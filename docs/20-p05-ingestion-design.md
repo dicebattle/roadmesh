@@ -32,3 +32,9 @@ Start actual local HTTP, PostgreSQL and separate worker processes alongside the 
 [PostgreSQL 18 SELECT locking documentation](https://www.postgresql.org/docs/18/sql-select.html#SQL-FOR-UPDATE-SHARE), inspected 2026-10-24, documents row locking and `SKIP LOCKED` for queue-like consumers. It is a possible claim primitive, not proof of recovery correctness. Exact schema, lease duration, transactional claim/finish SQL and failpoint IPC must be written before delegation. See [the draft product contract](04-protocol.md) for retention/time policies; document any deliberate pilot-specific difference.
 
 공식 PostgreSQL18 문서의 행 잠금·SKIP LOCKED를2026-10-24에 확인했습니다. 이는 작업 확보 수단이며 복구 정확성의 증명이 아닙니다. 위임 전에 정확한 스키마·임대 기간·확보/완료 SQL·중단 지점 통신을 정합니다. 보관/시각 정책은 제품 계약 초안을 따르고 파일럿에서 달라지는 부분은 명시합니다.
+
+## Executable detail / 실행 상세
+
+The decided schema, interfaces, time/retention boundaries, process failpoints and direct acceptance matrix are now fixed in [the P05 executable contract](22-p05-executable-contract.md). Implementation is in progress; no completion claim yet.
+
+확정한 스키마·인터페이스·시간/보관 경계·실제 중단 지점·수용 행렬을 실행 계약에 기록했습니다. 구현을 진행하며 완료로 표시하지 않습니다.
