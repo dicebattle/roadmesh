@@ -1,0 +1,143 @@
+{
+  "description_en": "Filter only non-local clamped vertices using exact shared endpoint coordinates and the already computed strictly closer adjacent interior projection. Tie tolerances and observed-time policies remain unchanged.",
+  "description_ko": "끝점 좌표가 정확히 같고 인접 선분의 계산된 내부 투영 거리가 엄격히 더 작은 경우에만 국소 최소가 아닌 꼭짓점 후보를 제외합니다. 동률 허용치·관측시간 정책은 그대로입니다.",
+  "status": "PASS",
+  "source_sha256": {
+    "tools/matching_evidence.ts": "4167a4f8f7953cc7ffd9c733f1fe2237fafcf4936b2a113df7dfa3f1f897079a",
+    "tools/seoul_simulation.ts": "fabd0c3eba38ac1e112df942a57dd13930db0a6441dd89c5882e3a1e17fd5076",
+    "tests/seoul_projection.test.ts": "66ee48f3a5d73dd2525a4ed9be61825a7fac07eb2cc6b4c5d0289940c7afc624",
+    "tests/fixtures/seoul-projection-local-minima.json": "f86e6cfc1b868c62ef72aff1d3acfd706ba83a2fa3daae0c4168201cc64e2bfd"
+  },
+  "verification": [
+    {
+      "command": "npm run build",
+      "record": "build.stdout.txt",
+      "exit_code": 0
+    },
+    {
+      "command": "node --test --test-name-pattern='^local minima ' dist/tests/seoul_projection.test.js",
+      "record": "focused.stdout.txt",
+      "tests": 4,
+      "pass": 4,
+      "fail": 0
+    },
+    {
+      "command": "npm run build",
+      "record": "coverage-build.stdout.txt",
+      "exit_code": 0
+    },
+    {
+      "command": "node --test --test-name-pattern='^noisy coverage fixed floor' dist/tests/seoul_projection.test.js",
+      "record": "coverage-focused.stdout.txt",
+      "tests": 1,
+      "pass": 1,
+      "fail": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "policy_id": "seoul-observed-v3",
+  "unchanged_ambiguity_distance_m": 0.01,
+  "unchanged_progress_difference_m": 0.01,
+  "new_noisy_gap_traversal_coverage_floor": 0.7,
+  "new_assertions": 6,
+  "expected_whole_assertions": 151,
+  "recovered_observed_points": [
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:68000",
+      "status": "MATCHED",
+      "edge_id": "660821006736",
+      "fraction": 0.9864051153002579,
+      "distance_m": 1.2795461420187964
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-noise:11500",
+      "status": "MATCHED",
+      "edge_id": "671826860432",
+      "fraction": 0.242446859274046,
+      "distance_m": 2.5452781682386516
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-noise:97500",
+      "status": "MATCHED",
+      "edge_id": "661324323216",
+      "fraction": 0.2886000297924904,
+      "distance_m": 2.019271921648929
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:6000",
+      "status": "MATCHED",
+      "edge_id": "9151104797786",
+      "fraction": 0.7272355887805712,
+      "distance_m": 0.45172858224908713
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:200500",
+      "status": "MATCHED",
+      "edge_id": "1620276780625",
+      "fraction": 0.01247001434703271,
+      "distance_m": 2.0937149604558734
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:202000",
+      "status": "MATCHED",
+      "edge_id": "1620377443921",
+      "fraction": 0.00016145030147785887,
+      "distance_m": 1.4337508882725485
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-noise:59500",
+      "status": "MATCHED",
+      "edge_id": "478620440976",
+      "fraction": 0.15223491908740136,
+      "distance_m": 1.375989396577952
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-gap:15000",
+      "status": "MATCHED",
+      "edge_id": "1297851898256",
+      "fraction": 0.013468296992287085,
+      "distance_m": 1.965633752288363
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-gap:87000",
+      "status": "MATCHED",
+      "edge_id": "1337479682448",
+      "fraction": 0.0013798601376368799,
+      "distance_m": 1.4194045939322806
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-noise:41000",
+      "status": "MATCHED",
+      "edge_id": "1296945928592",
+      "fraction": 0.0005364691340120065,
+      "distance_m": 1.3922496977227037
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-noise:43000",
+      "status": "MATCHED",
+      "edge_id": "1242319313296",
+      "fraction": 0.0001822681772519058,
+      "distance_m": 1.698186422519757
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-noise:57500",
+      "status": "MATCHED",
+      "edge_id": "1242185095568",
+      "fraction": 0.006018285367528604,
+      "distance_m": 1.6779027844403722
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-noise:148000",
+      "status": "MATCHED",
+      "edge_id": "1345566300560",
+      "fraction": 0.9922688849552506,
+      "distance_m": 1.689014225407101
+    }
+  ],
+  "retained_true_ambiguity": "seoul-road-demo:downtown-gap:4500",
+  "risk_en": "Only preserved-response interpretation and the fixed coverage acceptance logic were checked. No corrected live-engine workload or whole integration was rerun; final accepted traversal counts, timing precision, batch parity and all six coverage floors require the main fresh whole execution.",
+  "risk_ko": "보존 응답 해석과 고정 통과 범위 판정만 확인했습니다. 실제 엔진·전체 통합은 반복하지 않았으므로 최종 수용 통과 수·시각 정밀도·배치 동등성·6개 범위 하한은 메인의 새 전체 실행에서 확인해야 합니다."
+}

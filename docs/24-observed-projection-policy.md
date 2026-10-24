@@ -35,6 +35,20 @@ Retain engine response validation, fraction/returned-geometry coherence, upstrea
 
 ## Verification / 검증
 
+### Full-run review refinement / 전체 실행 검토 보완
+
+The first clean full execution at `5a173c8` passed145 assertions, but main's denominator audit found193/237 baseline traversals accepted versus the prior v2 result215/237. Clean traversals improved to79/79; noisy traces suffered extra exclusions. A passing gate did not end the review. Of14 AMBIGUOUS_PROJECTION points,13 had an extra clamped vertex candidate which was **not a local minimum of distance on the continuous path**: an adjacent segment sharing exactly the same vertex had a strictly closer interior projection. The remaining downtown-gap4500ms point had two distinct interior minima and remains ambiguous.
+
+첫 깨끗한 전체 실행은145개를 통과했지만, 메인의 분모 검토에서 기본 통과 채택이 이전 v2의215/237에서193/237로 줄었음을 확인했습니다. 정상 관측은79/79로 좋아졌지만 잡음 자료의 제외가 늘었습니다. 통과 표시로 검토를 끝내지 않았습니다. 투영 모호성 표본14개 중13개는 같은 꼭짓점을 공유한 인접 선분 안쪽에 더 가까운 투영이 있는데도 끝점을 별도 후보로 셌습니다. 그 끝점은 **연속 경로 전체에서 거리가 국소적으로 가장 작은 점이 아닙니다.** 나머지 도심 표본은 서로 다른 내부 최단 위치가 두 개이므로 모호성을 유지합니다.
+
+Refine the unreleased v3 candidate enumeration, not its0.01m distance/progress thresholds. Discard a clamped endpoint candidate only when the immediately adjacent segment shares the exact longitude/latitude vertex and has a strictly smaller-distance **interior** projection. Do not use a sampled1mm step as the decision rule. Keep genuine corner minima, outer path endpoints, distinct interior minima, loops and self-crossings. The broader1m edge-connection tolerance cannot make two different coordinates a shared vertex. Preserve original failed/refinement evidence and add the actual13 cases plus the retained ambiguous case as focused regression input before a new clean whole run.
+
+미공개 v3의 후보 구성만 보완하고0.01m의 거리·진행 동률 기준은 바꾸지 않습니다. 바로 옆 선분이 정확히 같은 경도·위도의 꼭짓점을 공유하고, 그 선분 **내부**에 엄밀히 더 가까운 투영이 있을 때만 끝점 후보를 제거합니다. 1mm 이동 시험으로 실제 판정하지 않습니다. 유효한 꺾임의 최단점·경로 양끝·서로 다른 내부 최단점·루프·자기 교차는 유지합니다. 1m 연결 허용 범위만으로 다른 좌표를 같은 꼭짓점으로 취급하지 않습니다. 실제13개와 남겨야 할1개를 회귀 자료로 보존한 뒤 새 전체 실행을 검증합니다.
+
+Strengthen the whole-run gate before rerunning: apply the existing clean-input70% complete-traversal coverage floor to each of the six noisy/gapped vehicles too. Prior v2's fixed scenarios all met this floor, whereas the first v3 Mapo-gap result8/18 did not. Preserve all existing false-traversal, timing and gap checks and the237 truth denominator. This adds six checks (Seoul35, total151 including P05/P06); do not lower the floor to fit later outputs.
+
+재실행 전에 전체 판정도 강화합니다. 정상 입력에 이미 쓰던 완전 통과 보존율70%를 잡음·누락6대에도 각각 적용합니다. 고정된 이전 v2 시나리오는 모두 이 기준을 만족했지만 첫 v3 마포 누락8/18은 그렇지 않았습니다. 기존 허구통과·시간·누락 검사와 정답237개는 유지합니다. 6개가 추가돼 서울35개·전체151개이며, 이후 결과에 맞춰 기준을 내리지 않습니다.
+
 Add focused regressions for the observed endpoint rounding, late edge association, connected-neighbor projection, loops/parallel ambiguity, forbidden jumps, gap/discontinuity and endpoint waiting. Keep original5 target traversals,150ms duration error and2% aggregate-speed tolerance. Only after focused checks pass, run one preserved-input development probe, then the complete fresh tiny→Seoul(v3)→P05→P06 pipeline and inspect raw results. If it fails, retain the failure and diagnose before another run. Historical v2 evidence remains scoped to its original implementation.
 
 끝점 반올림·늦은 구간 전환·연결 이웃 투영·루프/평행 모호성·금지 건너뛰기·누락/단절·끝점 대기의 집중 검사를 추가합니다. 원래의 대상 5개·150ms·집계 속도 2% 기준을 유지합니다. 집중 검사 후 보존 입력 개발조사를 한 번 실행하고, 새 전체 처리 흐름을 돌려 원문을 확인합니다. 실패하면 기록·진단을 먼저 하며, 과거 v2 증거의 범위도 유지합니다.

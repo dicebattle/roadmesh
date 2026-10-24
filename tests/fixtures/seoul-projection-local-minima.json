@@ -1,0 +1,3273 @@
+{
+  "description_en": "Minimum preserved fields for thirteen non-local clamped-vertex exclusions and one true dual-interior ambiguity from actual Valhalla responses to authored synthetic Seoul observations. No matcher output defines expected geometry or observations.",
+  "description_ko": "서울 합성 관측의 실제 Valhalla 응답에서 국소 최소가 아닌 꼭짓점 과잉 제외13건과 실제 두 내부 투영 모호성1건의 최소 원문 필드를 보존합니다. 매칭 출력으로 기대 지형이나 관측을 만들지 않습니다.",
+  "synthetic": true,
+  "attribution": {
+    "text": "© OpenStreetMap contributors",
+    "license": "ODbL-1.0",
+    "license_url": "https://www.openstreetmap.org/copyright",
+    "source_url": "https://download.geofabrik.de/asia/south-korea-261023.osm.pbf"
+  },
+  "source_analysis": "data/p06-local-minimum-analysis/analysis.json",
+  "source_sha256": {
+    "data/p06-main-20261024/seoul/workload/observations.json": "638c53e6eeabc5c46e17ec9d7de8bef4fa39c8874ba7e5a7ccfeb8cd0ad93201",
+    "data/p06-main-20261024/seoul/workload/matching/candidate-edges.json": "fd5e983e1091872b9bdc7860434410ff1d742b8b95d44aa2617bfcc46ed5307c",
+    "data/p06-main-20261024/seoul/workload/matching/result.json": "a49d417f66dceabea26c97f15fcfac6617b72a09affd9468f6186acde06b4227",
+    "data/p06-main-20261024/seoul/workload/matching/requests/0052-trace_attributes.response.json": "0a1fa7a5caee319557b458219a55c593bd201de6294777e4c89420ab5c283a74",
+    "data/p06-main-20261024/seoul/workload/matching/requests/0053-trace_attributes.response.json": "b94ea8e20800b25bc26293355e64ecccbe901a06f4ce90481bb122c85779d5d6",
+    "data/p06-main-20261024/seoul/workload/matching/requests/0054-trace_attributes.response.json": "5fee1717f4e67214c03fa6282a8cc78369186f38143c83823986fa0b29e00724",
+    "data/p06-main-20261024/seoul/workload/matching/requests/0056-trace_attributes.response.json": "776772e6acfe41fd4c9e0dccab6003995f15f75afaa9369ea397345aa4b5e057",
+    "data/p06-main-20261024/seoul/workload/matching/requests/0057-trace_attributes.response.json": "fb7c6f905cd58cfd16327b3ab409e48f5078a3aa6e736ff731cfc280fd9fa23c",
+    "data/p06-main-20261024/seoul/workload/matching/requests/0058-trace_attributes.response.json": "7c90e3a3affbbb05b124f3bed95d9d8bbef87cd506996399ea37807d59268373",
+    "data/p06-main-20261024/seoul/workload/matching/requests/0060-trace_attributes.response.json": "73aed211e956c3d32b25fb2153d7971c459e26c0ddce5547e2a1cf22bfe8dd90",
+    "data/p06-main-20261024/seoul/workload/matching/requests/0061-trace_attributes.response.json": "808d7adf22cf18e7e82f17289a3c6d2f709fec003a5a171852a27e9a9dc50b70",
+    "data/p06-main-20261024/seoul/workload/matching/requests/0062-trace_attributes.response.json": "7f37c6fd869b0084f1da4ea1831f88ffe8d26e1b2c5b0e5fc0adc03b8c514ec7",
+    "data/p06-main-20261024/seoul/workload/evaluation.json": "7ed82d2fc608337430cf6bf19a92b70d1f3e42fe93b74a3d8e336b00e39ccce1"
+  },
+  "extracted_fields": [
+    "trace responses: complete shape and edges arrays",
+    "trace responses: one unchanged matched_points[source_matched_point_index] per case",
+    "observations: selected sample IDs",
+    "candidate-edges: IDs referenced by preserved response edges",
+    "evaluation.json: complete nine-vehicle evaluation for the newly fixed noisy/gap traversal coverage floor"
+  ],
+  "graph_id": "a1cadb38a9ab9a14bf313621409eeb0c9d3fe7a9095239cd52738f3492665efc",
+  "catalog": [
+    {
+      "label": "edge-671994632592",
+      "osm_way_id": 908622899,
+      "edge_id": "671994632592",
+      "forward": false,
+      "engine_forward": false,
+      "car_access": true,
+      "source_geometry": [
+        [126.977213, 37.564928],
+        [126.977123, 37.564927],
+        [126.977084, 37.564924]
+      ],
+      "directed_geometry": [
+        [126.977084, 37.564924],
+        [126.977123, 37.564927],
+        [126.977213, 37.564928]
+      ],
+      "evidence_path": "requests/0000-locate.response.json"
+    },
+    {
+      "label": "edge-672531503504",
+      "osm_way_id": 1084408283,
+      "edge_id": "672531503504",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977117, 37.566637],
+        [126.977102, 37.565241],
+        [126.977084, 37.564924]
+      ],
+      "directed_geometry": [
+        [126.977117, 37.566637],
+        [126.977102, 37.565241],
+        [126.977084, 37.564924]
+      ],
+      "evidence_path": "requests/0000-locate.response.json"
+    },
+    {
+      "label": "edge-671826860432",
+      "osm_way_id": 378453707,
+      "edge_id": "671826860432",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977213, 37.564928],
+        [126.977221, 37.565103],
+        [126.977226, 37.565241],
+        [126.977227, 37.565403],
+        [126.97723, 37.566596],
+        [126.977239, 37.56688]
+      ],
+      "directed_geometry": [
+        [126.977213, 37.564928],
+        [126.977221, 37.565103],
+        [126.977226, 37.565241],
+        [126.977227, 37.565403],
+        [126.97723, 37.566596],
+        [126.977239, 37.56688]
+      ],
+      "evidence_path": "requests/0000-locate.response.json"
+    },
+    {
+      "label": "edge-9151104797786",
+      "osm_way_id": 591933960,
+      "edge_id": "9151104797786",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.931842, 37.527794],
+        [126.931767, 37.527775],
+        [126.931708, 37.527752],
+        [126.931653, 37.527747]
+      ],
+      "directed_geometry": [
+        [126.931842, 37.527794],
+        [126.931767, 37.527775],
+        [126.931708, 37.527752],
+        [126.931653, 37.527747]
+      ],
+      "evidence_path": "requests/0000-locate.response.json"
+    },
+    {
+      "label": "edge-9151239015514",
+      "osm_way_id": 591933960,
+      "edge_id": "9151239015514",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.931653, 37.527747],
+        [126.931608, 37.527753],
+        [126.93154, 37.527773],
+        [126.931485, 37.527806],
+        [126.931447, 37.527836],
+        [126.931331, 37.527866],
+        [126.931203, 37.527884]
+      ],
+      "directed_geometry": [
+        [126.931653, 37.527747],
+        [126.931608, 37.527753],
+        [126.93154, 37.527773],
+        [126.931485, 37.527806],
+        [126.931447, 37.527836],
+        [126.931331, 37.527866],
+        [126.931203, 37.527884]
+      ],
+      "evidence_path": "requests/0000-locate.response.json"
+    },
+    {
+      "label": "edge-1297617017232",
+      "osm_way_id": 520307303,
+      "edge_id": "1297617017232",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.028495, 37.498295],
+        [127.028253, 37.49822]
+      ],
+      "directed_geometry": [
+        [127.028495, 37.498295],
+        [127.028253, 37.49822]
+      ],
+      "evidence_path": "requests/0000-locate.response.json"
+    },
+    {
+      "label": "edge-1297415690640",
+      "osm_way_id": 975332778,
+      "edge_id": "1297415690640",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.028439, 37.498141],
+        [127.02872, 37.498225]
+      ],
+      "directed_geometry": [
+        [127.028439, 37.498141],
+        [127.02872, 37.498225]
+      ],
+      "evidence_path": "requests/0000-locate.response.json"
+    },
+    {
+      "label": "edge-1297851898256",
+      "osm_way_id": 975332778,
+      "edge_id": "1297851898256",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.028307, 37.4981],
+        [127.028439, 37.498141]
+      ],
+      "directed_geometry": [
+        [127.028307, 37.4981],
+        [127.028439, 37.498141]
+      ],
+      "evidence_path": "requests/0000-locate.response.json"
+    },
+    {
+      "label": "edge-1297281472912",
+      "osm_way_id": 975332778,
+      "edge_id": "1297281472912",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.02872, 37.498225],
+        [127.029417, 37.498437]
+      ],
+      "directed_geometry": [
+        [127.02872, 37.498225],
+        [127.029417, 37.498437]
+      ],
+      "evidence_path": "requests/0000-locate.response.json"
+    },
+    {
+      "label": "edge-1297751234960",
+      "osm_way_id": 1472718291,
+      "edge_id": "1297751234960",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.028253, 37.49822],
+        [127.028245, 37.498191],
+        [127.028235, 37.498179],
+        [127.028207, 37.49817],
+        [127.027955, 37.498097],
+        [127.02794, 37.498087],
+        [127.027925, 37.49807],
+        [127.02792, 37.498047],
+        [127.027932, 37.498029],
+        [127.027944, 37.498021],
+        [127.027965, 37.498016],
+        [127.028008, 37.498009]
+      ],
+      "directed_geometry": [
+        [127.028253, 37.49822],
+        [127.028245, 37.498191],
+        [127.028235, 37.498179],
+        [127.028207, 37.49817],
+        [127.027955, 37.498097],
+        [127.02794, 37.498087],
+        [127.027925, 37.49807],
+        [127.02792, 37.498047],
+        [127.027932, 37.498029],
+        [127.027944, 37.498021],
+        [127.027965, 37.498016],
+        [127.028008, 37.498009]
+      ],
+      "evidence_path": "requests/0000-locate.response.json"
+    },
+    {
+      "label": "edge-1296274839952",
+      "osm_way_id": 990628460,
+      "edge_id": "1296274839952",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.028008, 37.498009],
+        [127.028307, 37.4981]
+      ],
+      "directed_geometry": [
+        [127.028008, 37.498009],
+        [127.028307, 37.4981]
+      ],
+      "evidence_path": "requests/0000-locate.response.json"
+    },
+    {
+      "label": "edge-1236917395025",
+      "osm_way_id": 219690909,
+      "edge_id": "1236917395025",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.931203, 37.527884],
+        [126.930698, 37.528304]
+      ],
+      "directed_geometry": [
+        [126.931203, 37.527884],
+        [126.930698, 37.528304]
+      ],
+      "evidence_path": "requests/0002-locate.response.json"
+    },
+    {
+      "label": "edge-1236984503889",
+      "osm_way_id": 473697354,
+      "edge_id": "1236984503889",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.930698, 37.528304],
+        [126.930448, 37.528519]
+      ],
+      "directed_geometry": [
+        [126.930698, 37.528304],
+        [126.930448, 37.528519]
+      ],
+      "evidence_path": "requests/0004-locate.response.json"
+    },
+    {
+      "label": "edge-1237152276049",
+      "osm_way_id": 537281003,
+      "edge_id": "1237152276049",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.930448, 37.528519],
+        [126.930235, 37.528781],
+        [126.93019, 37.528987],
+        [126.930201, 37.529159],
+        [126.93022, 37.529236],
+        [126.93024, 37.529278]
+      ],
+      "directed_geometry": [
+        [126.930448, 37.528519],
+        [126.930235, 37.528781],
+        [126.93019, 37.528987],
+        [126.930201, 37.529159],
+        [126.93022, 37.529236],
+        [126.93024, 37.529278]
+      ],
+      "evidence_path": "requests/0005-locate.response.json"
+    },
+    {
+      "label": "edge-1296744602000",
+      "osm_way_id": 218864491,
+      "edge_id": "1296744602000",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.029417, 37.498437],
+        [127.03025, 37.498687]
+      ],
+      "directed_geometry": [
+        [127.029417, 37.498437],
+        [127.03025, 37.498687]
+      ],
+      "evidence_path": "requests/0006-locate.response.json"
+    },
+    {
+      "label": "edge-672397285776",
+      "osm_way_id": 378453707,
+      "edge_id": "672397285776",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977239, 37.56688],
+        [126.977241, 37.567002]
+      ],
+      "directed_geometry": [
+        [126.977239, 37.56688],
+        [126.977241, 37.567002]
+      ],
+      "evidence_path": "requests/0007-locate.response.json"
+    },
+    {
+      "label": "edge-672195959184",
+      "osm_way_id": 378453707,
+      "edge_id": "672195959184",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977241, 37.567002],
+        [126.977238, 37.567249]
+      ],
+      "directed_geometry": [
+        [126.977241, 37.567002],
+        [126.977238, 37.567249]
+      ],
+      "evidence_path": "requests/0007-locate.response.json"
+    },
+    {
+      "label": "edge-1237185830481",
+      "osm_way_id": 537281003,
+      "edge_id": "1237185830481",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.93024, 37.529278],
+        [126.930277, 37.529349]
+      ],
+      "directed_geometry": [
+        [126.93024, 37.529278],
+        [126.930277, 37.529349]
+      ],
+      "evidence_path": "requests/0007-locate.response.json"
+    },
+    {
+      "label": "edge-1237454265937",
+      "osm_way_id": 634612718,
+      "edge_id": "1237454265937",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.930277, 37.529349],
+        [126.930298, 37.529382],
+        [126.9304, 37.529505],
+        [126.930517, 37.529606],
+        [126.930703, 37.529731],
+        [126.93119, 37.530156]
+      ],
+      "directed_geometry": [
+        [126.930277, 37.529349],
+        [126.930298, 37.529382],
+        [126.9304, 37.529505],
+        [126.930517, 37.529606],
+        [126.930703, 37.529731],
+        [126.93119, 37.530156]
+      ],
+      "evidence_path": "requests/0007-locate.response.json"
+    },
+    {
+      "label": "edge-672330176912",
+      "osm_way_id": 378453707,
+      "edge_id": "672330176912",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977238, 37.567249],
+        [126.977231, 37.567899],
+        [126.977231, 37.568014]
+      ],
+      "directed_geometry": [
+        [126.977238, 37.567249],
+        [126.977231, 37.567899],
+        [126.977231, 37.568014]
+      ],
+      "evidence_path": "requests/0008-locate.response.json"
+    },
+    {
+      "label": "edge-1296878819728",
+      "osm_way_id": 218864491,
+      "edge_id": "1296878819728",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.03025, 37.498687],
+        [127.030896, 37.498883]
+      ],
+      "directed_geometry": [
+        [127.03025, 37.498687],
+        [127.030896, 37.498883]
+      ],
+      "evidence_path": "requests/0008-locate.response.json"
+    },
+    {
+      "label": "edge-1297013037456",
+      "osm_way_id": 218864491,
+      "edge_id": "1297013037456",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.030896, 37.498883],
+        [127.031073, 37.498934]
+      ],
+      "directed_geometry": [
+        [127.030896, 37.498883],
+        [127.031073, 37.498934]
+      ],
+      "evidence_path": "requests/0009-locate.response.json"
+    },
+    {
+      "label": "edge-672598612368",
+      "osm_way_id": 378453707,
+      "edge_id": "672598612368",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977231, 37.568014],
+        [126.97722, 37.568884]
+      ],
+      "directed_geometry": [
+        [126.977231, 37.568014],
+        [126.97722, 37.568884]
+      ],
+      "evidence_path": "requests/0009-locate.response.json"
+    },
+    {
+      "label": "edge-1296945928592",
+      "osm_way_id": 218864491,
+      "edge_id": "1296945928592",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.031073, 37.498934],
+        [127.031296, 37.499003]
+      ],
+      "directed_geometry": [
+        [127.031073, 37.498934],
+        [127.031296, 37.499003]
+      ],
+      "evidence_path": "requests/0010-locate.response.json"
+    },
+    {
+      "label": "edge-478620440976",
+      "osm_way_id": 473697309,
+      "edge_id": "478620440976",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.93119, 37.530156],
+        [126.932666, 37.531092],
+        [126.940951, 37.536248]
+      ],
+      "directed_geometry": [
+        [126.93119, 37.530156],
+        [126.932666, 37.531092],
+        [126.940951, 37.536248]
+      ],
+      "evidence_path": "requests/0010-locate.response.json"
+    },
+    {
+      "label": "edge-1242319313296",
+      "osm_way_id": 218864491,
+      "edge_id": "1242319313296",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.031296, 37.499003],
+        [127.032002, 37.499209]
+      ],
+      "directed_geometry": [
+        [127.031296, 37.499003],
+        [127.032002, 37.499209]
+      ],
+      "evidence_path": "requests/0010-locate.response.json"
+    },
+    {
+      "label": "edge-1242252204432",
+      "osm_way_id": 218864491,
+      "edge_id": "1242252204432",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.032002, 37.499209],
+        [127.032827, 37.499465]
+      ],
+      "directed_geometry": [
+        [127.032002, 37.499209],
+        [127.032827, 37.499465]
+      ],
+      "evidence_path": "requests/0012-locate.response.json"
+    },
+    {
+      "label": "edge-672766384528",
+      "osm_way_id": 378453707,
+      "edge_id": "672766384528",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.97722, 37.568884],
+        [126.977216, 37.569406],
+        [126.977214, 37.569612]
+      ],
+      "directed_geometry": [
+        [126.97722, 37.568884],
+        [126.977216, 37.569406],
+        [126.977214, 37.569612]
+      ],
+      "evidence_path": "requests/0012-locate.response.json"
+    },
+    {
+      "label": "edge-1242185095568",
+      "osm_way_id": 218864491,
+      "edge_id": "1242185095568",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.032827, 37.499465],
+        [127.033126, 37.499557]
+      ],
+      "directed_geometry": [
+        [127.032827, 37.499465],
+        [127.033126, 37.499557]
+      ],
+      "evidence_path": "requests/0014-locate.response.json"
+    },
+    {
+      "label": "edge-674947422608",
+      "osm_way_id": 378453707,
+      "edge_id": "674947422608",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977214, 37.569612],
+        [126.97721, 37.569818]
+      ],
+      "directed_geometry": [
+        [126.977214, 37.569612],
+        [126.97721, 37.569818]
+      ],
+      "evidence_path": "requests/0014-locate.response.json"
+    },
+    {
+      "label": "edge-674813204880",
+      "osm_way_id": 616037663,
+      "edge_id": "674813204880",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.97721, 37.569818],
+        [126.977209, 37.569995],
+        [126.977208, 37.570049]
+      ],
+      "directed_geometry": [
+        [126.97721, 37.569818],
+        [126.977209, 37.569995],
+        [126.977208, 37.570049]
+      ],
+      "evidence_path": "requests/0015-locate.response.json"
+    },
+    {
+      "label": "edge-1242117986704",
+      "osm_way_id": 218864491,
+      "edge_id": "1242117986704",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.033126, 37.499557],
+        [127.033998, 37.499817]
+      ],
+      "directed_geometry": [
+        [127.033126, 37.499557],
+        [127.033998, 37.499817]
+      ],
+      "evidence_path": "requests/0015-locate.response.json"
+    },
+    {
+      "label": "edge-673638799760",
+      "osm_way_id": 616037663,
+      "edge_id": "673638799760",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977208, 37.570049],
+        [126.977213, 37.57014]
+      ],
+      "directed_geometry": [
+        [126.977208, 37.570049],
+        [126.977213, 37.57014]
+      ],
+      "evidence_path": "requests/0016-locate.response.json"
+    },
+    {
+      "label": "edge-674444106128",
+      "osm_way_id": 198566325,
+      "edge_id": "674444106128",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977213, 37.57014],
+        [126.977218, 37.5702],
+        [126.977222, 37.570242],
+        [126.977227, 37.57028]
+      ],
+      "directed_geometry": [
+        [126.977213, 37.57014],
+        [126.977218, 37.5702],
+        [126.977222, 37.570242],
+        [126.977227, 37.57028]
+      ],
+      "evidence_path": "requests/0016-locate.response.json"
+    },
+    {
+      "label": "edge-674242779536",
+      "osm_way_id": 219747865,
+      "edge_id": "674242779536",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977227, 37.57028],
+        [126.977248, 37.570411]
+      ],
+      "directed_geometry": [
+        [126.977227, 37.57028],
+        [126.977248, 37.570411]
+      ],
+      "evidence_path": "requests/0016-locate.response.json"
+    },
+    {
+      "label": "edge-660821006736",
+      "osm_way_id": 219747865,
+      "edge_id": "660821006736",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977248, 37.570411],
+        [126.977253, 37.570467]
+      ],
+      "directed_geometry": [
+        [126.977248, 37.570411],
+        [126.977253, 37.570467]
+      ],
+      "evidence_path": "requests/0017-locate.response.json"
+    },
+    {
+      "label": "edge-660653234576",
+      "osm_way_id": 1084408278,
+      "edge_id": "660653234576",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977253, 37.570467],
+        [126.977254, 37.570486],
+        [126.97731, 37.571439]
+      ],
+      "directed_geometry": [
+        [126.977253, 37.570467],
+        [126.977254, 37.570486],
+        [126.97731, 37.571439]
+      ],
+      "evidence_path": "requests/0017-locate.response.json"
+    },
+    {
+      "label": "edge-1241849551248",
+      "osm_way_id": 218864491,
+      "edge_id": "1241849551248",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.033998, 37.499817],
+        [127.035532, 37.500276]
+      ],
+      "directed_geometry": [
+        [127.033998, 37.499817],
+        [127.035532, 37.500276]
+      ],
+      "evidence_path": "requests/0017-locate.response.json"
+    },
+    {
+      "label": "edge-661122996624",
+      "osm_way_id": 1084408279,
+      "edge_id": "661122996624",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.97731, 37.571439],
+        [126.977316, 37.571531]
+      ],
+      "directed_geometry": [
+        [126.97731, 37.571439],
+        [126.977316, 37.571531]
+      ],
+      "evidence_path": "requests/0020-locate.response.json"
+    },
+    {
+      "label": "edge-661190105488",
+      "osm_way_id": 1084408279,
+      "edge_id": "661190105488",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977316, 37.571531],
+        [126.977318, 37.571618]
+      ],
+      "directed_geometry": [
+        [126.977316, 37.571531],
+        [126.977318, 37.571618]
+      ],
+      "evidence_path": "requests/0020-locate.response.json"
+    },
+    {
+      "label": "edge-661257214352",
+      "osm_way_id": 616037664,
+      "edge_id": "661257214352",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977318, 37.571618],
+        [126.97728, 37.572586]
+      ],
+      "directed_geometry": [
+        [126.977318, 37.571618],
+        [126.97728, 37.572586]
+      ],
+      "evidence_path": "requests/0020-locate.response.json"
+    },
+    {
+      "label": "edge-1337345464720",
+      "osm_way_id": 218864491,
+      "edge_id": "1337345464720",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.035532, 37.500276],
+        [127.035699, 37.500325]
+      ],
+      "directed_geometry": [
+        [127.035532, 37.500276],
+        [127.035699, 37.500325]
+      ],
+      "evidence_path": "requests/0021-locate.response.json"
+    },
+    {
+      "label": "edge-1337580345744",
+      "osm_way_id": 218864491,
+      "edge_id": "1337580345744",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.035699, 37.500325],
+        [127.035937, 37.500399]
+      ],
+      "directed_geometry": [
+        [127.035699, 37.500325],
+        [127.035937, 37.500399]
+      ],
+      "evidence_path": "requests/0022-locate.response.json"
+    },
+    {
+      "label": "edge-1337479682448",
+      "osm_way_id": 218864491,
+      "edge_id": "1337479682448",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.035937, 37.500399],
+        [127.036339, 37.500517]
+      ],
+      "directed_geometry": [
+        [127.035937, 37.500399],
+        [127.036339, 37.500517]
+      ],
+      "evidence_path": "requests/0022-locate.response.json"
+    },
+    {
+      "label": "edge-1338553424272",
+      "osm_way_id": 218864491,
+      "edge_id": "1338553424272",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.036339, 37.500517],
+        [127.036737, 37.500635],
+        [127.036793, 37.500652]
+      ],
+      "directed_geometry": [
+        [127.036339, 37.500517],
+        [127.036737, 37.500635],
+        [127.036793, 37.500652]
+      ],
+      "evidence_path": "requests/0023-locate.response.json"
+    },
+    {
+      "label": "edge-661458540944",
+      "osm_way_id": 616037664,
+      "edge_id": "661458540944",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.97728, 37.572586],
+        [126.977274, 37.572722]
+      ],
+      "directed_geometry": [
+        [126.97728, 37.572586],
+        [126.977274, 37.572722]
+      ],
+      "evidence_path": "requests/0023-locate.response.json"
+    },
+    {
+      "label": "edge-661324323216",
+      "osm_way_id": 616037664,
+      "edge_id": "661324323216",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977274, 37.572722],
+        [126.977258, 37.573125],
+        [126.977218, 37.574121]
+      ],
+      "directed_geometry": [
+        [126.977274, 37.572722],
+        [126.977258, 37.573125],
+        [126.977218, 37.574121]
+      ],
+      "evidence_path": "requests/0024-locate.response.json"
+    },
+    {
+      "label": "edge-1338251434384",
+      "osm_way_id": 218864491,
+      "edge_id": "1338251434384",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.036793, 37.500652],
+        [127.036993, 37.500712]
+      ],
+      "directed_geometry": [
+        [127.036793, 37.500652],
+        [127.036993, 37.500712]
+      ],
+      "evidence_path": "requests/0025-locate.response.json"
+    },
+    {
+      "label": "edge-1338083662224",
+      "osm_way_id": 919983793,
+      "edge_id": "1338083662224",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.036993, 37.500712],
+        [127.037123, 37.500752],
+        [127.037245, 37.50079]
+      ],
+      "directed_geometry": [
+        [127.036993, 37.500712],
+        [127.037123, 37.500752],
+        [127.037245, 37.50079]
+      ],
+      "evidence_path": "requests/0025-locate.response.json"
+    },
+    {
+      "label": "edge-1338687642000",
+      "osm_way_id": 919983793,
+      "edge_id": "1338687642000",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.037245, 37.50079],
+        [127.03768, 37.500924]
+      ],
+      "directed_geometry": [
+        [127.037245, 37.50079],
+        [127.03768, 37.500924]
+      ],
+      "evidence_path": "requests/0026-locate.response.json"
+    },
+    {
+      "label": "edge-1338754750864",
+      "osm_way_id": 919983793,
+      "edge_id": "1338754750864",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.03768, 37.500924],
+        [127.038474, 37.50117]
+      ],
+      "directed_geometry": [
+        [127.03768, 37.500924],
+        [127.038474, 37.50117]
+      ],
+      "evidence_path": "requests/0027-locate.response.json"
+    },
+    {
+      "label": "edge-661525649808",
+      "osm_way_id": 616037664,
+      "edge_id": "661525649808",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977218, 37.574121],
+        [126.977205, 37.574474]
+      ],
+      "directed_geometry": [
+        [126.977218, 37.574121],
+        [126.977205, 37.574474]
+      ],
+      "evidence_path": "requests/0028-locate.response.json"
+    },
+    {
+      "label": "edge-1338922523024",
+      "osm_way_id": 919983793,
+      "edge_id": "1338922523024",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.038474, 37.50117],
+        [127.039197, 37.501397]
+      ],
+      "directed_geometry": [
+        [127.038474, 37.50117],
+        [127.039197, 37.501397]
+      ],
+      "evidence_path": "requests/0029-locate.response.json"
+    },
+    {
+      "label": "edge-661592758672",
+      "osm_way_id": 616037664,
+      "edge_id": "661592758672",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977205, 37.574474],
+        [126.977185, 37.574934]
+      ],
+      "directed_geometry": [
+        [126.977205, 37.574474],
+        [126.977185, 37.574934]
+      ],
+      "evidence_path": "requests/0029-locate.response.json"
+    },
+    {
+      "label": "edge-661794085264",
+      "osm_way_id": 616037664,
+      "edge_id": "661794085264",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977185, 37.574934],
+        [126.97718, 37.575063],
+        [126.977178, 37.575114],
+        [126.977177, 37.57519]
+      ],
+      "directed_geometry": [
+        [126.977185, 37.574934],
+        [126.97718, 37.575063],
+        [126.977178, 37.575114],
+        [126.977177, 37.57519]
+      ],
+      "evidence_path": "requests/0031-locate.response.json"
+    },
+    {
+      "label": "edge-1346170280336",
+      "osm_way_id": 919983793,
+      "edge_id": "1346170280336",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.039197, 37.501397],
+        [127.039882, 37.501608]
+      ],
+      "directed_geometry": [
+        [127.039197, 37.501397],
+        [127.039882, 37.501608]
+      ],
+      "evidence_path": "requests/0031-locate.response.json"
+    },
+    {
+      "label": "edge-661961857424",
+      "osm_way_id": 1266736990,
+      "edge_id": "661961857424",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977177, 37.57519],
+        [126.977171, 37.575281]
+      ],
+      "directed_geometry": [
+        [126.977177, 37.57519],
+        [126.977171, 37.575281]
+      ],
+      "evidence_path": "requests/0032-locate.response.json"
+    },
+    {
+      "label": "edge-662498728336",
+      "osm_way_id": 1084173181,
+      "edge_id": "662498728336",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.977171, 37.575281],
+        [126.977061, 37.575257]
+      ],
+      "directed_geometry": [
+        [126.977171, 37.575281],
+        [126.977061, 37.575257]
+      ],
+      "evidence_path": "requests/0032-locate.response.json"
+    },
+    {
+      "label": "edge-1345968953744",
+      "osm_way_id": 919983793,
+      "edge_id": "1345968953744",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.039882, 37.501608],
+        [127.040038, 37.501654],
+        [127.040535, 37.501799]
+      ],
+      "directed_geometry": [
+        [127.039882, 37.501608],
+        [127.040038, 37.501654],
+        [127.040535, 37.501799]
+      ],
+      "evidence_path": "requests/0033-locate.response.json"
+    },
+    {
+      "label": "edge-1345901844880",
+      "osm_way_id": 919983793,
+      "edge_id": "1345901844880",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.040535, 37.501799],
+        [127.041248, 37.502039]
+      ],
+      "directed_geometry": [
+        [127.040535, 37.501799],
+        [127.041248, 37.502039]
+      ],
+      "evidence_path": "requests/0034-locate.response.json"
+    },
+    {
+      "label": "edge-1345767627152",
+      "osm_way_id": 919983793,
+      "edge_id": "1345767627152",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.041248, 37.502039],
+        [127.042344, 37.502361]
+      ],
+      "directed_geometry": [
+        [127.041248, 37.502039],
+        [127.042344, 37.502361]
+      ],
+      "evidence_path": "requests/0035-locate.response.json"
+    },
+    {
+      "label": "edge-1345566300560",
+      "osm_way_id": 919983793,
+      "edge_id": "1345566300560",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.042344, 37.502361],
+        [127.042421, 37.502383]
+      ],
+      "directed_geometry": [
+        [127.042344, 37.502361],
+        [127.042421, 37.502383]
+      ],
+      "evidence_path": "requests/0037-locate.response.json"
+    },
+    {
+      "label": "edge-1345499191696",
+      "osm_way_id": 919983793,
+      "edge_id": "1345499191696",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.042421, 37.502383],
+        [127.042552, 37.502422],
+        [127.042633, 37.502446]
+      ],
+      "directed_geometry": [
+        [127.042421, 37.502383],
+        [127.042552, 37.502422],
+        [127.042633, 37.502446]
+      ],
+      "evidence_path": "requests/0037-locate.response.json"
+    },
+    {
+      "label": "edge-1344828103056",
+      "osm_way_id": 375049445,
+      "edge_id": "1344828103056",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.042633, 37.502446],
+        [127.042686, 37.502463],
+        [127.042798, 37.502499]
+      ],
+      "directed_geometry": [
+        [127.042633, 37.502446],
+        [127.042686, 37.502463],
+        [127.042798, 37.502499]
+      ],
+      "evidence_path": "requests/0038-locate.response.json"
+    },
+    {
+      "label": "edge-1344962320784",
+      "osm_way_id": 375049445,
+      "edge_id": "1344962320784",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.042798, 37.502499],
+        [127.042883, 37.502523]
+      ],
+      "directed_geometry": [
+        [127.042798, 37.502499],
+        [127.042883, 37.502523]
+      ],
+      "evidence_path": "requests/0038-locate.response.json"
+    },
+    {
+      "label": "edge-768329406864",
+      "osm_way_id": 650930758,
+      "edge_id": "768329406864",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.940951, 37.536248],
+        [126.941898, 37.536825],
+        [126.942055, 37.536931]
+      ],
+      "directed_geometry": [
+        [126.940951, 37.536248],
+        [126.941898, 37.536825],
+        [126.942055, 37.536931]
+      ],
+      "evidence_path": "requests/0038-locate.response.json"
+    },
+    {
+      "label": "edge-1345096538512",
+      "osm_way_id": 375049445,
+      "edge_id": "1345096538512",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.042883, 37.502523],
+        [127.042992, 37.502555],
+        [127.043101, 37.502586]
+      ],
+      "directed_geometry": [
+        [127.042883, 37.502523],
+        [127.042992, 37.502555],
+        [127.043101, 37.502586]
+      ],
+      "evidence_path": "requests/0038-locate.response.json"
+    },
+    {
+      "label": "edge-1346640042384",
+      "osm_way_id": 375049445,
+      "edge_id": "1346640042384",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.043101, 37.502586],
+        [127.043433, 37.502693],
+        [127.04442, 37.502996]
+      ],
+      "directed_geometry": [
+        [127.043101, 37.502586],
+        [127.043433, 37.502693],
+        [127.04442, 37.502996]
+      ],
+      "evidence_path": "requests/0039-locate.response.json"
+    },
+    {
+      "label": "edge-766282586512",
+      "osm_way_id": 650930758,
+      "edge_id": "766282586512",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.942055, 37.536931],
+        [126.942698, 37.537325]
+      ],
+      "directed_geometry": [
+        [126.942055, 37.536931],
+        [126.942698, 37.537325]
+      ],
+      "evidence_path": "requests/0040-locate.response.json"
+    },
+    {
+      "label": "edge-1346774260112",
+      "osm_way_id": 375049445,
+      "edge_id": "1346774260112",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.04442, 37.502996],
+        [127.045717, 37.503407]
+      ],
+      "directed_geometry": [
+        [127.04442, 37.502996],
+        [127.045717, 37.503407]
+      ],
+      "evidence_path": "requests/0041-locate.response.json"
+    },
+    {
+      "label": "edge-767020784016",
+      "osm_way_id": 516417606,
+      "edge_id": "767020784016",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.942698, 37.537325],
+        [126.944037, 37.538123],
+        [126.944137, 37.538187]
+      ],
+      "directed_geometry": [
+        [126.942698, 37.537325],
+        [126.944037, 37.538123],
+        [126.944137, 37.538187]
+      ],
+      "evidence_path": "requests/0042-locate.response.json"
+    },
+    {
+      "label": "edge-1346975586704",
+      "osm_way_id": 375049445,
+      "edge_id": "1346975586704",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.045717, 37.503407],
+        [127.047284, 37.503854]
+      ],
+      "directed_geometry": [
+        [127.045717, 37.503407],
+        [127.047284, 37.503854]
+      ],
+      "evidence_path": "requests/0043-locate.response.json"
+    },
+    {
+      "label": "edge-765510834576",
+      "osm_way_id": 794621881,
+      "edge_id": "765510834576",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.944137, 37.538187],
+        [126.94441, 37.538379]
+      ],
+      "directed_geometry": [
+        [126.944137, 37.538187],
+        [126.94441, 37.538379]
+      ],
+      "evidence_path": "requests/0045-locate.response.json"
+    },
+    {
+      "label": "edge-765007518096",
+      "osm_way_id": 794621881,
+      "edge_id": "765007518096",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.94441, 37.538379],
+        [126.944631, 37.538534]
+      ],
+      "directed_geometry": [
+        [126.94441, 37.538379],
+        [126.944631, 37.538534]
+      ],
+      "evidence_path": "requests/0045-locate.response.json"
+    },
+    {
+      "label": "edge-764940409232",
+      "osm_way_id": 1507371397,
+      "edge_id": "764940409232",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.944631, 37.538534],
+        [126.94505, 37.538845]
+      ],
+      "directed_geometry": [
+        [126.944631, 37.538534],
+        [126.94505, 37.538845]
+      ],
+      "evidence_path": "requests/0046-locate.response.json"
+    },
+    {
+      "label": "edge-1347042695568",
+      "osm_way_id": 375049445,
+      "edge_id": "1347042695568",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.047284, 37.503854],
+        [127.049065, 37.504404]
+      ],
+      "directed_geometry": [
+        [127.047284, 37.503854],
+        [127.049065, 37.504404]
+      ],
+      "evidence_path": "requests/0046-locate.response.json"
+    },
+    {
+      "label": "edge-1620310335057",
+      "osm_way_id": 37403023,
+      "edge_id": "1620310335057",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.94505, 37.538845],
+        [126.944911, 37.538954]
+      ],
+      "directed_geometry": [
+        [126.94505, 37.538845],
+        [126.944911, 37.538954]
+      ],
+      "evidence_path": "requests/0047-locate.response.json"
+    },
+    {
+      "label": "edge-1620276780625",
+      "osm_way_id": 37403023,
+      "edge_id": "1620276780625",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.944911, 37.538954],
+        [126.944841, 37.539007]
+      ],
+      "directed_geometry": [
+        [126.944911, 37.538954],
+        [126.944841, 37.539007]
+      ],
+      "evidence_path": "requests/0047-locate.response.json"
+    },
+    {
+      "label": "edge-1620176117329",
+      "osm_way_id": 37403023,
+      "edge_id": "1620176117329",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.944841, 37.539007],
+        [126.944786, 37.539047]
+      ],
+      "directed_geometry": [
+        [126.944841, 37.539007],
+        [126.944786, 37.539047]
+      ],
+      "evidence_path": "requests/0047-locate.response.json"
+    },
+    {
+      "label": "edge-1620377443921",
+      "osm_way_id": 37403023,
+      "edge_id": "1620377443921",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.944786, 37.539047],
+        [126.944236, 37.539455]
+      ],
+      "directed_geometry": [
+        [126.944786, 37.539047],
+        [126.944236, 37.539455]
+      ],
+      "evidence_path": "requests/0047-locate.response.json"
+    },
+    {
+      "label": "edge-9434304203866",
+      "osm_way_id": 383506878,
+      "edge_id": "9434304203866",
+      "forward": false,
+      "engine_forward": false,
+      "car_access": true,
+      "source_geometry": [
+        [126.94385, 37.53909],
+        [126.944131, 37.539348],
+        [126.944236, 37.539455]
+      ],
+      "directed_geometry": [
+        [126.944236, 37.539455],
+        [126.944131, 37.539348],
+        [126.94385, 37.53909]
+      ],
+      "evidence_path": "requests/0049-locate.response.json"
+    },
+    {
+      "label": "edge-1620109008465",
+      "osm_way_id": 515842285,
+      "edge_id": "1620109008465",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [126.944236, 37.539455],
+        [126.943607, 37.53993]
+      ],
+      "directed_geometry": [
+        [126.944236, 37.539455],
+        [126.943607, 37.53993]
+      ],
+      "evidence_path": "requests/0049-locate.response.json"
+    },
+    {
+      "label": "edge-1347344685456",
+      "osm_way_id": 921219576,
+      "edge_id": "1347344685456",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [127.049065, 37.504404],
+        [127.049391, 37.504511],
+        [127.050874, 37.504957]
+      ],
+      "directed_geometry": [
+        [127.049065, 37.504404],
+        [127.049391, 37.504511],
+        [127.050874, 37.504957]
+      ],
+      "evidence_path": "requests/0049-locate.response.json"
+    }
+  ],
+  "responses": {
+    "data/p06-main-20261024/seoul/workload/matching/requests/0052-trace_attributes.response.json": {
+      "shape": "o_xsfAybaeqFV@EmAAsD}IOsGIcIAqiAEwPQsFCwA@",
+      "edges": [
+        {
+          "way_id": 1084408283,
+          "id": 672531503504,
+          "end_shape_index": 1,
+          "begin_shape_index": 0,
+          "length": 0.001,
+          "source_percent_along": 0.992
+        },
+        {
+          "way_id": 908622899,
+          "id": 671994632592,
+          "end_shape_index": 3,
+          "begin_shape_index": 1,
+          "length": 0.011
+        },
+        {
+          "way_id": 378453707,
+          "id": 671826860432,
+          "end_shape_index": 8,
+          "begin_shape_index": 3,
+          "length": 0.217
+        },
+        {
+          "way_id": 378453707,
+          "id": 672397285776,
+          "end_shape_index": 9,
+          "begin_shape_index": 8,
+          "length": 0.014
+        },
+        {
+          "way_id": 378453707,
+          "id": 672195959184,
+          "end_shape_index": 10,
+          "begin_shape_index": 9,
+          "length": 0.004,
+          "target_percent_along": 0.177
+        }
+      ]
+    },
+    "data/p06-main-20261024/seoul/workload/matching/requests/0053-trace_attributes.response.json": {
+      "shape": "{}}sfA}kaeqF_A?ku@Ts_@F{KB{KFaJ@kB@uDIwBIsAGkAIeGi@oBIe@Aqz@oBwDKmDCo{@jAoGJeX^g}@nAaUXw[f@aGHeBBwC@uDJn@zE",
+      "edges": [
+        {
+          "way_id": 378453707,
+          "id": 672330176912,
+          "end_shape_index": 1,
+          "begin_shape_index": 0,
+          "length": 0.003,
+          "source_percent_along": 0.957
+        },
+        {
+          "way_id": 378453707,
+          "id": 672598612368,
+          "end_shape_index": 2,
+          "begin_shape_index": 1,
+          "length": 0.097
+        },
+        {
+          "way_id": 378453707,
+          "id": 672766384528,
+          "end_shape_index": 4,
+          "begin_shape_index": 2,
+          "length": 0.081
+        },
+        {
+          "way_id": 378453707,
+          "id": 674947422608,
+          "end_shape_index": 5,
+          "begin_shape_index": 4,
+          "length": 0.023
+        },
+        {
+          "way_id": 616037663,
+          "id": 674813204880,
+          "end_shape_index": 7,
+          "begin_shape_index": 5,
+          "length": 0.026
+        },
+        {
+          "way_id": 616037663,
+          "id": 673638799760,
+          "end_shape_index": 8,
+          "begin_shape_index": 7,
+          "length": 0.01
+        },
+        {
+          "way_id": 198566325,
+          "id": 674444106128,
+          "end_shape_index": 11,
+          "begin_shape_index": 8,
+          "length": 0.016
+        },
+        {
+          "way_id": 219747865,
+          "id": 674242779536,
+          "end_shape_index": 12,
+          "begin_shape_index": 11,
+          "length": 0.015
+        },
+        {
+          "way_id": 219747865,
+          "id": 660821006736,
+          "end_shape_index": 13,
+          "begin_shape_index": 12,
+          "length": 0.006
+        },
+        {
+          "way_id": 1084408278,
+          "id": 660653234576,
+          "end_shape_index": 15,
+          "begin_shape_index": 13,
+          "length": 0.108
+        },
+        {
+          "way_id": 1084408279,
+          "id": 661122996624,
+          "end_shape_index": 16,
+          "begin_shape_index": 15,
+          "length": 0.01
+        },
+        {
+          "way_id": 1084408279,
+          "id": 661190105488,
+          "end_shape_index": 17,
+          "begin_shape_index": 16,
+          "length": 0.01
+        },
+        {
+          "way_id": 616037664,
+          "id": 661257214352,
+          "end_shape_index": 18,
+          "begin_shape_index": 17,
+          "length": 0.108
+        },
+        {
+          "way_id": 616037664,
+          "id": 661458540944,
+          "end_shape_index": 19,
+          "begin_shape_index": 18,
+          "length": 0.015
+        },
+        {
+          "way_id": 616037664,
+          "id": 661324323216,
+          "end_shape_index": 21,
+          "begin_shape_index": 19,
+          "length": 0.156
+        },
+        {
+          "way_id": 616037664,
+          "id": 661525649808,
+          "end_shape_index": 22,
+          "begin_shape_index": 21,
+          "length": 0.039
+        },
+        {
+          "way_id": 616037664,
+          "id": 661592758672,
+          "end_shape_index": 23,
+          "begin_shape_index": 22,
+          "length": 0.051
+        },
+        {
+          "way_id": 616037664,
+          "id": 661794085264,
+          "end_shape_index": 26,
+          "begin_shape_index": 23,
+          "length": 0.029
+        },
+        {
+          "way_id": 1266736990,
+          "id": 661961857424,
+          "end_shape_index": 27,
+          "begin_shape_index": 26,
+          "length": 0.01
+        },
+        {
+          "way_id": 1084173181,
+          "id": 662498728336,
+          "end_shape_index": 28,
+          "begin_shape_index": 27,
+          "length": 0.01
+        }
+      ]
+    },
+    "data/p06-main-20261024/seoul/workload/matching/requests/0054-trace_attributes.response.json": {
+      "shape": "w~wsfAwbaeqFEmAAsD}IOsGIcIAqiAEwPQsFCmNDsg@LeF?ku@Ts_@F{KB{KFaJ@kB@uDIwBIsAGkAIeGi@oBIe@Aqz@oBwDKmDCo{@jAoGJeX^g}@nAaUXw[f@aGHeBBwC@uDJh@bE",
+      "edges": [
+        {
+          "way_id": 908622899,
+          "id": 671994632592,
+          "end_shape_index": 2,
+          "begin_shape_index": 0,
+          "length": 0.011
+        },
+        {
+          "way_id": 378453707,
+          "id": 671826860432,
+          "end_shape_index": 7,
+          "begin_shape_index": 2,
+          "length": 0.217
+        },
+        {
+          "way_id": 378453707,
+          "id": 672397285776,
+          "end_shape_index": 8,
+          "begin_shape_index": 7,
+          "length": 0.014
+        },
+        {
+          "way_id": 378453707,
+          "id": 672195959184,
+          "end_shape_index": 9,
+          "begin_shape_index": 8,
+          "length": 0.027
+        },
+        {
+          "way_id": 378453707,
+          "id": 672330176912,
+          "end_shape_index": 11,
+          "begin_shape_index": 9,
+          "length": 0.085
+        },
+        {
+          "way_id": 378453707,
+          "id": 672598612368,
+          "end_shape_index": 12,
+          "begin_shape_index": 11,
+          "length": 0.097
+        },
+        {
+          "way_id": 378453707,
+          "id": 672766384528,
+          "end_shape_index": 14,
+          "begin_shape_index": 12,
+          "length": 0.081
+        },
+        {
+          "way_id": 378453707,
+          "id": 674947422608,
+          "end_shape_index": 15,
+          "begin_shape_index": 14,
+          "length": 0.023
+        },
+        {
+          "way_id": 616037663,
+          "id": 674813204880,
+          "end_shape_index": 17,
+          "begin_shape_index": 15,
+          "length": 0.026
+        },
+        {
+          "way_id": 616037663,
+          "id": 673638799760,
+          "end_shape_index": 18,
+          "begin_shape_index": 17,
+          "length": 0.01
+        },
+        {
+          "way_id": 198566325,
+          "id": 674444106128,
+          "end_shape_index": 21,
+          "begin_shape_index": 18,
+          "length": 0.016
+        },
+        {
+          "way_id": 219747865,
+          "id": 674242779536,
+          "end_shape_index": 22,
+          "begin_shape_index": 21,
+          "length": 0.015
+        },
+        {
+          "way_id": 219747865,
+          "id": 660821006736,
+          "end_shape_index": 23,
+          "begin_shape_index": 22,
+          "length": 0.006
+        },
+        {
+          "way_id": 1084408278,
+          "id": 660653234576,
+          "end_shape_index": 25,
+          "begin_shape_index": 23,
+          "length": 0.108
+        },
+        {
+          "way_id": 1084408279,
+          "id": 661122996624,
+          "end_shape_index": 26,
+          "begin_shape_index": 25,
+          "length": 0.01
+        },
+        {
+          "way_id": 1084408279,
+          "id": 661190105488,
+          "end_shape_index": 27,
+          "begin_shape_index": 26,
+          "length": 0.01
+        },
+        {
+          "way_id": 616037664,
+          "id": 661257214352,
+          "end_shape_index": 28,
+          "begin_shape_index": 27,
+          "length": 0.108
+        },
+        {
+          "way_id": 616037664,
+          "id": 661458540944,
+          "end_shape_index": 29,
+          "begin_shape_index": 28,
+          "length": 0.015
+        },
+        {
+          "way_id": 616037664,
+          "id": 661324323216,
+          "end_shape_index": 31,
+          "begin_shape_index": 29,
+          "length": 0.156
+        },
+        {
+          "way_id": 616037664,
+          "id": 661525649808,
+          "end_shape_index": 32,
+          "begin_shape_index": 31,
+          "length": 0.039
+        },
+        {
+          "way_id": 616037664,
+          "id": 661592758672,
+          "end_shape_index": 33,
+          "begin_shape_index": 32,
+          "length": 0.051
+        },
+        {
+          "way_id": 616037664,
+          "id": 661794085264,
+          "end_shape_index": 36,
+          "begin_shape_index": 33,
+          "length": 0.029
+        },
+        {
+          "way_id": 1266736990,
+          "id": 661961857424,
+          "end_shape_index": 37,
+          "begin_shape_index": 36,
+          "length": 0.01
+        },
+        {
+          "way_id": 1084173181,
+          "id": 662498728336,
+          "end_shape_index": 38,
+          "begin_shape_index": 37,
+          "length": 0.008,
+          "target_percent_along": 0.892
+        }
+      ]
+    },
+    "data/p06-main-20261024/seoul/workload/matching/requests/0056-trace_attributes.response.json": {
+      "shape": "cnoqfAcwhbqFd@tCl@tBHlBKxAg@fCaAlB{@jA{@fFc@~FgYp^mLrNkOhL{KxAwIUyCe@??",
+      "edges": [
+        {
+          "way_id": 591933960,
+          "id": 9151104797786,
+          "end_shape_index": 3,
+          "begin_shape_index": 0,
+          "length": 0.018
+        },
+        {
+          "way_id": 591933960,
+          "id": 9151239015514,
+          "end_shape_index": 9,
+          "begin_shape_index": 3,
+          "length": 0.044
+        },
+        {
+          "way_id": 219690909,
+          "id": 1236917395025,
+          "end_shape_index": 10,
+          "begin_shape_index": 9,
+          "length": 0.065
+        },
+        {
+          "way_id": 473697354,
+          "id": 1236984503889,
+          "end_shape_index": 11,
+          "begin_shape_index": 10,
+          "length": 0.032
+        },
+        {
+          "way_id": 537281003,
+          "id": 1237152276049,
+          "end_shape_index": 16,
+          "begin_shape_index": 11,
+          "length": 0.085,
+          "target_percent_along": 0.945
+        }
+      ]
+    },
+    "data/p06-main-20261024/seoul/workload/matching/requests/0057-trace_attributes.response.json": {
+      "shape": "ivsqfAgagbqFmJcLoy@g{A_kGumL?@gu@evAac@ez@sEyH{LuU@ByIsP{p@urA_CgE_KaPuHyLmReYyEtGiBjCoAlBoXja@Y`@",
+      "edges": [
+        {
+          "way_id": 634612718,
+          "id": 1237454265937,
+          "end_shape_index": 1,
+          "begin_shape_index": 0,
+          "length": 0.027,
+          "source_percent_along": 0.772
+        },
+        {
+          "way_id": 473697309,
+          "id": 478620440976,
+          "end_shape_index": 3,
+          "begin_shape_index": 1,
+          "length": 0.939,
+          "target_percent_along": 0.857
+        },
+        {
+          "way_id": 473697309,
+          "id": 478620440976,
+          "end_shape_index": 5,
+          "begin_shape_index": 4,
+          "length": 0.156,
+          "source_percent_along": 0.857
+        },
+        {
+          "way_id": 650930758,
+          "id": 768329406864,
+          "end_shape_index": 7,
+          "begin_shape_index": 5,
+          "length": 0.124
+        },
+        {
+          "way_id": 650930758,
+          "id": 766282586512,
+          "end_shape_index": 8,
+          "begin_shape_index": 7,
+          "length": 0.04,
+          "target_percent_along": 0.564
+        },
+        {
+          "way_id": 650930758,
+          "id": 766282586512,
+          "end_shape_index": 10,
+          "begin_shape_index": 9,
+          "length": 0.031,
+          "source_percent_along": 0.561
+        },
+        {
+          "way_id": 516417606,
+          "id": 767020784016,
+          "end_shape_index": 12,
+          "begin_shape_index": 10,
+          "length": 0.159
+        },
+        {
+          "way_id": 794621881,
+          "id": 765510834576,
+          "end_shape_index": 13,
+          "begin_shape_index": 12,
+          "length": 0.032
+        },
+        {
+          "way_id": 794621881,
+          "id": 765007518096,
+          "end_shape_index": 14,
+          "begin_shape_index": 13,
+          "length": 0.026
+        },
+        {
+          "way_id": 1507371397,
+          "id": 764940409232,
+          "end_shape_index": 15,
+          "begin_shape_index": 14,
+          "length": 0.051
+        },
+        {
+          "way_id": 37403023,
+          "id": 1620310335057,
+          "end_shape_index": 16,
+          "begin_shape_index": 15,
+          "length": 0.017
+        },
+        {
+          "way_id": 37403023,
+          "id": 1620276780625,
+          "end_shape_index": 17,
+          "begin_shape_index": 16,
+          "length": 0.009
+        },
+        {
+          "way_id": 37403023,
+          "id": 1620176117329,
+          "end_shape_index": 18,
+          "begin_shape_index": 17,
+          "length": 0.007
+        },
+        {
+          "way_id": 37403023,
+          "id": 1620377443921,
+          "end_shape_index": 19,
+          "begin_shape_index": 18,
+          "length": 0.067
+        },
+        {
+          "way_id": 515842285,
+          "id": 1620109008465,
+          "end_shape_index": 20,
+          "begin_shape_index": 19,
+          "length": 0.002,
+          "target_percent_along": 0.026
+        }
+      ]
+    },
+    "data/p06-main-20261024/seoul/workload/matching/requests/0058-trace_attributes.response.json": {
+      "shape": "cnoqfAcwhbqFd@tCl@tBHlBKxAg@fCaAlB{@jA{@fFc@~FgYp^mLrNkOhL{KxAwIUyCe@sAg@mCiAaAi@uFkEiEiFyFsJqYm]oy@g{AueEi~H@DszBueEac@ez@sEyHsWeg@g[mn@?@sTic@_CgE_KaPuHyLmReYyEtGiBjCoAlBoXja@PP",
+      "edges": [
+        {
+          "way_id": 591933960,
+          "id": 9151104797786,
+          "end_shape_index": 3,
+          "begin_shape_index": 0,
+          "length": 0.018
+        },
+        {
+          "way_id": 591933960,
+          "id": 9151239015514,
+          "end_shape_index": 9,
+          "begin_shape_index": 3,
+          "length": 0.044
+        },
+        {
+          "way_id": 219690909,
+          "id": 1236917395025,
+          "end_shape_index": 10,
+          "begin_shape_index": 9,
+          "length": 0.065
+        },
+        {
+          "way_id": 473697354,
+          "id": 1236984503889,
+          "end_shape_index": 11,
+          "begin_shape_index": 10,
+          "length": 0.032
+        },
+        {
+          "way_id": 537281003,
+          "id": 1237152276049,
+          "end_shape_index": 16,
+          "begin_shape_index": 11,
+          "length": 0.091
+        },
+        {
+          "way_id": 537281003,
+          "id": 1237185830481,
+          "end_shape_index": 17,
+          "begin_shape_index": 16,
+          "length": 0.009
+        },
+        {
+          "way_id": 634612718,
+          "id": 1237454265937,
+          "end_shape_index": 22,
+          "begin_shape_index": 17,
+          "length": 0.121
+        },
+        {
+          "way_id": 473697309,
+          "id": 478620440976,
+          "end_shape_index": 24,
+          "begin_shape_index": 22,
+          "length": 0.739,
+          "target_percent_along": 0.674
+        },
+        {
+          "way_id": 473697309,
+          "id": 478620440976,
+          "end_shape_index": 26,
+          "begin_shape_index": 25,
+          "length": 0.356,
+          "source_percent_along": 0.674
+        },
+        {
+          "way_id": 650930758,
+          "id": 768329406864,
+          "end_shape_index": 28,
+          "begin_shape_index": 26,
+          "length": 0.124
+        },
+        {
+          "way_id": 650930758,
+          "id": 766282586512,
+          "end_shape_index": 29,
+          "begin_shape_index": 28,
+          "length": 0.072
+        },
+        {
+          "way_id": 516417606,
+          "id": 767020784016,
+          "end_shape_index": 30,
+          "begin_shape_index": 29,
+          "length": 0.083,
+          "target_percent_along": 0.526
+        },
+        {
+          "way_id": 516417606,
+          "id": 767020784016,
+          "end_shape_index": 33,
+          "begin_shape_index": 31,
+          "length": 0.075,
+          "source_percent_along": 0.525
+        },
+        {
+          "way_id": 794621881,
+          "id": 765510834576,
+          "end_shape_index": 34,
+          "begin_shape_index": 33,
+          "length": 0.032
+        },
+        {
+          "way_id": 794621881,
+          "id": 765007518096,
+          "end_shape_index": 35,
+          "begin_shape_index": 34,
+          "length": 0.026
+        },
+        {
+          "way_id": 1507371397,
+          "id": 764940409232,
+          "end_shape_index": 36,
+          "begin_shape_index": 35,
+          "length": 0.051
+        },
+        {
+          "way_id": 37403023,
+          "id": 1620310335057,
+          "end_shape_index": 37,
+          "begin_shape_index": 36,
+          "length": 0.017
+        },
+        {
+          "way_id": 37403023,
+          "id": 1620276780625,
+          "end_shape_index": 38,
+          "begin_shape_index": 37,
+          "length": 0.009
+        },
+        {
+          "way_id": 37403023,
+          "id": 1620176117329,
+          "end_shape_index": 39,
+          "begin_shape_index": 38,
+          "length": 0.007
+        },
+        {
+          "way_id": 37403023,
+          "id": 1620377443921,
+          "end_shape_index": 40,
+          "begin_shape_index": 39,
+          "length": 0.067
+        },
+        {
+          "way_id": 383506878,
+          "id": 9434304203866,
+          "end_shape_index": 41,
+          "begin_shape_index": 40,
+          "length": 0.001,
+          "target_percent_along": 0.023
+        }
+      ]
+    },
+    "data/p06-main-20261024/seoul/workload/matching/requests/0060-trace_attributes.response.json": {
+      "shape": "mzuofA}oehqFtCbNx@NVRPv@pCvNR\\`@\\l@Hb@WNWHi@LuAuDuQqAgGgDqPgLqj@}FqY",
+      "edges": [
+        {
+          "way_id": 520307303,
+          "id": 1297617017232,
+          "end_shape_index": 1,
+          "begin_shape_index": 0,
+          "length": 0.023
+        },
+        {
+          "way_id": 1472718291,
+          "id": 1297751234960,
+          "end_shape_index": 12,
+          "begin_shape_index": 1,
+          "length": 0.047
+        },
+        {
+          "way_id": 990628460,
+          "id": 1296274839952,
+          "end_shape_index": 13,
+          "begin_shape_index": 12,
+          "length": 0.028
+        },
+        {
+          "way_id": 975332778,
+          "id": 1297851898256,
+          "end_shape_index": 14,
+          "begin_shape_index": 13,
+          "length": 0.013
+        },
+        {
+          "way_id": 975332778,
+          "id": 1297415690640,
+          "end_shape_index": 15,
+          "begin_shape_index": 14,
+          "length": 0.027
+        },
+        {
+          "way_id": 975332778,
+          "id": 1297281472912,
+          "end_shape_index": 16,
+          "begin_shape_index": 15,
+          "length": 0.065
+        },
+        {
+          "way_id": 218864491,
+          "id": 1296744602000,
+          "end_shape_index": 17,
+          "begin_shape_index": 16,
+          "length": 0.04,
+          "target_percent_along": 0.509
+        }
+      ]
+    },
+    "data/p06-main-20261024/seoul/workload/matching/requests/0061-trace_attributes.response.json": {
+      "shape": "_awofAkljhqFk@uCiC}L{Kck@_Oqr@wDuQgOou@u[{~AaBmIsC{MkFcXkF{Wa@oBwBoKoAcGkAsFkGeZkNsp@eMel@eLyi@{AwHaHa^_Nqk@cSocAk@yCmAeGo@aDa@iBgA_Fo@iD_AyE}@yEuEwS}Qu|@uXapA}Z}`Bka@inBQw@",
+      "edges": [
+        {
+          "way_id": 218864491,
+          "id": 1297013037456,
+          "end_shape_index": 1,
+          "begin_shape_index": 0,
+          "length": 0.007,
+          "source_percent_along": 0.574
+        },
+        {
+          "way_id": 218864491,
+          "id": 1296945928592,
+          "end_shape_index": 2,
+          "begin_shape_index": 1,
+          "length": 0.021
+        },
+        {
+          "way_id": 218864491,
+          "id": 1242319313296,
+          "end_shape_index": 3,
+          "begin_shape_index": 2,
+          "length": 0.065
+        },
+        {
+          "way_id": 218864491,
+          "id": 1242252204432,
+          "end_shape_index": 4,
+          "begin_shape_index": 3,
+          "length": 0.078
+        },
+        {
+          "way_id": 218864491,
+          "id": 1242185095568,
+          "end_shape_index": 5,
+          "begin_shape_index": 4,
+          "length": 0.028
+        },
+        {
+          "way_id": 218864491,
+          "id": 1242117986704,
+          "end_shape_index": 6,
+          "begin_shape_index": 5,
+          "length": 0.082
+        },
+        {
+          "way_id": 218864491,
+          "id": 1241849551248,
+          "end_shape_index": 7,
+          "begin_shape_index": 6,
+          "length": 0.145
+        },
+        {
+          "way_id": 218864491,
+          "id": 1337345464720,
+          "end_shape_index": 8,
+          "begin_shape_index": 7,
+          "length": 0.016
+        },
+        {
+          "way_id": 218864491,
+          "id": 1337580345744,
+          "end_shape_index": 9,
+          "begin_shape_index": 8,
+          "length": 0.023
+        },
+        {
+          "way_id": 218864491,
+          "id": 1337479682448,
+          "end_shape_index": 10,
+          "begin_shape_index": 9,
+          "length": 0.038
+        },
+        {
+          "way_id": 218864491,
+          "id": 1338553424272,
+          "end_shape_index": 12,
+          "begin_shape_index": 10,
+          "length": 0.043
+        },
+        {
+          "way_id": 218864491,
+          "id": 1338251434384,
+          "end_shape_index": 13,
+          "begin_shape_index": 12,
+          "length": 0.019
+        },
+        {
+          "way_id": 919983793,
+          "id": 1338083662224,
+          "end_shape_index": 15,
+          "begin_shape_index": 13,
+          "length": 0.024
+        },
+        {
+          "way_id": 919983793,
+          "id": 1338687642000,
+          "end_shape_index": 16,
+          "begin_shape_index": 15,
+          "length": 0.041
+        },
+        {
+          "way_id": 919983793,
+          "id": 1338754750864,
+          "end_shape_index": 17,
+          "begin_shape_index": 16,
+          "length": 0.075
+        },
+        {
+          "way_id": 919983793,
+          "id": 1338922523024,
+          "end_shape_index": 18,
+          "begin_shape_index": 17,
+          "length": 0.069
+        },
+        {
+          "way_id": 919983793,
+          "id": 1346170280336,
+          "end_shape_index": 19,
+          "begin_shape_index": 18,
+          "length": 0.065
+        },
+        {
+          "way_id": 919983793,
+          "id": 1345968953744,
+          "end_shape_index": 21,
+          "begin_shape_index": 19,
+          "length": 0.061
+        },
+        {
+          "way_id": 919983793,
+          "id": 1345901844880,
+          "end_shape_index": 22,
+          "begin_shape_index": 21,
+          "length": 0.068
+        },
+        {
+          "way_id": 919983793,
+          "id": 1345767627152,
+          "end_shape_index": 23,
+          "begin_shape_index": 22,
+          "length": 0.103
+        },
+        {
+          "way_id": 919983793,
+          "id": 1345566300560,
+          "end_shape_index": 24,
+          "begin_shape_index": 23,
+          "length": 0.007
+        },
+        {
+          "way_id": 919983793,
+          "id": 1345499191696,
+          "end_shape_index": 26,
+          "begin_shape_index": 24,
+          "length": 0.02
+        },
+        {
+          "way_id": 375049445,
+          "id": 1344828103056,
+          "end_shape_index": 28,
+          "begin_shape_index": 26,
+          "length": 0.016
+        },
+        {
+          "way_id": 375049445,
+          "id": 1344962320784,
+          "end_shape_index": 29,
+          "begin_shape_index": 28,
+          "length": 0.008
+        },
+        {
+          "way_id": 375049445,
+          "id": 1345096538512,
+          "end_shape_index": 31,
+          "begin_shape_index": 29,
+          "length": 0.021
+        },
+        {
+          "way_id": 375049445,
+          "id": 1346640042384,
+          "end_shape_index": 33,
+          "begin_shape_index": 31,
+          "length": 0.125
+        },
+        {
+          "way_id": 375049445,
+          "id": 1346774260112,
+          "end_shape_index": 34,
+          "begin_shape_index": 33,
+          "length": 0.123
+        },
+        {
+          "way_id": 375049445,
+          "id": 1346975586704,
+          "end_shape_index": 35,
+          "begin_shape_index": 34,
+          "length": 0.146
+        },
+        {
+          "way_id": 375049445,
+          "id": 1347042695568,
+          "end_shape_index": 36,
+          "begin_shape_index": 35,
+          "length": 0.169
+        },
+        {
+          "way_id": 921219576,
+          "id": 1347344685456,
+          "end_shape_index": 37,
+          "begin_shape_index": 36,
+          "length": 0.002,
+          "target_percent_along": 0.015
+        }
+      ]
+    },
+    "data/p06-main-20261024/seoul/workload/matching/requests/0062-trace_attributes.response.json": {
+      "shape": "mzuofA}oehqFtCbNx@NVRPv@pCvNR\\`@\\l@Hb@WNWHi@LuAuDuQqAgGgDqPgLqj@sNas@gKkg@eBaJiC}L{Kck@_Oqr@wDuQgOou@u[{~AaBmIsC{MkFcXkF{Wa@oBwBoKoAcGkAsFkGeZkNsp@eMel@eLyi@{AwHaHa^_Nqk@cSocAk@yCmAeGo@aDa@iBgA_Fo@iD_AyE}@yEuEwS}Qu|@uXapA}Z}`Bka@inB",
+      "edges": [
+        {
+          "way_id": 520307303,
+          "id": 1297617017232,
+          "end_shape_index": 1,
+          "begin_shape_index": 0,
+          "length": 0.023
+        },
+        {
+          "way_id": 1472718291,
+          "id": 1297751234960,
+          "end_shape_index": 12,
+          "begin_shape_index": 1,
+          "length": 0.047
+        },
+        {
+          "way_id": 990628460,
+          "id": 1296274839952,
+          "end_shape_index": 13,
+          "begin_shape_index": 12,
+          "length": 0.028
+        },
+        {
+          "way_id": 975332778,
+          "id": 1297851898256,
+          "end_shape_index": 14,
+          "begin_shape_index": 13,
+          "length": 0.013
+        },
+        {
+          "way_id": 975332778,
+          "id": 1297415690640,
+          "end_shape_index": 15,
+          "begin_shape_index": 14,
+          "length": 0.027
+        },
+        {
+          "way_id": 975332778,
+          "id": 1297281472912,
+          "end_shape_index": 16,
+          "begin_shape_index": 15,
+          "length": 0.065
+        },
+        {
+          "way_id": 218864491,
+          "id": 1296744602000,
+          "end_shape_index": 17,
+          "begin_shape_index": 16,
+          "length": 0.079
+        },
+        {
+          "way_id": 218864491,
+          "id": 1296878819728,
+          "end_shape_index": 18,
+          "begin_shape_index": 17,
+          "length": 0.061
+        },
+        {
+          "way_id": 218864491,
+          "id": 1297013037456,
+          "end_shape_index": 19,
+          "begin_shape_index": 18,
+          "length": 0.017
+        },
+        {
+          "way_id": 218864491,
+          "id": 1296945928592,
+          "end_shape_index": 20,
+          "begin_shape_index": 19,
+          "length": 0.021
+        },
+        {
+          "way_id": 218864491,
+          "id": 1242319313296,
+          "end_shape_index": 21,
+          "begin_shape_index": 20,
+          "length": 0.065
+        },
+        {
+          "way_id": 218864491,
+          "id": 1242252204432,
+          "end_shape_index": 22,
+          "begin_shape_index": 21,
+          "length": 0.078
+        },
+        {
+          "way_id": 218864491,
+          "id": 1242185095568,
+          "end_shape_index": 23,
+          "begin_shape_index": 22,
+          "length": 0.028
+        },
+        {
+          "way_id": 218864491,
+          "id": 1242117986704,
+          "end_shape_index": 24,
+          "begin_shape_index": 23,
+          "length": 0.082
+        },
+        {
+          "way_id": 218864491,
+          "id": 1241849551248,
+          "end_shape_index": 25,
+          "begin_shape_index": 24,
+          "length": 0.145
+        },
+        {
+          "way_id": 218864491,
+          "id": 1337345464720,
+          "end_shape_index": 26,
+          "begin_shape_index": 25,
+          "length": 0.016
+        },
+        {
+          "way_id": 218864491,
+          "id": 1337580345744,
+          "end_shape_index": 27,
+          "begin_shape_index": 26,
+          "length": 0.023
+        },
+        {
+          "way_id": 218864491,
+          "id": 1337479682448,
+          "end_shape_index": 28,
+          "begin_shape_index": 27,
+          "length": 0.038
+        },
+        {
+          "way_id": 218864491,
+          "id": 1338553424272,
+          "end_shape_index": 30,
+          "begin_shape_index": 28,
+          "length": 0.043
+        },
+        {
+          "way_id": 218864491,
+          "id": 1338251434384,
+          "end_shape_index": 31,
+          "begin_shape_index": 30,
+          "length": 0.019
+        },
+        {
+          "way_id": 919983793,
+          "id": 1338083662224,
+          "end_shape_index": 33,
+          "begin_shape_index": 31,
+          "length": 0.024
+        },
+        {
+          "way_id": 919983793,
+          "id": 1338687642000,
+          "end_shape_index": 34,
+          "begin_shape_index": 33,
+          "length": 0.041
+        },
+        {
+          "way_id": 919983793,
+          "id": 1338754750864,
+          "end_shape_index": 35,
+          "begin_shape_index": 34,
+          "length": 0.075
+        },
+        {
+          "way_id": 919983793,
+          "id": 1338922523024,
+          "end_shape_index": 36,
+          "begin_shape_index": 35,
+          "length": 0.069
+        },
+        {
+          "way_id": 919983793,
+          "id": 1346170280336,
+          "end_shape_index": 37,
+          "begin_shape_index": 36,
+          "length": 0.065
+        },
+        {
+          "way_id": 919983793,
+          "id": 1345968953744,
+          "end_shape_index": 39,
+          "begin_shape_index": 37,
+          "length": 0.061
+        },
+        {
+          "way_id": 919983793,
+          "id": 1345901844880,
+          "end_shape_index": 40,
+          "begin_shape_index": 39,
+          "length": 0.068
+        },
+        {
+          "way_id": 919983793,
+          "id": 1345767627152,
+          "end_shape_index": 41,
+          "begin_shape_index": 40,
+          "length": 0.103
+        },
+        {
+          "way_id": 919983793,
+          "id": 1345566300560,
+          "end_shape_index": 42,
+          "begin_shape_index": 41,
+          "length": 0.007
+        },
+        {
+          "way_id": 919983793,
+          "id": 1345499191696,
+          "end_shape_index": 44,
+          "begin_shape_index": 42,
+          "length": 0.02
+        },
+        {
+          "way_id": 375049445,
+          "id": 1344828103056,
+          "end_shape_index": 46,
+          "begin_shape_index": 44,
+          "length": 0.016
+        },
+        {
+          "way_id": 375049445,
+          "id": 1344962320784,
+          "end_shape_index": 47,
+          "begin_shape_index": 46,
+          "length": 0.008
+        },
+        {
+          "way_id": 375049445,
+          "id": 1345096538512,
+          "end_shape_index": 49,
+          "begin_shape_index": 47,
+          "length": 0.021
+        },
+        {
+          "way_id": 375049445,
+          "id": 1346640042384,
+          "end_shape_index": 51,
+          "begin_shape_index": 49,
+          "length": 0.125
+        },
+        {
+          "way_id": 375049445,
+          "id": 1346774260112,
+          "end_shape_index": 52,
+          "begin_shape_index": 51,
+          "length": 0.123
+        },
+        {
+          "way_id": 375049445,
+          "id": 1346975586704,
+          "end_shape_index": 53,
+          "begin_shape_index": 52,
+          "length": 0.146
+        },
+        {
+          "way_id": 375049445,
+          "id": 1347042695568,
+          "end_shape_index": 54,
+          "begin_shape_index": 53,
+          "length": 0.169
+        }
+      ]
+    }
+  },
+  "cases": [
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:4500",
+      "source_response": "data/p06-main-20261024/seoul/workload/matching/requests/0052-trace_attributes.response.json",
+      "source_matched_point_index": 9,
+      "observation": {
+        "sample_id": "seoul-road-demo:downtown-gap:4500",
+        "vehicle_id": "downtown-gap",
+        "offset_ms": 4500,
+        "event_time_utc": "2026-10-24T00:00:04.500Z",
+        "longitude": 126.977090864,
+        "latitude": 37.564929675,
+        "accuracy_m": 3,
+        "source_class": "SYNTHETIC"
+      },
+      "engine_match": {
+        "lon": 126.977083,
+        "lat": 37.564924,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 0.869258
+      },
+      "expected_status": "EXCLUDED",
+      "expected_reason": "AMBIGUOUS_PROJECTION"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:68000",
+      "source_response": "data/p06-main-20261024/seoul/workload/matching/requests/0053-trace_attributes.response.json",
+      "source_matched_point_index": 56,
+      "observation": {
+        "sample_id": "seoul-road-demo:downtown-gap:68000",
+        "vehicle_id": "downtown-gap",
+        "offset_ms": 68000,
+        "event_time_utc": "2026-10-24T00:01:08.000Z",
+        "longitude": 126.97723845,
+        "latitude": 37.570467051,
+        "accuracy_m": 3,
+        "source_class": "SYNTHETIC"
+      },
+      "engine_match": {
+        "lon": 126.977252,
+        "lat": 37.570467,
+        "type": "matched",
+        "edge_index": 8,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.275114
+      },
+      "expected_status": "MATCHED",
+      "expected_reason": null
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-noise:11500",
+      "source_response": "data/p06-main-20261024/seoul/workload/matching/requests/0054-trace_attributes.response.json",
+      "source_matched_point_index": 23,
+      "observation": {
+        "sample_id": "seoul-road-demo:downtown-noise:11500",
+        "vehicle_id": "downtown-noise",
+        "offset_ms": 11500,
+        "event_time_utc": "2026-10-24T00:00:11.500Z",
+        "longitude": 126.977255866,
+        "latitude": 37.565401035,
+        "accuracy_m": 3,
+        "source_class": "SYNTHETIC"
+      },
+      "engine_match": {
+        "lon": 126.977226,
+        "lat": 37.565401,
+        "type": "matched",
+        "edge_index": 1,
+        "distance_along_edge": 0.242446,
+        "distance_from_trace_point": 2.530901
+      },
+      "expected_status": "MATCHED",
+      "expected_reason": null
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-noise:97500",
+      "source_response": "data/p06-main-20261024/seoul/workload/matching/requests/0054-trace_attributes.response.json",
+      "source_matched_point_index": 195,
+      "observation": {
+        "sample_id": "seoul-road-demo:downtown-noise:97500",
+        "vehicle_id": "downtown-noise",
+        "offset_ms": 97500,
+        "event_time_utc": "2026-10-24T00:01:37.500Z",
+        "longitude": 126.977235069,
+        "latitude": 37.573125177,
+        "accuracy_m": 3,
+        "source_class": "SYNTHETIC"
+      },
+      "engine_match": {
+        "lon": 126.977257,
+        "lat": 37.573125,
+        "type": "matched",
+        "edge_index": 18,
+        "distance_along_edge": 0.2886,
+        "distance_from_trace_point": 2.007866
+      },
+      "expected_status": "MATCHED",
+      "expected_reason": null
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:6000",
+      "source_response": "data/p06-main-20261024/seoul/workload/matching/requests/0056-trace_attributes.response.json",
+      "source_matched_point_index": 12,
+      "observation": {
+        "sample_id": "seoul-road-demo:mapo-bridge-gap:6000",
+        "vehicle_id": "mapo-bridge-gap",
+        "offset_ms": 6000,
+        "event_time_utc": "2026-10-24T00:00:06.000Z",
+        "longitude": 126.931707737,
+        "latitude": 37.527747887,
+        "accuracy_m": 3,
+        "source_class": "SYNTHETIC"
+      },
+      "engine_match": {
+        "lon": 126.931707,
+        "lat": 37.527751,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0.727235,
+        "distance_from_trace_point": 0.449176
+      },
+      "expected_status": "MATCHED",
+      "expected_reason": null
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:200500",
+      "source_response": "data/p06-main-20261024/seoul/workload/matching/requests/0057-trace_attributes.response.json",
+      "source_matched_point_index": 321,
+      "observation": {
+        "sample_id": "seoul-road-demo:mapo-bridge-gap:200500",
+        "vehicle_id": "mapo-bridge-gap",
+        "offset_ms": 200500,
+        "event_time_utc": "2026-10-24T00:03:20.500Z",
+        "longitude": 126.944926526,
+        "latitude": 37.538968279,
+        "accuracy_m": 3,
+        "source_class": "SYNTHETIC"
+      },
+      "engine_match": {
+        "lon": 126.94491,
+        "lat": 37.538954,
+        "type": "matched",
+        "edge_index": 10,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 2.084575
+      },
+      "expected_status": "MATCHED",
+      "expected_reason": null
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:202000",
+      "source_response": "data/p06-main-20261024/seoul/workload/matching/requests/0057-trace_attributes.response.json",
+      "source_matched_point_index": 324,
+      "observation": {
+        "sample_id": "seoul-road-demo:mapo-bridge-gap:202000",
+        "vehicle_id": "mapo-bridge-gap",
+        "offset_ms": 202000,
+        "event_time_utc": "2026-10-24T00:03:22.000Z",
+        "longitude": 126.944774802,
+        "latitude": 37.53903765,
+        "accuracy_m": 3,
+        "source_class": "SYNTHETIC"
+      },
+      "engine_match": {
+        "lon": 126.944786,
+        "lat": 37.539047,
+        "type": "matched",
+        "edge_index": 12,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.425692
+      },
+      "expected_status": "MATCHED",
+      "expected_reason": null
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-noise:59500",
+      "source_response": "data/p06-main-20261024/seoul/workload/matching/requests/0058-trace_attributes.response.json",
+      "source_matched_point_index": 119,
+      "observation": {
+        "sample_id": "seoul-road-demo:mapo-bridge-noise:59500",
+        "vehicle_id": "mapo-bridge-noise",
+        "offset_ms": 59500,
+        "event_time_utc": "2026-10-24T00:00:59.500Z",
+        "longitude": 126.932676459,
+        "latitude": 37.531082779,
+        "accuracy_m": 3,
+        "source_class": "SYNTHETIC"
+      },
+      "engine_match": {
+        "lon": 126.932666,
+        "lat": 37.531092,
+        "type": "matched",
+        "edge_index": 7,
+        "distance_along_edge": 0.152234,
+        "distance_from_trace_point": 1.368211
+      },
+      "expected_status": "MATCHED",
+      "expected_reason": null
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-gap:15000",
+      "source_response": "data/p06-main-20261024/seoul/workload/matching/requests/0060-trace_attributes.response.json",
+      "source_matched_point_index": 30,
+      "observation": {
+        "sample_id": "seoul-road-demo:teheran-gap:15000",
+        "vehicle_id": "teheran-gap",
+        "offset_ms": 15000,
+        "event_time_utc": "2026-10-24T00:00:15.000Z",
+        "longitude": 127.028300655,
+        "latitude": 37.498117013,
+        "accuracy_m": 3,
+        "source_class": "SYNTHETIC"
+      },
+      "engine_match": {
+        "lon": 127.028307,
+        "lat": 37.4981,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.961693
+      },
+      "expected_status": "MATCHED",
+      "expected_reason": null
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-gap:87000",
+      "source_response": "data/p06-main-20261024/seoul/workload/matching/requests/0061-trace_attributes.response.json",
+      "source_matched_point_index": 94,
+      "observation": {
+        "sample_id": "seoul-road-demo:teheran-gap:87000",
+        "vehicle_id": "teheran-gap",
+        "offset_ms": 87000,
+        "event_time_utc": "2026-10-24T00:01:27.000Z",
+        "longitude": 127.035943138,
+        "latitude": 37.500387191,
+        "accuracy_m": 3,
+        "source_class": "SYNTHETIC"
+      },
+      "engine_match": {
+        "lon": 127.035936,
+        "lat": 37.500399,
+        "type": "matched",
+        "edge_index": 8,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.41234
+      },
+      "expected_status": "MATCHED",
+      "expected_reason": null
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-noise:41000",
+      "source_response": "data/p06-main-20261024/seoul/workload/matching/requests/0062-trace_attributes.response.json",
+      "source_matched_point_index": 82,
+      "observation": {
+        "sample_id": "seoul-road-demo:teheran-noise:41000",
+        "vehicle_id": "teheran-noise",
+        "offset_ms": 41000,
+        "event_time_utc": "2026-10-24T00:00:41.000Z",
+        "longitude": 127.031078854,
+        "latitude": 37.498922372,
+        "accuracy_m": 3,
+        "source_class": "SYNTHETIC"
+      },
+      "engine_match": {
+        "lon": 127.031072,
+        "lat": 37.498934,
+        "type": "matched",
+        "edge_index": 8,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.384431
+      },
+      "expected_status": "MATCHED",
+      "expected_reason": null
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-noise:43000",
+      "source_response": "data/p06-main-20261024/seoul/workload/matching/requests/0062-trace_attributes.response.json",
+      "source_matched_point_index": 86,
+      "observation": {
+        "sample_id": "seoul-road-demo:teheran-noise:43000",
+        "vehicle_id": "teheran-noise",
+        "offset_ms": 43000,
+        "event_time_utc": "2026-10-24T00:00:43.000Z",
+        "longitude": 127.031289484,
+        "latitude": 37.499017371,
+        "accuracy_m": 3,
+        "source_class": "SYNTHETIC"
+      },
+      "engine_match": {
+        "lon": 127.031296,
+        "lat": 37.499002,
+        "type": "matched",
+        "edge_index": 9,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.688637
+      },
+      "expected_status": "MATCHED",
+      "expected_reason": null
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-noise:57500",
+      "source_response": "data/p06-main-20261024/seoul/workload/matching/requests/0062-trace_attributes.response.json",
+      "source_matched_point_index": 115,
+      "observation": {
+        "sample_id": "seoul-road-demo:teheran-noise:57500",
+        "vehicle_id": "teheran-noise",
+        "offset_ms": 57500,
+        "event_time_utc": "2026-10-24T00:00:57.500Z",
+        "longitude": 127.032835677,
+        "latitude": 37.499451485,
+        "accuracy_m": 3,
+        "source_class": "SYNTHETIC"
+      },
+      "engine_match": {
+        "lon": 127.032827,
+        "lat": 37.499465,
+        "type": "matched",
+        "edge_index": 11,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.676993
+      },
+      "expected_status": "MATCHED",
+      "expected_reason": null
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-noise:148000",
+      "source_response": "data/p06-main-20261024/seoul/workload/matching/requests/0062-trace_attributes.response.json",
+      "source_matched_point_index": 296,
+      "observation": {
+        "sample_id": "seoul-road-demo:teheran-noise:148000",
+        "vehicle_id": "teheran-noise",
+        "offset_ms": 148000,
+        "event_time_utc": "2026-10-24T00:02:28.000Z",
+        "longitude": 127.042413917,
+        "latitude": 37.502397121,
+        "accuracy_m": 3,
+        "source_class": "SYNTHETIC"
+      },
+      "engine_match": {
+        "lon": 127.04242,
+        "lat": 37.502383,
+        "type": "matched",
+        "edge_index": 28,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.68039
+      },
+      "expected_status": "MATCHED",
+      "expected_reason": null
+    }
+  ],
+  "coverage_regression_evaluation": [
+    {
+      "vehicle_id": "teheran-clean",
+      "input_samples": 423,
+      "matched_samples": 423,
+      "point_coverage": 1,
+      "correct_points": 423,
+      "boundary_equivalent_points": 0,
+      "point_precision": 1,
+      "truth_traversals": 37,
+      "accepted_traversals": 37,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "traversal_coverage": 1,
+      "max_entry_error_ms": 1,
+      "max_exit_error_ms": 1,
+      "gap_bridges": 0
+    },
+    {
+      "vehicle_id": "teheran-noise",
+      "input_samples": 423,
+      "matched_samples": 415,
+      "point_coverage": 0.9810874704491725,
+      "correct_points": 412,
+      "boundary_equivalent_points": 2,
+      "point_precision": 0.9975903614457832,
+      "truth_traversals": 37,
+      "accepted_traversals": 26,
+      "false_traversals": 0,
+      "missed_traversals": 11,
+      "traversal_coverage": 0.7027027027027027,
+      "max_entry_error_ms": 186,
+      "max_exit_error_ms": 186,
+      "gap_bridges": 0
+    },
+    {
+      "vehicle_id": "teheran-gap",
+      "input_samples": 403,
+      "matched_samples": 396,
+      "point_coverage": 0.9826302729528535,
+      "correct_points": 384,
+      "boundary_equivalent_points": 9,
+      "point_precision": 0.9924242424242424,
+      "truth_traversals": 37,
+      "accepted_traversals": 27,
+      "false_traversals": 0,
+      "missed_traversals": 10,
+      "traversal_coverage": 0.7297297297297297,
+      "max_entry_error_ms": 255,
+      "max_exit_error_ms": 255,
+      "gap_bridges": 0
+    },
+    {
+      "vehicle_id": "downtown-clean",
+      "input_samples": 246,
+      "matched_samples": 246,
+      "point_coverage": 1,
+      "correct_points": 246,
+      "boundary_equivalent_points": 0,
+      "point_precision": 1,
+      "truth_traversals": 24,
+      "accepted_traversals": 24,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "traversal_coverage": 1,
+      "max_entry_error_ms": 1,
+      "max_exit_error_ms": 1,
+      "gap_bridges": 0
+    },
+    {
+      "vehicle_id": "downtown-noise",
+      "input_samples": 246,
+      "matched_samples": 244,
+      "point_coverage": 0.991869918699187,
+      "correct_points": 237,
+      "boundary_equivalent_points": 5,
+      "point_precision": 0.9918032786885246,
+      "truth_traversals": 24,
+      "accepted_traversals": 20,
+      "false_traversals": 0,
+      "missed_traversals": 4,
+      "traversal_coverage": 0.8333333333333334,
+      "max_entry_error_ms": 199,
+      "max_exit_error_ms": 199,
+      "gap_bridges": 0
+    },
+    {
+      "vehicle_id": "downtown-gap",
+      "input_samples": 226,
+      "matched_samples": 224,
+      "point_coverage": 0.9911504424778761,
+      "correct_points": 214,
+      "boundary_equivalent_points": 3,
+      "point_precision": 0.96875,
+      "truth_traversals": 24,
+      "accepted_traversals": 18,
+      "false_traversals": 0,
+      "missed_traversals": 6,
+      "traversal_coverage": 0.75,
+      "max_entry_error_ms": 252,
+      "max_exit_error_ms": 260,
+      "gap_bridges": 0
+    },
+    {
+      "vehicle_id": "mapo-bridge-clean",
+      "input_samples": 419,
+      "matched_samples": 419,
+      "point_coverage": 1,
+      "correct_points": 419,
+      "boundary_equivalent_points": 0,
+      "point_precision": 1,
+      "truth_traversals": 18,
+      "accepted_traversals": 18,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "traversal_coverage": 1,
+      "max_entry_error_ms": 1,
+      "max_exit_error_ms": 1,
+      "gap_bridges": 0
+    },
+    {
+      "vehicle_id": "mapo-bridge-noise",
+      "input_samples": 419,
+      "matched_samples": 414,
+      "point_coverage": 0.9880668257756563,
+      "correct_points": 409,
+      "boundary_equivalent_points": 2,
+      "point_precision": 0.9927536231884058,
+      "truth_traversals": 18,
+      "accepted_traversals": 15,
+      "false_traversals": 0,
+      "missed_traversals": 3,
+      "traversal_coverage": 0.8333333333333334,
+      "max_entry_error_ms": 162,
+      "max_exit_error_ms": 162,
+      "gap_bridges": 0
+    },
+    {
+      "vehicle_id": "mapo-bridge-gap",
+      "input_samples": 399,
+      "matched_samples": 396,
+      "point_coverage": 0.9924812030075187,
+      "correct_points": 394,
+      "boundary_equivalent_points": 0,
+      "point_precision": 0.9949494949494949,
+      "truth_traversals": 18,
+      "accepted_traversals": 8,
+      "false_traversals": 0,
+      "missed_traversals": 10,
+      "traversal_coverage": 0.4444444444444444,
+      "max_entry_error_ms": 148,
+      "max_exit_error_ms": 230,
+      "gap_bridges": 0
+    }
+  ]
+}

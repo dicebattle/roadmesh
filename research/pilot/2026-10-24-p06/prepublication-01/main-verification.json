@@ -1,0 +1,83 @@
+{
+  "owned_pids_absent": 26,
+  "status": "PASS",
+  "source": {
+    "commit": "5a173c8aadc4c7e93bf1622510420e5e0e1db3f2",
+    "dirty": false
+  },
+  "graph_id": "a1cadb38a9ab9a14bf313621409eeb0c9d3fe7a9095239cd52738f3492665efc",
+  "implementation_sha256": "b9ce6122827acd07f07e940cc88b718daf367d22c101282b3792bc740f4279a2",
+  "assertions": {
+    "tiny": 48,
+    "seoul": 29,
+    "ingestion": 34,
+    "aggregation": 34,
+    "total": 145
+  },
+  "unique_file_hashes_checked": 2642,
+  "inventories": {
+    "manifest.json": 9,
+    "seoul/manifest.json": 8,
+    "seoul/tiny/manifest.json": 6,
+    "seoul/graph/manifest.json": 94,
+    "seoul/workload/manifest.json": 826,
+    "ingestion/manifest.json": 930,
+    "aggregation/manifest.json": 769
+  },
+  "source_sha256": "282d012b7629c643695f286d4424d7f6d88548d99edb5577ca5b678906f13c17",
+  "matching_policy": "seoul-observed-v3",
+  "stored_reference_traversals": 193,
+  "unique_stored_ids": 193,
+  "successful_trips": 9,
+  "raw_after_success": 0,
+  "independent_geometry_max_difference_m": 5.17506038022475e-10,
+  "independent_boundary_error_max_ms": 260,
+  "recovery_attempt_byte_parity": [
+    {
+      "phase": "AFTER_MATCH",
+      "interrupted_pid": 99758,
+      "recovered_pid": 99795,
+      "sha256": "4a387885e96f034cbdb582a9b9c5b4d056cdcefefd56d6b7c2f5e626717cede8",
+      "byte_identical": true
+    },
+    {
+      "phase": "AFTER_INSERT",
+      "interrupted_pid": 99821,
+      "recovered_pid": 99858,
+      "sha256": "7e834da31eeae12b9ab489d5e789361d2aed8b2078e390fdb7d06b6ed59d2a0c",
+      "byte_identical": true
+    }
+  ],
+  "database_restart": {
+    "same_container_id": true,
+    "same_named_volume": "routelens-p05-899d106b-d497-406f-bc5f-882eae00ccfc-db",
+    "restarted": true,
+    "previous_host_port": 32784,
+    "current_host_port": 32785,
+    "host_tcp_ready": true,
+    "host_tcp_wait_ms": 0.41120800000499
+  },
+  "api_durable_samples": 2,
+  "engine_failure_attempts": 3,
+  "clock_only_expiry_refused_before_sweep": true,
+  "retention_readback": {
+    "contributors": 22,
+    "trips": 0,
+    "batches": 0,
+    "samples": 0,
+    "traversals": 0,
+    "events": 0,
+    "raw_payloads": 0
+  },
+  "stopped_engine": {
+    "pid": 12,
+    "exe": "/usr/local/bin/valhalla_service",
+    "state": "T",
+    "action": "locate"
+  },
+  "killed_worker_pid": 361,
+  "orphan_engine_id": "62a3fe0d7ae78562172dcfe5a5bc92e1780e9fb50d1c6f78433f05dce14416ac",
+  "current_db_volume_engine_absence_verified": true,
+  "message_en": "Main independently checked artifact bytes, all stored traversal contents and geometry/timing, retry result bytes, durable restart/expiry/revocation read-backs and current exact owned-resource absence. This proves the bounded synthetic local pilot, not production authentication or real-driving accuracy.",
+  "message_ko": "메인이 원문 해시·저장 통과 전체의 지형/시간·재시도 결과 바이트·재시작/만료/철회 재조회·현재의 정확한 소유 자원 부재를 독립 검사했습니다. 제한된 합성 로컬 파일럿 증거이며 운영 인증·실주행 정확도는 별도입니다."
+}

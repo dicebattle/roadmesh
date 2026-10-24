@@ -516,6 +516,9 @@ interface PathProjection {
   edge_index: number;
   projection: Projection;
   progress_m: number;
+  local_fraction: number;
+  from: number[];
+  to: number[];
 }
 /** Project only onto the engine occurrence and its connected immediate neighbors.
  * 엔진 경로의 현재 구간과 연결된 바로 앞뒤 구간에만 투영합니다. */
@@ -546,6 +549,7 @@ function projectObservedPath(
   )
     indexes.push(engineIndex + 1);
   const candidates = indexes
+    .sort((a, b) => a - b)
     .flatMap((edge_index) => {
       const line = edges[edge_index]!.directed_geometry;
       let preceding = 0;
@@ -567,10 +571,33 @@ function projectObservedPath(
           edge_index,
           projection: { ...projected, fraction },
           progress_m: starts[edge_index]! + fraction * lengths[edge_index]!,
+          local_fraction: projected.fraction,
+          from: line[segment - 1]!,
+          to: line[segment]!,
         });
         preceding += segmentLength;
       }
       return projections;
+    })
+    .filter((candidate, index, segments) => {
+      if (candidate.local_fraction !== 0 && candidate.local_fraction !== 1)
+        return true;
+      const atStart = candidate.local_fraction === 0,
+        adjacent = segments[index + (atStart ? -1 : 1)];
+      if (!adjacent) return true;
+      const vertex = atStart ? candidate.from : candidate.to,
+        shared = atStart ? adjacent.to : adjacent.from;
+      // A clamped vertex is not a path-local minimum if its connected segment
+      // has a strictly closer interior projection. Distinct endpoints stay distinct.
+      // 연결 선분의 내부 투영이 더 가까우면 꼭짓점은 국소 최소가 아닙니다.
+      // 서로 다른 좌표의 끝점은 같은 꼭짓점으로 합치지 않습니다.
+      return !(
+        vertex[0] === shared[0] &&
+        vertex[1] === shared[1] &&
+        adjacent.local_fraction > 0 &&
+        adjacent.local_fraction < 1 &&
+        adjacent.projection.distance_m < candidate.projection.distance_m
+      );
     })
     .sort(
       (a, b) =>

@@ -3,6 +3,10 @@ import test from "node:test";
 import { fixture } from "./helpers.js";
 import { canonical } from "../tools/shared.js";
 import { geodesicSphere } from "../tools/geodesy.js";
+import {
+  noisyTraversalCoverageAssertions,
+  type VehicleEvaluation,
+} from "../tools/seoul_simulation.js";
 import type { EdgeMapping } from "../tools/graph_evidence.js";
 import type { Observation } from "../tools/vehicle_simulator.js";
 import {
@@ -379,4 +383,151 @@ test("moved upstream flag remains on original and projected occurrences / 이동
     assert.equal(traversal.status, "EXCLUDED");
     assert.ok(traversal.reason_codes.includes("DISCONTINUITY"));
   }
+});
+
+interface LocalMinimumFixture {
+  coverage_regression_evaluation: VehicleEvaluation[];
+  graph_id: string;
+  catalog: EdgeMapping[];
+  responses: Record<string, { shape: string; edges: unknown[] }>;
+  cases: Array<{
+    sample_id: string;
+    source_response: string;
+    source_matched_point_index: number;
+    observation: Observation;
+    engine_match: Record<string, unknown>;
+    expected_status: "MATCHED" | "EXCLUDED";
+    expected_reason: string | null;
+  }>;
+}
+const localMinima = fixture<LocalMinimumFixture>(
+  "tests/fixtures/seoul-projection-local-minima.json",
+);
+function interpretLocalMinimumCase(
+  captured: LocalMinimumFixture["cases"][number],
+) {
+  const selectedGraph = {
+    ...graph,
+    graphId: localMinima.graph_id,
+    edges: localMinima.catalog,
+  };
+  const input = {
+    ...envelope([captured.observation], "local-minimum-reproduction"),
+    graph_id: localMinima.graph_id,
+  };
+  const response = {
+    ...localMinima.responses[captured.source_response]!,
+    matched_points: [captured.engine_match],
+  };
+  return interpretRun(
+    input,
+    selectedGraph,
+    {
+      vehicle_id: captured.observation.vehicle_id,
+      index: 0,
+      observations: input.observations,
+    },
+    response,
+    hooks,
+  ).points[0]!;
+}
+test("local minima actual thirteen non-minimum vertices retain valid projections / 실제 비최소 꼭짓점13건의 유효 투영 유지", (t) => {
+  const cases = localMinima.cases.filter(
+    (c) => c.expected_status === "MATCHED",
+  );
+  assert.equal(cases.length, 13);
+  for (const captured of cases) {
+    const projected = interpretLocalMinimumCase(captured);
+    assert.equal(projected.status, "MATCHED", captured.sample_id);
+    assert.deepEqual(projected.reason_codes, []);
+    assert.equal(projected.position_method, "observed-path-projection-v1");
+    t.diagnostic(
+      JSON.stringify({
+        sample_id: captured.sample_id,
+        status: projected.status,
+        edge_id: projected.edge_id,
+        fraction: projected.fraction,
+        distance_m: projected.distance_m,
+      }),
+    );
+  }
+});
+test("local minima actual distinct interior projections remain ambiguous / 실제 서로 다른 내부 최소 투영의 모호성 유지", () => {
+  const cases = localMinima.cases.filter(
+    (c) => c.expected_status === "EXCLUDED",
+  );
+  assert.equal(cases.length, 1);
+  assert.equal(cases[0]!.sample_id, "seoul-road-demo:downtown-gap:4500");
+  assert.deepEqual(interpretLocalMinimumCase(cases[0]!).reason_codes, [
+    "AMBIGUOUS_PROJECTION",
+  ]);
+});
+test("local minima genuine corner and global path endpoint stay eligible / 실제 모서리 최소·전체 경로 끝점 후보 유지", () => {
+  const corner = authored(
+    [edge(1, [point(-10), point(0)]), edge(2, [point(0), point(0, 10)])],
+    [{ coordinate: point(1, -1), index: 0, fraction: 1 }],
+  );
+  corner.input.observations[0]!.accuracy_m = 3;
+  const cornerPoint = corner.read().points[0]!;
+  assert.equal(cornerPoint.status, "MATCHED");
+  assert.equal(cornerPoint.fraction, 1);
+  const global = authored(
+    [edge(1, [point(0), point(10)])],
+    [{ coordinate: point(-0.5), index: 0, fraction: 0 }],
+  );
+  const end = global.read().points[0]!;
+  assert.equal(end.status, "MATCHED");
+  assert.equal(end.fraction, 0);
+});
+test("local minima nearby unequal endpoints are not one shared vertex / 가까워도 좌표가 다른 끝점을 공유 꼭짓점으로 합치지 않음", () => {
+  const data = authored(
+    [edge(1, [point(0), point(10)]), edge(2, [point(10.05), point(20)])],
+    [{ coordinate: point(9.9, 2), index: 0, fraction: 0.99 }],
+  );
+  data.input.observations[0]!.accuracy_m = 3;
+  assert.deepEqual(data.read().points[0]!.reason_codes, [
+    "AMBIGUOUS_PROJECTION",
+  ]);
+});
+
+test("noisy coverage fixed floor rejects observed 8/18 regression and includes exactly six cases / 잡음 범위 고정 하한은 실제8/18퇴행 거부·정확히6건 검사", () => {
+  const gates = noisyTraversalCoverageAssertions(
+    localMinima.coverage_regression_evaluation,
+  );
+  assert.equal(gates.length, 6);
+  assert.ok(gates.every((gate) => !gate.assertion_id.includes("-clean-")));
+  const regression = gates.find(
+    (gate) => gate.assertion_id === "mapo-bridge-gap-observed-coverage",
+  )!;
+  assert.equal(regression.status, "FAIL");
+  const actual = regression.actual as VehicleEvaluation;
+  assert.equal(actual.accepted_traversals, 8);
+  assert.equal(actual.truth_traversals, 18);
+  assert.equal(actual.traversal_coverage, 8 / 18);
+  assert.deepEqual(regression.expected, { traversal_coverage: 0.7 });
+  for (const gate of gates)
+    assert.equal(
+      gate.status,
+      (gate.actual as VehicleEvaluation).traversal_coverage >= 0.7
+        ? "PASS"
+        : "FAIL",
+    );
+  assert.equal(
+    noisyTraversalCoverageAssertions([
+      { ...actual, traversal_coverage: 0.7 },
+    ])[0]!.status,
+    "PASS",
+  );
+  assert.equal(
+    noisyTraversalCoverageAssertions([
+      { ...actual, traversal_coverage: 0.699999 },
+    ])[0]!.status,
+    "FAIL",
+  );
+  assert.equal(
+    noisyTraversalCoverageAssertions([
+      { ...actual, vehicle_id: "mapo-bridge-clean" },
+    ]).length,
+    0,
+  );
 });

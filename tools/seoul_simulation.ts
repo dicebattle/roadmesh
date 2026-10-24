@@ -523,6 +523,25 @@ export function evaluateSeoul(
     };
   });
 }
+/** Keep useful noisy/gapped observations under the same fixed traversal floor.
+ * 잡음·누락 관측에도 기존과 같은 고정 통과 범위 하한을 적용합니다. */
+export function noisyTraversalCoverageAssertions(
+  evaluation: VehicleEvaluation[],
+): SimulationAssertion[] {
+  return evaluation
+    .filter((actual) => !actual.vehicle_id.endsWith("-clean"))
+    .map((actual) => ({
+      assertion_id: actual.vehicle_id + "-observed-coverage",
+      status: actual.traversal_coverage >= 0.7 ? "PASS" : "FAIL",
+      message_en:
+        "Noisy or gapped complete-traversal coverage meets the fixed 70% floor.",
+      message_ko:
+        "잡음·누락 관측의 완전 통과 범위가 고정 70% 하한을 충족합니다.",
+      expected: { traversal_coverage: 0.7 },
+      actual,
+      evidence_path: "evaluation.json",
+    }));
+}
 export function runSeoulWorkload(
   bundle: SeoulGraphBundle,
   output: string,
@@ -615,6 +634,7 @@ export function runSeoulWorkload(
       "evaluation.json",
     );
   }
+  assertions.push(...noisyTraversalCoverageAssertions(evaluation));
   const replay = generateSimulation(spec, bundle),
     changed = structuredClone(spec);
   changed.seed = 8;

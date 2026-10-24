@@ -1,0 +1,1560 @@
+{
+  "description_en": "Read-only numerical analysis of preserved full-run responses. No matcher, engine, compiler or full workload was rerun; no source or original evidence file changed.",
+  "description_ko": "보존한 전체 실행 원문을 읽어 수치만 분석했습니다. 매칭·엔진·컴파일·전체 실행을 반복하지 않았고 소스·원본 증거를 수정하지 않았습니다.",
+  "source_result": "data/p06-main-20261024/seoul/workload/matching/result.json",
+  "source_result_sha256": "a49d417f66dceabea26c97f15fcfac6617b72a09affd9468f6186acde06b4227",
+  "projection_ambiguous_points": 14,
+  "projection_ambiguous_traversals": 23,
+  "all_secondary_candidates_nonlocal_cases": 13,
+  "cases": [
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:4500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 4500,
+      "observation": [
+        126.977090864,
+        37.564929675
+      ],
+      "raw_request": "data/p06-main-20261024/seoul/workload/matching/requests/0052-trace_attributes.request.json",
+      "raw_response": "data/p06-main-20261024/seoul/workload/matching/requests/0052-trace_attributes.response.json",
+      "response_sha256": "0a1fa7a5caee319557b458219a55c593bd201de6294777e4c89420ab5c283a74",
+      "matched_point_index": 9,
+      "engine_match": {
+        "lon": 126.977083,
+        "lat": 37.564924,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 0.869258
+      },
+      "engine_edge_id": "672531503504",
+      "considered_occurrences": [
+        0,
+        1
+      ],
+      "near_candidates": [
+        {
+          "edge_index": 1,
+          "edge_id": "671994632592",
+          "segment_index": 0,
+          "from": [
+            126.977084,
+            37.564924
+          ],
+          "to": [
+            126.977123,
+            37.564927
+          ],
+          "length_m": 3.453617099426808,
+          "start_progress_m": 190.51848838274998,
+          "end_progress_m": 193.9721054821768,
+          "local_fraction": 0.1920065920395589,
+          "distance_m": 0.5696449332211115,
+          "progress_m": 191.18160563222045,
+          "coordinate": [
+            126.97709148825686,
+            37.564924576020765
+          ],
+          "distance_difference_m": 0,
+          "progress_difference_m": 0,
+          "clamped_endpoint": false,
+          "adjacent_segments": [],
+          "not_a_full_path_local_minimum": false,
+          "exact_shared_vertex_nonminimum": false
+        },
+        {
+          "edge_index": 0,
+          "edge_id": "672531503504",
+          "segment_index": 1,
+          "from": [
+            126.977102,
+            37.565241
+          ],
+          "to": [
+            126.977084,
+            37.564924
+          ],
+          "length_m": 35.28452635401073,
+          "start_progress_m": 155.23396202873926,
+          "end_progress_m": 190.51848838274998,
+          "local_fraction": 0.9813630319296955,
+          "distance_m": 0.5760091649694525,
+          "progress_m": 189.86089179171447,
+          "coordinate": [
+            126.97708433546404,
+            37.564929907918895
+          ],
+          "distance_difference_m": 0.006364231748340998,
+          "progress_difference_m": -1.320713840505988,
+          "clamped_endpoint": false,
+          "adjacent_segments": [],
+          "not_a_full_path_local_minimum": false,
+          "exact_shared_vertex_nonminimum": false
+        }
+      ],
+      "ambiguous_candidate_count": 1,
+      "all_distinct_progress_secondary_candidates_nonlocal": false,
+      "vehicle_traversals_with_projection_reason": [
+        "672531503504",
+        "671994632592",
+        "660821006736",
+        "660653234576"
+      ],
+      "all_secondary_candidates_meet_exact_shared_vertex_condition": false
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:68000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 68000,
+      "observation": [
+        126.97723845,
+        37.570467051
+      ],
+      "raw_request": "data/p06-main-20261024/seoul/workload/matching/requests/0053-trace_attributes.request.json",
+      "raw_response": "data/p06-main-20261024/seoul/workload/matching/requests/0053-trace_attributes.response.json",
+      "response_sha256": "b94ea8e20800b25bc26293355e64ecccbe901a06f4ce90481bb122c85779d5d6",
+      "matched_point_index": 56,
+      "engine_match": {
+        "lon": 126.977252,
+        "lat": 37.570467,
+        "type": "matched",
+        "edge_index": 8,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.275114
+      },
+      "engine_edge_id": "660821006736",
+      "considered_occurrences": [
+        8,
+        7,
+        9
+      ],
+      "near_candidates": [
+        {
+          "edge_index": 8,
+          "edge_id": "660821006736",
+          "segment_index": 0,
+          "from": [
+            126.977248,
+            37.570411
+          ],
+          "to": [
+            126.977253,
+            37.570467
+          ],
+          "length_m": 6.242497687545211,
+          "start_progress_m": 351.7890825451365,
+          "end_progress_m": 358.03158023268173,
+          "local_fraction": 0.9864051153002579,
+          "distance_m": 1.2795461420187964,
+          "progress_m": 357.94671419638115,
+          "coordinate": [
+            126.97725293202552,
+            37.57046623868646
+          ],
+          "distance_difference_m": 0,
+          "progress_difference_m": 0,
+          "clamped_endpoint": false,
+          "adjacent_segments": [],
+          "not_a_full_path_local_minimum": false,
+          "exact_shared_vertex_nonminimum": false
+        },
+        {
+          "edge_index": 9,
+          "edge_id": "660653234576",
+          "segment_index": 0,
+          "from": [
+            126.977253,
+            37.570467
+          ],
+          "to": [
+            126.977254,
+            37.570486
+          ],
+          "length_m": 2.114544017627109,
+          "start_progress_m": 358.03158023268173,
+          "end_progress_m": 360.14612425030884,
+          "local_fraction": 0,
+          "distance_m": 1.2823574289977757,
+          "progress_m": 358.03158023268173,
+          "coordinate": [
+            126.977253,
+            37.570467
+          ],
+          "distance_difference_m": 0.002811286978979366,
+          "progress_difference_m": 0.08486603630058198,
+          "clamped_endpoint": true,
+          "adjacent_segments": [
+            {
+              "edge_index": 8,
+              "edge_id": "660821006736",
+              "segment_index": 0,
+              "local_fraction": 0.9864051153002579,
+              "projection_distance_m": 1.2795461420187964,
+              "projection_progress_m": 357.94671419638115,
+              "step_from_vertex_m": 0.001,
+              "distance_at_step_m": 1.2822916321144322,
+              "descent_m": 0.0000657968833435163,
+              "exact_shared_vertex": true,
+              "interior_projection": true,
+              "strictly_smaller_distance": true
+            }
+          ],
+          "not_a_full_path_local_minimum": true,
+          "exact_shared_vertex_nonminimum": true
+        }
+      ],
+      "ambiguous_candidate_count": 1,
+      "all_distinct_progress_secondary_candidates_nonlocal": true,
+      "vehicle_traversals_with_projection_reason": [
+        "672531503504",
+        "671994632592",
+        "660821006736",
+        "660653234576"
+      ],
+      "all_secondary_candidates_meet_exact_shared_vertex_condition": true
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-noise:11500",
+      "vehicle_id": "downtown-noise",
+      "offset_ms": 11500,
+      "observation": [
+        126.977255866,
+        37.565401035
+      ],
+      "raw_request": "data/p06-main-20261024/seoul/workload/matching/requests/0054-trace_attributes.request.json",
+      "raw_response": "data/p06-main-20261024/seoul/workload/matching/requests/0054-trace_attributes.response.json",
+      "response_sha256": "5fee1717f4e67214c03fa6282a8cc78369186f38143c83823986fa0b29e00724",
+      "matched_point_index": 23,
+      "engine_match": {
+        "lon": 126.977226,
+        "lat": 37.565401,
+        "type": "matched",
+        "edge_index": 1,
+        "distance_along_edge": 0.242446,
+        "distance_from_trace_point": 2.530901
+      },
+      "engine_edge_id": "671826860432",
+      "considered_occurrences": [
+        1,
+        0,
+        2
+      ],
+      "near_candidates": [
+        {
+          "edge_index": 1,
+          "edge_id": "671826860432",
+          "segment_index": 2,
+          "from": [
+            126.977226,
+            37.565241
+          ],
+          "to": [
+            126.977227,
+            37.565403
+          ],
+          "length_m": 18.01381862828038,
+          "start_progress_m": 46.21017490726357,
+          "end_progress_m": 64.22399353554395,
+          "local_fraction": 0.9885617472024415,
+          "distance_m": 2.5452781682386516,
+          "progress_m": 64.0179469242243,
+          "coordinate": [
+            126.97722698856171,
+            37.56540114700305
+          ],
+          "distance_difference_m": 0,
+          "progress_difference_m": 0,
+          "clamped_endpoint": false,
+          "adjacent_segments": [],
+          "not_a_full_path_local_minimum": false,
+          "exact_shared_vertex_nonminimum": false
+        },
+        {
+          "edge_index": 1,
+          "edge_id": "671826860432",
+          "segment_index": 3,
+          "from": [
+            126.977227,
+            37.565403
+          ],
+          "to": [
+            126.97723,
+            37.566596
+          ],
+          "length_m": 132.65599424331987,
+          "start_progress_m": 64.22399353554395,
+          "end_progress_m": 196.87998777886384,
+          "local_fraction": 0,
+          "distance_m": 2.553604541570921,
+          "progress_m": 64.22399353554395,
+          "coordinate": [
+            126.977227,
+            37.565403
+          ],
+          "distance_difference_m": 0.008326373332269377,
+          "progress_difference_m": 0.20604661131964974,
+          "clamped_endpoint": true,
+          "adjacent_segments": [
+            {
+              "edge_index": 1,
+              "edge_id": "671826860432",
+              "segment_index": 2,
+              "local_fraction": 0.9885617472024415,
+              "projection_distance_m": 2.5452781682386516,
+              "projection_progress_m": 64.0179469242243,
+              "step_from_vertex_m": 0.001,
+              "distance_at_step_m": 2.5535240471611367,
+              "descent_m": 0.00008049440978430411,
+              "exact_shared_vertex": true,
+              "interior_projection": true,
+              "strictly_smaller_distance": true
+            }
+          ],
+          "not_a_full_path_local_minimum": true,
+          "exact_shared_vertex_nonminimum": true
+        }
+      ],
+      "ambiguous_candidate_count": 1,
+      "all_distinct_progress_secondary_candidates_nonlocal": true,
+      "vehicle_traversals_with_projection_reason": [
+        "671826860432",
+        "661324323216"
+      ],
+      "all_secondary_candidates_meet_exact_shared_vertex_condition": true
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-noise:97500",
+      "vehicle_id": "downtown-noise",
+      "offset_ms": 97500,
+      "observation": [
+        126.977235069,
+        37.573125177
+      ],
+      "raw_request": "data/p06-main-20261024/seoul/workload/matching/requests/0054-trace_attributes.request.json",
+      "raw_response": "data/p06-main-20261024/seoul/workload/matching/requests/0054-trace_attributes.response.json",
+      "response_sha256": "5fee1717f4e67214c03fa6282a8cc78369186f38143c83823986fa0b29e00724",
+      "matched_point_index": 195,
+      "engine_match": {
+        "lon": 126.977257,
+        "lat": 37.573125,
+        "type": "matched",
+        "edge_index": 18,
+        "distance_along_edge": 0.2886,
+        "distance_from_trace_point": 2.007866
+      },
+      "engine_edge_id": "661324323216",
+      "considered_occurrences": [
+        18,
+        17,
+        19
+      ],
+      "near_candidates": [
+        {
+          "edge_index": 18,
+          "edge_id": "661324323216",
+          "segment_index": 1,
+          "from": [
+            126.977258,
+            37.573125
+          ],
+          "to": [
+            126.977218,
+            37.574121
+          ],
+          "length_m": 110.8063894699864,
+          "start_progress_m": 923.30633994228,
+          "end_progress_m": 1034.1127294122664,
+          "local_fraction": 0.0007577633253483515,
+          "distance_m": 2.019271921648929,
+          "progress_m": 923.3903049604346,
+          "coordinate": [
+            126.97725796968984,
+            37.573125754732274
+          ],
+          "distance_difference_m": 0,
+          "progress_difference_m": 0,
+          "clamped_endpoint": false,
+          "adjacent_segments": [],
+          "not_a_full_path_local_minimum": false,
+          "exact_shared_vertex_nonminimum": false
+        },
+        {
+          "edge_index": 18,
+          "edge_id": "661324323216",
+          "segment_index": 0,
+          "from": [
+            126.977274,
+            37.572722
+          ],
+          "to": [
+            126.977258,
+            37.573125
+          ],
+          "length_m": 44.833797610053736,
+          "start_progress_m": 878.4725423322263,
+          "end_progress_m": 923.30633994228,
+          "local_fraction": 1,
+          "distance_m": 2.02101688014395,
+          "progress_m": 923.30633994228,
+          "coordinate": [
+            126.977258,
+            37.573125
+          ],
+          "distance_difference_m": 0.0017449584950210983,
+          "progress_difference_m": -0.08396501815457214,
+          "clamped_endpoint": true,
+          "adjacent_segments": [
+            {
+              "edge_index": 18,
+              "edge_id": "661324323216",
+              "segment_index": 1,
+              "local_fraction": 0.0007577633253483515,
+              "projection_distance_m": 2.019271921648929,
+              "projection_progress_m": 923.3903049604346,
+              "step_from_vertex_m": 0.001,
+              "distance_at_step_m": 2.0209755837901984,
+              "descent_m": 0.000041296353751718584,
+              "exact_shared_vertex": true,
+              "interior_projection": true,
+              "strictly_smaller_distance": true
+            }
+          ],
+          "not_a_full_path_local_minimum": true,
+          "exact_shared_vertex_nonminimum": true
+        }
+      ],
+      "ambiguous_candidate_count": 1,
+      "all_distinct_progress_secondary_candidates_nonlocal": true,
+      "vehicle_traversals_with_projection_reason": [
+        "671826860432",
+        "661324323216"
+      ],
+      "all_secondary_candidates_meet_exact_shared_vertex_condition": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:6000",
+      "vehicle_id": "mapo-bridge-gap",
+      "offset_ms": 6000,
+      "observation": [
+        126.931707737,
+        37.527747887
+      ],
+      "raw_request": "data/p06-main-20261024/seoul/workload/matching/requests/0056-trace_attributes.request.json",
+      "raw_response": "data/p06-main-20261024/seoul/workload/matching/requests/0056-trace_attributes.response.json",
+      "response_sha256": "776772e6acfe41fd4c9e0dccab6003995f15f75afaa9369ea397345aa4b5e057",
+      "matched_point_index": 12,
+      "engine_match": {
+        "lon": 126.931707,
+        "lat": 37.527751,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0.727235,
+        "distance_from_trace_point": 0.449176
+      },
+      "engine_edge_id": "9151104797786",
+      "considered_occurrences": [
+        0,
+        1
+      ],
+      "near_candidates": [
+        {
+          "edge_index": 0,
+          "edge_id": "9151104797786",
+          "segment_index": 2,
+          "from": [
+            126.931708,
+            37.527752
+          ],
+          "to": [
+            126.931653,
+            37.527747
+          ],
+          "length_m": 4.881892668182133,
+          "start_progress_m": 12.740517642918672,
+          "end_progress_m": 17.622410311100804,
+          "local_fraction": 0.015388764258822685,
+          "distance_m": 0.45172858224908713,
+          "progress_m": 12.815643938326202,
+          "coordinate": [
+            126.93170715361794,
+            37.52775192305637
+          ],
+          "distance_difference_m": 0,
+          "progress_difference_m": 0,
+          "clamped_endpoint": false,
+          "adjacent_segments": [],
+          "not_a_full_path_local_minimum": false,
+          "exact_shared_vertex_nonminimum": false
+        },
+        {
+          "edge_index": 0,
+          "edge_id": "9151104797786",
+          "segment_index": 1,
+          "from": [
+            126.931767,
+            37.527775
+          ],
+          "to": [
+            126.931708,
+            37.527752
+          ],
+          "length_m": 5.797461366432177,
+          "start_progress_m": 6.943056276486495,
+          "end_progress_m": 12.740517642918672,
+          "local_fraction": 1,
+          "distance_m": 0.45793304380453287,
+          "progress_m": 12.740517642918672,
+          "coordinate": [
+            126.931708,
+            37.527752
+          ],
+          "distance_difference_m": 0.006204461555445739,
+          "progress_difference_m": -0.07512629540753046,
+          "clamped_endpoint": true,
+          "adjacent_segments": [
+            {
+              "edge_index": 0,
+              "edge_id": "9151104797786",
+              "segment_index": 2,
+              "local_fraction": 0.015388764258822685,
+              "projection_distance_m": 0.45172858224908713,
+              "projection_progress_m": 12.815643938326202,
+              "step_from_vertex_m": 0.001,
+              "distance_at_step_m": 0.45777005130901216,
+              "descent_m": 0.0001629924955207085,
+              "exact_shared_vertex": true,
+              "interior_projection": true,
+              "strictly_smaller_distance": true
+            }
+          ],
+          "not_a_full_path_local_minimum": true,
+          "exact_shared_vertex_nonminimum": true
+        }
+      ],
+      "ambiguous_candidate_count": 1,
+      "all_distinct_progress_secondary_candidates_nonlocal": true,
+      "vehicle_traversals_with_projection_reason": [
+        "9151104797786",
+        "1620310335057",
+        "1620276780625",
+        "1620176117329",
+        "1620377443921"
+      ],
+      "all_secondary_candidates_meet_exact_shared_vertex_condition": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:200500",
+      "vehicle_id": "mapo-bridge-gap",
+      "offset_ms": 200500,
+      "observation": [
+        126.944926526,
+        37.538968279
+      ],
+      "raw_request": "data/p06-main-20261024/seoul/workload/matching/requests/0057-trace_attributes.request.json",
+      "raw_response": "data/p06-main-20261024/seoul/workload/matching/requests/0057-trace_attributes.response.json",
+      "response_sha256": "fb7c6f905cd58cfd16327b3ab409e48f5078a3aa6e736ff731cfc280fd9fa23c",
+      "matched_point_index": 321,
+      "engine_match": {
+        "lon": 126.94491,
+        "lat": 37.538954,
+        "type": "matched",
+        "edge_index": 10,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 2.084575
+      },
+      "engine_edge_id": "1620310335057",
+      "considered_occurrences": [
+        10,
+        9,
+        11
+      ],
+      "near_candidates": [
+        {
+          "edge_index": 11,
+          "edge_id": "1620276780625",
+          "segment_index": 0,
+          "from": [
+            126.944911,
+            37.538954
+          ],
+          "to": [
+            126.944841,
+            37.539007
+          ],
+          "length_m": 8.533732346058525,
+          "start_progress_m": 2863.531559745021,
+          "end_progress_m": 2872.0652920910793,
+          "local_fraction": 0.01247001434703271,
+          "distance_m": 2.0937149604558734,
+          "progress_m": 2863.63797550981,
+          "coordinate": [
+            126.94491012709966,
+            37.53895466091101
+          ],
+          "distance_difference_m": 0,
+          "progress_difference_m": 0,
+          "clamped_endpoint": false,
+          "adjacent_segments": [],
+          "not_a_full_path_local_minimum": false,
+          "exact_shared_vertex_nonminimum": false
+        },
+        {
+          "edge_index": 10,
+          "edge_id": "1620310335057",
+          "segment_index": 0,
+          "from": [
+            126.94505,
+            37.538845
+          ],
+          "to": [
+            126.944911,
+            37.538954
+          ],
+          "length_m": 17.236725432059387,
+          "start_progress_m": 2846.2948343129615,
+          "end_progress_m": 2863.531559745021,
+          "local_fraction": 1,
+          "distance_m": 2.0964175781508856,
+          "progress_m": 2863.531559745021,
+          "coordinate": [
+            126.944911,
+            37.538954
+          ],
+          "distance_difference_m": 0.0027026176950122327,
+          "progress_difference_m": -0.10641576478928982,
+          "clamped_endpoint": true,
+          "adjacent_segments": [
+            {
+              "edge_index": 11,
+              "edge_id": "1620276780625",
+              "segment_index": 0,
+              "local_fraction": 0.01247001434703271,
+              "projection_distance_m": 2.0937149604558734,
+              "projection_progress_m": 2863.63797550981,
+              "step_from_vertex_m": 0.001,
+              "distance_at_step_m": 2.0963670526094442,
+              "descent_m": 0.00005052554144135968,
+              "exact_shared_vertex": true,
+              "interior_projection": true,
+              "strictly_smaller_distance": true
+            }
+          ],
+          "not_a_full_path_local_minimum": true,
+          "exact_shared_vertex_nonminimum": true
+        }
+      ],
+      "ambiguous_candidate_count": 1,
+      "all_distinct_progress_secondary_candidates_nonlocal": true,
+      "vehicle_traversals_with_projection_reason": [
+        "9151104797786",
+        "1620310335057",
+        "1620276780625",
+        "1620176117329",
+        "1620377443921"
+      ],
+      "all_secondary_candidates_meet_exact_shared_vertex_condition": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:202000",
+      "vehicle_id": "mapo-bridge-gap",
+      "offset_ms": 202000,
+      "observation": [
+        126.944774802,
+        37.53903765
+      ],
+      "raw_request": "data/p06-main-20261024/seoul/workload/matching/requests/0057-trace_attributes.request.json",
+      "raw_response": "data/p06-main-20261024/seoul/workload/matching/requests/0057-trace_attributes.response.json",
+      "response_sha256": "fb7c6f905cd58cfd16327b3ab409e48f5078a3aa6e736ff731cfc280fd9fa23c",
+      "matched_point_index": 324,
+      "engine_match": {
+        "lon": 126.944786,
+        "lat": 37.539047,
+        "type": "matched",
+        "edge_index": 12,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.425692
+      },
+      "engine_edge_id": "1620176117329",
+      "considered_occurrences": [
+        12,
+        11,
+        13
+      ],
+      "near_candidates": [
+        {
+          "edge_index": 13,
+          "edge_id": "1620377443921",
+          "segment_index": 0,
+          "from": [
+            126.944786,
+            37.539047
+          ],
+          "to": [
+            126.944236,
+            37.539455
+          ],
+          "length_m": 66.40685022754671,
+          "start_progress_m": 2878.645535821525,
+          "end_progress_m": 2945.0523860490716,
+          "local_fraction": 0.00016145030147785887,
+          "distance_m": 1.4337508882725485,
+          "progress_m": 2878.6562572275143,
+          "coordinate": [
+            126.94478591120287,
+            37.53904706587193
+          ],
+          "distance_difference_m": 0,
+          "progress_difference_m": 0,
+          "clamped_endpoint": false,
+          "adjacent_segments": [],
+          "not_a_full_path_local_minimum": false,
+          "exact_shared_vertex_nonminimum": false
+        },
+        {
+          "edge_index": 12,
+          "edge_id": "1620176117329",
+          "segment_index": 0,
+          "from": [
+            126.944841,
+            37.539007
+          ],
+          "to": [
+            126.944786,
+            37.539047
+          ],
+          "length_m": 6.58024373044553,
+          "start_progress_m": 2872.0652920910793,
+          "end_progress_m": 2878.645535821525,
+          "local_fraction": 1,
+          "distance_m": 1.433790971031041,
+          "progress_m": 2878.645535821525,
+          "coordinate": [
+            126.944786,
+            37.539047
+          ],
+          "distance_difference_m": 0.00004008275849254339,
+          "progress_difference_m": -0.010721405989443156,
+          "clamped_endpoint": true,
+          "adjacent_segments": [
+            {
+              "edge_index": 13,
+              "edge_id": "1620377443921",
+              "segment_index": 0,
+              "local_fraction": 0.00016145030147785887,
+              "projection_distance_m": 1.4337508882725485,
+              "projection_progress_m": 2878.6562572275143,
+              "step_from_vertex_m": 0.001,
+              "distance_at_step_m": 1.4337838391325728,
+              "descent_m": 0.000007131898468237807,
+              "exact_shared_vertex": true,
+              "interior_projection": true,
+              "strictly_smaller_distance": true
+            }
+          ],
+          "not_a_full_path_local_minimum": true,
+          "exact_shared_vertex_nonminimum": true
+        }
+      ],
+      "ambiguous_candidate_count": 1,
+      "all_distinct_progress_secondary_candidates_nonlocal": true,
+      "vehicle_traversals_with_projection_reason": [
+        "9151104797786",
+        "1620310335057",
+        "1620276780625",
+        "1620176117329",
+        "1620377443921"
+      ],
+      "all_secondary_candidates_meet_exact_shared_vertex_condition": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-noise:59500",
+      "vehicle_id": "mapo-bridge-noise",
+      "offset_ms": 59500,
+      "observation": [
+        126.932676459,
+        37.531082779
+      ],
+      "raw_request": "data/p06-main-20261024/seoul/workload/matching/requests/0058-trace_attributes.request.json",
+      "raw_response": "data/p06-main-20261024/seoul/workload/matching/requests/0058-trace_attributes.response.json",
+      "response_sha256": "7c90e3a3affbbb05b124f3bed95d9d8bbef87cd506996399ea37807d59268373",
+      "matched_point_index": 119,
+      "engine_match": {
+        "lon": 126.932666,
+        "lat": 37.531092,
+        "type": "matched",
+        "edge_index": 7,
+        "distance_along_edge": 0.152234,
+        "distance_from_trace_point": 1.368211
+      },
+      "engine_edge_id": "478620440976",
+      "considered_occurrences": [
+        7,
+        6
+      ],
+      "near_candidates": [
+        {
+          "edge_index": 7,
+          "edge_id": "478620440976",
+          "segment_index": 1,
+          "from": [
+            126.932666,
+            37.531092
+          ],
+          "to": [
+            126.940951,
+            37.536248
+          ],
+          "length_m": 928.6540702914533,
+          "start_progress_m": 545.1823994442136,
+          "end_progress_m": 1473.836469735667,
+          "local_fraction": 0.0000995684013219526,
+          "distance_m": 1.375989396577952,
+          "progress_m": 545.2748640453736,
+          "coordinate": [
+            126.93266682486717,
+            37.53109251340348
+          ],
+          "distance_difference_m": 0,
+          "progress_difference_m": 0,
+          "clamped_endpoint": false,
+          "adjacent_segments": [],
+          "not_a_full_path_local_minimum": false,
+          "exact_shared_vertex_nonminimum": false
+        },
+        {
+          "edge_index": 7,
+          "edge_id": "478620440976",
+          "segment_index": 0,
+          "from": [
+            126.93119,
+            37.530156
+          ],
+          "to": [
+            126.932666,
+            37.531092
+          ],
+          "length_m": 166.65125260615784,
+          "start_progress_m": 378.53114683805575,
+          "end_progress_m": 545.1823994442136,
+          "local_fraction": 1,
+          "distance_m": 1.3790926442832574,
+          "progress_m": 545.1823994442136,
+          "coordinate": [
+            126.932666,
+            37.531092
+          ],
+          "distance_difference_m": 0.0031032477053054563,
+          "progress_difference_m": -0.09246460116003163,
+          "clamped_endpoint": true,
+          "adjacent_segments": [
+            {
+              "edge_index": 7,
+              "edge_id": "478620440976",
+              "segment_index": 1,
+              "local_fraction": 0.0000995684013219526,
+              "projection_distance_m": 1.375989396577952,
+              "projection_progress_m": 545.2748640453736,
+              "step_from_vertex_m": 0.001,
+              "distance_at_step_m": 1.3790259556755726,
+              "descent_m": 0.0000666886076847728,
+              "exact_shared_vertex": true,
+              "interior_projection": true,
+              "strictly_smaller_distance": true
+            }
+          ],
+          "not_a_full_path_local_minimum": true,
+          "exact_shared_vertex_nonminimum": true
+        }
+      ],
+      "ambiguous_candidate_count": 1,
+      "all_distinct_progress_secondary_candidates_nonlocal": true,
+      "vehicle_traversals_with_projection_reason": [
+        "478620440976"
+      ],
+      "all_secondary_candidates_meet_exact_shared_vertex_condition": true
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-gap:15000",
+      "vehicle_id": "teheran-gap",
+      "offset_ms": 15000,
+      "observation": [
+        127.028300655,
+        37.498117013
+      ],
+      "raw_request": "data/p06-main-20261024/seoul/workload/matching/requests/0060-trace_attributes.request.json",
+      "raw_response": "data/p06-main-20261024/seoul/workload/matching/requests/0060-trace_attributes.response.json",
+      "response_sha256": "73aed211e956c3d32b25fb2153d7971c459e26c0ddce5547e2a1cf22bfe8dd90",
+      "matched_point_index": 30,
+      "engine_match": {
+        "lon": 127.028307,
+        "lat": 37.4981,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.961693
+      },
+      "engine_edge_id": "1296274839952",
+      "considered_occurrences": [
+        2,
+        1,
+        3
+      ],
+      "near_candidates": [
+        {
+          "edge_index": 3,
+          "edge_id": "1297851898256",
+          "segment_index": 0,
+          "from": [
+            127.028307,
+            37.4981
+          ],
+          "to": [
+            127.028439,
+            37.498141
+          ],
+          "length_m": 12.50555834875305,
+          "start_progress_m": 98.48928203278159,
+          "end_progress_m": 110.99484038153464,
+          "local_fraction": 0.013468296992287085,
+          "distance_m": 1.965633752288363,
+          "progress_m": 98.65771060667697,
+          "coordinate": [
+            127.02830877781423,
+            37.49810055220116
+          ],
+          "distance_difference_m": 0,
+          "progress_difference_m": 0,
+          "clamped_endpoint": false,
+          "adjacent_segments": [],
+          "not_a_full_path_local_minimum": false,
+          "exact_shared_vertex_nonminimum": false
+        },
+        {
+          "edge_index": 2,
+          "edge_id": "1296274839952",
+          "segment_index": 0,
+          "from": [
+            127.028008,
+            37.498009
+          ],
+          "to": [
+            127.028307,
+            37.4981
+          ],
+          "length_m": 28.25181720346565,
+          "start_progress_m": 70.23746482931594,
+          "end_progress_m": 98.48928203278159,
+          "local_fraction": 1,
+          "distance_m": 1.9728365959542795,
+          "progress_m": 98.48928203278159,
+          "coordinate": [
+            127.028307,
+            37.4981
+          ],
+          "distance_difference_m": 0.007202843665916614,
+          "progress_difference_m": -0.16842857389538324,
+          "clamped_endpoint": true,
+          "adjacent_segments": [
+            {
+              "edge_index": 3,
+              "edge_id": "1297851898256",
+              "segment_index": 0,
+              "local_fraction": 0.013468296992287085,
+              "projection_distance_m": 1.965633752288363,
+              "projection_progress_m": 98.65771060667697,
+              "step_from_vertex_m": 0.001,
+              "distance_at_step_m": 1.9727514737100273,
+              "descent_m": 0.00008512224425216708,
+              "exact_shared_vertex": true,
+              "interior_projection": true,
+              "strictly_smaller_distance": true
+            }
+          ],
+          "not_a_full_path_local_minimum": true,
+          "exact_shared_vertex_nonminimum": true
+        }
+      ],
+      "ambiguous_candidate_count": 1,
+      "all_distinct_progress_secondary_candidates_nonlocal": true,
+      "vehicle_traversals_with_projection_reason": [
+        "1296274839952",
+        "1297851898256",
+        "1337580345744",
+        "1337479682448"
+      ],
+      "all_secondary_candidates_meet_exact_shared_vertex_condition": true
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-gap:87000",
+      "vehicle_id": "teheran-gap",
+      "offset_ms": 87000,
+      "observation": [
+        127.035943138,
+        37.500387191
+      ],
+      "raw_request": "data/p06-main-20261024/seoul/workload/matching/requests/0061-trace_attributes.request.json",
+      "raw_response": "data/p06-main-20261024/seoul/workload/matching/requests/0061-trace_attributes.response.json",
+      "response_sha256": "808d7adf22cf18e7e82f17289a3c6d2f709fec003a5a171852a27e9a9dc50b70",
+      "matched_point_index": 94,
+      "engine_match": {
+        "lon": 127.035936,
+        "lat": 37.500399,
+        "type": "matched",
+        "edge_index": 8,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.41234
+      },
+      "engine_edge_id": "1337580345744",
+      "considered_occurrences": [
+        8,
+        7,
+        9
+      ],
+      "near_candidates": [
+        {
+          "edge_index": 9,
+          "edge_id": "1337479682448",
+          "segment_index": 0,
+          "from": [
+            127.035937,
+            37.500399
+          ],
+          "to": [
+            127.036339,
+            37.500517
+          ],
+          "length_m": 37.812515873869565,
+          "start_progress_m": 475.59523870272085,
+          "end_progress_m": 513.4077545765904,
+          "local_fraction": 0.0013798601376368799,
+          "distance_m": 1.4194045939322806,
+          "progress_m": 475.64741468607895,
+          "coordinate": [
+            127.03593755470297,
+            37.500399162824436
+          ],
+          "distance_difference_m": 0,
+          "progress_difference_m": 0,
+          "clamped_endpoint": false,
+          "adjacent_segments": [],
+          "not_a_full_path_local_minimum": false,
+          "exact_shared_vertex_nonminimum": false
+        },
+        {
+          "edge_index": 8,
+          "edge_id": "1337580345744",
+          "segment_index": 0,
+          "from": [
+            127.035699,
+            37.500325
+          ],
+          "to": [
+            127.035937,
+            37.500399
+          ],
+          "length_m": 22.5503862077061,
+          "start_progress_m": 453.04485249501477,
+          "end_progress_m": 475.59523870272085,
+          "local_fraction": 1,
+          "distance_m": 1.4203632425876198,
+          "progress_m": 475.59523870272085,
+          "coordinate": [
+            127.035937,
+            37.500399
+          ],
+          "distance_difference_m": 0.0009586486553392337,
+          "progress_difference_m": -0.052175983358097255,
+          "clamped_endpoint": true,
+          "adjacent_segments": [
+            {
+              "edge_index": 9,
+              "edge_id": "1337479682448",
+              "segment_index": 0,
+              "local_fraction": 0.0013798601376368799,
+              "projection_distance_m": 1.4194045939322806,
+              "projection_progress_m": 475.64741468607895,
+              "step_from_vertex_m": 0.001,
+              "distance_at_step_m": 1.4203268589627633,
+              "descent_m": 0.00003638362485647306,
+              "exact_shared_vertex": true,
+              "interior_projection": true,
+              "strictly_smaller_distance": true
+            }
+          ],
+          "not_a_full_path_local_minimum": true,
+          "exact_shared_vertex_nonminimum": true
+        }
+      ],
+      "ambiguous_candidate_count": 1,
+      "all_distinct_progress_secondary_candidates_nonlocal": true,
+      "vehicle_traversals_with_projection_reason": [
+        "1296274839952",
+        "1297851898256",
+        "1337580345744",
+        "1337479682448"
+      ],
+      "all_secondary_candidates_meet_exact_shared_vertex_condition": true
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-noise:41000",
+      "vehicle_id": "teheran-noise",
+      "offset_ms": 41000,
+      "observation": [
+        127.031078854,
+        37.498922372
+      ],
+      "raw_request": "data/p06-main-20261024/seoul/workload/matching/requests/0062-trace_attributes.request.json",
+      "raw_response": "data/p06-main-20261024/seoul/workload/matching/requests/0062-trace_attributes.response.json",
+      "response_sha256": "7f37c6fd869b0084f1da4ea1831f88ffe8d26e1b2c5b0e5fc0adc03b8c514ec7",
+      "matched_point_index": 82,
+      "engine_match": {
+        "lon": 127.031072,
+        "lat": 37.498934,
+        "type": "matched",
+        "edge_index": 8,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.384431
+      },
+      "engine_edge_id": "1297013037456",
+      "considered_occurrences": [
+        8,
+        7,
+        9
+      ],
+      "near_candidates": [
+        {
+          "edge_index": 9,
+          "edge_id": "1296945928592",
+          "segment_index": 0,
+          "from": [
+            127.031073,
+            37.498934
+          ],
+          "to": [
+            127.031296,
+            37.499003
+          ],
+          "length_m": 21.11587573721582,
+          "start_progress_m": 359.53343538763346,
+          "end_progress_m": 380.6493111248493,
+          "local_fraction": 0.0005364691340120065,
+          "distance_m": 1.3922496977227037,
+          "progress_m": 359.5447634032041,
+          "coordinate": [
+            127.03107311963254,
+            37.49893403701648
+          ],
+          "distance_difference_m": 0,
+          "progress_difference_m": 0,
+          "clamped_endpoint": false,
+          "adjacent_segments": [],
+          "not_a_full_path_local_minimum": false,
+          "exact_shared_vertex_nonminimum": false
+        },
+        {
+          "edge_index": 8,
+          "edge_id": "1297013037456",
+          "segment_index": 0,
+          "from": [
+            127.030896,
+            37.498883
+          ],
+          "to": [
+            127.031073,
+            37.498934
+          ],
+          "length_m": 16.612540305433818,
+          "start_progress_m": 342.92089508219965,
+          "end_progress_m": 359.53343538763346,
+          "local_fraction": 1,
+          "distance_m": 1.3922957826292341,
+          "progress_m": 359.53343538763346,
+          "coordinate": [
+            127.031073,
+            37.498934
+          ],
+          "distance_difference_m": 0.0000460849065304636,
+          "progress_difference_m": -0.01132801557065477,
+          "clamped_endpoint": true,
+          "adjacent_segments": [
+            {
+              "edge_index": 9,
+              "edge_id": "1296945928592",
+              "segment_index": 0,
+              "local_fraction": 0.0005364691340120065,
+              "projection_distance_m": 1.3922496977227037,
+              "projection_progress_m": 359.5447634032041,
+              "step_from_vertex_m": 0.001,
+              "distance_at_step_m": 1.3922880035554726,
+              "descent_m": 0.00000777907376159348,
+              "exact_shared_vertex": true,
+              "interior_projection": true,
+              "strictly_smaller_distance": true
+            }
+          ],
+          "not_a_full_path_local_minimum": true,
+          "exact_shared_vertex_nonminimum": true
+        }
+      ],
+      "ambiguous_candidate_count": 1,
+      "all_distinct_progress_secondary_candidates_nonlocal": true,
+      "vehicle_traversals_with_projection_reason": [
+        "1297013037456",
+        "1296945928592",
+        "1242319313296",
+        "1242252204432",
+        "1242185095568",
+        "1345767627152",
+        "1345499191696"
+      ],
+      "all_secondary_candidates_meet_exact_shared_vertex_condition": true
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-noise:43000",
+      "vehicle_id": "teheran-noise",
+      "offset_ms": 43000,
+      "observation": [
+        127.031289484,
+        37.499017371
+      ],
+      "raw_request": "data/p06-main-20261024/seoul/workload/matching/requests/0062-trace_attributes.request.json",
+      "raw_response": "data/p06-main-20261024/seoul/workload/matching/requests/0062-trace_attributes.response.json",
+      "response_sha256": "7f37c6fd869b0084f1da4ea1831f88ffe8d26e1b2c5b0e5fc0adc03b8c514ec7",
+      "matched_point_index": 86,
+      "engine_match": {
+        "lon": 127.031296,
+        "lat": 37.499002,
+        "type": "matched",
+        "edge_index": 9,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.688637
+      },
+      "engine_edge_id": "1296945928592",
+      "considered_occurrences": [
+        9,
+        8,
+        10
+      ],
+      "near_candidates": [
+        {
+          "edge_index": 10,
+          "edge_id": "1242319313296",
+          "segment_index": 0,
+          "from": [
+            127.031296,
+            37.499003
+          ],
+          "to": [
+            127.032002,
+            37.499209
+          ],
+          "length_m": 66.3606311047321,
+          "start_progress_m": 380.6493111248493,
+          "end_progress_m": 447.0099422295814,
+          "local_fraction": 0.0001822681772519058,
+          "distance_m": 1.698186422519757,
+          "progress_m": 380.6614065561221,
+          "coordinate": [
+            127.03129612868099,
+            37.49900303754764
+          ],
+          "distance_difference_m": 0,
+          "progress_difference_m": 0,
+          "clamped_endpoint": false,
+          "adjacent_segments": [],
+          "not_a_full_path_local_minimum": false,
+          "exact_shared_vertex_nonminimum": false
+        },
+        {
+          "edge_index": 9,
+          "edge_id": "1296945928592",
+          "segment_index": 0,
+          "from": [
+            127.031073,
+            37.498934
+          ],
+          "to": [
+            127.031296,
+            37.499003
+          ],
+          "length_m": 21.11587573721582,
+          "start_progress_m": 359.53343538763346,
+          "end_progress_m": 380.6493111248493,
+          "local_fraction": 1,
+          "distance_m": 1.6982294977404002,
+          "progress_m": 380.6493111248493,
+          "coordinate": [
+            127.031296,
+            37.499003
+          ],
+          "distance_difference_m": 0.00004307522064328495,
+          "progress_difference_m": -0.01209543127276902,
+          "clamped_endpoint": true,
+          "adjacent_segments": [
+            {
+              "edge_index": 10,
+              "edge_id": "1242319313296",
+              "segment_index": 0,
+              "local_fraction": 0.0001822681772519058,
+              "projection_distance_m": 1.698186422519757,
+              "projection_progress_m": 380.6614065561221,
+              "step_from_vertex_m": 0.001,
+              "distance_at_step_m": 1.698222668947497,
+              "descent_m": 0.000006828792903146308,
+              "exact_shared_vertex": true,
+              "interior_projection": true,
+              "strictly_smaller_distance": true
+            }
+          ],
+          "not_a_full_path_local_minimum": true,
+          "exact_shared_vertex_nonminimum": true
+        }
+      ],
+      "ambiguous_candidate_count": 1,
+      "all_distinct_progress_secondary_candidates_nonlocal": true,
+      "vehicle_traversals_with_projection_reason": [
+        "1297013037456",
+        "1296945928592",
+        "1242319313296",
+        "1242252204432",
+        "1242185095568",
+        "1345767627152",
+        "1345499191696"
+      ],
+      "all_secondary_candidates_meet_exact_shared_vertex_condition": true
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-noise:57500",
+      "vehicle_id": "teheran-noise",
+      "offset_ms": 57500,
+      "observation": [
+        127.032835677,
+        37.499451485
+      ],
+      "raw_request": "data/p06-main-20261024/seoul/workload/matching/requests/0062-trace_attributes.request.json",
+      "raw_response": "data/p06-main-20261024/seoul/workload/matching/requests/0062-trace_attributes.response.json",
+      "response_sha256": "7f37c6fd869b0084f1da4ea1831f88ffe8d26e1b2c5b0e5fc0adc03b8c514ec7",
+      "matched_point_index": 115,
+      "engine_match": {
+        "lon": 127.032827,
+        "lat": 37.499465,
+        "type": "matched",
+        "edge_index": 11,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.676993
+      },
+      "engine_edge_id": "1242252204432",
+      "considered_occurrences": [
+        11,
+        10,
+        12
+      ],
+      "near_candidates": [
+        {
+          "edge_index": 12,
+          "edge_id": "1242185095568",
+          "segment_index": 0,
+          "from": [
+            127.032827,
+            37.499465
+          ],
+          "to": [
+            127.033126,
+            37.499557
+          ],
+          "length_m": 28.2913539569506,
+          "start_progress_m": 525.1584477203409,
+          "end_progress_m": 553.4498016772915,
+          "local_fraction": 0.006018285367528604,
+          "distance_m": 1.6779027844403722,
+          "progress_m": 525.3287131618875,
+          "coordinate": [
+            127.03282879946505,
+            37.499465553684516
+          ],
+          "distance_difference_m": 0,
+          "progress_difference_m": 0,
+          "clamped_endpoint": false,
+          "adjacent_segments": [],
+          "not_a_full_path_local_minimum": false,
+          "exact_shared_vertex_nonminimum": false
+        },
+        {
+          "edge_index": 11,
+          "edge_id": "1242252204432",
+          "segment_index": 0,
+          "from": [
+            127.032002,
+            37.499209
+          ],
+          "to": [
+            127.032827,
+            37.499465
+          ],
+          "length_m": 78.14850549075946,
+          "start_progress_m": 447.0099422295814,
+          "end_progress_m": 525.1584477203409,
+          "local_fraction": 1,
+          "distance_m": 1.6865195115513192,
+          "progress_m": 525.1584477203409,
+          "coordinate": [
+            127.032827,
+            37.499465
+          ],
+          "distance_difference_m": 0.008616727110946965,
+          "progress_difference_m": -0.17026544154668954,
+          "clamped_endpoint": true,
+          "adjacent_segments": [
+            {
+              "edge_index": 12,
+              "edge_id": "1242185095568",
+              "segment_index": 0,
+              "local_fraction": 0.006018285367528604,
+              "projection_distance_m": 1.6779027844403722,
+              "projection_progress_m": 525.3287131618875,
+              "step_from_vertex_m": 0.001,
+              "distance_at_step_m": 1.6864188493568044,
+              "descent_m": 0.00010066219451476677,
+              "exact_shared_vertex": true,
+              "interior_projection": true,
+              "strictly_smaller_distance": true
+            }
+          ],
+          "not_a_full_path_local_minimum": true,
+          "exact_shared_vertex_nonminimum": true
+        }
+      ],
+      "ambiguous_candidate_count": 1,
+      "all_distinct_progress_secondary_candidates_nonlocal": true,
+      "vehicle_traversals_with_projection_reason": [
+        "1297013037456",
+        "1296945928592",
+        "1242319313296",
+        "1242252204432",
+        "1242185095568",
+        "1345767627152",
+        "1345499191696"
+      ],
+      "all_secondary_candidates_meet_exact_shared_vertex_condition": true
+    },
+    {
+      "sample_id": "seoul-road-demo:teheran-noise:148000",
+      "vehicle_id": "teheran-noise",
+      "offset_ms": 148000,
+      "observation": [
+        127.042413917,
+        37.502397121
+      ],
+      "raw_request": "data/p06-main-20261024/seoul/workload/matching/requests/0062-trace_attributes.request.json",
+      "raw_response": "data/p06-main-20261024/seoul/workload/matching/requests/0062-trace_attributes.response.json",
+      "response_sha256": "7f37c6fd869b0084f1da4ea1831f88ffe8d26e1b2c5b0e5fc0adc03b8c514ec7",
+      "matched_point_index": 296,
+      "engine_match": {
+        "lon": 127.04242,
+        "lat": 37.502383,
+        "type": "matched",
+        "edge_index": 28,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.68039
+      },
+      "engine_edge_id": "1345566300560",
+      "considered_occurrences": [
+        28,
+        27,
+        29
+      ],
+      "near_candidates": [
+        {
+          "edge_index": 28,
+          "edge_id": "1345566300560",
+          "segment_index": 0,
+          "from": [
+            127.042344,
+            37.502361
+          ],
+          "to": [
+            127.042421,
+            37.502383
+          ],
+          "length_m": 7.219577219854612,
+          "start_progress_m": 1424.4197288797627,
+          "end_progress_m": 1431.6393060996172,
+          "local_fraction": 0.9922688849552506,
+          "distance_m": 1.689014225407101,
+          "progress_m": 1431.5834907175563,
+          "coordinate": [
+            127.04242040470399,
+            37.50238282991567
+          ],
+          "distance_difference_m": 0,
+          "progress_difference_m": 0,
+          "clamped_endpoint": false,
+          "adjacent_segments": [],
+          "not_a_full_path_local_minimum": false,
+          "exact_shared_vertex_nonminimum": false
+        },
+        {
+          "edge_index": 29,
+          "edge_id": "1345499191696",
+          "segment_index": 0,
+          "from": [
+            127.042421,
+            37.502383
+          ],
+          "to": [
+            127.042552,
+            37.502422
+          ],
+          "length_m": 12.342955301228939,
+          "start_progress_m": 1431.6393060996172,
+          "end_progress_m": 1443.9822614008463,
+          "local_fraction": 0,
+          "distance_m": 1.6899362149081243,
+          "progress_m": 1431.6393060996172,
+          "coordinate": [
+            127.042421,
+            37.502383
+          ],
+          "distance_difference_m": 0.0009219895010232904,
+          "progress_difference_m": 0.05581538206092773,
+          "clamped_endpoint": true,
+          "adjacent_segments": [
+            {
+              "edge_index": 28,
+              "edge_id": "1345566300560",
+              "segment_index": 0,
+              "local_fraction": 0.9922688849552506,
+              "projection_distance_m": 1.689014225407101,
+              "projection_progress_m": 1431.5834907175563,
+              "step_from_vertex_m": 0.001,
+              "distance_at_step_m": 1.6899034826475618,
+              "descent_m": 0.000032732260562440274,
+              "exact_shared_vertex": true,
+              "interior_projection": true,
+              "strictly_smaller_distance": true
+            }
+          ],
+          "not_a_full_path_local_minimum": true,
+          "exact_shared_vertex_nonminimum": true
+        }
+      ],
+      "ambiguous_candidate_count": 1,
+      "all_distinct_progress_secondary_candidates_nonlocal": true,
+      "vehicle_traversals_with_projection_reason": [
+        "1297013037456",
+        "1296945928592",
+        "1242319313296",
+        "1242252204432",
+        "1242185095568",
+        "1345767627152",
+        "1345499191696"
+      ],
+      "all_secondary_candidates_meet_exact_shared_vertex_condition": true
+    }
+  ],
+  "limitations_en": "The 13 non-local secondary-candidate cases establish over-exclusion at the point level. No corrected matcher was executed, and recovered traversal counts or unchanged safety precision are not inferred.",
+  "limitations_ko": "국소 최소가 아닌 보조 후보 13건은 표본 수준 과잉 제외를 입증합니다. 수정 매칭기를 실행하지 않았으므로 회수 통과 수나 안전 정밀도의 유지까지 추론하지 않습니다.",
+  "exact_shared_vertex_nonminimum_cases": 13,
+  "confirmed_design_en": "All thirteen ghost cases meet the proposed analytical test: a clamped endpoint shares exactly equal longitude/latitude coordinates with its adjacent segment, whose strictly interior projection has strictly smaller distance. One true dual-interior case remains; no one-millimetre sampling is required for this classification.",
+  "confirmed_design_ko": "가짜 후보13건 모두 끝점과 인접선분이 경도·위도 완전 동일한 물리 꼭짓점을 공유하고, 인접선분의 엄격한 내부 투영 거리가 더 작다는 해석적 조건을 충족합니다. 두 내부 투영의 실제 모호성1건은 유지되며 이 분류에는1mm이동 수치를 사용하지 않습니다."
+}
