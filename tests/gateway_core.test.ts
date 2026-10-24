@@ -239,6 +239,7 @@ function fixture(hooks: GatewayHooks = {}) {
     root,
     config,
     controller,
+    dependencies,
     bundle,
     g,
     calls,
@@ -585,5 +586,110 @@ test("Evidence directory failure releases admission and recovery accepts a fresh
   } finally {
     if (renamed) renameSync(moved, requests);
     await f.close();
+  }
+});
+
+test("Both generation byte checks are awaited and final verification failure is terminal / 세대 바이트 검사 두 번을 기다리고 마지막 실패는 재시도하지 않음", async () => {
+  const f = fixture(),
+    first = deferred<void>(),
+    last = deferred<void>();
+  let checks = 0;
+  f.dependencies.verifyGeneration = () =>
+    ++checks === 1 ? first.promise : last.promise;
+  try {
+    let finished = false;
+    const work = f.run().then((value) => {
+      finished = true;
+      return value;
+    });
+    await turn();
+    assert.equal(checks, 1);
+    assert.equal(f.calls.length, 0);
+    assert.equal(finished, false);
+    first.resolve();
+    for (let i = 0; i < 10 && checks < 2; i++) await turn();
+    assert.equal(checks, 2);
+    assert.equal(finished, false);
+    last.resolve();
+    assert.equal((await work).status, 200);
+  } finally {
+    first.resolve();
+    last.resolve();
+    await f.close();
+  }
+  const bad = fixture();
+  let n = 0;
+  bad.dependencies.verifyGeneration = async () => {
+    if (++n === 2) throw Error("worker verification failed");
+  };
+  try {
+    assert.equal((await bad.run()).status, 503);
+    assert.equal(bad.calls.filter((c) => c.path.endsWith("route")).length, 1);
+  } finally {
+    await bad.close();
+  }
+});
+test("Cancelling one caller stops its wait without authorizing late shared preparation / 한 요청 취소는 대기만 멈추고 늦은 공유 준비로 승인하지 않음", async () => {
+  const f = fixture(),
+    gate = deferred<TrafficGeneration>();
+  f.dependencies.compile = () => gate.promise;
+  try {
+    const abort = new AbortController(),
+      cancelled = f.controller.route(
+        { ...request, request_id: "cancelled" },
+        { deadline: performance.now() + 12000, signal: abort.signal },
+      ),
+      other = f.run({ ...request, request_id: "other" });
+    await turn();
+    abort.abort();
+    assert.equal((await cancelled).status, 504);
+    gate.resolve(f.g);
+    assert.equal((await other).status, 200);
+    assert.ok(
+      f.calls
+        .filter((c) => c.path.endsWith("route"))
+        .every((c) => c.body.request_id === "other"),
+    );
+  } finally {
+    gate.resolve(f.g);
+    await f.close();
+  }
+});
+test("Optional compiler shutdown is awaited and unsuccessful termination makes cleanup fail / 선택적 작업자 종료를 기다리고 종료 실패는 정리 실패", async () => {
+  const f = fixture(),
+    gate = deferred<void>();
+  let done = false;
+  f.dependencies.closeCompiler = async () => {
+    await gate.promise;
+    return { termination_verified: true };
+  };
+  const work = f.controller.close().then(() => {
+    done = true;
+  });
+  await turn();
+  assert.equal(done, false);
+  gate.resolve();
+  await work;
+  assert.equal(
+    JSON.parse(
+      readFileSync(join(f.config.runtime_root, "cleanup.json"), "utf8"),
+    ).compiler.termination_verified,
+    true,
+  );
+  await f.close();
+  const bad = fixture();
+  bad.dependencies.closeCompiler = async () => ({
+    termination_verified: false,
+  });
+  try {
+    await assert.rejects(bad.controller.close(), /cleanup incomplete/);
+    assert.equal(
+      JSON.parse(
+        readFileSync(join(bad.config.runtime_root, "cleanup.json"), "utf8"),
+      ).cleanup_verified,
+      false,
+    );
+  } finally {
+    await bad.close();
   }
 });

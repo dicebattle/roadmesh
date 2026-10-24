@@ -5,13 +5,9 @@ import { join, resolve } from "node:path";
 import { performance } from "node:perf_hooks";
 import { canonical, identifier, parseJson, record, sha256 } from "./shared.js";
 import { PublicationConsumer } from "./publication_consumer.js";
-import { loadTrafficBundle } from "./traffic_bundle.js";
-import {
-  compileTrafficGeneration,
-  verifyTrafficGeneration,
-} from "./traffic_compiler.js";
 import { assertSameTrafficSelection } from "./traffic_controller.js";
 import { durableNodeJSON } from "./node_engine.js";
+import { GatewayCompilerAdapter } from "./gateway_compiler.js";
 import { sphericalDistance, polylineLength } from "./geodesy.js";
 import type { AcceptedInspection } from "./publication_types.js";
 import type { TrafficGeneration } from "./traffic_types.js";
@@ -389,6 +385,9 @@ function wait<T>(promise: Promise<T>, signal: AbortSignal): Promise<T> {
   return new Promise((done, fail) => {
     const abort = () => fail(new GatewayError("DEADLINE_EXCEEDED"));
     if (signal.aborted) {
+      // A caller can stop waiting without leaving the owned worker's late rejection unhandled.
+      // 요청 대기는 멈추되 소유 작업자의 늦은 거부를 수거합니다.
+      void promise.catch(() => {});
       abort();
       return;
     }
@@ -445,50 +444,54 @@ export class GatewayController {
     hooks: GatewayHooks = {},
   ): Promise<GatewayController> {
     validateGatewayConfig(config);
-    const bundle = loadTrafficBundle(
-      config.bundle_directory,
-      config.graph_directory,
+    const compiler = await GatewayCompilerAdapter.start(
+      {
+        bundle_directory: config.bundle_directory,
+        graph_directory: config.graph_directory,
+        generation_root: config.generation_root,
+      },
+      resolve(config.runtime_root) + ".compiler-" + randomUUID(),
     );
-    const catalog = config.consumer.catalogs.find(
-      (c) => c.graph_id === bundle.graph_id,
-    );
-    if (
-      bundle.graph_id !== config.consumer.store.graph_id ||
-      !catalog ||
-      !canonical(
-        [...catalog.edges].sort((a, b) => a.edge_id.localeCompare(b.edge_id)),
-      ).equals(
-        canonical(
-          [...bundle.catalog].sort((a, b) =>
-            a.edge_id.localeCompare(b.edge_id),
-          ),
-        ),
-      )
-    )
-      reject("VERSION_MISMATCH");
-    const store = new PublicationConsumer(config.consumer);
+    let store: PublicationConsumer | undefined;
     try {
+      const bundle = await compiler.loadBundle();
+      const catalog = config.consumer.catalogs.find(
+        (c) => c.graph_id === bundle.graph_id,
+      );
+      if (
+        bundle.graph_id !== config.consumer.store.graph_id ||
+        !catalog ||
+        !canonical(
+          [...catalog.edges].sort((a, b) => a.edge_id.localeCompare(b.edge_id)),
+        ).equals(
+          canonical(
+            [...bundle.catalog].sort((a, b) =>
+              a.edge_id.localeCompare(b.edge_id),
+            ),
+          ),
+        )
+      )
+        reject("VERSION_MISMATCH");
+      store = new PublicationConsumer(config.consumer);
       return new GatewayController(
         config,
         {
           bundle,
           store,
-          compile: (input) => {
-            loadTrafficBundle(config.bundle_directory, config.graph_directory);
-            return compileTrafficGeneration(
-              bundle,
-              input,
-              config.generation_root,
-            );
-          },
-          verifyGeneration: verifyTrafficGeneration,
+          compile: (input) => compiler.prepare(input),
+          verifyGeneration: (g) => compiler.verify(g),
+          closeCompiler: () => compiler.close(),
           fetch: globalThis.fetch,
         },
         hooks,
       );
-    } catch (e) {
-      await store.close();
-      throw e;
+    } catch (error) {
+      try {
+        await store?.close();
+      } finally {
+        await compiler.close();
+      }
+      throw error;
     }
   }
   private storeCall<T>(run: () => Promise<T>, deadline: number): Promise<T> {
@@ -558,6 +561,20 @@ export class GatewayController {
       deadline,
     );
     return signal ? wait(work, signal) : work;
+  }
+  private async verifyGeneration(
+    generation: TrafficGeneration,
+    signal: AbortSignal,
+  ): Promise<void> {
+    try {
+      await wait(
+        Promise.resolve(this.dependencies.verifyGeneration(generation)),
+        signal,
+      );
+    } catch (error) {
+      if (error instanceof GatewayError) throw error;
+      reject("NO_HEALTHY_NODE");
+    }
   }
   start(): void {
     if (this.interval || this.closing) return;
@@ -757,7 +774,7 @@ export class GatewayController {
         this.dependencies.compile(selected.active),
         abort.signal,
       );
-      this.dependencies.verifyGeneration(generation);
+      await this.verifyGeneration(generation, abort.signal);
       budget(12000);
       sameState(selected, await this.inspect(deadline, abort.signal));
       write("target.json", {
@@ -882,7 +899,7 @@ export class GatewayController {
             ) ?? Promise.resolve(),
             abort.signal,
           );
-          this.dependencies.verifyGeneration(generation);
+          await this.verifyGeneration(generation, abort.signal);
           budget(12000);
           // Last asynchronous boundary is current durable authorization, never a peer call.
           // 마지막 비동기 경계는 노드 호출이 아닌 현재 영속 승인 조회입니다.
@@ -982,6 +999,15 @@ export class GatewayController {
     await this.reconciling;
     let timeout: ReturnType<typeof setTimeout> | undefined;
     let clean = false;
+    let compilerCleanup: Awaited<
+      ReturnType<NonNullable<GatewayDependencies["closeCompiler"]>>
+    >;
+    const compilerClosing = Promise.resolve()
+      .then(() => this.dependencies.closeCompiler?.())
+      .then(
+        (value) => ({ ok: true as const, value }),
+        () => ({ ok: false as const, value: undefined }),
+      );
     try {
       await Promise.race([
         this.dependencies.store.close(),
@@ -992,13 +1018,28 @@ export class GatewayController {
       clean = true;
     } finally {
       clearTimeout(timeout);
+      const compilerResult = await compilerClosing;
+      compilerCleanup = compilerResult.value;
+      if (
+        !compilerResult.ok ||
+        (compilerCleanup &&
+          (!compilerCleanup.termination_verified ||
+            compilerCleanup.cleanup_verified === false))
+      )
+        clean = false;
       durableNodeJSON(join(this.config.runtime_root, "cleanup.json"), {
         gateway_id: this.config.gateway_id,
         cleanup_verified: clean,
         in_flight: this.admission,
-        message_en: "Only this gateway's consumer resources are closed.",
-        message_ko: "이 중계자의 수신 자원만 종료합니다.",
+        ...(this.dependencies.closeCompiler
+          ? { compiler: compilerCleanup ?? { termination_verified: false } }
+          : {}),
+        message_en:
+          "Only this gateway's consumer and compiler resources are closed.",
+        message_ko: "이 중계자의 수신 자원과 작업 스레드만 종료합니다.",
       });
     }
+    if (!clean)
+      throw new Error("Gateway cleanup incomplete / 중계 정리 미완료");
   }
 }

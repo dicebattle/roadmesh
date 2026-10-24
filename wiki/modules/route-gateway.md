@@ -17,3 +17,7 @@ Public responses contain only allowed route/version fields and bilingual warning
 Clean2056521 passed252 unit tests and the fresh whole302. Main independently inspected9,838 listed hashes and all module originals; the current59.75s recording and EN/KO390px viewer passed review. [Current report](../../research/pilot/2026-10-25-p10/report.md). [P10 hosted inspection](../../research/pilot/2026-10-25-p10/hosted/README.md) passed9,691 hashes; protected delivery is pending; P09 protected ancestry has been incorporated without runtime changes.
 
 깨끗한2056521에서 단위252개·새 전체302개를 통과했습니다. 메인이 목록 해시9,838개·모든 모듈 원문·현재59.75초 녹화·한영390픽셀 화면을 확인했습니다. P10 원격 해시9,691개 검사를 통과했고 보호 반영은 대기 중이며, P09의 보호 병합 이력은 실행 코드 변경 없이 연결했습니다.
+
+Final-head hosted runs failed during concurrent admission preparation. Main preserved [both failures](../../research/pilot/2026-10-25-p10/hosted-failures/README.md) and the local event-loop measurement. Correction is in progress with existing deadlines and acceptance unchanged; protected delivery remains blocked.
+
+최종 원격 동시 접수 준비가 실패해 두 원문과 로컬 이벤트 루프 측정을 보존했습니다. 기존 기한·통과 기준을 유지하며 수정 중이고 보호 반영은 보류합니다.

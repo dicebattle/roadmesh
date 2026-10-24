@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "5a6d7d7cbf318022432adc2508c2cbe575b7de0a",
+    "dirty": true
+  },
+  "implementation_sha256": "0b37b365f8ffc8636f7455d5ac64f0c7734d94ba09497813f015150d7badc521",
+  "node": "v22.23.4",
+  "callers": 8,
+  "prepare_jobs": 1,
+  "verify_jobs": 8,
+  "scheduled_timer_ms": 10,
+  "observed_timer_ms": 10.123000000000047,
+  "prepare_elapsed_ms": 654.748834,
+  "generation_id": "e594e468b81c4d839a3524a3336b2fe913fb7fdba4677e77384baf8b375717f0",
+  "graph_id": "81996661573ee3265fb1633728526f9f54822e7a8aa1db38ca1a6d95bb855f15",
+  "traffic_sha256": "cba3392933e785f0fe7e68fd39e024cfbfb3c2fb9f7346161fcc7fc1acc2fc04",
+  "message_en": "Eight actual Seoul preparations share only one pending worker job; eight separate byte verifications remain and the parent timer stays responsive. This is not the whole302 or remote performance proof.",
+  "message_ko": "실제 서울 준비8개가 진행 중 작업 하나만 공유하며 별도 바이트검사8개와 부모 타이머 응답을 유지합니다. 전체302개나 원격 성능 근거는 아닙니다.",
+  "cleanup": {
+    "thread_id": 1,
+    "termination_verified": true,
+    "cleanup_verified": true,
+    "exit_code": 1,
+    "failure_reason": null
+  }
+}

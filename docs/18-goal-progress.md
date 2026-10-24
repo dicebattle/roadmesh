@@ -13,7 +13,7 @@ The goal remains the complete local P01–P14 pilot. Each increment needs fresh 
 | P07 publication / 서명 게시 | [Module](../wiki/modules/signed-publication.md) | Protected-merged including claim-race correction / 작업 선택 경쟁 수정 포함 보호 병합 |
 | P08 traffic application / 교통 반영 | [Report](../research/pilot/2026-10-25-p08-portability/report.md) | Local/hosted238; protected PR9 / 로컬·원격238·보호 PR9 |
 | P09 persistent nodes / 지속 노드 | [Report](../research/pilot/2026-10-25-p09/report.md) | Local/hosted270, Node22/24 each235; protected PR10 / 로컬·원격270·Node각235·보호 PR10 |
-| P10 gateway and failover / 중계·장애 전환 | [Report](../research/pilot/2026-10-25-p10/report.md), [module](../wiki/modules/route-gateway.md) | Clean local302, unit252 and independent inspection passed; hosted302/252 and9,691 hashes passed; protected merge pending / 로컬·원격302·단위252·독립 검사 통과·보호 병합 대기 |
+| P10 gateway and failover / 중계·장애 전환 | [Report](../research/pilot/2026-10-25-p10/report.md), [module](../wiki/modules/route-gateway.md) | Clean local302, unit252 and independent inspection passed; earlier hosted302/252 passed; final-head concurrency failed, correction in progress / 앞선 원격302/252 통과·최종 동시 요청 실패 수정 중 |
 | P11 actual client / 실제 경로 클라이언트 | [Pilot plan](11-local-pilot.md) | Evidence player exists; request client remains / 증거 재생 화면은 있으며 실제 요청 클라이언트는 남음 |
 | P12 full fault matrix / 전체 장애 행렬 | [Pilot plan](11-local-pilot.md) | Incremental actual runner exists; complete matrix remains / 점진 실제 실행기는 있으며 전체 행렬은 남음 |
 | P13 local Cloudflare parity / 로컬 Cloudflare 비교 | [Pilot plan](11-local-pilot.md) | Not implemented / 미구현 |
@@ -34,3 +34,7 @@ P10의 깨끗한2056521에서 새 전체302개·단위252개를 통과했습니�
 Geographic100/100, real mobile trials, live traffic, public-peer honesty and production deployment remain separate gates. Synthetic success never satisfies them.
 
 실제 지역100/100·실제 모바일 시험·실시간 교통·공개 노드 정직성·운영 배포는 별도 기준이며 합성 성공으로 충족하지 않습니다.
+
+Final-head PR40135410268 and push40135406234 failed the concurrency phase; protected merge is blocked pending the worker-thread correction and fresh evidence. [Preserved failures](../research/pilot/2026-10-25-p10/hosted-failures/README.md).
+
+최종 PR·푸시의 동시 요청 단계가 실패해 작업 스레드 수정과 새 근거를 확인할 때까지 보호 병합하지 않습니다. 실패 원문을 별도로 보존합니다.
