@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "run_url": "https://github.com/dicebattle/routelens/actions/runs/40095704921",
+  "host_image": {
+    "id": "sha256:ebefb40c7b0fecb86c59fdae154e8faceb679f155acdbd8628ef75b48362d952",
+    "platform": "linux/amd64",
+    "dockerfile_sha256": "063afdc0e67da85ca88eb5713600cf76b663508e66682ace5859628b465001bc"
+  },
+  "omitted_graph_binary_paths": [
+    "seoul/graph/seoul.osm.pbf",
+    "seoul/graph/tiles/0/002/866.gph",
+    "seoul/graph/tiles/1/046/026.gph",
+    "seoul/graph/tiles/1/046/027.gph",
+    "seoul/graph/tiles/2/000/734/186.gph",
+    "seoul/graph/tiles/2/000/734/187.gph",
+    "seoul/graph/tiles/2/000/734/188.gph",
+    "seoul/graph/tiles/2/000/734/189.gph",
+    "seoul/graph/tiles/2/000/735/626.gph",
+    "seoul/graph/tiles/2/000/735/627.gph",
+    "seoul/graph/tiles/2/000/735/628.gph",
+    "seoul/graph/tiles/2/000/735/629.gph",
+    "seoul/graph/tiles/2/000/737/066.gph",
+    "seoul/graph/tiles/2/000/737/067.gph",
+    "seoul/graph/tiles/2/000/737/068.gph"
+  ],
+  "full_split_overlap_bytes_identical": true,
+  "source": {
+    "commit": "168f16a4eb963954ca17b724380e6a500f1b1a06",
+    "dirty": false
+  },
+  "graph_id": "ee4008c0e2136e15e41483f2ff8c1300d22aab3474d20f524388ced721bc0d50",
+  "implementation_sha256": "4bc4113c39fa8377452d45ae03dbf340e77a5fb9fc0aa98f3a8b123ba9b52463",
+  "assertions": {
+    "tiny": 48,
+    "seoul": 29,
+    "ingestion": 34,
+    "total": 111
+  },
+  "unique_file_hashes_checked": 1883,
+  "inventories": {
+    "manifest.json": 8,
+    "seoul/manifest.json": 8,
+    "seoul/tiny/manifest.json": 6,
+    "seoul/graph/manifest.json": 94,
+    "seoul/workload/manifest.json": 826,
+    "ingestion/manifest.json": 956
+  },
+  "source_sha256": "282d012b7629c643695f286d4424d7f6d88548d99edb5577ca5b678906f13c17",
+  "stored_reference_traversals": 215,
+  "unique_stored_ids": 215,
+  "successful_trips": 9,
+  "raw_after_success": 0,
+  "independent_geometry_max_difference_m": 5.17506038022475e-10,
+  "independent_boundary_error_max_ms": 392,
+  "recovery_attempt_byte_parity": [
+    {
+      "phase": "AFTER_MATCH",
+      "interrupted_pid": 11871,
+      "recovered_pid": 12200,
+      "sha256": "bb6d93757dfca9d2c9425641b65dc7d2bee6e354f23609ec0773f3cf3b4cbde3",
+      "byte_identical": true
+    },
+    {
+      "phase": "AFTER_INSERT",
+      "interrupted_pid": 12529,
+      "recovered_pid": 12830,
+      "sha256": "e87cfae95e18b268a8e9ceadab8c51f5ce97230152246341c9b30c0355057458",
+      "byte_identical": true
+    }
+  ],
+  "database_restart": {
+    "same_container_id": true,
+    "same_named_volume": "routelens-p05-64b6e2e0-bdcd-447b-95c9-053128965bb4-db",
+    "restarted": true,
+    "previous_host_port": 32768,
+    "current_host_port": 32769,
+    "host_tcp_ready": true,
+    "host_tcp_wait_ms": 0.9721879999851808
+  },
+  "api_durable_samples": 2,
+  "engine_failure_attempts": 3,
+  "clock_only_expiry_refused_before_sweep": true,
+  "retention_readback": {
+    "contributors": 22,
+    "trips": 0,
+    "batches": 0,
+    "samples": 0,
+    "traversals": 0,
+    "events": 0,
+    "raw_payloads": 0
+  },
+  "stopped_engine": {
+    "pid": 75,
+    "exe": "/usr/local/bin/valhalla_service",
+    "state": "T",
+    "action": "locate"
+  },
+  "killed_worker_pid": 17511,
+  "orphan_engine_id": "4a8bc2fff9c43e36526a0514790446e351012a538ba8f7f2d364e157413b231b",
+  "recorded_db_volume_engine_cleanup_verified": true,
+  "message_en": "Main independently inspected downloaded hosted artifact hashes, all stored traversal content and geometry/timing, retry bytes, durable restart/expiry/revocation and recorded cleanup. Omitted graph binaries were not rehashed. Remote process absence is supported by hosted diagnostics, not a new live remote inspection. This proves the bounded synthetic pilot only.",
+  "message_ko": "메인이 내려받은 원격 원문 해시·저장 통과 지형/시간·복구바이트·재시작/만료/철회·기록된 정리를 독립 검사했습니다. 제외한 그래프 바이너리는 재해시하지 않았고 원격 프로세스 부재는 진단기록 근거이며 새 실시간 원격 검사는 아닙니다. 제한된 합성 파일럿 증거입니다."
+}

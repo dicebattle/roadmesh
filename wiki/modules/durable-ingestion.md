@@ -1,8 +1,8 @@
 # Durable ingestion and recovery / 영속 수집과 복구
 
-P05 is implemented for bounded SYNTHETIC local trips and verified through actual HTTP, PostgreSQL and separate worker processes. [Final report](../../research/pilot/2026-10-24-p05/report.md) records111 full-pipeline assertions, including34 P05 checks. Main owns [the executable contract](../../docs/22-p05-executable-contract.md); Sol implemented the code and tests. Hosted verification is tracked in the report.
+P05 is implemented for bounded SYNTHETIC local trips and verified through actual HTTP, PostgreSQL and separate worker processes. [Final report](../../research/pilot/2026-10-24-p05/report.md) records111 full-pipeline assertions, including34 P05 checks. Main owns [the executable contract](../../docs/22-p05-executable-contract.md); Sol implemented the code and tests. Hosted Node22/24 each137/137 and Linux Docker111/111 also passed; main inspected the downloaded artifacts.
 
-P05는 제한된 합성 로컬 여행을 구현했고 실제 HTTP·PostgreSQL·별도 처리자 실행으로 검증했습니다. 최종 보고서에 P0534개를 포함한 전체111개 검사를 기록합니다. 메인은 실행 계약, Sol은 코드·테스트를 맡았으며 원격 검증은 보고서에서 관리합니다.
+P05는 제한된 합성 로컬 여행을 구현했고 실제 HTTP·PostgreSQL·별도 처리자 실행으로 검증했습니다. 최종 보고서에 P0534개를 포함한 전체111개 검사를 기록합니다. 메인은 실행 계약, Sol은 코드·테스트를 맡았으며 원격 Node22·24각각137개·LinuxDocker111개도 통과했고 메인이 원문을 내려받아 검사했습니다.
 
 ## Ownership / 책임
 

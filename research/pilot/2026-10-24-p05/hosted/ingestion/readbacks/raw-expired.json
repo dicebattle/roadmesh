@@ -1,0 +1,32 @@
+{
+  "counts": {
+    "contributors": 22,
+    "trips": 39,
+    "batches": 143,
+    "samples": 6369,
+    "traversals": 215,
+    "events": 203,
+    "raw_payloads": 0
+  },
+  "trips": [
+    {
+      "trip_id": "raw-expiry",
+      "vehicle_id": "downtown-clean",
+      "state": "EXPIRED",
+      "fence": "1",
+      "attempt": 0,
+      "final_seq": null,
+      "first_received_at": "2026-10-24T00:21:13.040Z",
+      "last_activity_at": "2026-10-24T00:21:13.040Z",
+      "raw_expires_at": "2026-10-24T00:31:13.040Z",
+      "tombstone_expires_at": "2026-10-25T00:21:13.040Z",
+      "lease_until_utc": null,
+      "sample_count": 2,
+      "batch_count": 1,
+      "raw_payload_count": 0,
+      "traversal_count": 0,
+      "matching_digest": null
+    }
+  ],
+  "traversals": []
+}

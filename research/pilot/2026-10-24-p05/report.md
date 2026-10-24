@@ -1,8 +1,8 @@
 # Seoul durable ingestion proof / 서울 영속 수집 검증
 
-**Local result: PASS, 111/111 assertions = tiny regression48 + Seoul29 + P0534.** The final run completed at `2026-10-24T12:37:00.257Z` from clean source `0c7036af545c1f454ab2749cd29b17ce3c78811c`. Main designed and independently inspected the result; Sol (`gpt-6.1-sol`, core and integration agents) implemented the code and tests. Hosted verification is pending at this publication checkpoint.
+**Local result: PASS, 111/111 assertions = tiny regression48 + Seoul29 + P0534.** The final run completed at `2026-10-24T12:37:00.257Z` from clean source `0c7036af545c1f454ab2749cd29b17ce3c78811c`. Main designed and independently inspected the result; Sol (`gpt-6.1-sol`, core and integration agents) implemented the code and tests. Hosted Linux verification also passed; see the independently inspected evidence below.
 
-**로컬 결과: 전체111/111 통과 = 작은 회귀48 + 서울29 + P0534.** 위 깨끗한 커밋으로 최종 실행을 완료했습니다. 메인이 설계·독립 검사를, Sol의 코어·통합 담당이 구현·테스트를 맡았습니다. 이 게시 시점에는 원격 검증이 남아 있습니다.
+**로컬 결과: 전체111/111 통과 = 작은 회귀48 + 서울29 + P0534.** 위 깨끗한 커밋으로 최종 실행을 완료했습니다. 메인이 설계·독립 검사를, Sol의 코어·통합 담당이 구현·테스트를 맡았습니다. 원격 Linux 검증도 통과했으며 아래 독립 검사 근거를 기록합니다.
 
 [Recorded playback / 실제 녹화](../../../docs/media/demo.mp4) · [Interactive report / 재생 보고서](report.html) · [Main inspection / 메인 독립 검사](main-verification.json) · [Root manifest / 전체 명세](manifest.json) · [P05 assertions / P05 검사](ingestion/assertions.json) · [Module guide / 모듈 안내](../../../wiki/modules/durable-ingestion.md)
 
@@ -87,6 +87,20 @@ Focused implementation checks passed8 core +1 clock +4 integration contract +1 a
 Road geometry is © OpenStreetMap contributors, ODbL1.0, through Geofabrik. The rectangular envelope includes Seoul and adjacent roads, not an administrative polygon. Vehicle trajectories are authored SYNTHETIC fixtures. No real person location trace or private credential is published.
 
 도로 지형은 OSM 기여자·ODbL1.0·Geofabrik 출처입니다. 범위는 서울과 인접 도로를 포함하는 사각형이며 행정구역 폴리곤이 아닙니다. 차량 이동은 자체 합성 자료이고 실제 개인 이동·인증정보는 공개하지 않습니다.
+
+## Hosted Linux verification / 원격 Linux 검증
+
+[Run40095704921](https://github.com/dicebattle/routelens/actions/runs/40095704921) on clean push head `168f16a4eb963954ca17b724380e6a500f1b1a06` passed Node22/24 each137/137, the real Docker pipeline111/111 and Required checks. [CI record](hosted/ci.json), [independent artifact inspection](hosted-verification.json).
+
+깨끗한 푸시 커밋의 원격 실행에서 Node22·24각각137개·실제 Docker통합111개·필수검사를 통과했습니다. CI기록과 독립 결과물 검사 파일에 연결합니다.
+
+Main downloaded the artifact and checked1,883 unique available file hashes,215 stored/reference traversals, independent geometry/timing, byte-identical full/split/overlap results and interrupted-worker recovery, API response loss followed by same-volume DB restart(port32768→32769), terminal engine failure, expiry before sweep, revocation/24h deletion and recorded orphan cleanup. All passed on Linux/amd64. The15 omitted graph binaries are listed and were not rehashed; remote cleanup is proven by the run's original diagnostics, not by a later live process query. Local and hosted graph bytes/IDs differ as expected; invariants are checked within each graph.
+
+메인이 내려받은 결과물의 가능한 고유해시1,883개·저장/기준215통과·독립거리/시각·전체/분할/중첩 및 중단복구바이트·응답유실/같은볼륨DB재시작·최종엔진실패·정리전만료·철회/24시간삭제·잔여엔진정리를 검사해 모두 통과했습니다. 제외된 그래프바이너리15개는 목록으로 구분했고 재해시하지 않았습니다. 원격 정리는 원래 진단 근거이며 뒤늦은 실시간 조회로 주장하지 않습니다. 로컬·원격 그래프바이트/ID는 다르며 각 그래프 안에서 불변조건을 검사합니다.
+
+Selected original hosted manifests and DB/process read-backs are retained under [hosted/](hosted/manifest.json); the complete downloaded artifact is linked from the run and subject to its retention period. Main verified the published GitHub README GIF visually and downloaded the public MP4 with the exact local SHA256. Runtime source and media fingerprint did not change in this hosted-evidence documentation update. The final documentation head must pass required checks before protected merge.
+
+주요 원격 명세·DB/프로세스 재조회는 hosted폴더에 보존했고 전체 다운로드 묶음은 실행 링크에서 보관기간 내 확인할 수 있습니다. GitHub README의 GIF를 직접 보고 공개 MP4를 내려받아 로컬과 같은 해시도 확인했습니다. 이번 원격 증거 문서 갱신은 실행소스·녹화지문을 바꾸지 않으며 최종 문서 커밋의 필수검사 후 보호병합합니다.
 
 ## Remaining boundary / 남은 범위
 

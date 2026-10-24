@@ -1,8 +1,8 @@
 # P05 ingestion design / P05 수집 설계
 
-Status: implemented and locally verified from clean source. Main designed; Sol implemented. The final actual-Seoul pipeline passed111 assertions, including34 P05 checks. See the [report](../research/pilot/2026-10-24-p05/report.md) for evidence and hosted status.
+Status: implemented and locally/hosted verified from clean source. Main designed; Sol implemented. The final actual-Seoul pipeline passed111 assertions, including34 P05 checks. See the [report](../research/pilot/2026-10-24-p05/report.md) for evidence and hosted status.
 
-상태: 구현 후 깨끗한 소스로 로컬 검증했습니다. 메인이 설계하고 Sol이 구현했으며 실제 서울 전체111개·P0534개 검사를 통과했습니다. 증거·원격 상태는 보고서에 기록합니다.
+상태: 구현 후 깨끗한 소스로 로컬·원격 검증했습니다. 메인이 설계하고 Sol이 구현했으며 실제 서울 전체111개·P0534개 검사를 통과했습니다. 증거·원격 상태는 보고서에 기록합니다.
 
 ## Chosen responsibility / 선택한 책임
 

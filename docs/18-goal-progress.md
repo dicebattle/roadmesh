@@ -19,7 +19,7 @@ The user now requires real Seoul OSM roads for the primary simulation. Complete 
 | P03 vehicle/GPS / 차량·GPS | [Clean integrated proof](../research/seoul/2026-10-24/report.md) | Locally verified / 로컬 검증 |
 | P04 real matching and ambiguity handling / 실제 매칭·모호성 처리 | [Matching report](../research/seoul/2026-10-24/report.md) | Local and hosted verified / 로컬·원격 검증 |
 | Seoul primary simulation / 서울 주요 시뮬레이션 | [Actual-road evidence](../research/seoul/2026-10-24/report.md) | Local and hosted verified / 로컬·원격 검증 |
-| P05 durable ingestion / 영속 수집 | [111-check report](../research/pilot/2026-10-24-p05/report.md) | Locally verified; hosted pending / 로컬 검증·원격 대기 |
+| P05 durable ingestion / 영속 수집 | [111-check report](../research/pilot/2026-10-24-p05/report.md) | Local and hosted verified / 로컬·원격 검증 |
 | P06 aggregation / 집계 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P07 signed publication, P08 actual traffic consumption / 서명 게시·속도 반영 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P09 two nodes, P10 gateway/failover / 두 노드·중계/장애 전환 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
@@ -27,8 +27,8 @@ The user now requires real Seoul OSM roads for the primary simulation. Complete 
 | P13 local Cloudflare parity / Cloudflare 로컬 비교 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P14b engine integration / 엔진 통합 검사 | Extend CI with current whole-system runner / 현재 전체 실행기를 CI에 연결 | Hosted current-module run verified; full matrix remains / 현재 모듈 원격 검증·전체 행렬 남음 |
 | Whole implemented-system simulation / 구현 모듈 전체 시뮬레이션 | [Tiny, Seoul and P05 report](../research/pilot/2026-10-24-p05/report.md) / 작은 회귀·서울·P05 보고서 | Locally verified / 로컬 검증 |
-| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/pilot/2026-10-24-p05/report.md) / 보고서·캡처 | P05 local evidence recorded; hosted pending / P05 로컬 기록·원격 대기 |
-| README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | Current Seoul/P05 recording captured / 현재 서울·P05 녹화 완료 |
+| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/pilot/2026-10-24-p05/report.md) / 보고서·캡처 | P05 local/hosted evidence inspected / P05 로컬·원격 증거 검사 |
+| README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | Current Seoul/P05 recording and checks passed / 현재 서울·P05 녹화·검사 통과 |
 | Refresh on implementation changes / 구현 변경 때 갱신 | `media:check` fingerprint/hash/README checks / 지문·해시·README 검사 | Locally verified / 로컬 검증 |
 | Research other AI-development READMEs / 다른 AI 개발 README 참고 | [Research notes](../wiki/sources/readme-presentation.md) | Source inspection complete / 출처 확인 |
 
@@ -36,4 +36,4 @@ A green unit suite does not finish this goal. Completion requires the full modul
 
 단위 검사 성공만으로 목표를 완료하지 않습니다. 전체 모듈·시나리오 계약, 필요한 실제 프로세스/통신 장애, 검사한 통합 증거, 최신 미디어/문서, GitHub 반영이 필요합니다. 누락·약한 증거는 미완료로 둡니다. 실제 지역 100/100·운영 배포·실제 모바일 시험은 별도이며 합성 성공으로 주장하지 않습니다.
 
-Seoul transition merged through protected PR #5. Current: P05 local execution and evidence are verified; hosted checks and protected integration are next. Then implement P06 aggregation on actual Seoul roads. / 서울 전환을 보호된 PR #5로 병합했습니다. P05 로컬 실행·증거를 검증했고 원격 검사·보호된 병합 후 실제 서울의 P06 집계를 구현합니다.
+Seoul transition merged through protected PR #5. Current: P05 local and hosted execution/evidence are verified; protected PR #6 integration is the delivery gate. Next implement P06 aggregation on actual Seoul roads. / 서울 전환을 보호된 PR #5로 병합했습니다. P05 로컬·원격 실행/증거를 검증했고 보호된 PR #6 병합이 반영 관문입니다. 다음은 실제 서울의 P06 집계입니다.
