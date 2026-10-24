@@ -13,7 +13,7 @@ The goal remains the complete local P01–P14 pilot. Each increment needs fresh 
 | P07 publication / 서명 게시 | [Module](../wiki/modules/signed-publication.md) | Protected-merged including claim-race correction / 작업 선택 경쟁 수정 포함 보호 병합 |
 | P08 traffic application / 교통 반영 | [Report](../research/pilot/2026-10-25-p08-portability/report.md) | Local/hosted238; protected PR9 / 로컬·원격238·보호 PR9 |
 | P09 persistent nodes / 지속 노드 | [Report](../research/pilot/2026-10-25-p09/report.md) | Local/hosted270, Node22/24 each235; protected PR10 / 로컬·원격270·Node각235·보호 PR10 |
-| P10 gateway and failover / 중계·장애 전환 | [Report](../research/pilot/2026-10-25-p10/report.md), [module](../wiki/modules/route-gateway.md) | Clean local302, unit252 and independent inspection passed; hosted delivery pending / 깨끗한 로컬302·단위252·독립 검사 통과·원격 반영 대기 |
+| P10 gateway and failover / 중계·장애 전환 | [Report](../research/pilot/2026-10-25-p10/report.md), [module](../wiki/modules/route-gateway.md) | Clean local302, unit252 and independent inspection passed; hosted302/252 and9,691 hashes passed; protected merge pending / 로컬·원격302·단위252·독립 검사 통과·보호 병합 대기 |
 | P11 actual client / 실제 경로 클라이언트 | [Pilot plan](11-local-pilot.md) | Evidence player exists; request client remains / 증거 재생 화면은 있으며 실제 요청 클라이언트는 남음 |
 | P12 full fault matrix / 전체 장애 행렬 | [Pilot plan](11-local-pilot.md) | Incremental actual runner exists; complete matrix remains / 점진 실제 실행기는 있으며 전체 행렬은 남음 |
 | P13 local Cloudflare parity / 로컬 Cloudflare 비교 | [Pilot plan](11-local-pilot.md) | Not implemented / 미구현 |
@@ -27,9 +27,9 @@ P09 PR10 merged as `dfdfe2352f6e0fcb63c3ca2486bb80e5c7d5c187` after final head0b
 
 P09 PR10은 최종 커밋의 푸시·PR 필수 검사 두 건을 통과한 뒤 위 커밋으로 병합했습니다. 필수 검사·최신 기준·관리자 보호를 유지했고 브랜치 삭제나 보호 우회는 없었습니다. 기존 브랜치는 모두 main에 포함됐으며 새 P10 브랜치만 진행 중입니다.
 
-P10 clean2056521 passed the fresh whole302 and unit252. Main inspected9,838 listed hashes, gateway native38 pairs/18 successful API bindings, previous module originals, recorded failures and current owned cleanup. Later ancestry merge9d3cb75 preserves that runtime. The actual59.75s recording and both READMEs are updated. Next: inspect hosted P10 originals and protected delivery, then fix the P11 client contract. [Current report](../research/pilot/2026-10-25-p10/report.md).
+P10 clean2056521 passed the fresh whole302 and unit252. Main inspected9,838 listed hashes, gateway native38 pairs/18 successful API bindings, previous module originals, recorded failures and current owned cleanup. Later ancestry merge9d3cb75 preserves that runtime. The actual59.75s recording and both READMEs are updated. Hosted push40133930384 and PR40133976749 passed302/252; main inspected9,691 hashes. Next: final-head protected delivery while P11 implementation proceeds separately. [Current report](../research/pilot/2026-10-25-p10/report.md).
 
-P10의 깨끗한2056521에서 새 전체302개·단위252개를 통과했습니다. 메인이 목록 해시9,838개·중계 엔진38쌍/공개 성공18건·이전 모듈 원문·실패·현재 소유 정리를 검사했습니다. 이후9d3cb75는 같은 실행 코드를 유지합니다. 실제59.75초 영상과 한영 README를 갱신했고, 다음은 P10 원격 원문 검사·보호 반영과 P11 클라이언트 계약입니다.
+P10의 깨끗한2056521에서 새 전체302개·단위252개를 통과했습니다. 메인이 목록 해시9,838개·중계 엔진38쌍/공개 성공18건·이전 모듈 원문·실패·현재 소유 정리를 검사했습니다. 이후9d3cb75는 같은 실행 코드를 유지합니다. 실제59.75초 영상과 한영 README를 갱신했고, 원격 두 실행의302/252개와 원문 해시9,691개도 검사했습니다. 다음은 최종 커밋 보호 반영이며 P11 구현은 별도로 진행합니다.
 
 Geographic100/100, real mobile trials, live traffic, public-peer honesty and production deployment remain separate gates. Synthetic success never satisfies them.
 

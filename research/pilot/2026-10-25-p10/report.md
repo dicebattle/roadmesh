@@ -1,8 +1,8 @@
 # Verified route gateway on Seoul roads / 서울 도로망 경로 중계 검증
 
-**The fresh, clean P01–P10 simulation passed302/302 assertions.** Main independently inspected9,838 unique listed original-file hashes and the actual routes, signed bytes, durable state and resource cleanup. The whole unit suite passed252/252. Hosted verification and protected P10 delivery are still pending; P11–P14 are unfinished.
+**The fresh, clean P01–P10 simulation passed302/302 assertions.** Main independently inspected9,838 unique listed original-file hashes and the actual routes, signed bytes, durable state and resource cleanup. The whole unit suite passed252/252. [Hosted verification](hosted/README.md) passed302/252 with9,691 independently checked hashes; protected P10 delivery is pending; P11–P14 are unfinished.
 
-**깨끗한 소스에서 서울 그래프를 새로 만든 P01~P10 시뮬레이션의302개 판정이 모두 통과했습니다.** 메인이 고유 원문 파일 해시9,838개와 실제 경로·서명·영속 상태·자원 정리를 독립 검사했습니다. 전체 단위252개도 통과했습니다. P10 원격 검증과 보호 병합은 대기 중이며 P11~P14는 미완료입니다.
+**깨끗한 소스에서 서울 그래프를 새로 만든 P01~P10 시뮬레이션의302개 판정이 모두 통과했습니다.** 메인이 고유 원문 파일 해시9,838개와 실제 경로·서명·영속 상태·자원 정리를 독립 검사했습니다. 전체 단위252개도 통과했습니다. [P10 원격 검증](hosted/README.md)의302/252개와 독립 해시9,691개를 통과했고 보호 병합은 대기 중이며 P11~P14는 미완료입니다.
 
 [Actual59.75s MP4 / 실제59.75초 영상](demo.mp4) · [GIF](demo.gif) · [Interactive report / 대화형 보고서](report.html) · [Assertions / 판정](assertions.json) · [Media provenance / 영상 출처](media-manifest.json)
 
