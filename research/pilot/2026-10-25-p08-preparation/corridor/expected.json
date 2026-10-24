@@ -1,0 +1,34 @@
+{
+  "written_before_execution": true,
+  "targets": [
+    "1338083662224",
+    "1338687642000",
+    "1338754750864"
+  ],
+  "central_target": "1338754750864",
+  "lengths_km": [
+    0.024,
+    0.041,
+    0.075
+  ],
+  "total_length_m": 140,
+  "variants": [
+    "baseline",
+    "traffic2",
+    "restore"
+  ],
+  "requirements": {
+    "valid_routes": 3,
+    "traffic_shape_different_from_baseline": true,
+    "traffic_central_target_unused": true,
+    "report_all_target_presence": true,
+    "restore_same_shape": true,
+    "restore_time_absolute_tolerance_seconds": 0.000001
+  },
+  "comparison_alternative": "../p08-detour-design-probe/alternative.response.json",
+  "alternative_is_engine_observation_not_independent_expectation": true,
+  "traffic_request_has_no_exclusions_waypoints_or_added_weight": true,
+  "not_p05_p06_ingestion_or_p07_acceptance_or_automatic_expiry": true,
+  "message_en": "Fixed 140m corridor exploration; no additional search if unsuccessful.",
+  "message_ko": "고정140m구간 탐색이며 실패해도 추가 탐색하지 않습니다."
+}

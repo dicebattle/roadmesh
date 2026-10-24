@@ -1,0 +1,233 @@
+{
+  "tar_length": 8663040,
+  "index_size": 224,
+  "index_sha256": "3d492a7af11ffc654da1f9f3e9995c5f30325d156b1c5c4c088ec0141e265ec4",
+  "members": [
+    {
+      "offset": 1536,
+      "tilebase": 22928,
+      "length": 478736,
+      "count": 59838,
+      "version": 3,
+      "header_hex": "90590000000000000000000000000000bee90000030000000000000000000000"
+    },
+    {
+      "offset": 481280,
+      "tilebase": 368209,
+      "length": 576456,
+      "count": 72053,
+      "version": 3,
+      "header_hex": "519e050000000000000000000000000075190100030000000000000000000000"
+    },
+    {
+      "offset": 1058304,
+      "tilebase": 368217,
+      "length": 431048,
+      "count": 53877,
+      "version": 3,
+      "header_hex": "599e050000000000000000000000000075d20000030000000000000000000000"
+    },
+    {
+      "offset": 1489920,
+      "tilebase": 5873490,
+      "length": 156928,
+      "count": 19612,
+      "version": 3,
+      "header_hex": "529f59000000000000000000000000009c4c0000030000000000000000000000"
+    },
+    {
+      "offset": 1647616,
+      "tilebase": 5873498,
+      "length": 751376,
+      "count": 93918,
+      "version": 3,
+      "header_hex": "5a9f5900000000000000000000000000de6e0100030000000000000000000000"
+    },
+    {
+      "offset": 2399744,
+      "tilebase": 5873506,
+      "length": 669368,
+      "count": 83667,
+      "version": 3,
+      "header_hex": "629f5900000000000000000000000000d3460100030000000000000000000000"
+    },
+    {
+      "offset": 3069952,
+      "tilebase": 5873514,
+      "length": 424,
+      "count": 49,
+      "version": 3,
+      "header_hex": "6a9f590000000000000000000000000031000000030000000000000000000000"
+    },
+    {
+      "offset": 3070976,
+      "tilebase": 5885010,
+      "length": 355872,
+      "count": 44480,
+      "version": 3,
+      "header_hex": "52cc5900000000000000000000000000c0ad0000030000000000000000000000"
+    },
+    {
+      "offset": 3427840,
+      "tilebase": 5885018,
+      "length": 2476808,
+      "count": 309597,
+      "version": 3,
+      "header_hex": "5acc59000000000000000000000000005db90400030000000000000000000000"
+    },
+    {
+      "offset": 5905408,
+      "tilebase": 5885026,
+      "length": 2743776,
+      "count": 342968,
+      "version": 3,
+      "header_hex": "62cc5900000000000000000000000000b83b0500030000000000000000000000"
+    },
+    {
+      "offset": 8649728,
+      "tilebase": 5885034,
+      "length": 1096,
+      "count": 133,
+      "version": 3,
+      "header_hex": "6acc590000000000000000000000000085000000030000000000000000000000"
+    },
+    {
+      "offset": 8651776,
+      "tilebase": 5896530,
+      "length": 320,
+      "count": 36,
+      "version": 3,
+      "header_hex": "52f9590000000000000000000000000024000000030000000000000000000000"
+    },
+    {
+      "offset": 8652800,
+      "tilebase": 5896538,
+      "length": 624,
+      "count": 74,
+      "version": 3,
+      "header_hex": "5af959000000000000000000000000004a000000030000000000000000000000"
+    },
+    {
+      "offset": 8654336,
+      "tilebase": 5896546,
+      "length": 2560,
+      "count": 316,
+      "version": 3,
+      "header_hex": "62f959000000000000000000000000003c010000030000000000000000000000"
+    }
+  ],
+  "selected": [
+    {
+      "edge_id": "1296274839952",
+      "forward": true,
+      "sample_bucket": "5-9",
+      "source_class": "SYNTHETIC",
+      "speed_mps": 4.999437,
+      "status": "LIVE",
+      "level": 0,
+      "tilebase": 22928,
+      "edgeIndex": 38632,
+      "offset": 310624,
+      "member": {
+        "offset": 1536,
+        "tilebase": 22928,
+        "length": 478736,
+        "count": 59838,
+        "version": 3,
+        "header_hex": "90590000000000000000000000000000bee90000030000000000000000000000"
+      }
+    },
+    {
+      "edge_id": "1297617017232",
+      "forward": true,
+      "sample_bucket": "5-9",
+      "source_class": "SYNTHETIC",
+      "speed_mps": 5.000015,
+      "status": "LIVE",
+      "level": 0,
+      "tilebase": 22928,
+      "edgeIndex": 38672,
+      "offset": 310944,
+      "member": {
+        "offset": 1536,
+        "tilebase": 22928,
+        "length": 478736,
+        "count": 59838,
+        "version": 3,
+        "header_hex": "90590000000000000000000000000000bee90000030000000000000000000000"
+      }
+    },
+    {
+      "edge_id": "1297751234960",
+      "forward": true,
+      "sample_bucket": "5-9",
+      "source_class": "SYNTHETIC",
+      "speed_mps": 2.70958,
+      "status": "LIVE",
+      "level": 0,
+      "tilebase": 22928,
+      "edgeIndex": 38676,
+      "offset": 310976,
+      "member": {
+        "offset": 1536,
+        "tilebase": 22928,
+        "length": 478736,
+        "count": 59838,
+        "version": 3,
+        "header_hex": "90590000000000000000000000000000bee90000030000000000000000000000"
+      }
+    }
+  ],
+  "patches": [
+    {
+      "variant": "slow10",
+      "edge_id": "1296274839952",
+      "offset": 310624,
+      "before_hex": "0000000000000000",
+      "after_hex": "850200f00f000000"
+    },
+    {
+      "variant": "slow10",
+      "edge_id": "1297617017232",
+      "offset": 310944,
+      "before_hex": "0000000000000000",
+      "after_hex": "850200f00f000000"
+    },
+    {
+      "variant": "slow10",
+      "edge_id": "1297751234960",
+      "offset": 310976,
+      "before_hex": "0000000000000000",
+      "after_hex": "850200f00f000000"
+    },
+    {
+      "variant": "slow2",
+      "edge_id": "1296274839952",
+      "offset": 310624,
+      "before_hex": "0000000000000000",
+      "after_hex": "810000f00f000000"
+    },
+    {
+      "variant": "slow2",
+      "edge_id": "1297617017232",
+      "offset": 310944,
+      "before_hex": "0000000000000000",
+      "after_hex": "810000f00f000000"
+    },
+    {
+      "variant": "slow2",
+      "edge_id": "1297751234960",
+      "offset": 310976,
+      "before_hex": "0000000000000000",
+      "after_hex": "810000f00f000000"
+    }
+  ],
+  "hashes": {
+    "traffic.tar": "2cc7fe3f9798ba688c131c809312168a820846c986dac278c29b517781269a06",
+    "graph.tar": "7e974907eac9454dcc212775d37709f199cb074d06673a17187ed75ebc757537",
+    "baseline.tar": "2cc7fe3f9798ba688c131c809312168a820846c986dac278c29b517781269a06",
+    "slow10.tar": "12546c996dd1a392f57f1bdc4482d85584d2754f210de6db9bd6ba16e0381406",
+    "slow2.tar": "8d5bb0c5f276e8e9f96d42d33d9327a56b6ad529e1e78d9ded1c39eafbd0c487",
+    "restore.tar": "2cc7fe3f9798ba688c131c809312168a820846c986dac278c29b517781269a06"
+  }
+}

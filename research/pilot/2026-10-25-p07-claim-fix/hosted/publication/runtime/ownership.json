@@ -1,0 +1,381 @@
+{
+  "run_id": "72cb4ffb-2036-4f37-b610-fb57ba150a5c",
+  "container": "routelens-p05-72cb4ffb-2036-4f37-b610-fb57ba150a5c",
+  "volume": "routelens-p05-72cb4ffb-2036-4f37-b610-fb57ba150a5c-db",
+  "planned_before_creation": true,
+  "owned_output_root": "/home/runner/work/_temp/simulation-evidence/publication",
+  "processes": [
+    {
+      "role": "p07-source-api",
+      "pid": 24901,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-source-worker-0",
+      "pid": 24914,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-source-worker-1",
+      "pid": 25164,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-source-worker-2",
+      "pid": 25412,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-source-worker-3",
+      "pid": 25629,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-source-worker-4",
+      "pid": 25852,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-publisher-6",
+      "pid": 26078,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-publisher-7",
+      "pid": 26092,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-publisher-8",
+      "pid": 26105,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-publisher-9",
+      "pid": 26118,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-publisher-10",
+      "pid": 26119,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-initial-race-0",
+      "pid": 26145,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-initial-race-1",
+      "pid": 26146,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-http-13",
+      "pid": 26171,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-14",
+      "pid": 26188,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-15",
+      "pid": 26202,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-16",
+      "pid": 26217,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-17",
+      "pid": 26231,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-18",
+      "pid": 26245,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-publisher-19",
+      "pid": 26259,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-publisher-20",
+      "pid": 26260,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-21",
+      "pid": 26285,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-22",
+      "pid": 26300,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-23",
+      "pid": 26314,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-24",
+      "pid": 26329,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-25",
+      "pid": 26343,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-26",
+      "pid": 26357,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-27",
+      "pid": 26371,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-28",
+      "pid": 26385,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-29",
+      "pid": 26399,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-30",
+      "pid": 26413,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-31",
+      "pid": 26427,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-32",
+      "pid": 26441,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-33",
+      "pid": 26456,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-34",
+      "pid": 26470,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-35",
+      "pid": 26484,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-36",
+      "pid": 26498,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-37",
+      "pid": 26512,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-38",
+      "pid": 26519,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-39",
+      "pid": 26526,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-40",
+      "pid": 26533,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-41",
+      "pid": 26547,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-42",
+      "pid": 26561,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-43",
+      "pid": 26575,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-44",
+      "pid": 26590,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-45",
+      "pid": 26604,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-46",
+      "pid": 26618,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-47",
+      "pid": 26632,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-48",
+      "pid": 26646,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-49",
+      "pid": 26660,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-50",
+      "pid": 26674,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-51",
+      "pid": 26688,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-52",
+      "pid": 26702,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-53",
+      "pid": 26717,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-publisher-54",
+      "pid": 26732,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-publisher-55",
+      "pid": 26751,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-56",
+      "pid": 26764,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-57",
+      "pid": 26779,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-publisher-58",
+      "pid": 26794,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-59",
+      "pid": 26807,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-consumer-60",
+      "pid": 26822,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p07-http-61",
+      "pid": 26839,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    }
+  ]
+}

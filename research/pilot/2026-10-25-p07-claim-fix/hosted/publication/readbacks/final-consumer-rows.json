@@ -1,0 +1,42 @@
+[
+  {
+    "consumer_id": "committed-crash",
+    "publisher_id": "seoul-synthetic-publisher",
+    "region_id": "seoul-pilot-corridors-v1",
+    "high_water": "1",
+    "last_snapshot_id": "6b2dbc2c6b78088ad565ed49cdc0e660ad7db3aef6398a73b550ce11ebc32232",
+    "last_window_start": "2026-10-24T00:00:00.000Z",
+    "artifact_byte_length": 10474,
+    "jws": "eyJhbGciOiJFZERTQSIsImtpZCI6ImtleS1hIiwidHlwIjoicm91dGVsZW5zLXRyYWZmaWMtbWFuaWZlc3QrandzIn0.eyJhZ2dyZWdhdGlvbl9wb2xpY3kiOiJzZW91bC13aW5kb3ctbWVkaWFuLXYxIiwiYnl0ZV9sZW5ndGgiOjEwNDc0LCJncmFwaF9pZCI6ImM0OWQ2M2I5ZjkxMzU5ZTI1MzVmYzMzNzhhMDE3M2JkZjIyMDVjZTNkZDQ4YmQ1ZjEwNzMwOTMxMTQ5MDdiZjciLCJtZWRpYV90eXBlIjoiYXBwbGljYXRpb24vanNvbiIsInB1Ymxpc2hlZF9hdCI6IjIwMjYtMTAtMjRUMDA6MDE6MzAuMDAwWiIsInB1Ymxpc2hlcl9pZCI6InNlb3VsLXN5bnRoZXRpYy1wdWJsaXNoZXIiLCJyZWdpb25faWQiOiJzZW91bC1waWxvdC1jb3JyaWRvcnMtdjEiLCJzY2hlbWFfdmVyc2lvbiI6IjAuMSIsInNlcXVlbmNlIjoxLCJzaW11bGF0aW9uX25hbWVzcGFjZSI6InAwNy03MmNiNGZmYjIwMzY0ZjM3IiwidHJhZmZpY19zbmFwc2hvdF9pZCI6IjZiMmRiYzJjNmI3ODA4OGFkNTY1ZWQ0OWNkYzBlNjYwYWQ3ZGIzYWVmNjM5OGE3M2I1NTBjZTExZWJjMzIyMzIiLCJ2YWxpZF91bnRpbCI6IjIwMjYtMTAtMjRUMDA6MDQ6MDAuMDAwWiIsIndpbmRvd19lbmQiOiIyMDI2LTEwLTI0VDAwOjAxOjAwLjAwMFoiLCJ3aW5kb3dfc3RhcnQiOiIyMDI2LTEwLTI0VDAwOjAwOjAwLjAwMFoifQ.lkVo7SuRQ6FnGaricEiTOYKWunejIIXD3rFWDSipqnpyQ58tDtOMzyZQ7rCy_8AbmjyPLSaEv2J-tuEfZ5xCBw"
+  },
+  {
+    "consumer_id": "live-cache",
+    "publisher_id": "seoul-synthetic-publisher",
+    "region_id": "seoul-pilot-corridors-v1",
+    "high_water": "1",
+    "last_snapshot_id": "6b2dbc2c6b78088ad565ed49cdc0e660ad7db3aef6398a73b550ce11ebc32232",
+    "last_window_start": "2026-10-24T00:00:00.000Z",
+    "artifact_byte_length": null,
+    "jws": null
+  },
+  {
+    "consumer_id": "primary",
+    "publisher_id": "seoul-synthetic-publisher",
+    "region_id": "seoul-pilot-corridors-v1",
+    "high_water": "5",
+    "last_snapshot_id": "9ea2ae7fded3d3f0186d9f2d8c5380087101aeea55d89551066f056076eed226",
+    "last_window_start": "2026-10-24T00:01:00.000Z",
+    "artifact_byte_length": null,
+    "jws": null
+  },
+  {
+    "consumer_id": "revoked-trust-cache",
+    "publisher_id": "seoul-synthetic-publisher",
+    "region_id": "seoul-pilot-corridors-v1",
+    "high_water": "2",
+    "last_snapshot_id": "4349478d59bf2e74da5f8f0ffef35edf7b75561ebe18eba4c96a3e65f2b0b328",
+    "last_window_start": "2026-10-24T00:00:00.000Z",
+    "artifact_byte_length": null,
+    "jws": null
+  }
+]

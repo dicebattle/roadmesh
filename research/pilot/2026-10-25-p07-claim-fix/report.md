@@ -1,8 +1,8 @@
 # Seoul publication after queue-race correction / 작업 선택 경쟁 수정 후 서울 게시 검증
 
-**Local206/206 PASS** on clean source `4b8bf793d44beb110614987359e7a76fcd651159`. Main designed and reviewed the correction; Sol implemented the three-line claim fix, worker diagnostics and two focused regressions. A fresh graph and every implemented module ran again. Hosted verification of this corrected runtime is pending.
+**Local206/206 PASS** on clean source `4b8bf793d44beb110614987359e7a76fcd651159`. Main designed and reviewed the correction; Sol implemented the three-line claim fix, worker diagnostics and two focused regressions. A fresh graph and every implemented module ran again. Corrected hosted Node22/24 each202/202 and real Linux206/206 passed; main inspected the downloaded evidence below.
 
-**깨끗한 소스에서 로컬206개 모두 통과했습니다.** 메인이 수정 설계·검토를, Sol이 claim3줄·처리자 진단·집중회귀2개를 구현했습니다. 새 그래프와 구현된 모든 모듈을 다시 실행했으며 수정한 실행 코드의 원격 검증은 남아 있습니다.
+**깨끗한 소스에서 로컬206개 모두 통과했습니다.** 메인이 수정 설계·검토를, Sol이 claim3줄·처리자 진단·집중회귀2개를 구현했습니다. 새 그래프와 구현된 모든 모듈을 다시 실행했으며 수정한 코드도 원격 Node각202개·실제Linux206개를 통과했고 메인이 아래 원문을 검사했습니다.
 
 [Recording / 녹화](../../../docs/media/demo.mp4) · [Replay / 재생](report.html) · [Whole inspection / 전체 검사](main-verification.json) · [Publication / 게시 상태](publication/main-state-verification.json) · [Independent signatures / 독립 서명](publication/main-signature-verification.json) · [Correction contract / 수정 계약](../../../docs/26-p05-claim-race.md)
 
@@ -48,3 +48,13 @@ OSM지형은기여자·ODbL1.0을유지하고비밀키·실제개인이력을제
 Main inspected bilingual rendered states,390px mobile and1280px desktop without horizontal overflow or recorded JS errors. The corrected26.95s capture was fully decoded and its screenshots/frame reviewed. Eight capture processes, both temporary report-server sessions and IAB tabs are closed. A first framing-only recording was discarded and retained locally; no simulation was repeated for this. [Media inspection](media-verification.json).
 
 메인이한영상태·모바일390px·데스크톱1280px에서가로넘침·JS오류없음을확인하고26.95초녹화전체디코딩·화면/프레임을검사했습니다. 촬영프로세스8개·임시보고서서버두세션·내장탭을정리했습니다. 첫촬영의가로위치문제로녹화만교체하고원본을로컬에보존했으며시뮬레이션을반복하지않았습니다.
+
+## Corrected hosted proof / 수정 후 원격 검증
+
+[Run40113506052](https://github.com/dicebattle/routelens/actions/runs/40113506052), clean source `157c43e4f99586f5f964bc57d5fccd2d0557d506`, passed Node22/24 each202/202 and the actual Linux206-check pipeline. Both concurrent worker PIDs14242/14243 returned SUCCEEDED with exit0. Main inspected3064 available hashes,220 stored traversals/260ms error, P06 median/retention, five standard signatures/four HTTP captures,30 exact negative reasons, durable order, actual process/lock/revoke/expiry and recorded cleanup. [Whole](hosted-verification.json) · [Aggregation](hosted-aggregation-verification.json) · [Signature](hosted-signature-verification.json) · [Publication](hosted-publication-verification.json) · [Original CI](hosted/ci.json).
+
+수정한깨끗한소스에서Node각202개·실제Linux206개를통과했고동시처리자두PID모두종료0·SUCCEEDED였습니다. 메인이가능한3064해시·저장220통과/260ms·P06중앙값/삭제·표준서명5/HTTP4·부정30·영속순서·실제중단/잠금/철회/만료·원래정리진단을확인했습니다.
+
+Remote graph `c49d63b9f91359e2535fc3378a0173bdf2205ce3dd48bd5f1073093114907bf7` has its own identity. CI omitted15 graph binaries, explicitly listed in the proof and not counted as downloaded checks. Remote cleanup is original runtime evidence, not a live remote PID query. Selected raw records are retained here; complete CI artifacts follow workflow retention. Public MP4 bytes match the current local recording. Final documentation-head protection checks still precede merge.
+
+원격그래프는별도식별자를가지며CI가제외한바이너리15개는명시하고다운로드검사로세지않습니다. 원격정리는원실행진단이며실시간PID조회가아닙니다. 주요원문을보존하고전체CI자료에는보관기간이적용됩니다. 공개MP4는최신로컬녹화와동일하고최종문서커밋의보호검사후병합합니다.

@@ -1,0 +1,46 @@
+{
+  "written_before_execution": true,
+  "graph_id": "7f4fd63e63aae5e5b961fc26d36ecae0fe30128c5508d4e184109ef16d59a4be",
+  "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+  "targets": [
+    {
+      "edge_id": "1296274839952",
+      "forward": true,
+      "sample_bucket": "5-9",
+      "source_class": "SYNTHETIC",
+      "speed_mps": 4.999437,
+      "status": "LIVE"
+    },
+    {
+      "edge_id": "1297617017232",
+      "forward": true,
+      "sample_bucket": "5-9",
+      "source_class": "SYNTHETIC",
+      "speed_mps": 5.000015,
+      "status": "LIVE"
+    },
+    {
+      "edge_id": "1297751234960",
+      "forward": true,
+      "sample_bucket": "5-9",
+      "source_class": "SYNTHETIC",
+      "speed_mps": 2.70958,
+      "status": "LIVE"
+    }
+  ],
+  "historical_artifact": true,
+  "not_p07_acceptance": true,
+  "variants": [
+    "baseline",
+    "slow10",
+    "slow2",
+    "restore"
+  ],
+  "requirements": {
+    "valid_route_count": 4,
+    "restore_same_shape": true,
+    "restore_time_absolute_tolerance_seconds": 0.000001
+  },
+  "direction_hypothesis_en": "Lower selected edge speeds should increase length-based travel time if those directed edges are used; route or time changes are observations, not independent expected paths. No effect is not a pass.",
+  "direction_hypothesis_ko": "선택한 방향 구간을 이용한다면 낮은 속도는 길이 기반 통과시간을 늘릴 것으로 예상합니다. 경로·시간 변화는 관찰이며 독립 정답이 아닙니다. 효과 없음을 통과로 보지 않습니다."
+}

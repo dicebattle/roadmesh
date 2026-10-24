@@ -1,0 +1,66 @@
+{
+  "consumer_id": "primary",
+  "publisher_id": "seoul-synthetic-publisher",
+  "region_id": "seoul-pilot-corridors-v1",
+  "allowed_graph_ids": [
+    "c49d63b9f91359e2535fc3378a0173bdf2205ce3dd48bd5f1073093114907bf7"
+  ],
+  "trust_roots": [
+    {
+      "kid": "key-a",
+      "public_jwk": {
+        "kty": "RSA",
+        "n": "AA",
+        "e": "AQAB"
+      },
+      "publisher_id": "seoul-synthetic-publisher",
+      "simulation_namespace": "p07-72cb4ffb20364f37",
+      "region_id": "seoul-pilot-corridors-v1",
+      "allowed_graph_ids": [
+        "c49d63b9f91359e2535fc3378a0173bdf2205ce3dd48bd5f1073093114907bf7"
+      ],
+      "source_class": "SYNTHETIC",
+      "valid_from": "2026-10-23T23:59:00.000Z",
+      "valid_until": "2026-10-24T01:00:00.000Z",
+      "revoked": false
+    },
+    {
+      "kid": "key-b",
+      "public_jwk": {
+        "crv": "Ed25519",
+        "x": "Io3-gVNZV0BQTB_lBMfgyPSKtTZKyRTNkpt0UKjb1g8",
+        "kty": "OKP"
+      },
+      "publisher_id": "seoul-synthetic-publisher",
+      "simulation_namespace": "p07-72cb4ffb20364f37",
+      "region_id": "seoul-pilot-corridors-v1",
+      "allowed_graph_ids": [
+        "c49d63b9f91359e2535fc3378a0173bdf2205ce3dd48bd5f1073093114907bf7"
+      ],
+      "source_class": "SYNTHETIC",
+      "valid_from": "2026-10-23T23:59:00.000Z",
+      "valid_until": "2026-10-24T01:00:00.000Z",
+      "revoked": false
+    },
+    {
+      "kid": "key-c",
+      "public_jwk": {
+        "crv": "Ed25519",
+        "x": "ys9-BdC2MLlZLWVeGxTBVg1scKkCTaX12oCmEkC_9GU",
+        "kty": "OKP"
+      },
+      "publisher_id": "seoul-synthetic-publisher",
+      "simulation_namespace": "p07-72cb4ffb20364f37",
+      "region_id": "seoul-pilot-corridors-v1",
+      "allowed_graph_ids": [
+        "c49d63b9f91359e2535fc3378a0173bdf2205ce3dd48bd5f1073093114907bf7"
+      ],
+      "source_class": "SYNTHETIC",
+      "valid_from": "2026-10-23T23:59:00.000Z",
+      "valid_until": "2026-10-24T01:00:00.000Z",
+      "revoked": false
+    }
+  ],
+  "note_en": "Negative trust configuration; any d sentinel is deliberately invalid and is not generated private key material.",
+  "note_ko": "부정 신뢰설정이며 d 표식은 의도적으로 잘못된 값이고 생성한 비공개키가 아닙니다."
+}

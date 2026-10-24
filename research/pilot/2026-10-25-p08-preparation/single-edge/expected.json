@@ -1,0 +1,56 @@
+{
+  "written_before_route_execution": true,
+  "target": {
+    "id": "1338754750864",
+    "length_m": 75,
+    "start_m": 1028,
+    "end_m": 1103,
+    "midpoint_fraction": 0.5035444234404537,
+    "in_catalog": true,
+    "inside_20_80": true
+  },
+  "selection_rule": "Whole edge within cumulative 20-80%, catalog member, 60-120m length, midpoint nearest 50%; ID tie-break / 누적20~80% 내부·목록 포함·60~120m·중간점50%최근접·ID동률정렬",
+  "baseline_trace_shape_indices": {
+    "begin": 35,
+    "end": 36
+  },
+  "geometry_matches_trace": true,
+  "source_geometry": [
+    [
+      127.03768,
+      37.500924
+    ],
+    [
+      127.038474,
+      37.50117
+    ]
+  ],
+  "directed_geometry": [
+    [
+      127.03768,
+      37.500924
+    ],
+    [
+      127.038474,
+      37.50117
+    ]
+  ],
+  "geometry_length_m": 75.19501266640039,
+  "midpoint": {
+    "lon": 127.03807699999999,
+    "lat": 37.501047
+  },
+  "variants": [
+    "baseline",
+    "alternative",
+    "traffic2",
+    "restore"
+  ],
+  "expectations": {
+    "valid_baseline_and_alternative": true,
+    "traffic_different_path_and_target_unused_or_explicit_insufficient": true,
+    "restore_same_shape_and_time_tolerance_seconds": 0.000001
+  },
+  "limits_en": "Fixed exploratory engine observations, not independent expected route, P07 acceptance or automatic expiry proof.",
+  "limits_ko": "고정 탐색의 엔진 관찰이며 독립 정답 경로·P07수용·자동만료 증거 아님"
+}
