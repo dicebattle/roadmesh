@@ -1,8 +1,8 @@
 # Actual Seoul road simulation proof / 실제 서울 도로 시뮬레이션 증거
 
-Local result: **PASS — 48 tiny regression checks plus 29 Seoul checks**, from clean source `7cca509948e69286a572f3c87e74bea3db683df4`. Main designed and independently inspected the work; Sol implemented the TypeScript changes. Hosted verification is pending at this publication step.
+Local result: **PASS — 48 tiny regression checks plus 29 Seoul checks**, from clean source `7cca509948e69286a572f3c87e74bea3db683df4`. Main designed and independently inspected the work; Sol implemented the TypeScript changes. Hosted Node.js 22/24 each passed 122/122; the fresh Linux simulation passed tiny48 + Seoul29 and its downloaded artifact was independently inspected.
 
-로컬 결과: 깨끗한 소스에서 **tiny 회귀 48개와 서울 검사 29개 통과**입니다. 메인이 설계·독립 검증하고 Sol이 TypeScript 변경을 구현했습니다. 이 기록 단계에서 원격 검증은 아직 전입니다.
+로컬 결과: 깨끗한 소스에서 **tiny 회귀 48개와 서울 검사 29개 통과**입니다. 메인이 설계·독립 검증하고 Sol이 TypeScript 변경을 구현했습니다. 원격 Node.js 22·24에서 각각 122/122, 새 Linux 실행에서 tiny48·서울29를 통과했고 내려받은 결과물도 독립 검사했습니다.
 
 ## Actual capture / 실제 캡처
 
@@ -66,3 +66,13 @@ Graph identity: `ad3dc3ebcef69b287c7fbe2a76ff3f3a343c24942f265e6cafa3235c4792ed9
 Map and derived geometry: **© OpenStreetMap contributors, ODbL 1.0**, via Geofabrik. [Data license](DATA-LICENSE.md) / [NOTICE](../../../NOTICE). Code: Apache-2.0. Vehicles/GPS/speeds are synthetic. Same-engine engineering evidence is not independent real driving accuracy, nationwide coverage, live congestion or the reviewed 100/100 corpus. P05–P14 remain incomplete.
 
 지도·파생 지형은 OpenStreetMap 기여자의 ODbL 1.0이며 코드의 Apache-2.0과 구분합니다. 차량·GPS·속도는 합성입니다. 같은 엔진의 공학적 검증으로 독립 실주행 정확도·전국 범위·실시간 혼잡·검토한 100/100 자료를 주장하지 않습니다. P05~P14 전체는 미완료입니다.
+
+## Hosted verification / 원격 검증
+
+[GitHub run 40089091887](https://github.com/dicebattle/routelens/actions/runs/40089091887) tested clean `891cb82ecc1c47949b0319b924145b8aeb0eca57` on Linux amd64 with Node 22.23.3, using the same runtime fingerprint as the recorded local run. Node.js 22 and 24 each passed **122/122** tests; the actual Docker run passed **48 tiny + 29 Seoul** assertions and Required checks succeeded. Main downloaded the raw artifact and checked 8 root hashes, 79 graph text hashes, 826 workload hashes (including the 816 matching-file inventory), source identity, sample partition, independent metre noise, accepted directed occurrences/timing, observed ambiguity clusters and full/split/overlap byte equality. These are overlapping inventories, not 1,729 distinct files. [Independent inspection](hosted-verification.json), [hosted manifest](hosted/manifest.json).
+
+원격 Linux amd64·Node 22.23.3에서 녹화한 로컬 실행과 같은 구현 지문을 검증했습니다. Node.js 22·24 각각 **122/122**, 실제 Docker의 **tiny48·서울29**, 필수 검사가 통과했습니다. 메인이 원문을 내려받아 루트 8해시·그래프 텍스트 79해시·매칭 816개를 포함한 실행자료 826해시·원본·표본 분할·독립 미터 잡음·수용 방향 순번/시간·관측 불확실 군집·배치 바이트를 대조했습니다. 해시 목록은 중복되므로 서로 다른 파일 1,729개로 합산하지 않습니다.
+
+The remote graph ID is `21a1e4a023cfe907677765157664b6ad6753604f4650ec15aaf8f2d09b3bef0a`. Its 215 accepted / 237 true traversals, 22 missed, 28 excluded candidates, 392 ms maximum accepted boundary error and 2.998987 m maximum noise match the local numerical results. Four candidates carry observed boundary ambiguity. Cleanup is recorded as verified. Binary graph paths (15) are deliberately absent from the hosted artifact and were not independently rehashed after download; execution-time graph validation and manifests retain their hashes. The compact hosted manifests remain here; GitHub retains the complete uploaded text artifact for seven days.
+
+원격 그래프 식별자는 별도이며 수용215/정답237·미회수22·후보제외28·최대경계오차392ms·최대잡음2.998987m는 로컬 수치와 같습니다. 후보4개에 관측 경계 불확실성이 기록되고 정리 완료도 확인했습니다. 그래프 바이너리15경로는 원격 업로드에서 제외되므로 다운로드 후 독립 재해시했다고 주장하지 않습니다. 실행 중 그래프 검증과 목록의 해시는 보존합니다. 작은 원격 목록은 저장소에 남기며 전체 텍스트 결과물의 GitHub 보존기간은7일입니다.

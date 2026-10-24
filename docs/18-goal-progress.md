@@ -6,9 +6,9 @@ The goal remains the complete local pilot in [P01–P14](11-local-pilot.md), not
 
 ## Seoul requirement / 서울 요구사항
 
-The user now requires real Seoul OSM roads for the primary simulation. Complete [the Seoul transition](21-seoul-road-simulation.md) before P05; tiny-city remains regression-only. The transition now passes local tiny48 + Seoul29 with nine vehicles and a captured real-road replay; hosted delivery is the remaining gate.
+The user now requires real Seoul OSM roads for the primary simulation. Complete [the Seoul transition](21-seoul-road-simulation.md) before P05; tiny-city remains regression-only. The transition now passes local tiny48 + Seoul29 with nine vehicles and a captured real-road replay; hosted Linux execution and independent artifact inspection also passed.
 
-사용자 요구에 따라 주요 시뮬레이션을 실제 서울 OSM 도로로 전환한 뒤 P05를 진행합니다. tiny-city는 회귀용입니다. 차량 9대의 tiny48·서울29와 실제 도로 재생 녹화를 로컬 검증했으며 원격 반영 검사가 남았습니다.
+사용자 요구에 따라 주요 시뮬레이션을 실제 서울 OSM 도로로 전환한 뒤 P05를 진행합니다. tiny-city는 회귀용입니다. 차량 9대의 tiny48·서울29와 실제 도로 재생 녹화를 로컬 검증했으며 원격 Linux 실행과 독립 결과물 검사도 통과했습니다.
 
 ## Completion audit / 완료 판정표
 
@@ -18,7 +18,7 @@ The user now requires real Seoul OSM roads for the primary simulation. Complete 
 | P02 real engine graph / 실제 엔진 그래프 | [P02 proof](../research/pilot/p02-main-2026-10-24.json) | Verified / 검증 |
 | P03 vehicle/GPS / 차량·GPS | [Clean integrated proof](../research/seoul/2026-10-24/report.md) | Locally verified / 로컬 검증 |
 | P04 real matching and ambiguity handling / 실제 매칭·모호성 처리 | [Matching report](../research/seoul/2026-10-24/report.md) | Local and hosted verified / 로컬·원격 검증 |
-| Seoul primary simulation / 서울 주요 시뮬레이션 | [Actual-road evidence](../research/seoul/2026-10-24/report.md) | Locally verified; hosted pending / 로컬 검증·원격 전 |
+| Seoul primary simulation / 서울 주요 시뮬레이션 | [Actual-road evidence](../research/seoul/2026-10-24/report.md) | Local and hosted verified / 로컬·원격 검증 |
 | P05 durable ingestion, P06 aggregation / 영속 수집·집계 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P07 signed publication, P08 actual traffic consumption / 서명 게시·속도 반영 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P09 two nodes, P10 gateway/failover / 두 노드·중계/장애 전환 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
@@ -26,8 +26,8 @@ The user now requires real Seoul OSM roads for the primary simulation. Complete 
 | P13 local Cloudflare parity / Cloudflare 로컬 비교 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P14b engine integration / 엔진 통합 검사 | Extend CI with current whole-system runner / 현재 전체 실행기를 CI에 연결 | Hosted current-module run verified; full matrix remains / 현재 모듈 원격 검증·전체 행렬 남음 |
 | Whole implemented-system simulation / 구현 모듈 전체 시뮬레이션 | [Tiny plus Seoul report](../research/seoul/2026-10-24/report.md) / tiny·서울 보고서 | Locally verified / 로컬 검증 |
-| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/seoul/2026-10-24/report.md) / 보고서·캡처 | Seoul local evidence recorded / 서울 로컬 증거 기록 |
-| README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | Seoul recording refreshed / 서울 녹화 갱신 |
+| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/seoul/2026-10-24/report.md) / 보고서·캡처 | Seoul local/hosted evidence recorded / 서울 로컬·원격 증거 기록 |
+| README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | Seoul recording/media checks passed / 서울 녹화·미디어 검사 통과 |
 | Refresh on implementation changes / 구현 변경 때 갱신 | `media:check` fingerprint/hash/README checks / 지문·해시·README 검사 | Locally verified / 로컬 검증 |
 | Research other AI-development READMEs / 다른 AI 개발 README 참고 | [Research notes](../wiki/sources/readme-presentation.md) | Source inspection complete / 출처 확인 |
 
