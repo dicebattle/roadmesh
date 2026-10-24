@@ -1,0 +1,116 @@
+[
+  {
+    "assertion_id": "p05-all-nine-http",
+    "status": "PASS",
+    "message_en": "All nine Seoul vehicles are durably READY after actual bounded HTTP batches.",
+    "message_ko": "서울9대가 실제 제한 HTTP 배치 접수 뒤 영속 READY 상태입니다.",
+    "expected": 9,
+    "actual": 9,
+    "evidence_path": "readbacks/baseline-ready.json"
+  },
+  {
+    "assertion_id": "p05-concurrent-duplicates",
+    "status": "PASS",
+    "message_en": "Concurrent exact duplicates preserve sample and traversal counts.",
+    "message_ko": "동시 정확 중복이 표본·통과 수를 보존합니다.",
+    "expected": {
+      "contributors": 22,
+      "trips": 9,
+      "batches": 61,
+      "samples": 3204,
+      "traversals": 0,
+      "events": 61,
+      "raw_payloads": 3204
+    },
+    "actual": {
+      "contributors": 22,
+      "trips": 9,
+      "batches": 61,
+      "samples": 3204,
+      "traversals": 0,
+      "events": 61,
+      "raw_payloads": 3204
+    },
+    "evidence_path": "readbacks/duplicates.json"
+  },
+  {
+    "assertion_id": "p05-conflicts-atomic",
+    "status": "PASS",
+    "message_en": "Body, sequence, version, start, final and authenticated-vehicle conflicts leave storage unchanged.",
+    "message_ko": "본문·순서·버전·시작·마지막·인증차량 충돌이 저장을 바꾸지 않습니다.",
+    "expected": true,
+    "actual": [
+      409,
+      409,
+      409,
+      422,
+      409,
+      409,
+      409
+    ],
+    "evidence_path": "readbacks/conflicts.json"
+  },
+  {
+    "assertion_id": "p05-wrong-worker-graph",
+    "status": "PASS",
+    "message_en": "A worker pinned to a different graph cannot consume an attempt.",
+    "message_ko": "다른 그래프로 고정한 처리자가 시도횟수를 소비하지 않습니다.",
+    "expected": "IDLE",
+    "actual": "IDLE",
+    "evidence_path": "readbacks/wrong-graph-worker.json"
+  },
+  {
+    "assertion_id": "p05-recover-after_lease",
+    "status": "PASS",
+    "message_en": "A distinct worker recovers after an actual killed process and real lease expiry.",
+    "message_ko": "실제 프로세스 종료·현실 임대 만료 뒤 다른 처리자가 복구합니다.",
+    "expected": "SUCCEEDED",
+    "actual": "SUCCEEDED",
+    "evidence_path": "events.json"
+  },
+  {
+    "assertion_id": "p05-recover-after_match",
+    "status": "PASS",
+    "message_en": "A distinct worker recovers after an actual killed process and real lease expiry.",
+    "message_ko": "실제 프로세스 종료·현실 임대 만료 뒤 다른 처리자가 복구합니다.",
+    "expected": "SUCCEEDED",
+    "actual": "SUCCEEDED",
+    "evidence_path": "events.json"
+  },
+  {
+    "assertion_id": "p05-uncommitted-rollback",
+    "status": "PASS",
+    "message_en": "SIGKILL before commit leaves no partial traversal writes.",
+    "message_ko": "커밋 전 SIGKILL이 일부 통과 저장을 남기지 않습니다.",
+    "expected": 45,
+    "actual": 45,
+    "evidence_path": "readbacks/uncommitted-insert.json"
+  },
+  {
+    "assertion_id": "p05-recover-after_insert",
+    "status": "PASS",
+    "message_en": "A distinct worker recovers after an actual killed process and real lease expiry.",
+    "message_ko": "실제 프로세스 종료·현실 임대 만료 뒤 다른 처리자가 복구합니다.",
+    "expected": "SUCCEEDED",
+    "actual": "SUCCEEDED",
+    "evidence_path": "events.json"
+  },
+  {
+    "assertion_id": "p05-stale-owner-fenced",
+    "status": "PASS",
+    "message_en": "A stale process resumes and loses its fence without mutating committed rows.",
+    "message_ko": "오래된 프로세스가 재개돼 소유권을 잃고 저장 행을 바꾸지 않습니다.",
+    "expected": "LEASE_LOST",
+    "actual": "LEASE_LOST",
+    "evidence_path": "readbacks/after-stale-resume.json"
+  },
+  {
+    "assertion_id": "p05-two-workers",
+    "status": "FAIL",
+    "message_en": "Two actual worker processes claim different remaining jobs.",
+    "message_ko": "서로 다른 실제 처리자2개가 남은 작업을 확보했습니다.",
+    "expected": 2,
+    "actual": 2,
+    "evidence_path": "events.json"
+  }
+]

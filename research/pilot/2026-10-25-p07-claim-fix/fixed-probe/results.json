@@ -1,0 +1,283 @@
+[
+  {
+    "kind": "server",
+    "value": [
+      {
+        "version": "PostgreSQL 18.6 (Debian 18.6-1.pgdg12+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+        "isolation": "read committed"
+      }
+    ]
+  },
+  {
+    "kind": "initial",
+    "value": [
+      {
+        "contributor_id": "a",
+        "state": "READY",
+        "fence": "0",
+        "attempt": 0
+      },
+      {
+        "contributor_id": "b",
+        "state": "READY",
+        "fence": "0",
+        "attempt": 0
+      }
+    ]
+  },
+  {
+    "kind": "explain",
+    "value": [
+      {
+        "QUERY PLAN": [
+          {
+            "Plan": {
+              "Node Type": "Limit",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 35.83,
+              "Total Cost": 36.11,
+              "Plan Rows": 1,
+              "Plan Width": 167,
+              "Disabled": false,
+              "Output": [
+                "c.namespace",
+                "c.contributor_id",
+                "c.vehicle_id",
+                "c.consent_version",
+                "c.active",
+                "(probe_gate(c.contributor_id))",
+                "c.ctid"
+              ],
+              "Plans": [
+                {
+                  "Node Type": "LockRows",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Startup Cost": 35.83,
+                  "Total Cost": 36.11,
+                  "Plan Rows": 1,
+                  "Plan Width": 167,
+                  "Disabled": false,
+                  "Output": [
+                    "c.namespace",
+                    "c.contributor_id",
+                    "c.vehicle_id",
+                    "c.consent_version",
+                    "c.active",
+                    "(probe_gate(c.contributor_id))",
+                    "c.ctid"
+                  ],
+                  "Plans": [
+                    {
+                      "Node Type": "Result",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Startup Cost": 35.83,
+                      "Total Cost": 36.1,
+                      "Plan Rows": 1,
+                      "Plan Width": 167,
+                      "Disabled": false,
+                      "Output": [
+                        "c.namespace",
+                        "c.contributor_id",
+                        "c.vehicle_id",
+                        "c.consent_version",
+                        "c.active",
+                        "probe_gate(c.contributor_id)",
+                        "c.ctid"
+                      ],
+                      "Plans": [
+                        {
+                          "Node Type": "Sort",
+                          "Parent Relationship": "Outer",
+                          "Parallel Aware": false,
+                          "Async Capable": false,
+                          "Startup Cost": 35.83,
+                          "Total Cost": 35.84,
+                          "Plan Rows": 1,
+                          "Plan Width": 135,
+                          "Disabled": false,
+                          "Output": [
+                            "c.namespace",
+                            "c.contributor_id",
+                            "c.vehicle_id",
+                            "c.consent_version",
+                            "c.active",
+                            "c.ctid"
+                          ],
+                          "Sort Key": [
+                            "c.contributor_id"
+                          ],
+                          "Plans": [
+                            {
+                              "Node Type": "Bitmap Heap Scan",
+                              "Parent Relationship": "Outer",
+                              "Parallel Aware": false,
+                              "Async Capable": false,
+                              "Relation Name": "contributors",
+                              "Schema": "routelens_p05",
+                              "Alias": "c",
+                              "Startup Cost": 4.17,
+                              "Total Cost": 35.82,
+                              "Plan Rows": 1,
+                              "Plan Width": 135,
+                              "Disabled": false,
+                              "Output": [
+                                "c.namespace",
+                                "c.contributor_id",
+                                "c.vehicle_id",
+                                "c.consent_version",
+                                "c.active",
+                                "c.ctid"
+                              ],
+                              "Recheck Cond": "(c.namespace = 'claim-race-probe'::text)",
+                              "Filter": "(c.active AND EXISTS(SubPlan 1))",
+                              "Plans": [
+                                {
+                                  "Node Type": "Bitmap Index Scan",
+                                  "Parent Relationship": "Outer",
+                                  "Parallel Aware": false,
+                                  "Async Capable": false,
+                                  "Index Name": "contributors_pkey",
+                                  "Startup Cost": 0,
+                                  "Total Cost": 4.17,
+                                  "Plan Rows": 3,
+                                  "Plan Width": 0,
+                                  "Disabled": false,
+                                  "Index Cond": "(c.namespace = 'claim-race-probe'::text)"
+                                },
+                                {
+                                  "Node Type": "Index Scan",
+                                  "Parent Relationship": "SubPlan",
+                                  "Subplan Name": "SubPlan 1",
+                                  "Parallel Aware": false,
+                                  "Async Capable": false,
+                                  "Scan Direction": "Forward",
+                                  "Index Name": "p05_ready",
+                                  "Relation Name": "trips",
+                                  "Schema": "routelens_p05",
+                                  "Alias": "t",
+                                  "Startup Cost": 0.14,
+                                  "Total Cost": 8.18,
+                                  "Plan Rows": 1,
+                                  "Plan Width": 0,
+                                  "Disabled": false,
+                                  "Index Cond": "(t.namespace = c.namespace)",
+                                  "Filter": "((t.contributor_id = c.contributor_id) AND (t.graph_id = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'::text) AND (t.matching_policy = 'seoul-observed-v3'::text) AND ((t.state = 'READY'::text) OR ((t.state = 'LEASED'::text) AND (t.lease_until <= clock_timestamp()))))"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "kind": "a-blocked",
+    "value": [
+      {
+        "pid": 125,
+        "locktype": "advisory",
+        "mode": "ExclusiveLock",
+        "granted": false
+      }
+    ]
+  },
+  {
+    "kind": "a-not-yet-rowlocked",
+    "value": [
+      {
+        "contributor_id": "a"
+      }
+    ]
+  },
+  {
+    "kind": "production-b-claim",
+    "value": {
+      "namespace": "claim-race-probe",
+      "contributor_id": "a",
+      "trip_id": "trip-a",
+      "vehicle_id": "vehicle-a",
+      "graph_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "matching_policy": "seoul-observed-v3",
+      "trip_start_utc": "2026-10-25T00:00:00.000Z",
+      "matching_id": "8a8b6aeac69cadfd4bced11efb8c2ccc1d4fe7ee0e864b709bd36574bfeaf445",
+      "owner_id": "worker-b",
+      "fence": "1",
+      "attempt": 1,
+      "lease_until_utc": "2026-10-24T16:41:06.365Z",
+      "observations": []
+    }
+  },
+  {
+    "kind": "after-b-commit",
+    "value": [
+      {
+        "contributor_id": "a",
+        "state": "LEASED",
+        "fence": "1",
+        "attempt": 1
+      },
+      {
+        "contributor_id": "b",
+        "state": "READY",
+        "fence": "0",
+        "attempt": 0
+      }
+    ]
+  },
+  {
+    "kind": "production-a-claim-after-retry",
+    "value": {
+      "namespace": "claim-race-probe",
+      "contributor_id": "b",
+      "trip_id": "trip-b",
+      "vehicle_id": "vehicle-b",
+      "graph_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "matching_policy": "seoul-observed-v3",
+      "trip_start_utc": "2026-10-25T00:00:00.000Z",
+      "matching_id": "fad0a93814174cdb7b85054f31c4faf5c9d50b063fd39fdf6aaa51126fb01b54",
+      "owner_id": "worker-a",
+      "fence": "1",
+      "attempt": 1,
+      "lease_until_utc": "2026-10-24T16:41:06.378Z",
+      "observations": []
+    }
+  },
+  {
+    "kind": "final-trips",
+    "value": [
+      {
+        "contributor_id": "a",
+        "state": "LEASED",
+        "fence": "1",
+        "attempt": 1
+      },
+      {
+        "contributor_id": "b",
+        "state": "LEASED",
+        "fence": "1",
+        "attempt": 1
+      }
+    ]
+  },
+  {
+    "kind": "outcome",
+    "value": "FIXED: actual store A claim retries stale selection and claims b with fence1/attempt1 after actual store B claims a."
+  },
+  {
+    "kind": "cleanup",
+    "value": true
+  }
+]

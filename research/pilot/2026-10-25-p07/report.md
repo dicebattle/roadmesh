@@ -4,9 +4,9 @@
 
 **로컬206개 모두 통과: 작은 회귀48·서울35·수집34·집계34·게시55.** 위 깨끗한 소스에서 실행했습니다. 메인이 계약 설계·구현 검토·원문 직접 검사를, Sol이 생산 코드·테스트 구현을 담당했습니다. 원격 Node22/24 각각200개·실제Linux206개도 통과했고 메인이 다운로드 결과를 아래와 같이 독립 검사했습니다.
 
-[Actual recording / 실제 녹화](../../../docs/media/demo.mp4) · [Interactive report / 재생 보고서](report.html) · [Whole inspection / 전체 검사](main-verification.json) · [Independent signatures / 독립 서명 검사](publication/main-signature-verification.json) · [Durable state / 영속 상태 검사](publication/main-state-verification.json) · [Contract / 계약](../../../docs/25-p07-publication-contract.md) · [Module / 모듈](../../../wiki/modules/signed-publication.md)
+[Actual recording / 실제 녹화](https://raw.githubusercontent.com/dicebattle/routelens/ce75b77d055878d1471d45d017adcac650c7c853/docs/media/demo.mp4) · [Interactive report / 재생 보고서](report.html) · [Whole inspection / 전체 검사](main-verification.json) · [Independent signatures / 독립 서명 검사](publication/main-signature-verification.json) · [Durable state / 영속 상태 검사](publication/main-state-verification.json) · [Contract / 계약](../../../docs/25-p07-publication-contract.md) · [Module / 모듈](../../../wiki/modules/signed-publication.md)
 
-![Actual Seoul replay / 실제 서울 재생](../../../docs/media/report-en.png)
+![Actual Seoul replay / 실제 서울 재생](https://raw.githubusercontent.com/dicebattle/routelens/ce75b77d055878d1471d45d017adcac650c7c853/docs/media/report-en.png)
 
 ## What ran / 실행한 내용
 
@@ -47,9 +47,9 @@ The55 P07 checks include four actual SIGKILL events, publisher rollback and post
 
 P07의55개 검사는 실제 강제 종료4회·게시 롤백/커밋 후 재시도·최초 게시/키 교체 경쟁·수신 재시작/순서·수용한 키의 철회·기존 상태를 보존하는 정확한 부정 사유30개·실제 HTTP 리다이렉트/시간 초과·HTTP 철회 중 DB 잠금 대기·동일 트랜잭션 현재 참조 삭제·239.999초 유효/240초 만료·암호 검증 후 저장 전 만료를 포함합니다. 전체 해시 중 P07 원문406개를 검사했고 전체 소유 자식 PID126개·정확한 DB/볼륨/엔진 부재를 확인했습니다.
 
-![Signed publication evidence / 서명 게시 근거](../../../docs/media/report-publication-en.png)
+![Signed publication evidence / 서명 게시 근거](https://raw.githubusercontent.com/dicebattle/routelens/ce75b77d055878d1471d45d017adcac650c7c853/docs/media/report-publication-en.png)
 
-![Korean publication evidence / 한국어 게시 근거](../../../docs/media/report-publication-ko.png)
+![Korean publication evidence / 한국어 게시 근거](https://raw.githubusercontent.com/dicebattle/routelens/ce75b77d055878d1471d45d017adcac650c7c853/docs/media/report-publication-ko.png)
 
 ## Corrections, provenance and limits / 정정·출처·한계
 
@@ -84,3 +84,9 @@ Actual recording:27.05s at1280×720/20fps; the entire recording was converted an
 Remote graph `be72b68d2b37cf5411af8ca2bd5014fc17e8a6835c689661bf5ca8b85e792675` has a distinct verified identity. Fifteen graph binaries omitted by CI are explicitly listed and were not rehashed after download. Remote cleanup is supported by execution diagnostics, not a later live remote PID query. Selected original files are retained under hosted/; the complete CI artifact uses workflow retention. Main inspected the public README GIF and confirmed public MP4 bytes equal the local recording. Final documentation-head checks precede protected PR#8 merge.
 
 원격 그래프는 별도 식별자를 검증했습니다. CI가 제외한 그래프 바이너리15개는 명시하고 다운로드 후 검사한 것으로 세지 않았습니다. 원격 정리는 실행 진단 근거이고 실시간 원격 PID 조회는 아닙니다. 주요 원문은 hosted에 보존하며 전체 CI 결과물에는 보관기간이 적용됩니다. 공개 README GIF·MP4의 로컬동일바이트를 확인했고 최종 문서 커밋 검사 후 보호된 PR#8을 병합합니다.
+
+## Subsequent correction / 후속 정정
+
+Final documentation-head PR run40111577451 exposed a P05 claim race; same-head push passed. Protected merge was withheld. The results above are historical evidence, not proof of the later interleaving. [Correction and retained failure](../2026-10-25-p07-claim-fix/README.md). Media links are pinned to the tested published revision.
+
+최종 문서 커밋의 PR 실행에서 P05 작업 확보 경쟁이 드러났고 같은 커밋의 push는 통과했습니다. 보호 병합을 보류했으며 위 결과는 과거 관측 근거로 유지하되 후속 경쟁의 정확성 증거로 쓰지 않습니다. 실패·수정 근거를 별도 보존하고 미디어 링크는 검증한 공개 버전으로 고정했습니다.

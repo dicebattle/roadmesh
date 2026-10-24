@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "inspection": "Main reviewed source diff, controlled original/fixed SQL interleavings, real production claim results and exact owned resource absence.",
+  "inspection_ko": "메인이 소스 차이·통제된 수정 전후 SQL 순서·실제 생산 claim 결과·정확한 소유 자원 부재를 확인했습니다.",
+  "original_ready_but_empty_trip": true,
+  "fixed_claims": [
+    "a",
+    "b"
+  ],
+  "first_attempt_fences_preserved": true,
+  "owned_runtime_count": 2,
+  "source_sha256": {
+    "tools/ingestion_store.ts": "f499c06c91bb5f6bbe54fc2ec1ae58635fdd97e15f221d5ad460d166424caa86",
+    "tools/ingestion_checks.ts": "c8cca68d6ccad61a0bde41fa47791016b6b44e54cf2a951957a0b1f966b8e3b5",
+    "tests/ingestion_claim.test.ts": "e98000ac90df5e315f68f0cc9e07049304c997d5680a0b4ead084abbd0117095"
+  }
+}
