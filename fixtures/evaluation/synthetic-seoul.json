@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1",
+  "region": {
+    "id": "seoul-synthetic-example",
+    "bbox": [126.9, 37.4, 127.2, 37.7]
+  },
+  "sources": [
+    {
+      "id": "synthetic-example",
+      "kind": "synthetic",
+      "reference": "Original synthetic coordinates authored for RouteLens validator examples; not a recorded drive or a road legality claim.",
+      "license": "Apache-2.0",
+      "redistribution": "allowed"
+    }
+  ],
+  "cases": [
+    {
+      "id": "route-example",
+      "kind": "route",
+      "source_id": "synthetic-example",
+      "status": "draft",
+      "input": {
+        "origin": {"latitude": 37.5, "longitude": 127.02},
+        "destination": {"latitude": 37.51, "longitude": 127.03}
+      }
+    },
+    {
+      "id": "match-example",
+      "kind": "match",
+      "source_id": "synthetic-example",
+      "status": "draft",
+      "input": {
+        "samples": [
+          {"latitude": 37.5, "longitude": 127.02, "elapsed_s": 0, "accuracy_m": 5},
+          {"latitude": 37.5002, "longitude": 127.0202, "elapsed_s": 5, "accuracy_m": 5},
+          {"latitude": 37.5004, "longitude": 127.0204, "elapsed_s": 10, "accuracy_m": 8}
+        ]
+      }
+    }
+  ]
+}

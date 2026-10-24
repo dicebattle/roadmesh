@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1",
+  "region_id": "seoul-synthetic-example",
+  "counts": {
+    "route": {
+      "total": 1,
+      "reviewed_open_data": 0,
+      "synthetic": 1,
+      "draft": 1,
+      "uncertain": 0
+    },
+    "match": {
+      "total": 1,
+      "reviewed_open_data": 0,
+      "synthetic": 1,
+      "draft": 1,
+      "uncertain": 0
+    }
+  },
+  "ready_for_m0_measurement": false,
+  "blockers": [
+    "route: 0/100 reviewed open-data cases",
+    "match: 0/100 reviewed open-data cases"
+  ],
+  "corpus_sha256": "94dc327a01644928415f102557c0a98fbc3e4c8fe7276eb945075c78e4dc88d9"
+}

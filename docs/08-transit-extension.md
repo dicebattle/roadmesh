@@ -31,7 +31,7 @@ flowchart LR
   E --> F[승객 웹 / 정류장 화면]
   D --> G[실제 정류장 도착기록과 오차 평가]
   B --> H[별도 동의·구간 집계·버스 편향 처리]
-  H --> I[RoadMesh BUS 자료]
+  H --> I[RouteLens BUS 자료]
 ```
 
 GTFS Schedule과 GTFS Realtime을 교환 규격으로 사용합니다. 위치가 끊긴 버스를 계속 '3분 남음'으로 표시하지 않습니다. GTFS 권장사항의 잦은 갱신과 데이터 신선도 기준을 평가하고, 오래된 자료는 실시간 예측과 시간표를 구분해 표시합니다. [GTFS Realtime 권장사항](https://gtfs.org/documentation/realtime/realtime-best-practices/)

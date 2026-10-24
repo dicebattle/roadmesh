@@ -1,9 +1,9 @@
-RoadMesh
-Copyright 2026 RoadMesh contributors
+RouteLens
+Copyright 2026 RouteLens contributors
 
-This repository currently contains original planning documentation and public
-upstream metadata. No routing engine, map dataset, GPS trace, or third-party
-runtime implementation is bundled.
+This repository currently contains original planning documentation, an evaluation
+input validator, synthetic examples, tests and public upstream metadata. No
+routing engine, map dataset, real GPS trace, or third-party runtime is bundled.
 
 Future distributions must preserve all applicable upstream notices. The
 Apache-2.0 license for this repository does not relicense OpenStreetMap data,
