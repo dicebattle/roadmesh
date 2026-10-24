@@ -8,15 +8,17 @@ OpenStreetMap data and derived road geometry are © OpenStreetMap contributors,
 available under the Open Database License (ODbL)1.0. The project license does
 not relicense those datasets. The Seoul simulation uses a pinned Geofabrik
 South Korea extract; see wiki/sources/seoul-osm.md and the recorded source
-manifest. Map-derived files under research/seoul/ retain ODbL attribution;
+manifest. Map-derived files under research/seoul/, research/pilot/ and
+tests/fixtures/seoul-*.json retain ODbL attribution;
 large source PBF and built tiles remain local/ignored unless explicitly
 published with their data license. Synthetic vehicle activity is not actual
 personal GPS history.
 
 OpenStreetMap 원본·파생 도로 지형은 OSM 기여자의 ODbL1.0 자료이며
 프로젝트 라이선스로 바뀌지 않습니다. 서울 시뮬레이션은 고정 Geofabrik
-추출본을 사용하고 출처 기록·목록을 보존합니다. research/seoul/의 파생
-지도는 ODbL 표기를 유지하며 큰 PBF·타일은 별도 라이선스와 명시적으로
+추출본을 사용하고 출처 기록·목록을 보존합니다. research/seoul/,
+research/pilot/, tests/fixtures/seoul-*.json의 파생 지도는
+ODbL 표기를 유지하며 큰 PBF·타일은 별도 라이선스와 명시적으로
 공개하지 않는 한 로컬/Git제외로 둡니다. 합성 차량은 개인 GPS 이력이 아닙니다.
 
 https://www.openstreetmap.org/copyright

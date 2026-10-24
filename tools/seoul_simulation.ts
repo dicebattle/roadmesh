@@ -124,6 +124,7 @@ export function runSeoulMatching(
   envelope: MatchingEnvelope,
   output: string,
   mode: "full" | "split" | "overlap" = "full",
+  policy: "seoul-observed-v2" | "seoul-observed-v3" = "seoul-observed-v3",
 ): MatchingResult {
   validateEnvelope(envelope, {
     graphId: bundle.graphId,
@@ -246,7 +247,7 @@ export function runSeoulMatching(
         edges: [...registry.values()],
       },
       hooks: MatchingHooks = {
-        policy_id: "seoul-observed-v2",
+        policy_id: policy,
         geometry: geodesicSphere,
         connection_tolerance_m: 1,
         ambiguous_boundary_ms: 1000,
@@ -368,7 +369,7 @@ export function runSeoulMatching(
     source: sourceIdentity(),
     graph_id: bundle.graphId,
     graph_manifest_sha256: bundle.manifestSha256,
-    policy_id: "seoul-observed-v2",
+    policy_id: policy,
     geometry_policy: bundle.geometry_policy,
     source_class: "SYNTHETIC",
     engine_executed: true,
@@ -522,6 +523,25 @@ export function evaluateSeoul(
     };
   });
 }
+/** Keep useful noisy/gapped observations under the same fixed traversal floor.
+ * 잡음·누락 관측에도 기존과 같은 고정 통과 범위 하한을 적용합니다. */
+export function noisyTraversalCoverageAssertions(
+  evaluation: VehicleEvaluation[],
+): SimulationAssertion[] {
+  return evaluation
+    .filter((actual) => !actual.vehicle_id.endsWith("-clean"))
+    .map((actual) => ({
+      assertion_id: actual.vehicle_id + "-observed-coverage",
+      status: actual.traversal_coverage >= 0.7 ? "PASS" : "FAIL",
+      message_en:
+        "Noisy or gapped complete-traversal coverage meets the fixed 70% floor.",
+      message_ko:
+        "잡음·누락 관측의 완전 통과 범위가 고정 70% 하한을 충족합니다.",
+      expected: { traversal_coverage: 0.7 },
+      actual,
+      evidence_path: "evaluation.json",
+    }));
+}
 export function runSeoulWorkload(
   bundle: SeoulGraphBundle,
   output: string,
@@ -614,6 +634,7 @@ export function runSeoulWorkload(
       "evaluation.json",
     );
   }
+  assertions.push(...noisyTraversalCoverageAssertions(evaluation));
   const replay = generateSimulation(spec, bundle),
     changed = structuredClone(spec);
   changed.seed = 8;
@@ -684,7 +705,7 @@ export function runSeoulWorkload(
     graph_manifest_sha256: bundle.manifestSha256,
     implementation_sha256: fingerprint,
     geometry_policy: bundle.geometry_policy,
-    matching_policy: "seoul-observed-v2",
+    matching_policy: matching.policy_id,
     cleanup_verified: true,
     output_sha256: evidenceHashes(output),
     completed_at_utc: new Date().toISOString(),

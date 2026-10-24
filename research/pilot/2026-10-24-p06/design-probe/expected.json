@@ -1,0 +1,75 @@
+{
+  "description_en": "Authored geometry/schedule expectations fixed before matching; isolated design probe, not HTTP/database or final integration evidence.",
+  "description_ko": "지형·일정 예상값을 매칭 전에 고정한 독립 설계조사이며 HTTP·DB·최종 통합 증거가 아닙니다.",
+  "fixed_at_utc": "2026-10-24T13:17:19.588Z",
+  "graph_id": "0d06e16c146155e7a798af8aaa0de298e68190be3480fb0fac632b565ef58acd",
+  "edge_ids": [
+    "1297617017232",
+    "1297751234960",
+    "1296274839952"
+  ],
+  "edge_lengths_m": [
+    22.920070813648966,
+    47.31739401566697,
+    28.25181720346565
+  ],
+  "expected_target_traversals": 5,
+  "maximum_target_duration_error_ms": 150,
+  "expected": [
+    {
+      "vehicle_id": "p06-probe-3",
+      "speed_mps": 3,
+      "target_edge_id": "1297751234960",
+      "target_distance_m": 47.31739401566697,
+      "expected_duration_ms": 23772.464671888993,
+      "expected_entered_at_ms": 12640.023604549655,
+      "expected_exited_at_ms": 36412.48827643865,
+      "signal_pause_begin_ms": 20526,
+      "signal_pause_end_ms": 28526
+    },
+    {
+      "vehicle_id": "p06-probe-4",
+      "speed_mps": 4,
+      "target_edge_id": "1297751234960",
+      "target_distance_m": 47.31739401566697,
+      "expected_duration_ms": 19829.348503916743,
+      "expected_entered_at_ms": 10730.017703412243,
+      "expected_exited_at_ms": 30559.366207328985,
+      "signal_pause_begin_ms": 16645,
+      "signal_pause_end_ms": 24645
+    },
+    {
+      "vehicle_id": "p06-probe-5",
+      "speed_mps": 5,
+      "target_edge_id": "1297751234960",
+      "target_distance_m": 47.31739401566697,
+      "expected_duration_ms": 17463.478803133396,
+      "expected_entered_at_ms": 9584.014162729793,
+      "expected_exited_at_ms": 27047.492965863188,
+      "signal_pause_begin_ms": 14316,
+      "signal_pause_end_ms": 22316
+    },
+    {
+      "vehicle_id": "p06-probe-6",
+      "speed_mps": 6,
+      "target_edge_id": "1297751234960",
+      "target_distance_m": 47.31739401566697,
+      "expected_duration_ms": 15886.232335944496,
+      "expected_entered_at_ms": 8820.011802274828,
+      "expected_exited_at_ms": 24706.244138219325,
+      "signal_pause_begin_ms": 12763,
+      "signal_pause_end_ms": 20763
+    },
+    {
+      "vehicle_id": "p06-probe-7",
+      "speed_mps": 7,
+      "target_edge_id": "1297751234960",
+      "target_distance_m": 47.31739401566697,
+      "expected_duration_ms": 14759.627716523853,
+      "expected_entered_at_ms": 8274.295830521281,
+      "expected_exited_at_ms": 23033.923547045135,
+      "signal_pause_begin_ms": 11654,
+      "signal_pause_end_ms": 19654
+    }
+  ]
+}

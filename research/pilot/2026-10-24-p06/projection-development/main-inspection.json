@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "scope": "Preserved-input development artifact inspection; not final whole integration / 보존 입력 개발 결과물 검사·최종 전체 통합 아님",
+  "policy": "seoul-observed-v3",
+  "source": {
+    "commit": "a16c00e89b87b1602be573a1aaaa7c3b1f61bbba",
+    "dirty": true
+  },
+  "input_files_identical": [
+    "expected.json",
+    "spec.json",
+    "observations.json",
+    "truth.json",
+    "matching/input.json"
+  ],
+  "raw_hashes_checked": 64,
+  "target_accepted": 5,
+  "max_duration_error_ms": 0.4788031333955587,
+  "expected_speed_mps": 2.709505623082213,
+  "actual_speed_mps": 2.709579912710701,
+  "relative_speed_error": 0.000027418148851627205
+}

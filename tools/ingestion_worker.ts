@@ -20,6 +20,14 @@ export function contributionInput(
   result: MatchingResult,
   edges: EdgeMapping[],
 ): CompletionInput {
+  if (
+    result.policy_id !== claim.matching_policy ||
+    result.graph_id !== claim.graph_id ||
+    result.matching_id !== claim.matching_id
+  )
+    throw new Error(
+      "Pinned matching identity differs / 고정 매칭 식별자가 다릅니다",
+    );
   const epoch = utc(claim.trip_start_utc);
   return {
     semantic_sha256: result.semantic_sha256,
@@ -87,6 +95,8 @@ export async function runWorker(config: WorkerConfig): Promise<number> {
         observations: claim.observations,
       },
       output,
+      "full",
+      claim.matching_policy,
     );
     await barrier("AFTER_MATCH", config.pause_at);
     const edges = parseJson(

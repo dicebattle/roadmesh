@@ -1,0 +1,237 @@
+{
+  "run_id": "9c9d5783-5efa-4550-8104-2df0be20c75c",
+  "container": "routelens-p05-9c9d5783-5efa-4550-8104-2df0be20c75c",
+  "volume": "routelens-p05-9c9d5783-5efa-4550-8104-2df0be20c75c-db",
+  "planned_before_creation": true,
+  "owned_output_root": "/Users/dice/Documents/routelens/data/p06-main-20261024-r4/aggregation",
+  "processes": [
+    {
+      "role": "api-legacy",
+      "pid": 9778,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "api-count-0",
+      "pid": 9779,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "api-count-1",
+      "pid": 9780,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-count-1-3",
+      "pid": 9781,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-count-1-4",
+      "pid": 9803,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "api-count-4",
+      "pid": 9826,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-count-4-6",
+      "pid": 9827,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-count-4-7",
+      "pid": 9859,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-count-4-8",
+      "pid": 9884,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-count-4-9",
+      "pid": 9902,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "api-count-5",
+      "pid": 9921,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-count-5-11",
+      "pid": 9922,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-count-5-12",
+      "pid": 9950,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-count-5-13",
+      "pid": 9973,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-count-5-14",
+      "pid": 9994,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-count-5-15",
+      "pid": 10012,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-count-5-16",
+      "pid": 10032,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-count-5-17",
+      "pid": 10057,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p06-count-5-18",
+      "pid": 10078,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p06-count-5-19",
+      "pid": 10079,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p06-count-5-20",
+      "pid": 10081,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p06-count-5-21",
+      "pid": 10082,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "api-late-just-before",
+      "pid": 10086,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-late-just-before-23",
+      "pid": 10089,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "api-late-exact",
+      "pid": 10132,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-late-exact-25",
+      "pid": 10133,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "api-late-after",
+      "pid": 10155,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-late-after-27",
+      "pid": 10158,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p06-count-5-28",
+      "pid": 10187,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "api-expiry-five",
+      "pid": 10188,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-expiry-five-30",
+      "pid": 10189,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-expiry-five-31",
+      "pid": 10228,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-expiry-five-32",
+      "pid": 10258,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-expiry-five-33",
+      "pid": 10276,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p05-expiry-five-34",
+      "pid": 10298,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "api-catalog-race",
+      "pid": 10316,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p06-catalog-0",
+      "pid": 10317,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "p06-catalog-1",
+      "pid": 10318,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "description_en": "Minimal v3 guard preserves upstream discontinuity on the original engine occurrence before observed projection and on the projected occurrence through the existing flag logic.",
+  "description_ko": "v3 원관측 투영 전에 엔진 원래 구간의 단절 표시를 보존하고 기존 표시 처리로 투영된 구간에도 단절을 유지하는 최소 보강입니다.",
+  "status": "PASS",
+  "source_sha256": {
+    "tools/matching_evidence.ts": "a1753accb75c798cde23901b516b0b1f752cbb7c2d72d25c5cfbaf858bdadb30",
+    "tools/seoul_simulation.ts": "f0413020f2435078b5ec988be112d7445e57f06b9626c5ce7c9c584a9c5fb505",
+    "tests/seoul_projection.test.ts": "52f3cdbb0ea599f1c60481c3c9cd4291c5d3f50743c1af6d95fb689960d273d6"
+  },
+  "verification": [
+    {
+      "command": "npm run build",
+      "exit_code": 0
+    },
+    {
+      "command": "node --test --test-name-pattern='^moved upstream flag' dist/tests/seoul_projection.test.js",
+      "exit_code": 0,
+      "tests": 1,
+      "pass": 1,
+      "fail": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "observed_case": {
+    "original_engine_edge_id": "2",
+    "projected_edge_id": "1",
+    "upstream_flag": "begin_route_discontinuity",
+    "both_occurrences_status": "EXCLUDED",
+    "both_occurrences_reason": "DISCONTINUITY"
+  },
+  "limitations_en": "The prior twelve focused checks and preserved-input probe02 were not repeated. Probe02 remains evidence for the preceding implementation; the main fresh full run must verify the final source.",
+  "limitations_ko": "이전 집중검사12개와 보존 입력 probe02는 반복하지 않았습니다. probe02는 직전 구현의 증거로 유지하며 최종 소스는 메인의 새 전체 실행에서 확인해야 합니다."
+}

@@ -1,0 +1,17 @@
+{
+  "description_en": "One approved development replay using byte-identical preserved expectations and observed input, without generation or compilation.",
+  "description_ko": "생성·컴파일 없이 바이트가 동일한 보존 예상값과 관측 입력을 사용하는 승인된 개발 재생입니다.",
+  "policy": "seoul-observed-v3",
+  "node": "v25.4.0",
+  "compiled_module_sha256": {
+    "seoul_bundle": "3fa8bebadc3c84d0c384cb265a7ff12aad13d2ccf62d18be3633ea649dc1bb53",
+    "seoul_simulation": "44c3b60801b5535395bfdc911207f24c7f12afaa80e6e9591983b87a9f83cfd7",
+    "vehicle_simulator": "0da6964706240779fb065f92d82a761edd17c6897d5aa4a4bb405c0f6996fd12",
+    "matching_evidence": "82a239883190a47ac2d6c44bc408d0ee1c24e61c201ce3abf4018d6726704432"
+  },
+  "source_sha256": {
+    "seoul_simulation": "f0413020f2435078b5ec988be112d7445e57f06b9626c5ce7c9c584a9c5fb505",
+    "matching_evidence": "cd3fd482e0fa3fe7ad432e1265a245b6e67bcd47e9bcd505a76d95d92b443bc7"
+  },
+  "started_at_utc": "2026-10-24T13:33:05.910Z"
+}

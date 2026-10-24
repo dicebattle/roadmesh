@@ -4,9 +4,9 @@
 
 **로컬 결과: 전체111/111 통과 = 작은 회귀48 + 서울29 + P0534.** 위 깨끗한 커밋으로 최종 실행을 완료했습니다. 메인이 설계·독립 검사를, Sol의 코어·통합 담당이 구현·테스트를 맡았습니다. 원격 Linux 검증도 통과했으며 아래 독립 검사 근거를 기록합니다.
 
-[Recorded playback / 실제 녹화](../../../docs/media/demo.mp4) · [Interactive report / 재생 보고서](report.html) · [Main inspection / 메인 독립 검사](main-verification.json) · [Root manifest / 전체 명세](manifest.json) · [P05 assertions / P05 검사](ingestion/assertions.json) · [Module guide / 모듈 안내](../../../wiki/modules/durable-ingestion.md)
+[Recorded playback / 실제 녹화](https://raw.githubusercontent.com/dicebattle/routelens/920d48d74f5557b60a877a1515ce7cd6e442c21c/docs/media/demo.mp4) · [Interactive report / 재생 보고서](report.html) · [Main inspection / 메인 독립 검사](main-verification.json) · [Root manifest / 전체 명세](manifest.json) · [P05 assertions / P05 검사](ingestion/assertions.json) · [Module guide / 모듈 안내](../../../wiki/modules/durable-ingestion.md)
 
-![Actual Seoul playback / 실제 서울 재생](../../../docs/media/report-en.png)
+![Actual Seoul playback / 실제 서울 재생](https://raw.githubusercontent.com/dicebattle/routelens/920d48d74f5557b60a877a1515ce7cd6e442c21c/docs/media/report-en.png)
 
 ## What ran / 실행한 구성
 
@@ -56,7 +56,7 @@ These are one local run with cached source/images, not throughput or production 
 - The abort probe verified an actual `valhalla_service locate` process, stopped it in stateT, paused its exact container and killed its worker. The known orphan container was removed, with explicit NoSuch absence. Main also independently confirmed26 recorded child PIDs absent. [Stopped engine](ingestion/engine-abort-stopped-process.json), [before cleanup](ingestion/engine-abort-before-cleanup.json), [after cleanup](ingestion/engine-abort-after-cleanup.json), [PID check](main-process-cleanup.json).
   실제 locate 프로세스를 확인해 정지상태T로 멈추고 해당 컨테이너를 일시정지한 뒤 처리자를 종료했습니다. 확인한 잔여 컨테이너를 제거하고 명시적 부재를 확인했으며 메인도 기록된 자식 PID26개 부재를 독립 확인했습니다.
 
-![Recovery details / 복구 상세](../../../docs/media/report-recovery-en.png)
+![Recovery details / 복구 상세](https://raw.githubusercontent.com/dicebattle/routelens/920d48d74f5557b60a877a1515ce7cd6e442c21c/docs/media/report-recovery-en.png)
 
 ## Failed attempts retained / 실패 기록 보존
 

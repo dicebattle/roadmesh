@@ -14,17 +14,18 @@ export interface IngestBatch {
   batch_seq: number;
   is_final: boolean;
   graph_id: string;
-  matching_policy: "seoul-observed-v2";
+  matching_policy: "seoul-observed-v2" | "seoul-observed-v3";
   consent_version: "pilot-consent-v1";
   source_class: "SYNTHETIC";
   trip_start_utc: string;
+  trip_activity?: "TRAVEL" | "PARKED";
   samples: Observation[];
 }
 export interface StoreConfig {
   database_url: string;
   namespace: string;
   graph_id: string;
-  matching_policy: "seoul-observed-v2";
+  matching_policy: "seoul-observed-v2" | "seoul-observed-v3";
 }
 export interface Principal {
   contributor_id: string;
@@ -44,7 +45,7 @@ export interface Claim {
   trip_id: string;
   vehicle_id: string;
   graph_id: string;
-  matching_policy: "seoul-observed-v2";
+  matching_policy: "seoul-observed-v2" | "seoul-observed-v3";
   trip_start_utc: string;
   matching_id: string;
   owner_id: string;
@@ -104,7 +105,7 @@ export interface StoredTraversal extends AcceptedTraversal {
   contributor_id: string;
   trip_id: string;
   graph_id: string;
-  matching_policy: "seoul-observed-v2";
+  matching_policy: "seoul-observed-v2" | "seoul-observed-v3";
 }
 export interface StoreInspection {
   counts: {

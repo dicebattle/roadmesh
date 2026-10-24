@@ -14,6 +14,8 @@ import { implementationFingerprint } from "./media_manifest.js";
 import { verifyRegionalChild } from "./seoul_checks.js";
 import { OwnedIngestionRuntime } from "./ingestion_runtime.js";
 import { runIngestionChecks } from "./ingestion_checks.js";
+import { runAggregationChecks } from "./aggregation_checks.js";
+import type { SimulationAssertion } from "./vehicle_simulator.js";
 import {
   renderSimulationReport,
   type SimulationReportData,
@@ -101,14 +103,72 @@ export async function runPilotIntegration(
           evidence_path: "ingestion/" + a.evidence_path,
         })),
       );
+    const tiny = parseJson(
+      readFileSync(join(output, "seoul/tiny/assertions.json")),
+    ) as SimulationAssertion[];
+    const seoulAssertions = parseJson(
+      readFileSync(join(output, "seoul/workload/assertions.json")),
+    ) as SimulationAssertion[];
+    if (
+      tiny.length !== 48 ||
+      seoulAssertions.length !== 35 ||
+      ingestion.assertions.length !== 34 ||
+      [...tiny, ...seoulAssertions, ...ingestion.assertions].some(
+        (a) => a.status !== "PASS",
+      )
+    )
+      throw new Error(
+        "All 117 prior fresh assertions are required / 기존새검사117개 전체통과가 필요합니다",
+      );
+    data.assertions = [
+      ...tiny.map((a) => ({
+        ...a,
+        assertion_id: "tiny-" + a.assertion_id,
+        evidence_path: "seoul/tiny/" + a.evidence_path,
+      })),
+      ...data.assertions,
+    ];
+    const aggregationStarted = performance.now();
+    const aggregation = await runAggregationChecks(
+      join(output, "seoul/graph"),
+      join(output, "aggregation"),
+    );
+    verifyRegionalChild(join(output, "aggregation"), verified, data.graph_id);
+    data.aggregation = {
+      ...aggregation.aggregation,
+      cases: aggregation.aggregation.cases.map((c) => ({
+        ...c,
+        evidence_path: "aggregation/" + c.evidence_path,
+      })),
+    };
+    data.stages.push({
+      id: "p06",
+      name_en: "Actual short-trip ingestion and unsigned aggregation",
+      name_ko: "실제짧은여행 수집·서명전집계",
+      status: "PASS",
+      evidence_path: "aggregation/manifest.json",
+      duration_ms: performance.now() - aggregationStarted,
+    });
+    data.assertions.push(
+      ...aggregation.assertions.map((a) => ({
+        ...a,
+        evidence_path: "aggregation/" + a.evidence_path,
+      })),
+    );
     data.summary.assertions_passed = data.assertions.filter(
       (a) => a.status === "PASS",
     ).length;
     data.summary.assertions_total = data.assertions.length;
     data.limitations = data.limitations.map((item) => ({
       ...item,
-      message_en: item.message_en.replace("P05–P14 remain incomplete", "P06–P14 remain incomplete"),
-      message_ko: item.message_ko.replace("P05~P14는 미완료", "P06~P14는 미완료"),
+      message_en: item.message_en.replace(
+        "P05–P14 remain incomplete",
+        "P07–P14 remain incomplete",
+      ),
+      message_ko: item.message_ko.replace(
+        "P05~P14는 미완료",
+        "P07~P14는 미완료",
+      ),
     }));
     data.generated_at_utc = new Date().toISOString();
     if (
@@ -134,7 +194,7 @@ export async function runPilotIntegration(
     );
     writeFileSync(
       join(output, "summary.md"),
-      "# Whole implemented-system pilot / 구현된 전체 파일럿\n\nPASS: fresh tiny → Seoul → P05 durable ingestion, actual interruption/recovery and deletion read-back.\n통과: 새 tiny→서울→P05영속수집·실제중단/복구·삭제재조회.\n\nP06–P14 remain incomplete; no production authentication or real driver traces.\nP06~P14는 미완료이며 운영인증·실주행자료가 아닙니다.\n",
+      "# Whole implemented-system pilot / 구현된 전체 파일럿\n\nPASS: fresh tiny → Seoul → P05 durable ingestion, interruption/recovery and deletion read-back → P06 unsigned synthetic aggregation.\n통과: 새 tiny→서울→P05영속수집·실제중단/복구·삭제재조회→P06서명전합성집계.\n\nP07–P14 remain incomplete; no production authentication or real driver traces.\nP07~P14는 미완료이며 운영인증·실주행자료가 아닙니다.\n",
     );
   } catch (error) {
     failure = error;
@@ -168,6 +228,7 @@ export async function runPilotIntegration(
   const files = [
     "seoul/manifest.json",
     "ingestion/manifest.json",
+    "aggregation/manifest.json",
     "lifecycle/cleanup.json",
     "report-data.json",
     "report.html",
@@ -212,7 +273,7 @@ export async function main(
     for (let i = 0; i < argv.length; i++) {
       if (argv[i] === "--help") {
         io.out(
-          "Usage / 사용법: simulation:check -- --output NEW_DIRECTORY [--source PINNED_PBF]\nFresh tiny, actual Seoul roads and durable P05 HTTP/DB/process recovery. / 새 tiny·실제서울도로·영속P05 HTTP/DB/프로세스복구.",
+          "Usage / 사용법: simulation:check -- --output NEW_DIRECTORY [--source PINNED_PBF]\nFresh tiny, actual Seoul roads and durable P05 HTTP/DB/process recovery and P06 unsigned aggregation. / 새 tiny·실제서울도로·영속P05 HTTP/DB/프로세스복구·P06서명전집계.",
         );
         return 0;
       } else if (argv[i] === "--output" && !output) output = argv[++i] ?? "";

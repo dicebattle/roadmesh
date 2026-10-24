@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1",
+  "status": "PASS",
+  "source": {
+    "commit": "f295d8d2a6bc32227a868c4002aba38bd82c4df9",
+    "dirty": false
+  },
+  "implementation_sha256": "e374b63d9dea8a28752916d2fc5b2c73e5a1b42b92aeba36242016d99cd42961",
+  "graph_id": "e507c253192efa74f07804e9049c3e5607ef730d912d7ab3e71fbdde378167a9",
+  "cleanup_verified": true,
+  "output_sha256": {
+    "seoul/manifest.json": "1ceb448d522ed7133003945534e8d97a90768577c3d38f8f6dbe350a306b096f",
+    "ingestion/manifest.json": "389e0105998580ae48e9bc840e60d31ea75b651f0db98123b8fe676af0ef1ae9",
+    "aggregation/manifest.json": "7a8d99268881e7c17396209fdb2edf66ea9b6de406b76976dfebe360ce53bd5e",
+    "lifecycle/cleanup.json": "2aaecbbc87f9212ffe532cbd662014663a2dad96d3b1893c15a7dbd5beac5742",
+    "report-data.json": "38ee51a3c87c195c4b57721e89e41bf6f848fd6e91a5a5dfa9c0cba74be16686",
+    "report.html": "f910e0b49f2f6ad5dfa02828d484d54adbf60c299492f8619e69baeb7cec567e",
+    "assertions.json": "d87aa6816722881e285819611f37826218b5a45837272fbf4cedd2ed615768d1",
+    "summary.md": "ba6ead8c7318bcb8fc02fa36a94f3d3d0ac80a22db8b090614ba6dfd904b4984",
+    "seoul-process.json": "6ef5e2d83d03d9a191ec60e3ff614778a0fd57e2ee740ccec04104978043262f"
+  },
+  "completed_at_utc": "2026-10-24T14:51:01.309Z"
+}

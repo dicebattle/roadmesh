@@ -50,6 +50,7 @@ export function buildIngestBatches(
   tripId: string,
   graphId: string,
   tripStart: string,
+  matchingPolicy: IngestBatch["matching_policy"] = "seoul-observed-v3",
 ): IngestBatch[] {
   const batches: IngestBatch[] = [];
   for (let start = 0; start < samples.length; start += 57) {
@@ -61,7 +62,7 @@ export function buildIngestBatches(
       batch_seq: batches.length,
       is_final: start + 60 >= samples.length,
       graph_id: graphId,
-      matching_policy: "seoul-observed-v2",
+      matching_policy: matchingPolicy,
       consent_version: "pilot-consent-v1",
       source_class: "SYNTHETIC",
       trip_start_utc: tripStart,
@@ -138,6 +139,10 @@ export async function runIngestionChecks(
   const reference = parseJson(
     readFileSync(join(workloadDirectory, "matching/result.json")),
   ) as MatchingResult;
+  if (!["seoul-observed-v2", "seoul-observed-v3"].includes(reference.policy_id))
+    throw new Error(
+      "Unsupported reference matching policy / 미지원 기준 매칭 정책",
+    );
   const source = sourceIdentity(),
     fingerprint = implementationFingerprint();
   if (!source.commit || source.dirty === null)
@@ -352,7 +357,7 @@ export async function runIngestionChecks(
       database_url: await runtime.start(),
       namespace: "pilot-" + runtime.runId.replace(/-/g, ""),
       graph_id: graph.graphId,
-      matching_policy: "seoul-observed-v2",
+      matching_policy: reference.policy_id as StoreConfig["matching_policy"],
     };
     store = new IngestionStore(config);
     await store.initialize([...principals, ...extra, abortPrincipal]);
@@ -364,6 +369,7 @@ export async function runIngestionChecks(
         "base-" + i,
         graph.graphId,
         spec.start_time_utc,
+        config.matching_policy,
       ),
     }));
     const all = streams
@@ -608,13 +614,12 @@ export async function runIngestionChecks(
     check(
       "fresh-p04-equality",
       equal &&
-        expectedCount === 215 &&
         baselineDone.counts.traversals === expectedCount &&
         new Set(baselineDone.traversals.map((t) => t.observation_id)).size ===
           expectedCount &&
         baselineDone.counts.raw_payloads === 0,
-      "Stored edge, direction, occurrence and observed times equal all 215 fresh P04 traversals; IDs remain unique.",
-      "저장 구간·방향·순번·관측시각이 새 P04 통과215개와 같고 식별자가 고유합니다.",
+      "Stored edge, direction, occurrence and observed times equal all fresh P04 traversals; IDs remain unique.",
+      "저장 구간·방향·순번·관측시각이 새 P04 통과 전체와 같고 식별자가 고유합니다.",
       expectedCount,
       baselineDone.counts,
       "readbacks/baseline-succeeded.json",
@@ -692,7 +697,7 @@ export async function runIngestionChecks(
       batch_seq: 0,
       is_final: true,
       graph_id: graph.graphId,
-      matching_policy: "seoul-observed-v2",
+      matching_policy: config.matching_policy,
       consent_version: "pilot-consent-v1",
       source_class: "SYNTHETIC",
       trip_start_utc: start,
@@ -711,6 +716,7 @@ export async function runIngestionChecks(
       "order",
       graph.graphId,
       orderInput.trip_start_utc,
+      config.matching_policy,
     );
     await setClock(ordered.at(-1)!.samples.at(-1)!.event_time_utc);
     await request(orderPrincipal, ordered[0]!);
@@ -1188,6 +1194,7 @@ export async function runIngestionChecks(
       "engine-abort",
       graph.graphId,
       abortStart,
+      config.matching_policy,
     );
     write(output, "engine-abort-plan.json", {
       message_en:

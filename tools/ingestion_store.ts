@@ -18,6 +18,7 @@ import {
 } from "./ingestion_types.js";
 import {
   batchValid,
+  batchRequestHash,
   completeValid,
   digest,
   issue,
@@ -34,6 +35,11 @@ CREATE TABLE IF NOT EXISTS routelens_p05.batches(namespace text NOT NULL,contrib
 CREATE TABLE IF NOT EXISTS routelens_p05.samples(namespace text NOT NULL,contributor_id text NOT NULL,trip_id text NOT NULL,sample_id text NOT NULL,offset_ms integer NOT NULL,value_hash text NOT NULL,observation jsonb,PRIMARY KEY(namespace,contributor_id,trip_id,sample_id),UNIQUE(namespace,contributor_id,trip_id,offset_ms),FOREIGN KEY(namespace,contributor_id,trip_id) REFERENCES routelens_p05.trips ON DELETE CASCADE);
 CREATE TABLE IF NOT EXISTS routelens_p05.traversals(namespace text NOT NULL,observation_id text NOT NULL,contributor_id text NOT NULL,trip_id text NOT NULL,graph_id text NOT NULL,matching_policy text NOT NULL,traversal_id text NOT NULL,edge_id text NOT NULL,forward boolean NOT NULL,occurrence integer NOT NULL,entered_at_utc timestamptz NOT NULL,exited_at_utc timestamptz NOT NULL,distance_m double precision NOT NULL,duration_s double precision NOT NULL,source_class text NOT NULL,PRIMARY KEY(namespace,observation_id),FOREIGN KEY(namespace,contributor_id,trip_id) REFERENCES routelens_p05.trips ON DELETE CASCADE);
 CREATE TABLE IF NOT EXISTS routelens_p05.events(namespace text NOT NULL,event_id bigserial NOT NULL,contributor_id text NOT NULL,trip_id text NOT NULL,code text NOT NULL,state text NOT NULL,fence bigint NOT NULL,attempt integer NOT NULL,at_event_utc timestamptz NOT NULL,at_database_utc timestamptz NOT NULL DEFAULT clock_timestamp(),PRIMARY KEY(namespace,event_id),FOREIGN KEY(namespace,contributor_id,trip_id) REFERENCES routelens_p05.trips ON DELETE CASCADE);
+DO $$ BEGIN
+ IF NOT EXISTS(SELECT 1 FROM pg_attribute WHERE attrelid='routelens_p05.trips'::regclass AND attname='trip_activity' AND NOT attisdropped) THEN
+ ALTER TABLE routelens_p05.trips ADD COLUMN IF NOT EXISTS trip_activity text NOT NULL DEFAULT 'TRAVEL';
+ END IF;
+END $$;
 CREATE INDEX IF NOT EXISTS p05_ready ON routelens_p05.trips(namespace,state,lease_until);
 `;
 type Row = Record<string, unknown>;
@@ -45,7 +51,9 @@ export class IngestionStore {
     identifier(config.namespace, "namespace");
     if (
       !/^[a-f0-9]{64}$/.test(config.graph_id) ||
-      config.matching_policy !== "seoul-observed-v2"
+      !["seoul-observed-v2", "seoul-observed-v3"].includes(
+        config.matching_policy,
+      )
     )
       throw new Error(
         "Invalid pinned store configuration / 고정 저장소 설정이 올바르지 않습니다",
@@ -223,7 +231,7 @@ export class IngestionStore {
   ): Promise<Acceptance> {
     let now = utc(eventTimeUtc),
       batch = batchValid(value, principal, this.config),
-      hash = digest(batch),
+      hash = batchRequestHash(batch),
       n = this.config.namespace;
     return this.timedTx(eventTimeUtc, async (client, effectiveTime) => {
       eventTimeUtc = effectiveTime;
@@ -289,6 +297,7 @@ export class IngestionStore {
           trip.consent_version !== batch.consent_version ||
           trip.vehicle_id !== principal.vehicle_id ||
           trip.source_class !== batch.source_class ||
+          trip.trip_activity !== batch.trip_activity ||
           iso(trip.trip_start_utc) !==
             new Date(batch.trip_start_utc).toISOString()
         )
@@ -340,7 +349,7 @@ export class IngestionStore {
             "활성 여행 한도에 도달했습니다.",
           );
         await client.query(
-          "INSERT INTO routelens_p05.trips(namespace,contributor_id,trip_id,vehicle_id,graph_id,matching_policy,consent_version,source_class,trip_start_utc,first_received_at,last_activity_at,raw_expires_at,tombstone_expires_at) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$10,LEAST($10::timestamptz+interval '10 minutes',$9::timestamptz+interval '1 hour'),$10::timestamptz+interval '24 hours')",
+          "INSERT INTO routelens_p05.trips(namespace,contributor_id,trip_id,vehicle_id,graph_id,matching_policy,consent_version,source_class,trip_start_utc,trip_activity,first_received_at,last_activity_at,raw_expires_at,tombstone_expires_at) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$11,$10,$10,LEAST($10::timestamptz+interval '10 minutes',$9::timestamptz+interval '1 hour'),$10::timestamptz+interval '24 hours')",
           [
             n,
             principal.contributor_id,
@@ -352,6 +361,7 @@ export class IngestionStore {
             batch.source_class,
             batch.trip_start_utc,
             eventTimeUtc,
+            batch.trip_activity,
           ],
         );
         trip = (
@@ -631,7 +641,7 @@ export class IngestionStore {
             trip_id: String(trip.trip_id),
             vehicle_id: String(trip.vehicle_id),
             graph_id: String(trip.graph_id),
-            matching_policy: "seoul-observed-v2",
+            matching_policy: this.config.matching_policy,
             trip_start_utc: iso(trip.trip_start_utc),
             matching_id: matchingId(
               this.config.namespace,
@@ -676,6 +686,8 @@ export class IngestionStore {
       contributor.consent_version === "pilot-consent-v1" &&
       contributor.vehicle_id === claim.vehicle_id &&
       trip?.state === "LEASED" &&
+      trip.graph_id === claim.graph_id &&
+      trip.matching_policy === claim.matching_policy &&
       trip.owner_id === claim.owner_id &&
       String(trip.fence) === claim.fence &&
       trip.lease_valid &&

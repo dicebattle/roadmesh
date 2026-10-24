@@ -1,0 +1,929 @@
+[
+  {
+    "role": "api-legacy",
+    "pid": 9778,
+    "exit_code": null,
+    "signal": "SIGTERM",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "service",
+        "port": 63996
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:29.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "api-count-0",
+    "pid": 9779,
+    "exit_code": null,
+    "signal": "SIGTERM",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "service",
+        "port": 64003
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:59.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:30.000Z"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "api-count-1",
+    "pid": 9780,
+    "exit_code": null,
+    "signal": "SIGTERM",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "service",
+        "port": 64008
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:59.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:59.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:59.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:30.000Z"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-count-1-3",
+    "pid": 9781,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-3"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-count-1-4",
+    "pid": 9803,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-4"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "api-count-4",
+    "pid": 9826,
+    "exit_code": null,
+    "signal": "SIGTERM",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "service",
+        "port": 64017
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:59.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:30.000Z"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-count-4-6",
+    "pid": 9827,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-6"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-count-4-7",
+    "pid": 9859,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-7"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-count-4-8",
+    "pid": 9884,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-8"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-count-4-9",
+    "pid": 9902,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-9"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "api-count-5",
+    "pid": 9921,
+    "exit_code": null,
+    "signal": "SIGTERM",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "service",
+        "port": 64055
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:57.245Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:57.245Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:59.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:59.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:59.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:29.999Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:30.000Z"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-count-5-11",
+    "pid": 9922,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-11"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-count-5-12",
+    "pid": 9950,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-12"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-count-5-13",
+    "pid": 9973,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-13"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-count-5-14",
+    "pid": 9994,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-14"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-count-5-15",
+    "pid": 10012,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-15"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-count-5-16",
+    "pid": 10032,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-16"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-count-5-17",
+    "pid": 10057,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-17"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p06-count-5-18",
+    "pid": 10078,
+    "exit_code": null,
+    "signal": "SIGKILL",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "aggregation",
+        "pid": 10078
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_AGGREGATE_WRITE",
+        "pid": 10078
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p06-count-5-19",
+    "pid": 10079,
+    "exit_code": null,
+    "signal": "SIGKILL",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "aggregation",
+        "pid": 10079
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_AGGREGATE_COMMIT",
+        "pid": 10079
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p06-count-5-20",
+    "pid": 10081,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "aggregation",
+        "pid": 10081
+      },
+      {
+        "type": "RESULT",
+        "code": "FINALIZED",
+        "canonical_sha256": "3eeca9a96eca4e410aac0c5c1d8b8449db74cf21593cdd0a3a67d652b6a4a044"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p06-count-5-21",
+    "pid": 10082,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "aggregation",
+        "pid": 10082
+      },
+      {
+        "type": "RESULT",
+        "code": "FINALIZED",
+        "canonical_sha256": "3eeca9a96eca4e410aac0c5c1d8b8449db74cf21593cdd0a3a67d652b6a4a044"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "api-late-just-before",
+    "pid": 10086,
+    "exit_code": null,
+    "signal": "SIGTERM",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "service",
+        "port": 64088
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:29.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:59.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:29.999Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:30.000Z"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-late-just-before-23",
+    "pid": 10089,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-23"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_MATCH",
+        "pid": 10089
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "api-late-exact",
+    "pid": 10132,
+    "exit_code": null,
+    "signal": "SIGTERM",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "service",
+        "port": 64097
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:29.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:59.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:30.000Z"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-late-exact-25",
+    "pid": 10133,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-25"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_MATCH",
+        "pid": 10133
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "api-late-after",
+    "pid": 10155,
+    "exit_code": null,
+    "signal": "SIGTERM",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "service",
+        "port": 64109
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:29.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:59.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:30.001Z"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-late-after-27",
+    "pid": 10158,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-27"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_MATCH",
+        "pid": 10158
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p06-count-5-28",
+    "pid": 10187,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "aggregation",
+        "pid": 10187
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_AGGREGATE_WRITE",
+        "pid": 10187
+      },
+      {
+        "type": "RESULT",
+        "code": "FINALIZED",
+        "canonical_sha256": "3eeca9a96eca4e410aac0c5c1d8b8449db74cf21593cdd0a3a67d652b6a4a044"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "api-expiry-five",
+    "pid": 10188,
+    "exit_code": null,
+    "signal": "SIGTERM",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "service",
+        "port": 64141
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:29.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:40.830Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:59.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:30.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:02:30.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:04:00.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-25T00:01:00.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-25T00:02:00.000Z"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-expiry-five-30",
+    "pid": 10189,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-30"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-expiry-five-31",
+    "pid": 10228,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-31"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-expiry-five-32",
+    "pid": 10258,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-32"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-expiry-five-33",
+    "pid": 10276,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-33"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p05-expiry-five-34",
+    "pid": 10298,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-34"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "api-catalog-race",
+    "pid": 10316,
+    "exit_code": null,
+    "signal": "SIGTERM",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "service",
+        "port": 64164
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:30.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-25T00:01:00.000Z"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p06-catalog-0",
+    "pid": 10317,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "aggregation",
+        "pid": 10317
+      }
+    ],
+    "diagnostics": "Synthetic aggregation worker did not complete / 합성 집계 작업자가 처리를 완료하지 못했습니다\n"
+  },
+  {
+    "role": "p06-catalog-1",
+    "pid": 10318,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "aggregation",
+        "pid": 10318
+      },
+      {
+        "type": "RESULT",
+        "code": "FINALIZED",
+        "canonical_sha256": "0727e266621971a3b7205f058835aced13eb2ee67b78464975e4c4ee9f6a159d"
+      }
+    ],
+    "diagnostics": ""
+  }
+]

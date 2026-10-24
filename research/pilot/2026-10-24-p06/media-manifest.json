@@ -1,0 +1,42 @@
+{
+  "source_commit": "f295d8d2a6bc32227a868c4002aba38bd82c4df9",
+  "implementation_sha256": "e374b63d9dea8a28752916d2fc5b2c73e5a1b42b92aeba36242016d99cd42961",
+  "report_path": "research/pilot/2026-10-24-p06/report.html",
+  "report_sha256": "f910e0b49f2f6ad5dfa02828d484d54adbf60c299492f8619e69baeb7cec567e",
+  "capture_method": "Actual isolated Chrome replay, 25.350000s, 1280x900 at20fps; five/four/revoked/expired candidates and Korean playback. Full recording converted to H.264 and10fps GIF. / 격리 Chrome 실제 재생 25.350000초·1280x900·20fps로5명/4명/철회/만료·한국어 재생을 녹화하고 전체를 H.264·10fps GIF로 변환했습니다.",
+  "raw_capture_sha256": "41944d8cb5bf057547ba58404c78ab446311a3b0255f3edb3c3389d59dd0a118",
+  "assets": [
+    {
+      "path": "docs/media/demo.mp4",
+      "sha256": "889450925eea7c522b825155eedb289435aad60df504f8e62289c4698eadd281"
+    },
+    {
+      "path": "docs/media/demo.gif",
+      "sha256": "2c721e52ffdd39fee53ce3e5f16aa78af4cc5554ac44d1df9b14c123aeb39f33"
+    },
+    {
+      "path": "docs/media/report-en.png",
+      "sha256": "f44e6023b9a6eae467845dc74fb61f968ccc90090cf4bebd91261eaf2146a93d"
+    },
+    {
+      "path": "docs/media/report-ko.png",
+      "sha256": "02f8f5f0871f05c183f933458ccd5b5e009b189356edf3e085c731b8668cde2a"
+    },
+    {
+      "path": "docs/media/report-checks.png",
+      "sha256": "d3fc36e3b0ea70b46474338fbafbc46879ffea3d780c07ce3826081ac2e63037"
+    },
+    {
+      "path": "docs/media/report-recovery-en.png",
+      "sha256": "9d276433a76fd4986923fcb3708f5ea0a69f1f5740c990669e3ddbf740e0e3b2"
+    },
+    {
+      "path": "docs/media/report-aggregation-en.png",
+      "sha256": "833fc6ae7d7a8fae3a6882eda591d5a91eec75d31d2e0e51c0aa8d361aab111b"
+    },
+    {
+      "path": "research/pilot/2026-10-24-p06/report-data.json",
+      "sha256": "38ee51a3c87c195c4b57721e89e41bf6f848fd6e91a5a5dfa9c0cba74be16686"
+    }
+  ]
+}

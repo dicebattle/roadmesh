@@ -1,0 +1,419 @@
+{
+  "description_en": "Read-only analysis of preserved probe evidence. No matcher, compiler, source change or probe retry.",
+  "description_ko": "보존한 조사 원문만 분석했습니다. 매칭·컴파일·소스 수정·조사 재실행은 없습니다.",
+  "facts": {
+    "four_mps_failure": {
+      "sample_id": "p06-design-probe-01:p06-probe-4:10500",
+      "observation_index": 21,
+      "offset_ms": 10500,
+      "observation": [
+        127.028262714,
+        37.498223011
+      ],
+      "accuracy_m": 0.01,
+      "allowed_distance_m": 1.01,
+      "raw_response": "matching/requests/0007-trace_attributes.response.json",
+      "engine_edge_id": "1297617017232",
+      "engine_osm_way_id": 520307303,
+      "engine_match": {
+        "lon": 127.028252,
+        "lat": 37.498219,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 0.914845
+      },
+      "spherical_distance_to_serialized_engine_point_m": 1.0451234662806055,
+      "projection_on_matched_full_geometry": {
+        "distance_m": 0.000046652062804278474,
+        "fraction": 0.9598586704284507,
+        "coordinate": [
+          127.02826271419246,
+          37.49822301060923
+        ],
+        "tangent_radians": -1.9432005687639293
+      },
+      "full_geometry_first": [
+        127.028495,
+        37.498295
+      ],
+      "full_geometry_last": [
+        127.028253,
+        37.49822
+      ]
+    },
+    "three_mps_entry_before": {
+      "sample_id": "p06-design-probe-01:p06-probe-3:12500",
+      "observation_index": 25,
+      "offset_ms": 12500,
+      "observation": [
+        127.028257435,
+        37.498221375
+      ],
+      "accuracy_m": 0.01,
+      "allowed_distance_m": 1.01,
+      "raw_response": "matching/requests/0006-trace_attributes.response.json",
+      "engine_edge_id": "1297617017232",
+      "engine_osm_way_id": 520307303,
+      "engine_match": {
+        "lon": 127.028252,
+        "lat": 37.498219,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 0.417691
+      },
+      "spherical_distance_to_serialized_engine_point_m": 0.5473891196138562,
+      "projection_on_matched_full_geometry": {
+        "distance_m": 0.00005289773180662329,
+        "fraction": 0.9816726341157705,
+        "coordinate": [
+          127.02825743521817,
+          37.498221374556884
+        ],
+        "tangent_radians": -1.9432005687639293
+      },
+      "full_geometry_first": [
+        127.028495,
+        37.498295
+      ],
+      "full_geometry_last": [
+        127.028253,
+        37.49822
+      ]
+    },
+    "three_mps_entry_after": {
+      "sample_id": "p06-design-probe-01:p06-probe-3:13000",
+      "observation_index": 26,
+      "offset_ms": 13000,
+      "observation": [
+        127.028250383,
+        37.498210513
+      ],
+      "accuracy_m": 0.01,
+      "allowed_distance_m": 1.01,
+      "raw_response": "matching/requests/0006-trace_attributes.response.json",
+      "engine_edge_id": "1297751234960",
+      "engine_osm_way_id": 1472718291,
+      "engine_match": {
+        "lon": 127.02825,
+        "lat": 37.49821,
+        "type": "matched",
+        "edge_index": 1,
+        "distance_along_edge": 0.022821,
+        "distance_from_trace_point": 0.000008
+      },
+      "spherical_distance_to_serialized_engine_point_m": 0.06629883707489806,
+      "projection_on_matched_full_geometry": {
+        "distance_m": 0.00000897309298238558,
+        "fraction": 0.022821955224898632,
+        "coordinate": [
+          127.02825038290064,
+          37.49821051301725
+        ],
+        "tangent_radians": -2.926128645322683
+      },
+      "full_geometry_first": [
+        127.028253,
+        37.49822
+      ],
+      "full_geometry_last": [
+        127.028008,
+        37.498009
+      ]
+    },
+    "three_mps_exit_physical_before": {
+      "sample_id": "p06-design-probe-01:p06-probe-3:36000",
+      "observation_index": 72,
+      "offset_ms": 36000,
+      "observation": [
+        127.027994259,
+        37.498011237
+      ],
+      "accuracy_m": 0.01,
+      "allowed_distance_m": 1.01,
+      "raw_response": "matching/requests/0006-trace_attributes.response.json",
+      "engine_edge_id": "1297751234960",
+      "engine_osm_way_id": 1472718291,
+      "engine_match": {
+        "lon": 127.027994,
+        "lat": 37.498011,
+        "type": "matched",
+        "edge_index": 1,
+        "distance_along_edge": 0.973847,
+        "distance_from_trace_point": 0.00001
+      },
+      "spherical_distance_to_serialized_engine_point_m": 0.03487923374258035,
+      "projection_on_matched_full_geometry": {
+        "distance_m": 0.00000993134229014128,
+        "fraction": 0.9738472618164769,
+        "coordinate": [
+          127.0279942589774,
+          37.498011236912504
+        ],
+        "tangent_radians": 1.7731748397618976
+      },
+      "full_geometry_first": [
+        127.028253,
+        37.49822
+      ],
+      "full_geometry_last": [
+        127.028008,
+        37.498009
+      ]
+    },
+    "three_mps_exit_engine_before": {
+      "sample_id": "p06-design-probe-01:p06-probe-3:36500",
+      "observation_index": 73,
+      "offset_ms": 36500,
+      "observation": [
+        127.028010779,
+        37.498009846
+      ],
+      "accuracy_m": 0.01,
+      "allowed_distance_m": 1.01,
+      "raw_response": "matching/requests/0006-trace_attributes.response.json",
+      "engine_edge_id": "1297751234960",
+      "engine_osm_way_id": 1472718291,
+      "engine_match": {
+        "lon": 127.028008,
+        "lat": 37.498008,
+        "type": "matched",
+        "edge_index": 1,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 0.261106
+      },
+      "spherical_distance_to_serialized_engine_point_m": 0.31974734331688615,
+      "projection_on_matched_full_geometry": {
+        "distance_m": 0.2625900676185251,
+        "fraction": 1,
+        "coordinate": [
+          127.028008,
+          37.498009
+        ],
+        "tangent_radians": 1.7731748397618976
+      },
+      "full_geometry_first": [
+        127.028253,
+        37.49822
+      ],
+      "full_geometry_last": [
+        127.028008,
+        37.498009
+      ]
+    },
+    "three_mps_exit_engine_after": {
+      "sample_id": "p06-design-probe-01:p06-probe-3:37000",
+      "observation_index": 74,
+      "offset_ms": 37000,
+      "observation": [
+        127.028026654,
+        37.498014677
+      ],
+      "accuracy_m": 0.01,
+      "allowed_distance_m": 1.01,
+      "raw_response": "matching/requests/0006-trace_attributes.response.json",
+      "engine_edge_id": "1296274839952",
+      "engine_osm_way_id": 990628460,
+      "engine_match": {
+        "lon": 127.028026,
+        "lat": 37.498014,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.062387,
+        "distance_from_trace_point": 0.000031
+      },
+      "spherical_distance_to_serialized_engine_point_m": 0.09484567814285713,
+      "projection_on_matched_full_geometry": {
+        "distance_m": 0.00003455839842084127,
+        "fraction": 0.062387561900669644,
+        "coordinate": [
+          127.02802665385968,
+          37.498014677290165
+        ],
+        "tangent_radians": 1.2044952422144863
+      },
+      "full_geometry_first": [
+        127.028008,
+        37.498009
+      ],
+      "full_geometry_last": [
+        127.028307,
+        37.4981
+      ]
+    },
+    "three_mps_boundary_errors_ms": {
+      "entry": -140.02360454965492,
+      "exit": 87.51172356135066,
+      "duration": 227.5353281110074
+    },
+    "four_mps_engine_discontinuity_flags": [],
+    "code_paths": {
+      "engine_fraction": "tools/matching_evidence.ts:614",
+      "serialized_point_distance_guard": "tools/matching_evidence.ts:633",
+      "rejection_null": "tools/matching_evidence.ts:641",
+      "null_propagation": "tools/matching_evidence.ts:722",
+      "boundary_interpolation": "tools/matching_evidence.ts:791",
+      "partial_entry": "tools/matching_evidence.ts:816",
+      "trace_request_policy": "tools/map_matcher.ts:64"
+    }
+  },
+  "projection_diagnostic_math": [
+    {
+      "vehicle_id": "p06-probe-3",
+      "analysis_only": true,
+      "boundaries": [
+        {
+          "times": [
+            12500,
+            13000
+          ],
+          "edge_ids": [
+            "1297617017232",
+            "1297751234960"
+          ],
+          "projections": [
+            {
+              "distance_m": 0.00005289773180662329,
+              "fraction": 0.9816726341157705,
+              "coordinate": [
+                127.02825743521817,
+                37.498221374556884
+              ],
+              "tangent_radians": -1.9432005687639293
+            },
+            {
+              "distance_m": 0.00000897309298238558,
+              "fraction": 0.022821955224898632,
+              "coordinate": [
+                127.02825038290064,
+                37.49821051301725
+              ],
+              "tangent_radians": -2.926128645322683
+            }
+          ],
+          "left_m": 0.42006452389419324,
+          "right_m": 1.079875447584438,
+          "interpolated_ms": 12640.02711171171
+        },
+        {
+          "times": [
+            36000,
+            36500
+          ],
+          "edge_ids": [
+            "1297751234960",
+            "1296274839952"
+          ],
+          "projections": [
+            {
+              "distance_m": 0.00000993134229014128,
+              "fraction": 0.9738472618164769,
+              "coordinate": [
+                127.0279942589774,
+                37.498011236912504
+              ],
+              "tangent_radians": 1.7731748397618976
+            },
+            {
+              "distance_m": 0.00002210382081836282,
+              "fraction": 0.009294625715478625,
+              "coordinate": [
+                127.02801077908975,
+                37.49800984581441
+              ],
+              "tangent_radians": 1.2044952422144863
+            }
+          ],
+          "left_m": 1.2374794172183434,
+          "right_m": 0.26259006668833323,
+          "interpolated_ms": 36412.47403220134
+        }
+      ],
+      "computed_duration_ms": 23772.44692048963
+    },
+    {
+      "vehicle_id": "p06-probe-4",
+      "analysis_only": true,
+      "boundaries": [
+        {
+          "times": [
+            10500,
+            11000
+          ],
+          "edge_ids": [
+            "1297617017232",
+            "1297751234960"
+          ],
+          "projections": [
+            {
+              "distance_m": 0.000046652062804278474,
+              "fraction": 0.9598586704284507,
+              "coordinate": [
+                127.02826271419246,
+                37.49822301060923
+              ],
+              "tangent_radians": -1.9432005687639293
+            },
+            {
+              "distance_m": 0.00000897309298238558,
+              "fraction": 0.022821955224898632,
+              "coordinate": [
+                127.02825038290064,
+                37.49821051301725
+              ],
+              "tangent_radians": -2.926128645322683
+            }
+          ],
+          "left_m": 0.9200421163339303,
+          "right_m": 1.079875447584438,
+          "interpolated_ms": 10730.020010057646
+        },
+        {
+          "times": [
+            30500,
+            31000
+          ],
+          "edge_ids": [
+            "1297751234960",
+            "1296274839952"
+          ],
+          "projections": [
+            {
+              "distance_m": 0.000030451391003403324,
+              "fraction": 0.9949812354239902,
+              "coordinate": [
+                127.02800536306938,
+                37.498009429268265
+              ],
+              "tangent_radians": 1.7731748397618976
+            },
+            {
+              "distance_m": 0.00003455839842084127,
+              "fraction": 0.062387561900669644,
+              "coordinate": [
+                127.02802665385968,
+                37.498014677290165
+              ],
+              "tangent_radians": 1.2044952422144863
+            }
+          ],
+          "left_m": 0.2374748609149277,
+          "right_m": 1.7625619945876168,
+          "interpolated_ms": 30559.367621216974
+        }
+      ],
+      "computed_duration_ms": 19829.347611159326
+    }
+  ],
+  "limits_en": [
+    "Projection calculations are diagnostics, not proof of a corrected matcher or a new policy.",
+    "The 5s initial stop is an exact multiple of the 500ms sample interval and cannot change moving-point sample phase under the authored generator schedule; the repeated prefix could influence upstream engine matching and has not been experimentally isolated.",
+    "The actual path IDs and complete geometry agree with the expected three-edge path; no truth is needed to reproduce the distance rejection or engine-fraction boundary arithmetic."
+  ],
+  "limits_ko": [
+    "투영 수치는 진단 계산이며 수정된 매칭기·새 정책을 검증한 결과가 아닙니다.",
+    "초기5초는500ms의정수배라 생성 일정의 이동 표본 위상을 바꾸지 않지만, 반복된 시작 표본이 엔진 전체 매칭에 미칠 영향은 분리 실험하지 않았습니다.",
+    "실제 경로 식별·전체지형은 예상한3구간과 같고 거리거부·엔진비율 경계계산을 재현하는 데 정답자료가 필요하지 않습니다."
+  ]
+}

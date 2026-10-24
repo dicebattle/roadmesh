@@ -1,0 +1,48 @@
+✔ engine semantics actual noisy start retains native anchor and avoids projected jitter reversal / 실제 잡음 시작의 엔진 끝점 자격·방향 유지 (3.075ms)
+✔ engine semantics anchor refuses raw endpoint distance above the unchanged bound / 원관측 끝점 거리가 기존 허용치를 넘으면 고정점 거부 (0.383208ms)
+✔ engine semantics moved occurrence cannot borrow native endpoint eligibility / 다른 구간으로 투영된 표본은 엔진 끝점 자격 차용 금지 (1.23025ms)
+✔ engine semantics upstream breaks cannot acquire a native endpoint anchor / 엔진 단절 표시가 있으면 끝점 고정 금지 (0.986667ms)
+✖ engine semantics adjacent exclusion and gap reasons cannot be bypassed by anchor / 인접 제외·누락 사유를 끝점 고정으로 우회 금지 (2.122292ms)
+✔ engine semantics matching trace end can anchor but a gap cannot / 대응 추적 끝은 고정 가능하지만 누락 경계는 불가 (0.159709ms)
+✔ engine semantics genuine native reversal still excludes its occurrence / 실제 엔진 진행 역행은 여전히 해당 구간 제외 (0.1125ms)
+✔ engine semantics native reversal stays on original and moved occurrences / 엔진 역행은 원래·이동한 구간 모두에 유지 (0.146417ms)
+✔ engine semantics native reversal length belongs to its own occurrence / 엔진 역행 거리에는 엔진 발생 구간의 길이 사용 (0.128958ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 8
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 96.135167
+
+✖ failing tests:
+
+test at dist/tests/seoul_projection.test.js:409:1
+✖ engine semantics adjacent exclusion and gap reasons cannot be bypassed by anchor / 인접 제외·누락 사유를 끝점 고정으로 우회 금지 (2.122292ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + {
+  +   after_offset_ms: 1000,
+  +   after_sample_id: 'seoul-road-demo:mapo-bridge-gap:1000',
+  +   before_offset_ms: 1000,
+  +   before_sample_id: 'seoul-road-demo:mapo-bridge-gap:1000',
+  +   interpolated_at_ms: 1000
+  + }
+  - null
+  
+      at TestContext.<anonymous> (file:///Users/dice/Documents/routelens/dist/tests/seoul_projection.test.js:418:12)
+      at Test.runInAsyncScope (node:async_hooks:213:14)
+      at Test.run (node:internal/test_runner/test:1095:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:777:18)
+      at Test.postRun (node:internal/test_runner/test:1224:19)
+      at Test.run (node:internal/test_runner/test:1152:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:777:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { before_sample_id: 'seoul-road-demo:mapo-bridge-gap:1000', after_sample_id: 'seoul-road-demo:mapo-bridge-gap:1000', before_offset_ms: 1000, after_offset_ms: 1000, interpolated_at_ms: 1000 },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

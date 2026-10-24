@@ -65,7 +65,10 @@ test("Strict UTC rejects calendar normalization and offsets / 엄격 UTC는 날�
 });
 test("Bounded authenticated batch preserves observation content / 제한된 인증 배치는 관측 내용을 보존", () => {
   const value = batch();
-  assert.equal(batchValid(value, principal, config), value);
+  assert.deepEqual(batchValid(value, principal, config), {
+    ...value,
+    trip_activity: "TRAVEL",
+  });
   for (const change of [
     { batch_seq: 128 },
     { batch_seq: true },
