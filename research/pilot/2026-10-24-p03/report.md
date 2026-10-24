@@ -4,7 +4,7 @@
 
 **로컬 결과: 통과 — 새 실행 5단계, 30/30판정.** 메인이 위 깨끗한 커밋을 직접 실행·독립 검사했습니다. macOS arm64·Node22.23.4에서 실행을 관리하고 Linux arm64 Docker의 실제 Valhalla·Osmium을 사용했습니다. 현재 구현된 처리 모듈 전체를 검증했으며 P01~P14 전체 프로젝트 완료는 아닙니다.
 
-[Recorded demo / 실제 녹화](../../../docs/media/demo.mp4) · [Offline HTML / 오프라인 HTML](report.html) · [Run manifest / 실행 목록](manifest.json) · [Main inspection / 메인 독립 검사](main-verification.json) · [Media hashes / 미디어 해시](../../../docs/media/latest.json)
+[Recorded demo / 실제 녹화](https://github.com/dicebattle/routelens/blob/fe1990de7f69834338f0c0619674d6cab1b52048/docs/media/demo.mp4) · [Offline HTML / 오프라인 HTML](report.html) · [Run manifest / 실행 목록](manifest.json) · [Main inspection / 메인 독립 검사](main-verification.json) · [Media hashes / 미디어 해시](media-manifest.json)
 
 ## Actual execution / 실제 실행
 
@@ -59,11 +59,11 @@ The images below come from the actual report bound to the clean source above. Th
 
 아래 이미지는 위 깨끗한 소스에 연결된 실제 보고서를 캡처한 것입니다. 자체 가상 시험망이며 목업이나 실제 도로·위치 관측이 아닙니다.
 
-![English simulation replay / 영문 시뮬레이션 재생](../../../docs/media/report-en.png)
+![English simulation replay / 영문 시뮬레이션 재생](https://github.com/dicebattle/routelens/blob/fe1990de7f69834338f0c0619674d6cab1b52048/docs/media/report-en.png)
 
-![Korean simulation replay / 국문 시뮬레이션 재생](../../../docs/media/report-ko.png)
+![Korean simulation replay / 국문 시뮬레이션 재생](https://github.com/dicebattle/routelens/blob/fe1990de7f69834338f0c0619674d6cab1b52048/docs/media/report-ko.png)
 
-![Expanded expected and actual crossing times / 펼친 예상·실제 통과 시각](../../../docs/media/report-checks.png)
+![Expanded expected and actual crossing times / 펼친 예상·실제 통과 시각](https://github.com/dicebattle/routelens/blob/fe1990de7f69834338f0c0619674d6cab1b52048/docs/media/report-checks.png)
 
 The MP4 is a 31-second H.264 recording at 1280×720, 20 fps. It is trimmed from seconds 7–38 of the actual Chrome recording; the GIF preview uses recorded seconds 9.5–23.5. Main inspected representative frames and decoded the final MP4 without errors. No generated motion replaced the recorded playback. An initial Chrome-for-Testing launch failed because that version was absent; the final recording used an isolated installed Chrome profile. The only browser console error was the optional favicon request returning 404.
 
@@ -88,3 +88,5 @@ P04 매칭·P05~P10 교통/분산 노드·P11/P12 전체·P13·P14b 전체 장�
 The hosted engine ran on Linux amd64, while local evidence used Linux arm64 containers. Their graph IDs intentionally differ because the image identity is bound into the graph ID. Each run's P02 and P03 preserve the same exact graph ID internally. The implementation fingerprint matches the recording on both platforms; no cross-platform graph-byte identity is claimed.
 
 원격 엔진은Linux amd64, 로컬 컨테이너는Linux arm64입니다. 이미지 식별을 그래프 식별에 결합하므로 그래프 ID가 의도적으로 다르며 실행 내부 P02·P03은 각각 같은 정확한 ID를 유지합니다. 구현 지문은 녹화와 같지만 플랫폼 간 그래프 바이트 일치를 주장하지 않습니다.
+
+Historical media links are pinned to the P03 merge commit; `media-manifest.json` preserves the original metadata bytes. Report results and raw evidence are unchanged. / 과거 미디어는 P03 병합 커밋에 고정하고 원래 메타데이터 바이트를 보존했습니다. 보고 결과·원본 증거는 바꾸지 않았습니다.

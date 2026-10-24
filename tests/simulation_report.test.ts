@@ -225,3 +225,93 @@ test("viewer focuses fixed vehicle truth bounds and offers full fixture extent /
   assert(html.includes('id="all-roads"'));
   assert(html.includes("index * 20"));
 });
+
+test("optional matching evidence preserves results and bilingual exclusion reasons / 선택 매칭 증거의 결과와 이중 언어 제외 사유 보존", () => {
+  const input = structuredClone(data);
+  input.matching = {
+    policy_id: "tiny-city-matching-v1",
+    input_samples: 2,
+    matched_samples: 1,
+    excluded_samples: 1,
+    accepted_traversals: 0,
+    excluded_traversals: 1,
+    points: [
+      {
+        sample_id: "s:1",
+        vehicle_id: "v",
+        offset_ms: 0,
+        longitude: 0,
+        latitude: 0,
+        edge_id: "1",
+        status: "MATCHED",
+        reason_codes: [],
+      },
+      {
+        sample_id: "s:2",
+        vehicle_id: "v",
+        offset_ms: 1000,
+        longitude: 0.001,
+        latitude: 0,
+        edge_id: null,
+        status: "EXCLUDED",
+        reason_codes: ["AMBIGUOUS_PARALLEL"],
+      },
+    ],
+    traversals: [
+      {
+        traversal_id: "t:1",
+        vehicle_id: "v",
+        edge_id: "1",
+        label: "AB",
+        status: "EXCLUDED",
+        entered_at_ms: 0,
+        exited_at_ms: null,
+        reason_codes: ["PARTIAL_EXIT", "OBSERVATION_GAP"],
+      },
+    ],
+    cases: [
+      {
+        case_id: "midpoint",
+        name_en: "Parallel midpoint",
+        name_ko: "평행도로 중간점",
+        status: "PASS",
+        input_samples: 1,
+        matched_samples: 0,
+        excluded_samples: 1,
+        accepted_traversals: 0,
+        excluded_traversals: 0,
+      },
+    ],
+  };
+  const html = renderSimulationReport(input);
+  const raw = html.match(
+    /<script id="report-data" type="application\/json">([\s\S]*?)<\/script>/,
+  )![1]!;
+  assert.deepEqual(JSON.parse(raw).matching, input.matching);
+  assert(html.includes('id="matched"'));
+  assert(html.includes("P03 + P04"));
+  assert(html.includes("Complete traversal accepted"));
+  assert(html.includes("완전 통과 수용"));
+  for (const code of [
+    "AMBIGUOUS_PARALLEL",
+    "PARTIAL_ENTRY",
+    "PARTIAL_EXIT",
+    "OBSERVATION_GAP",
+    "DISCONTINUITY",
+    "UNMATCHED",
+    "DISTANCE_EXCEEDED",
+    "INSUFFICIENT_POINTS",
+  ])
+    assert(html.includes(code));
+  assert(html.includes("미등록 사유"));
+  new Function(html.match(/<script>([\s\S]*?)<\/script>/)![1]!);
+  const legacy = renderSimulationReport(data);
+  assert(legacy.includes("ROUTELENS / P03</div>"));
+  assert(
+    !JSON.parse(
+      legacy.match(
+        /<script id="report-data" type="application\/json">([\s\S]*?)<\/script>/,
+      )![1]!,
+    ).matching,
+  );
+});

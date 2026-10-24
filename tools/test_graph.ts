@@ -132,7 +132,7 @@ export class OwnedGraphContainer {
   readonly name = `routelens-p02-${this.runId}`;
   private attempted = false;
   constructor(private readonly commands: GraphCommands) {}
-  start(image: string, output: string): void {
+  start(image: string, output: string, readOnlyGraph?: string): void {
     this.attempted = true;
     this.commands.command(
       [
@@ -151,6 +151,12 @@ export class OwnedGraphContainer {
         "1",
         "--mount",
         `type=bind,src=${resolve(output)},dst=/work`,
+        ...(readOnlyGraph
+          ? [
+              "--mount",
+              `type=bind,src=${resolve(readOnlyGraph)},dst=/graph,readonly`,
+            ]
+          : []),
         "--entrypoint",
         "/bin/sh",
         image,

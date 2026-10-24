@@ -1,0 +1,104 @@
+{
+  "shape": [
+    {
+      "lon": 0.000004309,
+      "lat": -0.000008675,
+      "time": 0
+    },
+    {
+      "lon": 0.000071129,
+      "lat": 0.000002103,
+      "time": 1
+    },
+    {
+      "lon": 0.00018932,
+      "lat": -0.000004861,
+      "time": 2
+    },
+    {
+      "lon": 0.000259969,
+      "lat": 0.000011748,
+      "time": 3
+    },
+    {
+      "lon": 0.000357552,
+      "lat": -0.000003514,
+      "time": 4
+    },
+    {
+      "lon": 0.000446766,
+      "lat": -0.000017113,
+      "time": 5
+    },
+    {
+      "lon": 0.000521676,
+      "lat": 0.000001835,
+      "time": 6
+    },
+    {
+      "lon": 0.000627313,
+      "lat": -0.000020866,
+      "time": 7
+    },
+    {
+      "lon": 0.000723106,
+      "lat": 0.000001445,
+      "time": 8
+    },
+    {
+      "lon": 0.000806822,
+      "lat": 0.000016848,
+      "time": 9
+    },
+    {
+      "lon": 0.000873827,
+      "lat": -0.000001143,
+      "time": 10
+    },
+    {
+      "lon": 0.000983488,
+      "lat": 0.000002875,
+      "time": 11
+    },
+    {
+      "lon": 0.001074315,
+      "lat": -0.000006115,
+      "time": 12
+    },
+    {
+      "lon": 0.001158056,
+      "lat": 0.000015246,
+      "time": 13
+    },
+    {
+      "lon": 0.001256075,
+      "lat": -0.00001017,
+      "time": 14
+    }
+  ],
+  "shape_match": "map_snap",
+  "costing": "auto",
+  "trace_options": {
+    "gps_accuracy": 5,
+    "search_radius": 30,
+    "interpolation_distance": 0
+  },
+  "filters": {
+    "action": "include",
+    "attributes": [
+      "edge.id",
+      "edge.way_id",
+      "edge.length",
+      "edge.begin_shape_index",
+      "edge.end_shape_index",
+      "matched.point",
+      "matched.type",
+      "matched.edge_index",
+      "matched.begin_route_discontinuity",
+      "matched.end_route_discontinuity",
+      "matched.distance_along_edge",
+      "matched.distance_from_trace_point",
+      "shape"
+    ]
+  }
+}

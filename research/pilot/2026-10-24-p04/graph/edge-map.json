@@ -1,0 +1,640 @@
+[
+  {
+    "label": "ab",
+    "osm_way_id": 101,
+    "edge_id": "4152962",
+    "forward": true,
+    "engine_forward": true,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0,
+        0
+      ],
+      [
+        0.002,
+        0
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0,
+        0
+      ],
+      [
+        0.002,
+        0
+      ]
+    ],
+    "evidence_path": "locate-ab.response.json"
+  },
+  {
+    "label": "ab",
+    "osm_way_id": 101,
+    "edge_id": "306142850",
+    "forward": false,
+    "engine_forward": false,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0,
+        0
+      ],
+      [
+        0.002,
+        0
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.002,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "evidence_path": "locate-ab.response.json"
+  },
+  {
+    "label": "bc",
+    "osm_way_id": 102,
+    "edge_id": "339697282",
+    "forward": true,
+    "engine_forward": true,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0.002,
+        0
+      ],
+      [
+        0.004,
+        0
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.002,
+        0
+      ],
+      [
+        0.004,
+        0
+      ]
+    ],
+    "evidence_path": "locate-bc.response.json"
+  },
+  {
+    "label": "bc",
+    "osm_way_id": 102,
+    "edge_id": "440360578",
+    "forward": false,
+    "engine_forward": false,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0.002,
+        0
+      ],
+      [
+        0.004,
+        0
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.004,
+        0
+      ],
+      [
+        0.002,
+        0
+      ]
+    ],
+    "evidence_path": "locate-bc.response.json"
+  },
+  {
+    "label": "ad",
+    "osm_way_id": 103,
+    "edge_id": "37707394",
+    "forward": true,
+    "engine_forward": true,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0.002
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0.002
+      ]
+    ],
+    "evidence_path": "locate-ad.response.json"
+  },
+  {
+    "label": "ad",
+    "osm_way_id": 103,
+    "edge_id": "104816258",
+    "forward": false,
+    "engine_forward": false,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0.002
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0,
+        0.002
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "evidence_path": "locate-ad.response.json"
+  },
+  {
+    "label": "de",
+    "osm_way_id": 104,
+    "edge_id": "138370690",
+    "forward": true,
+    "engine_forward": true,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0,
+        0.002
+      ],
+      [
+        0.002,
+        0.002
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0,
+        0.002
+      ],
+      [
+        0.002,
+        0.002
+      ]
+    ],
+    "evidence_path": "locate-de.response.json"
+  },
+  {
+    "label": "de",
+    "osm_way_id": 104,
+    "edge_id": "171925122",
+    "forward": false,
+    "engine_forward": false,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0,
+        0.002
+      ],
+      [
+        0.002,
+        0.002
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.002,
+        0.002
+      ],
+      [
+        0,
+        0.002
+      ]
+    ],
+    "evidence_path": "locate-de.response.json"
+  },
+  {
+    "label": "ef",
+    "osm_way_id": 105,
+    "edge_id": "205479554",
+    "forward": true,
+    "engine_forward": true,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0.002,
+        0.002
+      ],
+      [
+        0.004,
+        0.002
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.002,
+        0.002
+      ],
+      [
+        0.004,
+        0.002
+      ]
+    ],
+    "evidence_path": "locate-ef.response.json"
+  },
+  {
+    "label": "ef",
+    "osm_way_id": 105,
+    "edge_id": "507469442",
+    "forward": false,
+    "engine_forward": false,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0.002,
+        0.002
+      ],
+      [
+        0.004,
+        0.002
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.004,
+        0.002
+      ],
+      [
+        0.002,
+        0.002
+      ]
+    ],
+    "evidence_path": "locate-ef.response.json"
+  },
+  {
+    "label": "fc",
+    "osm_way_id": 106,
+    "edge_id": "473915010",
+    "forward": false,
+    "engine_forward": false,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0.004,
+        0.002
+      ],
+      [
+        0.004,
+        0
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.004,
+        0
+      ],
+      [
+        0.004,
+        0.002
+      ]
+    ],
+    "evidence_path": "locate-fc.response.json"
+  },
+  {
+    "label": "fc",
+    "osm_way_id": 106,
+    "edge_id": "541023874",
+    "forward": true,
+    "engine_forward": true,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0.004,
+        0.002
+      ],
+      [
+        0.004,
+        0
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.004,
+        0.002
+      ],
+      [
+        0.004,
+        0
+      ]
+    ],
+    "evidence_path": "locate-fc.response.json"
+  },
+  {
+    "label": "eb",
+    "osm_way_id": 107,
+    "edge_id": "239033986",
+    "forward": true,
+    "engine_forward": true,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0.002,
+        0.002
+      ],
+      [
+        0.002,
+        0
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.002,
+        0.002
+      ],
+      [
+        0.002,
+        0
+      ]
+    ],
+    "evidence_path": "locate-eb.response.json"
+  },
+  {
+    "label": "eb",
+    "osm_way_id": 107,
+    "edge_id": "373251714",
+    "forward": false,
+    "engine_forward": false,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0.002,
+        0.002
+      ],
+      [
+        0.002,
+        0
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.002,
+        0
+      ],
+      [
+        0.002,
+        0.002
+      ]
+    ],
+    "evidence_path": "locate-eb.response.json"
+  },
+  {
+    "label": "bg",
+    "osm_way_id": 108,
+    "edge_id": "4141442",
+    "forward": false,
+    "engine_forward": false,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0.002,
+        0
+      ],
+      [
+        0.002,
+        -0.002
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.002,
+        -0.002
+      ],
+      [
+        0.002,
+        0
+      ]
+    ],
+    "evidence_path": "locate-bg.response.json"
+  },
+  {
+    "label": "bg",
+    "osm_way_id": 108,
+    "edge_id": "406806146",
+    "forward": true,
+    "engine_forward": true,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0.002,
+        0
+      ],
+      [
+        0.002,
+        -0.002
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.002,
+        0
+      ],
+      [
+        0.002,
+        -0.002
+      ]
+    ],
+    "evidence_path": "locate-bg.response.json"
+  },
+  {
+    "label": "oneway",
+    "osm_way_id": 201,
+    "edge_id": "608132738",
+    "forward": true,
+    "engine_forward": true,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0.01,
+        0
+      ],
+      [
+        0.012,
+        0
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.01,
+        0
+      ],
+      [
+        0.012,
+        0
+      ]
+    ],
+    "evidence_path": "locate-oneway.response.json"
+  },
+  {
+    "label": "oneway",
+    "osm_way_id": 201,
+    "edge_id": "641687170",
+    "forward": false,
+    "engine_forward": false,
+    "car_access": false,
+    "source_geometry": [
+      [
+        0.01,
+        0
+      ],
+      [
+        0.012,
+        0
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.012,
+        0
+      ],
+      [
+        0.01,
+        0
+      ]
+    ],
+    "evidence_path": "locate-oneway.response.json"
+  },
+  {
+    "label": "disconnected",
+    "osm_way_id": 301,
+    "edge_id": "574578306",
+    "forward": true,
+    "engine_forward": true,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0.01,
+        0.003
+      ],
+      [
+        0.012,
+        0.003
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.01,
+        0.003
+      ],
+      [
+        0.012,
+        0.003
+      ]
+    ],
+    "evidence_path": "locate-disconnected.response.json"
+  },
+  {
+    "label": "disconnected",
+    "osm_way_id": 301,
+    "edge_id": "675241602",
+    "forward": false,
+    "engine_forward": false,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0.01,
+        0.003
+      ],
+      [
+        0.012,
+        0.003
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.012,
+        0.003
+      ],
+      [
+        0.01,
+        0.003
+      ]
+    ],
+    "evidence_path": "locate-disconnected.response.json"
+  },
+  {
+    "label": "parallel",
+    "osm_way_id": 401,
+    "edge_id": "71261826",
+    "forward": true,
+    "engine_forward": true,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0,
+        0.0001
+      ],
+      [
+        0.002,
+        0.0001
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0,
+        0.0001
+      ],
+      [
+        0.002,
+        0.0001
+      ]
+    ],
+    "evidence_path": "locate-parallel.response.json"
+  },
+  {
+    "label": "parallel",
+    "osm_way_id": 401,
+    "edge_id": "272588418",
+    "forward": false,
+    "engine_forward": false,
+    "car_access": true,
+    "source_geometry": [
+      [
+        0,
+        0.0001
+      ],
+      [
+        0.002,
+        0.0001
+      ]
+    ],
+    "directed_geometry": [
+      [
+        0.002,
+        0.0001
+      ],
+      [
+        0,
+        0.0001
+      ]
+    ],
+    "evidence_path": "locate-parallel.response.json"
+  }
+]

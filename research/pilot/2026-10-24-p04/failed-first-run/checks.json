@@ -1,0 +1,259 @@
+[
+  {
+    "assertion_id": "p04-baseline-coverage",
+    "status": "PASS",
+    "message_en": "Every input has a recorded outcome; required engine execution and cleanup are verified.",
+    "message_ko": "모든 입력의 결과와 필요한 실제 엔진 실행·정리를 확인했습니다.",
+    "expected": 177,
+    "actual": 177,
+    "evidence_path": "matching/baseline/manifest.json"
+  },
+  {
+    "assertion_id": "p04-baseline-clean-complete",
+    "status": "PASS",
+    "message_en": "Clean traversal boundaries agree with independent truth within 5 ms.",
+    "message_ko": "깨끗한 통과 경계가 독립 정답의 5밀리초 이내입니다.",
+    "expected": {
+      "count": 2,
+      "tolerance_ms": 5
+    },
+    "actual": {
+      "passed": true,
+      "expected": 2,
+      "accepted": 2,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "boundary_errors_ms": [
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    "evidence_path": "matching/baseline-clean.evaluation.json"
+  },
+  {
+    "assertion_id": "p04-upper-waiting-complete",
+    "status": "PASS",
+    "message_en": "Clean traversal boundaries agree with independent truth within 5 ms.",
+    "message_ko": "깨끗한 통과 경계가 독립 정답의 5밀리초 이내입니다.",
+    "expected": {
+      "count": 4,
+      "tolerance_ms": 5
+    },
+    "actual": {
+      "passed": true,
+      "expected": 4,
+      "accepted": 4,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "boundary_errors_ms": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    "evidence_path": "matching/upper-waiting.evaluation.json"
+  },
+  {
+    "assertion_id": "p04-waiting-retained",
+    "status": "PASS",
+    "message_en": "Initial stationary five seconds remain in observed traversal timing.",
+    "message_ko": "관측 통과 시간에 초기 정지 5초가 남아 있습니다.",
+    "expected": true,
+    "actual": {
+      "traversal_id": "16017602e910e7637a1e46964f409530abb90c242dbc335077573a872b177e5b",
+      "vehicle_id": "upper-waiting",
+      "edge_id": "37707394",
+      "label": "ad",
+      "forward": true,
+      "status": "ACCEPTED",
+      "entered_at_ms": 0,
+      "exited_at_ms": 27239,
+      "reason_codes": [],
+      "source_sample_ids": [
+        "tiny-city-demo:upper-waiting:0",
+        "tiny-city-demo:upper-waiting:1000",
+        "tiny-city-demo:upper-waiting:2000",
+        "tiny-city-demo:upper-waiting:3000",
+        "tiny-city-demo:upper-waiting:4000",
+        "tiny-city-demo:upper-waiting:5000",
+        "tiny-city-demo:upper-waiting:6000",
+        "tiny-city-demo:upper-waiting:7000",
+        "tiny-city-demo:upper-waiting:8000",
+        "tiny-city-demo:upper-waiting:9000",
+        "tiny-city-demo:upper-waiting:10000",
+        "tiny-city-demo:upper-waiting:11000",
+        "tiny-city-demo:upper-waiting:12000",
+        "tiny-city-demo:upper-waiting:13000",
+        "tiny-city-demo:upper-waiting:14000",
+        "tiny-city-demo:upper-waiting:15000",
+        "tiny-city-demo:upper-waiting:16000",
+        "tiny-city-demo:upper-waiting:17000",
+        "tiny-city-demo:upper-waiting:18000",
+        "tiny-city-demo:upper-waiting:19000",
+        "tiny-city-demo:upper-waiting:20000",
+        "tiny-city-demo:upper-waiting:21000",
+        "tiny-city-demo:upper-waiting:22000",
+        "tiny-city-demo:upper-waiting:23000",
+        "tiny-city-demo:upper-waiting:24000",
+        "tiny-city-demo:upper-waiting:25000",
+        "tiny-city-demo:upper-waiting:26000",
+        "tiny-city-demo:upper-waiting:27000"
+      ],
+      "entry_bracket": {
+        "before_sample_id": "tiny-city-demo:upper-waiting:0",
+        "after_sample_id": "tiny-city-demo:upper-waiting:0",
+        "before_offset_ms": 0,
+        "after_offset_ms": 0,
+        "interpolated_at_ms": 0
+      },
+      "exit_bracket": {
+        "before_sample_id": "tiny-city-demo:upper-waiting:27000",
+        "after_sample_id": "tiny-city-demo:upper-waiting:28000",
+        "before_offset_ms": 27000,
+        "after_offset_ms": 28000,
+        "interpolated_at_ms": 27239
+      },
+      "reason_messages": []
+    },
+    "evidence_path": "matching/baseline/result.json"
+  },
+  {
+    "assertion_id": "p04-gap-no-complete",
+    "status": "PASS",
+    "message_en": "The gap vehicle creates no complete traversal and retains its gap reason.",
+    "message_ko": "누락 차량은 완전 통과를 만들지 않고 누락 사유를 보존합니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "matching/baseline/result.json"
+  },
+  {
+    "assertion_id": "p04-continuous-noisy-coverage",
+    "status": "PASS",
+    "message_en": "Every input has a recorded outcome; required engine execution and cleanup are verified.",
+    "message_ko": "모든 입력의 결과와 필요한 실제 엔진 실행·정리를 확인했습니다.",
+    "expected": 90,
+    "actual": 90,
+    "evidence_path": "matching/continuous-noisy/manifest.json"
+  },
+  {
+    "assertion_id": "p04-continuous-noise-boundaries",
+    "status": "PASS",
+    "message_en": "Continuous bounded-noise internal traversals agree within 750 ms.",
+    "message_ko": "연속 제한 잡음의 내부 통과가 750밀리초 이내로 일치합니다.",
+    "expected": {
+      "internal_edges": 2,
+      "tolerance_ms": 750
+    },
+    "actual": {
+      "passed": true,
+      "expected": 2,
+      "accepted": 2,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "boundary_errors_ms": [
+        444,
+        13,
+        13,
+        103
+      ]
+    },
+    "evidence_path": "matching/continuous-noisy.evaluation.json"
+  },
+  {
+    "assertion_id": "p04-parallel-midpoint-coverage",
+    "status": "PASS",
+    "message_en": "Every input has a recorded outcome; required engine execution and cleanup are verified.",
+    "message_ko": "모든 입력의 결과와 필요한 실제 엔진 실행·정리를 확인했습니다.",
+    "expected": 21,
+    "actual": 21,
+    "evidence_path": "matching/parallel-midpoint/manifest.json"
+  },
+  {
+    "assertion_id": "p04-parallel-excluded",
+    "status": "PASS",
+    "message_en": "All 21 parallel-midpoint points are explicitly excluded for ambiguity.",
+    "message_ko": "평행도로 중간 21개 표본을 모호성으로 명시적으로 제외했습니다.",
+    "expected": 21,
+    "actual": 21,
+    "evidence_path": "matching/parallel-midpoint/result.json"
+  },
+  {
+    "assertion_id": "p04-split-coverage",
+    "status": "PASS",
+    "message_en": "Every input has a recorded outcome; required engine execution and cleanup are verified.",
+    "message_ko": "모든 입력의 결과와 필요한 실제 엔진 실행·정리를 확인했습니다.",
+    "expected": 177,
+    "actual": 177,
+    "evidence_path": "matching/split/manifest.json"
+  },
+  {
+    "assertion_id": "p04-split-parity",
+    "status": "PASS",
+    "message_en": "Full and split/overlap batches preserve semantic hashes and traversal identities.",
+    "message_ko": "전체·분할/중첩 배치가 의미 해시와 통과 식별자를 보존합니다.",
+    "expected": "55e7b697eae874875ff4dfc64cd96d4ca14f7cb8c23546442638f868664fb0ca",
+    "actual": "55e7b697eae874875ff4dfc64cd96d4ca14f7cb8c23546442638f868664fb0ca",
+    "evidence_path": "matching/split/result.json"
+  },
+  {
+    "assertion_id": "p04-overlap-coverage",
+    "status": "PASS",
+    "message_en": "Every input has a recorded outcome; required engine execution and cleanup are verified.",
+    "message_ko": "모든 입력의 결과와 필요한 실제 엔진 실행·정리를 확인했습니다.",
+    "expected": 177,
+    "actual": 177,
+    "evidence_path": "matching/overlap/manifest.json"
+  },
+  {
+    "assertion_id": "p04-overlap-parity",
+    "status": "PASS",
+    "message_en": "Full and split/overlap batches preserve semantic hashes and traversal identities.",
+    "message_ko": "전체·분할/중첩 배치가 의미 해시와 통과 식별자를 보존합니다.",
+    "expected": "55e7b697eae874875ff4dfc64cd96d4ca14f7cb8c23546442638f868664fb0ca",
+    "actual": "55e7b697eae874875ff4dfc64cd96d4ca14f7cb8c23546442638f868664fb0ca",
+    "evidence_path": "matching/overlap/result.json"
+  },
+  {
+    "assertion_id": "p04-reversed-rejected",
+    "status": "PASS",
+    "message_en": "Invalid input or tampered graph is refused before successful evidence.",
+    "message_ko": "잘못된 입력·변조 그래프를 성공 증거 전에 거부했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "matching/reversed.rejection.json"
+  },
+  {
+    "assertion_id": "p04-duplicate-rejected",
+    "status": "PASS",
+    "message_en": "Invalid input or tampered graph is refused before successful evidence.",
+    "message_ko": "잘못된 입력·변조 그래프를 성공 증거 전에 거부했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "matching/duplicate.rejection.json"
+  },
+  {
+    "assertion_id": "p04-wrong-graph-rejected",
+    "status": "PASS",
+    "message_en": "Invalid input or tampered graph is refused before successful evidence.",
+    "message_ko": "잘못된 입력·변조 그래프를 성공 증거 전에 거부했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "matching/wrong-graph.rejection.json"
+  },
+  {
+    "assertion_id": "p04-tampered-graph-rejected",
+    "status": "FAIL",
+    "message_en": "Invalid input or tampered graph is refused before successful evidence.",
+    "message_ko": "잘못된 입력·변조 그래프를 성공 증거 전에 거부했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "matching/tampered-graph.rejection.json"
+  }
+]

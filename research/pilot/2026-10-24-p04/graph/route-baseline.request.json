@@ -1,0 +1,20 @@
+{
+  "locations": [
+    {
+      "lon": 0.0003,
+      "lat": 0,
+      "search_cutoff": 5,
+      "radius": 2,
+      "minimum_reachability": 0
+    },
+    {
+      "lon": 0.0037,
+      "lat": 0,
+      "search_cutoff": 5,
+      "radius": 2,
+      "minimum_reachability": 0
+    }
+  ],
+  "costing": "auto",
+  "shape_format": "polyline6"
+}

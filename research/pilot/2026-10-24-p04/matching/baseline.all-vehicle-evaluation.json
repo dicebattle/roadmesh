@@ -1,0 +1,46 @@
+[
+  {
+    "vehicle_id": "baseline-clean",
+    "tolerance_ms": 5,
+    "passed": true,
+    "expected": 2,
+    "accepted": 2,
+    "false_traversals": 0,
+    "missed_traversals": 0,
+    "boundary_errors_ms": [
+      0,
+      1,
+      1,
+      0
+    ]
+  },
+  {
+    "vehicle_id": "baseline-noisy",
+    "tolerance_ms": 5,
+    "passed": false,
+    "expected": 2,
+    "accepted": 0,
+    "false_traversals": 0,
+    "missed_traversals": 2,
+    "boundary_errors_ms": []
+  },
+  {
+    "vehicle_id": "upper-waiting",
+    "tolerance_ms": 5,
+    "passed": true,
+    "expected": 4,
+    "accepted": 4,
+    "false_traversals": 0,
+    "missed_traversals": 0,
+    "boundary_errors_ms": [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0
+    ]
+  }
+]

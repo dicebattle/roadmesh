@@ -1,34 +1,34 @@
 {
-  "source_commit": "5422399dcfbce746990600fbdda7ab2cca183f09",
-  "implementation_sha256": "d7bedeb54be6ca1c15f27603fd6094e817416c9b64f83b0cd93850906f192324",
-  "report_path": "research/pilot/2026-10-24-p03/report.html",
-  "report_sha256": "a1a3c9cb9848c3cb418cfae2ad0c869b56dce4f7d4dfe2144f0ee4ab18e57442",
-  "capture_method": "Actual isolated Chrome playback recorded with Playwright CLI 0.1.22; raw recording trimmed to seconds 7–38 and transcoded to H.264, 1280×720, 20 fps; GIF is recorded seconds 9.5–23.5 at 10 fps. No synthetic animation replacement. / 격리된 Chrome의 실제 재생을 Playwright CLI로 녹화하고 원본7~38초를 H.264로 변환했습니다. GIF는 원본9.5~23.5초이며 가짜 애니메이션으로 대체하지 않았습니다.",
-  "raw_capture_sha256": "a61055dd1f3fc496705d60ad55c4e746128f25d1314d5e400a8bff21cb2096d7",
+  "source_commit": "dccafeb197a1f878ea0e61ac3dd77156185d4424",
+  "implementation_sha256": "108db510646dc5a2fcf64f99849444f6d0bafc3d2232481d0ca98fd88d2deb09",
+  "report_path": "research/pilot/2026-10-24-p04/report.html",
+  "report_sha256": "b2a2b40ef225acbc13c8a152e4b08c598d4d1965a39611194684031e0384dd75",
+  "capture_method": "Actual isolated Chrome report playback, Playwright CLI,17.75s at1280x720/20fps; full recording transcoded toH.264, first14s toGIF at10fps. / 격리 Chrome에서 실제 보고서를17.75초 녹화했고 전체를H.264, 처음14초를10fps GIF로 변환했습니다.",
+  "raw_capture_sha256": "e8dc665e3dac2b05a6bd2208574586fd592f0285311dd1cb6c13ecc3dc63dc09",
   "assets": [
     {
       "path": "docs/media/demo.mp4",
-      "sha256": "6e4b7241dc4815e0eb2da760485a731067b566d32bef2ccaecce4b072e6088cb"
+      "sha256": "df2499955e7fee51a69652e36d91f7f71900f2d62e7d8d429697a3d5b0a8bf7b"
     },
     {
       "path": "docs/media/demo.gif",
-      "sha256": "704aaffb8be8a3ea673603677efd172e92296fa0d2cdc37bfaa25be6781f0f14"
+      "sha256": "e045c1854a8d34f0dd01c579de2234b1a399f8d64d0226e0a0ff5d601463c94d"
     },
     {
       "path": "docs/media/report-en.png",
-      "sha256": "c0ef5d8950fdb1fe5a1a85bad584d2a4a1a0221784edafe3c5a53edae81b0cba"
+      "sha256": "5f60e6bb5672645b85557b335919ca6c498d97d19a170666e922ab9c7325b0ec"
     },
     {
       "path": "docs/media/report-ko.png",
-      "sha256": "ae49cf0b052a94ffb00de2107a64ddb9ad76b14cd6398254cf62e6d958807b7d"
+      "sha256": "22a123e5108c4f155f989650f010cdd56442d98aa61489e629ff5b4a088fbb9d"
     },
     {
       "path": "docs/media/report-checks.png",
-      "sha256": "c5c1c12081d50f14e43f2167706c030694b497c745da2e0372fe2314f0dcca73"
+      "sha256": "60d8d86d5c2de2222405dd19e4b9ac439996b5d9761eb4587a9f8ae3566b6606"
     },
     {
-      "path": "research/pilot/2026-10-24-p03/report-data.json",
-      "sha256": "1b8420a23049977ded781067d86478b67d3d01cf9916c928b02e10642ed3bc3f"
+      "path": "research/pilot/2026-10-24-p04/report-data.json",
+      "sha256": "71a39091a5b949cd48ac58cc7f3ff35696bc7c3a4ff31fc8bac970dd4c1206c6"
     }
   ]
 }

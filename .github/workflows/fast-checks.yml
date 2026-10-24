@@ -66,6 +66,8 @@ jobs:
             ${{ runner.temp }}/simulation-evidence/report-data.json
             ${{ runner.temp }}/simulation-evidence/report.html
             ${{ runner.temp }}/simulation-evidence/simulation/*.json
+            ${{ runner.temp }}/simulation-evidence/matching/**/*.json
+            ${{ runner.temp }}/simulation-evidence/matching/**/*.txt
             ${{ runner.temp }}/simulation-evidence/corpus/report.json
             ${{ runner.temp }}/simulation-evidence/simulation-spec.json
             ${{ runner.temp }}/simulation-evidence/graph/route*.response.json

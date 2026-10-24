@@ -1,0 +1,39 @@
+{
+  "shape": [
+    {
+      "lon": 1,
+      "lat": 1,
+      "time": 0
+    },
+    {
+      "lon": 1.0001,
+      "lat": 1,
+      "time": 1
+    }
+  ],
+  "shape_match": "map_snap",
+  "costing": "auto",
+  "trace_options": {
+    "gps_accuracy": 5,
+    "search_radius": 30,
+    "interpolation_distance": 0
+  },
+  "filters": {
+    "action": "include",
+    "attributes": [
+      "edge.id",
+      "edge.way_id",
+      "edge.length",
+      "edge.begin_shape_index",
+      "edge.end_shape_index",
+      "matched.point",
+      "matched.type",
+      "matched.edge_index",
+      "matched.begin_route_discontinuity",
+      "matched.end_route_discontinuity",
+      "matched.distance_along_edge",
+      "matched.distance_from_trace_point",
+      "shape"
+    ]
+  }
+}

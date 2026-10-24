@@ -1,0 +1,231 @@
+[
+    {
+        "Id": "683845570a802e13884b5bd15210b36e353ade89cef2d9e687d911edfe9e0c5a",
+        "Created": "2026-10-24T09:50:03.031591543Z",
+        "Path": "/bin/sh",
+        "Args": [
+            "-c",
+            "sleep 900"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 84192,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-10-24T09:50:03.107996477Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:8b4a0609466e08dd6b384be7104ffa3f1c43270d9a8e931f3d93e2243566b4b6",
+        "ResolvConfPath": "/var/lib/docker/containers/683845570a802e13884b5bd15210b36e353ade89cef2d9e687d911edfe9e0c5a/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/683845570a802e13884b5bd15210b36e353ade89cef2d9e687d911edfe9e0c5a/hostname",
+        "HostsPath": "/var/lib/docker/containers/683845570a802e13884b5bd15210b36e353ade89cef2d9e687d911edfe9e0c5a/hosts",
+        "LogPath": "/var/lib/docker/containers/683845570a802e13884b5bd15210b36e353ade89cef2d9e687d911edfe9e0c5a/683845570a802e13884b5bd15210b36e353ade89cef2d9e687d911edfe9e0c5a-json.log",
+        "Name": "/routelens-p02-1f71fc05-bd7a-4c4a-993c-e68c19c097d2",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {
+                    "max-file": "5",
+                    "max-size": "20m"
+                }
+            },
+            "NetworkMode": "none",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 8408530944,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 2147483648,
+            "NanoCpus": 2000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 4294967296,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "Mounts": [
+                {
+                    "Type": "bind",
+                    "Source": "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/matching/split",
+                    "Target": "/work"
+                },
+                {
+                    "Type": "bind",
+                    "Source": "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/graph",
+                    "Target": "/graph",
+                    "ReadOnly": true
+                }
+            ],
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "683845570a802e13884b5bd15210b36e353ade89cef2d9e687d911edfe9e0c5a",
+                "LowerDir": "/var/lib/docker/overlay2/8c4b4774c5dfe9a6e04f3ab146bd367da1a5bb394faf411202fcc4ca055d8c7a-init/diff:/var/lib/docker/overlay2/kc7ohnf4kc2s8th08s2iqagut/diff:/var/lib/docker/overlay2/80a78762b31921e4fa9a2630f27ff71707472b277ec4f9661abf0052185d6138/diff:/var/lib/docker/overlay2/8d93b470fef86172bfc3551632878daaef1815ad5a18621f12b7eca3364202dd/diff:/var/lib/docker/overlay2/f20f7bc86d5e467939ae72bbc77d8daa8fb047ba9f43f6c66071b7e6ef7154fa/diff:/var/lib/docker/overlay2/1a58760cd2a789d82a5e045325a62f460620935a3014a48726a6851265eba239/diff:/var/lib/docker/overlay2/6ecae2f12c05d295348e24ce1471cc3a7d726bc3eb448ec92446ea25ec75bfc0/diff:/var/lib/docker/overlay2/ca6f2be6658d2ce1b63aae5cb69c2ec44d6a73927739451ed9bd7627aea9da52/diff",
+                "MergedDir": "/var/lib/docker/overlay2/8c4b4774c5dfe9a6e04f3ab146bd367da1a5bb394faf411202fcc4ca055d8c7a/merged",
+                "UpperDir": "/var/lib/docker/overlay2/8c4b4774c5dfe9a6e04f3ab146bd367da1a5bb394faf411202fcc4ca055d8c7a/diff",
+                "WorkDir": "/var/lib/docker/overlay2/8c4b4774c5dfe9a6e04f3ab146bd367da1a5bb394faf411202fcc4ca055d8c7a/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/graph",
+                "Destination": "/graph",
+                "Mode": "",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/matching/split",
+                "Destination": "/work",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "683845570a80",
+            "Domainname": "",
+            "User": "root",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LD_LIBRARY_PATH=/usr/local/lib:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/lib32:/usr/lib32"
+            ],
+            "Cmd": [
+                "-c",
+                "sleep 900"
+            ],
+            "Image": "sha256:8b4a0609466e08dd6b384be7104ffa3f1c43270d9a8e931f3d93e2243566b4b6",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/bin/sh"
+            ],
+            "Labels": {
+                "io.routelens.run_id": "1f71fc05-bd7a-4c4a-993c-e68c19c097d2",
+                "org.opencontainers.image.authors": "Kevin Kreiser <kevinkreiser@gmail.com>",
+                "org.opencontainers.image.description": "Open Source Routing Engine for OpenStreetMap and Other Datasources",
+                "org.opencontainers.image.source": "https://github.com/valhalla/valhalla",
+                "org.opencontainers.image.version": "24.04"
+            },
+            "StopTimeout": 1
+        },
+        "NetworkSettings": {
+            "SandboxID": "0b492974226799d180d83ecf51869e7c1bd2be47f5a597c87d0e7cc76e217be4",
+            "SandboxKey": "/var/run/docker/netns/0b4929742267",
+            "Ports": {},
+            "Networks": {
+                "none": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "7b7b07594976141f1022f0e0f349e112deec0958e8d9793c90900420e409effd",
+                    "EndpointID": "07a5193f4cce2cdced51a4c2fd200175a8715b91004544b1597cd79b4b7dc045",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        }
+    }
+]

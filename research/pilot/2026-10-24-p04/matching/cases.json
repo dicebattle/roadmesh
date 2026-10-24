@@ -1,0 +1,57 @@
+[
+  {
+    "case_id": "baseline",
+    "name_en": "Baseline clean, waiting and gap vehicles",
+    "name_ko": "기본 깨끗한·정지·누락 차량",
+    "status": "PASS",
+    "input_samples": 177,
+    "matched_samples": 177,
+    "excluded_samples": 0,
+    "accepted_traversals": 6,
+    "excluded_traversals": 2
+  },
+  {
+    "case_id": "continuous-noisy",
+    "name_en": "Continuous upper route with 3 m noise",
+    "name_ko": "3m 잡음의 연속 상단 경로",
+    "status": "PASS",
+    "input_samples": 90,
+    "matched_samples": 90,
+    "excluded_samples": 0,
+    "accepted_traversals": 3,
+    "excluded_traversals": 1
+  },
+  {
+    "case_id": "parallel-midpoint",
+    "name_en": "Ambiguous parallel midpoint",
+    "name_ko": "모호한 평행도로 중간점",
+    "status": "PASS",
+    "input_samples": 21,
+    "matched_samples": 0,
+    "excluded_samples": 21,
+    "accepted_traversals": 0,
+    "excluded_traversals": 0
+  },
+  {
+    "case_id": "split",
+    "name_en": "Split batch parity",
+    "name_ko": "분할 배치 동일성",
+    "status": "PASS",
+    "input_samples": 177,
+    "matched_samples": 177,
+    "excluded_samples": 0,
+    "accepted_traversals": 6,
+    "excluded_traversals": 2
+  },
+  {
+    "case_id": "overlap",
+    "name_en": "Overlap batch parity",
+    "name_ko": "중첩 배치 동일성",
+    "status": "PASS",
+    "input_samples": 177,
+    "matched_samples": 177,
+    "excluded_samples": 0,
+    "accepted_traversals": 6,
+    "excluded_traversals": 2
+  }
+]

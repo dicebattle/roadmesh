@@ -1,0 +1,2495 @@
+{
+  "note_en": "Pinned Valhalla 3.9.1 probe responses for engine-free adapter unit regression. Fresh integration must execute the engine again.",
+  "note_ko": "엔진 없는 연결기 단위 회귀 검사용 고정 Valhalla3.9.1 조사 응답입니다. 새 통합에서는 엔진을 다시 실행해야 합니다.",
+  "cases": {
+    "baseline-clean": {
+      "request": {
+        "shape": [
+          {
+            "lon": 0,
+            "lat": 0,
+            "time": 0
+          },
+          {
+            "lon": 0.000089932,
+            "lat": 0,
+            "time": 1
+          },
+          {
+            "lon": 0.000179864,
+            "lat": 0,
+            "time": 2
+          },
+          {
+            "lon": 0.000269796,
+            "lat": 0,
+            "time": 3
+          },
+          {
+            "lon": 0.000359728,
+            "lat": 0,
+            "time": 4
+          },
+          {
+            "lon": 0.00044966,
+            "lat": 0,
+            "time": 5
+          },
+          {
+            "lon": 0.000539592,
+            "lat": 0,
+            "time": 6
+          },
+          {
+            "lon": 0.000629524,
+            "lat": 0,
+            "time": 7
+          },
+          {
+            "lon": 0.000719456,
+            "lat": 0,
+            "time": 8
+          },
+          {
+            "lon": 0.000809388,
+            "lat": 0,
+            "time": 9
+          },
+          {
+            "lon": 0.00089932,
+            "lat": 0,
+            "time": 10
+          },
+          {
+            "lon": 0.000989252,
+            "lat": 0,
+            "time": 11
+          },
+          {
+            "lon": 0.001079184,
+            "lat": 0,
+            "time": 12
+          },
+          {
+            "lon": 0.001169116,
+            "lat": 0,
+            "time": 13
+          },
+          {
+            "lon": 0.001259049,
+            "lat": 0,
+            "time": 14
+          },
+          {
+            "lon": 0.001348981,
+            "lat": 0,
+            "time": 15
+          },
+          {
+            "lon": 0.001438913,
+            "lat": 0,
+            "time": 16
+          },
+          {
+            "lon": 0.001528845,
+            "lat": 0,
+            "time": 17
+          },
+          {
+            "lon": 0.001618777,
+            "lat": 0,
+            "time": 18
+          },
+          {
+            "lon": 0.001708709,
+            "lat": 0,
+            "time": 19
+          },
+          {
+            "lon": 0.001798641,
+            "lat": 0,
+            "time": 20
+          },
+          {
+            "lon": 0.001888573,
+            "lat": 0,
+            "time": 21
+          },
+          {
+            "lon": 0.001978505,
+            "lat": 0,
+            "time": 22
+          },
+          {
+            "lon": 0.002068437,
+            "lat": 0,
+            "time": 23
+          },
+          {
+            "lon": 0.002158369,
+            "lat": 0,
+            "time": 24
+          },
+          {
+            "lon": 0.002248301,
+            "lat": 0,
+            "time": 25
+          },
+          {
+            "lon": 0.002338233,
+            "lat": 0,
+            "time": 26
+          },
+          {
+            "lon": 0.002428165,
+            "lat": 0,
+            "time": 27
+          },
+          {
+            "lon": 0.002518097,
+            "lat": 0,
+            "time": 28
+          },
+          {
+            "lon": 0.002608029,
+            "lat": 0,
+            "time": 29
+          },
+          {
+            "lon": 0.002697961,
+            "lat": 0,
+            "time": 30
+          },
+          {
+            "lon": 0.002787893,
+            "lat": 0,
+            "time": 31
+          },
+          {
+            "lon": 0.002877825,
+            "lat": 0,
+            "time": 32
+          },
+          {
+            "lon": 0.002967757,
+            "lat": 0,
+            "time": 33
+          },
+          {
+            "lon": 0.003057689,
+            "lat": 0,
+            "time": 34
+          },
+          {
+            "lon": 0.003147621,
+            "lat": 0,
+            "time": 35
+          },
+          {
+            "lon": 0.003237553,
+            "lat": 0,
+            "time": 36
+          },
+          {
+            "lon": 0.003327485,
+            "lat": 0,
+            "time": 37
+          },
+          {
+            "lon": 0.003417417,
+            "lat": 0,
+            "time": 38
+          },
+          {
+            "lon": 0.003507349,
+            "lat": 0,
+            "time": 39
+          },
+          {
+            "lon": 0.003597281,
+            "lat": 0,
+            "time": 40
+          },
+          {
+            "lon": 0.003687213,
+            "lat": 0,
+            "time": 41
+          },
+          {
+            "lon": 0.003777146,
+            "lat": 0,
+            "time": 42
+          },
+          {
+            "lon": 0.003867078,
+            "lat": 0,
+            "time": 43
+          },
+          {
+            "lon": 0.00395701,
+            "lat": 0,
+            "time": 44
+          },
+          {
+            "lon": 0.004,
+            "lat": 0,
+            "time": 44.479
+          }
+        ],
+        "shape_match": "map_snap",
+        "costing": "auto",
+        "trace_options": {
+          "gps_accuracy": 5,
+          "search_radius": 30,
+          "interpolation_distance": 0
+        },
+        "filters": {
+          "action": "include",
+          "attributes": [
+            "edge.id",
+            "edge.way_id",
+            "edge.length",
+            "edge.begin_shape_index",
+            "edge.end_shape_index",
+            "edge.forward",
+            "matched.point",
+            "matched.type",
+            "matched.edge_index",
+            "matched.begin_route_discontinuity",
+            "matched.end_route_discontinuity",
+            "matched.distance_along_edge",
+            "matched.distance_from_trace_point",
+            "shape"
+          ]
+        }
+      },
+      "response": {
+        "units": "kilometers",
+        "shape": "???_|B?_|B",
+        "edges": [
+          {
+            "way_id": 101,
+            "id": 4152962,
+            "end_shape_index": 1,
+            "begin_shape_index": 0,
+            "forward": true,
+            "length": 0.223
+          },
+          {
+            "way_id": 102,
+            "id": 339697282,
+            "end_shape_index": 2,
+            "begin_shape_index": 1,
+            "forward": true,
+            "length": 0.223
+          }
+        ],
+        "matched_points": [
+          {
+            "lon": 0,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000089,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.044966,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000179,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.089932,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000269,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.134898,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000359,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.179864,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000449,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.22483,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000539,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.269796,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000629,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.314762,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000719,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.359728,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000809,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.404694,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000899,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.44966,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000989,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.494626,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001079,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.539592,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001169,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.584558,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001259,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.629524,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001348,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.67449,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001438,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.719456,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001528,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.764422,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001618,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.809388,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001708,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.854354,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001798,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.89932,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001888,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.944286,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001978,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.989252,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002068,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.034218,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002158,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.079184,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002248,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.12415,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002338,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.169116,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002428,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.214082,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002518,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.259048,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002608,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.304014,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002697,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.34898,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002787,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.393946,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002877,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.438912,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002967,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.483878,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003057,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.528844,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003147,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.57381,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003237,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.618776,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003327,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.663742,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003417,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.708708,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003507,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.753674,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003597,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.79864,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003687,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.843606,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003777,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.888572,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003867,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.933539,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003957,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.978504,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 1,
+            "distance_from_trace_point": 0
+          }
+        ],
+        "alternate_paths": []
+      }
+    },
+    "baseline-noisy": {
+      "request": {
+        "shape": [
+          {
+            "lon": 0.000004309,
+            "lat": -0.000008675,
+            "time": 0
+          },
+          {
+            "lon": 0.000071129,
+            "lat": 0.000002103,
+            "time": 1
+          },
+          {
+            "lon": 0.00018932,
+            "lat": -0.000004861,
+            "time": 2
+          },
+          {
+            "lon": 0.000259969,
+            "lat": 0.000011748,
+            "time": 3
+          },
+          {
+            "lon": 0.000357552,
+            "lat": -0.000003514,
+            "time": 4
+          },
+          {
+            "lon": 0.000446766,
+            "lat": -0.000017113,
+            "time": 5
+          },
+          {
+            "lon": 0.000521676,
+            "lat": 0.000001835,
+            "time": 6
+          },
+          {
+            "lon": 0.000627313,
+            "lat": -0.000020866,
+            "time": 7
+          },
+          {
+            "lon": 0.000723106,
+            "lat": 0.000001445,
+            "time": 8
+          },
+          {
+            "lon": 0.000806822,
+            "lat": 0.000016848,
+            "time": 9
+          },
+          {
+            "lon": 0.000873827,
+            "lat": -0.000001143,
+            "time": 10
+          },
+          {
+            "lon": 0.000983488,
+            "lat": 0.000002875,
+            "time": 11
+          },
+          {
+            "lon": 0.001074315,
+            "lat": -0.000006115,
+            "time": 12
+          },
+          {
+            "lon": 0.001158056,
+            "lat": 0.000015246,
+            "time": 13
+          },
+          {
+            "lon": 0.001256075,
+            "lat": -0.00001017,
+            "time": 14
+          },
+          {
+            "lon": 0.002241302,
+            "lat": 0.000014053,
+            "time": 25
+          },
+          {
+            "lon": 0.002327923,
+            "lat": -0.000005576,
+            "time": 26
+          },
+          {
+            "lon": 0.002423112,
+            "lat": -0.000005568,
+            "time": 27
+          },
+          {
+            "lon": 0.002492938,
+            "lat": 0.000005726,
+            "time": 28
+          },
+          {
+            "lon": 0.002599166,
+            "lat": -0.000007616,
+            "time": 29
+          },
+          {
+            "lon": 0.002718488,
+            "lat": 0.000011049,
+            "time": 30
+          },
+          {
+            "lon": 0.002794597,
+            "lat": 0.000013077,
+            "time": 31
+          },
+          {
+            "lon": 0.002868399,
+            "lat": -0.000003963,
+            "time": 32
+          },
+          {
+            "lon": 0.002958994,
+            "lat": -0.000008695,
+            "time": 33
+          },
+          {
+            "lon": 0.003061301,
+            "lat": 0.000003701,
+            "time": 34
+          },
+          {
+            "lon": 0.003157577,
+            "lat": -0.000009632,
+            "time": 35
+          },
+          {
+            "lon": 0.003240977,
+            "lat": -0.000002789,
+            "time": 36
+          },
+          {
+            "lon": 0.003344685,
+            "lat": 0.000003002,
+            "time": 37
+          },
+          {
+            "lon": 0.003413344,
+            "lat": 0.000014872,
+            "time": 38
+          },
+          {
+            "lon": 0.003497133,
+            "lat": -0.000011063,
+            "time": 39
+          },
+          {
+            "lon": 0.003598825,
+            "lat": 0.000023365,
+            "time": 40
+          },
+          {
+            "lon": 0.003708042,
+            "lat": 0.000013899,
+            "time": 41
+          },
+          {
+            "lon": 0.003777167,
+            "lat": 0.000013679,
+            "time": 42
+          },
+          {
+            "lon": 0.003849533,
+            "lat": 0.000018564,
+            "time": 43
+          },
+          {
+            "lon": 0.003960002,
+            "lat": 0.000002543,
+            "time": 44
+          },
+          {
+            "lon": 0.003983357,
+            "lat": 0.000011163,
+            "time": 44.479
+          }
+        ],
+        "shape_match": "map_snap",
+        "costing": "auto",
+        "trace_options": {
+          "gps_accuracy": 5,
+          "search_radius": 30,
+          "interpolation_distance": 0
+        },
+        "filters": {
+          "action": "include",
+          "attributes": [
+            "edge.id",
+            "edge.way_id",
+            "edge.length",
+            "edge.begin_shape_index",
+            "edge.end_shape_index",
+            "edge.forward",
+            "matched.point",
+            "matched.type",
+            "matched.edge_index",
+            "matched.begin_route_discontinuity",
+            "matched.end_route_discontinuity",
+            "matched.distance_along_edge",
+            "matched.distance_from_trace_point",
+            "shape"
+          ]
+        }
+      },
+      "response": {
+        "units": "kilometers",
+        "shape": "???_|B?}zB",
+        "edges": [
+          {
+            "way_id": 101,
+            "id": 4152962,
+            "end_shape_index": 1,
+            "begin_shape_index": 0,
+            "forward": true,
+            "length": 0.223
+          },
+          {
+            "way_id": 102,
+            "id": 339697282,
+            "end_shape_index": 2,
+            "begin_shape_index": 1,
+            "forward": true,
+            "length": 0.221,
+            "target_percent_along": 0.991
+          }
+        ],
+        "matched_points": [
+          {
+            "lon": 0,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0,
+            "distance_from_trace_point": 1.070977
+          },
+          {
+            "lon": 0.000071,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.035564,
+            "distance_from_trace_point": 0.232522
+          },
+          {
+            "lon": 0.000189,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.09466,
+            "distance_from_trace_point": 0.537466
+          },
+          {
+            "lon": 0.000259,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.129984,
+            "distance_from_trace_point": 1.298941
+          },
+          {
+            "lon": 0.000357,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.178776,
+            "distance_from_trace_point": 0.388532
+          },
+          {
+            "lon": 0.000446,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.223383,
+            "distance_from_trace_point": 1.892133
+          },
+          {
+            "lon": 0.000521,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.260838,
+            "distance_from_trace_point": 0.20289
+          },
+          {
+            "lon": 0.000627,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.313656,
+            "distance_from_trace_point": 2.307091
+          },
+          {
+            "lon": 0.000723,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.361553,
+            "distance_from_trace_point": 0.159769
+          },
+          {
+            "lon": 0.000806,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.40341,
+            "distance_from_trace_point": 1.862832
+          },
+          {
+            "lon": 0.000873,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.436913,
+            "distance_from_trace_point": 0.126378
+          },
+          {
+            "lon": 0.000983,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.491744,
+            "distance_from_trace_point": 0.31788
+          },
+          {
+            "lon": 0.001074,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.537157,
+            "distance_from_trace_point": 0.676117
+          },
+          {
+            "lon": 0.001158,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.579028,
+            "distance_from_trace_point": 1.685704
+          },
+          {
+            "lon": 0.001256,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.628037,
+            "distance_from_trace_point": 1.124466
+          },
+          {
+            "lon": 0.002241,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.120651,
+            "distance_from_trace_point": 1.553798
+          },
+          {
+            "lon": 0.002327,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.163961,
+            "distance_from_trace_point": 0.616521
+          },
+          {
+            "lon": 0.002423,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.211555,
+            "distance_from_trace_point": 0.615637
+          },
+          {
+            "lon": 0.002492,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.246469,
+            "distance_from_trace_point": 0.633106
+          },
+          {
+            "lon": 0.002599,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.299583,
+            "distance_from_trace_point": 0.842078
+          },
+          {
+            "lon": 0.002718,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.359243,
+            "distance_from_trace_point": 1.221654
+          },
+          {
+            "lon": 0.002794,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.397298,
+            "distance_from_trace_point": 1.445884
+          },
+          {
+            "lon": 0.002868,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.434199,
+            "distance_from_trace_point": 0.438177
+          },
+          {
+            "lon": 0.002958,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.479496,
+            "distance_from_trace_point": 0.96138
+          },
+          {
+            "lon": 0.003061,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.53065,
+            "distance_from_trace_point": 0.409208
+          },
+          {
+            "lon": 0.003157,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.578788,
+            "distance_from_trace_point": 1.064981
+          },
+          {
+            "lon": 0.00324,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.620488,
+            "distance_from_trace_point": 0.308371
+          },
+          {
+            "lon": 0.003344,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.672342,
+            "distance_from_trace_point": 0.331922
+          },
+          {
+            "lon": 0.003413,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.706671,
+            "distance_from_trace_point": 1.644352
+          },
+          {
+            "lon": 0.003497,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.748566,
+            "distance_from_trace_point": 1.223202
+          },
+          {
+            "lon": 0.003598,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.799412,
+            "distance_from_trace_point": 2.583397
+          },
+          {
+            "lon": 0.003708,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.854021,
+            "distance_from_trace_point": 1.53677
+          },
+          {
+            "lon": 0.003777,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.888583,
+            "distance_from_trace_point": 1.512445
+          },
+          {
+            "lon": 0.003849,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.924766,
+            "distance_from_trace_point": 2.052565
+          },
+          {
+            "lon": 0.00396,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.98,
+            "distance_from_trace_point": 0.281171
+          },
+          {
+            "lon": 0.003983,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.991678,
+            "distance_from_trace_point": 1.234259
+          }
+        ],
+        "alternate_paths": []
+      }
+    },
+    "upper-waiting": {
+      "request": {
+        "shape": [
+          {
+            "lon": 0,
+            "lat": 0,
+            "time": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0,
+            "time": 1
+          },
+          {
+            "lon": 0,
+            "lat": 0,
+            "time": 2
+          },
+          {
+            "lon": 0,
+            "lat": 0,
+            "time": 3
+          },
+          {
+            "lon": 0,
+            "lat": 0,
+            "time": 4
+          },
+          {
+            "lon": 0,
+            "lat": 0,
+            "time": 5
+          },
+          {
+            "lon": 0,
+            "lat": 0.000089932,
+            "time": 6
+          },
+          {
+            "lon": 0,
+            "lat": 0.000179864,
+            "time": 7
+          },
+          {
+            "lon": 0,
+            "lat": 0.000269796,
+            "time": 8
+          },
+          {
+            "lon": 0,
+            "lat": 0.000359728,
+            "time": 9
+          },
+          {
+            "lon": 0,
+            "lat": 0.00044966,
+            "time": 10
+          },
+          {
+            "lon": 0,
+            "lat": 0.000539592,
+            "time": 11
+          },
+          {
+            "lon": 0,
+            "lat": 0.000629524,
+            "time": 12
+          },
+          {
+            "lon": 0,
+            "lat": 0.000719456,
+            "time": 13
+          },
+          {
+            "lon": 0,
+            "lat": 0.000809388,
+            "time": 14
+          },
+          {
+            "lon": 0,
+            "lat": 0.00089932,
+            "time": 15
+          },
+          {
+            "lon": 0,
+            "lat": 0.000989252,
+            "time": 16
+          },
+          {
+            "lon": 0,
+            "lat": 0.001079184,
+            "time": 17
+          },
+          {
+            "lon": 0,
+            "lat": 0.001169116,
+            "time": 18
+          },
+          {
+            "lon": 0,
+            "lat": 0.001259049,
+            "time": 19
+          },
+          {
+            "lon": 0,
+            "lat": 0.001348981,
+            "time": 20
+          },
+          {
+            "lon": 0,
+            "lat": 0.001438913,
+            "time": 21
+          },
+          {
+            "lon": 0,
+            "lat": 0.001528845,
+            "time": 22
+          },
+          {
+            "lon": 0,
+            "lat": 0.001618777,
+            "time": 23
+          },
+          {
+            "lon": 0,
+            "lat": 0.001708709,
+            "time": 24
+          },
+          {
+            "lon": 0,
+            "lat": 0.001798641,
+            "time": 25
+          },
+          {
+            "lon": 0,
+            "lat": 0.001888573,
+            "time": 26
+          },
+          {
+            "lon": 0,
+            "lat": 0.001978505,
+            "time": 27
+          },
+          {
+            "lon": 0.000068437,
+            "lat": 0.002,
+            "time": 28
+          },
+          {
+            "lon": 0.000158369,
+            "lat": 0.002,
+            "time": 29
+          },
+          {
+            "lon": 0.000248301,
+            "lat": 0.002,
+            "time": 30
+          },
+          {
+            "lon": 0.000338233,
+            "lat": 0.002,
+            "time": 31
+          },
+          {
+            "lon": 0.000428165,
+            "lat": 0.002,
+            "time": 32
+          },
+          {
+            "lon": 0.000518097,
+            "lat": 0.002,
+            "time": 33
+          },
+          {
+            "lon": 0.000608029,
+            "lat": 0.002,
+            "time": 34
+          },
+          {
+            "lon": 0.000697961,
+            "lat": 0.002,
+            "time": 35
+          },
+          {
+            "lon": 0.000787893,
+            "lat": 0.002,
+            "time": 36
+          },
+          {
+            "lon": 0.000877825,
+            "lat": 0.002,
+            "time": 37
+          },
+          {
+            "lon": 0.000967757,
+            "lat": 0.002,
+            "time": 38
+          },
+          {
+            "lon": 0.001057689,
+            "lat": 0.002,
+            "time": 39
+          },
+          {
+            "lon": 0.001147621,
+            "lat": 0.002,
+            "time": 40
+          },
+          {
+            "lon": 0.001237553,
+            "lat": 0.002,
+            "time": 41
+          },
+          {
+            "lon": 0.001327485,
+            "lat": 0.002,
+            "time": 42
+          },
+          {
+            "lon": 0.001417417,
+            "lat": 0.002,
+            "time": 43
+          },
+          {
+            "lon": 0.001507349,
+            "lat": 0.002,
+            "time": 44
+          },
+          {
+            "lon": 0.001597281,
+            "lat": 0.002,
+            "time": 45
+          },
+          {
+            "lon": 0.001687213,
+            "lat": 0.002,
+            "time": 46
+          },
+          {
+            "lon": 0.001777146,
+            "lat": 0.002,
+            "time": 47
+          },
+          {
+            "lon": 0.001867078,
+            "lat": 0.002,
+            "time": 48
+          },
+          {
+            "lon": 0.00195701,
+            "lat": 0.002,
+            "time": 49
+          },
+          {
+            "lon": 0.002046942,
+            "lat": 0.002,
+            "time": 50
+          },
+          {
+            "lon": 0.002136874,
+            "lat": 0.002,
+            "time": 51
+          },
+          {
+            "lon": 0.002226806,
+            "lat": 0.002,
+            "time": 52
+          },
+          {
+            "lon": 0.002316738,
+            "lat": 0.002,
+            "time": 53
+          },
+          {
+            "lon": 0.00240667,
+            "lat": 0.002,
+            "time": 54
+          },
+          {
+            "lon": 0.002496602,
+            "lat": 0.002,
+            "time": 55
+          },
+          {
+            "lon": 0.002586534,
+            "lat": 0.002,
+            "time": 56
+          },
+          {
+            "lon": 0.002676466,
+            "lat": 0.002,
+            "time": 57
+          },
+          {
+            "lon": 0.002766398,
+            "lat": 0.002,
+            "time": 58
+          },
+          {
+            "lon": 0.00285633,
+            "lat": 0.002,
+            "time": 59
+          },
+          {
+            "lon": 0.002946262,
+            "lat": 0.002,
+            "time": 60
+          },
+          {
+            "lon": 0.003036194,
+            "lat": 0.002,
+            "time": 61
+          },
+          {
+            "lon": 0.003126126,
+            "lat": 0.002,
+            "time": 62
+          },
+          {
+            "lon": 0.003216058,
+            "lat": 0.002,
+            "time": 63
+          },
+          {
+            "lon": 0.00330599,
+            "lat": 0.002,
+            "time": 64
+          },
+          {
+            "lon": 0.003395922,
+            "lat": 0.002,
+            "time": 65
+          },
+          {
+            "lon": 0.003485854,
+            "lat": 0.002,
+            "time": 66
+          },
+          {
+            "lon": 0.003575786,
+            "lat": 0.002,
+            "time": 67
+          },
+          {
+            "lon": 0.003665718,
+            "lat": 0.002,
+            "time": 68
+          },
+          {
+            "lon": 0.00375565,
+            "lat": 0.002,
+            "time": 69
+          },
+          {
+            "lon": 0.003845582,
+            "lat": 0.002,
+            "time": 70
+          },
+          {
+            "lon": 0.003935514,
+            "lat": 0.002,
+            "time": 71
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001974554,
+            "time": 72
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001884622,
+            "time": 73
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001794689,
+            "time": 74
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001704757,
+            "time": 75
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001614825,
+            "time": 76
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001524893,
+            "time": 77
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001434961,
+            "time": 78
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001345029,
+            "time": 79
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001255097,
+            "time": 80
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001165165,
+            "time": 81
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001075233,
+            "time": 82
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000985301,
+            "time": 83
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000895369,
+            "time": 84
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000805437,
+            "time": 85
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000715505,
+            "time": 86
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000625573,
+            "time": 87
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000535641,
+            "time": 88
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000445709,
+            "time": 89
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000355777,
+            "time": 90
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000265845,
+            "time": 91
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000175913,
+            "time": 92
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000085981,
+            "time": 93
+          },
+          {
+            "lon": 0.004,
+            "lat": 0,
+            "time": 93.957
+          }
+        ],
+        "shape_match": "map_snap",
+        "costing": "auto",
+        "trace_options": {
+          "gps_accuracy": 5,
+          "search_radius": 30,
+          "interpolation_distance": 0
+        },
+        "filters": {
+          "action": "include",
+          "attributes": [
+            "edge.id",
+            "edge.way_id",
+            "edge.length",
+            "edge.begin_shape_index",
+            "edge.end_shape_index",
+            "edge.forward",
+            "matched.point",
+            "matched.type",
+            "matched.edge_index",
+            "matched.begin_route_discontinuity",
+            "matched.end_route_discontinuity",
+            "matched.distance_along_edge",
+            "matched.distance_from_trace_point",
+            "shape"
+          ]
+        }
+      },
+      "response": {
+        "units": "kilometers",
+        "shape": "??_|B??_|B?_|B~{B?",
+        "edges": [
+          {
+            "way_id": 103,
+            "id": 37707394,
+            "end_shape_index": 1,
+            "begin_shape_index": 0,
+            "forward": true,
+            "length": 0.223
+          },
+          {
+            "way_id": 104,
+            "id": 138370690,
+            "end_shape_index": 2,
+            "begin_shape_index": 1,
+            "forward": true,
+            "length": 0.223
+          },
+          {
+            "way_id": 105,
+            "id": 205479554,
+            "end_shape_index": 3,
+            "begin_shape_index": 2,
+            "forward": true,
+            "length": 0.223
+          },
+          {
+            "way_id": 106,
+            "id": 541023874,
+            "end_shape_index": 4,
+            "begin_shape_index": 3,
+            "forward": true,
+            "length": 0.223
+          }
+        ],
+        "matched_points": [
+          {
+            "lon": 0,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0,
+            "type": "interpolated",
+            "edge_index": 0,
+            "distance_along_edge": 0,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0,
+            "type": "interpolated",
+            "edge_index": 0,
+            "distance_along_edge": 0,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0,
+            "type": "interpolated",
+            "edge_index": 0,
+            "distance_along_edge": 0,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0,
+            "type": "interpolated",
+            "edge_index": 0,
+            "distance_along_edge": 0,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0,
+            "type": "interpolated",
+            "edge_index": 0,
+            "distance_along_edge": 0,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.000089,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.044966,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.000179,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.089932,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.000269,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.134898,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.000359,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.179864,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.000449,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.22483,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.000539,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.269796,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.000629,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.314762,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.000719,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.359728,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.000809,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.404694,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.000899,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.44966,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.000989,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.494626,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.001079,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.539592,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.001169,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.584558,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.001259,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.629524,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.001348,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.67449,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.001438,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.719456,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.001528,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.764422,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.001618,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.809388,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.001708,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.854354,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.001798,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.89932,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.001888,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.944286,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0,
+            "lat": 0.001978,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.989252,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000068,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.034218,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000158,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.079184,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000248,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.12415,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000338,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.169116,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000428,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.214082,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000518,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.259048,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000608,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.304014,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000697,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.34898,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000787,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.393946,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000877,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.438912,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.000967,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.483878,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001057,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.528844,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001147,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.57381,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001237,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.618776,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001327,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.663742,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001417,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.708708,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001507,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.753674,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001597,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.79864,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001687,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.843606,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001777,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.888573,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001867,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.933539,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.001957,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 1,
+            "distance_along_edge": 0.978504,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002046,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.023471,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002136,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.068436,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002226,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.113402,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002316,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.158369,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002406,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.203335,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002496,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.248301,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002586,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.293267,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002676,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.338233,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002766,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.383199,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002856,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.428164,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.002946,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.473131,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003036,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.518097,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003126,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.563062,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003216,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.608028,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003305,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.652995,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003395,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.69796,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003485,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.742927,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003575,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.787893,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003665,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.832858,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003755,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.877825,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003845,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.922791,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.003935,
+            "lat": 0.002,
+            "type": "matched",
+            "edge_index": 2,
+            "distance_along_edge": 0.967756,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001974,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.012723,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001884,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.057688,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001794,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.102655,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001704,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.147621,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001614,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.192587,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001524,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.237553,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001434,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.282519,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001345,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.327485,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001255,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.372451,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001165,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.417417,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.001075,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.462383,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000985,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.507349,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000895,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.552315,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000805,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.597281,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000715,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.642247,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000625,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.687213,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000535,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.732179,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000445,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.777145,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000355,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.822111,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000265,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.867077,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000175,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.912043,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0.000085,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 0.957009,
+            "distance_from_trace_point": 0
+          },
+          {
+            "lon": 0.004,
+            "lat": 0,
+            "type": "matched",
+            "edge_index": 3,
+            "distance_along_edge": 1,
+            "distance_from_trace_point": 0
+          }
+        ],
+        "alternate_paths": []
+      }
+    }
+  }
+}

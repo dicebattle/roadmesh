@@ -1,0 +1,27 @@
+{
+  "args": [
+    "create",
+    "--name",
+    "routelens-p04-probe-8f8c3930-9d4c-4101-a461-b23bfc723d7e",
+    "--label",
+    "io.routelens.run_id=8f8c3930-9d4c-4101-a461-b23bfc723d7e",
+    "--network",
+    "none",
+    "--cpus",
+    "2",
+    "--memory",
+    "2g",
+    "--mount",
+    "type=bind,src=/Users/dice/Documents/routelens/data/p03-main-20261024/graph,dst=/graph,readonly",
+    "--mount",
+    "type=bind,src=/Users/dice/Documents/routelens/data/p04-probe-20261024,dst=/work",
+    "--entrypoint",
+    "/bin/sh",
+    "sha256:8b4a0609466e08dd6b384be7104ffa3f1c43270d9a8e931f3d93e2243566b4b6",
+    "-c",
+    "sleep 300"
+  ],
+  "status": 0,
+  "stdout": "742ffd9b8ed0927b035d91e6336d52373df4a280e9d13264085fbed4c1a04414\n",
+  "stderr": ""
+}

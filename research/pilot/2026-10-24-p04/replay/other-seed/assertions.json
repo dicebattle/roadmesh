@@ -1,0 +1,47 @@
+[
+  {
+    "assertion_id": "complete-sample-partition",
+    "status": "PASS",
+    "message_en": "Every true sample is observed or explicitly omitted.",
+    "message_ko": "모든 정답 표본은 관측되거나 누락으로 기록됩니다.",
+    "expected": 187,
+    "actual": 187,
+    "evidence_path": "truth.json"
+  },
+  {
+    "assertion_id": "bounded-noise",
+    "status": "PASS",
+    "message_en": "Observed coordinates stay within the declared noise radius.",
+    "message_ko": "관측 좌표가 선언한 잡음 반경 안에 있습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "observations.json"
+  },
+  {
+    "assertion_id": "synthetic-observations",
+    "status": "PASS",
+    "message_en": "Observations are synthetic and contain no truth edge IDs.",
+    "message_ko": "관측은 합성이며 정답 구간 식별자를 포함하지 않습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "observations.json"
+  },
+  {
+    "assertion_id": "half-open-drops",
+    "status": "PASS",
+    "message_en": "Omissions follow half-open intervals.",
+    "message_ko": "누락이 반열린 구간을 따릅니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "omissions.json"
+  },
+  {
+    "assertion_id": "completed-traversals",
+    "status": "PASS",
+    "message_en": "All independently authored paths complete within the scenario.",
+    "message_ko": "독립적으로 작성한 모든 경로가 시나리오 안에 완료됩니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "truth.json"
+  }
+]
