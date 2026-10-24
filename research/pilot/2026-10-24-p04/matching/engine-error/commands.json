@@ -1,0 +1,123 @@
+[
+  {
+    "sequence": 1,
+    "args": [
+      "create",
+      "--name",
+      "routelens-p02-5a0aa04e-138f-4c24-a677-c4a9b08c970a",
+      "--label",
+      "io.routelens.run_id=5a0aa04e-138f-4c24-a677-c4a9b08c970a",
+      "--network",
+      "none",
+      "--cpus",
+      "2",
+      "--memory",
+      "2g",
+      "--stop-timeout",
+      "1",
+      "--mount",
+      "type=bind,src=/Users/dice/Documents/routelens/data/p04-main-20261024-r2/matching/engine-error,dst=/work",
+      "--mount",
+      "type=bind,src=/Users/dice/Documents/routelens/data/p04-main-20261024-r2/graph,dst=/graph,readonly",
+      "--entrypoint",
+      "/bin/sh",
+      "sha256:8b4a0609466e08dd6b384be7104ffa3f1c43270d9a8e931f3d93e2243566b4b6",
+      "-c",
+      "sleep 900"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 111.46029200000157,
+    "stdout": "commands/001.stdout.txt",
+    "stderr": "commands/001.stderr.txt"
+  },
+  {
+    "sequence": 2,
+    "args": [
+      "start",
+      "routelens-p02-5a0aa04e-138f-4c24-a677-c4a9b08c970a"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 87.19670799999949,
+    "stdout": "commands/002.stdout.txt",
+    "stderr": "commands/002.stderr.txt"
+  },
+  {
+    "sequence": 3,
+    "args": [
+      "exec",
+      "routelens-p02-5a0aa04e-138f-4c24-a677-c4a9b08c970a",
+      "valhalla_service",
+      "--version"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 53.5776249999999,
+    "stdout": "commands/003.stdout.txt",
+    "stderr": "commands/003.stderr.txt"
+  },
+  {
+    "sequence": 4,
+    "args": [
+      "exec",
+      "routelens-p02-5a0aa04e-138f-4c24-a677-c4a9b08c970a",
+      "valhalla_service",
+      "/work/runtime-config.json",
+      "trace_attributes",
+      "/work/requests/far-0.request.json"
+    ],
+    "exit_code": 1,
+    "elapsed_ms": 62.996375000000626,
+    "stdout": "commands/004.stdout.txt",
+    "stderr": "commands/004.stderr.txt"
+  },
+  {
+    "sequence": 5,
+    "args": [
+      "container",
+      "inspect",
+      "routelens-p02-5a0aa04e-138f-4c24-a677-c4a9b08c970a"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 33.11974999999984,
+    "stdout": "commands/005.stdout.txt",
+    "stderr": "commands/005.stderr.txt"
+  },
+  {
+    "sequence": 6,
+    "args": [
+      "rm",
+      "-f",
+      "routelens-p02-5a0aa04e-138f-4c24-a677-c4a9b08c970a"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 79.3608750000003,
+    "stdout": "commands/006.stdout.txt",
+    "stderr": "commands/006.stderr.txt"
+  },
+  {
+    "sequence": 7,
+    "args": [
+      "container",
+      "inspect",
+      "routelens-p02-5a0aa04e-138f-4c24-a677-c4a9b08c970a"
+    ],
+    "exit_code": 1,
+    "elapsed_ms": 33.146333999999115,
+    "stdout": "commands/007.stdout.txt",
+    "stderr": "commands/007.stderr.txt"
+  },
+  {
+    "sequence": 8,
+    "args": [
+      "ps",
+      "-a",
+      "--filter",
+      "name=^/routelens-p02-5a0aa04e-138f-4c24-a677-c4a9b08c970a$",
+      "--format",
+      "{{.Names}}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 34.75104200000169,
+    "stdout": "commands/008.stdout.txt",
+    "stderr": "commands/008.stderr.txt"
+  }
+]

@@ -1,6 +1,6 @@
 # P04 map matching / P04 도로 매칭
 
-Status: implementation added; independent full-run and hosted verification pending. / 상태: 구현을 추가했으며 메인의 전체 실행·원격 검증은 아직 전입니다.
+Status: independently verified locally:48/48 whole-pipeline checks. Hosted verification pending. / 상태: 메인 로컬 전체 실행48/48을 검증했으며 원격 검증은 아직 전입니다.
 
 Main designed the [bounded contract](../../docs/19-p04-matching-design.md). Sol implemented the TypeScript adapter and report integration. Valhalla3.9.1 performs actual map snapping; RouteLens validates input/graph identity, excludes uncertain evidence and computes observed traversal times. Truth is supplied only to the post-match evaluator.
 
@@ -26,3 +26,5 @@ The input envelope contains `schema_version`, `matching_id`, `graph_id`, and P03
   합성 전용 정책은3000ms 연속성·보수적 평행도로 검사·끝점 관측 또는 제한 보간입니다. 운영 관측 초안·실제 도로 정확도를 증명하지 않습니다.
 
 Next: [P05 durable ingestion and recovery](../../docs/20-p05-ingestion-design.md). / 다음은 P05 영속 수집·복구입니다.
+
+[Local evidence and captures / 로컬 증거·캡처](../../research/pilot/2026-10-24-p04/report.md).

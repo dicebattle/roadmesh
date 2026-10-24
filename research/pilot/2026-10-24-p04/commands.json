@@ -1,0 +1,152 @@
+[
+  {
+    "id": "corpus-valid",
+    "script": "evaluation_corpus",
+    "args": [
+      "/Users/dice/Documents/routelens/fixtures/evaluation/synthetic-seoul.json"
+    ],
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "duration_ms": 307.14050000000003,
+    "stdout": "corpus-valid.stdout.txt",
+    "stderr": "corpus-valid.stderr.txt"
+  },
+  {
+    "id": "corpus-strict",
+    "script": "evaluation_corpus",
+    "args": [
+      "/Users/dice/Documents/routelens/fixtures/evaluation/synthetic-seoul.json",
+      "--require-ready"
+    ],
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "duration_ms": 302.31825,
+    "stdout": "corpus-strict.stdout.txt",
+    "stderr": "corpus-strict.stderr.txt"
+  },
+  {
+    "id": "p01",
+    "script": "pilot_checks",
+    "args": [
+      "--output",
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/p01"
+    ],
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "duration_ms": 834.6036249999999,
+    "stdout": "p01.stdout.txt",
+    "stderr": "p01.stderr.txt"
+  },
+  {
+    "id": "simulation",
+    "script": "vehicle_simulator",
+    "args": [
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/simulation-spec.json",
+      "--graph",
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/graph",
+      "--output",
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/simulation"
+    ],
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "duration_ms": 81.54179199999999,
+    "stdout": "simulation.stdout.txt",
+    "stderr": "simulation.stderr.txt"
+  },
+  {
+    "id": "replay-same-seed",
+    "script": "vehicle_simulator",
+    "args": [
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/replay/same-seed.spec.json",
+      "--graph",
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/graph",
+      "--output",
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/replay/same-seed"
+    ],
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "duration_ms": 84.34783400000015,
+    "stdout": "replay-same-seed.stdout.txt",
+    "stderr": "replay-same-seed.stderr.txt"
+  },
+  {
+    "id": "replay-clean",
+    "script": "vehicle_simulator",
+    "args": [
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/replay/clean.spec.json",
+      "--graph",
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/graph",
+      "--output",
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/replay/clean"
+    ],
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "duration_ms": 114.29849999999988,
+    "stdout": "replay-clean.stdout.txt",
+    "stderr": "replay-clean.stderr.txt"
+  },
+  {
+    "id": "replay-other-seed",
+    "script": "vehicle_simulator",
+    "args": [
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/replay/other-seed.spec.json",
+      "--graph",
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/graph",
+      "--output",
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/replay/other-seed"
+    ],
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "duration_ms": 85.50129199999992,
+    "stdout": "replay-other-seed.stdout.txt",
+    "stderr": "replay-other-seed.stderr.txt"
+  },
+  {
+    "id": "replay-reordered",
+    "script": "vehicle_simulator",
+    "args": [
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/replay/reordered.spec.json",
+      "--graph",
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/graph",
+      "--output",
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/replay/reordered"
+    ],
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "duration_ms": 113.66774999999961,
+    "stdout": "replay-reordered.stdout.txt",
+    "stderr": "replay-reordered.stderr.txt"
+  },
+  {
+    "id": "invalid-path",
+    "script": "vehicle_simulator",
+    "args": [
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/replay/invalid-path.spec.json",
+      "--graph",
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/graph",
+      "--output",
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/replay/invalid-path"
+    ],
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "duration_ms": 52.01258299999972,
+    "stdout": "invalid-path.stdout.txt",
+    "stderr": "invalid-path.stderr.txt"
+  },
+  {
+    "id": "tampered-bundle",
+    "script": "vehicle_simulator",
+    "args": [
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/simulation-spec.json",
+      "--graph",
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/replay/tampered-graph",
+      "--output",
+      "/Users/dice/Documents/routelens/data/p04-main-20261024-r2/replay/tampered-simulation"
+    ],
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "duration_ms": 47.30408299999999,
+    "stdout": "tampered-bundle.stdout.txt",
+    "stderr": "tampered-bundle.stderr.txt"
+  }
+]

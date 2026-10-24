@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="RouteLens-original-synthetic-fixture">
+  <node id="1001" version="1" lat="0" lon="0"/>
+  <node id="1002" version="1" lat="0" lon="0.002"/>
+  <node id="1003" version="1" lat="0" lon="0.004"/>
+  <node id="1004" version="1" lat="0.002" lon="0"/>
+  <node id="1005" version="1" lat="0.002" lon="0.002"/>
+  <node id="1006" version="1" lat="0.002" lon="0.004"/>
+  <node id="1007" version="1" lat="-0.002" lon="0.002"/>
+  <node id="2001" version="1" lat="0" lon="0.01"/>
+  <node id="2002" version="1" lat="0" lon="0.012"/>
+  <node id="3001" version="1" lat="0.003" lon="0.01"/>
+  <node id="3002" version="1" lat="0.003" lon="0.012"/>
+  <node id="4001" version="1" lat="0.0001" lon="0"/>
+  <node id="4002" version="1" lat="0.0001" lon="0.002"/>
+  <way id="101" version="1"><nd ref="1001"/><nd ref="1002"/><tag k="highway" v="residential"/><tag k="name" v="ab"/><tag k="maxspeed" v="30"/><tag k="surface" v="asphalt"/></way>
+  <way id="102" version="1"><nd ref="1002"/><nd ref="1003"/><tag k="highway" v="residential"/><tag k="name" v="bc"/><tag k="maxspeed" v="30"/><tag k="surface" v="asphalt"/></way>
+  <way id="103" version="1"><nd ref="1001"/><nd ref="1004"/><tag k="highway" v="residential"/><tag k="name" v="ad"/><tag k="maxspeed" v="30"/><tag k="surface" v="asphalt"/></way>
+  <way id="104" version="1"><nd ref="1004"/><nd ref="1005"/><tag k="highway" v="residential"/><tag k="name" v="de"/><tag k="maxspeed" v="30"/><tag k="surface" v="asphalt"/></way>
+  <way id="105" version="1"><nd ref="1005"/><nd ref="1006"/><tag k="highway" v="residential"/><tag k="name" v="ef"/><tag k="maxspeed" v="30"/><tag k="surface" v="asphalt"/></way>
+  <way id="106" version="1"><nd ref="1006"/><nd ref="1003"/><tag k="highway" v="residential"/><tag k="name" v="fc"/><tag k="maxspeed" v="30"/><tag k="surface" v="asphalt"/></way>
+  <way id="107" version="1"><nd ref="1005"/><nd ref="1002"/><tag k="highway" v="residential"/><tag k="name" v="eb"/><tag k="maxspeed" v="30"/><tag k="surface" v="asphalt"/></way>
+  <way id="108" version="1"><nd ref="1002"/><nd ref="1007"/><tag k="highway" v="residential"/><tag k="name" v="bg"/><tag k="maxspeed" v="30"/><tag k="surface" v="asphalt"/></way>
+  <way id="201" version="1"><nd ref="2001"/><nd ref="2002"/><tag k="highway" v="residential"/><tag k="name" v="oneway"/><tag k="maxspeed" v="30"/><tag k="surface" v="asphalt"/><tag k="oneway" v="yes"/></way>
+  <way id="301" version="1"><nd ref="3001"/><nd ref="3002"/><tag k="highway" v="residential"/><tag k="name" v="disconnected"/><tag k="maxspeed" v="30"/><tag k="surface" v="asphalt"/></way>
+  <way id="401" version="1"><nd ref="4001"/><nd ref="4002"/><tag k="highway" v="residential"/><tag k="name" v="parallel"/><tag k="maxspeed" v="30"/><tag k="surface" v="asphalt"/></way>
+  <relation id="9001" version="1"><member type="way" ref="101" role="from"/><member type="node" ref="1002" role="via"/><member type="way" ref="108" role="to"/><tag k="type" v="restriction"/><tag k="restriction" v="no_right_turn"/></relation>
+</osm>

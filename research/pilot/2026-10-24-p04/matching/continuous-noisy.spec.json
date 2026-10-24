@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.1",
+  "simulation_id": "p04-continuous-noise",
+  "fixture_id": "tiny-city-v1",
+  "graph_id": "c1d06ace33d8e9184749e7b09c946f632489cdca5064672396e970d9c299aa0a",
+  "seed": 7,
+  "start_time_utc": "2026-01-01T00:00:00Z",
+  "duration_ms": 120000,
+  "sample_interval_ms": 1000,
+  "vehicles": [
+    {
+      "vehicle_id": "continuous-noisy",
+      "departure_ms": 0,
+      "path": [
+        {
+          "label": "ad",
+          "forward": true
+        },
+        {
+          "label": "de",
+          "forward": true
+        },
+        {
+          "label": "ef",
+          "forward": true
+        },
+        {
+          "label": "fc",
+          "forward": true
+        }
+      ],
+      "speed_profile": [
+        {
+          "duration_ms": 115000,
+          "speed_mps": 10
+        }
+      ],
+      "noise_radius_m": 3,
+      "drop_intervals": []
+    }
+  ]
+}

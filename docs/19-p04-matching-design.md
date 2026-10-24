@@ -1,8 +1,8 @@
 # P04 matching design notes / P04 매칭 설계 기록
 
-Status: contract fixed after the main agent's pinned-engine probe; implementation pending. Main owns design and direct verification; Sol owns runtime and tests. P03 evidence remains the baseline.
+Status: contract fixed after the main agent's pinned-engine probe; implemented with48/48 local integrated checks passed; hosted verification pending. Main owns design and direct verification; Sol owns runtime and tests. P03 evidence remains the baseline.
 
-상태: 메인의 고정 엔진 조사 후 계약을 확정했으며 구현 전입니다. 메인이 설계·직접 검증을, Sol이 실행 코드·검사를 담당합니다. P03 증거를 기준으로 유지합니다.
+상태: 메인의 고정 엔진 조사 후 계약을 확정했으며 구현·로컬 통합48/48검사를 마쳤고 원격 검증 전입니다. 메인이 설계·직접 검증을, Sol이 실행 코드·검사를 담당합니다. P03 증거를 기준으로 유지합니다.
 
 ## Decided boundaries / 확정한 경계
 

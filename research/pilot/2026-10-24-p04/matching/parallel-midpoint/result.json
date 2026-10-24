@@ -1,0 +1,413 @@
+{
+  "policy_id": "tiny-city-matching-v1",
+  "matching_id": "p04-parallel",
+  "graph_id": "c1d06ace33d8e9184749e7b09c946f632489cdca5064672396e970d9c299aa0a",
+  "input_samples": 21,
+  "matched_samples": 0,
+  "excluded_samples": 21,
+  "accepted_traversals": 0,
+  "excluded_traversals": 0,
+  "points": [
+    {
+      "sample_id": "p04-midpoint:parallel:0",
+      "vehicle_id": "parallel",
+      "offset_ms": 0,
+      "longitude": 0.0001,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:1000",
+      "vehicle_id": "parallel",
+      "offset_ms": 1000,
+      "longitude": 0.00019,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:2000",
+      "vehicle_id": "parallel",
+      "offset_ms": 2000,
+      "longitude": 0.00028000000000000003,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:3000",
+      "vehicle_id": "parallel",
+      "offset_ms": 3000,
+      "longitude": 0.00037,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:4000",
+      "vehicle_id": "parallel",
+      "offset_ms": 4000,
+      "longitude": 0.00046,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:5000",
+      "vehicle_id": "parallel",
+      "offset_ms": 5000,
+      "longitude": 0.00055,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:6000",
+      "vehicle_id": "parallel",
+      "offset_ms": 6000,
+      "longitude": 0.00064,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:7000",
+      "vehicle_id": "parallel",
+      "offset_ms": 7000,
+      "longitude": 0.0007300000000000001,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:8000",
+      "vehicle_id": "parallel",
+      "offset_ms": 8000,
+      "longitude": 0.0008200000000000001,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:9000",
+      "vehicle_id": "parallel",
+      "offset_ms": 9000,
+      "longitude": 0.0009100000000000001,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:10000",
+      "vehicle_id": "parallel",
+      "offset_ms": 10000,
+      "longitude": 0.001,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:11000",
+      "vehicle_id": "parallel",
+      "offset_ms": 11000,
+      "longitude": 0.00109,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:12000",
+      "vehicle_id": "parallel",
+      "offset_ms": 12000,
+      "longitude": 0.00118,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:13000",
+      "vehicle_id": "parallel",
+      "offset_ms": 13000,
+      "longitude": 0.00127,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:14000",
+      "vehicle_id": "parallel",
+      "offset_ms": 14000,
+      "longitude": 0.00136,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:15000",
+      "vehicle_id": "parallel",
+      "offset_ms": 15000,
+      "longitude": 0.0014500000000000001,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:16000",
+      "vehicle_id": "parallel",
+      "offset_ms": 16000,
+      "longitude": 0.0015400000000000001,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:17000",
+      "vehicle_id": "parallel",
+      "offset_ms": 17000,
+      "longitude": 0.0016300000000000002,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:18000",
+      "vehicle_id": "parallel",
+      "offset_ms": 18000,
+      "longitude": 0.0017200000000000002,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:19000",
+      "vehicle_id": "parallel",
+      "offset_ms": 19000,
+      "longitude": 0.0018100000000000002,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    },
+    {
+      "sample_id": "p04-midpoint:parallel:20000",
+      "vehicle_id": "parallel",
+      "offset_ms": 20000,
+      "longitude": 0.0019000000000000002,
+      "latitude": 0.00005,
+      "edge_id": null,
+      "status": "EXCLUDED",
+      "reason_codes": [
+        "AMBIGUOUS_PARALLEL"
+      ],
+      "reason_messages": [
+        {
+          "reason_code": "AMBIGUOUS_PARALLEL",
+          "message_en": "Multiple physical parallel ways are compatible with positional accuracy.",
+          "message_ko": "위치 정확도 범위에 서로 다른 평행도로가 있습니다."
+        }
+      ]
+    }
+  ],
+  "traversals": [],
+  "semantic_sha256": "754ff6544a78419bf7fbbfc99b13b0c87866cfc4260fdda73c855c12a1ac8534"
+}

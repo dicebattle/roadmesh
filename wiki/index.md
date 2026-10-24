@@ -1,12 +1,12 @@
 # RouteLens 프로젝트 위키
 
-Verified: [TypeScript P01/P14a tools](modules/pilot-runner.md), 33 tests and independent local/Node 22/24 hosted evidence. [Migration proof](../research/pilot/typescript-migration-2026-10-24.json). [P02 graph proof](modules/test-graph.md) is also complete. [P03 and fresh whole-module simulation](modules/vehicle-simulation.md) are locally and on hosted Docker verified; [recorded evidence](../research/pilot/2026-10-24-p03/report.md) includes 30/30 checks. Next: **P04 real map matching**. The complete pilot and geographic 100/100 gate remain separate. [Development workflow](../docs/12-development-workflow.md): protected main with required CI, descriptive bilingual commits and feature-branch pushes.
+Verified: [TypeScript P01/P14a tools](modules/pilot-runner.md), 33 tests and independent local/Node 22/24 hosted evidence. [Migration proof](../research/pilot/typescript-migration-2026-10-24.json). [P02 graph proof](modules/test-graph.md) is also complete. [P03 and fresh whole-module simulation](modules/vehicle-simulation.md) are locally and on hosted Docker verified; [recorded evidence](../research/pilot/2026-10-24-p03/report.md) includes 30/30 checks. **P04 now passes48/48 locally**; [evidence](../research/pilot/2026-10-24-p04/report.md), hosted verification pending. Next: **P05 durable ingestion**. The complete pilot and geographic 100/100 gate remain separate. [Development workflow](../docs/12-development-workflow.md): protected main with required CI, descriptive bilingual commits and feature-branch pushes.
 
-[TypeScript P01/P14a](modules/pilot-runner.md)의 33개 검사·독립 로컬 실행·Node 22/24 원격 증거를 검증했습니다. [전환 증거](../research/pilot/typescript-migration-2026-10-24.json)를 보존합니다. [P02 그래프 검증](modules/test-graph.md)도 완료했습니다. [P03·전체 구현 모듈 통합](modules/vehicle-simulation.md)을 로컬·원격 Docker 검증했고 [녹화 증거](../research/pilot/2026-10-24-p03/report.md)에30/30을 기록했습니다. 다음은 **P04 실제 도로 매칭**입니다. 전체 파일럿과 실제 도로 자료 100/100개 조건은 별도입니다. [개발 절차](../docs/12-development-workflow.md)는 필수 CI를 포함한 main 보호·상세한 이중 언어 커밋·작업 브랜치 푸시입니다.
+[TypeScript P01/P14a](modules/pilot-runner.md)의 33개 검사·독립 로컬 실행·Node 22/24 원격 증거를 검증했습니다. [전환 증거](../research/pilot/typescript-migration-2026-10-24.json)를 보존합니다. [P02 그래프 검증](modules/test-graph.md)도 완료했습니다. [P03·전체 구현 모듈 통합](modules/vehicle-simulation.md)을 로컬·원격 Docker 검증했고 [녹화 증거](../research/pilot/2026-10-24-p03/report.md)에30/30을 기록했습니다. **P04 로컬48/48을 검증**했고 [증거](../research/pilot/2026-10-24-p04/report.md)를 남겼으며 원격 검증 전입니다. 다음은 **P05 영속 수집**입니다. 전체 파일럿과 실제 도로 자료 100/100개 조건은 별도입니다. [개발 절차](../docs/12-development-workflow.md)는 필수 CI를 포함한 main 보호·상세한 이중 언어 커밋·작업 브랜치 푸시입니다.
 
-Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases in each category. Corpus/P01/P02/P03 tools and a recorded evidence viewer exist; complete navigation and deployment do not.
+Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases in each category. Corpus/P01/P02/P03/P04 tools and a recorded evidence viewer exist; complete navigation and deployment do not.
 
-실제 지역 M0 / RM-001은 진행 중이며 검토한 실제 도로 사례는 각각 0개입니다. 자료·P01/P02/P03 도구·녹화 증거 화면은 구현됐지만 완전한 내비게이션·배포는 없습니다.
+실제 지역 M0 / RM-001은 진행 중이며 검토한 실제 도로 사례는 각각 0개입니다. 자료·P01/P02/P03/P04 도구·녹화 증거 화면은 구현됐지만 완전한 내비게이션·배포는 없습니다.
 
 - [P02 graph evidence / P02 그래프 증거](../research/pilot/p02-main-2026-10-24.json)
 - [P03 design / P03 설계](../docs/16-p03-vehicle-simulation.md)
@@ -59,3 +59,6 @@ Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases i
 - [Integration and media contract / 통합·미디어 계약](../docs/17-simulation-evidence-delivery.md)
 
 - [P04 next design / P04 후속 설계](../docs/19-p04-matching-design.md)
+
+- [P04 matching / P04 매칭](modules/map-matching.md)
+- [P05 next design / P05 후속 설계](../docs/20-p05-ingestion-design.md)

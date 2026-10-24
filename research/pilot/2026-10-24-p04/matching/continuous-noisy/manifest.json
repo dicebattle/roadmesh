@@ -1,0 +1,64 @@
+{
+  "schema_version": "0.1",
+  "matching_id": "p04-continuous-noisy",
+  "policy_id": "tiny-city-matching-v1",
+  "source": {
+    "commit": "dccafeb197a1f878ea0e61ac3dd77156185d4424",
+    "dirty": false
+  },
+  "node": "22.23.4",
+  "host_architecture": "arm64",
+  "host_platform": "darwin",
+  "graph_id": "c1d06ace33d8e9184749e7b09c946f632489cdca5064672396e970d9c299aa0a",
+  "graph_manifest_sha256": "e7e096e7ac48fe15d39e7abb2e29985596107754bfa442db5157cf81021047ff",
+  "input_sha256": "942fa3c5225300e3f7901a5901f72c67ee8263e0b551b4e4715a3e78fd172bec",
+  "semantic_sha256": "85c1f1d49b994dfc7d339aa65a02f7865f0e0b3a9c2a8be5ea7e4f20fb3eb9db",
+  "status": "PASS",
+  "cleanup_verified": true,
+  "engine_executed": true,
+  "image": {
+    "id": "sha256:8b4a0609466e08dd6b384be7104ffa3f1c43270d9a8e931f3d93e2243566b4b6",
+    "platform": "linux/arm64",
+    "dockerfile_sha256": "063afdc0e67da85ca88eb5713600cf76b663508e66682ace5859628b465001bc"
+  },
+  "base_image": "ghcr.io/valhalla/valhalla@sha256:4fd114eb1d26b8fc2f43bcb3df234c1b63a0bf13c277405e5943d5361dc575de",
+  "runtime_config_sha256": "0f31a9650803055c45ba7581441376026a9e9b4549a61ec169fd07b3ef8df26b",
+  "graph_mount": "read-only",
+  "resource_limits": {
+    "cpus": 2,
+    "memory_bytes": 2147483648,
+    "network": "none"
+  },
+  "batch_context": {
+    "mode": "bounded-finalize-once",
+    "batch_size": 90,
+    "overlap": 0
+  },
+  "output_sha256": {
+    "assertions.json": "07aeae1d8e0db4bf1829f8e52046095fe4061b64fad1cba6815bf3fef70b111e",
+    "commands/001.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "commands/001.stdout.txt": "60c0a9082a694de599a7a6be02db828b3c2d720e3dbf80e612c0d25af3f1cf40",
+    "commands/002.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "commands/002.stdout.txt": "bac117c3de7e87ab3ed1de9386bedefc05c5b77c561a38ffe6f4487215488cc4",
+    "commands/003.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "commands/003.stdout.txt": "b43b810226c9625fdb0d7aad91c019a8423b40c4a3d7a80562c3725ee7df7919",
+    "commands/004.stderr.txt": "c85a12e753a541470887433277be2bc061f1f7880d3b0a2c7d1da42b6fe3b253",
+    "commands/004.stdout.txt": "cdc693166971ef1093d25abf31f0f59602df519e3caaac88a14e44bdd43b31ae",
+    "commands/005.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "commands/005.stdout.txt": "6836670bb2f1b8fdbe5286b3cee40927558dc34a3783f489e578cb5bc7ed59e6",
+    "commands/006.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "commands/006.stdout.txt": "bac117c3de7e87ab3ed1de9386bedefc05c5b77c561a38ffe6f4487215488cc4",
+    "commands/007.stderr.txt": "ca8f76e1c2ba6caf314b9b377092464c0b5fe783a1b1c6b80c9196b9c1da3253",
+    "commands/007.stdout.txt": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "commands/008.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "commands/008.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "commands.json": "cd28da68ac01a0c274f43e459a25d591da105298cf659d41fd607e9fe4eb8819",
+    "input.json": "942fa3c5225300e3f7901a5901f72c67ee8263e0b551b4e4715a3e78fd172bec",
+    "requests/continuous-noisy-0.request.json": "682e006f61a82fe81adb7e882654c4f7de610318b1e596d59783ab3477f7d924",
+    "requests/continuous-noisy-0.response.json": "1d5052c1e6157b3ecf5c9c92569b0473673c544b56925b2f12735ec5cce38d1a",
+    "result.json": "094b11d48dea8996d618032a8d9751dd6df0819bc8480ee50fa93bd10064cf80",
+    "runtime-config.json": "0f31a9650803055c45ba7581441376026a9e9b4549a61ec169fd07b3ef8df26b",
+    "summary.md": "099d4fcc76aeeef11b1c7936ce7ea6e06e8520b98d2106e3899d5c8a9ab2f92d"
+  },
+  "completed_at_utc": "2026-10-24T09:50:02.887Z"
+}

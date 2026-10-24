@@ -1,0 +1,42 @@
+{
+  "source": {
+    "commit": "dccafeb197a1f878ea0e61ac3dd77156185d4424",
+    "dirty": false
+  },
+  "graph_id": "c1d06ace33d8e9184749e7b09c946f632489cdca5064672396e970d9c299aa0a",
+  "status": "PASS",
+  "assertions_passed": 48,
+  "verified_matching_file_hashes": 137,
+  "main_independent_boundary_error_max_ms": 1,
+  "baseline": {
+    "input": 177,
+    "matched": 177,
+    "accepted": 6,
+    "excluded_candidates": 2,
+    "truth_complete": 8,
+    "missed": 2,
+    "false_traversals": 0
+  },
+  "noise_internal_boundary_error_max_ms": 444,
+  "noise_all_edges": {
+    "tolerance_ms": 750,
+    "passed": false,
+    "expected": 4,
+    "accepted": 3,
+    "false_traversals": 0,
+    "missed_traversals": 1,
+    "boundary_errors_ms": [
+      0,
+      444,
+      444,
+      13,
+      13,
+      103
+    ]
+  },
+  "parallel_excluded": 21,
+  "split_overlap_result_bytes_identical": true,
+  "owned_container_listing": "",
+  "message_en": "Main independently inspected fresh output hashes, counts, fixed boundary expectations, raw batch parity and cleanup.",
+  "message_ko": "메인이 새 출력 해시·개수·고정 경계 정답·배치 원문 동일성·정리를 독립 확인했습니다."
+}

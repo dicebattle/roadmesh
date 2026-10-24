@@ -1,0 +1,16 @@
+[
+  {
+    "assertion_id": "matching-execution",
+    "status": "FAIL",
+    "message_en": "Matching execution/evidence failed.",
+    "message_ko": "매칭 실행·증거가 실패했습니다.",
+    "evidence_path": "result.json"
+  },
+  {
+    "assertion_id": "matching-cleanup",
+    "status": "PASS",
+    "message_en": "Owned container absence verified.",
+    "message_ko": "소유 컨테이너 부재를 확인했습니다.",
+    "evidence_path": "commands.json"
+  }
+]

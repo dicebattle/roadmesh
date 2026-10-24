@@ -1,0 +1,134 @@
+{
+  "shape": [
+    {
+      "lon": 0.002241302,
+      "lat": 0.000014053,
+      "time": 25
+    },
+    {
+      "lon": 0.002327923,
+      "lat": -0.000005576,
+      "time": 26
+    },
+    {
+      "lon": 0.002423112,
+      "lat": -0.000005568,
+      "time": 27
+    },
+    {
+      "lon": 0.002492938,
+      "lat": 0.000005726,
+      "time": 28
+    },
+    {
+      "lon": 0.002599166,
+      "lat": -0.000007616,
+      "time": 29
+    },
+    {
+      "lon": 0.002718488,
+      "lat": 0.000011049,
+      "time": 30
+    },
+    {
+      "lon": 0.002794597,
+      "lat": 0.000013077,
+      "time": 31
+    },
+    {
+      "lon": 0.002868399,
+      "lat": -0.000003963,
+      "time": 32
+    },
+    {
+      "lon": 0.002958994,
+      "lat": -0.000008695,
+      "time": 33
+    },
+    {
+      "lon": 0.003061301,
+      "lat": 0.000003701,
+      "time": 34
+    },
+    {
+      "lon": 0.003157577,
+      "lat": -0.000009632,
+      "time": 35
+    },
+    {
+      "lon": 0.003240977,
+      "lat": -0.000002789,
+      "time": 36
+    },
+    {
+      "lon": 0.003344685,
+      "lat": 0.000003002,
+      "time": 37
+    },
+    {
+      "lon": 0.003413344,
+      "lat": 0.000014872,
+      "time": 38
+    },
+    {
+      "lon": 0.003497133,
+      "lat": -0.000011063,
+      "time": 39
+    },
+    {
+      "lon": 0.003598825,
+      "lat": 0.000023365,
+      "time": 40
+    },
+    {
+      "lon": 0.003708042,
+      "lat": 0.000013899,
+      "time": 41
+    },
+    {
+      "lon": 0.003777167,
+      "lat": 0.000013679,
+      "time": 42
+    },
+    {
+      "lon": 0.003849533,
+      "lat": 0.000018564,
+      "time": 43
+    },
+    {
+      "lon": 0.003960002,
+      "lat": 0.000002543,
+      "time": 44
+    },
+    {
+      "lon": 0.003983357,
+      "lat": 0.000011163,
+      "time": 44.479
+    }
+  ],
+  "shape_match": "map_snap",
+  "costing": "auto",
+  "trace_options": {
+    "gps_accuracy": 5,
+    "search_radius": 30,
+    "interpolation_distance": 0
+  },
+  "filters": {
+    "action": "include",
+    "attributes": [
+      "edge.id",
+      "edge.way_id",
+      "edge.length",
+      "edge.begin_shape_index",
+      "edge.end_shape_index",
+      "matched.point",
+      "matched.type",
+      "matched.edge_index",
+      "matched.begin_route_discontinuity",
+      "matched.end_route_discontinuity",
+      "matched.distance_along_edge",
+      "matched.distance_from_trace_point",
+      "shape"
+    ]
+  }
+}

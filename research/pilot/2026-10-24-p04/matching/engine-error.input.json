@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1",
+  "matching_id": "p04-engine-error",
+  "graph_id": "c1d06ace33d8e9184749e7b09c946f632489cdca5064672396e970d9c299aa0a",
+  "observations": [
+    {
+      "sample_id": "p04-far:0",
+      "vehicle_id": "far",
+      "offset_ms": 0,
+      "event_time_utc": "2026-01-01T00:00:00.000Z",
+      "longitude": 1,
+      "latitude": 1,
+      "accuracy_m": 1,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "p04-far:1",
+      "vehicle_id": "far",
+      "offset_ms": 1000,
+      "event_time_utc": "2026-01-01T00:00:01.000Z",
+      "longitude": 1.0001,
+      "latitude": 1,
+      "accuracy_m": 1,
+      "source_class": "SYNTHETIC"
+    }
+  ]
+}

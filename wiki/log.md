@@ -20,7 +20,7 @@
 ## 2026-10-24 RM-001a 시험자료 검사 도구 구현
 
 - 선택 이유: 경로 엔진을 평가하기 전에 입력의 출처와 검토 상태를 구분해야 함. [전체 계획](../docs/05-roadmap.md)의 첫 작업을 작은 하위 작업으로 분리.
-- 구현: [검사 도구](../tools/evaluation_corpus.py), [합성 입력](../fixtures/evaluation/synthetic-seoul.json), [집중 테스트](../tests/test_evaluation_corpus.py).
+- 구현: [검사 도구](https://github.com/dicebattle/routelens/blob/0095b3b2611b1ced21e8c39f788d9799bf58dbd9/tools/evaluation_corpus.py), [합성 입력](../fixtures/evaluation/synthetic-seoul.json), [집중 테스트](https://github.com/dicebattle/routelens/blob/0095b3b2611b1ced21e8c39f788d9799bf58dbd9/tests/test_evaluation_corpus.py).
 - 동작: 형식·좌표·GPS 순서·중복·참조·검토 근거 검사. 합성·불확실·미검토 자료를 실제 검토 사례 100개 기준에서 제외. 구조 유효와 자료 준비 완료를 다른 종료코드로 구분.
 - 검증 환경: Python 3.13.7, 로컬 실행.
 - 검증 명령: `python3 -m unittest discover -s tests -p 'test_evaluation_corpus.py' -v` — 10개 통과, 한 번 실행.
@@ -248,3 +248,8 @@
   최초 깨끗한 전체 실행은 종료1이었습니다. 정상 매칭·3m잡음 내부 경계(최대444ms)·평행 제외·분할/중첩은 통과했습니다. 변조 입력도 정상 거부됐지만 입력·출력 폴더 이름이 겹쳐 평가기가 기존P02목록을 새 결과로 오인했습니다. Sol이 경로를 분리하고 회귀 검사를 추가하며 원래 실패는 보존합니다. 실패 후 소유 컨테이너 목록은 비어 있었습니다.
 - Sol separated rejected-output directories and recorded their paths/manifest absence. The new regression initially failed because its test fixture tried to create an already existing temporary directory; changing it to a child directory made the single targeted retry pass. Strict build passed. This was a test setup failure, separate from the original integration-path bug.
   Sol이 거부 결과 폴더를 분리하고 경로·완료 목록 부재를 기록했습니다. 새 회귀의 첫 실행은 시험자료가 이미 있는 임시 폴더를 다시 생성해 실패했고 하위 폴더로 바꾼 한 번의 집중 재실행이 통과했습니다. strict 빌드도 통과했습니다. 원래 통합 경로 결함과 별개의 검사 준비 오류입니다.
+
+- Clean source `dccafeb197a1f878ea0e61ac3dd77156185d4424` passed the single corrected full integration:48/48,6 stages. Main independently checked137 raw matching file hashes, fixed clean boundary times(max1ms), noisy internal boundary error(max444ms),177/177 matched points with6/8 complete traversals accepted,21/21 parallel exclusions, exact split/overlap result bytes and absent owned containers. The missing2 baseline traversals and1 noisy traversal remain explicit in full-denominator evaluations.
+  수정한 깨끗한 소스의 전체 통합 한 번이6단계·48/48을 통과했습니다. 메인이 원본 매칭137해시·깨끗한 경계 최대1ms·잡음 내부 최대444ms·177관측 대응/8통과 중6수용·평행21제외·분할/중첩 바이트 동일성·컨테이너 부재를 확인했습니다. 기본2개·잡음1개의 미회수 통과를 전체 분모 평가에 그대로 남겼습니다.
+- In-app desktop/mobile inspection passed language, time/omission, vehicle/toggle and playback checks with no horizontal overflow or captured JavaScript errors. Recorded17.75s actual playback and refreshed both READMEs, screenshots and GIF/MP4. The first capture attempt used a stale details reference after language change and was discarded; the owned browser closed. A second isolated capture completed and both its daemon/browser PIDs were confirmed absent. Only the standard favicon404 appeared. Media fingerprint and hashes passed. Hosted CI/push remain the next gate.
+  내장 브라우저 데스크톱/모바일에서 언어·시각/누락·차량/표시·재생을 확인했고 가로 넘침·확인된 JavaScript 오류는 없었습니다. 실제17.75초 녹화·두README·스크린샷·GIF/MP4를 갱신했습니다. 첫 캡처는 언어 변경 뒤 오래된 참조를 사용해 폐기됐고 해당 브라우저를 닫았습니다. 두 번째 격리 녹화는 완료했고 데몬/브라우저 PID 부재를 확인했습니다. favicon404만 있었으며 미디어 지문·해시는 통과했습니다. 다음은 원격 CI·푸시입니다.

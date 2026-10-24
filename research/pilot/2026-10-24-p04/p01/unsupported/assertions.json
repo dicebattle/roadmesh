@@ -1,0 +1,36 @@
+[
+  {
+    "assertion_id": "seven-events",
+    "kind": "future-check",
+    "expected": 7,
+    "required": true,
+    "status": "SKIPPED",
+    "actual": null,
+    "evidence_path": null,
+    "message_en": "Unsupported assertion; required check was skipped.",
+    "message_ko": "지원하지 않는 검사이며 필수 검사가 생략되었습니다."
+  },
+  {
+    "assertion_id": "three-edge-events",
+    "kind": "event_kind_count",
+    "event_kind": "fixture_edge_enter",
+    "expected": 3,
+    "required": true,
+    "status": "PASS",
+    "actual": 3,
+    "evidence_path": "events.json",
+    "message_en": "Expectation matched.",
+    "message_ko": "기대값과 일치합니다."
+  },
+  {
+    "assertion_id": "last-marker-at-500",
+    "kind": "last_event_ms",
+    "expected": 500,
+    "required": true,
+    "status": "PASS",
+    "actual": 500,
+    "evidence_path": "events.json",
+    "message_en": "Expectation matched.",
+    "message_ko": "기대값과 일치합니다."
+  }
+]
