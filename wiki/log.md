@@ -363,3 +363,10 @@
 
 - P06 branch pushed as0d4c18e with matching remote SHA; PR#7 attached. Hosted run40104713791 passed Node22/24 each183/183, actual Linux151/151 and Required checks. Main downloaded the artifact and checked2,631 unique hashes (15 omitted graph binaries explicitly listed),220 stored/reference traversals, independent timing/geometry, recovery bytes and actual P06 windows/median/lock/revoke/expiry/retention evidence. Public README GIF and exact MP4 bytes were verified. [Hosted proof](../research/pilot/2026-10-24-p06/hosted-verification.json). This documentation update does not change runtime/media identity; final-head checks precede protected merge.
   작업브랜치를푸시하고원격SHA일치·PR#7연결을확인했습니다. 원격Node22·24각183개·실제Linux151개·필수검사를통과했고메인이2,631고유해시(제외바이너리15개명시)·저장220통과·독립시간/거리·복구바이트·P06창/중앙값/잠금/철회/만료/삭제원문을검사했습니다. 공개GIF표시·MP4바이트도확인했습니다. 이번문서갱신은실행/녹화식별을바꾸지않으며최종검사후보호병합합니다.
+
+## 2026-10-25 P07 signed publication / 서명 게시
+
+- Previous goal turn made verified progress: P06 protected PR#7 merged asd9b08e9; final push/PR checks passed, local main equals origin/main and all19 local/remote refs were ancestors. Main rechecked clean current main, merged PR and enforced strict protection before creating feat/p07-signed-publication. The full P01–P14 goal remains active.
+  직전목표차례는P06보호병합·최종검사·로컬/원격메인일치·기존19참조포함을검증한진전입니다. 메인이이번에도깨끗한현재메인·병합PR·엄격보호를확인하고P07브랜치를만들었습니다. 전체P01~P14목표는유지합니다.
+- Main fixed [P07 contract](../docs/25-p07-publication-contract.md) before coding: standard jose JWS, scoped local public keys, atomic immutable publication and durable consumer high-water state, real HTTP/process transfer, exact TTL, concurrency/crash/revoke evidence. Official pinned library docs and npm metadata were inspected. P07 is unimplemented/unverified at this entry; P08 traffic activation remains separate.
+  메인이코딩전에표준JWS·범위제한공개키·원자불변게시·영속수신최고순번·실제HTTP/프로세스·정확만료·경쟁/중단/철회검증계약을고정했습니다. 고정라이브러리공식문서·npm정보를읽었으며이기록시점P07은미구현/미검증이고P08속도반영은별도입니다.

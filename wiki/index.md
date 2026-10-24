@@ -70,3 +70,5 @@ Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases i
 - [Seoul OSM sources / 서울 OSM 출처](sources/seoul-osm.md)
 
 - [Traffic aggregation module / 교통 집계 모듈](modules/traffic-aggregation.md): fixed window, contributor median and deletion behavior. / 고정 창·기여자 중앙값·삭제 동작.
+
+- [P07 publication contract / P07 게시 계약](../docs/25-p07-publication-contract.md): main design fixed; implementation and direct evidence pending. / 메인 설계 고정·구현과 직접 검증 전.

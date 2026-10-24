@@ -71,3 +71,9 @@ P06은진출기준60초창·창끝30초미만의영속매칭완료시각·기여
 The P06 design probe exposed endpoint rounding and snapped-fraction timing errors in v2. Adopt [observed projection v3](24-observed-projection-policy.md) using original observations and only the engine-selected connected path. Preserve all distance/gap/ambiguity checks, original five-contributor/timing criteria and explicit legacy v2 interpretation. Do not change upstream Valhalla or use generated truth as matcher input. New P06 requires v3; P05 workers must execute the exact stored policy.
 
 P06 설계조사에서 v2의 끝점 반올림·진행 비율에 따른 시간 오차가 드러났습니다. 원관측과 엔진이 선택한 연결 경로만 사용하는 투영 v3를 채택합니다. 거리·누락·모호성 검사와 원래의 5명·시간 기준, 명시적인 과거 v2 해석을 유지합니다. 엔진을 수정하거나 생성 정답을 매칭 입력으로 쓰지 않습니다. 새 P06은 v3를 요구하고 P05 처리자는 저장된 정확한 정책을 실행합니다.
+
+## ADR-025: Standard signed bytes and durable publication order / 표준 서명 바이트·영속 게시 순서
+
+Use pinned jose compact JWS with explicit local scoped public keys, immutable PostgreSQL artifact bytes and transactional publisher/consumer sequence state. Require actual loopback HTTP transfer and independent consumer processes. Preserve the P06 authoritative candidate boundary and same-transaction current-pointer invalidation; never imply recall of already downloaded artifacts or P08 engine activation. [Fixed P07 contract](25-p07-publication-contract.md), [upstream source](../wiki/sources/jose-publication.md).
+
+고정 jose 표준JWS·범위를 명시한 로컬 공개키·불변DB내용·트랜잭션 발급/수신 순번을 사용합니다. 실제로컬HTTP·독립수신프로세스를 검증하고 P06후보와 동일트랜잭션 현재참조무효화를 유지합니다. 이미받은파일회수·P08엔진반영을 주장하지 않습니다.
