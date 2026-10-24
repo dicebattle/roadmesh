@@ -440,3 +440,13 @@
   수정한 깨끗한 소스로 새 전체238개를 통과했습니다. 메인이4,159고유해시·기존모듈·P08독립이동계산/서명/교통바이트/원경로/정정/만료·현재소유정리를 확인했습니다. 끝점격자/미터차이를 기록하는 독립검사13그룹도 통과했습니다. 실제34.7초재촬영·전체디코딩·프레임·한영/모바일을 검사하고README두언어/미디어를 갱신했으며 촬영8프로세스·서버·내장탭을 종료했습니다. 원격실패로그의 원래 끝공백은 보존하고 생산소스 형식은 그대로입니다. 수정후원격근거·보호병합을 이어갑니다.
 - During the first P08 hosted wait, main scoped a single P09 engine capability probe and Sol implemented/executed it in one owned isolated container. Installed help and a native HTTP listener were observed, but the probe checked only the IPv4 table and missed an IPv4-mapped IPv6 socket; no planned route request was sent. Main inspected the contradiction and exact cleanup, preserving [incomplete evidence](../research/pilot/2026-10-25-p09-preparation/README.md). No P09 implementation, repeated-route success or drain guarantee is claimed. P08 portability correction took priority; no alternate restart or dependency installation was attempted.
   최초P08원격대기중 메인이P09실행능력 단일조사 범위를정하고 Sol이소유격리컨테이너 하나에서 수행했습니다. 도움말·실제HTTP리스너는 확인했지만 감시가IPv4표만읽어 IPv6표의IPv4매핑소켓을 놓쳤고 계획한경로요청은 보내지못했습니다. 메인이 그불일치·정확소유정리를 검사해 미완료근거를 보존합니다. P09구현·반복경로성공·요청마무리보장은 주장하지 않으며 P08좌표수정을 우선하고 대체재시작·설치는 하지않았습니다.
+
+## 2026-10-25 — Corrected hosted Seoul proof / 보완 후 원격 서울 검증
+
+Main inspected the successful PR40122629962 artifact for head6153689 (merge-test5f25a578), with matching runtime12b6c016. Whole238, Node22/24 each217 and independent present hashes4,122 passed. Independent P08 hosted audit12/12 preserves exact17 map omissions and recorded-only remote cleanup limits; previous P06/P07 audits also passed. Actual public README GIF loaded and downloaded MP4 hash matched7d2eeda6. Main archived originals and refreshed canonical status; no runtime or recording changed. [Evidence](../research/pilot/2026-10-25-p08-portability/hosted/README.md). Protected final-head checks and merge remain the next delivery step.
+
+메인이 성공한 PR원격 원문을 내려받아 전체238개·Node각217개·존재하는 해시4,122개와 같은 실행 지문을 확인했습니다. P08독립감사12개 및 기존 집계/서명/영속상태 검사도 통과했고 제외 지도17개와 보존기록만의 원격정리 한계를 명시했습니다. 공개README미리보기·MP4해시를 확인하고 원문·현재상태를 기록했습니다. 실행코드·영상은 바꾸지 않았고 최종커밋필수검사·보호병합을 이어갑니다.
+
+Main separately reviewed Sol's bounded P09 retry: one persistent engine, two ordinary routes, both147.404s/2.119km, same PID24/start1007057,268 hashes, actual owned-container absence. Original failed probe remains. Review-only filename, Docker message-case and inspect-object assumptions were corrected without another engine run; no P09 production code exists yet. [Capability evidence](../research/pilot/2026-10-25-p09-preparation/retry/README.md).
+
+메인은 Sol의 P09제한재검사도 별도로 검토했습니다. 지속엔진한개·경로두건·같은PID/시작눈금·해시268개·소유컨테이너부재를 확인했습니다. 검토기의 파일명·Docker문구대소문자·객체형식 가정만 고쳤고 엔진을 재실행하지 않았습니다. 첫실패를보존하며 P09생산구현은 아직 없습니다.

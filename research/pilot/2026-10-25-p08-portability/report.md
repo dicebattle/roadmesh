@@ -1,8 +1,8 @@
 # Seoul routing after endpoint portability correction / 끝점 호환성 보완 후 서울 경로 검증
 
-**Corrected local238/238 PASS** on clean source `4e3265fb92016e3642670fe44ae516df1f68d903`. Main fixed the design, reviewed Sol's narrow selector change, and directly reran every implemented module with a fresh Seoul graph. Corrected hosted validation remains pending at this entry.
+**Corrected local238/238 PASS** on clean source `4e3265fb92016e3642670fe44ae516df1f68d903`. Main fixed the design, reviewed Sol's narrow selector change, and directly reran every implemented module with a fresh Seoul graph. Corrected hosted validation also passed: 238/238 and Node 22/24 each 217/217; see the [downloaded original evidence and independent audit](hosted/README.md).
 
-**수정한 깨끗한 소스에서 로컬238개를 모두 통과했습니다.** 메인이 설계를 정하고 Sol의 좁은 선택기 수정을 검토한 뒤, 서울 그래프를 새로 만들어 구현된 모든 모듈을 직접 다시 실행했습니다. 이 기록 시점 수정 후 원격 검증은 대기 중입니다.
+**수정한 깨끗한 소스에서 로컬238개를 모두 통과했습니다.** 메인이 설계를 정하고 Sol의 좁은 선택기 수정을 검토한 뒤, 서울 그래프를 새로 만들어 구현된 모든 모듈을 직접 다시 실행했습니다. 수정 후 원격 전체 238개와 Node 22·24 각각 217개도 통과했으며 내려받은 원문을 독립 검사했습니다.
 
 [Actual34.7s recording / 실제34.7초 녹화](demo.mp4) · [Replay / 재생](report.html) · [Whole inspection / 전체 검사](main-verification.json) · [Independent P08 inspection / 독립 P08 검사](main-traffic-verification.json) · [Correction and failed originals / 수정·실패 원문](README.md)
 

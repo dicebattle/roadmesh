@@ -1,0 +1,264 @@
+{
+  "run_url": "https://github.com/dicebattle/routelens/actions/runs/40122629962",
+  "recorded_owned_pid_count": 81,
+  "recorded_cleanup_only": true,
+  "local_live_process_queries_executed": false,
+  "omitted_inventory_paths": [
+    {
+      "path": "seoul/graph/seoul.osm.pbf",
+      "sha256": "926d2a35d09d0b98ad6a715c78732533ede080dffccf04cf793cf99ae0e29ad0",
+      "declared_by": "seoul/graph/manifest.json",
+      "reason": "Hosted artifact excludes pinned graph source bytes / 원격 압축에서 고정 지도 원본 바이트 제외",
+      "inventory": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/0/002/866.gph",
+      "sha256": "6067ac2d9a43da8b4f0279b069f40bb863cc44f7d8c0c676e8ce43b2bb1c76d7",
+      "declared_by": "seoul/graph/manifest.json",
+      "reason": "Hosted artifact excludes exact declared graph tiles / 원격 압축에서 정확히 선언한 지도 타일 제외",
+      "inventory": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/1/046/026.gph",
+      "sha256": "e6408fa0ff1337811bca09953678e0497c1d4c966c084ab15436aec16d84c50a",
+      "declared_by": "seoul/graph/manifest.json",
+      "reason": "Hosted artifact excludes exact declared graph tiles / 원격 압축에서 정확히 선언한 지도 타일 제외",
+      "inventory": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/1/046/027.gph",
+      "sha256": "2858979654ddec0492c13ea97bad511890772a55e0a1708683412ba0610e542a",
+      "declared_by": "seoul/graph/manifest.json",
+      "reason": "Hosted artifact excludes exact declared graph tiles / 원격 압축에서 정확히 선언한 지도 타일 제외",
+      "inventory": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/734/186.gph",
+      "sha256": "139a86d03e0b3e5084b83f4fd9ea1838a909909c19d78a6dcf7f24048ad2a1e9",
+      "declared_by": "seoul/graph/manifest.json",
+      "reason": "Hosted artifact excludes exact declared graph tiles / 원격 압축에서 정확히 선언한 지도 타일 제외",
+      "inventory": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/734/187.gph",
+      "sha256": "24c0e1a0fcc4636f7d69dec4e5009cc3c4b7877d6e1edd58b80269e8a337dc9c",
+      "declared_by": "seoul/graph/manifest.json",
+      "reason": "Hosted artifact excludes exact declared graph tiles / 원격 압축에서 정확히 선언한 지도 타일 제외",
+      "inventory": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/734/188.gph",
+      "sha256": "ab3105f65a4487825409a3e0113fd60d90cd797adc90bf59300bfd9b8aa6d824",
+      "declared_by": "seoul/graph/manifest.json",
+      "reason": "Hosted artifact excludes exact declared graph tiles / 원격 압축에서 정확히 선언한 지도 타일 제외",
+      "inventory": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/734/189.gph",
+      "sha256": "3b247cc818150ef995ddaf9eb97a073cdc8c51bc68d4aed91fd3bef7218280de",
+      "declared_by": "seoul/graph/manifest.json",
+      "reason": "Hosted artifact excludes exact declared graph tiles / 원격 압축에서 정확히 선언한 지도 타일 제외",
+      "inventory": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/735/626.gph",
+      "sha256": "1983d6d3c84e2e10ee4dea92add9ae4e445662ca1c1f05a9b3392a87d8666142",
+      "declared_by": "seoul/graph/manifest.json",
+      "reason": "Hosted artifact excludes exact declared graph tiles / 원격 압축에서 정확히 선언한 지도 타일 제외",
+      "inventory": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/735/627.gph",
+      "sha256": "10feaabaecc1c07b356128ea6482267d8cdf9a2f5c17bc95594cc5f36ec5f8c8",
+      "declared_by": "seoul/graph/manifest.json",
+      "reason": "Hosted artifact excludes exact declared graph tiles / 원격 압축에서 정확히 선언한 지도 타일 제외",
+      "inventory": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/735/628.gph",
+      "sha256": "7735e7a05137f70fbce4a805f5de87448f8118b1fc683256e36be76753453f2a",
+      "declared_by": "seoul/graph/manifest.json",
+      "reason": "Hosted artifact excludes exact declared graph tiles / 원격 압축에서 정확히 선언한 지도 타일 제외",
+      "inventory": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/735/629.gph",
+      "sha256": "02cdde5ece7c20723d72b6a80923d4890c44731ca95b87e9bdb2a993ecc5c7dd",
+      "declared_by": "seoul/graph/manifest.json",
+      "reason": "Hosted artifact excludes exact declared graph tiles / 원격 압축에서 정확히 선언한 지도 타일 제외",
+      "inventory": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/737/066.gph",
+      "sha256": "b566eac3ac2c6c051320a57b02409c3cca1d34fcaba9a1d512cac90957253549",
+      "declared_by": "seoul/graph/manifest.json",
+      "reason": "Hosted artifact excludes exact declared graph tiles / 원격 압축에서 정확히 선언한 지도 타일 제외",
+      "inventory": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/737/067.gph",
+      "sha256": "09640584633a86de55baa8159186a5e270f91fb40838ab178958af3af76f3761",
+      "declared_by": "seoul/graph/manifest.json",
+      "reason": "Hosted artifact excludes exact declared graph tiles / 원격 압축에서 정확히 선언한 지도 타일 제외",
+      "inventory": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/737/068.gph",
+      "sha256": "76f57edb4a27d6741a559986d60d02412e7f351156718d89a0d56f9bdf259cc3",
+      "declared_by": "seoul/graph/manifest.json",
+      "reason": "Hosted artifact excludes exact declared graph tiles / 원격 압축에서 정확히 선언한 지도 타일 제외",
+      "inventory": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "traffic/bundle/graph.tar",
+      "sha256": "c90851b36f523508651f787a4fd9ce1b4b64bcd1a5e90ee27e0c8472de81426f",
+      "declared_by": "traffic/bundle/manifest.json",
+      "reason": "Graph extract omitted; traffic bytes remain required / 지도 추출물 제외, 교통 바이트는 필수",
+      "inventory": "traffic/manifest.json"
+    },
+    {
+      "path": "traffic/negative/corrupt-bundle/graph.tar",
+      "sha256": "c90851b36f523508651f787a4fd9ce1b4b64bcd1a5e90ee27e0c8472de81426f",
+      "declared_by": "traffic/negative/corrupt-bundle/manifest.json",
+      "reason": "Graph extract omitted; traffic bytes remain required / 지도 추출물 제외, 교통 바이트는 필수",
+      "inventory": "traffic/manifest.json"
+    }
+  ],
+  "selected_inventory_scope_en": "Byte hashes cover the listed whole-system inventories and every present entry. Tiny-city graph originals outside those inventories are not claimed byte-verified. Only exact declared graph binary paths may be absent; all traffic and hidden staging bytes are required.",
+  "selected_inventory_scope_ko": "선택한 전체 실행 해시목록과 존재하는 모든 항목의 바이트 해시를 검사합니다. 목록 밖 작은 지도 원본의 바이트 검증은 주장하지 않습니다. 정확히 선언한 지도 이진 경로만 누락을 허용하며 모든 교통·숨김 임시 바이트는 필수입니다.",
+  "status": "PASS",
+  "source": {
+    "commit": "5f25a578e33cb623c3b16f954f26830ad484fa67",
+    "dirty": false
+  },
+  "graph_id": "d0596c37f21f3c27fdc7d252926ee2376445a8ffdcebe19999f4630f61431c36",
+  "implementation_sha256": "12b6c0164fba48fd08f6b2732ccd24197634ec9ae734ecf0a5de500a5e365404",
+  "assertions": {
+    "tiny": 48,
+    "seoul": 35,
+    "ingestion": 34,
+    "aggregation": 34,
+    "publication": 55,
+    "traffic": 32,
+    "total": 238
+  },
+  "unique_file_hashes_checked": 4122,
+  "inventories": {
+    "manifest.json": 11,
+    "seoul/manifest.json": 8,
+    "seoul/tiny/manifest.json": 6,
+    "seoul/graph/manifest.json": 94,
+    "seoul/workload/manifest.json": 826,
+    "ingestion/manifest.json": 946,
+    "aggregation/manifest.json": 761,
+    "publication/manifest.json": 404,
+    "traffic/manifest.json": 1083
+  },
+  "source_sha256": "282d012b7629c643695f286d4424d7f6d88548d99edb5577ca5b678906f13c17",
+  "matching_policy": "seoul-observed-v3",
+  "stored_reference_traversals": 220,
+  "unique_stored_ids": 220,
+  "successful_trips": 9,
+  "raw_after_success": 0,
+  "independent_geometry_max_difference_m": 5.17506038022475e-10,
+  "independent_boundary_error_max_ms": 260,
+  "recovery_attempt_byte_parity": [
+    {
+      "phase": "AFTER_MATCH",
+      "interrupted_pid": 11996,
+      "recovered_pid": 12329,
+      "sha256": "978aff1729b018839b8d42aa9f1383fb18eff7f7c9652c865d2b9526fc9eff6e",
+      "byte_identical": true
+    },
+    {
+      "phase": "AFTER_INSERT",
+      "interrupted_pid": 12656,
+      "recovered_pid": 12960,
+      "sha256": "6c49b3052164dac8077e2af25c2cc613632021f39e3dc7b7a85e3f69e20be71f",
+      "byte_identical": true
+    }
+  ],
+  "database_restart": {
+    "same_container_id": true,
+    "same_named_volume": "routelens-p05-924f3de2-fa0b-4d35-9a96-7f9bbff00fc9-db",
+    "restarted": true,
+    "previous_host_port": 32768,
+    "current_host_port": 32769,
+    "host_tcp_ready": true,
+    "host_tcp_wait_ms": 0.6705300000030547
+  },
+  "api_durable_samples": 2,
+  "engine_failure_attempts": 3,
+  "clock_only_expiry_refused_before_sweep": true,
+  "retention_readback": {
+    "contributors": 22,
+    "trips": 0,
+    "batches": 0,
+    "samples": 0,
+    "traversals": 0,
+    "events": 0,
+    "raw_payloads": 0
+  },
+  "stopped_engine": {
+    "pid": 88,
+    "exe": "/usr/local/bin/valhalla_service",
+    "state": "T",
+    "action": "locate"
+  },
+  "killed_worker_pid": 17652,
+  "orphan_engine_id": "fa1b9dfdf8b1eacc2cb6dae1c246225cc31fefbb2999152a558f5f6f53b2bc99",
+  "recorded_db_volume_engine_cleanup_verified": true,
+  "traffic_recorded_owned_containers": [
+    "routelens-p02-00043086-a783-4d2a-83e9-4760c0bb074e",
+    "routelens-p02-00091af3-75a7-4cdb-bef8-1fed375cf254",
+    "routelens-p02-097c2545-66b1-45a6-a1fb-f3b4c696367b",
+    "routelens-p02-1cf6b868-1d4a-4e88-b3f2-f3e8fcab1af9",
+    "routelens-p02-1e52d06b-1ef3-4685-9549-38b05798de56",
+    "routelens-p02-210de465-a62b-4211-ba97-fc6840f8e855",
+    "routelens-p02-4134a325-9617-451d-bb20-a92fe48a7381",
+    "routelens-p02-415a80d8-2286-4276-b380-edbd3b83e13d",
+    "routelens-p02-4d3702df-9577-4a45-9201-d72466f3418d",
+    "routelens-p02-56387f53-0ef4-4141-931d-89124bac84a9",
+    "routelens-p02-654d0cc5-c3e3-4c0b-b107-bc66b2b8b731",
+    "routelens-p02-898116b4-5069-4dc9-8839-0160e88d894f",
+    "routelens-p02-8b8f88db-e7e4-49b0-bb0c-273f8a3be8c6",
+    "routelens-p02-96ac318a-f1a8-4459-8998-3e41d0edd3d7",
+    "routelens-p02-a4820ee9-e82f-4ac1-9b58-85ff1a7e1f21",
+    "routelens-p02-a9531ab5-5b7c-4412-ade5-1de4d1810af7",
+    "routelens-p02-b532a687-e57c-4fd3-94e5-0d1433946702",
+    "routelens-p02-ba1a0a40-9edf-4ae9-80e2-e321fed8be90",
+    "routelens-p02-bd1cab09-353f-4ad4-a87c-d72ae5af7d05",
+    "routelens-p02-bde140a5-2072-4e27-abe6-b9f2c19c2646",
+    "routelens-p02-c38ce653-5537-4018-a514-26ff3d890526",
+    "routelens-p02-dcae25d8-f61f-4073-bb98-37f374fa75c8",
+    "routelens-p02-dd731e49-2214-4cf7-8872-0fcee059cbc7",
+    "routelens-p02-e20dfb47-7ca9-43a2-8e55-586f237c8054",
+    "routelens-p02-ec7f1948-ea4c-4013-9383-ceb69853e327",
+    "routelens-p02-f0336c86-0f95-41e0-b23f-a7da7ea257ad",
+    "routelens-p02-f283a5ce-3808-4482-83b0-5c6443f6d9ce",
+    "routelens-p02-f2e5b9fb-51f1-4063-a1b5-3adf19a7996c",
+    "routelens-p05-a9ee94ba-4cc5-4f6f-97ad-7f3de1840fef"
+  ],
+  "traffic_recorded_owned_volumes": [
+    "routelens-p05-a9ee94ba-4cc5-4f6f-97ad-7f3de1840fef-db"
+  ],
+  "traffic_cleanup_files_verified": [
+    "traffic/bundle/cleanup.json",
+    "traffic/generations/engine-unavailable/runtime/70654884-7b52-403e-9acd-7a434b7ddcbd/cleanup.json",
+    "traffic/generations/expiry-route/runtime/15164248-1de9-48e0-bf67-393286547cbc/cleanup.json",
+    "traffic/generations/main/runtime/01e41197-9524-4192-8da1-fc1952ebc95a/cleanup.json",
+    "traffic/generations/main/runtime/3d0d5fb0-c48a-41aa-a081-18d4af62eed3/cleanup.json",
+    "traffic/generations/main/runtime/3da08354-e212-46f2-b809-8e7dcb0a81ab/cleanup.json",
+    "traffic/generations/main/runtime/565f4d60-7352-46bb-936a-b17522c7e503/cleanup.json",
+    "traffic/generations/main/runtime/62e2a352-2112-42c0-ab0e-aad3a60a6759/cleanup.json",
+    "traffic/generations/main/runtime/6f436050-164f-457a-91f0-2915721dc9df/cleanup.json",
+    "traffic/generations/main/runtime/71625d51-9b61-4e2f-9b2d-0d9d2899d8df/cleanup.json",
+    "traffic/generations/main/runtime/979a89e8-a473-4458-a6d7-b9ccf4376028/cleanup.json",
+    "traffic/generations/main/runtime/e0b479af-d6df-40ee-b1d9-f077e170f262/cleanup.json",
+    "traffic/generations/main/runtime/fff7c5b3-2934-4876-ba4d-e36d4633137d/cleanup.json",
+    "traffic/negative/corrupt-bundle/cleanup.json",
+    "traffic/runtime/cleanup.json"
+  ],
+  "message_en": "Main independently checked artifact bytes, all stored traversal contents and geometry/timing, retry result bytes, durable restart/expiry/revocation read-backs and recorded hosted cleanup (without live remote process queries). This proves the bounded synthetic local pilot, not production authentication or real-driving accuracy.",
+  "message_ko": "메인이 원문 해시·저장 통과 전체의 지형/시간·재시도 결과 바이트·재시작/만료/철회 재조회·원격 정리 기록(실시간 원격 프로세스 조회 아님)를 독립 검사했습니다. 제한된 합성 로컬 파일럿 증거이며 운영 인증·실주행 정확도는 별도입니다."
+}

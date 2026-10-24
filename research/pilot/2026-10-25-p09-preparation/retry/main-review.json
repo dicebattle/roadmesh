@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "hash_count": 268,
+  "requests": 2,
+  "same_pid": 24,
+  "start_ticks": "1007057",
+  "eta_seconds": 147.404,
+  "distance_km": 2.119,
+  "owned_container": "routelens-p09-service-7d08b317-58c6-4fa1-aa7e-8eb2ce47c1eb",
+  "current_container_absent": true,
+  "inspection_corrections": [
+    "Actual route filenames are .response.json, not .body.json.",
+    "Docker absence is lowercase no such object; comparison corrected.",
+    "Recorded container-inspect is one object, not an array.",
+    "Prior inspection already verified hashes, HTTP bodies, shapes, PID identity and exit status. This continuation verifies remaining isolation and absence checks. No engine rerun."
+  ],
+  "limits": "Capability only; no activation/draining proof / 실행 능력만 확인·활성화와 요청 마무리는 미검증"
+}

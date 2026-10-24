@@ -22,13 +22,13 @@ The user now requires real Seoul OSM roads for the primary simulation. Complete 
 | P05 durable ingestion / 영속 수집 | [111-check report](../research/pilot/2026-10-24-p05/report.md) | Local and hosted verified / 로컬·원격 검증 |
 | P06 aggregation / 집계 | [P06 report](../research/pilot/2026-10-24-p06/report.md) | Local/hosted151 and Node22/24 each183 verified / 로컬·원격151·Node각183 검증 |
 | P07 signed publication / 서명 게시 | [P07 report](../research/pilot/2026-10-25-p07-claim-fix/report.md) | Corrected local/hosted206 and Node22/24 each202 verified / 수정후로컬·원격206·Node각202검증 |
-| P08 actual traffic consumption / 속도 반영 | [Contract](27-p08-traffic-activation.md), [report](../research/pilot/2026-10-25-p08-portability/report.md) | Clean local238 and independent inspection passed; hosted delivery pending / 깨끗한 로컬238·독립 검사 통과·원격 반영 대기 |
+| P08 actual traffic consumption / 속도 반영 | [Contract](27-p08-traffic-activation.md), [report](../research/pilot/2026-10-25-p08-portability/report.md) | Local/hosted238 and Node22/24 each217 verified; protected merge pending / 로컬·원격238·Node각217 검증·보호병합 대기 |
 | P09 two nodes, P10 gateway/failover / 두 노드·중계/장애 전환 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P11 complete client, P12 complete fault matrix / 전체 화면·장애 행렬 | Evidence replay and incremental runner implemented / 증거 재생·점진 실행기 구현 | Partial implementation / 일부 구현 |
 | P13 local Cloudflare parity / Cloudflare 로컬 비교 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P14b engine integration / 엔진 통합 검사 | Extend CI with current whole-system runner / 현재 전체 실행기를 CI에 연결 | Hosted current-module run verified; full matrix remains / 현재 모듈 원격 검증·전체 행렬 남음 |
-| Whole implemented-system simulation / 구현 모듈 전체 시뮬레이션 | [P01–P08 report](../research/pilot/2026-10-25-p08-portability/report.md) / P01~P08 보고서 | Clean local238 verified / 깨끗한 로컬238 검증 |
-| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/pilot/2026-10-25-p08-portability/report.md) / 보고서·캡처 | P08 local evidence inspected; push pending / P08 로컬 원문 검사·푸시 대기 |
+| Whole implemented-system simulation / 구현 모듈 전체 시뮬레이션 | [P01–P08 report](../research/pilot/2026-10-25-p08-portability/report.md) / P01~P08 보고서 | Clean local/hosted238 verified / 깨끗한 로컬·원격238 검증 |
+| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/pilot/2026-10-25-p08-portability/report.md) / 보고서·캡처 | Corrected report/demo published; hosted originals inspected / 보완 보고서·영상 게시·원격 원문 검사 |
 | README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | Current Seoul/P08 34.7s recording and hashes verified / 현재 서울·P08 34.7초 녹화·해시 검증 |
 | Refresh on implementation changes / 구현 변경 때 갱신 | `media:check` fingerprint/hash/README checks / 지문·해시·README 검사 | Locally verified / 로컬 검증 |
 | Research other AI-development READMEs / 다른 AI 개발 README 참고 | [Research notes](../wiki/sources/readme-presentation.md) | Source inspection complete / 출처 확인 |

@@ -25,3 +25,9 @@ Cleanup sent TERM only to the exact recorded daemon PID; original process absenc
 현재 그래프·manifest의 실제 이미지·검증한 P08 빈 파일 복사만 사용했고 그래프읽기전용·네트워크차단·CPU2개·메모리4GiB·외부 포트 없음 조건을 유지했습니다. 다른 방식 재시작·설치·외부 요청·생산 변경은 하지 않았습니다.
 
 기록한 정확한 데몬 PID에만 TERM을 보냈고, 컨테이너 삭제 전에 해당 프로세스 부재를 확인했습니다. 소유 라벨/마운트를 확인한 컨테이너만 삭제한 뒤 실제 부재와 빈 소유 목록을 확인했습니다. 원문을 보존하고 추가 실행은 하지 않습니다. P09 설계·구현 완료나 요청 마무리 보장은 아니며 다음 우선순위는 메인이 조사 중인 P08 교정입니다.
+
+## Bounded retry completed / 제한 재검사 완료
+
+[Retry evidence](retry/README.md) records two successful ordinary HTTP routes on the same persistent engine after correcting the socket observer. Main verified 268 original hashes, original responses, stable PID/start ticks, resource isolation and exact container absence. The earlier probe above is preserved. This is capability evidence only; P09 activation and draining remain unimplemented. Archive SHA256: `0eaf279cb67cb06c5f6b07ec1205aa178ce832a1994d28abbe7c1682859a30f8`.
+
+소켓 감시를 고친 제한 재검사에서 같은 지속 엔진의 HTTP 경로 두 건을 성공했습니다. 메인은 원문 해시 268개·응답·같은 PID/시작 눈금·격리·정확한 컨테이너 부재를 확인했습니다. 앞선 실패는 보존하며 P09 활성화·기존 요청 마무리 완료를 뜻하지 않습니다.
