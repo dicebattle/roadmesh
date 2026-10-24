@@ -22,7 +22,7 @@ The user now requires real Seoul OSM roads for the primary simulation. Complete 
 | P05 durable ingestion / 영속 수집 | [111-check report](../research/pilot/2026-10-24-p05/report.md) | Local and hosted verified / 로컬·원격 검증 |
 | P06 aggregation / 집계 | [P06 report](../research/pilot/2026-10-24-p06/report.md) | Local/hosted151 and Node22/24 each183 verified / 로컬·원격151·Node각183 검증 |
 | P07 signed publication / 서명 게시 | [P07 report](../research/pilot/2026-10-25-p07-claim-fix/report.md) | Corrected local/hosted206 and Node22/24 each202 verified / 수정후로컬·원격206·Node각202검증 |
-| P08 actual traffic consumption / 속도 반영 | [Fixed contract](27-p08-traffic-activation.md) | Design fixed; implementation pending / 설계고정·구현전 |
+| P08 actual traffic consumption / 속도 반영 | [Contract](27-p08-traffic-activation.md), [development proof](../research/pilot/2026-10-25-p08/development/README.md) | Actual development32 passed; fresh whole and hosted delivery pending / 실제 개발32 통과·새 전체/원격 반영 대기 |
 | P09 two nodes, P10 gateway/failover / 두 노드·중계/장애 전환 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P11 complete client, P12 complete fault matrix / 전체 화면·장애 행렬 | Evidence replay and incremental runner implemented / 증거 재생·점진 실행기 구현 | Partial implementation / 일부 구현 |
 | P13 local Cloudflare parity / Cloudflare 로컬 비교 | [Module plan](11-local-pilot.md) | Pending / 미구현 |

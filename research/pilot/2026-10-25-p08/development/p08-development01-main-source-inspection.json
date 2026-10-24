@@ -1,0 +1,112 @@
+{
+  "method": "Main independently compared authored expectations with original simulator truth and matcher input; no engine result used as truth.",
+  "trips": [
+    {
+      "vehicle_id": "p08-west-0",
+      "edge_id": "1338083662224",
+      "observations": 126,
+      "entry_error_ms": 0.4918694979569409,
+      "exit_error_ms": 0.8223774514626712
+    },
+    {
+      "vehicle_id": "p08-west-1",
+      "edge_id": "1338083662224",
+      "observations": 112,
+      "entry_error_ms": 0.4918694979569409,
+      "exit_error_ms": 0.6198910679668188
+    },
+    {
+      "vehicle_id": "p08-west-2",
+      "edge_id": "1338083662224",
+      "observations": 102,
+      "entry_error_ms": 0.4918694979569409,
+      "exit_error_ms": 0.8579019611643162
+    },
+    {
+      "vehicle_id": "p08-west-3",
+      "edge_id": "1338083662224",
+      "observations": 93,
+      "entry_error_ms": 0.4918694979569409,
+      "exit_error_ms": 0.05263814650243148
+    },
+    {
+      "vehicle_id": "p08-west-4",
+      "edge_id": "1338083662224",
+      "observations": 86,
+      "entry_error_ms": 0.4918694979569409,
+      "exit_error_ms": 0.2149183009751141
+    },
+    {
+      "vehicle_id": "p08-middle-0",
+      "edge_id": "1338687642000",
+      "observations": 212,
+      "entry_error_ms": 0.4939206981798634,
+      "exit_error_ms": 0.15875373501330614
+    },
+    {
+      "vehicle_id": "p08-middle-1",
+      "edge_id": "1338687642000",
+      "observations": 189,
+      "entry_error_ms": 0.4939206981798634,
+      "exit_error_ms": 0.25222554223728366
+    },
+    {
+      "vehicle_id": "p08-middle-2",
+      "edge_id": "1338687642000",
+      "observations": 171,
+      "entry_error_ms": 0.4939206981798634,
+      "exit_error_ms": 0.527002988033928
+    },
+    {
+      "vehicle_id": "p08-middle-3",
+      "edge_id": "1338687642000",
+      "observations": 156,
+      "entry_error_ms": 0.4939206981798634,
+      "exit_error_ms": 0.6609118072956335
+    },
+    {
+      "vehicle_id": "p08-middle-4",
+      "edge_id": "1338687642000",
+      "observations": 143,
+      "entry_error_ms": 0.4939206981798634,
+      "exit_error_ms": 0.4391691566561349
+    },
+    {
+      "vehicle_id": "p08-east-0",
+      "edge_id": "1338754750864",
+      "observations": 382,
+      "entry_error_ms": 0.9587796006308054,
+      "exit_error_ms": 0.19341956902644597
+    },
+    {
+      "vehicle_id": "p08-east-1",
+      "edge_id": "1338754750864",
+      "observations": 340,
+      "entry_error_ms": 0.9587796006308054,
+      "exit_error_ms": 0.3941507280105725
+    },
+    {
+      "vehicle_id": "p08-east-2",
+      "edge_id": "1338754750864",
+      "observations": 307,
+      "entry_error_ms": 0.9587796006308054,
+      "exit_error_ms": 0.354735655215336
+    },
+    {
+      "vehicle_id": "p08-east-3",
+      "edge_id": "1338754750864",
+      "observations": 280,
+      "entry_error_ms": 0.9587796006235294,
+      "exit_error_ms": 0.3224869593104813
+    },
+    {
+      "vehicle_id": "p08-east-4",
+      "edge_id": "1338754750864",
+      "observations": 257,
+      "entry_error_ms": 0.9587796006235294,
+      "exit_error_ms": 0.7956130459788255
+    }
+  ],
+  "observations": 2956,
+  "full_truth_traversals": 45
+}

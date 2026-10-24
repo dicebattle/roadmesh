@@ -1,3 +1,4 @@
+import type { TrafficReport } from "./traffic_checks.js";
 import type { AggregationDraft } from "./aggregation_types.js";
 /** Offline evidence viewer. Input provenance is rendered verbatim, never refreshed. */
 export interface SimulationReportData {
@@ -130,6 +131,7 @@ export interface SimulationReportData {
     assertions_total: number;
     cleanup_verified: boolean;
   };
+  traffic?: TrafficReport;
   publication?: {
     publisher_id: string;
     simulation_namespace: string;
@@ -617,14 +619,22 @@ export function renderSimulationReport(data: SimulationReportData): string {
         data-ko="P06 서명전 합성집계"
       ></h2>
       <p
-        data-en="The original nine vehicles are a separate regression replay. P06 uses its own short trips. Recorded candidates do not change with replay time. The moving PARKED sixth tests explicit collection state, not automatic parking detection. LIVE is a synthetic candidate state. These P06 candidates are unsigned; downstream P07 evidence is shown separately. Real-road routing activation is not implemented."
-        data-ko="기존9대는 별도회귀 재생이며 P06은 자체짧은여행을 사용합니다. 기록된 후보는 재생시각으로 바뀌지 않습니다. 이동하는 PARKED6번째는 명시수집상태 검사이며 자동주차탐지가 아닙니다. LIVE는 합성후보 상태입니다. P06 후보는 서명 전이며 후속 P07 증거는 따로 표시합니다. 실제도로 경로 반영은 미구현입니다."
+        data-en="The original nine vehicles are a separate regression replay. P06 uses its own short trips. Recorded candidates do not change with replay time. The moving PARKED sixth tests explicit collection state, not automatic parking detection. LIVE is a synthetic candidate state. These P06 candidates are unsigned; downstream P07 evidence is shown separately. P06 candidates are not activated by this replay; accepted P08 routing evidence is shown separately."
+        data-ko="기존9대는 별도회귀 재생이며 P06은 자체짧은여행을 사용합니다. 기록된 후보는 재생시각으로 바뀌지 않습니다. 이동하는 PARKED6번째는 명시수집상태 검사이며 자동주차탐지가 아닙니다. LIVE는 합성후보 상태입니다. P06 후보는 서명 전이며 후속 P07 증거는 따로 표시합니다. 이 재생은 P06 후보를 경로에 적용하지 않으며, 수용한 P08 경로 반영 근거는 별도로 표시합니다."
       ></p>
       <div id="aggregate-evidence"></div>
     </section>
+    <section id="traffic-section" class="checks" hidden>
+      <h2 data-en="P08 recorded traffic routing and expiry" data-ko="P08 기록된 교통 경로·만료"></h2>
+      <p data-en="Evidence playback of 15 authored synthetic trips on three target edges of the actual Teheran-ro road network in Seoul. Baseline, accepted live traffic and exact event-clock expiry use the same two-point request. The engine uses its own current wall clock for native speed blending. This is not a complete navigation client, real driving accuracy or live traffic." data-ko="실제 서울 테헤란로 도로망의 대상 3개 구간에 직접 만든 합성 여행 15개를 적용한 증거 재생입니다. 기본·수용 실시간·관측시계의 정확한 만료에 같은 두 좌표 요청을 씁니다. 엔진의 속도 혼합에는 엔진의 현재 현실시각을 사용합니다. 완성 내비게이션·실주행 정확도·실시간 교통 증거가 아닙니다."></p>
+      <div id="traffic-route-map" aria-label="Recorded route comparison / 기록 경로 비교"></div>
+      <div id="traffic-route-comparison"></div>
+      <div id="traffic-evidence"></div>
+      <details><summary data-en="Traffic file, concurrency, failure and expiry checks" data-ko="교통파일·경쟁·장애·만료 검사"></summary><div id="traffic-cases"></div></details>
+    </section>
     <section id="publication-section" class="checks" hidden>
       <h2 data-en="P07 signed publication and durable acceptance" data-ko="P07 서명 게시·영속 수용"></h2>
-      <p data-en="Recorded actual publication, verification, acceptance, rejection and expiry. These signed synthetic snapshots are separate from the original nine-vehicle and P06 evidence replays. P08 routing activation is not implemented. Revocation invalidates future pulls; offline downloaded bytes remain valid until TTL or a received correction or key revocation." data-ko="기록된 실제 게시·검증·수용·거부·만료입니다. 서명된 합성 스냅샷과 기존9대·P06 증거재생을 구분합니다. P08 경로 반영은 미구현입니다. 철회는 이후 조회를 무효화하며 이미 받은 오프라인 바이트는 기한·받은 정정본·키철회까지 유효할 수 있습니다."></p>
+      <p data-en="Recorded actual publication, verification, acceptance, rejection and expiry. These signed synthetic snapshots are separate from the original nine-vehicle and P06 evidence replays. P08 routing evidence is recorded separately. Revocation invalidates future pulls; offline downloaded bytes remain valid until TTL or a received correction or key revocation." data-ko="기록된 실제 게시·검증·수용·거부·만료입니다. 서명된 합성 스냅샷과 기존9대·P06 증거재생을 구분합니다. P08 경로 반영 근거는 별도로 기록합니다. 철회는 이후 조회를 무효화하며 이미 받은 오프라인 바이트는 기한·받은 정정본·키철회까지 유효할 수 있습니다."></p>
       <div id="publication-evidence"></div>
       <details><summary data-en="Publication and consumer checks" data-ko="게시·수신 검사"></summary><div id="publication-cases"></div></details>
     </section>
@@ -998,6 +1008,38 @@ export function renderSimulationReport(data: SimulationReportData): string {
       );
       const v = $("vehicle").options[0];
       if (v) v.textContent = lang === "en" ? "All vehicles" : "전체 차량";
+      $("traffic-section").hidden = !data.traffic;
+      if (data.traffic) {
+        const t = data.traffic, comparison = $("traffic-route-comparison"), map = $("traffic-route-map");
+        comparison.replaceChildren(); map.replaceChildren();
+        const chosen = ["baseline", "live", "expired"].map(label => t.routes.find(r => r.label === label)).filter(Boolean);
+        const colors = {baseline:"#48566A",live:"#CC481D",expired:"#18816B"};
+        const names = lang === "en" ? {baseline:"Baseline",live:"Accepted live traffic",expired:"Exact expiry"} : {baseline:"기본",live:"수용 실시간",expired:"정확한 만료"};
+        const coords = chosen.flatMap(r => r.coordinates), lons = coords.map(c => c[0]), lats = coords.map(c => c[1]);
+        if (coords.length) {
+          const view = document.createElementNS(ns,"svg"); view.setAttribute("viewBox","0 0 800 300"); view.setAttribute("role","img"); view.setAttribute("aria-label", lang === "en" ? "Recorded baseline, live and expired route shapes" : "기록된 기본·실시간·만료 경로 모양"); view.style.width="100%"; view.style.maxHeight="360px"; view.style.background="#F5F7F9";
+          const minX=Math.min(...lons), maxX=Math.max(...lons), minY=Math.min(...lats), maxY=Math.max(...lats);
+          const cosine=Math.cos(((minY+maxY)/2)*Math.PI/180);
+          const scale=Math.min(740/Math.max((maxX-minX)*cosine,1e-9),240/Math.max(maxY-minY,1e-9));
+          const project=c=>[400+(c[0]-(minX+maxX)/2)*cosine*scale,150-(c[1]-(minY+maxY)/2)*scale];
+          const line=(coordinates,color,width,dash)=>{const path=document.createElementNS(ns,"polyline");path.setAttribute("points",coordinates.map(c=>project(c).join(",")).join(" "));path.setAttribute("fill","none");path.setAttribute("stroke",color);path.setAttribute("stroke-width",width);if(dash)path.setAttribute("stroke-dasharray",dash);view.append(path);};
+          (data.context_roads||[]).filter(r=>r.coordinates.some(c=>c[0]>=minX&&c[0]<=maxX&&c[1]>=minY&&c[1]<=maxY)).forEach(r=>line(r.coordinates,"#D8DFE6","1"));
+          chosen.forEach(r=>line(r.coordinates,colors[r.label],r.label==="baseline"?"9":r.label==="live"?"5":"2",r.label==="expired"?"8 5":null));map.append(view);
+        }
+        chosen.forEach(r => {
+          const item=node("article","",comparison); item.style.borderLeft="4px solid "+colors[r.label]; item.style.padding="8px 12px"; item.style.margin="12px 0";
+          node("h3",names[r.label],item);
+          node("p",r.traffic_mode+" · "+r.distance_m.toFixed(1)+" m · "+r.eta_s.toFixed(6)+" s",item);
+          node("p",(lang==="en"?"Checked event time: ":"검사 관측시각: ")+r.checked_at_event_time+" · "+(lang==="en"?"valid until: ":"유효기한: ")+(r.valid_until||"—"),item);
+          node("p",(lang==="en"?"Sequence: ":"순번: ")+(r.sequence??"—")+" · "+(lang==="en"?"snapshot: ":"스냅샷: ")+(r.snapshot_id||"—"),item).style.overflowWrap="anywhere";
+          node("p",(lang==="en"?"Generation: ":"파일세대: ")+r.generation_id+" · SHA256 "+r.traffic_sha256,item).style.overflowWrap="anywhere";
+          evidence(r.evidence_path,item);
+        });
+        $("traffic-evidence").replaceChildren();
+        node("p",t.assertions_passed+"/"+t.assertions_total+(lang==="en"?" checks; owned cleanup verified: ":"검사 · 소유자원 정리 확인: ")+t.cleanup_verified,$("traffic-evidence"));
+        t.evidence.forEach(e => {const row=node("p",e["name_"+lang]+" · ",$("traffic-evidence"));evidence(e.path,row);});
+        $("traffic-cases").replaceChildren(); t.cases.forEach(c => {const row=node("p",c.status+" · "+c["message_"+lang]+" · ",$("traffic-cases"));evidence(c.evidence_path,row);});
+      }
       $("publication-section").hidden = !data.publication;
       if (data.publication) {
         const p = data.publication, root = $("publication-evidence");

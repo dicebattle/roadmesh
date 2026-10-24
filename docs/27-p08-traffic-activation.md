@@ -76,6 +76,16 @@ Write expected times/counts/median and all authored inputs before matching. Use5
 
 ## Evidence order and gates / 증거 순서·기준
 
+### Source-profile correction after the first actual run / 첫 실제 실행 뒤 관측 속도 계획 정정
+
+The initial constant slow-speed profile is superseded by this explicit source design. In development01, all 15 trips completed real matching but every target was excluded as `AMBIGUOUS_BOUNDARY`: slow progress within the endpoint uncertainty radius looked like sustained boundary dwell. The existing P04 policy deliberately cannot assign that dwell to one neighboring edge. Preserve that policy and the failed evidence; do not treat the absence of a traversal as engine failure or inject a successful aggregate.
+
+최초의 일정한 저속 이동 계획을 아래 설계로 정정합니다. development01에서 15여행 모두 실제 매칭을 마쳤지만, 끝점의 불확실성 반경 안에서 느리게 이동한 관측이 지속된 경계 정지처럼 보여 모든 대상이 `AMBIGUOUS_BOUNDARY`로 제외됐습니다. 기존 P04 정책은 이 정지를 어느 이웃 구간에 배정할지 단정하지 않습니다. 정책과 실패 원문을 보존하고, 통과 기록이 없다는 사실을 엔진 실패로 바꾸거나 성공 집계를 주입하지 않습니다.
+
+Keep the same three real edges, five contributors each, 500ms samples, zero noise, clipping, window, expiry and acceptance limits. The authored 0.4/0.45/0.5/0.55/0.6m/s values now mean target-edge **average** speeds. Traverse the first and last 3m of each target at 5m/s and slow only its interior. Compute the interior speed and millisecond duration from the original geometry so total target time equals `length / authored_average` within 1ms. Keep the predecessor/successor at 5m/s and target exits at 210s. Record the speed phases and independent expected boundary times before matching. This models interior congestion with observable boundary crossings; sustained endpoint dwell remains excluded and is not claimed as supported.
+
+실제 세 구간·각 5명·500ms 관측·잡음 없음·관측 자르기·집계창·만료·판정 한계는 유지합니다. 정한 다섯 속도는 이제 대상 구간의 **평균** 속도입니다. 각 대상의 처음과 마지막 3m는 5m/s로 지나고 내부에서만 느리게 이동합니다. 원래 길이에서 내부 속도와 밀리초 단위 시간을 계산해 전체 통과 시간이 `길이 / 정한 평균 속도`와 1ms 이내로 일치하게 합니다. 앞뒤 구간은 5m/s, 대상 진출은 210초로 유지하고 실제 매칭 전에 속도 단계·독립 기대 경계 시각을 기록합니다. 이는 내부 혼잡과 확인 가능한 경계 통과를 시험하며, 경계의 지속 정지는 계속 제외하고 지원된다고 주장하지 않습니다.
+
 Keep the existing206 whole checks unchanged. P08 declares required case IDs once and the parent derives the new total, rejects missing/duplicate/failed cases and verifies child source/graph/runtime identities. Focused tests cover strict layout, quantization and malformed inputs. Real integration must cover the following named groups with original evidence links:
 
 1. Fresh15-trip source, independent target timing/median, exact consumer-to-compiled bytes, full catalog and blank skeleton.

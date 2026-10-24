@@ -74,6 +74,8 @@ jobs:
             ${{ runner.temp }}/simulation-evidence/**/*.md
             ${{ runner.temp }}/simulation-evidence/**/*.html
             ${{ runner.temp }}/simulation-evidence/**/context-edges.tsv
+            ${{ runner.temp }}/simulation-evidence/traffic/**/traffic.tar
+            ${{ runner.temp }}/simulation-evidence/traffic/public/*.jws.txt
             !${{ runner.temp }}/simulation-evidence/**/tiles/**
           if-no-files-found: error
           retention-days: 7
