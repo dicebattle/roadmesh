@@ -1,54 +1,50 @@
 {
-  "source_commit": "4b8bf793d44beb110614987359e7a76fcd651159",
-  "implementation_sha256": "dcb2d3aa1de9c457d3119af0ddf6c18663de4fe800bb82ed20ef0791e305320e",
-  "report_path": "research/pilot/2026-10-25-p07-claim-fix/report.html",
-  "report_sha256": "0617c65233617d5d2369abec9757a9f869a77203cec6b3b001724a40550a2638",
-  "capture_method": "Actual isolated Chrome replay, 26.950000s at1280x720/20fps after claim-race correction; complete H.264/GIF conversion. / 작업 선택 경쟁 수정 후 실제26.950000초·1280x720·20fps 재생을 촬영하고 전체를 변환했습니다.",
-  "raw_capture_sha256": "1f6a82628ad04c02cfa68743f4eda965c1e0a8232439a9fb74ad634bd368a9bb",
+  "source_commit": "4e3265fb92016e3642670fe44ae516df1f68d903",
+  "implementation_sha256": "12b6c0164fba48fd08f6b2732ccd24197634ec9ae734ecf0a5de500a5e365404",
+  "report_path": "research/pilot/2026-10-25-p08-portability/report.html",
+  "report_sha256": "d20ea975ff737eb1f1f81261308b20691a98081c8f706f202bae73037632803e",
+  "capture_method": "Actual Chrome playback after endpoint portability correction, 34.7 seconds at1280x720/20fps, complete H.264/GIF conversion. / 끝점 호환성 보완 후 실제34.7초·1280x720·20fps 화면을 녹화하고 전체를 변환했습니다.",
+  "raw_capture_sha256": "6fedd34fc6f43d712c44fede0e967d077ef03aaa0891a6449d7846d5a5cf0b43",
   "assets": [
     {
       "path": "docs/media/demo.mp4",
-      "sha256": "3b0323fd0ee46a315cbd3699f895a655d70bf2fb7932caf8e43c41aac74d1cd0"
+      "sha256": "7d2eeda63569996ac0e5558bfd0813f7c637b832c9471bc715b755117bdaaf5e"
     },
     {
       "path": "docs/media/demo.gif",
-      "sha256": "9f803a895ada3b18a60e9f2587434fa735c00afe504dce436b952302df7687ae"
+      "sha256": "575e6ac08e1c22424b058628240f9d5f7d3aabf0a1c8c7e2a7244955ffee7a7a"
     },
     {
-      "path": "docs/media/report-aggregation-en.png",
-      "sha256": "273a9364ab39dec57143b3d384480dd02ddd9b62cfa39b6c864b1838afb10e54"
+      "path": "research/pilot/2026-10-25-p08-portability/report-data.json",
+      "sha256": "177055ba3e1f7ff4fb969a24bb62c0123ca3c24e6ab44097e2c9e8318e855ee6"
     },
     {
-      "path": "docs/media/report-checks.png",
-      "sha256": "22221ba2885360368f88496b265623ae382c63948312b18291f5cf8a8e2b8004"
+      "path": "research/pilot/2026-10-25-p08-portability/frames/checks.png",
+      "sha256": "b9a106f87345f68fd3d5584d1a4c7578fc087d4a61750d880bbd4b1cf910510c"
     },
     {
-      "path": "docs/media/report-en.png",
-      "sha256": "c66a169477f279f3501fa32f32aab04d4a610ce3687ea0ea3b33ab7a0695713a"
+      "path": "research/pilot/2026-10-25-p08-portability/frames/comparison-ko.png",
+      "sha256": "b9ed1d8b2d502d9f1b8607002b1101095cf9ddad2f5fbe3798e5dd7843f49315"
     },
     {
-      "path": "docs/media/report-ko.png",
-      "sha256": "7767b592f9afa2097e9ecbcfbf5ed9e4a1dbf8a47b0d9551e7330fcd93b81af7"
+      "path": "research/pilot/2026-10-25-p08-portability/frames/expired.png",
+      "sha256": "8d34dccc1d34c7b386c6f97094469ffdef894d182969580bb168ec0fa9dfece3"
     },
     {
-      "path": "docs/media/report-publication-checks.png",
-      "sha256": "edc6bb03f992e9838375ea3ef4fabf2b688e66671991333f29ba5bb69164df5a"
+      "path": "research/pilot/2026-10-25-p08-portability/frames/live.png",
+      "sha256": "fad1e94feefcb7cb2236ed7fb32a2bbc1729afc21ae55f50a12a817420109d92"
     },
     {
-      "path": "docs/media/report-publication-en.png",
-      "sha256": "c32bbb6fb5465ef98391c1e4b6f4db687df1fb5cd7aed263f984b69703a31b41"
+      "path": "research/pilot/2026-10-25-p08-portability/frames/map.png",
+      "sha256": "cf42ab84d88a4158cfe23ab72ae7c892de2dccf27a3254bc2f2d96b3cec0d931"
     },
     {
-      "path": "docs/media/report-publication-ko.png",
-      "sha256": "6b9b2840aee2367e899e6095e5a35a5709fd9c4f3f07d273d7826ddc5f2b591d"
+      "path": "research/pilot/2026-10-25-p08-portability/frames/traffic-en.png",
+      "sha256": "ce059119edd4e03738652b33fa5a83e1cccd3f2b741cf35dd00f40f8f9ecd2ae"
     },
     {
-      "path": "docs/media/report-recovery-en.png",
-      "sha256": "50adb5aad6a1471e8360df3d3c4892ef5041f34fe9985fad3c5b5fc0e0223d2e"
-    },
-    {
-      "path": "research/pilot/2026-10-25-p07-claim-fix/report-data.json",
-      "sha256": "b6a2d0da02d7c5cd437ec0f661cf98f9c9c6fedbd0683d5b6074ad8736a08f19"
+      "path": "research/pilot/2026-10-25-p08-portability/frames/traffic-ko.png",
+      "sha256": "cb7875975884c0b10437d8a16ba780fd8be59af36fd5c4a96a8a22b4e2e329f3"
     }
   ]
 }

@@ -16,6 +16,7 @@ import type {
   ConsumerConfig,
   ConsumerResult,
   ConsumerStatus,
+  AcceptedInspection,
   VerifiedPublication,
 } from "./publication_types.js";
 const schema = `CREATE TABLE IF NOT EXISTS routelens_p07.consumer_states(namespace text NOT NULL,consumer_id text NOT NULL,publisher_id text NOT NULL,region_id text NOT NULL,high_water bigint NOT NULL DEFAULT 0,last_snapshot_id text,last_window_start timestamptz,artifact bytea,jws text,PRIMARY KEY(namespace,consumer_id,publisher_id,region_id));`;
@@ -337,6 +338,10 @@ export class PublicationConsumer {
     }
   }
   async status(): Promise<ConsumerStatus> {
+    const { high_water, active } = await this.inspectAccepted();
+    return { high_water, active };
+  }
+  async inspectAccepted(): Promise<AcceptedInspection> {
     return this.tx(async (client, now) => {
       const row = (
         await client.query(
@@ -344,7 +349,7 @@ export class PublicationConsumer {
           this.keys(),
         )
       ).rows[0];
-      if (!row) return { high_water: 0, active: null };
+      if (!row) return { high_water: 0, active: null, checked_at_event_time: now };
       const highWater = Number(row.high_water);
       if (!Number.isSafeInteger(highWater) || highWater < 0)
         reject("INVALID_SEQUENCE");
@@ -370,7 +375,7 @@ export class PublicationConsumer {
           active = null;
         }
       }
-      return { high_water: highWater, active };
+      return { high_water: highWater, active, checked_at_event_time: now };
     });
   }
   async close(): Promise<void> {

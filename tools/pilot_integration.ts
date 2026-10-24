@@ -19,6 +19,11 @@ import {
   runPublicationChecks,
   requirePublicationCases,
 } from "./publication_checks.js";
+import {
+  runTrafficChecks,
+  requireTrafficCases,
+  TRAFFIC_CASE_IDS,
+} from "./traffic_checks.js";
 import type { SimulationAssertion } from "./vehicle_simulator.js";
 import {
   renderSimulationReport,
@@ -35,7 +40,10 @@ export async function runPilotIntegration(
     fingerprint = implementationFingerprint();
   if (!source.commit || source.dirty === null)
     throw new Error("Source identity unavailable / 소스 식별 불가");
-  const verified = { commit: source.commit, dirty: source.dirty };
+  const verified = {
+    commit: source.commit,
+    dirty: source.dirty,
+  };
   let cleanup = false,
     failure: unknown;
   try {
@@ -100,7 +108,10 @@ export async function runPilotIntegration(
       duration_ms: performance.now() - p05Start,
     });
     data.assertions = data.assertions
-      .map((a) => ({ ...a, evidence_path: "seoul/" + a.evidence_path }))
+      .map((a) => ({
+        ...a,
+        evidence_path: "seoul/" + a.evidence_path,
+      }))
       .concat(
         ingestion.assertions.map((a) => ({
           ...a,
@@ -203,6 +214,53 @@ export async function runPilotIntegration(
         evidence_path: "publication/" + a.evidence_path,
       })),
     );
+    if (
+      Number(data.assertions.length) !== 206 ||
+      data.assertions.some((a) => a.status !== "PASS")
+    )
+      throw new Error(
+        "All 206 prior fresh assertions are required / 기존 새 검사206개 전체 통과 필요",
+      );
+    const trafficStarted = performance.now();
+    const traffic = await runTrafficChecks(
+      join(output, "seoul/graph"),
+      join(output, "traffic"),
+    );
+    verifyRegionalChild(join(output, "traffic"), verified, data.graph_id);
+    requireTrafficCases(traffic.assertions);
+    data.traffic = {
+      ...traffic.traffic,
+      cases: traffic.traffic.cases.map((c) => ({
+        ...c,
+        evidence_path: "traffic/" + c.evidence_path,
+      })),
+      routes: traffic.traffic.routes.map((r) => ({
+        ...r,
+        evidence_path: "traffic/" + r.evidence_path,
+      })),
+      evidence: traffic.traffic.evidence.map((e) => ({
+        ...e,
+        path: "traffic/" + e.path,
+      })),
+    };
+    data.stages.push({
+      id: "p08",
+      name_en: "Accepted traffic files, actual routing and exact expiry",
+      name_ko: "수용 교통파일·실제 경로·정확한 만료",
+      status: "PASS",
+      evidence_path: "traffic/manifest.json",
+      duration_ms: performance.now() - trafficStarted,
+    });
+    data.assertions.push(
+      ...traffic.assertions.map((a) => ({
+        ...a,
+        evidence_path: "traffic/" + a.evidence_path,
+      })),
+    );
+    if (Number(data.assertions.length) !== 206 + TRAFFIC_CASE_IDS.length)
+      throw new Error(
+        "Whole assertion inventory mismatch / 전체 검사 목록 불일치",
+      );
     data.summary.assertions_passed = data.assertions.filter(
       (a) => a.status === "PASS",
     ).length;
@@ -211,11 +269,11 @@ export async function runPilotIntegration(
       ...item,
       message_en: item.message_en.replace(
         "P05–P14 remain incomplete",
-        "P08–P14 remain incomplete",
+        "P09–P14 remain incomplete",
       ),
       message_ko: item.message_ko.replace(
         "P05~P14는 미완료",
-        "P08~P14는 미완료",
+        "P09~P14는 미완료",
       ),
     }));
     data.generated_at_utc = new Date().toISOString();
@@ -230,7 +288,9 @@ export async function runPilotIntegration(
     writeFileSync(
       join(output, "report-data.json"),
       JSON.stringify(data, null, 2) + "\n",
-      { flag: "wx" },
+      {
+        flag: "wx",
+      },
     );
     writeFileSync(join(output, "report.html"), renderSimulationReport(data), {
       flag: "wx",
@@ -238,11 +298,13 @@ export async function runPilotIntegration(
     writeFileSync(
       join(output, "assertions.json"),
       JSON.stringify(data.assertions, null, 2) + "\n",
-      { flag: "wx" },
+      {
+        flag: "wx",
+      },
     );
     writeFileSync(
       join(output, "summary.md"),
-      "# Whole implemented-system pilot / 구현된 전체 파일럿\n\nPASS: fresh tiny → Seoul → P05 durable ingestion, interruption/recovery and deletion read-back → P06 unsigned synthetic aggregation → P07 signed HTTP publication and durable verification.\n통과: 새 tiny→서울→P05영속수집·실제중단/복구·삭제재조회→P06서명전합성집계→P07서명HTTP게시·영속검증.\n\nP08–P14 remain incomplete; no production authentication or real driver traces.\nP08~P14는 미완료이며 운영인증·실주행자료가 아닙니다.\n",
+      "# Whole implemented-system pilot / 구현된 전체 파일럿\n\nPASS: fresh tiny → Seoul → P05 durable ingestion, interruption/recovery and deletion read-back → P06 unsigned synthetic aggregation → P07 signed HTTP publication and durable verification → P08 accepted immutable traffic files, real routing and exact expiry.\n통과: 새 tiny→서울→P05영속수집·실제중단/복구·삭제재조회→P06서명전합성집계→P07서명HTTP게시·영속검증→P08수용불변교통파일·실제경로·정확한만료.\n\nP09–P14 remain incomplete; no production authentication or real driver traces.\nP09~P14는 미완료이며 운영인증·실주행자료가 아닙니다.\n",
     );
   } catch (error) {
     failure = error;
@@ -278,6 +340,7 @@ export async function runPilotIntegration(
     "ingestion/manifest.json",
     "aggregation/manifest.json",
     "publication/manifest.json",
+    "traffic/manifest.json",
     "lifecycle/cleanup.json",
     "report-data.json",
     "report.html",
@@ -307,7 +370,9 @@ export async function runPilotIntegration(
       null,
       2,
     ) + "\n",
-    { flag: "wx" },
+    {
+      flag: "wx",
+    },
   );
   renameSync(join(output, "manifest.json.tmp"), join(output, "manifest.json"));
   return 0;
@@ -322,7 +387,7 @@ export async function main(
     for (let i = 0; i < argv.length; i++) {
       if (argv[i] === "--help") {
         io.out(
-          "Usage / 사용법: simulation:check -- --output NEW_DIRECTORY [--source PINNED_PBF]\nFresh tiny, actual Seoul roads and durable P05 HTTP/DB/process recovery and P06 unsigned aggregation/P07 signed publication. / 새 tiny·실제서울도로·영속P05 HTTP/DB/프로세스복구·P06서명전집계·P07서명게시.",
+          "Usage / 사용법: simulation:check -- --output NEW_DIRECTORY [--source PINNED_PBF]\nFresh tiny, actual Seoul roads and durable P05 HTTP/DB/process recovery and P06 unsigned aggregation/P07 signed publication/P08 traffic routing and expiry. / 새 tiny·실제서울도로·영속P05 HTTP/DB/프로세스복구·P06서명전집계·P07서명게시·P08교통경로·만료.",
         );
         return 0;
       } else if (argv[i] === "--output" && !output) output = argv[++i] ?? "";

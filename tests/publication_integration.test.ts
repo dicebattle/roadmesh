@@ -131,5 +131,5 @@ test("offline publication report preserves recorded sequence, hashes and bilingu
     )![1]!,
   );
   assert.deepEqual(embedded.publication, input.publication);
-  assert.match(html, /P08 routing activation is not implemented/);
+  assert.match(html, /P08 routing evidence is recorded separately/);
 });

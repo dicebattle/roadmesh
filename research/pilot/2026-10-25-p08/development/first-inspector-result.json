@@ -1,0 +1,83 @@
+{
+  "schema_version": "independent-p08-evidence-0.1",
+  "status": "FAIL",
+  "root": "/Users/dice/Documents/routelens/data/p08-development03",
+  "graph_directory": "/Users/dice/Documents/routelens/data/p07-claim-fix-main-20261025/seoul/graph",
+  "read_only": true,
+  "production_validator_imports": false,
+  "local_checks_requested": true,
+  "checks_passed": 0,
+  "checks_total": 13,
+  "checks": [
+    {
+      "id": "complete-manifest-and-all-output-hashes",
+      "status": "FAIL",
+      "message": "Missing/extra output files or hosted omissions / 출력 누락·추가 또는 원격 제외"
+    },
+    {
+      "id": "independent-graph-identity-and-original-catalog",
+      "status": "FAIL",
+      "message": "Graph file inventory / 그래프 파일 목록"
+    },
+    {
+      "id": "authored-spec-fulltruth-observations-and-independent-kinematics",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'graph_id')"
+    },
+    {
+      "id": "actual-http-p05-storage-targets-and-matcher-inputs",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'start_time_utc')"
+    },
+    {
+      "id": "independent-duration-median-and-original-sphere-geometry",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'targets')"
+    },
+    {
+      "id": "node-standard-ed25519-original-jws-artifact-json-and-trust",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'graph_id')"
+    },
+    {
+      "id": "independent-tar-index-header-blank-skeleton-and-exact-generations",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'tile_sha256')"
+    },
+    {
+      "id": "actual-routes-original-ordinary-requests-and-raw-engine-traces",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'trips')"
+    },
+    {
+      "id": "negative-exact-code-reason-and-actual-kill-boundaries",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'generation_id')"
+    },
+    {
+      "id": "durable-corrections-ttl-expiry-highwater-and-restart",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading '0')"
+    },
+    {
+      "id": "32-unique-pass-cases-report-and-public-privacy",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'output_sha256')"
+    },
+    {
+      "id": "recorded-owned-process-engine-database-cleanup",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'image')"
+    },
+    {
+      "id": "live-exact-owned-local-absence",
+      "status": "FAIL",
+      "message": "--local requires the original local evidence root / --local은원래로컬근거경로필요"
+    }
+  ],
+  "limitations": [
+    "This is an offline byte/state-record audit, not an independent real-road accuracy or map-legality certification. / 오프라인 바이트·저장기록 감사이며 독립 실도로 정확도·지도 통행 합법성 인증이 아닙니다.",
+    "Archived process/SQL/HTTP records cannot independently attest that the recorder was honest. Actual local PID/Docker absence is queried only with --local. / 보존 기록 자체로 기록자의 정직성을 독립 보장하지 않으며 실제 PID·Docker 부재는 --local에서만 조회합니다.",
+    "P05 source inspection omits persisted trip_activity; explicit TRAVEL is checked in authored expectations, not asserted as an independent SQL activity read-back. / P05 조회에 영속 trip_activity가 없어 합성 기대값의 TRAVEL만 검사하며 독립 SQL 활동 조회로 주장하지 않습니다."
+  ]
+}

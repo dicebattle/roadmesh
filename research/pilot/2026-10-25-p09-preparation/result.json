@@ -1,0 +1,8 @@
+{
+  "status": "INCOMPLETE",
+  "failure": "AssertionError [ERR_ASSERTION]: No loopback HTTP listener from the single service start / 단일 시작에서 HTTP loopback 리스너 없음\n    at file:///Users/dice/Documents/routelens/data/p09-engine-service-probe/probe.mjs:241:10",
+  "daemon_absent_before_container_removal": true,
+  "owned_container_absence_verified": true,
+  "scope_en": "Capability observation only; no P09 implementation/design completion or drain guarantees.",
+  "scope_ko": "실행 능력 관찰일 뿐 P09 구현·설계 완료나 기존 요청 마무리 보장이 아닙니다."
+}

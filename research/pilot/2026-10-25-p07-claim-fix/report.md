@@ -4,7 +4,9 @@
 
 **깨끗한 소스에서 로컬206개 모두 통과했습니다.** 메인이 수정 설계·검토를, Sol이 claim3줄·처리자 진단·집중회귀2개를 구현했습니다. 새 그래프와 구현된 모든 모듈을 다시 실행했으며 수정한 코드도 원격 Node각202개·실제Linux206개를 통과했고 메인이 아래 원문을 검사했습니다.
 
-[Recording / 녹화](../../../docs/media/demo.mp4) · [Replay / 재생](report.html) · [Whole inspection / 전체 검사](main-verification.json) · [Publication / 게시 상태](publication/main-state-verification.json) · [Independent signatures / 독립 서명](publication/main-signature-verification.json) · [Correction contract / 수정 계약](../../../docs/26-p05-claim-race.md)
+[Recording / 녹화](demo.mp4) · [Replay / 재생](report.html) · [Whole inspection / 전체 검사](main-verification.json) · [Publication / 게시 상태](publication/main-state-verification.json) · [Independent signatures / 독립 서명](publication/main-signature-verification.json) · [Correction contract / 수정 계약](../../../docs/26-p05-claim-race.md)
+
+The original recording bytes are preserved beside this report when the current demo advances to P08. / 최신 데모가 P08로 갱신되어도 이 보고서의 원래 녹화 바이트를 같은 폴더에 보존합니다.
 
 ![Actual Seoul replay / 실제 서울 재생](../../../docs/media/report-en.png)
 

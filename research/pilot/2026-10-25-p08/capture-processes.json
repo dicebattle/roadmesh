@@ -1,0 +1,55 @@
+{
+  "root_pid": 54560,
+  "session": "routelens-p08-capture-20261025031048-54540",
+  "processes": [
+    {
+      "pid": 54560,
+      "parent": 1,
+      "started_at": "Sun Oct 25 03:10:49 2026",
+      "command": "/opt/homebrew/Cellar/node/25.4.0/bin/node"
+    },
+    {
+      "pid": 54561,
+      "parent": 54560,
+      "started_at": "Sun Oct 25 03:10:50 2026",
+      "command": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    },
+    {
+      "pid": 54568,
+      "parent": 54561,
+      "started_at": "Sun Oct 25 03:10:50 2026",
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/156.0.8078.47/Helpers/Google Chrome Helper (GPU).app/Contents/MacOS/Google Chrome Helper (GPU)"
+    },
+    {
+      "pid": 54569,
+      "parent": 54561,
+      "started_at": "Sun Oct 25 03:10:50 2026",
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/156.0.8078.47/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper"
+    },
+    {
+      "pid": 54572,
+      "parent": 54561,
+      "started_at": "Sun Oct 25 03:10:50 2026",
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/156.0.8078.47/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper"
+    },
+    {
+      "pid": 54575,
+      "parent": 54561,
+      "started_at": "Sun Oct 25 03:10:50 2026",
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/156.0.8078.47/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)"
+    },
+    {
+      "pid": 54576,
+      "parent": 54561,
+      "started_at": "Sun Oct 25 03:10:50 2026",
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/156.0.8078.47/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)"
+    },
+    {
+      "pid": 54577,
+      "parent": 54561,
+      "started_at": "Sun Oct 25 03:10:50 2026",
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/156.0.8078.47/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)"
+    }
+  ],
+  "captured_at_utc": "2026-10-24T18:11:24.023Z"
+}

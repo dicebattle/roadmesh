@@ -1,0 +1,46 @@
+{
+  "source": {
+    "commit": "4e3265fb92016e3642670fe44ae516df1f68d903",
+    "dirty": false
+  },
+  "implementation_sha256": "12b6c0164fba48fd08f6b2732ccd24197634ec9ae734ecf0a5de500a5e365404",
+  "duration_s": 34.7,
+  "width": 1280,
+  "height": 720,
+  "fps": 20,
+  "full_mp4_decode": "PASS",
+  "frames_reviewed": [
+    "map",
+    "traffic-en",
+    "live",
+    "expired",
+    "traffic-ko",
+    "comparison-ko",
+    "checks"
+  ],
+  "frame_seconds": [
+    2,
+    8,
+    15,
+    17,
+    21,
+    25,
+    33
+  ],
+  "iab_languages": [
+    "en",
+    "ko"
+  ],
+  "mobile_viewport": [
+    390,
+    844
+  ],
+  "mobile_scroll_width": 390,
+  "expanded_p08_cases": 32,
+  "javascript_errors": [],
+  "capture_owned_processes_absent": 8,
+  "temporary_server_pid": 69190,
+  "temporary_server_absent": true,
+  "iab_tabs_closed": true,
+  "viewport_reset": true
+}

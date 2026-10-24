@@ -1,0 +1,40 @@
+{
+  "owned_pids": [
+    15834,
+    15843,
+    15888,
+    15929,
+    15979,
+    16021,
+    16077,
+    16135,
+    16185,
+    16219,
+    16242,
+    16267,
+    16440,
+    16484,
+    16600,
+    16662
+  ],
+  "alive": [],
+  "resources": [
+    {
+      "args": [
+        "inspect",
+        "routelens-p05-1e28ee20-766b-44dc-ad49-ee176d6935d4"
+      ],
+      "status": 1,
+      "error": "error: no such object: routelens-p05-1e28ee20-766b-44dc-ad49-ee176d6935d4"
+    },
+    {
+      "args": [
+        "volume",
+        "inspect",
+        "routelens-p05-1e28ee20-766b-44dc-ad49-ee176d6935d4-db"
+      ],
+      "status": 1,
+      "error": "Error response from daemon: get routelens-p05-1e28ee20-766b-44dc-ad49-ee176d6935d4-db: no such volume"
+    }
+  ]
+}

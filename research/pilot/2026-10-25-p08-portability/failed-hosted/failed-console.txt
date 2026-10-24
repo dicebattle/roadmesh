@@ -1,0 +1,22 @@
+Implemented-module simulation	Fresh real-engine simulation / 실제 엔진의 새 통합 시뮬레이션	﻿2026-10-24T18:22:19.5996871Z ##[group]Run npm run simulation:check -- --output "/home/runner/work/_temp/simulation-evidence"
+Implemented-module simulation	Fresh real-engine simulation / 실제 엔진의 새 통합 시뮬레이션	2026-10-24T18:22:19.5997556Z [36;1mnpm run simulation:check -- --output "/home/runner/work/_temp/simulation-evidence"[0m
+Implemented-module simulation	Fresh real-engine simulation / 실제 엔진의 새 통합 시뮬레이션	2026-10-24T18:22:19.6053583Z shell: /usr/bin/bash -e {0}
+Implemented-module simulation	Fresh real-engine simulation / 실제 엔진의 새 통합 시뮬레이션	2026-10-24T18:22:19.6053776Z ##[endgroup]
+Implemented-module simulation	Fresh real-engine simulation / 실제 엔진의 새 통합 시뮬레이션	2026-10-24T18:22:19.7791520Z 
+Implemented-module simulation	Fresh real-engine simulation / 실제 엔진의 새 통합 시뮬레이션	2026-10-24T18:22:19.7792252Z > routelens@0.0.0 simulation:check
+Implemented-module simulation	Fresh real-engine simulation / 실제 엔진의 새 통합 시뮬레이션	2026-10-24T18:22:19.7792699Z > node dist/tools/pilot_integration.js --output /home/runner/work/_temp/simulation-evidence
+Implemented-module simulation	Fresh real-engine simulation / 실제 엔진의 새 통합 시뮬레이션	2026-10-24T18:22:19.7792917Z 
+Implemented-module simulation	Fresh real-engine simulation / 실제 엔진의 새 통합 시뮬레이션	2026-10-24T18:26:52.8146392Z Whole pilot incomplete / 전체파일럿 미완료: Error: Pinned corridor source drift / 고정 구간 원본 변경: west
+Implemented-module simulation	Fresh real-engine simulation / 실제 엔진의 새 통합 시뮬레이션	2026-10-24T18:26:52.8431502Z ##[error]Process completed with exit code 1.
+Required checks	Require successful prerequisites / 선행 검사 성공 필수	﻿2026-10-24T18:27:04.2042216Z ##[group]Run if [ "$NODE_RESULT" != success ] || [ "$SIMULATION_RESULT" != success ]; then
+Required checks	Require successful prerequisites / 선행 검사 성공 필수	2026-10-24T18:27:04.2043915Z [36;1mif [ "$NODE_RESULT" != success ] || [ "$SIMULATION_RESULT" != success ]; then[0m
+Required checks	Require successful prerequisites / 선행 검사 성공 필수	2026-10-24T18:27:04.2045438Z [36;1m  echo "Prerequisite failed, was cancelled or skipped. / 선행 검사가 실패·취소·생략되었습니다."[0m
+Required checks	Require successful prerequisites / 선행 검사 성공 필수	2026-10-24T18:27:04.2046776Z [36;1m  exit 1[0m
+Required checks	Require successful prerequisites / 선행 검사 성공 필수	2026-10-24T18:27:04.2047578Z [36;1mfi[0m
+Required checks	Require successful prerequisites / 선행 검사 성공 필수	2026-10-24T18:27:04.3127555Z shell: /usr/bin/bash -e {0}
+Required checks	Require successful prerequisites / 선행 검사 성공 필수	2026-10-24T18:27:04.3128489Z env:
+Required checks	Require successful prerequisites / 선행 검사 성공 필수	2026-10-24T18:27:04.3129022Z   NODE_RESULT: success
+Required checks	Require successful prerequisites / 선행 검사 성공 필수	2026-10-24T18:27:04.3129573Z   SIMULATION_RESULT: failure
+Required checks	Require successful prerequisites / 선행 검사 성공 필수	2026-10-24T18:27:04.3130072Z ##[endgroup]
+Required checks	Require successful prerequisites / 선행 검사 성공 필수	2026-10-24T18:27:04.3395628Z Prerequisite failed, was cancelled or skipped. / 선행 검사가 실패·취소·생략되었습니다.
+Required checks	Require successful prerequisites / 선행 검사 성공 필수	2026-10-24T18:27:04.3409150Z ##[error]Process completed with exit code 1.

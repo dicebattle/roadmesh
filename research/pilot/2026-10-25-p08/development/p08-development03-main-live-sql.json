@@ -1,0 +1,42 @@
+{
+  "observed_at_utc": "2026-10-24T17:54:15.112Z",
+  "owned_container": "routelens-p05-35a00106-ef43-42b1-982c-467da087dded",
+  "namespace": "p08-35a00106ef4342b1",
+  "query": "SELECT jsonb_build_object('clock',(SELECT event_time_utc FROM routelens_p05.namespace_clock WHERE namespace='p08-35a00106ef4342b1'),'traversals',(SELECT count(*) FROM routelens_p05.traversals WHERE namespace='p08-35a00106ef4342b1'),'publications',(SELECT jsonb_agg(to_jsonb(p)) FROM (SELECT publisher_id,sequence,traffic_snapshot_id,encode(sha256(artifact),'hex') AS actual_artifact_sha256,octet_length(artifact) AS byte_length,published_at,valid_until FROM routelens_p07.publications WHERE namespace='p08-35a00106ef4342b1' ORDER BY publisher_id,sequence)p),'consumers',(SELECT jsonb_agg(to_jsonb(c)) FROM (SELECT consumer_id,high_water,last_snapshot_id,octet_length(artifact) AS active_byte_length FROM routelens_p07.consumer_states WHERE namespace='p08-35a00106ef4342b1' ORDER BY consumer_id)c));",
+  "readback": {
+    "clock": "2026-10-24T00:04:30+00:00",
+    "consumers": [
+      {
+        "high_water": 1,
+        "consumer_id": "p08-key-revocation",
+        "last_snapshot_id": "af3f994eb9e23301dc6f780712479503d1ad1c8c8cdfa6eae6191ebe003cb37e",
+        "active_byte_length": 10469
+      },
+      {
+        "high_water": 1,
+        "consumer_id": "p08-main",
+        "last_snapshot_id": "af3f994eb9e23301dc6f780712479503d1ad1c8c8cdfa6eae6191ebe003cb37e",
+        "active_byte_length": 10469
+      },
+      {
+        "high_water": 1,
+        "consumer_id": "p08-offline-ttl",
+        "last_snapshot_id": "af3f994eb9e23301dc6f780712479503d1ad1c8c8cdfa6eae6191ebe003cb37e",
+        "active_byte_length": 10469
+      }
+    ],
+    "traversals": 15,
+    "publications": [
+      {
+        "sequence": 1,
+        "byte_length": 10469,
+        "valid_until": "2026-10-24T00:07:00+00:00",
+        "published_at": "2026-10-24T00:04:30+00:00",
+        "publisher_id": "seoul-p08-publisher",
+        "traffic_snapshot_id": "af3f994eb9e23301dc6f780712479503d1ad1c8c8cdfa6eae6191ebe003cb37e",
+        "actual_artifact_sha256": "af3f994eb9e23301dc6f780712479503d1ad1c8c8cdfa6eae6191ebe003cb37e"
+      }
+    ]
+  },
+  "point_in_time_only": true
+}

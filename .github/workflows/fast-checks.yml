@@ -67,6 +67,7 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: implemented-module-simulation
+          include-hidden-files: true
           path: |
             ${{ runner.temp }}/simulation-evidence/**/*.json
             ${{ runner.temp }}/simulation-evidence/**/*.txt
@@ -74,6 +75,8 @@ jobs:
             ${{ runner.temp }}/simulation-evidence/**/*.md
             ${{ runner.temp }}/simulation-evidence/**/*.html
             ${{ runner.temp }}/simulation-evidence/**/context-edges.tsv
+            ${{ runner.temp }}/simulation-evidence/traffic/**/traffic.tar
+            ${{ runner.temp }}/simulation-evidence/traffic/public/*.jws.txt
             !${{ runner.temp }}/simulation-evidence/**/tiles/**
           if-no-files-found: error
           retention-days: 7

@@ -1,0 +1,11 @@
+{
+  "status": "REVIEWED_INCOMPLETE",
+  "owned_container": "routelens-p09-service-18c990e7-a21a-4527-9562-5496cab4fc84",
+  "currently_absent": true,
+  "daemon_start_observed": true,
+  "http_route_requests": 0,
+  "readiness_probe_limitation": "Only tcp was watched; direct evidence showed a mapped loopback LISTEN socket in tcp6.",
+  "production_http_reuse_proven": false,
+  "message_en": "Main inspected original help, daemon/listener and cleanup evidence. This is a capability observation; no repeated-route or lifecycle success is claimed.",
+  "message_ko": "메인이 원 도움말·데몬/리스너·정리 근거를 검사했습니다. 실행 능력 관찰이며 반복 경로·수명주기 성공을 주장하지 않습니다."
+}

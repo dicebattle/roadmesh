@@ -1,0 +1,138 @@
+{
+  "owned_pids_absent": 81,
+  "status": "PASS",
+  "source": {
+    "commit": "eb541399ed11c7fd26a14f9336a0a7c4ebc51639",
+    "dirty": false
+  },
+  "graph_id": "41a52d348bfeb0a71a988b0fb1680affe510626ac6865cc9b0f775716ffca070",
+  "implementation_sha256": "21b3fc4aa287e009a293bbfab3046b0b8535540d6b683e239b2fe9c57ac2e1ff",
+  "assertions": {
+    "tiny": 48,
+    "seoul": 35,
+    "ingestion": 34,
+    "aggregation": 34,
+    "publication": 55,
+    "traffic": 32,
+    "total": 238
+  },
+  "unique_file_hashes_checked": 4153,
+  "inventories": {
+    "manifest.json": 11,
+    "seoul/manifest.json": 8,
+    "seoul/tiny/manifest.json": 6,
+    "seoul/graph/manifest.json": 94,
+    "seoul/workload/manifest.json": 826,
+    "ingestion/manifest.json": 940,
+    "aggregation/manifest.json": 773,
+    "publication/manifest.json": 410,
+    "traffic/manifest.json": 1085
+  },
+  "source_sha256": "282d012b7629c643695f286d4424d7f6d88548d99edb5577ca5b678906f13c17",
+  "matching_policy": "seoul-observed-v3",
+  "stored_reference_traversals": 220,
+  "unique_stored_ids": 220,
+  "successful_trips": 9,
+  "raw_after_success": 0,
+  "independent_geometry_max_difference_m": 5.17506038022475e-10,
+  "independent_boundary_error_max_ms": 260,
+  "recovery_attempt_byte_parity": [
+    {
+      "phase": "AFTER_MATCH",
+      "interrupted_pid": 44315,
+      "recovered_pid": 44516,
+      "sha256": "ae4b37e8ebbc7def66e6dfbc79d45b064be3830f7a10d12a7592cf45780a7fe7",
+      "byte_identical": true
+    },
+    {
+      "phase": "AFTER_INSERT",
+      "interrupted_pid": 44547,
+      "recovered_pid": 44646,
+      "sha256": "9c60e0b84d33c7cfd87c0797e579c74627a4352895820cb15291186a944c790a",
+      "byte_identical": true
+    }
+  ],
+  "database_restart": {
+    "same_container_id": true,
+    "same_named_volume": "routelens-p05-d34e60bd-f07a-4aa6-8700-46533d96302e-db",
+    "restarted": true,
+    "previous_host_port": 32784,
+    "current_host_port": 32785,
+    "host_tcp_ready": true,
+    "host_tcp_wait_ms": 0.4949170000036247
+  },
+  "api_durable_samples": 2,
+  "engine_failure_attempts": 3,
+  "clock_only_expiry_refused_before_sweep": true,
+  "retention_readback": {
+    "contributors": 22,
+    "trips": 0,
+    "batches": 0,
+    "samples": 0,
+    "traversals": 0,
+    "events": 0,
+    "raw_payloads": 0
+  },
+  "stopped_engine": {
+    "pid": 57,
+    "exe": "/usr/local/bin/valhalla_service",
+    "state": "T",
+    "action": "locate"
+  },
+  "killed_worker_pid": 50546,
+  "orphan_engine_id": "bde41c9947448284632753e2ebadb0daf8935c80b6422faa68ff8e9bd2d86b58",
+  "current_db_volume_engine_absence_verified": true,
+  "traffic_owned_containers_absent": [
+    "routelens-p02-015b1ec1-7b4e-48b2-9d99-6e5413587978",
+    "routelens-p02-1063979c-ccd6-404b-8326-c26c34652457",
+    "routelens-p02-10aa8bb5-064f-42b7-bc9e-a546aec284d7",
+    "routelens-p02-1238e5f4-67d7-40c8-afc7-41eb5118d94a",
+    "routelens-p02-1da2b4ae-60bc-4aa0-9dc5-4f553e4cbb4a",
+    "routelens-p02-1f0b844b-f177-42d0-933b-874413e3988b",
+    "routelens-p02-481917df-2f6e-4c5b-9b37-cab7889b22c3",
+    "routelens-p02-4d1598dd-a27c-4d13-bcab-e58fb026d7aa",
+    "routelens-p02-50539f29-8753-41e0-aa6b-9d8547286bd4",
+    "routelens-p02-512ccd84-d52b-4c44-ab7d-b73f15bac667",
+    "routelens-p02-5b039596-7f2a-4ac4-a7a1-c32462aa5724",
+    "routelens-p02-5d9d43b4-6336-40a6-9c89-36680c8bb9be",
+    "routelens-p02-645a64cc-3842-49f0-a43e-72ea9549c8b5",
+    "routelens-p02-664ec1e1-8cd8-4bb7-b8bd-488fae11b123",
+    "routelens-p02-668e49d6-ab24-4a87-9fa8-f562b586e80d",
+    "routelens-p02-679a5766-3876-43c5-b0e4-ed3c66091e36",
+    "routelens-p02-68ace02e-5900-4a1a-a7eb-e8c2f714def9",
+    "routelens-p02-69dd4a03-d7f8-4b04-b2bd-68ecf3e6cbb0",
+    "routelens-p02-6b56d8c4-4b50-4771-a249-42d14485dd70",
+    "routelens-p02-72b6015c-3e5a-4155-8ab6-04a3342f5bb1",
+    "routelens-p02-965f6a84-f50d-4e83-9a01-6547d2e4f2cd",
+    "routelens-p02-a3d72eab-5989-4c96-881a-d0ea4261556c",
+    "routelens-p02-ba50f228-162b-4319-b271-95c7823b287d",
+    "routelens-p02-ca04307d-6739-4519-8bcf-f53285e3b658",
+    "routelens-p02-ccd48c19-68e9-4ceb-ba90-0e42bf8fa52b",
+    "routelens-p02-dd8149db-b237-4395-a06d-7adc4733efd2",
+    "routelens-p02-e2be0c45-4b9f-4824-99b2-ac0359a032fd",
+    "routelens-p02-edcc042b-983b-4aec-ba03-60559532d7c3",
+    "routelens-p05-2ac5324d-897c-4424-a348-d3c04684a7f2"
+  ],
+  "traffic_owned_volumes_absent": [
+    "routelens-p05-2ac5324d-897c-4424-a348-d3c04684a7f2-db"
+  ],
+  "traffic_cleanup_files_verified": [
+    "traffic/bundle/cleanup.json",
+    "traffic/generations/engine-unavailable/runtime/9584ecf1-6e28-4a1a-80b8-7b51a0b7b185/cleanup.json",
+    "traffic/generations/expiry-route/runtime/772b4f4c-8401-4104-b696-1cff64400910/cleanup.json",
+    "traffic/generations/main/runtime/0bf963f1-66d1-49ed-ab61-3139ce078467/cleanup.json",
+    "traffic/generations/main/runtime/3bbcadaa-7607-4776-af8a-6532a6dc138a/cleanup.json",
+    "traffic/generations/main/runtime/3bd3ab48-0e59-4581-9b5d-4470c23cd5fa/cleanup.json",
+    "traffic/generations/main/runtime/50315bec-0cc6-42a6-9a2e-50b4a1fe99d1/cleanup.json",
+    "traffic/generations/main/runtime/63d12b7a-aca5-49ce-adb5-915c590b9e0f/cleanup.json",
+    "traffic/generations/main/runtime/65b13b68-7be8-4ace-a6fc-5cf4fed1d89e/cleanup.json",
+    "traffic/generations/main/runtime/67b11861-b6d4-42b2-9ca9-50443468753f/cleanup.json",
+    "traffic/generations/main/runtime/72e88c48-29ac-4930-85c3-206e527b625e/cleanup.json",
+    "traffic/generations/main/runtime/a0495a45-3ff2-4247-bf3b-5c7dfcd3289d/cleanup.json",
+    "traffic/generations/main/runtime/f7dcffdb-5153-4673-b381-222a387665b3/cleanup.json",
+    "traffic/negative/corrupt-bundle/cleanup.json",
+    "traffic/runtime/cleanup.json"
+  ],
+  "message_en": "Main independently checked artifact bytes, all stored traversal contents and geometry/timing, retry result bytes, durable restart/expiry/revocation read-backs and current exact owned-resource absence. This proves the bounded synthetic local pilot, not production authentication or real-driving accuracy.",
+  "message_ko": "메인이 원문 해시·저장 통과 전체의 지형/시간·재시도 결과 바이트·재시작/만료/철회 재조회·현재의 정확한 소유 자원 부재를 독립 검사했습니다. 제한된 합성 로컬 파일럿 증거이며 운영 인증·실주행 정확도는 별도입니다."
+}

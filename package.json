@@ -27,7 +27,9 @@
     "publication:check": "node dist/tools/publication_checks.js",
     "publication:worker": "node dist/tools/publication_worker.js",
     "publication:serve": "node dist/tools/publication_service.js",
-    "publication:consume": "node dist/tools/publication_consumer_worker.js"
+    "publication:consume": "node dist/tools/publication_consumer_worker.js",
+    "traffic:worker": "node dist/tools/traffic_worker.js",
+    "traffic:check": "node dist/tools/traffic_checks.js"
   },
   "dependencies": {
     "jose": "6.2.13",

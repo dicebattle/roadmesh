@@ -125,6 +125,9 @@ export interface ConsumerStatus {
   high_water: number;
   active: VerifiedPublication | null;
 }
+export interface AcceptedInspection extends ConsumerStatus {
+  checked_at_event_time: string;
+}
 export type ConsumerPhase = "AFTER_CONSUMER_VERIFY" | "AFTER_CONSUMER_COMMIT";
 export interface ConsumerWorkerConfig {
   consumer: ConsumerConfig;
