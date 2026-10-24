@@ -14,7 +14,7 @@ import {
   type EdgeMapping,
 } from "./graph_evidence.js";
 import type { GraphFixture } from "./graph_evidence.js";
-import type { GeometryStrategy } from "./geodesy.js";
+import type { GeometryStrategy, Projection } from "./geodesy.js";
 export interface MatchingGraph {
   graphId: string;
   edges: EdgeMapping[];
@@ -37,10 +37,12 @@ function requireGeometryPolicy(
   if (
     !bundle.fixture.ways &&
     (bundle.fixture.fixture_id !== "seoul-osm-20261023-v1" ||
-      !["seoul-observed-v1", "seoul-observed-v2"].includes(
+      !["seoul-observed-v1", "seoul-observed-v2", "seoul-observed-v3"].includes(
         hooks.policy_id ?? "",
       ) ||
-      (hooks.policy_id === "seoul-observed-v2" &&
+      (["seoul-observed-v2", "seoul-observed-v3"].includes(
+        hooks.policy_id ?? "",
+      ) &&
         hooks.ambiguous_boundary_ms !== 1000) ||
       !hooks.geometry ||
       !hooks.ambiguous)
@@ -57,6 +59,7 @@ export const GAP_MS = 3000;
 export type Reason =
   | "AMBIGUOUS_BOUNDARY"
   | "AMBIGUOUS_PARALLEL"
+  | "AMBIGUOUS_PROJECTION"
   | "PARTIAL_ENTRY"
   | "PARTIAL_EXIT"
   | "OBSERVATION_GAP"
@@ -68,6 +71,10 @@ const descriptions: Record<Reason, [string, string]> = {
   AMBIGUOUS_BOUNDARY: [
     "A sustained observed uncertainty cluster at a shared endpoint makes stop ownership ambiguous.",
     "공유 끝점의 지속된 관측 불확실성 때문에 정지가 어느 구간에 속했는지 확인할 수 없습니다.",
+  ],
+  AMBIGUOUS_PROJECTION: [
+    "Equally close projections identify different positions along the engine path.",
+    "비슷하게 가까운 투영이 엔진 경로의 서로 다른 진행 위치를 가리킵니다.",
   ],
   AMBIGUOUS_PARALLEL: [
     "Multiple physical parallel ways are compatible with positional accuracy.",
@@ -126,6 +133,10 @@ export interface MatchingPoint {
   matched_type?: string;
   fraction?: number;
   distance_m?: number;
+  position_method?: "observed-path-projection-v1";
+  engine_edge_id?: string;
+  engine_fraction?: number;
+  engine_distance_m?: number;
   reason_messages?: ReturnType<typeof reasonMessages>;
 }
 export interface BoundaryBracket {
@@ -501,6 +512,90 @@ interface Eligible {
   break_before: boolean;
   break_after: boolean;
 }
+interface PathProjection {
+  edge_index: number;
+  projection: Projection;
+  progress_m: number;
+}
+/** Project only onto the engine occurrence and its connected immediate neighbors.
+ * 엔진 경로의 현재 구간과 연결된 바로 앞뒤 구간에만 투영합니다. */
+function projectObservedPath(
+  observation: Observation,
+  engineIndex: number,
+  edges: EdgeMapping[],
+  lengths: number[],
+  starts: number[],
+  geometry: GeometryStrategy,
+  connectionTolerance: number,
+): PathProjection | null {
+  const indexes = [engineIndex];
+  if (
+    engineIndex > 0 &&
+    geometry.distance(
+      edges[engineIndex - 1]!.directed_geometry.at(-1)!,
+      edges[engineIndex]!.directed_geometry[0]!,
+    ) <= connectionTolerance
+  )
+    indexes.push(engineIndex - 1);
+  if (
+    engineIndex + 1 < edges.length &&
+    geometry.distance(
+      edges[engineIndex]!.directed_geometry.at(-1)!,
+      edges[engineIndex + 1]!.directed_geometry[0]!,
+    ) <= connectionTolerance
+  )
+    indexes.push(engineIndex + 1);
+  const candidates = indexes
+    .flatMap((edge_index) => {
+      const line = edges[edge_index]!.directed_geometry;
+      let preceding = 0;
+      const projections: PathProjection[] = [];
+      for (let segment = 1; segment < line.length; segment++) {
+        const segmentLength = geometry.distance(
+          line[segment - 1]!,
+          line[segment]!,
+        );
+        if (segmentLength === 0) continue;
+        const projected = geometry.project(
+          [observation.longitude, observation.latitude],
+          [line[segment - 1]!, line[segment]!],
+        );
+        const fraction =
+          (preceding + projected.fraction * segmentLength) /
+          lengths[edge_index]!;
+        projections.push({
+          edge_index,
+          projection: { ...projected, fraction },
+          progress_m: starts[edge_index]! + fraction * lengths[edge_index]!,
+        });
+        preceding += segmentLength;
+      }
+      return projections;
+    })
+    .sort(
+      (a, b) =>
+        a.projection.distance_m - b.projection.distance_m ||
+        Math.abs(a.edge_index - engineIndex) -
+          Math.abs(b.edge_index - engineIndex) ||
+        a.edge_index - b.edge_index,
+    );
+  const best = candidates[0];
+  if (!best)
+    fail(
+      "projection",
+      "positive path geometry required",
+      "양수 길이의 경로 지형이 필요합니다",
+    );
+  if (
+    candidates.some(
+      (candidate) =>
+        candidate.projection.distance_m - best.projection.distance_m <= 0.01 &&
+        Math.abs(candidate.progress_m - best.progress_m) > 0.01,
+    )
+  )
+    return null;
+  return best;
+}
 export function interpretRun(
   envelope: MatchingEnvelope,
   bundle: MatchingGraph,
@@ -574,9 +669,20 @@ export function interpretRun(
       );
     return edge;
   });
+  const useObservedProjection = hooks.policy_id === "seoul-observed-v3";
+  const pathLengths = useObservedProjection
+    ? edges.map((edge) => length(edge, hooks))
+    : [];
+  let precedingLength = 0;
+  const pathStarts = pathLengths.map((value) => {
+    const start = precedingLength;
+    precedingLength += value;
+    return start;
+  });
   const points: MatchingPoint[] = [],
     eligible: (Eligible | null)[] = [],
-    reversal = new Set<number>();
+    reversal = new Set<number>(),
+    engineDiscontinuities = new Set<number>();
   matches.forEach((raw, index) => {
     const match = object(raw),
       observation = run.observations[index]!;
@@ -611,6 +717,14 @@ export function interpretRun(
           "invalid discontinuity flag",
           "단절 표시가 올바르지 않습니다",
         );
+    // Projection must not erase an upstream discontinuity on its original occurrence.
+    // 투영으로 구간이 바뀌어도 원래 구간의 엔진 단절 표시를 지우지 않습니다.
+    if (
+      useObservedProjection &&
+      (match.begin_route_discontinuity === true ||
+        match.end_route_discontinuity === true)
+    )
+      engineDiscontinuities.add(match.edge_index);
     const edge = edges[match.edge_index]!,
       fraction = match.distance_along_edge,
       from = edge.directed_geometry[0]!,
@@ -630,44 +744,84 @@ export function interpretRun(
         "fraction and geometry disagree",
         "비율과 지형이 일치하지 않습니다",
       );
+    const projected = useObservedProjection
+      ? projectObservedPath(
+          observation,
+          match.edge_index,
+          edges,
+          pathLengths,
+          pathStarts,
+          hooks.geometry!,
+          hooks.connection_tolerance_m ?? 0.001,
+        )
+      : undefined;
+    if (useObservedProjection && projected === null) {
+      points.push(excludedPoint(observation, "AMBIGUOUS_PROJECTION"));
+      eligible.push(null);
+      return;
+    }
+    const observedDistance = projected
+      ? projected.projection.distance_m
+      : distance(
+          [observation.longitude, observation.latitude],
+          [match.lon, match.lat],
+        );
     if (
       match.distance_from_trace_point > observation.accuracy_m + 1 ||
-      distance(
-        [observation.longitude, observation.latitude],
-        [match.lon, match.lat],
-      ) >
-        observation.accuracy_m + 1
+      observedDistance > observation.accuracy_m + 1
     ) {
       points.push(excludedPoint(observation, "DISTANCE_EXCEEDED"));
       eligible.push(null);
       return;
     }
+    const selectedIndex = projected?.edge_index ?? match.edge_index,
+      selectedEdge = edges[selectedIndex]!,
+      selectedFraction = projected?.projection.fraction ?? fraction,
+      selectedCoordinate = projected?.projection.coordinate ?? [
+        match.lon,
+        match.lat,
+      ];
     const point: MatchingPoint = {
       sample_id: observation.sample_id,
       vehicle_id: observation.vehicle_id,
       offset_ms: observation.offset_ms,
-      longitude: match.lon,
-      latitude: match.lat,
-      edge_id: edge.edge_id,
+      longitude: selectedCoordinate[0]!,
+      latitude: selectedCoordinate[1]!,
+      edge_id: selectedEdge.edge_id,
       status: "MATCHED",
       reason_codes: [],
       matched_type: match.type,
-      fraction,
-      distance_m: match.distance_from_trace_point,
+      fraction: selectedFraction,
+      distance_m: projected
+        ? projected.projection.distance_m
+        : match.distance_from_trace_point,
+      ...(projected
+        ? {
+            position_method: "observed-path-projection-v1" as const,
+            engine_edge_id: edge.edge_id,
+            engine_fraction: fraction,
+            engine_distance_m: match.distance_from_trace_point,
+          }
+        : {}),
     };
     points.push(point);
     eligible.push({
       observation,
       point,
-      edge_index: match.edge_index,
-      fraction,
+      edge_index: selectedIndex,
+      fraction: selectedFraction,
       break_before: match.begin_route_discontinuity === true,
       break_after: match.end_route_discontinuity === true,
     });
   });
   const entries = new Map<number, BoundaryBracket>(),
     exits = new Map<number, BoundaryBracket>(),
-    reasons = edges.map(() => new Set<Reason>()),
+    reasons = edges.map(
+      (_, index) =>
+        new Set<Reason>(
+          engineDiscontinuities.has(index) ? ["DISCONTINUITY"] : [],
+        ),
+    ),
     boundaryAmbiguities = edges.map(() => [] as BoundaryAmbiguity[]);
   const bracket = (a: Eligible, b: Eligible, at: number): BoundaryBracket => ({
     before_sample_id: a.observation.sample_id,
@@ -771,7 +925,9 @@ export function interpretRun(
       continue;
     }
     if (
-      hooks.policy_id === "seoul-observed-v2" &&
+      ["seoul-observed-v2", "seoul-observed-v3"].includes(
+        hooks.policy_id ?? "",
+      ) &&
       hooks.geometry &&
       hooks.ambiguous_boundary_ms
     ) {

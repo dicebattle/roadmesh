@@ -21,7 +21,9 @@
     "simulation:tiny": "node dist/tools/simulation_checks.js",
     "ingestion:check": "node dist/tools/ingestion_checks.js",
     "ingestion:serve": "node dist/tools/ingestion_service.js",
-    "ingestion:worker": "node dist/tools/ingestion_worker.js"
+    "ingestion:worker": "node dist/tools/ingestion_worker.js",
+    "aggregation:check": "node dist/tools/aggregation_checks.js",
+    "aggregation:worker": "node dist/tools/aggregation_worker.js"
   },
   "dependencies": {
     "jsonc-parser": "3.3.1",

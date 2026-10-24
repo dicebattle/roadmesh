@@ -1,0 +1,22 @@
+{
+  "expected.json": {
+    "source_sha256": "bac01060a82c74b7636f90ccd20415f79c9229102eac34a93c271ffa4d39974d",
+    "copied_sha256": "bac01060a82c74b7636f90ccd20415f79c9229102eac34a93c271ffa4d39974d"
+  },
+  "spec.json": {
+    "source_sha256": "9e94012c796f93a53723fd9b769b6e4a84bdcf361ca678f47021d52322990ebd",
+    "copied_sha256": "9e94012c796f93a53723fd9b769b6e4a84bdcf361ca678f47021d52322990ebd"
+  },
+  "observations.json": {
+    "source_sha256": "783d1aba4fb9d151d05acb1dd2b7e0699f41cb88f2ae80afd0b7a71477001d8c",
+    "copied_sha256": "783d1aba4fb9d151d05acb1dd2b7e0699f41cb88f2ae80afd0b7a71477001d8c"
+  },
+  "truth.json": {
+    "source_sha256": "73805ab46cff092e5d1b56254c8f3eb4b538366342aa8cae27f3850be42936dc",
+    "copied_sha256": "73805ab46cff092e5d1b56254c8f3eb4b538366342aa8cae27f3850be42936dc"
+  },
+  "matching-input.json": {
+    "source_sha256": "59c8e30a5688e7fa544a495daff46485b7538d4e02e94c08ea097692126f4d0a",
+    "copied_sha256": "59c8e30a5688e7fa544a495daff46485b7538d4e02e94c08ea097692126f4d0a"
+  }
+}

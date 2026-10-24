@@ -4,6 +4,10 @@ Status: design fixed before implementation,2026-10-24. Main designs and reviews;
 
 상태: 구현 전에 메인이 설계를 고정했고 Sol이 구현합니다. P05는 보호된 PR#6으로 병합됐습니다. 기존 전체 실행을 유지하고 실제 서울 GPS→HTTP→PostgreSQL→매칭→집계를 추가합니다. 서명 게시·경로 비용 변경은 P07·P08로 남깁니다.
 
+Prerequisite discovered by direct probing: [observed projection v3](24-observed-projection-policy.md) fixes endpoint progress interpretation without lowering the five-contributor/timing criteria. New P06 traversals require `seoul-observed-v3`; legacy P05 v2 remains explicitly pinned and separately interpreted. The earlier v2-only P06 implementation draft is superseded on this point.
+
+직접 조사로 확인한 선행 수정은 관측 투영 v3입니다. 기여자 수·시간 기준을 낮추지 않고 끝점 진행 해석을 보완합니다. 새 P06 통과는 v3를 요구하고 기존 P05 v2는 명시 고정·별도 해석을 유지합니다. 이 부분은 앞선 P06의 v2 전용 초안을 대체합니다.
+
 ## Responsibility and reusable parts / 책임과 재사용
 
 Reuse PostgreSQL18.6 transactions/locks and the pinned pg driver; no new framework, queue, ORM or statistics dependency. Add a deterministic TypeScript aggregation function, a PostgreSQL adapter and a one-shot child worker. The database adapter reads actual committed P05 traversals and SUCCEEDED event times; it must not accept a prebuilt PASS report or fabricated traversal rows as the integration input.
@@ -65,6 +69,10 @@ Before the window deadline, return `WINDOW_OPEN` and persist no draft. In a clos
 Add optional `trip_activity: "TRAVEL" | "PARKED"` to the bounded P05 batch, default TRAVEL for existing callers. Normalize before hashing, persist it on the trip and require every later batch to agree. Additive schema initialization must work on a pre-P06 P05 database. PARKED trips can be matched in this authored synthetic test but are excluded from aggregation. A stationary interval alone never means PARKED; signal waiting in a TRAVEL trip remains in complete traversal duration. This is explicit fixture/user collection state, not inferred parking detection and not hidden trajectory ground truth. Mid-trip state changes conflict; a changed activity starts a new bounded trip. Real mobile collection UX remains P11.
 
 P05 배치에 선택 활동값을 추가하고 기존 호출은TRAVEL로 정규화합니다. 여행에 저장해 후속 배치와 일치시킵니다. 기존P05 DB에도 추가 초기화가 가능해야 합니다. 합성PARKED 여행은 매칭해도 집계에서 제외하고 정지값만으로 주차를 추론하지 않아 TRAVEL 신호대기를 시간에 남깁니다. 명시 수집상태이며 숨겨진 정답·자동주차판정이 아닙니다. 여행 중 변경은 충돌이고 새 여행으로 시작하며 실제 단말UX는P11입니다.
+
+For compatibility, omit the normalized default TRAVEL field from the batch hash input; explicit TRAVEL and the old omitted form have the old P05 digest. PARKED remains part of the hash. A real pre-P06 accepted batch must still return DUPLICATE after additive migration. Do not accept arbitrary legacy hashes as a conflict bypass. Geometry distance agreement tolerance is1e-6m and timestamp-derived duration agreement1e-6s; reject empty/duplicate/conflicting catalog keys and nonfinite values.
+
+호환성을위해기본TRAVEL은배치해시입력에서생략해명시/옛누락형태가같은기존P05해시를유지하고PARKED는포함합니다. 실제기존DB에접수한배치를추가마이그레이션뒤재전송해DUPLICATE를증명하며임의옛해시로충돌을우회하지않습니다. 지형길이일치는1e-6m·시각기반기간일치는1e-6s오차를허용하고빈/중복/충돌목록키·비유한값은거부합니다.
 
 Persist canonical candidate bytes in a single P06 window row, unique(namespace,graph,policy,source,window_start), with input/catalog digest and finalization event time. Never persist a second private copy of contributor IDs or raw points. A narrowly scoped PostgreSQL AFTER DELETE trigger on P05 traversals invalidates the corresponding stored window draft in the **same deletion transaction**, including consent revocation and retention cascade. This prevents an old candidate surviving a successful revoke response. Recompute from remaining authoritative rows on the next read/finalize. A5→4 revocation yields INSUFFICIENT; do not promise recall of immutable files already exported to third parties. All published test material is synthetic.
 

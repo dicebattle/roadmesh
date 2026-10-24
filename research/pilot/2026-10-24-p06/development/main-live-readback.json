@@ -1,0 +1,20 @@
+{
+  "observed_at_utc": "2026-10-24T13:48:21.598Z",
+  "owned_container": "routelens-p05-d87970c0-63bf-4d63-8009-171926487e88",
+  "query": "SELECT jsonb_build_object('states',(SELECT jsonb_object_agg(state,n) FROM (SELECT state,count(*) AS n FROM routelens_p05.trips GROUP BY state) s),'traversals',(SELECT count(*) FROM routelens_p05.traversals),'candidates',(SELECT count(*) FROM routelens_p06.candidates),'candidate_statuses',(SELECT jsonb_agg(DISTINCT e->>'status') FROM routelens_p06.candidates c CROSS JOIN LATERAL jsonb_array_elements(convert_from(c.canonical_json,'UTF8')::jsonb->'entries') e));",
+  "readback": {
+    "states": {
+      "WAITING": 2,
+      "SUCCEEDED": 15
+    },
+    "candidates": 6,
+    "traversals": 45,
+    "candidate_statuses": [
+      "INSUFFICIENT",
+      "LIVE",
+      "UNKNOWN"
+    ]
+  },
+  "message_en": "Independent read-only observation while the P06 development harness was live; not final state.",
+  "message_ko": "P06 개발 실행 중 메인이 별도로 읽은 상태이며 최종 결과가 아닙니다."
+}

@@ -58,19 +58,35 @@ export function batchValid(
 ): IngestBatch {
   try {
     principalValid(principal);
-    record(value, "batch", [
-      "schema_version",
-      "batch_id",
-      "trip_id",
-      "batch_seq",
-      "is_final",
-      "graph_id",
-      "matching_policy",
-      "consent_version",
-      "source_class",
-      "trip_start_utc",
-      "samples",
-    ]);
+    record(
+      value,
+      "batch",
+      [
+        "schema_version",
+        "batch_id",
+        "trip_id",
+        "batch_seq",
+        "is_final",
+        "graph_id",
+        "matching_policy",
+        "consent_version",
+        "source_class",
+        "trip_start_utc",
+        "samples",
+      ],
+      ["trip_activity"],
+    );
+    if (
+      value.trip_activity !== undefined &&
+      value.trip_activity !== "TRAVEL" &&
+      value.trip_activity !== "PARKED"
+    )
+      issue(
+        422,
+        "INVALID_INPUT",
+        "Trip activity is unsupported.",
+        "여행 활동을 지원하지 않습니다.",
+      );
     if (value.source_class !== "SYNTHETIC")
       issue(
         403,
@@ -124,7 +140,10 @@ export function batchValid(
           "관측 시각과 여행 시작이 일치하지 않습니다.",
         );
     }
-    return value as unknown as IngestBatch;
+    return {
+      ...value,
+      trip_activity: value.trip_activity ?? "TRAVEL",
+    } as unknown as IngestBatch;
   } catch (error) {
     if (error instanceof IngestionError) throw error;
     return issue(
@@ -136,6 +155,12 @@ export function batchValid(
   }
 }
 export const digest = (value: unknown): string => sha256(canonical(value));
+export function batchRequestHash(batch: IngestBatch): string {
+  const normalized = { ...batch };
+  if ((normalized.trip_activity ?? "TRAVEL") === "TRAVEL")
+    delete normalized.trip_activity;
+  return digest(normalized);
+}
 export const matchingId = (
   namespace: string,
   contributor: string,

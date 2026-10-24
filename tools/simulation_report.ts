@@ -1,3 +1,4 @@
+import type { AggregationDraft } from "./aggregation_types.js";
 /** Offline evidence viewer. Input provenance is rendered verbatim, never refreshed. */
 export interface SimulationReportData {
   schema_version: "0.1";
@@ -100,6 +101,34 @@ export interface SimulationReportData {
       accepted_traversals: number;
       excluded_traversals: number;
     }[];
+  };
+  aggregation?: {
+    policy_id: string;
+    target: { edge_id: string; forward: boolean; distance_m: number };
+    window_start: string;
+    deadline: string;
+    valid_until: string;
+    cases: {
+      case_id: string;
+      name_en: string;
+      name_ko: string;
+      draft: AggregationDraft;
+      canonical_sha256: string;
+      evidence_path: string;
+    }[];
+    population: {
+      duration_ms: number;
+      vehicles: SimulationReportData["vehicles"];
+      matching: NonNullable<SimulationReportData["matching"]>;
+      case_vehicle_ids?: Record<string, string[]>;
+      case_matching?: Record<
+        string,
+        NonNullable<SimulationReportData["matching"]>
+      >;
+    };
+    assertions_passed: number;
+    assertions_total: number;
+    cleanup_verified: boolean;
   };
   ingestion?: {
     scenario_count: number;
@@ -213,10 +242,30 @@ export function renderSimulationReport(data: SimulationReportData): string {
     .regional #regional-note p {
       margin: 2px 0;
     }
+    #aggregation-note {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+    #aggregation-note p {
+      width: 100%;
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+    #aggregation-note select {
+      max-width: 220px;
+      min-height: 32px;
+      padding: 4px;
+    }
+    .regional:has(#aggregation-note:not([hidden])) svg {
+      height: clamp(190px, calc(100vh - 540px), 360px);
+    }
     [hidden] {
       display: none !important;
     }
-    #matching-decisions {
+    #matching-decisions, #aggregate-evidence {
       overflow-wrap: anywhere;
     }
     * {
@@ -398,7 +447,8 @@ export function renderSimulationReport(data: SimulationReportData): string {
         gap: 10px;
       }
       svg,
-      .regional svg {
+      .regional svg,
+      .regional:has(#aggregation-note:not([hidden])) svg {
         height: 340px;
       }
     }
@@ -412,15 +462,8 @@ export function renderSimulationReport(data: SimulationReportData): string {
     <header>
       <div>
         <div class="eyebrow">ROUTELENS / ${data.region ? "SEOUL" : data.matching ? "P03 + P04" : "P03"}</div>
-        <h1
-          data-en="${data.region ? "Seoul road simulation" : "Vehicle &amp; GPS simulation"}"
-          data-ko="${data.region ? "서울 도로 시뮬레이션" : "차량·GPS 시뮬레이션"}"
-        ></h1>
-        <p
-          class="notice"
-          data-en="${data.region ? "Actual Seoul roads with SYNTHETIC vehicles and GPS. Same-engine round-trip evidence, not real driver traces, independent accuracy or live traffic." : "Synthetic trajectories and GPS observations on an authored fictional road network. Test evidence, not live traffic or a navigation client."}"
-          data-ko="${data.region ? "실제 서울 도로의 합성 차량·GPS입니다. 같은 엔진 왕복 검사이며 실주행 기록·독립 정확도·실시간 교통이 아닙니다." : "직접 만든 가상 도로망의 합성 이동 경로와 GPS 관측입니다. 실시간 교통정보나 내비게이션 화면이 아닌 검사 증거입니다."}"
-        ></p>
+        <h1 data-en="${data.region ? "Seoul road simulation" : "Vehicle &amp; GPS simulation"}" data-ko="${data.region ? "서울 도로 시뮬레이션" : "차량·GPS 시뮬레이션"}"></h1>
+        <p class="notice" data-en="${data.region ? "Actual Seoul roads with SYNTHETIC vehicles and GPS. Same-engine round-trip evidence, not real driver traces, independent accuracy or live traffic." : "Synthetic trajectories and GPS observations on an authored fictional road network. Test evidence, not live traffic or a navigation client."}" data-ko="${data.region ? "실제 서울 도로의 합성 차량·GPS입니다. 같은 엔진 왕복 검사이며 실주행 기록·독립 정확도·실시간 교통이 아닙니다." : "직접 만든 가상 도로망의 합성 이동 경로와 GPS 관측입니다. 실시간 교통정보나 내비게이션 화면이 아닌 검사 증거입니다."}"></p>
       </div>
       <button id="language" aria-label="Switch language / 언어 변경">
         한국어
@@ -435,6 +478,29 @@ export function renderSimulationReport(data: SimulationReportData): string {
             role="img"
             aria-label="${data.region ? "Seoul road replay / 서울 도로 재생" : "Fictional road replay / 가상 도로 재생"}"
           ></svg>
+          <div id="aggregation-note" hidden>
+            <label
+              ><span data-en="Replay dataset" data-ko="재생자료"></span
+              ><select id="dataset">
+                <option
+                  value="original"
+                  data-en="Original nine vehicles"
+                  data-ko="기존9대"
+                ></option>
+                <option
+                  value="aggregation"
+                  data-en="P06 short-trip population"
+                  data-ko="P06짧은여행 차량군"
+                ></option></select></label
+            ><label
+              ><span
+                data-en="Recorded unsigned case"
+                data-ko="기록된 서명전 사례"
+              ></span
+              ><select id="aggregate-case"></select
+            ></label>
+            <p id="aggregate-state"></p>
+          </div>
           <div
             id="regional-note"
             hidden
@@ -519,12 +585,42 @@ export function renderSimulationReport(data: SimulationReportData): string {
         <div class="provenance" id="provenance"></div>
       </aside>
     </div>
+    <section id="aggregation-section" class="checks" hidden>
+      <h2
+        data-en="P06 unsigned synthetic aggregation"
+        data-ko="P06 서명전 합성집계"
+      ></h2>
+      <p
+        data-en="The original nine vehicles are a separate regression replay. P06 uses its own short trips. Recorded candidates do not change with replay time. The moving PARKED sixth tests explicit collection state, not automatic parking detection. LIVE is a synthetic candidate state, with no signing, publication or real-road routing activation."
+        data-ko="기존9대는 별도회귀 재생이며 P06은 자체짧은여행을 사용합니다. 기록된 후보는 재생시각으로 바뀌지 않습니다. 이동하는 PARKED6번째는 명시수집상태 검사이며 자동주차탐지가 아닙니다. LIVE는 합성후보 상태이고 서명·게시·실제도로경로 활성화는 없습니다."
+      ></p>
+      <div id="aggregate-evidence"></div>
+    </section>
     <section id="ingestion-section" class="checks" hidden>
-      <h2 data-en="Durable receipt, interruption and recovery" data-ko="영속 접수·중단·복구"></h2>
-      <p data-en="Actual local HTTP, PostgreSQL and separate workers. Receipt follows commit; matching completion is a later state. Logical primary-store deletion excludes WAL and backups." data-ko="실제 로컬 HTTP·PostgreSQL·별도 처리자입니다. 접수는 커밋 후이며 매칭 완료는 이후 상태입니다. 주저장소 논리삭제이며 WAL·백업 삭제를 뜻하지 않습니다."></p>
-      <p id="ingestion-counts"></p><div id="ingestion-evidence"></div>
-      <details><summary data-en="Database acceptance, recovery and deletion checks" data-ko="DB 접수·복구·삭제 검사"></summary><div id="ingestion-cases"></div></details>
-      <details><summary data-en="Actual process and HTTP event timeline" data-ko="실제 프로세스·HTTP 이벤트 순서"></summary><div id="ingestion-events"></div></details>
+      <h2
+        data-en="Durable receipt, interruption and recovery"
+        data-ko="영속 접수·중단·복구"
+      ></h2>
+      <p
+        data-en="Actual local HTTP, PostgreSQL and separate workers. Receipt follows commit; matching completion is a later state. Logical primary-store deletion excludes WAL and backups."
+        data-ko="실제 로컬 HTTP·PostgreSQL·별도 처리자입니다. 접수는 커밋 후이며 매칭 완료는 이후 상태입니다. 주저장소 논리삭제이며 WAL·백업 삭제를 뜻하지 않습니다."
+      ></p>
+      <p id="ingestion-counts"></p>
+      <div id="ingestion-evidence"></div>
+      <details>
+        <summary
+          data-en="Database acceptance, recovery and deletion checks"
+          data-ko="DB 접수·복구·삭제 검사"
+        ></summary>
+        <div id="ingestion-cases"></div>
+      </details>
+      <details>
+        <summary
+          data-en="Actual process and HTTP event timeline"
+          data-ko="실제 프로세스·HTTP 이벤트 순서"
+        ></summary>
+        <div id="ingestion-events"></div>
+      </details>
     </section>
     <section id="matching-section" class="checks" hidden>
       <h2
@@ -581,9 +677,126 @@ export function renderSimulationReport(data: SimulationReportData): string {
         a.href = path;
       else a.removeAttribute("href");
     }
+    function replay() {
+      if (data.aggregation && $("dataset").value === "aggregation") {
+        const p = data.aggregation.population;
+        const key = $("aggregate-case").value;
+        const ids = p.case_vehicle_ids?.[key];
+        return {
+          ...p,
+          vehicles: ids
+            ? p.vehicles.filter((v) => ids.includes(v.vehicle_id))
+            : p.vehicles,
+          matching: p.case_matching?.[key] ?? p.matching,
+        };
+      }
+      return data;
+    }
+    function replayRoutes() {
+      return data.aggregation && $("dataset").value === "aggregation"
+        ? [
+            {
+              route_id: "p06",
+              name_en: "P06 short trips",
+              name_ko: "P06짧은여행",
+              vehicle_ids: replay().vehicles.map((v) => v.vehicle_id),
+            },
+          ]
+        : data.routes;
+    }
+    function aggregateDisplay() {
+      if (!data.aggregation) return;
+      const a = data.aggregation;
+      const selected =
+        a.cases.find((c) => c.case_id === $("aggregate-case").value) ||
+        a.cases[0];
+      if (!selected) return;
+      const active = $("dataset").value === "aggregation";
+      $("aggregate-case").disabled = !active;
+      const entry = selected.draft.entries.find(
+        (e) =>
+          e.edge_id === a.target.edge_id &&
+          e.forward === a.target.forward &&
+          e.source_class === "SYNTHETIC",
+      );
+      $("aggregate-state").textContent = active
+        ? (lang === "en"
+            ? "Recorded unsigned SYNTHETIC · "
+            : "기록된 서명전 합성 · ") +
+          (entry?.status ?? "UNKNOWN") +
+          " · " +
+          (lang === "en" ? "Speed: " : "속도: ") +
+          (entry?.speed_mps === null ? "—" : entry?.speed_mps + " m/s") +
+          " · " +
+          (entry?.sample_bucket ?? "—") +
+          " · " +
+          (lang === "en" ? "Deadline / expiry: " : "마감 / 만료: ") +
+          a.deadline.slice(11, 23) +
+          " / " +
+          a.valid_until.slice(11, 23)
+        : lang === "en"
+          ? "Original nine-vehicle replay. Select the separate P06 population to inspect aggregate cases."
+          : "기존9대 재생입니다. 집계사례는 별도 P06차량군을 선택해 확인하세요.";
+      $("aggregate-evidence").replaceChildren();
+      node(
+        "p",
+        a.policy_id +
+          " · " +
+          (lang === "en" ? "Target directed edge: " : "대상 방향구간: ") +
+          a.target.edge_id +
+          " / " +
+          a.target.forward +
+          " · " +
+          a.window_start,
+        $("aggregate-evidence"),
+      );
+      a.cases.forEach((c) => {
+        const p = node(
+          "p",
+          c["name_" + lang] + " · " + c.canonical_sha256 + " · ",
+          $("aggregate-evidence"),
+        );
+        evidence(c.evidence_path, p);
+      });
+      [...$("aggregate-case").options].forEach((option) => {
+        const c = a.cases.find((c) => c.case_id === option.value);
+        if (c) option.textContent = c["name_" + lang];
+      });
+    }
+    function resetReplay() {
+      playing = false;
+      last = 0;
+      time = 0;
+      $("time").max = String(replay().duration_ms ?? data.summary.duration_ms);
+      $("vehicle").replaceChildren();
+      node(
+        "option",
+        lang === "en" ? "All vehicles" : "전체 차량",
+        $("vehicle"),
+      ).value = "*";
+      replay().vehicles.forEach(
+        (v) =>
+          (node("option", v.vehicle_id, $("vehicle")).value = v.vehicle_id),
+      );
+      $("route").replaceChildren();
+      node(
+        "option",
+        lang === "en" ? "All routes" : "전체 경로",
+        $("route"),
+      ).value = "*";
+      replayRoutes()?.forEach(
+        (r) =>
+          (node("option", r["name_" + lang], $("route")).value = r.route_id),
+      );
+      translate();
+    }
     const reasons = {
       AMBIGUOUS_PARALLEL: ["Ambiguous parallel roads", "평행도로 구분 불가"],
-      AMBIGUOUS_BOUNDARY: ["Uncertain timing while stopped at an edge boundary", "구간 경계 정지 시각 불명확"],
+      AMBIGUOUS_PROJECTION: ["Ambiguous position on matched road geometry", "대응 도로 지형의 위치 구분 불가"],
+      AMBIGUOUS_BOUNDARY: [
+        "Uncertain timing while stopped at an edge boundary",
+        "구간 경계 정지 시각 불명확",
+      ],
       PARTIAL_ENTRY: ["Entry not fully observed", "진입 관측 부족"],
       PARTIAL_EXIT: ["Exit not fully observed", "진출 관측 부족"],
       OBSERVATION_GAP: ["Observation gap", "관측 누락 구간"],
@@ -627,7 +840,7 @@ export function renderSimulationReport(data: SimulationReportData): string {
             "개 제외";
     }
     function matchingDetails() {
-      const m = data.matching;
+      const m = replay().matching;
       if (!m) return;
       $("matching-counts").textContent =
         m.policy_id + " · " + matchingSummary(m);
@@ -753,7 +966,71 @@ export function renderSimulationReport(data: SimulationReportData): string {
       );
       const v = $("vehicle").options[0];
       if (v) v.textContent = lang === "en" ? "All vehicles" : "전체 차량";
-      if(data.ingestion){const i=data.ingestion;$('ingestion-counts').textContent=lang==='en'?i.assertions_passed+'/'+i.assertions_total+' checks · '+i.submitted_batches+' HTTP requests · '+i.duplicate_responses+' duplicates · '+i.stored_traversals+'/'+i.reference_traversals+' stored/reference traversals · '+i.recovered_workers+' recovered workers · cleanup '+i.cleanup_verified:i.assertions_passed+'/'+i.assertions_total+'검사 · HTTP '+i.submitted_batches+'회 · 중복 '+i.duplicate_responses+'회 · 저장/기준 통과 '+i.stored_traversals+'/'+i.reference_traversals+'개 · 처리자복구 '+i.recovered_workers+'회 · 정리 '+i.cleanup_verified;$('ingestion-evidence').replaceChildren();i.evidence.forEach(item=>{const p=node('p',item['name_'+lang]+' · ',$('ingestion-evidence'));evidence(item.path,p)});$('ingestion-cases').replaceChildren();i.cases.forEach(item=>{const p=node('p',item.status+' · '+item['message_'+lang]+' · ',$('ingestion-cases'));evidence(item.evidence_path,p)});$('ingestion-events').replaceChildren();i.events.forEach(item=>node('p',(item.elapsed_ms/1000).toFixed(2)+' s · '+item.phase+' · '+item.code,$('ingestion-events')))}
+      if (data.ingestion) {
+        const i = data.ingestion;
+        $("ingestion-counts").textContent =
+          lang === "en"
+            ? i.assertions_passed +
+              "/" +
+              i.assertions_total +
+              " checks · " +
+              i.submitted_batches +
+              " HTTP requests · " +
+              i.duplicate_responses +
+              " duplicates · " +
+              i.stored_traversals +
+              "/" +
+              i.reference_traversals +
+              " stored/reference traversals · " +
+              i.recovered_workers +
+              " recovered workers · cleanup " +
+              i.cleanup_verified
+            : i.assertions_passed +
+              "/" +
+              i.assertions_total +
+              "검사 · HTTP " +
+              i.submitted_batches +
+              "회 · 중복 " +
+              i.duplicate_responses +
+              "회 · 저장/기준 통과 " +
+              i.stored_traversals +
+              "/" +
+              i.reference_traversals +
+              "개 · 처리자복구 " +
+              i.recovered_workers +
+              "회 · 정리 " +
+              i.cleanup_verified;
+        $("ingestion-evidence").replaceChildren();
+        i.evidence.forEach((item) => {
+          const p = node(
+            "p",
+            item["name_" + lang] + " · ",
+            $("ingestion-evidence"),
+          );
+          evidence(item.path, p);
+        });
+        $("ingestion-cases").replaceChildren();
+        i.cases.forEach((item) => {
+          const p = node(
+            "p",
+            item.status + " · " + item["message_" + lang] + " · ",
+            $("ingestion-cases"),
+          );
+          evidence(item.evidence_path, p);
+        });
+        $("ingestion-events").replaceChildren();
+        i.events.forEach((item) =>
+          node(
+            "p",
+            (item.elapsed_ms / 1000).toFixed(2) +
+              " s · " +
+              item.phase +
+              " · " +
+              item.code,
+            $("ingestion-events"),
+          ),
+        );
+      }
       matchingDetails();
       if (data.region) {
         $("regional-note").replaceChildren();
@@ -789,26 +1066,28 @@ export function renderSimulationReport(data: SimulationReportData): string {
         );
         const all = $("route").options[0];
         if (all) all.textContent = lang === "en" ? "All routes" : "전체 경로";
-        data.routes?.forEach((r, i) => {
+        replayRoutes()?.forEach((r, i) => {
           if ($("route").options[i + 1])
             $("route").options[i + 1].textContent = r["name_" + lang];
         });
       }
-      if (data.matching) {
+      aggregateDisplay();
+      if (replay().matching) {
+        const activeMatching = replay().matching;
         $("matching-ribbon").textContent =
           (lang === "en" ? "GPS matched/excluded: " : "GPS 매칭/제외: ") +
-          data.matching.matched_samples +
+          activeMatching.matched_samples +
           "/" +
-          data.matching.excluded_samples +
+          activeMatching.excluded_samples +
           " · " +
           (lang === "en"
             ? "Complete traversals accepted/excluded: "
             : "완전 통과 수용/제외: ") +
-          data.matching.accepted_traversals +
+          activeMatching.accepted_traversals +
           "/" +
-          data.matching.excluded_traversals +
+          activeMatching.excluded_traversals +
           " · " +
-          [...new Set(data.matching.traversals.flatMap((t) => t.reason_codes))]
+          [...new Set(activeMatching.traversals.flatMap((t) => t.reason_codes))]
             .map((code) => reasons[code]?.[lang === "en" ? 0 : 1] || code)
             .join(", ");
       }
@@ -817,10 +1096,23 @@ export function renderSimulationReport(data: SimulationReportData): string {
     let viewportWidth = 900,
       viewportHeight = 560;
     function bounds() {
-      const selectedRoute = data.routes?.find(
+      const view =
+        data.aggregation && $("dataset").value === "aggregation"
+          ? data.aggregation.population
+          : data;
+      const routeList =
+        view === data
+          ? data.routes
+          : [
+              {
+                route_id: "p06",
+                vehicle_ids: view.vehicles.map((v) => v.vehicle_id),
+              },
+            ];
+      const selectedRoute = routeList?.find(
         (r) => r.route_id === $("route").value,
       );
-      const truth = data.vehicles
+      const truth = view.vehicles
         .filter(
           (v) =>
             !selectedRoute || selectedRoute.vehicle_ids.includes(v.vehicle_id),
@@ -832,8 +1124,16 @@ export function renderSimulationReport(data: SimulationReportData): string {
               (r) => r.coordinates,
             )
           : truth;
-      let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;
-      for(const p of coords){minX=Math.min(minX,p[0]);maxX=Math.max(maxX,p[0]);minY=Math.min(minY,p[1]);maxY=Math.max(maxY,p[1]);}
+      let minX = Infinity,
+        maxX = -Infinity,
+        minY = Infinity,
+        maxY = -Infinity;
+      for (const p of coords) {
+        minX = Math.min(minX, p[0]);
+        maxX = Math.max(maxX, p[0]);
+        minY = Math.min(minY, p[1]);
+        maxY = Math.max(maxY, p[1]);
+      }
       return {
         minX,
         maxX,
@@ -862,7 +1162,8 @@ export function renderSimulationReport(data: SimulationReportData): string {
     let activeLayer,
       roadLayer,
       movingLayer,
-      roadCacheKey = "", projectionCacheKey="";
+      roadCacheKey = "",
+      projectionCacheKey = "";
     function svg(tag, attrs) {
       const e = document.createElementNS(ns, tag);
       Object.entries(attrs).forEach(([k, v]) => e.setAttribute(k, String(v)));
@@ -879,8 +1180,17 @@ export function renderSimulationReport(data: SimulationReportData): string {
         "viewBox",
         "0 0 " + viewportWidth + " " + viewportHeight,
       );
-      const projectionKey=JSON.stringify([viewportWidth,viewportHeight,$('all-roads').checked,$('route').value]);
-      if(projectionKey!==projectionCacheKey){({ minX, maxX, minY, maxY, scale } = bounds());projectionCacheKey=projectionKey;}
+      const projectionKey = JSON.stringify([
+        $("dataset").value,
+        viewportWidth,
+        viewportHeight,
+        $("all-roads").checked,
+        $("route").value,
+      ]);
+      if (projectionKey !== projectionCacheKey) {
+        ({ minX, maxX, minY, maxY, scale } = bounds());
+        projectionCacheKey = projectionKey;
+      }
       if (!roadLayer) {
         roadLayer = document.createElementNS(ns, "g");
         movingLayer = document.createElementNS(ns, "g");
@@ -933,92 +1243,141 @@ export function renderSimulationReport(data: SimulationReportData): string {
       }
       activeLayer = movingLayer;
       movingLayer.replaceChildren();
+      if (data.aggregation && $("dataset").value === "aggregation") {
+        const edge = data.roads.find(
+          (r) =>
+            r.edge_id === data.aggregation.target.edge_id &&
+            r.forward === data.aggregation.target.forward,
+        );
+        if (edge)
+          svg("polyline", {
+            points: edge.coordinates.map((p) => xy(p).join(",")).join(" "),
+            fill: "none",
+            stroke: "#23775D",
+            "stroke-width": 5,
+            opacity: 0.7,
+          });
+      }
       let omissions = 0;
-      const route = data.routes?.find((r) => r.route_id === $("route").value);
-      const visibleVehicles = data.vehicles
-        .filter((v) => !route || route.vehicle_ids.includes(v.vehicle_id))
-        .filter((v) => $("vehicle").value === "*" || v.vehicle_id === $("vehicle").value);
+      const route = replayRoutes()?.find(
+        (r) => r.route_id === $("route").value,
+      );
+      const visibleVehicles = replay()
+        .vehicles.filter(
+          (v) => !route || route.vehicle_ids.includes(v.vehicle_id),
+        )
+        .filter(
+          (v) =>
+            $("vehicle").value === "*" || v.vehicle_id === $("vehicle").value,
+        );
       const labeledRoutes = new Set();
       visibleVehicles.forEach((v, index) => {
-          const truth = v.truth.filter((p) => p.offset_ms <= time),
-            obs = v.observations.filter((p) => p.offset_ms <= time);
-          if ($("truth").checked && truth.length) {
-            svg("polyline", {
-              points: truth.map((p) => point(p).join(",")).join(" "),
-              fill: "none",
-              stroke: "#1264B8",
-              "stroke-width": 3,
-            });
-            const p = point(truth[truth.length - 1]);
-            svg("circle", {
-              cx: p[0],
-              cy: p[1],
-              r: 8,
-              fill: "#1264B8",
-              stroke: "white",
-              "stroke-width": 2,
-            });
-            const rightHalf = p[0] > viewportWidth / 2;
-            const lowerHalf = p[1] > viewportHeight / 2;
-            if (data.region) {
-              const scene = data.routes?.find(r => r.vehicle_ids.includes(v.vehicle_id));
-              const grouped = $("vehicle").value === "*" && scene;
-              const key = grouped ? scene.route_id : v.vehicle_id;
-              if (!labeledRoutes.has(key)) {
-                labeledRoutes.add(key);
-                // This fixture shares truth across modes. Group labels follow the
-                // first visible vehicle, not a centroid of later divergent paths.
-                const label = grouped ? scene["name_" + lang] + " · " + visibleVehicles.filter(item => scene.vehicle_ids.includes(item.vehicle_id)).length : v.vehicle_id;
-                const t = svg("text", {
-                  x: p[0] + (rightHalf ? -12 : 12),
-                  y: Math.max(16, Math.min(viewportHeight - 12, p[1] + (lowerHalf ? -20 : 22))),
-                  "text-anchor": rightHalf ? "end" : "start",
-                });
-                t.textContent = label;
-                const width = Math.min(t.getComputedTextLength(), viewportWidth - 16);
-                t.setAttribute("x", String(rightHalf ? Math.max(width + 8, Math.min(viewportWidth - 8, p[0] - 12)) : Math.max(8, Math.min(viewportWidth - width - 8, p[0] + 12))));
-              }
-            } else {
+        const truth = v.truth.filter((p) => p.offset_ms <= time),
+          obs = v.observations.filter((p) => p.offset_ms <= time);
+        if ($("truth").checked && truth.length) {
+          svg("polyline", {
+            points: truth.map((p) => point(p).join(",")).join(" "),
+            fill: "none",
+            stroke: "#1264B8",
+            "stroke-width": 3,
+          });
+          const p = point(truth[truth.length - 1]);
+          svg("circle", {
+            cx: p[0],
+            cy: p[1],
+            r: 8,
+            fill: "#1264B8",
+            stroke: "white",
+            "stroke-width": 2,
+          });
+          const rightHalf = p[0] > viewportWidth / 2;
+          const lowerHalf = p[1] > viewportHeight / 2;
+          if (data.region) {
+            const scene = replayRoutes()?.find((r) =>
+              r.vehicle_ids.includes(v.vehicle_id),
+            );
+            const grouped = $("vehicle").value === "*" && scene;
+            const key = grouped ? scene.route_id : v.vehicle_id;
+            if (!labeledRoutes.has(key)) {
+              labeledRoutes.add(key);
+              // A group label follows its first visible vehicle, not a centroid.
+              // P06 schedules may place same-route vehicles at different points.
+              const label = grouped
+                ? scene["name_" + lang] +
+                  " · " +
+                  visibleVehicles.filter((item) =>
+                    scene.vehicle_ids.includes(item.vehicle_id),
+                  ).length
+                : v.vehicle_id;
               const t = svg("text", {
                 x: p[0] + (rightHalf ? -12 : 12),
-                y: p[1] + (lowerHalf ? -20 - index * 20 : 22 + index * 20),
+                y: Math.max(
+                  16,
+                  Math.min(viewportHeight - 12, p[1] + (lowerHalf ? -20 : 22)),
+                ),
                 "text-anchor": rightHalf ? "end" : "start",
               });
-              t.textContent = v.vehicle_id;
+              t.textContent = label;
+              const width = Math.min(
+                t.getComputedTextLength(),
+                viewportWidth - 16,
+              );
+              t.setAttribute(
+                "x",
+                String(
+                  rightHalf
+                    ? Math.max(
+                        width + 8,
+                        Math.min(viewportWidth - 8, p[0] - 12),
+                      )
+                    : Math.max(
+                        8,
+                        Math.min(viewportWidth - width - 8, p[0] + 12),
+                      ),
+                ),
+              );
             }
+          } else {
+            const t = svg("text", {
+              x: p[0] + (rightHalf ? -12 : 12),
+              y: p[1] + (lowerHalf ? -20 - index * 20 : 22 + index * 20),
+              "text-anchor": rightHalf ? "end" : "start",
+            });
+            t.textContent = v.vehicle_id;
           }
-          if ($("observed").checked)
-            obs.forEach((p) => {
+        }
+        if ($("observed").checked)
+          obs.forEach((p) => {
+            const q = point(p);
+            svg("path", {
+              d: "M" + (q[0] - 3) + "," + (q[1] - 3) + "l6,6m-6,0l6,-6",
+              stroke: "#D96B28",
+              "stroke-width": 2,
+              opacity: 0.75,
+            });
+          });
+        v.omissions
+          .filter((p) => p.offset_ms <= time)
+          .forEach((o) => {
+            omissions++;
+            const p = v.truth.find((t) => t.offset_ms === o.offset_ms);
+            if (p && $("observed").checked) {
               const q = point(p);
-              svg("path", {
-                d: "M" + (q[0] - 3) + "," + (q[1] - 3) + "l6,6m-6,0l6,-6",
-                stroke: "#D96B28",
-                "stroke-width": 2,
-                opacity: 0.75,
+              svg("circle", {
+                cx: q[0],
+                cy: q[1],
+                r: 6,
+                fill: "white",
+                stroke: "#172D46",
+                "stroke-width": 1.5,
+                "stroke-dasharray": "2 2",
               });
-            });
-          v.omissions
-            .filter((p) => p.offset_ms <= time)
-            .forEach((o) => {
-              omissions++;
-              const p = v.truth.find((t) => t.offset_ms === o.offset_ms);
-              if (p && $("observed").checked) {
-                const q = point(p);
-                svg("circle", {
-                  cx: q[0],
-                  cy: q[1],
-                  r: 6,
-                  fill: "white",
-                  stroke: "#172D46",
-                  "stroke-width": 1.5,
-                  "stroke-dasharray": "2 2",
-                });
-              }
-            });
-        });
-      if (data.matching && $("matched").checked)
-        data.matching.points
-          .filter(
+            }
+          });
+      });
+      if (replay().matching && $("matched").checked)
+        replay()
+          .matching.points.filter(
             (p) =>
               p.offset_ms <= time &&
               (!route || route.vehicle_ids.includes(p.vehicle_id)) &&
@@ -1045,7 +1404,7 @@ export function renderSimulationReport(data: SimulationReportData): string {
       $("clock").textContent =
         (time / 1000).toFixed(1) +
         " / " +
-        (data.summary.duration_ms / 1000).toFixed(1) +
+        ((replay().duration_ms ?? data.summary.duration_ms) / 1000).toFixed(1) +
         " s";
       $("omissions").textContent =
         (lang === "en"
@@ -1053,7 +1412,26 @@ export function renderSimulationReport(data: SimulationReportData): string {
           : "현재까지 예정된 누락: ") + omissions;
       $("time").value = String(time);
     }
-    $('ingestion-section').hidden=!data.ingestion;
+    $("aggregation-note").hidden = !data.aggregation;
+    $("aggregation-section").hidden = !data.aggregation;
+    data.aggregation?.cases
+      .filter((c) =>
+        [
+          "count-0",
+          "count-1",
+          "count-4",
+          "count-5",
+          "revoked",
+          "expired",
+        ].includes(c.case_id),
+      )
+      .forEach(
+        (c) =>
+          (node("option", c.name_en, $("aggregate-case")).value = c.case_id),
+      );
+    $("dataset").onchange = resetReplay;
+    $("aggregate-case").onchange = resetReplay;
+    $("ingestion-section").hidden = !data.ingestion;
     $("matching-section").hidden = !data.matching;
     $("matching-toggle").hidden = !data.matching;
     $("regional-note").hidden = !data.region;
@@ -1073,7 +1451,7 @@ export function renderSimulationReport(data: SimulationReportData): string {
       translate();
     };
     $("play").onclick = () => {
-      if (time >= data.summary.duration_ms) time = 0;
+      if (time >= (replay().duration_ms ?? data.summary.duration_ms)) time = 0;
       playing = !playing;
       last = 0;
       translate();
@@ -1090,12 +1468,12 @@ export function renderSimulationReport(data: SimulationReportData): string {
       if (!playing) return;
       if (last)
         time = Math.min(
-          data.summary.duration_ms,
+          replay().duration_ms ?? data.summary.duration_ms,
           time + (now - last) * Number($("speed").value),
         );
       last = now;
       draw();
-      if (time >= data.summary.duration_ms) {
+      if (time >= (replay().duration_ms ?? data.summary.duration_ms)) {
         playing = false;
         translate();
       } else requestAnimationFrame(tick);
