@@ -77,3 +77,9 @@ P06 설계조사에서 v2의 끝점 반올림·진행 비율에 따른 시간 �
 Use pinned jose compact JWS with explicit local scoped public keys, immutable PostgreSQL artifact bytes and transactional publisher/consumer sequence state. Require actual loopback HTTP transfer and independent consumer processes. Preserve the P06 authoritative candidate boundary and same-transaction current-pointer invalidation; never imply recall of already downloaded artifacts or P08 engine activation. [Fixed P07 contract](25-p07-publication-contract.md), [upstream source](../wiki/sources/jose-publication.md).
 
 고정 jose 표준JWS·범위를 명시한 로컬 공개키·불변DB내용·트랜잭션 발급/수신 순번을 사용합니다. 실제로컬HTTP·독립수신프로세스를 검증하고 P06후보와 동일트랜잭션 현재참조무효화를 유지합니다. 이미받은파일회수·P08엔진반영을 주장하지 않습니다.
+
+## ADR-026: Immutable traffic generation from durable acceptance / 영속 수용에서 불변 속도 파일 생성
+
+Reuse the pinned engine traffic skeleton and patch validated8-byte speed records in TypeScript. Bind each immutable generation to the graph, skeleton and exact P07 snapshot; recheck accepted state before engine use and response. Unknown/expired data selects a labeled baseline, never zero-speed closures. Preserve native current-time costing, prove fresh Seoul15-trip aggregation→signing→acceptance→detour→automatic expiry, and defer persistent two-node activation to P09. [Fixed contract](27-p08-traffic-activation.md).
+
+고정엔진뼈대를재사용하고검증한속도8바이트를TypeScript로반영합니다. 세대마다지도/뼈대/정확한P07자료를묶고엔진사용/응답전에수용상태를다시확인합니다. 미확인/만료를폐쇄0속도가아닌표시된기본값으로처리합니다. 현재시각비용을유지하고서울15여행의집계/서명/수용/우회/자동만료를증명하며영속두노드는P09입니다.

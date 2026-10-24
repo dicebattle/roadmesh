@@ -76,3 +76,5 @@ Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases i
 - [P07 publication contract / P07 게시 계약](../docs/25-p07-publication-contract.md): implemented and locally verified; [report](../research/pilot/2026-10-25-p07/report.md), [module](modules/signed-publication.md). / 구현·로컬·원격206개·Node각200개 검증 완료.
 
 - [Latest corrected206-run report / 최신수정206개보고서](../research/pilot/2026-10-25-p07-claim-fix/report.md): reproduced P05 claim race fixed; local proof and new recording complete; corrected hosted206 and Node22/24 each202 passed. / P05작업선택경쟁재현·수정, 새로컬/원격206개·Node각202개·녹화검증완료.
+
+- [P08 activation contract / P08 속도반영계약](../docs/27-p08-traffic-activation.md): fixed after protected P07 merge; fresh15-trip source, immutable traffic generations and exact expiry are required. / P07보호병합후고정·새15여행자료/불변속도세대/정확만료필수.
