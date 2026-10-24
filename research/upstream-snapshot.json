@@ -1,0 +1,299 @@
+{
+  "checked_at": "2026-10-24T02:20:49.592076+00:00",
+  "method": "Public GitHub REST repository metadata, latest release endpoint and one default-branch commit. No private data included.",
+  "notes": [
+    "Latest activity is not proof of operational quality.",
+    "NOASSERTION requires inspecting license files.",
+    "No latest release does not mean no package-specific releases."
+  ],
+  "repositories": [
+    {
+      "repository": "valhalla/valhalla",
+      "url": "https://github.com/valhalla/valhalla",
+      "archived": false,
+      "created_at": "2016-01-19T19:42:29Z",
+      "pushed_at": "2026-10-19T19:20:21Z",
+      "default_branch": "master",
+      "latest_default_branch_commit": {
+        "sha": "618cad5eb6a12c7787c3480851eda07c99eb5c74",
+        "committed_at": "2026-10-19T19:19:47Z",
+        "url": "https://github.com/valhalla/valhalla/commit/618cad5eb6a12c7787c3480851eda07c99eb5c74"
+      },
+      "github_license_detection": "NOASSERTION",
+      "latest_release": {
+        "tag": "3.9.1",
+        "published_at": "2026-10-06T10:51:23Z",
+        "url": "https://github.com/valhalla/valhalla/releases/tag/3.9.1"
+      }
+    },
+    {
+      "repository": "Project-OSRM/osrm-backend",
+      "url": "https://github.com/Project-OSRM/osrm-backend",
+      "archived": false,
+      "created_at": "2011-09-22T10:05:08Z",
+      "pushed_at": "2026-10-21T09:35:08Z",
+      "default_branch": "master",
+      "latest_default_branch_commit": {
+        "sha": "afd7d061981c8574872bbed5376112e76a8b2bb1",
+        "committed_at": "2026-10-21T09:35:05Z",
+        "url": "https://github.com/Project-OSRM/osrm-backend/commit/afd7d061981c8574872bbed5376112e76a8b2bb1"
+      },
+      "github_license_detection": "BSD-2-Clause",
+      "latest_release": {
+        "tag": "v26.10.0",
+        "published_at": "2026-10-01T08:13:32Z",
+        "url": "https://github.com/Project-OSRM/osrm-backend/releases/tag/v26.10.0"
+      }
+    },
+    {
+      "repository": "graphhopper/graphhopper",
+      "url": "https://github.com/graphhopper/graphhopper",
+      "archived": false,
+      "created_at": "2012-02-18T19:57:38Z",
+      "pushed_at": "2026-10-23T11:27:42Z",
+      "default_branch": "master",
+      "latest_default_branch_commit": {
+        "sha": "5d19929ef1d7f1972bf1a88ccb4148a6077ff5f3",
+        "committed_at": "2026-10-23T11:27:40Z",
+        "url": "https://github.com/graphhopper/graphhopper/commit/5d19929ef1d7f1972bf1a88ccb4148a6077ff5f3"
+      },
+      "github_license_detection": "Apache-2.0",
+      "latest_release": {
+        "tag": "11.1",
+        "published_at": "2026-09-29T13:14:02Z",
+        "url": "https://github.com/graphhopper/graphhopper/releases/tag/11.1"
+      }
+    },
+    {
+      "repository": "maplibre/maplibre-native",
+      "url": "https://github.com/maplibre/maplibre-native",
+      "archived": false,
+      "created_at": "2020-11-20T12:53:50Z",
+      "pushed_at": "2026-10-23T23:07:44Z",
+      "default_branch": "main",
+      "latest_default_branch_commit": {
+        "sha": "36132b0b0c541a9bed49e95e73b447a96d7aeee5",
+        "committed_at": "2026-10-23T21:59:44Z",
+        "url": "https://github.com/maplibre/maplibre-native/commit/36132b0b0c541a9bed49e95e73b447a96d7aeee5"
+      },
+      "github_license_detection": "BSD-2-Clause",
+      "latest_release": {
+        "tag": "android-v13.7.1",
+        "published_at": "2026-10-15T12:56:04Z",
+        "url": "https://github.com/maplibre/maplibre-native/releases/tag/android-v13.7.1"
+      }
+    },
+    {
+      "repository": "maplibre/maplibre-gl-js",
+      "url": "https://github.com/maplibre/maplibre-gl-js",
+      "archived": false,
+      "created_at": "2020-12-08T22:42:56Z",
+      "pushed_at": "2026-10-23T22:34:13Z",
+      "default_branch": "main",
+      "latest_default_branch_commit": {
+        "sha": "3ea36bb61fd93ed9f67e38091bdd8f12948b6cf1",
+        "committed_at": "2026-10-23T22:34:13Z",
+        "url": "https://github.com/maplibre/maplibre-gl-js/commit/3ea36bb61fd93ed9f67e38091bdd8f12948b6cf1"
+      },
+      "github_license_detection": "NOASSERTION",
+      "latest_release": {
+        "tag": "v6.15.0",
+        "published_at": "2026-10-18T12:57:17Z",
+        "url": "https://github.com/maplibre/maplibre-gl-js/releases/tag/v6.15.0"
+      }
+    },
+    {
+      "repository": "protomaps/PMTiles",
+      "url": "https://github.com/protomaps/PMTiles",
+      "archived": false,
+      "created_at": "2021-02-16T08:30:22Z",
+      "pushed_at": "2026-09-16T18:35:12Z",
+      "default_branch": "main",
+      "latest_default_branch_commit": {
+        "sha": "aec8fa1341222fdddb3318e9ffa8e18e19b312f7",
+        "committed_at": "2026-09-16T18:34:10Z",
+        "url": "https://github.com/protomaps/PMTiles/commit/aec8fa1341222fdddb3318e9ffa8e18e19b312f7"
+      },
+      "github_license_detection": "NOASSERTION",
+      "latest_release": null
+    },
+    {
+      "repository": "ipfs/kubo",
+      "url": "https://github.com/ipfs/kubo",
+      "archived": false,
+      "created_at": "2014-06-26T08:14:34Z",
+      "pushed_at": "2026-10-21T14:14:42Z",
+      "default_branch": "master",
+      "latest_default_branch_commit": {
+        "sha": "833e04a240d8c533509ddaaa3c202b39b0bb3024",
+        "committed_at": "2026-09-27T18:55:16Z",
+        "url": "https://github.com/ipfs/kubo/commit/833e04a240d8c533509ddaaa3c202b39b0bb3024"
+      },
+      "github_license_detection": "NOASSERTION",
+      "latest_release": {
+        "tag": "v0.43.1",
+        "published_at": "2026-09-15T00:52:17Z",
+        "url": "https://github.com/ipfs/kubo/releases/tag/v0.43.1"
+      }
+    },
+    {
+      "repository": "libp2p/go-libp2p",
+      "url": "https://github.com/libp2p/go-libp2p",
+      "archived": false,
+      "created_at": "2015-09-30T23:24:32Z",
+      "pushed_at": "2026-10-23T08:44:09Z",
+      "default_branch": "master",
+      "latest_default_branch_commit": {
+        "sha": "03349944847387886bf06b65993b2a03c1e6d12d",
+        "committed_at": "2026-10-23T07:14:36Z",
+        "url": "https://github.com/libp2p/go-libp2p/commit/03349944847387886bf06b65993b2a03c1e6d12d"
+      },
+      "github_license_detection": "MIT",
+      "latest_release": {
+        "tag": "v0.51.0",
+        "published_at": "2026-10-23T07:14:53Z",
+        "url": "https://github.com/libp2p/go-libp2p/releases/tag/v0.51.0"
+      }
+    },
+    {
+      "repository": "OneBusAway/onebusaway-application-modules",
+      "url": "https://github.com/OneBusAway/onebusaway-application-modules",
+      "archived": false,
+      "created_at": "2012-02-12T20:12:38Z",
+      "pushed_at": "2026-10-13T04:00:57Z",
+      "default_branch": "main",
+      "latest_default_branch_commit": {
+        "sha": "919e6d02118c8f68bab023ca9581832667a2adf1",
+        "committed_at": "2026-10-13T03:50:06Z",
+        "url": "https://github.com/OneBusAway/onebusaway-application-modules/commit/919e6d02118c8f68bab023ca9581832667a2adf1"
+      },
+      "github_license_detection": "NOASSERTION",
+      "latest_release": {
+        "tag": "v2.7.2",
+        "published_at": "2026-10-13T04:00:58Z",
+        "url": "https://github.com/OneBusAway/onebusaway-application-modules/releases/tag/v2.7.2"
+      }
+    },
+    {
+      "repository": "OneBusAway/onebusaway-gtfs-realtime-exporter",
+      "url": "https://github.com/OneBusAway/onebusaway-gtfs-realtime-exporter",
+      "archived": false,
+      "created_at": "2012-02-12T21:54:56Z",
+      "pushed_at": "2024-05-16T22:13:58Z",
+      "default_branch": "master",
+      "latest_default_branch_commit": {
+        "sha": "2236c3ff6dbd12c70a8075213739d7fe5f8c9055",
+        "committed_at": "2020-11-20T18:29:07Z",
+        "url": "https://github.com/OneBusAway/onebusaway-gtfs-realtime-exporter/commit/2236c3ff6dbd12c70a8075213739d7fe5f8c9055"
+      },
+      "github_license_detection": "NOASSERTION",
+      "latest_release": null
+    },
+    {
+      "repository": "OneBusAway/maglev",
+      "url": "https://github.com/OneBusAway/maglev",
+      "archived": false,
+      "created_at": "2025-05-04T06:05:46Z",
+      "pushed_at": "2026-10-23T21:04:57Z",
+      "default_branch": "main",
+      "latest_default_branch_commit": {
+        "sha": "d4ff86d0a8963a24f66a0a3c85880e0091d9afa7",
+        "committed_at": "2026-10-23T08:47:55Z",
+        "url": "https://github.com/OneBusAway/maglev/commit/d4ff86d0a8963a24f66a0a3c85880e0091d9afa7"
+      },
+      "github_license_detection": "NOASSERTION",
+      "latest_release": {
+        "tag": "0.1.1",
+        "published_at": "2026-02-19T04:11:54Z",
+        "url": "https://github.com/OneBusAway/maglev/releases/tag/0.1.1"
+      }
+    },
+    {
+      "repository": "OneBusAway/vehicle-positions",
+      "url": "https://github.com/OneBusAway/vehicle-positions",
+      "archived": false,
+      "created_at": "2026-02-18T07:33:11Z",
+      "pushed_at": "2026-10-22T05:33:32Z",
+      "default_branch": "main",
+      "latest_default_branch_commit": {
+        "sha": "98c31c2d65c586eb92a4d00b37c8ef6002f94a98",
+        "committed_at": "2026-10-22T05:33:32Z",
+        "url": "https://github.com/OneBusAway/vehicle-positions/commit/98c31c2d65c586eb92a4d00b37c8ef6002f94a98"
+      },
+      "github_license_detection": "Apache-2.0",
+      "latest_release": null
+    },
+    {
+      "repository": "OneBusAway/trip-updates",
+      "url": "https://github.com/OneBusAway/trip-updates",
+      "archived": false,
+      "created_at": "2026-04-22T04:15:01Z",
+      "pushed_at": "2026-05-01T06:04:30Z",
+      "default_branch": "develop",
+      "latest_default_branch_commit": {
+        "sha": "5ac88a44fa55c2305ee84bad2c386427c25c2017",
+        "committed_at": "2026-05-01T06:04:28Z",
+        "url": "https://github.com/OneBusAway/trip-updates/commit/5ac88a44fa55c2305ee84bad2c386427c25c2017"
+      },
+      "github_license_detection": "GPL-3.0",
+      "latest_release": null
+    },
+    {
+      "repository": "traccar/traccar",
+      "url": "https://github.com/traccar/traccar",
+      "archived": false,
+      "created_at": "2012-04-16T08:33:49Z",
+      "pushed_at": "2026-10-23T14:56:36Z",
+      "default_branch": "master",
+      "latest_default_branch_commit": {
+        "sha": "4531cbba6af59418412e48691d68c7f3ebb30e6c",
+        "committed_at": "2026-10-23T14:56:30Z",
+        "url": "https://github.com/traccar/traccar/commit/4531cbba6af59418412e48691d68c7f3ebb30e6c"
+      },
+      "github_license_detection": "Apache-2.0",
+      "latest_release": {
+        "tag": "v6.16.0",
+        "published_at": "2026-09-27T00:20:15Z",
+        "url": "https://github.com/traccar/traccar/releases/tag/v6.16.0"
+      }
+    },
+    {
+      "repository": "opentripplanner/OpenTripPlanner",
+      "url": "https://github.com/opentripplanner/OpenTripPlanner",
+      "archived": false,
+      "created_at": "2011-07-18T16:15:38Z",
+      "pushed_at": "2026-10-23T15:17:46Z",
+      "default_branch": "dev-2.x",
+      "latest_default_branch_commit": {
+        "sha": "bc0eb6ef3323004f00aab46bd4656f5a75ebaacb",
+        "committed_at": "2026-10-22T22:37:39Z",
+        "url": "https://github.com/opentripplanner/OpenTripPlanner/commit/bc0eb6ef3323004f00aab46bd4656f5a75ebaacb"
+      },
+      "github_license_detection": "NOASSERTION",
+      "latest_release": {
+        "tag": "v2.10.0",
+        "published_at": "2026-09-09T09:14:20Z",
+        "url": "https://github.com/opentripplanner/OpenTripPlanner/releases/tag/v2.10.0"
+      }
+    },
+    {
+      "repository": "TheTransitClock/transitime",
+      "url": "https://github.com/TheTransitClock/transitime",
+      "archived": false,
+      "created_at": "2015-03-06T18:06:23Z",
+      "pushed_at": "2024-07-10T13:09:19Z",
+      "default_branch": "develop",
+      "latest_default_branch_commit": {
+        "sha": "dee040293bd82e72d7a99c36981959ad1264cfd5",
+        "committed_at": "2023-03-30T09:19:36Z",
+        "url": "https://github.com/TheTransitClock/transitime/commit/dee040293bd82e72d7a99c36981959ad1264cfd5"
+      },
+      "github_license_detection": "GPL-3.0",
+      "latest_release": {
+        "tag": "untagged-d6fe7b2bebe82bd22e90",
+        "published_at": "2021-01-28T12:47:33Z",
+        "url": "https://github.com/TheTransitClock/transitime/releases/tag/untagged-d6fe7b2bebe82bd22e90"
+      }
+    }
+  ]
+}
