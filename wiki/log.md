@@ -59,3 +59,12 @@
   집중 검증: 위 명령으로 구현자가 한 번 실행해 13개 통과. 메인 에이전트는 같은 전체 검사를 중복 실행하지 않음. 외부 오류 세부사항은 영어 원문과 한국어 해결 안내를 제공하며 운영체제 언어는 변경하지 않음.
 - Next: P01 scenario/evidence contract and P14a fast continuous checks; make real successful CI check names required after that work. Existing historical evidence is preserved; older documents have not all been retroactively translated.
   다음: P01 시나리오·증거 계약과 P14a 빠른 지속 검사. 해당 작업 후 실제 성공한 CI 검사 이름을 필수 등록. 과거 증거는 보존하며 모든 과거 문서를 소급 번역한 상태는 아님.
+
+## 2026-10-24 Committed CLI verification / 커밋된 CLI 직접 검증
+
+- Main agent executed three direct CLI checks on clean commit `e78fb82`: help exits 0 with EN/KO guidance, the synthetic corpus with `--require-ready` exits 1 and explains 0/100 in both languages, and a missing input exits 2 with recovery guidance.
+  메인 에이전트가 미커밋 변경 없는 `e78fb82`에서 CLI를 직접 검사했습니다. 도움말은 영어·한국어와 종료코드 0, 합성 자료 엄격 검사는 0/100 설명과 종료코드 1, 없는 파일 입력은 해결 안내와 종료코드 2를 확인했습니다.
+- [Exact commands, outputs and source identity](../research/evaluation-corpus/2026-10-24-bilingual-cli-verification.json) preserve the evidence. The focused suite was not repeated. This follow-up changes evidence and index/log documents only; tested implementation files are unchanged.
+  [정확한 명령·출력·소스 식별 정보](../research/evaluation-corpus/2026-10-24-bilingual-cli-verification.json)를 보존했습니다. 집중 테스트 전체는 반복하지 않았습니다. 후속 변경은 증거·인덱스·기록뿐이며 검증한 구현 파일은 바뀌지 않았습니다.
+- Pilot status remains design-only. Handoff target is the pushed `docs/local-pilot-validation-plan` branch; main remains protected and unchanged by this task's commits.
+  파일럿은 계속 설계 단계입니다. 결과 전달 대상은 푸시한 `docs/local-pilot-validation-plan` 브랜치이며 이번 커밋으로 보호된 main을 변경하지 않습니다.

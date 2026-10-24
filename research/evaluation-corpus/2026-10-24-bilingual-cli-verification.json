@@ -1,0 +1,49 @@
+{
+  "checked_on": "2026-10-24",
+  "timezone": "Asia/Seoul",
+  "tested_source_commit": "e78fb82bb389623933f8e27a9e374ea258ae4d24",
+  "dirty_before_run": false,
+  "python_version": "3.13.7",
+  "source_sha256": "f5aef13767b0f8f7b55855038fa19e06e91442172c32b77c37b0c0884d54e2ba",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "tools.evaluation_corpus",
+        "--help"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "stdout": "usage / 사용법: evaluation_corpus.py [-h] [--require-ready] corpus\n\nValidate RouteLens M0 evaluation inputs; never claim routing quality.\nRouteLens M0 평가 입력을 검사하며 경로 품질을 검증했다고 주장하지 않습니다.\n\npositional arguments / 위치 인자:\n  corpus           evaluation corpus JSON file / 평가 자료 JSON 파일\n\noptions / 옵션:\n  -h, --help       show this help message and exit / 도움말을 표시하고 종료합니다\n  --require-ready  exit 1 unless both real-road case quotas are met / 경로·매칭의\n                   실제 도로 사례 기준을 모두 충족하지 못하면 종료 코드 1을 반환합니다\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "tools.evaluation_corpus",
+        "fixtures/evaluation/synthetic-seoul.json",
+        "--require-ready"
+      ],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "stdout": "{\n  \"schema_version\": \"0.1\",\n  \"region_id\": \"seoul-synthetic-example\",\n  \"counts\": {\n    \"route\": {\n      \"total\": 1,\n      \"reviewed_open_data\": 0,\n      \"synthetic\": 1,\n      \"draft\": 1,\n      \"uncertain\": 0\n    },\n    \"match\": {\n      \"total\": 1,\n      \"reviewed_open_data\": 0,\n      \"synthetic\": 1,\n      \"draft\": 1,\n      \"uncertain\": 0\n    }\n  },\n  \"ready_for_m0_measurement\": false,\n  \"blockers\": [\n    \"route: 0/100 reviewed open-data cases\",\n    \"match: 0/100 reviewed open-data cases\"\n  ],\n  \"blockers_ko\": [\n    \"route: 검토된 공개 자료 사례 0/100개\",\n    \"match: 검토된 공개 자료 사례 0/100개\"\n  ],\n  \"corpus_sha256\": \"94dc327a01644928415f102557c0a98fbc3e4c8fe7276eb945075c78e4dc88d9\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "tools.evaluation_corpus",
+        "fixtures/evaluation/nonexistent.json"
+      ],
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "stdout": "",
+      "stderr": "Invalid corpus: [Errno 2] No such file or directory: 'fixtures/evaluation/nonexistent.json'\n평가 자료가 유효하지 않습니다. 파일을 읽을 수 있는지, JSON 형식과 입력 계약에 맞는지 확인하세요.\n"
+    }
+  ],
+  "conclusion_en": "Three direct CLI checks passed; this does not test the planned local pilot.",
+  "conclusion_ko": "CLI 직접 검사 세 가지가 통과했으며 계획된 로컬 파일럿을 검증한 것은 아닙니다."
+}

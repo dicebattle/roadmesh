@@ -37,6 +37,7 @@ Current next task: **P01 scenario/evidence contract and P14a continuous checks**
 - [오픈소스 조사 스냅샷](../research/upstream-snapshot.json): 최초 조회 결과, 기존 내용을 덮어쓰지 않음.
 - [검사 모듈 실행 결과](../research/evaluation-corpus/2026-10-24-synthetic-report.json): 합성 예제의 미준비 판정과 파일 해시.
 - [집중 테스트](../tests/test_evaluation_corpus.py): 오류 입력·중복·출처·준비 수 경계 검증.
+- [Bilingual CLI verification / 이중 언어 CLI 검증](../research/evaluation-corpus/2026-10-24-bilingual-cli-verification.json): direct commands and outputs from a clean committed source / 커밋된 깨끗한 소스의 직접 명령과 출력.
 
 ## 기록 방법
 
