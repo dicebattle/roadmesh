@@ -404,6 +404,19 @@ export function renderSimulationReport(data: SimulationReportData): string {
       gap: 6px;
       align-items: center;
     }
+    #nodes-section > label {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      width: 100%;
+      max-width: 640px;
+      min-width: 0;
+    }
+    #nodes-section > label > select {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
     a {
       color: var(--truth);
       overflow-wrap: anywhere;

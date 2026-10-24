@@ -1,0 +1,15 @@
+{
+  "source_commit": "ead191413f40c16067965c31b483f5a8f0a4219c",
+  "report": "data/p09-main-20261025/report.html",
+  "browser": "Codex in-app browser",
+  "viewport": {"width":390,"height":844},
+  "language": "ko",
+  "document_scroll_width": 534,
+  "overflow": [
+    {"id":"node-event","width":501.5,"right":534.4765625},
+    {"id":"node-route","width":441.5,"right":474.4765625}
+  ],
+  "status": "FAIL",
+  "message_en": "The new P09 selectors overflow a390px viewport; preserve this observation and fix only their layout.",
+  "message_ko": "새 P09 선택 상자가390픽셀 화면을 넘습니다. 이 관측을 보존하고 해당 배치만 수정합니다."
+}

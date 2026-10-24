@@ -476,3 +476,13 @@ Main directly ran the actual node pipeline four times. Development01 failed the 
 Development04 passed32/32. Main independently checked2,938 original hashes, nine standard Ed25519 signatures, same-daemon repeated baseline, original two-node detours and exact-expiry baseline shapes/ETA. Request deadline30.028s and observed drain28.974s met the original bounds. Main confirmed32 processes,19 containers and one volume absent. Earlier failures and main cleanup observations are retained in the [development report](../research/pilot/2026-10-25-p09/development/README.md). The initial unit source, fixes and compile evidence are separately archived; none of these dirty development runs replaces the required clean whole270 execution or fresh media.
 
 네 번째 실행은32개를 모두 통과했습니다. 메인은 원문 해시2,938개·표준서명9개·같은 엔진 반복 계산·두 노드 우회와 정확한 만료의 원경로를 독립 확인했습니다. 요청30.028초·정리28.974초로 원래 기준을 통과했고 프로세스32개·컨테이너19개·볼륨1개 부재를 확인했습니다. 앞선 실패와 별도 정리 확인을 보존하고, 미커밋 개발 결과를 깨끗한 전체270개·새 녹화의 대체 근거로 삼지 않습니다.
+
+## 2026-10-25 — Clean270 passed, mobile correction / 깨끗한270개 통과·모바일 보완
+
+Main ran clean ead1914:235 tests and the fresh whole270 passed. Independent whole/node/traffic plus prior aggregation/signature/state audits passed;7,112 original hashes and44 native P09 requests were checked. Main separately observed the owned P07/P08/P09 databases. The first standalone P09 inspector omitted the standard JWS typ field; only that inspector was corrected to the existing exact P07 contract, and its original failure remains preserved.
+
+메인이 깨끗한 커밋의235개와 새 전체270개를 실행했고, 독립 전체/노드/교통 및 기존 집계/서명/영속 상태 검사를 통과했습니다. 원문 해시7,112개·P09실제요청44건을 검사하고 실제 세 단계 DB도 별도로 조회했습니다. 최초 P09검사기의 표준JWS헤더 가정 오류만 기존 계약에 맞게 고쳤으며 실패 원문을 보존했습니다.
+
+Actual IAB review then found P09 selectors overflowing390px to534px. Sol integration added only scoped label/select layout rules. Main confirmed both languages and expanded expiry view at390px with32 cases and no script errors. The old execution remains preserved and is not relabeled. A new clean whole run and fresh recording follow the CSS correction. [Layout evidence](../research/pilot/2026-10-25-p09/layout/README.md).
+
+실제 내장브라우저 검토에서 P09선택상자가390화면을534로 늘리는 문제를 확인했습니다. Sol통합이 해당 선택상자/라벨 규칙만 추가했고 메인이 두 언어·펼친32개·만료화면을390픽셀·스크립트오류없음으로 확인했습니다. 이전 실행은 보존하고 소스를 바꿔 적지 않으며 수정 뒤 새 전체 실행·녹화를 진행합니다.
