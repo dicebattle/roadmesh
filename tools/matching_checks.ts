@@ -130,6 +130,25 @@ export function evaluateTraversals(
     boundary_errors_ms: errors,
   };
 }
+export function checkRejectedMatching(
+  inputPath: string,
+  graphDirectory: string,
+  output: string,
+): { rejected: boolean; error: string; completion_absent: boolean } {
+  let rejected = false,
+    error = "";
+  try {
+    runMatching(inputPath, graphDirectory, output);
+  } catch (cause) {
+    rejected = cause instanceof InputError;
+    error = String(cause);
+  }
+  return {
+    rejected,
+    error,
+    completion_absent: !existsSync(join(output, "manifest.json")),
+  };
+}
 export function runMatchingChecks(
   output: string,
   graph: GraphBundle,
@@ -474,23 +493,24 @@ export function runMatchingChecks(
   ]);
   for (const [name, input, bundle] of rejects) {
     write(root, name + ".input.json", input);
-    let rejected = false;
-    let error = "";
-    try {
-      runMatching(join(root, name + ".input.json"), bundle, join(root, name));
-    } catch (cause) {
-      rejected = cause instanceof InputError;
-      error = String(cause);
-    }
+    const rejectedOutput = join(root, "rejected-" + name);
+    const { rejected, error, completion_absent } = checkRejectedMatching(
+      join(root, name + ".input.json"),
+      bundle,
+      rejectedOutput,
+    );
     write(root, name + ".rejection.json", {
       status: rejected ? "EXPECTED_REJECTION" : "FAIL",
       error,
+      graph_directory: bundle,
+      output_directory: rejectedOutput,
+      completion_absent,
       message_en: "Invalid input rejection, not successful matching.",
       message_ko: "잘못된 입력 거부이며 성공한 매칭이 아닙니다.",
     });
     check(
       name + "-rejected",
-      rejected && !existsSync(join(root, name, "manifest.json")),
+      rejected && completion_absent,
       "Invalid input or tampered graph is refused before successful evidence.",
       "잘못된 입력·변조 그래프를 성공 증거 전에 거부했습니다.",
       true,

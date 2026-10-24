@@ -1,3 +1,5 @@
+import { restoreGraph, matchingEnvelope } from "./matching_helpers.js";
+import { checkRejectedMatching } from "../tools/matching_checks.js";
 import {
   evaluateTraversals,
   verifyMatchingEvidence,
@@ -274,4 +276,22 @@ test("P04 evidence verifier binds source, graph, raw files and result semantics 
   assert.throws(() =>
     verifyMatchingEvidence(directory, input, graph, source, result),
   );
+});
+
+test("tampered graph input manifest is separate from rejected matching output / 변조 그래프 입력 목록과 거부된 매칭 출력 분리", (t) => {
+  const root = temporary(t);
+  const graph = restoreGraph(join(root,"tampered-graph"));
+  writeFileSync(join(graph.directory, "config.json"), "\n", { flag: "a" });
+  const envelope = join(root, "input.json");
+  writeFileSync(envelope, JSON.stringify(matchingEnvelope()));
+  const output = join(root, "rejected-tampered-graph");
+  const before = readFileSync(join(graph.directory, "manifest.json"), "utf8");
+  const result = checkRejectedMatching(envelope, graph.directory, output);
+  assert.equal(result.rejected, true);
+  assert.equal(result.completion_absent, true);
+  assert.equal(
+    readFileSync(join(graph.directory, "manifest.json"), "utf8"),
+    before,
+  );
+  assert.throws(() => readFileSync(join(output, "manifest.json")));
 });
