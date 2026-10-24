@@ -78,3 +78,13 @@ New core focused tests: 18/18 passed. Viewer/media focused checks covered proven
 P04 matching, P05–P10 traffic/distributed nodes, full P11/P12, P13 and the complete P14b fault matrix remain unfinished. This is not evidence of real-road accuracy, public-node trust, actual mobile operation or production readiness. See the [full goal audit](../../../docs/18-goal-progress.md).
 
 P04 매칭·P05~P10 교통/분산 노드·P11/P12 전체·P13·P14b 전체 장애 행렬은 미완료입니다. 실제 도로 정확도·공개 노드 신뢰·실제 모바일·운영 준비의 증거가 아닙니다. 전체 목표 판정표를 참고하세요.
+
+## Hosted verification / 원격 검증
+
+[Actions run 40080824622](https://github.com/dicebattle/routelens/actions/runs/40080824622) passed on `3f735adc6c6ad2b5b9e6a1ba101d81504a1b78f5`: Node 22 **71/71**, Node 24 **71/71**, current-media checks, a **fresh real Docker integration with 30/30 assertions**, and Required checks. Main downloaded the artifacts and independently checked root/P03 file hashes, clean source identity, 187/177/10/8 counts, exact upper crossings, replay truth hashes and cleanup state. [Hosted proof](hosted-verification.json).
+
+위 커밋의 원격 실행에서 Node22·24 각각71/71, 미디어 검사, **새 실제 Docker 통합30/30**, 종합 검사가 통과했습니다. 메인이 결과물을 내려받아 원본 해시·깨끗한 출처·독립 개수/시각·재생 정답 해시·정리를 확인했습니다.
+
+The hosted engine ran on Linux amd64, while local evidence used Linux arm64 containers. Their graph IDs intentionally differ because the image identity is bound into the graph ID. Each run's P02 and P03 preserve the same exact graph ID internally. The implementation fingerprint matches the recording on both platforms; no cross-platform graph-byte identity is claimed.
+
+원격 엔진은Linux amd64, 로컬 컨테이너는Linux arm64입니다. 이미지 식별을 그래프 식별에 결합하므로 그래프 ID가 의도적으로 다르며 실행 내부 P02·P03은 각각 같은 정확한 ID를 유지합니다. 구현 지문은 녹화와 같지만 플랫폼 간 그래프 바이트 일치를 주장하지 않습니다.

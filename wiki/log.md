@@ -217,3 +217,12 @@
   최초 테스트용 Chrome 실행은 파일 부재로 종료됐고 설치된 Chrome의 격리 프로필로 녹화했습니다. 선택적 favicon의404외에 보고서 스크립트 오류는 없었습니다. 사용자 프로필/세션을 재사용하거나 닫지 않았으며 현재 미디어 검사가 통과했습니다.
 - Captured reports/media are prepared for GitHub delivery. Runtime files remain identical to the recorded implementation; only evidence/docs and temporary-output ignore rules follow. Full hosted checks and artifact read-back are evaluated after push. The overall goal remains active: P04 onward and the complete pilot are not done.
   GitHub 반영용 캡처·보고서를 준비했고 녹화한 실행 코드는 그대로 유지하며 증거·문서·임시 출력 무시 규칙만 이어집니다. 원격 검사·결과물 재조회는 푸시 후 확인합니다. P04 이후 전체 파일럿은 아직 미완료이며 목표를 계속 유지합니다.
+
+## 2026-10-24 Hosted whole-module evidence / 원격 전체 구현 모듈 증거
+
+- [Actions 40080824622](https://github.com/dicebattle/routelens/actions/runs/40080824622) on pushed `3f735adc6c6ad2b5b9e6a1ba101d81504a1b78f5` passed Node22/24 (71/71 each), media validation, the actual fresh Docker integrated job and Required checks. Main downloaded all artifacts, checked the exact clean source, recomputed available root/P03 hashes and verified 30 assertions, independent counts/crossings, replay hashes and engine cleanup. [Hosted evidence](../research/pilot/2026-10-24-p03/hosted-verification.json).
+  푸시한 위 커밋에서 Node두버전각71개·미디어·실제새Docker통합·종합검사가 통과했습니다. 메인이 결과물을 내려받아 깨끗한 소스·원본 해시·30판정·독립 개수/시각·재생·정리를 확인했습니다.
+- Local/hosted image architectures differ (arm64/amd64), so graph IDs differ deliberately; each run preserves its own graph ID across modules. Runtime fingerprint matches the captured implementation. No protection bypass or graph-ID substitution occurred.
+  로컬/원격 이미지 아키텍처 차이에 따라 그래프 ID는 다르며 각 실행 내부에서는 정확한 식별을 유지합니다. 구현 지문은 녹화와 일치하고 보호 우회·그래프 치환은 없습니다.
+- Main inspected the official map-matching API and recorded [P04 design notes](../docs/19-p04-matching-design.md). Exact release response fields and exclusion/interpolation thresholds must be probed before coding. P04 has not been marked implemented, and the continuing full-project goal remains active.
+  공식 매칭 API를 확인하고 P04 설계 기록을 남겼습니다. 코딩 전에 고정 릴리스 필드·제외/보간 기준을 실제로 확인해야 합니다. P04 구현으로 표시하지 않으며 전체 목표를 계속 유지합니다.

@@ -17,13 +17,15 @@ The goal remains the complete local pilot in [P01–P14](11-local-pilot.md), not
 | P09 two nodes, P10 gateway/failover / 두 노드·중계/장애 전환 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P11 complete client, P12 complete fault matrix / 전체 화면·장애 행렬 | Evidence replay and incremental runner begin now / 증거 재생·점진 실행기부터 시작 | Partial design / 일부 설계 |
 | P13 local Cloudflare parity / Cloudflare 로컬 비교 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
-| P14b engine integration / 엔진 통합 검사 | Extend CI with current whole-system runner / 현재 전체 실행기를 CI에 연결 | Implementing partial coverage / 일부 범위 구현 중 |
+| P14b engine integration / 엔진 통합 검사 | Extend CI with current whole-system runner / 현재 전체 실행기를 CI에 연결 | Hosted current-module run verified; full matrix remains / 현재 모듈 원격 검증·전체 행렬 남음 |
 | Whole implemented-system simulation / 구현 모듈 전체 시뮬레이션 | [Fresh 5-stage report](../research/pilot/2026-10-24-p03/report.md) / 새5단계 보고서 | Locally verified / 로컬 검증 |
-| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/pilot/2026-10-24-p03/report.md) / 보고서·캡처 | Prepared; GitHub delivery pending / 준비·GitHub 반영 대기 |
-| README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | Prepared; publication pending / 준비·게시 대기 |
+| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/pilot/2026-10-24-p03/report.md) / 보고서·캡처 | Pushed with hosted verification / 푸시·원격 검증 |
+| README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | Pushed and media checks passed / 푸시·미디어 검사 통과 |
 | Refresh on implementation changes / 구현 변경 때 갱신 | `media:check` fingerprint/hash/README checks / 지문·해시·README 검사 | Locally verified / 로컬 검증 |
 | Research other AI-development READMEs / 다른 AI 개발 README 참고 | [Research notes](../wiki/sources/readme-presentation.md) | Source inspection complete / 출처 확인 |
 
 A green unit suite does not finish this goal. Completion requires the full module/scenario contract, actual process/network faults where required, inspected integrated evidence, current media/docs and verified GitHub delivery. Mark unmet or weak evidence as incomplete. Geographic 100/100, production deployment and actual mobile trials remain separate gates and must not be implied by synthetic success.
 
 단위 검사 성공만으로 목표를 완료하지 않습니다. 전체 모듈·시나리오 계약, 필요한 실제 프로세스/통신 장애, 검사한 통합 증거, 최신 미디어/문서, GitHub 반영이 필요합니다. 누락·약한 증거는 미완료로 둡니다. 실제 지역 100/100·운영 배포·실제 모바일 시험은 별도이며 합성 성공으로 주장하지 않습니다.
+
+Next design: [P04 matching notes](19-p04-matching-design.md). / 다음 설계는 P04 매칭 기록에 있습니다.
