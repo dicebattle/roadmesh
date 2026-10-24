@@ -1,0 +1,33 @@
+[
+  {
+    "phase": "AFTER_LEASE",
+    "interrupted_pid": 88850,
+    "recovered_pid": 88851,
+    "interrupted_attempts": [],
+    "recovered_attempts": [
+      "synthetic-engine/731d019fb728b1d20260229ccdc7c6278401f4243caa0375cb9d89d2c4a7aa39-2-f82092c1-8029-486c-b402-ccddc4209fa9"
+    ]
+  },
+  {
+    "phase": "AFTER_MATCH",
+    "interrupted_pid": 88879,
+    "recovered_pid": 88928,
+    "interrupted_attempts": [
+      "synthetic-engine/8ccfb3129f34fc60799c93f5d7c286162d506be49e4226e851f59c0e1571a803-1-58e10edc-c33a-4f2b-80a4-8c1ed17e6647"
+    ],
+    "recovered_attempts": [
+      "synthetic-engine/8ccfb3129f34fc60799c93f5d7c286162d506be49e4226e851f59c0e1571a803-2-03e07510-3be5-4749-8159-b69069f0dcad"
+    ]
+  },
+  {
+    "phase": "AFTER_INSERT",
+    "interrupted_pid": 88954,
+    "recovered_pid": 88989,
+    "interrupted_attempts": [
+      "synthetic-engine/a7287e9faacd4c12f1e56224019382f1a64f25e0c21b13d49bd06dbaaced120e-1-17ada20a-3351-4da8-b87a-2cdd104b77b4"
+    ],
+    "recovered_attempts": [
+      "synthetic-engine/a7287e9faacd4c12f1e56224019382f1a64f25e0c21b13d49bd06dbaaced120e-2-e48444a6-e3e7-410a-96f6-6327b4dedc1e"
+    ]
+  }
+]

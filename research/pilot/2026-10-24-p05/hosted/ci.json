@@ -1,0 +1,45 @@
+{
+  "run_url": "https://github.com/dicebattle/routelens/actions/runs/40095704921",
+  "source_commit": "168f16a4eb963954ca17b724380e6a500f1b1a06",
+  "status": "success",
+  "jobs": [
+    {
+      "name": "Implemented-module simulation",
+      "conclusion": "success",
+      "job_id": 120877401298
+    },
+    {
+      "name": "Node 22",
+      "conclusion": "success",
+      "job_id": 120877401437
+    },
+    {
+      "name": "Node 24",
+      "conclusion": "success",
+      "job_id": 120877401658
+    },
+    {
+      "name": "Required checks",
+      "conclusion": "success",
+      "job_id": 120878155422
+    }
+  ],
+  "unit_counts": {
+    "node22": {
+      "tests": 137,
+      "passed": 137,
+      "failed": 0
+    },
+    "node24": {
+      "tests": 137,
+      "passed": 137,
+      "failed": 0
+    }
+  },
+  "unit_logs_sha256": {
+    "22": "db51181d63301d237016c1b3789eb36e8e9efec638cf3341934e260770539135",
+    "24": "4af6f8381cdd33de7fc1269e155320ed792f52d308ab6b587489bd0ce6f4e772"
+  },
+  "message_en": "Main read completed job logs and independently inspected downloaded simulation artifacts. The source commit is the push head, not a PR merge-test commit.",
+  "message_ko": "메인이 완료된 작업 로그·내려받은 통합 원문을 검사했습니다. 소스 커밋은 푸시한 브랜치이며 PR 병합시험 커밋과 구분합니다."
+}

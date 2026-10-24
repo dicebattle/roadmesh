@@ -1,0 +1,38 @@
+{
+  "source_commit": "0c7036af545c1f454ab2749cd29b17ce3c78811c",
+  "implementation_sha256": "4bc4113c39fa8377452d45ae03dbf340e77a5fb9fc0aa98f3a8b123ba9b52463",
+  "report_path": "research/pilot/2026-10-24-p05/report.html",
+  "report_sha256": "3d30654094ab01e0cc79e8d0a4a0cb596070b7b94980327f35550e5c96ade843",
+  "capture_method": "Actual isolated Chrome playback recorded for 19.35 s at 1280×720, 20 fps using Playwright CLI; full recording converted to H.264 and 10 fps GIF. English/Korean map replay and PostgreSQL recovery details were inspected. / 격리 Chrome의 실제 재생을 1280×720·20fps로 19.35초 녹화하고 전체를 H.264·10fps GIF로 변환했습니다. 한영 지도 재생·PostgreSQL 복구 상세를 검사했습니다.",
+  "raw_capture_sha256": "bb33b954a1d79baf54e4f91ef2c2a445e4abcb5301416d400f1c24f7d89c4486",
+  "assets": [
+    {
+      "path": "docs/media/demo.mp4",
+      "sha256": "4e86a6ada80cbdea83079a9a19973a345e54ca9ed9ca429aa8ce7aa175824be4"
+    },
+    {
+      "path": "docs/media/demo.gif",
+      "sha256": "ba0af80cab560cedfdc066d2ee341822029f5e208d31064ed1fe516fbf30f6b9"
+    },
+    {
+      "path": "docs/media/report-en.png",
+      "sha256": "f02a84f2512d741706f2d3e2883b61982ba8d822ad2313455bd69b70f73920a0"
+    },
+    {
+      "path": "docs/media/report-ko.png",
+      "sha256": "43751f930a15dd5346ef5865d1df17247e5b5062e0e72334e4302e59c3df0e42"
+    },
+    {
+      "path": "docs/media/report-checks.png",
+      "sha256": "01f50ea5140b3dc68a2fa54f1550c71369ebca8f3d527496ba3437d70ee5ad58"
+    },
+    {
+      "path": "docs/media/report-recovery-en.png",
+      "sha256": "8836487dc5e69b7be3a10e4b973c08859a1125e7d35e7dd124ab7fee14eb73fd"
+    },
+    {
+      "path": "research/pilot/2026-10-24-p05/report-data.json",
+      "sha256": "80f29dae63677f1009f7d4957e4ac766d05c0190d6cde5a869836f9a1f133353"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "captured_at_utc": "2026-10-24T11:52:53.492Z",
+  "role": "main-independent-live-read-only",
+  "run_id": "691769b6-da3e-47cd-9b91-cedb736a7d27",
+  "result": {
+    "states": [
+      {
+        "state": "READY",
+        "count": 5
+      },
+      {
+        "state": "SUCCEEDED",
+        "count": 4
+      }
+    ],
+    "samples": 3204,
+    "raw_payloads": 2067,
+    "traversals": 84,
+    "unique_ids": 84,
+    "event_codes": [
+      {
+        "code": "ACCEPTED",
+        "count": 61
+      },
+      {
+        "code": "LEASED",
+        "count": 8
+      },
+      {
+        "code": "SUCCEEDED",
+        "count": 4
+      }
+    ]
+  }
+}

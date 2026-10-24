@@ -1,0 +1,13 @@
+{
+  "engine_id": "4a8bc2fff9c43e36526a0514790446e351012a538ba8f7f2d364e157413b231b",
+  "worker_pid": 17511,
+  "worker_exit": {
+    "code": null,
+    "signal": "SIGKILL"
+  },
+  "attempt_mount": "/home/runner/work/_temp/simulation-evidence/ingestion/synthetic-engine/c8df1b027e44686423ac25146e80dc2ddfbf78d1dd75cb3c3015d42fa11d6edf-1-119e4b45-f84f-4871-8e69-d4fed436bc39",
+  "engine_running": true,
+  "engine_paused": true,
+  "message_en": "An executing engine was paused, then its worker was killed; the exact orphan remains for cleanup.",
+  "message_ko": "실행중 엔진을 일시정지한 뒤 처리자를 종료했으며 정확한 잔여 컨테이너가 정리 대상으로 남았습니다."
+}

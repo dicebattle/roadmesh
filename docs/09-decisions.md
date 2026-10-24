@@ -53,3 +53,9 @@ Use pinned Valhalla map snapping behind a TypeScript adapter; do not fork its ma
 The user requires actual Seoul roads rather than a simplified invented network. Keep tiny-city as regression coverage and make a pinned OSM Seoul-envelope graph the primary integration/demo. Add explicit latitude-aware curved-polyline geometry, independent synthetic movement and observations-only matching. Preserve source/ODbL attribution and full-denominator evaluation. This transition now precedes P05; prior tiny-city evidence remains valid only within its original scope. [Contract](21-seoul-road-simulation.md).
 
 사용자가 단순 가상망 대신 실제 서울 도로를 요구했습니다. tiny-city는 회귀용으로 유지하고 고정 OSM 서울 범위 그래프를 주요 통합·데모로 사용합니다. 위도를 반영한 곡선 계산·독립 합성 이동·관측 전용 매칭을 추가하고 출처/ODbL·전체 분모 평가를 보존합니다. P05보다 먼저 전환하며 과거 tiny-city 증거는 원래 범위 안에서만 유효합니다.
+
+## ADR-022: PostgreSQL durable ingestion / PostgreSQL 영속 수집
+
+Use PostgreSQL transactions and row locks for the local P05 queue, with explicit trip finalization, bounded raw retention and fencing. Separate accepted storage, repeated computation and once-only committed effects. Use existing Seoul observations and real process termination to prove recovery. [Executable contract](22-p05-executable-contract.md).
+
+로컬 P05 큐는 PostgreSQL 트랜잭션·행 잠금을 사용하며 여행 완료·제한된 원문 보관·소유 세대 검사를 명시합니다. 저장 접수·계산 반복·한 번만 반영된 저장 효과를 구분하고 서울 관측과 실제 프로세스 종료로 복구를 증명합니다.

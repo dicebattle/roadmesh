@@ -1,0 +1,50 @@
+{
+  "counts": {
+    "contributors": 22,
+    "trips": 36,
+    "batches": 140,
+    "samples": 6363,
+    "traversals": 215,
+    "events": 190,
+    "raw_payloads": 0
+  },
+  "trips": [
+    {
+      "trip_id": "a-expired-first",
+      "vehicle_id": "downtown-clean",
+      "state": "EXPIRED",
+      "fence": "1",
+      "attempt": 0,
+      "final_seq": 0,
+      "first_received_at": "2026-10-24T00:11:12.539Z",
+      "last_activity_at": "2026-10-24T00:11:12.539Z",
+      "raw_expires_at": "2026-10-24T00:21:12.539Z",
+      "tombstone_expires_at": "2026-10-25T00:11:12.539Z",
+      "lease_until_utc": null,
+      "sample_count": 2,
+      "batch_count": 1,
+      "raw_payload_count": 0,
+      "traversal_count": 0,
+      "matching_digest": null
+    },
+    {
+      "trip_id": "z-ready-after-expired",
+      "vehicle_id": "downtown-clean",
+      "state": "SUCCEEDED",
+      "fence": "1",
+      "attempt": 1,
+      "final_seq": 0,
+      "first_received_at": "2026-10-24T00:21:12.540Z",
+      "last_activity_at": "2026-10-24T00:21:12.540Z",
+      "raw_expires_at": "2026-10-24T00:31:12.540Z",
+      "tombstone_expires_at": "2026-10-25T00:21:12.540Z",
+      "lease_until_utc": null,
+      "sample_count": 2,
+      "batch_count": 1,
+      "raw_payload_count": 0,
+      "traversal_count": 0,
+      "matching_digest": "e9b4709e0f213cb1c5e06fe956ca5851d0ff7476ce188a0129d1d01c698f9721"
+    }
+  ],
+  "traversals": []
+}

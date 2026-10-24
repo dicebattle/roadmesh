@@ -14,18 +14,23 @@
     "pilot:checks": "node dist/tools/pilot_checks.js",
     "graph:check": "node dist/tools/test_graph.js",
     "simulate": "node dist/tools/vehicle_simulator.js",
-    "simulation:check": "node dist/tools/seoul_checks.js",
+    "simulation:check": "node dist/tools/pilot_integration.js",
     "report:serve": "node dist/tools/report_server.js",
     "media:check": "node dist/tools/media_manifest.js",
     "match": "node dist/tools/map_matcher.js",
-    "simulation:tiny": "node dist/tools/simulation_checks.js"
+    "simulation:tiny": "node dist/tools/simulation_checks.js",
+    "ingestion:check": "node dist/tools/ingestion_checks.js",
+    "ingestion:serve": "node dist/tools/ingestion_service.js",
+    "ingestion:worker": "node dist/tools/ingestion_worker.js"
   },
   "dependencies": {
     "jsonc-parser": "3.3.1",
+    "pg": "8.23.1",
     "random-js": "2.1.0"
   },
   "devDependencies": {
     "@types/node": "22.20.5",
+    "@types/pg": "8.23.1",
     "typescript": "5.9.3"
   }
 }

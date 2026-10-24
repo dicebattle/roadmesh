@@ -101,6 +101,26 @@ export interface SimulationReportData {
       excluded_traversals: number;
     }[];
   };
+  ingestion?: {
+    scenario_count: number;
+    assertions_passed: number;
+    assertions_total: number;
+    submitted_batches: number;
+    duplicate_responses: number;
+    stored_traversals: number;
+    reference_traversals: number;
+    recovered_workers: number;
+    cleanup_verified: boolean;
+    events: { phase: string; code: string; elapsed_ms: number }[];
+    cases: {
+      case_id: string;
+      status: string;
+      message_en: string;
+      message_ko: string;
+      evidence_path: string;
+    }[];
+    evidence: { name_en: string; name_ko: string; path: string }[];
+  };
   region?: {
     profile_id: string;
     name_en: string;
@@ -499,6 +519,13 @@ export function renderSimulationReport(data: SimulationReportData): string {
         <div class="provenance" id="provenance"></div>
       </aside>
     </div>
+    <section id="ingestion-section" class="checks" hidden>
+      <h2 data-en="Durable receipt, interruption and recovery" data-ko="영속 접수·중단·복구"></h2>
+      <p data-en="Actual local HTTP, PostgreSQL and separate workers. Receipt follows commit; matching completion is a later state. Logical primary-store deletion excludes WAL and backups." data-ko="실제 로컬 HTTP·PostgreSQL·별도 처리자입니다. 접수는 커밋 후이며 매칭 완료는 이후 상태입니다. 주저장소 논리삭제이며 WAL·백업 삭제를 뜻하지 않습니다."></p>
+      <p id="ingestion-counts"></p><div id="ingestion-evidence"></div>
+      <details><summary data-en="Database acceptance, recovery and deletion checks" data-ko="DB 접수·복구·삭제 검사"></summary><div id="ingestion-cases"></div></details>
+      <details><summary data-en="Actual process and HTTP event timeline" data-ko="실제 프로세스·HTTP 이벤트 순서"></summary><div id="ingestion-events"></div></details>
+    </section>
     <section id="matching-section" class="checks" hidden>
       <h2
         data-en="Map matching and complete traversals"
@@ -726,6 +753,7 @@ export function renderSimulationReport(data: SimulationReportData): string {
       );
       const v = $("vehicle").options[0];
       if (v) v.textContent = lang === "en" ? "All vehicles" : "전체 차량";
+      if(data.ingestion){const i=data.ingestion;$('ingestion-counts').textContent=lang==='en'?i.assertions_passed+'/'+i.assertions_total+' checks · '+i.submitted_batches+' HTTP requests · '+i.duplicate_responses+' duplicates · '+i.stored_traversals+'/'+i.reference_traversals+' stored/reference traversals · '+i.recovered_workers+' recovered workers · cleanup '+i.cleanup_verified:i.assertions_passed+'/'+i.assertions_total+'검사 · HTTP '+i.submitted_batches+'회 · 중복 '+i.duplicate_responses+'회 · 저장/기준 통과 '+i.stored_traversals+'/'+i.reference_traversals+'개 · 처리자복구 '+i.recovered_workers+'회 · 정리 '+i.cleanup_verified;$('ingestion-evidence').replaceChildren();i.evidence.forEach(item=>{const p=node('p',item['name_'+lang]+' · ',$('ingestion-evidence'));evidence(item.path,p)});$('ingestion-cases').replaceChildren();i.cases.forEach(item=>{const p=node('p',item.status+' · '+item['message_'+lang]+' · ',$('ingestion-cases'));evidence(item.evidence_path,p)});$('ingestion-events').replaceChildren();i.events.forEach(item=>node('p',(item.elapsed_ms/1000).toFixed(2)+' s · '+item.phase+' · '+item.code,$('ingestion-events')))}
       matchingDetails();
       if (data.region) {
         $("regional-note").replaceChildren();
@@ -1025,6 +1053,7 @@ export function renderSimulationReport(data: SimulationReportData): string {
           : "현재까지 예정된 누락: ") + omissions;
       $("time").value = String(time);
     }
+    $('ingestion-section').hidden=!data.ingestion;
     $("matching-section").hidden = !data.matching;
     $("matching-toggle").hidden = !data.matching;
     $("regional-note").hidden = !data.region;

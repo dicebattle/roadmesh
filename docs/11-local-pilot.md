@@ -1,8 +1,8 @@
 # Local pilot design / 로컬 파일럿 설계
 
-Status: P01's bounded event runner and P14a's workflow are implemented; verification is recorded in the [module page](../wiki/modules/pilot-runner.md) and work log. [P02](../wiki/modules/test-graph.md) is also implemented and verified; [P03](../wiki/modules/vehicle-simulation.md) and current-module replay are locally verified; P04 is locally and on hosted Docker verified ([report](../research/pilot/2026-10-24-p04/report.md)); P05–P10, full P11/P12, P13 and the complete P14b matrix remain unfinished. No production deployment, real driving trial, or cloud reliability claim is implied.
+Status: P01's bounded event runner and P14a's workflow are implemented; verification is recorded in the [module page](../wiki/modules/pilot-runner.md) and work log. [P02](../wiki/modules/test-graph.md) is also implemented and verified; [P03](../wiki/modules/vehicle-simulation.md) and current-module replay are locally verified; P04 is locally and on hosted Docker verified ([report](../research/pilot/2026-10-24-p04/report.md)); P05 is locally and on hosted Linux verified ([report](../research/pilot/2026-10-24-p05/report.md)); P06–P10, full P11/P12, P13 and the complete P14b matrix remain unfinished. No production deployment, real driving trial, or cloud reliability claim is implied.
 
-상태: P01 범위의 이벤트 실행기와 P14a 워크플로를 구현했고 검증은 [모듈 문서](../wiki/modules/pilot-runner.md)와 작업 기록에 남깁니다. [P02](../wiki/modules/test-graph.md)도 구현·검증됐으며 [P03](../wiki/modules/vehicle-simulation.md)·현재 모듈 재생도 로컬 검증됐으며 P04도 로컬·원격Docker 검증됐으며([보고서](../research/pilot/2026-10-24-p04/report.md)) P05~P10·P11/P12 전체·P13·P14b 전체 행렬은 미완료입니다. 운영 배포·실주행 시험·클라우드 안정성 검증을 뜻하지 않습니다.
+상태: P01 범위의 이벤트 실행기와 P14a 워크플로를 구현했고 검증은 [모듈 문서](../wiki/modules/pilot-runner.md)와 작업 기록에 남깁니다. [P02](../wiki/modules/test-graph.md)도 구현·검증됐으며 [P03](../wiki/modules/vehicle-simulation.md)·현재 모듈 재생도 로컬 검증됐으며 P04도 로컬·원격Docker 검증됐으며([보고서](../research/pilot/2026-10-24-p04/report.md)) P05도 로컬·원격 검증했으며([보고서](../research/pilot/2026-10-24-p05/report.md)) P06~P10·P11/P12 전체·P13·P14b 전체 행렬은 미완료입니다. 운영 배포·실주행 시험·클라우드 안정성 검증을 뜻하지 않습니다.
 
 Primary simulation now uses [actual Seoul roads](21-seoul-road-simulation.md); tiny-city stays a regression fixture. [Local proof](../research/seoul/2026-10-24/report.md) passes tiny48 + Seoul29 locally and on hosted Linux.
 
@@ -98,17 +98,21 @@ Report bundle: `manifest.json`, `assertions.json`, `summary.md` (EN then KO), co
 
 ## 4. The test world / 시험 도로망
 
-Build a small original OSM XML fixture with two legal alternatives between origin and destination, a one-way street, an explicit turn restriction, a disconnected segment, and two close parallel roads. Keep known geometry and legal paths as independent expected data, not values copied from Valhalla's output. Use mature OSM/Valhalla tooling for parsing and graph construction.
+The primary integrated world is now the pinned **actual Seoul OSM road network** in [the Seoul contract](21-seoul-road-simulation.md). Every new module must connect to that fresh graph and its synthetic vehicles. Preserve full curved geometry, original source hashes and ODbL attribution. Three selected corridors exercise the current implementation; they do not model all Seoul traffic.
 
-출발지·목적지 사이 합법적 대안 경로 두 개, 일방통행, 명시적 회전 금지, 끊어진 도로, 가까운 평행도로를 포함한 작은 자체 OSM XML 시험자료를 만듭니다. 정답 지형과 합법 경로는 Valhalla 출력에서 복사하지 않고 독립된 기대값으로 둡니다. 파싱·그래프 생성에는 기존 OSM/Valhalla 도구를 사용합니다.
+주요 통합 시험 환경은 서울 계약의 **고정된 실제 서울 OSM 도로망**입니다. 새 모듈은 이 그래프를 새로 생성하고 합성 차량과 연결해야 합니다. 곡선 지형·원본 해시·ODbL 출처를 보존하며 현재의 세 구간 검증을 서울 전체 교통량 재현으로 표현하지 않습니다.
 
-The first integration demo slows enough edges on the initially preferred route that the second route is unambiguously better. Avoid ties. Predict the expected direction of change and use a documented numeric tolerance for travel-time comparison; do not require equal JSON or exact floating-point equality across engine versions.
+Keep the original tiny OSM fixture only as fast regression coverage for legal alternatives, one-way roads, forbidden turns, disconnection and close parallel roads. Its independent expected paths remain useful, but it must not replace the primary Seoul simulation or demo. This supersedes the earlier tiny-world-only integration plan.
 
-첫 통합 시연에서는 처음 선택되는 경로의 충분한 구간을 느리게 만들어 두 번째 경로가 명확히 유리해지게 합니다. 동률을 피하고, 비용 변화 방향과 문서화한 시간 허용 오차를 검사합니다. 엔진 버전 간 JSON 전체 일치나 부동소수점 완전 일치를 요구하지 않습니다.
+기존 작은 OSM 시험자료는 합법 대안·일방통행·금지 회전·단절·평행도로의 빠른 회귀용으로만 유지합니다. 독립 정답 경로는 계속 사용하되 주요 서울 통합·데모를 대신하지 않습니다. 이 결정이 앞선 작은 도로망만의 통합 계획을 대체합니다.
 
-Map display tiles and routing graphs are separate artifacts. P11 may draw a GeoJSON fixture directly on MapLibre with a plain background; it does not need external map tiles, an API key, or a new map-file pipeline to visualize the first synthetic test.
+For P06–P08, add a reproducible synthetic congestion population on actual Seoul corridors and verify a legal baseline and alternative route on the fresh graph before asserting a traffic-induced detour. Slow sufficient real directed edges to avoid a tie. Define the expected direction of route/cost change and numeric tolerance before implementation. Do not fabricate an alternative or copy an engine answer into an independent expected value. The tiny equivalent remains a separate regression.
 
-화면 지도 타일과 경로 계산 그래프는 별개입니다. P11의 첫 합성 시험에서는 MapLibre의 단순 배경 위에 시험 GeoJSON을 직접 그려 외부 지도 타일·API 키·추가 지도 생성 작업 없이 확인할 수 있습니다.
+P06~P08에서는 실제 서울 구간에 재현 가능한 합성 정체 차량군을 추가하고 새 그래프의 합법 기본/대안 경로부터 확인한 뒤 교통정보에 따른 우회를 판정합니다. 실제 방향 구간을 충분히 느리게 해 동률을 피하고 구현 전에 비용·경로 변화 방향과 허용 오차를 정합니다. 대안을 꾸미거나 엔진 응답을 독립 정답으로 복사하지 않습니다. 작은 도로망의 동등 사례는 별도 회귀로 남깁니다.
+
+Map display and routing graphs are separate artifacts. The current offline evidence viewer draws actual OSM-derived vector geometry; a complete MapLibre navigation client remains P11 work. No external map API key is needed for this local replay.
+
+표시 지형과 경로 계산 그래프는 별도 자료입니다. 현재 증거 화면은 실제 OSM 파생 벡터를 외부 연결 없이 그리며 완전한 MapLibre 내비게이션 클라이언트는 P11 작업입니다. 로컬 재생에는 외부 지도 API 키가 필요하지 않습니다.
 
 ## 5. Required scenarios / 필수 시나리오
 
@@ -136,7 +140,7 @@ Use actual process termination for crash claims and actual request timeout/drop 
 
 ## 6. Implementation order and proof gates / 구현 순서와 증명 기준
 
-1. **P01 + P14a:** scenario/result contracts and a small local runner; CI for the existing validator and new contract tests. Deterministic output and deliberate failure reporting are verified; see the module evidence. P02 is also verified; P03 is locally verified; P04 is locally verified; P05 is next.
+1. **P01 + P14a:** scenario/result contracts and a small local runner; CI for the existing validator and new contract tests. Deterministic output and deliberate failure reporting are verified; see the module evidence. P02 is also verified; P03 is locally verified; P04 and P05 are locally verified; P06 is next.
 2. **P02:** build the tiny real Valhalla graph and prove baseline legal routing. Pin source/image identity after inspecting actual release artifacts.
 3. **P03 → P04:** generate trajectories, run real map matching, compare with known ground truth.
 4. **P05 → P06:** reliable collection and pure aggregation, with crash/retry and event-time boundary evidence.
@@ -145,7 +149,7 @@ Use actual process termination for crash claims and actual request timeout/drop 
 7. **P11 → P12:** inspect the user flow in the in-app browser, then execute the complete fault matrix through one runner.
 8. **P13 + P14b:** local Cloudflare adapter parity and required integration checks; geographic and hosted tests remain separately labeled.
 
-1. **P01 + P14a:** 시나리오·결과 계약과 작은 로컬 실행기, 기존 검사 도구와 새 계약 검사의 CI. 결정적 결과와 의도적 실패 판정을 검증했으며 모듈 증거에 기록했습니다. P02도 검증했으며 P03도 로컬 검증했으며 다음은 P05입니다.
+1. **P01 + P14a:** 시나리오·결과 계약과 작은 로컬 실행기, 기존 검사 도구와 새 계약 검사의 CI. 결정적 결과와 의도적 실패 판정을 검증했으며 모듈 증거에 기록했습니다. P02도 검증했으며 P03도 로컬 검증했으며 P05도 로컬·원격 검증했으며 다음은 P06입니다.
 2. **P02:** 작은 실제 Valhalla 그래프 생성과 합법 기본 경로 확인. 실제 릴리스 자료를 확인한 뒤 소스·이미지를 고정합니다.
 3. **P03 → P04:** 궤적 생성, 실제 도로 매칭, 독립 정답과 비교.
 4. **P05 → P06:** 중단·재시도·관측시간 경계를 검사하는 수집·집계.

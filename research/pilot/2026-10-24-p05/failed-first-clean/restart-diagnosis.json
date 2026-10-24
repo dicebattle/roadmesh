@@ -1,0 +1,37 @@
+{
+  "records": [
+    {
+      "stage": "before",
+      "mapping": "127.0.0.1:32775",
+      "host_tcp_open": true
+    },
+    {
+      "stage": "after",
+      "wait_ms": 0,
+      "mapping": "127.0.0.1:32776",
+      "runtime_port": 32775,
+      "container_tcp_ready": true,
+      "old_host_tcp_open": false,
+      "current_host_tcp_open": true
+    },
+    {
+      "stage": "after",
+      "wait_ms": 500,
+      "mapping": "127.0.0.1:32776",
+      "runtime_port": 32775,
+      "container_tcp_ready": true,
+      "old_host_tcp_open": false,
+      "current_host_tcp_open": true
+    },
+    {
+      "stage": "after",
+      "wait_ms": 2000,
+      "mapping": "127.0.0.1:32776",
+      "runtime_port": 32775,
+      "container_tcp_ready": true,
+      "old_host_tcp_open": false,
+      "current_host_tcp_open": true
+    }
+  ],
+  "cleanup_verified": true
+}

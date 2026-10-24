@@ -1,0 +1,32 @@
+{
+  "counts": {
+    "contributors": 22,
+    "trips": 38,
+    "batches": 142,
+    "samples": 6367,
+    "traversals": 215,
+    "events": 201,
+    "raw_payloads": 0
+  },
+  "trips": [
+    {
+      "trip_id": "engine-failure",
+      "vehicle_id": "downtown-clean",
+      "state": "FAILED",
+      "fence": "6",
+      "attempt": 3,
+      "final_seq": 0,
+      "first_received_at": "2026-10-24T00:21:13.040Z",
+      "last_activity_at": "2026-10-24T00:21:13.040Z",
+      "raw_expires_at": "2026-10-24T00:31:13.040Z",
+      "tombstone_expires_at": "2026-10-25T00:21:13.040Z",
+      "lease_until_utc": null,
+      "sample_count": 2,
+      "batch_count": 1,
+      "raw_payload_count": 0,
+      "traversal_count": 0,
+      "matching_digest": null
+    }
+  ],
+  "traversals": []
+}
