@@ -152,3 +152,37 @@
   푸시 실행의 Node 22·24·종합 검사가 통과했습니다. 메인이 두 결과물의 10개 CLI 사례·8개 목록을 내려받아 깨끗한 SHA·로컬 해시와 대조했습니다. PR #1에 계획·구현 이력을 함께 반영하며 최종 기록 커밋은 실행 코드를 바꾸지 않습니다.
 - Limits: synthetic scheduling only; no claim of national road quality or language performance advantage. Next module has a recorded P02 design and will use real Valhalla graph/route evidence.
   한계: 합성 일정 검증이며 전국 도로 품질·언어 성능 우위는 주장하지 않습니다. 다음 P02는 기록된 설계에 따라 실제 Valhalla 그래프·경로 증거를 검증합니다.
+
+## 2026-10-24 Protected integration and P02 start / 보호된 병합·P02 시작
+
+- User-authorized [PR #1](https://github.com/dicebattle/routelens/pull/1) merged with commit `dca0c5219acf3cfece4045e1f731397d2fe36694` after final-head Node 22/24 and Required checks passed. Feature tip `abab4098c8b077e90ecb396691dc28cb561f2534` was verified remotely before merge. Both `docs/local-pilot-validation-plan` and `feat/p01-p14a-local-runner` are ancestors of the new main; all branches existing at the request are integrated without deleting their names.
+  사용자 요청에 따라 PR #1을 최종 HEAD 필수 검사 통과 후 위 커밋으로 병합했습니다. 기능 브랜치의 원격 해시를 확인했고 계획·기능 브랜치 모두 새 main의 조상임을 검사했습니다. 요청 당시 모든 브랜치 작업을 통합했으며 브랜치 이름은 삭제하지 않았습니다.
+- Protection read-back: strict Required checks from Actions app 15368, PR requirement, admin enforcement, blocked force push/deletion, approvals 0 for solo maintenance. No bypass was used. P02 begins on `feat/p02-test-graph` from updated main, under the recorded contract. Sol owns runtime/tests/fixtures; main owns design, independent verification and evidence.
+  보호 재조회에서 Actions 앱 15368 필수 검사·최신 기준 반영·PR 필수·관리자 적용·강제 푸시/삭제 차단·단독 관리 승인 수 0을 유지했습니다. 보호 우회는 없습니다. 갱신 main에서 P02 브랜치를 만들고 기록된 계약에 따라 Sol이 코드·검사·자료, 메인이 설계·독립 검증·증거를 담당합니다.
+
+## 2026-10-24 P02 implementation and review / P02 구현·검토
+
+- Main designed [P02](../docs/15-p02-test-graph.md), reviewed fixture geometry/expectations and runtime/test code. Sol (`gpt-6.1-sol`, `bilingual_cli`) implemented TypeScript orchestration, graph-evidence validation, a fictional 11-way XML/JSON fixture, pinned Valhalla/Osmium Dockerfile and 15 focused tests. Main also recorded the next [P03 design](../docs/16-p03-vehicle-simulation.md); P03 remains unimplemented.
+  메인이 P02 설계·지형/기대값·실행/테스트 코드를 검토했고 위 Sol이 TypeScript 실행 관리·증거 검사·가상 도로 11개·고정 엔진 Dockerfile·집중 검사 15개를 구현했습니다. 다음 P03 설계도 기록했으며 P03 구현은 아직 없습니다.
+- Review corrections before final proof: same-OD alternatives; required expectations cannot be omitted; stored-engine versus original-fixture direction separated; actual no-path JSON/exit 1 recognized; edge IDs stored as strings; whole graph identity binds produced tile hashes; engine-evidence mismatches return 1 rather than input-error 2. Runtime/source/host/resource limits are recorded without claiming measured peak memory.
+  최종 증거 전에 같은 출발/도착 우회·기대값 누락 거부·엔진/원본 방향 구분·실제 경로 없음 응답·문자열 구간 ID·타일 해시 결합·엔진 불일치 종료코드를 보정했습니다. 실제 실행/소스/호스트/한도를 기록하고 최대 메모리 실측으로 표현하지 않습니다.
+- Sol's first development integration failed on an incorrect assumption that version output had a Valhalla prefix; exit 2, no completed manifest and cleanup were observed. After correcting the version check, `npm exec --yes --package=node@22.23.4 -- npm run graph:check -- --output data/p02-development-02` passed 8 assertions (22 directed mappings, six route cases and cleanup) in 4642.510583 ms. This dirty-source run preceded the final edge-ID/graph-identity metadata changes and is not final clean-source proof.
+  최초 개발 통합은 버전 접두사 가정으로 실패했으며 종료코드 2·완료 목록 없음·정리를 확인했습니다. 보정 후 위 명령으로 22개 방향 대응·6경로·정리의 8판정이 통과했습니다. 미커밋 개발 실행이며 최종 식별자 보정 이전이므로 최종 깨끗한 증거로 사용하지 않습니다.
+- Focused validation: initial `npm test` stopped at compilation due to a misplaced metadata field; corrected before tests. The next actual test run passed 47/48 in 1168.555583 ms. One new test incorrectly assumed a particular stored shape orientation. It was corrected to use an explicitly reversed unit input while retaining actual-response checks. Strict build then passed, followed by only the failing case: `npm exec --yes --package=node@22.23.4 -- node --test --test-name-pattern 'engine shape direction' dist/tests/test_graph.test.js` → 1/1 PASS, 90.5945 ms. Already-passing tests were not repeated locally. Final full 48-case result will come from CI.
+  최초 검사는 메타데이터 필드 위치 때문에 컴파일에서 중단돼 수정했습니다. 다음 실제 검사는 47/48 통과했으며 신규 한 검사의 저장 지형 방향 가정이 잘못됐습니다. 실제 응답 검사는 유지하고 반전 입력을 명시해 보정한 뒤 엄격 빌드·실패 검사 하나만 재실행하여 통과했습니다. 이미 통과한 검사는 로컬에서 반복하지 않고 최종 48개 결과는 CI로 확인합니다.
+- Main now commits implementation before independent Docker execution. Hosted checks remain engine-free P14a; P14b and forced supervisor-termination recovery remain separate work. Sol verified no owned P02 containers remained after development checks.
+  메인이 구현을 먼저 커밋한 뒤 독립 Docker 검증을 실행합니다. 원격 검사는 엔진 없는 P14a이며 P14b·감독 프로세스 강제 종료 복구는 별도입니다. Sol은 개발 검사 후 소유 컨테이너가 없는 것을 확인했습니다.
+
+## 2026-10-24 P02 independent proof / P02 독립 증명
+
+- Main directly ran `/Users/dice/.npm/_npx/361c55be1121897e/node_modules/node/bin/node dist/tools/test_graph.js --output data/p02-main-20261024` on clean `7d68fd0e980b8b1c246498a3bd2c29330c22c735`. Eight assertions passed, including 22 directed edge mappings and six route cases. Total 6341.543167 ms includes warm-image preparation; it is not a production benchmark or peak-memory measurement.
+  메인이 위 깨끗한 소스에서 Node 22.23.4로 직접 실행해 22방향 대응·6경로·정리의 8판정이 통과했습니다. 준비 포함 6341.543167ms는 이미지가 이미 있는 실행이며 운영 벤치마크·최대 메모리 측정이 아닙니다.
+- Main independently inspected raw route/trace responses, expected way sequences, forbidden transition absence, exact 442/exit-1 negative responses, unique string IDs, car-access flags, source/runtime/host and all input/PBF/config/tile hashes. Recomputed graph identity from inputs/image/engine/tile hashes. Actual pre-cleanup container inspection confirms no network or published ports and CPU 2/2 GiB limits. Post-run Docker listing has zero owned containers. Reusing output returns 2 and preserves existing hashes.
+  메인이 원본 경로/구간 응답·도로 순서·금지 전환 부재·정확한 오류/종료코드·문자열 ID·통행권한·출처·전체 파일 해시를 독립 검사하고 그래프 식별을 다시 계산했습니다. 실제 컨테이너 조회로 통신/포트 없음·자원 한도를 확인했고 실행 후 잔여 소유 컨테이너 0개·기존 출력 보존을 확인했습니다.
+- [CI 40070623970](https://github.com/dicebattle/routelens/actions/runs/40070623970) on the same implementation passed Node 22/24 and Required checks. Main inspected logs: both versions report 48 passed, 0 failed/skipped. Hosted P14a remains engine-free. [Preserved proof](../research/pilot/p02-main-2026-10-24.json), [module](modules/test-graph.md).
+  같은 구현의 CI에서 Node 22·24·종합 검사가 통과했고 메인이 로그의 버전별 48통과·실패/생략 0개를 확인했습니다. 원격 P14a는 엔진을 실행하지 않으며 실제 엔진 증거는 로컬 실행입니다. 위 증거·모듈 문서를 보존합니다.
+- Next is P03 with its design already recorded; P04 matching, traffic, two-node reliability and the complete pilot remain. User-authorized protected integration follows after the final documentation head passes required checks; no protection bypass.
+  다음은 설계가 기록된 P03이며 P04 매칭·교통·두 노드 신뢰성·전체 파일럿은 남아 있습니다. 사용자 요청의 보호된 병합은 최종 문서 HEAD 필수 검사 후 수행하며 보호를 우회하지 않습니다.
+
+- Final consistency check: 21 current documentation pages had no missing relative file links. Updated the geographic module's next-step pointer to P03; its real-road quota and readiness behavior remain unchanged. Final branch SHA is verified against origin before protected PR integration.
+  최종 일관성 검사에서 현재 문서 21개의 상대 파일 링크 누락은 없었습니다. 실제 지역 모듈의 다음 단계만 P03으로 맞추고 실제 도로 기준·준비 동작은 유지했습니다. 보호된 PR 병합 전에 작업 브랜치 SHA를 원격과 대조합니다.

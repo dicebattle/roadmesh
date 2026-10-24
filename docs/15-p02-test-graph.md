@@ -34,9 +34,9 @@ Use real locate/trace responses to map each fixture label to actual directed gra
 
 ## Outputs and acceptance / 출력과 통과 조건
 
-CLI: `npm run graph:check -- --output NEW_DIRECTORY` after install/build. Output: original XML copy, PBF, effective config, tiles, edge map, raw command/response evidence, assertions and bilingual summary, then `manifest.json`. Manifest includes source commit/dirty state, fixture/config/PBF/tile hashes, engine/image versions, graph identity, resource limits, actual elapsed time and cleanup status. A graph identity binds inputs/config/engine; do not promise equal tile bytes across platforms without measuring them. Artifacts remain in ignored data; commit compact inspected evidence.
+CLI: `npm run graph:check -- --output NEW_DIRECTORY` after install/build. Output: original XML copy, PBF, effective config, tiles, edge map, raw command/response evidence, assertions and bilingual summary, then `manifest.json`. Manifest includes source commit/dirty state, fixture/config/PBF/tile hashes, engine/image versions, graph identity, resource limits, actual elapsed time and cleanup status. A graph identity binds inputs/config/engine **and the produced tile hashes** so different graph artifacts cannot accidentally share an edge namespace; do not promise equal tile bytes across platforms without measuring them. Artifacts remain in ignored data; commit compact inspected evidence.
 
-설치·빌드 후 위 명령으로 실행합니다. 출력은 XML 복사본·PBF·실효 설정·타일·구간 대응·원본 명령/응답·판정·이중 언어 요약·최종 목록입니다. 목록에는 커밋/미커밋·파일 해시·엔진/이미지·그래프 식별·자원 한도·실제 시간·정리 상태를 기록합니다. 그래프 식별은 입력·설정·엔진에 결합하며 측정 없이 플랫폼 간 타일 바이트 일치를 보장하지 않습니다. 생성 자료는 Git 제외 경로, 검사한 핵심 증거는 커밋합니다.
+설치·빌드 후 위 명령으로 실행합니다. 출력은 XML 복사본·PBF·실효 설정·타일·구간 대응·원본 명령/응답·판정·이중 언어 요약·최종 목록입니다. 목록에는 커밋/미커밋·파일 해시·엔진/이미지·그래프 식별·자원 한도·실제 시간·정리 상태를 기록합니다. 그래프 식별은 입력·설정·엔진과 **생성 타일 해시**에 결합해 다른 그래프 산출물이 같은 구간 네임스페이스를 쓰지 않게 하며, 측정 없이 플랫폼 간 타일 바이트 일치를 보장하지 않습니다. 생성 자료는 Git 제외 경로, 검사한 핵심 증거는 커밋합니다.
 
 Required checks: baseline preferred way sequence; forced legal alternative through upper roads; forbidden AB→BG transition absent with a valid detour; forward one-way success and reverse refusal; disconnected no-path; complete verified edge mapping; cleanup success. Invalid/pre-existing output and injected command failures must fail without a completed manifest. Exit 0 means all assertions and cleanup passed; 1 means failed engine/behavior checks; 2 means invalid CLI/input/environment or output error. Unsupported/missing evidence is never PASS.
 
@@ -45,3 +45,13 @@ Required checks: baseline preferred way sequence; forced legal alternative throu
 P14a stays fast and engine-free. P02 has focused unit tests plus a direct Docker integration command, independently executed by main on a clean commit. Hosted engine jobs and the two-node scenario remain P14b/P09. Continue P03 only after inspecting P02's actual graph and route evidence.
 
 P14a는 엔진 없는 빠른 검사로 유지합니다. P02는 집중 단위 검사와 Docker 직접 통합 명령을 제공하고 메인이 깨끗한 커밋에서 독립 실행합니다. 원격 엔진 검사·두 노드 시나리오는 P14b/P09에 남습니다. P02 그래프·경로 증거를 검사한 다음 P03으로 진행합니다.
+
+## Review refinements / 검토 보정
+
+Use `edge_id` strings for directed engine IDs, consistent with the product protocol. `graph_id` identifies the complete graph bundle, never one edge. Check the engine's numeric ID is safe before converting it. Separate `engine_forward` (relative to stored engine shape) from `forward` (relative to original fixture from/to nodes); derive fixture direction from geometry rather than assuming both conventions match.
+
+제품 계약대로 엔진 구간 ID는 `edge_id` 문자열로 기록합니다. `graph_id`는 전체 그래프 묶음이며 개별 구간 번호가 아닙니다. 엔진 숫자 ID의 정밀도 안전성을 확인한 뒤 변환합니다. 저장 지형 기준 `engine_forward`와 원본 시험 도로 기준 `forward`를 분리하고, 같은 방향 규칙이라고 가정하지 않고 지형에서 원본 방향을 계산합니다.
+
+Reject missing/duplicate route expectations before engine execution. Same-OD upper-route expectations are `[101,103,104,105,106,102]`, including partial start/end roads. Valhalla one-shot no-path responses return process exit 1 plus error 442; require both and the expected response structure. Executable version output is `3.9.1` without an obligatory name prefix. These were checked against upstream source/actual executables, not inferred from process success alone.
+
+엔진 실행 전에 경로 기대값 누락·중복을 거부합니다. 같은 출발/도착 상단 경로는 일부 시작·끝 도로를 포함한 위 순서입니다. Valhalla 단일 요청의 경로 없음은 프로세스 종료코드 1·오류 442와 정해진 응답 구조를 함께 검사합니다. 버전 출력은 이름 접두사가 필수가 아닌 `3.9.1`입니다. 공식 소스·실행 파일에서 확인한 내용이며 종료 성공만으로 추정하지 않았습니다.

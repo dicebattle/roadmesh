@@ -2,15 +2,15 @@
 
 Open-source traffic aggregation and federated routing, built around existing routing engines.
 
-RouteLens is derived from Metro Lens. Implemented tools: the evaluation-corpus validator and P01's deterministic event runner with English/Korean evidence. P14a adds fast automated checks; verification is recorded in the work log. The full navigation pilot is not implemented. Start with the [P01/P14a module](wiki/modules/pilot-runner.md) and [development workflow](docs/12-development-workflow.md). Work is pushed to feature branches; `main` is protected.
+RouteLens is derived from Metro Lens. Implemented tools: the evaluation-corpus validator and P01's deterministic event runner with English/Korean evidence. P14a adds fast automated checks; verification is recorded in the work log. P02 also builds a real synthetic Valhalla graph and verifies road legality. The full navigation pilot is not implemented. Start with the [P01/P14a module](wiki/modules/pilot-runner.md) and [development workflow](docs/12-development-workflow.md). Work is pushed to feature branches; `main` is protected.
 
-RouteLens는 Metro Lens에서 파생됐습니다. 시험자료 검사 도구와 영어·한국어 증거를 남기는 P01 결정적 이벤트 실행기를 구현했고 P14a 빠른 자동 검사를 추가했습니다. 검증 결과는 작업 기록에 남깁니다. 전체 내비게이션 파일럿은 아직 미구현입니다. [P01/P14a 모듈](wiki/modules/pilot-runner.md)과 [개발 작업 절차](docs/12-development-workflow.md)를 참고하세요. 작업 결과는 작업 브랜치로 푸시하고 main은 보호합니다.
+RouteLens는 Metro Lens에서 파생됐습니다. 시험자료 검사 도구와 영어·한국어 증거를 남기는 P01 결정적 이벤트 실행기를 구현했고 P14a 빠른 자동 검사를 추가했습니다. 검증 결과는 작업 기록에 남깁니다. P02는 실제 Valhalla 합성 그래프 생성·통행 규칙도 검증합니다. 전체 내비게이션 파일럿은 아직 미구현입니다. [P01/P14a 모듈](wiki/modules/pilot-runner.md)과 [개발 작업 절차](docs/12-development-workflow.md)를 참고하세요. 작업 결과는 작업 브랜치로 푸시하고 main은 보호합니다.
 
 RouteLens는 운전자가 제공한 주행 관측을 검증해 도로별 교통정보로 만들고, 독립적으로 운영되는 서버들이 같은 지도와 교통정보를 사용해 자동차 경로를 계산하도록 하는 프로젝트입니다.
 
-**Status: M0 input validation and P01 event scheduling exist; navigation, traffic collection and deployment do not.** Performance/accuracy targets in the plan are not measured achievements.
+**Status: M0 input validation, P01 event scheduling and P02 synthetic graph checks exist; navigation, traffic collection and deployment do not.** Performance/accuracy targets in the plan are not measured achievements.
 
-**현재 상태: M0 입력 검사와 P01 이벤트 일정 실행은 구현됐으며 내비게이션·교통 수집·배포는 미구현입니다.** 계획의 성능·정확도 수치는 실측 달성 결과가 아닙니다.
+**현재 상태: M0 입력 검사·P01 이벤트 일정·P02 합성 그래프 검사는 구현됐으며 내비게이션·교통 수집·배포는 미구현입니다.** 계획의 성능·정확도 수치는 실측 달성 결과가 아닙니다.
 
 현재 상태와 근거는 [프로젝트 위키](wiki/index.md), 누적 변경은 [작업 기록](wiki/log.md)에서 확인합니다. 이후 계획·구현·검증도 코드와 함께 저장소에 기록합니다.
 
@@ -76,11 +76,21 @@ npm run --silent pilot -- fixtures/pilot/success.json --output data/p01-example
 npm run --silent pilot:checks -- --output data/p01-checks
 ```
 
-## 다음 구현 작업
+## Real graph verification / 실제 그래프 검증
 
-Next after P01/P14a verification: P02, a tiny synthetic Valhalla graph with legal-route and forbidden-turn checks. The real-road RM-001 work remains a separate geographic evaluation gate; synthetic inputs do not satisfy it. See the [updated roadmap](docs/05-roadmap.md).
+[P02](wiki/modules/test-graph.md) uses Docker, Osmium and pinned Valhalla. Initial image preparation needs network; graph execution disables network. Use a new output directory:
 
-P01/P14a 검증 이후 다음은 작은 합성 Valhalla 그래프와 합법 경로·금지 회전 검사를 만드는 P02입니다. 실제 도로 RM-001 작업은 별도 지역 평가 기준으로 유지하고 합성 자료로 충족시키지 않습니다. [갱신된 로드맵](docs/05-roadmap.md)을 참고하세요.
+[P02](wiki/modules/test-graph.md)는 Docker·Osmium·고정 Valhalla를 사용합니다. 최초 이미지 준비는 네트워크가 필요하고 그래프 실행은 통신을 차단합니다. 새 출력 폴더로 실행하세요.
+
+```sh
+npm run graph:check -- --output data/p02-example
+```
+
+## Next implementation / 다음 구현
+
+P01/P14a TypeScript migration and P02 real synthetic graph checks are verified. Next is [P03 vehicle/GPS simulation](docs/16-p03-vehicle-simulation.md), followed by P04 real map matching. Real-road RM-001 remains a separate 100/100 evaluation gate; synthetic inputs do not satisfy it.
+
+P01/P14a TypeScript 전환과 P02 실제 합성 그래프 검증을 마쳤습니다. 다음은 [P03 차량·GPS 생성](docs/16-p03-vehicle-simulation.md), 이후 P04 실제 도로 매칭입니다. 실제 도로 RM-001의 100/100 평가 조건은 별도로 유지합니다.
 
 ## 오픈소스 원칙
 
