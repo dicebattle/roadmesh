@@ -122,7 +122,10 @@ export class GatewayPhaseBarriers {
       waiter.fail(new GatewayError("NO_HEALTHY_NODE"));
   }
 }
-export type GatewayHttpController = Pick<GatewayController, "route" | "status">;
+export type GatewayHttpController = Pick<
+  GatewayController,
+  "route" | "status" | "context"
+>;
 /** Admission includes incomplete bodies. No public waiting queue is created.
  * 미완성 본문도 동시 접수 한도에 포함하고 공개 대기열은 만들지 않습니다. */
 export function createGatewayHttpServer(
@@ -142,6 +145,11 @@ export function createGatewayHttpServer(
       if (!authorized(request, config.token)) {
         request.resume();
         respond(response, 401, gatewayFailure("AUTH_REQUIRED"));
+        return;
+      }
+      if (request.url === "/v1/route-context" && request.method === "GET") {
+        const result = await controller.context();
+        respond(response, result.status, result.body);
         return;
       }
       if (request.url === "/internal/v1/status" && request.method === "GET") {

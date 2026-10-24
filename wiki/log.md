@@ -521,6 +521,28 @@ Main verified English/Korean390px layout,32 expanded P10 cases and no console er
 
 내장 브라우저에서 한영390픽셀·펼친32개·콘솔 오류/경고 없음을 확인했습니다. 실제59.75초 영상을 전체 변환·디코딩하고11개 화면을 확인했으며, 추출 시점만 해당 장면에 맞췄습니다. 촬영 프로세스9개·서버87317·검증 탭을 닫고 화면 크기를 원복했습니다. 원문10,512개는 세 압축 조각으로 보존하고 정확한 지도 제외28개·별도 추가 감사·직접 UI 링크298개를 기록했습니다. 메타데이터 작성 스크립트의 불필요한 닫는 괄호는 실행 전에 바로잡았고 검사·시뮬레이션 재실행은 없었습니다. 한영 README·보고서를 갱신했으며 실행이 끝난 뒤 P09 이력을 연결하면서 양쪽 누적 기록과 같은 실행 코드를 보존했습니다. 다음은 P10 푸시·원격 원문 검사·보호 반영입니다.
 
+## 2026-10-25 — P11 actual client design / P11 실제 클라이언트 설계
+
+Main fixed [P11](../docs/30-p11-route-client.md) before implementation, using official MapLibre/esbuild documentation and dated npm metadata. Reuse the original checkout on feat/p11-route-client while P10 hosted delivery remains isolated in routelens-p10. Existing Sol core owns six gateway freshness fields/context, local session server, owned scenario lifetime, private controls and dependencies; Sol integration owns the TypeScript MapLibre UI, build adapter,32 actual browser cases, whole334 integration, report and CI. Public API field changes preserve prior302 checks with exact extended allowlists. Main clarified one-way event time, genuine publication/key rotation and actual consent-revocation correction; no synthetic restoration of old accepted bytes. Native successes must pass the real gateway. Manual UI verification stays in IAB; automated browser regression has separate exact ownership and cleanup. P11 implementation is in progress, not verified.
+
+메인은 구현 전에 공식 문서·날짜별 npm 자료를 확인하고 P11을 고정했습니다. 원래 폴더의 새 브랜치를 재사용하고 P10 원격 반영 폴더와 분리했습니다. 기존 Sol 코어는 중계 신선도 여섯 필드·문맥·로컬 세션 서버·시나리오 수명·비공개 제어·의존성을, 통합 담당은 TypeScript 지도 화면·빌드·실제 브라우저32사례·전체334개 연결·보고서·CI를 맡습니다. 공개 필드 확장은 이전302개를 약화하지 않고 정확한 새 허용 목록으로 검사합니다. 모의 시간은 앞으로만 진행하며 실제 게시·키 교체·동의 철회 정정을 사용하고 과거 바이트를 억지로 되살리지 않습니다. 성공은 실제 중계를 통과해야 합니다. 수동 화면은 내장 브라우저로 확인하고 자동 회귀 브라우저는 별도로 소유·정리합니다. 아직 구현 중이며 검증 완료가 아닙니다.
+
+## 2026-10-25 — P11 review corrections before actual execution / 실제 실행 전 P11 검토 수정
+
+Main reviewed the local app server, gateway freshness, browser state and owned lifetime. Corrections prevent evidence-write failure from skipping cleanup, register cancellation before startup, reject new owned work after cancellation, bound late mutations and browser waits, and ensure the completion signal resolves even when final evidence cannot be written. The existing ingestion owner gained one optional bounded external-resource cleanup callback so interruption waits for the exact owned browser; no-hook behavior is retained. A separate public-type module preserves a Node-free browser contract without duplicated DTOs or runtime refactoring.
+
+메인은 화면 서버·중계 신선도·브라우저 상태·소유 자원 수명을 검토했습니다. 기록 실패로 정리가 생략되지 않게 하고 준비 전 취소 등록·취소 후 자원 생성 거부·지연 작업과 브라우저 대기 제한·최종 기록 실패 때도 완료 신호 보장을 반영했습니다. 기존 수집 실행기에는 정확한 소유 브라우저 종료를 기다리는 선택적인 유한 콜백 하나를 추가하고 기본 동작을 보존했습니다. 공개 타입을 분리해 계약 복제나 실행 로직 재작성 없이 브라우저에서 Node 의존성을 제거했습니다.
+
+Initial strict-build failures (three optional Boolean conditions, then transitive Node types) and their original logs remain in data/p11-core-verification. The current Node/browser/assets build passed. Core focused tests first passed25/26; the wrong-Host negative case used fetch, which normalized the intended invalid header. Changing that test transport to node:http sent the actual invalid Host and its one-case rerun passed. Healthy cases were not restarted. Startup/cancellation and cleanup-hook failure tests passed in the original set. Actual client simulation, clean whole334, independent inspection and current recording remain outstanding; no completion claim is made yet.
+
+초기 엄격 빌드의 선택적 불리언 세 곳·간접 Node 타입 오류와 원래 로그를 보존했습니다. 현재 서버·브라우저·자료 빌드는 통과했습니다. 코어 집중 검사는 처음25/26개를 통과했고 잘못된 Host를 보내려던 fetch가 헤더를 정상화한 한 항목은 node:http로 실제 잘못된 헤더를 보내도록 수정해 그 한 개만 재검사했습니다. 정상 항목은 반복하지 않았으며 준비 취소·정리 콜백 실패 검사도 원래 실행에서 통과했습니다. 실제 클라이언트 시뮬레이션·깨끗한 전체334개·독립 검사·최신 녹화는 아직 남아 있습니다.
+
+## 2026-10-25 — P11 actual browser32 and startup interruption / P11 실제 브라우저32개·준비 중 중단
+
+Main directly ran the frozen dirty P11 implementation on Node22.23.4. Actual32 passed; independent2,410 original hashes, four standard signatures,27 native pairs and12 browser/native/map-source bindings passed. Read-only live SQL confirmed15 traversals and all three independent consumers at the same sequence1/snapshot. A real pre-READY SIGTERM removed the recorded child, database container and volume in about588ms. Exact browser PID/start identities and recorded owned resources were absent after the normal run. [Development originals and limits](../research/pilot/2026-10-25-p11/development/README.md). P10 final PR failed its eight-admission success case and is being corrected in the other worktree; P11 clean whole/video/hosted delivery waits for that correction. No failed P10 run is relabeled as successful.
+
+메인이 고정한 미커밋 P11을 직접 실행해 실제32개와 원문 해시2,410개·표준서명4개·엔진27쌍·브라우저/엔진/지도 연결12건을 검사했습니다. 실제 SQL 조회에서 통과15개와 독립 수신자3개의 같은 순번·스냅샷을 확인했습니다. 준비 전 실제 종료 신호 뒤 약588밀리초 안에 기록한 자식·DB·볼륨이 사라졌고 정상 실행 뒤 브라우저 원식별과 소유 자원 부재도 확인했습니다. 개발 원문과 한계를 보존합니다. 다른 작업 폴더의 P10 최종 PR 동시 접수 성공 항목이 실패해 수정 중이며 P11의 깨끗한 전체·영상·원격 반영은 그 뒤 진행합니다. 실패한 P10 실행을 성공으로 바꾸지 않습니다.
+
 ## 2026-10-25 — P10 hosted originals verified / P10 원격 원문 검증
 
 Main inspected push40133930384 at ecc8c9e after both push/PR40133976749 passed302 whole and252 tests on each Node22/24. Independent9,691 present listed hashes, gateway38 native pairs/18 API bindings, prior module state/signatures and recorded cleanup passed. Exact19/16 map omissions remain explicit.10,381 original files are preserved in three archive parts, with exact inventory and reconstructed hash verified; three inspector-created supplements remain separate. Public README GIF and downloaded MP4 matched the actual59.75s recording. Runtime is unchanged. [Evidence](../research/pilot/2026-10-25-p10/hosted/README.md). Final-head checks and protected merge follow; P11 proceeds in its separate branch.
@@ -548,3 +570,23 @@ Clean8f9c9f7 passed all262 unit tests and the fresh actual-Seoul whole302. Main 
 IAB English/Korean390px had no overflow or console warnings/errors. Main captured actual60.45s playback, fully decoded MP4 and reviewed11 frames. Two extraction timestamps were corrected without changing or repeating the recording. Owned recording processes9, server12933 and tab16 are closed; viewport reset. Both READMEs and current media hashes are refreshed; old reports and hosted failures remain. New branch push, hosted original inspection and protected merge follow. P11 development is separately committed and awaits this corrected ancestry before clean whole334.
 
 내장 브라우저 한영390픽셀의 넘침·콘솔 오류/경고가 없었습니다. 실제60.45초 재생을 녹화해 MP4 전체 디코딩과11화면을 확인했고 영상 변경·재촬영 없이 두 추출 시점만 바로잡았습니다. 촬영 프로세스9개·서버12933·탭16을 종료하고 화면 크기를 원복했습니다. 한영 README·미디어 해시를 갱신하고 과거 보고서·원격 실패를 보존합니다. 다음은 새 푸시·원격 원문·보호 병합입니다. 별도 커밋의 P11은 수정 이력을 연결한 뒤 깨끗한 전체334개를 확인합니다.
+
+## 2026-10-25 — Corrected P10 ancestry enters P11 / 수정된 P10 이력을 P11에 연결
+
+Main merged the locally verified P10 worker correction and current report at a5be89e into the separately implemented P11 branch. Runtime changes merged without conflict; both append-only histories are retained and current status selects the corrected P10 and P11 development rows. Public browser contracts, six freshness fields, client lifecycle and worker cleanup remain together. The combined source still needs its own clean unit/whole334 verification and recording. P10 hosted checks continue separately; protected main ancestry remains required before P11 delivery.
+
+메인이 로컬 검증한 P10 작업 스레드 수정·최신 보고서를 별도 P11 브랜치에 연결했습니다. 실행 코드는 충돌 없이 합쳐졌고 양쪽 누적 기록을 보존하며 현재 상태에는 수정 P10·P11 개발 근거를 함께 유지했습니다. 공개 브라우저 계약·신선도 여섯 필드·클라이언트 수명·작업 스레드 정리를 보존합니다. 합쳐진 소스의 깨끗한 단위·전체334개와 녹화는 이제 검증하며 P10 원격 검사는 별도로 진행합니다. P11 최종 반영 전 보호 main 이력을 포함해야 합니다.
+
+## 2026-10-25 — P10 protected merge and P11 whole/client proof / P10 보호 병합·P11 전체와 화면 검증
+
+Main Sol continued the fixed P11 design and existing Sol core/integration implementation. Clean c63c556: Node22 npm test285; fresh actual-Seoul whole334; main independent12,225 inventoried hashes, client2,411 hashes/4 signatures/27 native pairs/12 browser-map bindings; prior module audits and exact cleanup passed. Read-only live SQL confirmed15 traversals and identical accepted state across gateway/two nodes. Main IAB390px EN/KO and actual Chrome102.8s capture passed baseline→publication invalidation→detour/short coverage→nodeB failover→expiry→unavailable. Demo8 successes bind to native originals;22 owned container names, volume and processes absent;9 capture identities gone. Archive12,898 originals with29 exact map omissions and separate supplemental audits. [Report](../research/pilot/2026-10-25-p11/report.md).
+
+메인 Sol이 기존 확정 설계와 Sol 코어·통합 구현을 이어받아 단위285개·실제 서울 전체334개를 직접 실행했습니다. 원문12,225개와 클라이언트 서명·엔진·브라우저 연결, 이전 모듈·정리를 확인했습니다. 실제 SQL의15통과와 세 수신자 동일 상태도 읽었습니다. 내장 브라우저390픽셀 한영·실제102.8초 녹화에서 경로 변경·장애 전환·만료·사용 불가를 확인했고 시연8성공·컨테이너22개·녹화9프로세스 정리를 검증했습니다. 원문12,898개·지도 제외29개·추가 감사를 구분해 보존했습니다.
+
+P10 push40139486989/PR40139490949 passed302 and Node22/24 each262. Main inspected9,932 hosted hashes,38 native pairs/18 replies and73 worker jobs. Two audit invocation-scope mistakes are preserved and corrected; no product rerun. PR11 merged the exact checked a5be89e as a4b96c6 with protection retained. P11 merged that ancestry after its clean run and capture; runtime bytes are unchanged. Remote/merge records are committed here rather than adding a documentation-only premerge CI cycle. [Hosted proof](../research/pilot/2026-10-25-p10-worker/hosted/README.md).
+
+P10 원격 두 건302개·Node각262개와 해시9,932개·엔진38쌍/응답18건·작업73개를 확인했습니다. 감사 호출 범위 실수 두 건은 보존·정정했고 제품을 다시 실행하지 않았습니다. 검사한 커밋 그대로 보호 병합하고 P11 실행·촬영 뒤 이력을 포함했으며 실행 바이트는 같습니다. 문서만 바꾼 병합 전 재검사 대신 원격·병합 근거를 이번 기록에 포함합니다.
+
+Next: P11 push, hosted original inspection and protected delivery; then fix P12's actual transport/no-path/revocation/vehicle-class/interrupt contract. The [gap draft](../docs/31-p12-scenario-gap-review.md) is explicitly not implemented. P13/P14b and geographic/production gates remain.
+
+다음은 P11 푸시·원격 원문·보호 반영과 P12 통신/경로 없음/철회/차량 종류/중단 계약 확정입니다. 공백 초안은 구현 완료가 아니며 P13/P14b와 실제 지역·운영 기준은 남습니다.

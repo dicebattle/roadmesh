@@ -1,0 +1,1900 @@
+{
+  "assertions_passed": 32,
+  "assertions_total": 32,
+  "cleanup_verified": true,
+  "browser_version": "156.0.8078.4",
+  "screenshots": [
+    {
+      "label_en": "Actual local Seoul map",
+      "label_ko": "실제 로컬 서울 지도",
+      "path": "screenshots/desktop-baseline.png"
+    },
+    {
+      "label_en": "Korean accepted-live route",
+      "label_ko": "한국어 교통 적용 경로",
+      "path": "screenshots/korean-live.png"
+    },
+    {
+      "label_en": "390px Korean route client",
+      "label_ko": "390픽셀 한국어 경로 화면",
+      "path": "screenshots/mobile390-live.png"
+    },
+    {
+      "label_en": "Exact expiry and restored baseline",
+      "label_ko": "정확한 만료와 기본 경로 복구",
+      "path": "screenshots/mobile390-expired.png"
+    }
+  ],
+  "routes": [
+    {
+      "label": "baseline",
+      "response": {
+        "request_id": "browser-fbcf25e5-be53-4f73-8f67-5826ff042b7c",
+        "request_sha256": "8ef2276cd75fe2de7ecf596b4355429c38c0a270ca5fece41274ce9caa01f4a1",
+        "graph_id": "c8776b21c34cc539595670be118c4e306953db9c93b9dc20099cf517e7105f8e",
+        "snapshot_id": null,
+        "sequence": null,
+        "generation_id": "e293bbb92e0e32707246864721631f57a09bb1a9eb289a4f1d7b9960f08f209f",
+        "traffic_sha256": "7d750823d66296108479a68b61aad4ad9091076cf69c928ccdc6cf4d506672fe",
+        "engine_version": "3.9.1",
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "costing_config_id": "valhalla-current-v1",
+        "node_id": "client-node-a",
+        "traffic_mode": "BASE_ONLY",
+        "distance_m": 2119,
+        "duration_s": 147.404,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              127.028976,
+              37.498447
+            ],
+            [
+              127.028495,
+              37.498295
+            ],
+            [
+              127.028253,
+              37.49822
+            ],
+            [
+              127.028245,
+              37.498191
+            ],
+            [
+              127.028235,
+              37.498179
+            ],
+            [
+              127.028207,
+              37.49817
+            ],
+            [
+              127.027955,
+              37.498097
+            ],
+            [
+              127.02794,
+              37.498087
+            ],
+            [
+              127.027925,
+              37.49807
+            ],
+            [
+              127.02792,
+              37.498047
+            ],
+            [
+              127.027932,
+              37.498029
+            ],
+            [
+              127.027944,
+              37.498021
+            ],
+            [
+              127.027965,
+              37.498016
+            ],
+            [
+              127.028008,
+              37.498009
+            ],
+            [
+              127.028307,
+              37.4981
+            ],
+            [
+              127.028439,
+              37.498141
+            ],
+            [
+              127.02872,
+              37.498225
+            ],
+            [
+              127.029417,
+              37.498437
+            ],
+            [
+              127.03025,
+              37.498687
+            ],
+            [
+              127.030896,
+              37.498883
+            ],
+            [
+              127.031073,
+              37.498934
+            ],
+            [
+              127.031296,
+              37.499003
+            ],
+            [
+              127.032002,
+              37.499209
+            ],
+            [
+              127.032827,
+              37.499465
+            ],
+            [
+              127.033126,
+              37.499557
+            ],
+            [
+              127.033998,
+              37.499817
+            ],
+            [
+              127.035532,
+              37.500276
+            ],
+            [
+              127.035699,
+              37.500325
+            ],
+            [
+              127.035937,
+              37.500399
+            ],
+            [
+              127.036339,
+              37.500517
+            ],
+            [
+              127.036737,
+              37.500635
+            ],
+            [
+              127.036793,
+              37.500652
+            ],
+            [
+              127.036993,
+              37.500712
+            ],
+            [
+              127.037123,
+              37.500752
+            ],
+            [
+              127.037245,
+              37.50079
+            ],
+            [
+              127.03768,
+              37.500924
+            ],
+            [
+              127.038474,
+              37.50117
+            ],
+            [
+              127.039197,
+              37.501397
+            ],
+            [
+              127.039882,
+              37.501608
+            ],
+            [
+              127.040038,
+              37.501654
+            ],
+            [
+              127.040535,
+              37.501799
+            ],
+            [
+              127.041248,
+              37.502039
+            ],
+            [
+              127.042344,
+              37.502361
+            ],
+            [
+              127.042421,
+              37.502383
+            ],
+            [
+              127.042552,
+              37.502422
+            ],
+            [
+              127.042633,
+              37.502446
+            ],
+            [
+              127.042686,
+              37.502463
+            ],
+            [
+              127.042798,
+              37.502499
+            ],
+            [
+              127.042883,
+              37.502523
+            ],
+            [
+              127.042992,
+              37.502555
+            ],
+            [
+              127.043101,
+              37.502586
+            ],
+            [
+              127.043433,
+              37.502693
+            ],
+            [
+              127.04442,
+              37.502996
+            ],
+            [
+              127.045717,
+              37.503407
+            ],
+            [
+              127.047284,
+              37.503854
+            ],
+            [
+              127.049065,
+              37.504404
+            ],
+            [
+              127.049019,
+              37.504505
+            ]
+          ]
+        },
+        "live_coverage_ratio": 0,
+        "warnings": [
+          {
+            "code": "NO_USABLE_SNAPSHOT",
+            "message_en": "No usable snapshot is accepted; default speeds apply.",
+            "message_ko": "사용 가능한 수용 자료가 없어 기본 속도를 적용합니다."
+          }
+        ],
+        "high_water": 0,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "traffic_published_at": null,
+        "traffic_valid_until": null,
+        "source_class": "SYNTHETIC",
+        "clock_basis": "SIMULATION_EVENT_TIME",
+        "calculated_at": "2026-10-24T21:57:28.147Z"
+      },
+      "evidence_path": "states/baseline.json"
+    },
+    {
+      "label": "live",
+      "response": {
+        "request_id": "browser-8e16a8a3-9277-4137-a4d5-81b67a964618",
+        "request_sha256": "549eff19f07f5f45e0f67bd9c1468bfe2f1388ea4e16ac9e10e64224de2053db",
+        "graph_id": "c8776b21c34cc539595670be118c4e306953db9c93b9dc20099cf517e7105f8e",
+        "snapshot_id": "8247c012232bb62e429fa0ee50d9a18cde488a9b82cd9e5d092c2b3eb7259148",
+        "sequence": 1,
+        "generation_id": "2ec9e2660aacc6ad74fc47e50af5d0df6b39bbf2879f2b1bcd829c3cb2cb8f60",
+        "traffic_sha256": "c9a6bb3583305add78c7f986cda95f7fdca5c30be91d8c33b1394119be239c03",
+        "engine_version": "3.9.1",
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "costing_config_id": "valhalla-current-v1",
+        "node_id": "client-node-a",
+        "traffic_mode": "LIVE_MIXED",
+        "distance_m": 12,
+        "duration_s": 22.254,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              127.037397,
+              37.500837
+            ],
+            [
+              127.037528,
+              37.500877
+            ]
+          ]
+        },
+        "live_coverage_ratio": 1,
+        "warnings": [],
+        "high_water": 1,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "traffic_published_at": "2026-10-24T00:04:30.000Z",
+        "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+        "source_class": "SYNTHETIC",
+        "clock_basis": "SIMULATION_EVENT_TIME",
+        "calculated_at": "2026-10-24T21:57:32.765Z"
+      },
+      "evidence_path": "states/live.json"
+    },
+    {
+      "label": "detour",
+      "response": {
+        "request_id": "browser-864a98e0-383b-4791-b4a9-49d860c9e8bd",
+        "request_sha256": "329ce4b89df1aa4c2d272416b4c24633ad09ba3d88566390601b7d2748a41f86",
+        "graph_id": "c8776b21c34cc539595670be118c4e306953db9c93b9dc20099cf517e7105f8e",
+        "snapshot_id": "8247c012232bb62e429fa0ee50d9a18cde488a9b82cd9e5d092c2b3eb7259148",
+        "sequence": 1,
+        "generation_id": "2ec9e2660aacc6ad74fc47e50af5d0df6b39bbf2879f2b1bcd829c3cb2cb8f60",
+        "traffic_sha256": "c9a6bb3583305add78c7f986cda95f7fdca5c30be91d8c33b1394119be239c03",
+        "engine_version": "3.9.1",
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "costing_config_id": "valhalla-current-v1",
+        "node_id": "client-node-a",
+        "traffic_mode": "BASE_ONLY",
+        "distance_m": 2412,
+        "duration_s": 184.731,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              127.028976,
+              37.498447
+            ],
+            [
+              127.028495,
+              37.498295
+            ],
+            [
+              127.028253,
+              37.49822
+            ],
+            [
+              127.028245,
+              37.498191
+            ],
+            [
+              127.028235,
+              37.498179
+            ],
+            [
+              127.028207,
+              37.49817
+            ],
+            [
+              127.027955,
+              37.498097
+            ],
+            [
+              127.02794,
+              37.498087
+            ],
+            [
+              127.027925,
+              37.49807
+            ],
+            [
+              127.02792,
+              37.498047
+            ],
+            [
+              127.027932,
+              37.498029
+            ],
+            [
+              127.027944,
+              37.498021
+            ],
+            [
+              127.027965,
+              37.498016
+            ],
+            [
+              127.028008,
+              37.498009
+            ],
+            [
+              127.028307,
+              37.4981
+            ],
+            [
+              127.028439,
+              37.498141
+            ],
+            [
+              127.02872,
+              37.498225
+            ],
+            [
+              127.029417,
+              37.498437
+            ],
+            [
+              127.03025,
+              37.498687
+            ],
+            [
+              127.030896,
+              37.498883
+            ],
+            [
+              127.031073,
+              37.498934
+            ],
+            [
+              127.031296,
+              37.499003
+            ],
+            [
+              127.032002,
+              37.499209
+            ],
+            [
+              127.032827,
+              37.499465
+            ],
+            [
+              127.033126,
+              37.499557
+            ],
+            [
+              127.033998,
+              37.499817
+            ],
+            [
+              127.035532,
+              37.500276
+            ],
+            [
+              127.035699,
+              37.500325
+            ],
+            [
+              127.035937,
+              37.500399
+            ],
+            [
+              127.036339,
+              37.500517
+            ],
+            [
+              127.036737,
+              37.500635
+            ],
+            [
+              127.036793,
+              37.500652
+            ],
+            [
+              127.036993,
+              37.500712
+            ],
+            [
+              127.037064,
+              37.500559
+            ],
+            [
+              127.037068,
+              37.500551
+            ],
+            [
+              127.037195,
+              37.500276
+            ],
+            [
+              127.037602,
+              37.499396
+            ],
+            [
+              127.038088,
+              37.499542
+            ],
+            [
+              127.038564,
+              37.499685
+            ],
+            [
+              127.038909,
+              37.500047
+            ],
+            [
+              127.03899,
+              37.500133
+            ],
+            [
+              127.038828,
+              37.500501
+            ],
+            [
+              127.038752,
+              37.500642
+            ],
+            [
+              127.038654,
+              37.500837
+            ],
+            [
+              127.038523,
+              37.501079
+            ],
+            [
+              127.038474,
+              37.50117
+            ],
+            [
+              127.039197,
+              37.501397
+            ],
+            [
+              127.039882,
+              37.501608
+            ],
+            [
+              127.040038,
+              37.501654
+            ],
+            [
+              127.040535,
+              37.501799
+            ],
+            [
+              127.041248,
+              37.502039
+            ],
+            [
+              127.042344,
+              37.502361
+            ],
+            [
+              127.042421,
+              37.502383
+            ],
+            [
+              127.042552,
+              37.502422
+            ],
+            [
+              127.042633,
+              37.502446
+            ],
+            [
+              127.042686,
+              37.502463
+            ],
+            [
+              127.042798,
+              37.502499
+            ],
+            [
+              127.042883,
+              37.502523
+            ],
+            [
+              127.042992,
+              37.502555
+            ],
+            [
+              127.043101,
+              37.502586
+            ],
+            [
+              127.043433,
+              37.502693
+            ],
+            [
+              127.04442,
+              37.502996
+            ],
+            [
+              127.045717,
+              37.503407
+            ],
+            [
+              127.047284,
+              37.503854
+            ],
+            [
+              127.049065,
+              37.504404
+            ],
+            [
+              127.049019,
+              37.504505
+            ]
+          ]
+        },
+        "live_coverage_ratio": 0,
+        "warnings": [
+          {
+            "code": "NO_ROUTE_LIVE_COVERAGE",
+            "message_en": "This route has no accepted live edge coverage; default speeds apply.",
+            "message_ko": "이 경로에 수용된 실시간 구간이 없어 기본 속도를 적용합니다."
+          }
+        ],
+        "high_water": 1,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "traffic_published_at": "2026-10-24T00:04:30.000Z",
+        "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+        "source_class": "SYNTHETIC",
+        "clock_basis": "SIMULATION_EVENT_TIME",
+        "calculated_at": "2026-10-24T21:57:34.599Z"
+      },
+      "evidence_path": "states/detour.json"
+    },
+    {
+      "label": "failover",
+      "response": {
+        "request_id": "browser-65972468-ecc4-4f8a-b6a8-e7e812966ba2",
+        "request_sha256": "a54fa12d851f22f1c4fe1edcca8201212379abdc5e5e98e205eddffb3ff09b59",
+        "graph_id": "c8776b21c34cc539595670be118c4e306953db9c93b9dc20099cf517e7105f8e",
+        "snapshot_id": "8247c012232bb62e429fa0ee50d9a18cde488a9b82cd9e5d092c2b3eb7259148",
+        "sequence": 1,
+        "generation_id": "2ec9e2660aacc6ad74fc47e50af5d0df6b39bbf2879f2b1bcd829c3cb2cb8f60",
+        "traffic_sha256": "c9a6bb3583305add78c7f986cda95f7fdca5c30be91d8c33b1394119be239c03",
+        "engine_version": "3.9.1",
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "costing_config_id": "valhalla-current-v1",
+        "node_id": "client-node-b",
+        "traffic_mode": "LIVE_MIXED",
+        "distance_m": 12,
+        "duration_s": 22.254,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              127.037397,
+              37.500837
+            ],
+            [
+              127.037528,
+              37.500877
+            ]
+          ]
+        },
+        "live_coverage_ratio": 1,
+        "warnings": [],
+        "high_water": 1,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "traffic_published_at": "2026-10-24T00:04:30.000Z",
+        "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+        "source_class": "SYNTHETIC",
+        "clock_basis": "SIMULATION_EVENT_TIME",
+        "calculated_at": "2026-10-24T21:57:36.102Z"
+      },
+      "evidence_path": "states/failover.json"
+    },
+    {
+      "label": "newer-response",
+      "response": {
+        "request_id": "browser-cf184d21-ac36-4357-ad2d-6855f977174c",
+        "request_sha256": "f1f4f8784afed972d757d2ac9db5c08161a38337dba19fb34afe0c72060f2334",
+        "graph_id": "c8776b21c34cc539595670be118c4e306953db9c93b9dc20099cf517e7105f8e",
+        "snapshot_id": "8247c012232bb62e429fa0ee50d9a18cde488a9b82cd9e5d092c2b3eb7259148",
+        "sequence": 1,
+        "generation_id": "2ec9e2660aacc6ad74fc47e50af5d0df6b39bbf2879f2b1bcd829c3cb2cb8f60",
+        "traffic_sha256": "c9a6bb3583305add78c7f986cda95f7fdca5c30be91d8c33b1394119be239c03",
+        "engine_version": "3.9.1",
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "costing_config_id": "valhalla-current-v1",
+        "node_id": "client-node-a",
+        "traffic_mode": "BASE_ONLY",
+        "distance_m": 2412,
+        "duration_s": 184.731,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              127.028976,
+              37.498447
+            ],
+            [
+              127.028495,
+              37.498295
+            ],
+            [
+              127.028253,
+              37.49822
+            ],
+            [
+              127.028245,
+              37.498191
+            ],
+            [
+              127.028235,
+              37.498179
+            ],
+            [
+              127.028207,
+              37.49817
+            ],
+            [
+              127.027955,
+              37.498097
+            ],
+            [
+              127.02794,
+              37.498087
+            ],
+            [
+              127.027925,
+              37.49807
+            ],
+            [
+              127.02792,
+              37.498047
+            ],
+            [
+              127.027932,
+              37.498029
+            ],
+            [
+              127.027944,
+              37.498021
+            ],
+            [
+              127.027965,
+              37.498016
+            ],
+            [
+              127.028008,
+              37.498009
+            ],
+            [
+              127.028307,
+              37.4981
+            ],
+            [
+              127.028439,
+              37.498141
+            ],
+            [
+              127.02872,
+              37.498225
+            ],
+            [
+              127.029417,
+              37.498437
+            ],
+            [
+              127.03025,
+              37.498687
+            ],
+            [
+              127.030896,
+              37.498883
+            ],
+            [
+              127.031073,
+              37.498934
+            ],
+            [
+              127.031296,
+              37.499003
+            ],
+            [
+              127.032002,
+              37.499209
+            ],
+            [
+              127.032827,
+              37.499465
+            ],
+            [
+              127.033126,
+              37.499557
+            ],
+            [
+              127.033998,
+              37.499817
+            ],
+            [
+              127.035532,
+              37.500276
+            ],
+            [
+              127.035699,
+              37.500325
+            ],
+            [
+              127.035937,
+              37.500399
+            ],
+            [
+              127.036339,
+              37.500517
+            ],
+            [
+              127.036737,
+              37.500635
+            ],
+            [
+              127.036793,
+              37.500652
+            ],
+            [
+              127.036993,
+              37.500712
+            ],
+            [
+              127.037064,
+              37.500559
+            ],
+            [
+              127.037068,
+              37.500551
+            ],
+            [
+              127.037195,
+              37.500276
+            ],
+            [
+              127.037602,
+              37.499396
+            ],
+            [
+              127.038088,
+              37.499542
+            ],
+            [
+              127.038564,
+              37.499685
+            ],
+            [
+              127.038909,
+              37.500047
+            ],
+            [
+              127.03899,
+              37.500133
+            ],
+            [
+              127.038828,
+              37.500501
+            ],
+            [
+              127.038752,
+              37.500642
+            ],
+            [
+              127.038654,
+              37.500837
+            ],
+            [
+              127.038523,
+              37.501079
+            ],
+            [
+              127.038474,
+              37.50117
+            ],
+            [
+              127.039197,
+              37.501397
+            ],
+            [
+              127.039882,
+              37.501608
+            ],
+            [
+              127.040038,
+              37.501654
+            ],
+            [
+              127.040535,
+              37.501799
+            ],
+            [
+              127.041248,
+              37.502039
+            ],
+            [
+              127.042344,
+              37.502361
+            ],
+            [
+              127.042421,
+              37.502383
+            ],
+            [
+              127.042552,
+              37.502422
+            ],
+            [
+              127.042633,
+              37.502446
+            ],
+            [
+              127.042686,
+              37.502463
+            ],
+            [
+              127.042798,
+              37.502499
+            ],
+            [
+              127.042883,
+              37.502523
+            ],
+            [
+              127.042992,
+              37.502555
+            ],
+            [
+              127.043101,
+              37.502586
+            ],
+            [
+              127.043433,
+              37.502693
+            ],
+            [
+              127.04442,
+              37.502996
+            ],
+            [
+              127.045717,
+              37.503407
+            ],
+            [
+              127.047284,
+              37.503854
+            ],
+            [
+              127.049065,
+              37.504404
+            ],
+            [
+              127.049019,
+              37.504505
+            ]
+          ]
+        },
+        "live_coverage_ratio": 0,
+        "warnings": [
+          {
+            "code": "NO_ROUTE_LIVE_COVERAGE",
+            "message_en": "This route has no accepted live edge coverage; default speeds apply.",
+            "message_ko": "이 경로에 수용된 실시간 구간이 없어 기본 속도를 적용합니다."
+          }
+        ],
+        "high_water": 1,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "traffic_published_at": "2026-10-24T00:04:30.000Z",
+        "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+        "source_class": "SYNTHETIC",
+        "clock_basis": "SIMULATION_EVENT_TIME",
+        "calculated_at": "2026-10-24T21:57:59.334Z"
+      },
+      "evidence_path": "states/newer-response.json"
+    },
+    {
+      "label": "before-authority-change",
+      "response": {
+        "request_id": "browser-7a711e4e-a7df-496a-80e1-eb8355c6c372",
+        "request_sha256": "8c67646b8d83bf685ebf6ebcf028f9c670226ad9cdff732ded529cb989d46683",
+        "graph_id": "c8776b21c34cc539595670be118c4e306953db9c93b9dc20099cf517e7105f8e",
+        "snapshot_id": "282d80551e77e1fadce041dcb34aec652b63ca20ca0ddf9c8e7748bada4ef567",
+        "sequence": 2,
+        "generation_id": "1742e2776047f443eee22d7061e926c7a6c84b7a85d2b9b39300d85f476994b7",
+        "traffic_sha256": "c9a6bb3583305add78c7f986cda95f7fdca5c30be91d8c33b1394119be239c03",
+        "engine_version": "3.9.1",
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "costing_config_id": "valhalla-current-v1",
+        "node_id": "client-node-a",
+        "traffic_mode": "LIVE_MIXED",
+        "distance_m": 12,
+        "duration_s": 22.254,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              127.037397,
+              37.500837
+            ],
+            [
+              127.037528,
+              37.500877
+            ]
+          ]
+        },
+        "live_coverage_ratio": 1,
+        "warnings": [],
+        "high_water": 2,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "traffic_published_at": "2026-10-24T00:04:30.000Z",
+        "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+        "source_class": "SYNTHETIC",
+        "clock_basis": "SIMULATION_EVENT_TIME",
+        "calculated_at": "2026-10-24T21:58:05.495Z"
+      },
+      "evidence_path": "states/before-authority-change.json"
+    },
+    {
+      "label": "current-before-old-authority",
+      "response": {
+        "request_id": "browser-e96321dc-062f-4055-a185-87deda2f196b",
+        "request_sha256": "1f60a7d90f97a537b7bc07f52d3121936fe833a73fd896a5ea9f21a22078f7fd",
+        "graph_id": "c8776b21c34cc539595670be118c4e306953db9c93b9dc20099cf517e7105f8e",
+        "snapshot_id": "68230a25550d347258aba93af2450b6fa502476c21fb3d771330712ffa62e68f",
+        "sequence": 3,
+        "generation_id": "86ee1df4549313c7dd4721bec5b1eeb09d1fd07fbdb6cbd1e5ee03aa7a8018ed",
+        "traffic_sha256": "c9a6bb3583305add78c7f986cda95f7fdca5c30be91d8c33b1394119be239c03",
+        "engine_version": "3.9.1",
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "costing_config_id": "valhalla-current-v1",
+        "node_id": "client-node-a",
+        "traffic_mode": "LIVE_MIXED",
+        "distance_m": 12,
+        "duration_s": 22.254,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              127.037397,
+              37.500837
+            ],
+            [
+              127.037528,
+              37.500877
+            ]
+          ]
+        },
+        "live_coverage_ratio": 1,
+        "warnings": [],
+        "high_water": 3,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "traffic_published_at": "2026-10-24T00:04:30.000Z",
+        "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+        "source_class": "SYNTHETIC",
+        "clock_basis": "SIMULATION_EVENT_TIME",
+        "calculated_at": "2026-10-24T21:58:10.277Z"
+      },
+      "evidence_path": "states/current-before-old-authority.json"
+    },
+    {
+      "label": "keyboard",
+      "response": {
+        "request_id": "browser-06cb69b8-6e18-4161-9ffb-39669c5e6d3e",
+        "request_sha256": "ca7b3691cec089dee8a2e348d75f5aa9e7e69a0b2888c51af988d4684bef112d",
+        "graph_id": "c8776b21c34cc539595670be118c4e306953db9c93b9dc20099cf517e7105f8e",
+        "snapshot_id": "68230a25550d347258aba93af2450b6fa502476c21fb3d771330712ffa62e68f",
+        "sequence": 3,
+        "generation_id": "86ee1df4549313c7dd4721bec5b1eeb09d1fd07fbdb6cbd1e5ee03aa7a8018ed",
+        "traffic_sha256": "c9a6bb3583305add78c7f986cda95f7fdca5c30be91d8c33b1394119be239c03",
+        "engine_version": "3.9.1",
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "costing_config_id": "valhalla-current-v1",
+        "node_id": "client-node-a",
+        "traffic_mode": "LIVE_MIXED",
+        "distance_m": 12,
+        "duration_s": 22.254,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              127.037397,
+              37.500837
+            ],
+            [
+              127.037528,
+              37.500877
+            ]
+          ]
+        },
+        "live_coverage_ratio": 1,
+        "warnings": [],
+        "high_water": 3,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "traffic_published_at": "2026-10-24T00:04:30.000Z",
+        "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+        "source_class": "SYNTHETIC",
+        "clock_basis": "SIMULATION_EVENT_TIME",
+        "calculated_at": "2026-10-24T21:58:12.722Z"
+      },
+      "evidence_path": "states/keyboard.json"
+    },
+    {
+      "label": "correction",
+      "response": {
+        "request_id": "browser-373de4e1-17e4-4cb7-aa90-89ddef62d6f7",
+        "request_sha256": "1cbfb6c2920d92aa44f8f26efc55a61c5ace1a4371a7ee95b701ce2a9e874d91",
+        "graph_id": "c8776b21c34cc539595670be118c4e306953db9c93b9dc20099cf517e7105f8e",
+        "snapshot_id": "c98a48063253d46822ea92a505c8bbbb19c9e63fcc8fc8757d5499be30798ef7",
+        "sequence": 4,
+        "generation_id": "9d1d7fca53414a32aef6a0a27dbf725cebe28b3ccb571486846633b281765d6b",
+        "traffic_sha256": "7d750823d66296108479a68b61aad4ad9091076cf69c928ccdc6cf4d506672fe",
+        "engine_version": "3.9.1",
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "costing_config_id": "valhalla-current-v1",
+        "node_id": "client-node-a",
+        "traffic_mode": "BASE_ONLY",
+        "distance_m": 12,
+        "duration_s": 0.78,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              127.037397,
+              37.500837
+            ],
+            [
+              127.037528,
+              37.500877
+            ]
+          ]
+        },
+        "live_coverage_ratio": 0,
+        "warnings": [
+          {
+            "code": "NO_ROUTE_LIVE_COVERAGE",
+            "message_en": "This route has no accepted live edge coverage; default speeds apply.",
+            "message_ko": "이 경로에 수용된 실시간 구간이 없어 기본 속도를 적용합니다."
+          }
+        ],
+        "high_water": 4,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "traffic_published_at": "2026-10-24T00:04:30.000Z",
+        "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+        "source_class": "SYNTHETIC",
+        "clock_basis": "SIMULATION_EVENT_TIME",
+        "calculated_at": "2026-10-24T21:58:17.591Z"
+      },
+      "evidence_path": "states/correction.json"
+    },
+    {
+      "label": "before-expiry",
+      "response": {
+        "request_id": "browser-5f22599a-9d4c-49f4-9849-2eee36162742",
+        "request_sha256": "74a51f06358e307fb915acc44a61bd92bde4f4706f2493c02ca765ef326fc74d",
+        "graph_id": "c8776b21c34cc539595670be118c4e306953db9c93b9dc20099cf517e7105f8e",
+        "snapshot_id": "c98a48063253d46822ea92a505c8bbbb19c9e63fcc8fc8757d5499be30798ef7",
+        "sequence": 4,
+        "generation_id": "9d1d7fca53414a32aef6a0a27dbf725cebe28b3ccb571486846633b281765d6b",
+        "traffic_sha256": "7d750823d66296108479a68b61aad4ad9091076cf69c928ccdc6cf4d506672fe",
+        "engine_version": "3.9.1",
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "costing_config_id": "valhalla-current-v1",
+        "node_id": "client-node-a",
+        "traffic_mode": "BASE_ONLY",
+        "distance_m": 12,
+        "duration_s": 0.78,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              127.037397,
+              37.500837
+            ],
+            [
+              127.037528,
+              37.500877
+            ]
+          ]
+        },
+        "live_coverage_ratio": 0,
+        "warnings": [
+          {
+            "code": "NO_ROUTE_LIVE_COVERAGE",
+            "message_en": "This route has no accepted live edge coverage; default speeds apply.",
+            "message_ko": "이 경로에 수용된 실시간 구간이 없어 기본 속도를 적용합니다."
+          }
+        ],
+        "high_water": 4,
+        "checked_at_event_time": "2026-10-24T00:06:59.999Z",
+        "traffic_published_at": "2026-10-24T00:04:30.000Z",
+        "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+        "source_class": "SYNTHETIC",
+        "clock_basis": "SIMULATION_EVENT_TIME",
+        "calculated_at": "2026-10-24T21:58:19.672Z"
+      },
+      "evidence_path": "states/before-expiry.json"
+    },
+    {
+      "label": "expiry-baseline",
+      "response": {
+        "request_id": "browser-02f614cf-e375-4cec-a8d4-dc3fe5c94801",
+        "request_sha256": "e65ad0f47b1dc0c6de1fcc26922c3338b1e59eb86b36d72c174c9bf732d6b0ef",
+        "graph_id": "c8776b21c34cc539595670be118c4e306953db9c93b9dc20099cf517e7105f8e",
+        "snapshot_id": null,
+        "sequence": null,
+        "generation_id": "e293bbb92e0e32707246864721631f57a09bb1a9eb289a4f1d7b9960f08f209f",
+        "traffic_sha256": "7d750823d66296108479a68b61aad4ad9091076cf69c928ccdc6cf4d506672fe",
+        "engine_version": "3.9.1",
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "costing_config_id": "valhalla-current-v1",
+        "node_id": "client-node-a",
+        "traffic_mode": "BASE_ONLY",
+        "distance_m": 2119,
+        "duration_s": 147.404,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              127.028976,
+              37.498447
+            ],
+            [
+              127.028495,
+              37.498295
+            ],
+            [
+              127.028253,
+              37.49822
+            ],
+            [
+              127.028245,
+              37.498191
+            ],
+            [
+              127.028235,
+              37.498179
+            ],
+            [
+              127.028207,
+              37.49817
+            ],
+            [
+              127.027955,
+              37.498097
+            ],
+            [
+              127.02794,
+              37.498087
+            ],
+            [
+              127.027925,
+              37.49807
+            ],
+            [
+              127.02792,
+              37.498047
+            ],
+            [
+              127.027932,
+              37.498029
+            ],
+            [
+              127.027944,
+              37.498021
+            ],
+            [
+              127.027965,
+              37.498016
+            ],
+            [
+              127.028008,
+              37.498009
+            ],
+            [
+              127.028307,
+              37.4981
+            ],
+            [
+              127.028439,
+              37.498141
+            ],
+            [
+              127.02872,
+              37.498225
+            ],
+            [
+              127.029417,
+              37.498437
+            ],
+            [
+              127.03025,
+              37.498687
+            ],
+            [
+              127.030896,
+              37.498883
+            ],
+            [
+              127.031073,
+              37.498934
+            ],
+            [
+              127.031296,
+              37.499003
+            ],
+            [
+              127.032002,
+              37.499209
+            ],
+            [
+              127.032827,
+              37.499465
+            ],
+            [
+              127.033126,
+              37.499557
+            ],
+            [
+              127.033998,
+              37.499817
+            ],
+            [
+              127.035532,
+              37.500276
+            ],
+            [
+              127.035699,
+              37.500325
+            ],
+            [
+              127.035937,
+              37.500399
+            ],
+            [
+              127.036339,
+              37.500517
+            ],
+            [
+              127.036737,
+              37.500635
+            ],
+            [
+              127.036793,
+              37.500652
+            ],
+            [
+              127.036993,
+              37.500712
+            ],
+            [
+              127.037123,
+              37.500752
+            ],
+            [
+              127.037245,
+              37.50079
+            ],
+            [
+              127.03768,
+              37.500924
+            ],
+            [
+              127.038474,
+              37.50117
+            ],
+            [
+              127.039197,
+              37.501397
+            ],
+            [
+              127.039882,
+              37.501608
+            ],
+            [
+              127.040038,
+              37.501654
+            ],
+            [
+              127.040535,
+              37.501799
+            ],
+            [
+              127.041248,
+              37.502039
+            ],
+            [
+              127.042344,
+              37.502361
+            ],
+            [
+              127.042421,
+              37.502383
+            ],
+            [
+              127.042552,
+              37.502422
+            ],
+            [
+              127.042633,
+              37.502446
+            ],
+            [
+              127.042686,
+              37.502463
+            ],
+            [
+              127.042798,
+              37.502499
+            ],
+            [
+              127.042883,
+              37.502523
+            ],
+            [
+              127.042992,
+              37.502555
+            ],
+            [
+              127.043101,
+              37.502586
+            ],
+            [
+              127.043433,
+              37.502693
+            ],
+            [
+              127.04442,
+              37.502996
+            ],
+            [
+              127.045717,
+              37.503407
+            ],
+            [
+              127.047284,
+              37.503854
+            ],
+            [
+              127.049065,
+              37.504404
+            ],
+            [
+              127.049019,
+              37.504505
+            ]
+          ]
+        },
+        "live_coverage_ratio": 0,
+        "warnings": [
+          {
+            "code": "NO_USABLE_SNAPSHOT",
+            "message_en": "No usable snapshot is accepted; default speeds apply.",
+            "message_ko": "사용 가능한 수용 자료가 없어 기본 속도를 적용합니다."
+          }
+        ],
+        "high_water": 4,
+        "checked_at_event_time": "2026-10-24T00:07:00.000Z",
+        "traffic_published_at": null,
+        "traffic_valid_until": null,
+        "source_class": "SYNTHETIC",
+        "clock_basis": "SIMULATION_EVENT_TIME",
+        "calculated_at": "2026-10-24T21:58:23.703Z"
+      },
+      "evidence_path": "states/expiry-baseline.json"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "map-ready",
+      "state": "empty",
+      "message_en": "Observed browser state: map-ready",
+      "message_ko": "관측한 브라우저 상태: map-ready",
+      "evidence_path": "states/map-ready.json"
+    },
+    {
+      "event_id": "english",
+      "state": "empty",
+      "message_en": "Observed browser state: english",
+      "message_ko": "관측한 브라우저 상태: english",
+      "evidence_path": "states/english.json"
+    },
+    {
+      "event_id": "baseline",
+      "state": "current",
+      "message_en": "Observed browser state: baseline",
+      "message_ko": "관측한 브라우저 상태: baseline",
+      "evidence_path": "states/baseline.json"
+    },
+    {
+      "event_id": "live",
+      "state": "current",
+      "message_en": "Observed browser state: live",
+      "message_ko": "관측한 브라우저 상태: live",
+      "evidence_path": "states/live.json"
+    },
+    {
+      "event_id": "detour",
+      "state": "current",
+      "message_en": "Observed browser state: detour",
+      "message_ko": "관측한 브라우저 상태: detour",
+      "evidence_path": "states/detour.json"
+    },
+    {
+      "event_id": "failover",
+      "state": "current",
+      "message_en": "Observed browser state: failover",
+      "message_ko": "관측한 브라우저 상태: failover",
+      "evidence_path": "states/failover.json"
+    },
+    {
+      "event_id": "unavailable",
+      "state": "unavailable",
+      "message_en": "Observed browser state: unavailable",
+      "message_ko": "관측한 브라우저 상태: unavailable",
+      "evidence_path": "states/unavailable.json"
+    },
+    {
+      "event_id": "deadline",
+      "state": "timeout",
+      "message_en": "Observed browser state: deadline",
+      "message_ko": "관측한 브라우저 상태: deadline",
+      "evidence_path": "states/deadline.json"
+    },
+    {
+      "event_id": "input-change",
+      "state": "empty",
+      "message_en": "Observed browser state: input-change",
+      "message_ko": "관측한 브라우저 상태: input-change",
+      "evidence_path": "states/input-change.json"
+    },
+    {
+      "event_id": "newer-response",
+      "state": "current",
+      "message_en": "Observed browser state: newer-response",
+      "message_ko": "관측한 브라우저 상태: newer-response",
+      "evidence_path": "states/newer-response.json"
+    },
+    {
+      "event_id": "late-response",
+      "state": "current",
+      "message_en": "Observed browser state: late-response",
+      "message_ko": "관측한 브라우저 상태: late-response",
+      "evidence_path": "states/late-response.json"
+    },
+    {
+      "event_id": "changed-version",
+      "state": "unverified",
+      "message_en": "Observed browser state: changed-version",
+      "message_ko": "관측한 브라우저 상태: changed-version",
+      "evidence_path": "states/changed-version.json"
+    },
+    {
+      "event_id": "before-authority-change",
+      "state": "current",
+      "message_en": "Observed browser state: before-authority-change",
+      "message_ko": "관측한 브라우저 상태: before-authority-change",
+      "evidence_path": "states/before-authority-change.json"
+    },
+    {
+      "event_id": "authority-change",
+      "state": "unverified",
+      "message_en": "Observed browser state: authority-change",
+      "message_ko": "관측한 브라우저 상태: authority-change",
+      "evidence_path": "states/authority-change.json"
+    },
+    {
+      "event_id": "current-before-old-authority",
+      "state": "current",
+      "message_en": "Observed browser state: current-before-old-authority",
+      "message_ko": "관측한 브라우저 상태: current-before-old-authority",
+      "evidence_path": "states/current-before-old-authority.json"
+    },
+    {
+      "event_id": "older-authority",
+      "state": "current",
+      "message_en": "Observed browser state: older-authority",
+      "message_ko": "관측한 브라우저 상태: older-authority",
+      "evidence_path": "states/older-authority.json"
+    },
+    {
+      "event_id": "invalid-input",
+      "state": "invalid",
+      "message_en": "Observed browser state: invalid-input",
+      "message_ko": "관측한 브라우저 상태: invalid-input",
+      "evidence_path": "states/invalid-input.json"
+    },
+    {
+      "event_id": "keyboard",
+      "state": "current",
+      "message_en": "Observed browser state: keyboard",
+      "message_ko": "관측한 브라우저 상태: keyboard",
+      "evidence_path": "states/keyboard.json"
+    },
+    {
+      "event_id": "korean",
+      "state": "current",
+      "message_en": "Observed browser state: korean",
+      "message_ko": "관측한 브라우저 상태: korean",
+      "evidence_path": "states/korean.json"
+    },
+    {
+      "event_id": "mobile390",
+      "state": "current",
+      "message_en": "Observed browser state: mobile390",
+      "message_ko": "관측한 브라우저 상태: mobile390",
+      "evidence_path": "states/mobile390.json"
+    },
+    {
+      "event_id": "correction",
+      "state": "current",
+      "message_en": "Observed browser state: correction",
+      "message_ko": "관측한 브라우저 상태: correction",
+      "evidence_path": "states/correction.json"
+    },
+    {
+      "event_id": "before-expiry",
+      "state": "current",
+      "message_en": "Observed browser state: before-expiry",
+      "message_ko": "관측한 브라우저 상태: before-expiry",
+      "evidence_path": "states/before-expiry.json"
+    },
+    {
+      "event_id": "expired",
+      "state": "expired",
+      "message_en": "Observed browser state: expired",
+      "message_ko": "관측한 브라우저 상태: expired",
+      "evidence_path": "states/expired.json"
+    },
+    {
+      "event_id": "expiry-baseline",
+      "state": "current",
+      "message_en": "Observed browser state: expiry-baseline",
+      "message_ko": "관측한 브라우저 상태: expiry-baseline",
+      "evidence_path": "states/expiry-baseline.json"
+    },
+    {
+      "event_id": "reload",
+      "state": "empty",
+      "message_en": "Observed browser state: reload",
+      "message_ko": "관측한 브라우저 상태: reload",
+      "evidence_path": "states/reload.json"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "p11-fresh-source",
+      "status": "PASS",
+      "message_en": "A fresh actual HTTP/P05/P06 source authors fifteen Seoul trips for this browser run.",
+      "message_ko": "이번 브라우저 실행에 새 실제 HTTP·P05·P06 서울15여행을 생성합니다.",
+      "evidence_path": "fixture/source/db.json"
+    },
+    {
+      "case_id": "p11-bundled-offline",
+      "status": "PASS",
+      "message_en": "The frontend, stylesheet and map worker are locally bundled with exact original hashes.",
+      "message_ko": "화면·스타일·지도 작업자를 로컬에 묶고 정확한 원문 해시를 확인합니다.",
+      "evidence_path": "browser/assets.json"
+    },
+    {
+      "case_id": "p11-loopback-session",
+      "status": "PASS",
+      "message_en": "One HttpOnly Strict loopback session is issued to the actual browser.",
+      "message_ko": "실제 브라우저에 HttpOnly·Strict 로컬 세션 하나를 발급합니다.",
+      "evidence_path": "browser/session.json"
+    },
+    {
+      "case_id": "p11-unauthenticated-api",
+      "status": "PASS",
+      "message_en": "API access without the local session is refused.",
+      "message_ko": "로컬 세션이 없는 API 접근을 거부합니다.",
+      "evidence_path": "negative/unauthenticated.json"
+    },
+    {
+      "case_id": "p11-origin-rejected",
+      "status": "PASS",
+      "message_en": "An authenticated request with a foreign origin is rejected.",
+      "message_ko": "세션이 있어도 다른 출처의 요청을 거부합니다.",
+      "evidence_path": "negative/origin.json"
+    },
+    {
+      "case_id": "p11-path-traversal",
+      "status": "PASS",
+      "message_en": "Static path traversal cannot read repository files.",
+      "message_ko": "정적 경로 이탈로 저장소 파일을 읽을 수 없습니다.",
+      "evidence_path": "negative/path.json"
+    },
+    {
+      "case_id": "p11-bootstrap-privacy",
+      "status": "PASS",
+      "message_en": "Bootstrap exposes only public roads, authored presets and provenance.",
+      "message_ko": "초기 화면 자료는 공개 도로·합성 좌표·출처만 포함합니다.",
+      "evidence_path": "browser/bootstrap.json"
+    },
+    {
+      "case_id": "p11-map-ready",
+      "status": "PASS",
+      "message_en": "MapLibre renders the locally served original Seoul road geometry using explicit software WebGL.",
+      "message_ko": "명시한 소프트웨어 WebGL로 로컬 원래 서울 도로를 MapLibre에 표시합니다.",
+      "evidence_path": "states/map-ready.json"
+    },
+    {
+      "case_id": "p11-english",
+      "status": "PASS",
+      "message_en": "Initial UI uses readable English labels and status.",
+      "message_ko": "초기 화면은 읽을 수 있는 영어 이름·상태를 사용합니다.",
+      "evidence_path": "states/english.json"
+    },
+    {
+      "case_id": "p11-baseline-request",
+      "status": "PASS",
+      "message_en": "The browser baseline request reaches the real gateway and native route engine.",
+      "message_ko": "브라우저 기본 경로 요청이 실제 중계와 지속 엔진까지 도달합니다.",
+      "evidence_path": "states/baseline.json"
+    },
+    {
+      "case_id": "p11-live-request",
+      "status": "PASS",
+      "message_en": "The browser requests and displays an actual accepted-live partial route.",
+      "message_ko": "브라우저가 실제 수용 교통의 부분 경로를 요청하고 표시합니다.",
+      "evidence_path": "states/live.json"
+    },
+    {
+      "case_id": "p11-authority-clock",
+      "status": "PASS",
+      "message_en": "Traffic age uses authoritative simulation event time, not the browser wall clock or calculation timestamp.",
+      "message_ko": "교통정보 나이는 브라우저 실제 시각·계산시각 대신 승인된 모의 관측시각을 사용합니다.",
+      "evidence_path": "states/live.json"
+    },
+    {
+      "case_id": "p11-route-coverage",
+      "status": "PASS",
+      "message_en": "The UI separates accepted snapshot identity from actual returned-route coverage.",
+      "message_ko": "화면이 수용 스냅샷 식별과 실제 반환 경로 적용률을 구분합니다.",
+      "evidence_path": "states/detour.json"
+    },
+    {
+      "case_id": "p11-primary-kill-failover",
+      "status": "PASS",
+      "message_en": "An actual killed primary process fails over to the second native node through the browser.",
+      "message_ko": "첫 프로세스 실제 종료 뒤 브라우저 요청이 두 번째 지속 엔진 노드로 전환됩니다.",
+      "evidence_path": "states/failover.json"
+    },
+    {
+      "case_id": "p11-unavailable-clears-route",
+      "status": "PASS",
+      "message_en": "Both native nodes unavailable clears the preceding route line and shows a retry action.",
+      "message_ko": "두 지속 노드가 사용 불가하면 이전 경로선을 지우고 재시도 행동을 표시합니다.",
+      "evidence_path": "states/unavailable.json"
+    },
+    {
+      "case_id": "p11-deadline-clears-route",
+      "status": "PASS",
+      "message_en": "A confirmed held real request reaches its deadline and leaves no current route line.",
+      "message_ko": "확인된 실제 요청 대기가 기한에 도달하면 현재 경로선을 남기지 않습니다.",
+      "evidence_path": "states/deadline.json"
+    },
+    {
+      "case_id": "p11-input-change-cancels",
+      "status": "PASS",
+      "message_en": "Editing a coordinate cancels a phase-confirmed request and removes its active route.",
+      "message_ko": "좌표 수정이 확인된 단계의 요청을 취소하고 활성 경로를 제거합니다.",
+      "evidence_path": "browser/input-abort.json"
+    },
+    {
+      "case_id": "p11-late-response-ignored",
+      "status": "PASS",
+      "message_en": "An explicitly delayed transport response cannot replace the newer input or route.",
+      "message_ko": "명시적으로 지연한 전송 응답이 새 입력·경로를 덮을 수 없습니다.",
+      "evidence_path": "browser/transport-delay.json"
+    },
+    {
+      "case_id": "p11-changed-version-rejected",
+      "status": "PASS",
+      "message_en": "A real route calculated before publication changes is rejected and never left visible as current.",
+      "message_ko": "게시 교체 전 계산한 실제 경로는 거부하고 현재 경로처럼 표시하지 않습니다.",
+      "evidence_path": "browser/changed-version.json"
+    },
+    {
+      "case_id": "p11-authority-change-invalidates",
+      "status": "PASS",
+      "message_en": "The nonoverlapping context poll clears a route when durable authority changes.",
+      "message_ko": "중첩하지 않는 문맥 확인이 영속 승인이 바뀌면 경로를 제거합니다.",
+      "evidence_path": "states/authority-change.json"
+    },
+    {
+      "case_id": "p11-older-authority-ignored",
+      "status": "PASS",
+      "message_en": "A recorded older context served by an explicit test proxy cannot lower browser authority.",
+      "message_ko": "명시 시험대리서버로 보낸 기록된 옛 문맥이 브라우저 승인 순번을 낮추지 못합니다.",
+      "evidence_path": "browser/older-authority-proxy.json"
+    },
+    {
+      "case_id": "p11-invalid-input",
+      "status": "PASS",
+      "message_en": "Invalid coordinates produce a concrete correction action without a route request.",
+      "message_ko": "유효하지 않은 좌표는 경로를 요청하지 않고 수정 행동을 안내합니다.",
+      "evidence_path": "states/invalid-input.json"
+    },
+    {
+      "case_id": "p11-keyboard-submit",
+      "status": "PASS",
+      "message_en": "Keyboard Enter submits the same real route flow as the button.",
+      "message_ko": "키보드 Enter가 버튼과 같은 실제 경로 흐름을 실행합니다.",
+      "evidence_path": "states/keyboard.json"
+    },
+    {
+      "case_id": "p11-korean",
+      "status": "PASS",
+      "message_en": "Korean labels, spacing and route status remain readable with the same original result.",
+      "message_ko": "같은 원결과에서 한국어 이름·띄어쓰기·경로 상태를 읽을 수 있습니다.",
+      "evidence_path": "states/korean.json"
+    },
+    {
+      "case_id": "p11-mobile390",
+      "status": "PASS",
+      "message_en": "At390 pixels the form and result precede a usable original-road map without horizontal overflow.",
+      "message_ko": "390픽셀에서 입력·결과 뒤에 원래 도로 지도를 두고 가로 넘침 없이 사용합니다.",
+      "evidence_path": "states/mobile390.json"
+    },
+    {
+      "case_id": "p11-exact-expiry",
+      "status": "PASS",
+      "message_en": "Exact simulation expiry clears the active line and a fresh browser request restores the original baseline.",
+      "message_ko": "정확한 모의 만료에 활성선을 지우고 새 브라우저 요청으로 원래 기본 경로를 복구합니다.",
+      "evidence_path": "states/expired.json"
+    },
+    {
+      "case_id": "p11-reload-state",
+      "status": "PASS",
+      "message_en": "Reload preserves language preference but never resurrects an old route as current.",
+      "message_ko": "새로 고침은 언어 선택을 유지하되 옛 경로를 현재 결과로 복원하지 않습니다.",
+      "evidence_path": "states/reload.json"
+    },
+    {
+      "case_id": "p11-no-external-requests",
+      "status": "PASS",
+      "message_en": "Browser map, worker, assets and APIs use only the owned local origin.",
+      "message_ko": "브라우저 지도·작업자·자료·API가 소유 로컬 출처만 사용합니다.",
+      "evidence_path": "browser/network.json"
+    },
+    {
+      "case_id": "p11-no-geolocation",
+      "status": "PASS",
+      "message_en": "No geolocation permission or actual location collection is requested.",
+      "message_ko": "위치 권한이나 실제 위치 수집을 요청하지 않습니다.",
+      "evidence_path": "browser/geolocation.json"
+    },
+    {
+      "case_id": "p11-public-privacy",
+      "status": "PASS",
+      "message_en": "Public browser responses and console outcomes expose no private routing identity or credentials.",
+      "message_ko": "공개 브라우저 응답·콘솔 결과에 비공개 경로 식별·인증값을 노출하지 않습니다.",
+      "evidence_path": "browser/public-privacy.json"
+    },
+    {
+      "case_id": "p11-browser-cleanup",
+      "status": "PASS",
+      "message_en": "The single owned browser and original process identities are absent after close.",
+      "message_ko": "단일 소유 브라우저·원 프로세스 식별자가 종료 뒤 남지 않습니다.",
+      "evidence_path": "browser/cleanup.json"
+    },
+    {
+      "case_id": "p11-owned-cleanup",
+      "status": "PASS",
+      "message_en": "Client, gateway, native nodes, database and private configuration resources are removed.",
+      "message_ko": "클라이언트·중계·지속노드·DB·비공개 설정 자원을 제거했습니다.",
+      "evidence_path": "fixture/cleanup.json"
+    }
+  ],
+  "evidence": [
+    {
+      "name_en": "Actual browser network and console",
+      "name_ko": "실제 브라우저 통신·콘솔",
+      "path": "browser/network-final.json"
+    },
+    {
+      "name_en": "Fresh authored matching source",
+      "name_ko": "새 합성 매칭 원본",
+      "path": "fixture/source/db.json"
+    },
+    {
+      "name_en": "Original browser process cleanup",
+      "name_ko": "원래 브라우저 프로세스 정리",
+      "path": "browser/cleanup.json"
+    }
+  ]
+}

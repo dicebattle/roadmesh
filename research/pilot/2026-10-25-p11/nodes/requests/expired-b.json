@@ -1,0 +1,416 @@
+{
+  "status": 200,
+  "headers": {
+    "cache-control": "no-store",
+    "connection": "keep-alive",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sat, 24 Oct 2026 22:52:21 GMT",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked"
+  },
+  "body": {
+    "code": "ROUTE",
+    "request_id": "expired-b",
+    "node_id": "seoul-node-b",
+    "instance_id": "6f973cb5-60c0-4552-983f-59c96138776d",
+    "engine_result": {
+      "request": {
+        "locations": [
+          {
+            "lon": 127.029,
+            "lat": 37.4984
+          },
+          {
+            "lon": 127.049,
+            "lat": 37.5045
+          }
+        ],
+        "costing": "auto",
+        "units": "kilometers",
+        "language": "en-US",
+        "date_time": {
+          "type": 0
+        }
+      },
+      "route": {
+        "trip": {
+          "locations": [
+            {
+              "type": "break",
+              "lat": 37.4984,
+              "lon": 127.029,
+              "date_time": "2026-10-24T22:52",
+              "side_of_street": "left",
+              "original_index": 0
+            },
+            {
+              "type": "break",
+              "lat": 37.5045,
+              "lon": 127.049,
+              "original_index": 1
+            }
+          ],
+          "legs": [
+            {
+              "maneuvers": [
+                {
+                  "type": 3,
+                  "instruction": "Drive west on 테헤란로/90.",
+                  "verbal_succinct_transition_instruction": "Drive west. Then Bear left.",
+                  "verbal_pre_transition_instruction": "Drive west on 테헤란로, 90. Then Bear left.",
+                  "verbal_post_transition_instruction": "Continue for 70 meters.",
+                  "street_names": [
+                    "테헤란로",
+                    "90"
+                  ],
+                  "bearing_after": 248,
+                  "time": 4.326,
+                  "length": 0.068,
+                  "cost": 5.291,
+                  "begin_shape_index": 0,
+                  "end_shape_index": 2,
+                  "verbal_multi_cue": true,
+                  "travel_mode": "drive",
+                  "travel_type": "car"
+                },
+                {
+                  "type": 16,
+                  "instruction": "Bear left.",
+                  "verbal_transition_alert_instruction": "Bear left.",
+                  "verbal_succinct_transition_instruction": "Bear left. Then Turn left onto 테헤란로.",
+                  "verbal_pre_transition_instruction": "Bear left. Then Turn left onto 테헤란로.",
+                  "verbal_post_transition_instruction": "Continue for 50 meters.",
+                  "bearing_before": 249,
+                  "bearing_after": 239,
+                  "time": 1.838,
+                  "length": 0.047,
+                  "cost": 2.204,
+                  "begin_shape_index": 2,
+                  "end_shape_index": 13,
+                  "verbal_multi_cue": true,
+                  "travel_mode": "drive",
+                  "travel_type": "car"
+                },
+                {
+                  "type": 15,
+                  "instruction": "Turn left onto 테헤란로/90.",
+                  "verbal_transition_alert_instruction": "Turn left onto 테헤란로.",
+                  "verbal_succinct_transition_instruction": "Turn left.",
+                  "verbal_pre_transition_instruction": "Turn left onto 테헤란로, 90.",
+                  "verbal_post_transition_instruction": "Continue for 2 kilometers.",
+                  "street_names": [
+                    "테헤란로",
+                    "90"
+                  ],
+                  "bearing_before": 180,
+                  "bearing_after": 69,
+                  "time": 135.193,
+                  "length": 1.991,
+                  "cost": 258.867,
+                  "begin_shape_index": 13,
+                  "end_shape_index": 55,
+                  "travel_mode": "drive",
+                  "travel_type": "car"
+                },
+                {
+                  "type": 15,
+                  "instruction": "Turn left onto 선릉로.",
+                  "verbal_transition_alert_instruction": "Turn left onto 선릉로.",
+                  "verbal_succinct_transition_instruction": "Turn left. Then You will arrive at your destination.",
+                  "verbal_pre_transition_instruction": "Turn left onto 선릉로. Then You will arrive at your destination.",
+                  "verbal_post_transition_instruction": "Continue for 10 meters.",
+                  "street_names": [
+                    "선릉로"
+                  ],
+                  "bearing_before": 69,
+                  "bearing_after": 340,
+                  "time": 6.045,
+                  "length": 0.012,
+                  "cost": 23.595,
+                  "begin_shape_index": 55,
+                  "end_shape_index": 56,
+                  "verbal_multi_cue": true,
+                  "travel_mode": "drive",
+                  "travel_type": "car"
+                },
+                {
+                  "type": 4,
+                  "instruction": "You have arrived at your destination.",
+                  "verbal_transition_alert_instruction": "You will arrive at your destination.",
+                  "verbal_pre_transition_instruction": "You have arrived at your destination.",
+                  "bearing_before": 340,
+                  "time": 0,
+                  "length": 0,
+                  "cost": 0,
+                  "begin_shape_index": 56,
+                  "end_shape_index": 56,
+                  "travel_mode": "drive",
+                  "travel_type": "car"
+                }
+              ],
+              "summary": {
+                "has_time_restrictions": false,
+                "has_toll": false,
+                "has_highway": false,
+                "has_ferry": false,
+                "min_lat": 37.498008,
+                "min_lon": 127.02792,
+                "max_lat": 37.504505,
+                "max_lon": 127.049065,
+                "time": 147.404,
+                "length": 2.119,
+                "cost": 289.959
+              },
+              "shape": "}cvofA_nfhqFnH`]tCbNx@NVRPv@pCvNR\\`@\\l@Hb@WNWHi@LuAuDuQqAgGgDqPgLqj@sNas@gKkg@eBaJiC}L{Kck@_Oqr@wDuQgOou@u[{~AaBmIsC{MkFcXkF{Wa@oBwBoKoAcGkAsFkGeZkNsp@eMel@eLyi@{AwHaHa^_Nqk@cSocAk@yCmAeGo@aDa@iBgA_Fo@iD_AyE}@yEuEwS}Qu|@uXapA}Z}`Bka@inBiEzA"
+            }
+          ],
+          "summary": {
+            "has_time_restrictions": false,
+            "has_toll": false,
+            "has_highway": false,
+            "has_ferry": false,
+            "min_lat": 37.498008,
+            "min_lon": 127.02792,
+            "max_lat": 37.504505,
+            "max_lon": 127.049065,
+            "time": 147.404,
+            "length": 2.119,
+            "cost": 289.959
+          },
+          "status_message": "Found route between points",
+          "status": 0,
+          "units": "kilometers",
+          "language": "en-US"
+        }
+      },
+      "trace": {
+        "units": "kilometers",
+        "shape": "}cvofA_nfhqFnH`]tCbNx@NVRPv@pCvNR\\`@\\l@Hb@WNWHi@LuAuDuQqAgGgDqPgLqj@sNas@gKkg@eBaJiC}L{Kck@_Oqr@wDuQgOou@u[{~AaBmIsC{MkFcXkF{Wa@oBwBoKoAcGkAsFkGeZkNsp@eMel@eLyi@{AwHaHa^_Nqk@cSocAk@yCmAeGo@aDa@iBgA_Fo@iD_AyE}@yEuEwS}Qu|@uXapA}Z}`Bka@inBiExA",
+        "edges": [
+          {
+            "id": 1296811710864,
+            "speed": 57,
+            "length": 0.045,
+            "source_percent_along": 0.642
+          },
+          {
+            "id": 1297617017232,
+            "speed": 57,
+            "length": 0.023
+          },
+          {
+            "id": 1297751234960,
+            "speed": 94,
+            "length": 0.047
+          },
+          {
+            "id": 1296274839952,
+            "speed": 57,
+            "length": 0.028
+          },
+          {
+            "id": 1297851898256,
+            "speed": 57,
+            "length": 0.013
+          },
+          {
+            "id": 1297415690640,
+            "speed": 57,
+            "length": 0.027
+          },
+          {
+            "id": 1297281472912,
+            "speed": 57,
+            "length": 0.065
+          },
+          {
+            "id": 1296744602000,
+            "speed": 57,
+            "length": 0.079
+          },
+          {
+            "id": 1296878819728,
+            "speed": 57,
+            "length": 0.061
+          },
+          {
+            "id": 1297013037456,
+            "speed": 57,
+            "length": 0.017
+          },
+          {
+            "id": 1296945928592,
+            "speed": 57,
+            "length": 0.021
+          },
+          {
+            "id": 1242319313296,
+            "speed": 57,
+            "length": 0.065
+          },
+          {
+            "id": 1242252204432,
+            "speed": 57,
+            "length": 0.078
+          },
+          {
+            "id": 1242185095568,
+            "speed": 57,
+            "length": 0.028
+          },
+          {
+            "id": 1242117986704,
+            "speed": 57,
+            "length": 0.082
+          },
+          {
+            "id": 1241849551248,
+            "speed": 57,
+            "length": 0.145
+          },
+          {
+            "id": 1337345464720,
+            "speed": 57,
+            "length": 0.016
+          },
+          {
+            "id": 1337580345744,
+            "speed": 57,
+            "length": 0.023
+          },
+          {
+            "id": 1337479682448,
+            "speed": 57,
+            "length": 0.038
+          },
+          {
+            "id": 1338553424272,
+            "speed": 57,
+            "length": 0.043
+          },
+          {
+            "id": 1338251434384,
+            "speed": 57,
+            "length": 0.019
+          },
+          {
+            "id": 1338083662224,
+            "speed": 57,
+            "length": 0.024
+          },
+          {
+            "id": 1338687642000,
+            "speed": 57,
+            "length": 0.041
+          },
+          {
+            "id": 1338754750864,
+            "speed": 57,
+            "length": 0.075
+          },
+          {
+            "id": 1338922523024,
+            "speed": 57,
+            "length": 0.069
+          },
+          {
+            "id": 1346170280336,
+            "speed": 57,
+            "length": 0.065
+          },
+          {
+            "id": 1345968953744,
+            "speed": 57,
+            "length": 0.061
+          },
+          {
+            "id": 1345901844880,
+            "speed": 57,
+            "length": 0.068
+          },
+          {
+            "id": 1345767627152,
+            "speed": 57,
+            "length": 0.103
+          },
+          {
+            "id": 1345566300560,
+            "speed": 57,
+            "length": 0.007
+          },
+          {
+            "id": 1345499191696,
+            "speed": 57,
+            "length": 0.02
+          },
+          {
+            "id": 1344828103056,
+            "speed": 57,
+            "length": 0.016
+          },
+          {
+            "id": 1344962320784,
+            "speed": 57,
+            "length": 0.008
+          },
+          {
+            "id": 1345096538512,
+            "speed": 57,
+            "length": 0.021
+          },
+          {
+            "id": 1346640042384,
+            "speed": 57,
+            "length": 0.125
+          },
+          {
+            "id": 1346774260112,
+            "speed": 57,
+            "length": 0.123
+          },
+          {
+            "id": 1346975586704,
+            "speed": 57,
+            "length": 0.146
+          },
+          {
+            "id": 1347042695568,
+            "speed": 57,
+            "length": 0.169
+          },
+          {
+            "id": 392889212505,
+            "speed": 49,
+            "length": 0.012,
+            "target_percent_along": 0.449
+          }
+        ],
+        "alternate_paths": []
+      }
+    },
+    "provenance": {
+      "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+      "high_water": 2,
+      "sequence": null,
+      "traffic_snapshot_id": null,
+      "compiler_policy": "valhalla-current-v1",
+      "generation_id": "0784fbb28c7005e1915d2b72b796212943db54c12e63bab6c62c5768c112c87e",
+      "traffic_sha256": "c0726aec71a970a45e2f580f982e4f97b2ee0e72838c08bfcc6fe3dffb0ccd7e",
+      "traffic_byte_length": 8663040,
+      "checked_at_event_time": "2026-10-24T00:07:00.000Z",
+      "valid_until": null,
+      "traffic_mode": "NO_USABLE_SNAPSHOT",
+      "engine": {
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "version": "3.9.1"
+      },
+      "message_en": "No usable accepted snapshot; default speeds are used.",
+      "message_ko": "사용 가능한 수용 자료가 없어 기본 속도를 사용합니다.",
+      "activation_epoch": 2,
+      "native_daemon": {
+        "pid": 16,
+        "start_ticks": "2437455"
+      }
+    }
+  }
+}

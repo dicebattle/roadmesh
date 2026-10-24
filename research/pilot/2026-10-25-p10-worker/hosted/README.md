@@ -1,0 +1,17 @@
+# Corrected P10 hosted proof / 수정된 P10 원격 검증
+
+The corrected head `a5be89e842855d4572280a0062365c7045fcb96e` passed [push40139486989](https://github.com/dicebattle/routelens/actions/runs/40139486989) and [PR40139490949](https://github.com/dicebattle/routelens/actions/runs/40139490949): fresh whole302 and262 tests on each Node22/24. Main inspected the **push** originals. The runtime fingerprint matches the corrected local run and60.45s recording. [Run metadata](run.json), [PR checks](pr-checks.json).
+
+수정된 위 커밋에서 푸시·PR 모두 새 전체302개와 Node22/24 각각262개를 통과했습니다. 메인은 **푸시 원문**을 검사했으며 실행 지문이 수정된 로컬 실행·60.45초 녹화와 같습니다.
+
+Main verified9,932 present inventoried hashes. Detailed gateway inspection verified2,833 hashes,38 native route/trace pairs,18 successful public replies and73 compiler jobs. All eight concurrent requests succeeded; ninth-request429,12s shared deadline and4s node budgets are unchanged. Observed shared deadline12,002.609ms, native lease4,133.375ms and abort release10.171ms met the existing bounds. Worker termination and cleanup were recorded as complete. [Whole](whole-verification.json), [gateway](gateway-verification.json), [node](node-verification.json), [traffic](traffic-verification.json), [aggregation](aggregation-verification.json), [signatures](publication-signature-verification.json), [state](publication-state-verification.json).
+
+메인은 존재하는 목록 원문 해시9,932개를 확인했습니다. 중계 상세에서는 해시2,833개·엔진 경로/추적38쌍·공개 성공18건·작업73개를 확인했습니다. 동시8개 성공과 아홉째429, 기존 전체12초·노드4초 기준을 유지했습니다. 전체 기한·노드 작업 임대·취소 응답 시간은 각각 위 값으로 사전 기준을 충족했습니다. 작업 스레드 종료와 정리 기록도 확인했습니다.
+
+[Archive inventory](archive-verification.json) preserves10,622 originals in three ordered parts. Three supplemental audit files are stored separately. Exact19 whole/16 gateway map omissions remain explicit; present bytes are hashed. No present remote PID/container/volume lookup is claimed. The first P08 audit used a full-local inventory against selected hosted files and correctly failed; the selected-hosted inspector then passed. A first P07 audit invocation mistakenly selected local cleanup mode; its local absence result is **not remote evidence** and was superseded by the correct recorded-hosted audit. Both mistaken audit outputs remain labeled here. No product simulation was rerun or changed for these audit invocation corrections.
+
+원문10,622개를 순서 있는 세 조각으로 보존하고 추가 감사 세 파일은 별도로 둡니다. 전체19개·중계16개의 정확한 지도 제외를 명시하며 존재 바이트는 해시 검사합니다. 현재 원격 PID·컨테이너·볼륨 조회를 주장하지 않습니다. 첫 P08 감사는 선별 원격 자료에 전체 로컬 목록 기준을 적용해 실패했고, 올바른 원격 검사기로 통과했습니다. 첫 P07 감사는 호출 인자를 잘못 지정해 로컬 정리 모드가 선택됐습니다. 그 부재 결과는 **원격 근거가 아니며**, 기록된 원격 정리 모드로 다시 검사한 결과로 대체합니다. 잘못된 두 감사 출력도 표시해 보존하고, 제품 시뮬레이션을 다시 실행하거나 수정하지 않았습니다.
+
+[PR11](https://github.com/dicebattle/routelens/pull/11) merged the exact checked head as `a4b96c675198219e5474158e78d69ae8e03d270a`. Required checks, strict base freshness, administrator enforcement and force/deletion restrictions remained enabled. Main recorded the merge/protection read-back in the subsequent P11 evidence commit, avoiding a documentation-only re-run before merging the already checked source. [Merge](../../../repository/p10-protected-merge-2026-10-25.json), [protection](../../../repository/main-protection-p10-2026-10-25.json), [public video verification](public-media-verification.json).
+
+검사한 커밋 그대로 PR11을 보호 병합했습니다. 필수 검사·최신 기준·관리자 적용·강제 푸시와 삭제 제한을 유지했습니다. 병합·보호 재조회는 이어지는 P11 근거 커밋에 기록하므로, 이미 검사한 소스를 병합하기 전에 문서만 바꾸고 전체 실행을 다시 요구하지 않습니다.

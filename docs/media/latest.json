@@ -1,66 +1,58 @@
 {
-  "source_commit": "8f9c9f76762820f43b4606627738537c7d84fe51",
-  "implementation_sha256": "0b37b365f8ffc8636f7455d5ac64f0c7734d94ba09497813f015150d7badc521",
-  "report_path": "research/pilot/2026-10-25-p10-worker/report.html",
-  "report_sha256": "0616fa013e04db4ca0b9cc1e77546519085a7a02671c6988835ca393e84f4410",
-  "capture_method": "Actual Chrome report playback,60.45 seconds at1280x720/20fps; full MP4/GIF conversion. / 실제 보고서 화면60.45초·1280x720·20fps 녹화와 전체MP4/GIF변환.",
-  "raw_capture_sha256": "f92fcf3aae7a944861ac76128530a33e164803933ad50e41cecb7cf66ccd33d0",
+  "source_commit": "c63c556e460c9e172b2a6a628e6c193c58f073eb",
+  "implementation_sha256": "bcc635c55326ef1306aa04805355c14ea62b3fd115bb4385bcd002942e8c3430",
+  "report_path": "research/pilot/2026-10-25-p11/report.html",
+  "report_sha256": "0fb0f391a3e40557cf1520d1802df90677c6cd11389d73d8a9201e22bffd1f33",
+  "capture_method": "Actual route-client Chrome interaction,102.8 seconds at1280x720/20fps. Whole-run report is separate. / 실제 경로 클라이언트 Chrome 조작102.8초·1280x720·20fps 녹화. 전체 검사 보고서는 별도입니다.",
+  "raw_capture_sha256": "7f0d556ad198140dc29dd4ed7fc4f40fd07959b99ce0a64ec65d89a0c1835ef1",
   "assets": [
     {
       "path": "docs/media/demo.mp4",
-      "sha256": "81a0f2e8214be4d7414920c420ed4181615aeef06c40a58f083afaf1438fed0b"
+      "sha256": "f580eb7b765f91f6f9412c107e30694dd0bf6e17a826a9b7ec58341de4a27fb5"
     },
     {
       "path": "docs/media/demo.gif",
-      "sha256": "54ee717d5ba1c1fd84012d5f5f7c87b8cbf833cde1fd694a7d7ea8a34663744c"
+      "sha256": "56d86c31e68791e456c2afe35bcd31ff93105752ad3585f050555678e2312ea6"
     },
     {
-      "path": "research/pilot/2026-10-25-p10-worker/report-data.json",
-      "sha256": "fff8c3b3fd8de058402b192b903dbeaa7e5f6e234a4d6fe30d7e84aa53127bbe"
+      "path": "research/pilot/2026-10-25-p11/report-data.json",
+      "sha256": "012f50327529e69abc78562d3cb34728287fbca7f490e28b57d5e3b5d55977e4"
     },
     {
-      "path": "research/pilot/2026-10-25-p10-worker/frames/checks-ko.png",
-      "sha256": "5af872d569a8d4bbd782832c10e26faf7c661c5237b2aed87c4a1859a1c3e97d"
+      "path": "research/pilot/2026-10-25-p11/frames/baseline-en.png",
+      "sha256": "b9731dc647bb2652b6605792b8d7bb46a95fa5c5f170333f66c68fdf4abe07fa"
     },
     {
-      "path": "research/pilot/2026-10-25-p10-worker/frames/deadline-en.png",
-      "sha256": "bedba5d4a4732d060849d811024d3d7535c0c0ce9d651c1c848f556e5d2547c5"
+      "path": "research/pilot/2026-10-25-p11/frames/baseline-ko.png",
+      "sha256": "cd061ea25e27ac8c32a8682c8545310f7bd6ab913f1b7d81a23b6af4e0c3dd19"
     },
     {
-      "path": "research/pilot/2026-10-25-p10-worker/frames/detour-en.png",
-      "sha256": "91b8929f32714d4e7609d749523a6efced3842369e74f511ccbf8d01c67ffefa"
+      "path": "research/pilot/2026-10-25-p11/frames/detour-en.png",
+      "sha256": "14da02e042d28c66d86417c9bf7c07bc46312d3199707ffefccb6b962c7b5c21"
     },
     {
-      "path": "research/pilot/2026-10-25-p10-worker/frames/expired-en.png",
-      "sha256": "e1e3e1c521e6d57bb540dd46f0972a4615a0173dbd31c5df60bbc2df6ded94d2"
+      "path": "research/pilot/2026-10-25-p11/frames/expired-ko.png",
+      "sha256": "fd389ffdb2d6dc769d43611b2f63b147f962453758e8913a0359ab200fe08127"
     },
     {
-      "path": "research/pilot/2026-10-25-p10-worker/frames/expired-ko.png",
-      "sha256": "c692735e0da189140855af5be56976c8053d1082353e5d54fbdde7b1468258ea"
+      "path": "research/pilot/2026-10-25-p11/frames/failover-ko.png",
+      "sha256": "212a21ea0ec5671de3f02c7284ba56105b37c9086d4245e7863a08aae40474f3"
     },
     {
-      "path": "research/pilot/2026-10-25-p10-worker/frames/failover-en.png",
-      "sha256": "1b7f274a16a961fb78efe75cbe0a02979f8129f3db1247f7357cf926f37c7ce5"
+      "path": "research/pilot/2026-10-25-p11/frames/initial-en.png",
+      "sha256": "4524e6910c3150736d79dd8b266d4840d142eafd845b59c1fe2d178da3b8554a"
     },
     {
-      "path": "research/pilot/2026-10-25-p10-worker/frames/live-en.png",
-      "sha256": "de0d4cb2609d3db22449e1be3ac6f5c7c3564b89f63ffeca46a38555d8180709"
+      "path": "research/pilot/2026-10-25-p11/frames/invalidated-en.png",
+      "sha256": "d6357a4c1648ba31fabde7c8876e8e3ddf280e5ceac1506af397b01c3d7db886"
     },
     {
-      "path": "research/pilot/2026-10-25-p10-worker/frames/live-ko.png",
-      "sha256": "032a6dc39711aee6c8112a636184efb23b72ed438eb3b138f21425db53e199c5"
+      "path": "research/pilot/2026-10-25-p11/frames/live-en.png",
+      "sha256": "89ea72446d09379194cca5ed7041303271f64f48472088b38543317f427d67c4"
     },
     {
-      "path": "research/pilot/2026-10-25-p10-worker/frames/map.png",
-      "sha256": "c510c7b32641a7e277bb513ce0930f08ce25f1f5f30564f3c287fbb6a176e644"
-    },
-    {
-      "path": "research/pilot/2026-10-25-p10-worker/frames/overview-en.png",
-      "sha256": "3853151964c7fac387bbc60b284eeb0cf35e97219d6ecb0edb0e3cdc6cd424d6"
-    },
-    {
-      "path": "research/pilot/2026-10-25-p10-worker/frames/version-rejection-en.png",
-      "sha256": "9e633be9687690766b363a0bc126f19d4fc3e5c3b7e076c95abf003470a32815"
+      "path": "research/pilot/2026-10-25-p11/frames/unavailable-en.png",
+      "sha256": "029684178c2e33900b2849e430450699865714b5e94c268043c0d9ccaa80e9f4"
     }
   ]
 }

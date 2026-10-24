@@ -1591,10 +1591,27 @@ export async function runGatewayChecks(
       "geometry",
       "live_coverage_ratio",
       "warnings",
+      "high_water",
+      "checked_at_event_time",
+      "traffic_published_at",
+      "traffic_valid_until",
+      "source_class",
+      "clock_basis",
     ].sort();
     const privacy = publicSuccessBodies.every(
       (response) =>
         canonical(Object.keys(response).sort()).equals(canonical(publicKeys)) &&
+        Number.isSafeInteger(response.high_water) &&
+        response.high_water >= (response.sequence ?? 0) &&
+        Number.isFinite(Date.parse(response.checked_at_event_time)) &&
+        response.source_class === "SYNTHETIC" &&
+        response.clock_basis === "SIMULATION_EVENT_TIME" &&
+        (response.snapshot_id === null
+          ? response.traffic_published_at === null &&
+            response.traffic_valid_until === null
+          : Number.isFinite(Date.parse(response.traffic_published_at!)) &&
+            Date.parse(response.traffic_valid_until!) >
+              Date.parse(response.checked_at_event_time)) &&
         response.warnings.every((w) =>
           canonical(Object.keys(w).sort()).equals(
             canonical(["code", "message_en", "message_ko"].sort()),

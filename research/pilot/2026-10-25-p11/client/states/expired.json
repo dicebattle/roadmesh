@@ -1,0 +1,45 @@
+{
+  "lang": "ko",
+  "state": "expired",
+  "request_id": "",
+  "map_ready": "true",
+  "map_active_route": "false",
+  "map_request_id": "",
+  "map_rendered_request_id": "",
+  "status": "합성 교통 문맥의 기한이 지났습니다. 다시 계산하면 현재 기본 속도를 사용합니다.",
+  "summary": "",
+  "evidence": {
+    "request": {
+      "schema_version": "0.1",
+      "request_id": "browser-0772b9ef-cbff-4508-9f8d-381375e2a560",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    },
+    "response": null,
+    "authority": {
+      "schema_version": "0.1",
+      "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+      "traffic_snapshot_id": null,
+      "sequence": null,
+      "high_water": 4,
+      "checked_at_event_time": "2026-10-24T00:07:00.000Z",
+      "traffic_published_at": null,
+      "traffic_valid_until": null,
+      "source_class": "SYNTHETIC",
+      "clock_basis": "SIMULATION_EVENT_TIME"
+    },
+    "state": "expired",
+    "reason": "EXPIRED",
+    "map_source_geometry": null
+  },
+  "scroll_width": 390,
+  "viewport_width": 390
+}

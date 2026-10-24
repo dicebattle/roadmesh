@@ -1,0 +1,100 @@
+{
+  "lang": "ko",
+  "state": "current",
+  "request_id": "browser-e5f7fec4-fe43-47b8-a84d-82583a8a4f06",
+  "map_ready": "true",
+  "map_active_route": "true",
+  "map_request_id": "browser-e5f7fec4-fe43-47b8-a84d-82583a8a4f06",
+  "map_rendered_request_id": "browser-e5f7fec4-fe43-47b8-a84d-82583a8a4f06",
+  "status": "수용한 교통 문맥으로 확인한 경로입니다.",
+  "summary": "0.01 km · 0.0분이 경로에 기본 속도 적용경로 실시간 적용률: 0.00%교통정보 나이 · 모의 시각 기준: 0.0 초확인한 모의 시각: 2026-10-24T00:04:30.000Z이 경로에 수용된 실시간 구간이 없어 기본 속도를 적용합니다.",
+  "evidence": {
+    "request": {
+      "schema_version": "0.1",
+      "request_id": "browser-e5f7fec4-fe43-47b8-a84d-82583a8a4f06",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    },
+    "response": {
+      "request_id": "browser-e5f7fec4-fe43-47b8-a84d-82583a8a4f06",
+      "request_sha256": "876a00c795a5d0f44296bc956e413ad31844605871313b4169ca5f1e1819a80e",
+      "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+      "snapshot_id": "83d4a4f7eb5604961aeb930e546e64b3cc4a9a826d74861a1198bc16d0e19be5",
+      "sequence": 4,
+      "generation_id": "11bc0f7b00adbf47fa38639eb549e533920e3866407ca6b1422885bb335c6a27",
+      "traffic_sha256": "acb516cc0bbf967ffa22b304094c771e6d178f2aaf2427e10c1cf98267f3c6d0",
+      "engine_version": "3.9.1",
+      "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+      "costing_config_id": "valhalla-current-v1",
+      "node_id": "client-node-a",
+      "traffic_mode": "BASE_ONLY",
+      "distance_m": 12,
+      "duration_s": 0.78,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.037397,
+            37.500837
+          ],
+          [
+            127.037528,
+            37.500877
+          ]
+        ]
+      },
+      "live_coverage_ratio": 0,
+      "warnings": [
+        {
+          "code": "NO_ROUTE_LIVE_COVERAGE",
+          "message_en": "This route has no accepted live edge coverage; default speeds apply.",
+          "message_ko": "이 경로에 수용된 실시간 구간이 없어 기본 속도를 적용합니다."
+        }
+      ],
+      "high_water": 4,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "traffic_published_at": "2026-10-24T00:04:30.000Z",
+      "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+      "source_class": "SYNTHETIC",
+      "clock_basis": "SIMULATION_EVENT_TIME",
+      "calculated_at": "2026-10-24T22:56:22.898Z"
+    },
+    "authority": {
+      "schema_version": "0.1",
+      "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+      "traffic_snapshot_id": "83d4a4f7eb5604961aeb930e546e64b3cc4a9a826d74861a1198bc16d0e19be5",
+      "sequence": 4,
+      "high_water": 4,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "traffic_published_at": "2026-10-24T00:04:30.000Z",
+      "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+      "source_class": "SYNTHETIC",
+      "clock_basis": "SIMULATION_EVENT_TIME"
+    },
+    "state": "current",
+    "reason": "",
+    "map_source_geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.037397,
+          37.500837
+        ],
+        [
+          127.037528,
+          37.500877
+        ]
+      ]
+    }
+  },
+  "scroll_width": 390,
+  "viewport_width": 390
+}

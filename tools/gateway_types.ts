@@ -1,3 +1,25 @@
+export type {
+  GatewayContextReply,
+  GatewayFailure,
+  GatewayFreshness,
+  GatewayReason,
+  GatewayReply,
+  GatewayRequest,
+  GatewayRouteContext,
+  GatewaySuccess,
+  GatewayWarning,
+} from "./gateway_public_types.js";
+import type {
+  GatewayContextReply,
+  GatewayFailure,
+  GatewayFreshness,
+  GatewayReason,
+  GatewayReply,
+  GatewayRequest,
+  GatewayRouteContext,
+  GatewaySuccess,
+  GatewayWarning,
+} from "./gateway_public_types.js";
 /** P10 gateway authority, public allowlist and private IPC / 중계 승인·공개 허용목록·비공개 통신. */
 import type {
   AcceptedInspection,
@@ -21,59 +43,6 @@ export interface GatewayConfig {
   nodes: [GatewayNode, GatewayNode];
   port?: number;
   poll_interval_ms?: number;
-}
-export interface GatewayRequest {
-  schema_version: "0.1";
-  request_id: string;
-  origin: { latitude: number; longitude: number };
-  destination: { latitude: number; longitude: number };
-  profile: "car";
-  traffic_policy: "prefer_live";
-}
-export type GatewayReason =
-  | "AUTH_REQUIRED"
-  | "INVALID_INPUT"
-  | "UNSUPPORTED_POLICY"
-  | "RATE_LIMITED"
-  | "VERSION_MISMATCH"
-  | "TRAFFIC_CHANGED"
-  | "NO_HEALTHY_NODE"
-  | "STORE_UNAVAILABLE"
-  | "DEADLINE_EXCEEDED";
-export interface GatewayWarning {
-  code: string;
-  message_en: string;
-  message_ko: string;
-}
-export interface GatewaySuccess {
-  request_id: string;
-  /** SHA256(canonical(complete original public request)); native input is separately compared byte-for-byte canonically.
-   * 공개 원요청 전체 정규 JSON 해시이며 네이티브 입력은 별도로 정규 바이트 대조합니다. */
-  request_sha256: string;
-  graph_id: string;
-  snapshot_id: string | null;
-  sequence: number | null;
-  generation_id: string;
-  traffic_sha256: string;
-  engine_version: "3.9.1";
-  image_id: string;
-  costing_config_id: "valhalla-current-v1";
-  node_id: string;
-  calculated_at: string;
-  traffic_mode: "LIVE_MIXED" | "BASE_ONLY";
-  distance_m: number;
-  duration_s: number;
-  geometry: { type: "LineString"; coordinates: number[][] };
-  live_coverage_ratio: number;
-  warnings: GatewayWarning[];
-}
-export interface GatewayFailure extends GatewayWarning {
-  code: "ERROR";
-  reason: GatewayReason;
-}
-export interface GatewayReply {
-  status: number;
-  body: GatewaySuccess | GatewayFailure;
 }
 export interface GatewayRouteOptions {
   deadline: number;

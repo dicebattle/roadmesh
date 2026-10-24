@@ -1,0 +1,9 @@
+{
+  "status": 403,
+  "body": {
+    "code": "ERROR",
+    "reason": "AUTH_REQUIRED",
+    "message_en": "The gateway cannot return a current verified route for this request.",
+    "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+  }
+}

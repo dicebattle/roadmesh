@@ -1,0 +1,61 @@
+{
+  "source_commit": "c63c556e460c9e172b2a6a628e6c193c58f073eb",
+  "implementation_sha256": "bcc635c55326ef1306aa04805355c14ea62b3fd115bb4385bcd002942e8c3430",
+  "report_path": "research/pilot/2026-10-25-p11/report.html",
+  "report_sha256": "0fb0f391a3e40557cf1520d1802df90677c6cd11389d73d8a9201e22bffd1f33",
+  "capture_method": "Actual route-client Chrome interaction,102.8 seconds at1280x720/20fps. Whole-run report is separate. / 실제 경로 클라이언트 Chrome 조작102.8초·1280x720·20fps 녹화. 전체 검사 보고서는 별도입니다.",
+  "raw_capture_sha256": "7f0d556ad198140dc29dd4ed7fc4f40fd07959b99ce0a64ec65d89a0c1835ef1",
+  "assets": [
+    {
+      "path": "docs/media/demo.mp4",
+      "sha256": "f580eb7b765f91f6f9412c107e30694dd0bf6e17a826a9b7ec58341de4a27fb5"
+    },
+    {
+      "path": "docs/media/demo.gif",
+      "sha256": "56d86c31e68791e456c2afe35bcd31ff93105752ad3585f050555678e2312ea6"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p11/report-data.json",
+      "sha256": "012f50327529e69abc78562d3cb34728287fbca7f490e28b57d5e3b5d55977e4"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p11/frames/baseline-en.png",
+      "sha256": "b9731dc647bb2652b6605792b8d7bb46a95fa5c5f170333f66c68fdf4abe07fa"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p11/frames/baseline-ko.png",
+      "sha256": "cd061ea25e27ac8c32a8682c8545310f7bd6ab913f1b7d81a23b6af4e0c3dd19"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p11/frames/detour-en.png",
+      "sha256": "14da02e042d28c66d86417c9bf7c07bc46312d3199707ffefccb6b962c7b5c21"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p11/frames/expired-ko.png",
+      "sha256": "fd389ffdb2d6dc769d43611b2f63b147f962453758e8913a0359ab200fe08127"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p11/frames/failover-ko.png",
+      "sha256": "212a21ea0ec5671de3f02c7284ba56105b37c9086d4245e7863a08aae40474f3"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p11/frames/initial-en.png",
+      "sha256": "4524e6910c3150736d79dd8b266d4840d142eafd845b59c1fe2d178da3b8554a"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p11/frames/invalidated-en.png",
+      "sha256": "d6357a4c1648ba31fabde7c8876e8e3ddf280e5ceac1506af397b01c3d7db886"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p11/frames/live-en.png",
+      "sha256": "89ea72446d09379194cca5ed7041303271f64f48472088b38543317f427d67c4"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p11/frames/unavailable-en.png",
+      "sha256": "029684178c2e33900b2849e430450699865714b5e94c268043c0d9ccaa80e9f4"
+    }
+  ],
+  "raw_capture_path": "output/playwright/p11-client-capture.webm",
+  "frame_selection_note_en": "The first27s detour candidate showed invalidation; the unchanged video was sampled at33s for the actual detour. No UI/video content was replaced.",
+  "frame_selection_note_ko": "처음27초 후보는 무효화 화면이라 같은 원영상33초의 실제 우회 화면을 선택했습니다. UI·영상 내용을 대체하지 않았습니다."
+}

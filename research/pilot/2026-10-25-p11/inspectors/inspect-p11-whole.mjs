@@ -1,0 +1,864 @@
+import fs from "node:fs";
+import path from "node:path";
+import crypto from "node:crypto";
+import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
+import { createConnection } from "node:net";
+const args = process.argv.slice(2);
+assert.ok(
+  (args.length === 5 && args[3] === "--expected-source") &&
+    args[1] === "--output",
+  "Usage / 사용법: node data/inspect-p11-whole.mjs ROOT --output NEW_FILE_OUTSIDE_ROOT [--expected-source EXPECTED_SHA]",
+);
+const root = fs.realpathSync(args[0]),
+  output = path.resolve(args[2]);
+assert.ok(
+  output !== root && !output.startsWith(root + path.sep),
+  "Output must be outside evidence root / 출력은 증거 폴더 밖이어야 합니다",
+);
+assert.ok(
+  !fs.existsSync(output),
+  "Output must be new / 새 출력 파일이어야 합니다",
+);
+const resolvedOutputParent = fs.realpathSync(path.dirname(output));
+assert.ok(
+  resolvedOutputParent !== root &&
+    !resolvedOutputParent.startsWith(root + path.sep),
+);
+const inputPath = (p) => {
+  assert.ok(
+    typeof p === "string" &&
+      !path.isAbsolute(p) &&
+      !p.split(/[\\/]/).includes(".."),
+  );
+  const full = fs.realpathSync(path.resolve(root, p));
+  assert.ok(full === root || full.startsWith(root + path.sep));
+  return full;
+};
+const read = (p) => JSON.parse(fs.readFileSync(inputPath(p)));
+const sha = (p) =>
+  crypto
+    .createHash("sha256")
+    .update(fs.readFileSync(inputPath(p)))
+    .digest("hex");
+const expectedSource = args[4];
+assert.match(expectedSource, /^[a-f0-9]{40}$/);
+const m = read("manifest.json");
+assert.equal(m.source.commit, expectedSource);
+assert.equal(m.status, "PASS");
+assert.equal(m.source.dirty, false);
+assert.equal(m.cleanup_verified, true);
+const checked = new Set(),
+  inventories = {};
+for (const name of [
+  "manifest.json",
+  "seoul/manifest.json",
+  "seoul/tiny/manifest.json",
+  "seoul/graph/manifest.json",
+  "seoul/workload/manifest.json",
+  "ingestion/manifest.json",
+  "aggregation/manifest.json",
+  "publication/manifest.json",
+  "traffic/manifest.json",
+  "nodes/manifest.json",
+  "gateway/manifest.json",
+  "client/manifest.json",
+]) {
+  const v = read(name);
+  assert.equal(v.status, "PASS");
+  assert.deepEqual(v.source, m.source);
+  if (!name.startsWith("seoul/tiny/"))
+    assert.equal(v.graph_id, m.graph_id, name);
+  if (v.implementation_sha256 !== undefined)
+    assert.equal(v.implementation_sha256, m.implementation_sha256, name);
+  const entries = v.output_sha256 ?? v.files_sha256;
+  assert.ok(entries && Object.keys(entries).length);
+  inventories[name] = Object.keys(entries).length;
+  for (const [p, h] of Object.entries(entries)) {
+    const full = path.join(path.dirname(name), p);
+    assert.equal(sha(full), h, full);
+    checked.add(full);
+  }
+}
+const tiny = read("seoul/tiny/assertions.json"),
+  regional = read("seoul/assertions.json"),
+  ingest = read("ingestion/assertions.json");
+assert.equal(tiny.length, 48);
+assert.equal(regional.length, 35);
+assert.equal(ingest.length, 34);
+const aggregation = read("aggregation/assertions.json");
+assert.equal(aggregation.length, 34);
+const publication = read("publication/assertions.json");
+assert.equal(publication.length, 55);
+const traffic = read("traffic/assertions.json");
+const trafficRequiredIds = [
+  "authored-source",
+  "http-matched-timing",
+  "no-neighbor-contributions",
+  "three-live-medians",
+  "signed-http-acceptance",
+  "blank-bundle",
+  "exact-compiled-bytes",
+  "identical-retry",
+  "generation-concurrency",
+  "generation-precommit-kill",
+  "generation-postcommit-kill",
+  "corrupt-bundle",
+  "truncated-cache",
+  "baseline-route",
+  "live-detour",
+  "restart-cache",
+  "publisher-outage",
+  "accepted-key-revoked",
+  "database-outage",
+  "database-restart",
+  "engine-unavailable",
+  "superseded-compile",
+  "http-revoked-correction",
+  "offline-ttl",
+  "new-empty-window",
+  "before-expiry",
+  "exact-expiry",
+  "route-result-expiry",
+  "compile-selection-expiry",
+  "clock-only-baseline",
+  "public-privacy",
+  "owned-cleanup",
+].map((id) => "p08-" + id);
+assert.equal(trafficRequiredIds.length, 32);
+assert.equal(traffic.length, 32);
+assert.equal(new Set(traffic.map((a) => a.assertion_id)).size, 32);
+assert.deepEqual(
+  traffic.map((a) => a.assertion_id).sort(),
+  [...trafficRequiredIds].sort(),
+);
+const nodeRequiredIds = [
+  "fresh-source",
+  "independent-nodes",
+  "baseline-same-daemon",
+  "native-readiness",
+  "unauthorized",
+  "invalid-input",
+  "body-limit",
+  "generation-mismatch",
+  "capacity-eight",
+  "signed-http-pull",
+  "two-node-live-detour",
+  "held-old-lease",
+  "activation-new-request",
+  "obsolete-result-rejected",
+  "last-lease-cleanup",
+  "expired-candidate",
+  "before-expiry",
+  "automatic-baseline-expiry",
+  "offline-node-expiry",
+  "publisher-outage",
+  "store-outage",
+  "corrupt-generation",
+  "engine-kill",
+  "node-kill",
+  "parent-reaping",
+  "durable-restart",
+  "two-slot-coalescing",
+  "non-live-correction",
+  "accepted-key-revoked",
+  "deadline-drain-bound",
+  "public-privacy",
+  "owned-cleanup",
+].map((id) => "p09-" + id);
+const nodes = read("nodes/assertions.json");
+assert.equal(nodes.length, 32);
+assert.equal(new Set(nodes.map((a) => a.assertion_id)).size, 32);
+assert.deepEqual(
+  nodes.map((a) => a.assertion_id).sort(),
+  [...nodeRequiredIds].sort(),
+);
+for (const a of nodes) assert.equal(a.status, "PASS");
+// P10 whole linkage only; detailed native/crypto/deadline auditing is a separate inspector.
+// P10 전체 연결을 검사하며 상세 지속엔진·암호·기한 감사는 별도 검사기에서 수행합니다.
+const gatewayRequiredIds = [
+  "fresh-source",
+  "authenticated-api",
+  "invalid-input",
+  "body-limit",
+  "unsupported-policy",
+  "configured-origins",
+  "independent-consumer",
+  "baseline",
+  "live-primary",
+  "route-local-coverage",
+  "primary-kill-failover",
+  "primary-unavailable-retry",
+  "wrong-generation-rejected",
+  "wrong-request-rejected",
+  "malformed-route-rejected",
+  "oversized-response-rejected",
+  "redirect-rejected",
+  "stale-node-excluded",
+  "no-matching-node",
+  "both-down",
+  "retry-once",
+  "shared-deadline",
+  "propagated-node-deadline",
+  "client-disconnect",
+  "admission-eight",
+  "result-version-change",
+  "exact-expiry",
+  "non-live-correction",
+  "publisher-outage",
+  "store-outage",
+  "public-privacy",
+  "owned-cleanup",
+].map((id) => "p10-" + id);
+const gatewayAssertions = read("gateway/assertions.json");
+assert.equal(gatewayRequiredIds.length, 32);
+assert.equal(gatewayAssertions.length, 32);
+assert.equal(new Set(gatewayAssertions.map((a) => a.assertion_id)).size, 32);
+assert.deepEqual(
+  gatewayAssertions.map((a) => a.assertion_id).sort(),
+  [...gatewayRequiredIds].sort(),
+);
+const gatewayManifest = read("gateway/manifest.json"),
+  graphManifest = read("seoul/graph/manifest.json"),
+  gatewayReport = read("gateway/report-gateway.json"),
+  wholeReport = read("report-data.json");
+assert.equal(
+  gatewayManifest.graph_manifest_sha256,
+  sha("seoul/graph/manifest.json"),
+);
+assert.equal(gatewayManifest.graph_id, graphManifest.graph_id);
+assert.equal(gatewayReport.assertions_total, 32);
+assert.equal(gatewayReport.assertions_passed, 32);
+assert.equal(gatewayReport.cleanup_verified, true);
+assert.deepEqual(
+  gatewayReport.cases.map((c) => c.case_id).sort(),
+  [...gatewayRequiredIds].sort(),
+);
+assert.ok(gatewayReport.cases.every((c) => c.status === "PASS"));
+assert.deepEqual(wholeReport.source, m.source);
+assert.equal(wholeReport.graph_id, m.graph_id);
+assert.equal(wholeReport.implementation_sha256, m.implementation_sha256);
+assert.equal(wholeReport.gateway.assertions_total, 32);
+assert.equal(wholeReport.gateway.assertions_passed, 32);
+assert.equal(wholeReport.gateway.cleanup_verified, true);
+assert.deepEqual(
+  wholeReport.gateway.cases.map((c) => c.case_id).sort(),
+  [...gatewayRequiredIds].sort(),
+);
+for (const a of gatewayAssertions) {
+  assert.equal(a.status, "PASS");
+  assert.ok(checked.has("gateway/" + a.evidence_path), a.evidence_path);
+}
+for (const r of gatewayReport.routes) {
+  assert.equal(r.response.graph_id, m.graph_id);
+  assert.ok(checked.has("gateway/" + r.evidence_path));
+}
+const publicKeys = [
+  "request_id",
+  "request_sha256",
+  "graph_id",
+  "snapshot_id",
+  "sequence",
+  "generation_id",
+  "traffic_sha256",
+  "engine_version",
+  "image_id",
+  "costing_config_id",
+  "node_id",
+  "calculated_at",
+  "traffic_mode",
+  "distance_m",
+  "duration_s",
+  "geometry",
+  "live_coverage_ratio",
+  "warnings",
+  "high_water", "checked_at_event_time", "traffic_published_at", "traffic_valid_until", "source_class", "clock_basis",
+].sort();
+let publicResponses = 0;
+for (const entry of fs.readdirSync(inputPath("gateway/requests"), {
+  withFileTypes: true,
+})) {
+  assert.ok(entry.isFile() && !entry.isSymbolicLink());
+  const file = "gateway/requests/" + entry.name;
+  assert.ok(checked.has(file));
+  const r = read(file);
+  if (r.status !== 200) continue;
+  assert.deepEqual(Object.keys(r.body).sort(), publicKeys, file);
+  assert.equal(r.body.graph_id, m.graph_id);
+  assert.ok(["LIVE_MIXED", "BASE_ONLY"].includes(r.body.traffic_mode));
+  assert.ok(
+    Number.isFinite(r.body.live_coverage_ratio) &&
+      r.body.live_coverage_ratio >= 0 &&
+      r.body.live_coverage_ratio <= 1,
+  );
+  for (const warning of r.body.warnings)
+    assert.deepEqual(Object.keys(warning).sort(), [
+      "code",
+      "message_en",
+      "message_ko",
+    ]);
+  publicResponses++;
+}
+assert.ok(
+  publicResponses >= gatewayReport.routes.length && publicResponses > 0,
+);
+assert.ok(gatewayReport.routes.some((r) => r.label === "baseline"));
+assert.ok(gatewayReport.routes.some((r) => r.label === "live-primary"));
+assert.ok(gatewayReport.routes.some((r) => r.label === "exact-expiry"));
+const clientRequiredIds='fresh-source bundled-offline loopback-session unauthenticated-api origin-rejected path-traversal bootstrap-privacy authority-clock map-ready baseline-request live-request route-coverage primary-kill-failover unavailable-clears-route deadline-clears-route changed-version-rejected authority-change-invalidates exact-expiry input-change-cancels late-response-ignored older-authority-ignored invalid-input keyboard-submit english korean mobile390 no-external-requests no-geolocation reload-state public-privacy browser-cleanup owned-cleanup'.split(' ').map(x=>'p11-'+x);
+const clientAssertions=read('client/assertions.json');
+assert.deepEqual(clientAssertions.map(a=>a.assertion_id).sort(),clientRequiredIds.sort());
+for(const a of clientAssertions){assert.equal(a.status,'PASS');assert.ok(checked.has('client/'+a.evidence_path));}
+assert.equal(wholeReport.client.assertions_total,32);assert.equal(wholeReport.client.assertions_passed,32);assert.equal(wholeReport.client.cleanup_verified,true);
+assert.equal(read('client/browser/cleanup.json').cleanup_verified,true);
+assert.equal(read('client/fixture/cleanup.json').cleanup_verified,true);
+const combined = read("assertions.json");
+assert.deepEqual(combined.filter(a=>a.assertion_id.startsWith('p11-')).map(a=>a.assertion_id).sort(),clientRequiredIds.sort());
+assert.equal(combined.length, 334);
+assert.equal(new Set(combined.map((a) => a.assertion_id)).size, 334);
+assert.equal(read("report-data.json").summary.assertions_total, 334);
+assert.equal(read("report-data.json").summary.assertions_passed, 334);
+assert.deepEqual(
+  combined
+    .filter((a) => a.assertion_id.startsWith("p08-"))
+    .map((a) => a.assertion_id)
+    .sort(),
+  [...trafficRequiredIds].sort(),
+);
+for (const a of [
+  ...tiny,
+  ...regional,
+  ...ingest,
+  ...aggregation,
+  ...publication,
+  ...traffic,
+  ...gatewayAssertions,
+  ...combined,
+])
+  assert.equal(a.status, "PASS");
+assert.deepEqual(
+  combined
+    .filter((a) => a.assertion_id.startsWith("p09-"))
+    .map((a) => a.assertion_id)
+    .sort(),
+  [...nodeRequiredIds].sort(),
+);
+assert.deepEqual(
+  combined
+    .filter((a) => a.assertion_id.startsWith("p10-"))
+    .map((a) => a.assertion_id)
+    .sort(),
+  [...gatewayRequiredIds].sort(),
+);
+const source = read("seoul/graph/source-verification.json");
+assert.equal(
+  source.sha256,
+  "282d012b7629c643695f286d4424d7f6d88548d99edb5577ca5b678906f13c17",
+);
+assert.equal(source.size_bytes, 289916859);
+const db = read("ingestion/readbacks/baseline-succeeded.json"),
+  ref = read("seoul/workload/matching/result.json"),
+  spec = read("seoul/workload/spec.json"),
+  truth = read("seoul/workload/truth.json"),
+  edges = read("seoul/graph/edge-map.json");
+assert.equal(db.trips.length, 9);
+assert.ok(
+  db.trips.every((t) => t.state === "SUCCEEDED" && t.raw_payload_count === 0),
+);
+assert.equal(db.counts.raw_payloads, 0);
+assert.equal(
+  db.traversals.length,
+  ref.traversals.filter((t) => t.status === "ACCEPTED").length,
+);
+assert.equal(
+  new Set(db.traversals.map((t) => t.observation_id)).size,
+  db.traversals.length,
+);
+assert.equal(ref.policy_id, "seoul-observed-v3");
+for (const name of ["split-only", "split-overlap"])
+  assert.equal(
+    sha("seoul/workload/matching/result.json"),
+    sha("seoul/workload/" + name + "/result.json"),
+  );
+const vehicles = new Map(db.trips.map((t) => [t.trip_id, t.vehicle_id])),
+  base = Date.parse(spec.start_time_utc),
+  order = (a, b) =>
+    a.vehicle_id.localeCompare(b.vehicle_id) ||
+    a.entry - b.entry ||
+    a.edge_id.localeCompare(b.edge_id);
+const actual = db.traversals
+  .map((t) => ({
+    vehicle_id: vehicles.get(t.trip_id),
+    edge_id: t.edge_id,
+    forward: t.forward,
+    entry: Date.parse(t.entered_at_utc),
+    exit: Date.parse(t.exited_at_utc),
+  }))
+  .sort(order);
+const expected = ref.traversals
+  .filter((t) => t.status === "ACCEPTED")
+  .map((t) => ({
+    vehicle_id: t.vehicle_id,
+    edge_id: t.edge_id,
+    forward: t.forward,
+    entry: base + t.entered_at_ms,
+    exit: base + t.exited_at_ms,
+  }))
+  .sort(order);
+assert.deepEqual(actual, expected);
+function independentLength(points) {
+  let length = 0;
+  const r = Math.PI / 180;
+  for (let i = 1; i < points.length; i++) {
+    let a = points[i - 1],
+      b = points[i],
+      h =
+        Math.sin(((b[1] - a[1]) * r) / 2) ** 2 +
+        Math.cos(a[1] * r) *
+          Math.cos(b[1] * r) *
+          Math.sin(((b[0] - a[0]) * r) / 2) ** 2;
+    length += 6371008.8 * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
+  }
+  return length;
+}
+let maxDistance = 0,
+  maxError = 0;
+for (const t of db.traversals) {
+  const edge = edges.find(
+    (e) => e.edge_id === t.edge_id && e.forward === t.forward,
+  );
+  assert.ok(edge);
+  const delta = Math.abs(
+    independentLength(edge.directed_geometry) - t.distance_m,
+  );
+  maxDistance = Math.max(maxDistance, delta);
+  assert.ok(delta < 1e-6);
+  assert.equal(
+    (Date.parse(t.exited_at_utc) - Date.parse(t.entered_at_utc)) / 1000,
+    t.duration_s,
+  );
+  const vehicle = vehicles.get(t.trip_id),
+    entry = Date.parse(t.entered_at_utc) - base,
+    exit = Date.parse(t.exited_at_utc) - base;
+  const candidates = truth.traversals.filter(
+    (x) =>
+      x.vehicle_id === vehicle &&
+      x.edge_id === t.edge_id &&
+      x.forward === t.forward &&
+      Math.abs(x.entered_at_ms - entry) <= 1000 &&
+      Math.abs(x.exited_at_ms - exit) <= 1000,
+  );
+  assert.equal(candidates.length, 1);
+  const error = Math.max(
+    Math.abs(candidates[0].entered_at_ms - entry),
+    Math.abs(candidates[0].exited_at_ms - exit),
+  );
+  assert.ok(error <= (vehicle.endsWith("-clean") ? 100 : 1000));
+  maxError = Math.max(maxError, error);
+}
+const attempts = read("ingestion/attempt-links.json"),
+  parity = [];
+for (const a of attempts.filter((a) => a.interrupted_attempts.length)) {
+  assert.notEqual(a.interrupted_pid, a.recovered_pid);
+  const p = "ingestion/" + a.interrupted_attempts[0] + "/result.json",
+    q = "ingestion/" + a.recovered_attempts[0] + "/result.json";
+  assert.equal(sha(p), sha(q));
+  parity.push({
+    phase: a.phase,
+    interrupted_pid: a.interrupted_pid,
+    recovered_pid: a.recovered_pid,
+    sha256: sha(p),
+    byte_identical: true,
+  });
+}
+const before = read("ingestion/readbacks/api-before-response.json"),
+  after = read("ingestion/readbacks/api-durable-restart.json");
+assert.equal(before.trips[0].sample_count, 2);
+assert.deepEqual(before.trips, after.trips);
+const restart = read("ingestion/runtime/database-restart.json");
+assert.equal(restart.same_container_id, true);
+assert.equal(restart.host_tcp_ready, true);
+const failed = read("ingestion/readbacks/engine-terminal.json");
+assert.equal(failed.trips[0].state, "FAILED");
+assert.equal(failed.trips[0].attempt, 3);
+assert.equal(failed.trips[0].raw_payload_count, 0);
+assert.equal(failed.traversals.length, 0);
+const beforeSweep = read(
+  "ingestion/readbacks/pending-expiry-before-sweep.json",
+);
+assert.equal(beforeSweep.trips[0].state, "LEASED");
+assert.equal(beforeSweep.trips[0].raw_payload_count, 4);
+assert.equal(beforeSweep.traversals.length, 0);
+assert.equal(
+  ingest.find((a) => a.assertion_id === "p05-event-clock-without-sweep").actual,
+  "LEASE_LOST",
+);
+for (const [p, state] of [
+  ["pending-expiry", "EXPIRED"],
+  ["pending-revoke", "REVOKED"],
+  ["revoked-before-final", "REVOKED"],
+  ["raw-expired", "EXPIRED"],
+]) {
+  const d = read("ingestion/readbacks/" + p + ".json");
+  assert.ok(
+    d.trips.every((t) => t.state === state && t.raw_payload_count === 0),
+  );
+  assert.equal(d.traversals.length, 0);
+}
+const retained = read("ingestion/readbacks/retention-24h.json");
+for (const key of [
+  "trips",
+  "batches",
+  "samples",
+  "traversals",
+  "events",
+  "raw_payloads",
+])
+  assert.equal(retained.counts[key], 0);
+const stopped = read("ingestion/engine-abort-stopped-process.json"),
+  orphan = read("ingestion/engine-abort-before-cleanup.json"),
+  removed = read("ingestion/engine-abort-after-cleanup.json");
+assert.equal(stopped.state, "T");
+assert.ok(["locate", "trace_attributes"].includes(stopped.action));
+assert.equal(orphan.worker_exit.signal, "SIGKILL");
+assert.equal(orphan.engine_paused, true);
+assert.equal(removed.engine_id, orphan.engine_id);
+assert.equal(removed.absent, true);
+for (const p of [
+  "ingestion/runtime/cleanup.json",
+  "traffic/runtime/cleanup.json",
+  "nodes/runtime/cleanup.json",
+  "lifecycle/cleanup.json",
+]) {
+  const c = read(p);
+  assert.equal(c.cleanup_verified, true);
+  assert.equal(c.processes_exited, true);
+  assert.equal(c.private_files_removed, true);
+}
+const owner = read("ingestion/runtime/ownership.json");
+for (const args of [
+  ["inspect", "--format", "{{.Id}}", orphan.engine_id],
+  ["inspect", "--format", "{{.Id}}", owner.container],
+  ["volume", "inspect", "--format", "{{.Name}}", owner.volume],
+]) {
+  const r = spawnSync("docker", args, { encoding: "utf8" });
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /No such (?:container|object|volume)/i);
+}
+const trafficOwner = read("traffic/runtime/ownership.json");
+assert.equal(trafficOwner.planned_before_creation, true);
+assert.ok(
+  trafficOwner.processes.every(
+    (p) => p.spawn_recorded_before_start && p.exited,
+  ),
+);
+const trafficContainers = new Set([trafficOwner.container]),
+  trafficVolumes = new Set([trafficOwner.volume]),
+  trafficCleanupFiles = [];
+function trafficWalk(directory) {
+  for (const entry of fs.readdirSync(path.join(root, directory), {
+    withFileTypes: true,
+  })) {
+    assert.ok(!entry.isSymbolicLink(), "No symlink traversal: " + entry.name);
+    const relative = path.join(directory, entry.name);
+    if (entry.isDirectory()) trafficWalk(relative);
+    else if (entry.isFile()) {
+      if (entry.name === "cleanup.json") {
+        assert.equal(read(relative).cleanup_verified, true, relative);
+        trafficCleanupFiles.push(relative);
+      }
+      if (entry.name === "ownership.json") {
+        const o = read(relative);
+        if (o.run_id && o.container?.startsWith("routelens-p02-")) {
+          assert.match(o.run_id, /^[a-f0-9-]{36}$/);
+          assert.equal(o.container, "routelens-p02-" + o.run_id);
+          assert.equal(o.planned_before_creation, true);
+          trafficContainers.add(o.container);
+        }
+      }
+      if (entry.name === "commands.json") {
+        for (const c of read(relative)) {
+          if (c.args?.[0] !== "create") continue;
+          const nameIndex = c.args.indexOf("--name"),
+            label = c.args.find(
+              (a) =>
+                typeof a === "string" && a.startsWith("io.routelens.run_id="),
+            );
+          if (nameIndex < 0 || !label) continue;
+          const name = c.args[nameIndex + 1],
+            runId = label.slice("io.routelens.run_id=".length);
+          assert.match(runId, /^[a-f0-9-]{36}$/);
+          assert.equal(name, "routelens-p02-" + runId);
+          trafficContainers.add(name);
+        }
+      }
+    }
+  }
+}
+trafficWalk("traffic");
+assert.ok(trafficCleanupFiles.includes("traffic/bundle/cleanup.json"));
+assert.ok(trafficCleanupFiles.includes("traffic/runtime/cleanup.json"));
+for (const name of trafficContainers) {
+  const r = spawnSync("docker", ["inspect", "--format", "{{.Id}}", name], {
+    encoding: "utf8",
+  });
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /No such (?:container|object|volume)/i);
+}
+for (const name of trafficVolumes) {
+  const r = spawnSync(
+    "docker",
+    ["volume", "inspect", "--format", "{{.Name}}", name],
+    { encoding: "utf8" },
+  );
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /No such (?:container|object|volume)/i);
+}
+const nodeOwner = read("nodes/runtime/ownership.json"),
+  nodeContainers = new Set([nodeOwner.container]),
+  nodeVolumes = new Set([nodeOwner.volume]),
+  nodeCleanupFiles = [];
+assert.ok(
+  nodeOwner.processes.every((p) => p.spawn_recorded_before_start && p.exited),
+);
+function scanNodes(directory) {
+  for (const entry of fs.readdirSync(path.join(root, directory), {
+    withFileTypes: true,
+  })) {
+    assert.ok(!entry.isSymbolicLink());
+    const file = path.join(directory, entry.name);
+    if (entry.isDirectory()) scanNodes(file);
+    else if (entry.name === "cleanup.json") {
+      assert.equal(read(file).cleanup_verified, true, file);
+      nodeCleanupFiles.push(file);
+    } else if (entry.name === "ownership.json") {
+      const o = read(file);
+      if (o.schema_version === "p09-engine-0.1") {
+        assert.equal(o.container_name, "routelens-p02-" + o.owner_id);
+        assert.equal(o.owner_label, "io.routelens.run_id=" + o.owner_id);
+        nodeContainers.add(o.container_name);
+      }
+    } else if (entry.name === "commands.json") {
+      for (const c of read(file)) {
+        if (c.args?.[0] !== "create") continue;
+        const label = c.args.find(
+            (v) =>
+              typeof v === "string" && v.startsWith("io.routelens.run_id="),
+          ),
+          index = c.args.indexOf("--name");
+        if (!label || index < 0) continue;
+        const id = label.slice("io.routelens.run_id=".length);
+        assert.match(id, /^[a-f0-9-]{36}$/);
+        assert.equal(c.args[index + 1], "routelens-p02-" + id);
+        nodeContainers.add(c.args[index + 1]);
+      }
+    }
+  }
+}
+scanNodes("nodes");
+assert.ok(nodeCleanupFiles.includes("nodes/runtime/cleanup.json"));
+assert.ok(nodeCleanupFiles.includes("nodes/bundle/cleanup.json"));
+for (const name of nodeContainers) {
+  const r = spawnSync("docker", ["inspect", "--format", "{{.Id}}", name], {
+    encoding: "utf8",
+  });
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /No such (?:container|object|volume)/i);
+}
+for (const name of nodeVolumes) {
+  const r = spawnSync(
+    "docker",
+    ["volume", "inspect", "--format", "{{.Name}}", name],
+    { encoding: "utf8" },
+  );
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /No such (?:container|object|volume)/i);
+}
+const gatewayOwner = read("gateway/runtime/ownership.json"),
+  gatewayContainers = new Set([gatewayOwner.container]),
+  gatewayVolumes = new Set([gatewayOwner.volume]),
+  gatewayCleanupFiles = [];
+assert.equal(gatewayOwner.planned_before_creation, true);
+assert.ok(
+  gatewayOwner.processes.every(
+    (p) => p.spawn_recorded_before_start && p.exited,
+  ),
+);
+const gatewayInventory = gatewayManifest.output_sha256;
+function scanGateway(directory) {
+  for (const entry of fs.readdirSync(inputPath(directory), {
+    withFileTypes: true,
+  })) {
+    assert.ok(!entry.isSymbolicLink());
+    const file = directory + "/" + entry.name;
+    if (entry.isDirectory()) {
+      scanGateway(file);
+      continue;
+    }
+    assert.ok(entry.isFile());
+    assert.ok(
+      file === "gateway/manifest.json"
+        ? checked.has(file)
+        : Object.hasOwn(gatewayInventory, file.slice("gateway/".length)),
+      "Uninventoried gateway file / 중계목록밖파일: " + file,
+    );
+    if (entry.name === "cleanup.json") {
+      assert.equal(read(file).cleanup_verified, true, file);
+      gatewayCleanupFiles.push(file);
+    }
+    if (entry.name === "ownership.json") {
+      const o = read(file);
+      if (o.schema_version === "p09-engine-0.1") {
+        assert.equal(o.container_name, "routelens-p02-" + o.owner_id);
+        assert.equal(o.owner_label, "io.routelens.run_id=" + o.owner_id);
+        gatewayContainers.add(o.container_name);
+      }
+    }
+    if (entry.name === "commands.json") {
+      for (const c of read(file)) {
+        if (c.args?.[0] !== "create") continue;
+        const label = c.args.find(
+            (v) =>
+              typeof v === "string" && v.startsWith("io.routelens.run_id="),
+          ),
+          index = c.args.indexOf("--name");
+        if (!label || index < 0) continue;
+        const id = label.slice("io.routelens.run_id=".length);
+        assert.match(id, /^[a-f0-9-]{36}$/);
+        assert.equal(c.args[index + 1], "routelens-p02-" + id);
+        gatewayContainers.add(c.args[index + 1]);
+      }
+    }
+  }
+}
+scanGateway("gateway");
+for (const required of [
+  "gateway/runtime/cleanup.json",
+  "gateway/bundle/cleanup.json",
+  "gateway/gateway/runtime/cleanup.json",
+])
+  assert.ok(gatewayCleanupFiles.includes(required), required);
+const gatewayControllerCleanup = read("gateway/gateway/runtime/cleanup.json");
+assert.equal(gatewayControllerCleanup.in_flight, 0);
+const gatewayControllerOwner = read(
+  "gateway/gateway/runtime/gateway-ownership.json",
+);
+assert.equal(gatewayControllerOwner.graph_id, m.graph_id);
+assert.equal(gatewayControllerOwner.consumer_id, "p10-gateway");
+assert.ok(
+  gatewayOwner.processes.some((p) => p.pid === gatewayControllerOwner.pid),
+);
+for (const name of gatewayContainers) {
+  const r = spawnSync("docker", ["inspect", "--format", "{{.Id}}", name], {
+    encoding: "utf8",
+  });
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /No such (?:container|object)/i);
+}
+for (const name of gatewayVolumes) {
+  const r = spawnSync(
+    "docker",
+    ["volume", "inspect", "--format", "{{.Name}}", name],
+    { encoding: "utf8" },
+  );
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /No such volume/i);
+}
+const gatewayPorts = read("gateway/readbacks/ports-after-cleanup.json");
+assert.ok(gatewayPorts.length > 0);
+for (const item of gatewayPorts) {
+  assert.equal(item.open, false);
+  assert.ok(Number.isInteger(item.port) && item.port > 0 && item.port < 65536);
+  const open = await new Promise((ok) => {
+    const socket = createConnection({ host: "127.0.0.1", port: item.port });
+    socket.setTimeout(300);
+    socket.once("connect", () => {
+      socket.destroy();
+      ok(true);
+    });
+    for (const event of ["error", "timeout"])
+      socket.once(event, () => {
+        socket.destroy();
+        ok(false);
+      });
+  });
+  assert.equal(open, false, "Owned port / 소유포트: " + item.port);
+}
+const ownedPids = [
+  ...new Set(
+    [
+      ...owner.processes.map((p) => p.pid),
+      ...trafficOwner.processes.map((p) => p.pid),
+      ...nodeOwner.processes.map((p) => p.pid),
+      ...gatewayOwner.processes.map((p) => p.pid),
+      read("seoul-process.json").pid,
+    ].filter(Number.isInteger),
+  ),
+];
+for (const pid of ownedPids) {
+  const r = spawnSync("ps", ["-p", String(pid), "-o", "pid=,command="], {
+    encoding: "utf8",
+  });
+  assert.equal(r.status, 1, "PID " + pid);
+}
+const proof = {
+  expected_source: expectedSource,
+  scope_en:
+    "Whole P01–P11 manifest linkage, inventoried original bytes, fixed case completeness and local exact owned-resource absence. Detailed P10 native/signature/deadline and P11 browser/native/cleanup proof is checked separately; this is not production availability or independent real-driving accuracy certification.",
+  scope_ko:
+    "P01–P11전체manifest연결·목록원문바이트·고정사례완전성·현재정확소유자원부재검사입니다. P10상세지속엔진·서명·기한근거는별도감사하며운영가용성·독립실주행정확도인증이아닙니다.",
+  gateway_public_successes_allowlist_checked: publicResponses,
+  gateway_owned_containers_absent: [...gatewayContainers].sort(),
+  gateway_owned_volumes_absent: [...gatewayVolumes].sort(),
+  gateway_owned_ports_absent: gatewayPorts.map((p) => p.port),
+  gateway_cleanup_files_verified: gatewayCleanupFiles.sort(),
+  owned_pids_absent: ownedPids.length,
+  status: "PASS",
+  node_owned_containers_absent: [...nodeContainers].sort(),
+  node_owned_volumes_absent: [...nodeVolumes].sort(),
+  node_cleanup_files_verified: nodeCleanupFiles.sort(),
+  source: m.source,
+  graph_id: m.graph_id,
+  implementation_sha256: m.implementation_sha256,
+  assertions: {
+    tiny: 48,
+    seoul: 35,
+    ingestion: 34,
+    aggregation: 34,
+    publication: 55,
+    traffic: 32,
+    nodes: 32,
+    gateway: 32,
+    client:32,
+    total: 334,
+  },
+  unique_file_hashes_checked: checked.size,
+  inventories,
+  source_sha256: source.sha256,
+  matching_policy: ref.policy_id,
+  stored_reference_traversals: db.traversals.length,
+  unique_stored_ids: new Set(db.traversals.map((t) => t.observation_id)).size,
+  successful_trips: 9,
+  raw_after_success: 0,
+  independent_geometry_max_difference_m: maxDistance,
+  independent_boundary_error_max_ms: maxError,
+  recovery_attempt_byte_parity: parity,
+  database_restart: restart,
+  api_durable_samples: 2,
+  engine_failure_attempts: 3,
+  clock_only_expiry_refused_before_sweep: true,
+  retention_readback: retained.counts,
+  stopped_engine: stopped,
+  killed_worker_pid: orphan.worker_pid,
+  orphan_engine_id: orphan.engine_id,
+  current_db_volume_engine_absence_verified: true,
+  traffic_owned_containers_absent: [...trafficContainers].sort(),
+  traffic_owned_volumes_absent: [...trafficVolumes].sort(),
+  traffic_cleanup_files_verified: trafficCleanupFiles.sort(),
+  message_en:
+    "Main independently checked artifact bytes, all stored traversal contents and geometry/timing, retry result bytes, durable restart/expiry/revocation read-backs and current exact owned-resource absence. This proves the bounded synthetic local pilot, not production authentication or real-driving accuracy.",
+  message_ko:
+    "메인이 원문 해시·저장 통과 전체의 지형/시간·재시도 결과 바이트·재시작/만료/철회 재조회·현재의 정확한 소유 자원 부재를 독립 검사했습니다. 제한된 합성 로컬 파일럿 증거이며 운영 인증·실주행 정확도는 별도입니다.",
+};
+fs.writeFileSync(output, JSON.stringify(proof, null, 2) + "\n", { flag: "wx" });
+console.log(JSON.stringify(proof, null, 2));

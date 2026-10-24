@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "archived_original_files": 2410,
+  "omitted": [
+    {
+      "path": "fixture/bundle/graph.tar",
+      "bytes": 90787840,
+      "sha256": "8f777ff14eca3a779da2db80d70cce529c5f0b466b91e79cbd58f076f18d96e1"
+    }
+  ],
+  "archive_bytes": 6715312,
+  "archive_sha256": "5c3903305f739734d56f92a0aa0d4f1f8bc841dab8621a83a3d4b03e46297a2e",
+  "parts": [
+    {
+      "path": "originals.tar.gz.part-00",
+      "bytes": 6715312,
+      "sha256": "5c3903305f739734d56f92a0aa0d4f1f8bc841dab8621a83a3d4b03e46297a2e"
+    }
+  ],
+  "exact_inventory_match": true,
+  "reconstruction_match": true
+}

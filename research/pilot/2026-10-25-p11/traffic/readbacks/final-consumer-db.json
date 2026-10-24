@@ -1,0 +1,23 @@
+[
+  {
+    "consumer_id": "p08-key-revocation",
+    "high_water": "1",
+    "last_snapshot_id": "b1b3b989d72eda45384330617ab9144e8e0aee190059b91fb104429ed4e16a15",
+    "last_window_start": "2026-10-24T00:03:00.000Z",
+    "artifact_byte_length": null
+  },
+  {
+    "consumer_id": "p08-main",
+    "high_water": "3",
+    "last_snapshot_id": "e5a40b1e420dc77c4bbd56ea9d014b6a59ac0b050bb98c54575c50caa1ab9fc0",
+    "last_window_start": "2026-10-24T00:04:00.000Z",
+    "artifact_byte_length": 10463
+  },
+  {
+    "consumer_id": "p08-offline-ttl",
+    "high_water": "1",
+    "last_snapshot_id": "b1b3b989d72eda45384330617ab9144e8e0aee190059b91fb104429ed4e16a15",
+    "last_window_start": "2026-10-24T00:03:00.000Z",
+    "artifact_byte_length": null
+  }
+]

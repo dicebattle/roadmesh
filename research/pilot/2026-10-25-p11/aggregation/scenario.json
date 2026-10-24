@@ -1,0 +1,216 @@
+{
+  "schema_version": "0.1",
+  "simulation_id": "p06-signal-population",
+  "fixture_id": "seoul-osm-20261023-v1",
+  "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+  "seed": 7,
+  "start_time_utc": "2026-10-24T00:00:00.000Z",
+  "duration_ms": 60000,
+  "sample_interval_ms": 500,
+  "vehicles": [
+    {
+      "vehicle_id": "p06-speed-3",
+      "departure_ms": 0,
+      "path": [
+        {
+          "label": "edge-1297617017232",
+          "forward": true
+        },
+        {
+          "label": "edge-1297751234960",
+          "forward": true
+        },
+        {
+          "label": "edge-1296274839952",
+          "forward": true
+        }
+      ],
+      "speed_profile": [
+        {
+          "duration_ms": 15527,
+          "speed_mps": 3
+        },
+        {
+          "duration_ms": 8000,
+          "speed_mps": 0
+        },
+        {
+          "duration_ms": 36473,
+          "speed_mps": 3
+        }
+      ],
+      "noise_radius_m": 0,
+      "drop_intervals": []
+    },
+    {
+      "vehicle_id": "p06-speed-4",
+      "departure_ms": 0,
+      "path": [
+        {
+          "label": "edge-1297617017232",
+          "forward": true
+        },
+        {
+          "label": "edge-1297751234960",
+          "forward": true
+        },
+        {
+          "label": "edge-1296274839952",
+          "forward": true
+        }
+      ],
+      "speed_profile": [
+        {
+          "duration_ms": 11645,
+          "speed_mps": 4
+        },
+        {
+          "duration_ms": 8000,
+          "speed_mps": 0
+        },
+        {
+          "duration_ms": 40355,
+          "speed_mps": 4
+        }
+      ],
+      "noise_radius_m": 0,
+      "drop_intervals": []
+    },
+    {
+      "vehicle_id": "p06-speed-5",
+      "departure_ms": 0,
+      "path": [
+        {
+          "label": "edge-1297617017232",
+          "forward": true
+        },
+        {
+          "label": "edge-1297751234960",
+          "forward": true
+        },
+        {
+          "label": "edge-1296274839952",
+          "forward": true
+        }
+      ],
+      "speed_profile": [
+        {
+          "duration_ms": 9316,
+          "speed_mps": 5
+        },
+        {
+          "duration_ms": 8000,
+          "speed_mps": 0
+        },
+        {
+          "duration_ms": 42684,
+          "speed_mps": 5
+        }
+      ],
+      "noise_radius_m": 0,
+      "drop_intervals": []
+    },
+    {
+      "vehicle_id": "p06-speed-6",
+      "departure_ms": 0,
+      "path": [
+        {
+          "label": "edge-1297617017232",
+          "forward": true
+        },
+        {
+          "label": "edge-1297751234960",
+          "forward": true
+        },
+        {
+          "label": "edge-1296274839952",
+          "forward": true
+        }
+      ],
+      "speed_profile": [
+        {
+          "duration_ms": 7764,
+          "speed_mps": 6
+        },
+        {
+          "duration_ms": 8000,
+          "speed_mps": 0
+        },
+        {
+          "duration_ms": 44236,
+          "speed_mps": 6
+        }
+      ],
+      "noise_radius_m": 0,
+      "drop_intervals": []
+    },
+    {
+      "vehicle_id": "p06-speed-7",
+      "departure_ms": 0,
+      "path": [
+        {
+          "label": "edge-1297617017232",
+          "forward": true
+        },
+        {
+          "label": "edge-1297751234960",
+          "forward": true
+        },
+        {
+          "label": "edge-1296274839952",
+          "forward": true
+        }
+      ],
+      "speed_profile": [
+        {
+          "duration_ms": 6655,
+          "speed_mps": 7
+        },
+        {
+          "duration_ms": 8000,
+          "speed_mps": 0
+        },
+        {
+          "duration_ms": 45345,
+          "speed_mps": 7
+        }
+      ],
+      "noise_radius_m": 0,
+      "drop_intervals": []
+    },
+    {
+      "vehicle_id": "p06-parked",
+      "departure_ms": 0,
+      "path": [
+        {
+          "label": "edge-1297617017232",
+          "forward": true
+        },
+        {
+          "label": "edge-1297751234960",
+          "forward": true
+        },
+        {
+          "label": "edge-1296274839952",
+          "forward": true
+        }
+      ],
+      "speed_profile": [
+        {
+          "duration_ms": 23290,
+          "speed_mps": 2
+        },
+        {
+          "duration_ms": 8000,
+          "speed_mps": 0
+        },
+        {
+          "duration_ms": 28710,
+          "speed_mps": 2
+        }
+      ],
+      "noise_radius_m": 0,
+      "drop_intervals": []
+    }
+  ]
+}

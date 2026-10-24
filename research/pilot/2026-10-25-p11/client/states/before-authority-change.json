@@ -1,0 +1,94 @@
+{
+  "lang": "en",
+  "state": "current",
+  "request_id": "browser-206a02df-5bc7-4bda-af6f-00880a615e74",
+  "map_ready": "true",
+  "map_active_route": "true",
+  "map_request_id": "browser-206a02df-5bc7-4bda-af6f-00880a615e74",
+  "map_rendered_request_id": "browser-206a02df-5bc7-4bda-af6f-00880a615e74",
+  "status": "Route checked against the accepted traffic context.",
+  "summary": "0.01 km · 0.4 minAccepted traffic applied on this routeRoute live coverage: 100.00%Traffic age · simulation time: 0.0 sChecked simulation time: 2026-10-24T00:04:30.000Z",
+  "evidence": {
+    "request": {
+      "schema_version": "0.1",
+      "request_id": "browser-206a02df-5bc7-4bda-af6f-00880a615e74",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    },
+    "response": {
+      "request_id": "browser-206a02df-5bc7-4bda-af6f-00880a615e74",
+      "request_sha256": "5d695c75ac67f7cf8e06de3d1bb0ffe2d12d7efcd07b2e4b9a37b652aa9b8843",
+      "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+      "snapshot_id": "5577d81f141a64c37febf5cd2040806393856fced710be729483ef96713f7364",
+      "sequence": 2,
+      "generation_id": "7a13c5a6fd974809789956b1d86582891e4aef78b2ff4b3ad081cfd7ea03054c",
+      "traffic_sha256": "119d94d626947e5e31668f743154282123ffca70db73866f0a30eab8dc6679f9",
+      "engine_version": "3.9.1",
+      "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+      "costing_config_id": "valhalla-current-v1",
+      "node_id": "client-node-a",
+      "traffic_mode": "LIVE_MIXED",
+      "distance_m": 12,
+      "duration_s": 22.254,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.037397,
+            37.500837
+          ],
+          [
+            127.037528,
+            37.500877
+          ]
+        ]
+      },
+      "live_coverage_ratio": 1,
+      "warnings": [],
+      "high_water": 2,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "traffic_published_at": "2026-10-24T00:04:30.000Z",
+      "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+      "source_class": "SYNTHETIC",
+      "clock_basis": "SIMULATION_EVENT_TIME",
+      "calculated_at": "2026-10-24T22:56:09.818Z"
+    },
+    "authority": {
+      "schema_version": "0.1",
+      "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+      "traffic_snapshot_id": "5577d81f141a64c37febf5cd2040806393856fced710be729483ef96713f7364",
+      "sequence": 2,
+      "high_water": 2,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "traffic_published_at": "2026-10-24T00:04:30.000Z",
+      "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+      "source_class": "SYNTHETIC",
+      "clock_basis": "SIMULATION_EVENT_TIME"
+    },
+    "state": "current",
+    "reason": "",
+    "map_source_geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.037397,
+          37.500837
+        ],
+        [
+          127.037528,
+          37.500877
+        ]
+      ]
+    }
+  },
+  "scroll_width": 1280,
+  "viewport_width": 1280
+}

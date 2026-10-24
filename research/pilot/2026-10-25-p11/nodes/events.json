@@ -1,0 +1,1438 @@
+[
+  {
+    "event_id": "a-baseline",
+    "recorded_at_utc": "2026-10-24T22:50:55.022Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Observed node transition: a-baseline",
+    "message_ko": "관측한 노드 전환: a-baseline",
+    "evidence_path": "status/a-baseline.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "11a391ba-2ae8-49ee-a113-4bf6fce091e2",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 0,
+        "sequence": null,
+        "traffic_snapshot_id": null,
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "0784fbb28c7005e1915d2b72b796212943db54c12e63bab6c62c5768c112c87e",
+        "traffic_sha256": "c0726aec71a970a45e2f580f982e4f97b2ee0e72838c08bfcc6fe3dffb0ccd7e",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": null,
+        "traffic_mode": "NO_USABLE_SNAPSHOT",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "No usable accepted snapshot; default speeds are used.",
+        "message_ko": "사용 가능한 수용 자료가 없어 기본 속도를 사용합니다.",
+        "activation_epoch": 1,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2428988"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "0784fbb28c7005e1915d2b72b796212943db54c12e63bab6c62c5768c112c87e",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2428988"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "b-baseline",
+    "recorded_at_utc": "2026-10-24T22:50:55.672Z",
+    "node_id": "seoul-node-b",
+    "message_en": "Observed node transition: b-baseline",
+    "message_ko": "관측한 노드 전환: b-baseline",
+    "evidence_path": "status/b-baseline.json",
+    "status": {
+      "node_id": "seoul-node-b",
+      "instance_id": "f9c39216-67ba-4d3b-8c5e-f81a8083390a",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 0,
+        "sequence": null,
+        "traffic_snapshot_id": null,
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "0784fbb28c7005e1915d2b72b796212943db54c12e63bab6c62c5768c112c87e",
+        "traffic_sha256": "c0726aec71a970a45e2f580f982e4f97b2ee0e72838c08bfcc6fe3dffb0ccd7e",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": null,
+        "traffic_mode": "NO_USABLE_SNAPSHOT",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "No usable accepted snapshot; default speeds are used.",
+        "message_ko": "사용 가능한 수용 자료가 없어 기본 속도를 사용합니다.",
+        "activation_epoch": 1,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2429061"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "0784fbb28c7005e1915d2b72b796212943db54c12e63bab6c62c5768c112c87e",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2429061"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "capacity-eight",
+    "recorded_at_utc": "2026-10-24T22:50:58.856Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Recorded node state: capacity-eight",
+    "message_ko": "기록된 노드 상태: capacity-eight",
+    "evidence_path": "status/capacity-eight.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "11a391ba-2ae8-49ee-a113-4bf6fce091e2",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 0,
+        "sequence": null,
+        "traffic_snapshot_id": null,
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "0784fbb28c7005e1915d2b72b796212943db54c12e63bab6c62c5768c112c87e",
+        "traffic_sha256": "c0726aec71a970a45e2f580f982e4f97b2ee0e72838c08bfcc6fe3dffb0ccd7e",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": null,
+        "traffic_mode": "NO_USABLE_SNAPSHOT",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "No usable accepted snapshot; default speeds are used.",
+        "message_ko": "사용 가능한 수용 자료가 없어 기본 속도를 사용합니다.",
+        "activation_epoch": 1,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2428988"
+        }
+      },
+      "in_flight": 8,
+      "slots": [
+        {
+          "generation_id": "0784fbb28c7005e1915d2b72b796212943db54c12e63bab6c62c5768c112c87e",
+          "state": "ACTIVE",
+          "in_flight": 8,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2428988"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "b-live",
+    "recorded_at_utc": "2026-10-24T22:51:01.780Z",
+    "node_id": "seoul-node-b",
+    "message_en": "Observed node transition: b-live",
+    "message_ko": "관측한 노드 전환: b-live",
+    "evidence_path": "status/b-live.json",
+    "status": {
+      "node_id": "seoul-node-b",
+      "instance_id": "f9c39216-67ba-4d3b-8c5e-f81a8083390a",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 1,
+        "sequence": 1,
+        "traffic_snapshot_id": "7993d9c17c46f098f96216ad26fca8662bce6658c649ef0ba956ab7964337694",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "8c7568d661daef4aeb46c5675a64eb5310ba5b1377d2ef0566d86441ee6bde32",
+        "traffic_sha256": "d7a9d3dc46b7896f725cdd6924fc71733caac32cb543946c816275c255b26392",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 2,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2429650"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "0784fbb28c7005e1915d2b72b796212943db54c12e63bab6c62c5768c112c87e",
+          "state": "DRAINING",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2429061"
+          }
+        },
+        {
+          "generation_id": "8c7568d661daef4aeb46c5675a64eb5310ba5b1377d2ef0566d86441ee6bde32",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2429650"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "a-live",
+    "recorded_at_utc": "2026-10-24T22:51:01.973Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Observed node transition: a-live",
+    "message_ko": "관측한 노드 전환: a-live",
+    "evidence_path": "status/a-live.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "11a391ba-2ae8-49ee-a113-4bf6fce091e2",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 1,
+        "sequence": 1,
+        "traffic_snapshot_id": "7993d9c17c46f098f96216ad26fca8662bce6658c649ef0ba956ab7964337694",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "8c7568d661daef4aeb46c5675a64eb5310ba5b1377d2ef0566d86441ee6bde32",
+        "traffic_sha256": "d7a9d3dc46b7896f725cdd6924fc71733caac32cb543946c816275c255b26392",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 2,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2429668"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "0784fbb28c7005e1915d2b72b796212943db54c12e63bab6c62c5768c112c87e",
+          "state": "DRAINING",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2428988"
+          }
+        },
+        {
+          "generation_id": "8c7568d661daef4aeb46c5675a64eb5310ba5b1377d2ef0566d86441ee6bde32",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2429668"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "b-accepted-key-revoked",
+    "recorded_at_utc": "2026-10-24T22:51:06.572Z",
+    "node_id": "seoul-node-b",
+    "message_en": "Observed node transition: b-accepted-key-revoked",
+    "message_ko": "관측한 노드 전환: b-accepted-key-revoked",
+    "evidence_path": "status/b-accepted-key-revoked.json",
+    "status": {
+      "node_id": "seoul-node-b",
+      "instance_id": "2da3d333-7540-47fb-9fca-05f12c35528f",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 1,
+        "sequence": null,
+        "traffic_snapshot_id": null,
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "0784fbb28c7005e1915d2b72b796212943db54c12e63bab6c62c5768c112c87e",
+        "traffic_sha256": "c0726aec71a970a45e2f580f982e4f97b2ee0e72838c08bfcc6fe3dffb0ccd7e",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": null,
+        "traffic_mode": "NO_USABLE_SNAPSHOT",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "No usable accepted snapshot; default speeds are used.",
+        "message_ko": "사용 가능한 수용 자료가 없어 기본 속도를 사용합니다.",
+        "activation_epoch": 1,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2430141"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "0784fbb28c7005e1915d2b72b796212943db54c12e63bab6c62c5768c112c87e",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2430141"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "b-live-2",
+    "recorded_at_utc": "2026-10-24T22:51:08.856Z",
+    "node_id": "seoul-node-b",
+    "message_en": "Observed node transition: b-live-2",
+    "message_ko": "관측한 노드 전환: b-live-2",
+    "evidence_path": "status/b-live-2.json",
+    "status": {
+      "node_id": "seoul-node-b",
+      "instance_id": "2da3d333-7540-47fb-9fca-05f12c35528f",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 2,
+        "sequence": 2,
+        "traffic_snapshot_id": "4cfe504ecafab8e81042f8c1a0b30cda01a84d063b057331cd86c1bf03465dd8",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "af73e68dab8ed555e82e5824eea00cd759208a07de1751ca7c3ba3eac2fefa29",
+        "traffic_sha256": "d7a9d3dc46b7896f725cdd6924fc71733caac32cb543946c816275c255b26392",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 2,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2430373"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "0784fbb28c7005e1915d2b72b796212943db54c12e63bab6c62c5768c112c87e",
+          "state": "DRAINING",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2430141"
+          }
+        },
+        {
+          "generation_id": "af73e68dab8ed555e82e5824eea00cd759208a07de1751ca7c3ba3eac2fefa29",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2430373"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "a-live-2",
+    "recorded_at_utc": "2026-10-24T22:51:09.202Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Observed node transition: a-live-2",
+    "message_ko": "관측한 노드 전환: a-live-2",
+    "evidence_path": "status/a-live-2.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "11a391ba-2ae8-49ee-a113-4bf6fce091e2",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 2,
+        "sequence": 2,
+        "traffic_snapshot_id": "4cfe504ecafab8e81042f8c1a0b30cda01a84d063b057331cd86c1bf03465dd8",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "af73e68dab8ed555e82e5824eea00cd759208a07de1751ca7c3ba3eac2fefa29",
+        "traffic_sha256": "d7a9d3dc46b7896f725cdd6924fc71733caac32cb543946c816275c255b26392",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 3,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2430400"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "8c7568d661daef4aeb46c5675a64eb5310ba5b1377d2ef0566d86441ee6bde32",
+          "state": "DRAINING",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2429668"
+          }
+        },
+        {
+          "generation_id": "af73e68dab8ed555e82e5824eea00cd759208a07de1751ca7c3ba3eac2fefa29",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2430400"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "old-lease-held",
+    "recorded_at_utc": "2026-10-24T22:51:09.844Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Recorded node state: old-lease-held",
+    "message_ko": "기록된 노드 상태: old-lease-held",
+    "evidence_path": "status/old-lease-held.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "11a391ba-2ae8-49ee-a113-4bf6fce091e2",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 2,
+        "sequence": 2,
+        "traffic_snapshot_id": "4cfe504ecafab8e81042f8c1a0b30cda01a84d063b057331cd86c1bf03465dd8",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "af73e68dab8ed555e82e5824eea00cd759208a07de1751ca7c3ba3eac2fefa29",
+        "traffic_sha256": "d7a9d3dc46b7896f725cdd6924fc71733caac32cb543946c816275c255b26392",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 3,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2430400"
+        }
+      },
+      "in_flight": 1,
+      "slots": [
+        {
+          "generation_id": "af73e68dab8ed555e82e5824eea00cd759208a07de1751ca7c3ba3eac2fefa29",
+          "state": "ACTIVE",
+          "in_flight": 1,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2430400"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "old-draining-new-active",
+    "recorded_at_utc": "2026-10-24T22:51:12.199Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Observed node transition: old-draining-new-active",
+    "message_ko": "관측한 노드 전환: old-draining-new-active",
+    "evidence_path": "status/old-draining-new-active.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "11a391ba-2ae8-49ee-a113-4bf6fce091e2",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 3,
+        "sequence": 3,
+        "traffic_snapshot_id": "406032cb123e0989324aeb8018097e533e7dc6bcdea70e09bf9cdf65850cacf8",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "7f6cfd8f3d5f21de1be6120afc282806eb840145e88864c3b06542b3b7e47fb4",
+        "traffic_sha256": "d7a9d3dc46b7896f725cdd6924fc71733caac32cb543946c816275c255b26392",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 4,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2430697"
+        }
+      },
+      "in_flight": 1,
+      "slots": [
+        {
+          "generation_id": "af73e68dab8ed555e82e5824eea00cd759208a07de1751ca7c3ba3eac2fefa29",
+          "state": "DRAINING",
+          "in_flight": 1,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2430400"
+          }
+        },
+        {
+          "generation_id": "7f6cfd8f3d5f21de1be6120afc282806eb840145e88864c3b06542b3b7e47fb4",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2430697"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "obsolete-result-rejected",
+    "recorded_at_utc": "2026-10-24T22:51:12.942Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Old completed response rejected: 409 ACCEPTED_STATE_CHANGED",
+    "message_ko": "옛 완료 응답 거부:409 ACCEPTED_STATE_CHANGED",
+    "evidence_path": "requests/old-held.json",
+    "status": null
+  },
+  {
+    "event_id": "last-lease-retired",
+    "recorded_at_utc": "2026-10-24T22:51:13.529Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Observed node transition: last-lease-retired",
+    "message_ko": "관측한 노드 전환: last-lease-retired",
+    "evidence_path": "status/last-lease-retired.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "11a391ba-2ae8-49ee-a113-4bf6fce091e2",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 3,
+        "sequence": 3,
+        "traffic_snapshot_id": "406032cb123e0989324aeb8018097e533e7dc6bcdea70e09bf9cdf65850cacf8",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "7f6cfd8f3d5f21de1be6120afc282806eb840145e88864c3b06542b3b7e47fb4",
+        "traffic_sha256": "d7a9d3dc46b7896f725cdd6924fc71733caac32cb543946c816275c255b26392",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 4,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2430697"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "7f6cfd8f3d5f21de1be6120afc282806eb840145e88864c3b06542b3b7e47fb4",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2430697"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "coalesce-two-slots",
+    "recorded_at_utc": "2026-10-24T22:51:16.308Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Observed node transition: coalesce-two-slots",
+    "message_ko": "관측한 노드 전환: coalesce-two-slots",
+    "evidence_path": "status/coalesce-two-slots.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "11a391ba-2ae8-49ee-a113-4bf6fce091e2",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 4,
+        "sequence": 4,
+        "traffic_snapshot_id": "4817dc7905357ab7a555d0b43482da157c2fb44262292daa240e813c7cff856a",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "cb47ba23fd7090f365be7612f3dfdac16f756ea8899a66b8a4fd145b3c7cbeaf",
+        "traffic_sha256": "d7a9d3dc46b7896f725cdd6924fc71733caac32cb543946c816275c255b26392",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 5,
+        "native_daemon": {
+          "pid": 17,
+          "start_ticks": "2431113"
+        }
+      },
+      "in_flight": 1,
+      "slots": [
+        {
+          "generation_id": "7f6cfd8f3d5f21de1be6120afc282806eb840145e88864c3b06542b3b7e47fb4",
+          "state": "DRAINING",
+          "in_flight": 1,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2430697"
+          }
+        },
+        {
+          "generation_id": "cb47ba23fd7090f365be7612f3dfdac16f756ea8899a66b8a4fd145b3c7cbeaf",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 17,
+            "start_ticks": "2431113"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "coalesce-fifth-waiting",
+    "recorded_at_utc": "2026-10-24T22:51:16.501Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Recorded node state: coalesce-fifth-waiting",
+    "message_ko": "기록된 노드 상태: coalesce-fifth-waiting",
+    "evidence_path": "status/coalesce-fifth-waiting.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "11a391ba-2ae8-49ee-a113-4bf6fce091e2",
+      "ready": false,
+      "active": null,
+      "in_flight": 1,
+      "slots": [
+        {
+          "generation_id": "7f6cfd8f3d5f21de1be6120afc282806eb840145e88864c3b06542b3b7e47fb4",
+          "state": "DRAINING",
+          "in_flight": 1,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2430697"
+          }
+        },
+        {
+          "generation_id": "cb47ba23fd7090f365be7612f3dfdac16f756ea8899a66b8a4fd145b3c7cbeaf",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 17,
+            "start_ticks": "2431113"
+          }
+        }
+      ],
+      "reason": "ACCEPTED_STATE_CHANGED",
+      "message_en": "No currently verified engine is ready.",
+      "message_ko": "현재 검증된 준비 엔진이 없습니다."
+    }
+  },
+  {
+    "event_id": "coalesce-sixth-waiting",
+    "recorded_at_utc": "2026-10-24T22:51:16.693Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Recorded node state: coalesce-sixth-waiting",
+    "message_ko": "기록된 노드 상태: coalesce-sixth-waiting",
+    "evidence_path": "status/coalesce-sixth-waiting.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "11a391ba-2ae8-49ee-a113-4bf6fce091e2",
+      "ready": false,
+      "active": null,
+      "in_flight": 1,
+      "slots": [
+        {
+          "generation_id": "7f6cfd8f3d5f21de1be6120afc282806eb840145e88864c3b06542b3b7e47fb4",
+          "state": "DRAINING",
+          "in_flight": 1,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2430697"
+          }
+        },
+        {
+          "generation_id": "cb47ba23fd7090f365be7612f3dfdac16f756ea8899a66b8a4fd145b3c7cbeaf",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 17,
+            "start_ticks": "2431113"
+          }
+        }
+      ],
+      "reason": "ACCEPTED_STATE_CHANGED",
+      "message_en": "No currently verified engine is ready.",
+      "message_ko": "현재 검증된 준비 엔진이 없습니다."
+    }
+  },
+  {
+    "event_id": "coalesced-latest-active",
+    "recorded_at_utc": "2026-10-24T22:51:20.137Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Observed node transition: coalesced-latest-active",
+    "message_ko": "관측한 노드 전환: coalesced-latest-active",
+    "evidence_path": "status/coalesced-latest-active.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "11a391ba-2ae8-49ee-a113-4bf6fce091e2",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 6,
+        "sequence": 6,
+        "traffic_snapshot_id": "69e5d838c65b35e7a5ca7266e109acda79d57d443420f0f954a63834af3a01c7",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "115881ce1501146b1419336e4ad4306491109e14b6b1f5e29521c055980209ea",
+        "traffic_sha256": "d7a9d3dc46b7896f725cdd6924fc71733caac32cb543946c816275c255b26392",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 6,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2431444"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "115881ce1501146b1419336e4ad4306491109e14b6b1f5e29521c055980209ea",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2431444"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "store-recovered",
+    "recorded_at_utc": "2026-10-24T22:51:26.299Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Observed node transition: store-recovered",
+    "message_ko": "관측한 노드 전환: store-recovered",
+    "evidence_path": "status/store-recovered.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "11a391ba-2ae8-49ee-a113-4bf6fce091e2",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 6,
+        "sequence": 6,
+        "traffic_snapshot_id": "69e5d838c65b35e7a5ca7266e109acda79d57d443420f0f954a63834af3a01c7",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "115881ce1501146b1419336e4ad4306491109e14b6b1f5e29521c055980209ea",
+        "traffic_sha256": "d7a9d3dc46b7896f725cdd6924fc71733caac32cb543946c816275c255b26392",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 6,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2431444"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "115881ce1501146b1419336e4ad4306491109e14b6b1f5e29521c055980209ea",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2431444"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "offline-node-restored",
+    "recorded_at_utc": "2026-10-24T22:51:31.821Z",
+    "node_id": "seoul-node-b",
+    "message_en": "Observed node transition: offline-node-restored",
+    "message_ko": "관측한 노드 전환: offline-node-restored",
+    "evidence_path": "status/offline-node-restored.json",
+    "status": {
+      "node_id": "seoul-node-b",
+      "instance_id": "6f973cb5-60c0-4552-983f-59c96138776d",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 2,
+        "sequence": 2,
+        "traffic_snapshot_id": "4cfe504ecafab8e81042f8c1a0b30cda01a84d063b057331cd86c1bf03465dd8",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "af73e68dab8ed555e82e5824eea00cd759208a07de1751ca7c3ba3eac2fefa29",
+        "traffic_sha256": "d7a9d3dc46b7896f725cdd6924fc71733caac32cb543946c816275c255b26392",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 1,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2432676"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "af73e68dab8ed555e82e5824eea00cd759208a07de1751ca7c3ba3eac2fefa29",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2432676"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "engine-recovery-candidate-held",
+    "recorded_at_utc": "2026-10-24T22:51:34.437Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Recorded node state: engine-recovery-candidate-held",
+    "message_ko": "기록된 노드 상태: engine-recovery-candidate-held",
+    "evidence_path": "status/engine-recovery-candidate-held.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "11a391ba-2ae8-49ee-a113-4bf6fce091e2",
+      "ready": false,
+      "active": null,
+      "in_flight": 1,
+      "slots": [
+        {
+          "generation_id": "115881ce1501146b1419336e4ad4306491109e14b6b1f5e29521c055980209ea",
+          "state": "ACTIVE",
+          "in_flight": 1,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2431444"
+          }
+        },
+        {
+          "generation_id": "115881ce1501146b1419336e4ad4306491109e14b6b1f5e29521c055980209ea",
+          "state": "PREPARING",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2432934"
+          }
+        }
+      ],
+      "reason": "ENGINE_UNAVAILABLE",
+      "message_en": "No currently verified engine is ready.",
+      "message_ko": "현재 검증된 준비 엔진이 없습니다."
+    }
+  },
+  {
+    "event_id": "leased-engine-result-rejected",
+    "recorded_at_utc": "2026-10-24T22:51:34.514Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Completed leased result rejected: 503 ENGINE_UNAVAILABLE",
+    "message_ko": "고정 엔진의 완료 결과 거부:503 ENGINE_UNAVAILABLE",
+    "evidence_path": "requests/engine-kill.json",
+    "status": null
+  },
+  {
+    "event_id": "engine-recovered",
+    "recorded_at_utc": "2026-10-24T22:51:34.838Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Observed node transition: engine-recovered",
+    "message_ko": "관측한 노드 전환: engine-recovered",
+    "evidence_path": "status/engine-recovered.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "11a391ba-2ae8-49ee-a113-4bf6fce091e2",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 6,
+        "sequence": 6,
+        "traffic_snapshot_id": "69e5d838c65b35e7a5ca7266e109acda79d57d443420f0f954a63834af3a01c7",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "115881ce1501146b1419336e4ad4306491109e14b6b1f5e29521c055980209ea",
+        "traffic_sha256": "d7a9d3dc46b7896f725cdd6924fc71733caac32cb543946c816275c255b26392",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 7,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2432934"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "115881ce1501146b1419336e4ad4306491109e14b6b1f5e29521c055980209ea",
+          "state": "DRAINING",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2431444"
+          }
+        },
+        {
+          "generation_id": "115881ce1501146b1419336e4ad4306491109e14b6b1f5e29521c055980209ea",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2432934"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "durable-restarted",
+    "recorded_at_utc": "2026-10-24T22:51:39.714Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Observed node transition: durable-restarted",
+    "message_ko": "관측한 노드 전환: durable-restarted",
+    "evidence_path": "status/durable-restarted.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "624e3a27-8896-4f29-abda-87e257c98835",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 6,
+        "sequence": 6,
+        "traffic_snapshot_id": "69e5d838c65b35e7a5ca7266e109acda79d57d443420f0f954a63834af3a01c7",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "115881ce1501146b1419336e4ad4306491109e14b6b1f5e29521c055980209ea",
+        "traffic_sha256": "d7a9d3dc46b7896f725cdd6924fc71733caac32cb543946c816275c255b26392",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 1,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2433459"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "115881ce1501146b1419336e4ad4306491109e14b6b1f5e29521c055980209ea",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2433459"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "deadline-old-draining",
+    "recorded_at_utc": "2026-10-24T22:51:43.012Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Observed node transition: deadline-old-draining",
+    "message_ko": "관측한 노드 전환: deadline-old-draining",
+    "evidence_path": "status/deadline-old-draining.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "624e3a27-8896-4f29-abda-87e257c98835",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 7,
+        "sequence": 7,
+        "traffic_snapshot_id": "ffcfaef7ced602fd4d0fe4c2fefc336700564323637669dd2e0dd1b9eb44ef51",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "62e4a911cbe81d7ec326a5f5d8daada08e4e4f63893e3552bafb49052df3b8b7",
+        "traffic_sha256": "d7a9d3dc46b7896f725cdd6924fc71733caac32cb543946c816275c255b26392",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 2,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2433779"
+        }
+      },
+      "in_flight": 1,
+      "slots": [
+        {
+          "generation_id": "115881ce1501146b1419336e4ad4306491109e14b6b1f5e29521c055980209ea",
+          "state": "DRAINING",
+          "in_flight": 1,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2433459"
+          }
+        },
+        {
+          "generation_id": "62e4a911cbe81d7ec326a5f5d8daada08e4e4f63893e3552bafb49052df3b8b7",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2433779"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "deadline-old-retired",
+    "recorded_at_utc": "2026-10-24T22:52:11.026Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Observed node transition: deadline-old-retired",
+    "message_ko": "관측한 노드 전환: deadline-old-retired",
+    "evidence_path": "status/deadline-old-retired.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "624e3a27-8896-4f29-abda-87e257c98835",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 7,
+        "sequence": 7,
+        "traffic_snapshot_id": "ffcfaef7ced602fd4d0fe4c2fefc336700564323637669dd2e0dd1b9eb44ef51",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "62e4a911cbe81d7ec326a5f5d8daada08e4e4f63893e3552bafb49052df3b8b7",
+        "traffic_sha256": "d7a9d3dc46b7896f725cdd6924fc71733caac32cb543946c816275c255b26392",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 2,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2433779"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "62e4a911cbe81d7ec326a5f5d8daada08e4e4f63893e3552bafb49052df3b8b7",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2433779"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "non-live-correction",
+    "recorded_at_utc": "2026-10-24T22:52:13.789Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Observed node transition: non-live-correction",
+    "message_ko": "관측한 노드 전환: non-live-correction",
+    "evidence_path": "status/non-live-correction.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "624e3a27-8896-4f29-abda-87e257c98835",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 8,
+        "sequence": 8,
+        "traffic_snapshot_id": "65acefa02310a1be846e5a023a1c031a3d36056bdcc53618c5c591f47966fed3",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "8d5381d1c0d40de486f321c42191b78ba0f1f1119a6c7d2ba61ea2d171d17d6e",
+        "traffic_sha256": "c0726aec71a970a45e2f580f982e4f97b2ee0e72838c08bfcc6fe3dffb0ccd7e",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "NO_LIVE_COVERAGE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Accepted snapshot has no eligible live edges; default speeds are used.",
+        "message_ko": "수용한 자료에 유효한 실시간 구간이 없어 기본 속도를 사용합니다.",
+        "activation_epoch": 3,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2436861"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "62e4a911cbe81d7ec326a5f5d8daada08e4e4f63893e3552bafb49052df3b8b7",
+          "state": "DRAINING",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2433779"
+          }
+        },
+        {
+          "generation_id": "8d5381d1c0d40de486f321c42191b78ba0f1f1119a6c7d2ba61ea2d171d17d6e",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2436861"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "before-expiry-a",
+    "recorded_at_utc": "2026-10-24T22:52:14.986Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Recorded node state: before-expiry-a",
+    "message_ko": "기록된 노드 상태: before-expiry-a",
+    "evidence_path": "status/before-expiry-a.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "624e3a27-8896-4f29-abda-87e257c98835",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 8,
+        "sequence": 8,
+        "traffic_snapshot_id": "65acefa02310a1be846e5a023a1c031a3d36056bdcc53618c5c591f47966fed3",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "8d5381d1c0d40de486f321c42191b78ba0f1f1119a6c7d2ba61ea2d171d17d6e",
+        "traffic_sha256": "c0726aec71a970a45e2f580f982e4f97b2ee0e72838c08bfcc6fe3dffb0ccd7e",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:06:59.999Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "NO_LIVE_COVERAGE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Accepted snapshot has no eligible live edges; default speeds are used.",
+        "message_ko": "수용한 자료에 유효한 실시간 구간이 없어 기본 속도를 사용합니다.",
+        "activation_epoch": 3,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2436861"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "8d5381d1c0d40de486f321c42191b78ba0f1f1119a6c7d2ba61ea2d171d17d6e",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2436861"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "automatic-baseline-b",
+    "recorded_at_utc": "2026-10-24T22:52:19.684Z",
+    "node_id": "seoul-node-b",
+    "message_en": "Observed node transition: automatic-baseline-b",
+    "message_ko": "관측한 노드 전환: automatic-baseline-b",
+    "evidence_path": "status/automatic-baseline-b.json",
+    "status": {
+      "node_id": "seoul-node-b",
+      "instance_id": "6f973cb5-60c0-4552-983f-59c96138776d",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 2,
+        "sequence": null,
+        "traffic_snapshot_id": null,
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "0784fbb28c7005e1915d2b72b796212943db54c12e63bab6c62c5768c112c87e",
+        "traffic_sha256": "c0726aec71a970a45e2f580f982e4f97b2ee0e72838c08bfcc6fe3dffb0ccd7e",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:07:00.000Z",
+        "valid_until": null,
+        "traffic_mode": "NO_USABLE_SNAPSHOT",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "No usable accepted snapshot; default speeds are used.",
+        "message_ko": "사용 가능한 수용 자료가 없어 기본 속도를 사용합니다.",
+        "activation_epoch": 2,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2437455"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "af73e68dab8ed555e82e5824eea00cd759208a07de1751ca7c3ba3eac2fefa29",
+          "state": "DRAINING",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2432676"
+          }
+        },
+        {
+          "generation_id": "0784fbb28c7005e1915d2b72b796212943db54c12e63bab6c62c5768c112c87e",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2437455"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "automatic-baseline-a",
+    "recorded_at_utc": "2026-10-24T22:52:20.229Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Observed node transition: automatic-baseline-a",
+    "message_ko": "관측한 노드 전환: automatic-baseline-a",
+    "evidence_path": "status/automatic-baseline-a.json",
+    "status": {
+      "node_id": "seoul-node-a",
+      "instance_id": "624e3a27-8896-4f29-abda-87e257c98835",
+      "ready": true,
+      "active": {
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "high_water": 9,
+        "sequence": null,
+        "traffic_snapshot_id": null,
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "0784fbb28c7005e1915d2b72b796212943db54c12e63bab6c62c5768c112c87e",
+        "traffic_sha256": "c0726aec71a970a45e2f580f982e4f97b2ee0e72838c08bfcc6fe3dffb0ccd7e",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:07:00.000Z",
+        "valid_until": null,
+        "traffic_mode": "NO_USABLE_SNAPSHOT",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "No usable accepted snapshot; default speeds are used.",
+        "message_ko": "사용 가능한 수용 자료가 없어 기본 속도를 사용합니다.",
+        "activation_epoch": 4,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2437510"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "8d5381d1c0d40de486f321c42191b78ba0f1f1119a6c7d2ba61ea2d171d17d6e",
+          "state": "DRAINING",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2436861"
+          }
+        },
+        {
+          "generation_id": "0784fbb28c7005e1915d2b72b796212943db54c12e63bab6c62c5768c112c87e",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "2437510"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  },
+  {
+    "event_id": "expired-candidate-refused",
+    "recorded_at_utc": "2026-10-24T22:52:20.231Z",
+    "node_id": "seoul-node-a",
+    "message_en": "Ready candidate refused at exact 420-second expiry",
+    "message_ko": "준비 후보를 정확한420초 만료에 거부",
+    "evidence_path": "readbacks/expiry-candidate-ready.json",
+    "status": null
+  }
+]

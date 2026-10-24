@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "client": {
+    "viewport": [
+      390,
+      844
+    ],
+    "languages": [
+      "en",
+      "ko"
+    ],
+    "no_horizontal_overflow": true,
+    "rendered_geometry_matches_api": true,
+    "expired_active_route": false,
+    "unavailable_active_route": false,
+    "captured_errors_warnings": [],
+    "owned_tab_closed": true,
+    "viewport_reset": true
+  },
+  "report": {
+    "assertions": 334,
+    "client_cases": 32,
+    "images_loaded": 4,
+    "languages": [
+      "en",
+      "ko"
+    ],
+    "captured_errors_warnings": [],
+    "owned_tab_closed": true,
+    "owned_server_pid": 28234,
+    "owned_server_absent": true
+  },
+  "message_en": "Main directly observed the actual client and final report in IAB. Screenshot frames and automated mobile originals are separately retained.",
+  "message_ko": "메인이 내장 브라우저에서 실제 클라이언트와 최종 보고서를 직접 확인했습니다. 영상 추출 화면과 자동 모바일 원본은 별도 보존합니다."
+}

@@ -13,6 +13,8 @@ import type { AcceptedInspection } from "./publication_types.js";
 import type { TrafficGeneration } from "./traffic_types.js";
 import type {
   GatewayConfig,
+  GatewayFreshness,
+  GatewayContextReply,
   GatewayDependencies,
   GatewayFailure,
   GatewayHooks,
@@ -194,6 +196,16 @@ export function decodeGatewayShape(encoded: unknown): number[][] {
   if (points.length < 2) throw Error("shape");
   return points;
 }
+function freshness(state: AcceptedInspection): GatewayFreshness {
+  return {
+    high_water: state.high_water,
+    checked_at_event_time: state.checked_at_event_time,
+    traffic_published_at: state.active?.manifest.published_at ?? null,
+    traffic_valid_until: state.active?.manifest.valid_until ?? null,
+    source_class: "SYNTHETIC",
+    clock_basis: "SIMULATION_EVENT_TIME",
+  };
+}
 function sameState(a: AcceptedInspection, b: AcceptedInspection): void {
   try {
     assertSameTrafficSelection(a, b);
@@ -248,7 +260,7 @@ export function validateGatewayNodeResult(
   node: GatewayNode,
   bundle: GatewayDependencies["bundle"],
   g: TrafficGeneration,
-): Omit<GatewaySuccess, "calculated_at"> {
+): Omit<GatewaySuccess, "calculated_at" | keyof GatewayFreshness> {
   const v = object(raw);
   record(v, "node result", [
     "code",
@@ -636,6 +648,26 @@ export class GatewayController {
       reason,
     };
   }
+  async context(): Promise<GatewayContextReply> {
+    try {
+      if (this.closing) throw Error();
+      const state = await this.inspect(performance.now() + 2000);
+      if (this.closing) throw Error();
+      return {
+        status: 200,
+        body: {
+          schema_version: "0.1",
+          graph_id: this.dependencies.bundle.graph_id,
+          traffic_snapshot_id:
+            state.active?.manifest.traffic_snapshot_id ?? null,
+          sequence: state.active?.manifest.sequence ?? null,
+          ...freshness(state),
+        },
+      };
+    } catch {
+      return { status: 503, body: gatewayFailure("STORE_UNAVAILABLE") };
+    }
+  }
   private async peer(
     node: GatewayNode,
     path: string,
@@ -909,7 +941,11 @@ export class GatewayController {
           if (this.closing) reject("NO_HEALTHY_NODE");
           const reply = {
             status: 200,
-            body: { ...success, calculated_at: new Date().toISOString() },
+            body: {
+              ...success,
+              ...freshness(final),
+              calculated_at: new Date().toISOString(),
+            },
           };
           write("result.json", {
             ...reply,

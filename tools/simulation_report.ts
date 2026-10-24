@@ -1,3 +1,4 @@
+import type { ClientReport } from "./client_checks.js";
 import type { GatewayReport } from "./gateway_checks.js";
 import type { NodeReport } from "./node_checks.js";
 import type { TrafficReport } from "./traffic_checks.js";
@@ -135,6 +136,7 @@ export interface SimulationReportData {
   };
   nodes?: NodeReport;
   gateway?: GatewayReport;
+  client?: ClientReport;
   traffic?: TrafficReport;
   publication?: {
     publisher_id: string;
@@ -643,6 +645,12 @@ export function renderSimulationReport(data: SimulationReportData): string {
       ></p>
       <div id="aggregate-evidence"></div>
     </section>
+    <section id="client-section" class="checks" hidden>
+      <h2 data-en="P11 recorded actual browser route client" data-ko="P11 기록된 실제 브라우저 경로 화면"></h2>
+      <p data-en="Recorded automated browser requests use a fresh 15-trip source on actual Seoul roads, the independent gateway and two native nodes. These screenshots and states replay completed evidence. Start pilot:serve separately for the interactive client. Simulation time authorizes freshness; browser wall time does not. Explicit transport test proxies are not successful native-route proof. This is not production authentication, real-time traffic or independently verified driving accuracy." data-ko="실제 서울 도로의 새 합성15여행·독립 중계·두 지속노드로 자동 브라우저 요청을 기록했습니다. 화면과 상태는 완료된 근거 재생이며 실제 조작 화면은 pilot:serve로 별도 실행합니다. 신선도는 모의 시각으로 확인하고 브라우저 실제 시각을 쓰지 않습니다. 명시 전송 시험대리서버를 지속엔진 성공 근거로 세지 않습니다. 운영 인증·실시간 교통·독립 검증한 주행 정확도 근거가 아닙니다."></p>
+      <div id="client-evidence"></div><div id="client-screenshots"></div>
+      <details><summary data-en="Browser state, requests and 32 checks" data-ko="브라우저 상태·요청·32개 검사"></summary><div id="client-events"></div><div id="client-cases"></div></details>
+    </section>
     <section id="gateway-section" class="checks" hidden>
       <h2 data-en="P10 recorded version-aware route gateway" data-ko="P10 기록된 버전확인 경로 중계"></h2>
       <p data-en="Evidence playback from 15 fresh synthetic trips on three actual Seoul Teheran-ro edges. A separate durable gateway consumer selects the accepted version and routes through two approved persistent native nodes. Public route coverage is calculated for the returned route; an accepted LIVE snapshot can still produce BASE_ONLY when the route avoids all live edges. Test-proxy faults are explicitly separate from successful native routes. This is not a complete navigation client, production authentication, hostile-node integrity or real-driving accuracy proof." data-ko="실제 서울 테헤란로3개구간의 새 합성15여행 증거 재생입니다. 별도 영속 중계 수신자가 수용 버전을 정하고 승인한 두 지속엔진 노드에 경로를 요청합니다. 공개 적용률은 반환 경로 기준이며 LIVE자료를 수용해도 모든 대상구간을 우회하면 BASE_ONLY입니다. 시험대리서버 장애와 실제 지속엔진 성공 경로는 구분합니다. 완성 내비게이션·운영 인증·악성 노드 무결성·실주행 정확도 근거가 아닙니다."></p>
@@ -1046,6 +1054,14 @@ export function renderSimulationReport(data: SimulationReportData): string {
       );
       const v = $("vehicle").options[0];
       if (v) v.textContent = lang === "en" ? "All vehicles" : "전체 차량";
+      $("client-section").hidden=!data.client;
+      if(data.client){
+        const c=data.client,root=$("client-evidence");root.replaceChildren();node("p",c.assertions_passed+"/"+c.assertions_total+(lang==="en"?" checks · browser ":"개 검사 · 브라우저 ")+c.browser_version,root);
+        c.evidence.forEach(e=>{const row=node("p",e["name_"+lang]+" · ",root);evidence(e.path,row);});
+        const shots=$("client-screenshots");shots.replaceChildren();c.screenshots.forEach(s=>{const figure=node("figure","",shots);figure.style.margin="18px 0";const caption=s["label_"+lang];if(typeof s.path==="string"&&!s.path.split("/").includes("..")&&/^[a-zA-Z0-9_./-]+\.png$/.test(s.path)){const image=node("img","",figure);image.src=s.path;image.alt=caption;image.loading="lazy";image.style.maxWidth="100%";image.style.maxHeight="500px";image.style.objectFit="contain";}node("figcaption",caption,figure);});
+        const history=$("client-events");history.replaceChildren();c.events.forEach(e=>{const row=node("p",e.state+" · "+e["message_"+lang]+" · ",history);evidence(e.evidence_path,row);});
+        const cases=$("client-cases");cases.replaceChildren();c.cases.forEach(a=>{const row=node("p",a.status+" · "+a["message_"+lang]+" · ",cases);evidence(a.evidence_path,row);});
+      }
       $("gateway-section").hidden=!data.gateway;
       if(data.gateway){
         const g=data.gateway,selector=$("gateway-route"),selected=selector.value;selector.replaceChildren();

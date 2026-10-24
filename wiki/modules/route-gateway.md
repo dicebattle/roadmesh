@@ -25,3 +25,7 @@ Final-head hosted runs failed during concurrent admission preparation. Main pres
 Worker correction at clean8f9c9f7 passed fresh302, unit262,9,799 independently checked hashes and a new60.45s recording. All eight concurrent routes returned200; ninth429 and12s/4s limits remain. [Current report](../../research/pilot/2026-10-25-p10-worker/report.md). New hosted verification is pending.
 
 깨끗한 작업 스레드 수정에서 새302개·단위262개·독립 해시9,799개·새60.45초 녹화를 확인했습니다. 동시8개가 모두 성공하고 아홉째429·기한을 유지했습니다. 새 원격 검증은 남아 있습니다.
+
+Corrected P10 is protected-merged through PR11 after both hosted runs passed302/262. Main inspected9,932 hosted hashes and73 owned compiler jobs. [Recorded delivery](../../research/pilot/2026-10-25-p10-worker/hosted/README.md).
+
+수정된 P10은 두 원격 실행302/262개 통과 뒤 PR11로 보호 병합했고 원격 해시9,932개·작업73개를 독립 확인했습니다.

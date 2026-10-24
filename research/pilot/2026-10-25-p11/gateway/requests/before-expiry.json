@@ -1,0 +1,70 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "before-expiry",
+    "origin": {
+      "longitude": 127.03739724982245,
+      "latitude": 37.50083690018144
+    },
+    "destination": {
+      "longitude": 127.0375277498224,
+      "latitude": 37.500877100181434
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live"
+  },
+  "status": 200,
+  "headers": {
+    "cache-control": "no-store",
+    "connection": "keep-alive",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sat, 24 Oct 2026 22:54:26 GMT",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked"
+  },
+  "body": {
+    "request_id": "before-expiry",
+    "request_sha256": "dcce960e6349fcd878ab2dda4fa36dcd49f83390c4165dccd5f24ce0ee03257d",
+    "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+    "snapshot_id": "10ad48512b15ac1784e7cb941e63727ad8d03dd861e0c99cf46b1e411ade5276",
+    "sequence": 3,
+    "generation_id": "76af716605360de84ce0d03f8066b1417de5b3809a4e0f150b71947f76365157",
+    "traffic_sha256": "1e05d55cd4c2b7ad9faa73a0b2f831959dee44f24e1a0a225130c16c473e52ed",
+    "engine_version": "3.9.1",
+    "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "costing_config_id": "valhalla-current-v1",
+    "node_id": "seoul-gateway-node-a",
+    "traffic_mode": "BASE_ONLY",
+    "distance_m": 12,
+    "duration_s": 0.78,
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.037397,
+          37.500837
+        ],
+        [
+          127.037528,
+          37.500877
+        ]
+      ]
+    },
+    "live_coverage_ratio": 0,
+    "warnings": [
+      {
+        "code": "NO_ROUTE_LIVE_COVERAGE",
+        "message_en": "This route has no accepted live edge coverage; default speeds apply.",
+        "message_ko": "이 경로에 수용된 실시간 구간이 없어 기본 속도를 적용합니다."
+      }
+    ],
+    "high_water": 3,
+    "checked_at_event_time": "2026-10-24T00:06:59.999Z",
+    "traffic_published_at": "2026-10-24T00:04:30.000Z",
+    "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+    "source_class": "SYNTHETIC",
+    "clock_basis": "SIMULATION_EVENT_TIME",
+    "calculated_at": "2026-10-24T22:54:26.015Z"
+  },
+  "elapsed_ms": 1509.937208999996
+}

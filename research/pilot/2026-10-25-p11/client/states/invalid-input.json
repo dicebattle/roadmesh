@@ -1,0 +1,32 @@
+{
+  "lang": "en",
+  "state": "invalid",
+  "request_id": "",
+  "map_ready": "true",
+  "map_active_route": "false",
+  "map_request_id": "",
+  "map_rendered_request_id": "",
+  "status": "Enter finite coordinates within the displayed Seoul map area, then calculate again.",
+  "summary": "",
+  "evidence": {
+    "request": null,
+    "response": null,
+    "authority": {
+      "schema_version": "0.1",
+      "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+      "traffic_snapshot_id": "aad05e8bdd678ae4459b07fed13ce4fda2b6107b60d8198aaeb88f70cd5e59fd",
+      "sequence": 3,
+      "high_water": 3,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "traffic_published_at": "2026-10-24T00:04:30.000Z",
+      "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+      "source_class": "SYNTHETIC",
+      "clock_basis": "SIMULATION_EVENT_TIME"
+    },
+    "state": "invalid",
+    "reason": "INVALID_INPUT",
+    "map_source_geometry": null
+  },
+  "scroll_width": 1280,
+  "viewport_width": 1280
+}

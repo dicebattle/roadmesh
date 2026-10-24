@@ -43,6 +43,10 @@ test("Native remaining deadline accepts canonical decimal only and absence prese
 test("Gateway auth, chunked64KiB cap and no successful body on failure / 중계 인증·청크64KiB제한·실패의 성공본문 부재", async () => {
   let dispatched = 0;
   const server = createGatewayHttpServer({ token } as GatewayConfig, {
+    context: async () => ({
+      status: 503,
+      body: gatewayFailure("STORE_UNAVAILABLE"),
+    }),
     route: async () => {
       dispatched++;
       return { status: 503, body: gatewayFailure("NO_HEALTHY_NODE") };
