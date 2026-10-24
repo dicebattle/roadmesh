@@ -8,7 +8,19 @@
 - Preserve the graph/version/traffic contract. Unknown or expired observations must not be presented as live traffic.
 - Use focused tests for changes; do not restart healthy running tests merely to obtain different output.
 - Use the in-app browser for ordinary manual web checks, close temporary tabs, and stop only temporary processes started for this task.
-- Do not use subagents by default for small scoped work.
+- For implementation, follow the model-specific delegation rules below even for small scoped work. Avoid additional delegation for small investigations or documentation-only changes.
+
+## Design and implementation ownership
+
+- The main agent owns requirements, architecture, interfaces, implementation scope, acceptance criteria and the project plan. It also reviews the implementation and verification evidence before reporting completion.
+- When the main agent is an Astra model, delegate coding to a Sol subagent. This includes implementation, code fixes and test code. Use an available Sol model rather than inheriting Astra for the implementation subagent.
+- When the main agent is Claude, delegate implementation to Codex when available, or to a Sonnet subagent. Claude remains responsible for design and final review.
+- These are model-specific rules: they do not require a main Sol agent to delegate its own coding. Do not infer the active model from task content; use the model identity exposed by the environment.
+- Before delegating, provide the decided design, relevant repository documents, owned files/modules, constraints and acceptance checks. Tell the implementer that others may be working in the repository and that it must preserve their edits.
+- Prefer one implementation agent for a small module. Do not assign overlapping files to multiple agents or create parallel work that depends on unfinished design decisions.
+- The main agent may directly update plans, instructions and knowledge documents. Delegation does not remove its responsibility to check correctness, minimal scope and test evidence.
+- If the required implementation model or delegation mechanism is unavailable, report that limitation and resolve the alternative with the user before substituting a different implementation model. Never claim delegation occurred when it did not.
+- Record the design owner, actual implementation model/agent, scope, review outcome and verification in wiki/log.md for implementation tasks. Existing authorization boundaries for publishing, deployment and paid resources still apply.
 
 ## Persistent project knowledge
 
