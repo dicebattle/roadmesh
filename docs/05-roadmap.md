@@ -2,9 +2,9 @@
 
 ## Local pilot track / 로컬 파일럿 경로
 
-P01/P14a status: implemented and directly verified locally and in GitHub Actions on Python 3.11/3.13. Required CI is now active on main. [Module and evidence](../wiki/modules/pilot-runner.md). P02 is next; P14b remains deferred.
+P01/P14a status: implemented and directly verified locally and in GitHub Actions on Node 22/24 after the TypeScript migration. Required CI is now active on main. [Module and evidence](../wiki/modules/pilot-runner.md). P02 is next; P14b remains deferred.
 
-P01/P14a 상태: 구현 후 로컬과 GitHub Actions의 Python 3.11/3.13에서 직접 검증했습니다. main에 필수 CI도 적용했습니다. [모듈과 증거](../wiki/modules/pilot-runner.md)를 참고하세요. 다음은 P02이며 P14b는 아직 남아 있습니다.
+P01/P14a 상태: 구현 후 로컬과 TypeScript 전환 후 GitHub Actions의 Node 22/24에서 직접 검증했습니다. main에 필수 CI도 적용했습니다. [모듈과 증거](../wiki/modules/pilot-runner.md)를 참고하세요. 다음은 P02이며 P14b는 아직 남아 있습니다.
 
 Updated 2026-10-24: the user requested full local simulation before expanding implementation. Follow [P01–P14](11-local-pilot.md), starting with the scenario/evidence contract and fast CI checks, then a tiny real-engine synthetic graph. RM-001's 100/100 reviewed cases remain required for geographic quality evaluation, but no longer block synthetic integration work. The earlier “real-road corpus first for all implementation” order is superseded for the local pilot only. P01 and P14a code now exists; its direct and hosted verification is recorded in the module page. Remaining pilot modules are not implemented.
 

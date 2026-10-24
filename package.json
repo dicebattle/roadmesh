@@ -3,14 +3,23 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "engines": {"node": ">=22 <25"},
+  "engines": {
+    "node": ">=22 <25"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "npm run build && node --test dist/tests/*.test.js",
     "corpus": "node dist/tools/evaluation_corpus.js",
     "pilot": "node dist/tools/pilot_runner.js",
-    "pilot:checks": "node dist/tools/pilot_checks.js"
+    "pilot:checks": "node dist/tools/pilot_checks.js",
+    "graph:check": "node dist/tools/test_graph.js"
   },
-  "dependencies": {"jsonc-parser": "3.3.1", "random-js": "2.1.0"},
-  "devDependencies": {"@types/node": "22.20.5", "typescript": "5.9.3"}
+  "dependencies": {
+    "jsonc-parser": "3.3.1",
+    "random-js": "2.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "typescript": "5.9.3"
+  }
 }

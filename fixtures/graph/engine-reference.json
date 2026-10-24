@@ -1,0 +1,1743 @@
+{
+  "note_en": "Actual Valhalla 3.9.1 development responses for unit regression only; edge IDs are not universal.",
+  "note_ko": "단위 회귀 검사 전용 실제 Valhalla3.9.1 개발 응답이며 구간 ID는 보편적인 값이 아닙니다.",
+  "source_manifest": {
+    "schema_version": "0.1",
+    "run_id": "78c543ef-2383-4697-b5c0-106ee99949ce",
+    "fixture_id": "tiny-city-v1",
+    "source": {
+      "commit": "dca0c5219acf3cfece4045e1f731397d2fe36694",
+      "dirty": true
+    },
+    "engine_executed": true,
+    "graph_loaded": true,
+    "engine": {
+      "valhalla": "3.9.1",
+      "osmium": "osmium version 1.16.0\nlibosmium version 2.20.0\nSupported PBF compression types: none zlib lz4\n\nCopyright (C) 2013-2023  Jochen Topf <jochen@topf.org>\nLicense: GNU GENERAL PUBLIC LICENSE Version 3 <https://gnu.org/licenses/gpl.html>.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law."
+    },
+    "image": {
+      "id": "sha256:8b4a0609466e08dd6b384be7104ffa3f1c43270d9a8e931f3d93e2243566b4b6",
+      "platform": "linux/arm64",
+      "dockerfile_sha256": "063afdc0e67da85ca88eb5713600cf76b663508e66682ace5859628b465001bc"
+    },
+    "base_image": "ghcr.io/valhalla/valhalla@sha256:4fd114eb1d26b8fc2f43bcb3df234c1b63a0bf13c277405e5943d5361dc575de",
+    "graph_id": "2bca945a2d4965a6db8d7065eef7f9daf88f58c197e74f5c0dc458ba7524cf48",
+    "fixture_sha256": "4677bda5062936f23a2c846fdf2dd2ee719c6382e9c1d01d3113cddb2e7ddc10",
+    "config_sha256": "69be4cfb635430f39af54f0be7080d5bce9a0b06050451f05c13ddac49441be9",
+    "pbf_sha256": "394294b08c222c472172310e2e97cc2d3b7e6fc6741bf670c3e5d8f1b0f548ce",
+    "tile_sha256": {
+      "2/000/517/680.gph": "b0a6b98531862c89bb3bcb63f2c72c888ad0697cbe06185a9495f3018e4dfd92",
+      "2/000/519/120.gph": "98d5313fceaaf231932b4debcfc36d403bbcd72d37c5d2bd0eff0d3ec836c748"
+    },
+    "resource_limits": {
+      "cpus": 2,
+      "memory_bytes": 2147483648,
+      "network": "none"
+    },
+    "elapsed_ms": 4642.510583,
+    "started_at_utc": "2026-10-24T06:26:11.724Z",
+    "completed_at_utc": "2026-10-24T06:26:16.366Z",
+    "cleanup_verified": true,
+    "status": "PASS",
+    "evidence": {
+      "assertions": "assertions.json",
+      "edge_map": "edge-map.json",
+      "commands": "commands.json",
+      "summary": "summary.md"
+    }
+  },
+  "locate_ab": [
+    {
+      "input_lat": 0,
+      "input_lon": 0.001,
+      "edges": [
+        {
+          "access_restrictions": [],
+          "live_speed": {},
+          "correlated_lat": 0,
+          "correlated_lon": 0.001,
+          "side_of_street": "neither",
+          "bounding_circle": {
+            "lat": 1.557850307573605e-7,
+            "lon": 0.000999,
+            "radius": 120
+          },
+          "linear_reference": "KwAAAAAAAHLIAwDIAAAyWH8=",
+          "percent_along": 0.49919,
+          "distance": 0,
+          "shoulder": false,
+          "heading": 90,
+          "outbound_reach": 0,
+          "inbound_reach": 0,
+          "edge_info": {
+            "way_id": 101,
+            "bike_network": {
+              "national": false,
+              "regional": false,
+              "local": false,
+              "mountain": false
+            },
+            "names": [
+              "ab"
+            ],
+            "shape": "???_|B",
+            "mean_elevation": null,
+            "speed_limit": 30
+          },
+          "edge": {
+            "end_node": {
+              "level": 2,
+              "tile_id": 519120,
+              "id": 5,
+              "value": 171925122
+            },
+            "speeds": {
+              "default": 30,
+              "type": "tagged",
+              "free_flow": 0,
+              "constrained_flow": 0,
+              "predicted": false
+            },
+            "access_restriction": false,
+            "start_restriction": {
+              "bicycle": false,
+              "bus": false,
+              "car": false,
+              "emergency": false,
+              "HOV": false,
+              "pedestrian": false,
+              "taxi": false,
+              "truck": false,
+              "wheelchair": false,
+              "moped": false,
+              "motorcycle": false
+            },
+            "end_restriction": {
+              "bicycle": false,
+              "bus": false,
+              "car": false,
+              "emergency": false,
+              "HOV": false,
+              "pedestrian": false,
+              "taxi": false,
+              "truck": false,
+              "wheelchair": false,
+              "moped": false,
+              "motorcycle": false
+            },
+            "part_of_complex_restriction": false,
+            "has_sign": false,
+            "toll": false,
+            "destination_only": false,
+            "destination_only_hgv": false,
+            "tunnel": false,
+            "bridge": false,
+            "round_about": false,
+            "traffic_signal": false,
+            "forward": true,
+            "not_thru": false,
+            "stop_sign": false,
+            "yield_sign": false,
+            "cycle_lane": "none",
+            "bike_network": false,
+            "truck_route": false,
+            "lane_count": 1,
+            "country_crossing": false,
+            "sidewalk_left": false,
+            "sidewalk_right": false,
+            "sac_scale": "none",
+            "deadend": false,
+            "geo_attributes": {
+              "length": 223,
+              "weighted_grade": 0,
+              "max_up_slope": 0,
+              "max_down_slope": 0,
+              "curvature": 0
+            },
+            "access": {
+              "bicycle": true,
+              "bus": true,
+              "car": true,
+              "emergency": false,
+              "HOV": true,
+              "pedestrian": true,
+              "taxi": true,
+              "truck": true,
+              "wheelchair": true,
+              "moped": true,
+              "motorcycle": true
+            },
+            "classification": {
+              "classification": "residential",
+              "use": "road",
+              "surface": "paved_smooth",
+              "link": false,
+              "internal": false
+            }
+          },
+          "edge_id": {
+            "level": 2,
+            "tile_id": 519120,
+            "id": 0,
+            "value": 4152962
+          },
+          "predicted_speeds": []
+        },
+        {
+          "access_restrictions": [],
+          "live_speed": {},
+          "correlated_lat": 0,
+          "correlated_lon": 0.001,
+          "side_of_street": "neither",
+          "bounding_circle": {
+            "lat": 0,
+            "lon": 0,
+            "radius": 0
+          },
+          "linear_reference": "KwAAXQAAAHLYA/86AAAySIA=",
+          "percent_along": 0.5008,
+          "distance": 0,
+          "shoulder": false,
+          "heading": 270,
+          "outbound_reach": 0,
+          "inbound_reach": 0,
+          "edge_info": {
+            "way_id": 101,
+            "bike_network": {
+              "national": false,
+              "regional": false,
+              "local": false,
+              "mountain": false
+            },
+            "names": [
+              "ab"
+            ],
+            "shape": "???_|B",
+            "mean_elevation": null,
+            "speed_limit": 30
+          },
+          "edge": {
+            "end_node": {
+              "level": 2,
+              "tile_id": 519120,
+              "id": 0,
+              "value": 4152962
+            },
+            "speeds": {
+              "default": 30,
+              "type": "tagged",
+              "free_flow": 0,
+              "constrained_flow": 0,
+              "predicted": false
+            },
+            "access_restriction": false,
+            "start_restriction": {
+              "bicycle": false,
+              "bus": false,
+              "car": false,
+              "emergency": false,
+              "HOV": false,
+              "pedestrian": false,
+              "taxi": false,
+              "truck": false,
+              "wheelchair": false,
+              "moped": false,
+              "motorcycle": false
+            },
+            "end_restriction": {
+              "bicycle": false,
+              "bus": false,
+              "car": false,
+              "emergency": false,
+              "HOV": false,
+              "pedestrian": false,
+              "taxi": false,
+              "truck": false,
+              "wheelchair": false,
+              "moped": false,
+              "motorcycle": false
+            },
+            "part_of_complex_restriction": false,
+            "has_sign": false,
+            "toll": false,
+            "destination_only": false,
+            "destination_only_hgv": false,
+            "tunnel": false,
+            "bridge": false,
+            "round_about": false,
+            "traffic_signal": false,
+            "forward": false,
+            "not_thru": false,
+            "stop_sign": false,
+            "yield_sign": false,
+            "cycle_lane": "none",
+            "bike_network": false,
+            "truck_route": false,
+            "lane_count": 1,
+            "country_crossing": false,
+            "sidewalk_left": false,
+            "sidewalk_right": false,
+            "sac_scale": "none",
+            "deadend": false,
+            "geo_attributes": {
+              "length": 223,
+              "weighted_grade": 0,
+              "max_up_slope": 0,
+              "max_down_slope": 0,
+              "curvature": 0
+            },
+            "access": {
+              "bicycle": true,
+              "bus": true,
+              "car": true,
+              "emergency": false,
+              "HOV": true,
+              "pedestrian": true,
+              "taxi": true,
+              "truck": true,
+              "wheelchair": true,
+              "moped": true,
+              "motorcycle": true
+            },
+            "classification": {
+              "classification": "residential",
+              "use": "road",
+              "surface": "paved_smooth",
+              "link": false,
+              "internal": false
+            }
+          },
+          "edge_id": {
+            "level": 2,
+            "tile_id": 519120,
+            "id": 9,
+            "value": 306142850
+          },
+          "predicted_speeds": []
+        }
+      ],
+      "nodes": []
+    }
+  ],
+  "locate_fc": [
+    {
+      "input_lat": 0.001,
+      "input_lon": 0.004,
+      "edges": [
+        {
+          "access_restrictions": [],
+          "live_speed": {},
+          "correlated_lat": 0.001,
+          "correlated_lon": 0.004,
+          "side_of_street": "neither",
+          "bounding_circle": {
+            "lat": 0.000999,
+            "lon": 0.003999,
+            "radius": 120
+          },
+          "linear_reference": "KwAAugAAAHLAAwACAMgyUIA=",
+          "percent_along": 0.5008,
+          "distance": 0,
+          "shoulder": false,
+          "heading": 0,
+          "outbound_reach": 0,
+          "inbound_reach": 0,
+          "edge_info": {
+            "way_id": 106,
+            "bike_network": {
+              "national": false,
+              "regional": false,
+              "local": false,
+              "mountain": false
+            },
+            "names": [
+              "fc"
+            ],
+            "shape": "_|B_yF~{B?",
+            "mean_elevation": null,
+            "speed_limit": 30
+          },
+          "edge": {
+            "end_node": {
+              "level": 2,
+              "tile_id": 519120,
+              "id": 7,
+              "value": 239033986
+            },
+            "speeds": {
+              "default": 30,
+              "type": "tagged",
+              "free_flow": 0,
+              "constrained_flow": 0,
+              "predicted": false
+            },
+            "access_restriction": false,
+            "start_restriction": {
+              "bicycle": false,
+              "bus": false,
+              "car": false,
+              "emergency": false,
+              "HOV": false,
+              "pedestrian": false,
+              "taxi": false,
+              "truck": false,
+              "wheelchair": false,
+              "moped": false,
+              "motorcycle": false
+            },
+            "end_restriction": {
+              "bicycle": false,
+              "bus": false,
+              "car": false,
+              "emergency": false,
+              "HOV": false,
+              "pedestrian": false,
+              "taxi": false,
+              "truck": false,
+              "wheelchair": false,
+              "moped": false,
+              "motorcycle": false
+            },
+            "part_of_complex_restriction": false,
+            "has_sign": false,
+            "toll": false,
+            "destination_only": false,
+            "destination_only_hgv": false,
+            "tunnel": false,
+            "bridge": false,
+            "round_about": false,
+            "traffic_signal": false,
+            "forward": false,
+            "not_thru": false,
+            "stop_sign": false,
+            "yield_sign": false,
+            "cycle_lane": "none",
+            "bike_network": false,
+            "truck_route": false,
+            "lane_count": 1,
+            "country_crossing": false,
+            "sidewalk_left": false,
+            "sidewalk_right": false,
+            "sac_scale": "none",
+            "deadend": false,
+            "geo_attributes": {
+              "length": 223,
+              "weighted_grade": 0,
+              "max_up_slope": 0,
+              "max_down_slope": 0,
+              "curvature": 0
+            },
+            "access": {
+              "bicycle": true,
+              "bus": true,
+              "car": true,
+              "emergency": false,
+              "HOV": true,
+              "pedestrian": true,
+              "taxi": true,
+              "truck": true,
+              "wheelchair": true,
+              "moped": true,
+              "motorcycle": true
+            },
+            "classification": {
+              "classification": "residential",
+              "use": "road",
+              "surface": "paved_smooth",
+              "link": false,
+              "internal": false
+            }
+          },
+          "edge_id": {
+            "level": 2,
+            "tile_id": 519120,
+            "id": 14,
+            "value": 473915010
+          },
+          "predicted_speeds": []
+        },
+        {
+          "access_restrictions": [],
+          "live_speed": {},
+          "correlated_lat": 0.001,
+          "correlated_lon": 0.004,
+          "side_of_street": "neither",
+          "bounding_circle": {
+            "lat": 0,
+            "lon": 0,
+            "radius": 0
+          },
+          "linear_reference": "KwAAugAAXXLQAwAC/zoyQH8=",
+          "percent_along": 0.49919,
+          "distance": 0,
+          "shoulder": false,
+          "heading": 180,
+          "outbound_reach": 0,
+          "inbound_reach": 0,
+          "edge_info": {
+            "way_id": 106,
+            "bike_network": {
+              "national": false,
+              "regional": false,
+              "local": false,
+              "mountain": false
+            },
+            "names": [
+              "fc"
+            ],
+            "shape": "_|B_yF~{B?",
+            "mean_elevation": null,
+            "speed_limit": 30
+          },
+          "edge": {
+            "end_node": {
+              "level": 2,
+              "tile_id": 519120,
+              "id": 6,
+              "value": 205479554
+            },
+            "speeds": {
+              "default": 30,
+              "type": "tagged",
+              "free_flow": 0,
+              "constrained_flow": 0,
+              "predicted": false
+            },
+            "access_restriction": false,
+            "start_restriction": {
+              "bicycle": false,
+              "bus": false,
+              "car": false,
+              "emergency": false,
+              "HOV": false,
+              "pedestrian": false,
+              "taxi": false,
+              "truck": false,
+              "wheelchair": false,
+              "moped": false,
+              "motorcycle": false
+            },
+            "end_restriction": {
+              "bicycle": false,
+              "bus": false,
+              "car": false,
+              "emergency": false,
+              "HOV": false,
+              "pedestrian": false,
+              "taxi": false,
+              "truck": false,
+              "wheelchair": false,
+              "moped": false,
+              "motorcycle": false
+            },
+            "part_of_complex_restriction": false,
+            "has_sign": false,
+            "toll": false,
+            "destination_only": false,
+            "destination_only_hgv": false,
+            "tunnel": false,
+            "bridge": false,
+            "round_about": false,
+            "traffic_signal": false,
+            "forward": true,
+            "not_thru": false,
+            "stop_sign": false,
+            "yield_sign": false,
+            "cycle_lane": "none",
+            "bike_network": false,
+            "truck_route": false,
+            "lane_count": 1,
+            "country_crossing": false,
+            "sidewalk_left": false,
+            "sidewalk_right": false,
+            "sac_scale": "none",
+            "deadend": false,
+            "geo_attributes": {
+              "length": 223,
+              "weighted_grade": 0,
+              "max_up_slope": 0,
+              "max_down_slope": 0,
+              "curvature": 0
+            },
+            "access": {
+              "bicycle": true,
+              "bus": true,
+              "car": true,
+              "emergency": false,
+              "HOV": true,
+              "pedestrian": true,
+              "taxi": true,
+              "truck": true,
+              "wheelchair": true,
+              "moped": true,
+              "motorcycle": true
+            },
+            "classification": {
+              "classification": "residential",
+              "use": "road",
+              "surface": "paved_smooth",
+              "link": false,
+              "internal": false
+            }
+          },
+          "edge_id": {
+            "level": 2,
+            "tile_id": 519120,
+            "id": 16,
+            "value": 541023874
+          },
+          "predicted_speeds": []
+        }
+      ],
+      "nodes": []
+    }
+  ],
+  "locate_oneway": [
+    {
+      "input_lat": 0,
+      "input_lon": 0.011,
+      "edges": [
+        {
+          "access_restrictions": [],
+          "live_speed": {},
+          "correlated_lat": 0,
+          "correlated_lon": 0.011,
+          "side_of_street": "neither",
+          "bounding_circle": {
+            "lat": 1.557850307573605e-7,
+            "lon": 0.011009,
+            "radius": 120
+          },
+          "linear_reference": "KwAB0gAAAHPIAwDJAAAzWH8=",
+          "percent_along": 0.49919,
+          "distance": 0,
+          "shoulder": false,
+          "heading": 90,
+          "outbound_reach": 0,
+          "inbound_reach": 0,
+          "edge_info": {
+            "way_id": 201,
+            "bike_network": {
+              "national": false,
+              "regional": false,
+              "local": false,
+              "mountain": false
+            },
+            "names": [
+              "oneway"
+            ],
+            "shape": "?_pR?_|B",
+            "mean_elevation": null,
+            "speed_limit": 30
+          },
+          "edge": {
+            "end_node": {
+              "level": 2,
+              "tile_id": 519120,
+              "id": 10,
+              "value": 339697282
+            },
+            "speeds": {
+              "default": 30,
+              "type": "tagged",
+              "free_flow": 0,
+              "constrained_flow": 0,
+              "predicted": false
+            },
+            "access_restriction": false,
+            "start_restriction": {
+              "bicycle": false,
+              "bus": false,
+              "car": false,
+              "emergency": false,
+              "HOV": false,
+              "pedestrian": false,
+              "taxi": false,
+              "truck": false,
+              "wheelchair": false,
+              "moped": false,
+              "motorcycle": false
+            },
+            "end_restriction": {
+              "bicycle": false,
+              "bus": false,
+              "car": false,
+              "emergency": false,
+              "HOV": false,
+              "pedestrian": false,
+              "taxi": false,
+              "truck": false,
+              "wheelchair": false,
+              "moped": false,
+              "motorcycle": false
+            },
+            "part_of_complex_restriction": false,
+            "has_sign": false,
+            "toll": false,
+            "destination_only": false,
+            "destination_only_hgv": false,
+            "tunnel": false,
+            "bridge": false,
+            "round_about": false,
+            "traffic_signal": false,
+            "forward": true,
+            "not_thru": true,
+            "stop_sign": false,
+            "yield_sign": false,
+            "cycle_lane": "none",
+            "bike_network": false,
+            "truck_route": false,
+            "lane_count": 1,
+            "country_crossing": false,
+            "sidewalk_left": false,
+            "sidewalk_right": false,
+            "sac_scale": "none",
+            "deadend": true,
+            "geo_attributes": {
+              "length": 223,
+              "weighted_grade": 0,
+              "max_up_slope": 0,
+              "max_down_slope": 0,
+              "curvature": 0
+            },
+            "access": {
+              "bicycle": true,
+              "bus": true,
+              "car": true,
+              "emergency": false,
+              "HOV": true,
+              "pedestrian": true,
+              "taxi": true,
+              "truck": true,
+              "wheelchair": true,
+              "moped": true,
+              "motorcycle": true
+            },
+            "classification": {
+              "classification": "residential",
+              "use": "road",
+              "surface": "paved_smooth",
+              "link": false,
+              "internal": false
+            }
+          },
+          "edge_id": {
+            "level": 2,
+            "tile_id": 519120,
+            "id": 18,
+            "value": 608132738
+          },
+          "predicted_speeds": []
+        },
+        {
+          "access_restrictions": [],
+          "live_speed": {},
+          "correlated_lat": 0,
+          "correlated_lon": 0.011,
+          "side_of_street": "neither",
+          "bounding_circle": {
+            "lat": 0,
+            "lon": 0,
+            "radius": 0
+          },
+          "linear_reference": "KwACLwAAAHPYA/86AAAzSIA=",
+          "percent_along": 0.5008,
+          "distance": 0,
+          "shoulder": false,
+          "heading": 270,
+          "outbound_reach": 0,
+          "inbound_reach": 0,
+          "edge_info": {
+            "way_id": 201,
+            "bike_network": {
+              "national": false,
+              "regional": false,
+              "local": false,
+              "mountain": false
+            },
+            "names": [
+              "oneway"
+            ],
+            "shape": "?_pR?_|B",
+            "mean_elevation": null,
+            "speed_limit": 30
+          },
+          "edge": {
+            "end_node": {
+              "level": 2,
+              "tile_id": 519120,
+              "id": 9,
+              "value": 306142850
+            },
+            "speeds": {
+              "default": 30,
+              "type": "tagged",
+              "free_flow": 0,
+              "constrained_flow": 0,
+              "predicted": false
+            },
+            "access_restriction": false,
+            "start_restriction": {
+              "bicycle": false,
+              "bus": false,
+              "car": false,
+              "emergency": false,
+              "HOV": false,
+              "pedestrian": false,
+              "taxi": false,
+              "truck": false,
+              "wheelchair": false,
+              "moped": false,
+              "motorcycle": false
+            },
+            "end_restriction": {
+              "bicycle": false,
+              "bus": false,
+              "car": false,
+              "emergency": false,
+              "HOV": false,
+              "pedestrian": false,
+              "taxi": false,
+              "truck": false,
+              "wheelchair": false,
+              "moped": false,
+              "motorcycle": false
+            },
+            "part_of_complex_restriction": false,
+            "has_sign": false,
+            "toll": false,
+            "destination_only": false,
+            "destination_only_hgv": false,
+            "tunnel": false,
+            "bridge": false,
+            "round_about": false,
+            "traffic_signal": false,
+            "forward": false,
+            "not_thru": true,
+            "stop_sign": false,
+            "yield_sign": false,
+            "cycle_lane": "none",
+            "bike_network": false,
+            "truck_route": false,
+            "lane_count": 1,
+            "country_crossing": false,
+            "sidewalk_left": false,
+            "sidewalk_right": false,
+            "sac_scale": "none",
+            "deadend": true,
+            "geo_attributes": {
+              "length": 223,
+              "weighted_grade": 0,
+              "max_up_slope": 0,
+              "max_down_slope": 0,
+              "curvature": 0
+            },
+            "access": {
+              "bicycle": false,
+              "bus": false,
+              "car": false,
+              "emergency": false,
+              "HOV": false,
+              "pedestrian": true,
+              "taxi": false,
+              "truck": false,
+              "wheelchair": true,
+              "moped": false,
+              "motorcycle": false
+            },
+            "classification": {
+              "classification": "residential",
+              "use": "road",
+              "surface": "paved_smooth",
+              "link": false,
+              "internal": false
+            }
+          },
+          "edge_id": {
+            "level": 2,
+            "tile_id": 519120,
+            "id": 19,
+            "value": 641687170
+          },
+          "predicted_speeds": []
+        }
+      ],
+      "nodes": []
+    }
+  ],
+  "baseline": {
+    "trip": {
+      "locations": [
+        {
+          "type": "break",
+          "lat": 0,
+          "lon": 0.0003,
+          "original_index": 0
+        },
+        {
+          "type": "break",
+          "lat": 0,
+          "lon": 0.0037,
+          "original_index": 1
+        }
+      ],
+      "legs": [
+        {
+          "maneuvers": [
+            {
+              "type": 1,
+              "instruction": "Drive east on ab.",
+              "verbal_succinct_transition_instruction": "Drive east.",
+              "verbal_pre_transition_instruction": "Drive east on ab.",
+              "verbal_post_transition_instruction": "Continue for 400 meters.",
+              "street_names": [
+                "ab"
+              ],
+              "bearing_after": 90,
+              "time": 45.468,
+              "length": 0.378,
+              "cost": 49.642,
+              "begin_shape_index": 0,
+              "end_shape_index": 2,
+              "travel_mode": "drive",
+              "travel_type": "car"
+            },
+            {
+              "type": 4,
+              "instruction": "You have arrived at your destination.",
+              "verbal_transition_alert_instruction": "You will arrive at your destination.",
+              "verbal_pre_transition_instruction": "You have arrived at your destination.",
+              "bearing_before": 90,
+              "time": 0,
+              "length": 0,
+              "cost": 0,
+              "begin_shape_index": 2,
+              "end_shape_index": 2,
+              "travel_mode": "drive",
+              "travel_type": "car"
+            }
+          ],
+          "summary": {
+            "has_time_restrictions": false,
+            "has_toll": false,
+            "has_highway": false,
+            "has_ferry": false,
+            "min_lat": 0,
+            "min_lon": 0.0003,
+            "max_lat": 0,
+            "max_lon": 0.0037,
+            "time": 45.468,
+            "length": 0.378,
+            "cost": 49.642
+          },
+          "shape": "?wQ?giB?giB"
+        }
+      ],
+      "summary": {
+        "has_time_restrictions": false,
+        "has_toll": false,
+        "has_highway": false,
+        "has_ferry": false,
+        "min_lat": 0,
+        "min_lon": 0.0003,
+        "max_lat": 0,
+        "max_lon": 0.0037,
+        "time": 45.468,
+        "length": 0.378,
+        "cost": 49.642
+      },
+      "status_message": "Found route between points",
+      "status": 0,
+      "units": "kilometers",
+      "language": "en-US"
+    }
+  },
+  "trace_baseline": {
+    "units": "kilometers",
+    "osm_changeset": 4002,
+    "shape": "?wQ?giB?giB",
+    "confidence_score": 1,
+    "raw_score": 0,
+    "admins": [
+      {
+        "country_text": "None",
+        "state_text": "None"
+      }
+    ],
+    "edges": [
+      {
+        "truck_route": false,
+        "speed_limit": 30,
+        "density": 0,
+        "sac_scale": 0,
+        "shoulder": false,
+        "sidewalk": "none",
+        "bicycle_network": 0,
+        "cycle_lane": "none",
+        "lane_count": 1,
+        "max_downward_grade": -500,
+        "max_upward_grade": -500,
+        "weighted_grade": 0,
+        "way_id": 101,
+        "id": 4152962,
+        "travel_mode": "drive",
+        "vehicle_type": "car",
+        "surface": "paved_smooth",
+        "drive_on_right": true,
+        "internal_intersection": false,
+        "roundabout": false,
+        "bridge": false,
+        "tunnel": false,
+        "unpaved": false,
+        "toll": false,
+        "use": "road",
+        "traversability": "both",
+        "end_shape_index": 1,
+        "begin_shape_index": 0,
+        "end_heading": 90,
+        "begin_heading": 90,
+        "road_class": "residential",
+        "speed": 30,
+        "speed_type": "tagged",
+        "speeds_non_faded": {
+          "no_flow": 30
+        },
+        "country_crossing": false,
+        "forward": true,
+        "traffic_signal": false,
+        "length": 0.189,
+        "source_percent_along": 0.149,
+        "names": [
+          "ab"
+        ],
+        "end_node": {
+          "intersecting_edges": [
+            {
+              "walkability": "both",
+              "cyclability": "both",
+              "driveability": "both",
+              "from_edge_name_consistency": false,
+              "to_edge_name_consistency": false,
+              "begin_heading": 0,
+              "use": "road",
+              "road_class": "residential"
+            },
+            {
+              "walkability": "both",
+              "cyclability": "both",
+              "driveability": "both",
+              "from_edge_name_consistency": false,
+              "to_edge_name_consistency": false,
+              "begin_heading": 180,
+              "use": "road",
+              "road_class": "residential"
+            }
+          ],
+          "elapsed_time": 22.752,
+          "elapsed_cost": 19.339,
+          "admin_index": 0,
+          "type": "street_intersection",
+          "traffic_signal": false,
+          "fork": false,
+          "transition_time": 0.006
+        }
+      },
+      {
+        "truck_route": false,
+        "speed_limit": 30,
+        "density": 0,
+        "sac_scale": 0,
+        "shoulder": false,
+        "sidewalk": "none",
+        "bicycle_network": 0,
+        "cycle_lane": "none",
+        "lane_count": 1,
+        "max_downward_grade": -500,
+        "max_upward_grade": -500,
+        "weighted_grade": 0,
+        "way_id": 102,
+        "id": 339697282,
+        "travel_mode": "drive",
+        "vehicle_type": "car",
+        "surface": "paved_smooth",
+        "drive_on_right": true,
+        "internal_intersection": false,
+        "roundabout": false,
+        "bridge": false,
+        "tunnel": false,
+        "unpaved": false,
+        "toll": false,
+        "use": "road",
+        "traversability": "both",
+        "end_shape_index": 2,
+        "begin_shape_index": 1,
+        "end_heading": 90,
+        "begin_heading": 90,
+        "road_class": "residential",
+        "speed": 30,
+        "speed_type": "tagged",
+        "speeds_non_faded": {
+          "no_flow": 30
+        },
+        "country_crossing": false,
+        "forward": true,
+        "traffic_signal": false,
+        "length": 0.189,
+        "target_percent_along": 0.848,
+        "names": [
+          "bc"
+        ],
+        "end_node": {
+          "elapsed_time": 45.468,
+          "elapsed_cost": 49.642,
+          "admin_index": 0,
+          "type": "street_intersection",
+          "traffic_signal": false,
+          "fork": false,
+          "transition_time": 0
+        }
+      }
+    ],
+    "alternate_paths": []
+  },
+  "edge_map": [
+    {
+      "label": "ab",
+      "osm_way_id": 101,
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0,
+          0
+        ],
+        [
+          0.002,
+          0
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0,
+          0
+        ],
+        [
+          0.002,
+          0
+        ]
+      ],
+      "evidence_path": "locate-ab.response.json",
+      "edge_id": "4152962"
+    },
+    {
+      "label": "ab",
+      "osm_way_id": 101,
+      "forward": false,
+      "engine_forward": false,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0,
+          0
+        ],
+        [
+          0.002,
+          0
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.002,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "evidence_path": "locate-ab.response.json",
+      "edge_id": "306142850"
+    },
+    {
+      "label": "bc",
+      "osm_way_id": 102,
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0.002,
+          0
+        ],
+        [
+          0.004,
+          0
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.002,
+          0
+        ],
+        [
+          0.004,
+          0
+        ]
+      ],
+      "evidence_path": "locate-bc.response.json",
+      "edge_id": "339697282"
+    },
+    {
+      "label": "bc",
+      "osm_way_id": 102,
+      "forward": false,
+      "engine_forward": false,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0.002,
+          0
+        ],
+        [
+          0.004,
+          0
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.004,
+          0
+        ],
+        [
+          0.002,
+          0
+        ]
+      ],
+      "evidence_path": "locate-bc.response.json",
+      "edge_id": "440360578"
+    },
+    {
+      "label": "ad",
+      "osm_way_id": 103,
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0.002
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0.002
+        ]
+      ],
+      "evidence_path": "locate-ad.response.json",
+      "edge_id": "37707394"
+    },
+    {
+      "label": "ad",
+      "osm_way_id": 103,
+      "forward": false,
+      "engine_forward": false,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0.002
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0,
+          0.002
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "evidence_path": "locate-ad.response.json",
+      "edge_id": "104816258"
+    },
+    {
+      "label": "de",
+      "osm_way_id": 104,
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0,
+          0.002
+        ],
+        [
+          0.002,
+          0.002
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0,
+          0.002
+        ],
+        [
+          0.002,
+          0.002
+        ]
+      ],
+      "evidence_path": "locate-de.response.json",
+      "edge_id": "138370690"
+    },
+    {
+      "label": "de",
+      "osm_way_id": 104,
+      "forward": false,
+      "engine_forward": false,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0,
+          0.002
+        ],
+        [
+          0.002,
+          0.002
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.002,
+          0.002
+        ],
+        [
+          0,
+          0.002
+        ]
+      ],
+      "evidence_path": "locate-de.response.json",
+      "edge_id": "171925122"
+    },
+    {
+      "label": "ef",
+      "osm_way_id": 105,
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0.002,
+          0.002
+        ],
+        [
+          0.004,
+          0.002
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.002,
+          0.002
+        ],
+        [
+          0.004,
+          0.002
+        ]
+      ],
+      "evidence_path": "locate-ef.response.json",
+      "edge_id": "205479554"
+    },
+    {
+      "label": "ef",
+      "osm_way_id": 105,
+      "forward": false,
+      "engine_forward": false,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0.002,
+          0.002
+        ],
+        [
+          0.004,
+          0.002
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.004,
+          0.002
+        ],
+        [
+          0.002,
+          0.002
+        ]
+      ],
+      "evidence_path": "locate-ef.response.json",
+      "edge_id": "507469442"
+    },
+    {
+      "label": "fc",
+      "osm_way_id": 106,
+      "forward": false,
+      "engine_forward": false,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0.004,
+          0.002
+        ],
+        [
+          0.004,
+          0
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.004,
+          0
+        ],
+        [
+          0.004,
+          0.002
+        ]
+      ],
+      "evidence_path": "locate-fc.response.json",
+      "edge_id": "473915010"
+    },
+    {
+      "label": "fc",
+      "osm_way_id": 106,
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0.004,
+          0.002
+        ],
+        [
+          0.004,
+          0
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.004,
+          0.002
+        ],
+        [
+          0.004,
+          0
+        ]
+      ],
+      "evidence_path": "locate-fc.response.json",
+      "edge_id": "541023874"
+    },
+    {
+      "label": "eb",
+      "osm_way_id": 107,
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0.002,
+          0.002
+        ],
+        [
+          0.002,
+          0
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.002,
+          0.002
+        ],
+        [
+          0.002,
+          0
+        ]
+      ],
+      "evidence_path": "locate-eb.response.json",
+      "edge_id": "239033986"
+    },
+    {
+      "label": "eb",
+      "osm_way_id": 107,
+      "forward": false,
+      "engine_forward": false,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0.002,
+          0.002
+        ],
+        [
+          0.002,
+          0
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.002,
+          0
+        ],
+        [
+          0.002,
+          0.002
+        ]
+      ],
+      "evidence_path": "locate-eb.response.json",
+      "edge_id": "373251714"
+    },
+    {
+      "label": "bg",
+      "osm_way_id": 108,
+      "forward": false,
+      "engine_forward": false,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0.002,
+          0
+        ],
+        [
+          0.002,
+          -0.002
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.002,
+          -0.002
+        ],
+        [
+          0.002,
+          0
+        ]
+      ],
+      "evidence_path": "locate-bg.response.json",
+      "edge_id": "4141442"
+    },
+    {
+      "label": "bg",
+      "osm_way_id": 108,
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0.002,
+          0
+        ],
+        [
+          0.002,
+          -0.002
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.002,
+          0
+        ],
+        [
+          0.002,
+          -0.002
+        ]
+      ],
+      "evidence_path": "locate-bg.response.json",
+      "edge_id": "406806146"
+    },
+    {
+      "label": "oneway",
+      "osm_way_id": 201,
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0.01,
+          0
+        ],
+        [
+          0.012,
+          0
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.01,
+          0
+        ],
+        [
+          0.012,
+          0
+        ]
+      ],
+      "evidence_path": "locate-oneway.response.json",
+      "edge_id": "608132738"
+    },
+    {
+      "label": "oneway",
+      "osm_way_id": 201,
+      "forward": false,
+      "engine_forward": false,
+      "car_access": false,
+      "source_geometry": [
+        [
+          0.01,
+          0
+        ],
+        [
+          0.012,
+          0
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.012,
+          0
+        ],
+        [
+          0.01,
+          0
+        ]
+      ],
+      "evidence_path": "locate-oneway.response.json",
+      "edge_id": "641687170"
+    },
+    {
+      "label": "disconnected",
+      "osm_way_id": 301,
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0.01,
+          0.003
+        ],
+        [
+          0.012,
+          0.003
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.01,
+          0.003
+        ],
+        [
+          0.012,
+          0.003
+        ]
+      ],
+      "evidence_path": "locate-disconnected.response.json",
+      "edge_id": "574578306"
+    },
+    {
+      "label": "disconnected",
+      "osm_way_id": 301,
+      "forward": false,
+      "engine_forward": false,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0.01,
+          0.003
+        ],
+        [
+          0.012,
+          0.003
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.012,
+          0.003
+        ],
+        [
+          0.01,
+          0.003
+        ]
+      ],
+      "evidence_path": "locate-disconnected.response.json",
+      "edge_id": "675241602"
+    },
+    {
+      "label": "parallel",
+      "osm_way_id": 401,
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0,
+          0.0001
+        ],
+        [
+          0.002,
+          0.0001
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0,
+          0.0001
+        ],
+        [
+          0.002,
+          0.0001
+        ]
+      ],
+      "evidence_path": "locate-parallel.response.json",
+      "edge_id": "71261826"
+    },
+    {
+      "label": "parallel",
+      "osm_way_id": 401,
+      "forward": false,
+      "engine_forward": false,
+      "car_access": true,
+      "source_geometry": [
+        [
+          0,
+          0.0001
+        ],
+        [
+          0.002,
+          0.0001
+        ]
+      ],
+      "directed_geometry": [
+        [
+          0.002,
+          0.0001
+        ],
+        [
+          0,
+          0.0001
+        ]
+      ],
+      "evidence_path": "locate-parallel.response.json",
+      "edge_id": "272588418"
+    }
+  ]
+}
