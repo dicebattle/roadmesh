@@ -1,8 +1,8 @@
 # Route gateway / 경로 중계
 
-[Fixed contract](../../docs/29-p10-route-gateway.md). Main owns design/review and direct execution; existing Sol core/integration agents implement separate files. Local actual development32 passed with independently inspected originals; clean whole302 and final media/hosted delivery remain pending. [Development proof](../../research/pilot/2026-10-25-p10/development/README.md).
+[Fixed contract](../../docs/29-p10-route-gateway.md). Main owns design/review and direct execution; existing Sol core/integration agents implement separate files. Local actual development32, clean whole302, current media and hosted302/252 passed with independently inspected originals; final protected delivery remains pending. [Development proof](../../research/pilot/2026-10-25-p10/development/README.md).
 
-메인이설계·검토·직접실행하고기존Sol코어/통합담당자가파일을나누어구현합니다. 실제개발32개·독립원문검사를통과했으며깨끗한전체302개·최신미디어·원격반영은남아있습니다.
+메인이설계·검토·직접실행하고기존Sol코어/통합담당자가파일을나누어구현합니다. 실제 개발32개·깨끗한 전체302개·최신 미디어·원격302/252개와 독립 원문 검사를 통과했으며 최종 보호 반영이 남았습니다.
 
 The authenticated loopback API accepts strict car/prefer_live requests and selects from two configured P09 nodes. An independent P07 consumer controls target identity; P08 supplies immutable generation bytes. Match exact graph/generation/snapshot/costing/image before dispatch, retry once on the other matching node, and recheck authoritative state before returning. Version changes fail explicitly.12s shared deadline,4s per attempt,8 admissions and bounded serial DB operations prevent unbounded work. The narrow P09 remaining-deadline header preserves its old30s default when absent.
 
@@ -14,6 +14,14 @@ Public responses contain only allowed route/version fields and bilingual warning
 
 ## Clean whole result / 깨끗한 전체 결과
 
-Clean2056521 passed252 unit tests and the fresh whole302. Main independently inspected9,838 listed hashes and all module originals; the current59.75s recording and EN/KO390px viewer passed review. [Current report](../../research/pilot/2026-10-25-p10/report.md). P10 hosted inspection and protected delivery are pending; P09 protected ancestry has been incorporated without runtime changes.
+Clean2056521 passed252 unit tests and the fresh whole302. Main independently inspected9,838 listed hashes and all module originals; the current59.75s recording and EN/KO390px viewer passed review. [Current report](../../research/pilot/2026-10-25-p10/report.md). [P10 hosted inspection](../../research/pilot/2026-10-25-p10/hosted/README.md) passed9,691 hashes; protected delivery is pending; P09 protected ancestry has been incorporated without runtime changes.
 
-깨끗한2056521에서 단위252개·새 전체302개를 통과했습니다. 메인이 목록 해시9,838개·모든 모듈 원문·현재59.75초 녹화·한영390픽셀 화면을 확인했습니다. P10 원격 검사·보호 반영은 대기 중이며, P09의 보호 병합 이력은 실행 코드 변경 없이 연결했습니다.
+깨끗한2056521에서 단위252개·새 전체302개를 통과했습니다. 메인이 목록 해시9,838개·모든 모듈 원문·현재59.75초 녹화·한영390픽셀 화면을 확인했습니다. P10 원격 해시9,691개 검사를 통과했고 보호 반영은 대기 중이며, P09의 보호 병합 이력은 실행 코드 변경 없이 연결했습니다.
+
+Final-head hosted runs failed during concurrent admission preparation. Main preserved [both failures](../../research/pilot/2026-10-25-p10/hosted-failures/README.md) and the local event-loop measurement. Correction is in progress with existing deadlines and acceptance unchanged; protected delivery remains blocked.
+
+최종 원격 동시 접수 준비가 실패해 두 원문과 로컬 이벤트 루프 측정을 보존했습니다. 기존 기한·통과 기준을 유지하며 수정 중이고 보호 반영은 보류합니다.
+
+Worker correction at clean8f9c9f7 passed fresh302, unit262,9,799 independently checked hashes and a new60.45s recording. All eight concurrent routes returned200; ninth429 and12s/4s limits remain. [Current report](../../research/pilot/2026-10-25-p10-worker/report.md). New hosted verification is pending.
+
+깨끗한 작업 스레드 수정에서 새302개·단위262개·독립 해시9,799개·새60.45초 녹화를 확인했습니다. 동시8개가 모두 성공하고 아홉째429·기한을 유지했습니다. 새 원격 검증은 남아 있습니다.

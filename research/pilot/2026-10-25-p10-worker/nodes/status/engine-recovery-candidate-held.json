@@ -1,0 +1,30 @@
+{
+  "node_id": "seoul-node-a",
+  "instance_id": "da243500-9ccb-4699-a5b9-12328dbc94a4",
+  "ready": false,
+  "active": null,
+  "in_flight": 1,
+  "slots": [
+    {
+      "generation_id": "aae4f1be3496abbffb8aee14771bad11a620555b0712f88fe85bf3507c1f73b0",
+      "state": "ACTIVE",
+      "in_flight": 1,
+      "native_daemon": {
+        "pid": 16,
+        "start_ticks": "2268056"
+      }
+    },
+    {
+      "generation_id": "aae4f1be3496abbffb8aee14771bad11a620555b0712f88fe85bf3507c1f73b0",
+      "state": "PREPARING",
+      "in_flight": 0,
+      "native_daemon": {
+        "pid": 16,
+        "start_ticks": "2269558"
+      }
+    }
+  ],
+  "reason": "ENGINE_UNAVAILABLE",
+  "message_en": "No currently verified engine is ready.",
+  "message_ko": "현재 검증된 준비 엔진이 없습니다."
+}

@@ -542,3 +542,37 @@ Initial strict-build failures (three optional Boolean conditions, then transitiv
 Main directly ran the frozen dirty P11 implementation on Node22.23.4. Actual32 passed; independent2,410 original hashes, four standard signatures,27 native pairs and12 browser/native/map-source bindings passed. Read-only live SQL confirmed15 traversals and all three independent consumers at the same sequence1/snapshot. A real pre-READY SIGTERM removed the recorded child, database container and volume in about588ms. Exact browser PID/start identities and recorded owned resources were absent after the normal run. [Development originals and limits](../research/pilot/2026-10-25-p11/development/README.md). P10 final PR failed its eight-admission success case and is being corrected in the other worktree; P11 clean whole/video/hosted delivery waits for that correction. No failed P10 run is relabeled as successful.
 
 메인이 고정한 미커밋 P11을 직접 실행해 실제32개와 원문 해시2,410개·표준서명4개·엔진27쌍·브라우저/엔진/지도 연결12건을 검사했습니다. 실제 SQL 조회에서 통과15개와 독립 수신자3개의 같은 순번·스냅샷을 확인했습니다. 준비 전 실제 종료 신호 뒤 약588밀리초 안에 기록한 자식·DB·볼륨이 사라졌고 정상 실행 뒤 브라우저 원식별과 소유 자원 부재도 확인했습니다. 개발 원문과 한계를 보존합니다. 다른 작업 폴더의 P10 최종 PR 동시 접수 성공 항목이 실패해 수정 중이며 P11의 깨끗한 전체·영상·원격 반영은 그 뒤 진행합니다. 실패한 P10 실행을 성공으로 바꾸지 않습니다.
+
+## 2026-10-25 — P10 hosted originals verified / P10 원격 원문 검증
+
+Main inspected push40133930384 at ecc8c9e after both push/PR40133976749 passed302 whole and252 tests on each Node22/24. Independent9,691 present listed hashes, gateway38 native pairs/18 API bindings, prior module state/signatures and recorded cleanup passed. Exact19/16 map omissions remain explicit.10,381 original files are preserved in three archive parts, with exact inventory and reconstructed hash verified; three inspector-created supplements remain separate. Public README GIF and downloaded MP4 matched the actual59.75s recording. Runtime is unchanged. [Evidence](../research/pilot/2026-10-25-p10/hosted/README.md). Final-head checks and protected merge follow; P11 proceeds in its separate branch.
+
+푸시·PR의 전체302개와 Node22/24 각각252개 통과 뒤 메인이 푸시 원문을 검사했습니다. 목록 해시9,691개·중계 원경로38쌍/성공18건·이전 모듈 상태/서명·기록된 정리를 확인하고 지도 제외19/16개를 명시했습니다. 원문10,381개는 세 조각으로 보존해 목록·복원 해시를 확인했으며 추가 감사 세 파일은 분리했습니다. 공개 GIF·MP4는 실제59.75초 녹화와 일치하고 실행 코드는 그대로입니다. 최종 필수 검사·보호 병합을 이어가며 P11은 별도 브랜치에서 진행합니다.
+
+## 2026-10-25 — P10 final hosted admission failure / P10 최종 원격 동시 접수 실패
+
+Final PR40135410268 at5a6d7d7 failed admission-eight; merge is blocked. Original status shows in_flight8, ninth429, six504 responses without native attempts and two200 responses. All request targets share one generation. Main's source review identified repeated synchronous full-bundle preparation on the HTTP event loop as the suspected bottleneck and fixed the worker-thread correction contract in docs29. Existing deadlines and eight-success acceptance stay unchanged. The earlier successful hosted result remains a historical result, not evidence that this final run passed. P11 development32 and independent2,410 hashes/27 native pairs/12 browser bindings passed separately; P11 clean whole delivery waits for the P10 correction.
+
+최종 PR에서 동시 접수 항목이 실패해 병합하지 않습니다. 원문은8개 접수·아홉째429·엔진 시도 없는504 여섯 건·200 두 건과 동일한 목표 세대를 보여줍니다. 메인은 HTTP 이벤트 루프의 반복 동기 지도 준비를 병목 후보로 확인하고 docs29에 작업 스레드 수정 계약을 확정했습니다. 기한과8개 성공 기준은 유지합니다. 앞선 원격 성공은 과거 결과로 보존하며 이번 실패를 통과로 바꾸지 않습니다. 별도의 P11 개발32개와 해시2,410개·엔진27쌍·브라우저12건 연결은 통과했고 깨끗한 전체 반영은 P10 수정 뒤 진행합니다.
+
+## 2026-10-25 — P10 worker correction and actual Seoul preparation / P10 작업 스레드 수정·실제 서울 준비
+
+Main designed the correction; Sol core implemented one owned bounded compiler worker, exact in-flight sharing, awaited per-request verification and explicit cleanup.29 focused tests passed; final metadata-only cleanup compatibility was compiled. Main directly measured8 concurrent actual-Seoul preparations sharing one pending job, with8 separate verifies:654.749ms preparation and10.123ms response for a10ms parent timer, versus4,435.080ms timer delay from repeated synchronous loads. Thread termination and baseline bytes passed independent checks. [Original proof](../research/pilot/2026-10-25-p10-worker/preparation/README.md). Existing32 cases, eight-success criterion and12s/4s deadlines remain unchanged. Clean whole302 and current media/hosted delivery follow; P11's separately committed development proof remains preserved.
+
+메인이 수정 설계를 맡고 Sol 코어가 소유·기한 제한 작업 스레드·정확한 진행 중 공유·요청별 검사 대기·정리를 구현했습니다. 집중29개와 최종 정리 기록 호환 빌드를 확인했습니다. 실제 서울 동시 준비8개는 작업1개를 공유하면서 별도검사8개를 유지했고 준비654.749밀리초·10밀리초 타이머 응답10.123밀리초였습니다. 반복 동기 읽기의 타이머 지연4,435.080밀리초와 구분해 기록하고 스레드 종료·기본 바이트도 확인했습니다. 기존32개·8개 성공·12초/4초를 유지하며 깨끗한 전체302개·최신 영상·원격 반영을 이어갑니다. 별도로 커밋한 P11 개발 근거도 보존합니다.
+
+## 2026-10-25 — P10 corrected clean302 and new recording / P10 수정 후 깨끗한302개·새 녹화
+
+Clean8f9c9f7 passed all262 unit tests and the fresh actual-Seoul whole302. Main independently checked9,799 listed hashes, gateway2,718 hashes/three signatures/38 native pairs/18 API bindings,73 compiler jobs with exact parent/thread termination, and previous modules. All eight concurrent requests returned200 in2.752–3.448s; ninth429, shared12.012s, native lease4.146s and abort34.038ms kept the original limits. Read-only live SQL was captured for publication, traffic, nodes and gateway. Original10,473 files,28 exact map omissions,298 direct UI links and separate supplemental inspections are preserved in [the corrected report](../research/pilot/2026-10-25-p10-worker/report.md).
+
+깨끗한 수정 소스에서 단위262개와 새 실제 서울 전체302개를 통과했습니다. 메인은 목록 해시9,799개·중계해시2,718개·서명3개·엔진38쌍/공개18건·작업73개와 정확한 스레드 종료·이전 모듈을 검사했습니다. 동시8개가2.752~3.448초에 성공하고 아홉째429·전체12.012초·노드4.146초·취소34.038밀리초를 기존 기준으로 확인했습니다. 네 단계 실제DB 읽기 전용 조회와 원문10,473개·정확한 지도 제외28개·화면 연결298개·별도 추가 검사를 보존했습니다.
+
+IAB English/Korean390px had no overflow or console warnings/errors. Main captured actual60.45s playback, fully decoded MP4 and reviewed11 frames. Two extraction timestamps were corrected without changing or repeating the recording. Owned recording processes9, server12933 and tab16 are closed; viewport reset. Both READMEs and current media hashes are refreshed; old reports and hosted failures remain. New branch push, hosted original inspection and protected merge follow. P11 development is separately committed and awaits this corrected ancestry before clean whole334.
+
+내장 브라우저 한영390픽셀의 넘침·콘솔 오류/경고가 없었습니다. 실제60.45초 재생을 녹화해 MP4 전체 디코딩과11화면을 확인했고 영상 변경·재촬영 없이 두 추출 시점만 바로잡았습니다. 촬영 프로세스9개·서버12933·탭16을 종료하고 화면 크기를 원복했습니다. 한영 README·미디어 해시를 갱신하고 과거 보고서·원격 실패를 보존합니다. 다음은 새 푸시·원격 원문·보호 병합입니다. 별도 커밋의 P11은 수정 이력을 연결한 뒤 깨끗한 전체334개를 확인합니다.
+
+## 2026-10-25 — Corrected P10 ancestry enters P11 / 수정된 P10 이력을 P11에 연결
+
+Main merged the locally verified P10 worker correction and current report at a5be89e into the separately implemented P11 branch. Runtime changes merged without conflict; both append-only histories are retained and current status selects the corrected P10 and P11 development rows. Public browser contracts, six freshness fields, client lifecycle and worker cleanup remain together. The combined source still needs its own clean unit/whole334 verification and recording. P10 hosted checks continue separately; protected main ancestry remains required before P11 delivery.
+
+메인이 로컬 검증한 P10 작업 스레드 수정·최신 보고서를 별도 P11 브랜치에 연결했습니다. 실행 코드는 충돌 없이 합쳐졌고 양쪽 누적 기록을 보존하며 현재 상태에는 수정 P10·P11 개발 근거를 함께 유지했습니다. 공개 브라우저 계약·신선도 여섯 필드·클라이언트 수명·작업 스레드 정리를 보존합니다. 합쳐진 소스의 깨끗한 단위·전체334개와 녹화는 이제 검증하며 P10 원격 검사는 별도로 진행합니다. P11 최종 반영 전 보호 main 이력을 포함해야 합니다.

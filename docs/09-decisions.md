@@ -89,3 +89,9 @@ Reuse the pinned engine traffic skeleton and patch validated8-byte speed records
 P10 selects a target from its own durable P07 consumer and verified P08 generation, never from a peer's freshness claim alone. Allow one same-version retry across two approved local P09 nodes, preserve a shared deadline and reject changed authorization before return. Derive public live coverage from actual route partial lengths; do not equate a live snapshot with live coverage on every route. [Contract](29-p10-route-gateway.md), [verified local proof](../research/pilot/2026-10-25-p10/report.md). Public enrollment and response signatures remain future scope.
 
 P10은 노드의 최신 버전 주장만 믿지 않고 자체 P07 영속 수신자와 검증된 P08 세대로 대상을 정합니다. 승인된 로컬 P09 노드 두 개 사이에서 같은 버전으로 한 번만 재시도하고 전체 기한을 유지하며 반환 전 승인 변경을 거부합니다. 실제 부분 경로 길이로 공개 적용률을 계산하고 LIVE 자료가 있다고 모든 경로에 적용됐다고 표시하지 않습니다. 공개 노드 등록·응답 서명은 후속 범위입니다.
+
+## ADR-028: Keep graph verification off the gateway HTTP loop / 중계 HTTP 루프와 지도 검증 분리
+
+The final P10 hosted concurrency failures and local timer measurement showed that repeated synchronous full-bundle checks can consume admission deadlines before native dispatch. Reuse the unchanged P08 verifier/compiler inside one owned bounded Node worker. Share only identical in-flight preparations, never settled authorization; await every per-request generation check and close the worker explicitly. Keep existing request limits and acceptance criteria. [Contract](29-p10-route-gateway.md), [failures](../research/pilot/2026-10-25-p10/hosted-failures/README.md), [fresh correction proof](../research/pilot/2026-10-25-p10-worker/report.md).
+
+최종 원격 동시 요청 실패와 로컬 타이머 측정에서 반복 동기 지도 검증이 엔진 전달 전에 요청 기한을 소진할 수 있음을 확인했습니다. 기존 P08 검증·변환을 소유·기한 제한 Node 작업 스레드에서 재사용합니다. 같은 진행 중 준비만 공유하고 완료된 승인은 재사용하지 않으며 요청별 세대 검사를 기다리고 스레드를 명시적으로 종료합니다. 기존 요청 한도와 통과 기준은 유지합니다.

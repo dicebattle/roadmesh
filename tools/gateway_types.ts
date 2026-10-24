@@ -80,7 +80,11 @@ export interface GatewayDependencies {
   bundle: TrafficBundle;
   store: NodeAcceptedStore;
   compile(input: AcceptedInspection["active"]): Promise<TrafficGeneration>;
-  verifyGeneration(generation: TrafficGeneration): void;
+  verifyGeneration(generation: TrafficGeneration): void | Promise<void>;
+  closeCompiler?(): Promise<{
+    termination_verified: boolean;
+    cleanup_verified?: boolean;
+  } | void>;
   fetch: typeof globalThis.fetch;
 }
 export type GatewayControlMessage =

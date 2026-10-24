@@ -1,0 +1,539 @@
+{
+  "schema_version": "independent-p08-hosted-evidence-0.1",
+  "status": "PASS",
+  "root": "/Users/dice/Documents/routelens-p10/data/p10-hosted-40133930384/traffic",
+  "graph_directory": "/Users/dice/Documents/routelens-p10/data/p10-hosted-40133930384/seoul/graph",
+  "read_only": true,
+  "production_validator_imports": false,
+  "source_anchor_measurements": [
+    {
+      "label": "west",
+      "edge_id": "1338083662224",
+      "osm_way_id": 919983793,
+      "forward": true,
+      "start": {
+        "anchor": [
+          127.036993,
+          37.500712
+        ],
+        "actual": [
+          127.036994,
+          37.500712
+        ],
+        "delta_ticks": [
+          1,
+          0
+        ],
+        "delta_m": 0.08821614816914061
+      },
+      "end": {
+        "anchor": [
+          127.037245,
+          37.50079
+        ],
+        "actual": [
+          127.037245,
+          37.50079
+        ],
+        "delta_ticks": [
+          0,
+          0
+        ],
+        "delta_m": 0
+      },
+      "actual_geometry_preserved": true
+    },
+    {
+      "label": "middle",
+      "edge_id": "1338687642000",
+      "osm_way_id": 919983793,
+      "forward": true,
+      "start": {
+        "anchor": [
+          127.037245,
+          37.50079
+        ],
+        "actual": [
+          127.037245,
+          37.50079
+        ],
+        "delta_ticks": [
+          0,
+          0
+        ],
+        "delta_m": 0
+      },
+      "end": {
+        "anchor": [
+          127.03768,
+          37.500924
+        ],
+        "actual": [
+          127.03768,
+          37.500924
+        ],
+        "delta_ticks": [
+          0,
+          0
+        ],
+        "delta_m": 0
+      },
+      "actual_geometry_preserved": true
+    },
+    {
+      "label": "east",
+      "edge_id": "1338754750864",
+      "osm_way_id": 919983793,
+      "forward": true,
+      "start": {
+        "anchor": [
+          127.03768,
+          37.500924
+        ],
+        "actual": [
+          127.03768,
+          37.500924
+        ],
+        "delta_ticks": [
+          0,
+          0
+        ],
+        "delta_m": 0
+      },
+      "end": {
+        "anchor": [
+          127.038474,
+          37.50117
+        ],
+        "actual": [
+          127.038474,
+          37.50117
+        ],
+        "delta_ticks": [
+          0,
+          0
+        ],
+        "delta_m": 0
+      },
+      "actual_geometry_preserved": true
+    }
+  ],
+  "local_checks_requested": false,
+  "actual_current_host_queries": false,
+  "intentional_omissions": [
+    {
+      "scope": "ROOT",
+      "path": "bundle/graph.tar",
+      "declared_sha256": "5a38704eba647a9bf63fcf5addb754dbb6483a7dc1156e9c3a979ec26d88d04c",
+      "actual_bytes_verified": false
+    },
+    {
+      "scope": "ROOT",
+      "path": "negative/corrupt-bundle/graph.tar",
+      "declared_sha256": "5a38704eba647a9bf63fcf5addb754dbb6483a7dc1156e9c3a979ec26d88d04c",
+      "actual_bytes_verified": false
+    },
+    {
+      "scope": "GRAPH",
+      "path": "seoul.osm.pbf",
+      "declared_sha256": "926d2a35d09d0b98ad6a715c78732533ede080dffccf04cf793cf99ae0e29ad0",
+      "actual_bytes_verified": false
+    },
+    {
+      "scope": "GRAPH",
+      "path": "tiles/0/002/866.gph",
+      "declared_sha256": "5b8573c08a08da2d2830c09ae0b3fc86fb521d6f15dad3e5d2cedaeac43e946b",
+      "actual_bytes_verified": false
+    },
+    {
+      "scope": "GRAPH",
+      "path": "tiles/1/046/026.gph",
+      "declared_sha256": "d0459dba642482fe7c4af8c9cd869b40b756b827b7bc4779815f7c186009c3a4",
+      "actual_bytes_verified": false
+    },
+    {
+      "scope": "GRAPH",
+      "path": "tiles/1/046/027.gph",
+      "declared_sha256": "78147d085a4f764b0f7fd742b1fa91b4b39b880ba1f9b1e3b38c591fd137c540",
+      "actual_bytes_verified": false
+    },
+    {
+      "scope": "GRAPH",
+      "path": "tiles/2/000/734/186.gph",
+      "declared_sha256": "1c453b1fe6304d0621ba2c6bc3f5026f2cf953f9d84c84587704736f33b54028",
+      "actual_bytes_verified": false
+    },
+    {
+      "scope": "GRAPH",
+      "path": "tiles/2/000/734/187.gph",
+      "declared_sha256": "ebec4b4dc460adc8cf20f7ffeff4404b81cd8a7d6cd7582e7c14919e462f6476",
+      "actual_bytes_verified": false
+    },
+    {
+      "scope": "GRAPH",
+      "path": "tiles/2/000/734/188.gph",
+      "declared_sha256": "9b285bcfdf6853696a5f4080d920a6acaccf62ea7f4b71d1296d3e8b4bdaf8fc",
+      "actual_bytes_verified": false
+    },
+    {
+      "scope": "GRAPH",
+      "path": "tiles/2/000/734/189.gph",
+      "declared_sha256": "f0c3db4ed42454048e996f7ba3c58960029ecb700652795a444dc07b6ccaffbd",
+      "actual_bytes_verified": false
+    },
+    {
+      "scope": "GRAPH",
+      "path": "tiles/2/000/735/626.gph",
+      "declared_sha256": "4d752a3a86200ab63655da5a7af8d3bec7d940fe836dfcd177c8989d9b5d7dd1",
+      "actual_bytes_verified": false
+    },
+    {
+      "scope": "GRAPH",
+      "path": "tiles/2/000/735/627.gph",
+      "declared_sha256": "40e883078b25afe4be8c271a443af5a4af72f2c513f495bedeef8e7419a0e49e",
+      "actual_bytes_verified": false
+    },
+    {
+      "scope": "GRAPH",
+      "path": "tiles/2/000/735/628.gph",
+      "declared_sha256": "00c9b7f32b54491ef3b0ca20e464dd025cf5256c75693d74798448a591732a6c",
+      "actual_bytes_verified": false
+    },
+    {
+      "scope": "GRAPH",
+      "path": "tiles/2/000/735/629.gph",
+      "declared_sha256": "5648c9cac5006a152d7767ee6e00c2dd41a02f71e460b4d36b5302d42c988b90",
+      "actual_bytes_verified": false
+    },
+    {
+      "scope": "GRAPH",
+      "path": "tiles/2/000/737/066.gph",
+      "declared_sha256": "a401497545475d663bb1fa58d74c66ef6ad92cb90cf25889fe0378e98e51b06e",
+      "actual_bytes_verified": false
+    },
+    {
+      "scope": "GRAPH",
+      "path": "tiles/2/000/737/067.gph",
+      "declared_sha256": "727df9e838a7b644a19914a2d236b4d4f3b51f119fd85dcae2039e7c16e45d0c",
+      "actual_bytes_verified": false
+    },
+    {
+      "scope": "GRAPH",
+      "path": "tiles/2/000/737/068.gph",
+      "declared_sha256": "56fc175cc7c8abe356dbc0c288b8b4136f7d1ae7f6c62d844468c2710b1fc1a2",
+      "actual_bytes_verified": false
+    }
+  ],
+  "checks_passed": 12,
+  "checks_total": 12,
+  "checks": [
+    {
+      "id": "complete-manifest-and-all-output-hashes",
+      "status": "PASS",
+      "detail": {
+        "files": 1081
+      }
+    },
+    {
+      "id": "independent-graph-identity-and-original-catalog",
+      "status": "PASS",
+      "detail": {
+        "graph_id": "2add6a5984afbc24f27162f74531dbbcbaaa8ce083af57b8a63f67920eacde44",
+        "edges": 79
+      }
+    },
+    {
+      "id": "authored-spec-fulltruth-observations-and-independent-kinematics",
+      "status": "PASS",
+      "detail": {
+        "trips": 15,
+        "full_traversals": 45,
+        "samples": 3421,
+        "clipped_samples": 2954,
+        "max_coordinate_error_m": 0.0000694321098640694,
+        "source_anchor_measurements": [
+          {
+            "label": "west",
+            "edge_id": "1338083662224",
+            "osm_way_id": 919983793,
+            "forward": true,
+            "start": {
+              "anchor": [
+                127.036993,
+                37.500712
+              ],
+              "actual": [
+                127.036994,
+                37.500712
+              ],
+              "delta_ticks": [
+                1,
+                0
+              ],
+              "delta_m": 0.08821614816914061
+            },
+            "end": {
+              "anchor": [
+                127.037245,
+                37.50079
+              ],
+              "actual": [
+                127.037245,
+                37.50079
+              ],
+              "delta_ticks": [
+                0,
+                0
+              ],
+              "delta_m": 0
+            },
+            "actual_geometry_preserved": true
+          },
+          {
+            "label": "middle",
+            "edge_id": "1338687642000",
+            "osm_way_id": 919983793,
+            "forward": true,
+            "start": {
+              "anchor": [
+                127.037245,
+                37.50079
+              ],
+              "actual": [
+                127.037245,
+                37.50079
+              ],
+              "delta_ticks": [
+                0,
+                0
+              ],
+              "delta_m": 0
+            },
+            "end": {
+              "anchor": [
+                127.03768,
+                37.500924
+              ],
+              "actual": [
+                127.03768,
+                37.500924
+              ],
+              "delta_ticks": [
+                0,
+                0
+              ],
+              "delta_m": 0
+            },
+            "actual_geometry_preserved": true
+          },
+          {
+            "label": "east",
+            "edge_id": "1338754750864",
+            "osm_way_id": 919983793,
+            "forward": true,
+            "start": {
+              "anchor": [
+                127.03768,
+                37.500924
+              ],
+              "actual": [
+                127.03768,
+                37.500924
+              ],
+              "delta_ticks": [
+                0,
+                0
+              ],
+              "delta_m": 0
+            },
+            "end": {
+              "anchor": [
+                127.038474,
+                37.50117
+              ],
+              "actual": [
+                127.038474,
+                37.50117
+              ],
+              "delta_ticks": [
+                0,
+                0
+              ],
+              "delta_m": 0
+            },
+            "actual_geometry_preserved": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "actual-http-p05-storage-targets-and-matcher-inputs",
+      "status": "PASS",
+      "detail": {
+        "http_batches": 57,
+        "stored_targets": 15,
+        "other_contributions": 0,
+        "contributors_per_target": 5,
+        "max_boundary_error_ms": 0.0650259516260121
+      }
+    },
+    {
+      "id": "independent-duration-median-and-original-sphere-geometry",
+      "status": "PASS",
+      "detail": [
+        {
+          "edge_id": "1338083662224",
+          "length_m": 23.780325129758065,
+          "median_duration_s": 47.561,
+          "speed_mps": 0.4999963232429525
+        },
+        {
+          "edge_id": "1338687642000",
+          "length_m": 41.16520610199686,
+          "median_duration_s": 82.33,
+          "speed_mps": 0.5000025033644705
+        },
+        {
+          "edge_id": "1338754750864",
+          "length_m": 75.19511653017554,
+          "median_duration_s": 150.39,
+          "speed_mps": 0.5000007748532186
+        }
+      ]
+    },
+    {
+      "id": "node-standard-ed25519-original-jws-artifact-json-and-trust",
+      "status": "PASS",
+      "detail": {
+        "signatures": 3,
+        "algorithm": "Node crypto Ed25519",
+        "snapshot_ids": [
+          "cb2979d3eced4220dc97b1452eb3eadad83b1cb67ec41a3eea8a60ef7ba22966",
+          "3478d7d168c3a51013b9730be69fc9237425480927b52b77a191e26c2179e823",
+          "f047f45c81086dac4c85258945c0f125f55ecb9b70a74d0adc036ed1f867806c"
+        ]
+      }
+    },
+    {
+      "id": "independent-tar-index-header-blank-skeleton-and-exact-generations",
+      "status": "PASS",
+      "detail": {
+        "members": 14,
+        "skeleton_bytes": 8663040,
+        "verified_ready_generations": 11,
+        "intentional_corrupt_generations": 1,
+        "live_offsets": [
+          {
+            "edge_id": "1338083662224",
+            "offset": 320592,
+            "raw_hex": "810000f00f000000"
+          },
+          {
+            "edge_id": "1338687642000",
+            "offset": 320736,
+            "raw_hex": "810000f00f000000"
+          },
+          {
+            "edge_id": "1338754750864",
+            "offset": 320752,
+            "raw_hex": "810000f00f000000"
+          }
+        ]
+      }
+    },
+    {
+      "id": "actual-routes-original-ordinary-requests-and-raw-engine-traces",
+      "status": "PASS",
+      "detail": {
+        "route_records": 10,
+        "baseline": {
+          "time": 147.404,
+          "cost": 289.959,
+          "length_km": 2.119
+        },
+        "live": {
+          "time": 184.731,
+          "cost": 416.986,
+          "length_km": 2.412
+        },
+        "expired": {
+          "time": 147.404,
+          "cost": 289.959
+        },
+        "target_ids_avoided": [
+          "1338083662224",
+          "1338687642000",
+          "1338754750864"
+        ]
+      }
+    },
+    {
+      "id": "negative-exact-code-reason-and-actual-kill-boundaries",
+      "status": "PASS",
+      "detail": {
+        "negative_cases": 7,
+        "actual_sigkill_boundaries": 2,
+        "concurrent_workers": 2
+      }
+    },
+    {
+      "id": "durable-corrections-ttl-expiry-highwater-and-restart",
+      "status": "PASS",
+      "detail": {
+        "sequences": [
+          1,
+          2,
+          3
+        ],
+        "final_highwaters": [
+          {
+            "consumer": "p08-key-revocation",
+            "high_water": 1,
+            "active_bytes": null
+          },
+          {
+            "consumer": "p08-main",
+            "high_water": 3,
+            "active_bytes": 10463
+          },
+          {
+            "consumer": "p08-offline-ttl",
+            "high_water": 1,
+            "active_bytes": null
+          }
+        ],
+        "database_ports": {
+          "before": 32772,
+          "after": 32773
+        }
+      }
+    },
+    {
+      "id": "32-unique-pass-cases-report-and-public-privacy",
+      "status": "PASS",
+      "detail": {
+        "cases": 32,
+        "duplicates": 0,
+        "all_pass": true,
+        "report_routes": 10
+      }
+    },
+    {
+      "id": "recorded-owned-process-engine-database-cleanup",
+      "status": "PASS",
+      "detail": {
+        "child_processes": 55,
+        "engine_containers": 28,
+        "result_messages": 48,
+        "recorded_cleanup": true
+      }
+    }
+  ],
+  "limitations": [
+    "This is an offline byte/state-record audit, not an independent real-road accuracy or map-legality certification. / 오프라인 바이트·저장기록 감사이며 독립 실도로 정확도·지도 통행 합법성 인증이 아닙니다.",
+    "Archived process/SQL/HTTP records cannot independently attest that the recorder was honest. No current-host PID/Docker/DB queries are performed. / 보존 기록 자체로 기록자의 정직성을 독립 보장하지 않으며 현재 호스트 PID·Docker·DB는 조회하지 않습니다.",
+    "P05 source inspection omits persisted trip_activity; explicit TRAVEL is checked in authored expectations, not asserted as an independent SQL activity read-back. / P05 조회에 영속 trip_activity가 없어 합성 기대값의 TRAVEL만 검사하며 독립 SQL 활동 조회로 주장하지 않습니다.",
+    "The 17 explicitly listed omitted file bytes cannot be verified; their hashes are declarations only. / 명시한 누락17개 파일의 바이트는 검증하지 못하며 해시는 선언값만 확인했습니다.",
+    "Remote cleanup is supported only by archived ownership/commands/process/cleanup evidence; no current-host PID, Docker or DB was queried. / 원격 정리는 보존된 소유·명령·프로세스·정리 기록만 확인했으며 현재 호스트 PID·Docker·DB는 조회하지 않았습니다."
+  ]
+}

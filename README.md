@@ -15,13 +15,15 @@ RouteLens is an open-source project derived from **Metro Lens**. The intended sy
 
 **Today, the local prototype simulates GPS on actual Seoul roads, durably ingests and matches observations, aggregates at least five contributors, and signs and publishes traffic snapshots. A separate consumer verifies them before an immutable speed file changes actual Valhalla routes. Exact expiry restores default routing.** Two independent persistent nodes now activate verified generations, reject stale results and restore baseline routing at expiry. A local gateway independently selects the accepted version and switches to the other approved node after a failure. The navigation client remains on the roadmap.
 
+The gateway now performs heavy graph checks in an owned worker thread, preserving byte verification and the existing deadlines. The corrected fresh run passed all 302 cases, including eight simultaneous successful requests and ninth-request rejection. The earlier hosted failures remain in the report.
+
 ## Watch the current simulation
 
 [![Recorded Seoul routes: baseline, congestion detour and exact expiry](docs/media/demo.gif)](docs/media/demo.mp4)
 
-[Watch/download the MP4](docs/media/demo.mp4) · [Captured test report](research/pilot/2026-10-25-p10/report.md) · [Recording provenance](docs/media/latest.json)
+[Watch/download the MP4](docs/media/demo.mp4) · [Captured test report](research/pilot/2026-10-25-p10-worker/report.md) · [Recording provenance](docs/media/latest.json)
 
-This 59.75-second recording shows actual Seoul routes, persistent nodes and the version-aware gateway, including primary-node failure and expiry. Fifteen synthetic trips supply five contributors to each of three consecutive target edges. The same two-point request changes from **2.119 km / 147.404 s** to a **2.412 km / 184.731 s** detour; exact expiry at 420 seconds restores the original route. The complete run also retains nine vehicles across Teheran-ro, downtown Seoul and Mapo Bridge: 3,204 GPS observations, up to 3 m noise, 60 omissions, and 220 of 237 true traversals stored exactly once. All **302 assertions** passed. The gateway verifies path-specific live coverage: the long detour avoids all live edges, while a preselected12m interior route exercises positive coverage. Roads are real; vehicles, speeds and GPS are synthetic. This does not establish independent real-driving accuracy, live traffic or coverage of every Seoul road.
+This 60.45-second recording shows actual Seoul routes, persistent nodes and the version-aware gateway, including primary-node failure and expiry. Fifteen synthetic trips supply five contributors to each of three consecutive target edges. The same two-point request changes from **2.119 km / 147.404 s** to a **2.412 km / 184.731 s** detour; exact expiry at 420 seconds restores the original route. The complete run also retains nine vehicles across Teheran-ro, downtown Seoul and Mapo Bridge: 3,204 GPS observations, up to 3 m noise, 60 omissions, and 220 of 237 true traversals stored exactly once. All **302 assertions** passed. The gateway verifies path-specific live coverage: the long detour avoids all live edges, while a preselected12m interior route exercises positive coverage. Roads are real; vehicles, speeds and GPS are synthetic. This does not establish independent real-driving accuracy, live traffic or coverage of every Seoul road.
 
 ## What you can run today
 
@@ -37,7 +39,7 @@ This 59.75-second recording shows actual Seoul routes, persistent nodes and the 
 | **P08 — accepted traffic routing** | Immutable graph-specific speed files, actual detour, automatic expiry, concurrent generation, real process/database faults and stale-result refusal |
 | **P09 — persistent routing nodes** | Two independent nodes, native daemon reuse, request leases, bounded generation draining, durable restart and actual fault recovery |
 | **P10 — route gateway** | Independent accepted-version authority, one matching-node retry, actual primary kill,12s shared deadline,4s node budget and public route coverage |
-| **Integrated evidence** | Fresh tiny regression (48), Seoul graph/simulation/matching (35), durable ingestion (34), aggregation (34), publication (55), traffic routing (32) persistent nodes (32) and gateway (32): **302 assertions**, with source/artifact hashes |
+| **Integrated evidence** | Fresh tiny regression (48), Seoul graph/simulation/matching (35), durable ingestion (34), aggregation (34), publication (55), traffic routing (32), persistent nodes (32) and gateway (32): **302 assertions**, with source/artifact hashes |
 | **Replay report** | Offline Seoul playback, baseline/live/expired route comparison and actual recovery evidence; English/Korean controls and source links |
 
 Synthetic observations never count toward the separate **100 route / 100 map-matching real-road evaluation**. The geographic validator currently has no reviewed real-road corpus.
@@ -107,7 +109,7 @@ The planned production design has a managed ingestion path and approved independ
 
 Each module follows **design → implementation → direct execution → inspected evidence → bilingual record → push**. The main agent owns design and review; implementation is delegated according to [repository instructions](AGENTS.md). AI assistance is recorded with the actual checks and limits, not used as a quality claim.
 
-- [Latest integrated test report](research/pilot/2026-10-25-p10/report.md)
+- [Latest integrated test report](research/pilot/2026-10-25-p10-worker/report.md)
 - [Current implementation and remaining goal](docs/18-goal-progress.md)
 - [Append-only work log](wiki/log.md)
 - [P01–P14 module contracts](docs/11-local-pilot.md)

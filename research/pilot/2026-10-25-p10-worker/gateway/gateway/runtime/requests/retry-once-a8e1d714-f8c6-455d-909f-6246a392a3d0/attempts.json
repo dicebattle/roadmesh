@@ -1,0 +1,64 @@
+[
+  {
+    "attempt": 1,
+    "node_id": "seoul-gateway-node-a",
+    "request": {
+      "request_id": "retry-once",
+      "graph_id": "e2674fbd7bfaa6fd47de6b3843f2cd29c4e46ea8ce35bb19934a82ce81734eab",
+      "locations": [
+        {
+          "lon": 127.03739724982245,
+          "lat": 37.50083690018144
+        },
+        {
+          "lon": 127.0375277498224,
+          "lat": 37.500877100181434
+        }
+      ],
+      "expected_generation_id": "b6103f2feab91aacdc7e7171e8c666e265cbfeaec640c6e30cef6e1259d11552"
+    },
+    "deadline_ms": 4000,
+    "status": 503,
+    "body": {
+      "code": "UNAVAILABLE",
+      "reason": "ENGINE_UNAVAILABLE",
+      "message_en": "Configured proxy failure",
+      "message_ko": "설정된 대리 장애"
+    },
+    "outcome": "REJECTED",
+    "reason": "NODE_UNAVAILABLE",
+    "elapsed_start_ms": 915.4296670000003,
+    "elapsed_end_ms": 916.2686250000006
+  },
+  {
+    "attempt": 2,
+    "node_id": "seoul-gateway-node-b",
+    "request": {
+      "request_id": "retry-once",
+      "graph_id": "e2674fbd7bfaa6fd47de6b3843f2cd29c4e46ea8ce35bb19934a82ce81734eab",
+      "locations": [
+        {
+          "lon": 127.03739724982245,
+          "lat": 37.50083690018144
+        },
+        {
+          "lon": 127.0375277498224,
+          "lat": 37.500877100181434
+        }
+      ],
+      "expected_generation_id": "b6103f2feab91aacdc7e7171e8c666e265cbfeaec640c6e30cef6e1259d11552"
+    },
+    "deadline_ms": 4000,
+    "status": 503,
+    "body": {
+      "code": "UNAVAILABLE",
+      "reason": "ENGINE_UNAVAILABLE",
+      "message_en": "Configured proxy failure",
+      "message_ko": "설정된 대리 장애"
+    },
+    "outcome": "REJECTED",
+    "reason": "NODE_UNAVAILABLE",
+    "elapsed_start_ms": 930.6222080000007,
+    "elapsed_end_ms": 931.2017080000005
+  }
+]
