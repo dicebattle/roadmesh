@@ -14,6 +14,20 @@ The main agent designed [the implementation contract](../../docs/13-p01-p14a-con
 
 ## Evidence interpretation / 증거 해석
 
+### Why Python for this tool / 이 도구에서 Python을 선택한 이유
+
+The original architecture assigned Python to evaluation/replay tools while keeping server coordination and traffic aggregation in TypeScript. The first corpus validator used Python's standard library; P01 continued that tooling choice. Its implemented work is JSON validation, seeded event scheduling, hashing, filesystem reports and subprocess checks, all covered by the standard library without package installation or a build step. This was a tooling-simplicity choice, not a benchmark-based performance decision or a choice to build the navigation backend in Python.
+
+최초 아키텍처는 평가·재생 도구에 Python, 서버 조정·교통정보 집계에 TypeScript를 배정했습니다. 첫 자료 검사기가 Python 표준 라이브러리를 사용했고 P01도 그 도구 선택을 이어갔습니다. 실제 작업은 JSON 검사·시드 기반 일정·해시·파일 보고서·프로세스 검사로, 외부 패키지 설치나 빌드 단계 없이 표준 라이브러리로 처리할 수 있습니다. 개발 도구를 단순하게 만드는 선택이었으며 성능 비교 결과나 내비게이션 서버 전체를 Python으로 만든다는 결정은 아닙니다.
+
+TypeScript/Node.js could perform these tasks too. Keeping Python adds a second toolchain and prevents direct reuse of TypeScript types. That tradeoff was not quantitatively compared before implementation. Python should remain an external test driver, not a second implementation of production traffic rules. The planned production core stays TypeScript; Valhalla performs routing in C++, and Android is planned in Kotlin. If test logic increasingly needs shared production types or core code, reassess the harness language before duplicating behavior. No language migration is authorized or performed by this explanation.
+
+TypeScript/Node.js로도 같은 작업을 할 수 있습니다. Python을 유지하면 도구 체계가 하나 늘고 TypeScript 타입을 직접 공유하지 못합니다. 이 비용을 구현 전에 정량 비교하지는 않았습니다. Python은 외부 시험 도구로 한정하고 운영 교통 규칙을 별도로 다시 구현하지 않아야 합니다. 운영 핵심은 TypeScript, 경로 계산은 Valhalla C++, Android는 Kotlin 계획을 유지합니다. 검증 도구가 운영 타입·핵심 코드 공유를 자주 요구하게 되면 동작을 중복 작성하기 전에 언어를 재검토합니다. 이번 설명으로 언어 이전을 승인받거나 수행한 것은 아닙니다.
+
+References: [original module layout](../../docs/02-architecture.md), [P01 implementation contract](../../docs/13-p01-p14a-contract.md), and [actual imports and implementation](../../tools/pilot_runner.py).
+
+근거: [최초 모듈 구성](../../docs/02-architecture.md), [P01 구현 계약](../../docs/13-p01-p14a-contract.md), [실제 사용 모듈과 구현](../../tools/pilot_runner.py).
+
 - Event hashes are comparable across repeated runs; run UUIDs and wall-clock timestamps are deliberately different.
   반복 실행의 이벤트 해시는 비교 가능하며 실행 UUID·현실 시작시각은 의도적으로 다릅니다.
 - `source_commit` and `dirty_tree` describe the actual checkout at execution. A later documentation commit does not retroactively change the tested code identity.

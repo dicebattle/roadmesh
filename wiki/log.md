@@ -123,3 +123,12 @@
   API 보정: 구형 `contexts`와 앱 지정 `checks`를 함께 전달한 요청은 422로 거부돼 적용되지 않았습니다. `checks`만 사용하도록 고친 요청은 성공했고 설정을 재조회했습니다. 보호 우회나 main 변경은 없었습니다.
 - Completion boundary: P01 and P14a verified; P02, real engines, geographic evaluation and P14b remain. The workflow prerequisite failure path was inspected and CLI failure handling was tested; no intentionally red hosted workflow was manufactured. Final documentation/evidence commits preserve the tested implementation files and are pushed to the feature branch.
   완료 범위: P01·P14a 검증, P02·실제 엔진·실제 지역 평가·P14b는 남아 있습니다. 워크플로 선행 실패 처리 코드를 확인하고 CLI 실패 동작을 검사했으며 원격 워크플로를 일부러 실패시키는 커밋은 만들지 않았습니다. 최종 문서·증거 커밋은 검사한 구현 파일을 유지한 채 작업 브랜치로 푸시합니다.
+
+## 2026-10-24 Python scope clarification / Python 선택 범위 설명
+
+- User asked why Python was selected. Main checked the original architecture, P01 contract and implementation, then recorded the [rationale and tradeoffs](modules/pilot-runner.md).
+  사용자가 Python 선택 이유를 질문했습니다. 메인이 최초 아키텍처·P01 계약·구현을 확인하고 [선택 이유와 비용](modules/pilot-runner.md)을 기록했습니다.
+- Python applies to evaluation/replay tooling for standard-library-only execution and consistency with the first validator. It is not the production-core language or a measured performance winner. TypeScript/Node.js was a viable alternative, but no quantitative comparison was performed.
+  Python은 표준 라이브러리만으로 실행하는 평가·재생 도구와 첫 검사기와의 일관성에 적용됩니다. 운영 핵심 언어나 성능 비교 우승자로 고른 것은 아닙니다. TypeScript/Node.js도 가능했으며 정량 비교는 하지 않았습니다.
+- Boundary: do not duplicate production traffic algorithms in Python. Reassess if sharing TypeScript production types/core becomes important. No code, language migration, tests, or deployment changed; documentation links and whitespace were checked.
+  경계: 운영 교통 알고리즘을 Python으로 중복 구현하지 않습니다. TypeScript 운영 타입·핵심 코드 공유가 중요해지면 재검토합니다. 코드·언어 이전·테스트·배포 변경은 없으며 문서 링크·공백만 확인했습니다.
