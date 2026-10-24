@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: Real Ed25519 JWS verifies exact standard payload and artifact bytes / 실제 Ed25519 서명과 원문 바이트 검증
+ok 1 - Real Ed25519 JWS verifies exact standard payload and artifact bytes / 실제 Ed25519 서명과 원문 바이트 검증
+  ---
+  duration_ms: 7.652958
+  type: 'test'
+  ...
+# Subtest: Protected header rejects unknown metadata, algorithms and keys / 보호 헤더의 미지원 정보·알고리즘·키 거부
+ok 2 - Protected header rejects unknown metadata, algorithms and keys / 보호 헤더의 미지원 정보·알고리즘·키 거부
+  ---
+  duration_ms: 2.001
+  type: 'test'
+  ...
+# Subtest: Signed duplicate keys and unsupported fields still fail strict parsing / 서명된 중복 키와 미지원 필드도 거부
+ok 3 - Signed duplicate keys and unsupported fields still fail strict parsing / 서명된 중복 키와 미지원 필드도 거부
+  ---
+  duration_ms: 2.079875
+  type: 'test'
+  ...
+# Subtest: Bounds, length, truncation and invalid UTF-8 fail before acceptance / 크기·길이·절단·UTF-8 오류 거부
+ok 4 - Bounds, length, truncation and invalid UTF-8 fail before acceptance / 크기·길이·절단·UTF-8 오류 거부
+  ---
+  duration_ms: 2.347541
+  type: 'test'
+  ...
+# Subtest: Every signed scope field is checked against local trust / 서명된 범위를 로컬 신뢰 설정과 대조
+ok 5 - Every signed scope field is checked against local trust / 서명된 범위를 로컬 신뢰 설정과 대조
+  ---
+  duration_ms: 2.605167
+  type: 'test'
+  ...
+# Subtest: Duplicate, private and non-Ed25519 trust keys are rejected / 중복·비공개·다른 형식 신뢰 키 거부
+ok 6 - Duplicate, private and non-Ed25519 trust keys are rejected / 중복·비공개·다른 형식 신뢰 키 거부
+  ---
+  duration_ms: 0.202458
+  type: 'test'
+  ...
+# Subtest: Key revocation and both current/published validity boundaries are enforced / 키 철회와 발행·현재 유효시각 경계
+ok 7 - Key revocation and both current/published validity boundaries are enforced / 키 철회와 발행·현재 유효시각 경계
+  ---
+  duration_ms: 1.479834
+  type: 'test'
+  ...
+# Subtest: Preconfigured key rotation preserves the signed sequence / 사전 설정 키 교환은 서명 순번을 유지
+ok 8 - Preconfigured key rotation preserves the signed sequence / 사전 설정 키 교환은 서명 순번을 유지
+  ---
+  duration_ms: 0.916167
+  type: 'test'
+  ...
+# Subtest: Exact expiry, future publication and immutable TTL are enforced / 정확한 만료·미래 발행·고정 유효기간 검사
+ok 9 - Exact expiry, future publication and immutable TTL are enforced / 정확한 만료·미래 발행·고정 유효기간 검사
+  ---
+  duration_ms: 3.112375
+  type: 'test'
+  ...
+# Subtest: Entries enforce full sorted catalog, finite positive live speed and non-live nulls / 전체 정렬 목록·속도·상태별 null 검사
+ok 10 - Entries enforce full sorted catalog, finite positive live speed and non-live nulls / 전체 정렬 목록·속도·상태별 null 검사
+  ---
+  duration_ms: 5.299542
+  type: 'test'
+  ...
+# Subtest: Duplicated manifest/artifact metadata and unsafe sequences are rejected / 목록·내용 불일치와 안전 범위 밖 순번 거부
+ok 11 - Duplicated manifest/artifact metadata and unsafe sequences are rejected / 목록·내용 불일치와 안전 범위 밖 순번 거부
+  ---
+  duration_ms: 1.538458
+  type: 'test'
+  ...
+# Subtest: Fetcher permits only configured loopback origins / 수신기는 설정된 로컬 출처만 허용
+ok 12 - Fetcher permits only configured loopback origins / 수신기는 설정된 로컬 출처만 허용
+  ---
+  duration_ms: 0.200833
+  type: 'test'
+  ...
+# Subtest: Early type rejection and chunked oversize abort owned HTTP responses / 형식 조기 거부와 분할 크기 초과 후 HTTP 연결 종료
+ok 13 - Early type rejection and chunked oversize abort owned HTTP responses / 형식 조기 거부와 분할 크기 초과 후 HTTP 연결 종료
+  ---
+  duration_ms: 14.025417
+  type: 'test'
+  ...
+# Subtest: Real loopback service returns exact immutable bytes and bounded 404/410/405 errors / 실제 로컬 서비스 바이트와 오류 계약
+ok 14 - Real loopback service returns exact immutable bytes and bounded 404/410/405 errors / 실제 로컬 서비스 바이트와 오류 계약
+  ---
+  duration_ms: 7.543083
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 488.67375

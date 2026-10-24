@@ -1,0 +1,5 @@
+SELECT c.* FROM routelens_p05.contributors c WHERE c.namespace=$1 AND c.active AND EXISTS(SELECT 1 FROM routelens_p05.trips t WHERE t.namespace=c.namespace AND t.contributor_id=c.contributor_id AND t.graph_id=$2 AND t.matching_policy=$3 AND (t.state='READY' OR (t.state='LEASED' AND t.lease_until<=clock_timestamp()))) ORDER BY c.contributor_id FOR UPDATE SKIP LOCKED LIMIT 1;
+
+SELECT c.*, probe_gate(c.contributor_id) AS probe_gate FROM routelens_p05.contributors c WHERE c.namespace=$1 AND c.active AND EXISTS(SELECT 1 FROM routelens_p05.trips t WHERE t.namespace=c.namespace AND t.contributor_id=c.contributor_id AND t.graph_id=$2 AND t.matching_policy=$3 AND (t.state='READY' OR (t.state='LEASED' AND t.lease_until<=clock_timestamp()))) ORDER BY c.contributor_id FOR UPDATE SKIP LOCKED LIMIT 1;
+
+SELECT * FROM routelens_p05.trips WHERE namespace=$1 AND contributor_id=$2 AND graph_id=$3 AND matching_policy=$4 AND (state='READY' OR (state='LEASED' AND lease_until<=clock_timestamp())) ORDER BY first_received_at,trip_id FOR UPDATE SKIP LOCKED LIMIT 1;

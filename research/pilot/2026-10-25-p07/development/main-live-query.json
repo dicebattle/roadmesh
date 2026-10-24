@@ -1,0 +1,12 @@
+{
+  "observed_at_utc": "2026-10-24T15:37:56.994Z",
+  "owned_container": "routelens-p05-559da738-c6b2-46ec-befa-9fd966ef7c35",
+  "query": "SELECT jsonb_build_object('trips',(SELECT count(*) FROM routelens_p05.trips),'traversals',(SELECT count(*) FROM routelens_p05.traversals),'candidates',(SELECT count(*) FROM routelens_p06.candidates),'publications',(SELECT count(*) FROM routelens_p07.publications),'consumers',(SELECT count(*) FROM routelens_p07.consumer_states));",
+  "readback": {
+    "trips": 5,
+    "consumers": 4,
+    "candidates": 2,
+    "traversals": 12,
+    "publications": 6
+  }
+}

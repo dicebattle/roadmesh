@@ -584,7 +584,12 @@ export async function runIngestionChecks(
       "Two actual worker processes claim different remaining jobs.",
       "서로 다른 실제 처리자2개가 남은 작업을 확보했습니다.",
       2,
-      raceResults.length,
+      raceResults.map((r, index) => ({
+        pid: racers[index]!.child?.pid ?? null,
+        exit_code: r.exited.code,
+        signal: r.exited.signal,
+        result_code: r.result.code,
+      })),
       "events.json",
     );
     for (let i = 0; i < 3; i++) await finishWorker(await worker());

@@ -21,14 +21,15 @@ The user now requires real Seoul OSM roads for the primary simulation. Complete 
 | Seoul primary simulation / 서울 주요 시뮬레이션 | [Actual-road evidence](../research/seoul/2026-10-24/report.md) | Local and hosted verified / 로컬·원격 검증 |
 | P05 durable ingestion / 영속 수집 | [111-check report](../research/pilot/2026-10-24-p05/report.md) | Local and hosted verified / 로컬·원격 검증 |
 | P06 aggregation / 집계 | [P06 report](../research/pilot/2026-10-24-p06/report.md) | Local/hosted151 and Node22/24 each183 verified / 로컬·원격151·Node각183 검증 |
-| P07 signed publication, P08 actual traffic consumption / 서명 게시·속도 반영 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
+| P07 signed publication / 서명 게시 | [P07 report](../research/pilot/2026-10-25-p07-claim-fix/report.md) | Corrected local/hosted206 and Node22/24 each202 verified / 수정후로컬·원격206·Node각202검증 |
+| P08 actual traffic consumption / 속도 반영 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P09 two nodes, P10 gateway/failover / 두 노드·중계/장애 전환 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P11 complete client, P12 complete fault matrix / 전체 화면·장애 행렬 | Evidence replay and incremental runner implemented / 증거 재생·점진 실행기 구현 | Partial implementation / 일부 구현 |
 | P13 local Cloudflare parity / Cloudflare 로컬 비교 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P14b engine integration / 엔진 통합 검사 | Extend CI with current whole-system runner / 현재 전체 실행기를 CI에 연결 | Hosted current-module run verified; full matrix remains / 현재 모듈 원격 검증·전체 행렬 남음 |
-| Whole implemented-system simulation / 구현 모듈 전체 시뮬레이션 | [Tiny, Seoul, P05 and P06 report](../research/pilot/2026-10-24-p06/report.md) / 작은 회귀·서울·P05·P06 보고서 | Locally verified / 로컬 검증 |
-| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/pilot/2026-10-24-p06/report.md) / 보고서·캡처 | P06 local/hosted evidence inspected / P06 로컬·원격 증거 검사 |
-| README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | Current Seoul/P06 recording and checks passed / 현재 서울·P06 녹화·검사 통과 |
+| Whole implemented-system simulation / 구현 모듈 전체 시뮬레이션 | [Tiny, Seoul, P05, P06 and P07 report](../research/pilot/2026-10-25-p07-claim-fix/report.md) / 작은 회귀·서울·P05·P06·P07 보고서 | Locally verified / 로컬 검증 |
+| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/pilot/2026-10-25-p07-claim-fix/report.md) / 보고서·캡처 | P07 local/hosted evidence inspected / P07 로컬·원격 증거 검사 |
+| README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | Current Seoul/P07 recording and media hashes verified / 현재 서울·P07 녹화·해시 검증 |
 | Refresh on implementation changes / 구현 변경 때 갱신 | `media:check` fingerprint/hash/README checks / 지문·해시·README 검사 | Locally verified / 로컬 검증 |
 | Research other AI-development READMEs / 다른 AI 개발 README 참고 | [Research notes](../wiki/sources/readme-presentation.md) | Source inspection complete / 출처 확인 |
 
@@ -36,4 +37,6 @@ A green unit suite does not finish this goal. Completion requires the full modul
 
 단위 검사 성공만으로 목표를 완료하지 않습니다. 전체 모듈·시나리오 계약, 필요한 실제 프로세스/통신 장애, 검사한 통합 증거, 최신 미디어/문서, GitHub 반영이 필요합니다. 누락·약한 증거는 미완료로 둡니다. 실제 지역 100/100·운영 배포·실제 모바일 시험은 별도이며 합성 성공으로 주장하지 않습니다.
 
-Seoul transition merged through protected PR#5 and P05 through PR#6 (`920d48d`); all existing branch tips were ancestors of main. Current: P06 local/hosted151 and Node22/24 each183 passed; protected PR#7 delivery precedes P07 signed publication. / 서울 전환과P05는 보호병합됐습니다. 현재P06은 로컬·원격151개와Node각183개를 검증했고 PR#7보호병합 후P07서명게시를 진행합니다.
+Seoul transition merged through protected PR#5 and P05 through PR#6 (`920d48d`); all existing branch tips were ancestors of main. Current: P06 is merged through PR#7. P07 plus the P05 stale-selection correction passed local/hosted206 and Node22/24 each202; protected PR#8 delivery is next. / P06은PR#7로병합했습니다. P07과P05작업선택경쟁수정은로컬·원격206개·Node각202개를검증했고다음은PR#8보호병합입니다.
+
+Latest correction: clean4b8bf79 passed the full206 locally after a reproduced P05 stale-selection fix. Current media/report are refreshed; corrected hosted validation passed; protected PR#8 merge is still required. / 최신수정: 재현한P05작업선택경쟁수정후깨끗한4b8bf79로전체206개를다시통과하고최신영상/보고서를갱신했습니다. 수정후원격검증도통과했고PR#8보호병합이남았습니다.

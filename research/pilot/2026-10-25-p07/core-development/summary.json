@@ -1,0 +1,39 @@
+{
+  "source_commit": "58348b09b6644f142b2f2a798da97dd4513ec212",
+  "source_dirty": true,
+  "node": "v22.23.4",
+  "files_sha256": {
+    "package-lock.json": "7e4e5dfdb3f3fa10382031c4f44dcc9cba2a94c06088206d7a0d4438d8e8fdab",
+    "package.json": "e117c645a86b1461cfbc539471d14e05ddc3379edcc1af69aae8f93b8267022e",
+    "tests/publication_core.test.ts": "36680547a789910c3220d45a23d582f3c2956c304ef608db2afe231b29cef26f",
+    "tools/publication_consumer.ts": "f791c77d83658756c103e783b57d1a2157080e3bcf5b48f9bfa6410db3227c19",
+    "tools/publication_consumer_worker.ts": "3dd0ad98b4e6e693ad01df889ebfba1049b87841d0659915a8713dd11e4c6b90",
+    "tools/publication_crypto.ts": "9f25f8bcda5f831fb9a91ef0a0094c772b4b8a57e27617b5b635937f3589e334",
+    "tools/publication_runtime.ts": "be538f1c3031290a7a4a5c5224c5afa8eb6246b7627ac00fecc9796b7a26e613",
+    "tools/publication_service.ts": "8644a5e3d13168ede8717d60b89c2aacfca5f27276ee6393735cad143911e8d8",
+    "tools/publication_store.ts": "94ebe3270793dcf904660ed51f78b6d7c0f3615c731e62a6bf319f428b0e51c3",
+    "tools/publication_types.ts": "901b7746d29e788d4b9d4466ef798ab27badc69a3abb81278ead993bf59b291a",
+    "tools/publication_worker.ts": "4627416c207b1c87fdf1a50834b77f488928fc16ee5c58101f511a36e9347ad6"
+  },
+  "source_bundle_sha256": "c2ce4ab2f430798f05573411dc420a9b67a9c617d3b09cfc74c507a36aee605a",
+  "commands": [
+    {
+      "command": "/Users/dice/.npm/_npx/361c55be1121897e/node_modules/node/bin/node node_modules/typescript/bin/tsc -p tsconfig.json",
+      "exit_code": 0,
+      "stdout": "build.stdout.txt",
+      "stderr": "build.stderr.txt"
+    },
+    {
+      "command": "/Users/dice/.npm/_npx/361c55be1121897e/node_modules/node/bin/node --test dist/tests/publication_core.test.js",
+      "exit_code": 0,
+      "tests": 14,
+      "pass": 14,
+      "fail": 0,
+      "duration_ms": 488.67375,
+      "stdout": "unit.stdout.txt",
+      "stderr": "unit.stderr.txt"
+    }
+  ],
+  "capture_note_en": "The first focused run output was preserved from the tool result without rerunning tests. Compiler streams exclude the preceding formatter output.",
+  "capture_note_ko": "최초 집중 검사 도구 결과를 다시 실행하지 않고 보존했습니다. 컴파일 출력에는 앞서 실행한 formatter 출력을 포함하지 않습니다."
+}

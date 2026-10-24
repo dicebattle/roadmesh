@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "graph_id": "7f4fd63e63aae5e5b961fc26d36ecae0fe30128c5508d4e184109ef16d59a4be",
+  "independently_parsed_members": 14,
+  "header_bytes": 32,
+  "speed_bytes": 8,
+  "baseline_sha256": "2cc7fe3f9798ba688c131c809312168a820846c986dac278c29b517781269a06",
+  "modified_sha256": "1422956cd4a0cc891cf90df2e28ad95778bee0e0add090a2ebadc6fbf9f01716",
+  "selected_edges": [
+    "1338083662224",
+    "1338687642000",
+    "1338754750864"
+  ],
+  "changed_bytes": 9,
+  "no_changes_outside_selected_records": true,
+  "no_exclusions_in_traffic_request": true,
+  "baseline": {
+    "has_time_restrictions": false,
+    "has_toll": false,
+    "has_highway": false,
+    "has_ferry": false,
+    "min_lat": 37.498008,
+    "min_lon": 127.02792,
+    "max_lat": 37.504505,
+    "max_lon": 127.049065,
+    "time": 147.404,
+    "length": 2.119,
+    "cost": 289.959
+  },
+  "traffic": {
+    "has_time_restrictions": false,
+    "has_toll": false,
+    "has_highway": false,
+    "has_ferry": false,
+    "min_lat": 37.498008,
+    "min_lon": 127.02792,
+    "max_lat": 37.504505,
+    "max_lon": 127.049065,
+    "time": 184.731,
+    "length": 2.412,
+    "cost": 416.986
+  },
+  "restore": {
+    "has_time_restrictions": false,
+    "has_toll": false,
+    "has_highway": false,
+    "has_ferry": false,
+    "min_lat": 37.498008,
+    "min_lon": 127.02792,
+    "max_lat": 37.504505,
+    "max_lon": 127.049065,
+    "time": 147.404,
+    "length": 2.119,
+    "cost": 289.959
+  },
+  "target_edges_absent_from_actual_traffic_trace": true,
+  "prior_legal_alternative_shape_matches": true,
+  "owned_container_ids_absent": [
+    "751e9312a1c74ea30e8af0ec9640c0b1b4b00b9215e4dac05eb24c7f79782cf1",
+    "c14be11400d1795600f3ebe5c30a42f6dc49a3f50d259fe40c88101170660adf",
+    "b6f7050c76d864b43aef2aa4515e71ab034cb882ff6a6879e57a846b99b2f61f"
+  ],
+  "scope_en": "Main independently parsed upstream index/header bytes and selected speed bits, inspected original engine responses and exact cleanup. This proves a bounded direct-engine development experiment, not live P07 acceptance, aggregation population or automatic expiry.",
+  "scope_ko": "메인이 상위목록/헤더·선택속도비트·원엔진응답·정확한정리를독립검사했습니다. 제한된직접엔진개발실험이며실제P07수용·집계차량군·자동만료증거가아닙니다."
+}

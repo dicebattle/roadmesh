@@ -1,0 +1,81 @@
+{
+  "observations": [
+    {
+      "variant": "baseline",
+      "status": 0,
+      "has_time_restrictions": false,
+      "has_toll": false,
+      "has_highway": false,
+      "has_ferry": false,
+      "min_lat": 37.498008,
+      "min_lon": 127.02792,
+      "max_lat": 37.504505,
+      "max_lon": 127.049065,
+      "time": 147.404,
+      "length": 2.119,
+      "cost": 289.959,
+      "same_shape_as_baseline": true
+    },
+    {
+      "variant": "alternative",
+      "status": 0,
+      "has_time_restrictions": false,
+      "has_toll": false,
+      "has_highway": false,
+      "has_ferry": false,
+      "min_lat": 37.498008,
+      "min_lon": 127.02792,
+      "max_lat": 37.504505,
+      "max_lon": 127.049065,
+      "time": 184.731,
+      "length": 2.412,
+      "cost": 416.986,
+      "same_shape_as_baseline": false
+    },
+    {
+      "variant": "traffic2",
+      "status": 0,
+      "has_time_restrictions": false,
+      "has_toll": false,
+      "has_highway": false,
+      "has_ferry": false,
+      "min_lat": 37.498008,
+      "min_lon": 127.02792,
+      "max_lat": 37.504505,
+      "max_lon": 127.049065,
+      "time": 232.667,
+      "length": 2.119,
+      "cost": 393.156,
+      "same_shape_as_baseline": true
+    },
+    {
+      "variant": "restore",
+      "status": 0,
+      "has_time_restrictions": false,
+      "has_toll": false,
+      "has_highway": false,
+      "has_ferry": false,
+      "min_lat": 37.498008,
+      "min_lon": 127.02792,
+      "max_lat": 37.504505,
+      "max_lon": 127.049065,
+      "time": 147.404,
+      "length": 2.119,
+      "cost": 289.959,
+      "same_shape_as_baseline": true
+    }
+  ],
+  "targetUsage": {
+    "alternative": [],
+    "traffic2": [
+      {
+        "id": 1338754750864,
+        "speed": 3,
+        "length": 0.075
+      }
+    ]
+  },
+  "restore_time_match": true,
+  "traffic_detour_observed": false,
+  "independent_expected_route": false
+}

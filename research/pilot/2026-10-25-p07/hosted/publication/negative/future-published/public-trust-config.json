@@ -1,0 +1,66 @@
+{
+  "consumer_id": "primary",
+  "publisher_id": "seoul-synthetic-publisher",
+  "region_id": "seoul-pilot-corridors-v1",
+  "allowed_graph_ids": [
+    "be72b68d2b37cf5411af8ca2bd5014fc17e8a6835c689661bf5ca8b85e792675"
+  ],
+  "trust_roots": [
+    {
+      "kid": "key-a",
+      "public_jwk": {
+        "crv": "Ed25519",
+        "x": "-B6y4VCWyLaELCJhSM0rfMnqkH0ArrRuHN7yxUB7NGE",
+        "kty": "OKP"
+      },
+      "publisher_id": "seoul-synthetic-publisher",
+      "simulation_namespace": "p07-45cb9959eb2c42e0",
+      "region_id": "seoul-pilot-corridors-v1",
+      "allowed_graph_ids": [
+        "be72b68d2b37cf5411af8ca2bd5014fc17e8a6835c689661bf5ca8b85e792675"
+      ],
+      "source_class": "SYNTHETIC",
+      "valid_from": "2026-10-23T23:59:00.000Z",
+      "valid_until": "2026-10-24T01:00:00.000Z",
+      "revoked": false
+    },
+    {
+      "kid": "key-b",
+      "public_jwk": {
+        "crv": "Ed25519",
+        "x": "plj-Ox2v_YK9aXvXSRnsCyiqT_oXLWLDPAQyZr9VUcE",
+        "kty": "OKP"
+      },
+      "publisher_id": "seoul-synthetic-publisher",
+      "simulation_namespace": "p07-45cb9959eb2c42e0",
+      "region_id": "seoul-pilot-corridors-v1",
+      "allowed_graph_ids": [
+        "be72b68d2b37cf5411af8ca2bd5014fc17e8a6835c689661bf5ca8b85e792675"
+      ],
+      "source_class": "SYNTHETIC",
+      "valid_from": "2026-10-23T23:59:00.000Z",
+      "valid_until": "2026-10-24T01:00:00.000Z",
+      "revoked": false
+    },
+    {
+      "kid": "key-c",
+      "public_jwk": {
+        "crv": "Ed25519",
+        "x": "E-pqjp5-94MQq4VDZbh-XM6tF3L03zUo0-k3e5T_0Ik",
+        "kty": "OKP"
+      },
+      "publisher_id": "seoul-synthetic-publisher",
+      "simulation_namespace": "p07-45cb9959eb2c42e0",
+      "region_id": "seoul-pilot-corridors-v1",
+      "allowed_graph_ids": [
+        "be72b68d2b37cf5411af8ca2bd5014fc17e8a6835c689661bf5ca8b85e792675"
+      ],
+      "source_class": "SYNTHETIC",
+      "valid_from": "2026-10-23T23:59:00.000Z",
+      "valid_until": "2026-10-24T01:00:00.000Z",
+      "revoked": false
+    }
+  ],
+  "note_en": "Negative trust configuration; any d sentinel is deliberately invalid and is not generated private key material.",
+  "note_ko": "부정 신뢰설정이며 d 표식은 의도적으로 잘못된 값이고 생성한 비공개키가 아닙니다."
+}

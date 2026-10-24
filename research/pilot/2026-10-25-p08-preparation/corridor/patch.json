@@ -1,0 +1,31 @@
+{
+  "patches": [
+    {
+      "id": "1338083662224",
+      "tilebase": 22928,
+      "edgeIndex": 39878,
+      "offset": 320592,
+      "before": "0000000000000000",
+      "after": "810000f00f000000"
+    },
+    {
+      "id": "1338687642000",
+      "tilebase": 22928,
+      "edgeIndex": 39896,
+      "offset": 320736,
+      "before": "0000000000000000",
+      "after": "810000f00f000000"
+    },
+    {
+      "id": "1338754750864",
+      "tilebase": 22928,
+      "edgeIndex": 39898,
+      "offset": 320752,
+      "before": "0000000000000000",
+      "after": "810000f00f000000"
+    }
+  ],
+  "original_sha256": "2cc7fe3f9798ba688c131c809312168a820846c986dac278c29b517781269a06",
+  "derived_sha256": "1422956cd4a0cc891cf90df2e28ad95778bee0e0add090a2ebadc6fbf9f01716",
+  "only_selected_eight_byte_records_changed": true
+}

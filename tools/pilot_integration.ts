@@ -15,6 +15,10 @@ import { verifyRegionalChild } from "./seoul_checks.js";
 import { OwnedIngestionRuntime } from "./ingestion_runtime.js";
 import { runIngestionChecks } from "./ingestion_checks.js";
 import { runAggregationChecks } from "./aggregation_checks.js";
+import {
+  runPublicationChecks,
+  requirePublicationCases,
+} from "./publication_checks.js";
 import type { SimulationAssertion } from "./vehicle_simulator.js";
 import {
   renderSimulationReport,
@@ -155,6 +159,50 @@ export async function runPilotIntegration(
         evidence_path: "aggregation/" + a.evidence_path,
       })),
     );
+    if (
+      data.assertions.length !== 151 ||
+      data.assertions.some((a) => a.status !== "PASS")
+    )
+      throw new Error(
+        "All 151 prior fresh assertions are required / 기존 새 검사 151개 전체 통과가 필요합니다",
+      );
+    const publicationStarted = performance.now();
+    const publication = await runPublicationChecks(
+      join(output, "seoul/graph"),
+      join(output, "publication"),
+    );
+    verifyRegionalChild(join(output, "publication"), verified, data.graph_id);
+    requirePublicationCases(publication.assertions);
+    data.publication = {
+      ...publication.publication,
+      cases: publication.publication.cases.map((c) => ({
+        ...c,
+        evidence_path: "publication/" + c.evidence_path,
+      })),
+      versions: publication.publication.versions.map((v) => ({
+        ...v,
+        artifact_path: "publication/" + v.artifact_path,
+        jws_path: "publication/" + v.jws_path,
+      })),
+      evidence: publication.publication.evidence.map((e) => ({
+        ...e,
+        path: "publication/" + e.path,
+      })),
+    };
+    data.stages.push({
+      id: "p07",
+      name_en: "Signed HTTP publication and durable consumer acceptance",
+      name_ko: "서명 HTTP 게시·영속 수신 수용",
+      status: "PASS",
+      evidence_path: "publication/manifest.json",
+      duration_ms: performance.now() - publicationStarted,
+    });
+    data.assertions.push(
+      ...publication.assertions.map((a) => ({
+        ...a,
+        evidence_path: "publication/" + a.evidence_path,
+      })),
+    );
     data.summary.assertions_passed = data.assertions.filter(
       (a) => a.status === "PASS",
     ).length;
@@ -163,11 +211,11 @@ export async function runPilotIntegration(
       ...item,
       message_en: item.message_en.replace(
         "P05–P14 remain incomplete",
-        "P07–P14 remain incomplete",
+        "P08–P14 remain incomplete",
       ),
       message_ko: item.message_ko.replace(
         "P05~P14는 미완료",
-        "P07~P14는 미완료",
+        "P08~P14는 미완료",
       ),
     }));
     data.generated_at_utc = new Date().toISOString();
@@ -194,7 +242,7 @@ export async function runPilotIntegration(
     );
     writeFileSync(
       join(output, "summary.md"),
-      "# Whole implemented-system pilot / 구현된 전체 파일럿\n\nPASS: fresh tiny → Seoul → P05 durable ingestion, interruption/recovery and deletion read-back → P06 unsigned synthetic aggregation.\n통과: 새 tiny→서울→P05영속수집·실제중단/복구·삭제재조회→P06서명전합성집계.\n\nP07–P14 remain incomplete; no production authentication or real driver traces.\nP07~P14는 미완료이며 운영인증·실주행자료가 아닙니다.\n",
+      "# Whole implemented-system pilot / 구현된 전체 파일럿\n\nPASS: fresh tiny → Seoul → P05 durable ingestion, interruption/recovery and deletion read-back → P06 unsigned synthetic aggregation → P07 signed HTTP publication and durable verification.\n통과: 새 tiny→서울→P05영속수집·실제중단/복구·삭제재조회→P06서명전합성집계→P07서명HTTP게시·영속검증.\n\nP08–P14 remain incomplete; no production authentication or real driver traces.\nP08~P14는 미완료이며 운영인증·실주행자료가 아닙니다.\n",
     );
   } catch (error) {
     failure = error;
@@ -229,6 +277,7 @@ export async function runPilotIntegration(
     "seoul/manifest.json",
     "ingestion/manifest.json",
     "aggregation/manifest.json",
+    "publication/manifest.json",
     "lifecycle/cleanup.json",
     "report-data.json",
     "report.html",
@@ -273,7 +322,7 @@ export async function main(
     for (let i = 0; i < argv.length; i++) {
       if (argv[i] === "--help") {
         io.out(
-          "Usage / 사용법: simulation:check -- --output NEW_DIRECTORY [--source PINNED_PBF]\nFresh tiny, actual Seoul roads and durable P05 HTTP/DB/process recovery and P06 unsigned aggregation. / 새 tiny·실제서울도로·영속P05 HTTP/DB/프로세스복구·P06서명전집계.",
+          "Usage / 사용법: simulation:check -- --output NEW_DIRECTORY [--source PINNED_PBF]\nFresh tiny, actual Seoul roads and durable P05 HTTP/DB/process recovery and P06 unsigned aggregation/P07 signed publication. / 새 tiny·실제서울도로·영속P05 HTTP/DB/프로세스복구·P06서명전집계·P07서명게시.",
         );
         return 0;
       } else if (argv[i] === "--output" && !output) output = argv[++i] ?? "";

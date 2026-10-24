@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "d78b2c1aaee471360dd59b5a277d7b83f23dc77f",
+    "dirty": false
+  },
+  "ui": {
+    "english_publication_versions": 5,
+    "korean_details": true,
+    "mobile_width": 390,
+    "mobile_scroll_width": 375,
+    "javascript_errors": []
+  },
+  "capture": {
+    "duration_seconds": 27.05,
+    "width": 1280,
+    "height": 720,
+    "fps": 20,
+    "full_mp4_decode": true,
+    "screenshot_and_frame_review": true,
+    "owned_capture_pids_absent": 8,
+    "report_server_pid": 37510,
+    "report_server_absent": true,
+    "iab_tab_closed": true,
+    "viewport_reset": true
+  },
+  "privacy": {
+    "text_files_scanned": 3465,
+    "no_private_jwk_or_pem_or_credential_dsn": true,
+    "invalid_private_root_sentinel": "invalid-private-field"
+  },
+  "message_en": "Main inspected bilingual rendered controls, mobile layout, screenshots and a recorded moving frame; original text scanned for private key and credential patterns. Synthetic OSM-derived locations are intentionally public.",
+  "message_ko": "메인이 한영 조작·모바일 배치·화면·실제 움직이는 녹화 프레임을 확인하고 원문에서 비밀 키·인증정보 패턴을 검사했습니다. 합성 OSM 위치는 의도한 공개 자료입니다."
+}

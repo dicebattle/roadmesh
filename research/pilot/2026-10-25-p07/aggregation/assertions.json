@@ -1,0 +1,580 @@
+[
+  {
+    "assertion_id": "p06-mid-trip-activity-conflict",
+    "status": "PASS",
+    "message_en": "A later PARKED batch cannot change a committed TRAVEL trip.",
+    "message_ko": "나중PARKED배치가 저장된TRAVEL여행을 바꾸지 못합니다.",
+    "expected": 409,
+    "actual": 409,
+    "evidence_path": "synthetic-evaluation/activity-conflict.json"
+  },
+  {
+    "assertion_id": "p06-legacy-travel-hash",
+    "status": "PASS",
+    "message_en": "Default TRAVEL retains the legacy request bytes hash.",
+    "message_ko": "기본TRAVEL이 기존요청 바이트 해시를 보존합니다.",
+    "expected": "0a3bc2858e76d3ac51a632e0dad8effaa5f3fac31a141b46f8764d0e62e2dcb6",
+    "actual": "0a3bc2858e76d3ac51a632e0dad8effaa5f3fac31a141b46f8764d0e62e2dcb6",
+    "evidence_path": "scenario.json"
+  },
+  {
+    "assertion_id": "p06-activity-additive-migration",
+    "status": "PASS",
+    "message_en": "Activity-column migration preserves committed legacy hashes and exact retry semantics.",
+    "message_ko": "활동열 추가이전표현의 커밋해시와 정확재시도 의미를 보존합니다.",
+    "expected": {
+      "code": "DUPLICATE",
+      "activity": "TRAVEL"
+    },
+    "actual": {
+      "request_hash": "0a3bc2858e76d3ac51a632e0dad8effaa5f3fac31a141b46f8764d0e62e2dcb6",
+      "trip_activity": "TRAVEL"
+    },
+    "evidence_path": "readbacks/activity-migration.json"
+  },
+  {
+    "assertion_id": "p06-count-0",
+    "status": "PASS",
+    "message_en": "Independent populations preserve the zero/one/four eligibility denominator.",
+    "message_ko": "독립 차량군이0·1·4명 적격 분모를 보존합니다.",
+    "expected": {
+      "status": "UNKNOWN",
+      "contributors": 0
+    },
+    "actual": {
+      "entry": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      "private_contributors": 0
+    },
+    "evidence_path": "drafts/count-0.json"
+  },
+  {
+    "assertion_id": "p06-count-1-target-p06-speed-3",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 23.77246467188899,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 23.772
+      }
+    ],
+    "evidence_path": "synthetic-evaluation/count-1-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-1",
+    "status": "PASS",
+    "message_en": "Independent populations preserve the zero/one/four eligibility denominator.",
+    "message_ko": "독립 차량군이0·1·4명 적격 분모를 보존합니다.",
+    "expected": {
+      "status": "INSUFFICIENT",
+      "contributors": 1
+    },
+    "actual": {
+      "entry": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "INSUFFICIENT",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      "private_contributors": 1
+    },
+    "evidence_path": "drafts/count-1.json"
+  },
+  {
+    "assertion_id": "p06-count-4-target-p06-speed-3",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 23.77246467188899,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 23.772
+      }
+    ],
+    "evidence_path": "synthetic-evaluation/count-4-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-4-target-p06-speed-4",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 19.82934850391674,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 19.829
+      }
+    ],
+    "evidence_path": "synthetic-evaluation/count-4-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-4-target-p06-speed-5",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 17.463478803133395,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 17.463
+      }
+    ],
+    "evidence_path": "synthetic-evaluation/count-4-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-4-target-p06-speed-6",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 15.886232335944495,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 15.886
+      }
+    ],
+    "evidence_path": "synthetic-evaluation/count-4-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-4",
+    "status": "PASS",
+    "message_en": "Independent populations preserve the zero/one/four eligibility denominator.",
+    "message_ko": "독립 차량군이0·1·4명 적격 분모를 보존합니다.",
+    "expected": {
+      "status": "INSUFFICIENT",
+      "contributors": 4
+    },
+    "actual": {
+      "entry": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "INSUFFICIENT",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      "private_contributors": 4
+    },
+    "evidence_path": "drafts/count-4.json"
+  },
+  {
+    "assertion_id": "p06-count-5-target-p06-speed-3",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 23.77246467188899,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 23.772
+      }
+    ],
+    "evidence_path": "synthetic-evaluation/count-5-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-5-target-p06-speed-4",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 19.82934850391674,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 19.829
+      }
+    ],
+    "evidence_path": "synthetic-evaluation/count-5-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-5-target-p06-speed-5",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 17.463478803133395,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 17.463
+      }
+    ],
+    "evidence_path": "synthetic-evaluation/count-5-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-5-target-p06-speed-6",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 15.886232335944495,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 15.886
+      }
+    ],
+    "evidence_path": "synthetic-evaluation/count-5-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-5-target-p06-speed-7",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 14.759627716523852,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 14.76
+      }
+    ],
+    "evidence_path": "synthetic-evaluation/count-5-stored.json"
+  },
+  {
+    "assertion_id": "p06-exact-open-deadline",
+    "status": "PASS",
+    "message_en": "At deadline minus one millisecond, no draft is persisted.",
+    "message_ko": "마감1밀리초 전에는 후보를 저장하지 않습니다.",
+    "expected": "WINDOW_OPEN",
+    "actual": "WINDOW_OPEN",
+    "evidence_path": "readbacks/before-deadline.json"
+  },
+  {
+    "assertion_id": "p06-aggregate-write-rollback",
+    "status": "PASS",
+    "message_en": "Actual pre-commit worker SIGKILL leaves no partial candidate row.",
+    "message_ko": "실제 커밋전 처리자SIGKILL이 일부 후보행을 남기지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "readbacks/after-aggregate-write-kill.json"
+  },
+  {
+    "assertion_id": "p06-aggregate-commit-retry",
+    "status": "PASS",
+    "message_en": "Two actual workers and lost-response retry converge to one identical committed candidate.",
+    "message_ko": "실제 처리자2개·응답유실 재시도가 동일한 커밋 후보1개로 수렴합니다.",
+    "expected": "1924ef349fd91ba2d34edb7f7c01472283cdadb7bc0c35fd774fdd03b8adc525",
+    "actual": [
+      "1924ef349fd91ba2d34edb7f7c01472283cdadb7bc0c35fd774fdd03b8adc525",
+      "1924ef349fd91ba2d34edb7f7c01472283cdadb7bc0c35fd774fdd03b8adc525"
+    ],
+    "evidence_path": "readbacks/aggregate-concurrent-retry.json"
+  },
+  {
+    "assertion_id": "p06-live-independent-median",
+    "status": "PASS",
+    "message_en": "Five unique travel contributors yield the independent median speed; repeat and PARKED do not inflate it.",
+    "message_ko": "고유 이동기여자5명이 독립 중앙값 속도를 만들고 반복·주차는 부풀리지 않습니다.",
+    "expected": {
+      "contributors": 5,
+      "speed_mps": 2.709505623082213,
+      "relative_tolerance": 0.02
+    },
+    "actual": {
+      "entry": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "LIVE",
+        "speed_mps": 2.70958,
+        "sample_bucket": "5-9"
+      },
+      "selection": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "eligible_contributors": 5,
+        "selected_observation_ids": [
+          "d4ad70d7f021c0d802ce9d321757e8cf82ed214811d6d9ff77995e6ea635b2e0",
+          "6586fc76ecb6b6d7394965f38f14eec231acc76d65970d00412c7b2b3b098554",
+          "58c74196291dc87aa644f2abb339e5c70459bddac61a3757c6aca93d63b88e41",
+          "79575a1b965933b9a82ec140b3b1b5a538ecbfbe3ea0d9c2aa6214a3acbd8913",
+          "6110ffc48ff42c059d655a0d50c45eb0e6c440e198114f7b512a3d9f4982554c"
+        ],
+        "median_duration_s": 17.463
+      }
+    },
+    "evidence_path": "synthetic-evaluation/count-5.json"
+  },
+  {
+    "assertion_id": "p06-late-just-before",
+    "status": "PASS",
+    "message_en": "P05 completion before the deadline is eligible; exact or later completion cannot change the closed window.",
+    "message_ko": "마감전 P05완료는 적격이고 정확한마감·이후완료는 닫힌창을 바꾸지 못합니다.",
+    "expected": {
+      "available_at": "2026-10-24T00:01:29.999Z",
+      "eligible": 1
+    },
+    "actual": {
+      "available": [
+        {
+          "code": "SUCCEEDED",
+          "at_event_utc": "2026-10-24T00:01:29.999Z"
+        }
+      ],
+      "selected": 1
+    },
+    "evidence_path": "synthetic-evaluation/late-just-before-availability.json"
+  },
+  {
+    "assertion_id": "p06-late-exact",
+    "status": "PASS",
+    "message_en": "P05 completion before the deadline is eligible; exact or later completion cannot change the closed window.",
+    "message_ko": "마감전 P05완료는 적격이고 정확한마감·이후완료는 닫힌창을 바꾸지 못합니다.",
+    "expected": {
+      "available_at": "2026-10-24T00:01:30.000Z",
+      "eligible": 0
+    },
+    "actual": {
+      "available": [
+        {
+          "code": "SUCCEEDED",
+          "at_event_utc": "2026-10-24T00:01:30.000Z"
+        }
+      ],
+      "selected": 0
+    },
+    "evidence_path": "synthetic-evaluation/late-exact-availability.json"
+  },
+  {
+    "assertion_id": "p06-late-after",
+    "status": "PASS",
+    "message_en": "P05 completion before the deadline is eligible; exact or later completion cannot change the closed window.",
+    "message_ko": "마감전 P05완료는 적격이고 정확한마감·이후완료는 닫힌창을 바꾸지 못합니다.",
+    "expected": {
+      "available_at": "2026-10-24T00:01:30.001Z",
+      "eligible": 0
+    },
+    "actual": {
+      "available": [
+        {
+          "code": "SUCCEEDED",
+          "at_event_utc": "2026-10-24T00:01:30.001Z"
+        }
+      ],
+      "selected": 0
+    },
+    "evidence_path": "synthetic-evaluation/late-after-availability.json"
+  },
+  {
+    "assertion_id": "p06-revoke-actual-lock-wait",
+    "status": "PASS",
+    "message_en": "The actual revoke backend waits on the owned paused aggregate backend.",
+    "message_ko": "실제 철회DB처리가 소유한대기 집계DB처리의 잠금을 기다립니다.",
+    "expected": 1,
+    "actual": 1,
+    "evidence_path": "readbacks/revoke-lock-wait.json"
+  },
+  {
+    "assertion_id": "p06-same-transaction-invalidation",
+    "status": "PASS",
+    "message_en": "Acknowledged HTTP revocation has already removed the old candidate in the deletion transaction.",
+    "message_ko": "HTTP철회 응답때 삭제트랜잭션이 이미 옛후보를 제거했습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "readbacks/revoke-before-recompute.json"
+  },
+  {
+    "assertion_id": "p06-revoked-four",
+    "status": "PASS",
+    "message_en": "Recomputation after revocation has four contributors and no public speed.",
+    "message_ko": "철회뒤 재계산은4명이며 공개속도가 없습니다.",
+    "expected": "INSUFFICIENT",
+    "actual": {
+      "edge_id": "1297751234960",
+      "forward": true,
+      "source_class": "SYNTHETIC",
+      "status": "INSUFFICIENT",
+      "speed_mps": null,
+      "sample_bucket": null
+    },
+    "evidence_path": "drafts/revoked.json"
+  },
+  {
+    "assertion_id": "p06-new-window-no-inheritance",
+    "status": "PASS",
+    "message_en": "A newer empty window never inherits an older LIVE value.",
+    "message_ko": "새 빈창이 이전LIVE값을 이어받지 않습니다.",
+    "expected": "UNKNOWN",
+    "actual": {
+      "edge_id": "1297751234960",
+      "forward": true,
+      "source_class": "SYNTHETIC",
+      "status": "UNKNOWN",
+      "speed_mps": null,
+      "sample_bucket": null
+    },
+    "evidence_path": "drafts/new-empty-window.json"
+  },
+  {
+    "assertion_id": "p06-cached-read-expiry",
+    "status": "PASS",
+    "message_en": "The read path expires cached LIVE bytes before finalize is called.",
+    "message_ko": "확정호출 전에 읽기경로가 캐시LIVE바이트를 만료시킵니다.",
+    "expected": {
+      "before": "LIVE",
+      "after": "STALE",
+      "speed_mps": null
+    },
+    "actual": {
+      "before": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "sample_bucket": "5-9",
+        "source_class": "SYNTHETIC",
+        "speed_mps": 2.70958,
+        "status": "LIVE"
+      },
+      "read": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "sample_bucket": null,
+        "source_class": "SYNTHETIC",
+        "speed_mps": null,
+        "status": "STALE"
+      },
+      "after": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "sample_bucket": null,
+        "source_class": "SYNTHETIC",
+        "speed_mps": null,
+        "status": "STALE"
+      }
+    },
+    "evidence_path": "readbacks/cache-after-expiry.json"
+  },
+  {
+    "assertion_id": "p06-exact-expiry",
+    "status": "PASS",
+    "message_en": "At exact expiry, current persisted time removes speed; a stale caller cannot revive it.",
+    "message_ko": "정확한 만료때 저장시계가 속도를 지우고 옛호출시각도 복원하지 못합니다.",
+    "expected": "STALE",
+    "actual": {
+      "edge_id": "1297751234960",
+      "forward": true,
+      "source_class": "SYNTHETIC",
+      "status": "STALE",
+      "speed_mps": null,
+      "sample_bucket": null
+    },
+    "evidence_path": "drafts/expired.json"
+  },
+  {
+    "assertion_id": "p06-candidate-retention",
+    "status": "PASS",
+    "message_en": "The old candidate is deleted at window end plus 24 hours and cannot be recreated; the later window remains until its own deadline.",
+    "message_ko": "창끝24시간에 옛후보가 삭제되고 재생성되지 않으며 나중창은 자체기한까지 남습니다.",
+    "expected": {
+      "first_deleted": 1,
+      "second_deleted": 0,
+      "old_rows": 0,
+      "newer_rows": 1,
+      "code": "RETENTION_EXPIRED"
+    },
+    "actual": {
+      "first": {
+        "deleted": 1
+      },
+      "second": {
+        "deleted": 0
+      },
+      "plain_rows": 1,
+      "code": "RETENTION_EXPIRED"
+    },
+    "evidence_path": "readbacks/retention-sweep-results.json"
+  },
+  {
+    "assertion_id": "p06-all-candidates-purged",
+    "status": "PASS",
+    "message_en": "Repeated retention sweep leaves zero candidate rows.",
+    "message_ko": "반복 보관기한 정리뒤 후보행이0개입니다.",
+    "expected": {
+      "first_deleted": 1,
+      "second_deleted": 0,
+      "plain_rows": 0
+    },
+    "actual": {
+      "first": {
+        "deleted": 1
+      },
+      "second": {
+        "deleted": 0
+      },
+      "plain_rows": 0,
+      "inspected_rows": 0
+    },
+    "evidence_path": "readbacks/all-purge-results.json"
+  },
+  {
+    "assertion_id": "p06-catalog-conflict-atomic",
+    "status": "PASS",
+    "message_en": "Concurrent different-catalog finalizers cannot overwrite the winning catalog row.",
+    "message_ko": "동시 다른구간목록 확정이 승리한목록행을 덮어쓰지 못합니다.",
+    "expected": {
+      "success": 1,
+      "failure": 1,
+      "rows": 1
+    },
+    "actual": {
+      "exits": [
+        {
+          "code": 0,
+          "signal": null
+        },
+        {
+          "code": 1,
+          "signal": null
+        }
+      ],
+      "catalog_rows": 1,
+      "winning_hash": "b27cd56bb0bfd39d4d3d071384fc5d2d8f1ba30a17214f3413c50f2f17278491"
+    },
+    "evidence_path": "synthetic-evaluation/catalog-conflict.json"
+  },
+  {
+    "assertion_id": "p06-public-candidate-whitelist",
+    "status": "PASS",
+    "message_en": "Every actual exported candidate uses only the public whitelist and contains no private credentials or raw coordinates.",
+    "message_ko": "실제 내보낸 모든후보가 공개허용필드만 쓰고 비공개인증·원시좌표가 없습니다.",
+    "expected": 10,
+    "actual": 10,
+    "evidence_path": "drafts/count-5.json"
+  },
+  {
+    "assertion_id": "p06-owned-cleanup",
+    "status": "PASS",
+    "message_en": "All owned processes, engines, PostgreSQL volume, private files and ports were removed.",
+    "message_ko": "소유 프로세스·엔진·PostgreSQL볼륨·비공개파일·포트를 제거했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "runtime/cleanup.json"
+  }
+]

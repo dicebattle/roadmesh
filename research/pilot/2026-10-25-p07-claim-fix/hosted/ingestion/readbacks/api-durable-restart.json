@@ -1,0 +1,32 @@
+{
+  "counts": {
+    "contributors": 22,
+    "trips": 37,
+    "batches": 141,
+    "samples": 6365,
+    "traversals": 220,
+    "events": 193,
+    "raw_payloads": 2
+  },
+  "trips": [
+    {
+      "trip_id": "api-crash",
+      "vehicle_id": "downtown-clean",
+      "state": "WAITING",
+      "fence": "0",
+      "attempt": 0,
+      "final_seq": null,
+      "first_received_at": "2026-10-24T00:21:12.540Z",
+      "last_activity_at": "2026-10-24T00:21:12.540Z",
+      "raw_expires_at": "2026-10-24T00:31:12.540Z",
+      "tombstone_expires_at": "2026-10-25T00:21:12.540Z",
+      "lease_until_utc": null,
+      "sample_count": 2,
+      "batch_count": 1,
+      "raw_payload_count": 2,
+      "traversal_count": 0,
+      "matching_digest": null
+    }
+  ],
+  "traversals": []
+}

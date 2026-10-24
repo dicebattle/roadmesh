@@ -573,7 +573,7 @@ export class IngestionStore {
         "임대 시간이 올바르지 않습니다.",
       );
     for (;;) {
-      const result = await this.timedTx<Claim | null | "CLEANED">(
+      const result = await this.timedTx<Claim | null | "CLEANED" | "RETRY">(
         eventTimeUtc,
         async (client, effectiveTime) => {
           eventTimeUtc = effectiveTime;
@@ -599,7 +599,7 @@ export class IngestionStore {
               ],
             )
           ).rows[0] as Row | undefined;
-          if (!trip) return null;
+          if (!trip) return "RETRY";
           if (
             utc(eventTimeUtc) >= utc(iso(trip.raw_expires_at)) ||
             Number(trip.attempt) >= 3
@@ -656,7 +656,7 @@ export class IngestionStore {
           };
         },
       );
-      if (result !== "CLEANED") return result;
+      if (result !== "CLEANED" && result !== "RETRY") return result;
     }
   }
   private async owned(

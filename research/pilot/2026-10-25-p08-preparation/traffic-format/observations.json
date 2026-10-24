@@ -1,0 +1,154 @@
+{
+  "results": [
+    {
+      "variant": "baseline",
+      "has_time_restrictions": false,
+      "has_toll": false,
+      "has_highway": false,
+      "has_ferry": false,
+      "min_lat": 37.498008,
+      "min_lon": 127.02792,
+      "max_lat": 37.504505,
+      "max_lon": 127.049065,
+      "time": 147.404,
+      "length": 2.119,
+      "cost": 289.959,
+      "same_shape_as_baseline": true,
+      "time_delta_seconds": 0
+    },
+    {
+      "variant": "slow10",
+      "has_time_restrictions": false,
+      "has_toll": false,
+      "has_highway": false,
+      "has_ferry": false,
+      "min_lat": 37.498008,
+      "min_lon": 127.02792,
+      "max_lat": 37.504505,
+      "max_lon": 127.049065,
+      "time": 177.663,
+      "length": 2.119,
+      "cost": 301.485,
+      "same_shape_as_baseline": true,
+      "time_delta_seconds": 30.259000000000015
+    },
+    {
+      "variant": "slow2",
+      "has_time_restrictions": false,
+      "has_toll": false,
+      "has_highway": false,
+      "has_ferry": false,
+      "min_lat": 37.498008,
+      "min_lon": 127.02792,
+      "max_lat": 37.504505,
+      "max_lon": 127.049065,
+      "time": 273.783,
+      "length": 2.119,
+      "cost": 399.887,
+      "same_shape_as_baseline": true,
+      "time_delta_seconds": 126.37900000000002
+    },
+    {
+      "variant": "restore",
+      "has_time_restrictions": false,
+      "has_toll": false,
+      "has_highway": false,
+      "has_ferry": false,
+      "min_lat": 37.498008,
+      "min_lon": 127.02792,
+      "max_lat": 37.504505,
+      "max_lon": 127.049065,
+      "time": 147.404,
+      "length": 2.119,
+      "cost": 289.959,
+      "same_shape_as_baseline": true,
+      "time_delta_seconds": 0
+    }
+  ],
+  "inclusion": [
+    {
+      "edge_id": "1296274839952",
+      "forward": true,
+      "sample_bucket": "5-9",
+      "source_class": "SYNTHETIC",
+      "speed_mps": 4.999437,
+      "status": "LIVE",
+      "level": 0,
+      "tilebase": 22928,
+      "edgeIndex": 38632,
+      "offset": 310624,
+      "member": {
+        "offset": 1536,
+        "tilebase": 22928,
+        "length": 478736,
+        "count": 59838,
+        "version": 3,
+        "header_hex": "90590000000000000000000000000000bee90000030000000000000000000000"
+      },
+      "route_edges": [
+        {
+          "id": 1296274839952,
+          "speed": 57,
+          "length": 0.028
+        }
+      ]
+    },
+    {
+      "edge_id": "1297617017232",
+      "forward": true,
+      "sample_bucket": "5-9",
+      "source_class": "SYNTHETIC",
+      "speed_mps": 5.000015,
+      "status": "LIVE",
+      "level": 0,
+      "tilebase": 22928,
+      "edgeIndex": 38672,
+      "offset": 310944,
+      "member": {
+        "offset": 1536,
+        "tilebase": 22928,
+        "length": 478736,
+        "count": 59838,
+        "version": 3,
+        "header_hex": "90590000000000000000000000000000bee90000030000000000000000000000"
+      },
+      "route_edges": [
+        {
+          "id": 1297617017232,
+          "speed": 57,
+          "length": 0.023
+        }
+      ]
+    },
+    {
+      "edge_id": "1297751234960",
+      "forward": true,
+      "sample_bucket": "5-9",
+      "source_class": "SYNTHETIC",
+      "speed_mps": 2.70958,
+      "status": "LIVE",
+      "level": 0,
+      "tilebase": 22928,
+      "edgeIndex": 38676,
+      "offset": 310976,
+      "member": {
+        "offset": 1536,
+        "tilebase": 22928,
+        "length": 478736,
+        "count": 59838,
+        "version": 3,
+        "header_hex": "90590000000000000000000000000000bee90000030000000000000000000000"
+      },
+      "route_edges": [
+        {
+          "id": 1297751234960,
+          "speed": 94,
+          "length": 0.047
+        }
+      ]
+    }
+  ],
+  "route_effect_observed": true,
+  "independent_expected_detour": false,
+  "not_expiry_or_p07_acceptance_proof": true
+}

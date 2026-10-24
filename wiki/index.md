@@ -4,14 +4,16 @@ Verified: [TypeScript P01/P14a tools](modules/pilot-runner.md), 33 tests and ind
 
 [TypeScript P01/P14a](modules/pilot-runner.md)의 33개 검사·독립 로컬 실행·Node 22/24 원격 증거를 검증했습니다. [전환 증거](../research/pilot/typescript-migration-2026-10-24.json)를 보존합니다. [P02 그래프 검증](modules/test-graph.md)도 완료했습니다. [P03·전체 구현 모듈 통합](modules/vehicle-simulation.md)을 로컬·원격 Docker 검증했고 [녹화 증거](../research/pilot/2026-10-24-p03/report.md)에30/30을 기록했습니다. **P04 로컬·원격Docker48/48을 검증**했고 [증거](../research/pilot/2026-10-24-p04/report.md)를 남겼으며 원격 원문도 내려받아 검사했습니다. [실제 서울 시뮬레이션](modules/seoul-simulation.md)의 tiny48·서울29를 로컬·원격Linux에서 검증했고 Node22·24도 각각122/122를 통과했습니다. 서울 PR #5를 병합했고 [P05 영속 수집](modules/durable-ingestion.md)은 실제 HTTP·PostgreSQL 복구34개를 포함해 전체111개 로컬 검사를 통과했고 [증거](../research/pilot/2026-10-24-p05/report.md)를 보존합니다. 원격 Node22·24각각137개·LinuxDocker111개도 통과했고 메인이 내려받은 해시1,883개·실제DB/프로세스 증거를 검사했습니다. 전체 파일럿과 실제 도로 자료 100/100개 조건은 별도입니다. [개발 절차](../docs/12-development-workflow.md)는 필수 CI를 포함한 main 보호·상세한 이중 언어 커밋·작업 브랜치 푸시입니다.
 
-Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases in each category. Corpus/P01/P02/P03/P04/P05 tools and a recorded evidence viewer exist; complete navigation and deployment do not.
+Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases in each category. Corpus/P01/P02/P03/P04/P05/P06 tools and a recorded evidence viewer exist; complete navigation and deployment do not.
 
-실제 지역 M0 / RM-001은 진행 중이며 검토한 실제 도로 사례는 각각 0개입니다. 자료·P01/P02/P03/P04/P05 도구·녹화 증거 화면은 구현됐지만 완전한 내비게이션·배포는 없습니다.
+실제 지역 M0 / RM-001은 진행 중이며 검토한 실제 도로 사례는 각각 0개입니다. 자료·P01/P02/P03/P04/P05/P06 도구·녹화 증거 화면은 구현됐지만 완전한 내비게이션·배포는 없습니다.
 
 - [P02 graph evidence / P02 그래프 증거](../research/pilot/p02-main-2026-10-24.json)
 - [P03 design / P03 설계](../docs/16-p03-vehicle-simulation.md)
 
 ## 현재 구현과 다음 작업
+
+- [P07 signed publication / 서명 게시](modules/signed-publication.md): local206 passed with exact signature, durable state and cleanup inspection; current [report and demo](../research/pilot/2026-10-25-p07/report.md). Hosted206 and Node22/24 each200 passed; P08 activation is next. / 로컬206개·서명/영속상태/정리 검증 완료·최신 보고서/영상 갱신. 원격206개·Node각200개도 통과했고 다음은 P08 속도 적용입니다.
 
 - [P06 fixed contract / P06 고정 계약](../docs/23-p06-aggregation-contract.md): actual Seoul aggregation passed the fresh local151-check pipeline; hosted151 and Node22/24 each183 verified. [Report](../research/pilot/2026-10-24-p06/report.md). / 실제 서울 집계의 새 로컬151개 검사를 통과했으며 원격151개·Node22/24각183개도 검증했습니다.
 - [Observed projection v3 / 관측 투영 v3](../docs/24-observed-projection-policy.md): a failed actual-Seoul slow-traffic probe exposed endpoint interpretation errors; preserve its original criteria and verify the correction before P06 completion. / 실제 서울 저속 시나리오에서 끝점 해석 오류가 드러났습니다. 원래 기준을 보존하고 보정을 검증한 뒤 P06을 완료합니다.
@@ -70,3 +72,7 @@ Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases i
 - [Seoul OSM sources / 서울 OSM 출처](sources/seoul-osm.md)
 
 - [Traffic aggregation module / 교통 집계 모듈](modules/traffic-aggregation.md): fixed window, contributor median and deletion behavior. / 고정 창·기여자 중앙값·삭제 동작.
+
+- [P07 publication contract / P07 게시 계약](../docs/25-p07-publication-contract.md): implemented and locally verified; [report](../research/pilot/2026-10-25-p07/report.md), [module](modules/signed-publication.md). / 구현·로컬·원격206개·Node각200개 검증 완료.
+
+- [Latest corrected206-run report / 최신수정206개보고서](../research/pilot/2026-10-25-p07-claim-fix/report.md): reproduced P05 claim race fixed; local proof and new recording complete; corrected hosted206 and Node22/24 each202 passed. / P05작업선택경쟁재현·수정, 새로컬/원격206개·Node각202개·녹화검증완료.

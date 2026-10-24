@@ -30,7 +30,7 @@
 1. 시험 지역·원본 확보 방법·실제 운전자 모집 규모.
 2. 한국 도로에서의 경로 엔진 성능과 지도 품질.
 3. Valhalla live traffic 바이너리 변환의 정확한 구현, 매우 낮은 속도 처리, 변경분 교체 방식.
-4. TUF와 JWS의 구체적 라이브러리·버전, 키 보관 방식. 암호 기능을 자체 구현하지 않는 방향은 확정.
+4. TUF 배포 구성과 운영 키 보관은 미결정입니다. 로컬 P07의 JWS는 ADR-025와 고정 jose6.2.13·매 실행 비밀 키·로컬 공개 신뢰 설정으로 구체화했습니다. 암호 기능은 재사용합니다.
 5. 지도 표시 데이터의 생성 도구·서체·스타일과 재배포 조건.
 6. 운영 호스팅 공급자, 실제 월 예산과 노드 최소 사양.
 7. 공개 참여에서 익명성·중복 계정·관측 신뢰도를 함께 다룰 정책. 초대 시험은 해결책의 검증 범위가 제한됨.
@@ -71,3 +71,9 @@ P06은진출기준60초창·창끝30초미만의영속매칭완료시각·기여
 The P06 design probe exposed endpoint rounding and snapped-fraction timing errors in v2. Adopt [observed projection v3](24-observed-projection-policy.md) using original observations and only the engine-selected connected path. Preserve all distance/gap/ambiguity checks, original five-contributor/timing criteria and explicit legacy v2 interpretation. Do not change upstream Valhalla or use generated truth as matcher input. New P06 requires v3; P05 workers must execute the exact stored policy.
 
 P06 설계조사에서 v2의 끝점 반올림·진행 비율에 따른 시간 오차가 드러났습니다. 원관측과 엔진이 선택한 연결 경로만 사용하는 투영 v3를 채택합니다. 거리·누락·모호성 검사와 원래의 5명·시간 기준, 명시적인 과거 v2 해석을 유지합니다. 엔진을 수정하거나 생성 정답을 매칭 입력으로 쓰지 않습니다. 새 P06은 v3를 요구하고 P05 처리자는 저장된 정확한 정책을 실행합니다.
+
+## ADR-025: Standard signed bytes and durable publication order / 표준 서명 바이트·영속 게시 순서
+
+Use pinned jose compact JWS with explicit local scoped public keys, immutable PostgreSQL artifact bytes and transactional publisher/consumer sequence state. Require actual loopback HTTP transfer and independent consumer processes. Preserve the P06 authoritative candidate boundary and same-transaction current-pointer invalidation; never imply recall of already downloaded artifacts or P08 engine activation. [Fixed P07 contract](25-p07-publication-contract.md), [upstream source](../wiki/sources/jose-publication.md).
+
+고정 jose 표준JWS·범위를 명시한 로컬 공개키·불변DB내용·트랜잭션 발급/수신 순번을 사용합니다. 실제로컬HTTP·독립수신프로세스를 검증하고 P06후보와 동일트랜잭션 현재참조무효화를 유지합니다. 이미받은파일회수·P08엔진반영을 주장하지 않습니다.

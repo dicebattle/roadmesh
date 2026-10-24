@@ -23,9 +23,14 @@
     "ingestion:serve": "node dist/tools/ingestion_service.js",
     "ingestion:worker": "node dist/tools/ingestion_worker.js",
     "aggregation:check": "node dist/tools/aggregation_checks.js",
-    "aggregation:worker": "node dist/tools/aggregation_worker.js"
+    "aggregation:worker": "node dist/tools/aggregation_worker.js",
+    "publication:check": "node dist/tools/publication_checks.js",
+    "publication:worker": "node dist/tools/publication_worker.js",
+    "publication:serve": "node dist/tools/publication_service.js",
+    "publication:consume": "node dist/tools/publication_consumer_worker.js"
   },
   "dependencies": {
+    "jose": "6.2.13",
     "jsonc-parser": "3.3.1",
     "pg": "8.23.1",
     "random-js": "2.1.0"

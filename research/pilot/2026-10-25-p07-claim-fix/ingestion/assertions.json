@@ -1,0 +1,432 @@
+[
+  {
+    "assertion_id": "p05-all-nine-http",
+    "status": "PASS",
+    "message_en": "All nine Seoul vehicles are durably READY after actual bounded HTTP batches.",
+    "message_ko": "서울9대가 실제 제한 HTTP 배치 접수 뒤 영속 READY 상태입니다.",
+    "expected": 9,
+    "actual": 9,
+    "evidence_path": "readbacks/baseline-ready.json"
+  },
+  {
+    "assertion_id": "p05-concurrent-duplicates",
+    "status": "PASS",
+    "message_en": "Concurrent exact duplicates preserve sample and traversal counts.",
+    "message_ko": "동시 정확 중복이 표본·통과 수를 보존합니다.",
+    "expected": {
+      "contributors": 22,
+      "trips": 9,
+      "batches": 61,
+      "samples": 3204,
+      "traversals": 0,
+      "events": 61,
+      "raw_payloads": 3204
+    },
+    "actual": {
+      "contributors": 22,
+      "trips": 9,
+      "batches": 61,
+      "samples": 3204,
+      "traversals": 0,
+      "events": 61,
+      "raw_payloads": 3204
+    },
+    "evidence_path": "readbacks/duplicates.json"
+  },
+  {
+    "assertion_id": "p05-conflicts-atomic",
+    "status": "PASS",
+    "message_en": "Body, sequence, version, start, final and authenticated-vehicle conflicts leave storage unchanged.",
+    "message_ko": "본문·순서·버전·시작·마지막·인증차량 충돌이 저장을 바꾸지 않습니다.",
+    "expected": true,
+    "actual": [
+      409,
+      409,
+      409,
+      422,
+      409,
+      409,
+      409
+    ],
+    "evidence_path": "readbacks/conflicts.json"
+  },
+  {
+    "assertion_id": "p05-wrong-worker-graph",
+    "status": "PASS",
+    "message_en": "A worker pinned to a different graph cannot consume an attempt.",
+    "message_ko": "다른 그래프로 고정한 처리자가 시도횟수를 소비하지 않습니다.",
+    "expected": "IDLE",
+    "actual": "IDLE",
+    "evidence_path": "readbacks/wrong-graph-worker.json"
+  },
+  {
+    "assertion_id": "p05-recover-after_lease",
+    "status": "PASS",
+    "message_en": "A distinct worker recovers after an actual killed process and real lease expiry.",
+    "message_ko": "실제 프로세스 종료·현실 임대 만료 뒤 다른 처리자가 복구합니다.",
+    "expected": "SUCCEEDED",
+    "actual": "SUCCEEDED",
+    "evidence_path": "events.json"
+  },
+  {
+    "assertion_id": "p05-recover-after_match",
+    "status": "PASS",
+    "message_en": "A distinct worker recovers after an actual killed process and real lease expiry.",
+    "message_ko": "실제 프로세스 종료·현실 임대 만료 뒤 다른 처리자가 복구합니다.",
+    "expected": "SUCCEEDED",
+    "actual": "SUCCEEDED",
+    "evidence_path": "events.json"
+  },
+  {
+    "assertion_id": "p05-uncommitted-rollback",
+    "status": "PASS",
+    "message_en": "SIGKILL before commit leaves no partial traversal writes.",
+    "message_ko": "커밋 전 SIGKILL이 일부 통과 저장을 남기지 않습니다.",
+    "expected": 45,
+    "actual": 45,
+    "evidence_path": "readbacks/uncommitted-insert.json"
+  },
+  {
+    "assertion_id": "p05-recover-after_insert",
+    "status": "PASS",
+    "message_en": "A distinct worker recovers after an actual killed process and real lease expiry.",
+    "message_ko": "실제 프로세스 종료·현실 임대 만료 뒤 다른 처리자가 복구합니다.",
+    "expected": "SUCCEEDED",
+    "actual": "SUCCEEDED",
+    "evidence_path": "events.json"
+  },
+  {
+    "assertion_id": "p05-stale-owner-fenced",
+    "status": "PASS",
+    "message_en": "A stale process resumes and loses its fence without mutating committed rows.",
+    "message_ko": "오래된 프로세스가 재개돼 소유권을 잃고 저장 행을 바꾸지 않습니다.",
+    "expected": "LEASE_LOST",
+    "actual": "LEASE_LOST",
+    "evidence_path": "readbacks/after-stale-resume.json"
+  },
+  {
+    "assertion_id": "p05-two-workers",
+    "status": "PASS",
+    "message_en": "Two actual worker processes claim different remaining jobs.",
+    "message_ko": "서로 다른 실제 처리자2개가 남은 작업을 확보했습니다.",
+    "expected": 2,
+    "actual": [
+      {
+        "pid": 82968,
+        "exit_code": 0,
+        "signal": null,
+        "result_code": "SUCCEEDED"
+      },
+      {
+        "pid": 82969,
+        "exit_code": 0,
+        "signal": null,
+        "result_code": "SUCCEEDED"
+      }
+    ],
+    "evidence_path": "events.json"
+  },
+  {
+    "assertion_id": "p05-fresh-p04-equality",
+    "status": "PASS",
+    "message_en": "Stored edge, direction, occurrence and observed times equal all fresh P04 traversals; IDs remain unique.",
+    "message_ko": "저장 구간·방향·순번·관측시각이 새 P04 통과 전체와 같고 식별자가 고유합니다.",
+    "expected": 220,
+    "actual": {
+      "contributors": 22,
+      "trips": 9,
+      "batches": 61,
+      "samples": 3204,
+      "traversals": 220,
+      "events": 83,
+      "raw_payloads": 0
+    },
+    "evidence_path": "readbacks/baseline-succeeded.json"
+  },
+  {
+    "assertion_id": "p05-success-retry-stable",
+    "status": "PASS",
+    "message_en": "Successful retries preserve stored IDs and never revive raw payloads.",
+    "message_ko": "성공 뒤 재시도가 저장ID를 보존하고 원문을 복원하지 않습니다.",
+    "expected": "DUPLICATE",
+    "actual": "DUPLICATE",
+    "evidence_path": "readbacks/success-retry.json"
+  },
+  {
+    "assertion_id": "p05-authenticated-status",
+    "status": "PASS",
+    "message_en": "Authenticated status reports completion without raw locations.",
+    "message_ko": "인증한 상태 조회가 원시위치 없이 완료를 표시합니다.",
+    "expected": "SUCCEEDED",
+    "actual": "SUCCEEDED",
+    "evidence_path": "events.json"
+  },
+  {
+    "assertion_id": "p05-final-before-gap",
+    "status": "PASS",
+    "message_en": "A final batch does not make a sequence gap claimable.",
+    "message_ko": "마지막 배치가 와도 순서 누락은 확보할 수 없습니다.",
+    "expected": "WAITING",
+    "actual": "WAITING",
+    "evidence_path": "readbacks/sequence-waiting.json"
+  },
+  {
+    "assertion_id": "p05-filled-gap-and-final-lock",
+    "status": "PASS",
+    "message_en": "Filling the earlier gap makes READY; post-final extension is refused.",
+    "message_ko": "앞 순서 누락을 채우면 READY가 되고 마지막 뒤 확장은 거부됩니다.",
+    "expected": 409,
+    "actual": 409,
+    "evidence_path": "readbacks/sequence-ready.json"
+  },
+  {
+    "assertion_id": "p05-event-time-boundaries",
+    "status": "PASS",
+    "message_en": "Trusted event-time enforces exact 120 s age and 30 s future boundaries.",
+    "message_ko": "신뢰 관측시간이 정확한120초 과거·30초 미래 경계를 적용합니다.",
+    "expected": true,
+    "actual": [
+      {
+        "id": "age-exact",
+        "status": 202,
+        "expected": 202
+      },
+      {
+        "id": "age-too-old",
+        "status": 422,
+        "expected": 422
+      },
+      {
+        "id": "future-under",
+        "status": 202,
+        "expected": 202
+      },
+      {
+        "id": "future-exact",
+        "status": 422,
+        "expected": 422
+      }
+    ],
+    "evidence_path": "events.json"
+  },
+  {
+    "assertion_id": "p05-overlap-content-conflict",
+    "status": "PASS",
+    "message_en": "A changed overlap sample in a new sequence is rejected atomically.",
+    "message_ko": "새 순서의 중첩표본 내용변경을 원자적으로 거부합니다.",
+    "expected": 409,
+    "actual": 409,
+    "evidence_path": "readbacks/sample-content-conflict.json"
+  },
+  {
+    "assertion_id": "p05-http-validation-and-auth",
+    "status": "PASS",
+    "message_en": "HTTP rejects unauthenticated, duplicate-key, oversized, over-count, malformed and non-synthetic requests.",
+    "message_ko": "HTTP가 미인증·중복키·과대본문·개수초과·잘못된입력·비합성요청을 거부합니다.",
+    "expected": true,
+    "actual": [
+      [
+        401,
+        401
+      ],
+      [
+        400,
+        400
+      ],
+      [
+        413,
+        413
+      ],
+      [
+        422,
+        422
+      ],
+      [
+        422,
+        422
+      ],
+      [
+        422,
+        422
+      ],
+      [
+        403,
+        403
+      ],
+      [
+        422,
+        422
+      ]
+    ],
+    "evidence_path": "events.json"
+  },
+  {
+    "assertion_id": "p05-distinct-sample-limit",
+    "status": "PASS",
+    "message_en": "The 3002nd distinct observation is rejected atomically.",
+    "message_ko": "3002번째 고유관측을 원자적으로 거부합니다.",
+    "expected": {
+      "http_status": 429,
+      "sample_count": 3001
+    },
+    "actual": {
+      "http_status": 429,
+      "sample_count": 3001
+    },
+    "evidence_path": "readbacks/sample-limit.json"
+  },
+  {
+    "assertion_id": "p05-active-trip-capacity",
+    "status": "PASS",
+    "message_en": "A contributor may hold twenty active trips, but not twenty-one.",
+    "message_ko": "기여자 활성여행20개는 허용하고21개는 거부합니다.",
+    "expected": 429,
+    "actual": 429,
+    "evidence_path": "events.json"
+  },
+  {
+    "assertion_id": "p05-expired-front-not-blocking",
+    "status": "PASS",
+    "message_en": "Claim skips an expired first trip and processes the next READY trip.",
+    "message_ko": "확보가 만료된 앞여행을 건너뛰고 다음 READY여행을 처리합니다.",
+    "expected": "SUCCEEDED",
+    "actual": "SUCCEEDED",
+    "evidence_path": "readbacks/expired-front-ready-behind.json"
+  },
+  {
+    "assertion_id": "p05-old-api-clock-fenced",
+    "status": "PASS",
+    "message_en": "Restarting an API with old clock configuration cannot admit stale new observations.",
+    "message_ko": "과거 시계 설정으로 API를 재시작해도 오래된 신규관측을 접수할 수 없습니다.",
+    "expected": 422,
+    "actual": 422,
+    "evidence_path": "events.json"
+  },
+  {
+    "assertion_id": "p05-api-db-restart",
+    "status": "PASS",
+    "message_en": "Committed acceptance survives a killed API, lost response and same-volume PostgreSQL restart.",
+    "message_ko": "커밋 접수가 API종료·응답유실·같은볼륨 PostgreSQL재시작 뒤 유지됩니다.",
+    "expected": "DUPLICATE",
+    "actual": "DUPLICATE",
+    "evidence_path": "readbacks/api-durable-restart.json"
+  },
+  {
+    "assertion_id": "p05-actual-engine-terminal",
+    "status": "PASS",
+    "message_en": "Three actual engine failures reach FAILED and purge raw context without accepted rows.",
+    "message_ko": "실제 엔진3회실패가 FAILED가 되고 수용행 없이 원문을 삭제합니다.",
+    "expected": [
+      "RETRY",
+      "RETRY",
+      "FAILED"
+    ],
+    "actual": [
+      "RETRY",
+      "RETRY",
+      "FAILED"
+    ],
+    "evidence_path": "readbacks/engine-terminal.json"
+  },
+  {
+    "assertion_id": "p05-raw-expiry-replay",
+    "status": "PASS",
+    "message_en": "Raw expiry and repeated sweep reject replay without reviving payloads.",
+    "message_ko": "원문 만료·반복정리가 재전송을 거부하고 원문을 복원하지 않습니다.",
+    "expected": 410,
+    "actual": 410,
+    "evidence_path": "readbacks/raw-expired.json"
+  },
+  {
+    "assertion_id": "p05-revoked-not-reinitialized",
+    "status": "PASS",
+    "message_en": "Repeated revoke and initialize do not reactivate consent or raw data.",
+    "message_ko": "반복철회·초기화가 동의·원문을 되살리지 않습니다.",
+    "expected": 403,
+    "actual": 403,
+    "evidence_path": "readbacks/revoked-before-final.json"
+  },
+  {
+    "assertion_id": "p05-event-clock-without-sweep",
+    "status": "PASS",
+    "message_en": "Database event-clock expiry alone fences a paused old worker before sweeping.",
+    "message_ko": "DB관측시계 만료만으로 정리 전에도 대기중 옛처리자를 막습니다.",
+    "expected": "LEASE_LOST",
+    "actual": "LEASE_LOST",
+    "evidence_path": "readbacks/pending-expiry-before-sweep.json"
+  },
+  {
+    "assertion_id": "p05-pending-expiry-fenced",
+    "status": "PASS",
+    "message_en": "Pending completion cannot restore data after expiry or consent revocation.",
+    "message_ko": "만료·동의철회 뒤 대기중 완료가 자료를 복원할 수 없습니다.",
+    "expected": "LEASE_LOST",
+    "actual": "LEASE_LOST",
+    "evidence_path": "readbacks/pending-expiry.json"
+  },
+  {
+    "assertion_id": "p05-pending-revoke-fenced",
+    "status": "PASS",
+    "message_en": "Pending completion cannot restore data after expiry or consent revocation.",
+    "message_ko": "만료·동의철회 뒤 대기중 완료가 자료를 복원할 수 없습니다.",
+    "expected": "LEASE_LOST",
+    "actual": "LEASE_LOST",
+    "evidence_path": "readbacks/pending-revoke.json"
+  },
+  {
+    "assertion_id": "p05-retention-no-revival",
+    "status": "PASS",
+    "message_en": "Twenty-four-hour deletion removes dedupe and contributions; old input cannot revive them.",
+    "message_ko": "24시간삭제가 중복정보·기여를 지우고 과거입력이 복원하지 못합니다.",
+    "expected": 0,
+    "actual": {
+      "contributors": 22,
+      "trips": 0,
+      "batches": 0,
+      "samples": 0,
+      "traversals": 0,
+      "events": 0,
+      "raw_payloads": 0
+    },
+    "evidence_path": "readbacks/retention-24h.json"
+  },
+  {
+    "assertion_id": "p05-engine-abort-fixture",
+    "status": "PASS",
+    "message_en": "The orphan-engine probe uses all 423 authored Teheran clean observations.",
+    "message_ko": "잔여 엔진 검사가 직접 만든 테헤란 깨끗한 관측423개 전체를 사용합니다.",
+    "expected": 423,
+    "actual": 423,
+    "evidence_path": "readbacks/before-engine-abort.json"
+  },
+  {
+    "assertion_id": "p05-running-engine-orphan",
+    "status": "PASS",
+    "message_en": "An executing engine was paused before the worker was killed, leaving a verified owned container.",
+    "message_ko": "실행중 엔진을 일시정지한 뒤 처리자를 종료하고 소유 잔여 컨테이너를 확인했습니다.",
+    "expected": true,
+    "actual": {
+      "signal": "SIGKILL",
+      "paused": "true"
+    },
+    "evidence_path": "engine-abort-before-cleanup.json"
+  },
+  {
+    "assertion_id": "p05-orphan-engine-removed",
+    "status": "PASS",
+    "message_en": "The exact paused orphan engine is absent after owned cleanup.",
+    "message_ko": "소유 자원 정리 뒤 정확한 일시정지 잔여 엔진의 부재를 확인했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "engine-abort-after-cleanup.json"
+  },
+  {
+    "assertion_id": "p05-owned-cleanup",
+    "status": "PASS",
+    "message_en": "Owned processes, engine containers, PostgreSQL volume and ports are absent.",
+    "message_ko": "소유 프로세스·엔진컨테이너·PostgreSQL볼륨·포트의 부재를 확인했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "runtime/cleanup.json"
+  }
+]
