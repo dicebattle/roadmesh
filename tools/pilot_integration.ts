@@ -111,14 +111,14 @@ export async function runPilotIntegration(
     ) as SimulationAssertion[];
     if (
       tiny.length !== 48 ||
-      seoulAssertions.length !== 29 ||
+      seoulAssertions.length !== 35 ||
       ingestion.assertions.length !== 34 ||
       [...tiny, ...seoulAssertions, ...ingestion.assertions].some(
         (a) => a.status !== "PASS",
       )
     )
       throw new Error(
-        "All 111 prior fresh assertions are required / 기존새검사111개 전체통과가 필요합니다",
+        "All 117 prior fresh assertions are required / 기존새검사117개 전체통과가 필요합니다",
       );
     data.assertions = [
       ...tiny.map((a) => ({
