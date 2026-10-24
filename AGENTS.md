@@ -14,8 +14,8 @@
 
 - Follow docs/12-development-workflow.md. Main is protected: work on a focused branch, finish repository changes with a descriptive commit and push, then verify the remote SHA. Never bypass protection or merge without authorization.
   docs/12-development-workflow.md를 따릅니다. main은 보호되어 있으므로 작업 브랜치에서 변경하고, 이유가 드러나는 커밋과 푸시 후 원격 SHA를 확인합니다. 임의로 보호를 우회하거나 병합하지 않습니다.
-- Write new or changed human-facing messages in English first with Korean included: UI, CLI, application diagnostics, reports, documentation, commit messages and task replies. Preserve protocol identifiers and standard tool output; add bilingual context for third-party diagnostics. Do not change the host OS language.
-  새로 작성하거나 수정하는 UI·CLI·진단·보고서·문서·커밋·대화 안내는 영어 우선에 한국어를 병기합니다. 규격 식별자와 표준 도구 원문은 유지하고 외부 오류에는 이중 언어 설명을 추가합니다. 운영체제 언어 설정은 변경하지 않습니다.
+- Write new or changed repository artifacts in English first with Korean included: UI, CLI, application diagnostics, reports, documentation and commit messages. Conversation with this user stays Korean-only unless requested otherwise. Preserve protocol identifiers and standard tool output; add bilingual context for third-party diagnostics. Do not change the host OS language.
+  저장소에 새로 작성하거나 수정하는 UI·CLI·진단·보고서·문서·커밋은 영어 우선에 한국어를 병기합니다. 이 사용자와의 대화는 별도 요청이 없으면 한국어만 사용합니다. 규격 식별자와 표준 도구 원문은 유지하고 외부 오류에는 이중 언어 설명을 추가합니다. 운영체제 언어 설정은 변경하지 않습니다.
 - Use .gitmessage as a guide: why, changes, validation and limitations must be understandable to humans and agents. Preserve old commits and immutable reports rather than rewriting history for translation.
   .gitmessage를 기준으로 이유·변경·검증·한계를 사람과 에이전트가 이해하게 작성합니다. 번역을 위해 과거 커밋·보존 보고서를 다시 쓰지 않습니다.
 - Local pilot implementation follows docs/11-local-pilot.md. Each module needs a direct test and inspected evidence before completion. Synthetic pipeline proof is separate from real-road accuracy, real mobile behavior and hosted-cloud validation.

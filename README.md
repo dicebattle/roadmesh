@@ -2,13 +2,15 @@
 
 Open-source traffic aggregation and federated routing, built around existing routing engines.
 
-RouteLens is derived from Metro Lens. Current implementation: a local evaluation-corpus validator with English/Korean CLI messages. The navigation system and local pilot are not implemented yet. Start with the [local pilot module plan](docs/11-local-pilot.md) and [development workflow](docs/12-development-workflow.md). Work is pushed to feature branches; `main` is protected.
+RouteLens is derived from Metro Lens. Implemented tools: the evaluation-corpus validator and P01's deterministic event runner with English/Korean evidence. P14a adds fast automated checks; verification is recorded in the work log. The full navigation pilot is not implemented. Start with the [P01/P14a module](wiki/modules/pilot-runner.md) and [development workflow](docs/12-development-workflow.md). Work is pushed to feature branches; `main` is protected.
 
-RouteLens는 Metro Lens에서 파생됐습니다. 현재 구현은 영어·한국어 안내를 제공하는 로컬 시험자료 검사 도구이며, 내비게이션과 전체 로컬 파일럿은 미구현입니다. [로컬 파일럿 모듈 계획](docs/11-local-pilot.md)과 [개발 작업 절차](docs/12-development-workflow.md)를 먼저 읽으세요. 작업 결과는 작업 브랜치로 푸시하고 main은 보호합니다.
+RouteLens는 Metro Lens에서 파생됐습니다. 시험자료 검사 도구와 영어·한국어 증거를 남기는 P01 결정적 이벤트 실행기를 구현했고 P14a 빠른 자동 검사를 추가했습니다. 검증 결과는 작업 기록에 남깁니다. 전체 내비게이션 파일럿은 아직 미구현입니다. [P01/P14a 모듈](wiki/modules/pilot-runner.md)과 [개발 작업 절차](docs/12-development-workflow.md)를 참고하세요. 작업 결과는 작업 브랜치로 푸시하고 main은 보호합니다.
 
 RouteLens는 운전자가 제공한 주행 관측을 검증해 도로별 교통정보로 만들고, 독립적으로 운영되는 서버들이 같은 지도와 교통정보를 사용해 자동차 경로를 계산하도록 하는 프로젝트입니다.
 
-**현재 상태: M0 시험자료 검사 모듈을 구현했습니다. 실행 가능한 내비게이션, 수집 서버, 배포 환경은 아직 없습니다.** 문서의 성능·정확도 수치는 측정 결과가 아니라 개발 단계의 통과 목표입니다. RouteLens는 Metro Lens에서 파생된 오픈소스 프로젝트입니다.
+**Status: M0 input validation and P01 event scheduling exist; navigation, traffic collection and deployment do not.** Performance/accuracy targets in the plan are not measured achievements.
+
+**현재 상태: M0 입력 검사와 P01 이벤트 일정 실행은 구현됐으며 내비게이션·교통 수집·배포는 미구현입니다.** 계획의 성능·정확도 수치는 실측 달성 결과가 아닙니다.
 
 현재 상태와 근거는 [프로젝트 위키](wiki/index.md), 누적 변경은 [작업 기록](wiki/log.md)에서 확인합니다. 이후 계획·구현·검증도 코드와 함께 저장소에 기록합니다.
 
@@ -45,6 +47,7 @@ RouteLens는 운전자가 제공한 주행 관측을 검증해 도로별 교통�
 10. [공식 출처와 조사 기록](docs/10-sources.md)
 11. [Local pilot modules / 로컬 파일럿 모듈](docs/11-local-pilot.md)
 12. [Development workflow / 개발 작업 절차](docs/12-development-workflow.md)
+13. [P01/P14a contract / P01·P14a 계약](docs/13-p01-p14a-contract.md)
 
 설계 기준일은 2026-10-24입니다. 의존성의 개발 활동은 [조회 결과](research/upstream-snapshot.json)에 보관합니다. 최신 커밋이 있다는 사실만으로 운영 품질을 보증하지 않습니다.
 
@@ -59,11 +62,21 @@ python3 -m unittest discover -s tests -p 'test_evaluation_corpus.py' -v
 
 [시험자료 검사 모듈](wiki/modules/evaluation-corpus.md)은 좌표·관측 순서·중복·출처·검토 상태를 검사합니다. 포함된 합성 예제는 형식 검사를 통과하지만 실제 도로 검증 자료 100개 기준에는 포함되지 않습니다. `--require-ready`를 붙이면 이 예제는 미준비 상태로 종료합니다.
 
+Run P01 or its direct checks using a new output directory. Existing paths are refused; only Python's standard library is needed.
+
+새 출력 폴더로 P01 또는 직접 검사를 실행합니다. 기존 경로는 거부하며 Python 표준 라이브러리만 필요합니다.
+
+```bash
+mkdir -p data
+python3 -m tools.pilot_runner fixtures/pilot/success.json --output data/p01-example
+python3 -m tools.pilot_checks --output data/p01-checks
+```
+
 ## 다음 구현 작업
 
-Next: P01 scenario/evidence contracts and P14a continuous checks, followed by a tiny synthetic Valhalla graph. The real-road RM-001 work remains a separate geographic evaluation gate; synthetic inputs do not satisfy it. See the [updated roadmap](docs/05-roadmap.md).
+Next after P01/P14a verification: P02, a tiny synthetic Valhalla graph with legal-route and forbidden-turn checks. The real-road RM-001 work remains a separate geographic evaluation gate; synthetic inputs do not satisfy it. See the [updated roadmap](docs/05-roadmap.md).
 
-다음은 P01 시나리오·증거 계약과 P14a 지속 검사이며, 이후 작은 합성 Valhalla 그래프를 만듭니다. 실제 도로 RM-001 작업은 별도 지역 평가 기준으로 유지하고 합성 자료로 충족시키지 않습니다. [갱신된 로드맵](docs/05-roadmap.md)을 참고하세요.
+P01/P14a 검증 이후 다음은 작은 합성 Valhalla 그래프와 합법 경로·금지 회전 검사를 만드는 P02입니다. 실제 도로 RM-001 작업은 별도 지역 평가 기준으로 유지하고 합성 자료로 충족시키지 않습니다. [갱신된 로드맵](docs/05-roadmap.md)을 참고하세요.
 
 ## 오픈소스 원칙
 

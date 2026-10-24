@@ -1,8 +1,8 @@
 # Local pilot design / 로컬 파일럿 설계
 
-Status: **design, not implemented**, except the existing evaluation-corpus validator and its bilingual CLI. This plan defines the modules and evidence needed to demonstrate the complete navigation data path locally. No production deployment, real driving trial, or cloud reliability claim is implied.
+Status: P01's bounded event runner and P14a's workflow are implemented; verification is recorded in the [module page](../wiki/modules/pilot-runner.md) and work log. P02–P13 and P14b remain **design, not implemented**. No production deployment, real driving trial, or cloud reliability claim is implied.
 
-상태: 기존 시험자료 검사 도구와 이중 언어 CLI를 제외하면 **설계 단계이며 미구현**입니다. 내비게이션 데이터의 전체 처리 흐름을 로컬에서 증명하기 위한 모듈과 증거를 정의합니다. 운영 배포·실주행 시험·클라우드 안정성 검증을 뜻하지 않습니다.
+상태: P01 범위의 이벤트 실행기와 P14a 워크플로를 구현했고 검증은 [모듈 문서](../wiki/modules/pilot-runner.md)와 작업 기록에 남깁니다. P02~P13과 P14b는 **설계 단계이며 미구현**입니다. 운영 배포·실주행 시험·클라우드 안정성 검증을 뜻하지 않습니다.
 
 ## 1. What completion means / 완료의 의미
 

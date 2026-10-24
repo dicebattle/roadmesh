@@ -68,3 +68,34 @@
   [정확한 명령·출력·소스 식별 정보](../research/evaluation-corpus/2026-10-24-bilingual-cli-verification.json)를 보존했습니다. 집중 테스트 전체는 반복하지 않았습니다. 후속 변경은 증거·인덱스·기록뿐이며 검증한 구현 파일은 바뀌지 않았습니다.
 - Pilot status remains design-only. Handoff target is the pushed `docs/local-pilot-validation-plan` branch; main remains protected and unchanged by this task's commits.
   파일럿은 계속 설계 단계입니다. 결과 전달 대상은 푸시한 `docs/local-pilot-validation-plan` 브랜치이며 이번 커밋으로 보호된 main을 변경하지 않습니다.
+
+## 2026-10-24 P01/P14a design handoff / P01·P14a 설계 전달
+
+- Request: implement P01 and P14a with main-agent design and Sol coding, direct verification, repository evidence and feature-branch push. Chat is Korean-only; public artifacts and commits remain English/Korean.
+  요청: 메인 설계·Sol 코딩으로 P01·P14a 구현, 직접 검증·저장소 증거·작업 브랜치 푸시. 대화는 한국어만, 공개 기록물·커밋은 영어/한국어 병기.
+- Main-agent design: [bounded contract](../docs/13-p01-p14a-contract.md). P01 is a fixture-label scheduler with deterministic event digests and required assertion results, not GPS or routing. P14a runs two Python versions with a fail-closed aggregate check and artifacts.
+  메인 설계: [범위가 정해진 계약](../docs/13-p01-p14a-contract.md). P01은 고정 이벤트 해시와 필수 검사 결과를 만드는 도로 이름표 일정 실행기이며 GPS·경로 계산은 아님. P14a는 Python 두 버전, 실패를 숨기지 않는 종합 검사, 결과물 보존.
+- Implementation owner: Sol (`gpt-6.1-sol`, subagent `bilingual_cli`, reused for this task). Owned paths: pilot tools, pilot tests/fixtures, and the fast-checks workflow. Main owns documentation, review, direct execution, Git and protection changes.
+  구현 담당: Sol(`gpt-6.1-sol`, 기존 `bilingual_cli` 하위 에이전트 재사용). 파일럿 도구·테스트·예제·빠른 검사 워크플로 담당. 메인은 문서·검토·직접 실행·Git·보호 설정 담당.
+- Branch: `feat/p01-p14a-local-runner`, based on the pending pilot-design branch at `7217aff`. This continuation includes the unmerged design dependency; main remains unchanged. No PR or merge is implied.
+  브랜치: 설계 브랜치 `7217aff`에서 이어지는 `feat/p01-p14a-local-runner`. 아직 병합하지 않은 설계에 의존하는 후속 작업이며 main은 그대로 유지. PR 생성·병합을 포함하지 않음.
+- Verification plan: one focused unit-suite run by Sol, then main-agent direct checks from a clean source commit, hosted Actions and downloaded artifacts. Add the observed successful aggregate check to main protection afterward while preserving other rules.
+  검증 계획: Sol의 집중 테스트 한 번, 메인의 깨끗한 커밋 직접 실행, 원격 Actions와 내려받은 결과물 확인. 이후 실제 성공한 종합 검사를 다른 보호 규칙을 유지하며 main 필수 조건에 추가.
+
+## 2026-10-24 P01 review findings / P01 검토 중 확인한 문제
+
+- Initial Sol suite: 26 tests passed in one run. Main-agent review then directly reproduced two additional issues on the uncommitted candidate: equal-time edge entry preceded departure, and a simulated `events.json` write failure left a `PASS` manifest without events or summary.
+  최초 Sol 검사 26개는 한 번에 통과했습니다. 이후 메인이 미커밋 후보에서 직접 두 문제를 재현했습니다. 같은 시각의 도로 진입이 출발보다 먼저 기록됐고, `events.json` 저장 오류를 모의하면 이벤트·요약 없이 `PASS` 목록만 남았습니다.
+- Design correction: use semantic event priority (departure → edge entry → fault marker) rather than lexical kind sorting; write the completion manifest last. Sol owns the code and regression-test correction; main updates the contract and rechecks observable evidence. These are concrete findings, not a reason to repeat an otherwise healthy test run.
+  설계 보정: 종류 문자열 정렬 대신 출발→도로 진입→장애 표식 우선순위를 사용하고 완료 목록은 마지막에 저장합니다. Sol이 코드·회귀 검사를 수정하고 메인이 계약·실행 증거를 확인합니다. 실제 확인된 문제에 따른 재검증이며 정상 검사를 이유 없이 반복하는 것이 아닙니다.
+
+## 2026-10-24 P01/P14a implementation review / P01·P14a 구현 검토
+
+- Sol implemented `tools/pilot_runner.py`, `tools/pilot_checks.py`, the synthetic fixture, pilot tests and `.github/workflows/fast-checks.yml`. Main reviewed the complete code and workflow. No other runtime modules or dependencies were added.
+  Sol이 실행기·직접 검사 도구·합성 예제·파일럿 테스트·워크플로를 구현했고 메인이 전체 코드·워크플로를 검토했습니다. 다른 실행 모듈이나 외부 패키지는 추가하지 않았습니다.
+- Final focused command: `python3 -m unittest discover -s tests -p 'test_*.py' -v`. After the two reproduced findings were corrected, 28 tests passed in 1.105 seconds on Python 3.13.7. This was the single justified rerun after the initial 26-test pass.
+  최종 집중 명령은 위와 같고 두 재현 문제 수정 후 Python 3.13.7에서 28개가 1.105초에 통과했습니다. 최초 26개 통과 이후 확인된 문제에 따른 한 번의 재실행입니다.
+- Main review confirmed semantic same-time ordering, stable fault tie order, completion-manifest-last behavior with removal on failed manifest write, fail/skip exit 1, invalid input exit 2 and existing output preservation. Supported assertions link to `events.json`; unsupported assertions have no evidence path.
+  메인은 같은 시각의 의미상 순서·장애 표식 순서·완료 목록의 마지막 기록과 기록 실패 시 제거·실패/생략 종료코드 1·입력 오류 2·기존 출력 보존을 확인했습니다. 지원 검사는 이벤트 증거를 가리키며 미지원 검사는 증거 경로가 없습니다.
+- Local direct execution, hosted workflow run and required-check registration follow from the committed implementation and will be recorded in subsequent entries, without rewriting this pre-verification state.
+  커밋된 구현의 로컬 직접 실행·원격 워크플로·필수 검사 등록은 이어서 수행하고 이후 항목에 기록하며 검증 전 상태를 소급 변경하지 않습니다.

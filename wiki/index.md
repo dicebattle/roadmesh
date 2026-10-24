@@ -1,10 +1,12 @@
 # RouteLens 프로젝트 위키
 
-Current next task: **P01 scenario/evidence contract and P14a continuous checks** for the [local pilot](../docs/11-local-pilot.md). The pilot remains design-only. The geographic 100/100 gate remains separate. [Development workflow](../docs/12-development-workflow.md): protected main, descriptive bilingual commits and feature-branch pushes.
+Current increment: [P01 event runner and P14a fast checks](modules/pilot-runner.md), with verification tracked in the work log. Next module after verification: **P02 test graph builder**. The complete pilot and geographic 100/100 gate remain separate. [Development workflow](../docs/12-development-workflow.md): protected main, descriptive bilingual commits and feature-branch pushes.
 
-현재 다음 작업은 [로컬 파일럿](../docs/11-local-pilot.md)의 **P01 시나리오·증거 계약과 P14a 지속 검사**입니다. 파일럿은 아직 설계 단계이며 실제 도로 자료 100/100개 조건과 분리합니다. [개발 절차](../docs/12-development-workflow.md)는 main 보호·상세한 이중 언어 커밋·작업 브랜치 푸시입니다.
+현재 구현 단위는 [P01 이벤트 실행기와 P14a 빠른 검사](modules/pilot-runner.md)이며 검증은 작업 기록에 남깁니다. 검증 이후 다음 모듈은 **P02 시험 그래프 생성기**입니다. 전체 파일럿과 실제 도로 자료 100/100개 조건은 별도입니다. [개발 절차](../docs/12-development-workflow.md)는 main 보호·상세한 이중 언어 커밋·작업 브랜치 푸시입니다.
 
-현재 단계는 **M0 / RM-001 진행 중**입니다. 시험자료 검사 모듈만 구현됐으며 실제 도로 검토 사례는 경로·매칭 각각 0개입니다. 실행 가능한 내비게이션과 배포 환경은 없습니다.
+Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases in each category. The corpus validator and P01 tools exist; navigation and deployment do not.
+
+실제 지역 M0 / RM-001은 진행 중이며 검토한 실제 도로 사례는 각각 0개입니다. 자료 검사기와 P01 도구는 구현됐지만 내비게이션·배포는 없습니다.
 
 ## 현재 구현과 다음 작업
 
@@ -30,6 +32,7 @@ Current next task: **P01 scenario/evidence contract and P14a continuous checks**
 | [공식 출처](../docs/10-sources.md) | 기존 조사 출처와 공개 메타데이터 |
 | [Local pilot / 로컬 파일럿](../docs/11-local-pilot.md) | Modules, contracts, scenarios and evidence / 모듈·계약·시나리오·증거 |
 | [Workflow / 개발 절차](../docs/12-development-workflow.md) | Branch protection and bilingual delivery / 브랜치 보호·이중 언어 결과 전달 |
+| [P01/P14a contract / P01·P14a 계약](../docs/13-p01-p14a-contract.md) | Executable scope and acceptance checks / 실행 범위와 통과 검사 |
 
 ## 출처와 검증 자료
 

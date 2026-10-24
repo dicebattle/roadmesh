@@ -54,9 +54,9 @@ The tracked [.gitmessage](../.gitmessage) provides a template. Local repositorie
 
 ## English first, Korean included / 영어 우선·한국어 병기
 
-Apply this to new or changed user-facing UI copy, CLI help/errors, application logs intended for people, test failure guidance, reports, documentation, commit messages and task replies. Keep protocol keys, enum values, commands, identifiers and standard tool output intact. Structured messages should use stable codes plus `message_en` and `message_ko`; existing interfaces may add a Korean field without renaming their English fields.
+Apply this to new or changed user-facing UI copy, CLI help/errors, application logs intended for people, test failure guidance, reports, documentation and commit messages stored or published for the project. Conversation with the user is Korean-only unless requested otherwise; the bilingual requirement concerns the open-source artifacts. Keep protocol keys, enum values, commands, identifiers and standard tool output intact. Structured messages should use stable codes plus `message_en` and `message_ko`; existing interfaces may add a Korean field without renaming their English fields.
 
-새로 작성하거나 바꾸는 UI 문구·CLI 도움말/오류·사람이 읽는 로그·테스트 실패 안내·보고서·문서·커밋 메시지·대화 답변에 적용합니다. 프로토콜 키·enum·명령어·식별자·표준 도구 출력은 유지합니다. 구조화된 메시지는 고정 코드와 `message_en`, `message_ko`를 사용하고, 기존 인터페이스는 영문 필드 이름을 유지하며 한국어 필드를 추가할 수 있습니다.
+프로젝트에 저장하거나 공개하는 UI 문구·CLI 도움말/오류·사람이 읽는 로그·테스트 실패 안내·보고서·문서·커밋 메시지에 적용합니다. 사용자와의 대화는 별도 요청이 없으면 한국어만 사용하며, 이중 언어 요구는 오픈소스 기록물에 관한 것입니다. 프로토콜 키·enum·명령어·식별자·표준 도구 출력은 유지합니다. 구조화된 메시지는 고정 코드와 `message_en`, `message_ko`를 사용하고, 기존 인터페이스는 영문 필드 이름을 유지하며 한국어 필드를 추가할 수 있습니다.
 
 Third-party runtime errors are preserved verbatim with English/Korean context or recovery guidance. The rule does not mean changing the user's operating-system language, GitHub UI language, or upstream source code. Historical commits and immutable evidence are not rewritten. Older Korean-only planning documents remain historical baseline content and should gain English counterparts when substantively revised; do not claim that the entire archive has already been translated.
 
