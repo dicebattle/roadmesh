@@ -143,3 +143,12 @@
   Sol이 위 명령을 한 번 실행해 엄격 빌드·33개 검사(기존 28범주+전환 5범주)가 통과했고 실패·생략은 0개입니다. 메인은 기준 비교와 안전 정수 범위 강화를 검토했습니다. 목록의 Python 값은 null이며 실제 Node 버전을 추가합니다.
 - Exact dependencies: TypeScript 5.9.3, @types/node 22.20.5, random-js 2.1.0, jsonc-parser 3.3.1. CI targets Node 22/24 and preserves `Required checks`. Main's clean-source direct checks and hosted artifact inspection follow; this entry does not claim them complete.
   의존성을 위 버전으로 고정했고 CI는 Node 22/24·기존 종합 검사 이름을 유지합니다. 메인의 깨끗한 소스 직접 실행·원격 결과물 검사는 이어서 수행하며 아직 완료로 주장하지 않습니다.
+
+## 2026-10-24 TypeScript direct and hosted proof / TypeScript 직접·원격 증명
+
+- Main ran Node 22.23.4 `dist/tools/pilot_checks.js --output data/ts-main-20261024` on clean `65e97bc07365dacfa0696bc943fe6246d126e8fb`: five expected CLI cases passed. Independently checked offsets `[19,19,41,41,141,500,500]`, canonical SHA `ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6`, four clean source identities, distinct run UUIDs and no graph/engine claim. Reusing an output directory returned 2 without changing file hashes. Invalid input created no output. Corpus `--require-ready` returned 1 with zero reviewed roads.
+  메인이 위 깨끗한 커밋을 직접 실행해 5사례·독립 이벤트 시각/해시·출처·고유 실행 ID·엔진 미실행 표시를 검사했습니다. 기존 출력은 종료코드 2로 거부하고 파일을 보존했으며 잘못된 입력은 출력이 없었습니다. 자료 검사 엄격 모드는 실제 도로 0개로 종료코드 1을 반환했습니다.
+- Push run [40069570003](https://github.com/dicebattle/routelens/actions/runs/40069570003) passed Node 22, Node 24 and Required checks. Main downloaded both artifacts and inspected ten CLI cases/eight manifests, matching clean source SHA and the exact local event digest. [Compact evidence](../research/pilot/typescript-migration-2026-10-24.json). [PR #1](https://github.com/dicebattle/routelens/pull/1) combines the planning branch and P01/P14a implementation history. Final documentation commit has no runtime changes.
+  푸시 실행의 Node 22·24·종합 검사가 통과했습니다. 메인이 두 결과물의 10개 CLI 사례·8개 목록을 내려받아 깨끗한 SHA·로컬 해시와 대조했습니다. PR #1에 계획·구현 이력을 함께 반영하며 최종 기록 커밋은 실행 코드를 바꾸지 않습니다.
+- Limits: synthetic scheduling only; no claim of national road quality or language performance advantage. Next module has a recorded P02 design and will use real Valhalla graph/route evidence.
+  한계: 합성 일정 검증이며 전국 도로 품질·언어 성능 우위는 주장하지 않습니다. 다음 P02는 기록된 설계에 따라 실제 Valhalla 그래프·경로 증거를 검증합니다.

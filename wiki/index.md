@@ -1,8 +1,8 @@
 # RouteLens 프로젝트 위키
 
-Current work: [TypeScript migration](../docs/14-typescript-migration.md) of the verified P01/P14a tools. Earlier Python proof remains archived; new Node proof is recorded separately. Next module: **P02 test graph builder**. The complete pilot and geographic 100/100 gate remain separate. [Development workflow](../docs/12-development-workflow.md): protected main with required CI, descriptive bilingual commits and feature-branch pushes.
+Verified: [TypeScript P01/P14a tools](modules/pilot-runner.md), 33 tests and independent local/Node 22/24 hosted evidence. [Migration proof](../research/pilot/typescript-migration-2026-10-24.json). Next module: **P02 test graph builder**. The complete pilot and geographic 100/100 gate remain separate. [Development workflow](../docs/12-development-workflow.md): protected main with required CI, descriptive bilingual commits and feature-branch pushes.
 
-현재 작업은 검증된 P01/P14a 도구의 [TypeScript 전환](../docs/14-typescript-migration.md)입니다. 과거 Python 증거는 보존하고 새 Node 증거는 별도로 기록합니다. 다음 모듈은 **P02 시험 그래프 생성기**입니다. 전체 파일럿과 실제 도로 자료 100/100개 조건은 별도입니다. [개발 절차](../docs/12-development-workflow.md)는 필수 CI를 포함한 main 보호·상세한 이중 언어 커밋·작업 브랜치 푸시입니다.
+[TypeScript P01/P14a](modules/pilot-runner.md)의 33개 검사·독립 로컬 실행·Node 22/24 원격 증거를 검증했습니다. [전환 증거](../research/pilot/typescript-migration-2026-10-24.json)를 보존합니다. 다음 모듈은 **P02 시험 그래프 생성기**입니다. 전체 파일럿과 실제 도로 자료 100/100개 조건은 별도입니다. [개발 절차](../docs/12-development-workflow.md)는 필수 CI를 포함한 main 보호·상세한 이중 언어 커밋·작업 브랜치 푸시입니다.
 
 Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases in each category. The corpus validator and P01 tools exist; navigation and deployment do not.
 

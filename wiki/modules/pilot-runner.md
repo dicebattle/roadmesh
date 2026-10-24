@@ -1,16 +1,8 @@
 # P01 runner and P14a checks / P01 실행기와 P14a 검사
 
-Status: **P01 and P14a implemented and verified**, 2026-10-24. Hosted run [40065929029](https://github.com/dicebattle/routelens/actions/runs/40065929029) passed Python 3.11, Python 3.13 and `Required checks`. Downloaded artifacts match the implementation commit and local event digest. [CI evidence](../../research/pilot/p14a-ci-2026-10-24.json). The observed aggregate check is now required by main protection. Next module: P02.
+Status: **TypeScript P01/P14a verified**, 2026-10-24. Strict build and 33 tests passed on Node 22.23.4. Main independently verified clean source `65e97bc` and inspected Node 22/24 artifacts from [run 40069570003](https://github.com/dicebattle/routelens/actions/runs/40069570003). [Migration evidence](../../research/pilot/typescript-migration-2026-10-24.json). `Required checks` remains mandatory. Earlier Python evidence is historical. Next: P02.
 
-상태: 2026-10-24 **P01·P14a 구현·검증 완료**. [원격 실행 40065929029](https://github.com/dicebattle/routelens/actions/runs/40065929029)의 Python 3.11·3.13·종합 검사가 통과했고, 내려받은 결과물이 구현 커밋·로컬 이벤트 해시와 일치합니다. [CI 증거](../../research/pilot/p14a-ci-2026-10-24.json)를 보존하며 해당 종합 검사를 main 필수 조건으로 등록했습니다. 다음 모듈은 P02입니다.
-
-Scope: a deterministic **fixture-label event schedule**, assertion evaluation and evidence files. It does not produce GPS, load a graph, call Valhalla, inject network/process failures, or measure real-road accuracy. Those boundaries remain P02 onward.
-
-범위는 결정적인 **시험 도로 이름표 이벤트 일정**, 검사 판정, 증거 파일입니다. GPS 생성·그래프 로딩·Valhalla 호출·프로세스/통신 장애 주입·실제 도로 정확도 측정은 하지 않습니다. 해당 기능은 P02 이후에 남아 있습니다.
-
-The main agent designed [the implementation contract](../../docs/13-p01-p14a-contract.md). A Sol subagent implements the code and focused tests. The main agent inspects the code and directly executes committed scenarios before recording completion. Status and evidence are kept in [the work log](../log.md).
-
-메인 에이전트가 [구현 계약](../../docs/13-p01-p14a-contract.md)을 설계했고 Sol 하위 에이전트가 코드·집중 테스트를 구현합니다. 메인 에이전트가 코드를 검토하고 커밋된 시나리오를 직접 실행한 뒤 완료를 기록합니다. 상태·증거의 기준은 [작업 기록](../log.md)입니다.
+상태: 2026-10-24 **TypeScript P01/P14a 검증 완료**. Node 22.23.4 엄격 빌드·33개 검사, 메인의 깨끗한 소스 독립 실행, Node 22/24 원격 결과물 검사가 통과했습니다. 위 전환 증거를 보존하고 종합 검사를 계속 필수로 적용합니다. 기존 Python 증거는 과거 기록이며 다음은 P02입니다.
 
 ## Evidence interpretation / 증거 해석
 
