@@ -13,15 +13,15 @@
 
 RouteLens is an open-source project derived from **Metro Lens**. The intended system turns verified driving observations into shared traffic data, then lets independent routing nodes calculate routes using the same map and traffic version.
 
-**Today, the local prototype simulates GPS on actual Seoul roads, matches supported road traversals, and durably accepts the observations through HTTP and PostgreSQL. It recovers from interrupted processes without duplicating stored traversals and verifies expiry and consent deletion.** Traffic aggregation, live updates, distributed-node failover and a navigation app are still on the roadmap.
+**Today, the local prototype simulates GPS on actual Seoul roads, durably ingests and matches observations, and produces unsigned traffic candidates from at least five distinct contributors. It verifies real process recovery, consent deletion and expiry.** Signing, routing-engine traffic updates, distributed-node failover and a navigation app remain on the roadmap.
 
 ## Watch the current simulation
 
 [![Recorded RouteLens simulation: true trajectories, GPS observations and missing samples](docs/media/demo.gif)](docs/media/demo.mp4)
 
-[Watch/download the MP4](docs/media/demo.mp4) · [Captured test report](research/pilot/2026-10-24-p05/report.md) · [Recording provenance](docs/media/latest.json)
+[Watch/download the MP4](docs/media/demo.mp4) · [Captured test report](research/pilot/2026-10-24-p06/report.md) · [Recording provenance](docs/media/latest.json)
 
-This recording shows actual Seoul-road replay and the generated PostgreSQL recovery report. Teheran-ro, downtown Seoul and Mapo Bridge carry nine synthetic vehicles with 3,204 GPS observations, up to 3 m noise and 60 scheduled omissions. The pipeline accepts 215 of 237 true traversals and stores those 215 exactly once. Three actual worker interruptions, a lost API response, database restart, stale-owner rejection, retention/consent deletion and orphaned-engine cleanup are checked. Roads are real; vehicles, speeds and GPS are synthetic. This same-engine round trip does not establish independent real-driving accuracy or live traffic.
+This recording shows short trips on actual Teheran-ro geometry and the resulting unsigned candidates: five contributors produce a median speed; four or a revoked contribution suppress it; expiry removes the speed. The complete run also replays nine vehicles across Teheran-ro, downtown Seoul and Mapo Bridge: 3,204 GPS observations, up to 3 m noise, 60 omissions, and 220 of 237 true traversals stored exactly once. All **151 assertions** passed, including actual process interruptions, database restart, locking and deletion. Roads are real; vehicles, speeds and GPS are synthetic. This does not establish independent real-driving accuracy or live traffic.
 
 ## What you can run today
 
@@ -32,14 +32,15 @@ This recording shows actual Seoul-road replay and the generated PostgreSQL recov
 | **P03 — vehicle and GPS simulation** | Independent trajectories, speed/wait schedules, bounded noise, exact missing-sample intervals and stable sample identities |
 | **P04 — map matching** | Real map snapping, observed traversal boundaries, gap/ambiguity exclusions and identical full/split/overlap results |
 | **P05 — durable ingestion and recovery** | Committed receipt, duplicate/conflict handling, ordered trip finalization, fenced workers, real crash recovery and deletion read-back |
-| **Integrated evidence** | Fresh tiny regression (48), Seoul graph/simulation/matching (29) and HTTP/PostgreSQL recovery (34): **111 assertions**, with source/artifact hashes |
+| **P06 — traffic aggregation** | Five-contributor minimum, median full duration including signal waits, duplicate/PARKED exclusion, strict availability deadline, transactional revocation and expiry |
+| **Integrated evidence** | Fresh tiny regression (48), Seoul graph/simulation/matching (35), durable ingestion (34) and aggregation (34): **151 assertions**, with source/artifact hashes |
 | **Replay report** | Offline Seoul playback plus actual recovery, process and deletion evidence; English/Korean controls and source links |
 
 Synthetic observations never count toward the separate **100 route / 100 map-matching real-road evaluation**. The geographic validator currently has no reviewed real-road corpus.
 
 ## Run the whole implemented pipeline
 
-Requirements: **Node.js 22 or 24**, npm, curl, and Docker with Linux containers. Initial preparation downloads the pinned engine/Osmium and a 289.9 MB dated South Korea OSM file, verifies its SHA-256, then caches only the source. Every run builds a fresh Seoul graph with networking disabled (2 CPU / 4 GiB limits). P05 automatically starts a pinned PostgreSQL container with a dedicated volume and loopback port, plus separate API and worker processes, then removes its owned resources. No external database, Cloudflare account, map API key or real GPS trace is needed.
+Requirements: **Node.js 22 or 24**, npm, curl, and Docker with Linux containers. Initial preparation downloads the pinned engine/Osmium and a 289.9 MB dated South Korea OSM file, verifies its SHA-256, then caches only the source. Every run builds a fresh Seoul graph with networking disabled (2 CPU / 4 GiB limits). P05/P06 automatically start a pinned PostgreSQL container with a dedicated volume and loopback port, plus separate API and worker processes, then remove their owned resources. No external database, Cloudflare account, map API key or real GPS trace is needed.
 
 ```sh
 git clone https://github.com/dicebattle/routelens.git
@@ -82,7 +83,9 @@ flowchart LR
   W --> M
   M --> A[RouteLens · observed timing and exclusions]
   A --> C[PostgreSQL · atomic traversal commit]
-  C --> R
+  C --> U[RouteLens · deadline and contributor median]
+  U --> Q[Unsigned candidate · expiry and revocation]
+  Q --> R
 ```
 
 RouteLens owns the contracts, orchestration, simulation, ingestion/worker coordination and evidence checks. **PostgreSQL** supplies durable transactions, row locks and uniqueness; RouteLens defines when a trip is complete, which worker may commit and when raw values must be deleted. **Valhalla** builds graphs and calculates routes and performs map matching; **Osmium** extracts the Seoul envelope and converts OSM files. The planned client uses **MapLibre**; trusted traffic publication and node selection remain RouteLens responsibilities. [Build-or-reuse decisions](docs/03-build-or-reuse.md).
@@ -93,13 +96,13 @@ The planned production design has a managed ingestion path and approved independ
 
 Each module follows **design → implementation → direct execution → inspected evidence → bilingual record → push**. The main agent owns design and review; implementation is delegated according to [repository instructions](AGENTS.md). AI assistance is recorded with the actual checks and limits, not used as a quality claim.
 
-- [Latest integrated test report](research/pilot/2026-10-24-p05/report.md)
+- [Latest integrated test report](research/pilot/2026-10-24-p06/report.md)
 - [Current implementation and remaining goal](docs/18-goal-progress.md)
 - [Append-only work log](wiki/log.md)
 - [P01–P14 module contracts](docs/11-local-pilot.md)
 - [Architecture](docs/02-architecture.md) · [Protocol](docs/04-protocol.md) · [Privacy and trust](docs/07-privacy-and-trust.md)
 
-**Next: P06 traffic aggregation**, followed by signed publication, real speed-file consumption and two-node failover. P05 currently supports bounded synthetic pilot trips; production authentication, continuous GPS ingestion and forensic deletion from WAL/backups are not implemented. An evidence replay viewer is not the finished navigation client. Local synthetic success does not establish Korean road accuracy, mobile battery behavior or production reliability.
+**Next: P07 signed publication**, followed by real speed-file consumption and two-node failover. P06 candidates are not signed, published or activated in the routing engine. P05 currently supports bounded synthetic pilot trips; production authentication, continuous GPS ingestion and forensic deletion from WAL/backups are not implemented. An evidence replay viewer is not the finished navigation client. Local synthetic success does not establish Korean road accuracy, mobile battery behavior or production reliability.
 
 ## Contribute
 

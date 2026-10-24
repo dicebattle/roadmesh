@@ -1,0 +1,668 @@
+[
+  {
+    "assertion_id": "complete-sample-partition",
+    "status": "PASS",
+    "message_en": "Every true sample is observed or explicitly omitted.",
+    "message_ko": "모든 정답 표본은 관측되거나 누락으로 기록됩니다.",
+    "expected": 3264,
+    "actual": 3264,
+    "evidence_path": "workload/truth.json"
+  },
+  {
+    "assertion_id": "bounded-noise",
+    "status": "PASS",
+    "message_en": "Observed coordinates stay within the declared noise radius.",
+    "message_ko": "관측 좌표가 선언한 잡음 반경 안에 있습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "workload/observations.json"
+  },
+  {
+    "assertion_id": "synthetic-observations",
+    "status": "PASS",
+    "message_en": "Observations are synthetic and contain no truth edge IDs.",
+    "message_ko": "관측은 합성이며 정답 구간 식별자를 포함하지 않습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "workload/observations.json"
+  },
+  {
+    "assertion_id": "half-open-drops",
+    "status": "PASS",
+    "message_en": "Omissions follow half-open intervals.",
+    "message_ko": "누락이 반열린 구간을 따릅니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "workload/omissions.json"
+  },
+  {
+    "assertion_id": "completed-traversals",
+    "status": "PASS",
+    "message_en": "All independently authored paths complete within the scenario.",
+    "message_ko": "독립적으로 작성한 모든 경로가 시나리오 안에 완료됩니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "workload/truth.json"
+  },
+  {
+    "assertion_id": "teheran-clean-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 100
+    },
+    "actual": {
+      "vehicle_id": "teheran-clean",
+      "input_samples": 423,
+      "matched_samples": 423,
+      "point_coverage": 1,
+      "correct_points": 423,
+      "boundary_equivalent_points": 0,
+      "point_precision": 1,
+      "truth_traversals": 37,
+      "accepted_traversals": 37,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "traversal_coverage": 1,
+      "max_entry_error_ms": 1,
+      "max_exit_error_ms": 1,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "teheran-clean-clean-coverage",
+    "status": "PASS",
+    "message_en": "Clean point correctness and complete-traversal coverage meet fixed thresholds.",
+    "message_ko": "깨끗한 표본 정확성과 완전 통과 범위가 고정 기준을 충족합니다.",
+    "expected": {
+      "point_precision": 0.98,
+      "point_coverage": 0.9,
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "teheran-clean",
+      "input_samples": 423,
+      "matched_samples": 423,
+      "point_coverage": 1,
+      "correct_points": 423,
+      "boundary_equivalent_points": 0,
+      "point_precision": 1,
+      "truth_traversals": 37,
+      "accepted_traversals": 37,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "traversal_coverage": 1,
+      "max_entry_error_ms": 1,
+      "max_exit_error_ms": 1,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "teheran-clean-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "teheran-noise-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 1000
+    },
+    "actual": {
+      "vehicle_id": "teheran-noise",
+      "input_samples": 423,
+      "matched_samples": 419,
+      "point_coverage": 0.9905437352245863,
+      "correct_points": 414,
+      "boundary_equivalent_points": 4,
+      "point_precision": 0.9976133651551312,
+      "truth_traversals": 37,
+      "accepted_traversals": 36,
+      "false_traversals": 0,
+      "missed_traversals": 1,
+      "traversal_coverage": 0.972972972972973,
+      "max_entry_error_ms": 186,
+      "max_exit_error_ms": 186,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "teheran-noise-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "teheran-gap-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 1000
+    },
+    "actual": {
+      "vehicle_id": "teheran-gap",
+      "input_samples": 403,
+      "matched_samples": 398,
+      "point_coverage": 0.9875930521091811,
+      "correct_points": 386,
+      "boundary_equivalent_points": 9,
+      "point_precision": 0.992462311557789,
+      "truth_traversals": 37,
+      "accepted_traversals": 32,
+      "false_traversals": 0,
+      "missed_traversals": 5,
+      "traversal_coverage": 0.8648648648648649,
+      "max_entry_error_ms": 255,
+      "max_exit_error_ms": 255,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "teheran-gap-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-clean-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 100
+    },
+    "actual": {
+      "vehicle_id": "downtown-clean",
+      "input_samples": 246,
+      "matched_samples": 246,
+      "point_coverage": 1,
+      "correct_points": 246,
+      "boundary_equivalent_points": 0,
+      "point_precision": 1,
+      "truth_traversals": 24,
+      "accepted_traversals": 24,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "traversal_coverage": 1,
+      "max_entry_error_ms": 1,
+      "max_exit_error_ms": 1,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-clean-clean-coverage",
+    "status": "PASS",
+    "message_en": "Clean point correctness and complete-traversal coverage meet fixed thresholds.",
+    "message_ko": "깨끗한 표본 정확성과 완전 통과 범위가 고정 기준을 충족합니다.",
+    "expected": {
+      "point_precision": 0.98,
+      "point_coverage": 0.9,
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "downtown-clean",
+      "input_samples": 246,
+      "matched_samples": 246,
+      "point_coverage": 1,
+      "correct_points": 246,
+      "boundary_equivalent_points": 0,
+      "point_precision": 1,
+      "truth_traversals": 24,
+      "accepted_traversals": 24,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "traversal_coverage": 1,
+      "max_entry_error_ms": 1,
+      "max_exit_error_ms": 1,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-clean-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-noise-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 1000
+    },
+    "actual": {
+      "vehicle_id": "downtown-noise",
+      "input_samples": 246,
+      "matched_samples": 246,
+      "point_coverage": 1,
+      "correct_points": 239,
+      "boundary_equivalent_points": 5,
+      "point_precision": 0.991869918699187,
+      "truth_traversals": 24,
+      "accepted_traversals": 23,
+      "false_traversals": 0,
+      "missed_traversals": 1,
+      "traversal_coverage": 0.9583333333333334,
+      "max_entry_error_ms": 199,
+      "max_exit_error_ms": 199,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-noise-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-gap-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 1000
+    },
+    "actual": {
+      "vehicle_id": "downtown-gap",
+      "input_samples": 226,
+      "matched_samples": 225,
+      "point_coverage": 0.995575221238938,
+      "correct_points": 214,
+      "boundary_equivalent_points": 3,
+      "point_precision": 0.9644444444444444,
+      "truth_traversals": 24,
+      "accepted_traversals": 21,
+      "false_traversals": 0,
+      "missed_traversals": 3,
+      "traversal_coverage": 0.875,
+      "max_entry_error_ms": 260,
+      "max_exit_error_ms": 260,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-gap-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-clean-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 100
+    },
+    "actual": {
+      "vehicle_id": "mapo-bridge-clean",
+      "input_samples": 419,
+      "matched_samples": 419,
+      "point_coverage": 1,
+      "correct_points": 419,
+      "boundary_equivalent_points": 0,
+      "point_precision": 1,
+      "truth_traversals": 18,
+      "accepted_traversals": 18,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "traversal_coverage": 1,
+      "max_entry_error_ms": 1,
+      "max_exit_error_ms": 1,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-clean-clean-coverage",
+    "status": "PASS",
+    "message_en": "Clean point correctness and complete-traversal coverage meet fixed thresholds.",
+    "message_ko": "깨끗한 표본 정확성과 완전 통과 범위가 고정 기준을 충족합니다.",
+    "expected": {
+      "point_precision": 0.98,
+      "point_coverage": 0.9,
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "mapo-bridge-clean",
+      "input_samples": 419,
+      "matched_samples": 419,
+      "point_coverage": 1,
+      "correct_points": 419,
+      "boundary_equivalent_points": 0,
+      "point_precision": 1,
+      "truth_traversals": 18,
+      "accepted_traversals": 18,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "traversal_coverage": 1,
+      "max_entry_error_ms": 1,
+      "max_exit_error_ms": 1,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-clean-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-noise-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 1000
+    },
+    "actual": {
+      "vehicle_id": "mapo-bridge-noise",
+      "input_samples": 419,
+      "matched_samples": 415,
+      "point_coverage": 0.9904534606205251,
+      "correct_points": 410,
+      "boundary_equivalent_points": 2,
+      "point_precision": 0.9927710843373494,
+      "truth_traversals": 18,
+      "accepted_traversals": 16,
+      "false_traversals": 0,
+      "missed_traversals": 2,
+      "traversal_coverage": 0.8888888888888888,
+      "max_entry_error_ms": 162,
+      "max_exit_error_ms": 162,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-noise-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-gap-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 1000
+    },
+    "actual": {
+      "vehicle_id": "mapo-bridge-gap",
+      "input_samples": 399,
+      "matched_samples": 399,
+      "point_coverage": 1,
+      "correct_points": 397,
+      "boundary_equivalent_points": 0,
+      "point_precision": 0.9949874686716792,
+      "truth_traversals": 18,
+      "accepted_traversals": 13,
+      "false_traversals": 0,
+      "missed_traversals": 5,
+      "traversal_coverage": 0.7222222222222222,
+      "max_entry_error_ms": 230,
+      "max_exit_error_ms": 230,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-gap-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "teheran-noise-observed-coverage",
+    "status": "PASS",
+    "message_en": "Noisy or gapped complete-traversal coverage meets the fixed 70% floor.",
+    "message_ko": "잡음·누락 관측의 완전 통과 범위가 고정 70% 하한을 충족합니다.",
+    "expected": {
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "teheran-noise",
+      "input_samples": 423,
+      "matched_samples": 419,
+      "point_coverage": 0.9905437352245863,
+      "correct_points": 414,
+      "boundary_equivalent_points": 4,
+      "point_precision": 0.9976133651551312,
+      "truth_traversals": 37,
+      "accepted_traversals": 36,
+      "false_traversals": 0,
+      "missed_traversals": 1,
+      "traversal_coverage": 0.972972972972973,
+      "max_entry_error_ms": 186,
+      "max_exit_error_ms": 186,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "teheran-gap-observed-coverage",
+    "status": "PASS",
+    "message_en": "Noisy or gapped complete-traversal coverage meets the fixed 70% floor.",
+    "message_ko": "잡음·누락 관측의 완전 통과 범위가 고정 70% 하한을 충족합니다.",
+    "expected": {
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "teheran-gap",
+      "input_samples": 403,
+      "matched_samples": 398,
+      "point_coverage": 0.9875930521091811,
+      "correct_points": 386,
+      "boundary_equivalent_points": 9,
+      "point_precision": 0.992462311557789,
+      "truth_traversals": 37,
+      "accepted_traversals": 32,
+      "false_traversals": 0,
+      "missed_traversals": 5,
+      "traversal_coverage": 0.8648648648648649,
+      "max_entry_error_ms": 255,
+      "max_exit_error_ms": 255,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-noise-observed-coverage",
+    "status": "PASS",
+    "message_en": "Noisy or gapped complete-traversal coverage meets the fixed 70% floor.",
+    "message_ko": "잡음·누락 관측의 완전 통과 범위가 고정 70% 하한을 충족합니다.",
+    "expected": {
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "downtown-noise",
+      "input_samples": 246,
+      "matched_samples": 246,
+      "point_coverage": 1,
+      "correct_points": 239,
+      "boundary_equivalent_points": 5,
+      "point_precision": 0.991869918699187,
+      "truth_traversals": 24,
+      "accepted_traversals": 23,
+      "false_traversals": 0,
+      "missed_traversals": 1,
+      "traversal_coverage": 0.9583333333333334,
+      "max_entry_error_ms": 199,
+      "max_exit_error_ms": 199,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-gap-observed-coverage",
+    "status": "PASS",
+    "message_en": "Noisy or gapped complete-traversal coverage meets the fixed 70% floor.",
+    "message_ko": "잡음·누락 관측의 완전 통과 범위가 고정 70% 하한을 충족합니다.",
+    "expected": {
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "downtown-gap",
+      "input_samples": 226,
+      "matched_samples": 225,
+      "point_coverage": 0.995575221238938,
+      "correct_points": 214,
+      "boundary_equivalent_points": 3,
+      "point_precision": 0.9644444444444444,
+      "truth_traversals": 24,
+      "accepted_traversals": 21,
+      "false_traversals": 0,
+      "missed_traversals": 3,
+      "traversal_coverage": 0.875,
+      "max_entry_error_ms": 260,
+      "max_exit_error_ms": 260,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-noise-observed-coverage",
+    "status": "PASS",
+    "message_en": "Noisy or gapped complete-traversal coverage meets the fixed 70% floor.",
+    "message_ko": "잡음·누락 관측의 완전 통과 범위가 고정 70% 하한을 충족합니다.",
+    "expected": {
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "mapo-bridge-noise",
+      "input_samples": 419,
+      "matched_samples": 415,
+      "point_coverage": 0.9904534606205251,
+      "correct_points": 410,
+      "boundary_equivalent_points": 2,
+      "point_precision": 0.9927710843373494,
+      "truth_traversals": 18,
+      "accepted_traversals": 16,
+      "false_traversals": 0,
+      "missed_traversals": 2,
+      "traversal_coverage": 0.8888888888888888,
+      "max_entry_error_ms": 162,
+      "max_exit_error_ms": 162,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-gap-observed-coverage",
+    "status": "PASS",
+    "message_en": "Noisy or gapped complete-traversal coverage meets the fixed 70% floor.",
+    "message_ko": "잡음·누락 관측의 완전 통과 범위가 고정 70% 하한을 충족합니다.",
+    "expected": {
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "mapo-bridge-gap",
+      "input_samples": 399,
+      "matched_samples": 399,
+      "point_coverage": 1,
+      "correct_points": 397,
+      "boundary_equivalent_points": 0,
+      "point_precision": 0.9949874686716792,
+      "truth_traversals": 18,
+      "accepted_traversals": 13,
+      "false_traversals": 0,
+      "missed_traversals": 5,
+      "traversal_coverage": 0.7222222222222222,
+      "max_entry_error_ms": 230,
+      "max_exit_error_ms": 230,
+      "gap_bridges": 0
+    },
+    "evidence_path": "workload/evaluation.json"
+  },
+  {
+    "assertion_id": "seoul-generation-replay",
+    "status": "PASS",
+    "message_en": "Same seeded generation replays exactly.",
+    "message_ko": "같은 시드 생성이 정확하게 재생됩니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "workload/truth.json"
+  },
+  {
+    "assertion_id": "seoul-seed-truth-invariance",
+    "status": "PASS",
+    "message_en": "A different seed changes observations while truth stays fixed.",
+    "message_ko": "다른 시드는 관측만 바꾸고 정답을 유지합니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "workload/truth.json"
+  },
+  {
+    "assertion_id": "seoul-matching-batch-parity",
+    "status": "PASS",
+    "message_en": "Actual full/split/overlap matching has identical semantic bytes and traversal IDs.",
+    "message_ko": "실제 전체·분할·중첩 매칭의 의미 바이트·통과 식별자가 같습니다.",
+    "expected": "5ae9eb1714acb6229a0d88f0a6efbb22beacc6f555836183325140542325011b",
+    "actual": {
+      "split": "5ae9eb1714acb6229a0d88f0a6efbb22beacc6f555836183325140542325011b",
+      "overlap": "5ae9eb1714acb6229a0d88f0a6efbb22beacc6f555836183325140542325011b"
+    },
+    "evidence_path": "workload/split-overlap/result.json"
+  }
+]

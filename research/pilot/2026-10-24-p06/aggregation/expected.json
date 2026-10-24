@@ -1,0 +1,68 @@
+{
+  "target": {
+    "edge_id": "1297751234960",
+    "forward": true,
+    "distance_m": 47.31739401566697
+  },
+  "vehicles": [
+    {
+      "vehicle_id": "p06-speed-3",
+      "speed_mps": 3,
+      "trip_activity": "TRAVEL",
+      "entered_at_ms": 7641,
+      "exited_at_ms": 31413,
+      "duration_s": 23.77246467188899,
+      "pause_at_ms": 15527
+    },
+    {
+      "vehicle_id": "p06-speed-4",
+      "speed_mps": 4,
+      "trip_activity": "TRAVEL",
+      "entered_at_ms": 5731,
+      "exited_at_ms": 25560,
+      "duration_s": 19.82934850391674,
+      "pause_at_ms": 11645
+    },
+    {
+      "vehicle_id": "p06-speed-5",
+      "speed_mps": 5,
+      "trip_activity": "TRAVEL",
+      "entered_at_ms": 4585,
+      "exited_at_ms": 22048,
+      "duration_s": 17.463478803133395,
+      "pause_at_ms": 9316
+    },
+    {
+      "vehicle_id": "p06-speed-6",
+      "speed_mps": 6,
+      "trip_activity": "TRAVEL",
+      "entered_at_ms": 3821,
+      "exited_at_ms": 19707,
+      "duration_s": 15.886232335944495,
+      "pause_at_ms": 7764
+    },
+    {
+      "vehicle_id": "p06-speed-7",
+      "speed_mps": 7,
+      "trip_activity": "TRAVEL",
+      "entered_at_ms": 3275,
+      "exited_at_ms": 18034,
+      "duration_s": 14.759627716523852,
+      "pause_at_ms": 6655
+    },
+    {
+      "vehicle_id": "p06-parked",
+      "speed_mps": 2,
+      "trip_activity": "PARKED",
+      "entered_at_ms": 11461,
+      "exited_at_ms": 43119,
+      "duration_s": 31.658697007833485,
+      "pause_at_ms": 23290
+    }
+  ],
+  "median_duration_s": 17.463478803133395,
+  "speed_mps": 2.709505623082213,
+  "boundary_tolerance_ms": 150,
+  "speed_relative_tolerance": 0.02,
+  "calculated_before_matching": true
+}

@@ -13,7 +13,7 @@ Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases i
 
 ## 현재 구현과 다음 작업
 
-- [P06 fixed contract / P06 고정 계약](../docs/23-p06-aggregation-contract.md): actual Seoul event-window aggregation now in Sol implementation; not yet verified. P05 is merged through PR#6. / 실제서울관측창집계를Sol이구현중이며아직미검증입니다. P05는PR#6으로병합됐습니다.
+- [P06 fixed contract / P06 고정 계약](../docs/23-p06-aggregation-contract.md): actual Seoul aggregation passed the fresh local151-check pipeline; hosted delivery pending. [Report](../research/pilot/2026-10-24-p06/report.md). / 실제 서울 집계의 새 로컬151개 검사를 통과했으며 원격 반영은 남아 있습니다.
 - [Observed projection v3 / 관측 투영 v3](../docs/24-observed-projection-policy.md): a failed actual-Seoul slow-traffic probe exposed endpoint interpretation errors; preserve its original criteria and verify the correction before P06 completion. / 실제 서울 저속 시나리오에서 끝점 해석 오류가 드러났습니다. 원래 기준을 보존하고 보정을 검증한 뒤 P06을 완료합니다.
 
 - [시험자료 검사 모듈](modules/evaluation-corpus.md): 실행법, 입력 계약, 검사 범위, 검증 근거.
@@ -68,3 +68,5 @@ Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases i
 
 - [Seoul simulation contract / 서울 시뮬레이션 계약](../docs/21-seoul-road-simulation.md)
 - [Seoul OSM sources / 서울 OSM 출처](sources/seoul-osm.md)
+
+- [Traffic aggregation module / 교통 집계 모듈](modules/traffic-aggregation.md): fixed window, contributor median and deletion behavior. / 고정 창·기여자 중앙값·삭제 동작.
