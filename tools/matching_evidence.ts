@@ -140,6 +140,7 @@ export interface MatchingPoint {
   reason_messages?: ReturnType<typeof reasonMessages>;
 }
 export interface BoundaryBracket {
+  method?: "ENGINE_ENDPOINT_ANCHOR";
   before_sample_id: string;
   after_sample_id: string;
   before_offset_ms: number;
@@ -509,6 +510,8 @@ interface Eligible {
   point: MatchingPoint;
   edge_index: number;
   fraction: number;
+  engine_edge_index: number;
+  engine_fraction: number;
   break_before: boolean;
   break_after: boolean;
 }
@@ -708,6 +711,7 @@ export function interpretRun(
   });
   const points: MatchingPoint[] = [],
     eligible: (Eligible | null)[] = [],
+    nativeProgress: ({ edge_index: number; fraction: number } | null)[] = [],
     reversal = new Set<number>(),
     engineDiscontinuities = new Set<number>();
   matches.forEach((raw, index) => {
@@ -716,6 +720,7 @@ export function interpretRun(
     if (match.type === "unmatched") {
       points.push(excludedPoint(observation, "UNMATCHED"));
       eligible.push(null);
+      nativeProgress.push(null);
       return;
     }
     if (match.type !== "matched" && match.type !== "interpolated")
@@ -771,6 +776,7 @@ export function interpretRun(
         "fraction and geometry disagree",
         "비율과 지형이 일치하지 않습니다",
       );
+    nativeProgress.push({ edge_index: match.edge_index, fraction });
     const projected = useObservedProjection
       ? projectObservedPath(
           observation,
@@ -837,25 +843,53 @@ export function interpretRun(
       point,
       edge_index: selectedIndex,
       fraction: selectedFraction,
+      engine_edge_index: match.edge_index,
+      engine_fraction: fraction,
       break_before: match.begin_route_discontinuity === true,
       break_after: match.end_route_discontinuity === true,
     });
   });
+  // Native engine progress owns direction; observed projection owns timing.
+  // 엔진 진행은 방향을 판정하고 원관측 투영은 통과 시각을 계산합니다.
+  if (useObservedProjection)
+    for (let index = 1; index < nativeProgress.length; index++) {
+      const before = nativeProgress[index - 1],
+        current = nativeProgress[index];
+      if (!before || !current || before.edge_index !== current.edge_index)
+        continue;
+      if (
+        (before.fraction - current.fraction) *
+          length(edges[current.edge_index]!, hooks) >
+        1
+      ) {
+        reversal.add(current.edge_index);
+        for (const selected of [eligible[index - 1], eligible[index]])
+          if (selected) reversal.add(selected.edge_index);
+      }
+    }
   const entries = new Map<number, BoundaryBracket>(),
     exits = new Map<number, BoundaryBracket>(),
     reasons = edges.map(
       (_, index) =>
         new Set<Reason>(
-          engineDiscontinuities.has(index) ? ["DISCONTINUITY"] : [],
+          engineDiscontinuities.has(index) || reversal.has(index)
+            ? ["DISCONTINUITY"]
+            : [],
         ),
     ),
     boundaryAmbiguities = edges.map(() => [] as BoundaryAmbiguity[]);
-  const bracket = (a: Eligible, b: Eligible, at: number): BoundaryBracket => ({
+  const bracket = (
+    a: Eligible,
+    b: Eligible,
+    at: number,
+    method?: BoundaryBracket["method"],
+  ): BoundaryBracket => ({
     before_sample_id: a.observation.sample_id,
     after_sample_id: b.observation.sample_id,
     before_offset_ms: a.observation.offset_ms,
     after_offset_ms: b.observation.offset_ms,
     interpolated_at_ms: Math.round(at),
+    ...(method ? { method } : {}),
   });
   const reasonFromBreak = (
     index: number,
@@ -879,24 +913,66 @@ export function interpretRun(
     if (!current) continue;
     const before = eligible[index - 1],
       after = eligible[index + 1];
+    const nativeEndpoint =
+      useObservedProjection &&
+      current.engine_edge_index === current.edge_index &&
+      !current.break_before &&
+      !current.break_after;
+    const endpointDistance = (end: boolean): number =>
+      distance(
+        [current.observation.longitude, current.observation.latitude],
+        end
+          ? edges[current.edge_index]!.directed_geometry.at(-1)!
+          : edges[current.edge_index]!.directed_geometry[0]!,
+      );
+    const engineStartAnchor =
+      nativeEndpoint &&
+      index === 0 &&
+      !run.start_reason &&
+      after !== null &&
+      after?.break_before !== true &&
+      current.engine_fraction <= 0.00001 &&
+      endpointDistance(false) <= current.observation.accuracy_m + 1;
+    const engineEndAnchor =
+      nativeEndpoint &&
+      index === eligible.length - 1 &&
+      !run.end_reason &&
+      before !== null &&
+      before?.break_after !== true &&
+      current.engine_fraction >= 0.99999 &&
+      endpointDistance(true) <= current.observation.accuracy_m + 1;
     if (
       (!before || current.break_before || before.break_after) &&
-      current.fraction <= 0.00001 &&
+      (current.fraction <= 0.00001 || engineStartAnchor) &&
       !current.break_before
     )
       entries.set(
         current.edge_index,
         entries.get(current.edge_index) ??
-          bracket(current, current, current.observation.offset_ms),
+          bracket(
+            current,
+            current,
+            current.observation.offset_ms,
+            current.fraction > 0.00001 && engineStartAnchor
+              ? "ENGINE_ENDPOINT_ANCHOR"
+              : undefined,
+          ),
       );
     if (
       (!after || current.break_after || after.break_before) &&
-      current.fraction >= 0.99999 &&
+      (current.fraction >= 0.99999 || engineEndAnchor) &&
       !current.break_after
     )
       exits.set(
         current.edge_index,
-        bracket(current, current, current.observation.offset_ms),
+        bracket(
+          current,
+          current,
+          current.observation.offset_ms,
+          current.fraction < 0.99999 && engineEndAnchor
+            ? "ENGINE_ENDPOINT_ANCHOR"
+            : undefined,
+        ),
       );
     if (current.break_before || current.break_after)
       reasons[current.edge_index]!.add("DISCONTINUITY");
@@ -925,9 +1001,10 @@ export function interpretRun(
     }
     if (current.edge_index === before.edge_index) {
       if (
+        !useObservedProjection &&
         (before.fraction - current.fraction) *
           length(edges[current.edge_index]!, hooks) >
-        1
+          1
       ) {
         reversal.add(current.edge_index);
         reasons[current.edge_index]!.add("DISCONTINUITY");

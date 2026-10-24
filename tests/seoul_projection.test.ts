@@ -531,3 +531,240 @@ test("noisy coverage fixed floor rejects observed 8/18 regression and includes e
     0,
   );
 });
+
+interface EngineAnchorFixture {
+  graph_id: string;
+  matching_id: string;
+  catalog: EdgeMapping[];
+  observations: Observation[];
+  response: {
+    shape: string;
+    edges: unknown[];
+    matched_points: Array<Record<string, unknown>>;
+  };
+  legacy_expected: {
+    edge_id: string;
+    status: string;
+    entered_at_ms: number;
+    exited_at_ms: number;
+  };
+}
+const engineAnchor = fixture<EngineAnchorFixture>(
+  "tests/fixtures/seoul-engine-anchor.json",
+);
+function anchorInput() {
+  const observations = structuredClone(engineAnchor.observations);
+  return {
+    input: {
+      ...envelope(observations, engineAnchor.matching_id),
+      graph_id: engineAnchor.graph_id,
+    },
+    graph: {
+      ...graph,
+      graphId: engineAnchor.graph_id,
+      edges: engineAnchor.catalog,
+    },
+    run: { vehicle_id: "mapo-bridge-gap", index: 0, observations },
+    response: structuredClone(engineAnchor.response),
+  };
+}
+test("engine semantics actual noisy start retains native anchor and avoids projected jitter reversal / 실제 잡음 시작의 엔진 끝점 자격·방향 유지", () => {
+  const data = anchorInput();
+  const previous = interpretRun(
+    data.input,
+    data.graph,
+    data.run,
+    data.response,
+    { ...hooks, policy_id: "seoul-observed-v2" },
+  );
+  const original = previous.traversals.find(
+    (t) => t.edge_id === engineAnchor.legacy_expected.edge_id,
+  )!;
+  assert.equal(original.status, engineAnchor.legacy_expected.status);
+  assert.equal(
+    original.entered_at_ms,
+    engineAnchor.legacy_expected.entered_at_ms,
+  );
+  assert.equal(
+    original.exited_at_ms,
+    engineAnchor.legacy_expected.exited_at_ms,
+  );
+  const result = interpretRun(
+      data.input,
+      data.graph,
+      data.run,
+      data.response,
+      hooks,
+    ),
+    target = result.traversals.find((t) => t.edge_id === original.edge_id)!;
+  assert.equal(target.status, "ACCEPTED");
+  assert.equal(target.entered_at_ms, 0);
+  assert.equal(target.exited_at_ms, 6775);
+  assert.equal(target.entry_bracket!.method, "ENGINE_ENDPOINT_ANCHOR");
+  assert.equal(target.exit_bracket!.method, undefined);
+  assert.ok(result.points[0]!.fraction! > 0.00001);
+  assert.equal(result.points[0]!.engine_fraction, 0);
+  assert.ok(!target.reason_codes.includes("DISCONTINUITY"));
+  assert.equal(original.entry_bracket!.method, undefined);
+});
+test("engine semantics anchor refuses raw endpoint distance above the unchanged bound / 원관측 끝점 거리가 기존 허용치를 넘으면 고정점 거부", () => {
+  const data = anchorInput(),
+    first = engineAnchor.catalog.find(
+      (e) => e.edge_id === engineAnchor.legacy_expected.edge_id,
+    )!,
+    coordinate = geodesicSphere.position(first.directed_geometry, 4.5);
+  data.run.observations[0]!.longitude = coordinate[0]!;
+  data.run.observations[0]!.latitude = coordinate[1]!;
+  const result = interpretRun(
+      data.input,
+      data.graph,
+      data.run,
+      data.response,
+      hooks,
+    ),
+    target = result.traversals.find((t) => t.edge_id === first.edge_id)!;
+  assert.equal(target.status, "EXCLUDED");
+  assert.equal(target.entry_bracket, null);
+  assert.ok(target.reason_codes.includes("PARTIAL_ENTRY"));
+});
+test("engine semantics moved occurrence cannot borrow native endpoint eligibility / 다른 구간으로 투영된 표본은 엔진 끝점 자격 차용 금지", () => {
+  const data = authored(
+    [edge(1, [point(0), point(10)]), edge(2, [point(10), point(20)])],
+    [
+      { coordinate: point(9), index: 1, fraction: 0 },
+      { coordinate: point(12), index: 1, fraction: 0.2 },
+      { coordinate: point(20), index: 1, fraction: 1 },
+    ],
+  );
+  const result = data.read();
+  assert.equal(result.points[0]!.edge_id, "1");
+  assert.equal(result.points[0]!.engine_edge_id, "2");
+  assert.equal(result.traversals[0]!.entry_bracket, null);
+  assert.ok(result.traversals[1]!.entered_at_ms! > 0);
+  assert.equal(result.traversals[1]!.entry_bracket!.method, undefined);
+});
+test("engine semantics upstream breaks cannot acquire a native endpoint anchor / 엔진 단절 표시가 있으면 끝점 고정 금지", () => {
+  for (const field of [
+    "begin_route_discontinuity",
+    "end_route_discontinuity",
+  ]) {
+    const data = anchorInput();
+    data.response.matched_points[0]![field] = true;
+    const target = interpretRun(
+      data.input,
+      data.graph,
+      data.run,
+      data.response,
+      hooks,
+    ).traversals.find(
+      (t) => t.edge_id === engineAnchor.legacy_expected.edge_id,
+    )!;
+    assert.equal(target.status, "EXCLUDED");
+    assert.equal(target.entry_bracket, null);
+    assert.ok(target.reason_codes.includes("DISCONTINUITY"));
+  }
+});
+test("engine semantics adjacent exclusion and gap reasons cannot be bypassed by anchor / 인접 제외·누락 사유를 끝점 고정으로 우회 금지", () => {
+  const gap = anchorInput(),
+    gapTarget = interpretRun(
+      gap.input,
+      gap.graph,
+      { ...gap.run, start_reason: "OBSERVATION_GAP" },
+      gap.response,
+      hooks,
+    ).traversals.find(
+      (t) => t.edge_id === engineAnchor.legacy_expected.edge_id,
+    )!;
+  assert.equal(gapTarget.status, "EXCLUDED");
+  assert.equal(gapTarget.entry_bracket, null);
+  assert.ok(gapTarget.reason_codes.includes("OBSERVATION_GAP"));
+  const excluded = anchorInput();
+  excluded.response.matched_points[1]!.distance_from_trace_point = 5;
+  const target = interpretRun(
+    excluded.input,
+    excluded.graph,
+    excluded.run,
+    excluded.response,
+    hooks,
+  ).traversals.find((t) => t.edge_id === engineAnchor.legacy_expected.edge_id)!;
+  assert.equal(target.status, "EXCLUDED");
+  // The unchanged projected-endpoint branch may form a bracket, but it cannot
+  // bypass the exclusion or borrow the new native endpoint method.
+  // 기존 투영 끝점 분기가 경계를 만들더라도 제외·단절 사유를 우회하지 않습니다.
+  assert.notEqual(target.entry_bracket?.method, "ENGINE_ENDPOINT_ANCHOR");
+  assert.ok(target.reason_codes.includes("DISTANCE_EXCEEDED"));
+  assert.ok(target.reason_codes.includes("DISCONTINUITY"));
+});
+test("engine semantics matching trace end can anchor but a gap cannot / 대응 추적 끝은 고정 가능하지만 누락 경계는 불가", () => {
+  const data = authored(
+    [edge(1, [point(0), point(10)])],
+    [
+      { coordinate: point(0), index: 0, fraction: 0 },
+      { coordinate: point(9), index: 0, fraction: 1 },
+    ],
+  );
+  const target = data.read().traversals[0]!;
+  assert.equal(target.status, "ACCEPTED");
+  assert.equal(target.exited_at_ms, 500);
+  assert.equal(target.exit_bracket!.method, "ENGINE_ENDPOINT_ANCHOR");
+  const gap = interpretRun(
+    data.input,
+    data.graph,
+    { ...data.run, end_reason: "OBSERVATION_GAP" },
+    data.response,
+    hooks,
+  ).traversals[0]!;
+  assert.equal(gap.status, "EXCLUDED");
+  assert.equal(gap.exit_bracket, null);
+  assert.ok(gap.reason_codes.includes("OBSERVATION_GAP"));
+});
+test("engine semantics genuine native reversal still excludes its occurrence / 실제 엔진 진행 역행은 여전히 해당 구간 제외", () => {
+  const data = authored(
+    [edge(1, [point(0), point(10)])],
+    [
+      { coordinate: point(0), index: 0, fraction: 0 },
+      { coordinate: point(8), index: 0, fraction: 0.8 },
+      { coordinate: point(4), index: 0, fraction: 0.4 },
+      { coordinate: point(10), index: 0, fraction: 1 },
+    ],
+  );
+  const target = data.read().traversals[0]!;
+  assert.equal(target.status, "EXCLUDED");
+  assert.ok(target.reason_codes.includes("DISCONTINUITY"));
+});
+test("engine semantics native reversal stays on original and moved occurrences / 엔진 역행은 원래·이동한 구간 모두에 유지", () => {
+  const data = authored(
+    [edge(1, [point(0), point(10)]), edge(2, [point(10), point(20)])],
+    [
+      { coordinate: point(9.5), index: 1, fraction: 0.2 },
+      { coordinate: point(9), index: 1, fraction: 0 },
+      { coordinate: point(11), index: 1, fraction: 0.1 },
+      { coordinate: point(20), index: 1, fraction: 1 },
+    ],
+  );
+  for (const observation of data.run.observations) observation.accuracy_m = 3;
+  const result = data.read();
+  assert.equal(result.points[0]!.engine_edge_id, "2");
+  assert.equal(result.points[0]!.edge_id, "1");
+  for (const traversal of result.traversals) {
+    assert.equal(traversal.status, "EXCLUDED");
+    assert.ok(traversal.reason_codes.includes("DISCONTINUITY"));
+  }
+});
+test("engine semantics native reversal length belongs to its own occurrence / 엔진 역행 거리에는 엔진 발생 구간의 길이 사용", () => {
+  const data = authored(
+    [edge(1, [point(0), point(100)]), edge(2, [point(100), point(110)])],
+    [
+      { coordinate: point(99.5), index: 1, fraction: 0.09 },
+      { coordinate: point(99.4), index: 1, fraction: 0.04 },
+      { coordinate: point(101), index: 1, fraction: 0.1 },
+      { coordinate: point(110), index: 1, fraction: 1 },
+    ],
+  );
+  for (const observation of data.run.observations) observation.accuracy_m = 3;
+  const result = data.read();
+  assert.ok(
+    result.traversals.every((t) => !t.reason_codes.includes("DISCONTINUITY")),
+  );
+  assert.equal(result.traversals[1]!.status, "ACCEPTED");
+});

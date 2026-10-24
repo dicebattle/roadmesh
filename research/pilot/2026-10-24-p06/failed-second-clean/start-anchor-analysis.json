@@ -1,0 +1,656 @@
+{
+  "description_en": "Read-only diagnostic of noisy initial endpoint eligibility and reversal interpretation from the preserved failed second whole run. No source, compiler, matcher or engine execution.",
+  "description_ko": "보존된 두 번째 전체 실행 실패 원문에서 잡음 시작 끝점 자격·역행 해석만 읽기 분석했습니다. 소스·컴파일·매칭·엔진 실행은 없습니다.",
+  "source_result": "data/p06-main-20261024-r2/seoul/workload/matching/result.json",
+  "source_result_sha256": "ccb86efcf907fac60924da2ca3ff5e3b5d93b749a0f5fc2c57df03b5e7391284",
+  "edge_id": "9151104797786",
+  "full_length_m": 17.622410311100804,
+  "verified_start": [
+    126.931842,
+    37.527794
+  ],
+  "raw_evidence": {
+    "request": "data/p06-main-20261024-r2/seoul/workload/matching/requests/0056-trace_attributes.request.json",
+    "response": "data/p06-main-20261024-r2/seoul/workload/matching/requests/0056-trace_attributes.response.json",
+    "response_sha256": "776772e6acfe41fd4c9e0dccab6003995f15f75afaa9369ea397345aa4b5e057",
+    "first_matched_points": [
+      {
+        "lon": 126.931841,
+        "lat": 37.527794,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0,
+        "distance_from_trace_point": 1.235373
+      },
+      {
+        "lon": 126.931841,
+        "lat": 37.527794,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0,
+        "distance_from_trace_point": 2.320117
+      },
+      {
+        "lon": 126.931841,
+        "lat": 37.527794,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0,
+        "distance_from_trace_point": 2.456175
+      },
+      {
+        "lon": 126.931841,
+        "lat": 37.527794,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0,
+        "distance_from_trace_point": 1.239328
+      },
+      {
+        "lon": 126.931841,
+        "lat": 37.527794,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0,
+        "distance_from_trace_point": 2.638157
+      },
+      {
+        "lon": 126.931841,
+        "lat": 37.527794,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0,
+        "distance_from_trace_point": 1.764178
+      },
+      {
+        "lon": 126.931841,
+        "lat": 37.527794,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0,
+        "distance_from_trace_point": 1.626181
+      },
+      {
+        "lon": 126.931841,
+        "lat": 37.527794,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0,
+        "distance_from_trace_point": 2.543718
+      },
+      {
+        "lon": 126.931841,
+        "lat": 37.527794,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0,
+        "distance_from_trace_point": 1.548938
+      },
+      {
+        "lon": 126.931841,
+        "lat": 37.527794,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0,
+        "distance_from_trace_point": 2.468671
+      },
+      {
+        "lon": 126.931841,
+        "lat": 37.527794,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0,
+        "distance_from_trace_point": 2.011691
+      },
+      {
+        "lon": 126.931782,
+        "lat": 37.527779,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0.309955,
+        "distance_from_trace_point": 0.775187
+      },
+      {
+        "lon": 126.931707,
+        "lat": 37.527751,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0.727235,
+        "distance_from_trace_point": 0.449176
+      },
+      {
+        "lon": 126.931705,
+        "lat": 37.527751,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0.735687,
+        "distance_from_trace_point": 1.21068
+      },
+      {
+        "lon": 126.93161,
+        "lat": 37.527752,
+        "type": "matched",
+        "edge_index": 1,
+        "distance_along_edge": 0.087795,
+        "distance_from_trace_point": 0.146581
+      }
+    ]
+  },
+  "rows": [
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:0",
+      "time_ms": 0,
+      "observation": [
+        126.931828016,
+        37.527792641
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 1.242391414621958,
+      "chosen_edge": "9151104797786",
+      "projected_fraction": 0.06926816500028082,
+      "projected_progress_on_first_edge_m": 1.2206720251319807,
+      "engine_edge": "9151104797786",
+      "engine_fraction": 0,
+      "engine_distance_m": 1.235373,
+      "projected_backwards_m": null,
+      "engine_backwards_m": null,
+      "raw_engine_occurrence": 0,
+      "raw_engine_coordinate": [
+        126.931841,
+        37.527794
+      ],
+      "observation_to_serialized_engine_coordinate_m": 1.154911821630318,
+      "upstream_begin_discontinuity": false,
+      "upstream_end_discontinuity": false,
+      "original_both_distance_guards_pass": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:500",
+      "time_ms": 500,
+      "observation": [
+        126.931816543,
+        37.527799721
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 2.3332970720924426,
+      "chosen_edge": "9151104797786",
+      "projected_fraction": 0.1103637566683879,
+      "projected_progress_on_first_edge_m": 1.944875403484819,
+      "engine_edge": "9151104797786",
+      "engine_fraction": 0,
+      "engine_distance_m": 2.320117,
+      "projected_backwards_m": -0.7242033783528383,
+      "engine_backwards_m": 0,
+      "raw_engine_occurrence": 0,
+      "raw_engine_coordinate": [
+        126.931841,
+        37.527794
+      ],
+      "observation_to_serialized_engine_coordinate_m": 2.248582196412674,
+      "upstream_begin_discontinuity": false,
+      "upstream_end_discontinuity": false,
+      "original_both_distance_guards_pass": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:1000",
+      "time_ms": 1000,
+      "observation": [
+        126.931866503,
+        37.527783236
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 2.4701280222900253,
+      "chosen_edge": "9151104797786",
+      "projected_fraction": 0,
+      "projected_progress_on_first_edge_m": 0,
+      "engine_edge": "9151104797786",
+      "engine_fraction": 0,
+      "engine_distance_m": 2.456175,
+      "projected_backwards_m": 1.944875403484819,
+      "engine_backwards_m": 0,
+      "raw_engine_occurrence": 0,
+      "raw_engine_coordinate": [
+        126.931841,
+        37.527794
+      ],
+      "observation_to_serialized_engine_coordinate_m": 2.547626600869004,
+      "upstream_begin_discontinuity": false,
+      "upstream_end_discontinuity": false,
+      "original_both_distance_guards_pass": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:1500",
+      "time_ms": 1500,
+      "observation": [
+        126.931833792,
+        37.527784875
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 1.2463682546444708,
+      "chosen_edge": "9151104797786",
+      "projected_fraction": 0.05664612870121224,
+      "projected_progress_on_first_edge_m": 0.9982413225081858,
+      "engine_edge": "9151104797786",
+      "engine_fraction": 0,
+      "engine_distance_m": 1.239328,
+      "projected_backwards_m": -0.9982413225081858,
+      "engine_backwards_m": 0,
+      "raw_engine_occurrence": 0,
+      "raw_engine_coordinate": [
+        126.931841,
+        37.527794
+      ],
+      "observation_to_serialized_engine_coordinate_m": 1.1973103901969877,
+      "upstream_begin_discontinuity": false,
+      "upstream_end_discontinuity": false,
+      "original_both_distance_guards_pass": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:2000",
+      "time_ms": 2000,
+      "observation": [
+        126.931870747,
+        37.52780104
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 2.6531435599229503,
+      "chosen_edge": "9151104797786",
+      "projected_fraction": 0,
+      "projected_progress_on_first_edge_m": 0,
+      "engine_edge": "9151104797786",
+      "engine_fraction": 0,
+      "engine_distance_m": 2.638157,
+      "projected_backwards_m": 0.9982413225081858,
+      "engine_backwards_m": 0,
+      "raw_engine_occurrence": 0,
+      "raw_engine_coordinate": [
+        126.931841,
+        37.527794
+      ],
+      "observation_to_serialized_engine_coordinate_m": 2.7375255154044456,
+      "upstream_begin_discontinuity": false,
+      "upstream_end_discontinuity": false,
+      "original_both_distance_guards_pass": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:2500",
+      "time_ms": 2500,
+      "observation": [
+        126.931860739,
+        37.527788192
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 1.774199487133912,
+      "chosen_edge": "9151104797786",
+      "projected_fraction": 0,
+      "projected_progress_on_first_edge_m": 0,
+      "engine_edge": "9151104797786",
+      "engine_fraction": 0,
+      "engine_distance_m": 1.764178,
+      "projected_backwards_m": 0,
+      "engine_backwards_m": 0,
+      "raw_engine_occurrence": 0,
+      "raw_engine_coordinate": [
+        126.931841,
+        37.527794
+      ],
+      "observation_to_serialized_engine_coordinate_m": 1.856611377382898,
+      "upstream_begin_discontinuity": false,
+      "upstream_end_discontinuity": false,
+      "original_both_distance_guards_pass": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:3000",
+      "time_ms": 3000,
+      "observation": [
+        126.931826768,
+        37.52780239
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 1.6354186893393716,
+      "chosen_edge": "9151104797786",
+      "projected_fraction": 0.056498733033971266,
+      "projected_progress_on_first_edge_m": 0.9956438555819869,
+      "engine_edge": "9151104797786",
+      "engine_fraction": 0,
+      "engine_distance_m": 1.626181,
+      "projected_backwards_m": -0.9956438555819869,
+      "engine_backwards_m": 0,
+      "raw_engine_occurrence": 0,
+      "raw_engine_coordinate": [
+        126.931841,
+        37.527794
+      ],
+      "observation_to_serialized_engine_coordinate_m": 1.5637996056217178,
+      "upstream_begin_discontinuity": false,
+      "upstream_end_discontinuity": false,
+      "original_both_distance_guards_pass": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:3500",
+      "time_ms": 3500,
+      "observation": [
+        126.931844419,
+        37.527816926
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 2.5581678510312713,
+      "chosen_edge": "9151104797786",
+      "projected_fraction": 0,
+      "projected_progress_on_first_edge_m": 0,
+      "engine_edge": "9151104797786",
+      "engine_fraction": 0,
+      "engine_distance_m": 2.543718,
+      "projected_backwards_m": 0.9956438555819869,
+      "engine_backwards_m": 0,
+      "raw_engine_occurrence": 0,
+      "raw_engine_coordinate": [
+        126.931841,
+        37.527794
+      ],
+      "observation_to_serialized_engine_coordinate_m": 2.567025830154182,
+      "upstream_begin_discontinuity": false,
+      "upstream_end_discontinuity": false,
+      "original_both_distance_guards_pass": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:4000",
+      "time_ms": 4000,
+      "observation": [
+        126.931842046,
+        37.527808009
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 1.557737160790813,
+      "chosen_edge": "9151104797786",
+      "projected_fraction": 0,
+      "projected_progress_on_first_edge_m": 0,
+      "engine_edge": "9151104797786",
+      "engine_fraction": 0,
+      "engine_distance_m": 1.548938,
+      "projected_backwards_m": 0,
+      "engine_backwards_m": 0,
+      "raw_engine_occurrence": 0,
+      "raw_engine_coordinate": [
+        126.931841,
+        37.527794
+      ],
+      "observation_to_serialized_engine_coordinate_m": 1.5604604884137125,
+      "upstream_begin_discontinuity": false,
+      "upstream_end_discontinuity": false,
+      "original_both_distance_guards_pass": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:4500",
+      "time_ms": 4500,
+      "observation": [
+        126.931820462,
+        37.527808379
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 2.4826953410460395,
+      "chosen_edge": "9151104797786",
+      "projected_fraction": 0.07505905585241823,
+      "projected_progress_on_first_edge_m": 1.3227214797951463,
+      "engine_edge": "9151104797786",
+      "engine_fraction": 0,
+      "engine_distance_m": 2.468671,
+      "projected_backwards_m": -1.3227214797951463,
+      "engine_backwards_m": 0,
+      "raw_engine_occurrence": 0,
+      "raw_engine_coordinate": [
+        126.931841,
+        37.527794
+      ],
+      "observation_to_serialized_engine_coordinate_m": 2.4159003736413243,
+      "upstream_begin_discontinuity": false,
+      "upstream_end_discontinuity": false,
+      "original_both_distance_guards_pass": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:5000",
+      "time_ms": 5000,
+      "observation": [
+        126.931864786,
+        37.527791882
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 2.023118550978539,
+      "chosen_edge": "9151104797786",
+      "projected_fraction": 0,
+      "projected_progress_on_first_edge_m": 0,
+      "engine_edge": "9151104797786",
+      "engine_fraction": 0,
+      "engine_distance_m": 2.011691,
+      "projected_backwards_m": 1.3227214797951463,
+      "engine_backwards_m": 0,
+      "raw_engine_occurrence": 0,
+      "raw_engine_coordinate": [
+        126.931841,
+        37.527794
+      ],
+      "observation_to_serialized_engine_coordinate_m": 2.110728114248449,
+      "upstream_begin_discontinuity": false,
+      "upstream_end_discontinuity": false,
+      "original_both_distance_guards_pass": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:5500",
+      "time_ms": 5500,
+      "observation": [
+        126.931785687,
+        37.527772374
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 5.517509368283143,
+      "chosen_edge": "9151104797786",
+      "projected_fraction": 0.3099550944085519,
+      "projected_progress_on_first_edge_m": 5.462155851683488,
+      "engine_edge": "9151104797786",
+      "engine_fraction": 0.309955,
+      "engine_distance_m": 0.775187,
+      "projected_backwards_m": -5.462155851683488,
+      "engine_backwards_m": -5.46215418797725,
+      "raw_engine_occurrence": 0,
+      "raw_engine_coordinate": [
+        126.931782,
+        37.527779
+      ],
+      "observation_to_serialized_engine_coordinate_m": 0.805329424440589,
+      "upstream_begin_discontinuity": false,
+      "upstream_end_discontinuity": false,
+      "original_both_distance_guards_pass": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:6000",
+      "time_ms": 6000,
+      "observation": [
+        126.931707737,
+        37.527747887
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 12.902488085050045,
+      "chosen_edge": "9151104797786",
+      "projected_fraction": 0.7272355887805712,
+      "projected_progress_on_first_edge_m": 12.815643938326202,
+      "engine_edge": "9151104797786",
+      "engine_fraction": 0.727235,
+      "engine_distance_m": 0.449176,
+      "projected_backwards_m": -7.353488086642713,
+      "engine_backwards_m": -7.3534793746161435,
+      "raw_engine_occurrence": 0,
+      "raw_engine_coordinate": [
+        126.931707,
+        37.527751
+      ],
+      "observation_to_serialized_engine_coordinate_m": 0.35219873318682593,
+      "upstream_begin_discontinuity": false,
+      "upstream_end_discontinuity": false,
+      "original_both_distance_guards_pass": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:6500",
+      "time_ms": 6500,
+      "observation": [
+        126.931707048,
+        37.527740892
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 13.2852603997155,
+      "chosen_edge": "9151104797786",
+      "projected_fraction": 0.7356875769693406,
+      "projected_progress_on_first_edge_m": 12.964588342133274,
+      "engine_edge": "9151104797786",
+      "engine_fraction": 0.735687,
+      "engine_distance_m": 1.21068,
+      "projected_backwards_m": -0.14894440380707324,
+      "engine_backwards_m": -0.14894461194942427,
+      "raw_engine_occurrence": 0,
+      "raw_engine_coordinate": [
+        126.931705,
+        37.527751
+      ],
+      "observation_to_serialized_engine_coordinate_m": 1.138377178245231,
+      "upstream_begin_discontinuity": false,
+      "upstream_end_discontinuity": false,
+      "original_both_distance_guards_pass": true
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:7000",
+      "time_ms": 7000,
+      "observation": [
+        126.93161006,
+        37.527751381
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 20.995270072464287,
+      "chosen_edge": "9151239015514",
+      "projected_fraction": 0.08779590376659928,
+      "projected_progress_on_first_edge_m": null,
+      "engine_edge": "9151239015514",
+      "engine_fraction": 0.087795,
+      "engine_distance_m": 0.146581,
+      "projected_backwards_m": null,
+      "engine_backwards_m": null,
+      "raw_engine_occurrence": 1,
+      "raw_engine_coordinate": [
+        126.93161,
+        37.527752
+      ],
+      "observation_to_serialized_engine_coordinate_m": 0.06903282048530664,
+      "upstream_begin_discontinuity": false,
+      "upstream_end_discontinuity": false,
+      "original_both_distance_guards_pass": true
+    }
+  ],
+  "confirmed_projection_reversals": [
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:1000",
+      "time_ms": 1000,
+      "observation": [
+        126.931866503,
+        37.527783236
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 2.4701280222900253,
+      "chosen_edge": "9151104797786",
+      "projected_fraction": 0,
+      "projected_progress_on_first_edge_m": 0,
+      "engine_edge": "9151104797786",
+      "engine_fraction": 0,
+      "engine_distance_m": 2.456175,
+      "projected_backwards_m": 1.944875403484819,
+      "engine_backwards_m": 0
+    },
+    {
+      "sample_id": "seoul-road-demo:mapo-bridge-gap:5000",
+      "time_ms": 5000,
+      "observation": [
+        126.931864786,
+        37.527791882
+      ],
+      "accuracy_m": 3,
+      "allowed_endpoint_distance_m": 4,
+      "distance_to_verified_start_m": 2.023118550978539,
+      "chosen_edge": "9151104797786",
+      "projected_fraction": 0,
+      "projected_progress_on_first_edge_m": 0,
+      "engine_edge": "9151104797786",
+      "engine_fraction": 0,
+      "engine_distance_m": 2.011691,
+      "projected_backwards_m": 1.3227214797951463,
+      "engine_backwards_m": 0
+    }
+  ],
+  "current_traversal": {
+    "traversal_id": "92a64e4495a41a7f688d1f577831689d021a299ada0b864af89a8d226fd65616",
+    "vehicle_id": "mapo-bridge-gap",
+    "edge_id": "9151104797786",
+    "label": "edge-9151104797786",
+    "forward": true,
+    "status": "EXCLUDED",
+    "entered_at_ms": null,
+    "exited_at_ms": 6775,
+    "reason_codes": [
+      "DISCONTINUITY",
+      "PARTIAL_ENTRY"
+    ],
+    "source_sample_ids": [
+      "seoul-road-demo:mapo-bridge-gap:0",
+      "seoul-road-demo:mapo-bridge-gap:500",
+      "seoul-road-demo:mapo-bridge-gap:1000",
+      "seoul-road-demo:mapo-bridge-gap:1500",
+      "seoul-road-demo:mapo-bridge-gap:2000",
+      "seoul-road-demo:mapo-bridge-gap:2500",
+      "seoul-road-demo:mapo-bridge-gap:3000",
+      "seoul-road-demo:mapo-bridge-gap:3500",
+      "seoul-road-demo:mapo-bridge-gap:4000",
+      "seoul-road-demo:mapo-bridge-gap:4500",
+      "seoul-road-demo:mapo-bridge-gap:5000",
+      "seoul-road-demo:mapo-bridge-gap:5500",
+      "seoul-road-demo:mapo-bridge-gap:6000",
+      "seoul-road-demo:mapo-bridge-gap:6500"
+    ],
+    "entry_bracket": null,
+    "exit_bracket": {
+      "before_sample_id": "seoul-road-demo:mapo-bridge-gap:6500",
+      "after_sample_id": "seoul-road-demo:mapo-bridge-gap:7000",
+      "before_offset_ms": 6500,
+      "after_offset_ms": 7000,
+      "interpolated_at_ms": 6775
+    },
+    "reason_messages": [
+      {
+        "reason_code": "DISCONTINUITY",
+        "message_en": "Reversal or disconnected matching prevents traversal timing.",
+        "message_ko": "역행 또는 대응 단절로 통과 시각을 계산할 수 없습니다."
+      },
+      {
+        "reason_code": "PARTIAL_ENTRY",
+        "message_en": "No observed evidence of full edge entry.",
+        "message_ko": "전체 구간 진입의 관측 근거가 없습니다."
+      }
+    ]
+  },
+  "scope_en": "Restoring an engine-anchored endpoint within the original uncertainty radius restores the operational v2 endpoint contract; it is not independent proof that the physical driver crossed that endpoint. Original-occurrence progress must use occurrence indices rather than edge ID alone when considering legacy reversal semantics.",
+  "scope_ko": "기존 불확실성 반경 안의 엔진 끝점 자격 복원은 v2의 운영상 끝점 계약을 복원하는 것이며 실제 운전자가 끝점을 통과했다는 독립 증명은 아닙니다. 기존 역행 기준을 보존할 때는 같은 구간ID만이 아니라 엔진 경로의 동일 발생 순번인지 검사해야 합니다.",
+  "initial_0_to_5000_all_original_distance_guards_pass": true,
+  "initial_0_to_5000_all_engine_zero": true,
+  "initial_0_to_5000_upstream_flag_count": 0
+}
