@@ -1,0 +1,36 @@
+[
+  {
+    "assertion_id": "seven-events",
+    "kind": "event_count",
+    "expected": 0,
+    "required": true,
+    "status": "FAIL",
+    "actual": 7,
+    "evidence_path": "events.json",
+    "message_en": "Expectation did not match.",
+    "message_ko": "기대값과 일치하지 않습니다."
+  },
+  {
+    "assertion_id": "three-edge-events",
+    "kind": "event_kind_count",
+    "event_kind": "fixture_edge_enter",
+    "expected": 3,
+    "required": true,
+    "status": "PASS",
+    "actual": 3,
+    "evidence_path": "events.json",
+    "message_en": "Expectation matched.",
+    "message_ko": "기대값과 일치합니다."
+  },
+  {
+    "assertion_id": "last-marker-at-500",
+    "kind": "last_event_ms",
+    "expected": 500,
+    "required": true,
+    "status": "PASS",
+    "actual": 500,
+    "evidence_path": "events.json",
+    "message_en": "Expectation matched.",
+    "message_ko": "기대값과 일치합니다."
+  }
+]

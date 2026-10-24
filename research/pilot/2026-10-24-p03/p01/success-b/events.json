@@ -1,0 +1,56 @@
+[
+  {
+    "sequence": 1,
+    "kind": "vehicle_departure",
+    "entity_id": "car-b",
+    "offset_ms": 19,
+    "event_time_utc": "2026-10-24T00:00:00.019Z"
+  },
+  {
+    "sequence": 2,
+    "kind": "fixture_edge_enter",
+    "entity_id": "car-b",
+    "offset_ms": 19,
+    "event_time_utc": "2026-10-24T00:00:00.019Z",
+    "fixture_label": "edge-b"
+  },
+  {
+    "sequence": 3,
+    "kind": "vehicle_departure",
+    "entity_id": "car-a",
+    "offset_ms": 41,
+    "event_time_utc": "2026-10-24T00:00:00.041Z"
+  },
+  {
+    "sequence": 4,
+    "kind": "fixture_edge_enter",
+    "entity_id": "car-a",
+    "offset_ms": 41,
+    "event_time_utc": "2026-10-24T00:00:00.041Z",
+    "fixture_label": "edge-a"
+  },
+  {
+    "sequence": 5,
+    "kind": "fixture_edge_enter",
+    "entity_id": "car-a",
+    "offset_ms": 141,
+    "event_time_utc": "2026-10-24T00:00:00.141Z",
+    "fixture_label": "edge-c"
+  },
+  {
+    "sequence": 6,
+    "kind": "fault_marker",
+    "entity_id": "car-a",
+    "offset_ms": 500,
+    "event_time_utc": "2026-10-24T00:00:00.500Z",
+    "fault_id": "marker-a"
+  },
+  {
+    "sequence": 7,
+    "kind": "fault_marker",
+    "entity_id": "car-a",
+    "offset_ms": 500,
+    "event_time_utc": "2026-10-24T00:00:00.500Z",
+    "fault_id": "marker-b"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "run_id": "15b7d828-0359-47de-a10f-9e01d36d45ef",
+  "scenario_id": "synthetic-scheduler",
+  "source": {
+    "commit": "5422399dcfbce746990600fbdda7ab2cca183f09",
+    "dirty": false
+  },
+  "python": null,
+  "node": "22.23.4",
+  "platform": "darwin-24.6.0-arm64",
+  "scenario_sha256": "17d53ba1e92496ae06c581106e4d08af8f474b5e29eb18524da9a95a627255a7",
+  "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+  "started_at_utc": "2026-10-24T08:58:28.536Z",
+  "completed_at_utc": "2026-10-24T08:58:28.565Z",
+  "event_count": 7,
+  "fixture_graph_id": "unloaded-grid",
+  "graph_resolved": false,
+  "graph_loaded": false,
+  "engine_executed": false,
+  "image_digests": [],
+  "aggregation_policy": null,
+  "status": "PASS",
+  "seed": 7,
+  "evidence": {
+    "events": "events.json",
+    "assertions": "assertions.json",
+    "summary": "summary.md"
+  }
+}

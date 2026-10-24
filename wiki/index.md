@@ -1,12 +1,12 @@
 # RouteLens 프로젝트 위키
 
-Verified: [TypeScript P01/P14a tools](modules/pilot-runner.md), 33 tests and independent local/Node 22/24 hosted evidence. [Migration proof](../research/pilot/typescript-migration-2026-10-24.json). [P02 graph proof](modules/test-graph.md) is also complete. Next module: **P03 vehicle/GPS simulation**. The complete pilot and geographic 100/100 gate remain separate. [Development workflow](../docs/12-development-workflow.md): protected main with required CI, descriptive bilingual commits and feature-branch pushes.
+Verified: [TypeScript P01/P14a tools](modules/pilot-runner.md), 33 tests and independent local/Node 22/24 hosted evidence. [Migration proof](../research/pilot/typescript-migration-2026-10-24.json). [P02 graph proof](modules/test-graph.md) is also complete. [P03 and fresh whole-module simulation](modules/vehicle-simulation.md) are locally verified; [recorded evidence](../research/pilot/2026-10-24-p03/report.md) includes 30/30 checks. Next: **P04 real map matching**. The complete pilot and geographic 100/100 gate remain separate. [Development workflow](../docs/12-development-workflow.md): protected main with required CI, descriptive bilingual commits and feature-branch pushes.
 
-[TypeScript P01/P14a](modules/pilot-runner.md)의 33개 검사·독립 로컬 실행·Node 22/24 원격 증거를 검증했습니다. [전환 증거](../research/pilot/typescript-migration-2026-10-24.json)를 보존합니다. [P02 그래프 검증](modules/test-graph.md)도 완료했습니다. 다음은 **P03 차량·GPS 생성기**입니다. 전체 파일럿과 실제 도로 자료 100/100개 조건은 별도입니다. [개발 절차](../docs/12-development-workflow.md)는 필수 CI를 포함한 main 보호·상세한 이중 언어 커밋·작업 브랜치 푸시입니다.
+[TypeScript P01/P14a](modules/pilot-runner.md)의 33개 검사·독립 로컬 실행·Node 22/24 원격 증거를 검증했습니다. [전환 증거](../research/pilot/typescript-migration-2026-10-24.json)를 보존합니다. [P02 그래프 검증](modules/test-graph.md)도 완료했습니다. [P03·전체 구현 모듈 통합](modules/vehicle-simulation.md)을 로컬 검증했고 [녹화 증거](../research/pilot/2026-10-24-p03/report.md)에30/30을 기록했습니다. 다음은 **P04 실제 도로 매칭**입니다. 전체 파일럿과 실제 도로 자료 100/100개 조건은 별도입니다. [개발 절차](../docs/12-development-workflow.md)는 필수 CI를 포함한 main 보호·상세한 이중 언어 커밋·작업 브랜치 푸시입니다.
 
-Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases in each category. The corpus validator and P01 tools exist; navigation and deployment do not.
+Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases in each category. Corpus/P01/P02/P03 tools and a recorded evidence viewer exist; complete navigation and deployment do not.
 
-실제 지역 M0 / RM-001은 진행 중이며 검토한 실제 도로 사례는 각각 0개입니다. 자료 검사기와 P01 도구는 구현됐지만 내비게이션·배포는 없습니다.
+실제 지역 M0 / RM-001은 진행 중이며 검토한 실제 도로 사례는 각각 0개입니다. 자료·P01/P02/P03 도구·녹화 증거 화면은 구현됐지만 완전한 내비게이션·배포는 없습니다.
 
 - [P02 graph evidence / P02 그래프 증거](../research/pilot/p02-main-2026-10-24.json)
 - [P03 design / P03 설계](../docs/16-p03-vehicle-simulation.md)
@@ -54,3 +54,6 @@ Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases i
 ## 기록 방법
 
 새 자료는 출처와 접근 날짜를 기록하고, 관련 설계·모듈 페이지를 갱신한 뒤 작업 기록에 결과를 추가합니다. 추정과 확인된 결과를 구분하며, 기존 주장과 충돌하면 해당 문서에서 변경 이유를 설명합니다. 기록 규칙은 [AGENTS.md](../AGENTS.md)에 있습니다.
+
+- [Full goal audit / 전체 목표 판정](../docs/18-goal-progress.md)
+- [Integration and media contract / 통합·미디어 계약](../docs/17-simulation-evidence-delivery.md)

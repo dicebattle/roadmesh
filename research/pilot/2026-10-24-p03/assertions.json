@@ -1,0 +1,304 @@
+[
+  {
+    "assertion_id": "synthetic-quota-refusal",
+    "status": "PASS",
+    "message_en": "Synthetic corpus is valid but cannot satisfy the real-road quota.",
+    "message_ko": "합성 자료는 유효하지만 실제 도로 사례 기준을 충족하지 않습니다.",
+    "expected": false,
+    "actual": false,
+    "evidence_path": "corpus/report.json"
+  },
+  {
+    "assertion_id": "p01-replay-failure-skip",
+    "status": "PASS",
+    "message_en": "Fresh P01 replay, deliberate failure, skip and invalid-input checks passed.",
+    "message_ko": "새 P01 재생·의도적 실패·생략·잘못된 입력 검사가 통과했습니다.",
+    "expected": 5,
+    "actual": 5,
+    "evidence_path": "p01/checks.json"
+  },
+  {
+    "assertion_id": "p02-cleanup-and-graph",
+    "status": "PASS",
+    "message_en": "Fresh real Valhalla graph, road legality and container cleanup verified.",
+    "message_ko": "새 실제 Valhalla 그래프·통행 규칙·컨테이너 정리를 확인했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "graph/manifest.json"
+  },
+  {
+    "assertion_id": "p02-p03-graph-binding",
+    "status": "PASS",
+    "message_en": "Simulation uses this run’s verified graph identity.",
+    "message_ko": "시뮬레이션이 이번 실행에서 검증한 그래프 식별자를 사용합니다.",
+    "expected": "c1d06ace33d8e9184749e7b09c946f632489cdca5064672396e970d9c299aa0a",
+    "actual": "c1d06ace33d8e9184749e7b09c946f632489cdca5064672396e970d9c299aa0a",
+    "evidence_path": "simulation/manifest.json"
+  },
+  {
+    "assertion_id": "authored-truth-count",
+    "status": "PASS",
+    "message_en": "Counts match independent hand calculations.",
+    "message_ko": "개수가 독립 수작업 계산과 일치합니다.",
+    "expected": 187,
+    "actual": 187,
+    "evidence_path": "simulation/truth.json"
+  },
+  {
+    "assertion_id": "authored-observation-count",
+    "status": "PASS",
+    "message_en": "Counts match independent hand calculations.",
+    "message_ko": "개수가 독립 수작업 계산과 일치합니다.",
+    "expected": 177,
+    "actual": 177,
+    "evidence_path": "simulation/truth.json"
+  },
+  {
+    "assertion_id": "authored-omission-count",
+    "status": "PASS",
+    "message_en": "Counts match independent hand calculations.",
+    "message_ko": "개수가 독립 수작업 계산과 일치합니다.",
+    "expected": 10,
+    "actual": 10,
+    "evidence_path": "simulation/truth.json"
+  },
+  {
+    "assertion_id": "authored-traversal-count",
+    "status": "PASS",
+    "message_en": "Counts match independent hand calculations.",
+    "message_ko": "개수가 독립 수작업 계산과 일치합니다.",
+    "expected": 8,
+    "actual": 8,
+    "evidence_path": "simulation/truth.json"
+  },
+  {
+    "assertion_id": "authored-arrival-baseline-clean",
+    "status": "PASS",
+    "message_en": "Arrival matches independent distance/speed calculation.",
+    "message_ko": "도착 시각이 독립 거리·속도 계산과 일치합니다.",
+    "expected": 44479,
+    "actual": 44479,
+    "evidence_path": "simulation/truth.json"
+  },
+  {
+    "assertion_id": "authored-ab-exit-baseline-clean",
+    "status": "PASS",
+    "message_en": "AB exit matches hand calculation.",
+    "message_ko": "AB 진출이 수작업 계산과 일치합니다.",
+    "expected": 22240,
+    "actual": 22240,
+    "evidence_path": "simulation/truth.json"
+  },
+  {
+    "assertion_id": "authored-arrival-baseline-noisy",
+    "status": "PASS",
+    "message_en": "Arrival matches independent distance/speed calculation.",
+    "message_ko": "도착 시각이 독립 거리·속도 계산과 일치합니다.",
+    "expected": 44479,
+    "actual": 44479,
+    "evidence_path": "simulation/truth.json"
+  },
+  {
+    "assertion_id": "authored-ab-exit-baseline-noisy",
+    "status": "PASS",
+    "message_en": "AB exit matches hand calculation.",
+    "message_ko": "AB 진출이 수작업 계산과 일치합니다.",
+    "expected": 22240,
+    "actual": 22240,
+    "evidence_path": "simulation/truth.json"
+  },
+  {
+    "assertion_id": "authored-upper-exits",
+    "status": "PASS",
+    "message_en": "Upper crossings match independently calculated wait and distance.",
+    "message_ko": "상단 통과 시각이 독립 대기·거리 계산과 일치합니다.",
+    "expected": [
+      27240,
+      49479,
+      71718,
+      93957
+    ],
+    "actual": [
+      27240,
+      49479,
+      71718,
+      93957
+    ],
+    "evidence_path": "simulation/truth.json"
+  },
+  {
+    "assertion_id": "authored-zero-speed-wait",
+    "status": "PASS",
+    "message_en": "Upper vehicle remains still through the initial five seconds.",
+    "message_ko": "상단 차량이 처음 5초 동안 정지합니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "simulation/truth.json"
+  },
+  {
+    "assertion_id": "authored-drop-boundaries",
+    "status": "PASS",
+    "message_en": "Independent half-open drop times and 25 s observation match.",
+    "message_ko": "독립 반열린 누락 시각과 25초 관측이 일치합니다.",
+    "expected": [
+      15000,
+      16000,
+      17000,
+      18000,
+      19000,
+      20000,
+      21000,
+      22000,
+      23000,
+      24000
+    ],
+    "actual": [
+      15000,
+      16000,
+      17000,
+      18000,
+      19000,
+      20000,
+      21000,
+      22000,
+      23000,
+      24000
+    ],
+    "evidence_path": "simulation/omissions.json"
+  },
+  {
+    "assertion_id": "p03-complete-sample-partition",
+    "status": "PASS",
+    "message_en": "Every true sample is observed or explicitly omitted.",
+    "message_ko": "모든 정답 표본은 관측되거나 누락으로 기록됩니다.",
+    "expected": 187,
+    "actual": 187,
+    "evidence_path": "simulation/truth.json"
+  },
+  {
+    "assertion_id": "p03-bounded-noise",
+    "status": "PASS",
+    "message_en": "Observed coordinates stay within the declared noise radius.",
+    "message_ko": "관측 좌표가 선언한 잡음 반경 안에 있습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "simulation/observations.json"
+  },
+  {
+    "assertion_id": "p03-synthetic-observations",
+    "status": "PASS",
+    "message_en": "Observations are synthetic and contain no truth edge IDs.",
+    "message_ko": "관측은 합성이며 정답 구간 식별자를 포함하지 않습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "simulation/observations.json"
+  },
+  {
+    "assertion_id": "p03-half-open-drops",
+    "status": "PASS",
+    "message_en": "Omissions follow half-open intervals.",
+    "message_ko": "누락이 반열린 구간을 따릅니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "simulation/omissions.json"
+  },
+  {
+    "assertion_id": "p03-completed-traversals",
+    "status": "PASS",
+    "message_en": "All independently authored paths complete within the scenario.",
+    "message_ko": "독립적으로 작성한 모든 경로가 시나리오 안에 완료됩니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "simulation/truth.json"
+  },
+  {
+    "assertion_id": "truth-invariance-same-seed",
+    "status": "PASS",
+    "message_en": "Replay/fault changes preserve independent truth.",
+    "message_ko": "재생·장애 변경이 독립 정답을 보존합니다.",
+    "expected": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+    "actual": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+    "evidence_path": "replay/same-seed/manifest.json"
+  },
+  {
+    "assertion_id": "observation-replay-same-seed",
+    "status": "PASS",
+    "message_en": "Same seeded observations and omissions replay exactly.",
+    "message_ko": "같은 시드의 관측·누락이 정확히 재생됩니다.",
+    "expected": "c756bedf503ee9933514643c7d133e3867093d7f0fde0b5a61e2111c4c0edc6a",
+    "actual": "c756bedf503ee9933514643c7d133e3867093d7f0fde0b5a61e2111c4c0edc6a",
+    "evidence_path": "replay/same-seed/manifest.json"
+  },
+  {
+    "assertion_id": "truth-invariance-clean",
+    "status": "PASS",
+    "message_en": "Replay/fault changes preserve independent truth.",
+    "message_ko": "재생·장애 변경이 독립 정답을 보존합니다.",
+    "expected": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+    "actual": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+    "evidence_path": "replay/clean/manifest.json"
+  },
+  {
+    "assertion_id": "truth-invariance-other-seed",
+    "status": "PASS",
+    "message_en": "Replay/fault changes preserve independent truth.",
+    "message_ko": "재생·장애 변경이 독립 정답을 보존합니다.",
+    "expected": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+    "actual": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+    "evidence_path": "replay/other-seed/manifest.json"
+  },
+  {
+    "assertion_id": "noise-seed-changes",
+    "status": "PASS",
+    "message_en": "A different seed changes noise, while truth remains fixed.",
+    "message_ko": "다른 시드는 잡음만 바꾸고 정답은 유지합니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "replay/other-seed/manifest.json"
+  },
+  {
+    "assertion_id": "truth-invariance-reordered",
+    "status": "PASS",
+    "message_en": "Replay/fault changes preserve independent truth.",
+    "message_ko": "재생·장애 변경이 독립 정답을 보존합니다.",
+    "expected": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+    "actual": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+    "evidence_path": "replay/reordered/manifest.json"
+  },
+  {
+    "assertion_id": "observation-replay-reordered",
+    "status": "PASS",
+    "message_en": "Same seeded observations and omissions replay exactly.",
+    "message_ko": "같은 시드의 관측·누락이 정확히 재생됩니다.",
+    "expected": "c756bedf503ee9933514643c7d133e3867093d7f0fde0b5a61e2111c4c0edc6a",
+    "actual": "c756bedf503ee9933514643c7d133e3867093d7f0fde0b5a61e2111c4c0edc6a",
+    "evidence_path": "replay/reordered/manifest.json"
+  },
+  {
+    "assertion_id": "clean-noisy-paired-truth",
+    "status": "PASS",
+    "message_en": "Authored clean/noisy vehicle pair has identical independent truth.",
+    "message_ko": "직접 작성한 깨끗한·잡음 차량 쌍의 독립 정답이 같습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "simulation/truth.json"
+  },
+  {
+    "assertion_id": "invalid-path-rejected",
+    "status": "PASS",
+    "message_en": "Invalid authored path was rejected; no successful simulation produced.",
+    "message_ko": "잘못된 작성 경로를 거부했으며 성공 시뮬레이션을 만들지 않았습니다.",
+    "expected": false,
+    "actual": false,
+    "evidence_path": "invalid-path.stderr.txt"
+  },
+  {
+    "assertion_id": "tampered-graph-rejected",
+    "status": "PASS",
+    "message_en": "Tampered graph bundle was rejected; no successful simulation produced.",
+    "message_ko": "변조된 그래프 묶음을 거부했으며 성공 시뮬레이션을 만들지 않았습니다.",
+    "expected": false,
+    "actual": false,
+    "evidence_path": "tampered-bundle.stderr.txt"
+  }
+]

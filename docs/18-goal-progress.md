@@ -10,7 +10,7 @@ The goal remains the complete local pilot in [P01–P14](11-local-pilot.md), not
 | --- | --- | --- |
 | P01 scenario/replay and P14a fast checks / 일정·재생·빠른 검사 | [P01 module](../wiki/modules/pilot-runner.md) | Verified / 검증 |
 | P02 real engine graph / 실제 엔진 그래프 | [P02 proof](../research/pilot/p02-main-2026-10-24.json) | Verified / 검증 |
-| P03 vehicle/GPS / 차량·GPS | [Executable design](17-simulation-evidence-delivery.md) | Implementing / 구현 중 |
+| P03 vehicle/GPS / 차량·GPS | [Clean integrated proof](../research/pilot/2026-10-24-p03/report.md) | Locally verified / 로컬 검증 |
 | P04 real matching and ambiguity handling / 실제 매칭·모호성 처리 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P05 durable ingestion, P06 aggregation / 영속 수집·집계 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P07 signed publication, P08 actual traffic consumption / 서명 게시·속도 반영 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
@@ -18,10 +18,10 @@ The goal remains the complete local pilot in [P01–P14](11-local-pilot.md), not
 | P11 complete client, P12 complete fault matrix / 전체 화면·장애 행렬 | Evidence replay and incremental runner begin now / 증거 재생·점진 실행기부터 시작 | Partial design / 일부 설계 |
 | P13 local Cloudflare parity / Cloudflare 로컬 비교 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P14b engine integration / 엔진 통합 검사 | Extend CI with current whole-system runner / 현재 전체 실행기를 CI에 연결 | Implementing partial coverage / 일부 범위 구현 중 |
-| Whole implemented-system simulation / 구현 모듈 전체 시뮬레이션 | New fresh-run command; no reuse of past PASS files / 과거 성공 파일을 재사용하지 않는 새 실행 | Implementing / 구현 중 |
-| Captured test reports on GitHub / 캡처·보고서 게시 | Exact commit, graph identity, raw reports and screenshots / 정확한 커밋·그래프·원본 보고서·화면 | Pending this increment / 이번 단계 대기 |
-| README EN/KO with recorded demo / 한영 README·실제 녹화 | Current capability, quickstart, linked recording and limitations / 현재 기능·실행법·녹화·한계 | Implementing / 구현 중 |
-| Refresh on implementation changes / 구현 변경 때 갱신 | Runtime fingerprint and asset/report hash check / 구현 지문·미디어/보고서 해시 검사 | Implementing / 구현 중 |
+| Whole implemented-system simulation / 구현 모듈 전체 시뮬레이션 | [Fresh 5-stage report](../research/pilot/2026-10-24-p03/report.md) / 새5단계 보고서 | Locally verified / 로컬 검증 |
+| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/pilot/2026-10-24-p03/report.md) / 보고서·캡처 | Prepared; GitHub delivery pending / 준비·GitHub 반영 대기 |
+| README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | Prepared; publication pending / 준비·게시 대기 |
+| Refresh on implementation changes / 구현 변경 때 갱신 | `media:check` fingerprint/hash/README checks / 지문·해시·README 검사 | Locally verified / 로컬 검증 |
 | Research other AI-development READMEs / 다른 AI 개발 README 참고 | [Research notes](../wiki/sources/readme-presentation.md) | Source inspection complete / 출처 확인 |
 
 A green unit suite does not finish this goal. Completion requires the full module/scenario contract, actual process/network faults where required, inspected integrated evidence, current media/docs and verified GitHub delivery. Mark unmet or weak evidence as incomplete. Geographic 100/100, production deployment and actual mobile trials remain separate gates and must not be implied by synthetic success.

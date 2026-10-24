@@ -1,8 +1,8 @@
 # P03 vehicle/GPS and integrated replay / P03 차량·GPS·통합 재생
 
-Implementation: TypeScript, designed/reviewed by main and implemented by Sol. [Contract](../../docs/17-simulation-evidence-delivery.md). The standalone simulator consumes a verified fresh P02 graph bundle; the integrated command executes every implemented module rather than reading previous successful reports. Final clean-source evidence and media are recorded after the implementation commit.
+Implementation: TypeScript, designed/reviewed by main and implemented by Sol. [Contract](../../docs/17-simulation-evidence-delivery.md). The standalone simulator consumes a verified fresh P02 graph bundle; the integrated command executes every implemented module rather than reading previous successful reports. [Clean-source evidence and captures](../../research/pilot/2026-10-24-p03/report.md) verify 5 fresh stages and 30/30 assertions on `5422399`.
 
-구현은 TypeScript이며 메인이 설계·검토하고 Sol이 작성했습니다. 개별 생성기는 검증된 P02 그래프를 사용하고 통합 명령은 과거 성공 보고서를 읽는 대신 현재 구현된 모듈을 실제 실행합니다. 최종 깨끗한 소스 증거·미디어는 구현 커밋 이후 기록합니다.
+구현은 TypeScript이며 메인이 설계·검토하고 Sol이 작성했습니다. 개별 생성기는 검증된 P02 그래프를 사용하고 통합 명령은 과거 성공 보고서를 읽는 대신 현재 구현된 모듈을 실제 실행합니다. [깨끗한 소스 증거·캡처](../../research/pilot/2026-10-24-p03/report.md)는 위 커밋의 새5단계·30/30판정을 확인합니다.
 
 ```sh
 npm ci

@@ -1,0 +1,102 @@
+{
+  "source": {
+    "commit": "5422399dcfbce746990600fbdda7ab2cca183f09",
+    "dirty": false
+  },
+  "implementation_sha256": "d7bedeb54be6ca1c15f27603fd6094e817416c9b64f83b0cd93850906f192324",
+  "graph_id": "c1d06ace33d8e9184749e7b09c946f632489cdca5064672396e970d9c299aa0a",
+  "assertions": 30,
+  "stages": [
+    {
+      "id": "corpus",
+      "name_en": "Synthetic corpus validation",
+      "name_ko": "합성 자료 검사",
+      "status": "PASS",
+      "evidence_path": "corpus/report.json",
+      "duration_ms": 580.5515829999999
+    },
+    {
+      "id": "p01",
+      "name_en": "Fresh schedule replay and required checks",
+      "name_ko": "새 일정 재생·필수 검사",
+      "status": "PASS",
+      "evidence_path": "p01/checks.json",
+      "duration_ms": 330.992083
+    },
+    {
+      "id": "p02",
+      "name_en": "Fresh real-engine graph and routing",
+      "name_ko": "실제 엔진의 새 그래프·경로",
+      "status": "PASS",
+      "evidence_path": "graph/manifest.json",
+      "duration_ms": 3521.1079580000005
+    },
+    {
+      "id": "p03",
+      "name_en": "Seeded geographic truth and observations",
+      "name_ko": "시드 기반 지리 정답·관측",
+      "status": "PASS",
+      "evidence_path": "simulation/manifest.json",
+      "duration_ms": 81.41858299999967
+    },
+    {
+      "id": "replay",
+      "name_en": "Fresh replay and fault invariance",
+      "name_ko": "새 재생·장애 불변성",
+      "status": "PASS",
+      "evidence_path": "replay/checks.json",
+      "duration_ms": 397.32225000000017
+    }
+  ],
+  "counts": {
+    "vehicles": 3,
+    "truth": 187,
+    "observations": 177,
+    "omissions": 10,
+    "traversals": 8
+  },
+  "maximum_observed_noise_m": 2.8690967303207504,
+  "baseline_exits_ms": [
+    22240,
+    44479
+  ],
+  "upper_exits_ms": [
+    27240,
+    49479,
+    71718,
+    93957
+  ],
+  "omission_offsets_ms": [
+    15000,
+    16000,
+    17000,
+    18000,
+    19000,
+    20000,
+    21000,
+    22000,
+    23000,
+    24000
+  ],
+  "raw_hashes_recomputed": true,
+  "truth_invariance_verified": true,
+  "invalid_path_exit": 2,
+  "tampered_graph_exit": 2,
+  "existing_output_exit": 2,
+  "existing_manifest_preserved": true,
+  "owned_containers_remaining": [],
+  "browser_checks": {
+    "languages": [
+      "en",
+      "ko"
+    ],
+    "play_pause": true,
+    "vehicle_selection": true,
+    "whole_fixture_toggle": true,
+    "keyboard_home_end": true,
+    "mobile_width": 390,
+    "mobile_scroll_width": 390
+  },
+  "notes_en": "Main inspected clean-source real outputs and browser behavior independently. Simulation time is not wall-clock performance.",
+  "notes_ko": "메인이 깨끗한 소스의 실제 결과와 브라우저 동작을 독립 확인했습니다. 시뮬레이션 시간은 실제 성능 시간이 아닙니다."
+}

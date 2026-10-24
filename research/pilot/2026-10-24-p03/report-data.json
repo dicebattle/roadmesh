@@ -1,0 +1,2878 @@
+{
+  "schema_version": "0.1",
+  "source": {
+    "commit": "5422399dcfbce746990600fbdda7ab2cca183f09",
+    "dirty": false
+  },
+  "graph_id": "c1d06ace33d8e9184749e7b09c946f632489cdca5064672396e970d9c299aa0a",
+  "generated_at_utc": "2026-10-24T08:58:32.753Z",
+  "implementation_sha256": "d7bedeb54be6ca1c15f27603fd6094e817416c9b64f83b0cd93850906f192324",
+  "summary": {
+    "status": "PASS",
+    "assertions_passed": 30,
+    "assertions_total": 30,
+    "vehicle_count": 3,
+    "observation_count": 177,
+    "omission_count": 10,
+    "duration_ms": 120000
+  },
+  "stages": [
+    {
+      "id": "corpus",
+      "name_en": "Synthetic corpus validation",
+      "name_ko": "합성 자료 검사",
+      "status": "PASS",
+      "evidence_path": "corpus/report.json",
+      "duration_ms": 580.5515829999999
+    },
+    {
+      "id": "p01",
+      "name_en": "Fresh schedule replay and required checks",
+      "name_ko": "새 일정 재생·필수 검사",
+      "status": "PASS",
+      "evidence_path": "p01/checks.json",
+      "duration_ms": 330.992083
+    },
+    {
+      "id": "p02",
+      "name_en": "Fresh real-engine graph and routing",
+      "name_ko": "실제 엔진의 새 그래프·경로",
+      "status": "PASS",
+      "evidence_path": "graph/manifest.json",
+      "duration_ms": 3521.1079580000005
+    },
+    {
+      "id": "p03",
+      "name_en": "Seeded geographic truth and observations",
+      "name_ko": "시드 기반 지리 정답·관측",
+      "status": "PASS",
+      "evidence_path": "simulation/manifest.json",
+      "duration_ms": 81.41858299999967
+    },
+    {
+      "id": "replay",
+      "name_en": "Fresh replay and fault invariance",
+      "name_ko": "새 재생·장애 불변성",
+      "status": "PASS",
+      "evidence_path": "replay/checks.json",
+      "duration_ms": 397.32225000000017
+    }
+  ],
+  "roads": [
+    {
+      "label": "ab",
+      "edge_id": "4152962",
+      "forward": true,
+      "car_access": true,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          0.002,
+          0
+        ]
+      ]
+    },
+    {
+      "label": "bc",
+      "edge_id": "339697282",
+      "forward": true,
+      "car_access": true,
+      "coordinates": [
+        [
+          0.002,
+          0
+        ],
+        [
+          0.004,
+          0
+        ]
+      ]
+    },
+    {
+      "label": "ad",
+      "edge_id": "37707394",
+      "forward": true,
+      "car_access": true,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0.002
+        ]
+      ]
+    },
+    {
+      "label": "de",
+      "edge_id": "138370690",
+      "forward": true,
+      "car_access": true,
+      "coordinates": [
+        [
+          0,
+          0.002
+        ],
+        [
+          0.002,
+          0.002
+        ]
+      ]
+    },
+    {
+      "label": "ef",
+      "edge_id": "205479554",
+      "forward": true,
+      "car_access": true,
+      "coordinates": [
+        [
+          0.002,
+          0.002
+        ],
+        [
+          0.004,
+          0.002
+        ]
+      ]
+    },
+    {
+      "label": "fc",
+      "edge_id": "541023874",
+      "forward": true,
+      "car_access": true,
+      "coordinates": [
+        [
+          0.004,
+          0.002
+        ],
+        [
+          0.004,
+          0
+        ]
+      ]
+    },
+    {
+      "label": "eb",
+      "edge_id": "239033986",
+      "forward": true,
+      "car_access": true,
+      "coordinates": [
+        [
+          0.002,
+          0.002
+        ],
+        [
+          0.002,
+          0
+        ]
+      ]
+    },
+    {
+      "label": "bg",
+      "edge_id": "406806146",
+      "forward": true,
+      "car_access": true,
+      "coordinates": [
+        [
+          0.002,
+          0
+        ],
+        [
+          0.002,
+          -0.002
+        ]
+      ]
+    },
+    {
+      "label": "oneway",
+      "edge_id": "608132738",
+      "forward": true,
+      "car_access": true,
+      "coordinates": [
+        [
+          0.01,
+          0
+        ],
+        [
+          0.012,
+          0
+        ]
+      ]
+    },
+    {
+      "label": "disconnected",
+      "edge_id": "574578306",
+      "forward": true,
+      "car_access": true,
+      "coordinates": [
+        [
+          0.01,
+          0.003
+        ],
+        [
+          0.012,
+          0.003
+        ]
+      ]
+    },
+    {
+      "label": "parallel",
+      "edge_id": "71261826",
+      "forward": true,
+      "car_access": true,
+      "coordinates": [
+        [
+          0,
+          0.0001
+        ],
+        [
+          0.002,
+          0.0001
+        ]
+      ]
+    }
+  ],
+  "vehicles": [
+    {
+      "vehicle_id": "baseline-clean",
+      "truth": [
+        {
+          "offset_ms": 0,
+          "longitude": 0,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 1000,
+          "longitude": 0.000089932,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 2000,
+          "longitude": 0.000179864,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 3000,
+          "longitude": 0.000269796,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 4000,
+          "longitude": 0.000359728,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 5000,
+          "longitude": 0.00044966,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 6000,
+          "longitude": 0.000539592,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 7000,
+          "longitude": 0.000629524,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 8000,
+          "longitude": 0.000719456,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 9000,
+          "longitude": 0.000809388,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 10000,
+          "longitude": 0.00089932,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 11000,
+          "longitude": 0.000989252,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 12000,
+          "longitude": 0.001079184,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 13000,
+          "longitude": 0.001169116,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 14000,
+          "longitude": 0.001259049,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 15000,
+          "longitude": 0.001348981,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 16000,
+          "longitude": 0.001438913,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 17000,
+          "longitude": 0.001528845,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 18000,
+          "longitude": 0.001618777,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 19000,
+          "longitude": 0.001708709,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 20000,
+          "longitude": 0.001798641,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 21000,
+          "longitude": 0.001888573,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 22000,
+          "longitude": 0.001978505,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 23000,
+          "longitude": 0.002068437,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 24000,
+          "longitude": 0.002158369,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 25000,
+          "longitude": 0.002248301,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 26000,
+          "longitude": 0.002338233,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 27000,
+          "longitude": 0.002428165,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 28000,
+          "longitude": 0.002518097,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 29000,
+          "longitude": 0.002608029,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 30000,
+          "longitude": 0.002697961,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 31000,
+          "longitude": 0.002787893,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 32000,
+          "longitude": 0.002877825,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 33000,
+          "longitude": 0.002967757,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 34000,
+          "longitude": 0.003057689,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 35000,
+          "longitude": 0.003147621,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 36000,
+          "longitude": 0.003237553,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 37000,
+          "longitude": 0.003327485,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 38000,
+          "longitude": 0.003417417,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 39000,
+          "longitude": 0.003507349,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 40000,
+          "longitude": 0.003597281,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 41000,
+          "longitude": 0.003687213,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 42000,
+          "longitude": 0.003777146,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 43000,
+          "longitude": 0.003867078,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 44000,
+          "longitude": 0.00395701,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 44479,
+          "longitude": 0.004,
+          "latitude": 0,
+          "edge_id": "339697282"
+        }
+      ],
+      "observations": [
+        {
+          "offset_ms": 0,
+          "longitude": 0,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 1000,
+          "longitude": 0.000089932,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 2000,
+          "longitude": 0.000179864,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 3000,
+          "longitude": 0.000269796,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 4000,
+          "longitude": 0.000359728,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 5000,
+          "longitude": 0.00044966,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 6000,
+          "longitude": 0.000539592,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 7000,
+          "longitude": 0.000629524,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 8000,
+          "longitude": 0.000719456,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 9000,
+          "longitude": 0.000809388,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 10000,
+          "longitude": 0.00089932,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 11000,
+          "longitude": 0.000989252,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 12000,
+          "longitude": 0.001079184,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 13000,
+          "longitude": 0.001169116,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 14000,
+          "longitude": 0.001259049,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 15000,
+          "longitude": 0.001348981,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 16000,
+          "longitude": 0.001438913,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 17000,
+          "longitude": 0.001528845,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 18000,
+          "longitude": 0.001618777,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 19000,
+          "longitude": 0.001708709,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 20000,
+          "longitude": 0.001798641,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 21000,
+          "longitude": 0.001888573,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 22000,
+          "longitude": 0.001978505,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 23000,
+          "longitude": 0.002068437,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 24000,
+          "longitude": 0.002158369,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 25000,
+          "longitude": 0.002248301,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 26000,
+          "longitude": 0.002338233,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 27000,
+          "longitude": 0.002428165,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 28000,
+          "longitude": 0.002518097,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 29000,
+          "longitude": 0.002608029,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 30000,
+          "longitude": 0.002697961,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 31000,
+          "longitude": 0.002787893,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 32000,
+          "longitude": 0.002877825,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 33000,
+          "longitude": 0.002967757,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 34000,
+          "longitude": 0.003057689,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 35000,
+          "longitude": 0.003147621,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 36000,
+          "longitude": 0.003237553,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 37000,
+          "longitude": 0.003327485,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 38000,
+          "longitude": 0.003417417,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 39000,
+          "longitude": 0.003507349,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 40000,
+          "longitude": 0.003597281,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 41000,
+          "longitude": 0.003687213,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 42000,
+          "longitude": 0.003777146,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 43000,
+          "longitude": 0.003867078,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 44000,
+          "longitude": 0.00395701,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 44479,
+          "longitude": 0.004,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        }
+      ],
+      "omissions": [],
+      "traversals": [
+        {
+          "edge_id": "4152962",
+          "label": "ab",
+          "forward": true,
+          "entered_at_ms": 0,
+          "exited_at_ms": 22240,
+          "distance_m": 222.3901604670658
+        },
+        {
+          "edge_id": "339697282",
+          "label": "bc",
+          "forward": true,
+          "entered_at_ms": 22240,
+          "exited_at_ms": 44479,
+          "distance_m": 222.3901604670658
+        }
+      ]
+    },
+    {
+      "vehicle_id": "baseline-noisy",
+      "truth": [
+        {
+          "offset_ms": 0,
+          "longitude": 0,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 1000,
+          "longitude": 0.000089932,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 2000,
+          "longitude": 0.000179864,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 3000,
+          "longitude": 0.000269796,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 4000,
+          "longitude": 0.000359728,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 5000,
+          "longitude": 0.00044966,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 6000,
+          "longitude": 0.000539592,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 7000,
+          "longitude": 0.000629524,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 8000,
+          "longitude": 0.000719456,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 9000,
+          "longitude": 0.000809388,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 10000,
+          "longitude": 0.00089932,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 11000,
+          "longitude": 0.000989252,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 12000,
+          "longitude": 0.001079184,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 13000,
+          "longitude": 0.001169116,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 14000,
+          "longitude": 0.001259049,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 15000,
+          "longitude": 0.001348981,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 16000,
+          "longitude": 0.001438913,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 17000,
+          "longitude": 0.001528845,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 18000,
+          "longitude": 0.001618777,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 19000,
+          "longitude": 0.001708709,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 20000,
+          "longitude": 0.001798641,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 21000,
+          "longitude": 0.001888573,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 22000,
+          "longitude": 0.001978505,
+          "latitude": 0,
+          "edge_id": "4152962"
+        },
+        {
+          "offset_ms": 23000,
+          "longitude": 0.002068437,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 24000,
+          "longitude": 0.002158369,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 25000,
+          "longitude": 0.002248301,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 26000,
+          "longitude": 0.002338233,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 27000,
+          "longitude": 0.002428165,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 28000,
+          "longitude": 0.002518097,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 29000,
+          "longitude": 0.002608029,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 30000,
+          "longitude": 0.002697961,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 31000,
+          "longitude": 0.002787893,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 32000,
+          "longitude": 0.002877825,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 33000,
+          "longitude": 0.002967757,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 34000,
+          "longitude": 0.003057689,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 35000,
+          "longitude": 0.003147621,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 36000,
+          "longitude": 0.003237553,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 37000,
+          "longitude": 0.003327485,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 38000,
+          "longitude": 0.003417417,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 39000,
+          "longitude": 0.003507349,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 40000,
+          "longitude": 0.003597281,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 41000,
+          "longitude": 0.003687213,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 42000,
+          "longitude": 0.003777146,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 43000,
+          "longitude": 0.003867078,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 44000,
+          "longitude": 0.00395701,
+          "latitude": 0,
+          "edge_id": "339697282"
+        },
+        {
+          "offset_ms": 44479,
+          "longitude": 0.004,
+          "latitude": 0,
+          "edge_id": "339697282"
+        }
+      ],
+      "observations": [
+        {
+          "offset_ms": 0,
+          "longitude": 0.000004309,
+          "latitude": -0.000008675,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 1000,
+          "longitude": 0.000071129,
+          "latitude": 0.000002103,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 2000,
+          "longitude": 0.00018932,
+          "latitude": -0.000004861,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 3000,
+          "longitude": 0.000259969,
+          "latitude": 0.000011748,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 4000,
+          "longitude": 0.000357552,
+          "latitude": -0.000003514,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 5000,
+          "longitude": 0.000446766,
+          "latitude": -0.000017113,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 6000,
+          "longitude": 0.000521676,
+          "latitude": 0.000001835,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 7000,
+          "longitude": 0.000627313,
+          "latitude": -0.000020866,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 8000,
+          "longitude": 0.000723106,
+          "latitude": 0.000001445,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 9000,
+          "longitude": 0.000806822,
+          "latitude": 0.000016848,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 10000,
+          "longitude": 0.000873827,
+          "latitude": -0.000001143,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 11000,
+          "longitude": 0.000983488,
+          "latitude": 0.000002875,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 12000,
+          "longitude": 0.001074315,
+          "latitude": -0.000006115,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 13000,
+          "longitude": 0.001158056,
+          "latitude": 0.000015246,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 14000,
+          "longitude": 0.001256075,
+          "latitude": -0.00001017,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 25000,
+          "longitude": 0.002241302,
+          "latitude": 0.000014053,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 26000,
+          "longitude": 0.002327923,
+          "latitude": -0.000005576,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 27000,
+          "longitude": 0.002423112,
+          "latitude": -0.000005568,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 28000,
+          "longitude": 0.002492938,
+          "latitude": 0.000005726,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 29000,
+          "longitude": 0.002599166,
+          "latitude": -0.000007616,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 30000,
+          "longitude": 0.002718488,
+          "latitude": 0.000011049,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 31000,
+          "longitude": 0.002794597,
+          "latitude": 0.000013077,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 32000,
+          "longitude": 0.002868399,
+          "latitude": -0.000003963,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 33000,
+          "longitude": 0.002958994,
+          "latitude": -0.000008695,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 34000,
+          "longitude": 0.003061301,
+          "latitude": 0.000003701,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 35000,
+          "longitude": 0.003157577,
+          "latitude": -0.000009632,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 36000,
+          "longitude": 0.003240977,
+          "latitude": -0.000002789,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 37000,
+          "longitude": 0.003344685,
+          "latitude": 0.000003002,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 38000,
+          "longitude": 0.003413344,
+          "latitude": 0.000014872,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 39000,
+          "longitude": 0.003497133,
+          "latitude": -0.000011063,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 40000,
+          "longitude": 0.003598825,
+          "latitude": 0.000023365,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 41000,
+          "longitude": 0.003708042,
+          "latitude": 0.000013899,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 42000,
+          "longitude": 0.003777167,
+          "latitude": 0.000013679,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 43000,
+          "longitude": 0.003849533,
+          "latitude": 0.000018564,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 44000,
+          "longitude": 0.003960002,
+          "latitude": 0.000002543,
+          "accuracy_m": 3
+        },
+        {
+          "offset_ms": 44479,
+          "longitude": 0.003983357,
+          "latitude": 0.000011163,
+          "accuracy_m": 3
+        }
+      ],
+      "omissions": [
+        {
+          "offset_ms": 15000,
+          "reason": "SCHEDULED_DROP"
+        },
+        {
+          "offset_ms": 16000,
+          "reason": "SCHEDULED_DROP"
+        },
+        {
+          "offset_ms": 17000,
+          "reason": "SCHEDULED_DROP"
+        },
+        {
+          "offset_ms": 18000,
+          "reason": "SCHEDULED_DROP"
+        },
+        {
+          "offset_ms": 19000,
+          "reason": "SCHEDULED_DROP"
+        },
+        {
+          "offset_ms": 20000,
+          "reason": "SCHEDULED_DROP"
+        },
+        {
+          "offset_ms": 21000,
+          "reason": "SCHEDULED_DROP"
+        },
+        {
+          "offset_ms": 22000,
+          "reason": "SCHEDULED_DROP"
+        },
+        {
+          "offset_ms": 23000,
+          "reason": "SCHEDULED_DROP"
+        },
+        {
+          "offset_ms": 24000,
+          "reason": "SCHEDULED_DROP"
+        }
+      ],
+      "traversals": [
+        {
+          "edge_id": "4152962",
+          "label": "ab",
+          "forward": true,
+          "entered_at_ms": 0,
+          "exited_at_ms": 22240,
+          "distance_m": 222.3901604670658
+        },
+        {
+          "edge_id": "339697282",
+          "label": "bc",
+          "forward": true,
+          "entered_at_ms": 22240,
+          "exited_at_ms": 44479,
+          "distance_m": 222.3901604670658
+        }
+      ]
+    },
+    {
+      "vehicle_id": "upper-waiting",
+      "truth": [
+        {
+          "offset_ms": 0,
+          "longitude": 0,
+          "latitude": 0,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 1000,
+          "longitude": 0,
+          "latitude": 0,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 2000,
+          "longitude": 0,
+          "latitude": 0,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 3000,
+          "longitude": 0,
+          "latitude": 0,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 4000,
+          "longitude": 0,
+          "latitude": 0,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 5000,
+          "longitude": 0,
+          "latitude": 0,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 6000,
+          "longitude": 0,
+          "latitude": 0.000089932,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 7000,
+          "longitude": 0,
+          "latitude": 0.000179864,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 8000,
+          "longitude": 0,
+          "latitude": 0.000269796,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 9000,
+          "longitude": 0,
+          "latitude": 0.000359728,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 10000,
+          "longitude": 0,
+          "latitude": 0.00044966,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 11000,
+          "longitude": 0,
+          "latitude": 0.000539592,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 12000,
+          "longitude": 0,
+          "latitude": 0.000629524,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 13000,
+          "longitude": 0,
+          "latitude": 0.000719456,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 14000,
+          "longitude": 0,
+          "latitude": 0.000809388,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 15000,
+          "longitude": 0,
+          "latitude": 0.00089932,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 16000,
+          "longitude": 0,
+          "latitude": 0.000989252,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 17000,
+          "longitude": 0,
+          "latitude": 0.001079184,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 18000,
+          "longitude": 0,
+          "latitude": 0.001169116,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 19000,
+          "longitude": 0,
+          "latitude": 0.001259049,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 20000,
+          "longitude": 0,
+          "latitude": 0.001348981,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 21000,
+          "longitude": 0,
+          "latitude": 0.001438913,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 22000,
+          "longitude": 0,
+          "latitude": 0.001528845,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 23000,
+          "longitude": 0,
+          "latitude": 0.001618777,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 24000,
+          "longitude": 0,
+          "latitude": 0.001708709,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 25000,
+          "longitude": 0,
+          "latitude": 0.001798641,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 26000,
+          "longitude": 0,
+          "latitude": 0.001888573,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 27000,
+          "longitude": 0,
+          "latitude": 0.001978505,
+          "edge_id": "37707394"
+        },
+        {
+          "offset_ms": 28000,
+          "longitude": 0.000068437,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 29000,
+          "longitude": 0.000158369,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 30000,
+          "longitude": 0.000248301,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 31000,
+          "longitude": 0.000338233,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 32000,
+          "longitude": 0.000428165,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 33000,
+          "longitude": 0.000518097,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 34000,
+          "longitude": 0.000608029,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 35000,
+          "longitude": 0.000697961,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 36000,
+          "longitude": 0.000787893,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 37000,
+          "longitude": 0.000877825,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 38000,
+          "longitude": 0.000967757,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 39000,
+          "longitude": 0.001057689,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 40000,
+          "longitude": 0.001147621,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 41000,
+          "longitude": 0.001237553,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 42000,
+          "longitude": 0.001327485,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 43000,
+          "longitude": 0.001417417,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 44000,
+          "longitude": 0.001507349,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 45000,
+          "longitude": 0.001597281,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 46000,
+          "longitude": 0.001687213,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 47000,
+          "longitude": 0.001777146,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 48000,
+          "longitude": 0.001867078,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 49000,
+          "longitude": 0.00195701,
+          "latitude": 0.002,
+          "edge_id": "138370690"
+        },
+        {
+          "offset_ms": 50000,
+          "longitude": 0.002046942,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 51000,
+          "longitude": 0.002136874,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 52000,
+          "longitude": 0.002226806,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 53000,
+          "longitude": 0.002316738,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 54000,
+          "longitude": 0.00240667,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 55000,
+          "longitude": 0.002496602,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 56000,
+          "longitude": 0.002586534,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 57000,
+          "longitude": 0.002676466,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 58000,
+          "longitude": 0.002766398,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 59000,
+          "longitude": 0.00285633,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 60000,
+          "longitude": 0.002946262,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 61000,
+          "longitude": 0.003036194,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 62000,
+          "longitude": 0.003126126,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 63000,
+          "longitude": 0.003216058,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 64000,
+          "longitude": 0.00330599,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 65000,
+          "longitude": 0.003395922,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 66000,
+          "longitude": 0.003485854,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 67000,
+          "longitude": 0.003575786,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 68000,
+          "longitude": 0.003665718,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 69000,
+          "longitude": 0.00375565,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 70000,
+          "longitude": 0.003845582,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 71000,
+          "longitude": 0.003935514,
+          "latitude": 0.002,
+          "edge_id": "205479554"
+        },
+        {
+          "offset_ms": 72000,
+          "longitude": 0.004,
+          "latitude": 0.001974554,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 73000,
+          "longitude": 0.004,
+          "latitude": 0.001884622,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 74000,
+          "longitude": 0.004,
+          "latitude": 0.001794689,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 75000,
+          "longitude": 0.004,
+          "latitude": 0.001704757,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 76000,
+          "longitude": 0.004,
+          "latitude": 0.001614825,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 77000,
+          "longitude": 0.004,
+          "latitude": 0.001524893,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 78000,
+          "longitude": 0.004,
+          "latitude": 0.001434961,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 79000,
+          "longitude": 0.004,
+          "latitude": 0.001345029,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 80000,
+          "longitude": 0.004,
+          "latitude": 0.001255097,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 81000,
+          "longitude": 0.004,
+          "latitude": 0.001165165,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 82000,
+          "longitude": 0.004,
+          "latitude": 0.001075233,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 83000,
+          "longitude": 0.004,
+          "latitude": 0.000985301,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 84000,
+          "longitude": 0.004,
+          "latitude": 0.000895369,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 85000,
+          "longitude": 0.004,
+          "latitude": 0.000805437,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 86000,
+          "longitude": 0.004,
+          "latitude": 0.000715505,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 87000,
+          "longitude": 0.004,
+          "latitude": 0.000625573,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 88000,
+          "longitude": 0.004,
+          "latitude": 0.000535641,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 89000,
+          "longitude": 0.004,
+          "latitude": 0.000445709,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 90000,
+          "longitude": 0.004,
+          "latitude": 0.000355777,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 91000,
+          "longitude": 0.004,
+          "latitude": 0.000265845,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 92000,
+          "longitude": 0.004,
+          "latitude": 0.000175913,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 93000,
+          "longitude": 0.004,
+          "latitude": 0.000085981,
+          "edge_id": "541023874"
+        },
+        {
+          "offset_ms": 93957,
+          "longitude": 0.004,
+          "latitude": 0,
+          "edge_id": "541023874"
+        }
+      ],
+      "observations": [
+        {
+          "offset_ms": 0,
+          "longitude": 0,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 1000,
+          "longitude": 0,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 2000,
+          "longitude": 0,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 3000,
+          "longitude": 0,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 4000,
+          "longitude": 0,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 5000,
+          "longitude": 0,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 6000,
+          "longitude": 0,
+          "latitude": 0.000089932,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 7000,
+          "longitude": 0,
+          "latitude": 0.000179864,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 8000,
+          "longitude": 0,
+          "latitude": 0.000269796,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 9000,
+          "longitude": 0,
+          "latitude": 0.000359728,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 10000,
+          "longitude": 0,
+          "latitude": 0.00044966,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 11000,
+          "longitude": 0,
+          "latitude": 0.000539592,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 12000,
+          "longitude": 0,
+          "latitude": 0.000629524,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 13000,
+          "longitude": 0,
+          "latitude": 0.000719456,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 14000,
+          "longitude": 0,
+          "latitude": 0.000809388,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 15000,
+          "longitude": 0,
+          "latitude": 0.00089932,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 16000,
+          "longitude": 0,
+          "latitude": 0.000989252,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 17000,
+          "longitude": 0,
+          "latitude": 0.001079184,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 18000,
+          "longitude": 0,
+          "latitude": 0.001169116,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 19000,
+          "longitude": 0,
+          "latitude": 0.001259049,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 20000,
+          "longitude": 0,
+          "latitude": 0.001348981,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 21000,
+          "longitude": 0,
+          "latitude": 0.001438913,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 22000,
+          "longitude": 0,
+          "latitude": 0.001528845,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 23000,
+          "longitude": 0,
+          "latitude": 0.001618777,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 24000,
+          "longitude": 0,
+          "latitude": 0.001708709,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 25000,
+          "longitude": 0,
+          "latitude": 0.001798641,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 26000,
+          "longitude": 0,
+          "latitude": 0.001888573,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 27000,
+          "longitude": 0,
+          "latitude": 0.001978505,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 28000,
+          "longitude": 0.000068437,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 29000,
+          "longitude": 0.000158369,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 30000,
+          "longitude": 0.000248301,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 31000,
+          "longitude": 0.000338233,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 32000,
+          "longitude": 0.000428165,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 33000,
+          "longitude": 0.000518097,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 34000,
+          "longitude": 0.000608029,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 35000,
+          "longitude": 0.000697961,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 36000,
+          "longitude": 0.000787893,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 37000,
+          "longitude": 0.000877825,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 38000,
+          "longitude": 0.000967757,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 39000,
+          "longitude": 0.001057689,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 40000,
+          "longitude": 0.001147621,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 41000,
+          "longitude": 0.001237553,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 42000,
+          "longitude": 0.001327485,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 43000,
+          "longitude": 0.001417417,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 44000,
+          "longitude": 0.001507349,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 45000,
+          "longitude": 0.001597281,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 46000,
+          "longitude": 0.001687213,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 47000,
+          "longitude": 0.001777146,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 48000,
+          "longitude": 0.001867078,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 49000,
+          "longitude": 0.00195701,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 50000,
+          "longitude": 0.002046942,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 51000,
+          "longitude": 0.002136874,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 52000,
+          "longitude": 0.002226806,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 53000,
+          "longitude": 0.002316738,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 54000,
+          "longitude": 0.00240667,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 55000,
+          "longitude": 0.002496602,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 56000,
+          "longitude": 0.002586534,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 57000,
+          "longitude": 0.002676466,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 58000,
+          "longitude": 0.002766398,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 59000,
+          "longitude": 0.00285633,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 60000,
+          "longitude": 0.002946262,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 61000,
+          "longitude": 0.003036194,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 62000,
+          "longitude": 0.003126126,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 63000,
+          "longitude": 0.003216058,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 64000,
+          "longitude": 0.00330599,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 65000,
+          "longitude": 0.003395922,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 66000,
+          "longitude": 0.003485854,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 67000,
+          "longitude": 0.003575786,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 68000,
+          "longitude": 0.003665718,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 69000,
+          "longitude": 0.00375565,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 70000,
+          "longitude": 0.003845582,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 71000,
+          "longitude": 0.003935514,
+          "latitude": 0.002,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 72000,
+          "longitude": 0.004,
+          "latitude": 0.001974554,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 73000,
+          "longitude": 0.004,
+          "latitude": 0.001884622,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 74000,
+          "longitude": 0.004,
+          "latitude": 0.001794689,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 75000,
+          "longitude": 0.004,
+          "latitude": 0.001704757,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 76000,
+          "longitude": 0.004,
+          "latitude": 0.001614825,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 77000,
+          "longitude": 0.004,
+          "latitude": 0.001524893,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 78000,
+          "longitude": 0.004,
+          "latitude": 0.001434961,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 79000,
+          "longitude": 0.004,
+          "latitude": 0.001345029,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 80000,
+          "longitude": 0.004,
+          "latitude": 0.001255097,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 81000,
+          "longitude": 0.004,
+          "latitude": 0.001165165,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 82000,
+          "longitude": 0.004,
+          "latitude": 0.001075233,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 83000,
+          "longitude": 0.004,
+          "latitude": 0.000985301,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 84000,
+          "longitude": 0.004,
+          "latitude": 0.000895369,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 85000,
+          "longitude": 0.004,
+          "latitude": 0.000805437,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 86000,
+          "longitude": 0.004,
+          "latitude": 0.000715505,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 87000,
+          "longitude": 0.004,
+          "latitude": 0.000625573,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 88000,
+          "longitude": 0.004,
+          "latitude": 0.000535641,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 89000,
+          "longitude": 0.004,
+          "latitude": 0.000445709,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 90000,
+          "longitude": 0.004,
+          "latitude": 0.000355777,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 91000,
+          "longitude": 0.004,
+          "latitude": 0.000265845,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 92000,
+          "longitude": 0.004,
+          "latitude": 0.000175913,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 93000,
+          "longitude": 0.004,
+          "latitude": 0.000085981,
+          "accuracy_m": 0.01
+        },
+        {
+          "offset_ms": 93957,
+          "longitude": 0.004,
+          "latitude": 0,
+          "accuracy_m": 0.01
+        }
+      ],
+      "omissions": [],
+      "traversals": [
+        {
+          "edge_id": "37707394",
+          "label": "ad",
+          "forward": true,
+          "entered_at_ms": 0,
+          "exited_at_ms": 27240,
+          "distance_m": 222.3901604670658
+        },
+        {
+          "edge_id": "138370690",
+          "label": "de",
+          "forward": true,
+          "entered_at_ms": 27240,
+          "exited_at_ms": 49479,
+          "distance_m": 222.3901604670658
+        },
+        {
+          "edge_id": "205479554",
+          "label": "ef",
+          "forward": true,
+          "entered_at_ms": 49479,
+          "exited_at_ms": 71718,
+          "distance_m": 222.3901604670658
+        },
+        {
+          "edge_id": "541023874",
+          "label": "fc",
+          "forward": true,
+          "entered_at_ms": 71718,
+          "exited_at_ms": 93957,
+          "distance_m": 222.3901604670658
+        }
+      ]
+    }
+  ],
+  "assertions": [
+    {
+      "assertion_id": "synthetic-quota-refusal",
+      "status": "PASS",
+      "message_en": "Synthetic corpus is valid but cannot satisfy the real-road quota.",
+      "message_ko": "합성 자료는 유효하지만 실제 도로 사례 기준을 충족하지 않습니다.",
+      "expected": false,
+      "actual": false,
+      "evidence_path": "corpus/report.json"
+    },
+    {
+      "assertion_id": "p01-replay-failure-skip",
+      "status": "PASS",
+      "message_en": "Fresh P01 replay, deliberate failure, skip and invalid-input checks passed.",
+      "message_ko": "새 P01 재생·의도적 실패·생략·잘못된 입력 검사가 통과했습니다.",
+      "expected": 5,
+      "actual": 5,
+      "evidence_path": "p01/checks.json"
+    },
+    {
+      "assertion_id": "p02-cleanup-and-graph",
+      "status": "PASS",
+      "message_en": "Fresh real Valhalla graph, road legality and container cleanup verified.",
+      "message_ko": "새 실제 Valhalla 그래프·통행 규칙·컨테이너 정리를 확인했습니다.",
+      "expected": true,
+      "actual": true,
+      "evidence_path": "graph/manifest.json"
+    },
+    {
+      "assertion_id": "p02-p03-graph-binding",
+      "status": "PASS",
+      "message_en": "Simulation uses this run’s verified graph identity.",
+      "message_ko": "시뮬레이션이 이번 실행에서 검증한 그래프 식별자를 사용합니다.",
+      "expected": "c1d06ace33d8e9184749e7b09c946f632489cdca5064672396e970d9c299aa0a",
+      "actual": "c1d06ace33d8e9184749e7b09c946f632489cdca5064672396e970d9c299aa0a",
+      "evidence_path": "simulation/manifest.json"
+    },
+    {
+      "assertion_id": "authored-truth-count",
+      "status": "PASS",
+      "message_en": "Counts match independent hand calculations.",
+      "message_ko": "개수가 독립 수작업 계산과 일치합니다.",
+      "expected": 187,
+      "actual": 187,
+      "evidence_path": "simulation/truth.json"
+    },
+    {
+      "assertion_id": "authored-observation-count",
+      "status": "PASS",
+      "message_en": "Counts match independent hand calculations.",
+      "message_ko": "개수가 독립 수작업 계산과 일치합니다.",
+      "expected": 177,
+      "actual": 177,
+      "evidence_path": "simulation/truth.json"
+    },
+    {
+      "assertion_id": "authored-omission-count",
+      "status": "PASS",
+      "message_en": "Counts match independent hand calculations.",
+      "message_ko": "개수가 독립 수작업 계산과 일치합니다.",
+      "expected": 10,
+      "actual": 10,
+      "evidence_path": "simulation/truth.json"
+    },
+    {
+      "assertion_id": "authored-traversal-count",
+      "status": "PASS",
+      "message_en": "Counts match independent hand calculations.",
+      "message_ko": "개수가 독립 수작업 계산과 일치합니다.",
+      "expected": 8,
+      "actual": 8,
+      "evidence_path": "simulation/truth.json"
+    },
+    {
+      "assertion_id": "authored-arrival-baseline-clean",
+      "status": "PASS",
+      "message_en": "Arrival matches independent distance/speed calculation.",
+      "message_ko": "도착 시각이 독립 거리·속도 계산과 일치합니다.",
+      "expected": 44479,
+      "actual": 44479,
+      "evidence_path": "simulation/truth.json"
+    },
+    {
+      "assertion_id": "authored-ab-exit-baseline-clean",
+      "status": "PASS",
+      "message_en": "AB exit matches hand calculation.",
+      "message_ko": "AB 진출이 수작업 계산과 일치합니다.",
+      "expected": 22240,
+      "actual": 22240,
+      "evidence_path": "simulation/truth.json"
+    },
+    {
+      "assertion_id": "authored-arrival-baseline-noisy",
+      "status": "PASS",
+      "message_en": "Arrival matches independent distance/speed calculation.",
+      "message_ko": "도착 시각이 독립 거리·속도 계산과 일치합니다.",
+      "expected": 44479,
+      "actual": 44479,
+      "evidence_path": "simulation/truth.json"
+    },
+    {
+      "assertion_id": "authored-ab-exit-baseline-noisy",
+      "status": "PASS",
+      "message_en": "AB exit matches hand calculation.",
+      "message_ko": "AB 진출이 수작업 계산과 일치합니다.",
+      "expected": 22240,
+      "actual": 22240,
+      "evidence_path": "simulation/truth.json"
+    },
+    {
+      "assertion_id": "authored-upper-exits",
+      "status": "PASS",
+      "message_en": "Upper crossings match independently calculated wait and distance.",
+      "message_ko": "상단 통과 시각이 독립 대기·거리 계산과 일치합니다.",
+      "expected": [
+        27240,
+        49479,
+        71718,
+        93957
+      ],
+      "actual": [
+        27240,
+        49479,
+        71718,
+        93957
+      ],
+      "evidence_path": "simulation/truth.json"
+    },
+    {
+      "assertion_id": "authored-zero-speed-wait",
+      "status": "PASS",
+      "message_en": "Upper vehicle remains still through the initial five seconds.",
+      "message_ko": "상단 차량이 처음 5초 동안 정지합니다.",
+      "expected": true,
+      "actual": true,
+      "evidence_path": "simulation/truth.json"
+    },
+    {
+      "assertion_id": "authored-drop-boundaries",
+      "status": "PASS",
+      "message_en": "Independent half-open drop times and 25 s observation match.",
+      "message_ko": "독립 반열린 누락 시각과 25초 관측이 일치합니다.",
+      "expected": [
+        15000,
+        16000,
+        17000,
+        18000,
+        19000,
+        20000,
+        21000,
+        22000,
+        23000,
+        24000
+      ],
+      "actual": [
+        15000,
+        16000,
+        17000,
+        18000,
+        19000,
+        20000,
+        21000,
+        22000,
+        23000,
+        24000
+      ],
+      "evidence_path": "simulation/omissions.json"
+    },
+    {
+      "assertion_id": "p03-complete-sample-partition",
+      "status": "PASS",
+      "message_en": "Every true sample is observed or explicitly omitted.",
+      "message_ko": "모든 정답 표본은 관측되거나 누락으로 기록됩니다.",
+      "expected": 187,
+      "actual": 187,
+      "evidence_path": "simulation/truth.json"
+    },
+    {
+      "assertion_id": "p03-bounded-noise",
+      "status": "PASS",
+      "message_en": "Observed coordinates stay within the declared noise radius.",
+      "message_ko": "관측 좌표가 선언한 잡음 반경 안에 있습니다.",
+      "expected": true,
+      "actual": true,
+      "evidence_path": "simulation/observations.json"
+    },
+    {
+      "assertion_id": "p03-synthetic-observations",
+      "status": "PASS",
+      "message_en": "Observations are synthetic and contain no truth edge IDs.",
+      "message_ko": "관측은 합성이며 정답 구간 식별자를 포함하지 않습니다.",
+      "expected": true,
+      "actual": true,
+      "evidence_path": "simulation/observations.json"
+    },
+    {
+      "assertion_id": "p03-half-open-drops",
+      "status": "PASS",
+      "message_en": "Omissions follow half-open intervals.",
+      "message_ko": "누락이 반열린 구간을 따릅니다.",
+      "expected": true,
+      "actual": true,
+      "evidence_path": "simulation/omissions.json"
+    },
+    {
+      "assertion_id": "p03-completed-traversals",
+      "status": "PASS",
+      "message_en": "All independently authored paths complete within the scenario.",
+      "message_ko": "독립적으로 작성한 모든 경로가 시나리오 안에 완료됩니다.",
+      "expected": true,
+      "actual": true,
+      "evidence_path": "simulation/truth.json"
+    },
+    {
+      "assertion_id": "truth-invariance-same-seed",
+      "status": "PASS",
+      "message_en": "Replay/fault changes preserve independent truth.",
+      "message_ko": "재생·장애 변경이 독립 정답을 보존합니다.",
+      "expected": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+      "actual": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+      "evidence_path": "replay/same-seed/manifest.json"
+    },
+    {
+      "assertion_id": "observation-replay-same-seed",
+      "status": "PASS",
+      "message_en": "Same seeded observations and omissions replay exactly.",
+      "message_ko": "같은 시드의 관측·누락이 정확히 재생됩니다.",
+      "expected": "c756bedf503ee9933514643c7d133e3867093d7f0fde0b5a61e2111c4c0edc6a",
+      "actual": "c756bedf503ee9933514643c7d133e3867093d7f0fde0b5a61e2111c4c0edc6a",
+      "evidence_path": "replay/same-seed/manifest.json"
+    },
+    {
+      "assertion_id": "truth-invariance-clean",
+      "status": "PASS",
+      "message_en": "Replay/fault changes preserve independent truth.",
+      "message_ko": "재생·장애 변경이 독립 정답을 보존합니다.",
+      "expected": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+      "actual": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+      "evidence_path": "replay/clean/manifest.json"
+    },
+    {
+      "assertion_id": "truth-invariance-other-seed",
+      "status": "PASS",
+      "message_en": "Replay/fault changes preserve independent truth.",
+      "message_ko": "재생·장애 변경이 독립 정답을 보존합니다.",
+      "expected": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+      "actual": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+      "evidence_path": "replay/other-seed/manifest.json"
+    },
+    {
+      "assertion_id": "noise-seed-changes",
+      "status": "PASS",
+      "message_en": "A different seed changes noise, while truth remains fixed.",
+      "message_ko": "다른 시드는 잡음만 바꾸고 정답은 유지합니다.",
+      "expected": true,
+      "actual": true,
+      "evidence_path": "replay/other-seed/manifest.json"
+    },
+    {
+      "assertion_id": "truth-invariance-reordered",
+      "status": "PASS",
+      "message_en": "Replay/fault changes preserve independent truth.",
+      "message_ko": "재생·장애 변경이 독립 정답을 보존합니다.",
+      "expected": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+      "actual": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+      "evidence_path": "replay/reordered/manifest.json"
+    },
+    {
+      "assertion_id": "observation-replay-reordered",
+      "status": "PASS",
+      "message_en": "Same seeded observations and omissions replay exactly.",
+      "message_ko": "같은 시드의 관측·누락이 정확히 재생됩니다.",
+      "expected": "c756bedf503ee9933514643c7d133e3867093d7f0fde0b5a61e2111c4c0edc6a",
+      "actual": "c756bedf503ee9933514643c7d133e3867093d7f0fde0b5a61e2111c4c0edc6a",
+      "evidence_path": "replay/reordered/manifest.json"
+    },
+    {
+      "assertion_id": "clean-noisy-paired-truth",
+      "status": "PASS",
+      "message_en": "Authored clean/noisy vehicle pair has identical independent truth.",
+      "message_ko": "직접 작성한 깨끗한·잡음 차량 쌍의 독립 정답이 같습니다.",
+      "expected": true,
+      "actual": true,
+      "evidence_path": "simulation/truth.json"
+    },
+    {
+      "assertion_id": "invalid-path-rejected",
+      "status": "PASS",
+      "message_en": "Invalid authored path was rejected; no successful simulation produced.",
+      "message_ko": "잘못된 작성 경로를 거부했으며 성공 시뮬레이션을 만들지 않았습니다.",
+      "expected": false,
+      "actual": false,
+      "evidence_path": "invalid-path.stderr.txt"
+    },
+    {
+      "assertion_id": "tampered-graph-rejected",
+      "status": "PASS",
+      "message_en": "Tampered graph bundle was rejected; no successful simulation produced.",
+      "message_ko": "변조된 그래프 묶음을 거부했으며 성공 시뮬레이션을 만들지 않았습니다.",
+      "expected": false,
+      "actual": false,
+      "evidence_path": "tampered-bundle.stderr.txt"
+    }
+  ],
+  "limitations": [
+    {
+      "message_en": "Original fictional equatorial roads and controlled kinematics; not real-road accuracy or driver behavior.",
+      "message_ko": "직접 만든 가상의 적도 도로와 통제된 운동학이며 실제 도로 정확도·운전자 행동 검증이 아닙니다."
+    },
+    {
+      "message_en": "No noisy map-matching, traffic aggregation/publication, distributed-node or mobile execution proof yet.",
+      "message_ko": "잡음 도로 매칭·교통 집계/게시·분산 노드·모바일 실행은 아직 검증하지 않았습니다."
+    },
+    {
+      "message_en": "Current implemented-module integration, not the full P12/P14b fault matrix or complete navigation client.",
+      "message_ko": "현재 구현 모듈의 통합 검사이며 P12/P14b 전체 장애 행렬이나 완전한 내비게이션 클라이언트가 아닙니다."
+    }
+  ]
+}
