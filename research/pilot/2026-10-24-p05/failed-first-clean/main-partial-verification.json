@@ -37,6 +37,6 @@
     "private_files_removed": true,
     "processes_exited": true
   },
-  "remaining_en": "API/DB restart, actual engine failure and retention/revocation matrix did not execute. This is not P05 completion.",
-  "remaining_ko": "API/DB재시작·실제엔진실패·보관/철회행렬은미실행이며P05완료증거가아닙니다."
+  "remaining_en": "The API/DB restart executed, but durable reconnection did not complete. Later engine-failure and retention/revocation cases did not execute. This is not P05 completion.",
+  "remaining_ko": "API/DB 재시작은 실행했지만 영속 재연결을 완료하지 못했습니다. 후반 엔진 실패·보관/철회 사례는 미실행이며 P05 완료 증거가 아닙니다."
 }

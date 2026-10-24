@@ -168,8 +168,8 @@ export async function startService(
           await store.revoke(principal, eventTime);
           response(res, 200, {
             code: "REVOKED",
-            message_en: "Consent revoked and pilot data removed.",
-            message_ko: "동의가 철회되었고 파일럿 데이터가 삭제되었습니다.",
+            message_en: "Consent revoked; raw observations and stored traversals were removed.",
+            message_ko: "동의를 철회하고 원시 관측과 저장된 통과 기록을 삭제했습니다.",
           });
           return;
         }

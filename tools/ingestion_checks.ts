@@ -1257,34 +1257,89 @@ export async function runIngestionChecks(
             ),
         );
         if (!exact) continue;
-        const top = runtime.commands.command(
-          ["top", candidate, "-eo", "pid,comm,args"],
-          10000,
+        const remainingMs = Math.floor(engineDeadline - performance.now());
+        if (remainingMs < 1500)
+          throw new Error(
+            "Owned engine observation deadline elapsed / 소유 엔진 관찰 시간이 끝났습니다",
+          );
+        // Observe and stop inside this already verified container. Only locate
+        // or trace_attributes is eligible; the version probe is not work.
+        // No command line, request body or environment is printed.
+        const seconds = Math.max(1, Math.floor(remainingMs / 1000) - 1);
+        const observer = String.raw`
+deadline=$(($(date +%s) + ${seconds}))
+while [ "$(date +%s)" -lt "$deadline" ]; do
+  for path in /proc/[0-9]*; do
+    exe=$(readlink "$path/exe" 2>/dev/null) || continue
+    case "$exe" in */valhalla_service) ;; *) continue ;; esac
+    action=$(tr '\000' '\n' < "$path/cmdline" 2>/dev/null | awk '$0=="locate" || $0=="trace_attributes" {print; exit}')
+    case "$action" in locate|trace_attributes) ;; *) continue ;; esac
+    pid=$(basename "$path")
+    kill -STOP "$pid" 2>/dev/null || continue
+    check=0
+    while [ "$check" -lt 10 ]; do
+      actual=$(readlink "$path/exe" 2>/dev/null) || break
+      state=$(awk '/^State:/ {print $2}' "$path/status" 2>/dev/null)
+      if [ "$actual" = "$exe" ] && [ "$state" = T ]; then
+        printf '{"pid":%s,"exe":"%s","state":"T","action":"%s"}\n' "$pid" "$exe" "$action"
+        exit 0
+      fi
+      check=$((check + 1))
+      sleep 0.005
+    done
+    kill -CONT "$pid" 2>/dev/null || true
+  done
+  sleep 0.01
+done
+exit 3
+`;
+        const stopped = runtime.commands.command(
+          ["exec", candidate, "sh", "-c", observer],
+          remainingMs,
           true,
         );
+        if (stopped.status !== 0)
+          throw new Error(
+            "No executing locate/trace_attributes was stopped before the deadline / 기한 내 실행중 locate·trace_attributes를 정지하지 못했습니다",
+          );
+        assertNoSensitiveDiagnostics(stopped.stdout, secrets());
+        runtime.assertSafe(stopped.stdout);
+        const proof = JSON.parse(stopped.stdout) as {
+          pid: number;
+          exe: string;
+          state: string;
+          action: string;
+        };
         if (
-          top.status !== 0 ||
-          !top.stdout
-            .split("\n")
-            .some((line) => /\bvalhalla_service\b/.test(line))
+          !Number.isSafeInteger(proof.pid) ||
+          proof.pid <= 0 ||
+          !/^\/[a-zA-Z0-9_./-]+\/valhalla_service$/.test(proof.exe) ||
+          proof.state !== "T" ||
+          !["locate", "trace_attributes"].includes(proof.action)
         )
-          continue;
-        assertNoSensitiveDiagnostics(top.stdout, secrets());
-        runtime.assertSafe(top.stdout);
-        runtime.commands.command(["pause", candidate], 10000);
+          throw new Error(
+            "Stopped engine identity/state was not verified / 정지 엔진의 식별·상태를 확인하지 못했습니다",
+          );
+        write(output, "engine-abort-stopped-process.json", proof);
+        runtime.commands.command(
+          ["pause", candidate],
+          Math.max(1, Math.floor(engineDeadline - performance.now())),
+        );
         const pausedTop = runtime.commands.command(
-          ["top", candidate, "-eo", "pid,comm,args"],
-          10000,
+          ["top", candidate, "-eo", "pid,comm,stat"],
+          Math.max(1, Math.floor(engineDeadline - performance.now())),
         );
         assertNoSensitiveDiagnostics(pausedTop.stdout, secrets());
         runtime.assertSafe(pausedTop.stdout);
         if (
           !pausedTop.stdout
             .split("\n")
-            .some((line) => /\bvalhalla_service\b/.test(line))
+            .some((line) =>
+              /\bvalhalla_servic(?:e)?\b.*\bT[a-zA-Z+<]*\b/.test(line),
+            )
         )
           throw new Error(
-            "Engine completed before pause; abort not proven / 일시정지 전에 엔진이 끝나 중단을 증명하지 못했습니다",
+            "Stopped engine disappeared before container pause / 컨테이너 일시정지 전에 정지 엔진이 사라졌습니다",
           );
         orphanEngineId = runtime.commands
           .command(["inspect", "--format", "{{.Id}}", candidate], 10000)
