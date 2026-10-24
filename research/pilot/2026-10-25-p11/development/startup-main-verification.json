@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "trigger": "owned child started before READY",
+  "signal": "SIGTERM",
+  "pid": 99497,
+  "exit": {
+    "code": 130,
+    "signal": null
+  },
+  "elapsed_after_signal_ms": 588.0964999999997,
+  "containers_absent": [
+    "routelens-p05-8b20dc43-2408-4758-9b35-4787eacb9903"
+  ],
+  "volume_absent": "routelens-p05-8b20dc43-2408-4758-9b35-4787eacb9903-db",
+  "owned_child_pids_absent": [
+    99534
+  ],
+  "messages": [],
+  "message_en": "Actual startup interruption cleaned the exact owned resources before exit.",
+  "message_ko": "실제 준비 중 중단에서 종료 전 정확한 소유 자원을 정리했습니다."
+}

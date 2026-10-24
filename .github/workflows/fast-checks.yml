@@ -60,6 +60,8 @@ jobs:
         with:
           path: data/seoul-source-cache
           key: osm-source-282d012b7629c643695f286d4424d7f6d88548d99edb5577ca5b678906f13c17
+      - name: Install pinned browser for actual client regression / 실제 클라이언트 회귀용 고정 브라우저 설치
+        run: npx playwright install --with-deps chromium
       - name: Fresh real-engine simulation / 실제 엔진의 새 통합 시뮬레이션
         run: npm run simulation:check -- --output "${{ runner.temp }}/simulation-evidence"
       - name: Preserve compact integration evidence / 작은 통합 증거 보존
@@ -89,6 +91,12 @@ jobs:
             ${{ runner.temp }}/simulation-evidence/gateway/**/*.pid
             ${{ runner.temp }}/simulation-evidence/gateway/**/*.exit
             ${{ runner.temp }}/simulation-evidence/gateway/**/*.sh
+            ${{ runner.temp }}/simulation-evidence/client/**/*.png
+            ${{ runner.temp }}/simulation-evidence/client/**/traffic.tar
+            ${{ runner.temp }}/simulation-evidence/client/**/*.log
+            ${{ runner.temp }}/simulation-evidence/client/**/*.pid
+            ${{ runner.temp }}/simulation-evidence/client/**/*.exit
+            ${{ runner.temp }}/simulation-evidence/client/**/*.sh
             !${{ runner.temp }}/simulation-evidence/**/tiles/**
           if-no-files-found: error
           retention-days: 7

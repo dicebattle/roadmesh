@@ -54,6 +54,23 @@ export class OwnedIngestionRuntime {
   private password = randomBytes(32).toString("hex");
   private port = 0;
   private cleanupPromise?: Promise<boolean>;
+  private beforeCleanup?: { run: () => Promise<void>; timeout_ms: number };
+  /** One owned external-resource hook; never recursively call this owner's cleanup.
+   * 소유 외부 자원 정리 하나이며 이 소유자의 cleanup을 재귀 호출하지 않습니다. */
+  setBeforeCleanup(run: () => Promise<void>, timeoutMs = 10000): void {
+    if (
+      this.beforeCleanup ||
+      this.cleanupPromise ||
+      typeof run !== "function" ||
+      !Number.isInteger(timeoutMs) ||
+      timeoutMs < 1 ||
+      timeoutMs > 30000
+    )
+      throw new Error(
+        "Invalid or duplicate cleanup hook / 정리 훅 오류 또는 중복",
+      );
+    this.beforeCleanup = { run, timeout_ms: timeoutMs };
+  }
   constructor(
     readonly output: string,
     readonly ownedRoot = resolve(output, ".."),
@@ -313,6 +330,30 @@ export class OwnedIngestionRuntime {
   }
   private async finishCleanup(): Promise<boolean> {
     const failures: string[] = [];
+    let beforeCleanupCompleted: boolean | undefined;
+    if (this.beforeCleanup) {
+      let timer: ReturnType<typeof setTimeout> | undefined;
+      try {
+        await Promise.race([
+          Promise.resolve().then(this.beforeCleanup.run),
+          new Promise<never>((_, fail) => {
+            timer = setTimeout(
+              () =>
+                fail(
+                  new Error("Owned cleanup hook deadline / 소유 정리 훅 기한"),
+                ),
+              this.beforeCleanup!.timeout_ms,
+            );
+          }),
+        ]);
+        beforeCleanupCompleted = true;
+      } catch {
+        beforeCleanupCompleted = false;
+        failures.push("before-cleanup");
+      } finally {
+        clearTimeout(timer);
+      }
+    }
     for (const child of this.processes)
       try {
         await child.stop();
@@ -453,6 +494,9 @@ export class OwnedIngestionRuntime {
         {
           cleanup_verified: failures.length === 0,
           failures,
+          ...(beforeCleanupCompleted === undefined
+            ? {}
+            : { before_cleanup_completed: beforeCleanupCompleted }),
           private_files_removed: true,
           processes_exited: this.processes.every(
             (p) =>

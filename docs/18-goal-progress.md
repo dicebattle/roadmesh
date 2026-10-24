@@ -14,7 +14,7 @@ The goal remains the complete local P01–P14 pilot. Each increment needs fresh 
 | P08 traffic application / 교통 반영 | [Report](../research/pilot/2026-10-25-p08-portability/report.md) | Local/hosted238; protected PR9 / 로컬·원격238·보호 PR9 |
 | P09 persistent nodes / 지속 노드 | [Report](../research/pilot/2026-10-25-p09/report.md) | Local/hosted270, Node22/24 each235; protected PR10 / 로컬·원격270·Node각235·보호 PR10 |
 | P10 gateway and failover / 중계·장애 전환 | [Report](../research/pilot/2026-10-25-p10/report.md), [module](../wiki/modules/route-gateway.md) | Clean local302, unit252 and independent inspection passed; hosted delivery pending / 깨끗한 로컬302·단위252·독립 검사 통과·원격 반영 대기 |
-| P11 actual client / 실제 경로 클라이언트 | [Pilot plan](11-local-pilot.md) | Evidence player exists; request client remains / 증거 재생 화면은 있으며 실제 요청 클라이언트는 남음 |
+| P11 actual client / 실제 경로 클라이언트 | [Pilot plan](11-local-pilot.md) | [Development32](../research/pilot/2026-10-25-p11/development/README.md) passed; clean whole334/media/hosted remain / 실제 개발32개 통과·깨끗한 전체334개/영상/원격 검증은 남음 |
 | P12 full fault matrix / 전체 장애 행렬 | [Pilot plan](11-local-pilot.md) | Incremental actual runner exists; complete matrix remains / 점진 실제 실행기는 있으며 전체 행렬은 남음 |
 | P13 local Cloudflare parity / 로컬 Cloudflare 비교 | [Pilot plan](11-local-pilot.md) | Not implemented / 미구현 |
 | P14b final integration CI / 최종 통합 CI | Existing required actual-engine job / 필수 실제 엔진 작업 | Current modules tested; complete pilot matrix remains / 현재 모듈 검사·전체 파일럿 행렬은 남음 |

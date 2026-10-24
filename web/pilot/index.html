@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>RouteLens · Seoul pilot / 서울 파일럿</title>
+    <link rel="stylesheet" href="/client.css" />
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/"
+        >RouteLens<span data-i18n="subtitle">Seoul route pilot</span></a
+      ><button
+        id="language"
+        type="button"
+        aria-label="Switch to Korean / 한국어로 전환"
+      >
+        한국어
+      </button>
+    </header>
+    <main>
+      <section class="route-panel" aria-labelledby="route-heading">
+        <p class="synthetic" data-i18n="synthetic">
+          Actual Seoul roads · synthetic traffic
+        </p>
+        <h1 id="route-heading" data-i18n="heading">Choose your route</h1>
+        <form id="route-form">
+          <label for="preset" data-i18n="preset">Route preset</label
+          ><select id="preset">
+            <option value="long" data-i18n="long">
+              Teheran-ro · long route
+            </option>
+            <option value="short" data-i18n="short">
+              Teheran-ro · short live segment
+            </option>
+            <option value="custom" data-i18n="custom">Enter coordinates</option>
+          </select>
+          <fieldset>
+            <legend data-i18n="origin">Origin</legend>
+            <div class="coordinate-row">
+              <label
+                ><span data-i18n="latitude">Latitude</span
+                ><input
+                  id="origin-latitude"
+                  name="origin-latitude"
+                  type="number"
+                  step="any"
+                  required
+                  inputmode="decimal" /></label
+              ><label
+                ><span data-i18n="longitude">Longitude</span
+                ><input
+                  id="origin-longitude"
+                  name="origin-longitude"
+                  type="number"
+                  step="any"
+                  required
+                  inputmode="decimal"
+              /></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend data-i18n="destination">Destination</legend>
+            <div class="coordinate-row">
+              <label
+                ><span data-i18n="latitude">Latitude</span
+                ><input
+                  id="destination-latitude"
+                  name="destination-latitude"
+                  type="number"
+                  step="any"
+                  required
+                  inputmode="decimal" /></label
+              ><label
+                ><span data-i18n="longitude">Longitude</span
+                ><input
+                  id="destination-longitude"
+                  name="destination-longitude"
+                  type="number"
+                  step="any"
+                  required
+                  inputmode="decimal"
+              /></label>
+            </div>
+          </fieldset>
+          <button
+            id="request-route"
+            class="primary"
+            type="submit"
+            data-i18n="calculate"
+          >
+            Calculate route
+          </button>
+        </form>
+        <section
+          id="result"
+          aria-labelledby="result-heading"
+          data-state="empty"
+        >
+          <h2 id="result-heading" data-i18n="result">Route result</h2>
+          <p id="route-status" role="status" aria-live="polite"></p>
+          <div id="route-summary" hidden></div>
+          <button id="recalculate" type="button" hidden data-i18n="recalculate">
+            Recalculate route
+          </button>
+        </section>
+        <details id="evidence">
+          <summary data-i18n="evidence">Request and version evidence</summary>
+          <pre id="route-evidence"></pre>
+        </details>
+        <p class="scope" data-i18n="scope">
+          Local synthetic pilot. Not real-time traffic, driving guidance or
+          independently verified road accuracy.
+        </p>
+      </section>
+      <section class="map-panel" aria-label="Seoul road map / 서울 도로 지도">
+        <div
+          id="map"
+          role="region"
+          aria-label="Interactive Seoul road map / 서울 도로 조작 지도"
+        ></div>
+        <p id="map-status" role="status"></p>
+        <p class="map-help" data-i18n="mapHelp">
+          Select coordinates with the form. Pan or zoom the map to explore the
+          original roads.
+        </p>
+        <p id="attribution">
+          ©
+          <a href="https://www.openstreetmap.org/copyright" rel="noreferrer"
+            >OpenStreetMap contributors · ODbL</a
+          >
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -57,3 +57,21 @@ Keep all302 prior cases and add32 fixed P11 cases, total334: fresh-source, bundl
 Actual successful browser routes must reach the real gateway and native nodes. Use private parent controls for process kill, version/clock changes and held requests. Clearly labeled transport test proxies may test delayed/out-of-order responses but cannot count as native success. Automated headless browser regression is part of the actual whole runner and CI, separate from main manual IAB review. Record browser/version, request/response binding, rendered route coordinates, observed states, console/network outcomes, screenshots and exact browser/process cleanup. Prefer one owned browser server/session; close in finally and verify its PID/start identity tree. CI may use software WebGL explicitly, never as hardware-performance proof. Preserve all evidence on failure. Main must inspect the actual client through IAB, capture real video, update reports/READMEs, push and inspect hosted originals before protected delivery.
 
 성공 경로는 실제 중계와 엔진까지 도달해야 합니다. 프로세스 종료·버전/시계 변경·요청 대기는 비공개 부모 제어로 수행합니다. 지연·순서 오류용 시험 대리 서버는 명시하고 엔진 성공으로 세지 않습니다. 자동 브라우저 회귀는 전체 실행기·CI에 포함하고 메인의 내장 브라우저 수동 확인과 구분합니다. 브라우저 버전·원요청 연결·표시 좌표·상태·콘솔/통신·화면·정리를 보존합니다. 소유 브라우저 하나를 재사용하고 finally 종료 뒤 PID와 시작 식별자를 확인합니다. CI의 소프트웨어 WebGL은 명시하며 하드웨어 성능을 주장하지 않습니다. 실패 근거도 보존하고 메인이 실제 화면·녹화·보고서·README·원격 원문·보호 반영을 확인합니다.
+
+Automatic interactive mode publishes the initial fresh LIVE candidate once and reconciles the gateway and both nodes before READY. Supervised mode starts at baseline and exposes publication only through private control. Start elapsed-time advancement at readiness; do not overlap clock writes. The app server independently rejects coordinates outside bootstrap bounds with422 INVALID_INPUT, while the lower-level gateway's existing global coordinate contract remains unchanged.
+
+일반 실행은 처음의 실제 LIVE 후보를 한 번 게시하고 중계·두 노드를 조정한 뒤 화면 준비를 알립니다. 감독 실행은 기본값에서 시작하고 게시를 비공개 제어로만 수행합니다. 준비 완료부터 경과 시간을 적용하고 시계 쓰기를 중첩하지 않습니다. 화면 서버도 초기 범위 밖 좌표를 독립적으로422로 거부하되 하위 중계의 기존 전역 좌표 계약은 유지합니다.
+
+### Interrupted startup and browser cleanup / 준비 중 중단과 브라우저 정리
+
+Main review found that installing signal handlers only after READY leaves startup unprotected, and the existing ingestion owner exits after its own cleanup without waiting for browser-specific handlers. Register cancellation before startup and reject new owned resource creation after cancellation. Closing stops new mutations, bounds the drain of existing work and still cleans owned resources if evidence writing fails. The completion promise must resolve even when final diagnostic writes fail; such failure is not clean success.
+
+메인 검토에서 화면 준비 뒤에만 종료 신호를 등록하면 준비 단계가 보호되지 않고, 기존 수집 실행기는 별도 브라우저 종료를 기다리지 않고 정리 후 종료한다는 점을 확인했습니다. 시작 전에 취소를 등록하고 취소 뒤 새 소유 자원 생성을 막습니다. 종료 시 새 변경을 막고 진행 중 작업 대기를 제한하며 기록 쓰기에 실패해도 자원을 정리합니다. 최종 진단 쓰기 실패에도 완료 신호는 끝나야 하며 이를 정상 정리로 표시하지 않습니다.
+
+Add one optional, bounded before-cleanup callback to the existing owned runtime, default absent, so the same signal path closes the exact browser before database/process cleanup and exit. A callback failure or timeout cannot skip the owner's cleanup. The browser runner also bounds barriers and response collection, records failures, closes in finally and uses a15-minute owned-session deadline. Do not terminate unrelated browser processes or change P09/P10 behavior when no callback is installed.
+
+기존 소유 실행기에 선택적인 종료 전 콜백 하나와 기한을 추가합니다. 기본값은 없으며 같은 신호 경로에서 정확한 소유 브라우저를 닫은 뒤 DB·프로세스를 정리하고 종료합니다. 콜백 실패·기한 초과로 기존 정리가 생략되어서는 안 됩니다. 브라우저 실행기도 단계 대기·응답 수집에 기한을 두고 실패를 기록하며 finally 정리와15분 세션 기한을 적용합니다. 무관한 브라우저를 종료하지 않고 콜백 없는 P09/P10 동작을 유지합니다.
+
+Public browser contracts live in dependency-free `gateway_public_types.ts` and `client_public_types.ts`; the existing server type modules re-export them. This preserves server imports and the same DTO shape while browser TypeScript keeps `types:[]`. The first browser build exposed transitive Node-only types. Do not enable all Node globals in browser checking or maintain duplicated drifting route contracts; move only public type declarations, without runtime refactoring.
+
+공개 브라우저 계약은 의존성 없는 두 타입 파일에 두고 기존 서버 타입 모듈에서 다시 내보냅니다. 서버 가져오기 경로와 같은 자료 구조를 보존하면서 브라우저 검사는 Node 전역 타입 없이 유지합니다. 첫 브라우저 빌드에서 간접적인 Node 전용 타입 의존성이 드러났습니다. 브라우저 검사에 모든 Node 전역을 허용하거나 서로 어긋날 수 있는 계약을 복제하지 않고, 실행 로직 변경 없이 공개 타입 선언만 옮깁니다.

@@ -1,0 +1,327 @@
+@import "maplibre-gl/dist/maplibre-gl.css";
+:root {
+  --ink: #172b3a;
+  --paper: #f5f7f9;
+  --road: #cad4df;
+  --baseline: #18816b;
+  --traffic: #cc481d;
+  --focus: #2166ac;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI",
+    sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  border-bottom: 1px solid var(--road);
+  background: white;
+}
+.brand {
+  color: var(--ink);
+  text-decoration: none;
+  font-family: "Avenir Next", "Apple SD Gothic Neo", sans-serif;
+  font-size: 25px;
+  font-weight: 650;
+  letter-spacing: -1px;
+}
+.brand span {
+  display: block;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-top: 2px;
+}
+main {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  min-height: calc(100vh - 80px);
+}
+.route-panel {
+  padding: 28px 24px;
+  background: #fff;
+  border-right: 1px solid var(--road);
+  min-width: 0;
+}
+.synthetic {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 0 0 18px;
+  color: var(--baseline);
+}
+h1,
+h2 {
+  font-family: "Avenir Next", "Apple SD Gothic Neo", sans-serif;
+  letter-spacing: -0.025em;
+}
+h1 {
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 0 0 24px;
+}
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+form {
+  display: grid;
+  gap: 10px;
+}
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  min-width: 0;
+}
+select,
+input,
+button {
+  font: inherit;
+  color: inherit;
+  min-height: 44px;
+  max-width: 100%;
+  border: 1px solid var(--road);
+  border-radius: 5px;
+  background: white;
+  padding: 9px 10px;
+  min-width: 0;
+}
+select,
+input {
+  width: 100%;
+}
+input {
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+}
+button {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+.primary {
+  background: var(--ink);
+  color: white;
+  border-color: var(--ink);
+  margin-top: 5px;
+}
+.primary[aria-busy="true"] {
+  opacity: 0.75;
+}
+button:hover {
+  border-color: var(--ink);
+}
+fieldset {
+  border: 0;
+  margin: 8px 0 0;
+  padding: 0;
+  min-width: 0;
+}
+legend {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding: 0;
+}
+.coordinate-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
+}
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+#result {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--road);
+}
+#route-status {
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0 0 12px;
+}
+#route-summary {
+  font-variant-numeric: tabular-nums;
+}
+#route-summary p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 7px 0;
+}
+.route-measure {
+  font-size: 22px !important;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.mode {
+  font-size: 13px !important;
+  font-weight: 600;
+}
+.mode[data-mode="LIVE_MIXED"] {
+  color: var(--traffic);
+}
+.mode[data-mode="BASE_ONLY"] {
+  color: var(--baseline);
+}
+#recalculate {
+  width: 100%;
+}
+details {
+  font-size: 13px;
+  border-top: 1px solid var(--road);
+  margin-top: 22px;
+  padding-top: 14px;
+}
+summary {
+  cursor: pointer;
+}
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+  line-height: 1.5;
+  max-height: 260px;
+  overflow: auto;
+}
+.scope {
+  font-size: 12px;
+  color: #526575;
+  line-height: 1.6;
+  margin: 22px 0 0;
+}
+.map-panel {
+  position: relative;
+  min-width: 0;
+  min-height: 640px;
+}
+#map {
+  height: calc(100vh - 80px);
+  min-height: 640px;
+  width: 100%;
+}
+.map-help {
+  position: absolute;
+  left: 18px;
+  bottom: 44px;
+  max-width: 420px;
+  background: #ffffffed;
+  margin: 0;
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  pointer-events: none;
+}
+#attribution {
+  position: absolute;
+  bottom: 8px;
+  left: 18px;
+  background: #ffffffed;
+  font-size: 11px;
+  margin: 0;
+  padding: 4px 7px;
+  max-width: calc(100% - 36px);
+}
+a {
+  color: var(--focus);
+}
+#map-status {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+  background: white;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 10px;
+  border-left: 3px solid var(--traffic);
+}
+#map-status:empty {
+  display: none;
+}
+.location-marker {
+  font: 600 12px system-ui;
+  background: white;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+}
+.location-marker.destination {
+  background: var(--ink);
+  color: white;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 700px) {
+  header {
+    height: 72px;
+    padding: 14px 18px;
+  }
+  .brand {
+    font-size: 23px;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .route-panel {
+    padding: 24px 20px;
+    border-right: 0;
+    border-bottom: 1px solid var(--road);
+  }
+  h1 {
+    font-size: 27px;
+  }
+  .map-panel {
+    min-height: 440px;
+  }
+  #map {
+    height: 440px;
+    min-height: 440px;
+  }
+  .map-help {
+    left: 12px;
+    right: 12px;
+    bottom: 42px;
+    max-width: none;
+  }
+  #attribution {
+    left: 12px;
+    max-width: calc(100% - 24px);
+  }
+  .scope {
+    margin-top: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

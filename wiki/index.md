@@ -93,3 +93,5 @@ Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases i
 - [P09 routing-node module / P09 경로 노드 모듈](modules/routing-nodes.md): actual development32 passed after preserving three failures; clean whole270 and current media follow. / 세 실패를 보존하고 실제 개발32개 통과·깨끗한 전체270개와 최신 녹화 예정.
 
 - [P10 gateway contract](../docs/29-p10-route-gateway.md), [module](modules/route-gateway.md), [development32 proof](../research/pilot/2026-10-25-p10/development/README.md): actual independent native failover and main original inspection passed; fresh whole302 and delivery remain. / 실제 독립 엔진 전환·메인 원문 검사를 통과했으며 새 전체302개와 반영은 남습니다.
+
+- [Actual route client / 실제 경로 클라이언트](modules/route-client.md): development proof; final delivery pending / 개발 근거·최종 반영 대기.

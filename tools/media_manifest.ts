@@ -13,7 +13,7 @@ export function implementationFingerprint(root = ROOT): string {
     .toString()
     .split("\0")
     .filter((p) =>
-      /^(tools\/|fixtures\/|infra\/|web\/|package(?:-lock)?\.json$|tsconfig\.json$)/.test(
+      /^(tools\/|fixtures\/|infra\/|web\/|package(?:-lock)?\.json$|tsconfig(?:\.browser)?\.json$)/.test(
         p,
       ),
     );

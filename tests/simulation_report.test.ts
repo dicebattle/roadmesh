@@ -113,6 +113,10 @@ test("media gate rejects changed source, asset, report and commit reference / ì†
     git(["config", "user.name", "Test"]);
     git(["config", "user.email", "test@example.invalid"]);
     writeFileSync(join(root, "package.json"), "{}");
+    writeFileSync(
+      join(root, "tsconfig.browser.json"),
+      '{"compilerOptions":{"target":"ES2022"}}',
+    );
     git(["add", "."]);
     git(["commit", "-qm", "fixture"]);
     const commit = git(["rev-parse", "HEAD"]);
@@ -163,6 +167,16 @@ test("media gate rejects changed source, asset, report and commit reference / ì†
         "[Video](video.mp4) ![Preview](preview.gif)",
       );
     }
+    writeFileSync(
+      join(root, "tsconfig.browser.json"),
+      '{"compilerOptions":{"target":"ES2023"}}',
+    );
+    assert.notEqual(implementationFingerprint(root), fingerprint);
+    assert.throws(() => checkMedia(root, "manifest.json"), /Stale recording/);
+    writeFileSync(
+      join(root, "tsconfig.browser.json"),
+      '{"compilerOptions":{"target":"ES2022"}}',
+    );
     writeFileSync(join(root, "package.json"), "changed");
     assert.throws(() => checkMedia(root, "manifest.json"), /Stale recording/);
     writeFileSync(join(root, "package.json"), "{}");

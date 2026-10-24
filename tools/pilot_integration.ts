@@ -34,6 +34,11 @@ import {
   requireGatewayCases,
   GATEWAY_CASE_IDS,
 } from "./gateway_checks.js";
+import {
+  runClientChecks,
+  requireClientCases,
+  CLIENT_CASE_IDS,
+} from "./client_checks.js";
 import type { SimulationAssertion } from "./vehicle_simulator.js";
 import {
   renderSimulationReport,
@@ -373,6 +378,61 @@ export async function runPilotIntegration(
       throw new Error(
         "P10 whole case inventory mismatch / P10 전체검사목록 불일치",
       );
+    if (
+      Number(data.assertions.length) !== 302 ||
+      data.assertions.some((a) => a.status !== "PASS")
+    )
+      throw new Error(
+        "All302 prior fresh cases required / 기존 새302검사 전체통과 필요",
+      );
+    const clientStarted = performance.now();
+    const client = await runClientChecks(
+      join(output, "seoul/graph"),
+      join(output, "client"),
+    );
+    verifyRegionalChild(join(output, "client"), verified, data.graph_id);
+    requireClientCases(client.assertions);
+    data.client = {
+      ...client.client,
+      screenshots: client.client.screenshots.map((s) => ({
+        ...s,
+        path: "client/" + s.path,
+      })),
+      routes: client.client.routes.map((r) => ({
+        ...r,
+        evidence_path: "client/" + r.evidence_path,
+      })),
+      events: client.client.events.map((e) => ({
+        ...e,
+        evidence_path: "client/" + e.evidence_path,
+      })),
+      cases: client.client.cases.map((c) => ({
+        ...c,
+        evidence_path: "client/" + c.evidence_path,
+      })),
+      evidence: client.client.evidence.map((e) => ({
+        ...e,
+        path: "client/" + e.path,
+      })),
+    };
+    data.stages.push({
+      id: "p11",
+      name_en: "Actual same-origin browser route client and freshness",
+      name_ko: "실제 같은 출처 브라우저 경로·신선도",
+      status: "PASS",
+      evidence_path: "client/manifest.json",
+      duration_ms: performance.now() - clientStarted,
+    });
+    data.assertions.push(
+      ...client.assertions.map((a) => ({
+        ...a,
+        evidence_path: "client/" + a.evidence_path,
+      })),
+    );
+    if (Number(data.assertions.length) !== 302 + CLIENT_CASE_IDS.length)
+      throw new Error(
+        "P11 whole case inventory mismatch / P11 전체검사 목록 불일치",
+      );
     data.summary.assertions_passed = data.assertions.filter(
       (a) => a.status === "PASS",
     ).length;
@@ -381,11 +441,11 @@ export async function runPilotIntegration(
       ...item,
       message_en: item.message_en.replace(
         "P05–P14 remain incomplete",
-        "P11–P14 remain incomplete",
+        "P12–P14 remain incomplete",
       ),
       message_ko: item.message_ko.replace(
         "P05~P14는 미완료",
-        "P11~P14는 미완료",
+        "P12~P14는 미완료",
       ),
     }));
     data.generated_at_utc = new Date().toISOString();
@@ -416,7 +476,7 @@ export async function runPilotIntegration(
     );
     writeFileSync(
       join(output, "summary.md"),
-      "# Whole implemented-system pilot / 구현된 전체 파일럿\n\nPASS: fresh tiny → Seoul → P05 durable ingestion, interruption/recovery and deletion read-back → P06 unsigned synthetic aggregation → P07 signed HTTP publication and durable verification → P08 accepted immutable traffic files, real routing and exact expiry → P09 persistent native two-node routing, draining and automatic expiry → P10 version-aware route gateway and bounded native failover.\n통과: 새 tiny→서울→P05영속수집·실제중단/복구·삭제재조회→P06서명전합성집계→P07서명HTTP게시·영속검증→P08수용불변교통파일·실제경로·정확한만료→P09지속엔진두노드경로·요청마무리·자동만료→P10버전확인경로중계·제한된지속엔진전환.\n\nP11–P14 remain incomplete; no production authentication or real driver traces.\nP11~P14는 미완료이며 운영인증·실주행자료가 아닙니다.\n",
+      "# Whole implemented-system pilot / 구현된 전체 파일럿\n\nPASS: fresh tiny → Seoul → P05 durable ingestion, interruption/recovery and deletion read-back → P06 unsigned synthetic aggregation → P07 signed HTTP publication and durable verification → P08 accepted immutable traffic files, real routing and exact expiry → P09 persistent native two-node routing, draining and automatic expiry → P10 version-aware route gateway and bounded native failover → P11 actual same-origin browser requests and event-time freshness.\n통과: 새 tiny→서울→P05영속수집·실제중단/복구·삭제재조회→P06서명전합성집계→P07서명HTTP게시·영속검증→P08수용불변교통파일·실제경로·정확한만료→P09지속엔진두노드경로·요청마무리·자동만료→P10버전확인경로중계·제한된지속엔진전환→P11실제같은출처브라우저요청·모의시각신선도.\n\nP12–P14 remain incomplete; no production authentication or real driver traces.\nP12~P14는 미완료이며 운영인증·실주행자료가 아닙니다.\n",
     );
   } catch (error) {
     failure = error;
@@ -455,6 +515,7 @@ export async function runPilotIntegration(
     "traffic/manifest.json",
     "nodes/manifest.json",
     "gateway/manifest.json",
+    "client/manifest.json",
     "lifecycle/cleanup.json",
     "report-data.json",
     "report.html",
