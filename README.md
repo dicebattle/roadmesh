@@ -13,15 +13,15 @@
 
 RouteLens is an open-source project derived from **Metro Lens**. The intended system turns verified driving observations into shared traffic data, then lets independent routing nodes calculate routes using the same map and traffic version.
 
-**Today, the local prototype simulates GPS on actual Seoul roads, durably ingests and matches observations, aggregates at least five contributors, and signs and publishes traffic snapshots. A separate consumer verifies them before an immutable speed file changes actual Valhalla routes. Exact expiry restores default routing.** Persistent routing nodes, distributed failover and a navigation app remain on the roadmap.
+**Today, the local prototype simulates GPS on actual Seoul roads, durably ingests and matches observations, aggregates at least five contributors, and signs and publishes traffic snapshots. A separate consumer verifies them before an immutable speed file changes actual Valhalla routes. Exact expiry restores default routing.** Two independent persistent nodes now activate verified generations, reject stale results and restore baseline routing at expiry. Distributed failover and a navigation app remain on the roadmap.
 
 ## Watch the current simulation
 
 [![Recorded Seoul routes: baseline, congestion detour and exact expiry](docs/media/demo.gif)](docs/media/demo.mp4)
 
-[Watch/download the MP4](docs/media/demo.mp4) · [Captured test report](research/pilot/2026-10-25-p08-portability/report.md) · [Recording provenance](docs/media/latest.json)
+[Watch/download the MP4](docs/media/demo.mp4) · [Captured test report](research/pilot/2026-10-25-p09/report.md) · [Recording provenance](docs/media/latest.json)
 
-This 34.7-second recording compares baseline, congestion and expired routes on actual Teheran-ro geometry. Fifteen synthetic trips supply five contributors to each of three consecutive target edges. The same two-point request changes from **2.119 km / 147.404 s** to a **2.412 km / 184.731 s** detour; exact expiry at 420 seconds restores the original route. The complete run also retains nine vehicles across Teheran-ro, downtown Seoul and Mapo Bridge: 3,204 GPS observations, up to 3 m noise, 60 omissions, and 220 of 237 true traversals stored exactly once. All **238 assertions** passed. Roads are real; vehicles, speeds and GPS are synthetic. This does not establish independent real-driving accuracy, live traffic or coverage of every Seoul road.
+This 48.7-second recording compares baseline, congestion and expired routes on actual Teheran-ro geometry. Fifteen synthetic trips supply five contributors to each of three consecutive target edges. The same two-point request changes from **2.119 km / 147.404 s** to a **2.412 km / 184.731 s** detour; exact expiry at 420 seconds restores the original route. The complete run also retains nine vehicles across Teheran-ro, downtown Seoul and Mapo Bridge: 3,204 GPS observations, up to 3 m noise, 60 omissions, and 220 of 237 true traversals stored exactly once. All **270 assertions** passed. Roads are real; vehicles, speeds and GPS are synthetic. This does not establish independent real-driving accuracy, live traffic or coverage of every Seoul road.
 
 ## What you can run today
 
@@ -35,14 +35,15 @@ This 34.7-second recording compares baseline, congestion and expired routes on a
 | **P06 — traffic aggregation** | Five-contributor minimum, median full duration including signal waits, duplicate/PARKED exclusion, strict availability deadline, transactional revocation and expiry |
 | **P07 — signed publication** | Standard Ed25519 JWS, exact HTTP bytes, scoped local public keys, durable consumer order, key rotation, tamper/replay rejection and expiry |
 | **P08 — accepted traffic routing** | Immutable graph-specific speed files, actual detour, automatic expiry, concurrent generation, real process/database faults and stale-result refusal |
-| **Integrated evidence** | Fresh tiny regression (48), Seoul graph/simulation/matching (35), durable ingestion (34), aggregation (34), publication (55) and traffic routing (32): **238 assertions**, with source/artifact hashes |
+| **P09 — persistent routing nodes** | Two independent nodes, native daemon reuse, request leases, bounded generation draining, durable restart and actual fault recovery |
+| **Integrated evidence** | Fresh tiny regression (48), Seoul graph/simulation/matching (35), durable ingestion (34), aggregation (34), publication (55) traffic routing (32) and persistent nodes (32): **270 assertions**, with source/artifact hashes |
 | **Replay report** | Offline Seoul playback, baseline/live/expired route comparison and actual recovery evidence; English/Korean controls and source links |
 
 Synthetic observations never count toward the separate **100 route / 100 map-matching real-road evaluation**. The geographic validator currently has no reviewed real-road corpus.
 
 ## Run the whole implemented pipeline
 
-Requirements: **Node.js 22 or 24**, npm, curl, and Docker with Linux containers. Initial preparation downloads the pinned engine/Osmium and a 289.9 MB dated South Korea OSM file, verifies its SHA-256, then caches only the source. Every run builds a fresh Seoul graph with networking disabled (2 CPU / 4 GiB limits). P05–P08 automatically start pinned PostgreSQL containers with dedicated volumes and loopback ports, plus separate API, worker and engine processes, then remove their owned resources. No external database, Cloudflare account, map API key or real GPS trace is needed.
+Requirements: **Node.js 22 or 24**, npm, curl, and Docker with Linux containers. Initial preparation downloads the pinned engine/Osmium and a 289.9 MB dated South Korea OSM file, verifies its SHA-256, then caches only the source. Every run builds a fresh Seoul graph with networking disabled (2 CPU / 4 GiB limits). P05–P09 automatically start pinned PostgreSQL containers with dedicated volumes and loopback ports, plus separate API, worker and engine processes, then remove their owned resources. No external database, Cloudflare account, map API key or real GPS trace is needed.
 
 ```sh
 git clone https://github.com/dicebattle/routelens.git
@@ -96,7 +97,7 @@ flowchart LR
   X --> R
 ```
 
-RouteLens owns the contracts, orchestration, simulation, ingestion/worker coordination, traffic-file adapter and evidence checks. **PostgreSQL** supplies durable transactions, row locks and uniqueness; RouteLens defines completion, commit ownership and deletion rules. **Valhalla** builds graphs, prepares traffic archives, calculates routes and performs map matching; **Osmium** extracts the Seoul envelope and converts OSM files. **jose** provides standard JWS signing and verification; RouteLens owns trust scope, exact artifact validation and durable order. The planned client uses **MapLibre**; persistent node activation and node selection remain future work. [Build-or-reuse decisions](docs/03-build-or-reuse.md).
+RouteLens owns the contracts, orchestration, simulation, ingestion/worker coordination, traffic-file adapter and evidence checks. **PostgreSQL** supplies durable transactions, row locks and uniqueness; RouteLens defines completion, commit ownership and deletion rules. **Valhalla** builds graphs, prepares traffic archives, calculates routes and performs map matching; **Osmium** extracts the Seoul envelope and converts OSM files. **jose** provides standard JWS signing and verification; RouteLens owns trust scope, exact artifact validation and durable order. The planned client uses **MapLibre**; persistent node activation is implemented, while gateway node selection remains future work. [Build-or-reuse decisions](docs/03-build-or-reuse.md).
 
 The planned production design has a managed ingestion path and approved independent routing nodes. It keeps raw location data out of public peer-to-peer distribution. A Cloudflare deployment and an independently installable PostgreSQL/HTTP path are planned; neither is required for the current local simulation.
 
@@ -104,13 +105,13 @@ The planned production design has a managed ingestion path and approved independ
 
 Each module follows **design → implementation → direct execution → inspected evidence → bilingual record → push**. The main agent owns design and review; implementation is delegated according to [repository instructions](AGENTS.md). AI assistance is recorded with the actual checks and limits, not used as a quality claim.
 
-- [Latest integrated test report](research/pilot/2026-10-25-p08-portability/report.md)
+- [Latest integrated test report](research/pilot/2026-10-25-p09/report.md)
 - [Current implementation and remaining goal](docs/18-goal-progress.md)
 - [Append-only work log](wiki/log.md)
 - [P01–P14 module contracts](docs/11-local-pilot.md)
 - [Architecture](docs/02-architecture.md) · [Protocol](docs/04-protocol.md) · [Privacy and trust](docs/07-privacy-and-trust.md)
 
-**Next: P09 persistent routing-node lifecycle**, followed by P10 gateway and failover. P08 currently starts a bounded engine per request; it does not establish production latency or availability. Previously downloaded artifacts cannot be recalled from offline consumers; expiry, a newer received version or configured key revocation limits their use. Production authentication, continuous GPS ingestion and forensic deletion from WAL/backups remain unimplemented. The evidence viewer is not the finished navigation client.
+**Next: P10 gateway and failover.** P09 keeps native engines alive across requests and switches immutable generations. P08 remains the lower-level per-request reference. Local synthetic success does not establish production latency or availability. Previously downloaded artifacts cannot be recalled from offline consumers; expiry, a newer received version or configured key revocation limits their use. Production authentication, continuous GPS ingestion and forensic deletion from WAL/backups remain unimplemented. The evidence viewer is not the finished navigation client.
 
 ## Contribute
 

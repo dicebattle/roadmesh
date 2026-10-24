@@ -1,0 +1,141 @@
+{
+  "scope_en": "Only the exact regenerable map binaries listed here are omitted; their original bytes were checked locally. All native traffic archives and other original files remain.",
+  "scope_ko": "명시한 재생성 지도 바이너리만 제외하며 원바이트는 로컬에서 확인했습니다. 교통파일과 나머지 원문은 보존합니다.",
+  "files": [
+    {
+      "path": "nodes/bundle/graph.tar",
+      "bytes": 90787840,
+      "sha256": "d53966b6f8d7d9a314ad9896e89ec89a8021e175cb6995c9bf5af22c3cfd867f"
+    },
+    {
+      "path": "seoul/graph/seoul.osm.pbf",
+      "bytes": 39784193,
+      "sha256": "926d2a35d09d0b98ad6a715c78732533ede080dffccf04cf793cf99ae0e29ad0"
+    },
+    {
+      "path": "seoul/graph/tiles/0/002/866.gph",
+      "bytes": 5094248,
+      "sha256": "f02ad39264181acee5c279a030074aefe4a30644d27ac77d2afd5c5496dbd27d"
+    },
+    {
+      "path": "seoul/graph/tiles/1/046/026.gph",
+      "bytes": 5864896,
+      "sha256": "8bcc258f0d32b97a228c8b067cc1245d6a9b9a062a0d1189967ca9c278077acf"
+    },
+    {
+      "path": "seoul/graph/tiles/1/046/027.gph",
+      "bytes": 4427872,
+      "sha256": "ad3b137d503c6229b82342e8f3758ee441a467d04422e943cf6a44991df79c33"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/734/186.gph",
+      "bytes": 1686272,
+      "sha256": "59f5035a648db57f4ca62992bc172a9799a6c696addac3071f3756025e1a95a9"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/734/187.gph",
+      "bytes": 8025248,
+      "sha256": "8b289a8e34bacfd53d69b92a7bf0ea24eddcabb20cca6243e5e9d3bea30754c4"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/734/188.gph",
+      "bytes": 7091592,
+      "sha256": "fb6755532856825b00de36abea33536aa589fd4167f7d703662eb0f8e6ba39bd"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/734/189.gph",
+      "bytes": 8792,
+      "sha256": "58e0392fb42aff0a052e3831710ed1983657a004f12e927812770805821faba7"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/735/626.gph",
+      "bytes": 3790008,
+      "sha256": "7ce15298441626b44e3f2c4fbe7d8a4eb3e02b834cfb566e6d99d071fa161065"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/735/627.gph",
+      "bytes": 25947328,
+      "sha256": "aa5555a628cf49539d3f77a2c7a56ba7cb103e4e6ad9d2f41b2b055f71acb703"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/735/628.gph",
+      "bytes": 28730488,
+      "sha256": "88d0dad423dc6e6e7f341d117362becd2c27fb8dbd176c6e131991afbf737b5b"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/735/629.gph",
+      "bytes": 24144,
+      "sha256": "0464c0e48e3fdf62ef097c87d2b717579c52e17f937c051c8d230540279d2d7f"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/737/066.gph",
+      "bytes": 4400,
+      "sha256": "20bfc9a36eeb53ba338fe5dd20d79744249314199ad3b69fb7981ceafc73d351"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/737/067.gph",
+      "bytes": 14920,
+      "sha256": "249d1fabae417d7b35803fd4156abb685265b9cdbd668f9fbe92ccf7d539236b"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/737/068.gph",
+      "bytes": 40272,
+      "sha256": "15cebf853780ac3723bdd62d9dba7566b6d0d092d2db2d34ccfd5e3cc4994812"
+    },
+    {
+      "path": "seoul/tiny/graph/tiles/2/000/517/680.gph",
+      "bytes": 424,
+      "sha256": "b0a6b98531862c89bb3bcb63f2c72c888ad0697cbe06185a9495f3018e4dfd92"
+    },
+    {
+      "path": "seoul/tiny/graph/tiles/2/000/519/120.gph",
+      "bytes": 2144,
+      "sha256": "98d5313fceaaf231932b4debcfc36d403bbcd72d37c5d2bd0eff0d3ec836c748"
+    },
+    {
+      "path": "seoul/tiny/graph/tiny-city.osm.pbf",
+      "bytes": 609,
+      "sha256": "394294b08c222c472172310e2e97cc2d3b7e6fc6741bf670c3e5d8f1b0f548ce"
+    },
+    {
+      "path": "seoul/tiny/matching/tampered-graph/tiles/2/000/517/680.gph",
+      "bytes": 424,
+      "sha256": "b0a6b98531862c89bb3bcb63f2c72c888ad0697cbe06185a9495f3018e4dfd92"
+    },
+    {
+      "path": "seoul/tiny/matching/tampered-graph/tiles/2/000/519/120.gph",
+      "bytes": 2144,
+      "sha256": "98d5313fceaaf231932b4debcfc36d403bbcd72d37c5d2bd0eff0d3ec836c748"
+    },
+    {
+      "path": "seoul/tiny/matching/tampered-graph/tiny-city.osm.pbf",
+      "bytes": 609,
+      "sha256": "394294b08c222c472172310e2e97cc2d3b7e6fc6741bf670c3e5d8f1b0f548ce"
+    },
+    {
+      "path": "seoul/tiny/replay/tampered-graph/tiles/2/000/517/680.gph",
+      "bytes": 424,
+      "sha256": "b0a6b98531862c89bb3bcb63f2c72c888ad0697cbe06185a9495f3018e4dfd92"
+    },
+    {
+      "path": "seoul/tiny/replay/tampered-graph/tiles/2/000/519/120.gph",
+      "bytes": 2144,
+      "sha256": "98d5313fceaaf231932b4debcfc36d403bbcd72d37c5d2bd0eff0d3ec836c748"
+    },
+    {
+      "path": "seoul/tiny/replay/tampered-graph/tiny-city.osm.pbf",
+      "bytes": 609,
+      "sha256": "394294b08c222c472172310e2e97cc2d3b7e6fc6741bf670c3e5d8f1b0f548ce"
+    },
+    {
+      "path": "traffic/bundle/graph.tar",
+      "bytes": 90787840,
+      "sha256": "05cf188c9e4384c409eb2d3ea49e5c7182cafe91b008be4927c89abb27501f16"
+    },
+    {
+      "path": "traffic/negative/corrupt-bundle/graph.tar",
+      "bytes": 90787840,
+      "sha256": "05cf188c9e4384c409eb2d3ea49e5c7182cafe91b008be4927c89abb27501f16"
+    }
+  ]
+}

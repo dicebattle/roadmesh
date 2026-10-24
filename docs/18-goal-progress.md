@@ -23,13 +23,14 @@ The user now requires real Seoul OSM roads for the primary simulation. Complete 
 | P06 aggregation / 집계 | [P06 report](../research/pilot/2026-10-24-p06/report.md) | Local/hosted151 and Node22/24 each183 verified / 로컬·원격151·Node각183 검증 |
 | P07 signed publication / 서명 게시 | [P07 report](../research/pilot/2026-10-25-p07-claim-fix/report.md) | Corrected local/hosted206 and Node22/24 each202 verified / 수정후로컬·원격206·Node각202검증 |
 | P08 actual traffic consumption / 속도 반영 | [Contract](27-p08-traffic-activation.md), [report](../research/pilot/2026-10-25-p08-portability/report.md) | Local/hosted238 and Node22/24 each217 verified; protected PR9 merged / 로컬·원격238·Node각217 검증·보호PR9병합 |
-| P09 two nodes, P10 gateway/failover / 두 노드·중계/장애 전환 | [P09 contract](28-p09-routing-nodes.md) | P09 implementation in progress; P10 pending / P09구현중·P10미구현 |
+| P09 persistent nodes / 지속 노드 | [Contract](28-p09-routing-nodes.md), [report](../research/pilot/2026-10-25-p09/report.md) | Clean local270 and independent inspection passed; hosted delivery pending / 깨끗한 로컬270·독립 검사 통과·원격 반영 대기 |
+| P10 gateway/failover / 중계·장애 전환 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P11 complete client, P12 complete fault matrix / 전체 화면·장애 행렬 | Evidence replay and incremental runner implemented / 증거 재생·점진 실행기 구현 | Partial implementation / 일부 구현 |
 | P13 local Cloudflare parity / Cloudflare 로컬 비교 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P14b engine integration / 엔진 통합 검사 | Extend CI with current whole-system runner / 현재 전체 실행기를 CI에 연결 | Hosted current-module run verified; full matrix remains / 현재 모듈 원격 검증·전체 행렬 남음 |
-| Whole implemented-system simulation / 구현 모듈 전체 시뮬레이션 | [P01–P08 report](../research/pilot/2026-10-25-p08-portability/report.md) / P01~P08 보고서 | Clean local/hosted238 verified / 깨끗한 로컬·원격238 검증 |
-| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/pilot/2026-10-25-p08-portability/report.md) / 보고서·캡처 | Corrected report/demo published; hosted originals inspected / 보완 보고서·영상 게시·원격 원문 검사 |
-| README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | Current Seoul/P08 34.7s recording and hashes verified / 현재 서울·P08 34.7초 녹화·해시 검증 |
+| Whole implemented-system simulation / 구현 모듈 전체 시뮬레이션 | [P01–P09 report](../research/pilot/2026-10-25-p09/report.md) / P01~P09 보고서 | Clean local270 verified; hosted pending / 깨끗한 로컬270 검증·원격 대기 |
+| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/pilot/2026-10-25-p09/report.md) / 보고서·캡처 | P09 report/demo prepared; push and hosted inspection pending / P09 보고서·영상 준비·푸시와 원격 검사 대기 |
+| README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | Current Seoul/P09 48.7s recording and hashes verified / 현재 서울·P09 48.7초 녹화·해시 검증 |
 | Refresh on implementation changes / 구현 변경 때 갱신 | `media:check` fingerprint/hash/README checks / 지문·해시·README 검사 | Locally verified / 로컬 검증 |
 | Research other AI-development READMEs / 다른 AI 개발 README 참고 | [Research notes](../wiki/sources/readme-presentation.md) | Source inspection complete / 출처 확인 |
 
@@ -47,6 +48,12 @@ The corrected clean local source4e3265fb passed238 actual cases and4,159 indepen
 
 수정한 깨끗한 로컬소스에서 실제238개·독립해시4,159개와새녹화를확인했고, 원격에서도238개·Node각217개·존재하는해시4,122개와명시한지도제외범위를검사했습니다. 앞선실패와이전보고서는작업기록·날짜별근거로보존하되현재완료주장과구분합니다.
 
-Next: [P09 persistent-node contract](28-p09-routing-nodes.md), fixed by main and assigned to Sol.32 required actual lifecycle cases are planned in addition to the existing238; no P09 completion claim until execution, independent review, refreshed media and protected delivery pass. P10–P14 remain in scope.
+Next: complete P09 protected delivery, then implement P10 gateway/failover. P09 local32 lifecycle cases and the whole270 have passed; the remaining modules are not complete.
 
-다음은메인이고정하고Sol에맡긴P09지속노드입니다. 기존238개에필수실제32사례를추가할계획이며실행·독립검토·새미디어·보호반영전에는P09완료로보지않습니다. P10~P14도전체목표에남아있습니다.
+다음은 P09 보호 반영을 마친 뒤 P10 중계·장애 전환 구현입니다. P09 로컬 수명주기32개·전체270개를 통과했으며 나머지 모듈은 미완료입니다.
+
+## P09 local result / P09 로컬 결과
+
+Clean537cf0c passed270/270; main independently checked7,062 listed hashes and node/traffic/state evidence. The48.7s recording and both READMEs are refreshed. [Current report](../research/pilot/2026-10-25-p09/report.md). Hosted inspection and protected merge are next, followed by P10. P10–P14 remain unfinished.
+
+깨끗한537cf0c에서270개를 통과하고 메인이 목록 해시7,062개·노드/교통/상태 근거를 독립 검사했습니다.48.7초 녹화·한영 README를 갱신했습니다. 다음은 원격 검사·보호 병합 이후 P10이며 P10~P14는 미완료입니다.

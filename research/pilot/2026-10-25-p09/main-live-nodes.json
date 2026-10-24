@@ -1,0 +1,56 @@
+{
+  "observed_at_utc": "2026-10-24T20:17:30.317Z",
+  "owned_container": "routelens-p05-9989d206-d926-45ae-b828-be031cd682d0",
+  "namespace": "p09-9989d206d92645ae",
+  "query": "SELECT jsonb_build_object('clock',(SELECT event_time_utc FROM routelens_p05.namespace_clock WHERE namespace='p09-9989d206d92645ae'),'traversals',(SELECT count(*) FROM routelens_p05.traversals WHERE namespace='p09-9989d206d92645ae'),'publications',(SELECT jsonb_agg(to_jsonb(p)) FROM (SELECT publisher_id,sequence,traffic_snapshot_id,encode(sha256(artifact),'hex') AS actual_artifact_sha256,octet_length(artifact) AS byte_length,published_at,valid_until FROM routelens_p07.publications WHERE namespace='p09-9989d206d92645ae' ORDER BY publisher_id,sequence)p),'consumers',(SELECT jsonb_agg(to_jsonb(c)) FROM (SELECT consumer_id,high_water,last_snapshot_id,octet_length(artifact) AS active_byte_length FROM routelens_p07.consumer_states WHERE namespace='p09-9989d206d92645ae' ORDER BY consumer_id)c));",
+  "readback": {
+    "clock": "2026-10-24T00:04:30+00:00",
+    "consumers": [
+      {
+        "high_water": 3,
+        "consumer_id": "p09-consumer-0",
+        "last_snapshot_id": "a2a75ea481fbcb5d1242405654f544998fa5a26988991d4c207840fbb4386e83",
+        "active_byte_length": 10469
+      },
+      {
+        "high_water": 2,
+        "consumer_id": "p09-consumer-1",
+        "last_snapshot_id": "57379ab1781925fc2739434465d293f63c7582de3282555155d5a296f12320ed",
+        "active_byte_length": 10469
+      }
+    ],
+    "traversals": 15,
+    "publications": [
+      {
+        "sequence": 1,
+        "byte_length": 10469,
+        "valid_until": "2026-10-24T00:07:00+00:00",
+        "published_at": "2026-10-24T00:04:30+00:00",
+        "publisher_id": "seoul-p09-publisher",
+        "traffic_snapshot_id": "070694a1aa5bf65022800e6a9fcb723a31b3818ad8e69725f3a255d9506abe5b",
+        "actual_artifact_sha256": "070694a1aa5bf65022800e6a9fcb723a31b3818ad8e69725f3a255d9506abe5b"
+      },
+      {
+        "sequence": 2,
+        "byte_length": 10469,
+        "valid_until": "2026-10-24T00:07:00+00:00",
+        "published_at": "2026-10-24T00:04:30+00:00",
+        "publisher_id": "seoul-p09-publisher",
+        "traffic_snapshot_id": "57379ab1781925fc2739434465d293f63c7582de3282555155d5a296f12320ed",
+        "actual_artifact_sha256": "57379ab1781925fc2739434465d293f63c7582de3282555155d5a296f12320ed"
+      },
+      {
+        "sequence": 3,
+        "byte_length": 10469,
+        "valid_until": "2026-10-24T00:07:00+00:00",
+        "published_at": "2026-10-24T00:04:30+00:00",
+        "publisher_id": "seoul-p09-publisher",
+        "traffic_snapshot_id": "a2a75ea481fbcb5d1242405654f544998fa5a26988991d4c207840fbb4386e83",
+        "actual_artifact_sha256": "a2a75ea481fbcb5d1242405654f544998fa5a26988991d4c207840fbb4386e83"
+      }
+    ]
+  },
+  "point_in_time_only": true,
+  "message_en": "Main read the exact owned P09 database during execution; counts and versions are a point-in-time observation, not final totals.",
+  "message_ko": "메인이 실행 중 정확한 소유 P09 DB를 직접 읽었습니다. 개수와 버전은 그 시점의 관측이며 최종 합계가 아닙니다."
+}

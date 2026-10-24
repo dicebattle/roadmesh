@@ -486,3 +486,9 @@ Main ran clean ead1914:235 tests and the fresh whole270 passed. Independent whol
 Actual IAB review then found P09 selectors overflowing390px to534px. Sol integration added only scoped label/select layout rules. Main confirmed both languages and expanded expiry view at390px with32 cases and no script errors. The old execution remains preserved and is not relabeled. A new clean whole run and fresh recording follow the CSS correction. [Layout evidence](../research/pilot/2026-10-25-p09/layout/README.md).
 
 실제 내장브라우저 검토에서 P09선택상자가390화면을534로 늘리는 문제를 확인했습니다. Sol통합이 해당 선택상자/라벨 규칙만 추가했고 메인이 두 언어·펼친32개·만료화면을390픽셀·스크립트오류없음으로 확인했습니다. 이전 실행은 보존하고 소스를 바꿔 적지 않으며 수정 뒤 새 전체 실행·녹화를 진행합니다.
+
+## 2026-10-25 — P09 final local evidence / P09 최종 로컬 근거
+
+Main directly ran the corrected clean537cf0c whole270 and independent whole/node/traffic/aggregation/signature/state inspections.7,062 listed hashes passed;44 native route/trace pairs and21 API responses were tied to original evidence. Request deadline30.027s and raw drain28.076s met the unchanged bounds. Main recorded48.7s, decoded the MP4, inspected nine frames and EN/KO390px controls, and confirmed capture/server/tab cleanup. The archive preserves7,743 files with27 exact declared map omissions;270 UI links remain directly available. Both READMEs/media and [report](../research/pilot/2026-10-25-p09/report.md) are refreshed. Implementation remains by the existing Sol agents; main owns design and verification, and now runs as Sol per user instruction. Hosted inspection/protected merge follow.
+
+메인이 수정 후 깨끗한 소스의 전체270개와 독립 전체/노드/교통/집계/서명/상태 검사를 실행했습니다. 목록 해시7,062개·실제 경로/추적44쌍·API응답21개를 원문과 연결했고 요청30.027초·원문 정리28.076초로 기존 기준을 통과했습니다. 실제48.7초 녹화·전체 디코딩·9화면·한영390픽셀을 검토하고 촬영/서버/탭 정리를 확인했습니다. 압축은 지도27개를 정확히 제외한7,743개를 보존하고 UI링크270개를 별도 제공합니다. 한영README·영상·보고서를 갱신했습니다. 기존Sol담당자가 구현했고 메인이 설계·검증했으며 사용자 지시에 따라 메인도Sol로 이어갑니다. 다음은 원격 검사·보호 병합입니다.

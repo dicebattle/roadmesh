@@ -25,3 +25,9 @@ Generation replacement keeps old engines until admitted requests settle, but rej
 The native transport uses installed curl inside isolated containers; it is a pilot adapter, not a production network or latency claim. Configured HTTP502 faults are not packet-loss measurements. Trust changes use a new node process, not live configuration reload. The evidence viewer replays recorded results; it is not the complete navigation client.
 
 격리 컨테이너 안의 설치된 curl을 사용하는 전송은 파일럿 연결기이며 운영 네트워크·지연 검증은 아닙니다. 설정된HTTP502는 패킷 손실 측정과 다릅니다. 신뢰 설정은 새 노드 프로세스에 적용하며 실행 중 교체는 제공하지 않습니다. 보고서 화면은 기록 재생이며 완성된 내비게이션은 아닙니다.
+
+## Clean integrated proof / 깨끗한 통합 근거
+
+Source537cf0c passed270/270 and main independent checks of7,062 listed hashes. The actual48.7s recording, mobile EN/KO review and owned cleanup passed. [Current report](../../research/pilot/2026-10-25-p09/report.md). Hosted inspection and protected delivery are pending.
+
+소스537cf0c의270개·독립 목록 해시7,062개·실제48.7초 녹화·한영 모바일·소유 정리를 확인했습니다. 원격 검사·보호 반영은 대기 중입니다.

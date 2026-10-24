@@ -1,0 +1,32 @@
+{
+  "response": {
+    "status": 503,
+    "headers": {
+      "cache-control": "no-store",
+      "connection": "keep-alive",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Sat, 24 Oct 2026 20:18:28 GMT",
+      "keep-alive": "timeout=5",
+      "transfer-encoding": "chunked"
+    },
+    "body": {
+      "code": "UNAVAILABLE",
+      "reason": "REQUEST_DEADLINE",
+      "message_en": "The routing node cannot return a verified route for this request.",
+      "message_ko": "이 요청에 검증된 경로를 반환할 수 없습니다."
+    }
+  },
+  "request_elapsed_ms": 30027.265749999962,
+  "draining_elapsed_ms": 27887.241666999995,
+  "held_phase": {
+    "type": "PHASE",
+    "phase": "AFTER_NODE_ENGINE_RESULT",
+    "pid": 60435,
+    "node_id": "seoul-node-a",
+    "instance_id": "00eebe51-2a4e-470d-a9cb-f11bda0ebd74",
+    "generation_id": "357d99db20b2d9b595aa86ea2425c585f0b519daabfd779f6b755cd65cb13357",
+    "request_id": "deadline-held",
+    "engine_container": "routelens-p02-ea2a3729-4d40-4adb-ae3c-61ed22f59f46",
+    "engine_run_directory": "/Users/dice/Documents/routelens/data/p09-responsive-main-20261025/nodes/nodes/seoul-node-a/runtime-restarted-3edc878e-82b5-40bd-aba3-90603343e978/engines/ea2a3729-4d40-4adb-ae3c-61ed22f59f46"
+  }
+}

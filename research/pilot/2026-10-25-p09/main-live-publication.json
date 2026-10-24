@@ -1,0 +1,39 @@
+{
+  "observed_at_utc": "2026-10-24T20:14:33.825Z",
+  "owned_container": "routelens-p05-27c32c00-7e3c-47eb-9a88-be8e77bd89aa",
+  "namespace": "p07-27c32c007e3c47eb",
+  "query": "SELECT jsonb_build_object('clock',(SELECT event_time_utc FROM routelens_p05.namespace_clock WHERE namespace='p07-27c32c007e3c47eb'),'publications',(SELECT jsonb_agg(to_jsonb(p)) FROM (SELECT publisher_id,sequence,traffic_snapshot_id,encode(sha256(artifact),'hex') AS actual_artifact_sha256,octet_length(artifact) AS byte_length,published_at,valid_until FROM routelens_p07.publications WHERE namespace='p07-27c32c007e3c47eb' ORDER BY publisher_id,sequence)p),'consumers',(SELECT jsonb_agg(to_jsonb(c)) FROM (SELECT consumer_id,high_water,last_snapshot_id,octet_length(artifact) AS active_byte_length FROM routelens_p07.consumer_states WHERE namespace='p07-27c32c007e3c47eb' ORDER BY consumer_id)c));",
+  "readback": {
+    "clock": "2026-10-24T00:01:30+00:00",
+    "consumers": [
+      {
+        "high_water": 1,
+        "consumer_id": "primary",
+        "last_snapshot_id": "d20692d820da227cbb975e17088ab8339ccf75cf562ed3435567ed92a5027ceb",
+        "active_byte_length": 10474
+      }
+    ],
+    "publications": [
+      {
+        "sequence": 1,
+        "byte_length": 10471,
+        "valid_until": "2026-10-24T00:04:00+00:00",
+        "published_at": "2026-10-24T00:01:30+00:00",
+        "publisher_id": "initial-race-publisher",
+        "traffic_snapshot_id": "06074c96ccf55cfdac103e807e3a2ef1a3058c0da81fcb34db3f8d26d4c5c18a",
+        "actual_artifact_sha256": "06074c96ccf55cfdac103e807e3a2ef1a3058c0da81fcb34db3f8d26d4c5c18a"
+      },
+      {
+        "sequence": 1,
+        "byte_length": 10474,
+        "valid_until": "2026-10-24T00:04:00+00:00",
+        "published_at": "2026-10-24T00:01:30+00:00",
+        "publisher_id": "seoul-synthetic-publisher",
+        "traffic_snapshot_id": "d20692d820da227cbb975e17088ab8339ccf75cf562ed3435567ed92a5027ceb",
+        "actual_artifact_sha256": "d20692d820da227cbb975e17088ab8339ccf75cf562ed3435567ed92a5027ceb"
+      }
+    ]
+  },
+  "message_en": "Main read the live owned database during publication; counts are a point-in-time observation, not final totals.",
+  "message_ko": "메인이 게시 중 소유DB를직접읽었으며개수는당시관측이고최종합계가아닙니다."
+}
