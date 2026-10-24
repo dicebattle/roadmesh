@@ -1,8 +1,8 @@
 # P02 synthetic graph / P02 합성 그래프
 
-Status: implementation in progress; final clean-source evidence is required before completion. [Contract](../../docs/15-p02-test-graph.md). Main designs and verifies; Sol implements.
+Status: **implemented and independently verified**, 2026-10-24. [Clean-source evidence](../../research/pilot/p02-main-2026-10-24.json): eight real-engine assertions, 22 directed edges and six route cases passed. Node 22/24 CI passed all 48 unit/compatibility tests. [Contract](../../docs/15-p02-test-graph.md). Main designs and verifies; Sol implements.
 
-상태: 구현 중이며 완료 전에 깨끗한 소스의 최종 증거가 필요합니다. 위 계약에 따라 메인이 설계·검증하고 Sol이 구현합니다.
+상태: 2026-10-24 **구현·독립 검증 완료**. 깨끗한 소스에서 실제 엔진 8판정·방향별 22구간·6경로가 통과했고 Node 22/24 CI에서 단위/호환성 48개 모두 통과했습니다. 위 계약에 따라 메인이 설계·검증하고 Sol이 구현합니다.
 
 ## Purpose and reuse / 목적과 재사용
 
@@ -43,3 +43,22 @@ This proves the synthetic graph's routing/access behavior with Valhalla. It does
 Cleanup coverage is normal completion and handled command/validation failures. Killing the supervising Node process with an uncatchable signal is not a verified recovery scenario here; P12 must add whole-process interruption/recovery proof. P02's container command is time-bounded, and the final test checks that no owned container remains.
 
 정리 검증 범위는 정상 완료·처리된 명령/검증 실패입니다. 감독 Node 프로세스를 처리할 수 없는 신호로 강제 종료하는 복구 시나리오는 여기서 검증하지 않았으며 P12의 전체 프로세스 중단·복구 검사에 남깁니다. P02 컨테이너 명령은 시간 제한을 두고 최종 실행 후 소유 컨테이너가 남지 않았는지 확인합니다.
+
+## Observed result / 실제 결과
+
+Main executed clean commit `7d68fd0e980b8b1c246498a3bd2c29330c22c735` with Node 22.23.4 on macOS arm64; the engine ran in Linux arm64. The measured total was 6341.543167 ms with image layers already present, including preparation. The two generated tile files, PBF, fixture and config hashes were recomputed; graph identity includes tile hashes. Actual container inspection confirmed network none, no published ports, CPU 2 and 2 GiB limits. Owned containers remaining: zero. Existing evidence was preserved when a repeat output path returned 2.
+
+메인은 위 깨끗한 커밋을 macOS arm64·Node 22.23.4에서 실행했고 엔진은 Linux arm64였습니다. 기존 이미지 계층이 있는 상태에서 준비 포함 전체 6341.543167ms를 기록했습니다. 타일 두 개·PBF·시험자료·설정 해시를 다시 계산하고 그래프 식별의 타일 결합을 확인했습니다. 실제 컨테이너 조회로 통신 차단·포트 없음·CPU 2개/2GiB 한도를 확인했고 잔여 컨테이너는 0개입니다. 기존 출력 경로 재사용은 2로 거부하며 파일을 보존했습니다.
+
+| Case / 사례 | Observed / 관측 |
+| --- | --- |
+| Baseline / 기본 | 101 → 102 |
+| Same-OD upper alternative / 같은 출발도착 상단 대안 | 101 → 103 → 104 → 105 → 106 → 102 |
+| Restricted-turn detour / 금지 회전 우회 | 101 → 103 → 104 → 107 → 108; no 101 → 108 transition / 금지 전환 없음 |
+| One-way forward / 일방통행 정방향 | 201 |
+| One-way reverse / 일방통행 역방향 | engine exit 1, error 442 / 엔진 종료 1·오류 442 |
+| Disconnected / 도로 단절 | engine exit 1, error 442 / 엔진 종료 1·오류 442 |
+
+[Hosted run 40070623970](https://github.com/dicebattle/routelens/actions/runs/40070623970) passed Node 22, Node 24 and Required checks on the same implementation. Both versions report 48 passed, 0 failed/skipped. This hosted workflow does not start Valhalla; real engine evidence above is local.
+
+같은 구현의 원격 실행에서 Node 22·24·종합 검사가 통과했고 두 버전 모두 48통과·실패/생략 0개입니다. 원격 워크플로는 Valhalla를 실행하지 않으며 위 실제 엔진 증거는 로컬입니다.

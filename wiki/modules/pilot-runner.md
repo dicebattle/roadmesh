@@ -1,8 +1,8 @@
 # P01 runner and P14a checks / P01 실행기와 P14a 검사
 
-Status: **TypeScript P01/P14a verified**, 2026-10-24. Strict build and 33 tests passed on Node 22.23.4. Main independently verified clean source `65e97bc` and inspected Node 22/24 artifacts from [run 40069570003](https://github.com/dicebattle/routelens/actions/runs/40069570003). [Migration evidence](../../research/pilot/typescript-migration-2026-10-24.json). `Required checks` remains mandatory. Earlier Python evidence is historical. Next: P02.
+Status: **TypeScript P01/P14a verified**, 2026-10-24. Strict build and 33 tests passed on Node 22.23.4. Main independently verified clean source `65e97bc` and inspected Node 22/24 artifacts from [run 40069570003](https://github.com/dicebattle/routelens/actions/runs/40069570003). [Migration evidence](../../research/pilot/typescript-migration-2026-10-24.json). `Required checks` remains mandatory. Earlier Python evidence is historical. P02 is now [verified](test-graph.md); next is P03.
 
-상태: 2026-10-24 **TypeScript P01/P14a 검증 완료**. Node 22.23.4 엄격 빌드·33개 검사, 메인의 깨끗한 소스 독립 실행, Node 22/24 원격 결과물 검사가 통과했습니다. 위 전환 증거를 보존하고 종합 검사를 계속 필수로 적용합니다. 기존 Python 증거는 과거 기록이며 다음은 P02입니다.
+상태: 2026-10-24 **TypeScript P01/P14a 검증 완료**. Node 22.23.4 엄격 빌드·33개 검사, 메인의 깨끗한 소스 독립 실행, Node 22/24 원격 결과물 검사가 통과했습니다. 위 전환 증거를 보존하고 종합 검사를 계속 필수로 적용합니다. 기존 Python 증거는 과거 기록이며 P02도 [검증](test-graph.md)했으며 다음은 P03입니다.
 
 ## Evidence interpretation / 증거 해석
 

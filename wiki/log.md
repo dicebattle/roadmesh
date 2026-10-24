@@ -172,3 +172,14 @@
   최초 검사는 메타데이터 필드 위치 때문에 컴파일에서 중단돼 수정했습니다. 다음 실제 검사는 47/48 통과했으며 신규 한 검사의 저장 지형 방향 가정이 잘못됐습니다. 실제 응답 검사는 유지하고 반전 입력을 명시해 보정한 뒤 엄격 빌드·실패 검사 하나만 재실행하여 통과했습니다. 이미 통과한 검사는 로컬에서 반복하지 않고 최종 48개 결과는 CI로 확인합니다.
 - Main now commits implementation before independent Docker execution. Hosted checks remain engine-free P14a; P14b and forced supervisor-termination recovery remain separate work. Sol verified no owned P02 containers remained after development checks.
   메인이 구현을 먼저 커밋한 뒤 독립 Docker 검증을 실행합니다. 원격 검사는 엔진 없는 P14a이며 P14b·감독 프로세스 강제 종료 복구는 별도입니다. Sol은 개발 검사 후 소유 컨테이너가 없는 것을 확인했습니다.
+
+## 2026-10-24 P02 independent proof / P02 독립 증명
+
+- Main directly ran `/Users/dice/.npm/_npx/361c55be1121897e/node_modules/node/bin/node dist/tools/test_graph.js --output data/p02-main-20261024` on clean `7d68fd0e980b8b1c246498a3bd2c29330c22c735`. Eight assertions passed, including 22 directed edge mappings and six route cases. Total 6341.543167 ms includes warm-image preparation; it is not a production benchmark or peak-memory measurement.
+  메인이 위 깨끗한 소스에서 Node 22.23.4로 직접 실행해 22방향 대응·6경로·정리의 8판정이 통과했습니다. 준비 포함 6341.543167ms는 이미지가 이미 있는 실행이며 운영 벤치마크·최대 메모리 측정이 아닙니다.
+- Main independently inspected raw route/trace responses, expected way sequences, forbidden transition absence, exact 442/exit-1 negative responses, unique string IDs, car-access flags, source/runtime/host and all input/PBF/config/tile hashes. Recomputed graph identity from inputs/image/engine/tile hashes. Actual pre-cleanup container inspection confirms no network or published ports and CPU 2/2 GiB limits. Post-run Docker listing has zero owned containers. Reusing output returns 2 and preserves existing hashes.
+  메인이 원본 경로/구간 응답·도로 순서·금지 전환 부재·정확한 오류/종료코드·문자열 ID·통행권한·출처·전체 파일 해시를 독립 검사하고 그래프 식별을 다시 계산했습니다. 실제 컨테이너 조회로 통신/포트 없음·자원 한도를 확인했고 실행 후 잔여 소유 컨테이너 0개·기존 출력 보존을 확인했습니다.
+- [CI 40070623970](https://github.com/dicebattle/routelens/actions/runs/40070623970) on the same implementation passed Node 22/24 and Required checks. Main inspected logs: both versions report 48 passed, 0 failed/skipped. Hosted P14a remains engine-free. [Preserved proof](../research/pilot/p02-main-2026-10-24.json), [module](modules/test-graph.md).
+  같은 구현의 CI에서 Node 22·24·종합 검사가 통과했고 메인이 로그의 버전별 48통과·실패/생략 0개를 확인했습니다. 원격 P14a는 엔진을 실행하지 않으며 실제 엔진 증거는 로컬 실행입니다. 위 증거·모듈 문서를 보존합니다.
+- Next is P03 with its design already recorded; P04 matching, traffic, two-node reliability and the complete pilot remain. User-authorized protected integration follows after the final documentation head passes required checks; no protection bypass.
+  다음은 설계가 기록된 P03이며 P04 매칭·교통·두 노드 신뢰성·전체 파일럿은 남아 있습니다. 사용자 요청의 보호된 병합은 최종 문서 HEAD 필수 검사 후 수행하며 보호를 우회하지 않습니다.
