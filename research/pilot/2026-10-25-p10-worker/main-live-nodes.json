@@ -1,0 +1,9 @@
+{
+  "observed_at": "2026-10-24T22:23:46.906Z",
+  "stage": "nodes",
+  "container": "routelens-p05-784133b1-ff91-44c5-8f74-d24d9d8d9964",
+  "sql": "BEGIN READ ONLY; SET LOCAL statement_timeout='2s'; SELECT json_build_object('traversals',(SELECT count(*) FROM routelens_p05.traversals),'publications',(SELECT count(*) FROM routelens_p07.publications),'consumers',(SELECT json_agg(x) FROM (SELECT consumer_id, high_water, last_snapshot_id, octet_length(artifact) AS artifact_bytes FROM routelens_p07.consumer_states ORDER BY consumer_id) x)); COMMIT;",
+  "status": 0,
+  "stdout": "BEGIN\nSET\n{\"traversals\" : 15, \"publications\" : 1, \"consumers\" : [{\"consumer_id\":\"p09-consumer-0\",\"high_water\":1,\"last_snapshot_id\":\"54b75ea54825d6ac75a5b07893dd831c4255211c3b7a8d4e5b28054c4699f786\",\"artifact_bytes\":10469}, \n {\"consumer_id\":\"p09-consumer-1\",\"high_water\":1,\"last_snapshot_id\":\"54b75ea54825d6ac75a5b07893dd831c4255211c3b7a8d4e5b28054c4699f786\",\"artifact_bytes\":10469}]}\nCOMMIT\n",
+  "stderr": ""
+}

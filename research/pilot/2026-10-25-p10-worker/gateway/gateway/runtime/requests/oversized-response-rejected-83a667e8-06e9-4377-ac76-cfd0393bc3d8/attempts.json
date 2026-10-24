@@ -1,0 +1,54 @@
+[
+  {
+    "attempt": 1,
+    "node_id": "seoul-gateway-node-a",
+    "request": {
+      "request_id": "oversized-response-rejected",
+      "graph_id": "e2674fbd7bfaa6fd47de6b3843f2cd29c4e46ea8ce35bb19934a82ce81734eab",
+      "locations": [
+        {
+          "lon": 127.03739724982245,
+          "lat": 37.50083690018144
+        },
+        {
+          "lon": 127.0375277498224,
+          "lat": 37.500877100181434
+        }
+      ],
+      "expected_generation_id": "b6103f2feab91aacdc7e7171e8c666e265cbfeaec640c6e30cef6e1259d11552"
+    },
+    "deadline_ms": 4000,
+    "status": 0,
+    "body": null,
+    "outcome": "REJECTED",
+    "reason": "OVERSIZED_RESPONSE",
+    "elapsed_start_ms": 914.410249999999,
+    "elapsed_end_ms": 917.2797499999997
+  },
+  {
+    "attempt": 2,
+    "node_id": "seoul-gateway-node-b",
+    "request": {
+      "request_id": "oversized-response-rejected",
+      "graph_id": "e2674fbd7bfaa6fd47de6b3843f2cd29c4e46ea8ce35bb19934a82ce81734eab",
+      "locations": [
+        {
+          "lon": 127.03739724982245,
+          "lat": 37.50083690018144
+        },
+        {
+          "lon": 127.0375277498224,
+          "lat": 37.500877100181434
+        }
+      ],
+      "expected_generation_id": "b6103f2feab91aacdc7e7171e8c666e265cbfeaec640c6e30cef6e1259d11552"
+    },
+    "deadline_ms": 4000,
+    "status": 0,
+    "body": null,
+    "outcome": "REJECTED",
+    "reason": "OVERSIZED_RESPONSE",
+    "elapsed_start_ms": 931.3755000000001,
+    "elapsed_end_ms": 933.8117499999989
+  }
+]

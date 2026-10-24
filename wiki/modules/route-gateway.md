@@ -21,3 +21,7 @@ Clean2056521 passed252 unit tests and the fresh whole302. Main independently ins
 Final-head hosted runs failed during concurrent admission preparation. Main preserved [both failures](../../research/pilot/2026-10-25-p10/hosted-failures/README.md) and the local event-loop measurement. Correction is in progress with existing deadlines and acceptance unchanged; protected delivery remains blocked.
 
 최종 원격 동시 접수 준비가 실패해 두 원문과 로컬 이벤트 루프 측정을 보존했습니다. 기존 기한·통과 기준을 유지하며 수정 중이고 보호 반영은 보류합니다.
+
+Worker correction at clean8f9c9f7 passed fresh302, unit262,9,799 independently checked hashes and a new60.45s recording. All eight concurrent routes returned200; ninth429 and12s/4s limits remain. [Current report](../../research/pilot/2026-10-25-p10-worker/report.md). New hosted verification is pending.
+
+깨끗한 작업 스레드 수정에서 새302개·단위262개·독립 해시9,799개·새60.45초 녹화를 확인했습니다. 동시8개가 모두 성공하고 아홉째429·기한을 유지했습니다. 새 원격 검증은 남아 있습니다.

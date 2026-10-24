@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1",
+  "run_id": "62c96f80-b473-44a7-83ec-0ae5bb5cc8dd",
+  "fixture_id": "tiny-city-v1",
+  "source": {
+    "commit": "8f9c9f76762820f43b4606627738537c7d84fe51",
+    "dirty": false
+  },
+  "host_architecture": "arm64",
+  "host_platform": "darwin",
+  "node": "22.23.4",
+  "engine_executed": true,
+  "graph_loaded": true,
+  "engine": {
+    "valhalla": "3.9.1",
+    "osmium": "osmium version 1.16.0\nlibosmium version 2.20.0\nSupported PBF compression types: none zlib lz4\n\nCopyright (C) 2013-2023  Jochen Topf <jochen@topf.org>\nLicense: GNU GENERAL PUBLIC LICENSE Version 3 <https://gnu.org/licenses/gpl.html>.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law."
+  },
+  "image": {
+    "id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "platform": "linux/arm64",
+    "dockerfile_sha256": "063afdc0e67da85ca88eb5713600cf76b663508e66682ace5859628b465001bc"
+  },
+  "base_image": "ghcr.io/valhalla/valhalla@sha256:4fd114eb1d26b8fc2f43bcb3df234c1b63a0bf13c277405e5943d5361dc575de",
+  "graph_id": "6c3b6b6f450f592cad2c721811377532af6be197a1ebea277c84af25bd368942",
+  "fixture_sha256": "4677bda5062936f23a2c846fdf2dd2ee719c6382e9c1d01d3113cddb2e7ddc10",
+  "fixture_contract_sha256": "cedb7c2f71c98bc3e400e954746331de75a8294b877a6d81539030b8a9e86e2b",
+  "config_sha256": "69be4cfb635430f39af54f0be7080d5bce9a0b06050451f05c13ddac49441be9",
+  "pbf_sha256": "394294b08c222c472172310e2e97cc2d3b7e6fc6741bf670c3e5d8f1b0f548ce",
+  "tile_sha256": {
+    "2/000/517/680.gph": "b0a6b98531862c89bb3bcb63f2c72c888ad0697cbe06185a9495f3018e4dfd92",
+    "2/000/519/120.gph": "98d5313fceaaf231932b4debcfc36d403bbcd72d37c5d2bd0eff0d3ec836c748"
+  },
+  "resource_limits": {
+    "cpus": 2,
+    "memory_bytes": 2147483648,
+    "network": "none"
+  },
+  "elapsed_ms": 3779.941166,
+  "elapsed_includes_image_preparation": true,
+  "started_at_utc": "2026-10-24T22:17:15.501Z",
+  "completed_at_utc": "2026-10-24T22:17:19.281Z",
+  "cleanup_verified": true,
+  "status": "PASS",
+  "evidence": {
+    "assertions": "assertions.json",
+    "edge_map": "edge-map.json",
+    "commands": "commands.json",
+    "summary": "summary.md"
+  }
+}

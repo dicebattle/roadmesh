@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "source_commit": "8f9c9f76762820f43b4606627738537c7d84fe51",
+  "url": "http://127.0.0.1:59041/report.html",
+  "iab_tab": "16",
+  "english_mobile": {
+    "viewport": 390,
+    "document": 390,
+    "selector": 362,
+    "route": "primary-kill-failover",
+    "node": "seoul-gateway-node-b",
+    "mode": "LIVE_MIXED",
+    "coverage": 1
+  },
+  "korean_mobile": {
+    "viewport": 390,
+    "document": 390,
+    "selector": 362,
+    "route": "exact-expiry",
+    "mode": "BASE_ONLY",
+    "warning": "NO_USABLE_SNAPSHOT"
+  },
+  "expanded_gateway_cases": 32,
+  "console_errors_and_warnings": [],
+  "viewport_reset": true,
+  "owned_tab_closed": true,
+  "message_en": "Main directly inspected the fresh report in IAB; this is evidence replay, not the P11 request client.",
+  "message_ko": "메인이 내장 브라우저에서 새 보고서를 직접 검사했으며 P11 요청 화면이 아닌 증거 재생입니다."
+}
