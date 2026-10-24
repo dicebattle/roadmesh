@@ -105,6 +105,11 @@ export async function runPilotIntegration(
       (a) => a.status === "PASS",
     ).length;
     data.summary.assertions_total = data.assertions.length;
+    data.limitations = data.limitations.map((item) => ({
+      ...item,
+      message_en: item.message_en.replace("P05–P14 remain incomplete", "P06–P14 remain incomplete"),
+      message_ko: item.message_ko.replace("P05~P14는 미완료", "P06~P14는 미완료"),
+    }));
     data.generated_at_utc = new Date().toISOString();
     if (
       data.implementation_sha256 !== fingerprint ||
