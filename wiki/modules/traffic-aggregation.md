@@ -1,8 +1,8 @@
 # P06 traffic aggregation / 교통 집계
 
-The clean local151-check whole-system run passed. [Inspected report](../../research/pilot/2026-10-24-p06/report.md); hosted delivery remains pending. The [executable contract](../../docs/23-p06-aggregation-contract.md) is canonical. The [projection policy](../../docs/24-observed-projection-policy.md) explains the prerequisite matching correction and preserved failures.
+The clean local151-check whole-system run passed. [Inspected report](../../research/pilot/2026-10-24-p06/report.md); hosted151 and Node22/24 each183 also passed. The [executable contract](../../docs/23-p06-aggregation-contract.md) is canonical. The [projection policy](../../docs/24-observed-projection-policy.md) explains the prerequisite matching correction and preserved failures.
 
-깨끗한 로컬 전체151개 검사를 통과했고 보고서에 직접 확인한 증거를 기록했습니다. 원격 반영은 남아 있습니다. 실행 계약을 기준으로 하며 투영 정책 문서에 선행 매칭 보정과 실패 기록을 설명합니다.
+깨끗한 로컬 전체151개 검사를 통과했고 보고서에 직접 확인한 증거를 기록했습니다. 원격151개·Node22/24각183개도 검증했습니다. 실행 계약을 기준으로 하며 투영 정책 문서에 선행 매칭 보정과 실패 기록을 설명합니다.
 
 ## Data flow / 처리 흐름
 

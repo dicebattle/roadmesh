@@ -1,8 +1,8 @@
 # Observed boundary projection v3 / 관측 경계 투영 v3
 
-Status: decided after inspecting the failed P06 design probe; the corrected implementation passed the clean local151-check whole run; hosted delivery remains pending. Main designs; Sol implements the narrowly scoped matcher adapter. Valhalla stays pinned and unmodified. This is a prerequisite to P06's original five-contributor acceptance criteria, not a reduced criterion or a replacement vehicle population.
+Status: decided after inspecting the failed P06 design probe; the corrected implementation passed the clean local151-check whole run; hosted151 and Node22/24 each183 also passed. Main designs; Sol implements the narrowly scoped matcher adapter. Valhalla stays pinned and unmodified. This is a prerequisite to P06's original five-contributor acceptance criteria, not a reduced criterion or a replacement vehicle population.
 
-상태: P06 설계조사의 실패 원문을 검사한 뒤 결정했으며, 보정 구현은 깨끗한 로컬 전체151개 검사를 통과했으며 원격 반영은 남아 있습니다. 메인이 설계하고 Sol이 매칭 연결기만 수정합니다. Valhalla의 고정 버전은 바꾸지 않습니다. 원래 정한 5명 집계 기준을 충족하기 위한 선행 수정이며 기준을 낮추거나 차량군을 바꾸는 작업이 아닙니다.
+상태: P06 설계조사의 실패 원문을 검사한 뒤 결정했으며, 보정 구현은 깨끗한 로컬 전체151개 검사를 통과했으며 원격151개·Node22/24각183개도 검증했습니다. 메인이 설계하고 Sol이 매칭 연결기만 수정합니다. Valhalla의 고정 버전은 바꾸지 않습니다. 원래 정한 5명 집계 기준을 충족하기 위한 선행 수정이며 기준을 낮추거나 차량군을 바꾸는 작업이 아닙니다.
 
 ## Observed failure / 확인한 실패
 

@@ -1,8 +1,8 @@
 # Seoul traffic aggregation proof / 서울 교통 집계 검증
 
-**Local PASS:151/151 = tiny48 + Seoul35 + ingestion34 + aggregation34.** Clean source `f295d8d2a6bc32227a868c4002aba38bd82c4df9`, completed2026-10-24T14:51:00.855Z. Main designed and independently inspected the results; Sol (`gpt-6.1-sol`) implemented the core, integration and matcher changes. Hosted verification is pending.
+**Local PASS:151/151 = tiny48 + Seoul35 + ingestion34 + aggregation34.** Clean source `f295d8d2a6bc32227a868c4002aba38bd82c4df9`, completed2026-10-24T14:51:00.855Z. Main designed and independently inspected the results; Sol (`gpt-6.1-sol`) implemented the core, integration and matcher changes. Hosted Node22/24 each183/183 and the fresh Linux151-check run passed; independently inspected below.
 
-**로컬151/151 통과 = 작은 회귀48 + 서울35 + 수집34 + 집계34.** 위 깨끗한 소스로 실행했고 메인이 설계·독립 검사를, Sol이 코어·통합·매칭 구현을 맡았습니다. 원격 검증은 아직 전입니다.
+**로컬151/151 통과 = 작은 회귀48 + 서울35 + 수집34 + 집계34.** 위 깨끗한 소스로 실행했고 메인이 설계·독립 검사를, Sol이 코어·통합·매칭 구현을 맡았습니다. 원격 Node22·24 각각183개와 새 Linux151개 검사를 통과했으며 아래에 독립 검사 결과를 기록합니다.
 
 [Recording / 실제 녹화](../../../docs/media/demo.mp4) · [Interactive report / 재생 보고서](report.html) · [Main inspection / 메인 검사](main-verification.json) · [Aggregation inspection / 집계 검사](aggregation/main-verification.json) · [Contract / 계약](../../../docs/23-p06-aggregation-contract.md) · [Module guide / 모듈 안내](../../../wiki/modules/traffic-aggregation.md)
 
@@ -72,3 +72,13 @@ Road geometry is © OpenStreetMap contributors, ODbL1.0; the envelope includes a
 지도는 OSM 기여자·ODbL1.0을 유지하며 추출 범위에는 인접 도로도 포함됩니다. 이동·식별자는 자체 합성이며 실제 개인 이력·인증정보는 공개하지 않습니다. 메인이 한영 데스크톱·390px 모바일 상태 전환을 확인했고 가로 넘침·기록된 JavaScript 오류는 없었습니다.
 
 Actual recording: 25.350000s at1280×900/20fps, converted in full to MP4/GIF; full MP4 decoding passed and screenshots were inspected. Owned capture browser and report server are closed after inspection. / 실제 25.350000초를1280×900·20fps로 촬영해 전체를 변환했고 MP4전체 디코딩·화면 검사를 통과했습니다. 소유 촬영 브라우저·보고서 서버를 종료했습니다.
+
+## Hosted verification / 원격 검증
+
+[Run40104713791](https://github.com/dicebattle/routelens/actions/runs/40104713791), clean push `0d4c18ead3c4c361068d4ec2bf0cf2d03f762662`, passed Node22/24 each183/183, the real Linux Docker151/151 and Required checks. Main downloaded and independently checked2,631 unique available hashes,220 stored/reference traversals and geometry/timing, full/split/overlap bytes, real restart/crash/revoke/expiry/retention evidence and all P06 population outputs. The P06 inventory includes761 hashes within that total; five-person speed and0.002745% error agree with local results. [Main proof](hosted-verification.json), [aggregation proof](hosted-aggregation-verification.json), [original CI](hosted/ci.json).
+
+원격 깨끗한 푸시에서 Node22·24각183개·실제Linux Docker151개·필수검사를 통과했습니다. 메인이 내려받은 가능한 고유해시2,631개·저장/기준220통과·거리/시간·전체/분할/중첩바이트·실제재시작/중단/철회/만료/보존기한·P06차량군별결과를 확인했습니다. P06의761해시는 이 전체에 포함되며 속도·오차는 로컬과 같습니다.
+
+Remote graph `5d0f834a05483f2a22ac1230ed9f0d5401f9234f2e748db03bc8ebdcf486f893` has its own verified identity. Fifteen graph binaries deliberately omitted by CI are listed and were not rehashed after download. Remote cleanup is supported by original execution diagnostics, not a later live remote process query. Selected original manifests/read-backs are retained under hosted/; the complete uploaded artifact has the workflow retention period. Main visually checked the public README GIF and downloaded the public MP4 with an identical local SHA256. Final documentation-head checks must pass before protected PR#7 merge.
+
+원격 그래프는 별도 식별자를 검증했습니다. CI가 제외한 그래프 바이너리15개는 명시했으며 다운로드 후 재해시하지 않았습니다. 원격 정리는 원실행 진단 근거이고 뒤늦은 실시간 원격 프로세스 조회가 아닙니다. 주요 원문을 hosted폴더에 보존하며 전체 업로드 결과물에는 보관기간이 적용됩니다. 공개 README의 GIF를 직접 확인하고 공개 MP4도 로컬과 동일한 해시로 대조했습니다. 보호된 PR#7병합 전에 최종 문서 커밋 검사도 통과해야 합니다.

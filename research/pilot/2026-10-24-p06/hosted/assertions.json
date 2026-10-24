@@ -1,0 +1,2249 @@
+[
+  {
+    "assertion_id": "tiny-synthetic-quota-refusal",
+    "status": "PASS",
+    "message_en": "Synthetic corpus is valid but cannot satisfy the real-road quota.",
+    "message_ko": "합성 자료는 유효하지만 실제 도로 사례 기준을 충족하지 않습니다.",
+    "expected": false,
+    "actual": false,
+    "evidence_path": "seoul/tiny/corpus/report.json"
+  },
+  {
+    "assertion_id": "tiny-p01-replay-failure-skip",
+    "status": "PASS",
+    "message_en": "Fresh P01 replay, deliberate failure, skip and invalid-input checks passed.",
+    "message_ko": "새 P01 재생·의도적 실패·생략·잘못된 입력 검사가 통과했습니다.",
+    "expected": 5,
+    "actual": 5,
+    "evidence_path": "seoul/tiny/p01/checks.json"
+  },
+  {
+    "assertion_id": "tiny-p02-cleanup-and-graph",
+    "status": "PASS",
+    "message_en": "Fresh real Valhalla graph, road legality and container cleanup verified.",
+    "message_ko": "새 실제 Valhalla 그래프·통행 규칙·컨테이너 정리를 확인했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/tiny/graph/manifest.json"
+  },
+  {
+    "assertion_id": "tiny-p02-p03-graph-binding",
+    "status": "PASS",
+    "message_en": "Simulation uses this run’s verified graph identity.",
+    "message_ko": "시뮬레이션이 이번 실행에서 검증한 그래프 식별자를 사용합니다.",
+    "expected": "9e47061a0530d76b8960b83e7a11216a5070c4f0db9c26b8287ea99f08425279",
+    "actual": "9e47061a0530d76b8960b83e7a11216a5070c4f0db9c26b8287ea99f08425279",
+    "evidence_path": "seoul/tiny/simulation/manifest.json"
+  },
+  {
+    "assertion_id": "tiny-authored-truth-count",
+    "status": "PASS",
+    "message_en": "Counts match independent hand calculations.",
+    "message_ko": "개수가 독립 수작업 계산과 일치합니다.",
+    "expected": 187,
+    "actual": 187,
+    "evidence_path": "seoul/tiny/simulation/truth.json"
+  },
+  {
+    "assertion_id": "tiny-authored-observation-count",
+    "status": "PASS",
+    "message_en": "Counts match independent hand calculations.",
+    "message_ko": "개수가 독립 수작업 계산과 일치합니다.",
+    "expected": 177,
+    "actual": 177,
+    "evidence_path": "seoul/tiny/simulation/truth.json"
+  },
+  {
+    "assertion_id": "tiny-authored-omission-count",
+    "status": "PASS",
+    "message_en": "Counts match independent hand calculations.",
+    "message_ko": "개수가 독립 수작업 계산과 일치합니다.",
+    "expected": 10,
+    "actual": 10,
+    "evidence_path": "seoul/tiny/simulation/truth.json"
+  },
+  {
+    "assertion_id": "tiny-authored-traversal-count",
+    "status": "PASS",
+    "message_en": "Counts match independent hand calculations.",
+    "message_ko": "개수가 독립 수작업 계산과 일치합니다.",
+    "expected": 8,
+    "actual": 8,
+    "evidence_path": "seoul/tiny/simulation/truth.json"
+  },
+  {
+    "assertion_id": "tiny-authored-arrival-baseline-clean",
+    "status": "PASS",
+    "message_en": "Arrival matches independent distance/speed calculation.",
+    "message_ko": "도착 시각이 독립 거리·속도 계산과 일치합니다.",
+    "expected": 44479,
+    "actual": 44479,
+    "evidence_path": "seoul/tiny/simulation/truth.json"
+  },
+  {
+    "assertion_id": "tiny-authored-ab-exit-baseline-clean",
+    "status": "PASS",
+    "message_en": "AB exit matches hand calculation.",
+    "message_ko": "AB 진출이 수작업 계산과 일치합니다.",
+    "expected": 22240,
+    "actual": 22240,
+    "evidence_path": "seoul/tiny/simulation/truth.json"
+  },
+  {
+    "assertion_id": "tiny-authored-arrival-baseline-noisy",
+    "status": "PASS",
+    "message_en": "Arrival matches independent distance/speed calculation.",
+    "message_ko": "도착 시각이 독립 거리·속도 계산과 일치합니다.",
+    "expected": 44479,
+    "actual": 44479,
+    "evidence_path": "seoul/tiny/simulation/truth.json"
+  },
+  {
+    "assertion_id": "tiny-authored-ab-exit-baseline-noisy",
+    "status": "PASS",
+    "message_en": "AB exit matches hand calculation.",
+    "message_ko": "AB 진출이 수작업 계산과 일치합니다.",
+    "expected": 22240,
+    "actual": 22240,
+    "evidence_path": "seoul/tiny/simulation/truth.json"
+  },
+  {
+    "assertion_id": "tiny-authored-upper-exits",
+    "status": "PASS",
+    "message_en": "Upper crossings match independently calculated wait and distance.",
+    "message_ko": "상단 통과 시각이 독립 대기·거리 계산과 일치합니다.",
+    "expected": [
+      27240,
+      49479,
+      71718,
+      93957
+    ],
+    "actual": [
+      27240,
+      49479,
+      71718,
+      93957
+    ],
+    "evidence_path": "seoul/tiny/simulation/truth.json"
+  },
+  {
+    "assertion_id": "tiny-authored-zero-speed-wait",
+    "status": "PASS",
+    "message_en": "Upper vehicle remains still through the initial five seconds.",
+    "message_ko": "상단 차량이 처음 5초 동안 정지합니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/tiny/simulation/truth.json"
+  },
+  {
+    "assertion_id": "tiny-authored-drop-boundaries",
+    "status": "PASS",
+    "message_en": "Independent half-open drop times and 25 s observation match.",
+    "message_ko": "독립 반열린 누락 시각과 25초 관측이 일치합니다.",
+    "expected": [
+      15000,
+      16000,
+      17000,
+      18000,
+      19000,
+      20000,
+      21000,
+      22000,
+      23000,
+      24000
+    ],
+    "actual": [
+      15000,
+      16000,
+      17000,
+      18000,
+      19000,
+      20000,
+      21000,
+      22000,
+      23000,
+      24000
+    ],
+    "evidence_path": "seoul/tiny/simulation/omissions.json"
+  },
+  {
+    "assertion_id": "tiny-p03-complete-sample-partition",
+    "status": "PASS",
+    "message_en": "Every true sample is observed or explicitly omitted.",
+    "message_ko": "모든 정답 표본은 관측되거나 누락으로 기록됩니다.",
+    "expected": 187,
+    "actual": 187,
+    "evidence_path": "seoul/tiny/simulation/truth.json"
+  },
+  {
+    "assertion_id": "tiny-p03-bounded-noise",
+    "status": "PASS",
+    "message_en": "Observed coordinates stay within the declared noise radius.",
+    "message_ko": "관측 좌표가 선언한 잡음 반경 안에 있습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/tiny/simulation/observations.json"
+  },
+  {
+    "assertion_id": "tiny-p03-synthetic-observations",
+    "status": "PASS",
+    "message_en": "Observations are synthetic and contain no truth edge IDs.",
+    "message_ko": "관측은 합성이며 정답 구간 식별자를 포함하지 않습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/tiny/simulation/observations.json"
+  },
+  {
+    "assertion_id": "tiny-p03-half-open-drops",
+    "status": "PASS",
+    "message_en": "Omissions follow half-open intervals.",
+    "message_ko": "누락이 반열린 구간을 따릅니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/tiny/simulation/omissions.json"
+  },
+  {
+    "assertion_id": "tiny-p03-completed-traversals",
+    "status": "PASS",
+    "message_en": "All independently authored paths complete within the scenario.",
+    "message_ko": "독립적으로 작성한 모든 경로가 시나리오 안에 완료됩니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/tiny/simulation/truth.json"
+  },
+  {
+    "assertion_id": "tiny-truth-invariance-same-seed",
+    "status": "PASS",
+    "message_en": "Replay/fault changes preserve independent truth.",
+    "message_ko": "재생·장애 변경이 독립 정답을 보존합니다.",
+    "expected": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+    "actual": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+    "evidence_path": "seoul/tiny/replay/same-seed/manifest.json"
+  },
+  {
+    "assertion_id": "tiny-observation-replay-same-seed",
+    "status": "PASS",
+    "message_en": "Same seeded observations and omissions replay exactly.",
+    "message_ko": "같은 시드의 관측·누락이 정확히 재생됩니다.",
+    "expected": "c756bedf503ee9933514643c7d133e3867093d7f0fde0b5a61e2111c4c0edc6a",
+    "actual": "c756bedf503ee9933514643c7d133e3867093d7f0fde0b5a61e2111c4c0edc6a",
+    "evidence_path": "seoul/tiny/replay/same-seed/manifest.json"
+  },
+  {
+    "assertion_id": "tiny-truth-invariance-clean",
+    "status": "PASS",
+    "message_en": "Replay/fault changes preserve independent truth.",
+    "message_ko": "재생·장애 변경이 독립 정답을 보존합니다.",
+    "expected": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+    "actual": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+    "evidence_path": "seoul/tiny/replay/clean/manifest.json"
+  },
+  {
+    "assertion_id": "tiny-truth-invariance-other-seed",
+    "status": "PASS",
+    "message_en": "Replay/fault changes preserve independent truth.",
+    "message_ko": "재생·장애 변경이 독립 정답을 보존합니다.",
+    "expected": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+    "actual": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+    "evidence_path": "seoul/tiny/replay/other-seed/manifest.json"
+  },
+  {
+    "assertion_id": "tiny-noise-seed-changes",
+    "status": "PASS",
+    "message_en": "A different seed changes noise, while truth remains fixed.",
+    "message_ko": "다른 시드는 잡음만 바꾸고 정답은 유지합니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/tiny/replay/other-seed/manifest.json"
+  },
+  {
+    "assertion_id": "tiny-truth-invariance-reordered",
+    "status": "PASS",
+    "message_en": "Replay/fault changes preserve independent truth.",
+    "message_ko": "재생·장애 변경이 독립 정답을 보존합니다.",
+    "expected": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+    "actual": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+    "evidence_path": "seoul/tiny/replay/reordered/manifest.json"
+  },
+  {
+    "assertion_id": "tiny-observation-replay-reordered",
+    "status": "PASS",
+    "message_en": "Same seeded observations and omissions replay exactly.",
+    "message_ko": "같은 시드의 관측·누락이 정확히 재생됩니다.",
+    "expected": "c756bedf503ee9933514643c7d133e3867093d7f0fde0b5a61e2111c4c0edc6a",
+    "actual": "c756bedf503ee9933514643c7d133e3867093d7f0fde0b5a61e2111c4c0edc6a",
+    "evidence_path": "seoul/tiny/replay/reordered/manifest.json"
+  },
+  {
+    "assertion_id": "tiny-clean-noisy-paired-truth",
+    "status": "PASS",
+    "message_en": "Authored clean/noisy vehicle pair has identical independent truth.",
+    "message_ko": "직접 작성한 깨끗한·잡음 차량 쌍의 독립 정답이 같습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/tiny/simulation/truth.json"
+  },
+  {
+    "assertion_id": "tiny-invalid-path-rejected",
+    "status": "PASS",
+    "message_en": "Invalid authored path was rejected; no successful simulation produced.",
+    "message_ko": "잘못된 작성 경로를 거부했으며 성공 시뮬레이션을 만들지 않았습니다.",
+    "expected": false,
+    "actual": false,
+    "evidence_path": "seoul/tiny/invalid-path.stderr.txt"
+  },
+  {
+    "assertion_id": "tiny-tampered-graph-rejected",
+    "status": "PASS",
+    "message_en": "Tampered graph bundle was rejected; no successful simulation produced.",
+    "message_ko": "변조된 그래프 묶음을 거부했으며 성공 시뮬레이션을 만들지 않았습니다.",
+    "expected": false,
+    "actual": false,
+    "evidence_path": "seoul/tiny/tampered-bundle.stderr.txt"
+  },
+  {
+    "assertion_id": "tiny-p04-baseline-coverage",
+    "status": "PASS",
+    "message_en": "Every input has a recorded outcome; required engine execution and cleanup are verified.",
+    "message_ko": "모든 입력의 결과와 필요한 실제 엔진 실행·정리를 확인했습니다.",
+    "expected": 177,
+    "actual": 177,
+    "evidence_path": "seoul/tiny/matching/baseline/manifest.json"
+  },
+  {
+    "assertion_id": "tiny-p04-baseline-clean-complete",
+    "status": "PASS",
+    "message_en": "Clean traversal boundaries agree with independent truth within 5 ms.",
+    "message_ko": "깨끗한 통과 경계가 독립 정답의 5밀리초 이내입니다.",
+    "expected": {
+      "count": 2,
+      "tolerance_ms": 5
+    },
+    "actual": {
+      "passed": true,
+      "expected": 2,
+      "accepted": 2,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "boundary_errors_ms": [
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    "evidence_path": "seoul/tiny/matching/baseline-clean.evaluation.json"
+  },
+  {
+    "assertion_id": "tiny-p04-upper-waiting-complete",
+    "status": "PASS",
+    "message_en": "Clean traversal boundaries agree with independent truth within 5 ms.",
+    "message_ko": "깨끗한 통과 경계가 독립 정답의 5밀리초 이내입니다.",
+    "expected": {
+      "count": 4,
+      "tolerance_ms": 5
+    },
+    "actual": {
+      "passed": true,
+      "expected": 4,
+      "accepted": 4,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "boundary_errors_ms": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    "evidence_path": "seoul/tiny/matching/upper-waiting.evaluation.json"
+  },
+  {
+    "assertion_id": "tiny-p04-waiting-retained",
+    "status": "PASS",
+    "message_en": "Initial stationary five seconds remain in observed traversal timing.",
+    "message_ko": "관측 통과 시간에 초기 정지 5초가 남아 있습니다.",
+    "expected": true,
+    "actual": {
+      "traversal_id": "01407e53d565ae0dc87d2acd68479c20df3f282e9bfbc2130df2c5feb99e4acc",
+      "vehicle_id": "upper-waiting",
+      "edge_id": "37707394",
+      "label": "ad",
+      "forward": true,
+      "status": "ACCEPTED",
+      "entered_at_ms": 0,
+      "exited_at_ms": 27239,
+      "reason_codes": [],
+      "source_sample_ids": [
+        "tiny-city-demo:upper-waiting:0",
+        "tiny-city-demo:upper-waiting:1000",
+        "tiny-city-demo:upper-waiting:2000",
+        "tiny-city-demo:upper-waiting:3000",
+        "tiny-city-demo:upper-waiting:4000",
+        "tiny-city-demo:upper-waiting:5000",
+        "tiny-city-demo:upper-waiting:6000",
+        "tiny-city-demo:upper-waiting:7000",
+        "tiny-city-demo:upper-waiting:8000",
+        "tiny-city-demo:upper-waiting:9000",
+        "tiny-city-demo:upper-waiting:10000",
+        "tiny-city-demo:upper-waiting:11000",
+        "tiny-city-demo:upper-waiting:12000",
+        "tiny-city-demo:upper-waiting:13000",
+        "tiny-city-demo:upper-waiting:14000",
+        "tiny-city-demo:upper-waiting:15000",
+        "tiny-city-demo:upper-waiting:16000",
+        "tiny-city-demo:upper-waiting:17000",
+        "tiny-city-demo:upper-waiting:18000",
+        "tiny-city-demo:upper-waiting:19000",
+        "tiny-city-demo:upper-waiting:20000",
+        "tiny-city-demo:upper-waiting:21000",
+        "tiny-city-demo:upper-waiting:22000",
+        "tiny-city-demo:upper-waiting:23000",
+        "tiny-city-demo:upper-waiting:24000",
+        "tiny-city-demo:upper-waiting:25000",
+        "tiny-city-demo:upper-waiting:26000",
+        "tiny-city-demo:upper-waiting:27000"
+      ],
+      "entry_bracket": {
+        "before_sample_id": "tiny-city-demo:upper-waiting:0",
+        "after_sample_id": "tiny-city-demo:upper-waiting:0",
+        "before_offset_ms": 0,
+        "after_offset_ms": 0,
+        "interpolated_at_ms": 0
+      },
+      "exit_bracket": {
+        "before_sample_id": "tiny-city-demo:upper-waiting:27000",
+        "after_sample_id": "tiny-city-demo:upper-waiting:28000",
+        "before_offset_ms": 27000,
+        "after_offset_ms": 28000,
+        "interpolated_at_ms": 27239
+      },
+      "reason_messages": []
+    },
+    "evidence_path": "seoul/tiny/matching/baseline/result.json"
+  },
+  {
+    "assertion_id": "tiny-p04-gap-no-complete",
+    "status": "PASS",
+    "message_en": "The gap vehicle creates no complete traversal and retains its gap reason.",
+    "message_ko": "누락 차량은 완전 통과를 만들지 않고 누락 사유를 보존합니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "seoul/tiny/matching/baseline/result.json"
+  },
+  {
+    "assertion_id": "tiny-p04-continuous-noisy-coverage",
+    "status": "PASS",
+    "message_en": "Every input has a recorded outcome; required engine execution and cleanup are verified.",
+    "message_ko": "모든 입력의 결과와 필요한 실제 엔진 실행·정리를 확인했습니다.",
+    "expected": 90,
+    "actual": 90,
+    "evidence_path": "seoul/tiny/matching/continuous-noisy/manifest.json"
+  },
+  {
+    "assertion_id": "tiny-p04-continuous-noise-boundaries",
+    "status": "PASS",
+    "message_en": "Continuous bounded-noise internal traversals agree within 750 ms.",
+    "message_ko": "연속 제한 잡음의 내부 통과가 750밀리초 이내로 일치합니다.",
+    "expected": {
+      "internal_edges": 2,
+      "tolerance_ms": 750
+    },
+    "actual": {
+      "passed": true,
+      "expected": 2,
+      "accepted": 2,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "boundary_errors_ms": [
+        444,
+        13,
+        13,
+        103
+      ]
+    },
+    "evidence_path": "seoul/tiny/matching/continuous-noisy.evaluation.json"
+  },
+  {
+    "assertion_id": "tiny-p04-parallel-midpoint-coverage",
+    "status": "PASS",
+    "message_en": "Every input has a recorded outcome; required engine execution and cleanup are verified.",
+    "message_ko": "모든 입력의 결과와 필요한 실제 엔진 실행·정리를 확인했습니다.",
+    "expected": 21,
+    "actual": 21,
+    "evidence_path": "seoul/tiny/matching/parallel-midpoint/manifest.json"
+  },
+  {
+    "assertion_id": "tiny-p04-parallel-excluded",
+    "status": "PASS",
+    "message_en": "All 21 parallel-midpoint points are explicitly excluded for ambiguity.",
+    "message_ko": "평행도로 중간 21개 표본을 모호성으로 명시적으로 제외했습니다.",
+    "expected": 21,
+    "actual": 21,
+    "evidence_path": "seoul/tiny/matching/parallel-midpoint/result.json"
+  },
+  {
+    "assertion_id": "tiny-p04-split-coverage",
+    "status": "PASS",
+    "message_en": "Every input has a recorded outcome; required engine execution and cleanup are verified.",
+    "message_ko": "모든 입력의 결과와 필요한 실제 엔진 실행·정리를 확인했습니다.",
+    "expected": 177,
+    "actual": 177,
+    "evidence_path": "seoul/tiny/matching/split/manifest.json"
+  },
+  {
+    "assertion_id": "tiny-p04-split-parity",
+    "status": "PASS",
+    "message_en": "Full and split/overlap batches preserve semantic hashes and traversal identities.",
+    "message_ko": "전체·분할/중첩 배치가 의미 해시와 통과 식별자를 보존합니다.",
+    "expected": "268b53e7e5a62c05a20ae8206694ff4a226a703a992e01bd94e0c2961539fe1e",
+    "actual": "268b53e7e5a62c05a20ae8206694ff4a226a703a992e01bd94e0c2961539fe1e",
+    "evidence_path": "seoul/tiny/matching/split/result.json"
+  },
+  {
+    "assertion_id": "tiny-p04-overlap-coverage",
+    "status": "PASS",
+    "message_en": "Every input has a recorded outcome; required engine execution and cleanup are verified.",
+    "message_ko": "모든 입력의 결과와 필요한 실제 엔진 실행·정리를 확인했습니다.",
+    "expected": 177,
+    "actual": 177,
+    "evidence_path": "seoul/tiny/matching/overlap/manifest.json"
+  },
+  {
+    "assertion_id": "tiny-p04-overlap-parity",
+    "status": "PASS",
+    "message_en": "Full and split/overlap batches preserve semantic hashes and traversal identities.",
+    "message_ko": "전체·분할/중첩 배치가 의미 해시와 통과 식별자를 보존합니다.",
+    "expected": "268b53e7e5a62c05a20ae8206694ff4a226a703a992e01bd94e0c2961539fe1e",
+    "actual": "268b53e7e5a62c05a20ae8206694ff4a226a703a992e01bd94e0c2961539fe1e",
+    "evidence_path": "seoul/tiny/matching/overlap/result.json"
+  },
+  {
+    "assertion_id": "tiny-p04-reversed-rejected",
+    "status": "PASS",
+    "message_en": "Invalid input or tampered graph is refused before successful evidence.",
+    "message_ko": "잘못된 입력·변조 그래프를 성공 증거 전에 거부했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/tiny/matching/reversed.rejection.json"
+  },
+  {
+    "assertion_id": "tiny-p04-duplicate-rejected",
+    "status": "PASS",
+    "message_en": "Invalid input or tampered graph is refused before successful evidence.",
+    "message_ko": "잘못된 입력·변조 그래프를 성공 증거 전에 거부했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/tiny/matching/duplicate.rejection.json"
+  },
+  {
+    "assertion_id": "tiny-p04-wrong-graph-rejected",
+    "status": "PASS",
+    "message_en": "Invalid input or tampered graph is refused before successful evidence.",
+    "message_ko": "잘못된 입력·변조 그래프를 성공 증거 전에 거부했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/tiny/matching/wrong-graph.rejection.json"
+  },
+  {
+    "assertion_id": "tiny-p04-tampered-graph-rejected",
+    "status": "PASS",
+    "message_en": "Invalid input or tampered graph is refused before successful evidence.",
+    "message_ko": "잘못된 입력·변조 그래프를 성공 증거 전에 거부했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/tiny/matching/tampered-graph.rejection.json"
+  },
+  {
+    "assertion_id": "tiny-p04-actual-engine-error",
+    "status": "PASS",
+    "message_en": "Actual upstream map_snap failure produces no PASS manifest and its container is removed.",
+    "message_ko": "실제 엔진 map_snap 실패는 통과 목록을 만들지 않으며 컨테이너가 제거됩니다.",
+    "expected": true,
+    "actual": {
+      "engineFailed": true,
+      "failureAssertions": [
+        {
+          "assertion_id": "matching-execution",
+          "status": "FAIL",
+          "message_en": "Matching execution/evidence failed.",
+          "message_ko": "매칭 실행·증거가 실패했습니다.",
+          "evidence_path": "result.json"
+        },
+        {
+          "assertion_id": "matching-cleanup",
+          "status": "PASS",
+          "message_en": "Owned container absence verified.",
+          "message_ko": "소유 컨테이너 부재를 확인했습니다.",
+          "evidence_path": "commands.json"
+        }
+      ]
+    },
+    "evidence_path": "seoul/tiny/matching/engine-error/assertions.json"
+  },
+  {
+    "assertion_id": "complete-sample-partition",
+    "status": "PASS",
+    "message_en": "Every true sample is observed or explicitly omitted.",
+    "message_ko": "모든 정답 표본은 관측되거나 누락으로 기록됩니다.",
+    "expected": 3264,
+    "actual": 3264,
+    "evidence_path": "seoul/workload/truth.json"
+  },
+  {
+    "assertion_id": "bounded-noise",
+    "status": "PASS",
+    "message_en": "Observed coordinates stay within the declared noise radius.",
+    "message_ko": "관측 좌표가 선언한 잡음 반경 안에 있습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/workload/observations.json"
+  },
+  {
+    "assertion_id": "synthetic-observations",
+    "status": "PASS",
+    "message_en": "Observations are synthetic and contain no truth edge IDs.",
+    "message_ko": "관측은 합성이며 정답 구간 식별자를 포함하지 않습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/workload/observations.json"
+  },
+  {
+    "assertion_id": "half-open-drops",
+    "status": "PASS",
+    "message_en": "Omissions follow half-open intervals.",
+    "message_ko": "누락이 반열린 구간을 따릅니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/workload/omissions.json"
+  },
+  {
+    "assertion_id": "completed-traversals",
+    "status": "PASS",
+    "message_en": "All independently authored paths complete within the scenario.",
+    "message_ko": "독립적으로 작성한 모든 경로가 시나리오 안에 완료됩니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/workload/truth.json"
+  },
+  {
+    "assertion_id": "teheran-clean-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 100
+    },
+    "actual": {
+      "vehicle_id": "teheran-clean",
+      "input_samples": 423,
+      "matched_samples": 423,
+      "point_coverage": 1,
+      "correct_points": 423,
+      "boundary_equivalent_points": 0,
+      "point_precision": 1,
+      "truth_traversals": 37,
+      "accepted_traversals": 37,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "traversal_coverage": 1,
+      "max_entry_error_ms": 1,
+      "max_exit_error_ms": 1,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "teheran-clean-clean-coverage",
+    "status": "PASS",
+    "message_en": "Clean point correctness and complete-traversal coverage meet fixed thresholds.",
+    "message_ko": "깨끗한 표본 정확성과 완전 통과 범위가 고정 기준을 충족합니다.",
+    "expected": {
+      "point_precision": 0.98,
+      "point_coverage": 0.9,
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "teheran-clean",
+      "input_samples": 423,
+      "matched_samples": 423,
+      "point_coverage": 1,
+      "correct_points": 423,
+      "boundary_equivalent_points": 0,
+      "point_precision": 1,
+      "truth_traversals": 37,
+      "accepted_traversals": 37,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "traversal_coverage": 1,
+      "max_entry_error_ms": 1,
+      "max_exit_error_ms": 1,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "teheran-clean-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "teheran-noise-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 1000
+    },
+    "actual": {
+      "vehicle_id": "teheran-noise",
+      "input_samples": 423,
+      "matched_samples": 419,
+      "point_coverage": 0.9905437352245863,
+      "correct_points": 414,
+      "boundary_equivalent_points": 4,
+      "point_precision": 0.9976133651551312,
+      "truth_traversals": 37,
+      "accepted_traversals": 36,
+      "false_traversals": 0,
+      "missed_traversals": 1,
+      "traversal_coverage": 0.972972972972973,
+      "max_entry_error_ms": 186,
+      "max_exit_error_ms": 186,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "teheran-noise-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "teheran-gap-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 1000
+    },
+    "actual": {
+      "vehicle_id": "teheran-gap",
+      "input_samples": 403,
+      "matched_samples": 398,
+      "point_coverage": 0.9875930521091811,
+      "correct_points": 386,
+      "boundary_equivalent_points": 9,
+      "point_precision": 0.992462311557789,
+      "truth_traversals": 37,
+      "accepted_traversals": 32,
+      "false_traversals": 0,
+      "missed_traversals": 5,
+      "traversal_coverage": 0.8648648648648649,
+      "max_entry_error_ms": 255,
+      "max_exit_error_ms": 255,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "teheran-gap-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-clean-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 100
+    },
+    "actual": {
+      "vehicle_id": "downtown-clean",
+      "input_samples": 246,
+      "matched_samples": 246,
+      "point_coverage": 1,
+      "correct_points": 246,
+      "boundary_equivalent_points": 0,
+      "point_precision": 1,
+      "truth_traversals": 24,
+      "accepted_traversals": 24,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "traversal_coverage": 1,
+      "max_entry_error_ms": 1,
+      "max_exit_error_ms": 1,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-clean-clean-coverage",
+    "status": "PASS",
+    "message_en": "Clean point correctness and complete-traversal coverage meet fixed thresholds.",
+    "message_ko": "깨끗한 표본 정확성과 완전 통과 범위가 고정 기준을 충족합니다.",
+    "expected": {
+      "point_precision": 0.98,
+      "point_coverage": 0.9,
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "downtown-clean",
+      "input_samples": 246,
+      "matched_samples": 246,
+      "point_coverage": 1,
+      "correct_points": 246,
+      "boundary_equivalent_points": 0,
+      "point_precision": 1,
+      "truth_traversals": 24,
+      "accepted_traversals": 24,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "traversal_coverage": 1,
+      "max_entry_error_ms": 1,
+      "max_exit_error_ms": 1,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-clean-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-noise-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 1000
+    },
+    "actual": {
+      "vehicle_id": "downtown-noise",
+      "input_samples": 246,
+      "matched_samples": 246,
+      "point_coverage": 1,
+      "correct_points": 239,
+      "boundary_equivalent_points": 5,
+      "point_precision": 0.991869918699187,
+      "truth_traversals": 24,
+      "accepted_traversals": 23,
+      "false_traversals": 0,
+      "missed_traversals": 1,
+      "traversal_coverage": 0.9583333333333334,
+      "max_entry_error_ms": 199,
+      "max_exit_error_ms": 199,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-noise-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-gap-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 1000
+    },
+    "actual": {
+      "vehicle_id": "downtown-gap",
+      "input_samples": 226,
+      "matched_samples": 225,
+      "point_coverage": 0.995575221238938,
+      "correct_points": 214,
+      "boundary_equivalent_points": 3,
+      "point_precision": 0.9644444444444444,
+      "truth_traversals": 24,
+      "accepted_traversals": 21,
+      "false_traversals": 0,
+      "missed_traversals": 3,
+      "traversal_coverage": 0.875,
+      "max_entry_error_ms": 260,
+      "max_exit_error_ms": 260,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-gap-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-clean-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 100
+    },
+    "actual": {
+      "vehicle_id": "mapo-bridge-clean",
+      "input_samples": 419,
+      "matched_samples": 419,
+      "point_coverage": 1,
+      "correct_points": 419,
+      "boundary_equivalent_points": 0,
+      "point_precision": 1,
+      "truth_traversals": 18,
+      "accepted_traversals": 18,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "traversal_coverage": 1,
+      "max_entry_error_ms": 1,
+      "max_exit_error_ms": 1,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-clean-clean-coverage",
+    "status": "PASS",
+    "message_en": "Clean point correctness and complete-traversal coverage meet fixed thresholds.",
+    "message_ko": "깨끗한 표본 정확성과 완전 통과 범위가 고정 기준을 충족합니다.",
+    "expected": {
+      "point_precision": 0.98,
+      "point_coverage": 0.9,
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "mapo-bridge-clean",
+      "input_samples": 419,
+      "matched_samples": 419,
+      "point_coverage": 1,
+      "correct_points": 419,
+      "boundary_equivalent_points": 0,
+      "point_precision": 1,
+      "truth_traversals": 18,
+      "accepted_traversals": 18,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "traversal_coverage": 1,
+      "max_entry_error_ms": 1,
+      "max_exit_error_ms": 1,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-clean-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-noise-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 1000
+    },
+    "actual": {
+      "vehicle_id": "mapo-bridge-noise",
+      "input_samples": 419,
+      "matched_samples": 415,
+      "point_coverage": 0.9904534606205251,
+      "correct_points": 410,
+      "boundary_equivalent_points": 2,
+      "point_precision": 0.9927710843373494,
+      "truth_traversals": 18,
+      "accepted_traversals": 16,
+      "false_traversals": 0,
+      "missed_traversals": 2,
+      "traversal_coverage": 0.8888888888888888,
+      "max_entry_error_ms": 162,
+      "max_exit_error_ms": 162,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-noise-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-gap-accepted-precision",
+    "status": "PASS",
+    "message_en": "Accepted directed occurrences and observed-time bounds meet the fixed policy.",
+    "message_ko": "수용 방향 통과·관측 시간 경계가 고정 정책을 충족합니다.",
+    "expected": {
+      "false": 0,
+      "minimum_accepted": 1,
+      "timing_ms": 1000
+    },
+    "actual": {
+      "vehicle_id": "mapo-bridge-gap",
+      "input_samples": 399,
+      "matched_samples": 399,
+      "point_coverage": 1,
+      "correct_points": 397,
+      "boundary_equivalent_points": 0,
+      "point_precision": 0.9949874686716792,
+      "truth_traversals": 18,
+      "accepted_traversals": 13,
+      "false_traversals": 0,
+      "missed_traversals": 5,
+      "traversal_coverage": 0.7222222222222222,
+      "max_entry_error_ms": 230,
+      "max_exit_error_ms": 230,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-gap-no-gap-bridging",
+    "status": "PASS",
+    "message_en": "Accepted traversals never bridge a scheduled observation gap.",
+    "message_ko": "수용 통과가 예정 관측 누락을 건너지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "teheran-noise-observed-coverage",
+    "status": "PASS",
+    "message_en": "Noisy or gapped complete-traversal coverage meets the fixed 70% floor.",
+    "message_ko": "잡음·누락 관측의 완전 통과 범위가 고정 70% 하한을 충족합니다.",
+    "expected": {
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "teheran-noise",
+      "input_samples": 423,
+      "matched_samples": 419,
+      "point_coverage": 0.9905437352245863,
+      "correct_points": 414,
+      "boundary_equivalent_points": 4,
+      "point_precision": 0.9976133651551312,
+      "truth_traversals": 37,
+      "accepted_traversals": 36,
+      "false_traversals": 0,
+      "missed_traversals": 1,
+      "traversal_coverage": 0.972972972972973,
+      "max_entry_error_ms": 186,
+      "max_exit_error_ms": 186,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "teheran-gap-observed-coverage",
+    "status": "PASS",
+    "message_en": "Noisy or gapped complete-traversal coverage meets the fixed 70% floor.",
+    "message_ko": "잡음·누락 관측의 완전 통과 범위가 고정 70% 하한을 충족합니다.",
+    "expected": {
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "teheran-gap",
+      "input_samples": 403,
+      "matched_samples": 398,
+      "point_coverage": 0.9875930521091811,
+      "correct_points": 386,
+      "boundary_equivalent_points": 9,
+      "point_precision": 0.992462311557789,
+      "truth_traversals": 37,
+      "accepted_traversals": 32,
+      "false_traversals": 0,
+      "missed_traversals": 5,
+      "traversal_coverage": 0.8648648648648649,
+      "max_entry_error_ms": 255,
+      "max_exit_error_ms": 255,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-noise-observed-coverage",
+    "status": "PASS",
+    "message_en": "Noisy or gapped complete-traversal coverage meets the fixed 70% floor.",
+    "message_ko": "잡음·누락 관측의 완전 통과 범위가 고정 70% 하한을 충족합니다.",
+    "expected": {
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "downtown-noise",
+      "input_samples": 246,
+      "matched_samples": 246,
+      "point_coverage": 1,
+      "correct_points": 239,
+      "boundary_equivalent_points": 5,
+      "point_precision": 0.991869918699187,
+      "truth_traversals": 24,
+      "accepted_traversals": 23,
+      "false_traversals": 0,
+      "missed_traversals": 1,
+      "traversal_coverage": 0.9583333333333334,
+      "max_entry_error_ms": 199,
+      "max_exit_error_ms": 199,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "downtown-gap-observed-coverage",
+    "status": "PASS",
+    "message_en": "Noisy or gapped complete-traversal coverage meets the fixed 70% floor.",
+    "message_ko": "잡음·누락 관측의 완전 통과 범위가 고정 70% 하한을 충족합니다.",
+    "expected": {
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "downtown-gap",
+      "input_samples": 226,
+      "matched_samples": 225,
+      "point_coverage": 0.995575221238938,
+      "correct_points": 214,
+      "boundary_equivalent_points": 3,
+      "point_precision": 0.9644444444444444,
+      "truth_traversals": 24,
+      "accepted_traversals": 21,
+      "false_traversals": 0,
+      "missed_traversals": 3,
+      "traversal_coverage": 0.875,
+      "max_entry_error_ms": 260,
+      "max_exit_error_ms": 260,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-noise-observed-coverage",
+    "status": "PASS",
+    "message_en": "Noisy or gapped complete-traversal coverage meets the fixed 70% floor.",
+    "message_ko": "잡음·누락 관측의 완전 통과 범위가 고정 70% 하한을 충족합니다.",
+    "expected": {
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "mapo-bridge-noise",
+      "input_samples": 419,
+      "matched_samples": 415,
+      "point_coverage": 0.9904534606205251,
+      "correct_points": 410,
+      "boundary_equivalent_points": 2,
+      "point_precision": 0.9927710843373494,
+      "truth_traversals": 18,
+      "accepted_traversals": 16,
+      "false_traversals": 0,
+      "missed_traversals": 2,
+      "traversal_coverage": 0.8888888888888888,
+      "max_entry_error_ms": 162,
+      "max_exit_error_ms": 162,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "mapo-bridge-gap-observed-coverage",
+    "status": "PASS",
+    "message_en": "Noisy or gapped complete-traversal coverage meets the fixed 70% floor.",
+    "message_ko": "잡음·누락 관측의 완전 통과 범위가 고정 70% 하한을 충족합니다.",
+    "expected": {
+      "traversal_coverage": 0.7
+    },
+    "actual": {
+      "vehicle_id": "mapo-bridge-gap",
+      "input_samples": 399,
+      "matched_samples": 399,
+      "point_coverage": 1,
+      "correct_points": 397,
+      "boundary_equivalent_points": 0,
+      "point_precision": 0.9949874686716792,
+      "truth_traversals": 18,
+      "accepted_traversals": 13,
+      "false_traversals": 0,
+      "missed_traversals": 5,
+      "traversal_coverage": 0.7222222222222222,
+      "max_entry_error_ms": 230,
+      "max_exit_error_ms": 230,
+      "gap_bridges": 0
+    },
+    "evidence_path": "seoul/workload/evaluation.json"
+  },
+  {
+    "assertion_id": "seoul-generation-replay",
+    "status": "PASS",
+    "message_en": "Same seeded generation replays exactly.",
+    "message_ko": "같은 시드 생성이 정확하게 재생됩니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/workload/truth.json"
+  },
+  {
+    "assertion_id": "seoul-seed-truth-invariance",
+    "status": "PASS",
+    "message_en": "A different seed changes observations while truth stays fixed.",
+    "message_ko": "다른 시드는 관측만 바꾸고 정답을 유지합니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "seoul/workload/truth.json"
+  },
+  {
+    "assertion_id": "seoul-matching-batch-parity",
+    "status": "PASS",
+    "message_en": "Actual full/split/overlap matching has identical semantic bytes and traversal IDs.",
+    "message_ko": "실제 전체·분할·중첩 매칭의 의미 바이트·통과 식별자가 같습니다.",
+    "expected": "3e3dd553e0802037cd55089c47a19bc5a38bde39257b4f2ca27cf3fe9ba8a30e",
+    "actual": {
+      "split": "3e3dd553e0802037cd55089c47a19bc5a38bde39257b4f2ca27cf3fe9ba8a30e",
+      "overlap": "3e3dd553e0802037cd55089c47a19bc5a38bde39257b4f2ca27cf3fe9ba8a30e"
+    },
+    "evidence_path": "seoul/workload/split-overlap/result.json"
+  },
+  {
+    "assertion_id": "p05-all-nine-http",
+    "status": "PASS",
+    "message_en": "All nine Seoul vehicles are durably READY after actual bounded HTTP batches.",
+    "message_ko": "서울9대가 실제 제한 HTTP 배치 접수 뒤 영속 READY 상태입니다.",
+    "expected": 9,
+    "actual": 9,
+    "evidence_path": "ingestion/readbacks/baseline-ready.json"
+  },
+  {
+    "assertion_id": "p05-concurrent-duplicates",
+    "status": "PASS",
+    "message_en": "Concurrent exact duplicates preserve sample and traversal counts.",
+    "message_ko": "동시 정확 중복이 표본·통과 수를 보존합니다.",
+    "expected": {
+      "contributors": 22,
+      "trips": 9,
+      "batches": 61,
+      "samples": 3204,
+      "traversals": 0,
+      "events": 61,
+      "raw_payloads": 3204
+    },
+    "actual": {
+      "contributors": 22,
+      "trips": 9,
+      "batches": 61,
+      "samples": 3204,
+      "traversals": 0,
+      "events": 61,
+      "raw_payloads": 3204
+    },
+    "evidence_path": "ingestion/readbacks/duplicates.json"
+  },
+  {
+    "assertion_id": "p05-conflicts-atomic",
+    "status": "PASS",
+    "message_en": "Body, sequence, version, start, final and authenticated-vehicle conflicts leave storage unchanged.",
+    "message_ko": "본문·순서·버전·시작·마지막·인증차량 충돌이 저장을 바꾸지 않습니다.",
+    "expected": true,
+    "actual": [
+      409,
+      409,
+      409,
+      422,
+      409,
+      409,
+      409
+    ],
+    "evidence_path": "ingestion/readbacks/conflicts.json"
+  },
+  {
+    "assertion_id": "p05-wrong-worker-graph",
+    "status": "PASS",
+    "message_en": "A worker pinned to a different graph cannot consume an attempt.",
+    "message_ko": "다른 그래프로 고정한 처리자가 시도횟수를 소비하지 않습니다.",
+    "expected": "IDLE",
+    "actual": "IDLE",
+    "evidence_path": "ingestion/readbacks/wrong-graph-worker.json"
+  },
+  {
+    "assertion_id": "p05-recover-after_lease",
+    "status": "PASS",
+    "message_en": "A distinct worker recovers after an actual killed process and real lease expiry.",
+    "message_ko": "실제 프로세스 종료·현실 임대 만료 뒤 다른 처리자가 복구합니다.",
+    "expected": "SUCCEEDED",
+    "actual": "SUCCEEDED",
+    "evidence_path": "ingestion/events.json"
+  },
+  {
+    "assertion_id": "p05-recover-after_match",
+    "status": "PASS",
+    "message_en": "A distinct worker recovers after an actual killed process and real lease expiry.",
+    "message_ko": "실제 프로세스 종료·현실 임대 만료 뒤 다른 처리자가 복구합니다.",
+    "expected": "SUCCEEDED",
+    "actual": "SUCCEEDED",
+    "evidence_path": "ingestion/events.json"
+  },
+  {
+    "assertion_id": "p05-uncommitted-rollback",
+    "status": "PASS",
+    "message_en": "SIGKILL before commit leaves no partial traversal writes.",
+    "message_ko": "커밋 전 SIGKILL이 일부 통과 저장을 남기지 않습니다.",
+    "expected": 45,
+    "actual": 45,
+    "evidence_path": "ingestion/readbacks/uncommitted-insert.json"
+  },
+  {
+    "assertion_id": "p05-recover-after_insert",
+    "status": "PASS",
+    "message_en": "A distinct worker recovers after an actual killed process and real lease expiry.",
+    "message_ko": "실제 프로세스 종료·현실 임대 만료 뒤 다른 처리자가 복구합니다.",
+    "expected": "SUCCEEDED",
+    "actual": "SUCCEEDED",
+    "evidence_path": "ingestion/events.json"
+  },
+  {
+    "assertion_id": "p05-stale-owner-fenced",
+    "status": "PASS",
+    "message_en": "A stale process resumes and loses its fence without mutating committed rows.",
+    "message_ko": "오래된 프로세스가 재개돼 소유권을 잃고 저장 행을 바꾸지 않습니다.",
+    "expected": "LEASE_LOST",
+    "actual": "LEASE_LOST",
+    "evidence_path": "ingestion/readbacks/after-stale-resume.json"
+  },
+  {
+    "assertion_id": "p05-two-workers",
+    "status": "PASS",
+    "message_en": "Two actual worker processes claim different remaining jobs.",
+    "message_ko": "서로 다른 실제 처리자2개가 남은 작업을 확보했습니다.",
+    "expected": 2,
+    "actual": 2,
+    "evidence_path": "ingestion/events.json"
+  },
+  {
+    "assertion_id": "p05-fresh-p04-equality",
+    "status": "PASS",
+    "message_en": "Stored edge, direction, occurrence and observed times equal all fresh P04 traversals; IDs remain unique.",
+    "message_ko": "저장 구간·방향·순번·관측시각이 새 P04 통과 전체와 같고 식별자가 고유합니다.",
+    "expected": 220,
+    "actual": {
+      "contributors": 22,
+      "trips": 9,
+      "batches": 61,
+      "samples": 3204,
+      "traversals": 220,
+      "events": 83,
+      "raw_payloads": 0
+    },
+    "evidence_path": "ingestion/readbacks/baseline-succeeded.json"
+  },
+  {
+    "assertion_id": "p05-success-retry-stable",
+    "status": "PASS",
+    "message_en": "Successful retries preserve stored IDs and never revive raw payloads.",
+    "message_ko": "성공 뒤 재시도가 저장ID를 보존하고 원문을 복원하지 않습니다.",
+    "expected": "DUPLICATE",
+    "actual": "DUPLICATE",
+    "evidence_path": "ingestion/readbacks/success-retry.json"
+  },
+  {
+    "assertion_id": "p05-authenticated-status",
+    "status": "PASS",
+    "message_en": "Authenticated status reports completion without raw locations.",
+    "message_ko": "인증한 상태 조회가 원시위치 없이 완료를 표시합니다.",
+    "expected": "SUCCEEDED",
+    "actual": "SUCCEEDED",
+    "evidence_path": "ingestion/events.json"
+  },
+  {
+    "assertion_id": "p05-final-before-gap",
+    "status": "PASS",
+    "message_en": "A final batch does not make a sequence gap claimable.",
+    "message_ko": "마지막 배치가 와도 순서 누락은 확보할 수 없습니다.",
+    "expected": "WAITING",
+    "actual": "WAITING",
+    "evidence_path": "ingestion/readbacks/sequence-waiting.json"
+  },
+  {
+    "assertion_id": "p05-filled-gap-and-final-lock",
+    "status": "PASS",
+    "message_en": "Filling the earlier gap makes READY; post-final extension is refused.",
+    "message_ko": "앞 순서 누락을 채우면 READY가 되고 마지막 뒤 확장은 거부됩니다.",
+    "expected": 409,
+    "actual": 409,
+    "evidence_path": "ingestion/readbacks/sequence-ready.json"
+  },
+  {
+    "assertion_id": "p05-event-time-boundaries",
+    "status": "PASS",
+    "message_en": "Trusted event-time enforces exact 120 s age and 30 s future boundaries.",
+    "message_ko": "신뢰 관측시간이 정확한120초 과거·30초 미래 경계를 적용합니다.",
+    "expected": true,
+    "actual": [
+      {
+        "id": "age-exact",
+        "status": 202,
+        "expected": 202
+      },
+      {
+        "id": "age-too-old",
+        "status": 422,
+        "expected": 422
+      },
+      {
+        "id": "future-under",
+        "status": 202,
+        "expected": 202
+      },
+      {
+        "id": "future-exact",
+        "status": 422,
+        "expected": 422
+      }
+    ],
+    "evidence_path": "ingestion/events.json"
+  },
+  {
+    "assertion_id": "p05-overlap-content-conflict",
+    "status": "PASS",
+    "message_en": "A changed overlap sample in a new sequence is rejected atomically.",
+    "message_ko": "새 순서의 중첩표본 내용변경을 원자적으로 거부합니다.",
+    "expected": 409,
+    "actual": 409,
+    "evidence_path": "ingestion/readbacks/sample-content-conflict.json"
+  },
+  {
+    "assertion_id": "p05-http-validation-and-auth",
+    "status": "PASS",
+    "message_en": "HTTP rejects unauthenticated, duplicate-key, oversized, over-count, malformed and non-synthetic requests.",
+    "message_ko": "HTTP가 미인증·중복키·과대본문·개수초과·잘못된입력·비합성요청을 거부합니다.",
+    "expected": true,
+    "actual": [
+      [
+        401,
+        401
+      ],
+      [
+        400,
+        400
+      ],
+      [
+        413,
+        413
+      ],
+      [
+        422,
+        422
+      ],
+      [
+        422,
+        422
+      ],
+      [
+        422,
+        422
+      ],
+      [
+        403,
+        403
+      ],
+      [
+        422,
+        422
+      ]
+    ],
+    "evidence_path": "ingestion/events.json"
+  },
+  {
+    "assertion_id": "p05-distinct-sample-limit",
+    "status": "PASS",
+    "message_en": "The 3002nd distinct observation is rejected atomically.",
+    "message_ko": "3002번째 고유관측을 원자적으로 거부합니다.",
+    "expected": {
+      "http_status": 429,
+      "sample_count": 3001
+    },
+    "actual": {
+      "http_status": 429,
+      "sample_count": 3001
+    },
+    "evidence_path": "ingestion/readbacks/sample-limit.json"
+  },
+  {
+    "assertion_id": "p05-active-trip-capacity",
+    "status": "PASS",
+    "message_en": "A contributor may hold twenty active trips, but not twenty-one.",
+    "message_ko": "기여자 활성여행20개는 허용하고21개는 거부합니다.",
+    "expected": 429,
+    "actual": 429,
+    "evidence_path": "ingestion/events.json"
+  },
+  {
+    "assertion_id": "p05-expired-front-not-blocking",
+    "status": "PASS",
+    "message_en": "Claim skips an expired first trip and processes the next READY trip.",
+    "message_ko": "확보가 만료된 앞여행을 건너뛰고 다음 READY여행을 처리합니다.",
+    "expected": "SUCCEEDED",
+    "actual": "SUCCEEDED",
+    "evidence_path": "ingestion/readbacks/expired-front-ready-behind.json"
+  },
+  {
+    "assertion_id": "p05-old-api-clock-fenced",
+    "status": "PASS",
+    "message_en": "Restarting an API with old clock configuration cannot admit stale new observations.",
+    "message_ko": "과거 시계 설정으로 API를 재시작해도 오래된 신규관측을 접수할 수 없습니다.",
+    "expected": 422,
+    "actual": 422,
+    "evidence_path": "ingestion/events.json"
+  },
+  {
+    "assertion_id": "p05-api-db-restart",
+    "status": "PASS",
+    "message_en": "Committed acceptance survives a killed API, lost response and same-volume PostgreSQL restart.",
+    "message_ko": "커밋 접수가 API종료·응답유실·같은볼륨 PostgreSQL재시작 뒤 유지됩니다.",
+    "expected": "DUPLICATE",
+    "actual": "DUPLICATE",
+    "evidence_path": "ingestion/readbacks/api-durable-restart.json"
+  },
+  {
+    "assertion_id": "p05-actual-engine-terminal",
+    "status": "PASS",
+    "message_en": "Three actual engine failures reach FAILED and purge raw context without accepted rows.",
+    "message_ko": "실제 엔진3회실패가 FAILED가 되고 수용행 없이 원문을 삭제합니다.",
+    "expected": [
+      "RETRY",
+      "RETRY",
+      "FAILED"
+    ],
+    "actual": [
+      "RETRY",
+      "RETRY",
+      "FAILED"
+    ],
+    "evidence_path": "ingestion/readbacks/engine-terminal.json"
+  },
+  {
+    "assertion_id": "p05-raw-expiry-replay",
+    "status": "PASS",
+    "message_en": "Raw expiry and repeated sweep reject replay without reviving payloads.",
+    "message_ko": "원문 만료·반복정리가 재전송을 거부하고 원문을 복원하지 않습니다.",
+    "expected": 410,
+    "actual": 410,
+    "evidence_path": "ingestion/readbacks/raw-expired.json"
+  },
+  {
+    "assertion_id": "p05-revoked-not-reinitialized",
+    "status": "PASS",
+    "message_en": "Repeated revoke and initialize do not reactivate consent or raw data.",
+    "message_ko": "반복철회·초기화가 동의·원문을 되살리지 않습니다.",
+    "expected": 403,
+    "actual": 403,
+    "evidence_path": "ingestion/readbacks/revoked-before-final.json"
+  },
+  {
+    "assertion_id": "p05-event-clock-without-sweep",
+    "status": "PASS",
+    "message_en": "Database event-clock expiry alone fences a paused old worker before sweeping.",
+    "message_ko": "DB관측시계 만료만으로 정리 전에도 대기중 옛처리자를 막습니다.",
+    "expected": "LEASE_LOST",
+    "actual": "LEASE_LOST",
+    "evidence_path": "ingestion/readbacks/pending-expiry-before-sweep.json"
+  },
+  {
+    "assertion_id": "p05-pending-expiry-fenced",
+    "status": "PASS",
+    "message_en": "Pending completion cannot restore data after expiry or consent revocation.",
+    "message_ko": "만료·동의철회 뒤 대기중 완료가 자료를 복원할 수 없습니다.",
+    "expected": "LEASE_LOST",
+    "actual": "LEASE_LOST",
+    "evidence_path": "ingestion/readbacks/pending-expiry.json"
+  },
+  {
+    "assertion_id": "p05-pending-revoke-fenced",
+    "status": "PASS",
+    "message_en": "Pending completion cannot restore data after expiry or consent revocation.",
+    "message_ko": "만료·동의철회 뒤 대기중 완료가 자료를 복원할 수 없습니다.",
+    "expected": "LEASE_LOST",
+    "actual": "LEASE_LOST",
+    "evidence_path": "ingestion/readbacks/pending-revoke.json"
+  },
+  {
+    "assertion_id": "p05-retention-no-revival",
+    "status": "PASS",
+    "message_en": "Twenty-four-hour deletion removes dedupe and contributions; old input cannot revive them.",
+    "message_ko": "24시간삭제가 중복정보·기여를 지우고 과거입력이 복원하지 못합니다.",
+    "expected": 0,
+    "actual": {
+      "contributors": 22,
+      "trips": 0,
+      "batches": 0,
+      "samples": 0,
+      "traversals": 0,
+      "events": 0,
+      "raw_payloads": 0
+    },
+    "evidence_path": "ingestion/readbacks/retention-24h.json"
+  },
+  {
+    "assertion_id": "p05-engine-abort-fixture",
+    "status": "PASS",
+    "message_en": "The orphan-engine probe uses all 423 authored Teheran clean observations.",
+    "message_ko": "잔여 엔진 검사가 직접 만든 테헤란 깨끗한 관측423개 전체를 사용합니다.",
+    "expected": 423,
+    "actual": 423,
+    "evidence_path": "ingestion/readbacks/before-engine-abort.json"
+  },
+  {
+    "assertion_id": "p05-running-engine-orphan",
+    "status": "PASS",
+    "message_en": "An executing engine was paused before the worker was killed, leaving a verified owned container.",
+    "message_ko": "실행중 엔진을 일시정지한 뒤 처리자를 종료하고 소유 잔여 컨테이너를 확인했습니다.",
+    "expected": true,
+    "actual": {
+      "signal": "SIGKILL",
+      "paused": "true"
+    },
+    "evidence_path": "ingestion/engine-abort-before-cleanup.json"
+  },
+  {
+    "assertion_id": "p05-orphan-engine-removed",
+    "status": "PASS",
+    "message_en": "The exact paused orphan engine is absent after owned cleanup.",
+    "message_ko": "소유 자원 정리 뒤 정확한 일시정지 잔여 엔진의 부재를 확인했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "ingestion/engine-abort-after-cleanup.json"
+  },
+  {
+    "assertion_id": "p05-owned-cleanup",
+    "status": "PASS",
+    "message_en": "Owned processes, engine containers, PostgreSQL volume and ports are absent.",
+    "message_ko": "소유 프로세스·엔진컨테이너·PostgreSQL볼륨·포트의 부재를 확인했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "ingestion/runtime/cleanup.json"
+  },
+  {
+    "assertion_id": "p06-mid-trip-activity-conflict",
+    "status": "PASS",
+    "message_en": "A later PARKED batch cannot change a committed TRAVEL trip.",
+    "message_ko": "나중PARKED배치가 저장된TRAVEL여행을 바꾸지 못합니다.",
+    "expected": 409,
+    "actual": 409,
+    "evidence_path": "aggregation/synthetic-evaluation/activity-conflict.json"
+  },
+  {
+    "assertion_id": "p06-legacy-travel-hash",
+    "status": "PASS",
+    "message_en": "Default TRAVEL retains the legacy request bytes hash.",
+    "message_ko": "기본TRAVEL이 기존요청 바이트 해시를 보존합니다.",
+    "expected": "4dc39c630af6927dca96a596a1004d3affb8c64d515c82152bf83b1926c936c9",
+    "actual": "4dc39c630af6927dca96a596a1004d3affb8c64d515c82152bf83b1926c936c9",
+    "evidence_path": "aggregation/scenario.json"
+  },
+  {
+    "assertion_id": "p06-activity-additive-migration",
+    "status": "PASS",
+    "message_en": "Activity-column migration preserves committed legacy hashes and exact retry semantics.",
+    "message_ko": "활동열 추가이전표현의 커밋해시와 정확재시도 의미를 보존합니다.",
+    "expected": {
+      "code": "DUPLICATE",
+      "activity": "TRAVEL"
+    },
+    "actual": {
+      "request_hash": "4dc39c630af6927dca96a596a1004d3affb8c64d515c82152bf83b1926c936c9",
+      "trip_activity": "TRAVEL"
+    },
+    "evidence_path": "aggregation/readbacks/activity-migration.json"
+  },
+  {
+    "assertion_id": "p06-count-0",
+    "status": "PASS",
+    "message_en": "Independent populations preserve the zero/one/four eligibility denominator.",
+    "message_ko": "독립 차량군이0·1·4명 적격 분모를 보존합니다.",
+    "expected": {
+      "status": "UNKNOWN",
+      "contributors": 0
+    },
+    "actual": {
+      "entry": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      "private_contributors": 0
+    },
+    "evidence_path": "aggregation/drafts/count-0.json"
+  },
+  {
+    "assertion_id": "p06-count-1-target-p06-speed-3",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 23.77246467188899,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 23.772
+      }
+    ],
+    "evidence_path": "aggregation/synthetic-evaluation/count-1-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-1",
+    "status": "PASS",
+    "message_en": "Independent populations preserve the zero/one/four eligibility denominator.",
+    "message_ko": "독립 차량군이0·1·4명 적격 분모를 보존합니다.",
+    "expected": {
+      "status": "INSUFFICIENT",
+      "contributors": 1
+    },
+    "actual": {
+      "entry": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "INSUFFICIENT",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      "private_contributors": 1
+    },
+    "evidence_path": "aggregation/drafts/count-1.json"
+  },
+  {
+    "assertion_id": "p06-count-4-target-p06-speed-3",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 23.77246467188899,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 23.772
+      }
+    ],
+    "evidence_path": "aggregation/synthetic-evaluation/count-4-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-4-target-p06-speed-4",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 19.82934850391674,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 19.829
+      }
+    ],
+    "evidence_path": "aggregation/synthetic-evaluation/count-4-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-4-target-p06-speed-5",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 17.463478803133395,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 17.463
+      }
+    ],
+    "evidence_path": "aggregation/synthetic-evaluation/count-4-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-4-target-p06-speed-6",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 15.886232335944495,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 15.886
+      }
+    ],
+    "evidence_path": "aggregation/synthetic-evaluation/count-4-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-4",
+    "status": "PASS",
+    "message_en": "Independent populations preserve the zero/one/four eligibility denominator.",
+    "message_ko": "독립 차량군이0·1·4명 적격 분모를 보존합니다.",
+    "expected": {
+      "status": "INSUFFICIENT",
+      "contributors": 4
+    },
+    "actual": {
+      "entry": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "INSUFFICIENT",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      "private_contributors": 4
+    },
+    "evidence_path": "aggregation/drafts/count-4.json"
+  },
+  {
+    "assertion_id": "p06-count-5-target-p06-speed-3",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 23.77246467188899,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 23.772
+      }
+    ],
+    "evidence_path": "aggregation/synthetic-evaluation/count-5-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-5-target-p06-speed-4",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 19.82934850391674,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 19.829
+      }
+    ],
+    "evidence_path": "aggregation/synthetic-evaluation/count-5-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-5-target-p06-speed-5",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 17.463478803133395,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 17.463
+      }
+    ],
+    "evidence_path": "aggregation/synthetic-evaluation/count-5-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-5-target-p06-speed-6",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 15.886232335944495,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 15.886
+      }
+    ],
+    "evidence_path": "aggregation/synthetic-evaluation/count-5-stored.json"
+  },
+  {
+    "assertion_id": "p06-count-5-target-p06-speed-7",
+    "status": "PASS",
+    "message_en": "Every authored travel contributor supports the target; signal wait remains within 150 ms.",
+    "message_ko": "직접 만든 각이동 기여자가 대상구간을 지지하며 신호대기를150밀리초 이내로 보존합니다.",
+    "expected": {
+      "duration_s": 14.759627716523852,
+      "tolerance_s": 0.15
+    },
+    "actual": [
+      {
+        "duration_s": 14.76
+      }
+    ],
+    "evidence_path": "aggregation/synthetic-evaluation/count-5-stored.json"
+  },
+  {
+    "assertion_id": "p06-exact-open-deadline",
+    "status": "PASS",
+    "message_en": "At deadline minus one millisecond, no draft is persisted.",
+    "message_ko": "마감1밀리초 전에는 후보를 저장하지 않습니다.",
+    "expected": "WINDOW_OPEN",
+    "actual": "WINDOW_OPEN",
+    "evidence_path": "aggregation/readbacks/before-deadline.json"
+  },
+  {
+    "assertion_id": "p06-aggregate-write-rollback",
+    "status": "PASS",
+    "message_en": "Actual pre-commit worker SIGKILL leaves no partial candidate row.",
+    "message_ko": "실제 커밋전 처리자SIGKILL이 일부 후보행을 남기지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "aggregation/readbacks/after-aggregate-write-kill.json"
+  },
+  {
+    "assertion_id": "p06-aggregate-commit-retry",
+    "status": "PASS",
+    "message_en": "Two actual workers and lost-response retry converge to one identical committed candidate.",
+    "message_ko": "실제 처리자2개·응답유실 재시도가 동일한 커밋 후보1개로 수렴합니다.",
+    "expected": "93451d049d9d1fe1e2e1f98e79ccee70e4d272ff3e5cdf75f09831d9dc6c45ae",
+    "actual": [
+      "93451d049d9d1fe1e2e1f98e79ccee70e4d272ff3e5cdf75f09831d9dc6c45ae",
+      "93451d049d9d1fe1e2e1f98e79ccee70e4d272ff3e5cdf75f09831d9dc6c45ae"
+    ],
+    "evidence_path": "aggregation/readbacks/aggregate-concurrent-retry.json"
+  },
+  {
+    "assertion_id": "p06-live-independent-median",
+    "status": "PASS",
+    "message_en": "Five unique travel contributors yield the independent median speed; repeat and PARKED do not inflate it.",
+    "message_ko": "고유 이동기여자5명이 독립 중앙값 속도를 만들고 반복·주차는 부풀리지 않습니다.",
+    "expected": {
+      "contributors": 5,
+      "speed_mps": 2.709505623082213,
+      "relative_tolerance": 0.02
+    },
+    "actual": {
+      "entry": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "LIVE",
+        "speed_mps": 2.70958,
+        "sample_bucket": "5-9"
+      },
+      "selection": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "eligible_contributors": 5,
+        "selected_observation_ids": [
+          "a00a8d949d89cb464bac808ba8396358bbf952aff9deb5639b85866fc30da2d2",
+          "5a813bc864b7a0c6bcd557c6160ff94be059445080cdb821bfc286cae43d6b86",
+          "a32bf337b07b904ebfc5b68398b924c22428f96c258deb841cfb3ba4fafd8f19",
+          "7c2c07625b69191d239ce0072c03b002b74f8ea3eeff079acc60c66e26f1bb47",
+          "76e1e8bf649f1d4e11a851624d8831f96f0416b452ebc286a3d93e50cc41568a"
+        ],
+        "median_duration_s": 17.463
+      }
+    },
+    "evidence_path": "aggregation/synthetic-evaluation/count-5.json"
+  },
+  {
+    "assertion_id": "p06-late-just-before",
+    "status": "PASS",
+    "message_en": "P05 completion before the deadline is eligible; exact or later completion cannot change the closed window.",
+    "message_ko": "마감전 P05완료는 적격이고 정확한마감·이후완료는 닫힌창을 바꾸지 못합니다.",
+    "expected": {
+      "available_at": "2026-10-24T00:01:29.999Z",
+      "eligible": 1
+    },
+    "actual": {
+      "available": [
+        {
+          "code": "SUCCEEDED",
+          "at_event_utc": "2026-10-24T00:01:29.999Z"
+        }
+      ],
+      "selected": 1
+    },
+    "evidence_path": "aggregation/synthetic-evaluation/late-just-before-availability.json"
+  },
+  {
+    "assertion_id": "p06-late-exact",
+    "status": "PASS",
+    "message_en": "P05 completion before the deadline is eligible; exact or later completion cannot change the closed window.",
+    "message_ko": "마감전 P05완료는 적격이고 정확한마감·이후완료는 닫힌창을 바꾸지 못합니다.",
+    "expected": {
+      "available_at": "2026-10-24T00:01:30.000Z",
+      "eligible": 0
+    },
+    "actual": {
+      "available": [
+        {
+          "code": "SUCCEEDED",
+          "at_event_utc": "2026-10-24T00:01:30.000Z"
+        }
+      ],
+      "selected": 0
+    },
+    "evidence_path": "aggregation/synthetic-evaluation/late-exact-availability.json"
+  },
+  {
+    "assertion_id": "p06-late-after",
+    "status": "PASS",
+    "message_en": "P05 completion before the deadline is eligible; exact or later completion cannot change the closed window.",
+    "message_ko": "마감전 P05완료는 적격이고 정확한마감·이후완료는 닫힌창을 바꾸지 못합니다.",
+    "expected": {
+      "available_at": "2026-10-24T00:01:30.001Z",
+      "eligible": 0
+    },
+    "actual": {
+      "available": [
+        {
+          "code": "SUCCEEDED",
+          "at_event_utc": "2026-10-24T00:01:30.001Z"
+        }
+      ],
+      "selected": 0
+    },
+    "evidence_path": "aggregation/synthetic-evaluation/late-after-availability.json"
+  },
+  {
+    "assertion_id": "p06-revoke-actual-lock-wait",
+    "status": "PASS",
+    "message_en": "The actual revoke backend waits on the owned paused aggregate backend.",
+    "message_ko": "실제 철회DB처리가 소유한대기 집계DB처리의 잠금을 기다립니다.",
+    "expected": 1,
+    "actual": 1,
+    "evidence_path": "aggregation/readbacks/revoke-lock-wait.json"
+  },
+  {
+    "assertion_id": "p06-same-transaction-invalidation",
+    "status": "PASS",
+    "message_en": "Acknowledged HTTP revocation has already removed the old candidate in the deletion transaction.",
+    "message_ko": "HTTP철회 응답때 삭제트랜잭션이 이미 옛후보를 제거했습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "aggregation/readbacks/revoke-before-recompute.json"
+  },
+  {
+    "assertion_id": "p06-revoked-four",
+    "status": "PASS",
+    "message_en": "Recomputation after revocation has four contributors and no public speed.",
+    "message_ko": "철회뒤 재계산은4명이며 공개속도가 없습니다.",
+    "expected": "INSUFFICIENT",
+    "actual": {
+      "edge_id": "1297751234960",
+      "forward": true,
+      "source_class": "SYNTHETIC",
+      "status": "INSUFFICIENT",
+      "speed_mps": null,
+      "sample_bucket": null
+    },
+    "evidence_path": "aggregation/drafts/revoked.json"
+  },
+  {
+    "assertion_id": "p06-new-window-no-inheritance",
+    "status": "PASS",
+    "message_en": "A newer empty window never inherits an older LIVE value.",
+    "message_ko": "새 빈창이 이전LIVE값을 이어받지 않습니다.",
+    "expected": "UNKNOWN",
+    "actual": {
+      "edge_id": "1297751234960",
+      "forward": true,
+      "source_class": "SYNTHETIC",
+      "status": "UNKNOWN",
+      "speed_mps": null,
+      "sample_bucket": null
+    },
+    "evidence_path": "aggregation/drafts/new-empty-window.json"
+  },
+  {
+    "assertion_id": "p06-cached-read-expiry",
+    "status": "PASS",
+    "message_en": "The read path expires cached LIVE bytes before finalize is called.",
+    "message_ko": "확정호출 전에 읽기경로가 캐시LIVE바이트를 만료시킵니다.",
+    "expected": {
+      "before": "LIVE",
+      "after": "STALE",
+      "speed_mps": null
+    },
+    "actual": {
+      "before": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "sample_bucket": "5-9",
+        "source_class": "SYNTHETIC",
+        "speed_mps": 2.70958,
+        "status": "LIVE"
+      },
+      "read": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "sample_bucket": null,
+        "source_class": "SYNTHETIC",
+        "speed_mps": null,
+        "status": "STALE"
+      },
+      "after": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "sample_bucket": null,
+        "source_class": "SYNTHETIC",
+        "speed_mps": null,
+        "status": "STALE"
+      }
+    },
+    "evidence_path": "aggregation/readbacks/cache-after-expiry.json"
+  },
+  {
+    "assertion_id": "p06-exact-expiry",
+    "status": "PASS",
+    "message_en": "At exact expiry, current persisted time removes speed; a stale caller cannot revive it.",
+    "message_ko": "정확한 만료때 저장시계가 속도를 지우고 옛호출시각도 복원하지 못합니다.",
+    "expected": "STALE",
+    "actual": {
+      "edge_id": "1297751234960",
+      "forward": true,
+      "source_class": "SYNTHETIC",
+      "status": "STALE",
+      "speed_mps": null,
+      "sample_bucket": null
+    },
+    "evidence_path": "aggregation/drafts/expired.json"
+  },
+  {
+    "assertion_id": "p06-candidate-retention",
+    "status": "PASS",
+    "message_en": "The old candidate is deleted at window end plus 24 hours and cannot be recreated; the later window remains until its own deadline.",
+    "message_ko": "창끝24시간에 옛후보가 삭제되고 재생성되지 않으며 나중창은 자체기한까지 남습니다.",
+    "expected": {
+      "first_deleted": 1,
+      "second_deleted": 0,
+      "old_rows": 0,
+      "newer_rows": 1,
+      "code": "RETENTION_EXPIRED"
+    },
+    "actual": {
+      "first": {
+        "deleted": 1
+      },
+      "second": {
+        "deleted": 0
+      },
+      "plain_rows": 1,
+      "code": "RETENTION_EXPIRED"
+    },
+    "evidence_path": "aggregation/readbacks/retention-sweep-results.json"
+  },
+  {
+    "assertion_id": "p06-all-candidates-purged",
+    "status": "PASS",
+    "message_en": "Repeated retention sweep leaves zero candidate rows.",
+    "message_ko": "반복 보관기한 정리뒤 후보행이0개입니다.",
+    "expected": {
+      "first_deleted": 1,
+      "second_deleted": 0,
+      "plain_rows": 0
+    },
+    "actual": {
+      "first": {
+        "deleted": 1
+      },
+      "second": {
+        "deleted": 0
+      },
+      "plain_rows": 0,
+      "inspected_rows": 0
+    },
+    "evidence_path": "aggregation/readbacks/all-purge-results.json"
+  },
+  {
+    "assertion_id": "p06-catalog-conflict-atomic",
+    "status": "PASS",
+    "message_en": "Concurrent different-catalog finalizers cannot overwrite the winning catalog row.",
+    "message_ko": "동시 다른구간목록 확정이 승리한목록행을 덮어쓰지 못합니다.",
+    "expected": {
+      "success": 1,
+      "failure": 1,
+      "rows": 1
+    },
+    "actual": {
+      "exits": [
+        {
+          "code": 1,
+          "signal": null
+        },
+        {
+          "code": 0,
+          "signal": null
+        }
+      ],
+      "catalog_rows": 1,
+      "winning_hash": "23d55b9aab0e5cabd3af895281bed6724d6aa70b38dab1af6510837702a2b2da"
+    },
+    "evidence_path": "aggregation/synthetic-evaluation/catalog-conflict.json"
+  },
+  {
+    "assertion_id": "p06-public-candidate-whitelist",
+    "status": "PASS",
+    "message_en": "Every actual exported candidate uses only the public whitelist and contains no private credentials or raw coordinates.",
+    "message_ko": "실제 내보낸 모든후보가 공개허용필드만 쓰고 비공개인증·원시좌표가 없습니다.",
+    "expected": 10,
+    "actual": 10,
+    "evidence_path": "aggregation/drafts/count-5.json"
+  },
+  {
+    "assertion_id": "p06-owned-cleanup",
+    "status": "PASS",
+    "message_en": "All owned processes, engines, PostgreSQL volume, private files and ports were removed.",
+    "message_ko": "소유 프로세스·엔진·PostgreSQL볼륨·비공개파일·포트를 제거했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "aggregation/runtime/cleanup.json"
+  }
+]
