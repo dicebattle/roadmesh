@@ -6,9 +6,9 @@ Local result: **PASS — 48 tiny regression checks plus 29 Seoul checks**, from 
 
 ## Actual capture / 실제 캡처
 
-[![Actual Seoul replay / 실제 서울 재생](../../../docs/media/demo.gif)](../../../docs/media/demo.mp4)
+[![Actual Seoul replay / 실제 서울 재생](https://github.com/dicebattle/routelens/blob/d385c5d1f46617ebe24181385e45f3b9f95ad31c/docs/media/demo.gif)](https://github.com/dicebattle/routelens/blob/d385c5d1f46617ebe24181385e45f3b9f95ad31c/docs/media/demo.mp4)
 
-[MP4](../../../docs/media/demo.mp4) · [English capture / 영어 화면](../../../docs/media/report-en.png) · [한국어 화면](../../../docs/media/report-ko.png) · [Assertion capture / 검사 화면](../../../docs/media/report-checks.png) · [Media provenance / 미디어 출처](media-manifest.json)
+[MP4](https://github.com/dicebattle/routelens/blob/d385c5d1f46617ebe24181385e45f3b9f95ad31c/docs/media/demo.mp4) · [English capture / 영어 화면](https://github.com/dicebattle/routelens/blob/d385c5d1f46617ebe24181385e45f3b9f95ad31c/docs/media/report-en.png) · [한국어 화면](https://github.com/dicebattle/routelens/blob/d385c5d1f46617ebe24181385e45f3b9f95ad31c/docs/media/report-ko.png) · [Assertion capture / 검사 화면](https://github.com/dicebattle/routelens/blob/d385c5d1f46617ebe24181385e45f3b9f95ad31c/docs/media/report-checks.png) · [Media provenance / 미디어 출처](media-manifest.json)
 
 The 17.25-second video is actual Chrome report playback, 1280×720, encoded at 20 fps, with English/Korean route selection. MP4 and GIF contain the full recording. This is capture configuration, not a renderer performance claim. Main inspected desktop/mobile replay, labels, controls, source attribution and 390 px mobile overflow. JavaScript error inspection was empty; the separate capture browser had only a missing favicon 404. A later stale capture reference failed after the video was already saved; the browser closed via its trap, and the assertion screenshot was captured in-app. All temporary tabs, recording daemon/browser and the owned report server are cleaned up at delivery.
 

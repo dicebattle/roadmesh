@@ -30,3 +30,7 @@ npm view @types/pg version dist.integrity --json
 Runtime acceptance still requires real HTTP, PostgreSQL, process kills/restarts, stale-owner attempts and persisted read-back. Logical deletion from the primary store does not prove forensic erasure of WAL/backups. This is synthetic local technical evidence only.
 
 실행 수용은 실제 HTTP·PostgreSQL·프로세스 종료/재시작·만료한 소유자의 저장 시도·DB 재조회로 별도 증명해야 합니다. 기본 저장소의 논리 삭제를 WAL·백업의 물리적 완전 삭제로 주장하지 않으며 합성 로컬 기술 검증 범위입니다.
+
+The pinned image's [entrypoint source](https://github.com/docker-library/postgres/blob/e00e1bd34ec5c8a8e7ad89b273b3d42efaf6d5bc/docker-entrypoint.sh) starts a temporary initialization server with no TCP listener, then stops it before launching the final server. P05 development run02 exposed why a Unix-socket readiness response alone is insufficient. Use TCP readiness plus an actual query; preserve the failed connection evidence.
+
+고정 이미지의 시작 스크립트는 TCP를 열지 않는 초기화용 임시 서버를 띄운 뒤 종료하고 최종 서버를 시작합니다. P05 개발실행02에서 Unix소켓 준비 응답만으로는 부족함을 확인했습니다. TCP 준비·실제 조회를 함께 확인하며 실패 연결 증거를 보존합니다.

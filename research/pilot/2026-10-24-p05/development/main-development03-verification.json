@@ -1,0 +1,42 @@
+{
+  "status": "PARTIAL_VERIFIED",
+  "run_root": "data/p05-development-20261024-03",
+  "completed_pass_assertions": 18,
+  "whole_run_status": "FAIL",
+  "whole_run_failure": "Harness expected 422 but the valid trip capacity rejection was 429 / 시험은422를예상했지만계약상용량거부429가반환됨",
+  "independent_traversals_checked": 215,
+  "unique_ids": 215,
+  "successful_trips": 9,
+  "raw_after_success": 0,
+  "independent_geometry_max_difference_m": 5.17506038022475e-10,
+  "independent_accepted_boundary_error_max_ms": 392,
+  "raw_recovery_result_parity": [
+    {
+      "phase": "AFTER_MATCH",
+      "interrupted_pid": 80034,
+      "recovered_pid": 80075,
+      "result_sha256": "118d530dbf8789dd4c835ce45e9f6e923948bbc6b7c3bd8b03be3d58bc02e9b8",
+      "byte_identical": true
+    },
+    {
+      "phase": "AFTER_INSERT",
+      "interrupted_pid": 80100,
+      "recovered_pid": 80144,
+      "result_sha256": "369588c0a322e5ef4ad13670ffba59d69ab42c9e2eae2405b675b5b672b89c3a",
+      "byte_identical": true
+    }
+  ],
+  "input_hashes": {
+    "db": "85e22ef7085ac83717de4b5c907bcf343c5e7c003ac626dded5647fb7678b704",
+    "p04": "1f6fdeae269a01754aabb5d1e4e32863c003ff76dc854616147f01b561c1dd1d",
+    "geometry": "ce4ce0f208a0460112822cbc5c3179992c03b9f7f0b50de45e14ea08a3fa46ea"
+  },
+  "cleanup": {
+    "cleanup_verified": true,
+    "failures": [],
+    "private_files_removed": true,
+    "processes_exited": true
+  },
+  "remaining_en": "API/DB restart, actual engine failure and retention/revocation matrix did not execute. This is not P05 completion.",
+  "remaining_ko": "API/DB재시작·실제엔진실패·보관/철회행렬은미실행이며P05완료증거가아닙니다."
+}

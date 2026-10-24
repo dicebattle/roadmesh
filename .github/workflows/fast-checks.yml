@@ -70,6 +70,7 @@ jobs:
           path: |
             ${{ runner.temp }}/simulation-evidence/**/*.json
             ${{ runner.temp }}/simulation-evidence/**/*.txt
+            ${{ runner.temp }}/simulation-evidence/**/*.sql
             ${{ runner.temp }}/simulation-evidence/**/*.md
             ${{ runner.temp }}/simulation-evidence/**/*.html
             ${{ runner.temp }}/simulation-evidence/**/context-edges.tsv

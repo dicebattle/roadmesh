@@ -1,0 +1,53 @@
+[
+  {
+    "assertion_id": "p05-all-nine-http",
+    "status": "PASS",
+    "message_en": "All nine Seoul vehicles are durably READY after actual bounded HTTP batches.",
+    "message_ko": "서울9대가 실제 제한 HTTP 배치 접수 뒤 영속 READY 상태입니다.",
+    "expected": 9,
+    "actual": 9,
+    "evidence_path": "readbacks/baseline-ready.json"
+  },
+  {
+    "assertion_id": "p05-concurrent-duplicates",
+    "status": "PASS",
+    "message_en": "Concurrent exact duplicates preserve sample and traversal counts.",
+    "message_ko": "동시 정확 중복이 표본·통과 수를 보존합니다.",
+    "expected": {
+      "contributors": 21,
+      "trips": 9,
+      "batches": 61,
+      "samples": 3204,
+      "traversals": 0,
+      "events": 61,
+      "raw_payloads": 3204
+    },
+    "actual": {
+      "contributors": 21,
+      "trips": 9,
+      "batches": 61,
+      "samples": 3204,
+      "traversals": 0,
+      "events": 61,
+      "raw_payloads": 3204
+    },
+    "evidence_path": "readbacks/duplicates.json"
+  },
+  {
+    "assertion_id": "p05-conflicts-atomic",
+    "status": "PASS",
+    "message_en": "Body, sequence, version, start, final and authenticated-vehicle conflicts leave storage unchanged.",
+    "message_ko": "본문·순서·버전·시작·마지막·인증차량 충돌이 저장을 바꾸지 않습니다.",
+    "expected": true,
+    "actual": [
+      409,
+      409,
+      409,
+      422,
+      409,
+      409,
+      409
+    ],
+    "evidence_path": "readbacks/conflicts.json"
+  }
+]
