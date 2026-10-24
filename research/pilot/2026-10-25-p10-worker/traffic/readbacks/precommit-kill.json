@@ -1,0 +1,80 @@
+{
+  "pid": 8062,
+  "signal": "SIGKILL",
+  "directories_after_kill": [
+    ".staging-78266c59bcc7490f175576b6b7f834b29f3ad9e2b41be480e421daa5c4cf6d41-b7d11e01-039c-4a2a-93d4-3b008265be85"
+  ],
+  "retry": {
+    "message": {
+      "type": "RESULT",
+      "code": "READY",
+      "generation": {
+        "graph_id": "e2674fbd7bfaa6fd47de6b3843f2cd29c4e46ea8ce35bb19934a82ce81734eab",
+        "skeleton_sha256": "c0b32f2cdde2308981cf7d8419d964e35f1fe251919e395dc787204a878dfc05",
+        "traffic_snapshot_id": "54e4ce7e8e8dc57d0df2a90de2ba676417e27a9da01b926783622cf65f86b4d0",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "78266c59bcc7490f175576b6b7f834b29f3ad9e2b41be480e421daa5c4cf6d41",
+        "sequence": 1,
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_sha256": "4142a6972a8eff116c138f48bfb06400970a26ae92f03f87c9f85c7bb9b4cc5d",
+        "traffic_byte_length": 8663040,
+        "live_edges": [
+          {
+            "edge_id": "1338083662224",
+            "forward": true,
+            "offset": 320592,
+            "input_speed_mps": 0.500001,
+            "raw_speed": 1,
+            "decoded_speed_mps": 0.5555555555555556,
+            "quantization_error_mps": 0.05555455555555555
+          },
+          {
+            "edge_id": "1338687642000",
+            "forward": true,
+            "offset": 320736,
+            "input_speed_mps": 0.500003,
+            "raw_speed": 1,
+            "decoded_speed_mps": 0.5555555555555556,
+            "quantization_error_mps": 0.055552555555555605
+          },
+          {
+            "edge_id": "1338754750864",
+            "forward": true,
+            "offset": 320752,
+            "input_speed_mps": 0.500001,
+            "raw_speed": 1,
+            "decoded_speed_mps": 0.5555555555555556,
+            "quantization_error_mps": 0.05555455555555555
+          }
+        ],
+        "directory": "/Users/dice/Documents/routelens-p10/data/p10-worker-main-20261025/traffic/generations/precommit/78266c59bcc7490f175576b6b7f834b29f3ad9e2b41be480e421daa5c4cf6d41",
+        "traffic_path": "/Users/dice/Documents/routelens-p10/data/p10-worker-main-20261025/traffic/generations/precommit/78266c59bcc7490f175576b6b7f834b29f3ad9e2b41be480e421daa5c4cf6d41/traffic.tar",
+        "manifest_path": "/Users/dice/Documents/routelens-p10/data/p10-worker-main-20261025/traffic/generations/precommit/78266c59bcc7490f175576b6b7f834b29f3ad9e2b41be480e421daa5c4cf6d41/manifest.json"
+      },
+      "provenance": {
+        "graph_id": "e2674fbd7bfaa6fd47de6b3843f2cd29c4e46ea8ce35bb19934a82ce81734eab",
+        "high_water": 1,
+        "sequence": 1,
+        "traffic_snapshot_id": "54e4ce7e8e8dc57d0df2a90de2ba676417e27a9da01b926783622cf65f86b4d0",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "78266c59bcc7490f175576b6b7f834b29f3ad9e2b41be480e421daa5c4cf6d41",
+        "traffic_sha256": "4142a6972a8eff116c138f48bfb06400970a26ae92f03f87c9f85c7bb9b4cc5d",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다."
+      }
+    },
+    "exit": {
+      "code": 0,
+      "signal": null
+    },
+    "pid": 8064
+  }
+}

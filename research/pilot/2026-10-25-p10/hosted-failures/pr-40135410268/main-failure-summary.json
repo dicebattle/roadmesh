@@ -1,0 +1,130 @@
+{
+  "pr_head": "5a6d7d7cbf318022432adc2508c2cbe575b7de0a",
+  "actual_source": {
+    "commit": "dcdf6aee47e6cb1715c8af2a8f2e2d687c0f040a",
+    "dirty": false
+  },
+  "implementation_sha256": "bebae7f5f5e7c8efed69627735ef82a2749570d1bba66937c3507dfe990dc538",
+  "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+  "admission": [
+    {
+      "request_id": "admission-0",
+      "status": 504,
+      "reason": "DEADLINE_EXCEEDED",
+      "elapsed_ms": 12023.891669999924
+    },
+    {
+      "request_id": "admission-1",
+      "status": 504,
+      "reason": "DEADLINE_EXCEEDED",
+      "elapsed_ms": 12024.073579999967
+    },
+    {
+      "request_id": "admission-2",
+      "status": 504,
+      "reason": "DEADLINE_EXCEEDED",
+      "elapsed_ms": 12026.749165000045
+    },
+    {
+      "request_id": "admission-3",
+      "status": 504,
+      "reason": "DEADLINE_EXCEEDED",
+      "elapsed_ms": 12027.87808699999
+    },
+    {
+      "request_id": "admission-4",
+      "status": 504,
+      "reason": "DEADLINE_EXCEEDED",
+      "elapsed_ms": 12033.562780000037
+    },
+    {
+      "request_id": "admission-5",
+      "status": 504,
+      "reason": "DEADLINE_EXCEEDED",
+      "elapsed_ms": 12039.064934000024
+    },
+    {
+      "request_id": "admission-6",
+      "status": 200,
+      "reason": null,
+      "elapsed_ms": 13226.950086000026
+    },
+    {
+      "request_id": "admission-7",
+      "status": 200,
+      "reason": null,
+      "elapsed_ms": 13255.528447000077
+    },
+    {
+      "request_id": "admission-ninth",
+      "status": 429,
+      "reason": "RATE_LIMITED",
+      "elapsed_ms": 2.0440330000128597
+    }
+  ],
+  "gateway_failure": {
+    "status": "FAIL",
+    "error": "Error: P10 criterion failed / P10 기준 미달: admission-eight",
+    "cleanup_verified": true,
+    "message_en": "Actual P10 gateway integration incomplete.",
+    "message_ko": "실제 P10 중계 통합 미완료."
+  },
+  "confirmed_admission_phases": [
+    {
+      "type": "PHASE",
+      "phase": "AFTER_GATEWAY_SELECTION",
+      "pid": 68926,
+      "request_id": "admission-0",
+      "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+    },
+    {
+      "type": "PHASE",
+      "phase": "AFTER_GATEWAY_SELECTION",
+      "pid": 68926,
+      "request_id": "admission-1",
+      "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+    },
+    {
+      "type": "PHASE",
+      "phase": "AFTER_GATEWAY_SELECTION",
+      "pid": 68926,
+      "request_id": "admission-2",
+      "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+    },
+    {
+      "type": "PHASE",
+      "phase": "AFTER_GATEWAY_SELECTION",
+      "pid": 68926,
+      "request_id": "admission-3",
+      "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+    },
+    {
+      "type": "PHASE",
+      "phase": "AFTER_GATEWAY_SELECTION",
+      "pid": 68926,
+      "request_id": "admission-4",
+      "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+    },
+    {
+      "type": "PHASE",
+      "phase": "AFTER_GATEWAY_SELECTION",
+      "pid": 68926,
+      "request_id": "admission-5",
+      "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+    },
+    {
+      "type": "PHASE",
+      "phase": "AFTER_GATEWAY_SELECTION",
+      "pid": 68926,
+      "request_id": "admission-6",
+      "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+    },
+    {
+      "type": "PHASE",
+      "phase": "AFTER_GATEWAY_SELECTION",
+      "pid": 68926,
+      "request_id": "admission-7",
+      "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+    }
+  ]
+}

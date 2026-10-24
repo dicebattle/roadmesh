@@ -1,0 +1,18 @@
+# P10 hosted inspection / P10 원격 검사
+
+The push run [40133930384](https://github.com/dicebattle/routelens/actions/runs/40133930384) and PR run [40133976749](https://github.com/dicebattle/routelens/actions/runs/40133976749) passed the fresh whole302 and Node22/24 tests252 each. Main downloaded and inspected the **push** originals, source `ecc8c9e7042d6d1fd0465f8fbf12ca7917206ffb`. The PR merge-test source is separately recorded in [PR metadata](pr-source.json); it is not the inspected push source. Runtime fingerprint `bebae7f5f5e7c8efed69627735ef82a2749570d1bba66937c3507dfe990dc538` matches the local proof and recording.
+
+푸시·PR 두 실행에서 새 전체302개와 Node22/24 각각252개를 통과했습니다. 메인은 **푸시 실행**의 원문을 내려받아 위 소스로 검사했습니다. PR 병합 시험 소스는 별도로 기록하며 검사한 푸시 소스와 혼동하지 않습니다. 실행 지문은 로컬 근거·녹화와 같습니다.
+
+Main independently verified9,691 present inventoried hashes, all302 fixed assertions, durable state, signatures and original native routes. Gateway evidence contains38 native route/trace pairs and18 successful API bindings; its detailed inspection checked2,720 hashes. Shared deadline12.0016s, propagated node lease4.0586s and client-abort release9.749ms meet the predefined bounds. Prior node/traffic/aggregation/publication inspections also passed. These are synthetic inputs on actual Seoul OSM, not measured real-driving traffic.
+
+메인은 존재하는 목록 해시9,691개·고정302개·영속 상태·서명·원래 엔진 경로를 독립 검사했습니다. 중계 상세에서는 해시2,720개와 엔진 경로/추적38쌍·공개 성공18건을 대조했습니다. 전체 기한12.0016초·노드 기한4.0586초·연결 취소9.749밀리초는 사전 기준을 만족했고 이전 모듈 검사도 통과했습니다. 실제 서울 OSM 위의 합성 입력이며 실주행 교통 측정은 아닙니다.
+
+- [Whole](whole-verification.json), [gateway](gateway-verification.json), [node](node-verification.json), [traffic](traffic-verification.json), [aggregation](aggregation-verification.json), [signatures](publication-signature-verification.json), [publication state](publication-state-verification.json). / 전체·모듈별 독립 검사.
+- [Archive inventory and ordered hashes](archive-verification.json):10,381 original files in three parts; join the parts in listed order before extracting. Exactly three inspector-created supplements remain outside the original archive. / 원문10,381개를 세 조각으로 보존했습니다. 목록 순서로 연결해 풀며 검사기가 만든 세 파일은 원문 밖에 별도로 보존합니다.
+- [Run log](run.log.gz), [push metadata](run.json), [PR checks](pr-checks.json), [public media proof](public-media-verification.json). / 실행 로그·푸시 정보·PR 검사·공개 영상 근거.
+- [Whole inspector](inspectors/inspect-p10-whole.mjs), [gateway inspector](inspectors/inspect-p10-evidence.mjs), [node inspector](inspectors/inspect-p09.mjs). Exact expected source comes from run metadata; local paths in scripts identify the retained original audit inputs. / 실행 정보의 정확한 소스를 요구하는 검사기이며 로컬 경로는 보존한 감사 입력을 가리킵니다.
+
+Only19 exact map files may be absent in the whole inspection and16 in the gateway inspection; present bytes are always hashed. Original logs, PID/exit/script files and traffic.tar are retained. Missing map bytes and uninventoried tiny-map originals are not byte-verified. Hosted cleanup is checked from recorded evidence only: no claim of present remote PID/container/volume/port absence is made from this local machine. Independent built-in-only audit scripts used the local Node25 runtime; product execution used Node22 and hosted tests used22/24. Final-head required checks and protected merge follow; P11–P14 remain unfinished.
+
+전체 검사에서는 정확한 지도19개, 중계 검사에서는16개만 누락을 허용하고 존재 바이트는 모두 해시 검사합니다. 원래 로그·PID·종료·실행 스크립트·traffic.tar를 보존합니다. 빠진 지도와 목록 밖 작은 지도 원문의 바이트 검증은 주장하지 않습니다. 원격 정리는 보존된 기록만 확인하며 이 컴퓨터에서 현재 원격 자원 부재를 확인했다고 주장하지 않습니다. 기본 라이브러리만 사용하는 독립 감사는 로컬 Node25에서, 제품 실행은 Node22·원격 단위 검사는22/24에서 수행했습니다. 최종 커밋의 필수 검사와 보호 병합을 이어가며 P11~P14는 아직 남아 있습니다.

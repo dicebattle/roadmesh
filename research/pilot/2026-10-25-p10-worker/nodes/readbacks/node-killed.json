@@ -1,0 +1,29 @@
+{
+  "pid": 8709,
+  "signal": "SIGKILL",
+  "instance_id": "da243500-9ccb-4699-a5b9-12328dbc94a4",
+  "orphan_engines": [
+    {
+      "file": "/Users/dice/Documents/routelens-p10/data/p10-worker-main-20261025/nodes/nodes/seoul-node-a/runtime-64ed1142-0b88-4e52-a3a8-a4bd0597cd12/engines/0ff3b1a9-5277-4c49-9dd4-61a0f9aaa514/ownership.json",
+      "record": {
+        "schema_version": "p09-engine-0.1",
+        "owner_id": "0ff3b1a9-5277-4c49-9dd4-61a0f9aaa514",
+        "container_name": "routelens-p02-0ff3b1a9-5277-4c49-9dd4-61a0f9aaa514",
+        "container_id": "c5f907c106b94405403b050436558b55f539a33b9be2a3179159f5c8921dfcaf",
+        "owner_label": "io.routelens.run_id=0ff3b1a9-5277-4c49-9dd4-61a0f9aaa514",
+        "work_directory": "/Users/dice/Documents/routelens-p10/data/p10-worker-main-20261025/nodes/nodes/seoul-node-a/runtime-64ed1142-0b88-4e52-a3a8-a4bd0597cd12/engines/0ff3b1a9-5277-4c49-9dd4-61a0f9aaa514",
+        "graph_directory": "/Users/dice/Documents/routelens-p10/data/p10-worker-main-20261025/seoul/graph",
+        "generation_id": "aae4f1be3496abbffb8aee14771bad11a620555b0712f88fe85bf3507c1f73b0",
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2269558"
+        },
+        "planned_before_creation": true,
+        "cleanup_verified": false
+      }
+    }
+  ],
+  "lost_request": {
+    "error": "TypeError: fetch failed"
+  }
+}

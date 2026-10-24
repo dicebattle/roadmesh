@@ -152,7 +152,7 @@ const done = async (child: OwnedIngestionProcess) => {
 };
 /** Only fresh source preparation is shared in this integration module; no prior PASS reuse.
  * 새 원본 준비만 좁게 묶으며 과거 성공 자료는 재사용하지 않습니다. */
-async function prepareNodeSource(
+export async function prepareNodeSource(
   graphDirectory: string,
   output: string,
   runtime: OwnedIngestionRuntime,

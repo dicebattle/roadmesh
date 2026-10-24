@@ -1,0 +1,116 @@
+{
+  "source_commit": "8f9c9f76762820f43b4606627738537c7d84fe51",
+  "implementation_sha256": "0b37b365f8ffc8636f7455d5ac64f0c7734d94ba09497813f015150d7badc521",
+  "report_path": "research/pilot/2026-10-25-p10-worker/report.html",
+  "report_sha256": "0616fa013e04db4ca0b9cc1e77546519085a7a02671c6988835ca393e84f4410",
+  "capture_method": "Actual Chrome report playback,60.45 seconds at1280x720/20fps; full MP4/GIF conversion. / 실제 보고서 화면60.45초·1280x720·20fps 녹화와 전체MP4/GIF변환.",
+  "raw_capture_sha256": "f92fcf3aae7a944861ac76128530a33e164803933ad50e41cecb7cf66ccd33d0",
+  "assets": [
+    {
+      "path": "docs/media/demo.mp4",
+      "sha256": "81a0f2e8214be4d7414920c420ed4181615aeef06c40a58f083afaf1438fed0b"
+    },
+    {
+      "path": "docs/media/demo.gif",
+      "sha256": "54ee717d5ba1c1fd84012d5f5f7c87b8cbf833cde1fd694a7d7ea8a34663744c"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10-worker/report-data.json",
+      "sha256": "fff8c3b3fd8de058402b192b903dbeaa7e5f6e234a4d6fe30d7e84aa53127bbe"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10-worker/frames/checks-ko.png",
+      "sha256": "5af872d569a8d4bbd782832c10e26faf7c661c5237b2aed87c4a1859a1c3e97d"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10-worker/frames/deadline-en.png",
+      "sha256": "bedba5d4a4732d060849d811024d3d7535c0c0ce9d651c1c848f556e5d2547c5"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10-worker/frames/detour-en.png",
+      "sha256": "91b8929f32714d4e7609d749523a6efced3842369e74f511ccbf8d01c67ffefa"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10-worker/frames/expired-en.png",
+      "sha256": "e1e3e1c521e6d57bb540dd46f0972a4615a0173dbd31c5df60bbc2df6ded94d2"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10-worker/frames/expired-ko.png",
+      "sha256": "c692735e0da189140855af5be56976c8053d1082353e5d54fbdde7b1468258ea"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10-worker/frames/failover-en.png",
+      "sha256": "1b7f274a16a961fb78efe75cbe0a02979f8129f3db1247f7357cf926f37c7ce5"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10-worker/frames/live-en.png",
+      "sha256": "de0d4cb2609d3db22449e1be3ac6f5c7c3564b89f63ffeca46a38555d8180709"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10-worker/frames/live-ko.png",
+      "sha256": "032a6dc39711aee6c8112a636184efb23b72ed438eb3b138f21425db53e199c5"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10-worker/frames/map.png",
+      "sha256": "c510c7b32641a7e277bb513ce0930f08ce25f1f5f30564f3c287fbb6a176e644"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10-worker/frames/overview-en.png",
+      "sha256": "3853151964c7fac387bbc60b284eeb0cf35e97219d6ecb0edb0e3cdc6cd424d6"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10-worker/frames/version-rejection-en.png",
+      "sha256": "9e633be9687690766b363a0bc126f19d4fc3e5c3b7e076c95abf003470a32815"
+    }
+  ],
+  "frame_times": [
+    {
+      "name": "map",
+      "time_s": 3
+    },
+    {
+      "name": "overview-en",
+      "time_s": 12
+    },
+    {
+      "name": "live-en",
+      "time_s": 18
+    },
+    {
+      "name": "detour-en",
+      "time_s": 22
+    },
+    {
+      "name": "failover-en",
+      "time_s": 28
+    },
+    {
+      "name": "version-rejection-en",
+      "time_s": 34
+    },
+    {
+      "name": "deadline-en",
+      "time_s": 38
+    },
+    {
+      "name": "expired-en",
+      "time_s": 42
+    },
+    {
+      "name": "live-ko",
+      "time_s": 45
+    },
+    {
+      "name": "expired-ko",
+      "time_s": 49
+    },
+    {
+      "name": "checks-ko",
+      "time_s": 59
+    }
+  ],
+  "reviewed_frames": 11,
+  "full_mp4_decode_passed": true,
+  "frame_selection_note_en": "The first Korean extractions selected later scenes. Only their extraction times were corrected to45/49 seconds in the unchanged raw recording; initial extracted files remain local.",
+  "frame_selection_note_ko": "첫 한국어 추출이 뒤 장면을 가리켜 원래 영상은 그대로 두고 추출 시점만45/49초로 바로잡았습니다. 초기 추출 파일은 로컬에 보존합니다."
+}

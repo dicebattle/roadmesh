@@ -1,0 +1,58 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "publisher-outage",
+    "origin": {
+      "longitude": 127.03739724982245,
+      "latitude": 37.50083690018144
+    },
+    "destination": {
+      "longitude": 127.0375277498224,
+      "latitude": 37.500877100181434
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live"
+  },
+  "status": 200,
+  "headers": {
+    "cache-control": "no-store",
+    "connection": "keep-alive",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sat, 24 Oct 2026 22:27:02 GMT",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked"
+  },
+  "body": {
+    "request_id": "publisher-outage",
+    "request_sha256": "5f4334d8109093145783d1eb1342ab482a01845f2266ff73cdbcf795adbd5563",
+    "graph_id": "e2674fbd7bfaa6fd47de6b3843f2cd29c4e46ea8ce35bb19934a82ce81734eab",
+    "snapshot_id": "2c94b0ce158f6842f76633e9dd5e005abe6fb103db84fafaf702b908245b40fe",
+    "sequence": 2,
+    "generation_id": "296394f9897b0685da39999203a7754af8e218a8d05fe829d5b01df77adbdd94",
+    "traffic_sha256": "4b7343a23bdee31c7a9b99ab1785c7edf13a55bbe1636276b28ce312214ea1c9",
+    "engine_version": "3.9.1",
+    "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "costing_config_id": "valhalla-current-v1",
+    "node_id": "seoul-gateway-node-a",
+    "traffic_mode": "LIVE_MIXED",
+    "distance_m": 12,
+    "duration_s": 22.254,
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.037397,
+          37.500837
+        ],
+        [
+          127.037528,
+          37.500877
+        ]
+      ]
+    },
+    "live_coverage_ratio": 1,
+    "warnings": [],
+    "calculated_at": "2026-10-24T22:27:02.487Z"
+  },
+  "elapsed_ms": 1590.440500000026
+}

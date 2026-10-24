@@ -1,0 +1,31 @@
+{
+  "reply": {
+    "status": 504,
+    "headers": {
+      "cache-control": "no-store",
+      "connection": "keep-alive",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Sat, 24 Oct 2026 22:26:51 GMT",
+      "keep-alive": "timeout=5",
+      "transfer-encoding": "chunked"
+    },
+    "body": {
+      "code": "ERROR",
+      "reason": "DEADLINE_EXCEEDED",
+      "message_en": "The gateway cannot return a current verified route for this request.",
+      "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+    },
+    "elapsed_ms": 12011.9288750001
+  },
+  "elapsed_ms": 12012.202959000017,
+  "status": {
+    "gateway_id": "seoul-route-gateway",
+    "instance_id": "f6c0cbb4-246d-432f-b6bb-001ca83c5c22",
+    "in_flight": 0,
+    "closing": false,
+    "high_water": 1,
+    "snapshot_id": "3769cf52b7549becd1edecab10d03d85049c23b3320fea347e35708bda335d1e",
+    "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+    "reason": "READY"
+  }
+}

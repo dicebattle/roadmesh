@@ -1,0 +1,9 @@
+{
+  "observed_at": "2026-10-24T22:22:04.749Z",
+  "stage": "traffic",
+  "container": "routelens-p05-8bcca706-0680-4e28-9cb1-578d137d8b96",
+  "sql": "BEGIN READ ONLY; SET LOCAL statement_timeout='2s'; SELECT json_build_object('traversals',(SELECT count(*) FROM routelens_p05.traversals),'publications',(SELECT count(*) FROM routelens_p07.publications),'consumers',(SELECT json_agg(x) FROM (SELECT consumer_id, high_water, last_snapshot_id, octet_length(artifact) AS artifact_bytes FROM routelens_p07.consumer_states ORDER BY consumer_id) x)); COMMIT;",
+  "status": 0,
+  "stdout": "BEGIN\nSET\n{\"traversals\" : 15, \"publications\" : 1, \"consumers\" : [{\"consumer_id\":\"p08-key-revocation\",\"high_water\":1,\"last_snapshot_id\":\"54e4ce7e8e8dc57d0df2a90de2ba676417e27a9da01b926783622cf65f86b4d0\",\"artifact_bytes\":10469}, \n {\"consumer_id\":\"p08-main\",\"high_water\":1,\"last_snapshot_id\":\"54e4ce7e8e8dc57d0df2a90de2ba676417e27a9da01b926783622cf65f86b4d0\",\"artifact_bytes\":10469}, \n {\"consumer_id\":\"p08-offline-ttl\",\"high_water\":1,\"last_snapshot_id\":\"54e4ce7e8e8dc57d0df2a90de2ba676417e27a9da01b926783622cf65f86b4d0\",\"artifact_bytes\":10469}]}\nCOMMIT\n",
+  "stderr": ""
+}

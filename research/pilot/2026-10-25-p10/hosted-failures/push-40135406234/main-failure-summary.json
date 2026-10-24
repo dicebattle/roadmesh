@@ -1,0 +1,75 @@
+{
+  "pr_head": "5a6d7d7cbf318022432adc2508c2cbe575b7de0a",
+  "actual_source": {
+    "commit": "5a6d7d7cbf318022432adc2508c2cbe575b7de0a",
+    "dirty": false
+  },
+  "implementation_sha256": "bebae7f5f5e7c8efed69627735ef82a2749570d1bba66937c3507dfe990dc538",
+  "graph_id": "f333146517ea5c45afcd9b6c5e64dce22f280ecbefb7115c4d2505b9cfb69e71",
+  "admission": [
+    {
+      "request_id": "admission-0",
+      "status": 504,
+      "reason": "DEADLINE_EXCEEDED",
+      "elapsed_ms": 12214.76168799994
+    },
+    {
+      "request_id": "admission-1",
+      "status": 504,
+      "reason": "DEADLINE_EXCEEDED",
+      "elapsed_ms": 12215.881514000008
+    },
+    {
+      "request_id": "admission-2",
+      "status": 504,
+      "reason": "DEADLINE_EXCEEDED",
+      "elapsed_ms": 12215.84287599998
+    },
+    {
+      "request_id": "admission-3",
+      "status": 504,
+      "reason": "DEADLINE_EXCEEDED",
+      "elapsed_ms": 12216.526229000068
+    },
+    {
+      "request_id": "admission-4",
+      "status": 504,
+      "reason": "DEADLINE_EXCEEDED",
+      "elapsed_ms": 12217.256469000014
+    },
+    {
+      "request_id": "admission-5",
+      "status": 504,
+      "reason": "DEADLINE_EXCEEDED",
+      "elapsed_ms": 12217.905316999997
+    },
+    {
+      "request_id": "admission-6",
+      "status": 503,
+      "reason": "STORE_UNAVAILABLE",
+      "elapsed_ms": 12219.287221999955
+    },
+    {
+      "request_id": "admission-7",
+      "status": 503,
+      "reason": "STORE_UNAVAILABLE",
+      "elapsed_ms": 12219.63853700005
+    }
+  ],
+  "gateway_failure": {
+    "status": "FAIL",
+    "error": "Error: Owned child IPC timed out / 소유 자식 통신 시간 초과",
+    "cleanup_verified": true,
+    "message_en": "Actual P10 gateway integration incomplete.",
+    "message_ko": "실제 P10 중계 통합 미완료."
+  },
+  "confirmed_admission_phases": [
+    {
+      "type": "PHASE",
+      "phase": "AFTER_GATEWAY_SELECTION",
+      "pid": 69035,
+      "request_id": "admission-0",
+      "generation_id": "f0ae7ce0b0aa4d1dcd57c5b3a1d855a38c91b11871ba42986f11179e025b96c5"
+    }
+  ]
+}

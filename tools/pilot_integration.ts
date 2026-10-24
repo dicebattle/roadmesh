@@ -29,6 +29,11 @@ import {
   requireNodeCases,
   NODE_CASE_IDS,
 } from "./node_checks.js";
+import {
+  runGatewayChecks,
+  requireGatewayCases,
+  GATEWAY_CASE_IDS,
+} from "./gateway_checks.js";
 import type { SimulationAssertion } from "./vehicle_simulator.js";
 import {
   renderSimulationReport,
@@ -317,6 +322,57 @@ export async function runPilotIntegration(
       throw new Error(
         "P09 whole case inventory mismatch / P09 전체 검사 목록 불일치",
       );
+    if (
+      Number(data.assertions.length) !== 270 ||
+      data.assertions.some((a) => a.status !== "PASS")
+    )
+      throw new Error(
+        "All270 prior fresh cases are required / 기존 새270검사 전체통과 필요",
+      );
+    const gatewayStarted = performance.now();
+    const gateway = await runGatewayChecks(
+      join(output, "seoul/graph"),
+      join(output, "gateway"),
+    );
+    verifyRegionalChild(join(output, "gateway"), verified, data.graph_id);
+    requireGatewayCases(gateway.assertions);
+    data.gateway = {
+      ...gateway.gateway,
+      routes: gateway.gateway.routes.map((r) => ({
+        ...r,
+        evidence_path: "gateway/" + r.evidence_path,
+      })),
+      events: gateway.gateway.events.map((e) => ({
+        ...e,
+        evidence_path: "gateway/" + e.evidence_path,
+      })),
+      cases: gateway.gateway.cases.map((c) => ({
+        ...c,
+        evidence_path: "gateway/" + c.evidence_path,
+      })),
+      evidence: gateway.gateway.evidence.map((e) => ({
+        ...e,
+        path: "gateway/" + e.path,
+      })),
+    };
+    data.stages.push({
+      id: "p10",
+      name_en: "Version-aware route gateway and bounded failover",
+      name_ko: "버전확인 경로중계·제한된 전환",
+      status: "PASS",
+      evidence_path: "gateway/manifest.json",
+      duration_ms: performance.now() - gatewayStarted,
+    });
+    data.assertions.push(
+      ...gateway.assertions.map((a) => ({
+        ...a,
+        evidence_path: "gateway/" + a.evidence_path,
+      })),
+    );
+    if (Number(data.assertions.length) !== 270 + GATEWAY_CASE_IDS.length)
+      throw new Error(
+        "P10 whole case inventory mismatch / P10 전체검사목록 불일치",
+      );
     data.summary.assertions_passed = data.assertions.filter(
       (a) => a.status === "PASS",
     ).length;
@@ -325,11 +381,11 @@ export async function runPilotIntegration(
       ...item,
       message_en: item.message_en.replace(
         "P05–P14 remain incomplete",
-        "P10–P14 remain incomplete",
+        "P11–P14 remain incomplete",
       ),
       message_ko: item.message_ko.replace(
         "P05~P14는 미완료",
-        "P10~P14는 미완료",
+        "P11~P14는 미완료",
       ),
     }));
     data.generated_at_utc = new Date().toISOString();
@@ -360,7 +416,7 @@ export async function runPilotIntegration(
     );
     writeFileSync(
       join(output, "summary.md"),
-      "# Whole implemented-system pilot / 구현된 전체 파일럿\n\nPASS: fresh tiny → Seoul → P05 durable ingestion, interruption/recovery and deletion read-back → P06 unsigned synthetic aggregation → P07 signed HTTP publication and durable verification → P08 accepted immutable traffic files, real routing and exact expiry → P09 persistent native two-node routing, draining and automatic expiry.\n통과: 새 tiny→서울→P05영속수집·실제중단/복구·삭제재조회→P06서명전합성집계→P07서명HTTP게시·영속검증→P08수용불변교통파일·실제경로·정확한만료→P09지속엔진두노드경로·요청마무리·자동만료.\n\nP10–P14 remain incomplete; no production authentication or real driver traces.\nP10~P14는 미완료이며 운영인증·실주행자료가 아닙니다.\n",
+      "# Whole implemented-system pilot / 구현된 전체 파일럿\n\nPASS: fresh tiny → Seoul → P05 durable ingestion, interruption/recovery and deletion read-back → P06 unsigned synthetic aggregation → P07 signed HTTP publication and durable verification → P08 accepted immutable traffic files, real routing and exact expiry → P09 persistent native two-node routing, draining and automatic expiry → P10 version-aware route gateway and bounded native failover.\n통과: 새 tiny→서울→P05영속수집·실제중단/복구·삭제재조회→P06서명전합성집계→P07서명HTTP게시·영속검증→P08수용불변교통파일·실제경로·정확한만료→P09지속엔진두노드경로·요청마무리·자동만료→P10버전확인경로중계·제한된지속엔진전환.\n\nP11–P14 remain incomplete; no production authentication or real driver traces.\nP11~P14는 미완료이며 운영인증·실주행자료가 아닙니다.\n",
     );
   } catch (error) {
     failure = error;
@@ -398,6 +454,7 @@ export async function runPilotIntegration(
     "publication/manifest.json",
     "traffic/manifest.json",
     "nodes/manifest.json",
+    "gateway/manifest.json",
     "lifecycle/cleanup.json",
     "report-data.json",
     "report.html",

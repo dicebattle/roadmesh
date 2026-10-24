@@ -1,0 +1,9 @@
+{
+  "status": "EXPECTED_REJECTION",
+  "error": "Error: offset_ms: duplicate or decreasing vehicle timestamp / 차량 시각이 중복되거나 역순입니다",
+  "graph_directory": "/Users/dice/Documents/routelens-p10/data/p10-worker-main-20261025/seoul/tiny/graph",
+  "output_directory": "/Users/dice/Documents/routelens-p10/data/p10-worker-main-20261025/seoul/tiny/matching/rejected-reversed",
+  "completion_absent": true,
+  "message_en": "Invalid input rejection, not successful matching.",
+  "message_ko": "잘못된 입력 거부이며 성공한 매칭이 아닙니다."
+}

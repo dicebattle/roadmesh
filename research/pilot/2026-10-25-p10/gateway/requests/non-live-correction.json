@@ -1,0 +1,64 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "non-live-correction",
+    "origin": {
+      "longitude": 127.03739724982245,
+      "latitude": 37.50083690018144
+    },
+    "destination": {
+      "longitude": 127.0375277498224,
+      "latitude": 37.500877100181434
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live"
+  },
+  "status": 200,
+  "headers": {
+    "cache-control": "no-store",
+    "connection": "keep-alive",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sat, 24 Oct 2026 21:12:32 GMT",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked"
+  },
+  "body": {
+    "request_id": "non-live-correction",
+    "request_sha256": "a07677d96c5169745da148877a504878b3af779129e524d3425a65cc2c4dfe90",
+    "graph_id": "81996661573ee3265fb1633728526f9f54822e7a8aa1db38ca1a6d95bb855f15",
+    "snapshot_id": "768767119f55f7fd77e325510aeef4de8b3d86c11aa0b7b330089d9172363030",
+    "sequence": 3,
+    "generation_id": "daeb36ddb38615b4d42e0099aa0460e9d7f376354561bd60050d9d94a7221ece",
+    "traffic_sha256": "cba3392933e785f0fe7e68fd39e024cfbfb3c2fb9f7346161fcc7fc1acc2fc04",
+    "engine_version": "3.9.1",
+    "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "costing_config_id": "valhalla-current-v1",
+    "node_id": "seoul-gateway-node-a",
+    "traffic_mode": "BASE_ONLY",
+    "distance_m": 12,
+    "duration_s": 0.78,
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.037397,
+          37.500837
+        ],
+        [
+          127.037528,
+          37.500877
+        ]
+      ]
+    },
+    "live_coverage_ratio": 0,
+    "warnings": [
+      {
+        "code": "NO_ROUTE_LIVE_COVERAGE",
+        "message_en": "This route has no accepted live edge coverage; default speeds apply.",
+        "message_ko": "이 경로에 수용된 실시간 구간이 없어 기본 속도를 적용합니다."
+      }
+    ],
+    "calculated_at": "2026-10-24T21:12:32.828Z"
+  },
+  "elapsed_ms": 1517.0720000000438
+}

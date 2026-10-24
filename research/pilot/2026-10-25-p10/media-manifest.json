@@ -1,0 +1,66 @@
+{
+  "source_commit": "20565218895a7cf50322e9587f2fe6b0bb412b03",
+  "implementation_sha256": "bebae7f5f5e7c8efed69627735ef82a2749570d1bba66937c3507dfe990dc538",
+  "report_path": "research/pilot/2026-10-25-p10/report.html",
+  "report_sha256": "f35d7c5ca75900fb0e632d61e0dfa2ed67ec21b2e99e6db57a58a40969e6fe38",
+  "capture_method": "Actual Chrome report playback,59.75 seconds at1280x720/20fps; full MP4/GIF conversion. / 실제 보고서 화면59.75초·1280x720·20fps 녹화와 전체MP4/GIF변환.",
+  "raw_capture_sha256": "85f6494443dddc06b72b502ae849347af8a85e8f27a8eb7d3043ee3f868071b0",
+  "assets": [
+    {
+      "path": "docs/media/demo.mp4",
+      "sha256": "804c5a9a59a67d3a43608095154ab0299b6f753283ca9ea1cbbde069c283e61c"
+    },
+    {
+      "path": "docs/media/demo.gif",
+      "sha256": "ccd337662930dfc6fac4cf9d4e6683129fb7b1b68cb042b1c7835e3cf292f77c"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10/report-data.json",
+      "sha256": "20a12ef24c4dfaf62f6b9ea86fab41d2a95b8a7673aa413cac8338a782943259"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10/frames/checks-ko.png",
+      "sha256": "2613751d1ea0512c330d2eb6579d67e801856667bead7d2a6faa9183dc6fc93b"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10/frames/deadline-en.png",
+      "sha256": "1652d6a37a1b95b62f0a63b91e1ba44bf20b1ff50e8c4c9d1d96e14bd1fba0ee"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10/frames/detour-en.png",
+      "sha256": "655acaf054512f90ed8f192fbdd64ee65a00491945cda2ae49bd9ef0f176331e"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10/frames/expired-en.png",
+      "sha256": "5168fad07d898e0e0e81b6e4fabb631d75d774b1e18a3fc7168ef33f4427da42"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10/frames/expired-ko.png",
+      "sha256": "04e2672110266c8c2c19f2270e33459a00b7ac3bede55f2cb99cc182ac4dbdac"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10/frames/failover-en.png",
+      "sha256": "f61392d5709a51d9d6abf2adc3949eb9a3da1869c64c13146c79d5e47e8ae3ce"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10/frames/live-en.png",
+      "sha256": "ba0939dded7afe1c891e7f7e9a9a18aca40821ecfa70820c922db27928c7e97d"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10/frames/live-ko.png",
+      "sha256": "b6bb192a4f40b179dedffd3f95d96ac4625bd9005345b4c444f38bb63fc4037c"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10/frames/map.png",
+      "sha256": "9c6d38b0ec5b652ea605e0cce340fa5a753218c1695c5f4f995e0cad9f77265f"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10/frames/overview-en.png",
+      "sha256": "0740c5c19ac9f078593c23e8208f5f1d5cc3dbfd9d2ae70df6d60d74e57e7dcd"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10/frames/version-rejection-en.png",
+      "sha256": "7db247c952963bdf1cc2789d93fbab5081717290b2f65fbc96de94c61181ee1a"
+    }
+  ]
+}

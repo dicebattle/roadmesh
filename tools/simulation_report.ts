@@ -1,3 +1,4 @@
+import type { GatewayReport } from "./gateway_checks.js";
 import type { NodeReport } from "./node_checks.js";
 import type { TrafficReport } from "./traffic_checks.js";
 import type { AggregationDraft } from "./aggregation_types.js";
@@ -133,6 +134,7 @@ export interface SimulationReportData {
     cleanup_verified: boolean;
   };
   nodes?: NodeReport;
+  gateway?: GatewayReport;
   traffic?: TrafficReport;
   publication?: {
     publisher_id: string;
@@ -404,14 +406,16 @@ export function renderSimulationReport(data: SimulationReportData): string {
       gap: 6px;
       align-items: center;
     }
-    #nodes-section > label {
+    #nodes-section > label,
+    #gateway-section > label {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
       width: 100%;
       max-width: 640px;
       min-width: 0;
     }
-    #nodes-section > label > select {
+    #nodes-section > label > select,
+    #gateway-section > label > select {
       width: 100%;
       max-width: 100%;
       min-width: 0;
@@ -638,6 +642,14 @@ export function renderSimulationReport(data: SimulationReportData): string {
         data-ko="기존9대는 별도회귀 재생이며 P06은 자체짧은여행을 사용합니다. 기록된 후보는 재생시각으로 바뀌지 않습니다. 이동하는 PARKED6번째는 명시수집상태 검사이며 자동주차탐지가 아닙니다. LIVE는 합성후보 상태입니다. P06 후보는 서명 전이며 후속 P07 증거는 따로 표시합니다. 이 재생은 P06 후보를 경로에 적용하지 않으며, 수용한 P08 경로 반영 근거는 별도로 표시합니다."
       ></p>
       <div id="aggregate-evidence"></div>
+    </section>
+    <section id="gateway-section" class="checks" hidden>
+      <h2 data-en="P10 recorded version-aware route gateway" data-ko="P10 기록된 버전확인 경로 중계"></h2>
+      <p data-en="Evidence playback from 15 fresh synthetic trips on three actual Seoul Teheran-ro edges. A separate durable gateway consumer selects the accepted version and routes through two approved persistent native nodes. Public route coverage is calculated for the returned route; an accepted LIVE snapshot can still produce BASE_ONLY when the route avoids all live edges. Test-proxy faults are explicitly separate from successful native routes. This is not a complete navigation client, production authentication, hostile-node integrity or real-driving accuracy proof." data-ko="실제 서울 테헤란로3개구간의 새 합성15여행 증거 재생입니다. 별도 영속 중계 수신자가 수용 버전을 정하고 승인한 두 지속엔진 노드에 경로를 요청합니다. 공개 적용률은 반환 경로 기준이며 LIVE자료를 수용해도 모든 대상구간을 우회하면 BASE_ONLY입니다. 시험대리서버 장애와 실제 지속엔진 성공 경로는 구분합니다. 완성 내비게이션·운영 인증·악성 노드 무결성·실주행 정확도 근거가 아닙니다."></p>
+      <label><span data-en="Recorded public gateway route" data-ko="기록된 공개 중계 경로"></span><select id="gateway-route"></select></label>
+      <div id="gateway-route-map"></div><div id="gateway-route-detail"></div>
+      <div id="gateway-evidence"></div>
+      <details><summary data-en="Gateway checks, attempts and private native originals" data-ko="중계검사·시도·별도지속엔진원문"></summary><div id="gateway-cases"></div></details>
     </section>
     <section id="nodes-section" class="checks" hidden>
       <h2 data-en="P09 recorded two-node native routing" data-ko="P09 기록된 두 노드 지속 엔진 경로"></h2>
@@ -1034,6 +1046,14 @@ export function renderSimulationReport(data: SimulationReportData): string {
       );
       const v = $("vehicle").options[0];
       if (v) v.textContent = lang === "en" ? "All vehicles" : "전체 차량";
+      $("gateway-section").hidden=!data.gateway;
+      if(data.gateway){
+        const g=data.gateway,selector=$("gateway-route"),selected=selector.value;selector.replaceChildren();
+        g.routes.forEach((r,index)=>{const option=node("option",r.label+" · "+r.response.traffic_mode+" · "+r.response.node_id,selector);option.value=String(index);});selector.value=selected||"0";drawGatewayRoute();
+        const evidenceRoot=$("gateway-evidence");evidenceRoot.replaceChildren();node("p",g.assertions_passed+"/"+g.assertions_total+(lang==="en"?" checks; owned cleanup: ":"검사 · 소유자원 정리: ")+g.cleanup_verified,evidenceRoot);
+        g.evidence.forEach(e=>{const row=node("p",e["name_"+lang]+" · ",evidenceRoot);evidence(e.path,row);});
+        const cases=$("gateway-cases");cases.replaceChildren();g.cases.forEach(c=>{const row=node("p",c.status+" · "+c["message_"+lang]+" · ",cases);evidence(c.evidence_path,row);});
+      }
       $("nodes-section").hidden = !data.nodes;
       if(data.nodes){
         const n=data.nodes, selector=$("node-event"),selectedEvent=selector.value,routeSelector=$("node-route"),selectedRoute=routeSelector.value;
@@ -1537,6 +1557,18 @@ export function renderSimulationReport(data: SimulationReportData): string {
           : "현재까지 예정된 누락: ") + omissions;
       $("time").value = String(time);
     }
+    function drawGatewayRoute(){
+      if(!data.gateway)return;const r=data.gateway.routes[Number($("gateway-route").value)],map=$("gateway-route-map"),detail=$("gateway-route-detail");map.replaceChildren();detail.replaceChildren();if(!r)return;
+      const body=r.response,coords=body.geometry.coordinates,lons=coords.map(c=>c[0]),lats=coords.map(c=>c[1]);
+      if(coords.length){const minX=Math.min(...lons),maxX=Math.max(...lons),minY=Math.min(...lats),maxY=Math.max(...lats),cosine=Math.cos((minY+maxY)/2*Math.PI/180),scale=Math.min(740/Math.max((maxX-minX)*cosine,1e-9),240/Math.max(maxY-minY,1e-9));const view=document.createElementNS(ns,"svg");view.setAttribute("viewBox","0 0 800 300");view.setAttribute("role","img");view.setAttribute("aria-label",lang==="en"?"Recorded public gateway route":"기록된 공개 중계 경로");view.style.width="100%";view.style.maxHeight="360px";view.style.background="#F5F7F9";const line=(coordinates,color,width)=>{const p=document.createElementNS(ns,"polyline");p.setAttribute("points",coordinates.map(c=>(400+(c[0]-(minX+maxX)/2)*cosine*scale)+","+(150-(c[1]-(minY+maxY)/2)*scale)).join(" "));p.setAttribute("fill","none");p.setAttribute("stroke",color);p.setAttribute("stroke-width",width);view.append(p);};(data.context_roads||[]).filter(road=>road.coordinates.some(c=>c[0]>=minX&&c[0]<=maxX&&c[1]>=minY&&c[1]<=maxY)).forEach(road=>line(road.coordinates,"#D8DFE6","1"));line(coords,body.traffic_mode==="LIVE_MIXED"?"#CC481D":"#18816B","5");map.append(view);}
+      node("h3",r.label+" · "+body.traffic_mode,detail);node("p",body.distance_m.toFixed(1)+" m · "+body.duration_s.toFixed(6)+" s · "+(lang==="en"?"route live coverage: ":"경로 실시간 적용률: ")+(body.live_coverage_ratio*100).toFixed(2)+"%",detail);
+      node("p",(lang==="en"?"Public node / sequence: ":"공개 노드 / 순번: ")+body.node_id+" / "+(body.sequence??"—"),detail);
+      node("p",(lang==="en"?"Snapshot / generation: ":"스냅샷 / 파일세대: ")+(body.snapshot_id??"—")+" / "+body.generation_id,detail).style.overflowWrap="anywhere";
+      node("p",(lang==="en"?"Request hash: ":"요청 해시: ")+body.request_sha256,detail).style.overflowWrap="anywhere";
+      body.warnings.forEach(w=>node("p",w.code+" · "+w["message_"+lang],detail));
+      node("p",lang==="en"?"The linked evidence separately retains original native replies and gateway attempts; these are not public API fields.":"연결된 근거에 지속엔진 원응답·중계 시도를 별도로 보존하며 공개API필드가 아닙니다.",detail);evidence(r.evidence_path,detail);
+    }
+    $("gateway-route").onchange=drawGatewayRoute;
     let nodeReplayTimer=null;
     function drawNodeEvent(){
       if(!data.nodes)return;

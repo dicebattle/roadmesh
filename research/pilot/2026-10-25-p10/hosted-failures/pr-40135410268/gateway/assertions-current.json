@@ -1,0 +1,2711 @@
+[
+  {
+    "assertion_id": "p10-fresh-source",
+    "status": "PASS",
+    "message_en": "Fresh fifteen Seoul trips pass actual HTTP, P05 matching and P06 fixed criteria.",
+    "message_ko": "새 서울15여행이 실제HTTP·P05매칭·P06고정기준을 통과합니다.",
+    "expected": true,
+    "actual": {
+      "trips": 15,
+      "targets": 3
+    },
+    "evidence_path": "source/candidate.json"
+  },
+  {
+    "assertion_id": "p10-authenticated-api",
+    "status": "PASS",
+    "message_en": "The public endpoint requires its private bearer token.",
+    "message_ko": "공개 경로 접점이 비공개 인증값을 요구합니다.",
+    "expected": true,
+    "actual": {
+      "status": 401,
+      "headers": {
+        "cache-control": "no-store",
+        "connection": "keep-alive",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sat, 24 Oct 2026 21:56:29 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "body": {
+        "code": "ERROR",
+        "reason": "AUTH_REQUIRED",
+        "message_en": "The gateway cannot return a current verified route for this request.",
+        "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+      },
+      "elapsed_ms": 5.929588999948464
+    },
+    "evidence_path": "requests/unauthorized.json"
+  },
+  {
+    "assertion_id": "p10-invalid-input",
+    "status": "PASS",
+    "message_en": "Unknown fields, coordinates and unsupported schema/profile are rejected.",
+    "message_ko": "알수없는 필드·좌표·미지원규격/이동수단을 거부합니다.",
+    "expected": true,
+    "actual": [
+      {
+        "status": 422,
+        "headers": {
+          "cache-control": "no-store",
+          "connection": "keep-alive",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Sat, 24 Oct 2026 21:56:29 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "body": {
+          "code": "ERROR",
+          "reason": "INVALID_INPUT",
+          "message_en": "The gateway cannot return a current verified route for this request.",
+          "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+        },
+        "elapsed_ms": 4.918233000091277
+      },
+      {
+        "status": 422,
+        "headers": {
+          "cache-control": "no-store",
+          "connection": "keep-alive",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Sat, 24 Oct 2026 21:56:29 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "body": {
+          "code": "ERROR",
+          "reason": "INVALID_INPUT",
+          "message_en": "The gateway cannot return a current verified route for this request.",
+          "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+        },
+        "elapsed_ms": 1.7863029999425635
+      },
+      {
+        "status": 422,
+        "headers": {
+          "cache-control": "no-store",
+          "connection": "keep-alive",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Sat, 24 Oct 2026 21:56:29 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "body": {
+          "code": "ERROR",
+          "reason": "INVALID_INPUT",
+          "message_en": "The gateway cannot return a current verified route for this request.",
+          "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+        },
+        "elapsed_ms": 1.4132540000136942
+      },
+      {
+        "status": 422,
+        "headers": {
+          "cache-control": "no-store",
+          "connection": "keep-alive",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Sat, 24 Oct 2026 21:56:29 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "body": {
+          "code": "ERROR",
+          "reason": "INVALID_INPUT",
+          "message_en": "The gateway cannot return a current verified route for this request.",
+          "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+        },
+        "elapsed_ms": 1.5747470000060275
+      }
+    ],
+    "evidence_path": "requests/invalid-unknown.json"
+  },
+  {
+    "assertion_id": "p10-body-limit",
+    "status": "PASS",
+    "message_en": "The public body limit rejects oversized input.",
+    "message_ko": "공개 본문 크기 제한이 초과 입력을 거부합니다.",
+    "expected": true,
+    "actual": {
+      "oversized": {
+        "status": 422,
+        "headers": {
+          "cache-control": "no-store",
+          "connection": "keep-alive",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Sat, 24 Oct 2026 21:56:29 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "body": {
+          "code": "ERROR",
+          "reason": "INVALID_INPUT",
+          "message_en": "The gateway cannot return a current verified route for this request.",
+          "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+        },
+        "elapsed_ms": 2.1590899999719113
+      },
+      "chunked": {
+        "status": 422,
+        "headers": {
+          "content-type": "application/json; charset=utf-8",
+          "cache-control": "no-store",
+          "date": "Sat, 24 Oct 2026 21:56:29 GMT",
+          "connection": "keep-alive",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "body": {
+          "code": "ERROR",
+          "reason": "INVALID_INPUT",
+          "message_en": "The gateway cannot return a current verified route for this request.",
+          "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+        },
+        "elapsed_ms": 4.826360999955796
+      }
+    },
+    "evidence_path": "requests/body-limit-chunked.json"
+  },
+  {
+    "assertion_id": "p10-unsupported-policy",
+    "status": "PASS",
+    "message_en": "Explicit base_only is refused rather than silently computing live traffic.",
+    "message_ko": "명시 base_only를 몰래 실시간 계산하지 않고 거부합니다.",
+    "expected": true,
+    "actual": {
+      "status": 422,
+      "headers": {
+        "cache-control": "no-store",
+        "connection": "keep-alive",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sat, 24 Oct 2026 21:56:29 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "body": {
+        "code": "ERROR",
+        "reason": "UNSUPPORTED_POLICY",
+        "message_en": "The gateway cannot return a current verified route for this request.",
+        "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+      },
+      "elapsed_ms": 1.9146229999605566
+    },
+    "evidence_path": "requests/unsupported-policy.json"
+  },
+  {
+    "assertion_id": "p10-configured-origins",
+    "status": "PASS",
+    "message_en": "Only distinct configured loopback node origins are admitted.",
+    "message_ko": "서로 다른 설정된 로컬 노드 주소만 허용합니다.",
+    "expected": true,
+    "actual": [
+      {
+        "exit": {
+          "code": 1,
+          "signal": null
+        },
+        "ready": false,
+        "messages": [],
+        "diagnostics": "Gateway failed; inspect owned evidence / 중계 실패: 소유 근거를 확인하세요\n"
+      },
+      {
+        "exit": {
+          "code": 1,
+          "signal": null
+        },
+        "ready": false,
+        "messages": [],
+        "diagnostics": "Gateway failed; inspect owned evidence / 중계 실패: 소유 근거를 확인하세요\n"
+      }
+    ],
+    "evidence_path": "negative/configured-origins.json"
+  },
+  {
+    "assertion_id": "p10-baseline",
+    "status": "PASS",
+    "message_en": "No accepted traffic yields a real native baseline with zero live coverage.",
+    "message_ko": "수용 교통정보가 없으면 실제 지속 엔진 기본 경로와 적용률0을 반환합니다.",
+    "expected": true,
+    "actual": {
+      "request_id": "baseline",
+      "request_sha256": "39543a39520a64cb4abbcf43640db8c7b64b891ba9a287b16d865271c2e2e7eb",
+      "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+      "snapshot_id": null,
+      "sequence": null,
+      "generation_id": "9b2b8a1863fd340d00067e1e23145191b692985f926b1dc11b4c57e7a107dbec",
+      "traffic_sha256": "60c448c4c82139f7c06be7b39c9a29ddd6da2037b82850812cb95a1277608078",
+      "engine_version": "3.9.1",
+      "image_id": "sha256:f1646f2fe251128253b9dee59190723fd1efbbc568867027a09bc6052d52f393",
+      "costing_config_id": "valhalla-current-v1",
+      "node_id": "seoul-gateway-node-a",
+      "traffic_mode": "BASE_ONLY",
+      "distance_m": 2119,
+      "duration_s": 147.404,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.028976,
+            37.498447
+          ],
+          [
+            127.028495,
+            37.498295
+          ],
+          [
+            127.028253,
+            37.49822
+          ],
+          [
+            127.028245,
+            37.498191
+          ],
+          [
+            127.028235,
+            37.498179
+          ],
+          [
+            127.028207,
+            37.49817
+          ],
+          [
+            127.027955,
+            37.498097
+          ],
+          [
+            127.02794,
+            37.498087
+          ],
+          [
+            127.027925,
+            37.49807
+          ],
+          [
+            127.02792,
+            37.498047
+          ],
+          [
+            127.027932,
+            37.498029
+          ],
+          [
+            127.027944,
+            37.498021
+          ],
+          [
+            127.027965,
+            37.498016
+          ],
+          [
+            127.028008,
+            37.498009
+          ],
+          [
+            127.028307,
+            37.4981
+          ],
+          [
+            127.028439,
+            37.498141
+          ],
+          [
+            127.02872,
+            37.498225
+          ],
+          [
+            127.029417,
+            37.498437
+          ],
+          [
+            127.03025,
+            37.498687
+          ],
+          [
+            127.030896,
+            37.498883
+          ],
+          [
+            127.031073,
+            37.498934
+          ],
+          [
+            127.031296,
+            37.499003
+          ],
+          [
+            127.032002,
+            37.499209
+          ],
+          [
+            127.032827,
+            37.499465
+          ],
+          [
+            127.033126,
+            37.499557
+          ],
+          [
+            127.033998,
+            37.499817
+          ],
+          [
+            127.035532,
+            37.500276
+          ],
+          [
+            127.035699,
+            37.500325
+          ],
+          [
+            127.035937,
+            37.500399
+          ],
+          [
+            127.036339,
+            37.500517
+          ],
+          [
+            127.036737,
+            37.500635
+          ],
+          [
+            127.036793,
+            37.500652
+          ],
+          [
+            127.036994,
+            37.500712
+          ],
+          [
+            127.037123,
+            37.500752
+          ],
+          [
+            127.037245,
+            37.50079
+          ],
+          [
+            127.03768,
+            37.500924
+          ],
+          [
+            127.038474,
+            37.50117
+          ],
+          [
+            127.039198,
+            37.501397
+          ],
+          [
+            127.039882,
+            37.501608
+          ],
+          [
+            127.040038,
+            37.501654
+          ],
+          [
+            127.040535,
+            37.501799
+          ],
+          [
+            127.041248,
+            37.502039
+          ],
+          [
+            127.042344,
+            37.502361
+          ],
+          [
+            127.042421,
+            37.502383
+          ],
+          [
+            127.042552,
+            37.502422
+          ],
+          [
+            127.042633,
+            37.502446
+          ],
+          [
+            127.042687,
+            37.502463
+          ],
+          [
+            127.042798,
+            37.502499
+          ],
+          [
+            127.042883,
+            37.502523
+          ],
+          [
+            127.042992,
+            37.502555
+          ],
+          [
+            127.043101,
+            37.502586
+          ],
+          [
+            127.043433,
+            37.502693
+          ],
+          [
+            127.04442,
+            37.502996
+          ],
+          [
+            127.045717,
+            37.503407
+          ],
+          [
+            127.047284,
+            37.503854
+          ],
+          [
+            127.049065,
+            37.504404
+          ],
+          [
+            127.049019,
+            37.504505
+          ]
+        ]
+      },
+      "live_coverage_ratio": 0,
+      "warnings": [
+        {
+          "code": "NO_USABLE_SNAPSHOT",
+          "message_en": "No usable snapshot is accepted; default speeds apply.",
+          "message_ko": "사용 가능한 수용 자료가 없어 기본 속도를 적용합니다."
+        }
+      ],
+      "calculated_at": "2026-10-24T21:56:31.920Z"
+    },
+    "evidence_path": "requests/baseline.json"
+  },
+  {
+    "assertion_id": "p10-independent-consumer",
+    "status": "PASS",
+    "message_en": "The gateway and both nodes have distinct persisted consumers.",
+    "message_ko": "중계와 두 노드는 서로 다른 영속 수신자를 가집니다.",
+    "expected": true,
+    "actual": [
+      {
+        "namespace": "p09-ea8a0be045c1448c",
+        "consumer_id": "p10-gateway",
+        "publisher_id": "seoul-p09-publisher",
+        "region_id": "seoul-pilot-corridors-v1",
+        "high_water": "1",
+        "last_snapshot_id": "41c4c3743721d50bd2e5b9b2a723e34cc1230cad5f9eb3b0ec2b1b6e6da5b15b",
+        "artifact_bytes": 10469
+      },
+      {
+        "namespace": "p09-ea8a0be045c1448c",
+        "consumer_id": "p10-node-a",
+        "publisher_id": "seoul-p09-publisher",
+        "region_id": "seoul-pilot-corridors-v1",
+        "high_water": "1",
+        "last_snapshot_id": "41c4c3743721d50bd2e5b9b2a723e34cc1230cad5f9eb3b0ec2b1b6e6da5b15b",
+        "artifact_bytes": 10469
+      },
+      {
+        "namespace": "p09-ea8a0be045c1448c",
+        "consumer_id": "p10-node-b",
+        "publisher_id": "seoul-p09-publisher",
+        "region_id": "seoul-pilot-corridors-v1",
+        "high_water": "1",
+        "last_snapshot_id": "41c4c3743721d50bd2e5b9b2a723e34cc1230cad5f9eb3b0ec2b1b6e6da5b15b",
+        "artifact_bytes": 10469
+      }
+    ],
+    "evidence_path": "readbacks/sql-live.json"
+  },
+  {
+    "assertion_id": "p10-live-primary",
+    "status": "PASS",
+    "message_en": "The first matching actual node uses accepted live traffic on the preselected partial edge.",
+    "message_ko": "첫 적합 실제 노드가 미리 선정한 부분구간의 수용 교통정보를 사용합니다.",
+    "expected": true,
+    "actual": {
+      "request_id": "live-primary",
+      "request_sha256": "97b94cb3bf75f84d3c09369604ae93f09b01036c58107acdb57494115e5d13d3",
+      "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+      "snapshot_id": "41c4c3743721d50bd2e5b9b2a723e34cc1230cad5f9eb3b0ec2b1b6e6da5b15b",
+      "sequence": 1,
+      "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871",
+      "traffic_sha256": "e3275240890fa85d8bacb46cee987f904d2ded30f9f5ce023f38c8a9cffcd459",
+      "engine_version": "3.9.1",
+      "image_id": "sha256:f1646f2fe251128253b9dee59190723fd1efbbc568867027a09bc6052d52f393",
+      "costing_config_id": "valhalla-current-v1",
+      "node_id": "seoul-gateway-node-a",
+      "traffic_mode": "LIVE_MIXED",
+      "distance_m": 12,
+      "duration_s": 22.254,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.037397,
+            37.500837
+          ],
+          [
+            127.037528,
+            37.500877
+          ]
+        ]
+      },
+      "live_coverage_ratio": 1,
+      "warnings": [],
+      "calculated_at": "2026-10-24T21:56:37.767Z"
+    },
+    "evidence_path": "requests/live-primary.json"
+  },
+  {
+    "assertion_id": "p10-route-local-coverage",
+    "status": "PASS",
+    "message_en": "Coverage belongs to the returned partial route; the longer detour has zero accepted live-edge overlap.",
+    "message_ko": "적용률은 반환한 부분 경로 기준이며 긴 우회 경로의 수용 구간 교집합은0입니다.",
+    "expected": true,
+    "actual": {
+      "live": {
+        "request_id": "live-primary",
+        "request_sha256": "97b94cb3bf75f84d3c09369604ae93f09b01036c58107acdb57494115e5d13d3",
+        "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+        "snapshot_id": "41c4c3743721d50bd2e5b9b2a723e34cc1230cad5f9eb3b0ec2b1b6e6da5b15b",
+        "sequence": 1,
+        "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871",
+        "traffic_sha256": "e3275240890fa85d8bacb46cee987f904d2ded30f9f5ce023f38c8a9cffcd459",
+        "engine_version": "3.9.1",
+        "image_id": "sha256:f1646f2fe251128253b9dee59190723fd1efbbc568867027a09bc6052d52f393",
+        "costing_config_id": "valhalla-current-v1",
+        "node_id": "seoul-gateway-node-a",
+        "traffic_mode": "LIVE_MIXED",
+        "distance_m": 12,
+        "duration_s": 22.254,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              127.037397,
+              37.500837
+            ],
+            [
+              127.037528,
+              37.500877
+            ]
+          ]
+        },
+        "live_coverage_ratio": 1,
+        "warnings": [],
+        "calculated_at": "2026-10-24T21:56:37.767Z"
+      },
+      "detour": {
+        "request_id": "live-detour",
+        "request_sha256": "cd0ae6daa56a7cb530a2b9b5f0de76818645a6cca6a15d099aea097a7404c7a5",
+        "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+        "snapshot_id": "41c4c3743721d50bd2e5b9b2a723e34cc1230cad5f9eb3b0ec2b1b6e6da5b15b",
+        "sequence": 1,
+        "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871",
+        "traffic_sha256": "e3275240890fa85d8bacb46cee987f904d2ded30f9f5ce023f38c8a9cffcd459",
+        "engine_version": "3.9.1",
+        "image_id": "sha256:f1646f2fe251128253b9dee59190723fd1efbbc568867027a09bc6052d52f393",
+        "costing_config_id": "valhalla-current-v1",
+        "node_id": "seoul-gateway-node-a",
+        "traffic_mode": "BASE_ONLY",
+        "distance_m": 2412,
+        "duration_s": 184.731,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              127.028976,
+              37.498447
+            ],
+            [
+              127.028495,
+              37.498295
+            ],
+            [
+              127.028253,
+              37.49822
+            ],
+            [
+              127.028245,
+              37.498191
+            ],
+            [
+              127.028235,
+              37.498179
+            ],
+            [
+              127.028207,
+              37.49817
+            ],
+            [
+              127.027955,
+              37.498097
+            ],
+            [
+              127.02794,
+              37.498087
+            ],
+            [
+              127.027925,
+              37.49807
+            ],
+            [
+              127.02792,
+              37.498047
+            ],
+            [
+              127.027932,
+              37.498029
+            ],
+            [
+              127.027944,
+              37.498021
+            ],
+            [
+              127.027965,
+              37.498016
+            ],
+            [
+              127.028008,
+              37.498009
+            ],
+            [
+              127.028307,
+              37.4981
+            ],
+            [
+              127.028439,
+              37.498141
+            ],
+            [
+              127.02872,
+              37.498225
+            ],
+            [
+              127.029417,
+              37.498437
+            ],
+            [
+              127.03025,
+              37.498687
+            ],
+            [
+              127.030896,
+              37.498883
+            ],
+            [
+              127.031073,
+              37.498934
+            ],
+            [
+              127.031296,
+              37.499003
+            ],
+            [
+              127.032002,
+              37.499209
+            ],
+            [
+              127.032827,
+              37.499465
+            ],
+            [
+              127.033126,
+              37.499557
+            ],
+            [
+              127.033998,
+              37.499817
+            ],
+            [
+              127.035532,
+              37.500276
+            ],
+            [
+              127.035699,
+              37.500325
+            ],
+            [
+              127.035937,
+              37.500399
+            ],
+            [
+              127.036339,
+              37.500517
+            ],
+            [
+              127.036737,
+              37.500635
+            ],
+            [
+              127.036793,
+              37.500652
+            ],
+            [
+              127.036994,
+              37.500712
+            ],
+            [
+              127.037064,
+              37.500559
+            ],
+            [
+              127.037068,
+              37.500551
+            ],
+            [
+              127.037195,
+              37.500276
+            ],
+            [
+              127.037602,
+              37.499396
+            ],
+            [
+              127.038088,
+              37.499542
+            ],
+            [
+              127.038564,
+              37.499685
+            ],
+            [
+              127.038909,
+              37.500047
+            ],
+            [
+              127.03899,
+              37.500133
+            ],
+            [
+              127.038828,
+              37.500501
+            ],
+            [
+              127.038752,
+              37.500642
+            ],
+            [
+              127.038654,
+              37.500837
+            ],
+            [
+              127.038523,
+              37.501079
+            ],
+            [
+              127.038474,
+              37.50117
+            ],
+            [
+              127.039198,
+              37.501397
+            ],
+            [
+              127.039882,
+              37.501608
+            ],
+            [
+              127.040038,
+              37.501654
+            ],
+            [
+              127.040535,
+              37.501799
+            ],
+            [
+              127.041248,
+              37.502039
+            ],
+            [
+              127.042344,
+              37.502361
+            ],
+            [
+              127.042421,
+              37.502383
+            ],
+            [
+              127.042552,
+              37.502422
+            ],
+            [
+              127.042633,
+              37.502446
+            ],
+            [
+              127.042687,
+              37.502463
+            ],
+            [
+              127.042798,
+              37.502499
+            ],
+            [
+              127.042883,
+              37.502523
+            ],
+            [
+              127.042992,
+              37.502555
+            ],
+            [
+              127.043101,
+              37.502586
+            ],
+            [
+              127.043433,
+              37.502693
+            ],
+            [
+              127.04442,
+              37.502996
+            ],
+            [
+              127.045717,
+              37.503407
+            ],
+            [
+              127.047284,
+              37.503854
+            ],
+            [
+              127.049065,
+              37.504404
+            ],
+            [
+              127.049019,
+              37.504505
+            ]
+          ]
+        },
+        "live_coverage_ratio": 0,
+        "warnings": [
+          {
+            "code": "NO_ROUTE_LIVE_COVERAGE",
+            "message_en": "This route has no accepted live edge coverage; default speeds apply.",
+            "message_ko": "이 경로에 수용된 실시간 구간이 없어 기본 속도를 적용합니다."
+          }
+        ],
+        "calculated_at": "2026-10-24T21:56:39.911Z"
+      }
+    },
+    "evidence_path": "requests/live-detour.json"
+  },
+  {
+    "assertion_id": "p10-wrong-generation-rejected",
+    "status": "PASS",
+    "message_en": "Two explicit test-proxy responses are rejected with the exact validation reason: WRONG_GENERATION",
+    "message_ko": "명시한 두 시험 응답을 정확한 검증 사유로 거부합니다.",
+    "expected": true,
+    "actual": {
+      "reply": {
+        "status": 503,
+        "headers": {
+          "cache-control": "no-store",
+          "connection": "keep-alive",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Sat, 24 Oct 2026 21:56:42 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "body": {
+          "code": "ERROR",
+          "reason": "NO_HEALTHY_NODE",
+          "message_en": "The gateway cannot return a current verified route for this request.",
+          "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+        },
+        "elapsed_ms": 2557.4629570000106
+      },
+      "attempts": [
+        {
+          "attempt": 1,
+          "node_id": "seoul-gateway-node-a",
+          "request": {
+            "request_id": "wrong-generation-rejected",
+            "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+            "locations": [
+              {
+                "lon": 127.03739724982245,
+                "lat": 37.50083690018144
+              },
+              {
+                "lon": 127.0375277498224,
+                "lat": 37.500877100181434
+              }
+            ],
+            "expected_generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+          },
+          "deadline_ms": 4000,
+          "status": 200,
+          "body": {
+            "code": "ROUTE",
+            "request_id": "wrong-generation-rejected",
+            "node_id": "seoul-gateway-node-a",
+            "instance_id": "034ec581-476b-47af-8026-044d7e731bc0",
+            "engine_result": {
+              "request": {
+                "locations": [
+                  {
+                    "lon": 127.03739724982245,
+                    "lat": 37.50083690018144
+                  },
+                  {
+                    "lon": 127.0375277498224,
+                    "lat": 37.500877100181434
+                  }
+                ],
+                "costing": "auto",
+                "units": "kilometers",
+                "language": "en-US",
+                "date_time": {
+                  "type": 0
+                }
+              },
+              "route": {
+                "trip": {
+                  "locations": [
+                    {
+                      "type": "break",
+                      "lat": 37.500836,
+                      "lon": 127.037397,
+                      "date_time": "2026-10-24T21:56",
+                      "original_index": 0
+                    },
+                    {
+                      "type": "break",
+                      "lat": 37.500877,
+                      "lon": 127.037527,
+                      "original_index": 1
+                    }
+                  ],
+                  "legs": [
+                    {
+                      "maneuvers": [
+                        {
+                          "type": 1,
+                          "instruction": "Drive east on 테헤란로/90.",
+                          "verbal_succinct_transition_instruction": "Drive east. Then You will arrive at your destination.",
+                          "verbal_pre_transition_instruction": "Drive east on 테헤란로, 90. Then You will arrive at your destination.",
+                          "verbal_post_transition_instruction": "Continue for 10 meters.",
+                          "street_names": [
+                            "테헤란로",
+                            "90"
+                          ],
+                          "bearing_after": 69,
+                          "time": 22.254,
+                          "length": 0.012,
+                          "cost": 27.261,
+                          "begin_shape_index": 0,
+                          "end_shape_index": 1,
+                          "verbal_multi_cue": true,
+                          "travel_mode": "drive",
+                          "travel_type": "car"
+                        },
+                        {
+                          "type": 4,
+                          "instruction": "You have arrived at your destination.",
+                          "verbal_transition_alert_instruction": "You will arrive at your destination.",
+                          "verbal_pre_transition_instruction": "You have arrived at your destination.",
+                          "bearing_before": 69,
+                          "time": 0,
+                          "length": 0,
+                          "cost": 0,
+                          "begin_shape_index": 1,
+                          "end_shape_index": 1,
+                          "travel_mode": "drive",
+                          "travel_type": "car"
+                        }
+                      ],
+                      "summary": {
+                        "has_time_restrictions": false,
+                        "has_toll": false,
+                        "has_highway": false,
+                        "has_ferry": false,
+                        "min_lat": 37.500836,
+                        "min_lon": 127.037397,
+                        "max_lat": 37.500877,
+                        "max_lon": 127.037527,
+                        "time": 22.254,
+                        "length": 0.012,
+                        "cost": 27.261
+                      },
+                      "shape": "iyzofAi|vhqFoAeG"
+                    }
+                  ],
+                  "summary": {
+                    "has_time_restrictions": false,
+                    "has_toll": false,
+                    "has_highway": false,
+                    "has_ferry": false,
+                    "min_lat": 37.500836,
+                    "min_lon": 127.037397,
+                    "max_lat": 37.500877,
+                    "max_lon": 127.037527,
+                    "time": 22.254,
+                    "length": 0.012,
+                    "cost": 27.261
+                  },
+                  "status_message": "Found route between points",
+                  "status": 0,
+                  "units": "kilometers",
+                  "language": "en-US"
+                }
+              },
+              "trace": {
+                "units": "kilometers",
+                "shape": "iyzofAi|vhqFoAeG",
+                "edges": [
+                  {
+                    "id": 1338687642000,
+                    "speed": 2,
+                    "length": 0.012,
+                    "source_percent_along": 0.351,
+                    "target_percent_along": 0.653
+                  }
+                ],
+                "alternate_paths": []
+              }
+            },
+            "provenance": {
+              "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+              "high_water": 1,
+              "sequence": 1,
+              "traffic_snapshot_id": "41c4c3743721d50bd2e5b9b2a723e34cc1230cad5f9eb3b0ec2b1b6e6da5b15b",
+              "compiler_policy": "valhalla-current-v1",
+              "generation_id": "0000000000000000000000000000000000000000000000000000000000000000",
+              "traffic_sha256": "e3275240890fa85d8bacb46cee987f904d2ded30f9f5ce023f38c8a9cffcd459",
+              "traffic_byte_length": 8663040,
+              "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+              "valid_until": "2026-10-24T00:07:00.000Z",
+              "traffic_mode": "LIVE",
+              "engine": {
+                "image_id": "sha256:f1646f2fe251128253b9dee59190723fd1efbbc568867027a09bc6052d52f393",
+                "version": "3.9.1"
+              },
+              "message_en": "Fresh accepted synthetic traffic is applied.",
+              "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+              "activation_epoch": 2,
+              "native_daemon": {
+                "pid": 19,
+                "start_ticks": "98676"
+              }
+            }
+          },
+          "outcome": "REJECTED",
+          "reason": "WRONG_GENERATION",
+          "elapsed_start_ms": 1612.032170999999,
+          "elapsed_end_ms": 2048.1523660000003
+        },
+        {
+          "attempt": 2,
+          "node_id": "seoul-gateway-node-b",
+          "request": {
+            "request_id": "wrong-generation-rejected",
+            "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+            "locations": [
+              {
+                "lon": 127.03739724982245,
+                "lat": 37.50083690018144
+              },
+              {
+                "lon": 127.0375277498224,
+                "lat": 37.500877100181434
+              }
+            ],
+            "expected_generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+          },
+          "deadline_ms": 4000,
+          "status": 200,
+          "body": {
+            "code": "ROUTE",
+            "request_id": "wrong-generation-rejected",
+            "node_id": "seoul-gateway-node-b",
+            "instance_id": "efead4e5-350c-4bf4-b5ca-22646c06c7ce",
+            "engine_result": {
+              "request": {
+                "locations": [
+                  {
+                    "lon": 127.03739724982245,
+                    "lat": 37.50083690018144
+                  },
+                  {
+                    "lon": 127.0375277498224,
+                    "lat": 37.500877100181434
+                  }
+                ],
+                "costing": "auto",
+                "units": "kilometers",
+                "language": "en-US",
+                "date_time": {
+                  "type": 0
+                }
+              },
+              "route": {
+                "trip": {
+                  "locations": [
+                    {
+                      "type": "break",
+                      "lat": 37.500836,
+                      "lon": 127.037397,
+                      "date_time": "2026-10-24T21:56",
+                      "original_index": 0
+                    },
+                    {
+                      "type": "break",
+                      "lat": 37.500877,
+                      "lon": 127.037527,
+                      "original_index": 1
+                    }
+                  ],
+                  "legs": [
+                    {
+                      "maneuvers": [
+                        {
+                          "type": 1,
+                          "instruction": "Drive east on 테헤란로/90.",
+                          "verbal_succinct_transition_instruction": "Drive east. Then You will arrive at your destination.",
+                          "verbal_pre_transition_instruction": "Drive east on 테헤란로, 90. Then You will arrive at your destination.",
+                          "verbal_post_transition_instruction": "Continue for 10 meters.",
+                          "street_names": [
+                            "테헤란로",
+                            "90"
+                          ],
+                          "bearing_after": 69,
+                          "time": 22.254,
+                          "length": 0.012,
+                          "cost": 27.261,
+                          "begin_shape_index": 0,
+                          "end_shape_index": 1,
+                          "verbal_multi_cue": true,
+                          "travel_mode": "drive",
+                          "travel_type": "car"
+                        },
+                        {
+                          "type": 4,
+                          "instruction": "You have arrived at your destination.",
+                          "verbal_transition_alert_instruction": "You will arrive at your destination.",
+                          "verbal_pre_transition_instruction": "You have arrived at your destination.",
+                          "bearing_before": 69,
+                          "time": 0,
+                          "length": 0,
+                          "cost": 0,
+                          "begin_shape_index": 1,
+                          "end_shape_index": 1,
+                          "travel_mode": "drive",
+                          "travel_type": "car"
+                        }
+                      ],
+                      "summary": {
+                        "has_time_restrictions": false,
+                        "has_toll": false,
+                        "has_highway": false,
+                        "has_ferry": false,
+                        "min_lat": 37.500836,
+                        "min_lon": 127.037397,
+                        "max_lat": 37.500877,
+                        "max_lon": 127.037527,
+                        "time": 22.254,
+                        "length": 0.012,
+                        "cost": 27.261
+                      },
+                      "shape": "iyzofAi|vhqFoAeG"
+                    }
+                  ],
+                  "summary": {
+                    "has_time_restrictions": false,
+                    "has_toll": false,
+                    "has_highway": false,
+                    "has_ferry": false,
+                    "min_lat": 37.500836,
+                    "min_lon": 127.037397,
+                    "max_lat": 37.500877,
+                    "max_lon": 127.037527,
+                    "time": 22.254,
+                    "length": 0.012,
+                    "cost": 27.261
+                  },
+                  "status_message": "Found route between points",
+                  "status": 0,
+                  "units": "kilometers",
+                  "language": "en-US"
+                }
+              },
+              "trace": {
+                "units": "kilometers",
+                "shape": "iyzofAi|vhqFoAeG",
+                "edges": [
+                  {
+                    "id": 1338687642000,
+                    "speed": 2,
+                    "length": 0.012,
+                    "source_percent_along": 0.351,
+                    "target_percent_along": 0.653
+                  }
+                ],
+                "alternate_paths": []
+              }
+            },
+            "provenance": {
+              "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+              "high_water": 1,
+              "sequence": 1,
+              "traffic_snapshot_id": "41c4c3743721d50bd2e5b9b2a723e34cc1230cad5f9eb3b0ec2b1b6e6da5b15b",
+              "compiler_policy": "valhalla-current-v1",
+              "generation_id": "0000000000000000000000000000000000000000000000000000000000000000",
+              "traffic_sha256": "e3275240890fa85d8bacb46cee987f904d2ded30f9f5ce023f38c8a9cffcd459",
+              "traffic_byte_length": 8663040,
+              "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+              "valid_until": "2026-10-24T00:07:00.000Z",
+              "traffic_mode": "LIVE",
+              "engine": {
+                "image_id": "sha256:f1646f2fe251128253b9dee59190723fd1efbbc568867027a09bc6052d52f393",
+                "version": "3.9.1"
+              },
+              "message_en": "Fresh accepted synthetic traffic is applied.",
+              "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+              "activation_epoch": 2,
+              "native_daemon": {
+                "pid": 19,
+                "start_ticks": "98724"
+              }
+            }
+          },
+          "outcome": "REJECTED",
+          "reason": "WRONG_GENERATION",
+          "elapsed_start_ms": 2051.861686,
+          "elapsed_end_ms": 2551.207656999999
+        }
+      ]
+    },
+    "evidence_path": "gateway/runtime/requests/wrong-generation-rejected-225b0f91-b8ad-411b-a524-6c3a3f41a312/attempts.json"
+  },
+  {
+    "assertion_id": "p10-wrong-request-rejected",
+    "status": "PASS",
+    "message_en": "Two explicit test-proxy responses are rejected with the exact validation reason: WRONG_REQUEST",
+    "message_ko": "명시한 두 시험 응답을 정확한 검증 사유로 거부합니다.",
+    "expected": true,
+    "actual": {
+      "reply": {
+        "status": 503,
+        "headers": {
+          "cache-control": "no-store",
+          "connection": "keep-alive",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Sat, 24 Oct 2026 21:56:45 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "body": {
+          "code": "ERROR",
+          "reason": "NO_HEALTHY_NODE",
+          "message_en": "The gateway cannot return a current verified route for this request.",
+          "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+        },
+        "elapsed_ms": 2694.6606280000415
+      },
+      "attempts": [
+        {
+          "attempt": 1,
+          "node_id": "seoul-gateway-node-a",
+          "request": {
+            "request_id": "wrong-request-rejected",
+            "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+            "locations": [
+              {
+                "lon": 127.03739724982245,
+                "lat": 37.50083690018144
+              },
+              {
+                "lon": 127.0375277498224,
+                "lat": 37.500877100181434
+              }
+            ],
+            "expected_generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+          },
+          "deadline_ms": 4000,
+          "status": 200,
+          "body": {
+            "code": "ROUTE",
+            "request_id": "another-request",
+            "node_id": "seoul-gateway-node-a",
+            "instance_id": "034ec581-476b-47af-8026-044d7e731bc0",
+            "engine_result": {
+              "request": {
+                "locations": [
+                  {
+                    "lon": 127.03739724982245,
+                    "lat": 37.50083690018144
+                  },
+                  {
+                    "lon": 127.0375277498224,
+                    "lat": 37.500877100181434
+                  }
+                ],
+                "costing": "auto",
+                "units": "kilometers",
+                "language": "en-US",
+                "date_time": {
+                  "type": 0
+                }
+              },
+              "route": {
+                "trip": {
+                  "locations": [
+                    {
+                      "type": "break",
+                      "lat": 37.500836,
+                      "lon": 127.037397,
+                      "date_time": "2026-10-24T21:56",
+                      "original_index": 0
+                    },
+                    {
+                      "type": "break",
+                      "lat": 37.500877,
+                      "lon": 127.037527,
+                      "original_index": 1
+                    }
+                  ],
+                  "legs": [
+                    {
+                      "maneuvers": [
+                        {
+                          "type": 1,
+                          "instruction": "Drive east on 테헤란로/90.",
+                          "verbal_succinct_transition_instruction": "Drive east. Then You will arrive at your destination.",
+                          "verbal_pre_transition_instruction": "Drive east on 테헤란로, 90. Then You will arrive at your destination.",
+                          "verbal_post_transition_instruction": "Continue for 10 meters.",
+                          "street_names": [
+                            "테헤란로",
+                            "90"
+                          ],
+                          "bearing_after": 69,
+                          "time": 22.254,
+                          "length": 0.012,
+                          "cost": 27.261,
+                          "begin_shape_index": 0,
+                          "end_shape_index": 1,
+                          "verbal_multi_cue": true,
+                          "travel_mode": "drive",
+                          "travel_type": "car"
+                        },
+                        {
+                          "type": 4,
+                          "instruction": "You have arrived at your destination.",
+                          "verbal_transition_alert_instruction": "You will arrive at your destination.",
+                          "verbal_pre_transition_instruction": "You have arrived at your destination.",
+                          "bearing_before": 69,
+                          "time": 0,
+                          "length": 0,
+                          "cost": 0,
+                          "begin_shape_index": 1,
+                          "end_shape_index": 1,
+                          "travel_mode": "drive",
+                          "travel_type": "car"
+                        }
+                      ],
+                      "summary": {
+                        "has_time_restrictions": false,
+                        "has_toll": false,
+                        "has_highway": false,
+                        "has_ferry": false,
+                        "min_lat": 37.500836,
+                        "min_lon": 127.037397,
+                        "max_lat": 37.500877,
+                        "max_lon": 127.037527,
+                        "time": 22.254,
+                        "length": 0.012,
+                        "cost": 27.261
+                      },
+                      "shape": "iyzofAi|vhqFoAeG"
+                    }
+                  ],
+                  "summary": {
+                    "has_time_restrictions": false,
+                    "has_toll": false,
+                    "has_highway": false,
+                    "has_ferry": false,
+                    "min_lat": 37.500836,
+                    "min_lon": 127.037397,
+                    "max_lat": 37.500877,
+                    "max_lon": 127.037527,
+                    "time": 22.254,
+                    "length": 0.012,
+                    "cost": 27.261
+                  },
+                  "status_message": "Found route between points",
+                  "status": 0,
+                  "units": "kilometers",
+                  "language": "en-US"
+                }
+              },
+              "trace": {
+                "units": "kilometers",
+                "shape": "iyzofAi|vhqFoAeG",
+                "edges": [
+                  {
+                    "id": 1338687642000,
+                    "speed": 2,
+                    "length": 0.012,
+                    "source_percent_along": 0.351,
+                    "target_percent_along": 0.653
+                  }
+                ],
+                "alternate_paths": []
+              }
+            },
+            "provenance": {
+              "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+              "high_water": 1,
+              "sequence": 1,
+              "traffic_snapshot_id": "41c4c3743721d50bd2e5b9b2a723e34cc1230cad5f9eb3b0ec2b1b6e6da5b15b",
+              "compiler_policy": "valhalla-current-v1",
+              "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871",
+              "traffic_sha256": "e3275240890fa85d8bacb46cee987f904d2ded30f9f5ce023f38c8a9cffcd459",
+              "traffic_byte_length": 8663040,
+              "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+              "valid_until": "2026-10-24T00:07:00.000Z",
+              "traffic_mode": "LIVE",
+              "engine": {
+                "image_id": "sha256:f1646f2fe251128253b9dee59190723fd1efbbc568867027a09bc6052d52f393",
+                "version": "3.9.1"
+              },
+              "message_en": "Fresh accepted synthetic traffic is applied.",
+              "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+              "activation_epoch": 2,
+              "native_daemon": {
+                "pid": 19,
+                "start_ticks": "98676"
+              }
+            }
+          },
+          "outcome": "REJECTED",
+          "reason": "WRONG_REQUEST",
+          "elapsed_start_ms": 1732.2376800000002,
+          "elapsed_end_ms": 2188.309342999999
+        },
+        {
+          "attempt": 2,
+          "node_id": "seoul-gateway-node-b",
+          "request": {
+            "request_id": "wrong-request-rejected",
+            "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+            "locations": [
+              {
+                "lon": 127.03739724982245,
+                "lat": 37.50083690018144
+              },
+              {
+                "lon": 127.0375277498224,
+                "lat": 37.500877100181434
+              }
+            ],
+            "expected_generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+          },
+          "deadline_ms": 4000,
+          "status": 200,
+          "body": {
+            "code": "ROUTE",
+            "request_id": "another-request",
+            "node_id": "seoul-gateway-node-b",
+            "instance_id": "efead4e5-350c-4bf4-b5ca-22646c06c7ce",
+            "engine_result": {
+              "request": {
+                "locations": [
+                  {
+                    "lon": 127.03739724982245,
+                    "lat": 37.50083690018144
+                  },
+                  {
+                    "lon": 127.0375277498224,
+                    "lat": 37.500877100181434
+                  }
+                ],
+                "costing": "auto",
+                "units": "kilometers",
+                "language": "en-US",
+                "date_time": {
+                  "type": 0
+                }
+              },
+              "route": {
+                "trip": {
+                  "locations": [
+                    {
+                      "type": "break",
+                      "lat": 37.500836,
+                      "lon": 127.037397,
+                      "date_time": "2026-10-24T21:56",
+                      "original_index": 0
+                    },
+                    {
+                      "type": "break",
+                      "lat": 37.500877,
+                      "lon": 127.037527,
+                      "original_index": 1
+                    }
+                  ],
+                  "legs": [
+                    {
+                      "maneuvers": [
+                        {
+                          "type": 1,
+                          "instruction": "Drive east on 테헤란로/90.",
+                          "verbal_succinct_transition_instruction": "Drive east. Then You will arrive at your destination.",
+                          "verbal_pre_transition_instruction": "Drive east on 테헤란로, 90. Then You will arrive at your destination.",
+                          "verbal_post_transition_instruction": "Continue for 10 meters.",
+                          "street_names": [
+                            "테헤란로",
+                            "90"
+                          ],
+                          "bearing_after": 69,
+                          "time": 22.254,
+                          "length": 0.012,
+                          "cost": 27.261,
+                          "begin_shape_index": 0,
+                          "end_shape_index": 1,
+                          "verbal_multi_cue": true,
+                          "travel_mode": "drive",
+                          "travel_type": "car"
+                        },
+                        {
+                          "type": 4,
+                          "instruction": "You have arrived at your destination.",
+                          "verbal_transition_alert_instruction": "You will arrive at your destination.",
+                          "verbal_pre_transition_instruction": "You have arrived at your destination.",
+                          "bearing_before": 69,
+                          "time": 0,
+                          "length": 0,
+                          "cost": 0,
+                          "begin_shape_index": 1,
+                          "end_shape_index": 1,
+                          "travel_mode": "drive",
+                          "travel_type": "car"
+                        }
+                      ],
+                      "summary": {
+                        "has_time_restrictions": false,
+                        "has_toll": false,
+                        "has_highway": false,
+                        "has_ferry": false,
+                        "min_lat": 37.500836,
+                        "min_lon": 127.037397,
+                        "max_lat": 37.500877,
+                        "max_lon": 127.037527,
+                        "time": 22.254,
+                        "length": 0.012,
+                        "cost": 27.261
+                      },
+                      "shape": "iyzofAi|vhqFoAeG"
+                    }
+                  ],
+                  "summary": {
+                    "has_time_restrictions": false,
+                    "has_toll": false,
+                    "has_highway": false,
+                    "has_ferry": false,
+                    "min_lat": 37.500836,
+                    "min_lon": 127.037397,
+                    "max_lat": 37.500877,
+                    "max_lon": 127.037527,
+                    "time": 22.254,
+                    "length": 0.012,
+                    "cost": 27.261
+                  },
+                  "status_message": "Found route between points",
+                  "status": 0,
+                  "units": "kilometers",
+                  "language": "en-US"
+                }
+              },
+              "trace": {
+                "units": "kilometers",
+                "shape": "iyzofAi|vhqFoAeG",
+                "edges": [
+                  {
+                    "id": 1338687642000,
+                    "speed": 2,
+                    "length": 0.012,
+                    "source_percent_along": 0.351,
+                    "target_percent_along": 0.653
+                  }
+                ],
+                "alternate_paths": []
+              }
+            },
+            "provenance": {
+              "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+              "high_water": 1,
+              "sequence": 1,
+              "traffic_snapshot_id": "41c4c3743721d50bd2e5b9b2a723e34cc1230cad5f9eb3b0ec2b1b6e6da5b15b",
+              "compiler_policy": "valhalla-current-v1",
+              "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871",
+              "traffic_sha256": "e3275240890fa85d8bacb46cee987f904d2ded30f9f5ce023f38c8a9cffcd459",
+              "traffic_byte_length": 8663040,
+              "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+              "valid_until": "2026-10-24T00:07:00.000Z",
+              "traffic_mode": "LIVE",
+              "engine": {
+                "image_id": "sha256:f1646f2fe251128253b9dee59190723fd1efbbc568867027a09bc6052d52f393",
+                "version": "3.9.1"
+              },
+              "message_en": "Fresh accepted synthetic traffic is applied.",
+              "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+              "activation_epoch": 2,
+              "native_daemon": {
+                "pid": 19,
+                "start_ticks": "98724"
+              }
+            }
+          },
+          "outcome": "REJECTED",
+          "reason": "WRONG_REQUEST",
+          "elapsed_start_ms": 2196.2547269999977,
+          "elapsed_end_ms": 2679.4022349999996
+        }
+      ]
+    },
+    "evidence_path": "gateway/runtime/requests/wrong-request-rejected-573981b6-7573-40ba-ba7c-739ae4ce26ef/attempts.json"
+  },
+  {
+    "assertion_id": "p10-malformed-route-rejected",
+    "status": "PASS",
+    "message_en": "Two explicit test-proxy responses are rejected with the exact validation reason: INVALID_ROUTE",
+    "message_ko": "명시한 두 시험 응답을 정확한 검증 사유로 거부합니다.",
+    "expected": true,
+    "actual": {
+      "reply": {
+        "status": 503,
+        "headers": {
+          "cache-control": "no-store",
+          "connection": "keep-alive",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Sat, 24 Oct 2026 21:56:47 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "body": {
+          "code": "ERROR",
+          "reason": "NO_HEALTHY_NODE",
+          "message_en": "The gateway cannot return a current verified route for this request.",
+          "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+        },
+        "elapsed_ms": 2708.8340610000305
+      },
+      "attempts": [
+        {
+          "attempt": 1,
+          "node_id": "seoul-gateway-node-a",
+          "request": {
+            "request_id": "malformed-route-rejected",
+            "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+            "locations": [
+              {
+                "lon": 127.03739724982245,
+                "lat": 37.50083690018144
+              },
+              {
+                "lon": 127.0375277498224,
+                "lat": 37.500877100181434
+              }
+            ],
+            "expected_generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+          },
+          "deadline_ms": 4000,
+          "status": 200,
+          "body": {
+            "code": "ROUTE",
+            "request_id": "malformed-route-rejected",
+            "node_id": "seoul-gateway-node-a",
+            "instance_id": "034ec581-476b-47af-8026-044d7e731bc0",
+            "engine_result": {
+              "request": {
+                "locations": [
+                  {
+                    "lon": 127.03739724982245,
+                    "lat": 37.50083690018144
+                  },
+                  {
+                    "lon": 127.0375277498224,
+                    "lat": 37.500877100181434
+                  }
+                ],
+                "costing": "auto",
+                "units": "kilometers",
+                "language": "en-US",
+                "date_time": {
+                  "type": 0
+                }
+              },
+              "route": {
+                "trip": {
+                  "locations": [
+                    {
+                      "type": "break",
+                      "lat": 37.500836,
+                      "lon": 127.037397,
+                      "date_time": "2026-10-24T21:56",
+                      "original_index": 0
+                    },
+                    {
+                      "type": "break",
+                      "lat": 37.500877,
+                      "lon": 127.037527,
+                      "original_index": 1
+                    }
+                  ],
+                  "legs": [
+                    {
+                      "maneuvers": [
+                        {
+                          "type": 1,
+                          "instruction": "Drive east on 테헤란로/90.",
+                          "verbal_succinct_transition_instruction": "Drive east. Then You will arrive at your destination.",
+                          "verbal_pre_transition_instruction": "Drive east on 테헤란로, 90. Then You will arrive at your destination.",
+                          "verbal_post_transition_instruction": "Continue for 10 meters.",
+                          "street_names": [
+                            "테헤란로",
+                            "90"
+                          ],
+                          "bearing_after": 69,
+                          "time": 22.254,
+                          "length": 0.012,
+                          "cost": 27.261,
+                          "begin_shape_index": 0,
+                          "end_shape_index": 1,
+                          "verbal_multi_cue": true,
+                          "travel_mode": "drive",
+                          "travel_type": "car"
+                        },
+                        {
+                          "type": 4,
+                          "instruction": "You have arrived at your destination.",
+                          "verbal_transition_alert_instruction": "You will arrive at your destination.",
+                          "verbal_pre_transition_instruction": "You have arrived at your destination.",
+                          "bearing_before": 69,
+                          "time": 0,
+                          "length": 0,
+                          "cost": 0,
+                          "begin_shape_index": 1,
+                          "end_shape_index": 1,
+                          "travel_mode": "drive",
+                          "travel_type": "car"
+                        }
+                      ],
+                      "summary": {
+                        "has_time_restrictions": false,
+                        "has_toll": false,
+                        "has_highway": false,
+                        "has_ferry": false,
+                        "min_lat": 37.500836,
+                        "min_lon": 127.037397,
+                        "max_lat": 37.500877,
+                        "max_lon": 127.037527,
+                        "time": 22.254,
+                        "length": 0.012,
+                        "cost": 27.261
+                      },
+                      "shape": "!"
+                    }
+                  ],
+                  "summary": {
+                    "has_time_restrictions": false,
+                    "has_toll": false,
+                    "has_highway": false,
+                    "has_ferry": false,
+                    "min_lat": 37.500836,
+                    "min_lon": 127.037397,
+                    "max_lat": 37.500877,
+                    "max_lon": 127.037527,
+                    "time": 22.254,
+                    "length": 0.012,
+                    "cost": 27.261
+                  },
+                  "status_message": "Found route between points",
+                  "status": 0,
+                  "units": "kilometers",
+                  "language": "en-US"
+                }
+              },
+              "trace": {
+                "units": "kilometers",
+                "shape": "iyzofAi|vhqFoAeG",
+                "edges": [
+                  {
+                    "id": 1338687642000,
+                    "speed": 2,
+                    "length": 0.012,
+                    "source_percent_along": 0.351,
+                    "target_percent_along": 0.653
+                  }
+                ],
+                "alternate_paths": []
+              }
+            },
+            "provenance": {
+              "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+              "high_water": 1,
+              "sequence": 1,
+              "traffic_snapshot_id": "41c4c3743721d50bd2e5b9b2a723e34cc1230cad5f9eb3b0ec2b1b6e6da5b15b",
+              "compiler_policy": "valhalla-current-v1",
+              "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871",
+              "traffic_sha256": "e3275240890fa85d8bacb46cee987f904d2ded30f9f5ce023f38c8a9cffcd459",
+              "traffic_byte_length": 8663040,
+              "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+              "valid_until": "2026-10-24T00:07:00.000Z",
+              "traffic_mode": "LIVE",
+              "engine": {
+                "image_id": "sha256:f1646f2fe251128253b9dee59190723fd1efbbc568867027a09bc6052d52f393",
+                "version": "3.9.1"
+              },
+              "message_en": "Fresh accepted synthetic traffic is applied.",
+              "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+              "activation_epoch": 2,
+              "native_daemon": {
+                "pid": 19,
+                "start_ticks": "98676"
+              }
+            }
+          },
+          "outcome": "REJECTED",
+          "reason": "INVALID_ROUTE",
+          "elapsed_start_ms": 1725.1332839999995,
+          "elapsed_end_ms": 2206.17858
+        },
+        {
+          "attempt": 2,
+          "node_id": "seoul-gateway-node-b",
+          "request": {
+            "request_id": "malformed-route-rejected",
+            "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+            "locations": [
+              {
+                "lon": 127.03739724982245,
+                "lat": 37.50083690018144
+              },
+              {
+                "lon": 127.0375277498224,
+                "lat": 37.500877100181434
+              }
+            ],
+            "expected_generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+          },
+          "deadline_ms": 4000,
+          "status": 200,
+          "body": {
+            "code": "ROUTE",
+            "request_id": "malformed-route-rejected",
+            "node_id": "seoul-gateway-node-b",
+            "instance_id": "efead4e5-350c-4bf4-b5ca-22646c06c7ce",
+            "engine_result": {
+              "request": {
+                "locations": [
+                  {
+                    "lon": 127.03739724982245,
+                    "lat": 37.50083690018144
+                  },
+                  {
+                    "lon": 127.0375277498224,
+                    "lat": 37.500877100181434
+                  }
+                ],
+                "costing": "auto",
+                "units": "kilometers",
+                "language": "en-US",
+                "date_time": {
+                  "type": 0
+                }
+              },
+              "route": {
+                "trip": {
+                  "locations": [
+                    {
+                      "type": "break",
+                      "lat": 37.500836,
+                      "lon": 127.037397,
+                      "date_time": "2026-10-24T21:56",
+                      "original_index": 0
+                    },
+                    {
+                      "type": "break",
+                      "lat": 37.500877,
+                      "lon": 127.037527,
+                      "original_index": 1
+                    }
+                  ],
+                  "legs": [
+                    {
+                      "maneuvers": [
+                        {
+                          "type": 1,
+                          "instruction": "Drive east on 테헤란로/90.",
+                          "verbal_succinct_transition_instruction": "Drive east. Then You will arrive at your destination.",
+                          "verbal_pre_transition_instruction": "Drive east on 테헤란로, 90. Then You will arrive at your destination.",
+                          "verbal_post_transition_instruction": "Continue for 10 meters.",
+                          "street_names": [
+                            "테헤란로",
+                            "90"
+                          ],
+                          "bearing_after": 69,
+                          "time": 22.254,
+                          "length": 0.012,
+                          "cost": 27.261,
+                          "begin_shape_index": 0,
+                          "end_shape_index": 1,
+                          "verbal_multi_cue": true,
+                          "travel_mode": "drive",
+                          "travel_type": "car"
+                        },
+                        {
+                          "type": 4,
+                          "instruction": "You have arrived at your destination.",
+                          "verbal_transition_alert_instruction": "You will arrive at your destination.",
+                          "verbal_pre_transition_instruction": "You have arrived at your destination.",
+                          "bearing_before": 69,
+                          "time": 0,
+                          "length": 0,
+                          "cost": 0,
+                          "begin_shape_index": 1,
+                          "end_shape_index": 1,
+                          "travel_mode": "drive",
+                          "travel_type": "car"
+                        }
+                      ],
+                      "summary": {
+                        "has_time_restrictions": false,
+                        "has_toll": false,
+                        "has_highway": false,
+                        "has_ferry": false,
+                        "min_lat": 37.500836,
+                        "min_lon": 127.037397,
+                        "max_lat": 37.500877,
+                        "max_lon": 127.037527,
+                        "time": 22.254,
+                        "length": 0.012,
+                        "cost": 27.261
+                      },
+                      "shape": "!"
+                    }
+                  ],
+                  "summary": {
+                    "has_time_restrictions": false,
+                    "has_toll": false,
+                    "has_highway": false,
+                    "has_ferry": false,
+                    "min_lat": 37.500836,
+                    "min_lon": 127.037397,
+                    "max_lat": 37.500877,
+                    "max_lon": 127.037527,
+                    "time": 22.254,
+                    "length": 0.012,
+                    "cost": 27.261
+                  },
+                  "status_message": "Found route between points",
+                  "status": 0,
+                  "units": "kilometers",
+                  "language": "en-US"
+                }
+              },
+              "trace": {
+                "units": "kilometers",
+                "shape": "iyzofAi|vhqFoAeG",
+                "edges": [
+                  {
+                    "id": 1338687642000,
+                    "speed": 2,
+                    "length": 0.012,
+                    "source_percent_along": 0.351,
+                    "target_percent_along": 0.653
+                  }
+                ],
+                "alternate_paths": []
+              }
+            },
+            "provenance": {
+              "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+              "high_water": 1,
+              "sequence": 1,
+              "traffic_snapshot_id": "41c4c3743721d50bd2e5b9b2a723e34cc1230cad5f9eb3b0ec2b1b6e6da5b15b",
+              "compiler_policy": "valhalla-current-v1",
+              "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871",
+              "traffic_sha256": "e3275240890fa85d8bacb46cee987f904d2ded30f9f5ce023f38c8a9cffcd459",
+              "traffic_byte_length": 8663040,
+              "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+              "valid_until": "2026-10-24T00:07:00.000Z",
+              "traffic_mode": "LIVE",
+              "engine": {
+                "image_id": "sha256:f1646f2fe251128253b9dee59190723fd1efbbc568867027a09bc6052d52f393",
+                "version": "3.9.1"
+              },
+              "message_en": "Fresh accepted synthetic traffic is applied.",
+              "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+              "activation_epoch": 2,
+              "native_daemon": {
+                "pid": 19,
+                "start_ticks": "98724"
+              }
+            }
+          },
+          "outcome": "REJECTED",
+          "reason": "INVALID_ROUTE",
+          "elapsed_start_ms": 2217.709662000001,
+          "elapsed_end_ms": 2701.909598000002
+        }
+      ]
+    },
+    "evidence_path": "gateway/runtime/requests/malformed-route-rejected-38f71793-996b-4320-9315-7398d5555286/attempts.json"
+  },
+  {
+    "assertion_id": "p10-oversized-response-rejected",
+    "status": "PASS",
+    "message_en": "Two explicit test-proxy responses are rejected with the exact validation reason: OVERSIZED_RESPONSE",
+    "message_ko": "명시한 두 시험 응답을 정확한 검증 사유로 거부합니다.",
+    "expected": true,
+    "actual": {
+      "reply": {
+        "status": 503,
+        "headers": {
+          "cache-control": "no-store",
+          "connection": "keep-alive",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Sat, 24 Oct 2026 21:56:49 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "body": {
+          "code": "ERROR",
+          "reason": "NO_HEALTHY_NODE",
+          "message_en": "The gateway cannot return a current verified route for this request.",
+          "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+        },
+        "elapsed_ms": 1740.4434960000217
+      },
+      "attempts": [
+        {
+          "attempt": 1,
+          "node_id": "seoul-gateway-node-a",
+          "request": {
+            "request_id": "oversized-response-rejected",
+            "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+            "locations": [
+              {
+                "lon": 127.03739724982245,
+                "lat": 37.50083690018144
+              },
+              {
+                "lon": 127.0375277498224,
+                "lat": 37.500877100181434
+              }
+            ],
+            "expected_generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+          },
+          "deadline_ms": 4000,
+          "status": 0,
+          "body": null,
+          "outcome": "REJECTED",
+          "reason": "OVERSIZED_RESPONSE",
+          "elapsed_start_ms": 1703.9017459999995,
+          "elapsed_end_ms": 1713.6333919999997
+        },
+        {
+          "attempt": 2,
+          "node_id": "seoul-gateway-node-b",
+          "request": {
+            "request_id": "oversized-response-rejected",
+            "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+            "locations": [
+              {
+                "lon": 127.03739724982245,
+                "lat": 37.50083690018144
+              },
+              {
+                "lon": 127.0375277498224,
+                "lat": 37.500877100181434
+              }
+            ],
+            "expected_generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+          },
+          "deadline_ms": 4000,
+          "status": 0,
+          "body": null,
+          "outcome": "REJECTED",
+          "reason": "OVERSIZED_RESPONSE",
+          "elapsed_start_ms": 1718.577314000002,
+          "elapsed_end_ms": 1732.3616880000009
+        }
+      ]
+    },
+    "evidence_path": "gateway/runtime/requests/oversized-response-rejected-2263c52d-e101-420e-a006-746d215b5be6/attempts.json"
+  },
+  {
+    "assertion_id": "p10-redirect-rejected",
+    "status": "PASS",
+    "message_en": "Two explicit test-proxy responses are rejected with the exact validation reason: REDIRECT_REJECTED",
+    "message_ko": "명시한 두 시험 응답을 정확한 검증 사유로 거부합니다.",
+    "expected": true,
+    "actual": {
+      "reply": {
+        "status": 503,
+        "headers": {
+          "cache-control": "no-store",
+          "connection": "keep-alive",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Sat, 24 Oct 2026 21:56:51 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "body": {
+          "code": "ERROR",
+          "reason": "NO_HEALTHY_NODE",
+          "message_en": "The gateway cannot return a current verified route for this request.",
+          "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+        },
+        "elapsed_ms": 1797.461461000028
+      },
+      "attempts": [
+        {
+          "attempt": 1,
+          "node_id": "seoul-gateway-node-a",
+          "request": {
+            "request_id": "redirect-rejected",
+            "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+            "locations": [
+              {
+                "lon": 127.03739724982245,
+                "lat": 37.50083690018144
+              },
+              {
+                "lon": 127.0375277498224,
+                "lat": 37.500877100181434
+              }
+            ],
+            "expected_generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+          },
+          "deadline_ms": 4000,
+          "status": 0,
+          "body": null,
+          "outcome": "REJECTED",
+          "reason": "REDIRECT_REJECTED",
+          "elapsed_start_ms": 1784.8025629999975,
+          "elapsed_end_ms": 1786.0976969999974
+        },
+        {
+          "attempt": 2,
+          "node_id": "seoul-gateway-node-b",
+          "request": {
+            "request_id": "redirect-rejected",
+            "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+            "locations": [
+              {
+                "lon": 127.03739724982245,
+                "lat": 37.50083690018144
+              },
+              {
+                "lon": 127.0375277498224,
+                "lat": 37.500877100181434
+              }
+            ],
+            "expected_generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+          },
+          "deadline_ms": 4000,
+          "status": 0,
+          "body": null,
+          "outcome": "REJECTED",
+          "reason": "REDIRECT_REJECTED",
+          "elapsed_start_ms": 1789.326735999999,
+          "elapsed_end_ms": 1790.501143999998
+        }
+      ]
+    },
+    "evidence_path": "gateway/runtime/requests/redirect-rejected-47f4e964-a24c-440f-9786-09456ccea98e/attempts.json"
+  },
+  {
+    "assertion_id": "p10-stale-node-excluded",
+    "status": "PASS",
+    "message_en": "A stale generation is excluded during status selection before route dispatch.",
+    "message_ko": "오래된 세대는 경로 전송 전 상태 선택에서 제외합니다.",
+    "expected": true,
+    "actual": {
+      "request_id": "stale-node-excluded",
+      "request_sha256": "0cbe00d8e9601554b2f975be1226734164a0117745a51e3f28eaf437c7faebd7",
+      "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+      "snapshot_id": "41c4c3743721d50bd2e5b9b2a723e34cc1230cad5f9eb3b0ec2b1b6e6da5b15b",
+      "sequence": 1,
+      "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871",
+      "traffic_sha256": "e3275240890fa85d8bacb46cee987f904d2ded30f9f5ce023f38c8a9cffcd459",
+      "engine_version": "3.9.1",
+      "image_id": "sha256:f1646f2fe251128253b9dee59190723fd1efbbc568867027a09bc6052d52f393",
+      "costing_config_id": "valhalla-current-v1",
+      "node_id": "seoul-gateway-node-b",
+      "traffic_mode": "LIVE_MIXED",
+      "distance_m": 12,
+      "duration_s": 22.254,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.037397,
+            37.500837
+          ],
+          [
+            127.037528,
+            37.500877
+          ]
+        ]
+      },
+      "live_coverage_ratio": 1,
+      "warnings": [],
+      "calculated_at": "2026-10-24T21:56:53.679Z"
+    },
+    "evidence_path": "gateway/runtime/requests/stale-node-excluded-8855c7a5-c5de-4697-8f94-558003ac23b4/attempts.json"
+  },
+  {
+    "assertion_id": "p10-no-matching-node",
+    "status": "PASS",
+    "message_en": "No matching current generation is an explicit failure, never an older live or baseline substitution.",
+    "message_ko": "현재 세대 적합 노드가 없으면 옛 실시간·기본 경로로 바꾸지 않고 실패합니다.",
+    "expected": true,
+    "actual": {
+      "status": 503,
+      "headers": {
+        "cache-control": "no-store",
+        "connection": "keep-alive",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sat, 24 Oct 2026 21:56:55 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "body": {
+        "code": "ERROR",
+        "reason": "NO_HEALTHY_NODE",
+        "message_en": "The gateway cannot return a current verified route for this request.",
+        "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+      },
+      "elapsed_ms": 1683.2165409999434
+    },
+    "evidence_path": "requests/no-matching-node.json"
+  },
+  {
+    "assertion_id": "p10-both-down",
+    "status": "PASS",
+    "message_en": "Both unavailable nodes produce an explicit unavailable response.",
+    "message_ko": "두 노드가 모두 사용불가하면 명시적으로 실패합니다.",
+    "expected": true,
+    "actual": {
+      "status": 503,
+      "headers": {
+        "cache-control": "no-store",
+        "connection": "keep-alive",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sat, 24 Oct 2026 21:56:56 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked"
+      },
+      "body": {
+        "code": "ERROR",
+        "reason": "NO_HEALTHY_NODE",
+        "message_en": "The gateway cannot return a current verified route for this request.",
+        "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+      },
+      "elapsed_ms": 1566.2892619998893
+    },
+    "evidence_path": "requests/both-down.json"
+  },
+  {
+    "assertion_id": "p10-primary-unavailable-retry",
+    "status": "PASS",
+    "message_en": "One failed primary route retries the same pinned target on the other real node.",
+    "message_ko": "첫 경로 실패 뒤 다른 실제 노드에 같은 고정 자료로 한 번 재시도합니다.",
+    "expected": true,
+    "actual": [
+      {
+        "attempt": 1,
+        "node_id": "seoul-gateway-node-a",
+        "request": {
+          "request_id": "primary-unavailable-retry",
+          "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+          "locations": [
+            {
+              "lon": 127.03739724982245,
+              "lat": 37.50083690018144
+            },
+            {
+              "lon": 127.0375277498224,
+              "lat": 37.500877100181434
+            }
+          ],
+          "expected_generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+        },
+        "deadline_ms": 4000,
+        "status": 503,
+        "body": {
+          "code": "UNAVAILABLE",
+          "reason": "ENGINE_UNAVAILABLE",
+          "message_en": "Configured proxy failure",
+          "message_ko": "설정된 대리 장애"
+        },
+        "outcome": "REJECTED",
+        "reason": "NODE_UNAVAILABLE",
+        "elapsed_start_ms": 1663.2668789999989,
+        "elapsed_end_ms": 1664.8341619999992
+      },
+      {
+        "attempt": 2,
+        "node_id": "seoul-gateway-node-b",
+        "request": {
+          "request_id": "primary-unavailable-retry",
+          "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+          "locations": [
+            {
+              "lon": 127.03739724982245,
+              "lat": 37.50083690018144
+            },
+            {
+              "lon": 127.0375277498224,
+              "lat": 37.500877100181434
+            }
+          ],
+          "expected_generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+        },
+        "deadline_ms": 4000,
+        "status": 200,
+        "body": {
+          "code": "ROUTE",
+          "request_id": "primary-unavailable-retry",
+          "node_id": "seoul-gateway-node-b",
+          "instance_id": "efead4e5-350c-4bf4-b5ca-22646c06c7ce",
+          "engine_result": {
+            "request": {
+              "locations": [
+                {
+                  "lon": 127.03739724982245,
+                  "lat": 37.50083690018144
+                },
+                {
+                  "lon": 127.0375277498224,
+                  "lat": 37.500877100181434
+                }
+              ],
+              "costing": "auto",
+              "units": "kilometers",
+              "language": "en-US",
+              "date_time": {
+                "type": 0
+              }
+            },
+            "route": {
+              "trip": {
+                "locations": [
+                  {
+                    "type": "break",
+                    "lat": 37.500836,
+                    "lon": 127.037397,
+                    "date_time": "2026-10-24T21:56",
+                    "original_index": 0
+                  },
+                  {
+                    "type": "break",
+                    "lat": 37.500877,
+                    "lon": 127.037527,
+                    "original_index": 1
+                  }
+                ],
+                "legs": [
+                  {
+                    "maneuvers": [
+                      {
+                        "type": 1,
+                        "instruction": "Drive east on 테헤란로/90.",
+                        "verbal_succinct_transition_instruction": "Drive east. Then You will arrive at your destination.",
+                        "verbal_pre_transition_instruction": "Drive east on 테헤란로, 90. Then You will arrive at your destination.",
+                        "verbal_post_transition_instruction": "Continue for 10 meters.",
+                        "street_names": [
+                          "테헤란로",
+                          "90"
+                        ],
+                        "bearing_after": 69,
+                        "time": 22.254,
+                        "length": 0.012,
+                        "cost": 27.261,
+                        "begin_shape_index": 0,
+                        "end_shape_index": 1,
+                        "verbal_multi_cue": true,
+                        "travel_mode": "drive",
+                        "travel_type": "car"
+                      },
+                      {
+                        "type": 4,
+                        "instruction": "You have arrived at your destination.",
+                        "verbal_transition_alert_instruction": "You will arrive at your destination.",
+                        "verbal_pre_transition_instruction": "You have arrived at your destination.",
+                        "bearing_before": 69,
+                        "time": 0,
+                        "length": 0,
+                        "cost": 0,
+                        "begin_shape_index": 1,
+                        "end_shape_index": 1,
+                        "travel_mode": "drive",
+                        "travel_type": "car"
+                      }
+                    ],
+                    "summary": {
+                      "has_time_restrictions": false,
+                      "has_toll": false,
+                      "has_highway": false,
+                      "has_ferry": false,
+                      "min_lat": 37.500836,
+                      "min_lon": 127.037397,
+                      "max_lat": 37.500877,
+                      "max_lon": 127.037527,
+                      "time": 22.254,
+                      "length": 0.012,
+                      "cost": 27.261
+                    },
+                    "shape": "iyzofAi|vhqFoAeG"
+                  }
+                ],
+                "summary": {
+                  "has_time_restrictions": false,
+                  "has_toll": false,
+                  "has_highway": false,
+                  "has_ferry": false,
+                  "min_lat": 37.500836,
+                  "min_lon": 127.037397,
+                  "max_lat": 37.500877,
+                  "max_lon": 127.037527,
+                  "time": 22.254,
+                  "length": 0.012,
+                  "cost": 27.261
+                },
+                "status_message": "Found route between points",
+                "status": 0,
+                "units": "kilometers",
+                "language": "en-US"
+              }
+            },
+            "trace": {
+              "units": "kilometers",
+              "shape": "iyzofAi|vhqFoAeG",
+              "edges": [
+                {
+                  "id": 1338687642000,
+                  "speed": 2,
+                  "length": 0.012,
+                  "source_percent_along": 0.351,
+                  "target_percent_along": 0.653
+                }
+              ],
+              "alternate_paths": []
+            }
+          },
+          "provenance": {
+            "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+            "high_water": 1,
+            "sequence": 1,
+            "traffic_snapshot_id": "41c4c3743721d50bd2e5b9b2a723e34cc1230cad5f9eb3b0ec2b1b6e6da5b15b",
+            "compiler_policy": "valhalla-current-v1",
+            "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871",
+            "traffic_sha256": "e3275240890fa85d8bacb46cee987f904d2ded30f9f5ce023f38c8a9cffcd459",
+            "traffic_byte_length": 8663040,
+            "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+            "valid_until": "2026-10-24T00:07:00.000Z",
+            "traffic_mode": "LIVE",
+            "engine": {
+              "image_id": "sha256:f1646f2fe251128253b9dee59190723fd1efbbc568867027a09bc6052d52f393",
+              "version": "3.9.1"
+            },
+            "message_en": "Fresh accepted synthetic traffic is applied.",
+            "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+            "activation_epoch": 2,
+            "native_daemon": {
+              "pid": 19,
+              "start_ticks": "98724"
+            }
+          }
+        },
+        "outcome": "VALIDATED",
+        "elapsed_start_ms": 1670.270870999997,
+        "elapsed_end_ms": 2122.6035840000004
+      }
+    ],
+    "evidence_path": "gateway/runtime/requests/primary-unavailable-retry-4ebeb27e-6012-4253-ab79-8cbd11763e7b/attempts.json"
+  },
+  {
+    "assertion_id": "p10-retry-once",
+    "status": "PASS",
+    "message_en": "Two failed route attempts exhaust the single retry without hedging or a third attempt.",
+    "message_ko": "두 번의 순차 실패 뒤 추가·동시 요청 없이 한 번의 재시도를 마칩니다.",
+    "expected": true,
+    "actual": [
+      {
+        "attempt": 1,
+        "node_id": "seoul-gateway-node-a",
+        "request": {
+          "request_id": "retry-once",
+          "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+          "locations": [
+            {
+              "lon": 127.03739724982245,
+              "lat": 37.50083690018144
+            },
+            {
+              "lon": 127.0375277498224,
+              "lat": 37.500877100181434
+            }
+          ],
+          "expected_generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+        },
+        "deadline_ms": 4000,
+        "status": 503,
+        "body": {
+          "code": "UNAVAILABLE",
+          "reason": "ENGINE_UNAVAILABLE",
+          "message_en": "Configured proxy failure",
+          "message_ko": "설정된 대리 장애"
+        },
+        "outcome": "REJECTED",
+        "reason": "NODE_UNAVAILABLE",
+        "elapsed_start_ms": 1760.166632999997,
+        "elapsed_end_ms": 1762.0593530000006
+      },
+      {
+        "attempt": 2,
+        "node_id": "seoul-gateway-node-b",
+        "request": {
+          "request_id": "retry-once",
+          "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+          "locations": [
+            {
+              "lon": 127.03739724982245,
+              "lat": 37.50083690018144
+            },
+            {
+              "lon": 127.0375277498224,
+              "lat": 37.500877100181434
+            }
+          ],
+          "expected_generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871"
+        },
+        "deadline_ms": 4000,
+        "status": 503,
+        "body": {
+          "code": "UNAVAILABLE",
+          "reason": "ENGINE_UNAVAILABLE",
+          "message_en": "Configured proxy failure",
+          "message_ko": "설정된 대리 장애"
+        },
+        "outcome": "REJECTED",
+        "reason": "NODE_UNAVAILABLE",
+        "elapsed_start_ms": 1766.3458199999986,
+        "elapsed_end_ms": 1768.0104339999998
+      }
+    ],
+    "evidence_path": "gateway/runtime/requests/retry-once-9a1c832a-6634-48f5-a12c-51b3671d83f4/attempts.json"
+  },
+  {
+    "assertion_id": "p10-primary-kill-failover",
+    "status": "PASS",
+    "message_en": "An actual SIGKILL of the primary node fails over to the independent native node at the same accepted version.",
+    "message_ko": "첫 노드를 실제 강제 종료한 뒤 독립 지속 엔진 노드의 같은 수용 버전으로 전환합니다.",
+    "expected": true,
+    "actual": {
+      "killIdentity": {
+        "pid": 68041,
+        "instance_id": "034ec581-476b-47af-8026-044d7e731bc0",
+        "node_id": "seoul-gateway-node-a"
+      },
+      "killedExit": {
+        "code": null,
+        "signal": "SIGKILL"
+      },
+      "failover": {
+        "request_id": "primary-kill-failover",
+        "request_sha256": "8d7582785c7d496bcdc1000f210217e480940d25b8391d3be5013fa8e4cf1e82",
+        "graph_id": "baafba446e78e9a5f01a2e77fd2ef27962faf36511c60cf3a72df108e6ea04a4",
+        "snapshot_id": "41c4c3743721d50bd2e5b9b2a723e34cc1230cad5f9eb3b0ec2b1b6e6da5b15b",
+        "sequence": 1,
+        "generation_id": "4dccd38020ed6e2fd5c595eb8fdfc5e83a7b1f7e2c2689ed52d265547986f871",
+        "traffic_sha256": "e3275240890fa85d8bacb46cee987f904d2ded30f9f5ce023f38c8a9cffcd459",
+        "engine_version": "3.9.1",
+        "image_id": "sha256:f1646f2fe251128253b9dee59190723fd1efbbc568867027a09bc6052d52f393",
+        "costing_config_id": "valhalla-current-v1",
+        "node_id": "seoul-gateway-node-b",
+        "traffic_mode": "LIVE_MIXED",
+        "distance_m": 12,
+        "duration_s": 22.254,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              127.037397,
+              37.500837
+            ],
+            [
+              127.037528,
+              37.500877
+            ]
+          ]
+        },
+        "live_coverage_ratio": 1,
+        "warnings": [],
+        "calculated_at": "2026-10-24T21:57:02.897Z"
+      }
+    },
+    "evidence_path": "readbacks/primary-sigkill.json"
+  },
+  {
+    "assertion_id": "p10-admission-eight",
+    "status": "FAIL",
+    "message_en": "Exactly eight admitted requests are held at a confirmed phase; the ninth is refused without a queue.",
+    "message_ko": "확정 단계에8요청을 고정하고 아홉째는 대기열 없이 거부합니다.",
+    "expected": true,
+    "actual": {
+      "admissionState": {
+        "gateway_id": "seoul-route-gateway",
+        "instance_id": "657e7958-5104-42c4-9336-78a83e5efc6e",
+        "in_flight": 8,
+        "closing": false,
+        "high_water": 1,
+        "snapshot_id": "41c4c3743721d50bd2e5b9b2a723e34cc1230cad5f9eb3b0ec2b1b6e6da5b15b",
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "reason": "READY"
+      },
+      "ninth": {
+        "status": 429,
+        "headers": {
+          "cache-control": "no-store",
+          "connection": "keep-alive",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Sat, 24 Oct 2026 21:57:19 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "body": {
+          "code": "ERROR",
+          "reason": "RATE_LIMITED",
+          "message_en": "The gateway cannot return a current verified route for this request.",
+          "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+        },
+        "elapsed_ms": 2.0440330000128597
+      },
+      "released": [
+        504,
+        504,
+        504,
+        504,
+        504,
+        504,
+        200,
+        200
+      ]
+    },
+    "evidence_path": "status/admission-eight.json"
+  }
+]
