@@ -81,3 +81,9 @@ The builder verifies the pinned country source before extraction and again befor
 Route↔edge_walk coordinate comparison permits at most one microdegree per axis for engine re-encoding, matching the previous graph policy; full internal located shapes remain checked separately. Virtual scene time is2026-10-24T00:00:00Z, after the pinned map snapshot. Adjacent-edge point equivalence is checked against actual shared geometry endpoints, never the nearest sampled point. Full, split-only and overlap batches are separate actual engine runs.
 
 경로↔edge_walk재인코딩은 기존정책처럼 축별1마이크로도까지만 허용하고 내부전체지형은별도검사합니다. 가상시각은 지도스냅샷뒤인2026-10-24로고정합니다. 인접구간동등성은 가장가까운표본이아닌 실제공유지형끝점으로검사합니다. 전체·분할만·중첩은 각각 실제엔진을실행합니다.
+
+### Boundary-stop correction:seoul-observed-v2 / 경계 정지 보정
+
+The first clean whole run exposed a5000ms entry error in the downtown noise+gap case. `seoul-observed-v1` could assign a stationary cluster to the preceding edge endpoint and then accept entry to the next edge only when movement resumed, silently discarding ambiguous waiting time. `seoul-observed-v2` adds an observations-only gate:when original observations remain continuously within each sample's `accuracy_m+1m` of the actual shared endpoint for at least1000ms before a directed edge transition, exclude both adjacent traversal candidates with `AMBIGUOUS_BOUNDARY`. Preserve the cluster/bracket evidence. Do not use truth to choose which edge receives the wait. Road-point matches may remain valid; their complete traversal timing is withheld. Ordinary movement and stops inside an edge are unaffected. All original timing/coverage acceptance thresholds remain fixed.
+
+첫 전체 실행에서 도심 잡음·누락 차량의 진입오차5000ms를 발견했습니다. v1은 정지군집을 이전구간끝에 붙이고 이동재개 때 다음구간진입을 수용해 불명확한 대기시간을 빠뜨릴 수 있었습니다. v2는 방향구간전환 전 원관측이 실제공유끝점의 각표본 정확도+1m 안에1000ms이상 연속머물면 두인접통과후보를 AMBIGUOUS_BOUNDARY로 제외하고 군집·경계 근거를 보존합니다. 정답으로 정지를 배분하지 않습니다. 도로표본대응은 유지할 수 있지만 완전통과시간은 보류합니다. 일반이동·구간내부정지는 영향받지 않으며 처음 허용시간·범위기준을 그대로 유지합니다.

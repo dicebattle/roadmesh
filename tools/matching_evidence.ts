@@ -25,6 +25,7 @@ export interface MatchingHooks {
   geometry?: GeometryStrategy;
   ambiguous?: (observation: Observation, bundle: MatchingGraph) => boolean;
   connection_tolerance_m?: number;
+  ambiguous_boundary_ms?: 1000;
 }
 
 import { localDistance, type Observation } from "./vehicle_simulator.js";
@@ -36,7 +37,11 @@ function requireGeometryPolicy(
   if (
     !bundle.fixture.ways &&
     (bundle.fixture.fixture_id !== "seoul-osm-20261023-v1" ||
-      hooks.policy_id !== "seoul-observed-v1" ||
+      !["seoul-observed-v1", "seoul-observed-v2"].includes(
+        hooks.policy_id ?? "",
+      ) ||
+      (hooks.policy_id === "seoul-observed-v2" &&
+        hooks.ambiguous_boundary_ms !== 1000) ||
       !hooks.geometry ||
       !hooks.ambiguous)
   )
@@ -50,6 +55,7 @@ export const MATCHING_POLICY = "tiny-city-matching-v1";
 export const MAX_MATCHING_SAMPLES = 60020;
 export const GAP_MS = 3000;
 export type Reason =
+  | "AMBIGUOUS_BOUNDARY"
   | "AMBIGUOUS_PARALLEL"
   | "PARTIAL_ENTRY"
   | "PARTIAL_EXIT"
@@ -59,6 +65,10 @@ export type Reason =
   | "DISTANCE_EXCEEDED"
   | "INSUFFICIENT_POINTS";
 const descriptions: Record<Reason, [string, string]> = {
+  AMBIGUOUS_BOUNDARY: [
+    "A sustained observed uncertainty cluster at a shared endpoint makes stop ownership ambiguous.",
+    "공유 끝점의 지속된 관측 불확실성 때문에 정지가 어느 구간에 속했는지 확인할 수 없습니다.",
+  ],
   AMBIGUOUS_PARALLEL: [
     "Multiple physical parallel ways are compatible with positional accuracy.",
     "위치 정확도 범위에 서로 다른 평행도로가 있습니다.",
@@ -125,6 +135,63 @@ export interface BoundaryBracket {
   after_offset_ms: number;
   interpolated_at_ms: number;
 }
+export interface BoundaryAmbiguity {
+  longitude: number;
+  latitude: number;
+  start_offset_ms: number;
+  end_offset_ms: number;
+  pre_transition_end_offset_ms: number;
+  sample_ids: string[];
+  distances_m: number[];
+}
+export function observedBoundaryCluster(
+  observations: Observation[],
+  transitionIndex: number,
+  boundary: number[],
+  geometry: GeometryStrategy,
+  minimumMs: number,
+): BoundaryAmbiguity | null {
+  const near = (index: number): boolean =>
+    index >= 0 &&
+    index < observations.length &&
+    geometry.distance(
+      [observations[index]!.longitude, observations[index]!.latitude],
+      boundary,
+    ) <=
+      observations[index]!.accuracy_m + 1;
+  if (!near(transitionIndex - 1)) return null;
+  let start = transitionIndex - 1,
+    end = start;
+  while (
+    near(start - 1) &&
+    observations[start]!.offset_ms - observations[start - 1]!.offset_ms <=
+      GAP_MS
+  )
+    start--;
+  const preEnd = transitionIndex - 1;
+  if (
+    observations[preEnd]!.offset_ms - observations[start]!.offset_ms <
+    minimumMs
+  )
+    return null;
+  while (
+    near(end + 1) &&
+    observations[end + 1]!.offset_ms - observations[end]!.offset_ms <= GAP_MS
+  )
+    end++;
+  const cluster = observations.slice(start, end + 1);
+  return {
+    longitude: boundary[0]!,
+    latitude: boundary[1]!,
+    start_offset_ms: cluster[0]!.offset_ms,
+    end_offset_ms: cluster.at(-1)!.offset_ms,
+    pre_transition_end_offset_ms: observations[preEnd]!.offset_ms,
+    sample_ids: cluster.map((point) => point.sample_id),
+    distances_m: cluster.map((point) =>
+      geometry.distance([point.longitude, point.latitude], boundary),
+    ),
+  };
+}
 export interface MatchedTraversal {
   traversal_id: string;
   vehicle_id: string;
@@ -136,6 +203,7 @@ export interface MatchedTraversal {
   exited_at_ms: number | null;
   reason_codes: Reason[];
   source_sample_ids: string[];
+  boundary_ambiguities?: BoundaryAmbiguity[];
   entry_bracket: BoundaryBracket | null;
   exit_bracket: BoundaryBracket | null;
   reason_messages: ReturnType<typeof reasonMessages>;
@@ -599,7 +667,8 @@ export function interpretRun(
   });
   const entries = new Map<number, BoundaryBracket>(),
     exits = new Map<number, BoundaryBracket>(),
-    reasons = edges.map(() => new Set<Reason>());
+    reasons = edges.map(() => new Set<Reason>()),
+    boundaryAmbiguities = edges.map(() => [] as BoundaryAmbiguity[]);
   const bracket = (a: Eligible, b: Eligible, at: number): BoundaryBracket => ({
     before_sample_id: a.observation.sample_id,
     after_sample_id: b.observation.sample_id,
@@ -701,6 +770,24 @@ export function interpretRun(
         reasons[middle]!.add("INSUFFICIENT_POINTS");
       continue;
     }
+    if (
+      hooks.policy_id === "seoul-observed-v2" &&
+      hooks.geometry &&
+      hooks.ambiguous_boundary_ms
+    ) {
+      const cluster = observedBoundaryCluster(
+        run.observations,
+        index,
+        previous.directed_geometry.at(-1)!,
+        hooks.geometry,
+        hooks.ambiguous_boundary_ms,
+      );
+      if (cluster)
+        for (const occurrence of [before.edge_index, current.edge_index]) {
+          reasons[occurrence]!.add("AMBIGUOUS_BOUNDARY");
+          boundaryAmbiguities[occurrence]!.push(cluster);
+        }
+    }
     const left = (1 - before.fraction) * length(previous, hooks),
       right = current.fraction * length(next, hooks);
     if (left + right <= 0) {
@@ -778,6 +865,9 @@ export function interpretRun(
       exited_at_ms: exit?.interpolated_at_ms ?? null,
       reason_codes,
       source_sample_ids,
+      ...(boundaryAmbiguities[index]!.length
+        ? { boundary_ambiguities: boundaryAmbiguities[index] }
+        : {}),
       entry_bracket: entry,
       exit_bracket: exit,
       reason_messages: reasonMessages(reason_codes),

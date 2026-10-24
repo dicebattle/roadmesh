@@ -294,6 +294,7 @@ test("optional matching evidence preserves results and bilingual exclusion reaso
   assert(html.includes("완전 통과 수용"));
   for (const code of [
     "AMBIGUOUS_PARALLEL",
+    "AMBIGUOUS_BOUNDARY",
     "PARTIAL_ENTRY",
     "PARTIAL_EXIT",
     "OBSERVATION_GAP",

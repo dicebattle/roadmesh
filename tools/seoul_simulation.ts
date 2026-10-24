@@ -246,9 +246,10 @@ export function runSeoulMatching(
         edges: [...registry.values()],
       },
       hooks: MatchingHooks = {
-        policy_id: "seoul-observed-v1",
+        policy_id: "seoul-observed-v2",
         geometry: geodesicSphere,
         connection_tolerance_m: 1,
+        ambiguous_boundary_ms: 1000,
         ambiguous: (sample) =>
           regionalAmbiguous(sample, candidates.get(sample.sample_id) ?? []),
       };
@@ -367,7 +368,7 @@ export function runSeoulMatching(
     source: sourceIdentity(),
     graph_id: bundle.graphId,
     graph_manifest_sha256: bundle.manifestSha256,
-    policy_id: "seoul-observed-v1",
+    policy_id: "seoul-observed-v2",
     geometry_policy: bundle.geometry_policy,
     source_class: "SYNTHETIC",
     engine_executed: true,
@@ -683,7 +684,7 @@ export function runSeoulWorkload(
     graph_manifest_sha256: bundle.manifestSha256,
     implementation_sha256: fingerprint,
     geometry_policy: bundle.geometry_policy,
-    matching_policy: "seoul-observed-v1",
+    matching_policy: "seoul-observed-v2",
     cleanup_verified: true,
     output_sha256: evidenceHashes(output),
     completed_at_utc: new Date().toISOString(),

@@ -556,6 +556,7 @@ export function renderSimulationReport(data: SimulationReportData): string {
     }
     const reasons = {
       AMBIGUOUS_PARALLEL: ["Ambiguous parallel roads", "평행도로 구분 불가"],
+      AMBIGUOUS_BOUNDARY: ["Uncertain timing while stopped at an edge boundary", "구간 경계 정지 시각 불명확"],
       PARTIAL_ENTRY: ["Entry not fully observed", "진입 관측 부족"],
       PARTIAL_EXIT: ["Exit not fully observed", "진출 관측 부족"],
       OBSERVATION_GAP: ["Observation gap", "관측 누락 구간"],
