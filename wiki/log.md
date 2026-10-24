@@ -450,3 +450,9 @@ Main inspected the successful PR40122629962 artifact for head6153689 (merge-test
 Main separately reviewed Sol's bounded P09 retry: one persistent engine, two ordinary routes, both147.404s/2.119km, same PID24/start1007057,268 hashes, actual owned-container absence. Original failed probe remains. Review-only filename, Docker message-case and inspect-object assumptions were corrected without another engine run; no P09 production code exists yet. [Capability evidence](../research/pilot/2026-10-25-p09-preparation/retry/README.md).
 
 메인은 Sol의 P09제한재검사도 별도로 검토했습니다. 지속엔진한개·경로두건·같은PID/시작눈금·해시268개·소유컨테이너부재를 확인했습니다. 검토기의 파일명·Docker문구대소문자·객체형식 가정만 고쳤고 엔진을 재실행하지 않았습니다. 첫실패를보존하며 P09생산구현은 아직 없습니다.
+
+## 2026-10-25 — P09 design fixed / P09 설계 고정
+
+Main fixed [the persistent-node contract](../docs/28-p09-routing-nodes.md) using the verified native HTTP probe. Two independent local nodes reuse P07 acceptance and P08 immutable generations; one active pointer and per-request leases prevent mixed-version results. Superseded/expired results remain rejected while old engines drain. Scope includes actual Seoul inputs, exact ownership, bounded slots, real process faults and fresh whole-system/media delivery. Sol owns implementation. P08 PR#9 final checks are still running; this new branch starts at its unchanged-runtime documentation head16f1049 and must incorporate the protected main merge before delivery.
+
+메인은 실제HTTP실험을 근거로 지속노드 계약을 고정했습니다. 독립 두 노드가 기존 수용/불변세대를 재사용하고 활성참조·요청별고정으로 버전혼합을 막습니다. 옛 엔진의 요청을 마무리하더라도 교체/만료된 결과는 거부합니다. 실제서울입력·정확한소유권·세대상한·실제프로세스장애·새전체검증/녹화를 범위로 정했으며 Sol이 구현합니다. P08 최종검사는 진행중이고 새 브랜치는 실행코드가 같은 문서커밋에서 시작하므로 결과 전달 전에 보호된 main 병합을 반영해야 합니다.
