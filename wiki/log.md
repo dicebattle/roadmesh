@@ -132,3 +132,14 @@
   Python은 표준 라이브러리만으로 실행하는 평가·재생 도구와 첫 검사기와의 일관성에 적용됩니다. 운영 핵심 언어나 성능 비교 우승자로 고른 것은 아닙니다. TypeScript/Node.js도 가능했으며 정량 비교는 하지 않았습니다.
 - Boundary: do not duplicate production traffic algorithms in Python. Reassess if sharing TypeScript production types/core becomes important. No code, language migration, tests, or deployment changed; documentation links and whitespace were checked.
   경계: 운영 교통 알고리즘을 Python으로 중복 구현하지 않습니다. TypeScript 운영 타입·핵심 코드 공유가 중요해지면 재검토합니다. 코드·언어 이전·테스트·배포 변경은 없으며 문서 링크·공백만 확인했습니다.
+
+## 2026-10-24 TypeScript migration implementation / TypeScript 전환 구현
+
+- User explicitly requested one TypeScript toolchain, Sol implementation, direct proof, branch push, continued modules and merging current branches. Main wrote [migration design](../docs/14-typescript-migration.md) and [P02 contract](../docs/15-p02-test-graph.md); Sol (`gpt-6.1-sol`, agent `bilingual_cli`) implemented the migration. Main reviewed all runtime code, tests and CI. Existing feature branch includes the earlier planning branch.
+  사용자가 TypeScript 통일·Sol 구현·직접 검증·푸시·후속 개발·현재 브랜치 병합을 요청했습니다. 메인이 전환·P02 계약을 작성하고 위 Sol이 전환 코드를 구현했습니다. 메인이 실행 코드·검사·CI를 검토했고 기존 기능 브랜치는 앞선 계획 브랜치를 포함합니다.
+- Before removing Python tools/tests, Sol captured [reference outputs](../fixtures/compat/python-0095b3b.json) from `0095b3b2611b1ced21e8c39f788d9799bf58dbd9`. TypeScript preserves 17 scenario event streams/digests/assertion reports, 150 random draws across five seeds, two corpus reports and six invalid-input exit cases. Historical implementation and evidence remain in Git.
+  Python 도구·검사를 제거하기 전에 위 리비전 기준 출력을 보존했습니다. 시나리오 17개·난수 150개·자료 보고서 2개·잘못된 입력 6개의 동등성을 검사했으며 과거 구현·증거는 Git에 남깁니다.
+- Sol ran `npm exec --yes --package=node@22.23.4 -- npm test` once: strict TypeScript build and 33 tests passed (28 prior categories + 5 migration categories), 0 failed/skipped, 1243.878917 ms. Main reviewed reference assertions and explicit numeric-domain tightening: unsafe integer inputs now fail instead of risking JavaScript precision loss. Runtime manifests retain `python: null` and add actual `node` version.
+  Sol이 위 명령을 한 번 실행해 엄격 빌드·33개 검사(기존 28범주+전환 5범주)가 통과했고 실패·생략은 0개입니다. 메인은 기준 비교와 안전 정수 범위 강화를 검토했습니다. 목록의 Python 값은 null이며 실제 Node 버전을 추가합니다.
+- Exact dependencies: TypeScript 5.9.3, @types/node 22.20.5, random-js 2.1.0, jsonc-parser 3.3.1. CI targets Node 22/24 and preserves `Required checks`. Main's clean-source direct checks and hosted artifact inspection follow; this entry does not claim them complete.
+  의존성을 위 버전으로 고정했고 CI는 Node 22/24·기존 종합 검사 이름을 유지합니다. 메인의 깨끗한 소스 직접 실행·원격 결과물 검사는 이어서 수행하며 아직 완료로 주장하지 않습니다.

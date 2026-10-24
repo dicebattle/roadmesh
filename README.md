@@ -53,23 +53,27 @@ RouteLens는 운전자가 제공한 주행 관측을 검증해 도로별 교통�
 
 ## 지금 실행할 수 있는 모듈
 
-Python 3.11 이상에서 저장소 루트를 작업 디렉터리로 사용합니다. 추가 패키지나 API 키는 필요하지 않습니다.
+Use Node.js 22 or 24 and npm from the repository root. Install the locked dependencies and build before running tools. No API key is needed.
+
+저장소 루트에서 Node.js 22 또는 24와 npm을 사용합니다. 고정 의존성 설치·빌드 후 실행하며 API 키는 필요하지 않습니다.
 
 ```bash
-python3 -m tools.evaluation_corpus fixtures/evaluation/synthetic-seoul.json
-python3 -m unittest discover -s tests -p 'test_evaluation_corpus.py' -v
+npm ci
+npm run build
+npm run --silent corpus -- fixtures/evaluation/synthetic-seoul.json
+npm test
 ```
 
 [시험자료 검사 모듈](wiki/modules/evaluation-corpus.md)은 좌표·관측 순서·중복·출처·검토 상태를 검사합니다. 포함된 합성 예제는 형식 검사를 통과하지만 실제 도로 검증 자료 100개 기준에는 포함되지 않습니다. `--require-ready`를 붙이면 이 예제는 미준비 상태로 종료합니다.
 
-Run P01 or its direct checks using a new output directory. Existing paths are refused; only Python's standard library is needed.
+Run P01 or its direct checks using a new output directory. Existing paths are refused. The tools now share the TypeScript/Node.js toolchain.
 
-새 출력 폴더로 P01 또는 직접 검사를 실행합니다. 기존 경로는 거부하며 Python 표준 라이브러리만 필요합니다.
+새 출력 폴더로 P01 또는 직접 검사를 실행합니다. 기존 경로는 거부하며 도구는 TypeScript/Node.js 체계를 공유합니다.
 
 ```bash
 mkdir -p data
-python3 -m tools.pilot_runner fixtures/pilot/success.json --output data/p01-example
-python3 -m tools.pilot_checks --output data/p01-checks
+npm run --silent pilot -- fixtures/pilot/success.json --output data/p01-example
+npm run --silent pilot:checks -- --output data/p01-checks
 ```
 
 ## 다음 구현 작업

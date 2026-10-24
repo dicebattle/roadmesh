@@ -23,6 +23,8 @@
 | ADR-017 | P01 schedules fixture-label events only / P01은 도로 이름표 이벤트 일정만 생성 | Build truthful replay and evidence before GPS or engine integration / GPS·엔진 연결 전에 정직한 재현·증거 기반 마련 | Extend at P02/P03 without presenting P01 as real routing / P02/P03에서 확장하고 P01을 실제 경로 계산으로 표현하지 않음 |
 | ADR-018 | Korean chat, bilingual project artifacts / 대화는 한국어·프로젝트 기록물은 이중 언어 | User clarified the scope of the language rule / 사용자가 언어 규칙의 범위를 정정 | Follow explicit user language requests / 명시적인 사용자 언어 요청을 따름 |
 
+| ADR-019 | TypeScript for verification and production coordination / 검증과 운영 조정에 TypeScript 통일 | User-requested shared toolchain and future type reuse; preserve P01 replay parity / 사용자 요청에 따른 도구 통일·후속 타입 공유, P01 재생 동등성 유지 | Revisit only with measured requirements; see [migration](14-typescript-migration.md) / 실측 요구에 따라 재검토 |
+
 ## 아직 확정하지 않은 것
 
 1. 시험 지역·원본 확보 방법·실제 운전자 모집 규모.

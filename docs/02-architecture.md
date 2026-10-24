@@ -38,7 +38,7 @@ services/aggregator/            Cloudflare / PostgreSQL 실행 어댑터
 services/node-agent/            TypeScript/Node.js, Valhalla 프로세스 관리·버전 교체
 services/traffic-compiler/      고정된 Valhalla 버전에 맞춘 C++ 변환 도구
 tools/map-builder/              OSM 가져오기·그래프 생성·검증·목록 작성
-tools/replay/                   Python 평가·기록 재생
+tools/replay/                   TypeScript evaluation/replay tools / 평가·기록 재생
 deploy/cloudflare/              Workers, Queues, Durable Objects, R2
 deploy/compose/                 일반 서버용 PostgreSQL/PostGIS + 서비스 구성
 ```

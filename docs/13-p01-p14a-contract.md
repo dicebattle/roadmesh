@@ -4,11 +4,15 @@ Design owner: main agent. Coding owner: Sol implementation subagent. This is the
 
 설계 담당은 메인 에이전트, 코딩 담당은 Sol 구현 하위 에이전트입니다. 이번 로컬 파일럿 첫 구현의 범위를 정하며 P02 도로 생성·P03 GPS 생성·P12 프로세스 운영은 구현하지 않습니다.
 
+Language update: [TypeScript migration](14-typescript-migration.md) supersedes the original Python implementation choice. The behavioral contract below remains; runtime provenance now records Node.js.
+
+언어 변경: [TypeScript 전환](14-typescript-migration.md)이 최초 Python 구현 선택을 대체합니다. 아래 행동 계약은 유지하고 런타임 출처는 Node.js로 기록합니다.
+
 ## P01 input / P01 입력
 
-Use Python 3.11+ standard library, consistent with the existing development tools. Add `tools/pilot_runner.py`, `fixtures/pilot/`, and focused tests. Do not add a service, cloud dependency, or a broad plugin system.
+Use TypeScript with Node.js 22/24. Implement `tools/pilot_runner.ts`, `fixtures/pilot/`, and focused tests. Do not add a service, cloud dependency, or a broad plugin system.
 
-기존 개발 도구와 같이 Python 3.11 이상 표준 라이브러리를 사용합니다. `tools/pilot_runner.py`, `fixtures/pilot/`, 집중 테스트를 추가하며 서비스·클라우드 의존성·범용 플러그인 체계를 만들지 않습니다.
+TypeScript와 Node.js 22/24를 사용합니다. `tools/pilot_runner.ts`, `fixtures/pilot/`, 집중 테스트를 추가하며 서비스·클라우드 의존성·범용 플러그인 체계를 만들지 않습니다.
 
 `ScenarioSpec 0.1` requires:
 
@@ -26,7 +30,7 @@ JSON 키 중복·NaN/Infinity·미지원 버전·1MiB 초과 입력·20,000개 �
 
 ## Deterministic scheduling / 결정적 일정 생성
 
-For vehicles sorted by ID, a local `random.Random(seed)` draws integer departure jitter in `[0, start_jitter_ms]`. Emit one `vehicle_departure`, then one `fixture_edge_enter` for each route label at departure plus `index * step_ms`. Emit each `fault_marker` at its declared time. Sort by `(offset_ms, kind priority, entity ID, ordinal)`, where priority is departure, edge enter, then fault marker; assign stable sequence IDs after sorting. Use an injected integer-millisecond event clock that refuses backward movement.
+For vehicles sorted by ID, a local Python-compatible MT19937 adapter draws integer departure jitter in `[0, start_jitter_ms]`. Emit one `vehicle_departure`, then one `fixture_edge_enter` for each route label at departure plus `index * step_ms`. Emit each `fault_marker` at its declared time. Sort by `(offset_ms, kind priority, entity ID, ordinal)`, where priority is departure, edge enter, then fault marker; assign stable sequence IDs after sorting. Use an injected integer-millisecond event clock that refuses backward movement.
 
 차량 ID 순서로 로컬 난수 생성기가 설정 범위의 정수 출발 지연을 뽑습니다. 출발 이벤트 하나와 각 도로 이름표 진입 이벤트를 설정 간격으로 만들고, 장애 표식은 지정 시각에 만듭니다. 시각·종류 우선순위·대상 ID·순번으로 정렬하며 종류는 출발→도로 진입→장애 표식 순서입니다. 이후 고정 이벤트 ID를 붙입니다. 정수 밀리초 단위 가상 관측시계는 역행을 거부합니다.
 
@@ -44,21 +48,21 @@ Supported assertions are `event_count`, `event_kind_count`, `last_event_ms`, and
 
 지원 검사는 전체 이벤트 수·종류별 이벤트 수·마지막 이벤트 시각·이벤트 해시입니다. 수·시간의 기대값은 음수가 아닌 정수이고 해시는 소문자 16진수 64자리입니다. 모르는 검사 종류는 통과로 숨기지 않고 `SKIPPED`로 기록합니다. P01의 검사는 모두 필수이며 빈 검사는 입력 오류, 틀린 기대값은 실패입니다.
 
-CLI: `python3 -m tools.pilot_runner SCENARIO --output NEW_DIRECTORY`. Exit `0`: all required assertions pass. Exit `1`: any assertion fails or is skipped. Exit `2`: invalid input, arguments or output write error. Validate and compute before writing; refuse any existing output directory, including symlinks. Partial output after an I/O error is incomplete evidence, never a success. Do not overwrite earlier runs.
+CLI: `npm run --silent pilot -- SCENARIO --output NEW_DIRECTORY` after `npm ci && npm run build`. Exit `0`: all required assertions pass. Exit `1`: any assertion fails or is skipped. Exit `2`: invalid input, arguments or output write error. Validate and compute before writing; refuse any existing output directory, including symlinks. Partial output after an I/O error is incomplete evidence, never a success. Do not overwrite earlier runs.
 
 CLI 형식은 위와 같으며 모든 검사 통과는 0, 실패·생략은 1, 입력·인자·출력 오류는 2입니다. 쓰기 전에 입력과 계산을 확인하고 심볼릭 링크를 포함한 기존 출력 경로는 거부합니다. 입출력 오류 후 일부 파일만 남으면 미완료 증거이며 성공으로 취급하지 않습니다. 이전 실행 결과는 덮어쓰지 않습니다.
 
-Each output contains `manifest.json`, `events.json`, `assertions.json`, and English/Korean `summary.md`. Write the final manifest last, only after all other evidence files are written, so an interrupted write cannot leave a completed PASS manifest. Record full source commit, dirty state, Python/platform, scenario file SHA, event SHA, unique run ID and timestamps. If source identity is unavailable, record it as unknown rather than clean. Identify `engine_executed=false`, unresolved graph, no image digests and no applied aggregation policy. Evidence references are relative to the run directory. Human guidance is bilingual; machine keys stay English.
+Each output contains `manifest.json`, `events.json`, `assertions.json`, and English/Korean `summary.md`. Write the final manifest last, only after all other evidence files are written, so an interrupted write cannot leave a completed PASS manifest. Record full source commit, dirty state, Node.js/platform, scenario file SHA, event SHA, unique run ID and timestamps. If source identity is unavailable, record it as unknown rather than clean. Identify `engine_executed=false`, unresolved graph, no image digests and no applied aggregation policy. Evidence references are relative to the run directory. Human guidance is bilingual; machine keys stay English.
 
-결과에는 실행 목록·이벤트·검사 JSON과 영어/한국어 요약을 담습니다. 완성 실행 목록은 다른 모든 증거 저장 후 마지막에 기록하여 저장 중단 때 완료된 성공 목록만 남지 않게 합니다. 전체 소스 커밋·미커밋 상태·Python/플랫폼·입력/이벤트 해시·고유 실행 ID·시각을 기록합니다. 소스를 확인하지 못하면 깨끗한 상태라고 가정하지 않고 미확인으로 둡니다. 엔진 미실행·그래프 미연결·이미지/집계 정책 없음도 명시합니다. 증거 참조는 실행 폴더 기준 상대경로로 적고, 사람용 안내만 이중 언어로 제공하며 키는 영어로 유지합니다.
+결과에는 실행 목록·이벤트·검사 JSON과 영어/한국어 요약을 담습니다. 완성 실행 목록은 다른 모든 증거 저장 후 마지막에 기록하여 저장 중단 때 완료된 성공 목록만 남지 않게 합니다. 전체 소스 커밋·미커밋 상태·Node.js/플랫폼·입력/이벤트 해시·고유 실행 ID·시각을 기록합니다. 소스를 확인하지 못하면 깨끗한 상태라고 가정하지 않고 미확인으로 둡니다. 엔진 미실행·그래프 미연결·이미지/집계 정책 없음도 명시합니다. 증거 참조는 실행 폴더 기준 상대경로로 적고, 사람용 안내만 이중 언어로 제공하며 키는 영어로 유지합니다.
 
 ## P14a continuous checks / P14a 지속 검사
 
-GitHub Actions triggers on branch pushes and pull requests without path filters that could leave a required check pending. Run Python 3.11 and 3.13, with a stable aggregate check named `Required checks`. It must fail when a prerequisite job fails, is cancelled, or is skipped. Permissions are `contents: read`; no deployment secrets, `pull_request_target`, automatic comments or repository writes.
+GitHub Actions triggers on branch pushes and pull requests without path filters that could leave a required check pending. Run Node.js 22 and 24, with a stable aggregate check named `Required checks`. It must fail when a prerequisite job fails, is cancelled, or is skipped. Permissions are `contents: read`; no deployment secrets, `pull_request_target`, automatic comments or repository writes.
 
-GitHub Actions는 작업 브랜치 푸시와 PR에서 실행하며 필수 검사를 대기 상태로 남길 경로 필터를 두지 않습니다. Python 3.11·3.13을 검사하고 고정 종합 검사 이름은 `Required checks`입니다. 선행 검사 실패·취소·생략 때 종합 검사도 실패해야 합니다. 저장소 읽기 권한만 사용하며 배포 비밀정보·특권 PR 이벤트·자동 댓글·저장소 쓰기는 사용하지 않습니다.
+GitHub Actions는 작업 브랜치 푸시와 PR에서 실행하며 필수 검사를 대기 상태로 남길 경로 필터를 두지 않습니다. Node.js 22·24를 검사하고 고정 종합 검사 이름은 `Required checks`입니다. 선행 검사 실패·취소·생략 때 종합 검사도 실패해야 합니다. 저장소 읽기 권한만 사용하며 배포 비밀정보·특권 PR 이벤트·자동 댓글·저장소 쓰기는 사용하지 않습니다.
 
-Pin reviewed action revisions: checkout v4 `11d5960a326750d5838078e36cf38b85af677262`; setup-python v5 `a26af69be951a213d495a4c3e4e4022e16d87065`; upload-artifact v4 `ea165f8d65b6e75b540449e92b4886f43607fa02`. These revisions were resolved through official repository refs on 2026-10-24. Upload small synthetic evidence even after test failure, retain seven days, fail if expected evidence is missing, and time-limit jobs.
+Pin reviewed action revisions: checkout v4 `11d5960a326750d5838078e36cf38b85af677262`; setup-node v4 `49933ea5288caeca8642d1e84afbd3f7d6820020`; upload-artifact v4 `ea165f8d65b6e75b540449e92b4886f43607fa02`. These revisions were resolved through official repository refs on 2026-10-24. Upload small synthetic evidence even after test failure, retain seven days, fail if expected evidence is missing, and time-limit jobs.
 
 2026-10-24 공식 저장소 참조에서 확인한 위 Actions 커밋으로 고정합니다. 검사 실패 시에도 작은 합성 증거를 보존하고 보관은 7일로 제한합니다. 필요한 증거가 없으면 오류로 처리하고 작업 시간도 제한합니다.
 

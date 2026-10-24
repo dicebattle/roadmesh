@@ -10,16 +10,18 @@ English-first/Korean CLI update, 2026-10-24: help and project validation errors 
 
 M0에서는 경로 100개와 지도 매칭 사례 100개로 엔진을 평가할 계획입니다. 합성 예제·검토하지 않은 자료·중복 입력을 그 수에 넣으면 엔진 품질을 과장하게 됩니다. 원본 출처와 기대 결과의 근거를 먼저 정리할 수 있는 작은 도구를 만들었습니다.
 
-코드: [tools/evaluation_corpus.py](../../tools/evaluation_corpus.py). 검증: [tests/test_evaluation_corpus.py](../../tests/test_evaluation_corpus.py). 전체 위치: [로드맵](../../docs/05-roadmap.md).
+코드: [tools/evaluation_corpus.ts](../../tools/evaluation_corpus.ts). 검증: [tests/evaluation_corpus.test.ts](../../tests/evaluation_corpus.test.ts). 전체 위치: [로드맵](../../docs/05-roadmap.md).
 
 ## 실행
 
-저장소 루트에서 Python 3.11 이상을 사용합니다. 외부 패키지·서버·계정은 필요하지 않습니다. 이번 검증 환경은 Python 3.13.7입니다. 3.11에서의 별도 실행은 아직 하지 않았습니다.
+Use Node.js 22/24: `npm ci && npm run build`. See the [migration contract](../../docs/14-typescript-migration.md). Earlier Python evidence below is historical.
+
+Node.js 22/24에서 설치·빌드 후 실행합니다. [전환 계약](../../docs/14-typescript-migration.md)을 참고하며 아래 기존 Python 검증 결과는 과거 기록입니다.
 
 ```bash
-python3 -m tools.evaluation_corpus fixtures/evaluation/synthetic-seoul.json
-python3 -m tools.evaluation_corpus fixtures/evaluation/synthetic-seoul.json --require-ready
-python3 -m unittest discover -s tests -p 'test_evaluation_corpus.py' -v
+npm run --silent corpus -- fixtures/evaluation/synthetic-seoul.json
+npm run --silent corpus -- fixtures/evaluation/synthetic-seoul.json --require-ready
+npm test
 ```
 
 첫 명령은 형식 검사 성공으로 종료코드 0입니다. 두 번째는 실제 검토 자료가 부족하므로 종료코드 1입니다. 잘못된 JSON·잘못된 좌표 등 입력 오류는 종료코드 2이며 오류 위치를 표준 오류 출력으로 알려줍니다. 결과 파일은 표준 출력을 원하는 경로로 저장할 수 있습니다. 도구 자체는 파일을 수정하지 않습니다.

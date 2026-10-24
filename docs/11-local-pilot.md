@@ -47,9 +47,9 @@ These are code and test boundaries, not fourteen separate network services. Reus
 | P13 | Cloudflare local adapter parity / Cloudflare 로컬 구현 비교 | Run the same core cases through the local Worker/DO/queue environment / 같은 핵심 사례를 로컬 Worker·DO·큐 환경으로 실행 | Equal canonical outputs for supported cases; differences explicit / 지원 사례의 표준 결과 일치·차이 명시 |
 | P14 | Continuous checks and evidence publication / 지속 검사·증거 보존 | Fast checks, engine integration jobs, retained reports, stable check names / 빠른 검사·엔진 통합 검사·보고서 보존·고정 검사 이름 | A deliberately failing assertion fails the job; no skipped check reported as passed / 실패 조건이 검사 실패로 이어지고 생략은 통과로 표시하지 않음 |
 
-Existing module: `tools/evaluation_corpus.py` is **P01's geographic-input companion**, not the scenario runner. Reuse its source/review separation; add a separate scenario contract rather than making a synthetic run satisfy its real-road quota.
+Existing module: `tools/evaluation_corpus.ts` is **P01's geographic-input companion**, not the scenario runner. Reuse its source/review separation; add a separate scenario contract rather than making a synthetic run satisfy its real-road quota.
 
-기존 `tools/evaluation_corpus.py`는 **P01과 함께 사용하는 실제 지역 입력 검사기**이며 시나리오 실행기는 아닙니다. 출처·검토 상태 구분을 재사용하되 합성 시나리오 계약은 별도로 만들어 실제 도로 기준을 우회하지 않습니다.
+기존 `tools/evaluation_corpus.ts`는 **P01과 함께 사용하는 실제 지역 입력 검사기**이며 시나리오 실행기는 아닙니다. 출처·검토 상태 구분을 재사용하되 합성 시나리오 계약은 별도로 만들어 실제 도로 기준을 우회하지 않습니다.
 
 ## 3. Contracts before implementation / 구현 전 계약
 

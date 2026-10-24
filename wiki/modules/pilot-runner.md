@@ -14,19 +14,23 @@ The main agent designed [the implementation contract](../../docs/13-p01-p14a-con
 
 ## Evidence interpretation / 증거 해석
 
-### Why Python for this tool / 이 도구에서 Python을 선택한 이유
+### Original Python decision, superseded / 대체된 최초 Python 선택
+
+The user subsequently chose TypeScript for all project verification tools. [Migration design](../../docs/14-typescript-migration.md) preserves behavior and removes the second project toolchain. The paragraphs below explain the historical decision.
+
+사용자의 후속 요청으로 프로젝트 검증 도구를 TypeScript로 통일합니다. [전환 설계](../../docs/14-typescript-migration.md)는 행동을 보존하며 프로젝트의 이중 도구 체계를 없앱니다. 아래는 과거 결정의 설명입니다.
 
 The original architecture assigned Python to evaluation/replay tools while keeping server coordination and traffic aggregation in TypeScript. The first corpus validator used Python's standard library; P01 continued that tooling choice. Its implemented work is JSON validation, seeded event scheduling, hashing, filesystem reports and subprocess checks, all covered by the standard library without package installation or a build step. This was a tooling-simplicity choice, not a benchmark-based performance decision or a choice to build the navigation backend in Python.
 
 최초 아키텍처는 평가·재생 도구에 Python, 서버 조정·교통정보 집계에 TypeScript를 배정했습니다. 첫 자료 검사기가 Python 표준 라이브러리를 사용했고 P01도 그 도구 선택을 이어갔습니다. 실제 작업은 JSON 검사·시드 기반 일정·해시·파일 보고서·프로세스 검사로, 외부 패키지 설치나 빌드 단계 없이 표준 라이브러리로 처리할 수 있습니다. 개발 도구를 단순하게 만드는 선택이었으며 성능 비교 결과나 내비게이션 서버 전체를 Python으로 만든다는 결정은 아닙니다.
 
-TypeScript/Node.js could perform these tasks too. Keeping Python adds a second toolchain and prevents direct reuse of TypeScript types. That tradeoff was not quantitatively compared before implementation. Python should remain an external test driver, not a second implementation of production traffic rules. The planned production core stays TypeScript; Valhalla performs routing in C++, and Android is planned in Kotlin. If test logic increasingly needs shared production types or core code, reassess the harness language before duplicating behavior. No language migration is authorized or performed by this explanation.
+TypeScript/Node.js could perform these tasks too. Keeping Python adds a second toolchain and prevents direct reuse of TypeScript types. That tradeoff was not quantitatively compared before implementation. Python should remain an external test driver, not a second implementation of production traffic rules. The planned production core stays TypeScript; Valhalla performs routing in C++, and Android is planned in Kotlin. If test logic increasingly needs shared production types or core code, reassess the harness language before duplicating behavior. That explanation itself did not perform a migration; the later user request superseded this boundary.
 
-TypeScript/Node.js로도 같은 작업을 할 수 있습니다. Python을 유지하면 도구 체계가 하나 늘고 TypeScript 타입을 직접 공유하지 못합니다. 이 비용을 구현 전에 정량 비교하지는 않았습니다. Python은 외부 시험 도구로 한정하고 운영 교통 규칙을 별도로 다시 구현하지 않아야 합니다. 운영 핵심은 TypeScript, 경로 계산은 Valhalla C++, Android는 Kotlin 계획을 유지합니다. 검증 도구가 운영 타입·핵심 코드 공유를 자주 요구하게 되면 동작을 중복 작성하기 전에 언어를 재검토합니다. 이번 설명으로 언어 이전을 승인받거나 수행한 것은 아닙니다.
+TypeScript/Node.js로도 같은 작업을 할 수 있습니다. Python을 유지하면 도구 체계가 하나 늘고 TypeScript 타입을 직접 공유하지 못합니다. 이 비용을 구현 전에 정량 비교하지는 않았습니다. Python은 외부 시험 도구로 한정하고 운영 교통 규칙을 별도로 다시 구현하지 않아야 합니다. 운영 핵심은 TypeScript, 경로 계산은 Valhalla C++, Android는 Kotlin 계획을 유지합니다. 검증 도구가 운영 타입·핵심 코드 공유를 자주 요구하게 되면 동작을 중복 작성하기 전에 언어를 재검토합니다. 당시 설명은 언어 이전을 수행하지 않았으며 이후 사용자 요청이 이 경계를 대체했습니다.
 
-References: [original module layout](../../docs/02-architecture.md), [P01 implementation contract](../../docs/13-p01-p14a-contract.md), and [actual imports and implementation](../../tools/pilot_runner.py).
+References: [original module layout](../../docs/02-architecture.md), [P01 implementation contract](../../docs/13-p01-p14a-contract.md), and [actual imports and implementation](../../tools/pilot_runner.ts).
 
-근거: [최초 모듈 구성](../../docs/02-architecture.md), [P01 구현 계약](../../docs/13-p01-p14a-contract.md), [실제 사용 모듈과 구현](../../tools/pilot_runner.py).
+근거: [최초 모듈 구성](../../docs/02-architecture.md), [P01 구현 계약](../../docs/13-p01-p14a-contract.md), [실제 사용 모듈과 구현](../../tools/pilot_runner.ts).
 
 - Event hashes are comparable across repeated runs; run UUIDs and wall-clock timestamps are deliberately different.
   반복 실행의 이벤트 해시는 비교 가능하며 실행 UUID·현실 시작시각은 의도적으로 다릅니다.
@@ -47,14 +51,14 @@ From the repository root, choose output directories that do not yet exist. Repea
 
 ```bash
 mkdir -p data
-python3 -m tools.pilot_runner fixtures/pilot/success.json --output data/p01-example
-python3 -m tools.pilot_checks --output data/p01-checks
-python3 -m unittest discover -s tests -p 'test_*.py' -v
+npm run --silent pilot -- fixtures/pilot/success.json --output data/p01-example
+npm run --silent pilot:checks -- --output data/p01-checks
+npm test
 ```
 
-The [runner](../../tools/pilot_runner.py) writes events, assertions, a bilingual summary and a final manifest. Completion manifests are written last. Existing paths are preserved. The [direct-check wrapper](../../tools/pilot_checks.py) runs five CLI cases: two successful replays, an expected assertion failure, an unsupported assertion and invalid input. It checks report contents as well as exit codes, and fails if the expected behavior is violated.
+The [runner](../../tools/pilot_runner.ts) writes events, assertions, a bilingual summary and a final manifest. Completion manifests are written last. Existing paths are preserved. The [direct-check wrapper](../../tools/pilot_checks.ts) runs five CLI cases: two successful replays, an expected assertion failure, an unsupported assertion and invalid input. It checks report contents as well as exit codes, and fails if the expected behavior is violated.
 
-[실행기](../../tools/pilot_runner.py)는 이벤트·판정·이중 언어 요약과 최종 실행 목록을 저장하며 완료 목록은 마지막에 기록합니다. 기존 경로는 보존합니다. [직접 검사 도구](../../tools/pilot_checks.py)는 성공 재생 두 번·의도적 실패·미지원 검사·잘못된 입력의 다섯 CLI 사례를 실행하고, 종료코드뿐 아니라 보고서도 검사하여 기대 동작이 깨지면 실패합니다.
+[실행기](../../tools/pilot_runner.ts)는 이벤트·판정·이중 언어 요약과 최종 실행 목록을 저장하며 완료 목록은 마지막에 기록합니다. 기존 경로는 보존합니다. [직접 검사 도구](../../tools/pilot_checks.ts)는 성공 재생 두 번·의도적 실패·미지원 검사·잘못된 입력의 다섯 CLI 사례를 실행하고, 종료코드뿐 아니라 보고서도 검사하여 기대 동작이 깨지면 실패합니다.
 
 The [fixture](../../fixtures/pilot/success.json) independently expects 7 events: 2 departures, 3 fixture-label entries and 2 scheduled markers. The last marker occurs at 500 ms. Same-time order is departure, edge entry, then fault marker. Markers do not inject actual failures.
 
@@ -66,9 +70,9 @@ Main-agent local verification on clean implementation commit `a2f3d905cbb979bce6
 
 메인이 미커밋 변경 없는 구현 커밋 `a2f3d905cbb979bce672d30f4894cc068b516826`에서 CLI 다섯 사례를 직접 통과시켰습니다. 독립적으로 계산한 이벤트 7개·정규 해시·소스 식별·서로 다른 실행 ID·덮어쓰기 거부 후 파일 보존도 확인했습니다. [로컬 증거](../../research/pilot/p01-local-2026-10-24.json)를 보존합니다.
 
-[Fast checks](../../.github/workflows/fast-checks.yml) runs the existing corpus and new P01 tests under Python 3.11 and 3.13. Job names are `Python 3.11`, `Python 3.13` and the aggregate `Required checks`. Evidence upload runs even after a test fails; absence of expected artifacts is an error. Matrix failure, cancellation or skipping prevents aggregate success. Artifacts are retained for seven days.
+[Fast checks](../../.github/workflows/fast-checks.yml) runs the corpus and P01 tests under Node.js 22 and 24. Job names are `Node 22`, `Node 24` and the aggregate `Required checks`. Evidence upload runs even after a test fails; absence of expected artifacts is an error. Matrix failure, cancellation or skipping prevents aggregate success. Artifacts are retained for seven days.
 
-[빠른 검사](../../.github/workflows/fast-checks.yml)는 Python 3.11·3.13에서 기존 자료 검사와 신규 P01 테스트를 실행합니다. 작업 이름은 위와 같고 종합 검사는 `Required checks`입니다. 실패 후에도 증거를 업로드하며 필요한 결과물이 없으면 오류입니다. 버전별 검사 실패·취소·생략은 종합 성공을 막습니다. 결과물 보관은 7일입니다.
+[빠른 검사](../../.github/workflows/fast-checks.yml)는 Node.js 22·24에서 자료 검사와 P01 테스트를 실행합니다. 작업 이름은 위와 같고 종합 검사는 `Required checks`입니다. 실패 후에도 증거를 업로드하며 필요한 결과물이 없으면 오류입니다. 버전별 검사 실패·취소·생략은 종합 성공을 막습니다. 결과물 보관은 7일입니다.
 
 Sol's first focused suite passed 26 tests. Main review found ordering and interrupted-output gaps, which Sol corrected with two regression tests. The revised focused suite passed 28 tests in one additional run. Clean-commit direct verification and hosted CI evidence are recorded separately in the work log; unit success alone is not proof of hosted CI.
 
