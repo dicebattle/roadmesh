@@ -1,50 +1,50 @@
 {
-  "source_commit": "eb541399ed11c7fd26a14f9336a0a7c4ebc51639",
-  "implementation_sha256": "21b3fc4aa287e009a293bbfab3046b0b8535540d6b683e239b2fe9c57ac2e1ff",
-  "report_path": "research/pilot/2026-10-25-p08/report.html",
-  "report_sha256": "10eb8dc0bf1e49392583eda91e2ceb985b203b55d622a296ed38166a87a062e7",
-  "capture_method": "Actual isolated Chrome UI playback, 34.7 seconds at 1280x720/20fps, full H.264/GIF conversion. / 실제 격리 Chrome 화면을 34.7초·1280x720·20fps로 녹화하고 전체를 H.264/GIF로 변환했습니다.",
-  "raw_capture_sha256": "771f6b8c42bda7ffe4c0b6f7f6ed0f37b71e525df601450d487246ca384b3b05",
+  "source_commit": "4e3265fb92016e3642670fe44ae516df1f68d903",
+  "implementation_sha256": "12b6c0164fba48fd08f6b2732ccd24197634ec9ae734ecf0a5de500a5e365404",
+  "report_path": "research/pilot/2026-10-25-p08-portability/report.html",
+  "report_sha256": "d20ea975ff737eb1f1f81261308b20691a98081c8f706f202bae73037632803e",
+  "capture_method": "Actual Chrome playback after endpoint portability correction, 34.7 seconds at1280x720/20fps, complete H.264/GIF conversion. / 끝점 호환성 보완 후 실제34.7초·1280x720·20fps 화면을 녹화하고 전체를 변환했습니다.",
+  "raw_capture_sha256": "6fedd34fc6f43d712c44fede0e967d077ef03aaa0891a6449d7846d5a5cf0b43",
   "assets": [
     {
       "path": "docs/media/demo.mp4",
-      "sha256": "dab246d5926f793b1173c9986641bb51228661055b7f58a443beec21f316a320"
+      "sha256": "7d2eeda63569996ac0e5558bfd0813f7c637b832c9471bc715b755117bdaaf5e"
     },
     {
       "path": "docs/media/demo.gif",
-      "sha256": "9bf1248b1279ea9973dd3f6b334443144c4874bb8d9a4a7690a25c67ecd8015a"
+      "sha256": "575e6ac08e1c22424b058628240f9d5f7d3aabf0a1c8c7e2a7244955ffee7a7a"
     },
     {
-      "path": "research/pilot/2026-10-25-p08/report-data.json",
-      "sha256": "31ba32c4bb43c81a0237e0b347ff1bd63451fe02d44f6746624791815c8ff784"
+      "path": "research/pilot/2026-10-25-p08-portability/report-data.json",
+      "sha256": "177055ba3e1f7ff4fb969a24bb62c0123ca3c24e6ab44097e2c9e8318e855ee6"
     },
     {
-      "path": "research/pilot/2026-10-25-p08/frames/checks.png",
-      "sha256": "a2829c8bd59fd7746435c56cf2b7861caade87edbdeec39aa988abf62ec0b879"
+      "path": "research/pilot/2026-10-25-p08-portability/frames/checks.png",
+      "sha256": "b9a106f87345f68fd3d5584d1a4c7578fc087d4a61750d880bbd4b1cf910510c"
     },
     {
-      "path": "research/pilot/2026-10-25-p08/frames/comparison-ko.png",
-      "sha256": "bd7a261ff5534d7ba80b0213cc4cbc6a0581d60f468a0667d7926179b5e802bc"
+      "path": "research/pilot/2026-10-25-p08-portability/frames/comparison-ko.png",
+      "sha256": "b9ed1d8b2d502d9f1b8607002b1101095cf9ddad2f5fbe3798e5dd7843f49315"
     },
     {
-      "path": "research/pilot/2026-10-25-p08/frames/expired.png",
-      "sha256": "bf2be278c98e43afe0b59d2140e44142ccb3622586c7572c380438bb44f503b5"
+      "path": "research/pilot/2026-10-25-p08-portability/frames/expired.png",
+      "sha256": "8d34dccc1d34c7b386c6f97094469ffdef894d182969580bb168ec0fa9dfece3"
     },
     {
-      "path": "research/pilot/2026-10-25-p08/frames/live.png",
-      "sha256": "a08185404bed3ef01182409229eef1e6697ec12ca1e7411b9b35bf188443d593"
+      "path": "research/pilot/2026-10-25-p08-portability/frames/live.png",
+      "sha256": "fad1e94feefcb7cb2236ed7fb32a2bbc1729afc21ae55f50a12a817420109d92"
     },
     {
-      "path": "research/pilot/2026-10-25-p08/frames/map.png",
-      "sha256": "7f258b1be5f67e829e502323530724a4dfabbfa83a6baf424bafde123f1af91a"
+      "path": "research/pilot/2026-10-25-p08-portability/frames/map.png",
+      "sha256": "cf42ab84d88a4158cfe23ab72ae7c892de2dccf27a3254bc2f2d96b3cec0d931"
     },
     {
-      "path": "research/pilot/2026-10-25-p08/frames/traffic-en.png",
-      "sha256": "44c6048253048504351559c29cdee1f56b5b1f9fd23831ca0521adfd1f13e3c2"
+      "path": "research/pilot/2026-10-25-p08-portability/frames/traffic-en.png",
+      "sha256": "ce059119edd4e03738652b33fa5a83e1cccd3f2b741cf35dd00f40f8f9ecd2ae"
     },
     {
-      "path": "research/pilot/2026-10-25-p08/frames/traffic-ko.png",
-      "sha256": "758965638449e955616a27f54bcd3f14a6dba761807483e7396d69880f5984c3"
+      "path": "research/pilot/2026-10-25-p08-portability/frames/traffic-ko.png",
+      "sha256": "cb7875975884c0b10437d8a16ba780fd8be59af36fd5c4a96a8a22b4e2e329f3"
     }
   ]
 }

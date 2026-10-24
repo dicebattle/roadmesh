@@ -1,0 +1,73 @@
+{
+  "message": {
+    "type": "RESULT",
+    "code": "READY",
+    "generation": {
+      "graph_id": "bae9f30609e49d87f496dd92380894800262b55a8f927f0cc1c3805c6692e384",
+      "skeleton_sha256": "09f995bdada85cdfcca34aa1392ee8cf5d0283c129478373db159b0cf990e350",
+      "traffic_snapshot_id": "6ed9484e1894324bbe506eec0fecced873c748324135e2d0f19bebf618136c20",
+      "compiler_policy": "valhalla-current-v1",
+      "generation_id": "f62ef6d235989e59c9137ce23fa75a1e7cae16960e4ffff4c7ac833157afb995",
+      "sequence": 1,
+      "valid_until": "2026-10-24T00:07:00.000Z",
+      "traffic_sha256": "699d5046a65f05275e047c17b2b726488e95cfae14565e94688232dcd3b252fc",
+      "traffic_byte_length": 8663040,
+      "live_edges": [
+        {
+          "edge_id": "1338083662224",
+          "forward": true,
+          "offset": 320592,
+          "input_speed_mps": 0.500001,
+          "raw_speed": 1,
+          "decoded_speed_mps": 0.5555555555555556,
+          "quantization_error_mps": 0.05555455555555555
+        },
+        {
+          "edge_id": "1338687642000",
+          "forward": true,
+          "offset": 320736,
+          "input_speed_mps": 0.500003,
+          "raw_speed": 1,
+          "decoded_speed_mps": 0.5555555555555556,
+          "quantization_error_mps": 0.055552555555555605
+        },
+        {
+          "edge_id": "1338754750864",
+          "forward": true,
+          "offset": 320752,
+          "input_speed_mps": 0.500001,
+          "raw_speed": 1,
+          "decoded_speed_mps": 0.5555555555555556,
+          "quantization_error_mps": 0.05555455555555555
+        }
+      ],
+      "directory": "/Users/dice/Documents/routelens/data/p08-portable-main-20261025/traffic/generations/main/f62ef6d235989e59c9137ce23fa75a1e7cae16960e4ffff4c7ac833157afb995",
+      "traffic_path": "/Users/dice/Documents/routelens/data/p08-portable-main-20261025/traffic/generations/main/f62ef6d235989e59c9137ce23fa75a1e7cae16960e4ffff4c7ac833157afb995/traffic.tar",
+      "manifest_path": "/Users/dice/Documents/routelens/data/p08-portable-main-20261025/traffic/generations/main/f62ef6d235989e59c9137ce23fa75a1e7cae16960e4ffff4c7ac833157afb995/manifest.json"
+    },
+    "provenance": {
+      "graph_id": "bae9f30609e49d87f496dd92380894800262b55a8f927f0cc1c3805c6692e384",
+      "high_water": 1,
+      "sequence": 1,
+      "traffic_snapshot_id": "6ed9484e1894324bbe506eec0fecced873c748324135e2d0f19bebf618136c20",
+      "compiler_policy": "valhalla-current-v1",
+      "generation_id": "f62ef6d235989e59c9137ce23fa75a1e7cae16960e4ffff4c7ac833157afb995",
+      "traffic_sha256": "699d5046a65f05275e047c17b2b726488e95cfae14565e94688232dcd3b252fc",
+      "traffic_byte_length": 8663040,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "valid_until": "2026-10-24T00:07:00.000Z",
+      "traffic_mode": "LIVE",
+      "engine": {
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "version": "3.9.1"
+      },
+      "message_en": "Fresh accepted synthetic traffic is applied.",
+      "message_ko": "현재 수용한 합성 교통정보를 적용했습니다."
+    }
+  },
+  "exit": {
+    "code": 0,
+    "signal": null
+  },
+  "pid": 67923
+}

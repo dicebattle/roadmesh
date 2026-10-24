@@ -1,0 +1,1772 @@
+[
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:0",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 0,
+    "event_time_utc": "2026-01-01T00:00:00.000Z",
+    "longitude": 0,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:0",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 0,
+    "event_time_utc": "2026-01-01T00:00:00.000Z",
+    "longitude": 0.000004309,
+    "latitude": -0.000008675,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:0",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 0,
+    "event_time_utc": "2026-01-01T00:00:00.000Z",
+    "longitude": 0,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:1000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 1000,
+    "event_time_utc": "2026-01-01T00:00:01.000Z",
+    "longitude": 0.000089932,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:1000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 1000,
+    "event_time_utc": "2026-01-01T00:00:01.000Z",
+    "longitude": 0.000071129,
+    "latitude": 0.000002103,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:1000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 1000,
+    "event_time_utc": "2026-01-01T00:00:01.000Z",
+    "longitude": 0,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:2000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 2000,
+    "event_time_utc": "2026-01-01T00:00:02.000Z",
+    "longitude": 0.000179864,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:2000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 2000,
+    "event_time_utc": "2026-01-01T00:00:02.000Z",
+    "longitude": 0.00018932,
+    "latitude": -0.000004861,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:2000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 2000,
+    "event_time_utc": "2026-01-01T00:00:02.000Z",
+    "longitude": 0,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:3000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 3000,
+    "event_time_utc": "2026-01-01T00:00:03.000Z",
+    "longitude": 0.000269796,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:3000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 3000,
+    "event_time_utc": "2026-01-01T00:00:03.000Z",
+    "longitude": 0.000259969,
+    "latitude": 0.000011748,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:3000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 3000,
+    "event_time_utc": "2026-01-01T00:00:03.000Z",
+    "longitude": 0,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:4000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 4000,
+    "event_time_utc": "2026-01-01T00:00:04.000Z",
+    "longitude": 0.000359728,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:4000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 4000,
+    "event_time_utc": "2026-01-01T00:00:04.000Z",
+    "longitude": 0.000357552,
+    "latitude": -0.000003514,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:4000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 4000,
+    "event_time_utc": "2026-01-01T00:00:04.000Z",
+    "longitude": 0,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:5000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 5000,
+    "event_time_utc": "2026-01-01T00:00:05.000Z",
+    "longitude": 0.00044966,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:5000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 5000,
+    "event_time_utc": "2026-01-01T00:00:05.000Z",
+    "longitude": 0.000446766,
+    "latitude": -0.000017113,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:5000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 5000,
+    "event_time_utc": "2026-01-01T00:00:05.000Z",
+    "longitude": 0,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:6000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 6000,
+    "event_time_utc": "2026-01-01T00:00:06.000Z",
+    "longitude": 0.000539592,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:6000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 6000,
+    "event_time_utc": "2026-01-01T00:00:06.000Z",
+    "longitude": 0.000521676,
+    "latitude": 0.000001835,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:6000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 6000,
+    "event_time_utc": "2026-01-01T00:00:06.000Z",
+    "longitude": 0,
+    "latitude": 0.000089932,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:7000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 7000,
+    "event_time_utc": "2026-01-01T00:00:07.000Z",
+    "longitude": 0.000629524,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:7000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 7000,
+    "event_time_utc": "2026-01-01T00:00:07.000Z",
+    "longitude": 0.000627313,
+    "latitude": -0.000020866,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:7000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 7000,
+    "event_time_utc": "2026-01-01T00:00:07.000Z",
+    "longitude": 0,
+    "latitude": 0.000179864,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:8000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 8000,
+    "event_time_utc": "2026-01-01T00:00:08.000Z",
+    "longitude": 0.000719456,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:8000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 8000,
+    "event_time_utc": "2026-01-01T00:00:08.000Z",
+    "longitude": 0.000723106,
+    "latitude": 0.000001445,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:8000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 8000,
+    "event_time_utc": "2026-01-01T00:00:08.000Z",
+    "longitude": 0,
+    "latitude": 0.000269796,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:9000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 9000,
+    "event_time_utc": "2026-01-01T00:00:09.000Z",
+    "longitude": 0.000809388,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:9000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 9000,
+    "event_time_utc": "2026-01-01T00:00:09.000Z",
+    "longitude": 0.000806822,
+    "latitude": 0.000016848,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:9000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 9000,
+    "event_time_utc": "2026-01-01T00:00:09.000Z",
+    "longitude": 0,
+    "latitude": 0.000359728,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:10000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 10000,
+    "event_time_utc": "2026-01-01T00:00:10.000Z",
+    "longitude": 0.00089932,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:10000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 10000,
+    "event_time_utc": "2026-01-01T00:00:10.000Z",
+    "longitude": 0.000873827,
+    "latitude": -0.000001143,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:10000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 10000,
+    "event_time_utc": "2026-01-01T00:00:10.000Z",
+    "longitude": 0,
+    "latitude": 0.00044966,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:11000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 11000,
+    "event_time_utc": "2026-01-01T00:00:11.000Z",
+    "longitude": 0.000989252,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:11000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 11000,
+    "event_time_utc": "2026-01-01T00:00:11.000Z",
+    "longitude": 0.000983488,
+    "latitude": 0.000002875,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:11000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 11000,
+    "event_time_utc": "2026-01-01T00:00:11.000Z",
+    "longitude": 0,
+    "latitude": 0.000539592,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:12000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 12000,
+    "event_time_utc": "2026-01-01T00:00:12.000Z",
+    "longitude": 0.001079184,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:12000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 12000,
+    "event_time_utc": "2026-01-01T00:00:12.000Z",
+    "longitude": 0.001074315,
+    "latitude": -0.000006115,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:12000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 12000,
+    "event_time_utc": "2026-01-01T00:00:12.000Z",
+    "longitude": 0,
+    "latitude": 0.000629524,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:13000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 13000,
+    "event_time_utc": "2026-01-01T00:00:13.000Z",
+    "longitude": 0.001169116,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:13000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 13000,
+    "event_time_utc": "2026-01-01T00:00:13.000Z",
+    "longitude": 0.001158056,
+    "latitude": 0.000015246,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:13000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 13000,
+    "event_time_utc": "2026-01-01T00:00:13.000Z",
+    "longitude": 0,
+    "latitude": 0.000719456,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:14000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 14000,
+    "event_time_utc": "2026-01-01T00:00:14.000Z",
+    "longitude": 0.001259049,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:14000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 14000,
+    "event_time_utc": "2026-01-01T00:00:14.000Z",
+    "longitude": 0.001256075,
+    "latitude": -0.00001017,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:14000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 14000,
+    "event_time_utc": "2026-01-01T00:00:14.000Z",
+    "longitude": 0,
+    "latitude": 0.000809388,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:15000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 15000,
+    "event_time_utc": "2026-01-01T00:00:15.000Z",
+    "longitude": 0.001348981,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:15000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 15000,
+    "event_time_utc": "2026-01-01T00:00:15.000Z",
+    "longitude": 0,
+    "latitude": 0.00089932,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:16000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 16000,
+    "event_time_utc": "2026-01-01T00:00:16.000Z",
+    "longitude": 0.001438913,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:16000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 16000,
+    "event_time_utc": "2026-01-01T00:00:16.000Z",
+    "longitude": 0,
+    "latitude": 0.000989252,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:17000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 17000,
+    "event_time_utc": "2026-01-01T00:00:17.000Z",
+    "longitude": 0.001528845,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:17000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 17000,
+    "event_time_utc": "2026-01-01T00:00:17.000Z",
+    "longitude": 0,
+    "latitude": 0.001079184,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:18000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 18000,
+    "event_time_utc": "2026-01-01T00:00:18.000Z",
+    "longitude": 0.001618777,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:18000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 18000,
+    "event_time_utc": "2026-01-01T00:00:18.000Z",
+    "longitude": 0,
+    "latitude": 0.001169116,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:19000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 19000,
+    "event_time_utc": "2026-01-01T00:00:19.000Z",
+    "longitude": 0.001708709,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:19000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 19000,
+    "event_time_utc": "2026-01-01T00:00:19.000Z",
+    "longitude": 0,
+    "latitude": 0.001259049,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:20000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 20000,
+    "event_time_utc": "2026-01-01T00:00:20.000Z",
+    "longitude": 0.001798641,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:20000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 20000,
+    "event_time_utc": "2026-01-01T00:00:20.000Z",
+    "longitude": 0,
+    "latitude": 0.001348981,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:21000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 21000,
+    "event_time_utc": "2026-01-01T00:00:21.000Z",
+    "longitude": 0.001888573,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:21000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 21000,
+    "event_time_utc": "2026-01-01T00:00:21.000Z",
+    "longitude": 0,
+    "latitude": 0.001438913,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:22000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 22000,
+    "event_time_utc": "2026-01-01T00:00:22.000Z",
+    "longitude": 0.001978505,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:22000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 22000,
+    "event_time_utc": "2026-01-01T00:00:22.000Z",
+    "longitude": 0,
+    "latitude": 0.001528845,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:23000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 23000,
+    "event_time_utc": "2026-01-01T00:00:23.000Z",
+    "longitude": 0.002068437,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:23000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 23000,
+    "event_time_utc": "2026-01-01T00:00:23.000Z",
+    "longitude": 0,
+    "latitude": 0.001618777,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:24000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 24000,
+    "event_time_utc": "2026-01-01T00:00:24.000Z",
+    "longitude": 0.002158369,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:24000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 24000,
+    "event_time_utc": "2026-01-01T00:00:24.000Z",
+    "longitude": 0,
+    "latitude": 0.001708709,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:25000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 25000,
+    "event_time_utc": "2026-01-01T00:00:25.000Z",
+    "longitude": 0.002248301,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:25000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 25000,
+    "event_time_utc": "2026-01-01T00:00:25.000Z",
+    "longitude": 0.002241302,
+    "latitude": 0.000014053,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:25000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 25000,
+    "event_time_utc": "2026-01-01T00:00:25.000Z",
+    "longitude": 0,
+    "latitude": 0.001798641,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:26000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 26000,
+    "event_time_utc": "2026-01-01T00:00:26.000Z",
+    "longitude": 0.002338233,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:26000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 26000,
+    "event_time_utc": "2026-01-01T00:00:26.000Z",
+    "longitude": 0.002327923,
+    "latitude": -0.000005576,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:26000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 26000,
+    "event_time_utc": "2026-01-01T00:00:26.000Z",
+    "longitude": 0,
+    "latitude": 0.001888573,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:27000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 27000,
+    "event_time_utc": "2026-01-01T00:00:27.000Z",
+    "longitude": 0.002428165,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:27000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 27000,
+    "event_time_utc": "2026-01-01T00:00:27.000Z",
+    "longitude": 0.002423112,
+    "latitude": -0.000005568,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:27000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 27000,
+    "event_time_utc": "2026-01-01T00:00:27.000Z",
+    "longitude": 0,
+    "latitude": 0.001978505,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:28000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 28000,
+    "event_time_utc": "2026-01-01T00:00:28.000Z",
+    "longitude": 0.002518097,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:28000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 28000,
+    "event_time_utc": "2026-01-01T00:00:28.000Z",
+    "longitude": 0.002492938,
+    "latitude": 0.000005726,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:28000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 28000,
+    "event_time_utc": "2026-01-01T00:00:28.000Z",
+    "longitude": 0.000068437,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:29000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 29000,
+    "event_time_utc": "2026-01-01T00:00:29.000Z",
+    "longitude": 0.002608029,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:29000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 29000,
+    "event_time_utc": "2026-01-01T00:00:29.000Z",
+    "longitude": 0.002599166,
+    "latitude": -0.000007616,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:29000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 29000,
+    "event_time_utc": "2026-01-01T00:00:29.000Z",
+    "longitude": 0.000158369,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:30000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 30000,
+    "event_time_utc": "2026-01-01T00:00:30.000Z",
+    "longitude": 0.002697961,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:30000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 30000,
+    "event_time_utc": "2026-01-01T00:00:30.000Z",
+    "longitude": 0.002718488,
+    "latitude": 0.000011049,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:30000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 30000,
+    "event_time_utc": "2026-01-01T00:00:30.000Z",
+    "longitude": 0.000248301,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:31000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 31000,
+    "event_time_utc": "2026-01-01T00:00:31.000Z",
+    "longitude": 0.002787893,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:31000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 31000,
+    "event_time_utc": "2026-01-01T00:00:31.000Z",
+    "longitude": 0.002794597,
+    "latitude": 0.000013077,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:31000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 31000,
+    "event_time_utc": "2026-01-01T00:00:31.000Z",
+    "longitude": 0.000338233,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:32000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 32000,
+    "event_time_utc": "2026-01-01T00:00:32.000Z",
+    "longitude": 0.002877825,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:32000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 32000,
+    "event_time_utc": "2026-01-01T00:00:32.000Z",
+    "longitude": 0.002868399,
+    "latitude": -0.000003963,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:32000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 32000,
+    "event_time_utc": "2026-01-01T00:00:32.000Z",
+    "longitude": 0.000428165,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:33000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 33000,
+    "event_time_utc": "2026-01-01T00:00:33.000Z",
+    "longitude": 0.002967757,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:33000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 33000,
+    "event_time_utc": "2026-01-01T00:00:33.000Z",
+    "longitude": 0.002958994,
+    "latitude": -0.000008695,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:33000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 33000,
+    "event_time_utc": "2026-01-01T00:00:33.000Z",
+    "longitude": 0.000518097,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:34000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 34000,
+    "event_time_utc": "2026-01-01T00:00:34.000Z",
+    "longitude": 0.003057689,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:34000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 34000,
+    "event_time_utc": "2026-01-01T00:00:34.000Z",
+    "longitude": 0.003061301,
+    "latitude": 0.000003701,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:34000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 34000,
+    "event_time_utc": "2026-01-01T00:00:34.000Z",
+    "longitude": 0.000608029,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:35000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 35000,
+    "event_time_utc": "2026-01-01T00:00:35.000Z",
+    "longitude": 0.003147621,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:35000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 35000,
+    "event_time_utc": "2026-01-01T00:00:35.000Z",
+    "longitude": 0.003157577,
+    "latitude": -0.000009632,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:35000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 35000,
+    "event_time_utc": "2026-01-01T00:00:35.000Z",
+    "longitude": 0.000697961,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:36000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 36000,
+    "event_time_utc": "2026-01-01T00:00:36.000Z",
+    "longitude": 0.003237553,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:36000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 36000,
+    "event_time_utc": "2026-01-01T00:00:36.000Z",
+    "longitude": 0.003240977,
+    "latitude": -0.000002789,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:36000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 36000,
+    "event_time_utc": "2026-01-01T00:00:36.000Z",
+    "longitude": 0.000787893,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:37000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 37000,
+    "event_time_utc": "2026-01-01T00:00:37.000Z",
+    "longitude": 0.003327485,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:37000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 37000,
+    "event_time_utc": "2026-01-01T00:00:37.000Z",
+    "longitude": 0.003344685,
+    "latitude": 0.000003002,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:37000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 37000,
+    "event_time_utc": "2026-01-01T00:00:37.000Z",
+    "longitude": 0.000877825,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:38000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 38000,
+    "event_time_utc": "2026-01-01T00:00:38.000Z",
+    "longitude": 0.003417417,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:38000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 38000,
+    "event_time_utc": "2026-01-01T00:00:38.000Z",
+    "longitude": 0.003413344,
+    "latitude": 0.000014872,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:38000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 38000,
+    "event_time_utc": "2026-01-01T00:00:38.000Z",
+    "longitude": 0.000967757,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:39000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 39000,
+    "event_time_utc": "2026-01-01T00:00:39.000Z",
+    "longitude": 0.003507349,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:39000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 39000,
+    "event_time_utc": "2026-01-01T00:00:39.000Z",
+    "longitude": 0.003497133,
+    "latitude": -0.000011063,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:39000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 39000,
+    "event_time_utc": "2026-01-01T00:00:39.000Z",
+    "longitude": 0.001057689,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:40000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 40000,
+    "event_time_utc": "2026-01-01T00:00:40.000Z",
+    "longitude": 0.003597281,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:40000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 40000,
+    "event_time_utc": "2026-01-01T00:00:40.000Z",
+    "longitude": 0.003598825,
+    "latitude": 0.000023365,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:40000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 40000,
+    "event_time_utc": "2026-01-01T00:00:40.000Z",
+    "longitude": 0.001147621,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:41000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 41000,
+    "event_time_utc": "2026-01-01T00:00:41.000Z",
+    "longitude": 0.003687213,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:41000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 41000,
+    "event_time_utc": "2026-01-01T00:00:41.000Z",
+    "longitude": 0.003708042,
+    "latitude": 0.000013899,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:41000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 41000,
+    "event_time_utc": "2026-01-01T00:00:41.000Z",
+    "longitude": 0.001237553,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:42000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 42000,
+    "event_time_utc": "2026-01-01T00:00:42.000Z",
+    "longitude": 0.003777146,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:42000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 42000,
+    "event_time_utc": "2026-01-01T00:00:42.000Z",
+    "longitude": 0.003777167,
+    "latitude": 0.000013679,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:42000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 42000,
+    "event_time_utc": "2026-01-01T00:00:42.000Z",
+    "longitude": 0.001327485,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:43000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 43000,
+    "event_time_utc": "2026-01-01T00:00:43.000Z",
+    "longitude": 0.003867078,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:43000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 43000,
+    "event_time_utc": "2026-01-01T00:00:43.000Z",
+    "longitude": 0.003849533,
+    "latitude": 0.000018564,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:43000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 43000,
+    "event_time_utc": "2026-01-01T00:00:43.000Z",
+    "longitude": 0.001417417,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:44000",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 44000,
+    "event_time_utc": "2026-01-01T00:00:44.000Z",
+    "longitude": 0.00395701,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:44000",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 44000,
+    "event_time_utc": "2026-01-01T00:00:44.000Z",
+    "longitude": 0.003960002,
+    "latitude": 0.000002543,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:44000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 44000,
+    "event_time_utc": "2026-01-01T00:00:44.000Z",
+    "longitude": 0.001507349,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-clean:44479",
+    "vehicle_id": "baseline-clean",
+    "offset_ms": 44479,
+    "event_time_utc": "2026-01-01T00:00:44.479Z",
+    "longitude": 0.004,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:baseline-noisy:44479",
+    "vehicle_id": "baseline-noisy",
+    "offset_ms": 44479,
+    "event_time_utc": "2026-01-01T00:00:44.479Z",
+    "longitude": 0.003983357,
+    "latitude": 0.000011163,
+    "accuracy_m": 3,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:45000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 45000,
+    "event_time_utc": "2026-01-01T00:00:45.000Z",
+    "longitude": 0.001597281,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:46000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 46000,
+    "event_time_utc": "2026-01-01T00:00:46.000Z",
+    "longitude": 0.001687213,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:47000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 47000,
+    "event_time_utc": "2026-01-01T00:00:47.000Z",
+    "longitude": 0.001777146,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:48000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 48000,
+    "event_time_utc": "2026-01-01T00:00:48.000Z",
+    "longitude": 0.001867078,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:49000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 49000,
+    "event_time_utc": "2026-01-01T00:00:49.000Z",
+    "longitude": 0.00195701,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:50000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 50000,
+    "event_time_utc": "2026-01-01T00:00:50.000Z",
+    "longitude": 0.002046942,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:51000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 51000,
+    "event_time_utc": "2026-01-01T00:00:51.000Z",
+    "longitude": 0.002136874,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:52000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 52000,
+    "event_time_utc": "2026-01-01T00:00:52.000Z",
+    "longitude": 0.002226806,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:53000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 53000,
+    "event_time_utc": "2026-01-01T00:00:53.000Z",
+    "longitude": 0.002316738,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:54000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 54000,
+    "event_time_utc": "2026-01-01T00:00:54.000Z",
+    "longitude": 0.00240667,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:55000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 55000,
+    "event_time_utc": "2026-01-01T00:00:55.000Z",
+    "longitude": 0.002496602,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:56000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 56000,
+    "event_time_utc": "2026-01-01T00:00:56.000Z",
+    "longitude": 0.002586534,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:57000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 57000,
+    "event_time_utc": "2026-01-01T00:00:57.000Z",
+    "longitude": 0.002676466,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:58000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 58000,
+    "event_time_utc": "2026-01-01T00:00:58.000Z",
+    "longitude": 0.002766398,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:59000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 59000,
+    "event_time_utc": "2026-01-01T00:00:59.000Z",
+    "longitude": 0.00285633,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:60000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 60000,
+    "event_time_utc": "2026-01-01T00:01:00.000Z",
+    "longitude": 0.002946262,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:61000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 61000,
+    "event_time_utc": "2026-01-01T00:01:01.000Z",
+    "longitude": 0.003036194,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:62000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 62000,
+    "event_time_utc": "2026-01-01T00:01:02.000Z",
+    "longitude": 0.003126126,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:63000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 63000,
+    "event_time_utc": "2026-01-01T00:01:03.000Z",
+    "longitude": 0.003216058,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:64000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 64000,
+    "event_time_utc": "2026-01-01T00:01:04.000Z",
+    "longitude": 0.00330599,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:65000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 65000,
+    "event_time_utc": "2026-01-01T00:01:05.000Z",
+    "longitude": 0.003395922,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:66000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 66000,
+    "event_time_utc": "2026-01-01T00:01:06.000Z",
+    "longitude": 0.003485854,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:67000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 67000,
+    "event_time_utc": "2026-01-01T00:01:07.000Z",
+    "longitude": 0.003575786,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:68000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 68000,
+    "event_time_utc": "2026-01-01T00:01:08.000Z",
+    "longitude": 0.003665718,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:69000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 69000,
+    "event_time_utc": "2026-01-01T00:01:09.000Z",
+    "longitude": 0.00375565,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:70000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 70000,
+    "event_time_utc": "2026-01-01T00:01:10.000Z",
+    "longitude": 0.003845582,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:71000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 71000,
+    "event_time_utc": "2026-01-01T00:01:11.000Z",
+    "longitude": 0.003935514,
+    "latitude": 0.002,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:72000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 72000,
+    "event_time_utc": "2026-01-01T00:01:12.000Z",
+    "longitude": 0.004,
+    "latitude": 0.001974554,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:73000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 73000,
+    "event_time_utc": "2026-01-01T00:01:13.000Z",
+    "longitude": 0.004,
+    "latitude": 0.001884622,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:74000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 74000,
+    "event_time_utc": "2026-01-01T00:01:14.000Z",
+    "longitude": 0.004,
+    "latitude": 0.001794689,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:75000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 75000,
+    "event_time_utc": "2026-01-01T00:01:15.000Z",
+    "longitude": 0.004,
+    "latitude": 0.001704757,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:76000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 76000,
+    "event_time_utc": "2026-01-01T00:01:16.000Z",
+    "longitude": 0.004,
+    "latitude": 0.001614825,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:77000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 77000,
+    "event_time_utc": "2026-01-01T00:01:17.000Z",
+    "longitude": 0.004,
+    "latitude": 0.001524893,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:78000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 78000,
+    "event_time_utc": "2026-01-01T00:01:18.000Z",
+    "longitude": 0.004,
+    "latitude": 0.001434961,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:79000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 79000,
+    "event_time_utc": "2026-01-01T00:01:19.000Z",
+    "longitude": 0.004,
+    "latitude": 0.001345029,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:80000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 80000,
+    "event_time_utc": "2026-01-01T00:01:20.000Z",
+    "longitude": 0.004,
+    "latitude": 0.001255097,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:81000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 81000,
+    "event_time_utc": "2026-01-01T00:01:21.000Z",
+    "longitude": 0.004,
+    "latitude": 0.001165165,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:82000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 82000,
+    "event_time_utc": "2026-01-01T00:01:22.000Z",
+    "longitude": 0.004,
+    "latitude": 0.001075233,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:83000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 83000,
+    "event_time_utc": "2026-01-01T00:01:23.000Z",
+    "longitude": 0.004,
+    "latitude": 0.000985301,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:84000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 84000,
+    "event_time_utc": "2026-01-01T00:01:24.000Z",
+    "longitude": 0.004,
+    "latitude": 0.000895369,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:85000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 85000,
+    "event_time_utc": "2026-01-01T00:01:25.000Z",
+    "longitude": 0.004,
+    "latitude": 0.000805437,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:86000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 86000,
+    "event_time_utc": "2026-01-01T00:01:26.000Z",
+    "longitude": 0.004,
+    "latitude": 0.000715505,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:87000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 87000,
+    "event_time_utc": "2026-01-01T00:01:27.000Z",
+    "longitude": 0.004,
+    "latitude": 0.000625573,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:88000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 88000,
+    "event_time_utc": "2026-01-01T00:01:28.000Z",
+    "longitude": 0.004,
+    "latitude": 0.000535641,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:89000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 89000,
+    "event_time_utc": "2026-01-01T00:01:29.000Z",
+    "longitude": 0.004,
+    "latitude": 0.000445709,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:90000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 90000,
+    "event_time_utc": "2026-01-01T00:01:30.000Z",
+    "longitude": 0.004,
+    "latitude": 0.000355777,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:91000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 91000,
+    "event_time_utc": "2026-01-01T00:01:31.000Z",
+    "longitude": 0.004,
+    "latitude": 0.000265845,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:92000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 92000,
+    "event_time_utc": "2026-01-01T00:01:32.000Z",
+    "longitude": 0.004,
+    "latitude": 0.000175913,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:93000",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 93000,
+    "event_time_utc": "2026-01-01T00:01:33.000Z",
+    "longitude": 0.004,
+    "latitude": 0.000085981,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  },
+  {
+    "sample_id": "tiny-city-demo:upper-waiting:93957",
+    "vehicle_id": "upper-waiting",
+    "offset_ms": 93957,
+    "event_time_utc": "2026-01-01T00:01:33.957Z",
+    "longitude": 0.004,
+    "latitude": 0,
+    "accuracy_m": 0.01,
+    "source_class": "SYNTHETIC"
+  }
+]

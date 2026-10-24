@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "4e3265fb92016e3642670fe44ae516df1f68d903",
+    "dirty": false
+  },
+  "graph_id": "bae9f30609e49d87f496dd92380894800262b55a8f927f0cc1c3805c6692e384",
+  "implementation_sha256": "12b6c0164fba48fd08f6b2732ccd24197634ec9ae734ecf0a5de500a5e365404",
+  "method": "Node crypto Ed25519 verify over exact compact JWS signing bytes; no jose or RouteLens crypto helper reused",
+  "versions": [
+    {
+      "sequence": 1,
+      "kid": "key-a",
+      "traffic_snapshot_id": "076d73e3c4cb3adfe6239997d0dcdeac51c33bf612d4fb79e3a1fbaf4ead9b66",
+      "artifact_bytes": 10474,
+      "live_entries": 3,
+      "insufficient_entries": 0,
+      "unknown_entries": 76,
+      "standard_signature_valid": true,
+      "http_bytes_equal": true,
+      "source": "committed and HTTP bytes"
+    },
+    {
+      "sequence": 2,
+      "kid": "key-b",
+      "traffic_snapshot_id": "2be20d5ede37d34a904353a7ad50c1a5d01c704724ad63de9e462c24521a8a18",
+      "artifact_bytes": 10474,
+      "live_entries": 3,
+      "insufficient_entries": 0,
+      "unknown_entries": 76,
+      "standard_signature_valid": true,
+      "http_bytes_equal": true,
+      "source": "committed and HTTP bytes"
+    },
+    {
+      "sequence": 3,
+      "kid": "key-c",
+      "traffic_snapshot_id": "af454c5101820259408f23b6aca6a64fe8ca46dc8123b308ccf7cdd20a19b847",
+      "artifact_bytes": 10474,
+      "live_entries": 3,
+      "insufficient_entries": 0,
+      "unknown_entries": 76,
+      "standard_signature_valid": true,
+      "http_bytes_equal": null,
+      "source": "committed bytes; current invalidated by concurrent revoke before retrieval"
+    },
+    {
+      "sequence": 4,
+      "kid": "key-c",
+      "traffic_snapshot_id": "b6779b7a1bfefe3ff6a269ca65de6148cf4fbe536cdbcc7ff6dc79c946afd8c2",
+      "artifact_bytes": 10484,
+      "live_entries": 0,
+      "insufficient_entries": 3,
+      "unknown_entries": 76,
+      "standard_signature_valid": true,
+      "http_bytes_equal": true,
+      "source": "committed and HTTP bytes"
+    },
+    {
+      "sequence": 5,
+      "kid": "key-c",
+      "traffic_snapshot_id": "c07be1f68cd85bc456de6ab7e8c30838b2135412b6b8eb5a1f3cc9f4ff7edecc",
+      "artifact_bytes": 10469,
+      "live_entries": 0,
+      "insufficient_entries": 0,
+      "unknown_entries": 79,
+      "standard_signature_valid": true,
+      "http_bytes_equal": true,
+      "source": "committed and HTTP bytes"
+    }
+  ],
+  "message_en": "Main independently verified standard signatures with archived public keys, original HTTP bytes, hashes, lengths, scope, time and all public entries. This is synthetic publication, not routing-engine activation.",
+  "message_ko": "메인이 보존된 공개키·원본 HTTP바이트·해시·길이·범위·시각·전체 공개항목을 독립 검사했습니다. 합성 게시이며 경로 엔진 활성화는 아닙니다."
+}

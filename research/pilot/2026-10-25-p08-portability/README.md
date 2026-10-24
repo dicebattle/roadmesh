@@ -1,5 +1,7 @@
 # P08 endpoint representation correction / P08 끝점 표현 정정
 
+The corrected clean local238 run and new recording are now in the [current report](report.md); corrected hosted delivery follows. / 수정 후 깨끗한 로컬238개와 새 녹화는 최신 보고서에 있으며 원격 반영을 이어갑니다.
+
 The initial P08 local238 proof and34.7s recording remain in [the original report](../2026-10-25-p08/report.md). Hosted push [40120363512](https://github.com/dicebattle/routelens/actions/runs/40120363512) and PR [40120412439](https://github.com/dicebattle/routelens/actions/runs/40120412439) failed at P08 source selection, so main withheld merge. All prior206 cases passed; the source SHA256, source lock, Dockerfile and engine version match the local run.
 
 최초 P08의 로컬238개·34.7초 녹화는 원래 보고서에 보존합니다. 원격 push와 PR 실행이 P08 원본 선택에서 실패해 메인은 병합을 보류했습니다. 기존206개는 통과했고 원본 해시·잠금·Dockerfile·엔진 버전은 로컬과 같습니다.

@@ -1,0 +1,44 @@
+{
+  "observed_at_utc": "2026-10-24T18:41:24.500Z",
+  "owned_container": "routelens-p05-b7c33623-9b7b-45c1-9e63-c137f99f3075",
+  "namespace": "p08-b7c336239b7b45c1",
+  "query": "SELECT jsonb_build_object('clock',(SELECT event_time_utc FROM routelens_p05.namespace_clock WHERE namespace='p08-b7c336239b7b45c1'),'traversals',(SELECT count(*) FROM routelens_p05.traversals WHERE namespace='p08-b7c336239b7b45c1'),'publications',(SELECT jsonb_agg(to_jsonb(p)) FROM (SELECT publisher_id,sequence,traffic_snapshot_id,encode(sha256(artifact),'hex') AS actual_artifact_sha256,octet_length(artifact) AS byte_length,published_at,valid_until FROM routelens_p07.publications WHERE namespace='p08-b7c336239b7b45c1' ORDER BY publisher_id,sequence)p),'consumers',(SELECT jsonb_agg(to_jsonb(c)) FROM (SELECT consumer_id,high_water,last_snapshot_id,octet_length(artifact) AS active_byte_length FROM routelens_p07.consumer_states WHERE namespace='p08-b7c336239b7b45c1' ORDER BY consumer_id)c));",
+  "readback": {
+    "clock": "2026-10-24T00:04:30+00:00",
+    "consumers": [
+      {
+        "high_water": 1,
+        "consumer_id": "p08-key-revocation",
+        "last_snapshot_id": "6ed9484e1894324bbe506eec0fecced873c748324135e2d0f19bebf618136c20",
+        "active_byte_length": 10469
+      },
+      {
+        "high_water": 1,
+        "consumer_id": "p08-main",
+        "last_snapshot_id": "6ed9484e1894324bbe506eec0fecced873c748324135e2d0f19bebf618136c20",
+        "active_byte_length": 10469
+      },
+      {
+        "high_water": 1,
+        "consumer_id": "p08-offline-ttl",
+        "last_snapshot_id": "6ed9484e1894324bbe506eec0fecced873c748324135e2d0f19bebf618136c20",
+        "active_byte_length": 10469
+      }
+    ],
+    "traversals": 15,
+    "publications": [
+      {
+        "sequence": 1,
+        "byte_length": 10469,
+        "valid_until": "2026-10-24T00:07:00+00:00",
+        "published_at": "2026-10-24T00:04:30+00:00",
+        "publisher_id": "seoul-p08-publisher",
+        "traffic_snapshot_id": "6ed9484e1894324bbe506eec0fecced873c748324135e2d0f19bebf618136c20",
+        "actual_artifact_sha256": "6ed9484e1894324bbe506eec0fecced873c748324135e2d0f19bebf618136c20"
+      }
+    ]
+  },
+  "point_in_time_only": true,
+  "message_en": "Main read the exact owned P08 database during execution; counts and versions are a point-in-time observation, not final totals.",
+  "message_ko": "메인이 실행 중 정확한 소유 P08 DB를 직접 읽었습니다. 개수와 버전은 그 시점의 관측이며 최종 합계가 아닙니다."
+}

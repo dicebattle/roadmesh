@@ -1,0 +1,50 @@
+{
+  "source_commit": "4e3265fb92016e3642670fe44ae516df1f68d903",
+  "implementation_sha256": "12b6c0164fba48fd08f6b2732ccd24197634ec9ae734ecf0a5de500a5e365404",
+  "report_path": "research/pilot/2026-10-25-p08-portability/report.html",
+  "report_sha256": "d20ea975ff737eb1f1f81261308b20691a98081c8f706f202bae73037632803e",
+  "capture_method": "Actual Chrome playback after endpoint portability correction, 34.7 seconds at1280x720/20fps, complete H.264/GIF conversion. / 끝점 호환성 보완 후 실제34.7초·1280x720·20fps 화면을 녹화하고 전체를 변환했습니다.",
+  "raw_capture_sha256": "6fedd34fc6f43d712c44fede0e967d077ef03aaa0891a6449d7846d5a5cf0b43",
+  "assets": [
+    {
+      "path": "docs/media/demo.mp4",
+      "sha256": "7d2eeda63569996ac0e5558bfd0813f7c637b832c9471bc715b755117bdaaf5e"
+    },
+    {
+      "path": "docs/media/demo.gif",
+      "sha256": "575e6ac08e1c22424b058628240f9d5f7d3aabf0a1c8c7e2a7244955ffee7a7a"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p08-portability/report-data.json",
+      "sha256": "177055ba3e1f7ff4fb969a24bb62c0123ca3c24e6ab44097e2c9e8318e855ee6"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p08-portability/frames/checks.png",
+      "sha256": "b9a106f87345f68fd3d5584d1a4c7578fc087d4a61750d880bbd4b1cf910510c"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p08-portability/frames/comparison-ko.png",
+      "sha256": "b9ed1d8b2d502d9f1b8607002b1101095cf9ddad2f5fbe3798e5dd7843f49315"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p08-portability/frames/expired.png",
+      "sha256": "8d34dccc1d34c7b386c6f97094469ffdef894d182969580bb168ec0fa9dfece3"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p08-portability/frames/live.png",
+      "sha256": "fad1e94feefcb7cb2236ed7fb32a2bbc1729afc21ae55f50a12a817420109d92"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p08-portability/frames/map.png",
+      "sha256": "cf42ab84d88a4158cfe23ab72ae7c892de2dccf27a3254bc2f2d96b3cec0d931"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p08-portability/frames/traffic-en.png",
+      "sha256": "ce059119edd4e03738652b33fa5a83e1cccd3f2b741cf35dd00f40f8f9ecd2ae"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p08-portability/frames/traffic-ko.png",
+      "sha256": "cb7875975884c0b10437d8a16ba780fd8be59af36fd5c4a96a8a22b4e2e329f3"
+    }
+  ]
+}

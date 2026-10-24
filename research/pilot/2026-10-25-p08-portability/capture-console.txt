@@ -1,0 +1,68 @@
+### Browser `routelens-p08-capture-20261025034339-69224` opened with pid 69242.
+### Ran Playwright code
+```js
+await page.goto('http://127.0.0.1:58591/report.html');
+```
+### Page
+- Page URL: http://127.0.0.1:58591/report.html
+- Page Title: RouteLens · Simulation evidence / 시뮬레이션 증거
+- Console: 1 errors, 0 warnings
+### Snapshot
+- [Snapshot](.playwright-cli/page-2026-10-24T18-43-41-508Z.yml)
+### Events
+- New console entries: .playwright-cli/console-2026-10-24T18-43-41-370Z.log#L1
+### Ran Playwright code
+```js
+await (async (page) => {
+  await page.setViewportSize({width:1280,height:720});
+  await page.locator("#dataset").waitFor({state:"visible"});
+  const datasets=await page.locator("#dataset option").evaluateAll(options=>options.map(o=>o.value));
+  if(!datasets.includes("original"))throw Error("Original replay missing / 원본 재생 누락");
+  await page.locator("#dataset").selectOption("original");
+  const routes=await page.locator("#route option").evaluateAll(options=>options.map(o=>o.value));
+  if(!routes.includes("teheran"))throw Error("Teheran route missing / 테헤란 경로 누락");
+  await page.locator("#route").selectOption("teheran");
+  const englishButton=(await page.locator("#language").textContent()).trim();
+  if(englishButton!=="한국어")throw Error("Expected English initial report / 영어 초기 보고서 필요");
+  await page.locator("#traffic-section").waitFor({state:"visible"});
+  const articles=page.locator("#traffic-route-comparison article");
+  if(await articles.count()!==3)throw Error("Expected three recorded route comparisons / 기록 경로 비교3개 필요");
+  const caseCount=await page.locator("#traffic-cases > p").count();
+  if(caseCount!==32)throw Error("Expected32 traffic cases / 교통검사32개 필요");
+  await page.locator("#map").evaluate(el=>{const r=el.getBoundingClientRect();window.scrollTo({left:0,top:window.scrollY+r.top});});
+})(page);
+```
+### Result
+Video recording started.
+### Ran Playwright code
+```js
+await (async (page) => {
+  const top=async locator=>locator.evaluate(el=>{const r=el.getBoundingClientRect();window.scrollTo({left:0,top:window.scrollY+r.top});});
+  await page.locator("#play").click();
+  await top(page.locator("#map"));
+  await page.waitForTimeout(5000);
+  await page.locator("#play").click();
+  await top(page.locator("#traffic-section"));
+  await page.waitForTimeout(5000);
+  const articles=page.locator("#traffic-route-comparison article");
+  for(let index=0;index<3;index++){
+    const heading=(await articles.nth(index).locator("h3").textContent()).trim();
+    const expected=["Baseline","Accepted live traffic","Exact expiry"][index];
+    if(heading!==expected)throw Error("Unexpected recorded comparison order / 기록 비교 순서 불일치: "+heading);
+    await top(articles.nth(index));
+    await page.waitForTimeout(3000);
+  }
+  await page.locator("#language").click();
+  if((await page.locator("#language").textContent()).trim()!=="English")throw Error("Korean switch failed / 한국어 전환 실패");
+  await top(page.locator("#traffic-section"));
+  await page.waitForTimeout(4000);
+  await top(articles.first());
+  await page.waitForTimeout(3000);
+  await page.locator("#traffic-section details > summary").click();
+  if(!await page.locator("#traffic-section details").evaluate(el=>el.open))throw Error("Traffic cases not expanded / 교통 검사 펼치기 실패");
+  await top(page.locator("#traffic-evidence"));
+  await page.waitForTimeout(3000);
+})(page);
+```
+### Result
+- [Video](output/playwright/p08-capture.webm)

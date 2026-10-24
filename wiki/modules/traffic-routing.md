@@ -1,6 +1,6 @@
 # Accepted traffic routing / 수용 교통정보 경로 반영
 
-P08 connects durable P07 acceptance to actual Valhalla routing. The [contract](../../docs/27-p08-traffic-activation.md) is authoritative; [development evidence](../../research/pilot/2026-10-25-p08/development/README.md) records 32 passing real-process cases and two earlier failures. The [fresh whole-system report](../../research/pilot/2026-10-25-p08/report.md) verifies all238 local cases and independent inspection. Hosted delivery remains pending at this entry.
+P08 connects durable P07 acceptance to actual Valhalla routing. The [contract](../../docs/27-p08-traffic-activation.md) is authoritative; [development evidence](../../research/pilot/2026-10-25-p08/development/README.md) records 32 passing real-process cases and two earlier failures. The [fresh whole-system report](../../research/pilot/2026-10-25-p08-portability/report.md) verifies all238 local cases and independent inspection. Hosted delivery remains pending at this entry.
 
 P08은 영속 P07 수용을 실제 Valhalla 경로 계산에 연결합니다. 기준은 설계 문서이며, 개발 근거에 실제 프로세스 검사32개 통과와 앞선 두 실패를 함께 기록했습니다. 새 전체보고서의 로컬238개·독립검사도 통과했으며 이 기록 시점 원격 반영은 남아 있습니다.
 
