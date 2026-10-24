@@ -192,6 +192,21 @@ export async function readNodeBody(
     if (deadline <= performance.now()) fail("REQUEST_DEADLINE");
   });
 }
+/** Optional private remaining budget; absent preserves the P09 thirty-second bound.
+ * 선택적 비공개 잔여 기한이며 없으면 P09의30초 한도를 유지합니다. */
+export function nodeRequestDeadline(
+  value: string | string[] | undefined,
+  now: number,
+): number {
+  if (value === undefined) return now + 30000;
+  if (
+    typeof value !== "string" ||
+    !/^[1-9][0-9]{0,4}$/.test(value) ||
+    Number(value) > 30000
+  )
+    throw new TrafficError("INVALID_REQUEST");
+  return now + Number(value);
+}
 export interface RunningRoutingNode {
   port: number;
   controller: RoutingNodeController;
@@ -217,9 +232,16 @@ export async function startRoutingNode(
       }
       if (request.url === "/internal/v1/route" && request.method === "POST") {
         try {
-          const result = await controller.route(
-            await readNodeBody(request, deadline),
+          const routeDeadline = Math.min(
             deadline,
+            nodeRequestDeadline(
+              request.headers["x-routelens-deadline-ms"],
+              deadline - 30000,
+            ),
+          );
+          const result = await controller.route(
+            await readNodeBody(request, routeDeadline),
+            routeDeadline,
           );
           respond(response, result.status, result.body);
         } catch (error) {

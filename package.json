@@ -31,7 +31,9 @@
     "traffic:worker": "node dist/tools/traffic_worker.js",
     "traffic:check": "node dist/tools/traffic_checks.js",
     "node:serve": "node dist/tools/node_service.js",
-    "node:check": "node dist/tools/node_checks.js"
+    "node:check": "node dist/tools/node_checks.js",
+    "gateway:serve": "node dist/tools/gateway_service.js",
+    "gateway:check": "node dist/tools/gateway_checks.js"
   },
   "dependencies": {
     "jose": "6.2.13",
