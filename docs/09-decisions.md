@@ -59,3 +59,9 @@ The user requires actual Seoul roads rather than a simplified invented network. 
 Use PostgreSQL transactions and row locks for the local P05 queue, with explicit trip finalization, bounded raw retention and fencing. Separate accepted storage, repeated computation and once-only committed effects. Use existing Seoul observations and real process termination to prove recovery. [Executable contract](22-p05-executable-contract.md).
 
 로컬 P05 큐는 PostgreSQL 트랜잭션·행 잠금을 사용하며 여행 완료·제한된 원문 보관·소유 세대 검사를 명시합니다. 저장 접수·계산 반복·한 번만 반영된 저장 효과를 구분하고 서울 관측과 실제 프로세스 종료로 복구를 증명합니다.
+
+## ADR-023: Closed event windows and durable aggregate invalidation / 마감 관측 창과 영속 집계 무효화
+
+P06 uses exit-time60s windows and persisted matching availability strictly before end+30s, one earliest eligible contribution per contributor/edge/window and median traversal duration. Do not backdate long-trip matching into LIVE traffic. Add short actual-Seoul trips and explicit TRAVEL/PARKED state; never infer parking from zero speed. Store unsigned candidate bytes atomically and invalidate them within the source traversal's deletion transaction. [Fixed contract](23-p06-aggregation-contract.md), [database sources](../wiki/sources/postgresql-aggregation.md). This is a planned implementation until direct evidence passes.
+
+P06은진출기준60초창·창끝30초미만의영속매칭완료시각·기여자/구간/창별최초적격1건·통과시간중앙값을사용합니다. 긴여행의늦은매칭을옛LIVE로만들지않고짧은실제서울여행·명시주행/주차상태를추가합니다. 0속도로주차를추론하지않으며서명전후보를원자저장하고원본통과삭제와같은트랜잭션에서무효화합니다. 직접증거통과전에는구현완료가아닙니다.

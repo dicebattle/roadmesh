@@ -13,6 +13,8 @@ Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases i
 
 ## 현재 구현과 다음 작업
 
+- [P06 fixed contract / P06 고정 계약](../docs/23-p06-aggregation-contract.md): actual Seoul event-window aggregation now in Sol implementation; not yet verified. P05 is merged through PR#6. / 실제서울관측창집계를Sol이구현중이며아직미검증입니다. P05는PR#6으로병합됐습니다.
+
 - [시험자료 검사 모듈](modules/evaluation-corpus.md): 실행법, 입력 계약, 검사 범위, 검증 근거.
 - [누적 작업 기록](log.md): 요청·설계 결정·실행 결과·남은 일.
 - Geographic work remains pending: RM-001b selects real test regions and reviewed sources. / 실제 지역 작업 RM-001b의 시험 지역·검토 출처 선정은 별도로 남아 있습니다.

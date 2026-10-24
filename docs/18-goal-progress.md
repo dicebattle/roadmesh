@@ -20,7 +20,7 @@ The user now requires real Seoul OSM roads for the primary simulation. Complete 
 | P04 real matching and ambiguity handling / 실제 매칭·모호성 처리 | [Matching report](../research/seoul/2026-10-24/report.md) | Local and hosted verified / 로컬·원격 검증 |
 | Seoul primary simulation / 서울 주요 시뮬레이션 | [Actual-road evidence](../research/seoul/2026-10-24/report.md) | Local and hosted verified / 로컬·원격 검증 |
 | P05 durable ingestion / 영속 수집 | [111-check report](../research/pilot/2026-10-24-p05/report.md) | Local and hosted verified / 로컬·원격 검증 |
-| P06 aggregation / 집계 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
+| P06 aggregation / 집계 | [Fixed executable contract](23-p06-aggregation-contract.md) | Sol implementation in progress; unverified / Sol 구현 중·미검증 |
 | P07 signed publication, P08 actual traffic consumption / 서명 게시·속도 반영 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P09 two nodes, P10 gateway/failover / 두 노드·중계/장애 전환 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P11 complete client, P12 complete fault matrix / 전체 화면·장애 행렬 | Evidence replay and incremental runner implemented / 증거 재생·점진 실행기 구현 | Partial implementation / 일부 구현 |
@@ -36,4 +36,4 @@ A green unit suite does not finish this goal. Completion requires the full modul
 
 단위 검사 성공만으로 목표를 완료하지 않습니다. 전체 모듈·시나리오 계약, 필요한 실제 프로세스/통신 장애, 검사한 통합 증거, 최신 미디어/문서, GitHub 반영이 필요합니다. 누락·약한 증거는 미완료로 둡니다. 실제 지역 100/100·운영 배포·실제 모바일 시험은 별도이며 합성 성공으로 주장하지 않습니다.
 
-Seoul transition merged through protected PR #5. Current: P05 local and hosted execution/evidence are verified; protected PR #6 integration is the delivery gate. Next implement P06 aggregation on actual Seoul roads. / 서울 전환을 보호된 PR #5로 병합했습니다. P05 로컬·원격 실행/증거를 검증했고 보호된 PR #6 병합이 반영 관문입니다. 다음은 실제 서울의 P06 집계입니다.
+Seoul transition merged through protected PR#5 and P05 through PR#6 (`920d48d`); all existing branch tips were ancestors of main. Current: implement the fixed P06 contract on actual Seoul roads, then inspect a fresh whole-system run and publish current evidence. / 서울 전환은 보호된 PR#5·P05는 PR#6으로 병합했고 기존브랜치끝이모두main에포함됨을확인했습니다. 현재는실제서울의고정P06계약을구현한뒤새전체실행·최신증거를검사·게시합니다.
