@@ -36,7 +36,7 @@ This 48.7-second recording compares baseline, congestion and expired routes on a
 | **P07 — signed publication** | Standard Ed25519 JWS, exact HTTP bytes, scoped local public keys, durable consumer order, key rotation, tamper/replay rejection and expiry |
 | **P08 — accepted traffic routing** | Immutable graph-specific speed files, actual detour, automatic expiry, concurrent generation, real process/database faults and stale-result refusal |
 | **P09 — persistent routing nodes** | Two independent nodes, native daemon reuse, request leases, bounded generation draining, durable restart and actual fault recovery |
-| **Integrated evidence** | Fresh tiny regression (48), Seoul graph/simulation/matching (35), durable ingestion (34), aggregation (34), publication (55) traffic routing (32) and persistent nodes (32): **270 assertions**, with source/artifact hashes |
+| **Integrated evidence** | Fresh tiny regression (48), Seoul graph/simulation/matching (35), durable ingestion (34), aggregation (34), publication (55), traffic routing (32) and persistent nodes (32): **270 assertions**, with source/artifact hashes |
 | **Replay report** | Offline Seoul playback, baseline/live/expired route comparison and actual recovery evidence; English/Korean controls and source links |
 
 Synthetic observations never count toward the separate **100 route / 100 map-matching real-road evaluation**. The geographic validator currently has no reviewed real-road corpus.

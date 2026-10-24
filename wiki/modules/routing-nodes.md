@@ -31,3 +31,7 @@ The native transport uses installed curl inside isolated containers; it is a pil
 Source537cf0c passed270/270 and main independent checks of7,062 listed hashes. The actual48.7s recording, mobile EN/KO review and owned cleanup passed. [Current report](../../research/pilot/2026-10-25-p09/report.md). Hosted inspection and protected delivery are pending.
 
 소스537cf0c의270개·독립 목록 해시7,062개·실제48.7초 녹화·한영 모바일·소유 정리를 확인했습니다. 원격 검사·보호 반영은 대기 중입니다.
+
+Hosted PR run40130640754 also passed270 and Node22/24 each235; main inspected6,988 present hashes and exact declared omissions. [Original evidence](../../research/pilot/2026-10-25-p09/hosted/README.md). Final-head protected merge remains.
+
+원격PR실행도270개·Node각235개를 통과했고 메인이 존재 해시6,988개와 정확한 제외 목록을 검사했습니다. 최종커밋 보호 병합을 이어갑니다.

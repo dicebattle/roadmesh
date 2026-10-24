@@ -493,6 +493,12 @@ Main directly ran the corrected clean537cf0c whole270 and independent whole/node
 
 메인이 수정 후 깨끗한 소스의 전체270개와 독립 전체/노드/교통/집계/서명/상태 검사를 실행했습니다. 목록 해시7,062개·실제 경로/추적44쌍·API응답21개를 원문과 연결했고 요청30.027초·원문 정리28.076초로 기존 기준을 통과했습니다. 실제48.7초 녹화·전체 디코딩·9화면·한영390픽셀을 검토하고 촬영/서버/탭 정리를 확인했습니다. 압축은 지도27개를 정확히 제외한7,743개를 보존하고 UI링크270개를 별도 제공합니다. 한영README·영상·보고서를 갱신했습니다. 기존Sol담당자가 구현했고 메인이 설계·검증했으며 사용자 지시에 따라 메인도Sol로 이어갑니다. 다음은 원격 검사·보호 병합입니다.
 
+## 2026-10-25 — Hosted P09 inspected / 원격 P09 검사
+
+PR40130640754 passed270 and Node22/24 each235 on merge-test f84050c6, head e1b5932, with matching runtime d95a3627. Main independently inspected6,988 present listed hashes, original native44 route/trace pairs,21 API successes, signatures/state and recorded cleanup; exact18 whole/16 node map exclusions remain explicit. Public README GIF loaded and MP4 matched b567e3a8. [Archived evidence](../research/pilot/2026-10-25-p09/hosted/README.md). Runtime and recording are unchanged; final-head protected checks and merge follow. In parallel, main fixed P10 design in a separate worktree and assigned existing Sol owners; that work does not modify P09 evidence.
+
+원격PR의270개·Node각235개와같은실행지문을확인했습니다. 메인이존재목록해시6,988개·원경로/추적44쌍·성공응답21개·서명/상태·기록된정리를검사하고정확한지도제외18/16개를명시했습니다. 공개GIF로딩·MP4해시도확인했습니다. 실행소스와녹화는동일하며최종커밋필수검사·보호병합을이어갑니다. 별도작업폴더의P10설계·Sol구현은P09근거를바꾸지않습니다.
+
 ## 2026-10-25 — P10 isolated implementation starts / P10 별도 구현 착수
 
 Main fixed docs29 and the native partial-length interpretation from pinned Valhalla3.9.1 sources. P09 hosted checks run against immutable e1b5932 while P10 has a separate worktree/branch. Existing Sol core owns gateway types/controller/service, the narrow node deadline header and focused tests; Sol integration owns32 actual cases, whole runner, report and CI. Both preserve unrelated edits. Main owns design and final execution. No P10 passed execution is claimed. P09 protected ancestry must be integrated before delivery.

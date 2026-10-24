@@ -23,12 +23,12 @@ The user now requires real Seoul OSM roads for the primary simulation. Complete 
 | P06 aggregation / 집계 | [P06 report](../research/pilot/2026-10-24-p06/report.md) | Local/hosted151 and Node22/24 each183 verified / 로컬·원격151·Node각183 검증 |
 | P07 signed publication / 서명 게시 | [P07 report](../research/pilot/2026-10-25-p07-claim-fix/report.md) | Corrected local/hosted206 and Node22/24 each202 verified / 수정후로컬·원격206·Node각202검증 |
 | P08 actual traffic consumption / 속도 반영 | [Contract](27-p08-traffic-activation.md), [report](../research/pilot/2026-10-25-p08-portability/report.md) | Local/hosted238 and Node22/24 each217 verified; protected PR9 merged / 로컬·원격238·Node각217 검증·보호PR9병합 |
-| P09 persistent nodes / 지속 노드 | [Contract](28-p09-routing-nodes.md), [report](../research/pilot/2026-10-25-p09/report.md) | Clean local270 and independent inspection passed; hosted delivery pending / 깨끗한 로컬270·독립 검사 통과·원격 반영 대기 |
+| P09 persistent nodes / 지속 노드 | [Contract](28-p09-routing-nodes.md), [report](../research/pilot/2026-10-25-p09/report.md) | Clean local270 and independent inspection passed; hosted270/Node235 passed; protected merge pending / 깨끗한 로컬270·독립 검사 통과·원격270/Node235 통과·보호 병합 대기 |
 | P10 gateway/failover / 중계·장애 전환 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P11 complete client, P12 complete fault matrix / 전체 화면·장애 행렬 | Evidence replay and incremental runner implemented / 증거 재생·점진 실행기 구현 | Partial implementation / 일부 구현 |
 | P13 local Cloudflare parity / Cloudflare 로컬 비교 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P14b engine integration / 엔진 통합 검사 | Extend CI with current whole-system runner / 현재 전체 실행기를 CI에 연결 | Hosted current-module run verified; full matrix remains / 현재 모듈 원격 검증·전체 행렬 남음 |
-| Whole implemented-system simulation / 구현 모듈 전체 시뮬레이션 | [P01–P09 report](../research/pilot/2026-10-25-p09/report.md) / P01~P09 보고서 | Clean local270 verified; hosted pending / 깨끗한 로컬270 검증·원격 대기 |
+| Whole implemented-system simulation / 구현 모듈 전체 시뮬레이션 | [P01–P09 report](../research/pilot/2026-10-25-p09/report.md) / P01~P09 보고서 | Clean local270 verified; hosted270 verified; protected merge pending / 깨끗한 로컬·원격270 검증·보호 병합 대기 |
 | Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/pilot/2026-10-25-p09/report.md) / 보고서·캡처 | P09 report/demo prepared; push and hosted inspection pending / P09 보고서·영상 준비·푸시와 원격 검사 대기 |
 | README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | Current Seoul/P09 48.7s recording and hashes verified / 현재 서울·P09 48.7초 녹화·해시 검증 |
 | Refresh on implementation changes / 구현 변경 때 갱신 | `media:check` fingerprint/hash/README checks / 지문·해시·README 검사 | Locally verified / 로컬 검증 |
@@ -57,3 +57,7 @@ Next: complete P09 protected delivery, then implement P10 gateway/failover. P09 
 Clean537cf0c passed270/270; main independently checked7,062 listed hashes and node/traffic/state evidence. The48.7s recording and both READMEs are refreshed. [Current report](../research/pilot/2026-10-25-p09/report.md). Hosted inspection and protected merge are next, followed by P10. P10–P14 remain unfinished.
 
 깨끗한537cf0c에서270개를 통과하고 메인이 목록 해시7,062개·노드/교통/상태 근거를 독립 검사했습니다.48.7초 녹화·한영 README를 갱신했습니다. 다음은 원격 검사·보호 병합 이후 P10이며 P10~P14는 미완료입니다.
+
+Hosted PR run40130640754 also passed270 and Node22/24 each235; main inspected6,988 present hashes and exact declared omissions. [Original evidence](../research/pilot/2026-10-25-p09/hosted/README.md). Final-head protected merge remains.
+
+원격PR실행도270개·Node각235개를 통과했고 메인이 존재 해시6,988개와 정확한 제외 목록을 검사했습니다. 최종커밋 보호 병합을 이어갑니다.
