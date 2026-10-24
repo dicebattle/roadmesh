@@ -83,3 +83,9 @@ Use pinned jose compact JWS with explicit local scoped public keys, immutable Po
 Reuse the pinned engine traffic skeleton and patch validated8-byte speed records in TypeScript. Bind each immutable generation to the graph, skeleton and exact P07 snapshot; recheck accepted state before engine use and response. Unknown/expired data selects a labeled baseline, never zero-speed closures. Preserve native current-time costing, prove fresh Seoul15-trip aggregation→signing→acceptance→detour→automatic expiry, and defer persistent two-node activation to P09. [Fixed contract](27-p08-traffic-activation.md).
 
 고정엔진뼈대를재사용하고검증한속도8바이트를TypeScript로반영합니다. 세대마다지도/뼈대/정확한P07자료를묶고엔진사용/응답전에수용상태를다시확인합니다. 미확인/만료를폐쇄0속도가아닌표시된기본값으로처리합니다. 현재시각비용을유지하고서울15여행의집계/서명/수용/우회/자동만료를증명하며영속두노드는P09입니다.
+
+## ADR-027: Independent gateway authority / 독립 중계 승인 기준
+
+P10 selects a target from its own durable P07 consumer and verified P08 generation, never from a peer's freshness claim alone. Allow one same-version retry across two approved local P09 nodes, preserve a shared deadline and reject changed authorization before return. Derive public live coverage from actual route partial lengths; do not equate a live snapshot with live coverage on every route. [Contract](29-p10-route-gateway.md), [verified local proof](../research/pilot/2026-10-25-p10/report.md). Public enrollment and response signatures remain future scope.
+
+P10은 노드의 최신 버전 주장만 믿지 않고 자체 P07 영속 수신자와 검증된 P08 세대로 대상을 정합니다. 승인된 로컬 P09 노드 두 개 사이에서 같은 버전으로 한 번만 재시도하고 전체 기한을 유지하며 반환 전 승인 변경을 거부합니다. 실제 부분 경로 길이로 공개 적용률을 계산하고 LIVE 자료가 있다고 모든 경로에 적용됐다고 표시하지 않습니다. 공개 노드 등록·응답 서명은 후속 범위입니다.

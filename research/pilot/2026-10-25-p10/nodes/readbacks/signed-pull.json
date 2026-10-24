@@ -1,0 +1,408 @@
+{
+  "states": [
+    {
+      "node_id": "seoul-node-a",
+      "instance_id": "40c02de8-990e-453d-b72c-6ff4562e1546",
+      "ready": true,
+      "active": {
+        "graph_id": "81996661573ee3265fb1633728526f9f54822e7a8aa1db38ca1a6d95bb855f15",
+        "high_water": 1,
+        "sequence": 1,
+        "traffic_snapshot_id": "aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "b52424317729fdc89b8e042d995e00c7c404a80330ac5c9accc77590d5a5e9c7",
+        "traffic_sha256": "30869466a778e402f6f0d4547a9a9c25b1d9a2a381c924fa652655e0766f1ba8",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 2,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "1818448"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "050ec878ae1c749e76075a26bb44eac45e9629c36684c58d87423aa437b6ada2",
+          "state": "DRAINING",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "1817760"
+          }
+        },
+        {
+          "generation_id": "b52424317729fdc89b8e042d995e00c7c404a80330ac5c9accc77590d5a5e9c7",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "1818448"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    },
+    {
+      "node_id": "seoul-node-b",
+      "instance_id": "937f0cc1-a366-433b-bbbe-7193e5bdc570",
+      "ready": true,
+      "active": {
+        "graph_id": "81996661573ee3265fb1633728526f9f54822e7a8aa1db38ca1a6d95bb855f15",
+        "high_water": 1,
+        "sequence": 1,
+        "traffic_snapshot_id": "aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "b52424317729fdc89b8e042d995e00c7c404a80330ac5c9accc77590d5a5e9c7",
+        "traffic_sha256": "30869466a778e402f6f0d4547a9a9c25b1d9a2a381c924fa652655e0766f1ba8",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 2,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "1818429"
+        }
+      },
+      "in_flight": 0,
+      "slots": [
+        {
+          "generation_id": "050ec878ae1c749e76075a26bb44eac45e9629c36684c58d87423aa437b6ada2",
+          "state": "DRAINING",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "1817839"
+          }
+        },
+        {
+          "generation_id": "b52424317729fdc89b8e042d995e00c7c404a80330ac5c9accc77590d5a5e9c7",
+          "state": "ACTIVE",
+          "in_flight": 0,
+          "native_daemon": {
+            "pid": 16,
+            "start_ticks": "1818429"
+          }
+        }
+      ],
+      "reason": "READY",
+      "message_en": "A current verified engine is ready.",
+      "message_ko": "현재 검증된 엔진이 준비됐습니다."
+    }
+  ],
+  "proxy_requests": [
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 404,
+      "sha256": "28d5bfbfdb5432e3bac7542fe89c1f1ab352eb01938b601b54909ae76b26be9a",
+      "byte_length": 140,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 200,
+      "sha256": "5c8a3d2a99787cee45b654048f51a8c632661b1850bcef0c02b12077612f15f6",
+      "byte_length": 972,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/artifacts/aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "status": 200,
+      "sha256": "aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "byte_length": 10469,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 200,
+      "sha256": "5c8a3d2a99787cee45b654048f51a8c632661b1850bcef0c02b12077612f15f6",
+      "byte_length": 972,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/artifacts/aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "status": 200,
+      "sha256": "aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "byte_length": 10469,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 200,
+      "sha256": "5c8a3d2a99787cee45b654048f51a8c632661b1850bcef0c02b12077612f15f6",
+      "byte_length": 972,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/artifacts/aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "status": 200,
+      "sha256": "aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "byte_length": 10469,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 200,
+      "sha256": "5c8a3d2a99787cee45b654048f51a8c632661b1850bcef0c02b12077612f15f6",
+      "byte_length": 972,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/artifacts/aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "status": 200,
+      "sha256": "aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "byte_length": 10469,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 200,
+      "sha256": "5c8a3d2a99787cee45b654048f51a8c632661b1850bcef0c02b12077612f15f6",
+      "byte_length": 972,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/artifacts/aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "status": 200,
+      "sha256": "aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "byte_length": 10469,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 200,
+      "sha256": "5c8a3d2a99787cee45b654048f51a8c632661b1850bcef0c02b12077612f15f6",
+      "byte_length": 972,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/artifacts/aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "status": 200,
+      "sha256": "aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "byte_length": 10469,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 200,
+      "sha256": "5c8a3d2a99787cee45b654048f51a8c632661b1850bcef0c02b12077612f15f6",
+      "byte_length": 972,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/artifacts/aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "status": 200,
+      "sha256": "aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "byte_length": 10469,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 200,
+      "sha256": "5c8a3d2a99787cee45b654048f51a8c632661b1850bcef0c02b12077612f15f6",
+      "byte_length": 972,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/artifacts/aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "status": 200,
+      "sha256": "aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "byte_length": 10469,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 200,
+      "sha256": "5c8a3d2a99787cee45b654048f51a8c632661b1850bcef0c02b12077612f15f6",
+      "byte_length": 972,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-b",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/artifacts/aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "status": 200,
+      "sha256": "aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "byte_length": 10469,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/regions/seoul-pilot-corridors-v1/current",
+      "status": 200,
+      "sha256": "5c8a3d2a99787cee45b654048f51a8c632661b1850bcef0c02b12077612f15f6",
+      "byte_length": 972,
+      "proxy_transport_unavailable": false
+    },
+    {
+      "node_id": "seoul-node-a",
+      "path": "/v1/simulations/p09-1e7c764930cb4c7f/artifacts/aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "status": 200,
+      "sha256": "aef8b637bbcd424217a8639e6ed771990e4131d3e72b22ff0947d91eb366fddd",
+      "byte_length": 10469,
+      "proxy_transport_unavailable": false
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "old_loopback_port": 32823,
+  "new_loopback_port": 32824,
+  "same_namespace": true,
+  "exact_durable_state_preserved": true,
+  "consumer_acceptance_repeated": false,
+  "clock_initialization_repeated": false,
+  "message_en": "Reopened current endpoint with fresh pools and owned HTTP services; original consumer state was read back without reacceptance.",
+  "message_ko": "현재 접속처의 새 연결 풀·소유 HTTP 서비스를 열고 재수용 없이 기존 수신 상태를 다시 읽었습니다."
+}

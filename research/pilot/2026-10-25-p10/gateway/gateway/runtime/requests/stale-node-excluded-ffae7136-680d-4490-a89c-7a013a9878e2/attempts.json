@@ -1,0 +1,180 @@
+[
+  {
+    "attempt": 1,
+    "node_id": "seoul-gateway-node-b",
+    "request": {
+      "request_id": "stale-node-excluded",
+      "graph_id": "81996661573ee3265fb1633728526f9f54822e7a8aa1db38ca1a6d95bb855f15",
+      "locations": [
+        {
+          "lon": 127.03739724982245,
+          "lat": 37.50083690018144
+        },
+        {
+          "lon": 127.0375277498224,
+          "lat": 37.500877100181434
+        }
+      ],
+      "expected_generation_id": "e6561e11e2b3b72b8bacad9e779b1ece28d3356b9a7595421f9dad08a14e1ce6"
+    },
+    "deadline_ms": 4000,
+    "status": 200,
+    "body": {
+      "code": "ROUTE",
+      "request_id": "stale-node-excluded",
+      "node_id": "seoul-gateway-node-b",
+      "instance_id": "67ccfa26-4437-40ef-ab36-65f05a18263c",
+      "engine_result": {
+        "request": {
+          "locations": [
+            {
+              "lon": 127.03739724982245,
+              "lat": 37.50083690018144
+            },
+            {
+              "lon": 127.0375277498224,
+              "lat": 37.500877100181434
+            }
+          ],
+          "costing": "auto",
+          "units": "kilometers",
+          "language": "en-US",
+          "date_time": {
+            "type": 0
+          }
+        },
+        "route": {
+          "trip": {
+            "locations": [
+              {
+                "type": "break",
+                "lat": 37.500836,
+                "lon": 127.037397,
+                "date_time": "2026-10-24T21:11",
+                "original_index": 0
+              },
+              {
+                "type": "break",
+                "lat": 37.500877,
+                "lon": 127.037527,
+                "original_index": 1
+              }
+            ],
+            "legs": [
+              {
+                "maneuvers": [
+                  {
+                    "type": 1,
+                    "instruction": "Drive east on 테헤란로/90.",
+                    "verbal_succinct_transition_instruction": "Drive east. Then You will arrive at your destination.",
+                    "verbal_pre_transition_instruction": "Drive east on 테헤란로, 90. Then You will arrive at your destination.",
+                    "verbal_post_transition_instruction": "Continue for 10 meters.",
+                    "street_names": [
+                      "테헤란로",
+                      "90"
+                    ],
+                    "bearing_after": 69,
+                    "time": 22.254,
+                    "length": 0.012,
+                    "cost": 27.261,
+                    "begin_shape_index": 0,
+                    "end_shape_index": 1,
+                    "verbal_multi_cue": true,
+                    "travel_mode": "drive",
+                    "travel_type": "car"
+                  },
+                  {
+                    "type": 4,
+                    "instruction": "You have arrived at your destination.",
+                    "verbal_transition_alert_instruction": "You will arrive at your destination.",
+                    "verbal_pre_transition_instruction": "You have arrived at your destination.",
+                    "bearing_before": 69,
+                    "time": 0,
+                    "length": 0,
+                    "cost": 0,
+                    "begin_shape_index": 1,
+                    "end_shape_index": 1,
+                    "travel_mode": "drive",
+                    "travel_type": "car"
+                  }
+                ],
+                "summary": {
+                  "has_time_restrictions": false,
+                  "has_toll": false,
+                  "has_highway": false,
+                  "has_ferry": false,
+                  "min_lat": 37.500836,
+                  "min_lon": 127.037397,
+                  "max_lat": 37.500877,
+                  "max_lon": 127.037527,
+                  "time": 22.254,
+                  "length": 0.012,
+                  "cost": 27.261
+                },
+                "shape": "iyzofAi|vhqFoAeG"
+              }
+            ],
+            "summary": {
+              "has_time_restrictions": false,
+              "has_toll": false,
+              "has_highway": false,
+              "has_ferry": false,
+              "min_lat": 37.500836,
+              "min_lon": 127.037397,
+              "max_lat": 37.500877,
+              "max_lon": 127.037527,
+              "time": 22.254,
+              "length": 0.012,
+              "cost": 27.261
+            },
+            "status_message": "Found route between points",
+            "status": 0,
+            "units": "kilometers",
+            "language": "en-US"
+          }
+        },
+        "trace": {
+          "units": "kilometers",
+          "shape": "iyzofAi|vhqFoAeG",
+          "edges": [
+            {
+              "id": 1338687642000,
+              "speed": 2,
+              "length": 0.012,
+              "source_percent_along": 0.351,
+              "target_percent_along": 0.653
+            }
+          ],
+          "alternate_paths": []
+        }
+      },
+      "provenance": {
+        "graph_id": "81996661573ee3265fb1633728526f9f54822e7a8aa1db38ca1a6d95bb855f15",
+        "high_water": 1,
+        "sequence": 1,
+        "traffic_snapshot_id": "c14721b0be8bc94c2922618f9b51786d2b3445227676474d70d86a2bf9eb1c55",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "e6561e11e2b3b72b8bacad9e779b1ece28d3356b9a7595421f9dad08a14e1ce6",
+        "traffic_sha256": "748b6f8f5e905d7787329c389d7d3c13845a99e506141949a243b6a5d6a5e5c5",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 2,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "1832372"
+        }
+      }
+    },
+    "outcome": "VALIDATED",
+    "elapsed_start_ms": 837.8860829999994,
+    "elapsed_end_ms": 1395.8099999999995
+  }
+]

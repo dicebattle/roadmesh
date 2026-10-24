@@ -1,58 +1,66 @@
 {
-  "source_commit": "537cf0cd8f34509fa24023420d71bfa6dabe7614",
-  "implementation_sha256": "d95a3627c0711e8df618e31ceb34c25bc17c7518ac06d0260eed358437152798",
-  "report_path": "research/pilot/2026-10-25-p09/report.html",
-  "report_sha256": "c8c8d3196bb6fc400d6d44648d059a6407f728b8f3711e93d0c3b10f11101530",
-  "capture_method": "Actual Chrome playback, 48.7 seconds at 1280x720/20fps; full H.264/GIF conversion. / 실제 48.7초·1280x720·20fps 화면 녹화와 전체 H.264/GIF 변환.",
-  "raw_capture_sha256": "a5c65a6fdcb9ba9fcab01c42808f585f0cff85026a0fade11765ef5f2cf923ca",
+  "source_commit": "20565218895a7cf50322e9587f2fe6b0bb412b03",
+  "implementation_sha256": "bebae7f5f5e7c8efed69627735ef82a2749570d1bba66937c3507dfe990dc538",
+  "report_path": "research/pilot/2026-10-25-p10/report.html",
+  "report_sha256": "f35d7c5ca75900fb0e632d61e0dfa2ed67ec21b2e99e6db57a58a40969e6fe38",
+  "capture_method": "Actual Chrome report playback,59.75 seconds at1280x720/20fps; full MP4/GIF conversion. / 실제 보고서 화면59.75초·1280x720·20fps 녹화와 전체MP4/GIF변환.",
+  "raw_capture_sha256": "85f6494443dddc06b72b502ae849347af8a85e8f27a8eb7d3043ee3f868071b0",
   "assets": [
     {
       "path": "docs/media/demo.mp4",
-      "sha256": "b567e3a8af9bc3ac7bf56d30ce872d6ca1b2085686ace25b1b26abc20c5b9791"
+      "sha256": "804c5a9a59a67d3a43608095154ab0299b6f753283ca9ea1cbbde069c283e61c"
     },
     {
       "path": "docs/media/demo.gif",
-      "sha256": "9cdb004a53461abc2496148c1ef3c46decbb84014db6757f04c05b6e2a809ca2"
+      "sha256": "ccd337662930dfc6fac4cf9d4e6683129fb7b1b68cb042b1c7835e3cf292f77c"
     },
     {
-      "path": "research/pilot/2026-10-25-p09/report-data.json",
-      "sha256": "b6c68c589eca43a54f6d207898ca7c64aef85eed5e5b333afd553d440ff204b0"
+      "path": "research/pilot/2026-10-25-p10/report-data.json",
+      "sha256": "20a12ef24c4dfaf62f6b9ea86fab41d2a95b8a7673aa413cac8338a782943259"
     },
     {
-      "path": "research/pilot/2026-10-25-p09/frames/baseline.png",
-      "sha256": "96bc1df6e61b63b94c387938bae8f402f7594e3202f65bc8b4009b1784e6298c"
+      "path": "research/pilot/2026-10-25-p10/frames/checks-ko.png",
+      "sha256": "2613751d1ea0512c330d2eb6579d67e801856667bead7d2a6faa9183dc6fc93b"
     },
     {
-      "path": "research/pilot/2026-10-25-p09/frames/checks-ko.png",
-      "sha256": "8463be68aef58eff628777e754aa0f09742fe053c2dc77ea9ae6457d393fe772"
+      "path": "research/pilot/2026-10-25-p10/frames/deadline-en.png",
+      "sha256": "1652d6a37a1b95b62f0a63b91e1ba44bf20b1ff50e8c4c9d1d96e14bd1fba0ee"
     },
     {
-      "path": "research/pilot/2026-10-25-p09/frames/expired-ko.png",
-      "sha256": "abd3877a657d89aac546bc299993a9cc66e6172f837af6c61158745fa7ea5c51"
+      "path": "research/pilot/2026-10-25-p10/frames/detour-en.png",
+      "sha256": "655acaf054512f90ed8f192fbdd64ee65a00491945cda2ae49bd9ef0f176331e"
     },
     {
-      "path": "research/pilot/2026-10-25-p09/frames/expired.png",
-      "sha256": "6c4ad85e08178709bc5061f50b869ae72dc0c977cb968342e77e4dbd7c464131"
+      "path": "research/pilot/2026-10-25-p10/frames/expired-en.png",
+      "sha256": "5168fad07d898e0e0e81b6e4fabb631d75d774b1e18a3fc7168ef33f4427da42"
     },
     {
-      "path": "research/pilot/2026-10-25-p09/frames/live.png",
-      "sha256": "783ba9150bd0d906d4e0d780e68a0cc53e69326a9326caf587f4ec2668ca3c26"
+      "path": "research/pilot/2026-10-25-p10/frames/expired-ko.png",
+      "sha256": "04e2672110266c8c2c19f2270e33459a00b7ac3bede55f2cb99cc182ac4dbdac"
     },
     {
-      "path": "research/pilot/2026-10-25-p09/frames/map.png",
-      "sha256": "8238c9cf94d616f66b3f9768411afa4d74d370e3160ef0a8830ee972293ba0be"
+      "path": "research/pilot/2026-10-25-p10/frames/failover-en.png",
+      "sha256": "f61392d5709a51d9d6abf2adc3949eb9a3da1869c64c13146c79d5e47e8ae3ce"
     },
     {
-      "path": "research/pilot/2026-10-25-p09/frames/nodes-en.png",
-      "sha256": "4d029d853b85980c732f45d3cc386bcc19182213520526b77a020c199eec0ef4"
+      "path": "research/pilot/2026-10-25-p10/frames/live-en.png",
+      "sha256": "ba0939dded7afe1c891e7f7e9a9a18aca40821ecfa70820c922db27928c7e97d"
     },
     {
-      "path": "research/pilot/2026-10-25-p09/frames/nodes-ko.png",
-      "sha256": "b90afce54c7a34c595c74ae6acc1168fb6ef0991cc2eba2a6ce6bfc57c41fc86"
+      "path": "research/pilot/2026-10-25-p10/frames/live-ko.png",
+      "sha256": "b6bb192a4f40b179dedffd3f95d96ac4625bd9005345b4c444f38bb63fc4037c"
     },
     {
-      "path": "research/pilot/2026-10-25-p09/frames/obsolete-en.png",
-      "sha256": "9202fa058c1020d3ebc46b390039e0060888e3b87a6fcc0fbc720f08d0b225d2"
+      "path": "research/pilot/2026-10-25-p10/frames/map.png",
+      "sha256": "9c6d38b0ec5b652ea605e0cce340fa5a753218c1695c5f4f995e0cad9f77265f"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10/frames/overview-en.png",
+      "sha256": "0740c5c19ac9f078593c23e8208f5f1d5cc3dbfd9d2ae70df6d60d74e57e7dcd"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p10/frames/version-rejection-en.png",
+      "sha256": "7db247c952963bdf1cc2789d93fbab5081717290b2f65fbc96de94c61181ee1a"
     }
   ]
 }

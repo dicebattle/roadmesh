@@ -1,0 +1,14 @@
+{
+  "message": {
+    "type": "RESULT",
+    "code": "UNAVAILABLE",
+    "reason": "INVALID_TAR_HEADER",
+    "message_en": "Traffic operation is unavailable; no successful route is returned.",
+    "message_ko": "교통정보 작업을 사용할 수 없어 성공 경로를 반환하지 않습니다."
+  },
+  "exit": {
+    "code": 1,
+    "signal": null
+  },
+  "pid": 82348
+}

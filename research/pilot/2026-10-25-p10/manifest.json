@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1",
+  "status": "PASS",
+  "source": {
+    "commit": "20565218895a7cf50322e9587f2fe6b0bb412b03",
+    "dirty": false
+  },
+  "implementation_sha256": "bebae7f5f5e7c8efed69627735ef82a2749570d1bba66937c3507dfe990dc538",
+  "graph_id": "81996661573ee3265fb1633728526f9f54822e7a8aa1db38ca1a6d95bb855f15",
+  "cleanup_verified": true,
+  "output_sha256": {
+    "seoul/manifest.json": "7904a9e8dfd4ac41857953a297271702f565ffb397744484271b0349e8c43281",
+    "ingestion/manifest.json": "e85b489f7b9053b9d5803408ad6ad493d06bf34638826dadd8dc36c193fc88bb",
+    "aggregation/manifest.json": "4c34c627762c86bb6a0f325069a3f40a2b5b1124662f536f82d7e152cfd2ae8c",
+    "publication/manifest.json": "1986ec7d0befbb29d44d2fee1b32164a1be12f562c602a926822b82cd5fae678",
+    "traffic/manifest.json": "4c4c8c7fe99ff6d7e4c50744782024ebaea6e8ad2ba6923419758c2a55028980",
+    "nodes/manifest.json": "6c1131482fd9c6b946206870fcc9b6e3a5a03981d4342f7cd80d146ec1bec43b",
+    "gateway/manifest.json": "3bea58d8c83dc911cb5505e017992e61b131784f00924656995a5125683b14bc",
+    "lifecycle/cleanup.json": "2aaecbbc87f9212ffe532cbd662014663a2dad96d3b1893c15a7dbd5beac5742",
+    "report-data.json": "20a12ef24c4dfaf62f6b9ea86fab41d2a95b8a7673aa413cac8338a782943259",
+    "report.html": "f35d7c5ca75900fb0e632d61e0dfa2ed67ec21b2e99e6db57a58a40969e6fe38",
+    "assertions.json": "c781b22073dde45d87b1d55d42bc7a19b2f9de6545e099e6b156eccd565ac23c",
+    "summary.md": "44b25bc546c70dccb6d85cfa690cb30f1a68ebcc483b12b6df06a6bc60fa075c",
+    "seoul-process.json": "9b73549e776fcb79664b0bf5eda60d818ec5238eb64f800300590e38bf94fcd8"
+  },
+  "completed_at_utc": "2026-10-24T21:12:43.197Z"
+}

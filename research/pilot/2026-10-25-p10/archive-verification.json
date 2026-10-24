@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "archived_original_files": 10512,
+  "map_omissions": 28,
+  "supplemental_audits_kept_separately": [
+    "aggregation/main-verification.json",
+    "publication/main-signature-verification.json",
+    "publication/main-state-verification.json"
+  ],
+  "ui_linked_files": 298,
+  "combined_archive_bytes": 54240546,
+  "combined_archive_sha256": "96228784344ea6ae9a19d6c712eac9b4118873ae0ea3e39adce186c70a559b5c",
+  "parts": [
+    {
+      "path": "evidence.tar.gz.part-00",
+      "bytes": 20971520,
+      "sha256": "49488a357b316ebf2b5181838bed3a226eee6d0dfa0d8d6ad9c0e8a02519fd1c"
+    },
+    {
+      "path": "evidence.tar.gz.part-01",
+      "bytes": 20971520,
+      "sha256": "b8035cde6ea2feb333a1f2f803689e063aa1764e02db1c0f65cc6b46df29a9c3"
+    },
+    {
+      "path": "evidence.tar.gz.part-02",
+      "bytes": 12297506,
+      "sha256": "bd5efbc5b3c60106491c51c8e000229c4db27c9b39231a89e4ce0618a7cb1c58"
+    }
+  ],
+  "inventory_exact_match": true,
+  "reconstructed_hash_match": true
+}

@@ -11,3 +11,9 @@ The authenticated loopback API accepts strict car/prefer_live requests and selec
 Public responses contain only allowed route/version fields and bilingual warnings. Live coverage uses ordered matched partial edge lengths intersecting accepted live records, including repeated edges; a detour can have coverage0 despite a live snapshot. The broader product draft's explicit base_only policy is currently rejected as unsupported. Arbitrary URLs, redirects, oversized node responses, mismatched request/geometry/provenance and stale results are rejected. Node enrollment, response signatures, public-peer honesty and production deployment remain outside this local module.
 
 공개응답은허용경로/버전필드·한영경고만포함합니다. 실제부분구간길이와수용구간의교집합으로반복구간까지적용률을계산하므로LIVE자료가있어도우회경로의적용률은0일수있습니다. 제품초안의명시적base_only는현재미지원으로거부합니다. 임의주소·리다이렉트·과대응답·요청/지형/출처불일치·낡은결과를거부합니다. 공개노드등록·응답서명·노드정직성·운영배포는범위밖입니다.
+
+## Clean whole result / 깨끗한 전체 결과
+
+Clean2056521 passed252 unit tests and the fresh whole302. Main independently inspected9,838 listed hashes and all module originals; the current59.75s recording and EN/KO390px viewer passed review. [Current report](../../research/pilot/2026-10-25-p10/report.md). P10 hosted inspection and protected delivery are pending; P09 protected ancestry has been incorporated without runtime changes.
+
+깨끗한2056521에서 단위252개·새 전체302개를 통과했습니다. 메인이 목록 해시9,838개·모든 모듈 원문·현재59.75초 녹화·한영390픽셀 화면을 확인했습니다. P10 원격 검사·보호 반영은 대기 중이며, P09의 보호 병합 이력은 실행 코드 변경 없이 연결했습니다.

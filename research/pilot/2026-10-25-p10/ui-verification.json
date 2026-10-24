@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "source_commit": "20565218895a7cf50322e9587f2fe6b0bb412b03",
+  "languages": [
+    "en",
+    "ko"
+  ],
+  "mobile_viewport": 390,
+  "mobile_document_width": 390,
+  "selector_width": 362,
+  "expanded_gateway_cases": 32,
+  "console_errors": 0,
+  "console_warnings": 0,
+  "recording_seconds": 59.75,
+  "recording_pixels": [
+    1280,
+    720
+  ],
+  "fps": 20,
+  "full_mp4_decode": "PASS",
+  "frame_seconds": {
+    "map": 3,
+    "overview-en": 12,
+    "live-en": 18,
+    "detour-en": 22,
+    "failover-en": 28,
+    "version-rejection-en": 32,
+    "deadline-en": 36,
+    "expired-en": 40,
+    "live-ko": 45,
+    "expired-ko": 49,
+    "checks-ko": 58
+  },
+  "frames_visually_reviewed": 11,
+  "capture_processes_absent": 9,
+  "report_server_pid_absent": 87317,
+  "owned_iab_tabs_closed": true,
+  "viewport_reset": true,
+  "message_en": "Main inspected actual bilingual mobile controls and frames from the unchanged recording. Initial frame timestamps were adjusted to select intended scenes; video was not recaptured or synthesized.",
+  "message_ko": "메인이 실제 한영 모바일 조작과 녹화에서 추출한 화면을 확인했습니다. 추출 시점만 해당 장면에 맞게 조정했으며 영상 재촬영이나 합성은 하지 않았습니다."
+}
