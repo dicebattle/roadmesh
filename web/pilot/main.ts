@@ -43,6 +43,8 @@ const copy = {
       "Enter finite coordinates within the displayed Seoul map area, then calculate again.",
     unavailable:
       "The route service is unavailable. Recalculate after it recovers.",
+    noRoad: "No suitable road was found within the selected search range. Choose another location.",
+    noPath: "No car route connects these locations under the selected policy. Choose another location.",
     timeout: "The route request timed out. Recalculate to try again.",
     mapUnavailable:
       "The map is unavailable in this browser. Route distance, time and freshness remain readable below the form.",
@@ -90,6 +92,8 @@ const copy = {
       "표시된 서울 지도 범위 안의 유한한 좌표를 입력한 뒤 다시 계산하세요.",
     unavailable:
       "경로 서비스를 사용할 수 없습니다. 서비스가 복구되면 다시 계산하세요.",
+    noRoad: "선택한 탐색 범위에서 적합한 도로를 찾지 못했습니다. 다른 위치를 선택하세요.",
+    noPath: "선택한 정책으로 두 위치를 잇는 자동차 경로가 없습니다. 다른 위치를 선택하세요.",
     timeout: "경로 요청 시간이 초과됐습니다. 다시 계산해 요청을 재시도하세요.",
     mapUnavailable:
       "이 브라우저에서 지도를 사용할 수 없습니다. 입력 아래에서 거리·시간·유효성을 확인할 수 있습니다.",

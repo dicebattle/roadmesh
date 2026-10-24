@@ -9,6 +9,7 @@ import type {
   TrafficProvenance,
   TrafficRouteRequest,
 } from "./traffic_types.js";
+import type { RouteNativeCode, RouteRejectionReason } from "./route_contract.js";
 export interface RoutingNodeConfig {
   node_id: string;
   consumer: ConsumerConfig;
@@ -70,9 +71,20 @@ export interface NodeRouteSuccess {
   engine_result: { request: unknown; route: unknown; trace: unknown };
   provenance: NodeProvenance;
 }
+export interface NodeRouteFailure {
+  code: "ROUTE_REJECTED";
+  request_id: string;
+  request_sha256: string;
+  native_request_sha256: string;
+  node_id: string;
+  instance_id: string;
+  reason: RouteRejectionReason;
+  native_code: RouteNativeCode;
+  provenance: NodeProvenance;
+}
 export interface NodeReply {
   status: number;
-  body: NodeRouteSuccess | NodeFailure;
+  body: NodeRouteSuccess | NodeRouteFailure | NodeFailure;
 }
 export type NodeSlotState = "PREPARING" | "ACTIVE" | "DRAINING";
 export interface NodeStatus {

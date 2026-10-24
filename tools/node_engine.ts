@@ -21,6 +21,7 @@ import {
 } from "./traffic_bundle.js";
 import { verifyTrafficGeneration } from "./traffic_compiler.js";
 import { validateTrafficRequest } from "./traffic_runtime.js";
+import { nativeRouteRequest, readNativeRouteRejection } from "./route_contract.js";
 import type {
   TrafficBundle,
   TrafficGeneration,
@@ -386,13 +387,7 @@ class PersistentNativeEngine implements NodeNativeEngine {
       id = randomUUID(),
       directory = join(this.directory, "requests", id);
     mkdirSync(directory, { recursive: true });
-    const native = {
-      locations: request.locations,
-      costing: "auto",
-      units: "kilometers",
-      language: "en-US",
-      date_time: { type: 0 },
-    };
+    const native = nativeRouteRequest(request);
     const call = async (
       action: "route" | "trace_attributes",
       input: unknown,
@@ -431,8 +426,16 @@ class PersistentNativeEngine implements NodeNativeEngine {
         Math.max(1, left),
         signal,
       );
-      if (r.stdout.trim() !== "200") trafficReject("ENGINE_HTTP_ERROR");
-      const responsePath = join(directory, action + ".response.json"),
+      const responsePath = join(directory, action + ".response.json");
+      if (r.stdout.trim() !== "200") {
+        if (action !== "route") trafficReject("ENGINE_HTTP_ERROR");
+        const rejected = readNativeRouteRejection(responsePath, r.stdout.trim());
+        const after = await this.inspect(signal);
+        if (!canonical(before).equals(canonical(after))) trafficReject("ENGINE_IDENTITY");
+        durableNodeJSON(join(directory, "identity.json"), { before, after });
+        throw rejected;
+      }
+      const
         stat = lstatSync(responsePath);
       if (
         !stat.isFile() ||

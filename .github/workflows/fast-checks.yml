@@ -97,6 +97,13 @@ jobs:
             ${{ runner.temp }}/simulation-evidence/client/**/*.pid
             ${{ runner.temp }}/simulation-evidence/client/**/*.exit
             ${{ runner.temp }}/simulation-evidence/client/**/*.sh
+            ${{ runner.temp }}/simulation-evidence/scenarios/**/*.png
+            ${{ runner.temp }}/simulation-evidence/scenarios/**/*.webm
+            ${{ runner.temp }}/simulation-evidence/scenarios/**/traffic.tar
+            ${{ runner.temp }}/simulation-evidence/scenarios/**/*.log
+            ${{ runner.temp }}/simulation-evidence/scenarios/**/*.pid
+            ${{ runner.temp }}/simulation-evidence/scenarios/**/*.exit
+            ${{ runner.temp }}/simulation-evidence/scenarios/**/*.sh
             !${{ runner.temp }}/simulation-evidence/**/tiles/**
           if-no-files-found: error
           retention-days: 7

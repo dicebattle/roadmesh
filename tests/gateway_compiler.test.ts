@@ -63,6 +63,7 @@ function fixture() {
     graph_directory: directory,
     graph_id: graphId,
     graph_manifest_sha256: "b".repeat(64),
+    coverage_bounds: [126.7, 37.4, 127.25, 37.75],
     image_id: "sha256:" + "c".repeat(64),
     skeleton_path: path,
     skeleton_sha256: sha256(bytes),

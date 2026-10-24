@@ -259,6 +259,14 @@ function loadValidatedTrafficBundle(
 ): TrafficBundle {
   directory = resolve(directory);
   const graph = loadSeoulGraph(graphDirectory);
+  // loadSeoulGraph already binds these bytes to the pinned source lock.
+  // loadSeoulGraph가 이 바이트를 고정 원본 잠금 파일과 대조했습니다.
+  const source = parseJson(readFileSync(join(graph.directory, "source.lock.json"))) as {
+    extract: { bounds: [number, number, number, number] };
+  };
+  const bounds = source.extract.bounds;
+  if (!Array.isArray(bounds) || bounds.length !== 4 || !bounds.every(Number.isFinite) ||
+      bounds[0] >= bounds[2] || bounds[1] >= bounds[3]) trafficReject("BUNDLE_CONFLICT");
   const manifestPath = bundlePath(directory, "manifest.json");
   if (lstatSync(manifestPath).size > 1024 * 1024)
     trafficReject("BUNDLE_MANIFEST_LIMIT");
@@ -300,6 +308,7 @@ function loadValidatedTrafficBundle(
     graph_directory: graph.directory,
     graph_id: graph.graphId,
     graph_manifest_sha256: graph.manifestSha256,
+    coverage_bounds: Object.freeze([...bounds]) as readonly [number, number, number, number],
     image_id: image.id,
     skeleton_path,
     skeleton_sha256: sha256(skeleton),

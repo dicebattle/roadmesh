@@ -12,6 +12,7 @@ import {
   validateNodeRequest,
 } from "../tools/node_controller.js";
 import { TrafficError } from "../tools/traffic_bundle.js";
+import { NativeRouteRejection } from "../tools/route_contract.js";
 import {
   COMPILER_POLICY,
   type TrafficBundle,
@@ -88,6 +89,7 @@ function fixture(hooks: NodeHooks = {}) {
     graph_directory: parent,
     graph_id: graph,
     graph_manifest_sha256: "e".repeat(64),
+    coverage_bounds: [126.7, 37.4, 127.25, 37.75] as const,
     image_id: "sha256:" + "f".repeat(64),
     skeleton_path: "/unit/blank",
     skeleton_sha256: blank,
@@ -145,6 +147,7 @@ function fixture(hooks: NodeHooks = {}) {
     }
     async route(request: unknown) {
       this.calls++;
+      if (routeRejection) throw routeRejection;
       return {
         request,
         route: {
@@ -185,12 +188,14 @@ function fixture(hooks: NodeHooks = {}) {
       if (corrupt) throw new TrafficError("GENERATION_CONFLICT");
     },
   };
+  let routeRejection: NativeRouteRejection | undefined;
   const controller = new RoutingNodeController(config, deps, hooks);
   return {
     controller,
     engines,
     compiled,
     config,
+    set routeRejection(value: NativeRouteRejection | undefined) { routeRejection = value; },
     get reads() {
       return reads;
     },
@@ -560,4 +565,26 @@ test("Slow reconciliation skips periodic ticks and completes one explicit follow
     await f.close();
     t.mock.timers.reset();
   }
+});
+
+test("Domain failures keep leases and reject changed authority before return / 업무 실패도 고정을 유지하고 반환 전 승인 변경 거부", async () => {
+  let f: ReturnType<typeof fixture>, change = false;
+  f = fixture({phase: async phase => {
+    if (change && phase === "AFTER_NODE_ENGINE_RESULT") f.state = accepted(1);
+  }});
+  try {
+    await f.controller.reconcile(false);
+    f.routeRejection = new NativeRouteRejection(442);
+    const r = {...request("domain"), snap_policy:"nearest_road_100m" as const};
+    const response = await f.controller.route(r);
+    assert.equal(response.status,422);
+    assert.equal(response.body.code,"ROUTE_REJECTED");
+    if (response.body.code !== "ROUTE_REJECTED") throw Error();
+    assert.equal(response.body.request_sha256,sha256(canonical(r)));
+    assert.equal(response.body.native_code,442);
+    assert.equal(response.body.reason,"NO_PATH");
+    assert.equal((await f.controller.status()).in_flight,0);
+    change = true;
+    assert.equal((await f.controller.route(r)).status,409);
+  } finally { await f.close(); }
 });

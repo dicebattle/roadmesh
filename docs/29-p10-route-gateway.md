@@ -69,3 +69,9 @@ Move production bundle loading, generation compilation and generation-byte verif
 The parent remains responsive to HTTP admission, abort and deadline timers. Bound outstanding distinct worker jobs at16 and each job at12s; worker error/exit/deadline rejects its pending jobs and fails closed until gateway restart. One caller abort does not cancel shared work needed by another caller; the caller still stops waiting immediately, and late values cannot authorize its result. Own the worker from creation, close it on startup failure and normal/error shutdown, await termination, and include its termination status in cleanup evidence. Tests must cover in-flight sharing, revalidation after settlement, changed/corrupt input separation, event-loop responsiveness, worker failure/timeout and cleanup. Fresh whole302, independent originals and a new recording remain required before delivery.
 
 부모는 HTTP 접수·취소·기한 타이머에 응답할 수 있어야 합니다. 서로 다른 미완료 작업은16개, 작업별 기한은12초로 제한합니다. 작업 스레드 오류·종료·기한 초과는 대기 작업을 모두 실패시키고 중계 재시작 전까지 안전하게 실패합니다. 한 요청 취소가 다른 요청의 공유 작업을 취소하지는 않지만 취소한 요청은 즉시 기다림을 끝내고 늦은 결과를 승인에 사용하지 않습니다. 생성 즉시 소유하고 시작 실패·정상/오류 종료 때 스레드 종료를 기다려 근거에 기록합니다. 진행 중 공유·이후 재검증·변경/손상 입력 구분·이벤트 루프 응답·실패/기한·정리를 검사하고 새 전체302개·독립 원문·녹화를 다시 확인합니다.
+
+## P12 opt-in adapter / P12 선택 연결
+
+The P12 candidate adds `snap_policy:"nearest_road_100m"`, verified source-lock coverage, normalized422 `OUT_OF_COVERAGE`/`NO_SUITABLE_ROAD`/`NO_PATH`, and private `excluded_node_ids`. Legacy requests keep their native bytes. A bound domain failure passes final authority exactly like success and is not retried; malformed claims retain one peer retry. [Fixed P12 contract and development scope](32-p12-whole-scenarios.md). Final whole acceptance remains pending.
+
+P12 후보는 선택형100m 정책·검증 원본 범위·정규화422 사유·비공개 노드 제외를 추가합니다. 기존 요청의 엔진 바이트를 보존하고 업무 실패도 성공과 같은 최종 승인 검사를 통과해야 하며 손상된 주장은 한 번만 재시도합니다. 고정 계약·개발 범위는 연결한 문서를 따르며 최종 전체 판정은 남아 있습니다.

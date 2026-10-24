@@ -35,7 +35,8 @@
     "gateway:serve": "node dist/tools/gateway_service.js",
     "gateway:check": "node dist/tools/gateway_checks.js",
     "pilot:serve": "node dist/tools/client_serve.js",
-    "client:check": "node dist/tools/client_checks.js"
+    "client:check": "node dist/tools/client_checks.js",
+    "scenario:check": "node dist/tools/scenario_checks.js"
   },
   "dependencies": {
     "jose": "6.2.13",

@@ -231,3 +231,13 @@ test("Real HTTP rejects raw credentials and returns bounded 413 JSON / 실제 HT
     await server.close();
   }
 });
+
+test("Trusted vehicle class rejects non-car admission before body spoofing / 신뢰 차량 종류는 본문 위조 전에 자동차 외 접수 거부", () => {
+  for (const vehicle_class of ["BUS","OTHER"] as const) {
+    for (const value of [batch(),{...batch(),vehicle_class:"CAR"},null])
+      assert.throws(()=>batchValid(value,{...principal,vehicle_class},config),
+        (e:unknown)=>e instanceof IngestionError && e.status===403 && e.code==="VEHICLE_NOT_ALLOWED");
+  }
+  assert.deepEqual(batchValid(batch(),{...principal,vehicle_class:"CAR"},config),batchValid(batch(),principal,config));
+  assert.throws(()=>batchValid(batch(),{...principal,vehicle_class:"TRUCK" as any},config));
+});

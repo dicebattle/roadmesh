@@ -55,3 +55,9 @@ The24 P12 IDs are: fresh-source, bounded-native-success, no-suitable-road, no-pa
 Main Sol owns design, implementation and direct verification in this increment. Scope is the optional route policy/error adapter, trusted exclusion/class guards, dedicated scenario runtime/checks/matrix, narrow existing integration/report extension and focused tests. Existing334 cases remain; implementation is followed by fresh358, independent originals, updated actual recording/README, bilingual report, push, hosted inspection and protected delivery. P13/P14b remain separate work.
 
 이번 단계는 메인 Sol이 설계·구현·직접 검증을 맡습니다. 선택형 경로 정책/오류 연결·신뢰 제외/차량 보호·시나리오 실행/검사/행렬·기존 전체 실행/보고의 좁은 확장과 집중 검사가 범위입니다. 기존334개를 유지하고 구현 뒤 새358개·독립 원문·최신 녹화/README·한영 보고·푸시·원격 검사·보호 반영을 수행합니다. P13/P14b는 별도 작업입니다.
+
+## Implementation progress before final acceptance / 최종 판정 전 구현 경과
+
+The main Sol implementation now exists. Actual development19 and two live outer-supervisor fault fixtures passed; original failures, exact source/runtime scope and main inspection are in the [development record](../research/pilot/2026-10-25-p12/development/README.md). The runtime-only command deliberately reports DEVELOPMENT_ONLY and cannot substitute for the334-prior plus24 same-run gate. The original fixed design above is historical; full clean358, refreshed actual demo, hosted originals and protected merge remain pending.
+
+메인 Sol 구현이 추가됐고 실제 개발19개와 살아 있는 상위 감독 장애 두 경우를 통과했습니다. 실패·소스/실행 범위·메인 검사는 개발 기록에 보존합니다. 개별 명령은 개발 전용 상태를 반환하고 기존334개와 추가24개를 같은 실행에서 통과한 것으로 대신하지 않습니다. 위 고정 설계는 당시 기록이며 깨끗한 전체358개·최신 실제 데모·원격 원문·보호 병합은 남아 있습니다.

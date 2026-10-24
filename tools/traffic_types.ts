@@ -16,6 +16,7 @@ export interface TrafficBundle {
   graph_directory: string;
   graph_id: string;
   graph_manifest_sha256: string;
+  coverage_bounds: readonly [number, number, number, number];
   image_id: string;
   skeleton_path: string;
   skeleton_sha256: string;
@@ -65,6 +66,7 @@ export interface TrafficHooks {
 }
 export interface TrafficRouteRequest {
   graph_id: string;
+  snap_policy?: "nearest_road_100m";
   locations: [
     {
       lon: number;

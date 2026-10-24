@@ -95,3 +95,9 @@ P10은 노드의 최신 버전 주장만 믿지 않고 자체 P07 영속 수신�
 The final P10 hosted concurrency failures and local timer measurement showed that repeated synchronous full-bundle checks can consume admission deadlines before native dispatch. Reuse the unchanged P08 verifier/compiler inside one owned bounded Node worker. Share only identical in-flight preparations, never settled authorization; await every per-request generation check and close the worker explicitly. Keep existing request limits and acceptance criteria. [Contract](29-p10-route-gateway.md), [failures](../research/pilot/2026-10-25-p10/hosted-failures/README.md), [fresh correction proof](../research/pilot/2026-10-25-p10-worker/report.md).
 
 최종 원격 동시 요청 실패와 로컬 타이머 측정에서 반복 동기 지도 검증이 엔진 전달 전에 요청 기한을 소진할 수 있음을 확인했습니다. 기존 P08 검증·변환을 소유·기한 제한 Node 작업 스레드에서 재사용합니다. 같은 진행 중 준비만 공유하고 완료된 승인은 재사용하지 않으며 요청별 세대 검사를 기다리고 스레드를 명시적으로 종료합니다. 기존 요청 한도와 통과 기준은 유지합니다.
+
+## ADR-029: Bound native domain errors to final authority / 최종 승인에 엔진 업무 오류 연결
+
+P12 reuses pinned Valhalla3.9.1's100m search option and original route400 codes170/171/442. It does not fork routing or silently change legacy defaults. Strict bounded error parsing and private request/native hashes preserve the selected generation and instance; both node and gateway recheck accepted state before returning the four-field public error. Unknown upstream failures remain unavailable. Trusted CAR admission and administrative node exclusion stay outside public request claims. [Fixed design](32-p12-whole-scenarios.md); final clean integration remains pending.
+
+P12는 고정 엔진의 탐색 옵션과 원래 경로 오류를 재사용하며 엔진을 포크하거나 기존 기본값을 바꾸지 않습니다. 제한된 엄격 해석·비공개 요청/엔진 해시로 선택한 세대·실행을 연결하고 노드·중계 모두 최종 수용 상태를 검사한 뒤 네 필드 공개 오류를 반환합니다. 미확인 엔진 실패는 사용 불가로 유지하며 자동차 접수·관리 노드 제외는 공개 요청의 주장에 맡기지 않습니다. 최종 깨끗한 통합 판정은 남아 있습니다.

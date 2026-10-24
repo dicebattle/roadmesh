@@ -19,6 +19,7 @@ import {
   validateGatewayConfig,
   validateGatewayRequest,
   validateGatewayNodeResult,
+  validateGatewayNodeRejection,
 } from "../tools/gateway_controller.js";
 import type {
   GatewayConfig,
@@ -31,6 +32,8 @@ import type {
   TrafficGeneration,
 } from "../tools/traffic_types.js";
 import type { AcceptedInspection } from "../tools/publication_types.js";
+import { nativeRouteRequest } from "../tools/route_contract.js";
+import type { NodeRouteRequest } from "../tools/node_types.js";
 
 const graph = "a".repeat(64);
 function deferred<T>() {
@@ -70,10 +73,11 @@ const request: GatewayRequest = {
   profile: "car",
   traffic_policy: "prefer_live",
 };
-function fixture(hooks: GatewayHooks = {}) {
+function fixture(hooks: GatewayHooks = {}, excluded?: string[]) {
   const root = mkdtempSync(join(tmpdir(), "routelens-gateway-unit-"));
   const bundle = {
     graph_id: graph,
+    coverage_bounds: [126.7, 37.4, 127.25, 37.75],
     image_id: "sha256:" + "b".repeat(64),
     catalog: [],
     directory: root,
@@ -100,6 +104,7 @@ function fixture(hooks: GatewayHooks = {}) {
     manifest_path: join(root, "manifest.json"),
   };
   const config: GatewayConfig = {
+    ...(excluded ? { excluded_node_ids: excluded } : {}),
     gateway_id: "unit-gateway",
     consumer: {
       store: { namespace: "p10-unit", graph_id: graph },
@@ -228,6 +233,7 @@ function fixture(hooks: GatewayHooks = {}) {
       if (url.pathname.endsWith("status"))
         return json({
           node_id: node,
+          instance_id: "unit-instance",
           ready: true,
           active: trafficProvenance(bundle, g, state),
         });
@@ -274,6 +280,65 @@ function fixture(hooks: GatewayHooks = {}) {
     },
   };
 }
+test("Domain rejection binds policy, request, selected instance and final authority / 업무 거부는 정책·요청·선택 실행·최종 승인을 연결", async () => {
+  let f: ReturnType<typeof fixture>;
+  let change = false;
+  f = fixture({ phase: async phase => {
+    if (change && phase === "AFTER_GATEWAY_NODE_RESULT") f.state = { ...f.state, high_water: 1 };
+  }});
+  const r: GatewayRequest = { ...request, snap_policy: "nearest_road_100m" };
+  const internal: NodeRouteRequest = {
+    request_id: r.request_id, graph_id: graph,
+    locations: [{lon: r.origin.longitude, lat: r.origin.latitude}, {lon: r.destination.longitude, lat: r.destination.latitude}],
+    snap_policy: r.snap_policy, expected_generation_id: f.g.generation_id,
+  };
+  const domain = {
+    code: "ROUTE_REJECTED", request_id: r.request_id,
+    request_sha256: sha256(canonical(internal)),
+    native_request_sha256: sha256(canonical(nativeRouteRequest(internal))),
+    node_id: "node-a", instance_id: "unit-instance", reason: "NO_PATH", native_code: 442,
+    provenance: f.result("node-a").provenance,
+  };
+  let malformed = false;
+  f.fetch = async (node, path, body) => path.endsWith("status")
+    ? f.json({ node_id: node, instance_id: "unit-instance", ready: true, active: f.result(node).provenance })
+    : node === "node-a" ? f.json({ ...domain, ...(malformed ? { request_sha256: "f".repeat(64) } : {}) }, 422)
+    : f.json({ ...f.result(node, r), engine_result: { ...f.result(node, r).engine_result, request: nativeRouteRequest(internal) } });
+  try {
+    assert.equal(validateGatewayNodeRejection(domain, r, f.config.nodes[0], f.bundle, f.g, "unit-instance"), "NO_PATH");
+    for (const delta of [{native_code:441}, {reason:"NO_SUITABLE_ROAD"}, {instance_id:"another"}, {native_request_sha256:"bad"}, {extra:"private"}])
+      assert.throws(() => validateGatewayNodeRejection({...domain,...delta},r,f.config.nodes[0],f.bundle,f.g,"unit-instance"));
+    const reply = await f.run(r);
+    assert.equal(reply.status, 422);
+    assert.deepEqual(Object.keys(reply.body).sort(), ["code", "message_en", "message_ko", "reason"]);
+    assert.equal((reply.body as any).reason, "NO_PATH");
+    assert.equal(f.calls.filter(c => c.path.endsWith("route")).length, 1);
+    assert.deepEqual(f.calls.at(-1)!.body, internal);
+    malformed = true;
+    assert.equal((await f.run(r)).status, 200);
+    malformed = false;
+    change = true;
+    assert.equal((await f.run(r)).status, 409);
+  } finally { await f.close(); }
+});
+test("Coverage is checked before dispatch and exclusions skip healthy peers / 범위는 전달 전에 검사하고 제외한 정상 노드는 건너뜀", async () => {
+  const f = fixture({}, ["node-a"]);
+  try {
+    const outside = await f.run({...request, destination:{longitude:127.26,latitude:37.5}});
+    assert.equal((outside.body as any).reason,"OUT_OF_COVERAGE");
+    assert.equal(f.calls.length,0);
+    assert.equal(f.reads,0);
+    assert.equal((await f.run()).status,200);
+    assert.ok(f.calls.every(c=>c.node==="node-b"));
+    for (const excluded_node_ids of [["unknown"],["node-a","node-a"],"node-a"])
+      assert.throws(()=>validateGatewayConfig({...f.config,excluded_node_ids} as GatewayConfig));
+  } finally { await f.close(); }
+  const both = fixture({},["node-a","node-b"]);
+  try {
+    assert.equal((await both.run()).status,503);
+    assert.equal(both.calls.length,0);
+  } finally { await both.close(); }
+});
 test("Strict public input and exact configured origins / 정확 공개 입력·설정 주소", async () => {
   const f = fixture();
   try {

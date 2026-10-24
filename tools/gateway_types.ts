@@ -41,6 +41,7 @@ export interface GatewayConfig {
   runtime_root: string;
   token: string;
   nodes: [GatewayNode, GatewayNode];
+  excluded_node_ids?: string[];
   port?: number;
   poll_interval_ms?: number;
 }

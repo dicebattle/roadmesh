@@ -101,3 +101,5 @@ Latest: [P11 actual client proof](../research/pilot/2026-10-25-p11/report.md), [
 최신: P11 실제 화면 검증·P10 원격 보호 반영·P12 공백 검토 초안입니다.
 
 [P12 fixed design / P12 확정 설계](../docs/32-p12-whole-scenarios.md) · [P11 hosted proof / P11 원격 근거](../research/pilot/2026-10-25-p11/hosted/README.md)
+
+- [P12 scenario runner candidate / P12 시나리오 실행 후보](modules/scenario-runner.md): actual development19 and two live supervisor cases passed; clean358 and delivery remain. / 실제 개발19개·살아 있는 감독 두 경우 통과, 깨끗한358개·반영은 남음.

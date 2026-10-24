@@ -31,6 +31,7 @@ export interface Principal {
   contributor_id: string;
   vehicle_id: string;
   consent_version: "pilot-consent-v1";
+  vehicle_class?: "CAR" | "BUS" | "OTHER";
 }
 export interface Acceptance {
   code: "ACCEPTED" | "DUPLICATE";
@@ -164,6 +165,7 @@ export type ApiCode =
   | "UNAUTHORIZED"
   | "CONSENT_REVOKED"
   | "SOURCE_NOT_ALLOWED"
+  | "VEHICLE_NOT_ALLOWED"
   | "BATCH_CONFLICT"
   | "TRIP_CONFLICT"
   | "VERSION_MISMATCH"

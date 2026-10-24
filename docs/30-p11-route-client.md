@@ -75,3 +75,9 @@ Add one optional, bounded before-cleanup callback to the existing owned runtime,
 Public browser contracts live in dependency-free `gateway_public_types.ts` and `client_public_types.ts`; the existing server type modules re-export them. This preserves server imports and the same DTO shape while browser TypeScript keeps `types:[]`. The first browser build exposed transitive Node-only types. Do not enable all Node globals in browser checking or maintain duplicated drifting route contracts; move only public type declarations, without runtime refactoring.
 
 공개 브라우저 계약은 의존성 없는 두 타입 파일에 두고 기존 서버 타입 모듈에서 다시 내보냅니다. 서버 가져오기 경로와 같은 자료 구조를 보존하면서 브라우저 검사는 Node 전역 타입 없이 유지합니다. 첫 브라우저 빌드에서 간접적인 Node 전용 타입 의존성이 드러났습니다. 브라우저 검사에 모든 Node 전역을 허용하거나 서로 어긋날 수 있는 계약을 복제하지 않고, 실행 로직 변경 없이 공개 타입 선언만 옮깁니다.
+
+## P12 domain states / P12 업무 상태
+
+The P12 candidate keeps the form's legacy request unchanged. If its API returns a route-domain error, the client clears geometry and distinguishes no suitable road, no path and out-of-coverage input, with English/Korean next actions. New policy controls are not added to the form. [P12 contract](32-p12-whole-scenarios.md).
+
+P12 후보는 입력 화면의 기존 요청을 유지합니다. API가 경로 업무 오류를 반환하면 지형을 지우고 적합한 도로 없음·경로 없음·범위 밖 입력을 구분해 한영 다음 행동을 안내합니다. 새 정책 조작 항목은 입력 화면에 추가하지 않습니다.

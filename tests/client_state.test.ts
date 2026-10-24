@@ -145,3 +145,10 @@ test("unknown authority and nonfinite route content never become current / 알�
   assert.equal(s.result(s.begin("bad"), "bad", bad), false);
   assert.equal(s.route, null);
 });
+
+test("Route domain errors clear geometry and preserve distinct states / 경로 업무 오류는 지형을 지우고 서로 다른 상태 유지", () => {
+  for(const [reason,phase] of [["NO_PATH","noPath"],["NO_SUITABLE_ROAD","noRoad"],["OUT_OF_COVERAGE","invalid"]]) {
+    const s=new RouteClientState();const generation=s.begin("domain");s.fail(generation,reason!);
+    assert.equal(s.phase,phase);assert.equal(s.route,null);
+  }
+});
