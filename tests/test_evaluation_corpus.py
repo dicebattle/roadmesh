@@ -115,6 +115,49 @@ class EvaluationCorpusTests(unittest.TestCase):
         self.assertFalse(validate(self.corpus)["ready_for_m0_measurement"])
         self.assertEqual(validate(self.corpus)["counts"]["match"]["reviewed_open_data"], 99)
 
+    def test_readiness_explanations_preserve_english_and_add_korean(self):
+        result = validate(self.corpus)
+        self.assertEqual(result["blockers"], [
+            "route: 0/100 reviewed open-data cases",
+            "match: 0/100 reviewed open-data cases",
+        ])
+        self.assertEqual(result["blockers_ko"], [
+            "route: 검토된 공개 자료 사례 0/100개",
+            "match: 검토된 공개 자료 사례 0/100개",
+        ])
+        self.corpus["sources"][0]["redistribution"] = "unresolved"
+        result = validate(self.corpus)
+        self.assertEqual(len(result["blockers"]), len(result["blockers_ko"]))
+        self.assertIn("재배포 권한", result["blockers_ko"][-1])
+
+    def test_validation_diagnostic_has_english_then_korean(self):
+        self.corpus["cases"] = []
+        with self.assertRaises(CorpusError) as raised:
+            validate(self.corpus)
+        self.assertEqual(str(raised.exception),
+                         "cases: expected an array with at least 1 items / "
+                         "cases: 항목이 최소 1개인 배열이 필요합니다")
+
+    def test_cli_help_and_argument_errors_are_bilingual(self):
+        output = io.StringIO()
+        with contextlib.redirect_stdout(output), self.assertRaises(SystemExit) as raised:
+            main(["--help"])
+        self.assertEqual(raised.exception.code, 0)
+        help_text = output.getvalue()
+        self.assertIn("usage / 사용법:", help_text)
+        self.assertIn("evaluation corpus JSON file / 평가 자료 JSON 파일", help_text)
+        self.assertIn("show this help message and exit / 도움말", help_text)
+        self.assertIn("exit 1 unless", help_text)
+        self.assertIn("종료 코드 1", help_text)
+        for arguments in ([], ["example.json", "--unknown"]):
+            error = io.StringIO()
+            with (self.subTest(arguments=arguments), contextlib.redirect_stderr(error),
+                  self.assertRaises(SystemExit) as raised):
+                main(arguments)
+            self.assertEqual(raised.exception.code, 2)
+            self.assertIn("usage / 사용법:", error.getvalue())
+            self.assertLess(error.getvalue().index("error:"), error.getvalue().index("명령행 인자"))
+
     def test_cli_exit_codes_and_nonstandard_json(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "corpus.json"
@@ -127,8 +170,11 @@ class EvaluationCorpusTests(unittest.TestCase):
                 self.assertEqual(main([str(path), "--require-ready"]), 1)
             for contents in ('{"schema_version":"0.1","schema_version":"0.2"}', 'NaN', '{', '[]'):
                 path.write_text(contents)
-                with self.subTest(contents=contents), contextlib.redirect_stderr(io.StringIO()):
+                error = io.StringIO()
+                with self.subTest(contents=contents), contextlib.redirect_stderr(error):
                     self.assertEqual(main([str(path)]), 2)
+                self.assertTrue(error.getvalue().startswith("Invalid corpus:"))
+                self.assertIn("평가 자료가 유효하지 않습니다", error.getvalue())
 
 
 if __name__ == "__main__":

@@ -40,3 +40,22 @@
 - 이번 변경은 지침·기록만 수정하므로 메인 에이전트가 직접 수행. 코드 변경·하위 에이전트 구현·배포는 없음.
 - 검증: 문서 차이와 참조 파일을 확인하고 `git diff --check` 수행. 실행 코드 변경이 없어 기존 테스트는 재실행하지 않음.
 - 다음 개발 작업은 RM-001b로 유지. 이후 구현 작업 기록에는 실제 설계·구현 담당과 검증 결과도 남김.
+
+## 2026-10-24 Local pilot and protected delivery / 로컬 파일럿과 보호된 결과 전달
+
+- Request: design all modules for a locally verifiable pilot, prove each module through direct tests, protect main, end tasks with pushes, and use English-first/Korean messages and explanatory commits.
+  요청: 로컬에서 전체 검증할 파일럿 모듈 설계, 모듈별 직접 테스트, main 보호, 작업 종료 시 푸시, 영어 우선·한국어 안내와 설명이 있는 커밋.
+- Design owner: main agent. [P01–P14 plan](../docs/11-local-pilot.md) defines contracts, dependencies, fifteen end-to-end scenarios, evidence and limits. No pilot module was implemented in this task.
+  설계 담당: 메인 에이전트. [P01~P14 계획](../docs/11-local-pilot.md)에 계약·선행 조건·전체 시나리오 15개·증거·한계를 정의했으며 이번 작업에서 파일럿 모듈은 구현하지 않음.
+- Revised decision: synthetic integration can proceed before the geographic 100/100 corpus is ready. The corpus gate is retained for real-road accuracy. This supersedes the earlier universal RM-001b-first order, not the requirement for real-world evidence.
+  변경 결정: 실제 도로 자료 100/100개 준비 전에도 합성 통합 검증 진행 가능. 해당 기준은 실제 도로 정확도에 유지. 모든 구현에 RM-001b를 먼저 요구하던 순서를 바꾸며 실제 증거 요구를 없애지 않음.
+- Live repository setting: PR required, administrator enforcement, force-push/deletion blocked, conversations resolved. Approval count 0 for solo maintenance; CI checks not yet required. [Read-back evidence](../research/repository/main-protection-2026-10-24.json).
+  실제 저장소 설정: PR 필수·관리자 적용·강제 푸시/삭제 차단·리뷰 대화 해결. 단독 운영 승인자 0명, 필수 CI는 아직 없음. [재조회 증거](../research/repository/main-protection-2026-10-24.json).
+- Workflow: [English/Korean delivery rules](../docs/12-development-workflow.md), tracked [.gitmessage](../.gitmessage), AGENTS/CLAUDE instructions. Work branch: `docs/local-pilot-validation-plan`; no main push, PR creation, merge or deployment.
+  절차: [영어/한국어 전달 규칙](../docs/12-development-workflow.md), [.gitmessage](../.gitmessage), AGENTS/CLAUDE 지침. 작업 브랜치 `docs/local-pilot-validation-plan`; main 푸시·PR 생성·병합·배포 없음.
+- Implementation owner for the existing CLI localization only: Sol subagent (`gpt-6.1-sol`, task `bilingual_cli`). Files: `tools/evaluation_corpus.py`, `tests/test_evaluation_corpus.py`. Main agent reviewed the diff and verified English fields/exit codes remain compatible. Korean readiness text is additive (`blockers_ko`).
+  기존 CLI 언어 변경 구현 담당: Sol 하위 에이전트(`gpt-6.1-sol`, `bilingual_cli`). 담당 파일은 검사 도구·테스트 두 개. 메인 에이전트가 차이를 검토해 영문 필드·종료코드 호환 유지와 한국어 준비 상태 필드 추가를 확인.
+- Focused verification: `python3 -m unittest discover -s tests -p 'test_evaluation_corpus.py' -v` — 13 tests passed, one run by the implementer. No duplicate suite run by the main agent. Third-party error details retain English with Korean corrective guidance; OS locale was not changed.
+  집중 검증: 위 명령으로 구현자가 한 번 실행해 13개 통과. 메인 에이전트는 같은 전체 검사를 중복 실행하지 않음. 외부 오류 세부사항은 영어 원문과 한국어 해결 안내를 제공하며 운영체제 언어는 변경하지 않음.
+- Next: P01 scenario/evidence contract and P14a fast continuous checks; make real successful CI check names required after that work. Existing historical evidence is preserved; older documents have not all been retroactively translated.
+  다음: P01 시나리오·증거 계약과 P14a 빠른 지속 검사. 해당 작업 후 실제 성공한 CI 검사 이름을 필수 등록. 과거 증거는 보존하며 모든 과거 문서를 소급 번역한 상태는 아님.

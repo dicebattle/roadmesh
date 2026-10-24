@@ -1,4 +1,6 @@
-"""Validate RouteLens M0 evaluation inputs; never claim routing quality."""
+"""Validate RouteLens M0 evaluation inputs; never claim routing quality.
+RouteLens M0 평가 입력을 검사하며 경로 품질을 검증했다고 주장하지 않습니다.
+"""
 
 import argparse
 import hashlib
@@ -11,6 +13,55 @@ from pathlib import Path
 
 class CorpusError(ValueError):
     """An input does not satisfy the evaluation-corpus contract."""
+
+    def __init__(self, message):
+        path, _, detail = message.partition(": ")
+        translations = {
+            "expected an object": "객체가 필요합니다",
+            "missing required fields": "필수 필드가 누락되었습니다",
+            "unexpected fields": "허용되지 않은 필드가 있습니다",
+            "expected non-empty text": "비어 있지 않은 문자열이 필요합니다",
+            "expected a lowercase identifier (1–80 characters)": "소문자 식별자가 필요합니다(1~80자)",
+            "expected a finite number within the allowed range": "허용 범위 안의 유한한 숫자가 필요합니다",
+            "unsupported value": "지원하지 않는 값입니다",
+            "unsupported version": "지원하지 않는 버전입니다",
+            "expected west, south, east, north": "서쪽, 남쪽, 동쪽, 북쪽 경계 4개가 필요합니다",
+            "bounds must increase; antimeridian regions are not supported": "서쪽은 동쪽보다, 남쪽은 북쪽보다 작아야 하며 날짜변경선을 지나는 지역은 지원하지 않습니다",
+            "duplicate source id": "출처 식별자가 중복되었습니다",
+            "duplicate case id": "사례 식별자가 중복되었습니다",
+            "unknown source id": "등록되지 않은 출처 식별자입니다",
+            "origin and destination must differ": "출발지와 목적지는 달라야 합니다",
+            "sample elapsed_s must strictly increase": "표본의 elapsed_s 값은 이전 표본보다 커야 합니다",
+            "duplicate evaluation input, even if ids differ": "식별자가 달라도 같은 평가 입력을 중복 등록할 수 없습니다",
+            "reviewed cases require resolved redistribution rights": "검토된 사례는 재배포 권한이 확인되어야 합니다",
+            "review must be absent until status is reviewed": "status가 reviewed일 때만 review를 포함할 수 있습니다",
+            "duplicate object key": "객체의 키가 중복되었습니다",
+            "NaN and Infinity are not permitted": "NaN과 Infinity는 허용되지 않습니다",
+        }
+        if detail.startswith("expected an array with at least "):
+            minimum = detail.split()[-2]
+            korean = f"항목이 최소 {minimum}개인 배열이 필요합니다"
+        else:
+            korean = translations[detail]
+        super().__init__(f"{message} / {path}: {korean}")
+
+
+class BilingualArgumentParser(argparse.ArgumentParser):
+    """Keep argparse parsing and exit codes, adding Korean CLI guidance."""
+
+    def format_usage(self):
+        return super().format_usage().replace("usage: ", "usage / 사용법: ", 1)
+
+    def format_help(self):
+        return (super().format_help()
+                .replace("usage: ", "usage / 사용법: ", 1)
+                .replace("positional arguments:", "positional arguments / 위치 인자:")
+                .replace("options:", "options / 옵션:"))
+
+    def error(self, message):
+        self.print_usage(sys.stderr)
+        self.exit(2, f"{self.prog}: error: {message}\n"
+                     "명령행 인자를 확인하세요. 필수 corpus 파일 경로와 지원 옵션은 --help에서 확인할 수 있습니다.\n")
 
 
 def record(value, path, required, optional=()):
@@ -158,10 +209,14 @@ def validate(corpus):
 
     blockers = [f"{kind}: {count['reviewed_open_data']}/100 reviewed open-data cases"
                 for kind, count in counts.items() if count["reviewed_open_data"] < 100]
+    blockers_ko = [f"{kind}: 검토된 공개 자료 사례 {count['reviewed_open_data']}/100개"
+                   for kind, count in counts.items() if count["reviewed_open_data"] < 100]
     if unresolved_sources:
+        blockers_ko.append("참조된 출처 중 재배포 권한이 확인되지 않은 출처가 있습니다")
         blockers.append("referenced sources have unresolved redistribution rights")
     return {"schema_version": "0.1", "region_id": region["id"], "counts": counts,
-            "ready_for_m0_measurement": not blockers, "blockers": blockers}
+            "ready_for_m0_measurement": not blockers, "blockers": blockers,
+            "blockers_ko": blockers_ko}
 
 
 def unique_keys(pairs):
@@ -178,10 +233,13 @@ def reject_constant(_):
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("corpus", type=Path)
+    parser = BilingualArgumentParser(description=__doc__, add_help=False)
+    parser.add_argument("-h", "--help", action="help",
+                        help="show this help message and exit / 도움말을 표시하고 종료합니다")
+    parser.add_argument("corpus", type=Path,
+                        help="evaluation corpus JSON file / 평가 자료 JSON 파일")
     parser.add_argument("--require-ready", action="store_true",
-                        help="exit 1 unless both real-road case quotas are met")
+                        help="exit 1 unless both real-road case quotas are met / 경로·매칭의 실제 도로 사례 기준을 모두 충족하지 못하면 종료 코드 1을 반환합니다")
     args = parser.parse_args(argv)
     try:
         raw = args.corpus.read_bytes()
@@ -189,7 +247,8 @@ def main(argv=None):
         report = validate(corpus)
         report["corpus_sha256"] = hashlib.sha256(raw).hexdigest()
     except (OSError, ValueError, UnicodeError, RecursionError) as error:
-        print(f"Invalid corpus: {error}", file=sys.stderr)
+        print(f"Invalid corpus: {error}\n평가 자료가 유효하지 않습니다. 파일을 읽을 수 있는지, JSON 형식과 입력 계약에 맞는지 확인하세요.",
+              file=sys.stderr)
         return 2
     print(json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False))
     return 1 if args.require_ready and not report["ready_for_m0_measurement"] else 0

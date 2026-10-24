@@ -2,6 +2,10 @@
 
 Open-source traffic aggregation and federated routing, built around existing routing engines.
 
+RouteLens is derived from Metro Lens. Current implementation: a local evaluation-corpus validator with English/Korean CLI messages. The navigation system and local pilot are not implemented yet. Start with the [local pilot module plan](docs/11-local-pilot.md) and [development workflow](docs/12-development-workflow.md). Work is pushed to feature branches; `main` is protected.
+
+RouteLens는 Metro Lens에서 파생됐습니다. 현재 구현은 영어·한국어 안내를 제공하는 로컬 시험자료 검사 도구이며, 내비게이션과 전체 로컬 파일럿은 미구현입니다. [로컬 파일럿 모듈 계획](docs/11-local-pilot.md)과 [개발 작업 절차](docs/12-development-workflow.md)를 먼저 읽으세요. 작업 결과는 작업 브랜치로 푸시하고 main은 보호합니다.
+
 RouteLens는 운전자가 제공한 주행 관측을 검증해 도로별 교통정보로 만들고, 독립적으로 운영되는 서버들이 같은 지도와 교통정보를 사용해 자동차 경로를 계산하도록 하는 프로젝트입니다.
 
 **현재 상태: M0 시험자료 검사 모듈을 구현했습니다. 실행 가능한 내비게이션, 수집 서버, 배포 환경은 아직 없습니다.** 문서의 성능·정확도 수치는 측정 결과가 아니라 개발 단계의 통과 목표입니다. RouteLens는 Metro Lens에서 파생된 오픈소스 프로젝트입니다.
@@ -39,6 +43,8 @@ RouteLens는 운전자가 제공한 주행 관측을 검증해 도로별 교통�
 8. [버스 관리 제품으로의 확장](docs/08-transit-extension.md)
 9. [설계 결정과 미결정 항목](docs/09-decisions.md)
 10. [공식 출처와 조사 기록](docs/10-sources.md)
+11. [Local pilot modules / 로컬 파일럿 모듈](docs/11-local-pilot.md)
+12. [Development workflow / 개발 작업 절차](docs/12-development-workflow.md)
 
 설계 기준일은 2026-10-24입니다. 의존성의 개발 활동은 [조회 결과](research/upstream-snapshot.json)에 보관합니다. 최신 커밋이 있다는 사실만으로 운영 품질을 보증하지 않습니다.
 
@@ -55,7 +61,9 @@ python3 -m unittest discover -s tests -p 'test_evaluation_corpus.py' -v
 
 ## 다음 구현 작업
 
-[M0의 RM-001부터 RM-004](docs/05-roadmap.md)를 진행합니다. RM-001의 검사 도구만 완료됐으며 실제 시험 지역·공개 자료·기대 경로 검토는 남아 있습니다. 다음은 공개 OSM 자료를 이용한 소수의 실제 사례 검토와 지도 생성용 입력 고정입니다. 제한된 한국 도로 구간에서 Valhalla의 경로·도로 매칭 품질과 교통정보 반영을 검증해야 다음 단계로 갈 수 있습니다.
+Next: P01 scenario/evidence contracts and P14a continuous checks, followed by a tiny synthetic Valhalla graph. The real-road RM-001 work remains a separate geographic evaluation gate; synthetic inputs do not satisfy it. See the [updated roadmap](docs/05-roadmap.md).
+
+다음은 P01 시나리오·증거 계약과 P14a 지속 검사이며, 이후 작은 합성 Valhalla 그래프를 만듭니다. 실제 도로 RM-001 작업은 별도 지역 평가 기준으로 유지하고 합성 자료로 충족시키지 않습니다. [갱신된 로드맵](docs/05-roadmap.md)을 참고하세요.
 
 ## 오픈소스 원칙
 

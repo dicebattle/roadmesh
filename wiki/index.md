@@ -1,12 +1,16 @@
 # RouteLens 프로젝트 위키
 
+Current next task: **P01 scenario/evidence contract and P14a continuous checks** for the [local pilot](../docs/11-local-pilot.md). The pilot remains design-only. The geographic 100/100 gate remains separate. [Development workflow](../docs/12-development-workflow.md): protected main, descriptive bilingual commits and feature-branch pushes.
+
+현재 다음 작업은 [로컬 파일럿](../docs/11-local-pilot.md)의 **P01 시나리오·증거 계약과 P14a 지속 검사**입니다. 파일럿은 아직 설계 단계이며 실제 도로 자료 100/100개 조건과 분리합니다. [개발 절차](../docs/12-development-workflow.md)는 main 보호·상세한 이중 언어 커밋·작업 브랜치 푸시입니다.
+
 현재 단계는 **M0 / RM-001 진행 중**입니다. 시험자료 검사 모듈만 구현됐으며 실제 도로 검토 사례는 경로·매칭 각각 0개입니다. 실행 가능한 내비게이션과 배포 환경은 없습니다.
 
 ## 현재 구현과 다음 작업
 
 - [시험자료 검사 모듈](modules/evaluation-corpus.md): 실행법, 입력 계약, 검사 범위, 검증 근거.
 - [누적 작업 기록](log.md): 요청·설계 결정·실행 결과·남은 일.
-- 다음 작업: 실제 시험 지역·공개 원본을 정하고 소수의 실제 도로 사례를 검토하는 RM-001b.
+- Geographic work remains pending: RM-001b selects real test regions and reviewed sources. / 실제 지역 작업 RM-001b의 시험 지역·검토 출처 선정은 별도로 남아 있습니다.
 
 ## 기준 문서
 
@@ -24,6 +28,8 @@
 | [버스 확장](../docs/08-transit-extension.md) | 별도 제품으로 남긴 방향 |
 | [설계 결정](../docs/09-decisions.md) | 채택·보류·미결정 사항 |
 | [공식 출처](../docs/10-sources.md) | 기존 조사 출처와 공개 메타데이터 |
+| [Local pilot / 로컬 파일럿](../docs/11-local-pilot.md) | Modules, contracts, scenarios and evidence / 모듈·계약·시나리오·증거 |
+| [Workflow / 개발 절차](../docs/12-development-workflow.md) | Branch protection and bilingual delivery / 브랜치 보호·이중 언어 결과 전달 |
 
 ## 출처와 검증 자료
 

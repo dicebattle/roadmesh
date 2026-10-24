@@ -1,5 +1,11 @@
 # 개발 순서와 통과 기준
 
+## Local pilot track / 로컬 파일럿 경로
+
+Updated 2026-10-24: the user requested full local simulation before expanding implementation. Follow [P01–P14](11-local-pilot.md), starting with the scenario/evidence contract and fast CI checks, then a tiny real-engine synthetic graph. RM-001's 100/100 reviewed cases remain required for geographic quality evaluation, but no longer block synthetic integration work. The earlier “real-road corpus first for all implementation” order is superseded for the local pilot only. The pilot is designed, not implemented.
+
+2026-10-24 변경: 사용자가 전체 흐름을 로컬 시뮬레이션으로 검증하기를 요청했습니다. [P01~P14](11-local-pilot.md)에 따라 시나리오·증거 계약과 빠른 CI 검사, 작은 실제 엔진용 합성 그래프부터 진행합니다. RM-001의 검토 자료 100/100개는 실제 지역 품질 평가에 유지하되 합성 통합 구현의 선행 조건에서 분리합니다. 모든 구현에 앞서 실제 도로 자료부터 확보하던 순서는 로컬 파일럿에 한해 대체합니다. 파일럿은 설계만 됐으며 아직 구현되지 않았습니다.
+
 아래 기간은 경험 있는 개발자 1명이 집중 작업할 때의 **공수 가정**입니다. 실제 운전자 모집, 법적 검토, 데이터 이용 허가, 앱 배포 심사, 이동 기록 수집에 걸리는 대기시간은 별도입니다. 2026-10-24 현재 RM-001의 시험자료 검사 도구만 구현·로컬 검증됐습니다. 실제 도로 사례·지도 생성·내비게이션은 아직 준비되지 않았습니다. 최신 근거는 [작업 기록](../wiki/log.md)을 따릅니다.
 
 ## M0 가장 위험한 연결부터 검증 — 1~2 개발자 주
@@ -80,4 +86,6 @@ TUF 구현체 고정, 키 폐기, 서명 사고 복구 훈련, 프로세스 자�
 
 ## 착수 순서
 
-다음 작업은 **RM-001b → RM-001c → RM-002 → RM-003/RM-004**입니다. 먼저 소수의 실제 도로 사례와 근거를 검토하고, 충분한 자료를 확보한 뒤 지도 생성과 엔진 검증으로 넘어갑니다. UI·전국 배포·버스 제품을 동시에 착수하지 않습니다.
+Local pilot: **P01/P14a → P02 → P03/P04 → P05/P06 → P07/P08 → P09/P10 → P11/P12 → P13/P14b**. Geographic evaluation retains **RM-001b → RM-001c → RM-002 → RM-003/RM-004**. Do not use synthetic success as real-road proof. The original development-week estimates do not include a measured estimate for this expanded pilot; revise them after P02 integration.
+
+로컬 파일럿은 **P01/P14a → P02 → P03/P04 → P05/P06 → P07/P08 → P09/P10 → P11/P12 → P13/P14b** 순서입니다. 실제 지역 평가는 **RM-001b → RM-001c → RM-002 → RM-003/RM-004**를 유지합니다. 합성 시험 성공을 실제 도로 증명으로 사용하지 않습니다. 기존 개발 주차 추정에는 확대된 파일럿의 실측 공수가 포함되지 않으며 P02 연결 이후 재산정합니다.
