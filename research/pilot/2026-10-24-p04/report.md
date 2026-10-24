@@ -4,7 +4,7 @@
 
 **로컬·원격 결과:통합 검사48/48 통과, Node22·24 각각96/96 통과.** 현재 구현한 모든 모듈을 실행한 결과이며 향후 P01~P14 전체 파일럿의 완료는 아닙니다.
 
-[Actual recorded playback / 실제 재생 녹화](../../../docs/media/demo.mp4) · [Offline report / 오프라인 보고서](report.html) · [Manifest / 실행 목록](manifest.json) · [Independent main inspection / 메인 독립 검사](main-verification.json) · [Media provenance / 미디어 출처](../../../docs/media/latest.json)
+[Actual recorded playback / 실제 재생 녹화](https://github.com/dicebattle/routelens/blob/3d32df694b89f051873aa19499394eb322e23e76/docs/media/demo.mp4) · [Offline report / 오프라인 보고서](report.html) · [Manifest / 실행 목록](manifest.json) · [Independent main inspection / 메인 독립 검사](main-verification.json) · [Media provenance / 미디어 출처](media-manifest.json)
 
 ## Exact run / 정확한 실행
 
@@ -38,11 +38,11 @@ Main inspected the actual generated report in the in-app browser: English/Korean
 
 메인이 내장 브라우저에서 실제 생성 보고서의 한영 전환·25초/누락10개·차량 선택·매칭 표시·재생을 확인했습니다. 데스크톱1280×720과 모바일390×844에 가로 넘침이 없었습니다. 매칭 표본과 통과 수용을 구분하고 제외 사유를 남깁니다. 영상은 격리된 Playwright 세션으로 실제 보고서를 재생한 녹화이며 가짜 애니메이션이 아닙니다.
 
-![English replay / 영문 재생](../../../docs/media/report-en.png)
+![English replay / 영문 재생](https://github.com/dicebattle/routelens/blob/3d32df694b89f051873aa19499394eb322e23e76/docs/media/report-en.png)
 
-![Korean replay / 국문 재생](../../../docs/media/report-ko.png)
+![Korean replay / 국문 재생](https://github.com/dicebattle/routelens/blob/3d32df694b89f051873aa19499394eb322e23e76/docs/media/report-ko.png)
 
-![Matching decisions / 매칭 판정](../../../docs/media/report-checks.png)
+![Matching decisions / 매칭 판정](https://github.com/dicebattle/routelens/blob/3d32df694b89f051873aa19499394eb322e23e76/docs/media/report-checks.png)
 
 ## Boundaries / 한계
 
@@ -59,3 +59,5 @@ The compact archive preserves requests, responses, configuration and results; lo
 [GitHub run40084172093](https://github.com/dicebattle/routelens/actions/runs/40084172093) passed Node22, Node24, actual Docker integration and Required checks on clean `11f83a6e9aae683773f6c521ad6250d607b530d7`. Main downloaded its artifact and verified137 matching-file hashes, all48 assertions, clean max1ms/noisy internal max444ms,21 parallel exclusions, identical full/split/overlap result bytes and real engine failure exit1 with cleanup. [Inspection record](hosted-verification.json). The hosted graph is bound to its actual image/build identity and differs from the local arm64 graph; it is not silently substituted.
 
 위 원격 실행은 깨끗한 소스에서 Node22·24·실제Docker통합·필수검사를 통과했습니다. 메인이 결과물을 내려받아137매칭파일해시·48검사·정상최대1ms/잡음내부444ms·평행21제외·전체/분할/중첩바이트·실제엔진종료1과정리를 검증했습니다. 기록에 실제 식별자를 남겼으며 원격 그래프는 해당 이미지/생성 식별에 연결되므로 로컬arm64그래프와 다릅니다. 임의 대체하지 않았습니다.
+
+P04 media links are pinned to its merged commit and original metadata bytes are archived; later Seoul demos do not replace this historical evidence. / P04 미디어를 당시 병합 커밋에 고정하고 원래 메타데이터를 보존해 서울 데모가 과거 증거를 바꾸지 않게 했습니다.

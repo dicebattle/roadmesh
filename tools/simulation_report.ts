@@ -391,10 +391,10 @@ export function renderSimulationReport(data: SimulationReportData): string {
   <main>
     <header>
       <div>
-        <div class="eyebrow">ROUTELENS / ${data.matching ? "P03 + P04" : "P03"}</div>
+        <div class="eyebrow">ROUTELENS / ${data.region ? "SEOUL" : data.matching ? "P03 + P04" : "P03"}</div>
         <h1
-          data-en="Vehicle &amp; GPS simulation"
-          data-ko="차량·GPS 시뮬레이션"
+          data-en="${data.region ? "Seoul road simulation" : "Vehicle &amp; GPS simulation"}"
+          data-ko="${data.region ? "서울 도로 시뮬레이션" : "차량·GPS 시뮬레이션"}"
         ></h1>
         <p
           class="notice"
@@ -907,13 +907,11 @@ export function renderSimulationReport(data: SimulationReportData): string {
       movingLayer.replaceChildren();
       let omissions = 0;
       const route = data.routes?.find((r) => r.route_id === $("route").value);
-      data.vehicles
+      const visibleVehicles = data.vehicles
         .filter((v) => !route || route.vehicle_ids.includes(v.vehicle_id))
-        .filter(
-          (v) =>
-            $("vehicle").value === "*" || v.vehicle_id === $("vehicle").value,
-        )
-        .forEach((v, index) => {
+        .filter((v) => $("vehicle").value === "*" || v.vehicle_id === $("vehicle").value);
+      const labeledRoutes = new Set();
+      visibleVehicles.forEach((v, index) => {
           const truth = v.truth.filter((p) => p.offset_ms <= time),
             obs = v.observations.filter((p) => p.offset_ms <= time);
           if ($("truth").checked && truth.length) {
@@ -934,12 +932,32 @@ export function renderSimulationReport(data: SimulationReportData): string {
             });
             const rightHalf = p[0] > viewportWidth / 2;
             const lowerHalf = p[1] > viewportHeight / 2;
-            const t = svg("text", {
-              x: p[0] + (rightHalf ? -12 : 12),
-              y: p[1] + (lowerHalf ? -20 - index * 20 : 22 + index * 20),
-              "text-anchor": rightHalf ? "end" : "start",
-            });
-            t.textContent = v.vehicle_id;
+            if (data.region) {
+              const scene = data.routes?.find(r => r.vehicle_ids.includes(v.vehicle_id));
+              const grouped = $("vehicle").value === "*" && scene;
+              const key = grouped ? scene.route_id : v.vehicle_id;
+              if (!labeledRoutes.has(key)) {
+                labeledRoutes.add(key);
+                // This fixture shares truth across modes. Group labels follow the
+                // first visible vehicle, not a centroid of later divergent paths.
+                const label = grouped ? scene["name_" + lang] + " · " + visibleVehicles.filter(item => scene.vehicle_ids.includes(item.vehicle_id)).length : v.vehicle_id;
+                const t = svg("text", {
+                  x: p[0] + (rightHalf ? -12 : 12),
+                  y: Math.max(16, Math.min(viewportHeight - 12, p[1] + (lowerHalf ? -20 : 22))),
+                  "text-anchor": rightHalf ? "end" : "start",
+                });
+                t.textContent = label;
+                const width = Math.min(t.getComputedTextLength(), viewportWidth - 16);
+                t.setAttribute("x", String(rightHalf ? Math.max(width + 8, Math.min(viewportWidth - 8, p[0] - 12)) : Math.max(8, Math.min(viewportWidth - width - 8, p[0] + 12))));
+              }
+            } else {
+              const t = svg("text", {
+                x: p[0] + (rightHalf ? -12 : 12),
+                y: p[1] + (lowerHalf ? -20 - index * 20 : 22 + index * 20),
+                "text-anchor": rightHalf ? "end" : "start",
+              });
+              t.textContent = v.vehicle_id;
+            }
           }
           if ($("observed").checked)
             obs.forEach((p) => {
