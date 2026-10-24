@@ -1,8 +1,8 @@
 # Persistent Seoul routing nodes / 서울 장기 실행 경로 노드
 
-The clean local P01–P09 run passed **270/270** actual assertions, including all32 P09 lifecycle cases. Main independently inspected **7,062 unique listed original-file hashes**, raw routes, signatures, database state and owned cleanup. Hosted verification and protected delivery are pending; P10–P14 remain unfinished.
+The clean local P01–P09 run passed **270/270** actual assertions, including all32 P09 lifecycle cases. Main independently inspected **7,062 unique listed original-file hashes**, raw routes, signatures, database state and owned cleanup. [Hosted270 and Node22/24 each235 also passed, with original-artifact inspection](hosted/README.md). Final protected delivery is pending; P10–P14 remain unfinished.
 
-깨끗한 로컬 P01~P09 실행에서 P09 수명주기32개를 포함한 **270개 전체 판정**을 통과했습니다. 메인이 **목록에 있는 고유 원문 파일 해시7,062개**, 원경로·서명·DB 상태·소유 자원 정리를 독립 검사했습니다. 원격 검증·보호 병합은 대기 중이며 P10~P14는 미완료입니다.
+깨끗한 로컬 P01~P09 실행에서 P09 수명주기32개를 포함한 **270개 전체 판정**을 통과했습니다. 메인이 **목록에 있는 고유 원문 파일 해시7,062개**, 원경로·서명·DB 상태·소유 자원 정리를 독립 검사했습니다. [원격270개·Node각235개와 원문 검사도 통과](hosted/README.md)했습니다. 최종 보호 병합은 대기 중이며 P10~P14는 미완료입니다.
 
 [Actual48.7s recording / 실제48.7초 녹화](demo.mp4) · [GIF](demo.gif) · [Interactive evidence / 대화형 근거](report.html) · [Assertions / 판정](assertions.json) · [Source manifest / 소스 명세](manifest.json) · [Media provenance / 미디어 출처](media-manifest.json)
 
