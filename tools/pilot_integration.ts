@@ -211,8 +211,11 @@ export async function main(
         );
         return 0;
       } else if (argv[i] === "--output" && !output) output = argv[++i] ?? "";
-      else if (argv[i] === "--source" && !source) source = argv[++i];
-      else throw new Error("Unknown argument / 알 수 없는 인자");
+      else if (argv[i] === "--source" && !source) {
+        source = argv[++i];
+        if (!source || source.startsWith("-"))
+          throw new Error("Source file required / 원본 파일이 필요합니다");
+      } else throw new Error("Unknown argument / 알 수 없는 인자");
     }
     if (!output || output.startsWith("-") || source?.startsWith("-"))
       throw new Error("New output required / 새출력 필요");

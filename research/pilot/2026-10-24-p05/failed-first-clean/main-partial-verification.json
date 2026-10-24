@@ -1,0 +1,42 @@
+{
+  "status": "PARTIAL_VERIFIED",
+  "run_root": "data/p05-main-20261024/ingestion",
+  "completed_pass_assertions": 21,
+  "whole_run_status": "FAIL",
+  "whole_run_failure": "Database reconnect used a stale dynamically mapped host port / DB 재연결이 변경 전 임시 호스트 포트를 사용함",
+  "independent_traversals_checked": 215,
+  "unique_ids": 215,
+  "successful_trips": 9,
+  "raw_after_success": 0,
+  "independent_geometry_max_difference_m": 5.17506038022475e-10,
+  "independent_accepted_boundary_error_max_ms": 392,
+  "raw_recovery_result_parity": [
+    {
+      "phase": "AFTER_MATCH",
+      "interrupted_pid": 82714,
+      "recovered_pid": 82772,
+      "result_sha256": "c15889116698c51db2a9c0896edc4d14e5a6068dc3fde2e94318c8009bc7de76",
+      "byte_identical": true
+    },
+    {
+      "phase": "AFTER_INSERT",
+      "interrupted_pid": 82795,
+      "recovered_pid": 82824,
+      "result_sha256": "f9bd25b0f4639d9e9ac4254f5d12e6069a0a6a3a9a69ae6ec403ae14b6d9ec6a",
+      "byte_identical": true
+    }
+  ],
+  "input_hashes": {
+    "db": "5c4cd6e6f154e58832f9f48c35c9bb68a44187100d652ebc932b7ebd170793e4",
+    "p04": "8a893568794deb4be5f28919af4dd6c6f04bd090b38634e6e148fd38d3623041",
+    "geometry": "ce4ce0f208a0460112822cbc5c3179992c03b9f7f0b50de45e14ea08a3fa46ea"
+  },
+  "cleanup": {
+    "cleanup_verified": true,
+    "failures": [],
+    "private_files_removed": true,
+    "processes_exited": true
+  },
+  "remaining_en": "API/DB restart, actual engine failure and retention/revocation matrix did not execute. This is not P05 completion.",
+  "remaining_ko": "API/DB재시작·실제엔진실패·보관/철회행렬은미실행이며P05완료증거가아닙니다."
+}

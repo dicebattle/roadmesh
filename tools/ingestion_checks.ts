@@ -961,6 +961,7 @@ export async function runIngestionChecks(
     await store.close();
     store = undefined;
     await runtime.restartDatabase();
+    config = { ...config, database_url: runtime.databaseUrl };
     store = new IngestionStore(config);
     await store.initialize([...principals, ...extra, abortPrincipal]);
     await startService(undefined, spec.start_time_utc);

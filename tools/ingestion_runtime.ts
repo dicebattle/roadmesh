@@ -167,15 +167,8 @@ export class OwnedIngestionRuntime {
     ]);
     this.commands.command(["start", this.name]);
     await this.ready();
-    const mapped = this.commands
-      .command(["port", this.name, "5432/tcp"])
-      .stdout.trim();
-    const match = /^127\.0\.0\.1:(\d+)$/.exec(mapped);
-    if (!match)
-      throw new Error(
-        "PostgreSQL is not loopback-only / PostgreSQL이 로컬 전용이 아닙니다",
-      );
-    this.port = Number(match[1]);
+    this.refreshHostPort();
+    await this.hostReady();
     const settings = this.commands
       .command([
         "exec",
@@ -234,7 +227,29 @@ export class OwnedIngestionRuntime {
         "Private database credential detected / 비공개 DB 인증값 감지",
       );
   }
+  private refreshHostPort(): void {
+    const mapped = this.commands
+      .command(["port", this.name, "5432/tcp"])
+      .stdout.trim();
+    const match = /^127\.0\.0\.1:(\d+)$/.exec(mapped);
+    if (!match)
+      throw new Error(
+        "PostgreSQL is not loopback-only / PostgreSQL이 로컬 전용이 아닙니다",
+      );
+    this.port = Number(match[1]);
+  }
+  private async hostReady(): Promise<number> {
+    const started = performance.now();
+    while (performance.now() - started < 10000) {
+      if (await portIsOpen(this.port)) return performance.now() - started;
+      await pause(50);
+    }
+    throw new Error(
+      "PostgreSQL host TCP port did not become ready / PostgreSQL 호스트 TCP 포트가 준비되지 않았습니다",
+    );
+  }
   async restartDatabase(): Promise<void> {
+    const previousHostPort = this.port;
     const before = this.commands
       .command(["inspect", "--format", "{{.Id}}", this.name])
       .stdout.trim();
@@ -247,6 +262,8 @@ export class OwnedIngestionRuntime {
       throw new Error(
         "Database container unexpectedly replaced / DB 컨테이너가 예기치 않게 교체됨",
       );
+    this.refreshHostPort();
+    const hostWait = await this.hostReady();
     writeFileSync(
       join(this.output, "database-restart.json"),
       JSON.stringify(
@@ -254,6 +271,10 @@ export class OwnedIngestionRuntime {
           same_container_id: true,
           same_named_volume: this.volume,
           restarted: true,
+          previous_host_port: previousHostPort,
+          current_host_port: this.port,
+          host_tcp_ready: true,
+          host_tcp_wait_ms: hostWait,
         },
         null,
         2,

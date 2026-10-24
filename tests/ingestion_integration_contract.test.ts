@@ -1,3 +1,7 @@
+import { main as pilotMain } from "../tools/pilot_integration.js";
+import { captured, temporary } from "./helpers.js";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import { confirmedAbsent } from "../tools/ingestion_runtime.js";
 import test from "node:test";
 import assert from "node:assert/strict";
@@ -193,4 +197,17 @@ test("cleanup requires explicit missing-resource evidence, not daemon failure / 
     }),
   );
   assert(!confirmedAbsent({ status: 0, stderr: "No such container" }));
+});
+
+test("whole pilot refuses missing source value before creating output / 전체 파일럿 원본 인자 누락은 출력 생성 전 거부", async (t) => {
+  const output = join(temporary(t), "must-not-start");
+  for (const args of [
+    ["--output", output, "--source"],
+    ["--source", "--output", output],
+  ]) {
+    const io = captured();
+    assert.equal(await pilotMain(args, io.io), 1);
+    assert(!existsSync(output));
+    assert(io.errors.some((text) => text.includes("Source file required")));
+  }
 });
