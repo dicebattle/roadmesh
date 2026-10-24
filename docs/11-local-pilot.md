@@ -4,6 +4,10 @@ Status: P01's bounded event runner and P14a's workflow are implemented; verifica
 
 상태: P01 범위의 이벤트 실행기와 P14a 워크플로를 구현했고 검증은 [모듈 문서](../wiki/modules/pilot-runner.md)와 작업 기록에 남깁니다. [P02](../wiki/modules/test-graph.md)도 구현·검증됐으며 [P03](../wiki/modules/vehicle-simulation.md)·현재 모듈 재생도 로컬 검증됐으며 P04도 로컬·원격Docker 검증됐으며([보고서](../research/pilot/2026-10-24-p04/report.md)) P05~P10·P11/P12 전체·P13·P14b 전체 행렬은 미완료입니다. 운영 배포·실주행 시험·클라우드 안정성 검증을 뜻하지 않습니다.
 
+Primary simulation now uses [actual Seoul roads](21-seoul-road-simulation.md); tiny-city stays a regression fixture. [Local proof](../research/seoul/2026-10-24/report.md) passes tiny48 + Seoul29; hosted delivery follows.
+
+주요 시뮬레이션을 실제 서울 도로로 전환했고 tiny-city는 회귀용으로 유지합니다. 로컬 tiny48·서울29를 통과했으며 원격 반영을 이어갑니다.
+
 ## 1. What completion means / 완료의 의미
 
 A local pilot is complete when a reproducible test drives synthetic vehicles through a known road network, matches their GPS, publishes verified traffic, changes a route on two real routing-engine processes, expires the traffic, recovers from injected failures, and produces a report tied to the tested commit and inputs.

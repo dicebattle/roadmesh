@@ -13,32 +13,32 @@
 
 RouteLens is an open-source project derived from **Metro Lens**. The intended system turns verified driving observations into shared traffic data, then lets independent routing nodes calculate routes using the same map and traffic version.
 
-**Today, the local prototype builds a real Valhalla graph, simulates vehicles, produces GPS observations with controlled noise and missing samples, and matches them to roads with explicit traversal exclusions.** Traffic aggregation, live updates, distributed-node failover and a navigation app are still on the roadmap.
+**Today, the local prototype builds a Valhalla graph from actual Seoul OSM roads, simulates vehicles on the full curved road geometry, generates GPS noise and gaps, and accepts only supported complete traversals.** Traffic aggregation, live updates, distributed-node failover and a navigation app are still on the roadmap.
 
 ## Watch the current simulation
 
 [![Recorded RouteLens simulation: true trajectories, GPS observations and missing samples](docs/media/demo.gif)](docs/media/demo.mp4)
 
-[Watch/download the MP4](docs/media/demo.mp4) · [Captured test report](research/pilot/2026-10-24-p04/report.md) · [Recording provenance](docs/media/latest.json)
+[Watch/download the MP4](docs/media/demo.mp4) · [Captured test report](research/seoul/2026-10-24/report.md) · [Recording provenance](docs/media/latest.json)
 
-This is a recording of an actual generated report from a fresh integrated run. It shows fictional roads, three simulated vehicles, a five-second wait, bounded GPS noise and ten scheduled missing observations. It now includes actual Valhalla map matching:177 observations match roads, while only6 of8 true complete traversals have sufficient timing evidence. Two gap-affected traversals are excluded. A separate21-point parallel-road ambiguity case is fully excluded. This is synthetic evidence, not live traffic or real-road accuracy.
+This 17.25-second recording comes from a fresh integrated run on **actual Seoul roads**: Teheran-ro, downtown Seoul and Mapo Bridge. Nine synthetic vehicles produce 3,204 GPS observations with up to 3 m noise and 60 scheduled omissions. Of 237 true road traversals, 215 are accepted and 22 remain unreported; 28 engine candidates are excluded, including ambiguous stops at shared road endpoints. The full-run report retains all denominators. Roads are real; vehicles, speeds and GPS are synthetic. This same-engine round trip does not establish independent real-driving accuracy or live traffic.
 
 ## What you can run today
 
 | Capability | What is actually checked |
 | --- | --- |
 | **P01 — deterministic scenarios** | Seeded replay, event order, failed/skipped assertions and output preservation |
-| **P02 — real routing graph** | Valhalla graph generation, 22 directed edges, legal alternatives, forbidden-turn detours, one-way and disconnected-road errors |
+| **P02 — real routing graph** | Fresh Seoul graph from a pinned OSM source; 79 directed scene edges. Tiny-city retains 22-edge legal/forbidden-turn regression |
 | **P03 — vehicle and GPS simulation** | Independent trajectories, speed/wait schedules, bounded noise, exact missing-sample intervals and stable sample identities |
 | **P04 — map matching** | Real map snapping, observed traversal boundaries, gap/ambiguity exclusions and identical full/split/overlap results |
-| **Integrated evidence** | Fresh corpus → P01 → Docker/Valhalla P02 → P03 → replay → P04 matching and rejection checks, with source and artifact hashes |
-| **Replay report** | Offline map playback, time/vehicle controls, English/Korean text and links to actual stage evidence |
+| **Integrated evidence** | 48 tiny-system checks, then fresh Seoul graph → nine-vehicle simulation → actual full/split/overlap matching: 29 Seoul checks, with source/artifact hashes |
+| **Replay report** | Offline Seoul road playback, route/time/vehicle controls, English/Korean text and links to actual stage evidence |
 
 Synthetic observations never count toward the separate **100 route / 100 map-matching real-road evaluation**. The geographic validator currently has no reviewed real-road corpus.
 
 ## Run the whole implemented pipeline
 
-Requirements: **Node.js 22 or 24**, npm, and Docker with Linux containers. Initial image preparation downloads the pinned engine and Osmium package; graph operations then run with networking disabled. No Cloudflare account, map API key or real GPS trace is needed.
+Requirements: **Node.js 22 or 24**, npm, curl, and Docker with Linux containers. Initial preparation downloads the pinned engine/Osmium and a 289.9 MB dated South Korea OSM file, verifies its SHA-256, then caches only the source. Every run builds a fresh Seoul graph with networking disabled (2 CPU / 4 GiB limits). No Cloudflare account, map API key or real GPS trace is needed.
 
 ```sh
 git clone https://github.com/dicebattle/routelens.git
@@ -50,6 +50,8 @@ npm run report:serve -- data/my-first-run
 ```
 
 Open the loopback URL printed by the server with `/report.html` appended. The server stops after 15 minutes. Use a **new output directory** for every run; existing evidence is never overwritten.
+
+For offline source reuse, add `--source /path/to/south-korea-261023.osm.pbf` with the exact pinned SHA-256. The default source cache is `data/seoul-source-cache`; `ROUTELENS_SOURCE_CACHE` overrides its location. `npm run simulation:tiny -- --output data/tiny-only` runs the small regression alone. See the [Seoul module guide](wiki/modules/seoul-simulation.md).
 
 For automated checks:
 
@@ -64,7 +66,7 @@ npm run media:check
 
 ```mermaid
 flowchart LR
-  F[Authored synthetic OSM] --> O[Osmium · PBF conversion]
+  F[Pinned actual Seoul OSM source] --> O[Osmium · regional extraction]
   O --> V[Valhalla · real graph and routing]
   V --> G[Verified graph bundle]
   S[Authored paths and speed schedules] --> P[RouteLens · vehicle simulation]
@@ -78,7 +80,7 @@ flowchart LR
   A --> R
 ```
 
-RouteLens owns the contracts, orchestration, simulation and evidence checks. **Valhalla** builds graphs and calculates routes and performs map matching; **Osmium** converts OSM files. The planned client uses **MapLibre**; trusted traffic publication and node selection remain RouteLens responsibilities. [Build-or-reuse decisions](docs/03-build-or-reuse.md).
+RouteLens owns the contracts, orchestration, simulation and evidence checks. **Valhalla** builds graphs and calculates routes and performs map matching; **Osmium** extracts the Seoul envelope and converts OSM files. The planned client uses **MapLibre**; trusted traffic publication and node selection remain RouteLens responsibilities. [Build-or-reuse decisions](docs/03-build-or-reuse.md).
 
 The planned production design has a managed ingestion path and approved independent routing nodes. It keeps raw location data out of public peer-to-peer distribution. A Cloudflare deployment and an independently installable PostgreSQL/HTTP path are planned; neither is required for the current local simulation.
 
@@ -86,7 +88,7 @@ The planned production design has a managed ingestion path and approved independ
 
 Each module follows **design → implementation → direct execution → inspected evidence → bilingual record → push**. The main agent owns design and review; implementation is delegated according to [repository instructions](AGENTS.md). AI assistance is recorded with the actual checks and limits, not used as a quality claim.
 
-- [Latest integrated test report](research/pilot/2026-10-24-p04/report.md)
+- [Latest integrated test report](research/seoul/2026-10-24/report.md)
 - [Current implementation and remaining goal](docs/18-goal-progress.md)
 - [Append-only work log](wiki/log.md)
 - [P01–P14 module contracts](docs/11-local-pilot.md)
@@ -96,6 +98,8 @@ Each module follows **design → implementation → direct execution → inspect
 
 ## Contribute
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) and the [development workflow](docs/12-development-workflow.md). Main is protected; changes must pass required checks. Keep fixtures synthetic and distributable, preserve prior evidence, and explain why a change exists in English and Korean.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) and the [development workflow](docs/12-development-workflow.md). Main is protected; changes must pass required checks. Keep vehicle observations synthetic and all datasets lawfully redistributable with their source licenses, preserve prior evidence, and explain why a change exists in English and Korean.
+
+The map uses © OpenStreetMap contributors, [ODbL 1.0](https://www.openstreetmap.org/copyright), via [Geofabrik](https://download.geofabrik.de/asia/south-korea.html), snapshot 2026-10-23. The extraction envelope includes Seoul and adjacent boundary roads; it is not an exact administrative polygon. The viewer displays 1,268 selected geometries from 149,857 exported records; these are not full car-road counts. Derived map data retains ODbL; see [NOTICE](NOTICE).
 
 Project code and documentation use [Apache-2.0](LICENSE). Upstream tools and datasets retain their own licenses. [Security policy](SECURITY.md) · [Governance](GOVERNANCE.md).

@@ -1,0 +1,187 @@
+{
+  "source": {
+    "commit": "7cca509948e69286a572f3c87e74bea3db683df4",
+    "dirty": false
+  },
+  "graph_id": "ad3dc3ebcef69b287c7fbe2a76ff3f3a343c24942f265e6cafa3235c4792ed9c",
+  "status": "PASS",
+  "tiny_assertions": 48,
+  "seoul_assertions": 29,
+  "matching_file_hashes_checked": 816,
+  "curved_scene_edges": 24,
+  "scene_edges": 79,
+  "observations": 3204,
+  "truth_samples": 3264,
+  "truth_traversals": 237,
+  "scheduled_omissions": 60,
+  "accepted_traversals": 215,
+  "excluded_candidates": 28,
+  "matched_samples": 3190,
+  "excluded_samples": 14,
+  "independent_noise_max_m": 2.998986987480023,
+  "independent_truth_boundary_error_max_ms": 0,
+  "accepted_boundary_error_max_ms": 392,
+  "vehicles": [
+    {
+      "vehicle_id": "teheran-clean",
+      "truth": 37,
+      "accepted": 35,
+      "missed": 2,
+      "max_boundary_error_ms": 100
+    },
+    {
+      "vehicle_id": "teheran-noise",
+      "truth": 37,
+      "accepted": 35,
+      "missed": 2,
+      "max_boundary_error_ms": 336
+    },
+    {
+      "vehicle_id": "teheran-gap",
+      "truth": 37,
+      "accepted": 32,
+      "missed": 5,
+      "max_boundary_error_ms": 317
+    },
+    {
+      "vehicle_id": "downtown-clean",
+      "truth": 24,
+      "accepted": 24,
+      "missed": 0,
+      "max_boundary_error_ms": 100
+    },
+    {
+      "vehicle_id": "downtown-noise",
+      "truth": 24,
+      "accepted": 23,
+      "missed": 1,
+      "max_boundary_error_ms": 204
+    },
+    {
+      "vehicle_id": "downtown-gap",
+      "truth": 24,
+      "accepted": 19,
+      "missed": 5,
+      "max_boundary_error_ms": 368
+    },
+    {
+      "vehicle_id": "mapo-bridge-clean",
+      "truth": 18,
+      "accepted": 18,
+      "missed": 0,
+      "max_boundary_error_ms": 97
+    },
+    {
+      "vehicle_id": "mapo-bridge-noise",
+      "truth": 18,
+      "accepted": 16,
+      "missed": 2,
+      "max_boundary_error_ms": 384
+    },
+    {
+      "vehicle_id": "mapo-bridge-gap",
+      "truth": 18,
+      "accepted": 13,
+      "missed": 5,
+      "max_boundary_error_ms": 392
+    }
+  ],
+  "full_split_overlap_bytes_identical": true,
+  "boundary_stop_excluded": {
+    "traversal_id": "52b93bc427715b334461409b7483818adafe94f27a2d9e5d711d10f401963a72",
+    "vehicle_id": "downtown-gap",
+    "edge_id": "672531503504",
+    "label": "edge-672531503504",
+    "forward": true,
+    "status": "EXCLUDED",
+    "entered_at_ms": null,
+    "exited_at_ms": 5000,
+    "reason_codes": [
+      "AMBIGUOUS_BOUNDARY",
+      "PARTIAL_ENTRY"
+    ],
+    "source_sample_ids": [
+      "seoul-road-demo:downtown-gap:0",
+      "seoul-road-demo:downtown-gap:500",
+      "seoul-road-demo:downtown-gap:1000",
+      "seoul-road-demo:downtown-gap:1500",
+      "seoul-road-demo:downtown-gap:2000",
+      "seoul-road-demo:downtown-gap:2500",
+      "seoul-road-demo:downtown-gap:3000",
+      "seoul-road-demo:downtown-gap:3500",
+      "seoul-road-demo:downtown-gap:4000",
+      "seoul-road-demo:downtown-gap:4500",
+      "seoul-road-demo:downtown-gap:5000"
+    ],
+    "boundary_ambiguities": [
+      {
+        "longitude": 126.977084,
+        "latitude": 37.564924,
+        "start_offset_ms": 0,
+        "end_offset_ms": 5000,
+        "pre_transition_end_offset_ms": 5000,
+        "sample_ids": [
+          "seoul-road-demo:downtown-gap:0",
+          "seoul-road-demo:downtown-gap:500",
+          "seoul-road-demo:downtown-gap:1000",
+          "seoul-road-demo:downtown-gap:1500",
+          "seoul-road-demo:downtown-gap:2000",
+          "seoul-road-demo:downtown-gap:2500",
+          "seoul-road-demo:downtown-gap:3000",
+          "seoul-road-demo:downtown-gap:3500",
+          "seoul-road-demo:downtown-gap:4000",
+          "seoul-road-demo:downtown-gap:4500",
+          "seoul-road-demo:downtown-gap:5000"
+        ],
+        "distances_m": [
+          2.2093283400131947,
+          2.009988276902853,
+          1.9240416007870929,
+          2.8117680356038117,
+          2.3075671689281303,
+          2.302205107592486,
+          2.6671440632747094,
+          2.294538941484453,
+          0.7689587357441791,
+          0.8741966803718987,
+          1.7077601642944062
+        ]
+      }
+    ],
+    "entry_bracket": null,
+    "exit_bracket": {
+      "before_sample_id": "seoul-road-demo:downtown-gap:5000",
+      "after_sample_id": "seoul-road-demo:downtown-gap:5500",
+      "before_offset_ms": 5000,
+      "after_offset_ms": 5500,
+      "interpolated_at_ms": 5000
+    },
+    "reason_messages": [
+      {
+        "reason_code": "AMBIGUOUS_BOUNDARY",
+        "message_en": "A sustained observed uncertainty cluster at a shared endpoint makes stop ownership ambiguous.",
+        "message_ko": "공유 끝점의 지속된 관측 불확실성 때문에 정지가 어느 구간에 속했는지 확인할 수 없습니다."
+      },
+      {
+        "reason_code": "PARTIAL_ENTRY",
+        "message_en": "No observed evidence of full edge entry.",
+        "message_ko": "전체 구간 진입의 관측 근거가 없습니다."
+      }
+    ]
+  },
+  "owned_containers": "",
+  "message_en": "Main used independent local tangent distance and direct raw output/hash/occurrence comparisons; no truth was supplied to matching.",
+  "message_ko": "메인이 독립 국소거리식과 원문·해시·방향순번을 직접 대조했고 정답을 매칭에 제공하지 않았습니다.",
+  "independent_numeric_reference_commit": "7910a267d0658ae6059bdf857c371e8c52c65496",
+  "independent_numeric_reference_graph_id": "e93fe5176b6ec85fadaa47d6d4e68fc03eb31c0c84fec5380b8d0c3fd9814ba5",
+  "final_numeric_files_byte_identical": [
+    "graph/edge-map.json",
+    "workload/truth.json",
+    "workload/observations.json",
+    "workload/omissions.json",
+    "workload/evaluation.json"
+  ],
+  "final_matching_behavior_identical_excluding_graph_bound_ids": true,
+  "graph_note_en": "Fresh tile bytes differ, so graph/traversal identities correctly differ. Numerical proof was checked against byte-identical edge geometry/truth/observations/evaluation and matching values excluding only graph-bound identities. No graph-byte reproducibility is claimed.",
+  "graph_note_ko": "새 타일바이트가 달라 그래프·통과식별자도 달라졌습니다. 지형·정답·관측·평가의바이트와그래프연결식별자만제외한매칭값이동일함을확인해독립수치증거를연결했습니다. 그래프바이트재생성을보장하지않습니다."
+}
