@@ -1,8 +1,8 @@
 # Local pilot design / 로컬 파일럿 설계
 
-Status: P01's bounded event runner and P14a's workflow are implemented; verification is recorded in the [module page](../wiki/modules/pilot-runner.md) and work log. [P02](../wiki/modules/test-graph.md) is also implemented and verified; [P03](../wiki/modules/vehicle-simulation.md) and current-module replay are locally verified; P04 is locally and on hosted Docker verified ([report](../research/pilot/2026-10-24-p04/report.md)); P05–P10, full P11/P12, P13 and the complete P14b matrix remain unfinished. No production deployment, real driving trial, or cloud reliability claim is implied.
+Status: P01's bounded event runner and P14a's workflow are implemented; verification is recorded in the [module page](../wiki/modules/pilot-runner.md) and work log. [P02](../wiki/modules/test-graph.md) is also implemented and verified; [P03](../wiki/modules/vehicle-simulation.md) and current-module replay are locally verified; P04 is locally and on hosted Docker verified ([report](../research/pilot/2026-10-24-p04/report.md)); P05 is locally verified ([report](../research/pilot/2026-10-24-p05/report.md)); P06–P10, full P11/P12, P13 and the complete P14b matrix remain unfinished. No production deployment, real driving trial, or cloud reliability claim is implied.
 
-상태: P01 범위의 이벤트 실행기와 P14a 워크플로를 구현했고 검증은 [모듈 문서](../wiki/modules/pilot-runner.md)와 작업 기록에 남깁니다. [P02](../wiki/modules/test-graph.md)도 구현·검증됐으며 [P03](../wiki/modules/vehicle-simulation.md)·현재 모듈 재생도 로컬 검증됐으며 P04도 로컬·원격Docker 검증됐으며([보고서](../research/pilot/2026-10-24-p04/report.md)) P05~P10·P11/P12 전체·P13·P14b 전체 행렬은 미완료입니다. 운영 배포·실주행 시험·클라우드 안정성 검증을 뜻하지 않습니다.
+상태: P01 범위의 이벤트 실행기와 P14a 워크플로를 구현했고 검증은 [모듈 문서](../wiki/modules/pilot-runner.md)와 작업 기록에 남깁니다. [P02](../wiki/modules/test-graph.md)도 구현·검증됐으며 [P03](../wiki/modules/vehicle-simulation.md)·현재 모듈 재생도 로컬 검증됐으며 P04도 로컬·원격Docker 검증됐으며([보고서](../research/pilot/2026-10-24-p04/report.md)) P05도 로컬 검증했으며([보고서](../research/pilot/2026-10-24-p05/report.md)) P06~P10·P11/P12 전체·P13·P14b 전체 행렬은 미완료입니다. 운영 배포·실주행 시험·클라우드 안정성 검증을 뜻하지 않습니다.
 
 Primary simulation now uses [actual Seoul roads](21-seoul-road-simulation.md); tiny-city stays a regression fixture. [Local proof](../research/seoul/2026-10-24/report.md) passes tiny48 + Seoul29 locally and on hosted Linux.
 
@@ -140,7 +140,7 @@ Use actual process termination for crash claims and actual request timeout/drop 
 
 ## 6. Implementation order and proof gates / 구현 순서와 증명 기준
 
-1. **P01 + P14a:** scenario/result contracts and a small local runner; CI for the existing validator and new contract tests. Deterministic output and deliberate failure reporting are verified; see the module evidence. P02 is also verified; P03 is locally verified; P04 is locally verified; P05 is next.
+1. **P01 + P14a:** scenario/result contracts and a small local runner; CI for the existing validator and new contract tests. Deterministic output and deliberate failure reporting are verified; see the module evidence. P02 is also verified; P03 is locally verified; P04 and P05 are locally verified; P06 is next.
 2. **P02:** build the tiny real Valhalla graph and prove baseline legal routing. Pin source/image identity after inspecting actual release artifacts.
 3. **P03 → P04:** generate trajectories, run real map matching, compare with known ground truth.
 4. **P05 → P06:** reliable collection and pure aggregation, with crash/retry and event-time boundary evidence.
@@ -149,7 +149,7 @@ Use actual process termination for crash claims and actual request timeout/drop 
 7. **P11 → P12:** inspect the user flow in the in-app browser, then execute the complete fault matrix through one runner.
 8. **P13 + P14b:** local Cloudflare adapter parity and required integration checks; geographic and hosted tests remain separately labeled.
 
-1. **P01 + P14a:** 시나리오·결과 계약과 작은 로컬 실행기, 기존 검사 도구와 새 계약 검사의 CI. 결정적 결과와 의도적 실패 판정을 검증했으며 모듈 증거에 기록했습니다. P02도 검증했으며 P03도 로컬 검증했으며 다음은 P05입니다.
+1. **P01 + P14a:** 시나리오·결과 계약과 작은 로컬 실행기, 기존 검사 도구와 새 계약 검사의 CI. 결정적 결과와 의도적 실패 판정을 검증했으며 모듈 증거에 기록했습니다. P02도 검증했으며 P03도 로컬 검증했으며 P05도 로컬 검증했으며 다음은 P06입니다.
 2. **P02:** 작은 실제 Valhalla 그래프 생성과 합법 기본 경로 확인. 실제 릴리스 자료를 확인한 뒤 소스·이미지를 고정합니다.
 3. **P03 → P04:** 궤적 생성, 실제 도로 매칭, 독립 정답과 비교.
 4. **P05 → P06:** 중단·재시도·관측시간 경계를 검사하는 수집·집계.

@@ -1,0 +1,940 @@
+[
+  {
+    "role": "api-0",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "service",
+        "port": 52777
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:29.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:29.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:29.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:29.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:29.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:29.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:29.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:29.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:29.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:58.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:58.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:58.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:58.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:58.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:00:58.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:08.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:08.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:08.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:26.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:26.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:26.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:26.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:26.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:26.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:36.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:36.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:36.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:55.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:55.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:55.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:55.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:55.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:01:55.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:02:02.323Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:02:02.323Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:02:02.323Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:02:05.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:02:05.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:02:23.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:02:23.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:02:23.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:02:23.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:02:33.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:02:33.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:02:52.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:02:52.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:02:52.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:02:52.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:03:02.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:03:02.000Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:03:20.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:03:20.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:03:20.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:03:20.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:03:28.555Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:03:28.555Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:03:28.555Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:03:30.500Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:03:30.940Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:03:30.940Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:03:30.940Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:04:35.440Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:06:15.440Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:06:15.440Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:06:21.281Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:06:27.221Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:06:33.161Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:06:39.101Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:06:45.041Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:06:50.981Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:06:56.921Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:07:02.861Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:07:08.801Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:07:14.741Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:07:20.681Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:07:26.621Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:07:32.561Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:07:38.501Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:07:44.441Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:07:50.381Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:07:56.321Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:08:02.261Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:08:08.201Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:08:14.141Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:08:20.081Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:08:26.021Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:08:31.961Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:08:37.901Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:08:43.841Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:08:49.781Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:08:55.721Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:09:01.661Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:09:07.601Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:09:13.541Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:09:19.481Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:09:25.421Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:09:31.361Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:09:37.301Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:09:43.241Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:09:49.181Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:09:55.121Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:10:01.061Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:10:07.001Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:10:12.941Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:10:18.881Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:10:24.821Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:10:30.761Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:10:36.701Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:10:42.641Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:10:48.581Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:10:54.521Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:11:00.461Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:11:06.401Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:11:12.341Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:11:12.440Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:11:12.539Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:11:12.539Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:21:12.540Z"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "wrong-graph-worker",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "wrong-graph-worker"
+      },
+      {
+        "type": "RESULT",
+        "code": "IDLE"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-2",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-2"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_LEASE",
+        "pid": 88850
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-3",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-3"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 24
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-4",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-4"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_MATCH",
+        "pid": 88879
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-5",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-5"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 19
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-6",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-6"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_INSERT",
+        "pid": 88954
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-7",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-7"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 23
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-8",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-8"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_LEASE",
+        "pid": 89020
+      },
+      {
+        "type": "RESULT",
+        "code": "LEASE_LOST",
+        "stored_count": 0
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-9",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-9"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 18
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-10",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-10"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 16
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-11",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-11"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 13
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-12",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-12"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 35
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-13",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-13"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 32
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-14",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-14"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 35
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-15",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-15"
+      },
+      {
+        "type": "RESULT",
+        "code": "IDLE"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-16",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-16"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 0
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "api-17",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "service",
+        "port": 52896
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:21:12.540Z"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_ACCEPT_COMMIT",
+        "pid": 89248
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "api-18",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "service",
+        "port": 52901
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:21:13.040Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:21:13.040Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:31:13.041Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:31:13.041Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:31:13.041Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:41:13.042Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-24T00:41:13.042Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-25T00:41:13.043Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-25T00:41:42.543Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-25T00:42:11.043Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-25T00:42:39.543Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-25T00:43:08.043Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-25T00:43:36.543Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-25T00:44:05.043Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-25T00:44:33.543Z"
+      },
+      {
+        "type": "EVENT_TIME_SET",
+        "event_time_utc": "2026-10-25T00:44:43.983Z"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-19",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-19"
+      },
+      {
+        "type": "RESULT",
+        "code": "RETRY",
+        "attempt": 1
+      }
+    ],
+    "diagnostics": "Synthetic worker did not complete / 합성 작업자가 처리를 완료하지 못했습니다\n"
+  },
+  {
+    "role": "worker-20",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-20"
+      },
+      {
+        "type": "RESULT",
+        "code": "RETRY",
+        "attempt": 2
+      }
+    ],
+    "diagnostics": "Synthetic worker did not complete / 합성 작업자가 처리를 완료하지 못했습니다\n"
+  },
+  {
+    "role": "worker-21",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-21"
+      },
+      {
+        "type": "RESULT",
+        "code": "FAILED",
+        "attempt": 3
+      }
+    ],
+    "diagnostics": "Synthetic worker did not complete / 합성 작업자가 처리를 완료하지 못했습니다\n"
+  },
+  {
+    "role": "worker-22",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-22"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_MATCH",
+        "pid": 89305
+      },
+      {
+        "type": "RESULT",
+        "code": "LEASE_LOST",
+        "stored_count": 0
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-23",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-23"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_MATCH",
+        "pid": 89326
+      },
+      {
+        "type": "RESULT",
+        "code": "LEASE_LOST",
+        "stored_count": 0
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "worker-24",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "worker-24"
+      }
+    ],
+    "diagnostics": ""
+  }
+]

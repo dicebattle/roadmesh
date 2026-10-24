@@ -1,8 +1,8 @@
 # P05 executable contract / P05 실행 계약
 
-Status: design fixed before implementation, 2026-10-24. Main owns this contract and review; Sol implements. This extends [P05 design](20-p05-ingestion-design.md), [protocol](04-protocol.md) and [privacy](07-privacy-and-trust.md). Seoul PR #5 merged as `d385c5d`; the prior goal turn made verified implementation progress, not merely a plan. P06–P14 remain unfinished.
+Status: design fixed before implementation, 2026-10-24; now implemented and locally verified in the [111-check report](../research/pilot/2026-10-24-p05/report.md). Main owns this contract and review; Sol implements. This extends [P05 design](20-p05-ingestion-design.md), [protocol](04-protocol.md) and [privacy](07-privacy-and-trust.md). Seoul PR #5 merged as `d385c5d`; the prior goal turn made verified implementation progress, not merely a plan. P06–P14 remain unfinished.
 
-상태: 2026-10-24 구현 전에 실행 계약을 정했습니다. 메인이 계약·검토를 맡고 Sol이 구현합니다. 서울 PR #5가 `d385c5d`로 병합됐으며 직전 차례는 실제 구현·검증을 완료한 진전입니다. P06~P14 전체는 미완료입니다.
+상태: 2026-10-24 구현 전에 실행 계약을 정했고 이제 구현·로컬111개 검증을 보고서에 기록했습니다. 메인이 계약·검토를 맡고 Sol이 구현합니다. 서울 PR #5가 `d385c5d`로 병합됐으며 직전 차례는 실제 구현·검증을 완료한 진전입니다. P06~P14 전체는 미완료입니다.
 
 ## Reuse and process boundary / 재사용과 프로세스 경계
 

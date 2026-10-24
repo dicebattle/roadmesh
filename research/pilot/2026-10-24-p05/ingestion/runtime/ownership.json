@@ -1,0 +1,159 @@
+{
+  "run_id": "58ed4b89-4016-4eca-9e69-e6f66a7402c4",
+  "container": "routelens-p05-58ed4b89-4016-4eca-9e69-e6f66a7402c4",
+  "volume": "routelens-p05-58ed4b89-4016-4eca-9e69-e6f66a7402c4-db",
+  "planned_before_creation": true,
+  "owned_output_root": "/Users/dice/Documents/routelens/data/p05-main-20261024-r4/ingestion",
+  "processes": [
+    {
+      "role": "api-0",
+      "pid": 88845,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "wrong-graph-worker",
+      "pid": 88849,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-2",
+      "pid": 88850,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-3",
+      "pid": 88851,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-4",
+      "pid": 88879,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-5",
+      "pid": 88928,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-6",
+      "pid": 88954,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-7",
+      "pid": 88989,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-8",
+      "pid": 89020,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-9",
+      "pid": 89023,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-10",
+      "pid": 89077,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-11",
+      "pid": 89078,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-12",
+      "pid": 89127,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-13",
+      "pid": 89166,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-14",
+      "pid": 89194,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-15",
+      "pid": 89222,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-16",
+      "pid": 89228,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "api-17",
+      "pid": 89248,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "api-18",
+      "pid": 89254,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-19",
+      "pid": 89255,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-20",
+      "pid": 89273,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-21",
+      "pid": 89287,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-22",
+      "pid": 89305,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-23",
+      "pid": 89326,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    },
+    {
+      "role": "worker-24",
+      "pid": 89349,
+      "spawn_recorded_before_start": true,
+      "exited": true
+    }
+  ]
+}

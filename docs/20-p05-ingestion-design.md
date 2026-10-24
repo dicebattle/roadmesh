@@ -1,8 +1,8 @@
-# P05 next design / P05 후속 설계
+# P05 ingestion design / P05 수집 설계
 
-Status: planned, not implemented. P04 and the verified actual-Seoul simulation must complete protected integration before P05 coding. Main owns this design; Sol will implement after the executable contract is fixed.
+Status: implemented and locally verified from clean source. Main designed; Sol implemented. The final actual-Seoul pipeline passed111 assertions, including34 P05 checks. See the [report](../research/pilot/2026-10-24-p05/report.md) for evidence and hosted status.
 
-상태: 계획이며 미구현입니다. P04와 실제 서울 시뮬레이션의 검증·보호된 병합 후 P05 코딩을 시작합니다. 메인이 설계하고 실행 계약 확정 후 Sol이 구현합니다.
+상태: 구현 후 깨끗한 소스로 로컬 검증했습니다. 메인이 설계하고 Sol이 구현했으며 실제 서울 전체111개·P0534개 검사를 통과했습니다. 증거·원격 상태는 보고서에 기록합니다.
 
 ## Chosen responsibility / 선택한 책임
 
@@ -35,6 +35,6 @@ Start actual local HTTP, PostgreSQL and separate worker processes alongside the 
 
 ## Executable detail / 실행 상세
 
-The decided schema, interfaces, time/retention boundaries, process failpoints and direct acceptance matrix are now fixed in [the P05 executable contract](22-p05-executable-contract.md). Implementation is in progress; no completion claim yet.
+The decided schema, interfaces, time/retention boundaries, process failpoints and direct acceptance matrix are now fixed in [the P05 executable contract](22-p05-executable-contract.md). The bounded local implementation is verified; production authentication and continuous real GPS remain outside its scope.
 
-확정한 스키마·인터페이스·시간/보관 경계·실제 중단 지점·수용 행렬을 실행 계약에 기록했습니다. 구현을 진행하며 완료로 표시하지 않습니다.
+확정한 스키마·인터페이스·시간/보관 경계·실제 중단 지점·수용 행렬을 실행 계약에 기록했습니다. 제한된 로컬 구현을 검증했으며 운영 인증·연속 실제 GPS는 범위 밖입니다.
