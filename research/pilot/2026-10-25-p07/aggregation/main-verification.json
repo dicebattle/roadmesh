@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "d78b2c1aaee471360dd59b5a277d7b83f23dc77f",
+    "dirty": false
+  },
+  "implementation_sha256": "80cefb7edfcb5055139da48b886073b6dc9d2cce87366e3832093dbb12ae59e9",
+  "graph_id": "def78e7b971076f5cc82529283a607bf621961ea98db87d56ad0b0c60afa6ff6",
+  "raw_hashes_checked": 765,
+  "assertions": 34,
+  "populations": [
+    {
+      "count": 0,
+      "status": "UNKNOWN",
+      "speed_mps": null,
+      "stored_trips": 0,
+      "stored_traversals": 0
+    },
+    {
+      "count": 1,
+      "status": "INSUFFICIENT",
+      "speed_mps": null,
+      "stored_trips": 2,
+      "stored_traversals": 6
+    },
+    {
+      "count": 4,
+      "status": "INSUFFICIENT",
+      "speed_mps": null,
+      "stored_trips": 4,
+      "stored_traversals": 12
+    },
+    {
+      "count": 5,
+      "status": "LIVE",
+      "speed_mps": 2.70958,
+      "stored_trips": 7,
+      "stored_traversals": 21
+    }
+  ],
+  "max_target_duration_error_ms": 0.4788031333937681,
+  "expected_speed_mps": 2.709505623082213,
+  "actual_speed_mps": 2.70958,
+  "relative_speed_error": 0.00002745036480207828,
+  "actual_killed_pids": [
+    35554,
+    35560
+  ],
+  "actual_revoke_lock_wait": true,
+  "sweep_deleted": [
+    1,
+    0
+  ],
+  "all_remaining_candidate_rows": 0,
+  "legacy_layout_hash_preserved": true,
+  "conflicting_catalogs_single_winner": true,
+  "current_owned_pids_absent": 38,
+  "current_db_volume_absent": true,
+  "message_en": "Main independently checked all artifact hashes, every public entry against stored traversals and authored activity declarations, timing/median, actual process/lock/deletion evidence and current owned resource absence. This is bounded synthetic execution, not production or real-driving accuracy.",
+  "message_ko": "메인이 원문 해시·저장 통과/명시 활동과 공개 항목 전체 대조·시간/중앙값·실제 프로세스/잠금/삭제·현재 소유 자원 부재를 독립 검사했습니다. 제한된 합성 실행이며 운영·실주행 정확도 증거가 아닙니다."
+}

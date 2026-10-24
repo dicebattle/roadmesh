@@ -1,0 +1,54 @@
+{
+  "source_commit": "d78b2c1aaee471360dd59b5a277d7b83f23dc77f",
+  "implementation_sha256": "80cefb7edfcb5055139da48b886073b6dc9d2cce87366e3832093dbb12ae59e9",
+  "report_path": "research/pilot/2026-10-25-p07/report.html",
+  "report_sha256": "82d4da4e7202c67df0b9f9128d82d25bcf1a95019bf5889bb5bb9262241eebe3",
+  "capture_method": "Actual isolated Chrome replay, 27.05s at1280x720/20fps: five-contributor Seoul playback, signed versions and expanded EN/KO publication checks. Complete H.264/GIF conversion and full MP4 decoding. / 격리 Chrome에서27.05초·1280x720·20fps로 서울5명 재생·서명 버전·한영 게시 상세를 촬영하고 전체 변환·MP4 전체 디코딩을 확인했습니다.",
+  "raw_capture_sha256": "42ab4bbe7ea1c967d3a513191a5e34dbed8a55e5073ece39f664d3ba74640ea4",
+  "assets": [
+    {
+      "path": "docs/media/demo.mp4",
+      "sha256": "43e29a27893ee78adc17af7212a2b13f7005073e7e6a2ffeb0c8fb6e502e7481"
+    },
+    {
+      "path": "docs/media/demo.gif",
+      "sha256": "b139eabefef954412efec358abc06f805c801829cee3e6655c954978386312ec"
+    },
+    {
+      "path": "docs/media/report-aggregation-en.png",
+      "sha256": "83baa7f1a32540be2e3321a0ab80e1cce82aa75c61acba4680157e90cb535bc2"
+    },
+    {
+      "path": "docs/media/report-checks.png",
+      "sha256": "0d9b2ccc4ab90d9c075fa574731f525c740ece1432a82b1309f2d436ec75b873"
+    },
+    {
+      "path": "docs/media/report-en.png",
+      "sha256": "631e19231884aca7b7def020505b292d0b25687920f59f864571a36cf3f18fd3"
+    },
+    {
+      "path": "docs/media/report-ko.png",
+      "sha256": "ff2f00e5bf108d359ec5344fa7cb1bbf987069ff55f043cc144fe1df64c5904f"
+    },
+    {
+      "path": "docs/media/report-publication-checks.png",
+      "sha256": "2e4b3525dc0779fe9220535e27be3d9d4a0889c6bd5fb52bd9ce0d206cffba07"
+    },
+    {
+      "path": "docs/media/report-publication-en.png",
+      "sha256": "68239c448d0f94f315648a4a37fa0249916e9a93f6c6c7bbb135dd8c4e8a49da"
+    },
+    {
+      "path": "docs/media/report-publication-ko.png",
+      "sha256": "2a5d3993d2b9be2f9ef52d3a79ba285805eb221992f8d7154ca34555a42c319f"
+    },
+    {
+      "path": "docs/media/report-recovery-en.png",
+      "sha256": "66b67df5ac911e458d7ddee4560af07dc236d4507cfa43a8c41b16e1db67b0e9"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p07/report-data.json",
+      "sha256": "172180a272c707e27f2c54184b85f4fb220d833094bcbb451f6ae5feb38d36b1"
+    }
+  ]
+}

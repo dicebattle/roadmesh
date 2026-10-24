@@ -13,6 +13,8 @@ Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases i
 
 ## 현재 구현과 다음 작업
 
+- [P07 signed publication / 서명 게시](modules/signed-publication.md): local206 passed with exact signature, durable state and cleanup inspection; current [report and demo](../research/pilot/2026-10-25-p07/report.md). Hosted delivery pending; P08 activation is next. / 로컬206개·서명/영속상태/정리 검증 완료·최신 보고서/영상 갱신. 원격 반영 후 P08 속도 적용을 진행합니다.
+
 - [P06 fixed contract / P06 고정 계약](../docs/23-p06-aggregation-contract.md): actual Seoul aggregation passed the fresh local151-check pipeline; hosted151 and Node22/24 each183 verified. [Report](../research/pilot/2026-10-24-p06/report.md). / 실제 서울 집계의 새 로컬151개 검사를 통과했으며 원격151개·Node22/24각183개도 검증했습니다.
 - [Observed projection v3 / 관측 투영 v3](../docs/24-observed-projection-policy.md): a failed actual-Seoul slow-traffic probe exposed endpoint interpretation errors; preserve its original criteria and verify the correction before P06 completion. / 실제 서울 저속 시나리오에서 끝점 해석 오류가 드러났습니다. 원래 기준을 보존하고 보정을 검증한 뒤 P06을 완료합니다.
 
@@ -71,4 +73,4 @@ Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases i
 
 - [Traffic aggregation module / 교통 집계 모듈](modules/traffic-aggregation.md): fixed window, contributor median and deletion behavior. / 고정 창·기여자 중앙값·삭제 동작.
 
-- [P07 publication contract / P07 게시 계약](../docs/25-p07-publication-contract.md): main design fixed; implementation and direct evidence pending. / 메인 설계 고정·구현과 직접 검증 전.
+- [P07 publication contract / P07 게시 계약](../docs/25-p07-publication-contract.md): implemented and locally verified; [report](../research/pilot/2026-10-25-p07/report.md), [module](modules/signed-publication.md). / 구현·로컬 전체 검증 완료·원격 검증 전.

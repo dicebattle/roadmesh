@@ -82,7 +82,7 @@ GPS 순간속도의 단순 평균 대신, 완성된 방향성 구간 통과시�
 
 ## 공개 교통정보 묶음
 
-Executable pilot refinement / 실행 파일럿 구체화: [P07 contract](25-p07-publication-contract.md) defines the planned exact signed envelope, simulation namespace, retained entry direction, local trust roots and durable ordering. It supersedes the shape below for P07 implementation; direct P07 verification is still pending. / P07 계약에서 시험 영역·구간 방향·정확한 서명 형식·로컬 신뢰키·영속 순번을 구체화했습니다. P07 구현에는 아래 초안보다 해당 계약을 우선하며 직접 검증은 아직 전입니다.
+Executable pilot refinement / 실행 파일럿 구체화: [P07 contract](25-p07-publication-contract.md) defines the implemented exact signed envelope, simulation namespace, retained entry direction, local trust roots and durable ordering. It supersedes the shape below for P07 implementation; local P07 verification passed; see the dated report. / P07 계약에서 시험 영역·구간 방향·정확한 서명 형식·로컬 신뢰키·영속 순번을 구체화했습니다. P07 구현에는 아래 초안보다 해당 계약을 우선하며 로컬 P07 검증을 통과했으며 날짜별 보고서에 근거를 남겼습니다.
 
 ```typescript
 type TrafficSnapshot = {
