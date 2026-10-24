@@ -13,13 +13,49 @@ import {
   object,
   type EdgeMapping,
 } from "./graph_evidence.js";
-import type { GraphBundle } from "./graph_bundle.js";
+import type { GraphFixture } from "./graph_evidence.js";
+import type { GeometryStrategy } from "./geodesy.js";
+export interface MatchingGraph {
+  graphId: string;
+  edges: EdgeMapping[];
+  fixture: { fixture_id?: string; ways?: GraphFixture["ways"] };
+}
+export interface MatchingHooks {
+  policy_id?: string;
+  geometry?: GeometryStrategy;
+  ambiguous?: (observation: Observation, bundle: MatchingGraph) => boolean;
+  connection_tolerance_m?: number;
+  ambiguous_boundary_ms?: 1000;
+}
+
 import { localDistance, type Observation } from "./vehicle_simulator.js";
 
+function requireGeometryPolicy(
+  bundle: MatchingGraph,
+  hooks: MatchingHooks,
+): void {
+  if (
+    !bundle.fixture.ways &&
+    (bundle.fixture.fixture_id !== "seoul-osm-20261023-v1" ||
+      !["seoul-observed-v1", "seoul-observed-v2"].includes(
+        hooks.policy_id ?? "",
+      ) ||
+      (hooks.policy_id === "seoul-observed-v2" &&
+        hooks.ambiguous_boundary_ms !== 1000) ||
+      !hooks.geometry ||
+      !hooks.ambiguous)
+  )
+    fail(
+      "matching policy",
+      "regional geometry, policy and ambiguity hooks are required",
+      "지역 지형·정책·모호성 검사 함수를 명시해야 합니다",
+    );
+}
 export const MATCHING_POLICY = "tiny-city-matching-v1";
 export const MAX_MATCHING_SAMPLES = 60020;
 export const GAP_MS = 3000;
 export type Reason =
+  | "AMBIGUOUS_BOUNDARY"
   | "AMBIGUOUS_PARALLEL"
   | "PARTIAL_ENTRY"
   | "PARTIAL_EXIT"
@@ -29,6 +65,10 @@ export type Reason =
   | "DISTANCE_EXCEEDED"
   | "INSUFFICIENT_POINTS";
 const descriptions: Record<Reason, [string, string]> = {
+  AMBIGUOUS_BOUNDARY: [
+    "A sustained observed uncertainty cluster at a shared endpoint makes stop ownership ambiguous.",
+    "공유 끝점의 지속된 관측 불확실성 때문에 정지가 어느 구간에 속했는지 확인할 수 없습니다.",
+  ],
   AMBIGUOUS_PARALLEL: [
     "Multiple physical parallel ways are compatible with positional accuracy.",
     "위치 정확도 범위에 서로 다른 평행도로가 있습니다.",
@@ -95,6 +135,63 @@ export interface BoundaryBracket {
   after_offset_ms: number;
   interpolated_at_ms: number;
 }
+export interface BoundaryAmbiguity {
+  longitude: number;
+  latitude: number;
+  start_offset_ms: number;
+  end_offset_ms: number;
+  pre_transition_end_offset_ms: number;
+  sample_ids: string[];
+  distances_m: number[];
+}
+export function observedBoundaryCluster(
+  observations: Observation[],
+  transitionIndex: number,
+  boundary: number[],
+  geometry: GeometryStrategy,
+  minimumMs: number,
+): BoundaryAmbiguity | null {
+  const near = (index: number): boolean =>
+    index >= 0 &&
+    index < observations.length &&
+    geometry.distance(
+      [observations[index]!.longitude, observations[index]!.latitude],
+      boundary,
+    ) <=
+      observations[index]!.accuracy_m + 1;
+  if (!near(transitionIndex - 1)) return null;
+  let start = transitionIndex - 1,
+    end = start;
+  while (
+    near(start - 1) &&
+    observations[start]!.offset_ms - observations[start - 1]!.offset_ms <=
+      GAP_MS
+  )
+    start--;
+  const preEnd = transitionIndex - 1;
+  if (
+    observations[preEnd]!.offset_ms - observations[start]!.offset_ms <
+    minimumMs
+  )
+    return null;
+  while (
+    near(end + 1) &&
+    observations[end + 1]!.offset_ms - observations[end]!.offset_ms <= GAP_MS
+  )
+    end++;
+  const cluster = observations.slice(start, end + 1);
+  return {
+    longitude: boundary[0]!,
+    latitude: boundary[1]!,
+    start_offset_ms: cluster[0]!.offset_ms,
+    end_offset_ms: cluster.at(-1)!.offset_ms,
+    pre_transition_end_offset_ms: observations[preEnd]!.offset_ms,
+    sample_ids: cluster.map((point) => point.sample_id),
+    distances_m: cluster.map((point) =>
+      geometry.distance([point.longitude, point.latitude], boundary),
+    ),
+  };
+}
 export interface MatchedTraversal {
   traversal_id: string;
   vehicle_id: string;
@@ -106,6 +203,7 @@ export interface MatchedTraversal {
   exited_at_ms: number | null;
   reason_codes: Reason[];
   source_sample_ids: string[];
+  boundary_ambiguities?: BoundaryAmbiguity[];
   entry_bracket: BoundaryBracket | null;
   exit_bracket: BoundaryBracket | null;
   reason_messages: ReturnType<typeof reasonMessages>;
@@ -180,7 +278,7 @@ export function validateObservation(value: unknown): Observation {
 }
 export function validateEnvelope(
   value: unknown,
-  bundle: GraphBundle,
+  bundle: MatchingGraph,
 ): MatchingEnvelope {
   record(value, "matching", [
     "schema_version",
@@ -272,9 +370,12 @@ function distanceToSegment(point: number[], a: number[], b: number[]): number {
 }
 export function ambiguousParallel(
   observation: Observation,
-  bundle: GraphBundle,
+  bundle: MatchingGraph,
+  hooks: MatchingHooks = {},
 ): boolean {
-  const ways = bundle.fixture.ways.filter(
+  requireGeometryPolicy(bundle, hooks);
+  if (hooks.ambiguous) return hooks.ambiguous(observation, bundle);
+  const ways = (bundle.fixture.ways ?? []).filter(
     (way) =>
       bundle.edges.some(
         (edge) => edge.osm_way_id === way.osm_way_id && edge.car_access,
@@ -310,7 +411,8 @@ export function ambiguousParallel(
 }
 export function splitContinuousRuns(
   envelope: MatchingEnvelope,
-  bundle: GraphBundle,
+  bundle: MatchingGraph,
+  hooks: MatchingHooks = {},
 ): { runs: ContinuousRun[]; points: MatchingPoint[] } {
   const runs: ContinuousRun[] = [],
     points: MatchingPoint[] = [];
@@ -336,7 +438,7 @@ export function splitContinuousRuns(
     for (const observation of envelope.observations.filter(
       (sample) => sample.vehicle_id === vehicle_id,
     )) {
-      if (ambiguousParallel(observation, bundle)) {
+      if (ambiguousParallel(observation, bundle, hooks)) {
         flush("AMBIGUOUS_PARALLEL");
         points.push(excludedPoint(observation, "AMBIGUOUS_PARALLEL"));
         continue;
@@ -381,7 +483,8 @@ function edgeId(value: unknown): string {
     "유효한 정수·문자열 식별자가 아닙니다",
   );
 }
-function length(edge: EdgeMapping): number {
+function length(edge: EdgeMapping, hooks: MatchingHooks = {}): number {
+  if (hooks.geometry) return hooks.geometry.length(edge.directed_geometry);
   return edge.directed_geometry
     .slice(1)
     .reduce(
@@ -400,10 +503,13 @@ interface Eligible {
 }
 export function interpretRun(
   envelope: MatchingEnvelope,
-  bundle: GraphBundle,
+  bundle: MatchingGraph,
   run: ContinuousRun,
   response: unknown,
+  hooks: MatchingHooks = {},
 ): { points: MatchingPoint[]; traversals: MatchedTraversal[] } {
+  requireGeometryPolicy(bundle, hooks);
+  const distance = hooks.geometry?.distance ?? localDistance;
   const data = object(response),
     rawEdges = items(data.edges),
     matches = items(data.matched_points),
@@ -438,7 +544,12 @@ export function interpretRun(
       value.begin_shape_index,
       value.end_shape_index + 1,
     ))
-      if (distanceToSegment(coordinate, from, to) > 1)
+      if (
+        (hooks.geometry
+          ? hooks.geometry.project(coordinate, edge.directed_geometry)
+              .distance_m
+          : distanceToSegment(coordinate, from, to)) > 1
+      )
         fail(
           "engine",
           "returned geometry differs from verified edge",
@@ -447,9 +558,14 @@ export function interpretRun(
     const a = shape[value.begin_shape_index]!,
       b = shape[value.end_shape_index]!;
     if (
-      (b[0]! - a[0]!) * (to[0]! - from[0]!) +
-        (b[1]! - a[1]!) * (to[1]! - from[1]!) <
-      0
+      hooks.geometry
+        ? (hooks.geometry.project(b, edge.directed_geometry).fraction -
+            hooks.geometry.project(a, edge.directed_geometry).fraction) *
+            length(edge, hooks) <
+          -1
+        : (b[0]! - a[0]!) * (to[0]! - from[0]!) +
+            (b[1]! - a[1]!) * (to[1]! - from[1]!) <
+          0
     )
       fail(
         "engine",
@@ -499,11 +615,16 @@ export function interpretRun(
       fraction = match.distance_along_edge,
       from = edge.directed_geometry[0]!,
       to = edge.directed_geometry.at(-1)!,
-      predicted = [
-        from[0]! + (to[0]! - from[0]!) * fraction,
-        from[1]! + (to[1]! - from[1]!) * fraction,
-      ];
-    if (localDistance([match.lon, match.lat], predicted) > 1)
+      predicted = hooks.geometry
+        ? hooks.geometry.position(
+            edge.directed_geometry,
+            fraction * length(edge, hooks),
+          )
+        : [
+            from[0]! + (to[0]! - from[0]!) * fraction,
+            from[1]! + (to[1]! - from[1]!) * fraction,
+          ];
+    if (distance([match.lon, match.lat], predicted) > 1)
       fail(
         "matched point",
         "fraction and geometry disagree",
@@ -511,7 +632,7 @@ export function interpretRun(
       );
     if (
       match.distance_from_trace_point > observation.accuracy_m + 1 ||
-      localDistance(
+      distance(
         [observation.longitude, observation.latitude],
         [match.lon, match.lat],
       ) >
@@ -546,7 +667,8 @@ export function interpretRun(
   });
   const entries = new Map<number, BoundaryBracket>(),
     exits = new Map<number, BoundaryBracket>(),
-    reasons = edges.map(() => new Set<Reason>());
+    reasons = edges.map(() => new Set<Reason>()),
+    boundaryAmbiguities = edges.map(() => [] as BoundaryAmbiguity[]);
   const bracket = (a: Eligible, b: Eligible, at: number): BoundaryBracket => ({
     before_sample_id: a.observation.sample_id,
     after_sample_id: b.observation.sample_id,
@@ -623,7 +745,7 @@ export function interpretRun(
     if (current.edge_index === before.edge_index) {
       if (
         (before.fraction - current.fraction) *
-          length(edges[current.edge_index]!) >
+          length(edges[current.edge_index]!, hooks) >
         1
       ) {
         reversal.add(current.edge_index);
@@ -635,10 +757,8 @@ export function interpretRun(
       next = edges[current.edge_index]!;
     if (
       current.edge_index !== before.edge_index + 1 ||
-      localDistance(
-        previous.directed_geometry.at(-1)!,
-        next.directed_geometry[0]!,
-      ) > 0.001
+      distance(previous.directed_geometry.at(-1)!, next.directed_geometry[0]!) >
+        (hooks.connection_tolerance_m ?? 0.001)
     ) {
       reasons[before.edge_index]!.add("DISCONTINUITY");
       reasons[current.edge_index]!.add("DISCONTINUITY");
@@ -650,8 +770,26 @@ export function interpretRun(
         reasons[middle]!.add("INSUFFICIENT_POINTS");
       continue;
     }
-    const left = (1 - before.fraction) * length(previous),
-      right = current.fraction * length(next);
+    if (
+      hooks.policy_id === "seoul-observed-v2" &&
+      hooks.geometry &&
+      hooks.ambiguous_boundary_ms
+    ) {
+      const cluster = observedBoundaryCluster(
+        run.observations,
+        index,
+        previous.directed_geometry.at(-1)!,
+        hooks.geometry,
+        hooks.ambiguous_boundary_ms,
+      );
+      if (cluster)
+        for (const occurrence of [before.edge_index, current.edge_index]) {
+          reasons[occurrence]!.add("AMBIGUOUS_BOUNDARY");
+          boundaryAmbiguities[occurrence]!.push(cluster);
+        }
+    }
+    const left = (1 - before.fraction) * length(previous, hooks),
+      right = current.fraction * length(next, hooks);
     if (left + right <= 0) {
       reasons[before.edge_index]!.add("DISCONTINUITY");
       reasons[current.edge_index]!.add("DISCONTINUITY");
@@ -701,7 +839,7 @@ export function interpretRun(
         !reversal.has(index);
     const traversal_id = sha256(
       canonical({
-        policy: MATCHING_POLICY,
+        policy: hooks.policy_id ?? MATCHING_POLICY,
         graph_id: bundle.graphId,
         matching_id: envelope.matching_id,
         vehicle_id: run.vehicle_id,
@@ -727,6 +865,9 @@ export function interpretRun(
       exited_at_ms: exit?.interpolated_at_ms ?? null,
       reason_codes,
       source_sample_ids,
+      ...(boundaryAmbiguities[index]!.length
+        ? { boundary_ambiguities: boundaryAmbiguities[index] }
+        : {}),
       entry_bracket: entry,
       exit_bracket: exit,
       reason_messages: reasonMessages(reason_codes),
@@ -737,11 +878,13 @@ export function interpretRun(
 export type TraceRun = (run: ContinuousRun) => unknown;
 export function matchObservations(
   envelope: MatchingEnvelope,
-  bundle: GraphBundle,
+  bundle: MatchingGraph,
   trace: TraceRun,
+  hooks: MatchingHooks = {},
 ): MatchingResult {
+  requireGeometryPolicy(bundle, hooks);
   validateEnvelope(envelope, bundle);
-  const split = splitContinuousRuns(envelope, bundle),
+  const split = splitContinuousRuns(envelope, bundle, hooks),
     points = [...split.points],
     traversals: MatchedTraversal[] = [];
   for (const run of split.runs) {
@@ -753,7 +896,7 @@ export function matchObservations(
       );
       continue;
     }
-    const interpreted = interpretRun(envelope, bundle, run, trace(run));
+    const interpreted = interpretRun(envelope, bundle, run, trace(run), hooks);
     points.push(...interpreted.points);
     traversals.push(...interpreted.traversals);
   }
@@ -766,7 +909,7 @@ export function matchObservations(
           : 0) || a.offset_ms - b.offset_ms,
   );
   const core = {
-    policy_id: MATCHING_POLICY,
+    policy_id: hooks.policy_id ?? MATCHING_POLICY,
     matching_id: envelope.matching_id,
     graph_id: bundle.graphId,
     input_samples: envelope.observations.length,
@@ -789,9 +932,12 @@ export class MatchingSession {
   private sealed = false;
   constructor(
     private readonly header: Omit<MatchingEnvelope, "observations">,
-    private readonly bundle: GraphBundle,
+    private readonly bundle: MatchingGraph,
     private readonly trace: TraceRun,
-  ) {}
+    private readonly hooks: MatchingHooks = {},
+  ) {
+    requireGeometryPolicy(bundle, hooks);
+  }
   append(batch: unknown[]): void {
     if (this.sealed) fail("session", "session is sealed", "세션이 닫혔습니다");
     const fresh: Observation[] = [],
@@ -830,6 +976,7 @@ export class MatchingSession {
       { ...this.header, observations: this.observations },
       this.bundle,
       this.trace,
+      this.hooks,
     );
   }
 }

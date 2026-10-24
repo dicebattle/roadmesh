@@ -52,3 +52,10 @@
   정확한 소스·그래프 식별·스크린샷·실제 재생 녹화를 날짜별 이중 언어 보고서로 게시합니다. 실행 동작이 바뀌면 한영 README·데모를 갱신하고 미디어 구현 지문·파일 해시 검사를 유지합니다. 재촬영을 피하려고 검사를 완화하지 않습니다.
 - Capture and replay only authored synthetic data. Keep roadmap behavior visibly separate from demonstrated behavior. Record when a viewer is evidence playback rather than a complete navigation client; never imply live traffic or real-road accuracy from synthetic success.
   자체 합성 자료만 캡처·재생합니다. 계획과 실제 시연을 구분하고 증거 재생 화면을 완성된 내비게이션으로 표현하지 않습니다. 합성 성공으로 실시간 교통·실제 도로 정확도를 주장하지 않습니다.
+
+## Primary Seoul simulation / 주요 서울 시뮬레이션
+
+- The primary integrated simulation, reports and demos must use the actual Seoul OpenStreetMap road network with pinned source bytes. Keep tiny-city only as a fast regression fixture. Implement the transition in docs/21-seoul-road-simulation.md before resuming P05.
+  주요 통합 시뮬레이션·보고서·데모는 원본 바이트를 고정한 실제 서울 OSM 도로망을 사용합니다. tiny-city는 빠른 회귀 자료로만 유지합니다. P05 전에 서울 전환 설계를 구현합니다.
+- Public map data and synthetic movement are distinct: preserve OSM attribution/ODbL and original curved geometry, while vehicles, speeds, waits and GPS faults remain synthetic. Same-engine round trips do not count as independently reviewed real-road accuracy or live traffic evidence.
+  공개 지도와 합성 이동을 구분합니다. OSM 출처·ODbL·원래 곡선 지형을 보존하고 차량·속도·정지·GPS 장애는 합성으로 생성합니다. 같은 엔진의 왕복 검사를 독립 실도로 정확도·실시간 교통 증거로 세지 않습니다.

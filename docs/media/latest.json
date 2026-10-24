@@ -1,34 +1,34 @@
 {
-  "source_commit": "dccafeb197a1f878ea0e61ac3dd77156185d4424",
-  "implementation_sha256": "108db510646dc5a2fcf64f99849444f6d0bafc3d2232481d0ca98fd88d2deb09",
-  "report_path": "research/pilot/2026-10-24-p04/report.html",
-  "report_sha256": "b2a2b40ef225acbc13c8a152e4b08c598d4d1965a39611194684031e0384dd75",
-  "capture_method": "Actual isolated Chrome report playback, Playwright CLI,17.75s at1280x720/20fps; full recording transcoded toH.264, first14s toGIF at10fps. / 격리 Chrome에서 실제 보고서를17.75초 녹화했고 전체를H.264, 처음14초를10fps GIF로 변환했습니다.",
-  "raw_capture_sha256": "e8dc665e3dac2b05a6bd2208574586fd592f0285311dd1cb6c13ecc3dc63dc09",
+  "source_commit": "7cca509948e69286a572f3c87e74bea3db683df4",
+  "implementation_sha256": "1cabad7746f377e9118817c28da1fe86039bb799358e00b825ca26c64a5be8b6",
+  "report_path": "research/seoul/2026-10-24/report.html",
+  "report_sha256": "889823057fa4d1504afe6da3da18487f9964bb82bc89128bac8f8670ff76c042",
+  "capture_method": "Actual isolated Chrome playback recorded for 17.25 s at 1280×720, 20 fps with Playwright CLI; full recording converted to H.264 and 10 fps GIF. English/Korean replay screenshots and in-app assertion capture. / 격리 Chrome의 실제 재생을 1280×720, 20fps로 17.25초 녹화하고 전체를 H.264·10fps GIF로 변환했습니다. 한영 재생 화면과 내장 브라우저 검사 화면도 캡처했습니다.",
+  "raw_capture_sha256": "ce054364a772e128997d6d89feb02ec43e161350b5f00ccc6c8e6e9d626fdc8b",
   "assets": [
     {
       "path": "docs/media/demo.mp4",
-      "sha256": "df2499955e7fee51a69652e36d91f7f71900f2d62e7d8d429697a3d5b0a8bf7b"
+      "sha256": "0e7792432561b5d9725fb251d5ff27ae368d3b9a8c9c2fe24563c624342c59bb"
     },
     {
       "path": "docs/media/demo.gif",
-      "sha256": "e045c1854a8d34f0dd01c579de2234b1a399f8d64d0226e0a0ff5d601463c94d"
+      "sha256": "7c3a7c180e02d4c336ced5d995658d3e13c7755c74819e0ee154e9938e1955e4"
     },
     {
       "path": "docs/media/report-en.png",
-      "sha256": "5f60e6bb5672645b85557b335919ca6c498d97d19a170666e922ab9c7325b0ec"
+      "sha256": "2f80c20900f22b0183405e93dd2ea328ae2ecdf2251d363f14da1f3815dadb65"
     },
     {
       "path": "docs/media/report-ko.png",
-      "sha256": "22a123e5108c4f155f989650f010cdd56442d98aa61489e629ff5b4a088fbb9d"
+      "sha256": "38d5a4dbfe11a8bde1f1661f91b5bb9fa0510b5ab5da3d2a7625ad87e9750d94"
     },
     {
       "path": "docs/media/report-checks.png",
-      "sha256": "60d8d86d5c2de2222405dd19e4b9ac439996b5d9761eb4587a9f8ae3566b6606"
+      "sha256": "f2b2cc0bbbe983e7ec246058a784c8d6be7ad3d4c4e1fe0fe8f53de0c72f87fe"
     },
     {
-      "path": "research/pilot/2026-10-24-p04/report-data.json",
-      "sha256": "71a39091a5b949cd48ac58cc7f3ff35696bc7c3a4ff31fc8bac970dd4c1206c6"
+      "path": "research/seoul/2026-10-24/report-data.json",
+      "sha256": "b2c069b89113cb0e6e0608f7b7eed4b1f84b0d8646fd1b29f4cbbe0d40e9a1d5"
     }
   ]
 }

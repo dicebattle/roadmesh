@@ -1,0 +1,180 @@
+[
+  {
+    "args": [
+      "create",
+      "--name",
+      "routelens-seoul-probe-6745c652-e378-47ae-a117-5a920fc0871e",
+      "--label",
+      "io.routelens.run_id=6745c652-e378-47ae-a117-5a920fc0871e",
+      "--network",
+      "none",
+      "--cpus",
+      "2",
+      "--memory",
+      "4g",
+      "--stop-timeout",
+      "1",
+      "--mount",
+      "type=bind,src=/Users/dice/Documents/routelens/data/seoul-source-20261023,dst=/source,readonly",
+      "--mount",
+      "type=bind,src=/Users/dice/Documents/routelens/data/seoul-probe-20261024-r2,dst=/work",
+      "--entrypoint",
+      "/bin/sh",
+      "sha256:8b4a0609466e08dd6b384be7104ffa3f1c43270d9a8e931f3d93e2243566b4b6",
+      "-c",
+      "sleep 900"
+    ],
+    "status": 0,
+    "elapsed_ms": 795,
+    "stdout": "000.stdout.txt",
+    "stderr": "000.stderr.txt"
+  },
+  {
+    "args": [
+      "start",
+      "routelens-seoul-probe-6745c652-e378-47ae-a117-5a920fc0871e"
+    ],
+    "status": 0,
+    "elapsed_ms": 490,
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt"
+  },
+  {
+    "args": [
+      "exec",
+      "routelens-seoul-probe-6745c652-e378-47ae-a117-5a920fc0871e",
+      "osmium",
+      "extract",
+      "--bbox",
+      "126.7,37.4,127.25,37.75",
+      "--strategy",
+      "smart",
+      "-S",
+      "types=restriction",
+      "/source/south-korea-261023.osm.pbf",
+      "--output",
+      "/work/seoul.osm.pbf"
+    ],
+    "status": 0,
+    "elapsed_ms": 7811,
+    "stdout": "002.stdout.txt",
+    "stderr": "002.stderr.txt"
+  },
+  {
+    "args": [
+      "exec",
+      "routelens-seoul-probe-6745c652-e378-47ae-a117-5a920fc0871e",
+      "osmium",
+      "fileinfo",
+      "-e",
+      "-j",
+      "/work/seoul.osm.pbf"
+    ],
+    "status": 0,
+    "elapsed_ms": 706,
+    "stdout": "003.stdout.txt",
+    "stderr": "003.stderr.txt"
+  },
+  {
+    "args": [
+      "exec",
+      "routelens-seoul-probe-6745c652-e378-47ae-a117-5a920fc0871e",
+      "valhalla_build_config",
+      "--mjolnir-tile-dir",
+      "/work/tiles",
+      "--mjolnir-tile-extract",
+      "/work/unused.tar"
+    ],
+    "status": 0,
+    "elapsed_ms": 88,
+    "stdout": "004.stdout.txt",
+    "stderr": "004.stderr.txt"
+  },
+  {
+    "args": [
+      "exec",
+      "routelens-seoul-probe-6745c652-e378-47ae-a117-5a920fc0871e",
+      "valhalla_build_tiles",
+      "-c",
+      "/work/config.json",
+      "/work/seoul.osm.pbf"
+    ],
+    "status": 0,
+    "elapsed_ms": 11160,
+    "stdout": "005.stdout.txt",
+    "stderr": "005.stderr.txt"
+  },
+  {
+    "args": [
+      "exec",
+      "routelens-seoul-probe-6745c652-e378-47ae-a117-5a920fc0871e",
+      "valhalla_service",
+      "/work/config.json",
+      "route",
+      "/work/route-teheran.request.json"
+    ],
+    "status": 0,
+    "elapsed_ms": 126,
+    "stdout": "006.stdout.txt",
+    "stderr": "006.stderr.txt"
+  },
+  {
+    "args": [
+      "exec",
+      "routelens-seoul-probe-6745c652-e378-47ae-a117-5a920fc0871e",
+      "valhalla_service",
+      "/work/config.json",
+      "route",
+      "/work/route-downtown.request.json"
+    ],
+    "status": 0,
+    "elapsed_ms": 102,
+    "stdout": "007.stdout.txt",
+    "stderr": "007.stderr.txt"
+  },
+  {
+    "args": [
+      "exec",
+      "routelens-seoul-probe-6745c652-e378-47ae-a117-5a920fc0871e",
+      "valhalla_service",
+      "/work/config.json",
+      "route",
+      "/work/route-mapo-bridge.request.json"
+    ],
+    "status": 0,
+    "elapsed_ms": 92,
+    "stdout": "008.stdout.txt",
+    "stderr": "008.stderr.txt"
+  },
+  {
+    "args": [
+      "inspect",
+      "routelens-seoul-probe-6745c652-e378-47ae-a117-5a920fc0871e"
+    ],
+    "status": 0,
+    "elapsed_ms": 35,
+    "stdout": "009.stdout.txt",
+    "stderr": "009.stderr.txt"
+  },
+  {
+    "args": [
+      "rm",
+      "-f",
+      "routelens-seoul-probe-6745c652-e378-47ae-a117-5a920fc0871e"
+    ],
+    "status": 0,
+    "elapsed_ms": 133,
+    "stdout": "010.stdout.txt",
+    "stderr": "010.stderr.txt"
+  },
+  {
+    "args": [
+      "inspect",
+      "routelens-seoul-probe-6745c652-e378-47ae-a117-5a920fc0871e"
+    ],
+    "status": 1,
+    "elapsed_ms": 38,
+    "stdout": "011.stdout.txt",
+    "stderr": "011.stderr.txt"
+  }
+]

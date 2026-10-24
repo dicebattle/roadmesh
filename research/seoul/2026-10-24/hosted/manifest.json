@@ -1,0 +1,48 @@
+{
+  "schema_version": "0.1",
+  "status": "PASS",
+  "source": {
+    "commit": "891cb82ecc1c47949b0319b924145b8aeb0eca57",
+    "dirty": false
+  },
+  "graph_id": "21a1e4a023cfe907677765157664b6ad6753604f4650ec15aaf8f2d09b3bef0a",
+  "implementation_sha256": "1cabad7746f377e9118817c28da1fe86039bb799358e00b825ca26c64a5be8b6",
+  "cleanup_verified": true,
+  "stages": [
+    {
+      "id": "tiny-regression",
+      "name_en": "Preserved tiny-city whole-system regression",
+      "name_ko": "기존 tiny-city 전체 회귀",
+      "status": "PASS",
+      "evidence_path": "tiny/manifest.json",
+      "duration_ms": 35236.800835
+    },
+    {
+      "id": "seoul-graph",
+      "name_en": "Pinned OSM source and fresh Seoul graph",
+      "name_ko": "고정 OSM 원본·새 서울 그래프",
+      "status": "PASS",
+      "evidence_path": "graph/manifest.json",
+      "duration_ms": 60503.69431
+    },
+    {
+      "id": "seoul-workload",
+      "name_en": "Nine synthetic vehicles on actual Seoul roads",
+      "name_ko": "실제 서울 도로의 합성 차량9대",
+      "status": "PASS",
+      "evidence_path": "workload/manifest.json",
+      "duration_ms": 44673.493913
+    }
+  ],
+  "output_sha256": {
+    "tiny/manifest.json": "f34db865692b7412524014cea2cc083d9658e8b2b72ce724de4553d99106bc0f",
+    "graph/manifest.json": "e5888c8795710ba86b3cda01c8fbb48684e4200a29f247079d532bbc6cc7bb7d",
+    "workload/manifest.json": "9774196587fee251bcc1283308ba44b89855ea2a0bde5993e1bd0e8d0962694f",
+    "report-data.json": "6c0293c9db7fb89d0854666933dc4d34b666f30e62e93343237c0c813cbc8050",
+    "report.html": "c1c84c7297dbbfa619897e4740712365c9fef3fcaf0debe9608a2d5f0a3066fc",
+    "assertions.json": "b4b61cbc8e7bf7442a194a3dd178dcc913c85de286db4a63dad10275834bd20e",
+    "summary.md": "fc55a1c85fb594fad0a798aadd116fa95e1ba02e653e5a0533f37f657605c05d",
+    "stages.json": "466de2d86290bfdb67af4c5c6e0db6c96d20121997380075832a393f04026e11"
+  },
+  "completed_at_utc": "2026-10-24T11:16:56.855Z"
+}

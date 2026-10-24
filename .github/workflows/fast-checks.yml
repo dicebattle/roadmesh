@@ -55,6 +55,11 @@ jobs:
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Compile strict TypeScript / 엄격 TypeScript 컴파일
         run: npm run build
+      - name: Cache pinned OSM source only / 고정 OSM 원본만 캐시
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: data/seoul-source-cache
+          key: osm-source-282d012b7629c643695f286d4424d7f6d88548d99edb5577ca5b678906f13c17
       - name: Fresh real-engine simulation / 실제 엔진의 새 통합 시뮬레이션
         run: npm run simulation:check -- --output "${{ runner.temp }}/simulation-evidence"
       - name: Preserve compact integration evidence / 작은 통합 증거 보존
@@ -63,25 +68,12 @@ jobs:
         with:
           name: implemented-module-simulation
           path: |
-            ${{ runner.temp }}/simulation-evidence/report-data.json
-            ${{ runner.temp }}/simulation-evidence/report.html
-            ${{ runner.temp }}/simulation-evidence/simulation/*.json
-            ${{ runner.temp }}/simulation-evidence/matching/**/*.json
-            ${{ runner.temp }}/simulation-evidence/matching/**/*.txt
-            ${{ runner.temp }}/simulation-evidence/corpus/report.json
-            ${{ runner.temp }}/simulation-evidence/simulation-spec.json
-            ${{ runner.temp }}/simulation-evidence/graph/route*.response.json
-            ${{ runner.temp }}/simulation-evidence/graph/trace*.response.json
-            ${{ runner.temp }}/simulation-evidence/graph/config.json
-            ${{ runner.temp }}/simulation-evidence/**/*manifest.json
-            ${{ runner.temp }}/simulation-evidence/**/assertions.json
-            ${{ runner.temp }}/simulation-evidence/**/checks.json
-            ${{ runner.temp }}/simulation-evidence/**/summary.md
-            ${{ runner.temp }}/simulation-evidence/**/commands.json
-            ${{ runner.temp }}/simulation-evidence/graph/edge-map.json
-            ${{ runner.temp }}/simulation-evidence/graph/*.way-sequence.json
-            ${{ runner.temp }}/simulation-evidence/*.stdout.txt
-            ${{ runner.temp }}/simulation-evidence/*.stderr.txt
+            ${{ runner.temp }}/simulation-evidence/**/*.json
+            ${{ runner.temp }}/simulation-evidence/**/*.txt
+            ${{ runner.temp }}/simulation-evidence/**/*.md
+            ${{ runner.temp }}/simulation-evidence/**/*.html
+            ${{ runner.temp }}/simulation-evidence/**/context-edges.tsv
+            !${{ runner.temp }}/simulation-evidence/**/tiles/**
           if-no-files-found: error
           retention-days: 7
   required:

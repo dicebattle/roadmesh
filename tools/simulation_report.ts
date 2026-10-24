@@ -101,6 +101,27 @@ export interface SimulationReportData {
       excluded_traversals: number;
     }[];
   };
+  region?: {
+    profile_id: string;
+    name_en: string;
+    name_ko: string;
+    source_date: string;
+    source_url: string;
+    bounds: [number, number, number, number];
+    attribution: string;
+    license_url: string;
+    graph_counts: Record<string, unknown>;
+    display_road_count: number;
+  };
+  context_roads?: { name: string; coordinates: number[][] }[];
+  routes?: {
+    route_id: string;
+    name_en: string;
+    name_ko: string;
+    edge_ids: string[];
+    bounds: [number, number, number, number];
+    vehicle_ids: string[];
+  }[];
   limitations: { message_en: string; message_ko: string }[];
 }
 export function renderSimulationReport(data: SimulationReportData): string {
@@ -126,7 +147,7 @@ export function renderSimulationReport(data: SimulationReportData): string {
     .replace(/\u2028/g, "\\u2028")
     .replace(/\u2029/g, "\\u2029");
   return `<!doctype html>
-<html lang="en">
+<html lang="en" class="${data.region ? "regional" : "tiny"}">
   <meta charset="utf-8" /><meta
     name="viewport"
     content="width=device-width,initial-scale=1"
@@ -140,6 +161,37 @@ export function renderSimulationReport(data: SimulationReportData): string {
       --truth: #1264b8;
       --observed: #d96b28;
       --success: #23775d;
+    }
+    .regional main {
+      padding-top: 18px;
+    }
+    .regional h1 {
+      font-size: 30px;
+    }
+    .regional .workspace {
+      margin-top: 16px;
+    }
+    .regional .notice {
+      font-size: 12px;
+    }
+    .regional .legend {
+      font-size: 12px;
+      padding: 6px 18px;
+      gap: 10px;
+    }
+    .regional .controls {
+      padding: 10px;
+      gap: 8px;
+      font-size: 13px;
+    }
+    .regional svg {
+      height: clamp(240px, calc(100vh - 460px), 400px);
+    }
+    .regional #matching-ribbon {
+      line-height: 1.3;
+    }
+    .regional #regional-note p {
+      margin: 2px 0;
     }
     [hidden] {
       display: none !important;
@@ -325,7 +377,8 @@ export function renderSimulationReport(data: SimulationReportData): string {
       .controls {
         gap: 10px;
       }
-      svg {
+      svg,
+      .regional svg {
         height: 340px;
       }
     }
@@ -338,15 +391,15 @@ export function renderSimulationReport(data: SimulationReportData): string {
   <main>
     <header>
       <div>
-        <div class="eyebrow">ROUTELENS / ${data.matching ? "P03 + P04" : "P03"}</div>
+        <div class="eyebrow">ROUTELENS / ${data.region ? "SEOUL" : data.matching ? "P03 + P04" : "P03"}</div>
         <h1
-          data-en="Vehicle &amp; GPS simulation"
-          data-ko="차량·GPS 시뮬레이션"
+          data-en="${data.region ? "Seoul road simulation" : "Vehicle &amp; GPS simulation"}"
+          data-ko="${data.region ? "서울 도로 시뮬레이션" : "차량·GPS 시뮬레이션"}"
         ></h1>
         <p
           class="notice"
-          data-en="Synthetic trajectories and GPS observations on an authored fictional road network. Test evidence, not live traffic or a navigation client."
-          data-ko="직접 만든 가상 도로망의 합성 이동 경로와 GPS 관측입니다. 실시간 교통정보나 내비게이션 화면이 아닌 검사 증거입니다."
+          data-en="${data.region ? "Actual Seoul roads with SYNTHETIC vehicles and GPS. Same-engine round-trip evidence, not real driver traces, independent accuracy or live traffic." : "Synthetic trajectories and GPS observations on an authored fictional road network. Test evidence, not live traffic or a navigation client."}"
+          data-ko="${data.region ? "실제 서울 도로의 합성 차량·GPS입니다. 같은 엔진 왕복 검사이며 실주행 기록·독립 정확도·실시간 교통이 아닙니다." : "직접 만든 가상 도로망의 합성 이동 경로와 GPS 관측입니다. 실시간 교통정보나 내비게이션 화면이 아닌 검사 증거입니다."}"
         ></p>
       </div>
       <button id="language" aria-label="Switch language / 언어 변경">
@@ -360,8 +413,18 @@ export function renderSimulationReport(data: SimulationReportData): string {
             id="map"
             viewBox="0 0 900 560"
             role="img"
-            aria-label="Fictional road replay / 가상 도로 재생"
+            aria-label="${data.region ? "Seoul road replay / 서울 도로 재생" : "Fictional road replay / 가상 도로 재생"}"
           ></svg>
+          <div
+            id="regional-note"
+            hidden
+            style="padding: 8px 18px; font-size: 12px"
+          ></div>
+          <div
+            id="matching-ribbon"
+            hidden
+            style="padding: 6px 18px; font-size: 12px"
+          ></div>
           <div class="legend">
             <span
               class="truth"
@@ -407,10 +470,13 @@ export function renderSimulationReport(data: SimulationReportData): string {
             ><label
               ><span data-en="Vehicle" data-ko="차량"></span
               ><select id="vehicle"></select></label
+            ><label id="route-control" hidden
+              ><span data-en="Route" data-ko="경로"></span
+              ><select id="route"></select></label
             ><label
               ><input id="all-roads" type="checkbox" /><span
-                data-en="All fixture roads"
-                data-ko="전체 시험도로"
+                data-en="${data.region ? "All context roads" : "All fixture roads"}"
+                data-ko="${data.region ? "전체 배경도로" : "전체 시험도로"}"
               ></span></label
             ><label
               ><input id="truth" type="checkbox" checked /><span
@@ -490,6 +556,7 @@ export function renderSimulationReport(data: SimulationReportData): string {
     }
     const reasons = {
       AMBIGUOUS_PARALLEL: ["Ambiguous parallel roads", "평행도로 구분 불가"],
+      AMBIGUOUS_BOUNDARY: ["Uncertain timing while stopped at an edge boundary", "구간 경계 정지 시각 불명확"],
       PARTIAL_ENTRY: ["Entry not fully observed", "진입 관측 부족"],
       PARTIAL_EXIT: ["Exit not fully observed", "진출 관측 부족"],
       OBSERVATION_GAP: ["Observation gap", "관측 누락 구간"],
@@ -626,6 +693,14 @@ export function renderSimulationReport(data: SimulationReportData): string {
       node("p", "Graph: " + data.graph_id, $("provenance"));
       node("p", data.generated_at_utc, $("provenance"));
       node("p", "SHA-256: " + data.implementation_sha256, $("provenance"));
+      if (data.region)
+        node(
+          "p",
+          (lang === "en"
+            ? "Extraction envelope (west, south, east, north): "
+            : "추출 사각 범위(서·남·동·북): ") + data.region.bounds.join(", "),
+          $("provenance"),
+        );
       $("checks").replaceChildren();
       data.assertions.forEach((a) => {
         const e = node("details", undefined, $("checks"));
@@ -652,31 +727,96 @@ export function renderSimulationReport(data: SimulationReportData): string {
       const v = $("vehicle").options[0];
       if (v) v.textContent = lang === "en" ? "All vehicles" : "전체 차량";
       matchingDetails();
+      if (data.region) {
+        $("regional-note").replaceChildren();
+        node(
+          "span",
+          (lang === "en" ? data.region.name_en : data.region.name_ko) +
+            " · " +
+            data.region.source_date +
+            " · " +
+            data.region.attribution +
+            " · ",
+          $("regional-note"),
+        );
+        const license = node("a", "ODbL", $("regional-note"));
+        license.href = "https://www.openstreetmap.org/copyright";
+        node("span", " · ", $("regional-note"));
+        const mapSource = node("a", "Geofabrik", $("regional-note"));
+        mapSource.href =
+          "https://download.geofabrik.de/asia/south-korea-261023.osm.pbf";
+        node(
+          "span",
+          " · " + (lang === "en" ? "SYNTHETIC vehicles" : "합성 차량"),
+          $("regional-note"),
+        );
+        node(
+          "p",
+          (lang === "en" ? "Display roads: " : "표시 도로: ") +
+            data.region.display_road_count +
+            " · " +
+            (lang === "en" ? "Full graph export: " : "전체 그래프 내보내기: ") +
+            (data.region.graph_counts.full_export_roads ?? "?"),
+          $("regional-note"),
+        );
+        const all = $("route").options[0];
+        if (all) all.textContent = lang === "en" ? "All routes" : "전체 경로";
+        data.routes?.forEach((r, i) => {
+          if ($("route").options[i + 1])
+            $("route").options[i + 1].textContent = r["name_" + lang];
+        });
+      }
+      if (data.matching) {
+        $("matching-ribbon").textContent =
+          (lang === "en" ? "GPS matched/excluded: " : "GPS 매칭/제외: ") +
+          data.matching.matched_samples +
+          "/" +
+          data.matching.excluded_samples +
+          " · " +
+          (lang === "en"
+            ? "Complete traversals accepted/excluded: "
+            : "완전 통과 수용/제외: ") +
+          data.matching.accepted_traversals +
+          "/" +
+          data.matching.excluded_traversals +
+          " · " +
+          [...new Set(data.matching.traversals.flatMap((t) => t.reason_codes))]
+            .map((code) => reasons[code]?.[lang === "en" ? 0 : 1] || code)
+            .join(", ");
+      }
       draw();
     }
     let viewportWidth = 900,
       viewportHeight = 560;
     function bounds() {
-      const truth = data.vehicles.flatMap((v) =>
-        v.truth.map((p) => [p.longitude, p.latitude]),
+      const selectedRoute = data.routes?.find(
+        (r) => r.route_id === $("route").value,
       );
+      const truth = data.vehicles
+        .filter(
+          (v) =>
+            !selectedRoute || selectedRoute.vehicle_ids.includes(v.vehicle_id),
+        )
+        .flatMap((v) => v.truth.map((p) => [p.longitude, p.latitude]));
       const coords =
         $("all-roads").checked || !truth.length
-          ? data.roads.flatMap((r) => r.coordinates)
+          ? [...data.roads, ...(data.context_roads || [])].flatMap(
+              (r) => r.coordinates,
+            )
           : truth;
-      const xs = coords.map((p) => p[0]),
-        ys = coords.map((p) => p[1]);
-      const minX = Math.min(...xs),
-        maxX = Math.max(...xs),
-        minY = Math.min(...ys),
-        maxY = Math.max(...ys);
+      let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;
+      for(const p of coords){minX=Math.min(minX,p[0]);maxX=Math.max(maxX,p[0]);minY=Math.min(minY,p[1]);maxY=Math.max(maxY,p[1]);}
       return {
         minX,
         maxX,
         minY,
         maxY,
         scale: Math.min(
-          Math.max(100, viewportWidth - 120) / (maxX - minX || 0.001),
+          Math.max(100, viewportWidth - 120) /
+            ((maxX - minX || 0.001) *
+              (data.region
+                ? Math.cos((((minY + maxY) / 2) * Math.PI) / 180)
+                : 1)),
           Math.max(100, viewportHeight - 110) / (maxY - minY || 0.001),
         ),
       };
@@ -684,14 +824,21 @@ export function renderSimulationReport(data: SimulationReportData): string {
     let { minX, maxX, minY, maxY, scale } = bounds();
     function xy(p) {
       return [
-        viewportWidth / 2 + (p[0] - (minX + maxX) / 2) * scale,
+        viewportWidth / 2 +
+          (p[0] - (minX + maxX) / 2) *
+            scale *
+            (data.region ? Math.cos((((minY + maxY) / 2) * Math.PI) / 180) : 1),
         viewportHeight / 2 - (p[1] - (minY + maxY) / 2) * scale,
       ];
     }
+    let activeLayer,
+      roadLayer,
+      movingLayer,
+      roadCacheKey = "", projectionCacheKey="";
     function svg(tag, attrs) {
       const e = document.createElementNS(ns, tag);
       Object.entries(attrs).forEach(([k, v]) => e.setAttribute(k, String(v)));
-      $("map").append(e);
+      (activeLayer || $("map")).append(e);
       return e;
     }
     function point(p) {
@@ -704,36 +851,67 @@ export function renderSimulationReport(data: SimulationReportData): string {
         "viewBox",
         "0 0 " + viewportWidth + " " + viewportHeight,
       );
-      ({ minX, maxX, minY, maxY, scale } = bounds());
-      $("map").replaceChildren();
-      data.roads.forEach((r) => {
-        svg("polyline", {
-          points: r.coordinates.map((p) => xy(p).join(",")).join(" "),
-          fill: "none",
-          stroke: "#9BAEC2",
-          "stroke-width": 12,
-          "stroke-linecap": "round",
+      const projectionKey=JSON.stringify([viewportWidth,viewportHeight,$('all-roads').checked,$('route').value]);
+      if(projectionKey!==projectionCacheKey){({ minX, maxX, minY, maxY, scale } = bounds());projectionCacheKey=projectionKey;}
+      if (!roadLayer) {
+        roadLayer = document.createElementNS(ns, "g");
+        movingLayer = document.createElementNS(ns, "g");
+        $("map").replaceChildren(roadLayer, movingLayer);
+      }
+      const cacheKey = JSON.stringify([
+        viewportWidth,
+        viewportHeight,
+        minX,
+        maxX,
+        minY,
+        maxY,
+        $("all-roads").checked,
+      ]);
+      if (cacheKey !== roadCacheKey) {
+        roadLayer.replaceChildren();
+        activeLayer = roadLayer;
+        if (data.region)
+          (data.context_roads || []).forEach((r) =>
+            svg("polyline", {
+              points: r.coordinates.map((p) => xy(p).join(",")).join(" "),
+              fill: "none",
+              stroke: "#d7e0e9",
+              "stroke-width": 1.5,
+            }),
+          );
+        data.roads.forEach((r) => {
+          svg("polyline", {
+            points: r.coordinates.map((p) => xy(p).join(",")).join(" "),
+            fill: "none",
+            stroke: "#9BAEC2",
+            "stroke-width": data.region ? 2.5 : 12,
+            "stroke-linecap": "round",
+          });
+          if (data.region) return;
+          const first = r.coordinates[0];
+          const last = r.coordinates[r.coordinates.length - 1];
+          const p = xy([(first[0] + last[0]) / 2, (first[1] + last[1]) / 2]);
+          const horizontal =
+            Math.abs(last[0] - first[0]) >= Math.abs(last[1] - first[1]);
+          const below = ["ab", "bc"].includes(r.label.toLowerCase());
+          const t = svg("text", {
+            x: p[0] + (horizontal ? 0 : 12),
+            y: p[1] + (horizontal ? (below ? 24 : -14) : 4),
+            "text-anchor": horizontal ? "middle" : "start",
+          });
+          t.textContent = r.label;
         });
-        const first = r.coordinates[0];
-        const last = r.coordinates[r.coordinates.length - 1];
-        const p = xy([(first[0] + last[0]) / 2, (first[1] + last[1]) / 2]);
-        const horizontal =
-          Math.abs(last[0] - first[0]) >= Math.abs(last[1] - first[1]);
-        const below = ["ab", "bc"].includes(r.label.toLowerCase());
-        const t = svg("text", {
-          x: p[0] + (horizontal ? 0 : 12),
-          y: p[1] + (horizontal ? (below ? 24 : -14) : 4),
-          "text-anchor": horizontal ? "middle" : "start",
-        });
-        t.textContent = r.label;
-      });
+        roadCacheKey = cacheKey;
+      }
+      activeLayer = movingLayer;
+      movingLayer.replaceChildren();
       let omissions = 0;
-      data.vehicles
-        .filter(
-          (v) =>
-            $("vehicle").value === "*" || v.vehicle_id === $("vehicle").value,
-        )
-        .forEach((v, index) => {
+      const route = data.routes?.find((r) => r.route_id === $("route").value);
+      const visibleVehicles = data.vehicles
+        .filter((v) => !route || route.vehicle_ids.includes(v.vehicle_id))
+        .filter((v) => $("vehicle").value === "*" || v.vehicle_id === $("vehicle").value);
+      const labeledRoutes = new Set();
+      visibleVehicles.forEach((v, index) => {
           const truth = v.truth.filter((p) => p.offset_ms <= time),
             obs = v.observations.filter((p) => p.offset_ms <= time);
           if ($("truth").checked && truth.length) {
@@ -754,12 +932,32 @@ export function renderSimulationReport(data: SimulationReportData): string {
             });
             const rightHalf = p[0] > viewportWidth / 2;
             const lowerHalf = p[1] > viewportHeight / 2;
-            const t = svg("text", {
-              x: p[0] + (rightHalf ? -12 : 12),
-              y: p[1] + (lowerHalf ? -20 - index * 20 : 22 + index * 20),
-              "text-anchor": rightHalf ? "end" : "start",
-            });
-            t.textContent = v.vehicle_id;
+            if (data.region) {
+              const scene = data.routes?.find(r => r.vehicle_ids.includes(v.vehicle_id));
+              const grouped = $("vehicle").value === "*" && scene;
+              const key = grouped ? scene.route_id : v.vehicle_id;
+              if (!labeledRoutes.has(key)) {
+                labeledRoutes.add(key);
+                // This fixture shares truth across modes. Group labels follow the
+                // first visible vehicle, not a centroid of later divergent paths.
+                const label = grouped ? scene["name_" + lang] + " · " + visibleVehicles.filter(item => scene.vehicle_ids.includes(item.vehicle_id)).length : v.vehicle_id;
+                const t = svg("text", {
+                  x: p[0] + (rightHalf ? -12 : 12),
+                  y: Math.max(16, Math.min(viewportHeight - 12, p[1] + (lowerHalf ? -20 : 22))),
+                  "text-anchor": rightHalf ? "end" : "start",
+                });
+                t.textContent = label;
+                const width = Math.min(t.getComputedTextLength(), viewportWidth - 16);
+                t.setAttribute("x", String(rightHalf ? Math.max(width + 8, Math.min(viewportWidth - 8, p[0] - 12)) : Math.max(8, Math.min(viewportWidth - width - 8, p[0] + 12))));
+              }
+            } else {
+              const t = svg("text", {
+                x: p[0] + (rightHalf ? -12 : 12),
+                y: p[1] + (lowerHalf ? -20 - index * 20 : 22 + index * 20),
+                "text-anchor": rightHalf ? "end" : "start",
+              });
+              t.textContent = v.vehicle_id;
+            }
           }
           if ($("observed").checked)
             obs.forEach((p) => {
@@ -795,6 +993,7 @@ export function renderSimulationReport(data: SimulationReportData): string {
           .filter(
             (p) =>
               p.offset_ms <= time &&
+              (!route || route.vehicle_ids.includes(p.vehicle_id)) &&
               ($("vehicle").value === "*" ||
                 p.vehicle_id === $("vehicle").value),
           )
@@ -828,6 +1027,13 @@ export function renderSimulationReport(data: SimulationReportData): string {
     }
     $("matching-section").hidden = !data.matching;
     $("matching-toggle").hidden = !data.matching;
+    $("regional-note").hidden = !data.region;
+    $("matching-ribbon").hidden = !data.matching;
+    $("route-control").hidden = !data.routes?.length;
+    node("option", "All routes", $("route")).value = "*";
+    data.routes?.forEach(
+      (r) => (node("option", r.name_en, $("route")).value = r.route_id),
+    );
     $("time").max = String(data.summary.duration_ms);
     node("option", "All vehicles", $("vehicle")).value = "*";
     data.vehicles.forEach(
@@ -848,7 +1054,7 @@ export function renderSimulationReport(data: SimulationReportData): string {
       time = Number($("time").value);
       draw();
     };
-    ["vehicle", "truth", "observed", "all-roads", "matched"].forEach(
+    ["vehicle", "truth", "observed", "all-roads", "matched", "route"].forEach(
       (id) => ($(id).onchange = draw),
     );
     function tick(now) {

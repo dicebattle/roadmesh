@@ -1,0 +1,1658 @@
+{
+  "note_en": "Actual clean-commit Seoul engine response exposing ambiguous boundary-stop ownership; observations only, no truth-derived repair.",
+  "note_ko": "깨끗한 커밋의 실제 서울 엔진 응답에서 확인된 경계 정지 귀속 모호성입니다. 관측만 보존하며 정답에서 보정하지 않습니다.",
+  "source_commit": "a7988deda8be7d06a87435b0a5898d4d044e8b1e",
+  "graph_id": "c5cc856054738eba366ad2fe1195c6dd0d0013e2da67b13063a815c2250d00ce",
+  "request": {
+    "shape": [
+      {
+        "lon": 126.977064983,
+        "lat": 37.564936944,
+        "time": 0
+      },
+      {
+        "lon": 126.977068396,
+        "lat": 37.564910818,
+        "time": 0.5
+      },
+      {
+        "lon": 126.977062877,
+        "lat": 37.564919634,
+        "time": 1
+      },
+      {
+        "lon": 126.977102281,
+        "lat": 37.564903277,
+        "time": 1.5
+      },
+      {
+        "lon": 126.977105654,
+        "lat": 37.564912336,
+        "time": 2
+      },
+      {
+        "lon": 126.977083141,
+        "lat": 37.564944693,
+        "time": 2.5
+      },
+      {
+        "lon": 126.977054488,
+        "lat": 37.564929301,
+        "time": 3
+      },
+      {
+        "lon": 126.977060733,
+        "lat": 37.564914744,
+        "time": 3.5
+      },
+      {
+        "lon": 126.977092356,
+        "lat": 37.564925988,
+        "time": 4
+      },
+      {
+        "lon": 126.977090864,
+        "lat": 37.564929675,
+        "time": 4.5
+      },
+      {
+        "lon": 126.977076764,
+        "lat": 37.564909753,
+        "time": 5
+      },
+      {
+        "lon": 126.977133054,
+        "lat": 37.564918768,
+        "time": 5.5
+      },
+      {
+        "lon": 126.977200229,
+        "lat": 37.564904326,
+        "time": 6
+      },
+      {
+        "lon": 126.977222155,
+        "lat": 37.564961143,
+        "time": 6.5
+      },
+      {
+        "lon": 126.977186346,
+        "lat": 37.565011717,
+        "time": 7
+      },
+      {
+        "lon": 126.977209192,
+        "lat": 37.56507192,
+        "time": 7.5
+      },
+      {
+        "lon": 126.977205467,
+        "lat": 37.565094652,
+        "time": 8
+      },
+      {
+        "lon": 126.97723654,
+        "lat": 37.56512363,
+        "time": 8.5
+      },
+      {
+        "lon": 126.977217656,
+        "lat": 37.565168591,
+        "time": 9
+      },
+      {
+        "lon": 126.977214833,
+        "lat": 37.565231657,
+        "time": 9.5
+      },
+      {
+        "lon": 126.977218912,
+        "lat": 37.565282715,
+        "time": 10
+      },
+      {
+        "lon": 126.977204902,
+        "lat": 37.56532734,
+        "time": 10.5
+      },
+      {
+        "lon": 126.977243113,
+        "lat": 37.56537033,
+        "time": 11
+      },
+      {
+        "lon": 126.977196172,
+        "lat": 37.565417947,
+        "time": 11.5
+      },
+      {
+        "lon": 126.977226182,
+        "lat": 37.565471561,
+        "time": 12
+      },
+      {
+        "lon": 126.977212705,
+        "lat": 37.565502928,
+        "time": 12.5
+      },
+      {
+        "lon": 126.977232189,
+        "lat": 37.565548779,
+        "time": 13
+      },
+      {
+        "lon": 126.977238094,
+        "lat": 37.565595394,
+        "time": 13.5
+      },
+      {
+        "lon": 126.977237085,
+        "lat": 37.565619792,
+        "time": 14
+      },
+      {
+        "lon": 126.977248125,
+        "lat": 37.565683463,
+        "time": 14.5
+      },
+      {
+        "lon": 126.977236509,
+        "lat": 37.565740086,
+        "time": 15
+      },
+      {
+        "lon": 126.977247831,
+        "lat": 37.565766116,
+        "time": 15.5
+      },
+      {
+        "lon": 126.9772592,
+        "lat": 37.565806299,
+        "time": 16
+      },
+      {
+        "lon": 126.977236142,
+        "lat": 37.565834584,
+        "time": 16.5
+      },
+      {
+        "lon": 126.977222626,
+        "lat": 37.565928655,
+        "time": 17
+      },
+      {
+        "lon": 126.977255607,
+        "lat": 37.565954409,
+        "time": 17.5
+      },
+      {
+        "lon": 126.977212817,
+        "lat": 37.56598467,
+        "time": 18
+      },
+      {
+        "lon": 126.977228512,
+        "lat": 37.566016606,
+        "time": 18.5
+      },
+      {
+        "lon": 126.977206051,
+        "lat": 37.566071292,
+        "time": 19
+      },
+      {
+        "lon": 126.977255601,
+        "lat": 37.566122194,
+        "time": 19.5
+      },
+      {
+        "lon": 126.977239647,
+        "lat": 37.566167745,
+        "time": 20
+      },
+      {
+        "lon": 126.977214346,
+        "lat": 37.566242543,
+        "time": 20.5
+      },
+      {
+        "lon": 126.977211138,
+        "lat": 37.566252184,
+        "time": 21
+      },
+      {
+        "lon": 126.977260851,
+        "lat": 37.566313243,
+        "time": 21.5
+      },
+      {
+        "lon": 126.977216669,
+        "lat": 37.566345933,
+        "time": 22
+      },
+      {
+        "lon": 126.977250735,
+        "lat": 37.566394526,
+        "time": 22.5
+      },
+      {
+        "lon": 126.977238764,
+        "lat": 37.566457826,
+        "time": 23
+      },
+      {
+        "lon": 126.977259768,
+        "lat": 37.566501251,
+        "time": 23.5
+      },
+      {
+        "lon": 126.977204303,
+        "lat": 37.566533182,
+        "time": 24
+      },
+      {
+        "lon": 126.977248656,
+        "lat": 37.56656962,
+        "time": 24.5
+      },
+      {
+        "lon": 126.977209343,
+        "lat": 37.566616218,
+        "time": 25
+      },
+      {
+        "lon": 126.97720677,
+        "lat": 37.56668022,
+        "time": 25.5
+      },
+      {
+        "lon": 126.977219225,
+        "lat": 37.566702089,
+        "time": 26
+      },
+      {
+        "lon": 126.977234443,
+        "lat": 37.56675412,
+        "time": 26.5
+      },
+      {
+        "lon": 126.977245296,
+        "lat": 37.566807539,
+        "time": 27
+      },
+      {
+        "lon": 126.977256954,
+        "lat": 37.566839237,
+        "time": 27.5
+      },
+      {
+        "lon": 126.977265163,
+        "lat": 37.566906,
+        "time": 28
+      },
+      {
+        "lon": 126.977271799,
+        "lat": 37.56694126,
+        "time": 28.5
+      },
+      {
+        "lon": 126.97724011,
+        "lat": 37.566987137,
+        "time": 29
+      },
+      {
+        "lon": 126.977251512,
+        "lat": 37.567046018,
+        "time": 29.5
+      }
+    ],
+    "shape_match": "map_snap",
+    "costing": "auto",
+    "trace_options": {
+      "gps_accuracy": 5,
+      "search_radius": 30,
+      "interpolation_distance": 0
+    },
+    "filters": {
+      "action": "include",
+      "attributes": [
+        "edge.id",
+        "edge.way_id",
+        "edge.length",
+        "edge.begin_shape_index",
+        "edge.end_shape_index",
+        "matched.point",
+        "matched.type",
+        "matched.edge_index",
+        "matched.begin_route_discontinuity",
+        "matched.end_route_discontinuity",
+        "matched.distance_along_edge",
+        "matched.distance_from_trace_point",
+        "shape"
+      ]
+    }
+  },
+  "observations": [
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:0",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 0,
+      "event_time_utc": "2026-10-24T00:00:00.000Z",
+      "longitude": 126.977064983,
+      "latitude": 37.564936944,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 500,
+      "event_time_utc": "2026-10-24T00:00:00.500Z",
+      "longitude": 126.977068396,
+      "latitude": 37.564910818,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:1000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 1000,
+      "event_time_utc": "2026-10-24T00:00:01.000Z",
+      "longitude": 126.977062877,
+      "latitude": 37.564919634,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:1500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 1500,
+      "event_time_utc": "2026-10-24T00:00:01.500Z",
+      "longitude": 126.977102281,
+      "latitude": 37.564903277,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:2000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 2000,
+      "event_time_utc": "2026-10-24T00:00:02.000Z",
+      "longitude": 126.977105654,
+      "latitude": 37.564912336,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:2500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 2500,
+      "event_time_utc": "2026-10-24T00:00:02.500Z",
+      "longitude": 126.977083141,
+      "latitude": 37.564944693,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:3000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 3000,
+      "event_time_utc": "2026-10-24T00:00:03.000Z",
+      "longitude": 126.977054488,
+      "latitude": 37.564929301,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:3500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 3500,
+      "event_time_utc": "2026-10-24T00:00:03.500Z",
+      "longitude": 126.977060733,
+      "latitude": 37.564914744,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:4000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 4000,
+      "event_time_utc": "2026-10-24T00:00:04.000Z",
+      "longitude": 126.977092356,
+      "latitude": 37.564925988,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:4500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 4500,
+      "event_time_utc": "2026-10-24T00:00:04.500Z",
+      "longitude": 126.977090864,
+      "latitude": 37.564929675,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:5000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 5000,
+      "event_time_utc": "2026-10-24T00:00:05.000Z",
+      "longitude": 126.977076764,
+      "latitude": 37.564909753,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:5500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 5500,
+      "event_time_utc": "2026-10-24T00:00:05.500Z",
+      "longitude": 126.977133054,
+      "latitude": 37.564918768,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:6000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 6000,
+      "event_time_utc": "2026-10-24T00:00:06.000Z",
+      "longitude": 126.977200229,
+      "latitude": 37.564904326,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:6500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 6500,
+      "event_time_utc": "2026-10-24T00:00:06.500Z",
+      "longitude": 126.977222155,
+      "latitude": 37.564961143,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:7000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 7000,
+      "event_time_utc": "2026-10-24T00:00:07.000Z",
+      "longitude": 126.977186346,
+      "latitude": 37.565011717,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:7500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 7500,
+      "event_time_utc": "2026-10-24T00:00:07.500Z",
+      "longitude": 126.977209192,
+      "latitude": 37.56507192,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:8000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 8000,
+      "event_time_utc": "2026-10-24T00:00:08.000Z",
+      "longitude": 126.977205467,
+      "latitude": 37.565094652,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:8500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 8500,
+      "event_time_utc": "2026-10-24T00:00:08.500Z",
+      "longitude": 126.97723654,
+      "latitude": 37.56512363,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:9000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 9000,
+      "event_time_utc": "2026-10-24T00:00:09.000Z",
+      "longitude": 126.977217656,
+      "latitude": 37.565168591,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:9500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 9500,
+      "event_time_utc": "2026-10-24T00:00:09.500Z",
+      "longitude": 126.977214833,
+      "latitude": 37.565231657,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:10000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 10000,
+      "event_time_utc": "2026-10-24T00:00:10.000Z",
+      "longitude": 126.977218912,
+      "latitude": 37.565282715,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:10500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 10500,
+      "event_time_utc": "2026-10-24T00:00:10.500Z",
+      "longitude": 126.977204902,
+      "latitude": 37.56532734,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:11000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 11000,
+      "event_time_utc": "2026-10-24T00:00:11.000Z",
+      "longitude": 126.977243113,
+      "latitude": 37.56537033,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:11500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 11500,
+      "event_time_utc": "2026-10-24T00:00:11.500Z",
+      "longitude": 126.977196172,
+      "latitude": 37.565417947,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:12000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 12000,
+      "event_time_utc": "2026-10-24T00:00:12.000Z",
+      "longitude": 126.977226182,
+      "latitude": 37.565471561,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:12500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 12500,
+      "event_time_utc": "2026-10-24T00:00:12.500Z",
+      "longitude": 126.977212705,
+      "latitude": 37.565502928,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:13000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 13000,
+      "event_time_utc": "2026-10-24T00:00:13.000Z",
+      "longitude": 126.977232189,
+      "latitude": 37.565548779,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:13500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 13500,
+      "event_time_utc": "2026-10-24T00:00:13.500Z",
+      "longitude": 126.977238094,
+      "latitude": 37.565595394,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:14000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 14000,
+      "event_time_utc": "2026-10-24T00:00:14.000Z",
+      "longitude": 126.977237085,
+      "latitude": 37.565619792,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:14500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 14500,
+      "event_time_utc": "2026-10-24T00:00:14.500Z",
+      "longitude": 126.977248125,
+      "latitude": 37.565683463,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:15000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 15000,
+      "event_time_utc": "2026-10-24T00:00:15.000Z",
+      "longitude": 126.977236509,
+      "latitude": 37.565740086,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:15500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 15500,
+      "event_time_utc": "2026-10-24T00:00:15.500Z",
+      "longitude": 126.977247831,
+      "latitude": 37.565766116,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:16000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 16000,
+      "event_time_utc": "2026-10-24T00:00:16.000Z",
+      "longitude": 126.9772592,
+      "latitude": 37.565806299,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:16500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 16500,
+      "event_time_utc": "2026-10-24T00:00:16.500Z",
+      "longitude": 126.977236142,
+      "latitude": 37.565834584,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:17000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 17000,
+      "event_time_utc": "2026-10-24T00:00:17.000Z",
+      "longitude": 126.977222626,
+      "latitude": 37.565928655,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:17500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 17500,
+      "event_time_utc": "2026-10-24T00:00:17.500Z",
+      "longitude": 126.977255607,
+      "latitude": 37.565954409,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:18000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 18000,
+      "event_time_utc": "2026-10-24T00:00:18.000Z",
+      "longitude": 126.977212817,
+      "latitude": 37.56598467,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:18500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 18500,
+      "event_time_utc": "2026-10-24T00:00:18.500Z",
+      "longitude": 126.977228512,
+      "latitude": 37.566016606,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:19000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 19000,
+      "event_time_utc": "2026-10-24T00:00:19.000Z",
+      "longitude": 126.977206051,
+      "latitude": 37.566071292,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:19500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 19500,
+      "event_time_utc": "2026-10-24T00:00:19.500Z",
+      "longitude": 126.977255601,
+      "latitude": 37.566122194,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:20000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 20000,
+      "event_time_utc": "2026-10-24T00:00:20.000Z",
+      "longitude": 126.977239647,
+      "latitude": 37.566167745,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:20500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 20500,
+      "event_time_utc": "2026-10-24T00:00:20.500Z",
+      "longitude": 126.977214346,
+      "latitude": 37.566242543,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:21000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 21000,
+      "event_time_utc": "2026-10-24T00:00:21.000Z",
+      "longitude": 126.977211138,
+      "latitude": 37.566252184,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:21500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 21500,
+      "event_time_utc": "2026-10-24T00:00:21.500Z",
+      "longitude": 126.977260851,
+      "latitude": 37.566313243,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:22000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 22000,
+      "event_time_utc": "2026-10-24T00:00:22.000Z",
+      "longitude": 126.977216669,
+      "latitude": 37.566345933,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:22500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 22500,
+      "event_time_utc": "2026-10-24T00:00:22.500Z",
+      "longitude": 126.977250735,
+      "latitude": 37.566394526,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:23000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 23000,
+      "event_time_utc": "2026-10-24T00:00:23.000Z",
+      "longitude": 126.977238764,
+      "latitude": 37.566457826,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:23500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 23500,
+      "event_time_utc": "2026-10-24T00:00:23.500Z",
+      "longitude": 126.977259768,
+      "latitude": 37.566501251,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:24000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 24000,
+      "event_time_utc": "2026-10-24T00:00:24.000Z",
+      "longitude": 126.977204303,
+      "latitude": 37.566533182,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:24500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 24500,
+      "event_time_utc": "2026-10-24T00:00:24.500Z",
+      "longitude": 126.977248656,
+      "latitude": 37.56656962,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:25000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 25000,
+      "event_time_utc": "2026-10-24T00:00:25.000Z",
+      "longitude": 126.977209343,
+      "latitude": 37.566616218,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:25500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 25500,
+      "event_time_utc": "2026-10-24T00:00:25.500Z",
+      "longitude": 126.97720677,
+      "latitude": 37.56668022,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:26000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 26000,
+      "event_time_utc": "2026-10-24T00:00:26.000Z",
+      "longitude": 126.977219225,
+      "latitude": 37.566702089,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:26500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 26500,
+      "event_time_utc": "2026-10-24T00:00:26.500Z",
+      "longitude": 126.977234443,
+      "latitude": 37.56675412,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:27000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 27000,
+      "event_time_utc": "2026-10-24T00:00:27.000Z",
+      "longitude": 126.977245296,
+      "latitude": 37.566807539,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:27500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 27500,
+      "event_time_utc": "2026-10-24T00:00:27.500Z",
+      "longitude": 126.977256954,
+      "latitude": 37.566839237,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:28000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 28000,
+      "event_time_utc": "2026-10-24T00:00:28.000Z",
+      "longitude": 126.977265163,
+      "latitude": 37.566906,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:28500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 28500,
+      "event_time_utc": "2026-10-24T00:00:28.500Z",
+      "longitude": 126.977271799,
+      "latitude": 37.56694126,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:29000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 29000,
+      "event_time_utc": "2026-10-24T00:00:29.000Z",
+      "longitude": 126.97724011,
+      "latitude": 37.566987137,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:29500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 29500,
+      "event_time_utc": "2026-10-24T00:00:29.500Z",
+      "longitude": 126.977251512,
+      "latitude": 37.567046018,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    }
+  ],
+  "response": {
+    "units": "kilometers",
+    "shape": "o_xsfAybaeqFV@EmAAsD}IOsGIcIAqiAEwPQsFCwA@",
+    "edges": [
+      {
+        "way_id": 1084408283,
+        "id": 672531503504,
+        "end_shape_index": 1,
+        "begin_shape_index": 0,
+        "length": 0.001,
+        "source_percent_along": 0.992
+      },
+      {
+        "way_id": 908622899,
+        "id": 671994632592,
+        "end_shape_index": 3,
+        "begin_shape_index": 1,
+        "length": 0.011
+      },
+      {
+        "way_id": 378453707,
+        "id": 671826860432,
+        "end_shape_index": 8,
+        "begin_shape_index": 3,
+        "length": 0.217
+      },
+      {
+        "way_id": 378453707,
+        "id": 672397285776,
+        "end_shape_index": 9,
+        "begin_shape_index": 8,
+        "length": 0.014
+      },
+      {
+        "way_id": 378453707,
+        "id": 672195959184,
+        "end_shape_index": 10,
+        "begin_shape_index": 9,
+        "length": 0.004,
+        "target_percent_along": 0.177
+      }
+    ],
+    "matched_points": [
+      {
+        "lon": 126.977084,
+        "lat": 37.564936,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 0.992848,
+        "distance_from_trace_point": 1.72936
+      },
+      {
+        "lon": 126.977083,
+        "lat": 37.564924,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.998635
+      },
+      {
+        "lon": 126.977083,
+        "lat": 37.564924,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.913173
+      },
+      {
+        "lon": 126.977083,
+        "lat": 37.564924,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 2.795885
+      },
+      {
+        "lon": 126.977083,
+        "lat": 37.564924,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 2.294533
+      },
+      {
+        "lon": 126.977083,
+        "lat": 37.564924,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 2.289201
+      },
+      {
+        "lon": 126.977083,
+        "lat": 37.564924,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 2.652078
+      },
+      {
+        "lon": 126.977083,
+        "lat": 37.564924,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 2.281578
+      },
+      {
+        "lon": 126.977083,
+        "lat": 37.564924,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 0.764615
+      },
+      {
+        "lon": 126.977083,
+        "lat": 37.564924,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 0.869258
+      },
+      {
+        "lon": 126.977083,
+        "lat": 37.564924,
+        "type": "matched",
+        "edge_index": 0,
+        "distance_along_edge": 1,
+        "distance_from_trace_point": 1.698113
+      },
+      {
+        "lon": 126.977132,
+        "lat": 37.564927,
+        "type": "matched",
+        "edge_index": 1,
+        "distance_along_edge": 0.379982,
+        "distance_from_trace_point": 0.922448
+      },
+      {
+        "lon": 126.977199,
+        "lat": 37.564927,
+        "type": "matched",
+        "edge_index": 1,
+        "distance_along_edge": 0.897916,
+        "distance_from_trace_point": 2.601618
+      },
+      {
+        "lon": 126.977214,
+        "lat": 37.564961,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.0171,
+        "distance_from_trace_point": 0.669138
+      },
+      {
+        "lon": 126.977216,
+        "lat": 37.56501,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.042461,
+        "distance_from_trace_point": 2.669677
+      },
+      {
+        "lon": 126.977219,
+        "lat": 37.565071,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.073615,
+        "distance_from_trace_point": 0.90976
+      },
+      {
+        "lon": 126.97722,
+        "lat": 37.565094,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.085196,
+        "distance_from_trace_point": 1.327028
+      },
+      {
+        "lon": 126.977221,
+        "lat": 37.565123,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.100442,
+        "distance_from_trace_point": 1.295915
+      },
+      {
+        "lon": 126.977223,
+        "lat": 37.565168,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.123242,
+        "distance_from_trace_point": 0.501148
+      },
+      {
+        "lon": 126.977225,
+        "lat": 37.565231,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.1555,
+        "distance_from_trace_point": 0.948639
+      },
+      {
+        "lon": 126.977226,
+        "lat": 37.565282,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.181767,
+        "distance_from_trace_point": 0.643766
+      },
+      {
+        "lon": 126.977226,
+        "lat": 37.565327,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.204597,
+        "distance_from_trace_point": 1.895755
+      },
+      {
+        "lon": 126.977226,
+        "lat": 37.56537,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.226693,
+        "distance_from_trace_point": 1.42983
+      },
+      {
+        "lon": 126.977227,
+        "lat": 37.565417,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.251027,
+        "distance_from_trace_point": 2.705109
+      },
+      {
+        "lon": 126.977227,
+        "lat": 37.565471,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.278513,
+        "distance_from_trace_point": 0.0868
+      },
+      {
+        "lon": 126.977227,
+        "lat": 37.565502,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.29457,
+        "distance_from_trace_point": 1.274858
+      },
+      {
+        "lon": 126.977227,
+        "lat": 37.565548,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.318071,
+        "distance_from_trace_point": 0.422643
+      },
+      {
+        "lon": 126.977227,
+        "lat": 37.565595,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.341953,
+        "distance_from_trace_point": 0.929892
+      },
+      {
+        "lon": 126.977227,
+        "lat": 37.565619,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.35445,
+        "distance_from_trace_point": 0.836084
+      },
+      {
+        "lon": 126.977227,
+        "lat": 37.565683,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.387073,
+        "distance_from_trace_point": 1.789611
+      },
+      {
+        "lon": 126.977227,
+        "lat": 37.56574,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.416067,
+        "distance_from_trace_point": 0.75909
+      },
+      {
+        "lon": 126.977227,
+        "lat": 37.565766,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.429409,
+        "distance_from_trace_point": 1.745627
+      },
+      {
+        "lon": 126.977228,
+        "lat": 37.565806,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.450001,
+        "distance_from_trace_point": 2.733162
+      },
+      {
+        "lon": 126.977228,
+        "lat": 37.565834,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.464471,
+        "distance_from_trace_point": 0.706099
+      },
+      {
+        "lon": 126.977228,
+        "lat": 37.565928,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.512645,
+        "distance_from_trace_point": 0.499189
+      },
+      {
+        "lon": 126.977228,
+        "lat": 37.565954,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.525864,
+        "distance_from_trace_point": 2.385621
+      },
+      {
+        "lon": 126.977228,
+        "lat": 37.565984,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.54133,
+        "distance_from_trace_point": 1.371204
+      },
+      {
+        "lon": 126.977228,
+        "lat": 37.566016,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.557701,
+        "distance_from_trace_point": 0.002718
+      },
+      {
+        "lon": 126.977228,
+        "lat": 37.566071,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.585694,
+        "distance_from_trace_point": 1.983271
+      },
+      {
+        "lon": 126.977228,
+        "lat": 37.566122,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.611807,
+        "distance_from_trace_point": 2.348112
+      },
+      {
+        "lon": 126.977228,
+        "lat": 37.566167,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.635127,
+        "distance_from_trace_point": 0.939852
+      },
+      {
+        "lon": 126.977229,
+        "lat": 37.566242,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.67342,
+        "distance_from_trace_point": 1.294029
+      },
+      {
+        "lon": 126.977229,
+        "lat": 37.566252,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.678355,
+        "distance_from_trace_point": 1.577305
+      },
+      {
+        "lon": 126.977229,
+        "lat": 37.566313,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.709672,
+        "distance_from_trace_point": 2.766115
+      },
+      {
+        "lon": 126.977229,
+        "lat": 37.566345,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.72638,
+        "distance_from_trace_point": 1.113224
+      },
+      {
+        "lon": 126.977229,
+        "lat": 37.566394,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.751298,
+        "distance_from_trace_point": 1.861627
+      },
+      {
+        "lon": 126.977229,
+        "lat": 37.566457,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.783713,
+        "distance_from_trace_point": 0.798532
+      },
+      {
+        "lon": 126.977229,
+        "lat": 37.566501,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.805973,
+        "distance_from_trace_point": 2.629759
+      },
+      {
+        "lon": 126.977229,
+        "lat": 37.566533,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.822284,
+        "distance_from_trace_point": 2.238248
+      },
+      {
+        "lon": 126.977229,
+        "lat": 37.566569,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.840984,
+        "distance_from_trace_point": 1.64083
+      },
+      {
+        "lon": 126.97723,
+        "lat": 37.566615,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.864624,
+        "distance_from_trace_point": 1.86595
+      },
+      {
+        "lon": 126.977232,
+        "lat": 37.566679,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.897371,
+        "distance_from_trace_point": 2.269075
+      },
+      {
+        "lon": 126.977233,
+        "lat": 37.566701,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.908696,
+        "distance_from_trace_point": 1.238577
+      },
+      {
+        "lon": 126.977235,
+        "lat": 37.566754,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.935494,
+        "distance_from_trace_point": 0.04975
+      },
+      {
+        "lon": 126.977236,
+        "lat": 37.566807,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.962959,
+        "distance_from_trace_point": 0.752792
+      },
+      {
+        "lon": 126.977237,
+        "lat": 37.566839,
+        "type": "matched",
+        "edge_index": 2,
+        "distance_along_edge": 0.979309,
+        "distance_from_trace_point": 1.686171
+      },
+      {
+        "lon": 126.977239,
+        "lat": 37.566906,
+        "type": "matched",
+        "edge_index": 3,
+        "distance_along_edge": 0.215287,
+        "distance_from_trace_point": 2.255381
+      },
+      {
+        "lon": 126.97724,
+        "lat": 37.566941,
+        "type": "matched",
+        "edge_index": 3,
+        "distance_along_edge": 0.504814,
+        "distance_from_trace_point": 2.786255
+      },
+      {
+        "lon": 126.97724,
+        "lat": 37.566987,
+        "type": "matched",
+        "edge_index": 3,
+        "distance_along_edge": 0.878117,
+        "distance_from_trace_point": 0.05664
+      },
+      {
+        "lon": 126.97724,
+        "lat": 37.567045,
+        "type": "matched",
+        "edge_index": 4,
+        "distance_along_edge": 0.177869,
+        "distance_from_trace_point": 0.96808
+      }
+    ],
+    "alternate_paths": []
+  },
+  "edges": [
+    {
+      "label": "edge-671994632592",
+      "osm_way_id": 908622899,
+      "edge_id": "671994632592",
+      "forward": false,
+      "engine_forward": false,
+      "car_access": true,
+      "source_geometry": [
+        [
+          126.977213,
+          37.564928
+        ],
+        [
+          126.977123,
+          37.564927
+        ],
+        [
+          126.977084,
+          37.564924
+        ]
+      ],
+      "directed_geometry": [
+        [
+          126.977084,
+          37.564924
+        ],
+        [
+          126.977123,
+          37.564927
+        ],
+        [
+          126.977213,
+          37.564928
+        ]
+      ],
+      "evidence_path": "requests/0000-locate.response.json"
+    },
+    {
+      "label": "edge-672531503504",
+      "osm_way_id": 1084408283,
+      "edge_id": "672531503504",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [
+          126.977117,
+          37.566637
+        ],
+        [
+          126.977102,
+          37.565241
+        ],
+        [
+          126.977084,
+          37.564924
+        ]
+      ],
+      "directed_geometry": [
+        [
+          126.977117,
+          37.566637
+        ],
+        [
+          126.977102,
+          37.565241
+        ],
+        [
+          126.977084,
+          37.564924
+        ]
+      ],
+      "evidence_path": "requests/0000-locate.response.json"
+    },
+    {
+      "label": "edge-671826860432",
+      "osm_way_id": 378453707,
+      "edge_id": "671826860432",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [
+          126.977213,
+          37.564928
+        ],
+        [
+          126.977221,
+          37.565103
+        ],
+        [
+          126.977226,
+          37.565241
+        ],
+        [
+          126.977227,
+          37.565403
+        ],
+        [
+          126.97723,
+          37.566596
+        ],
+        [
+          126.977239,
+          37.56688
+        ]
+      ],
+      "directed_geometry": [
+        [
+          126.977213,
+          37.564928
+        ],
+        [
+          126.977221,
+          37.565103
+        ],
+        [
+          126.977226,
+          37.565241
+        ],
+        [
+          126.977227,
+          37.565403
+        ],
+        [
+          126.97723,
+          37.566596
+        ],
+        [
+          126.977239,
+          37.56688
+        ]
+      ],
+      "evidence_path": "requests/0000-locate.response.json"
+    },
+    {
+      "label": "edge-672397285776",
+      "osm_way_id": 378453707,
+      "edge_id": "672397285776",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [
+          126.977239,
+          37.56688
+        ],
+        [
+          126.977241,
+          37.567002
+        ]
+      ],
+      "directed_geometry": [
+        [
+          126.977239,
+          37.56688
+        ],
+        [
+          126.977241,
+          37.567002
+        ]
+      ],
+      "evidence_path": "requests/0007-locate.response.json"
+    },
+    {
+      "label": "edge-672195959184",
+      "osm_way_id": 378453707,
+      "edge_id": "672195959184",
+      "forward": true,
+      "engine_forward": true,
+      "car_access": true,
+      "source_geometry": [
+        [
+          126.977241,
+          37.567002
+        ],
+        [
+          126.977238,
+          37.567249
+        ]
+      ],
+      "directed_geometry": [
+        [
+          126.977241,
+          37.567002
+        ],
+        [
+          126.977238,
+          37.567249
+        ]
+      ],
+      "evidence_path": "requests/0007-locate.response.json"
+    }
+  ]
+}

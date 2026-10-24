@@ -1,0 +1,32 @@
+{
+  "fixture_id": "seoul-osm-20261023-v1",
+  "scenes": [
+    {
+      "route_id": "teheran",
+      "name_en": "Teheran-ro",
+      "name_ko": "테헤란로",
+      "locations": [
+        { "lon": 127.029, "lat": 37.4984 },
+        { "lon": 127.049, "lat": 37.5045 }
+      ]
+    },
+    {
+      "route_id": "downtown",
+      "name_en": "Downtown Seoul",
+      "name_ko": "서울 도심",
+      "locations": [
+        { "lon": 126.977, "lat": 37.5658 },
+        { "lon": 126.977, "lat": 37.5754 }
+      ]
+    },
+    {
+      "route_id": "mapo-bridge",
+      "name_en": "Mapo Bridge",
+      "name_ko": "마포대교",
+      "locations": [
+        { "lon": 126.9331, "lat": 37.5277 },
+        { "lon": 126.9441, "lat": 37.5393 }
+      ]
+    }
+  ]
+}

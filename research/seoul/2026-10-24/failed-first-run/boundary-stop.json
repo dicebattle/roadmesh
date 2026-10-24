@@ -1,0 +1,373 @@
+{
+  "source_commit": "a7988deda8be7d06a87435b0a5898d4d044e8b1e",
+  "graph_id": "c5cc856054738eba366ad2fe1195c6dd0d0013e2da67b13063a815c2250d00ce",
+  "policy_id": "seoul-observed-v1",
+  "candidate": {
+    "traversal_id": "816ccd1da43fd2d0fe3f8aba3a69cff0b2dc235787a6801f3c3efc9e202418f0",
+    "vehicle_id": "downtown-gap",
+    "edge_id": "671994632592",
+    "label": "edge-671994632592",
+    "forward": false,
+    "status": "ACCEPTED",
+    "entered_at_ms": 5000,
+    "exited_at_ms": 6119,
+    "reason_codes": [],
+    "source_sample_ids": [
+      "seoul-road-demo:downtown-gap:5500",
+      "seoul-road-demo:downtown-gap:6000"
+    ],
+    "entry_bracket": {
+      "before_sample_id": "seoul-road-demo:downtown-gap:5000",
+      "after_sample_id": "seoul-road-demo:downtown-gap:5500",
+      "before_offset_ms": 5000,
+      "after_offset_ms": 5500,
+      "interpolated_at_ms": 5000
+    },
+    "exit_bracket": {
+      "before_sample_id": "seoul-road-demo:downtown-gap:6000",
+      "after_sample_id": "seoul-road-demo:downtown-gap:6500",
+      "before_offset_ms": 6000,
+      "after_offset_ms": 6500,
+      "interpolated_at_ms": 6119
+    },
+    "reason_messages": []
+  },
+  "truth": {
+    "vehicle_id": "downtown-gap",
+    "edge_id": "671994632592",
+    "label": "edge-671994632592",
+    "forward": false,
+    "entered_at_ms": 0,
+    "exited_at_ms": 6139,
+    "distance_m": 11.38701656029258
+  },
+  "observations": [
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:0",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 0,
+      "event_time_utc": "2026-10-24T00:00:00.000Z",
+      "longitude": 126.977064983,
+      "latitude": 37.564936944,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 500,
+      "event_time_utc": "2026-10-24T00:00:00.500Z",
+      "longitude": 126.977068396,
+      "latitude": 37.564910818,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:1000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 1000,
+      "event_time_utc": "2026-10-24T00:00:01.000Z",
+      "longitude": 126.977062877,
+      "latitude": 37.564919634,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:1500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 1500,
+      "event_time_utc": "2026-10-24T00:00:01.500Z",
+      "longitude": 126.977102281,
+      "latitude": 37.564903277,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:2000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 2000,
+      "event_time_utc": "2026-10-24T00:00:02.000Z",
+      "longitude": 126.977105654,
+      "latitude": 37.564912336,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:2500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 2500,
+      "event_time_utc": "2026-10-24T00:00:02.500Z",
+      "longitude": 126.977083141,
+      "latitude": 37.564944693,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:3000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 3000,
+      "event_time_utc": "2026-10-24T00:00:03.000Z",
+      "longitude": 126.977054488,
+      "latitude": 37.564929301,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:3500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 3500,
+      "event_time_utc": "2026-10-24T00:00:03.500Z",
+      "longitude": 126.977060733,
+      "latitude": 37.564914744,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:4000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 4000,
+      "event_time_utc": "2026-10-24T00:00:04.000Z",
+      "longitude": 126.977092356,
+      "latitude": 37.564925988,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:4500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 4500,
+      "event_time_utc": "2026-10-24T00:00:04.500Z",
+      "longitude": 126.977090864,
+      "latitude": 37.564929675,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:5000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 5000,
+      "event_time_utc": "2026-10-24T00:00:05.000Z",
+      "longitude": 126.977076764,
+      "latitude": 37.564909753,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:5500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 5500,
+      "event_time_utc": "2026-10-24T00:00:05.500Z",
+      "longitude": 126.977133054,
+      "latitude": 37.564918768,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:6000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 6000,
+      "event_time_utc": "2026-10-24T00:00:06.000Z",
+      "longitude": 126.977200229,
+      "latitude": 37.564904326,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:6500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 6500,
+      "event_time_utc": "2026-10-24T00:00:06.500Z",
+      "longitude": 126.977222155,
+      "latitude": 37.564961143,
+      "accuracy_m": 3,
+      "source_class": "SYNTHETIC"
+    }
+  ],
+  "matched_points": [
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:0",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 0,
+      "longitude": 126.977084,
+      "latitude": 37.564936,
+      "edge_id": "672531503504",
+      "status": "MATCHED",
+      "reason_codes": [],
+      "matched_type": "matched",
+      "fraction": 0.992848,
+      "distance_m": 1.72936
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 500,
+      "longitude": 126.977083,
+      "latitude": 37.564924,
+      "edge_id": "672531503504",
+      "status": "MATCHED",
+      "reason_codes": [],
+      "matched_type": "matched",
+      "fraction": 1,
+      "distance_m": 1.998635
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:1000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 1000,
+      "longitude": 126.977083,
+      "latitude": 37.564924,
+      "edge_id": "672531503504",
+      "status": "MATCHED",
+      "reason_codes": [],
+      "matched_type": "matched",
+      "fraction": 1,
+      "distance_m": 1.913173
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:1500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 1500,
+      "longitude": 126.977083,
+      "latitude": 37.564924,
+      "edge_id": "672531503504",
+      "status": "MATCHED",
+      "reason_codes": [],
+      "matched_type": "matched",
+      "fraction": 1,
+      "distance_m": 2.795885
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:2000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 2000,
+      "longitude": 126.977083,
+      "latitude": 37.564924,
+      "edge_id": "672531503504",
+      "status": "MATCHED",
+      "reason_codes": [],
+      "matched_type": "matched",
+      "fraction": 1,
+      "distance_m": 2.294533
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:2500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 2500,
+      "longitude": 126.977083,
+      "latitude": 37.564924,
+      "edge_id": "672531503504",
+      "status": "MATCHED",
+      "reason_codes": [],
+      "matched_type": "matched",
+      "fraction": 1,
+      "distance_m": 2.289201
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:3000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 3000,
+      "longitude": 126.977083,
+      "latitude": 37.564924,
+      "edge_id": "672531503504",
+      "status": "MATCHED",
+      "reason_codes": [],
+      "matched_type": "matched",
+      "fraction": 1,
+      "distance_m": 2.652078
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:3500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 3500,
+      "longitude": 126.977083,
+      "latitude": 37.564924,
+      "edge_id": "672531503504",
+      "status": "MATCHED",
+      "reason_codes": [],
+      "matched_type": "matched",
+      "fraction": 1,
+      "distance_m": 2.281578
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:4000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 4000,
+      "longitude": 126.977083,
+      "latitude": 37.564924,
+      "edge_id": "672531503504",
+      "status": "MATCHED",
+      "reason_codes": [],
+      "matched_type": "matched",
+      "fraction": 1,
+      "distance_m": 0.764615
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:4500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 4500,
+      "longitude": 126.977083,
+      "latitude": 37.564924,
+      "edge_id": "672531503504",
+      "status": "MATCHED",
+      "reason_codes": [],
+      "matched_type": "matched",
+      "fraction": 1,
+      "distance_m": 0.869258
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:5000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 5000,
+      "longitude": 126.977083,
+      "latitude": 37.564924,
+      "edge_id": "672531503504",
+      "status": "MATCHED",
+      "reason_codes": [],
+      "matched_type": "matched",
+      "fraction": 1,
+      "distance_m": 1.698113
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:5500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 5500,
+      "longitude": 126.977132,
+      "latitude": 37.564927,
+      "edge_id": "671994632592",
+      "status": "MATCHED",
+      "reason_codes": [],
+      "matched_type": "matched",
+      "fraction": 0.379982,
+      "distance_m": 0.922448
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:6000",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 6000,
+      "longitude": 126.977199,
+      "latitude": 37.564927,
+      "edge_id": "671994632592",
+      "status": "MATCHED",
+      "reason_codes": [],
+      "matched_type": "matched",
+      "fraction": 0.897916,
+      "distance_m": 2.601618
+    },
+    {
+      "sample_id": "seoul-road-demo:downtown-gap:6500",
+      "vehicle_id": "downtown-gap",
+      "offset_ms": 6500,
+      "longitude": 126.977214,
+      "latitude": 37.564961,
+      "edge_id": "671826860432",
+      "status": "MATCHED",
+      "reason_codes": [],
+      "matched_type": "matched",
+      "fraction": 0.0171,
+      "distance_m": 0.669138
+    }
+  ],
+  "result_sha256": "3f0ae1e38c982434a582fbfc5754565c166d8ce9cb1c2666e3f2cfe1e28c3b16",
+  "license": "ODbL-1.0",
+  "attribution": "© OpenStreetMap contributors"
+}

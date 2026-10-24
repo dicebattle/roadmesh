@@ -294,6 +294,7 @@ test("optional matching evidence preserves results and bilingual exclusion reaso
   assert(html.includes("완전 통과 수용"));
   for (const code of [
     "AMBIGUOUS_PARALLEL",
+    "AMBIGUOUS_BOUNDARY",
     "PARTIAL_ENTRY",
     "PARTIAL_EXIT",
     "OBSERVATION_GAP",
@@ -314,4 +315,60 @@ test("optional matching evidence preserves results and bilingual exclusion reaso
       )![1]!,
     ).matching,
   );
+});
+
+test("Seoul profile keeps curved geometry, attribution and cached static layer / 서울 곡선 지형·출처·정적 계층 캐시", () => {
+  const input = structuredClone(data);
+  input.region = {
+    profile_id: "seoul-osm-20261023-v1",
+    name_en: "Seoul road network",
+    name_ko: "서울 도로망",
+    source_date: "2026-10-23",
+    source_url: "https://download.geofabrik.de/asia/south-korea-261023.osm.pbf",
+    bounds: [126.7, 37.4, 127.25, 37.75],
+    attribution: "© OpenStreetMap contributors",
+    license_url: "https://www.openstreetmap.org/copyright",
+    graph_counts: { full_export_roads: 100 },
+    display_road_count: 1,
+  };
+  input.context_roads = [
+    {
+      name: "테헤란로",
+      coordinates: [
+        [127, 37.5],
+        [127.001, 37.501],
+        [127.002, 37.5],
+      ],
+    },
+  ];
+  input.routes = [
+    {
+      route_id: "teheran",
+      name_en: "Teheran road",
+      name_ko: "테헤란로",
+      edge_ids: ["1"],
+      bounds: [127, 37.5, 127.002, 37.501],
+      vehicle_ids: ["v"],
+    },
+  ];
+  const html = renderSimulationReport(input);
+  assert(html.includes("Actual Seoul roads"));
+  assert(!html.includes("on an authored fictional road network"));
+  assert(html.includes("© OpenStreetMap contributors"));
+  assert(html.includes("openstreetmap.org/copyright"));
+  assert(html.includes("Math.cos"));
+  assert(html.includes("roadCacheKey"));
+  assert(html.includes("movingLayer.replaceChildren"));
+  assert(
+    html.includes("if(data.region)return") ||
+      html.includes("if (data.region) return"),
+  );
+  assert(html.includes('id="route"'));
+  new Function(html.match(/<script>([\s\S]*?)<\/script>/)![1]!);
+  const embedded = JSON.parse(
+    html.match(
+      /<script id="report-data" type="application\/json">([\s\S]*?)<\/script>/,
+    )![1]!,
+  );
+  assert.deepEqual(embedded.context_roads, input.context_roads);
 });

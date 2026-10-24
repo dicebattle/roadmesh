@@ -1,8 +1,8 @@
 # P05 next design / P05 후속 설계
 
-Status: planned, not implemented. P04 verification and protected integration precede P05 coding. Main owns this design; Sol will implement after the executable contract is fixed.
+Status: planned, not implemented. P04 and the verified actual-Seoul simulation must complete protected integration before P05 coding. Main owns this design; Sol will implement after the executable contract is fixed.
 
-상태: 계획이며 미구현입니다. P04 검증·보호된 병합 후 P05 코딩을 시작합니다. 메인이 설계하고 실행 계약 확정 후 Sol이 구현합니다.
+상태: 계획이며 미구현입니다. P04와 실제 서울 시뮬레이션의 검증·보호된 병합 후 P05 코딩을 시작합니다. 메인이 설계하고 실행 계약 확정 후 Sol이 구현합니다.
 
 ## Chosen responsibility / 선택한 책임
 
