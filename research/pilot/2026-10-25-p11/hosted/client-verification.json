@@ -1,0 +1,183 @@
+{
+  "status": "PASS",
+  "omitted_map_bytes": [
+    {
+      "path": "fixture/bundle/graph.tar",
+      "declared_sha256": "becbd2031a205d603d62f2e99b652ff835741743044f970bd81606ea423df945",
+      "actual_bytes_verified": false
+    }
+  ],
+  "live_resource_queries_performed": false,
+  "source": {
+    "commit": "eda6f680032f7ae90d2d76f0fc0a64934cba1d1f",
+    "dirty": false
+  },
+  "implementation_sha256": "bcc635c55326ef1306aa04805355c14ea62b3fd115bb4385bcd002942e8c3430",
+  "graph_id": "80ce8d7e0712d47dc72f329893e76ca48863b3eb8811025c039ba31359ed750c",
+  "original_hashes_checked": 2367,
+  "required_cases": 32,
+  "publications_verified": 4,
+  "native_pairs": 27,
+  "browser_successes_bound": 12,
+  "bindings": [
+    {
+      "request_id": "browser-6f127686-5098-4ffa-8c61-aeae73fb43ab",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-850c0145-3dab-4c03-b993-85fce6e38bc8/engines/aa614d1c-5a2c-4187-b653-2bd4c71f39a5/requests/4460b993-c808-41c0-a9f8-6f201328229b",
+      "matching_candidates": 2,
+      "coverage": 0,
+      "sequence": null
+    },
+    {
+      "request_id": "browser-1ba20c95-9359-4d98-8253-37450ff21570",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-850c0145-3dab-4c03-b993-85fce6e38bc8/engines/05edf8bd-3451-48bb-abcd-fe6df8b5478b/requests/96e6d176-9c03-4325-8b19-78d054867bbb",
+      "matching_candidates": 1,
+      "coverage": 1,
+      "sequence": 1
+    },
+    {
+      "request_id": "browser-35248d56-3c76-49de-b856-976e839df8aa",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-850c0145-3dab-4c03-b993-85fce6e38bc8/engines/05edf8bd-3451-48bb-abcd-fe6df8b5478b/requests/35aa7748-2dd9-49f1-9881-1c60668a84e6",
+      "matching_candidates": 2,
+      "coverage": 0,
+      "sequence": 1
+    },
+    {
+      "request_id": "browser-4a9bfb80-8fe6-45bd-9224-3d1adc7a577f",
+      "node_id": "client-node-b",
+      "native_directory": "fixture/nodes/client-node-b/runtime-03d94e58-050b-40b8-93f6-e5763b27105e/engines/9c5b8241-2c95-4efd-8110-29ac08a7f784/requests/785b112c-5d67-4437-ad14-d530dfceff6a",
+      "matching_candidates": 1,
+      "coverage": 1,
+      "sequence": 1
+    },
+    {
+      "request_id": "browser-aced0c29-b2ac-4699-9852-724eb94d4d44",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-de65a598-8c3c-41a9-ba96-4065a477eb48/engines/2c557cdc-fd93-4649-8df6-ee0997d0c41b/requests/2c0409d4-39f8-4078-944e-11ba21693f48",
+      "matching_candidates": 2,
+      "coverage": 0,
+      "sequence": 1
+    },
+    {
+      "request_id": "browser-113b0567-85bd-4723-80c9-4c3747d10526",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-de65a598-8c3c-41a9-ba96-4065a477eb48/engines/2c557cdc-fd93-4649-8df6-ee0997d0c41b/requests/3b1aea28-175f-40fa-8cf9-1ba383476dab",
+      "matching_candidates": 2,
+      "coverage": 1,
+      "sequence": 1
+    },
+    {
+      "request_id": "browser-adc5cd6b-35b9-42a4-af23-496dc5204cc2",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-de65a598-8c3c-41a9-ba96-4065a477eb48/engines/a4e85c9a-7ace-4a05-b388-680d5aa54822/requests/b5a99424-8b3b-41db-a4a1-d4f73af1e750",
+      "matching_candidates": 1,
+      "coverage": 1,
+      "sequence": 2
+    },
+    {
+      "request_id": "browser-df080799-c0d4-41f4-a46b-85f68882b329",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-de65a598-8c3c-41a9-ba96-4065a477eb48/engines/d819b608-4e3b-457d-bd25-50cb5cfccde8/requests/0afb7974-e311-41af-8200-751c86ae4795",
+      "matching_candidates": 2,
+      "coverage": 1,
+      "sequence": 3
+    },
+    {
+      "request_id": "browser-afb8a535-4ec7-43bb-bded-9e7bed13c188",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-de65a598-8c3c-41a9-ba96-4065a477eb48/engines/d819b608-4e3b-457d-bd25-50cb5cfccde8/requests/d15eb671-c222-4b19-9042-6b018965d0ad",
+      "matching_candidates": 1,
+      "coverage": 1,
+      "sequence": 3
+    },
+    {
+      "request_id": "browser-57d17949-7fd0-4220-b0f4-42c3a69b1c25",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-de65a598-8c3c-41a9-ba96-4065a477eb48/engines/7625b1ed-2b02-4622-8219-d61583f3ef50/requests/18121323-0f66-497c-8e10-75eed542d88a",
+      "matching_candidates": 2,
+      "coverage": 0,
+      "sequence": 4
+    },
+    {
+      "request_id": "browser-58b20ffd-2d64-4dba-af93-188f11e5fd29",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-de65a598-8c3c-41a9-ba96-4065a477eb48/engines/7625b1ed-2b02-4622-8219-d61583f3ef50/requests/de2e439f-5723-4d9e-b562-f2e9b48b45f0",
+      "matching_candidates": 1,
+      "coverage": 0,
+      "sequence": 4
+    },
+    {
+      "request_id": "browser-80770392-23a8-489f-8218-b86278076f4c",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-de65a598-8c3c-41a9-ba96-4065a477eb48/engines/79da8e92-18df-41cb-9ead-e5ecfe4ded04/requests/396159f2-d654-444b-b366-8be0e7a6df47",
+      "matching_candidates": 2,
+      "coverage": 0,
+      "sequence": null
+    }
+  ],
+  "recorded_browser_processes": 6,
+  "recorded_container_names_and_ids": [
+    "routelens-p05-eab8a914-dc04-4d40-ad5a-1f387dbb69f6",
+    "3828c5d7bf37f27bf82e3660b8a5cf8fb9c9be112baf54f438dd8ccd1dc20742",
+    "03bd3a20480fabe5b6dabc860cead10a409316f6363057dcfa753d72d15b60d1",
+    "d63be5e424ffe7f9350e8ba57456b6601bc8f716a1941ae8c7483005dfa563bf",
+    "c739076728cd9aeecd7123542c44778701153e266b9ff3cf974cf1f9f546cf75",
+    "82ad4149fca69afc4a2a6d32dd974314c4ee2f7bd797bcc9787059c4bacf2885",
+    "852a77beaffe6e67fbb83f423c9d385848989ad02b74187b5003bdba8416ee15",
+    "6f5aaefde72abc853b942402498809271dcf3aea503118a2970dc7a3fac04470",
+    "75d217835c21a586f3892cb5e69a34e9af0f4da155a1bafb69ac5a5502bdcde9",
+    "6567f8009d0a5e6461838975ed1f0b66e6609e324ec28dd239b70df7283de449",
+    "f9c49c300240bf6251ba4c1cf8a16b3ca06d8376b5ec9556c379d2095e2f4f8b",
+    "33becb5147a10bf18a6370c70a4455be5f59fb50a2840a5ac2bb0b0ebea9cb58",
+    "58cb6f0aee3cd5891d38152d55696ad21aea6fbc99ce60985c22407f933538b3",
+    "c868479e43bebaa66be082a6c827d1a1b2b12c150e3e34140170dc7e0d8b15f6",
+    "dcbf2f45ce75795fc8b464d35c5ab48d9969128c5f1e5c4214caecd7aaa5babe",
+    "routelens-p02-e95e0d3a-a104-4c5c-a4e4-2318d1804932",
+    "routelens-p02-05edf8bd-3451-48bb-abcd-fe6df8b5478b",
+    "routelens-p02-aa614d1c-5a2c-4187-b653-2bd4c71f39a5",
+    "routelens-p02-2c557cdc-fd93-4649-8df6-ee0997d0c41b",
+    "routelens-p02-7625b1ed-2b02-4622-8219-d61583f3ef50",
+    "routelens-p02-79da8e92-18df-41cb-9ead-e5ecfe4ded04",
+    "routelens-p02-a4e85c9a-7ace-4a05-b388-680d5aa54822",
+    "routelens-p02-d819b608-4e3b-457d-bd25-50cb5cfccde8",
+    "routelens-p02-69542e63-1c0d-4f4d-8ef7-00369cc919c5",
+    "routelens-p02-9c5b8241-2c95-4efd-8110-29ac08a7f784",
+    "routelens-p02-2ef75010-80e3-4cc6-86c6-ec3ccde765e8",
+    "routelens-p02-76178861-b0af-4796-accb-34533335e2e3",
+    "routelens-p02-78399e11-bf57-4f03-b56c-16f20cd0e21f",
+    "routelens-p02-e5d7a7e2-aa71-479b-84ac-670fc93e75b8",
+    "routelens-p02-f5013520-496f-4e23-b5dd-df6972c89f5f",
+    "routelens-p02-aa0440dd-2b97-4f74-a074-c9c151853157",
+    "routelens-p02-3acdaa09-5d82-4399-8af5-70cf12145cbd",
+    "routelens-p02-cf74922f-be0c-485f-9660-6623c3923c55",
+    "routelens-p02-b0a36ad7-9ec6-4817-872b-c3e7ad922f41",
+    "routelens-p02-b68e256c-55ae-4b27-aebb-99a90eeba235",
+    "routelens-p02-4fb4cbd5-81e7-4a69-8140-dbefbb36e8b6",
+    "routelens-p02-2540923d-5210-4961-a52b-80c4e9e35647",
+    "routelens-p02-f4ccec9a-840d-46f6-bb2e-7d5af9e3ddee",
+    "routelens-p02-3f746fc7-6d7d-4b65-b99c-4f0e0efc9b1e",
+    "routelens-p02-60ce8358-9e01-41e6-aba7-90058834d625",
+    "routelens-p02-4c7087d0-0581-4dfe-abee-ff34e09c11af",
+    "routelens-p02-80d95e8c-436b-4607-a381-3900c915ffe7",
+    "routelens-p02-d98ce212-1c5c-46e9-b5e5-ae4298b406a7",
+    "routelens-p02-c01825ca-7fb5-449c-92d4-4f1dc3c1792a",
+    "routelens-p02-f2a98091-25a9-4f29-b0ae-74e85ca97401"
+  ],
+  "recorded_volume": "routelens-p05-eab8a914-dc04-4d40-ad5a-1f387dbb69f6-db",
+  "limitations_en": [
+    "Only exact declared graph.tar is omitted. Cleanup uses original recorded diagnostics; no current remote resource lookup is performed.",
+    "Synthetic actual-road pilot, not real-driving accuracy.",
+    "Transport proxies are explicitly marked and do not establish ordinary native success.",
+    "Native protocol has no public request ID; exact repeated computations can have multiple matching candidates.",
+    "Application response/map-source binding and screenshots do not alone prove pixel-perfect geometry; main visual inspection is separate."
+  ],
+  "limitations_ko": [
+    "정확히 선언한 graph.tar만 제외합니다. 정리는 원래 기록만 검사하며 현재 원격 자원을 조회하지 않습니다.",
+    "실제 도로 위 합성 파일럿이며 실주행 정확도 근거가 아닙니다.",
+    "전송 시험 대리 서버는 명시하며 일반 엔진 성공의 근거로 사용하지 않습니다.",
+    "네이티브 규격에 공개 요청 ID가 없어 동일 계산은 여러 원문 후보와 일치할 수 있습니다.",
+    "응답·지도 자료 연결과 화면만으로 픽셀 정확도를 주장하지 않으며 메인 시각 검토는 별도입니다."
+  ]
+}

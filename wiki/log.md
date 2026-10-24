@@ -590,3 +590,19 @@ P10 원격 두 건302개·Node각262개와 해시9,932개·엔진38쌍/응답18�
 Next: P11 push, hosted original inspection and protected delivery; then fix P12's actual transport/no-path/revocation/vehicle-class/interrupt contract. The [gap draft](../docs/31-p12-scenario-gap-review.md) is explicitly not implemented. P13/P14b and geographic/production gates remain.
 
 다음은 P11 푸시·원격 원문·보호 반영과 P12 통신/경로 없음/철회/차량 종류/중단 계약 확정입니다. 공백 초안은 구현 완료가 아니며 P13/P14b와 실제 지역·운영 기준은 남습니다.
+
+## 2026-10-25 — P12 source and negative-fixture investigation / P12 소스·부정 입력 조사
+
+Main Sol opened feat/p12-whole-scenarios from the pushed P11 head while P11 CI runs. This branch changes no runtime yet. Pinned Valhalla3.9.1 definitions distinguish disconnected/no-nearby-edge/no-path outcomes. The exploratory actual-Seoul engine probe returned20 routes; its outside input was blocked by the existing RouteLens guard. No no-path proof was obtained. Preserve all candidates/results and owned cleanup; continue contract design instead of inventing failure. [Research](../research/pilot/2026-10-25-p12-planning/README.md).
+
+메인 Sol이 P11 원격 검사 중 푸시된 소스에서 P12 작업 브랜치를 만들었으며 아직 실행 코드는 바꾸지 않았습니다. 고정 Valhalla 오류와 실제 서울 후보를 조사했고20개 경로 성공·기존 검사 거부1개를 확인했습니다. 경로 없음 증거는 얻지 못했으므로 후보·결과·정리를 보존하고 실패를 꾸미지 않은 채 계약 설계를 이어갑니다.
+
+The follow-up all-vertex probe found actual native171 and442 at two fixed Seoul targets under explicit100m/minimum-reachability0 options; unchanged defaults return routes at both. All owned probe engines were checked absent. Main fixed [P12's opt-in request/domain-error, trusted exclusion/class and24-case design](../docs/32-p12-whole-scenarios.md). No runtime implementation is claimed yet. Preserve the original unsuccessful candidate method and all comparisons.
+
+후속 모든 점 연결 조사에서 선택형100m·연결 규모 제외 없는 옵션의 실제171·442를 찾았고 기존 기본값은 같은 좌표에서 모두 경로를 반환했습니다. 조사 엔진 부재를 확인하고 메인이 선택형 요청/업무 오류·신뢰 제외/차량 종류·24개 사례 설계를 고정했습니다. 아직 실행 구현은 아니며 앞선 후보 방식과 비교를 모두 보존합니다.
+
+## 2026-10-25 — P11 hosted/protected delivery and archive correction / P11 원격·보호 반영과 기록 정정
+
+Main inspected push40141450307 after push and PR40141478545 passed334/285. Checked12,054 present hashes, client27 native pairs/12 browser bindings and gateway73 worker jobs, with recorded hosted cleanup and exact map omissions. PR12 merged eda6f68 as b7e383c with all protection retained. Hosted/merge evidence is recorded on the P12 branch. Fresh-worktree review found two historical log links depended on ignored local files; gzip originals now ship. Eight P11 recording/audit logs omitted by the same rule are now archived. The earlier917-link check was local availability, not clean-checkout deliverability. No test results or video bytes changed.
+
+메인은 원격 두 실행334/285개 통과 후 푸시 원문 해시12,054개·클라이언트 엔진/브라우저·중계 작업·기록 정리·지도 제외를 확인했습니다. 검사한 커밋을 PR12로 보호 병합하고 P12 브랜치에 근거를 기록합니다. 새 작업 폴더에서 과거 로그 링크2개가 Git 제외 로컬 파일에 의존함을 찾아 원본 gzip을 추가했고 P11 녹화/감사 로그8개도 묶음으로 보존했습니다. 앞선917링크 검사는 새 체크아웃 전달이 아닌 로컬 존재 확인이었으며 테스트 결과·영상 바이트는 바꾸지 않았습니다.

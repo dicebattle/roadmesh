@@ -1,6 +1,6 @@
 # RouteLens 프로젝트 위키
 
-Current / 현재: P01–P10 are protected-merged. P11 passed clean whole334, unit285, independent originals,390px manual IAB and a102.8s actual client recording. [Latest report](../research/pilot/2026-10-25-p11/report.md). P11 hosted delivery and P12–P14 remain. Earlier entries are historical. / P01~P10은 보호 병합했고 P11은 전체334개·단위285개·독립 원문·390픽셀 수동 화면·102.8초 녹화를 통과했습니다. P11 원격 반영과 P12~P14는 남아 있으며 아래 기록은 당시 상태입니다.
+Current / 현재: P01–P11 are protected-merged. P11 passed clean whole334, unit285, independent originals,390px manual IAB and a102.8s actual client recording. [Latest report](../research/pilot/2026-10-25-p11/report.md). P11 hosted334/285 and protected PR12 passed; P12–P14 remain. Earlier entries are historical. / P01~P11은 보호 병합했고 P11은 전체334개·단위285개·독립 원문·390픽셀 수동 화면·102.8초 녹화를 통과했습니다. P11 원격334/285·PR12 보호 반영을 확인했으며 P12~P14는 남아 있고 아래 기록은 당시 상태입니다.
 
 
 Verified: [TypeScript P01/P14a tools](modules/pilot-runner.md), 33 tests and independent local/Node 22/24 hosted evidence. [Migration proof](../research/pilot/typescript-migration-2026-10-24.json). [P02 graph proof](modules/test-graph.md) is also complete. [P03 and fresh whole-module simulation](modules/vehicle-simulation.md) are locally and on hosted Docker verified; [recorded evidence](../research/pilot/2026-10-24-p03/report.md) includes 30/30 checks. **P04 now passes48/48 locally and on hosted Docker**; [evidence](../research/pilot/2026-10-24-p04/report.md), hosted evidence downloaded and inspected. The [actual Seoul simulation](modules/seoul-simulation.md) passes tiny48 + Seoul29 locally and on hosted Linux, plus Node22/24 each122/122; Seoul PR #5 is merged. [P05 durable ingestion](modules/durable-ingestion.md) now passes111 whole-pipeline assertions locally, including34 actual HTTP/PostgreSQL recovery checks; [evidence](../research/pilot/2026-10-24-p05/report.md). Hosted Node22/24 each137/137 and Linux Docker111/111 also passed; main inspected1,883 downloaded artifact hashes and actual DB/process evidence. The complete pilot and geographic 100/100 gate remain separate. [Development workflow](../docs/12-development-workflow.md): protected main with required CI, descriptive bilingual commits and feature-branch pushes.
@@ -99,3 +99,5 @@ Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases i
 Latest: [P11 actual client proof](../research/pilot/2026-10-25-p11/report.md), [P10 protected hosted delivery](../research/pilot/2026-10-25-p10-worker/hosted/README.md), [P12 gap review draft](../docs/31-p12-scenario-gap-review.md).
 
 최신: P11 실제 화면 검증·P10 원격 보호 반영·P12 공백 검토 초안입니다.
+
+[P12 fixed design / P12 확정 설계](../docs/32-p12-whole-scenarios.md) · [P11 hosted proof / P11 원격 근거](../research/pilot/2026-10-25-p11/hosted/README.md)
