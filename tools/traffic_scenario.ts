@@ -68,8 +68,14 @@ export function createTrafficScenario(
 ): TrafficScenario {
   const route = graph.routes.find((r) => r.route_id === "teheran");
   if (!route) throw new Error("Teheran route missing / 테헤란 경로 누락");
+  // Compare only source selection on the engine polyline6 grid; retain original geometry.
+  // 원본 선택만 엔진의 소수점 여섯 자리 격자로 비교하고 원래 지형은 보존합니다.
   const equal = (a: readonly number[], b: readonly number[]) =>
-    a.length === 2 && a.every((v, i) => Math.abs(v - b[i]!) <= 1e-7);
+    a.length === 2 &&
+    a.every(
+      (value, axis) =>
+        Math.abs(Math.round(value * 1e6) - Math.round(b[axis]! * 1e6)) <= 1,
+    );
   const selected = TRAFFIC_TARGETS.map((target) => {
     const found = graph.edges.filter(
       (e) =>

@@ -1,5 +1,9 @@
 # Actual Seoul traffic routing and expiry / 실제 서울 교통 경로·만료 검증
 
+**Hosted follow-up:** the initial Linux runs failed at endpoint selection despite the local proof below. The [portability correction](../2026-10-25-p08-portability/README.md) preserves the original results and explains the one-grid-unit representation difference. Do not read this initial report as a hosted P08 success.
+
+**원격 후속 결과:** 아래 로컬 근거와 별개로 최초 Linux 실행은 끝점 선택에서 실패했습니다. 정정 기록에 기존 결과와 격자 한 칸 표현 차이를 보존하며, 이 최초 보고서를 원격 P08 성공으로 해석하지 않습니다.
+
 **Local 238/238 PASS** on clean source `eb541399ed11c7fd26a14f9336a0a7c4ebc51639`. Main designed, reviewed and directly ran the complete pipeline; Sol `gpt-6.1-sol` implemented P08. Every implemented module ran together from a fresh Seoul graph. Hosted evidence and protected merge are pending at this entry.
 
 **깨끗한 소스에서 로컬 238개를 모두 통과했습니다.** 메인이 설계·검토·전체 직접 실행을 맡고 Sol이 P08을 구현했습니다. 서울 그래프를 새로 만들고 구현된 모든 모듈을 함께 실행했습니다. 이 기록 시점 원격 근거와 보호 병합은 아직 남아 있습니다.

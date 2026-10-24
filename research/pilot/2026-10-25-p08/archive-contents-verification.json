@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "archived_files": 4835,
+  "omitted_files": 26,
+  "hidden_staging_files": [
+    "traffic/generations/precommit/.staging-1f12dba0b087561f6859d2f94cb4b2cca7791edaa049e3cd0bf32748c357c714-89f0c28f-8a95-49a2-96b3-ce1b284a7b6a/manifest.json",
+    "traffic/generations/precommit/.staging-1f12dba0b087561f6859d2f94cb4b2cca7791edaa049e3cd0bf32748c357c714-89f0c28f-8a95-49a2-96b3-ce1b284a7b6a/traffic.tar"
+  ],
+  "traffic_archives": 27,
+  "message_en": "The compressed archive exactly matches original files minus the explicit map-binary omissions, including hidden interrupted-write evidence.",
+  "message_ko": "압축 목록은 명시한 지도 바이너리만 제외한 원문과 정확히 같으며 숨김 중단 쓰기 근거도 보존합니다."
+}

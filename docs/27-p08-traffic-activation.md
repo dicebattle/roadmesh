@@ -58,7 +58,9 @@ Every result records graph ID, accepted sequence/high-water, selected snapshot I
 
 ## Fresh Seoul congestion source / 새 서울 정체 자료
 
-Resolve three eastbound consecutive catalog edges on OSM way919983793 by these exact endpoint pairs (not hardcoded transient graph edge IDs):
+Resolve three eastbound consecutive catalog edges on OSM way919983793 using these fixed endpoint anchors (not hardcoded transient graph edge IDs). Compare each axis on the integer microdegree grid: `abs(round(actual*1e6)-round(anchor*1e6)) <= 1`. More than one grid unit, multiple candidates, reverse orientation or broken route order is rejected. Preserve the selected graph's original geometry for every distance, timing and matching calculation; never rewrite it to the anchors.
+
+고정 끝점 기준을 정수 마이크로도 격자로 비교해 각 축 한 칸까지만 허용합니다. 두 칸 이상·중복 후보·역방향·연결 순서 불일치는 거부합니다. 선택한 그래프의 원 지형은 거리·시간·매칭 계산에 그대로 사용하며 기준 좌표로 다시 쓰지 않습니다.
 
 | Label / 이름 | Start lon,lat / 시작 | End lon,lat / 끝 |
 | --- | --- | --- |
@@ -66,7 +68,7 @@ Resolve three eastbound consecutive catalog edges on OSM way919983793 by these e
 | middle / 중간 |127.037245,37.500790|127.037680,37.500924|
 | east / 동쪽 |127.037680,37.500924|127.038474,37.501170|
 
-Require unique matching geometry/orientation, car access and ordered membership in the fresh Teheran route. Preserve original curved geometry; fail unsupported source drift rather than silently selecting another road. Each target has five distinct authored contributors with speeds0.4/0.45/0.5/0.55/0.6m/s, total15 trips. Set departures to put target exits near210s in the same[180s,240s) window. Use the existing simulator with one full predecessor and successor as context at5m/s, then clip only the authored observation stream to at most8m of partial context on each side. Preserve full independent simulator truth and record clipping explicitly. Never send truth/edge IDs to the matcher. Partial neighboring edges must not become eligible full contributions or contaminate other target medians.
+Require unique matching geometry/orientation, car access and ordered membership in the fresh Teheran route. Preserve original curved geometry; fail source drift beyond the stated grid tolerance rather than silently selecting another road. Each target has five distinct authored contributors with speeds0.4/0.45/0.5/0.55/0.6m/s, total15 trips. Set departures to put target exits near210s in the same[180s,240s) window. Use the existing simulator with one full predecessor and successor as context at5m/s, then clip only the authored observation stream to at most8m of partial context on each side. Preserve full independent simulator truth and record clipping explicitly. Never send truth/edge IDs to the matcher. Partial neighboring edges must not become eligible full contributions or contaminate other target medians.
 
 새테헤란경로에서고유지형/방향·자동차접근·연결순서를확인하고원곡선을유지합니다. 원본변경이면다른도로를몰래고르지말고실패합니다. 구간마다서로다른5명의정한속도를사용해총15여행을만들고목표진출을210초부근의같은180~240초창에맞춥니다. 기존생성기에서앞뒤구간을5m/s문맥으로만든뒤관측흐름만양쪽최대8m부분문맥으로자릅니다. 독립정답전체·잘라낸범위를명시하고매칭에정답/구간ID를보내지않습니다. 부분이웃구간이완전통과로수용돼다른중앙값을오염시키면안됩니다.
 
@@ -75,6 +77,16 @@ Write expected times/counts/median and all authored inputs before matching. Use5
 매칭전에기대시각/개수/중앙값과입력을저장합니다.500ms·잡음0·TRAVEL·240초시나리오에서실제HTTP→P05매칭완료시각240초→P06마감270초→P07서명/HTTP/수용으로구간당5명·LIVE3개·다른LIVE없음을확인합니다. 시간오차150ms·중앙값속도오차2%이내이고세속도는2km/h로변환돼야합니다. 기본/교통요청은같은원래두좌표입니다. 교통경로가달라지고실제trace에세대상이없으며거리50m·ETA5초이상늘어야합니다. 엔진의정확한답을기대값으로복제하지않고420초만료복구는기본shape·ETA1e-6초이내와같아야합니다.
 
 ## Evidence order and gates / 증거 순서·기준
+
+### Endpoint representation correction from hosted evidence / 원격 근거에 따른 끝점 표현 정정
+
+The initial `1e-7` degree selector was narrower than the engine geometry's polyline6 grid. Hosted run40120363512 passed all prior206 cases, then refused the west target: local ARM64 recorded longitude127.036993, while hosted AMD64 recorded127.036994 at the same endpoint. The source SHA256, source lock, Dockerfile and Valhalla3.9.1 version match, as do the OSM way, orientation, car access and connected edge sequence. The exact arithmetic cause is unproven; the approximately0.088m recorded difference is confirmed in [the original comparison](../research/pilot/2026-10-25-p08-portability/failed-hosted/main-comparison.json).
+
+최초 `1e-7`도 선택 기준은 엔진 지형의 소수6자리 격자보다 좁았습니다. 원격 실행은 기존206개를 통과한 뒤 서쪽 대상을 거부했습니다. 같은 끝점이 로컬 ARM64에서는 경도127.036993, 원격 AMD64에서는127.036994였습니다. 원본 해시·잠금·Dockerfile·엔진 버전과 OSM도로·방향·자동차 접근·연속 구간은 같습니다. 정확한 산술 원인은 확정하지 않았고 약0.088m의 기록 차이만 확인했습니다.
+
+The revised selector admits at most one integer grid unit per axis, still requiring a unique candidate on the same way and original route. Tests must accept the recorded one-unit representation, reject two-unit drift and ambiguous candidates, and prove no mutation of graph geometry. The five-contributor, three-LIVE, timing, median, detour and expiry gates do not change. A new clean whole run, recording and hosted result are required because executable source changed.
+
+수정 선택기는 축별 정수 격자 한 칸까지만 허용하고 같은 도로·원 경로의 고유 후보를 요구합니다. 기록된 한 칸 표현을 수용하고 두 칸 차이·중복 후보를 거부하며 그래프 지형을 수정하지 않았음을 검사합니다. 기여자5명·LIVE3개·시간·중앙값·우회·만료 기준은 바꾸지 않습니다. 실행 소스가 바뀌므로 새 깨끗한 전체 실행·녹화·원격 결과를 다시 확인해야 합니다.
 
 ### Source-profile correction after the first actual run / 첫 실제 실행 뒤 관측 속도 계획 정정
 

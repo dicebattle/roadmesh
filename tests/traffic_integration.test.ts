@@ -143,6 +143,37 @@ test("source drift, duplicates, inaccessible and reordered corridor fail closed 
   wrong.edges[1]!.directed_geometry[0] = [127, 37];
   assert.throws(() => createTrafficScenario(wrong), /source drift/);
 });
+test("source endpoint grid permits one microdegree, rejects two and preserves original geometry / 원본끝점격자한칸허용·두칸거부·원지형보존", () => {
+  const shifted = graph();
+  shifted.edges[1]!.directed_geometry[0]![0] = 127.036994;
+  const original = JSON.stringify(shifted.edges);
+  const scene = createTrafficScenario(shifted);
+  assert.equal(scene.expected.length, 15);
+  assert.equal(scene.simulation.truth.traversals.length, 45);
+  assert.equal(JSON.stringify(shifted.edges), original);
+  assert.equal(shifted.edges[1]!.directed_geometry[0]![0], 127.036994);
+  for (const axis of [0, 1])
+    for (const sign of [-1, 1]) {
+      const outside = graph();
+      outside.edges[1]!.directed_geometry[0]![axis]! += sign * 0.000002;
+      assert.throws(() => createTrafficScenario(outside), /source drift/);
+      const inside = graph();
+      inside.edges[1]!.directed_geometry[0]![axis]! += sign * 0.000001;
+      assert.equal(createTrafficScenario(inside).expected.length, 15);
+    }
+  const duplicate = graph();
+  const competing = structuredClone(duplicate.edges[1]!);
+  competing.directed_geometry[0]![0]! += 0.000001;
+  competing.edge_id = "other-candidate";
+  duplicate.edges.push(competing);
+  assert.throws(() => createTrafficScenario(duplicate), /source drift/);
+  const reverse = graph();
+  reverse.edges[1]!.directed_geometry = [
+    ...reverse.edges[1]!.directed_geometry,
+  ].reverse();
+  reverse.edges[1]!.forward = false;
+  assert.throws(() => createTrafficScenario(reverse), /source drift/);
+});
 test("single traffic case inventory rejects missing, duplicate, failed and extra cases / 단일교통검사목록누락·중복·실패·추가거부", () => {
   const cases: SimulationAssertion[] = TRAFFIC_CASE_IDS.map((assertion_id) => ({
     assertion_id,

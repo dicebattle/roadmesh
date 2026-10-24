@@ -1,0 +1,143 @@
+{
+  "same_source_sha256": "282d012b7629c643695f286d4424d7f6d88548d99edb5577ca5b678906f13c17",
+  "same_source_lock_sha256": "8f4808218646e68c738b19803e422476cba58e4c079152223962af7c95b46752",
+  "same_dockerfile_sha256": "063afdc0e67da85ca88eb5713600cf76b663508e66682ace5859628b465001bc",
+  "valhalla": "3.9.1",
+  "local": {
+    "graph_id": "41a52d348bfeb0a71a988b0fb1680affe510626ac6865cc9b0f775716ffca070",
+    "image": {
+      "id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+      "platform": "linux/arm64",
+      "dockerfile_sha256": "063afdc0e67da85ca88eb5713600cf76b663508e66682ace5859628b465001bc"
+    }
+  },
+  "hosted": {
+    "graph_id": "75fb6ede0d667d8b24d3ffc7961ebb34f1e271707c798eefe09ac453f66147f4",
+    "image": {
+      "id": "sha256:7bc9a4cdb74ffe47304f2d08f7d28201c1f02d0c31116287224271d4f9d1520b",
+      "platform": "linux/amd64",
+      "dockerfile_sha256": "063afdc0e67da85ca88eb5713600cf76b663508e66682ace5859628b465001bc"
+    }
+  },
+  "targets": [
+    {
+      "label": "west",
+      "osm_way_id": 919983793,
+      "observed_local_edge_id": "1338083662224",
+      "observed_hosted_edge_id": "1338083662224",
+      "local_geometry": [
+        [
+          127.036993,
+          37.500712
+        ],
+        [
+          127.037123,
+          37.500752
+        ],
+        [
+          127.037245,
+          37.50079
+        ]
+      ],
+      "hosted_geometry": [
+        [
+          127.036994,
+          37.500712
+        ],
+        [
+          127.037123,
+          37.500752
+        ],
+        [
+          127.037245,
+          37.50079
+        ]
+      ],
+      "local_car_access": true,
+      "hosted_car_access": true,
+      "start_delta_grid_units": [
+        1,
+        0
+      ],
+      "end_delta_grid_units": [
+        0,
+        0
+      ]
+    },
+    {
+      "label": "middle",
+      "osm_way_id": 919983793,
+      "observed_local_edge_id": "1338687642000",
+      "observed_hosted_edge_id": "1338687642000",
+      "local_geometry": [
+        [
+          127.037245,
+          37.50079
+        ],
+        [
+          127.03768,
+          37.500924
+        ]
+      ],
+      "hosted_geometry": [
+        [
+          127.037245,
+          37.50079
+        ],
+        [
+          127.03768,
+          37.500924
+        ]
+      ],
+      "local_car_access": true,
+      "hosted_car_access": true,
+      "start_delta_grid_units": [
+        0,
+        0
+      ],
+      "end_delta_grid_units": [
+        0,
+        0
+      ]
+    },
+    {
+      "label": "east",
+      "osm_way_id": 919983793,
+      "observed_local_edge_id": "1338754750864",
+      "observed_hosted_edge_id": "1338754750864",
+      "local_geometry": [
+        [
+          127.03768,
+          37.500924
+        ],
+        [
+          127.038474,
+          37.50117
+        ]
+      ],
+      "hosted_geometry": [
+        [
+          127.03768,
+          37.500924
+        ],
+        [
+          127.038474,
+          37.50117
+        ]
+      ],
+      "local_car_access": true,
+      "hosted_car_access": true,
+      "start_delta_grid_units": [
+        0,
+        0
+      ],
+      "end_delta_grid_units": [
+        0,
+        0
+      ]
+    }
+  ],
+  "exact_arithmetic_cause": "Not established by this comparison; only the recorded one-grid-unit difference is confirmed.",
+  "message_en": "The same pinned source and engine version produced one differing endpoint grid unit. Road identity and connectivity are preserved; original geometry is never rewritten.",
+  "message_ko": "같은 고정 원본·엔진 버전의 끝점 한 격자 차이를 확인했습니다. 도로 식별·연결을 유지하며 원 지형을 다시 쓰지 않습니다."
+}
