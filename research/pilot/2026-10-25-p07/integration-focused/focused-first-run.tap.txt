@@ -1,0 +1,41 @@
+TAP version 13
+# Subtest: whole publication gate rejects missing, duplicate and failed actual cases / 전체 게시 관문이 누락·중복·실패 사례 거부
+ok 1 - whole publication gate rejects missing, duplicate and failed actual cases / 전체 게시 관문이 누락·중복·실패 사례 거부
+  ---
+  duration_ms: 0.453167
+  type: 'test'
+  ...
+# Subtest: publication CLI rejects incomplete arguments without starting resources / 게시 명령이 불완전 인자를 자원 생성 전에 거부
+ok 2 - publication CLI rejects incomplete arguments without starting resources / 게시 명령이 불완전 인자를 자원 생성 전에 거부
+  ---
+  duration_ms: 0.133833
+  type: 'test'
+  ...
+# Subtest: offline publication report preserves recorded sequence, hashes and bilingual evidence safely / 오프라인 게시보고서가 순번·해시·한영증거 안전 보존
+not ok 3 - offline publication report preserves recorded sequence, hashes and bilingual evidence safely / 오프라인 게시보고서가 순번·해시·한영증거 안전 보존
+  ---
+  duration_ms: 0.3215
+  type: 'test'
+  location: '/Users/dice/Documents/routelens/dist/tests/publication_integration.test.js:19:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing report data / 보고 화면 자료가 누락되었습니다'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    renderSimulationReport (file:///Users/dice/Documents/routelens/dist/tools/simulation_report.js:14:15)
+    TestContext.<anonymous> (file:///Users/dice/Documents/routelens/dist/tests/publication_integration.test.js:21:18)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 2
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 346.084917

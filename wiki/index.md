@@ -4,9 +4,9 @@ Verified: [TypeScript P01/P14a tools](modules/pilot-runner.md), 33 tests and ind
 
 [TypeScript P01/P14a](modules/pilot-runner.md)의 33개 검사·독립 로컬 실행·Node 22/24 원격 증거를 검증했습니다. [전환 증거](../research/pilot/typescript-migration-2026-10-24.json)를 보존합니다. [P02 그래프 검증](modules/test-graph.md)도 완료했습니다. [P03·전체 구현 모듈 통합](modules/vehicle-simulation.md)을 로컬·원격 Docker 검증했고 [녹화 증거](../research/pilot/2026-10-24-p03/report.md)에30/30을 기록했습니다. **P04 로컬·원격Docker48/48을 검증**했고 [증거](../research/pilot/2026-10-24-p04/report.md)를 남겼으며 원격 원문도 내려받아 검사했습니다. [실제 서울 시뮬레이션](modules/seoul-simulation.md)의 tiny48·서울29를 로컬·원격Linux에서 검증했고 Node22·24도 각각122/122를 통과했습니다. 서울 PR #5를 병합했고 [P05 영속 수집](modules/durable-ingestion.md)은 실제 HTTP·PostgreSQL 복구34개를 포함해 전체111개 로컬 검사를 통과했고 [증거](../research/pilot/2026-10-24-p05/report.md)를 보존합니다. 원격 Node22·24각각137개·LinuxDocker111개도 통과했고 메인이 내려받은 해시1,883개·실제DB/프로세스 증거를 검사했습니다. 전체 파일럿과 실제 도로 자료 100/100개 조건은 별도입니다. [개발 절차](../docs/12-development-workflow.md)는 필수 CI를 포함한 main 보호·상세한 이중 언어 커밋·작업 브랜치 푸시입니다.
 
-Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases in each category. Corpus/P01/P02/P03/P04/P05 tools and a recorded evidence viewer exist; complete navigation and deployment do not.
+Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases in each category. Corpus/P01/P02/P03/P04/P05/P06 tools and a recorded evidence viewer exist; complete navigation and deployment do not.
 
-실제 지역 M0 / RM-001은 진행 중이며 검토한 실제 도로 사례는 각각 0개입니다. 자료·P01/P02/P03/P04/P05 도구·녹화 증거 화면은 구현됐지만 완전한 내비게이션·배포는 없습니다.
+실제 지역 M0 / RM-001은 진행 중이며 검토한 실제 도로 사례는 각각 0개입니다. 자료·P01/P02/P03/P04/P05/P06 도구·녹화 증거 화면은 구현됐지만 완전한 내비게이션·배포는 없습니다.
 
 - [P02 graph evidence / P02 그래프 증거](../research/pilot/p02-main-2026-10-24.json)
 - [P03 design / P03 설계](../docs/16-p03-vehicle-simulation.md)

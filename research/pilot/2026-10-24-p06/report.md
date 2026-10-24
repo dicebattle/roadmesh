@@ -4,9 +4,9 @@
 
 **로컬151/151 통과 = 작은 회귀48 + 서울35 + 수집34 + 집계34.** 위 깨끗한 소스로 실행했고 메인이 설계·독립 검사를, Sol이 코어·통합·매칭 구현을 맡았습니다. 원격 Node22·24 각각183개와 새 Linux151개 검사를 통과했으며 아래에 독립 검사 결과를 기록합니다.
 
-[Recording / 실제 녹화](../../../docs/media/demo.mp4) · [Interactive report / 재생 보고서](report.html) · [Main inspection / 메인 검사](main-verification.json) · [Aggregation inspection / 집계 검사](aggregation/main-verification.json) · [Contract / 계약](../../../docs/23-p06-aggregation-contract.md) · [Module guide / 모듈 안내](../../../wiki/modules/traffic-aggregation.md)
+[Recording / 실제 녹화](https://raw.githubusercontent.com/dicebattle/routelens/d9b08e969cf54725fe0029cefc4846415bf48411/docs/media/demo.mp4) · [Interactive report / 재생 보고서](report.html) · [Main inspection / 메인 검사](main-verification.json) · [Aggregation inspection / 집계 검사](aggregation/main-verification.json) · [Contract / 계약](../../../docs/23-p06-aggregation-contract.md) · [Module guide / 모듈 안내](../../../wiki/modules/traffic-aggregation.md)
 
-![Actual Seoul aggregation replay / 실제 서울 집계 재생](../../../docs/media/report-en.png)
+![Actual Seoul aggregation replay / 실제 서울 집계 재생](https://raw.githubusercontent.com/dicebattle/routelens/d9b08e969cf54725fe0029cefc4846415bf48411/docs/media/report-en.png)
 
 ## Actual execution / 실제 실행
 
@@ -47,7 +47,7 @@ Actual checks cover: persisted completion at89.999/90/90.001s; SIGKILL before/af
 
 실제 성공 저장 시각의 마감 전후1ms·집계 커밋 전후 강제 종료·두 처리자의 동일 바이트 수렴·실제 DB 철회 잠금 대기와 같은 트랜잭션 후보 무효화·시계 만료·새 빈 창·직접 SQL 보존기한 삭제·반복 삭제·목록 충돌·공개 필드를 확인했습니다. 메인은 자식 PID64개와 소유 DB·볼륨·엔진 부재도 확인했습니다.
 
-![Recorded candidate evidence / 기록된 후보 근거](../../../docs/media/report-aggregation-en.png)
+![Recorded candidate evidence / 기록된 후보 근거](https://raw.githubusercontent.com/dicebattle/routelens/d9b08e969cf54725fe0029cefc4846415bf48411/docs/media/report-aggregation-en.png)
 
 ## Corrections and limits / 보정과 한계
 

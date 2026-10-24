@@ -130,6 +130,32 @@ export interface SimulationReportData {
     assertions_total: number;
     cleanup_verified: boolean;
   };
+  publication?: {
+    publisher_id: string;
+    simulation_namespace: string;
+    high_water: number;
+    active_snapshot_id: string | null;
+    assertions_passed: number;
+    assertions_total: number;
+    cleanup_verified: boolean;
+    versions: {
+      sequence: number;
+      kid: string;
+      snapshot_id: string;
+      target_status: string;
+      valid_until: string;
+      artifact_path: string;
+      jws_path: string;
+    }[];
+    cases: {
+      case_id: string;
+      status: string;
+      message_en: string;
+      message_ko: string;
+      evidence_path: string;
+    }[];
+    evidence: { name_en: string; name_ko: string; path: string }[];
+  };
   ingestion?: {
     scenario_count: number;
     assertions_passed: number;
@@ -265,7 +291,7 @@ export function renderSimulationReport(data: SimulationReportData): string {
     [hidden] {
       display: none !important;
     }
-    #matching-decisions, #aggregate-evidence {
+    #matching-decisions, #aggregate-evidence, #publication-evidence {
       overflow-wrap: anywhere;
     }
     * {
@@ -591,10 +617,16 @@ export function renderSimulationReport(data: SimulationReportData): string {
         data-ko="P06 서명전 합성집계"
       ></h2>
       <p
-        data-en="The original nine vehicles are a separate regression replay. P06 uses its own short trips. Recorded candidates do not change with replay time. The moving PARKED sixth tests explicit collection state, not automatic parking detection. LIVE is a synthetic candidate state, with no signing, publication or real-road routing activation."
-        data-ko="기존9대는 별도회귀 재생이며 P06은 자체짧은여행을 사용합니다. 기록된 후보는 재생시각으로 바뀌지 않습니다. 이동하는 PARKED6번째는 명시수집상태 검사이며 자동주차탐지가 아닙니다. LIVE는 합성후보 상태이고 서명·게시·실제도로경로 활성화는 없습니다."
+        data-en="The original nine vehicles are a separate regression replay. P06 uses its own short trips. Recorded candidates do not change with replay time. The moving PARKED sixth tests explicit collection state, not automatic parking detection. LIVE is a synthetic candidate state. These P06 candidates are unsigned; downstream P07 evidence is shown separately. Real-road routing activation is not implemented."
+        data-ko="기존9대는 별도회귀 재생이며 P06은 자체짧은여행을 사용합니다. 기록된 후보는 재생시각으로 바뀌지 않습니다. 이동하는 PARKED6번째는 명시수집상태 검사이며 자동주차탐지가 아닙니다. LIVE는 합성후보 상태입니다. P06 후보는 서명 전이며 후속 P07 증거는 따로 표시합니다. 실제도로 경로 반영은 미구현입니다."
       ></p>
       <div id="aggregate-evidence"></div>
+    </section>
+    <section id="publication-section" class="checks" hidden>
+      <h2 data-en="P07 signed publication and durable acceptance" data-ko="P07 서명 게시·영속 수용"></h2>
+      <p data-en="Recorded actual publication, verification, acceptance, rejection and expiry. These signed synthetic snapshots are separate from the original nine-vehicle and P06 evidence replays. P08 routing activation is not implemented. Revocation invalidates future pulls; offline downloaded bytes remain valid until TTL or a received correction or key revocation." data-ko="기록된 실제 게시·검증·수용·거부·만료입니다. 서명된 합성 스냅샷과 기존9대·P06 증거재생을 구분합니다. P08 경로 반영은 미구현입니다. 철회는 이후 조회를 무효화하며 이미 받은 오프라인 바이트는 기한·받은 정정본·키철회까지 유효할 수 있습니다."></p>
+      <div id="publication-evidence"></div>
+      <details><summary data-en="Publication and consumer checks" data-ko="게시·수신 검사"></summary><div id="publication-cases"></div></details>
     </section>
     <section id="ingestion-section" class="checks" hidden>
       <h2
@@ -966,6 +998,20 @@ export function renderSimulationReport(data: SimulationReportData): string {
       );
       const v = $("vehicle").options[0];
       if (v) v.textContent = lang === "en" ? "All vehicles" : "전체 차량";
+      $("publication-section").hidden = !data.publication;
+      if (data.publication) {
+        const p = data.publication, root = $("publication-evidence");
+        root.replaceChildren();
+        node("p", p.assertions_passed + "/" + p.assertions_total + (lang === "en" ? " checks · highest accepted sequence: " : "검사 · 수용 최고순번: ") + p.high_water + (lang === "en" ? " · active snapshot: " : " · 현재 유효 스냅샷: ") + (p.active_snapshot_id || (lang === "en" ? "none (expired)" : "없음(만료)")), root);
+        node("p", p.publisher_id + " · " + p.simulation_namespace, root);
+        p.versions.forEach(v => {
+          const row = node("p", (lang === "en" ? "Committed sequence " : "커밋 순번 ") + v.sequence + " · " + v.kid + " · " + v.target_status + " · " + v.snapshot_id + " · " + v.valid_until + " · ", root);
+          evidence(v.artifact_path, row); row.append(document.createTextNode(" · ")); evidence(v.jws_path, row);
+        });
+        p.evidence.forEach(item => { const row = node("p", item["name_" + lang] + " · ", root); evidence(item.path, row); });
+        $("publication-cases").replaceChildren();
+        p.cases.forEach(item => { const row = node("p", item.status + " · " + item["message_" + lang] + " · ", $("publication-cases")); evidence(item.evidence_path, row); });
+      }
       if (data.ingestion) {
         const i = data.ingestion;
         $("ingestion-counts").textContent =
