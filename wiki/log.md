@@ -183,3 +183,6 @@
   같은 구현의 CI에서 Node 22·24·종합 검사가 통과했고 메인이 로그의 버전별 48통과·실패/생략 0개를 확인했습니다. 원격 P14a는 엔진을 실행하지 않으며 실제 엔진 증거는 로컬 실행입니다. 위 증거·모듈 문서를 보존합니다.
 - Next is P03 with its design already recorded; P04 matching, traffic, two-node reliability and the complete pilot remain. User-authorized protected integration follows after the final documentation head passes required checks; no protection bypass.
   다음은 설계가 기록된 P03이며 P04 매칭·교통·두 노드 신뢰성·전체 파일럿은 남아 있습니다. 사용자 요청의 보호된 병합은 최종 문서 HEAD 필수 검사 후 수행하며 보호를 우회하지 않습니다.
+
+- Final consistency check: 21 current documentation pages had no missing relative file links. Updated the geographic module's next-step pointer to P03; its real-road quota and readiness behavior remain unchanged. Final branch SHA is verified against origin before protected PR integration.
+  최종 일관성 검사에서 현재 문서 21개의 상대 파일 링크 누락은 없었습니다. 실제 지역 모듈의 다음 단계만 P03으로 맞추고 실제 도로 기준·준비 동작은 유지했습니다. 보호된 PR 병합 전에 작업 브랜치 SHA를 원격과 대조합니다.
