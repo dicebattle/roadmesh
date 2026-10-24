@@ -39,6 +39,7 @@ import {
   renderSimulationReport,
   type SimulationReportData,
 } from "./simulation_report.js";
+import { runMatchingChecks } from "./matching_checks.js";
 import { implementationFingerprint } from "./media_manifest.js";
 
 export interface StageProcess {
@@ -133,6 +134,7 @@ export function buildReportData(
   stages: SimulationReportData["stages"],
   assertions: SimulationAssertion[],
   fingerprint: string,
+  matching?: SimulationReportData["matching"],
 ): SimulationReportData {
   return {
     schema_version: "0.1",
@@ -193,6 +195,7 @@ export function buildReportData(
           .map(({ vehicle_id: _, ...rest }) => rest),
       })),
     assertions,
+    ...(matching ? { matching } : {}),
     limitations: [
       {
         message_en:
@@ -201,10 +204,12 @@ export function buildReportData(
           "직접 만든 가상의 적도 도로와 통제된 운동학이며 실제 도로 정확도·운전자 행동 검증이 아닙니다.",
       },
       {
-        message_en:
-          "No noisy map-matching, traffic aggregation/publication, distributed-node or mobile execution proof yet.",
-        message_ko:
-          "잡음 도로 매칭·교통 집계/게시·분산 노드·모바일 실행은 아직 검증하지 않았습니다.",
+        message_en: matching
+          ? "Synthetic-only batch matching; no real-road accuracy, traffic aggregation/publication, distributed-node or mobile execution proof."
+          : "No noisy map-matching, traffic aggregation/publication, distributed-node or mobile execution proof yet.",
+        message_ko: matching
+          ? "합성 전용 배치 매칭이며 실제 도로 정확도·교통 집계/게시·분산 노드·모바일 실행은 검증하지 않았습니다."
+          : "잡음 도로 매칭·교통 집계/게시·분산 노드·모바일 실행은 아직 검증하지 않았습니다.",
       },
       {
         message_en:
@@ -736,6 +741,32 @@ export function runChecks(
         );
       },
     );
+    let matching: SimulationReportData["matching"];
+    stage(
+      "p04",
+      "Actual engine matching and conservative traversal evidence",
+      "실제 엔진 매칭·보수적인 통과 증거",
+      "matching/manifest.json",
+      () => {
+        let result: ReturnType<typeof runMatchingChecks>;
+        try {
+          result = runMatchingChecks(
+            output,
+            graph,
+            spec,
+            readJson(output, "simulation/observations.json") as Observation[],
+            readJson(output, "simulation/truth.json") as SimulationTruth,
+            verifiedSource,
+          );
+        } catch (error) {
+          throw new IntegrationFailure(
+            `P04 stage failed / P04 단계 실패: ${String(error)}`,
+          );
+        }
+        matching = result.matching;
+        assertions.push(...result.assertions);
+      },
+    );
     if (implementationFingerprint() !== fingerprint)
       throw new IntegrationFailure(
         "Implementation changed during run / 실행 중 구현이 변경되었습니다",
@@ -756,6 +787,7 @@ export function runChecks(
       stages,
       assertions,
       fingerprint,
+      matching,
     );
     writeJson(output, "report-data.json", data);
     writeFileSync(join(output, "report.html"), renderSimulationReport(data), {
@@ -764,7 +796,7 @@ export function runChecks(
     writeJson(output, "assertions.json", assertions);
     writeFileSync(
       join(output, "summary.md"),
-      `# Implemented-module integration / 구현 모듈 통합 검사\n\nPASS: fresh corpus → P01 → real Docker P02 → P03 → replay/fault checks.\n통과: 새 자료 검사 → P01 → 실제 Docker P02 → P03 → 재생·장애 검사.\n\nNot the complete P01–P14 pilot or full P12/P14b fault matrix.\nP01~P14 전체 파일럿이나 P12/P14b 전체 장애 행렬의 완료는 아닙니다.\n\n[Offline report / 오프라인 보고서](report.html)\n`,
+      `# Implemented-module integration / 구현 모듈 통합 검사\n\nPASS: fresh corpus → P01 → real Docker P02 → P03 → replay/fault checks → P04 matching/exclusions.\n통과: 새 자료 검사 → P01 → 실제 Docker P02 → P03 → 재생·장애 검사 → P04 매칭·제외.\n\nNot the complete P01–P14 pilot or full P12/P14b fault matrix.\nP01~P14 전체 파일럿이나 P12/P14b 전체 장애 행렬의 완료는 아닙니다.\n\n[Offline report / 오프라인 보고서](report.html)\n`,
     );
     const outputs = Object.fromEntries(
       [
@@ -773,6 +805,7 @@ export function runChecks(
         "assertions.json",
         "summary.md",
         "commands.json",
+        "matching/manifest.json",
       ].map((path) => [path, sha256(readFileSync(join(output, path)))]),
     );
     writeJson(output, "manifest.json.tmp", {
@@ -821,7 +854,7 @@ export function main(
     const args = cliArguments(argv, "checks");
     if (args.help) {
       io.out(
-        "usage / 사용법: npm run simulation:check -- --output NEW_DIRECTORY\nFresh corpus, schedule, real Docker graph, simulation, replay and rejection checks. / 자료·일정·실제 Docker 그래프·시뮬레이션·재생·거부 검사를 새로 실행합니다.\nExit 0: completed integration; 1: failed stage; 2: input/environment/output error. / 종료 코드 0: 통합 완료, 1: 단계 실패, 2: 입력·환경·출력 오류",
+        "usage / 사용법: npm run simulation:check -- --output NEW_DIRECTORY\nFresh corpus, schedule, real Docker graph, simulation, replay, matching and rejection checks. / 자료·일정·실제 Docker 그래프·시뮬레이션·재생·매칭·거부 검사를 새로 실행합니다.\nExit 0: completed integration; 1: failed stage; 2: input/environment/output error. / 종료 코드 0: 통합 완료, 1: 단계 실패, 2: 입력·환경·출력 오류",
       );
       return 0;
     }

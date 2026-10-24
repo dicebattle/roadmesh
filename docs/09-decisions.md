@@ -41,3 +41,9 @@
 서버를 자원봉사자에게 나누고 검증된 자료를 배포한다는 목적은 유지합니다. 다만 경로를 여러 노드의 조각으로 합치는 것, 휴대폰을 필수 계산 서버로 삼는 것, 원본 관측을 공개 P2P로 전파하는 것은 첫 버전에서 제외합니다.
 
 서버리스 수집이 가능하다는 것과 지도 매칭까지 일반 Worker 하나에서 처리된다는 것은 다릅니다. 코드 공개와 위치 데이터 공개도 다릅니다. 이 두 구분이 전체 설계의 경계입니다.
+
+## ADR-020: Conservative observed-time matching / 보수적인 관측시간 매칭
+
+Use pinned Valhalla map snapping behind a TypeScript adapter; do not fork its matcher. The P04 adapter accepts only supported synthetic observations on a verified graph, keeps ambiguous/gapped/partial evidence explicit, and derives complete traversal times from observation timestamps rather than engine ETA. A bounded session finalizes once after all batches; no streaming or durable queue claim. [Contract and fixed checks](19-p04-matching-design.md). Revisit thresholds only with documented new evidence; real-road matching quality remains unmeasured.
+
+고정 Valhalla 매칭을 TypeScript 연결기로 재사용하며 엔진 매칭기를 포크하지 않습니다. 검증 그래프의 지원 합성 관측만 받고 모호·누락·일부 증거를 명시하며 예상 주행시간 대신 원래 관측시각으로 완전 통과시간을 만듭니다. 크기가 제한된 세션이 모든 배치 후 한 번 확정하며 실시간·영속 큐로 주장하지 않습니다. 새 근거를 기록한 뒤에만 기준을 재검토하며 실제 도로 매칭 품질은 아직 측정하지 않았습니다.

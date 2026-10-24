@@ -62,6 +62,45 @@ export interface SimulationReportData {
     actual: unknown;
     evidence_path: string;
   }[];
+  matching?: {
+    policy_id: string;
+    input_samples: number;
+    matched_samples: number;
+    excluded_samples: number;
+    accepted_traversals: number;
+    excluded_traversals: number;
+    points: {
+      sample_id: string;
+      vehicle_id: string;
+      offset_ms: number;
+      longitude: number;
+      latitude: number;
+      edge_id: string | null;
+      status: "MATCHED" | "EXCLUDED";
+      reason_codes: string[];
+    }[];
+    traversals: {
+      traversal_id: string;
+      vehicle_id: string;
+      edge_id: string;
+      label: string;
+      status: "ACCEPTED" | "EXCLUDED";
+      entered_at_ms: number | null;
+      exited_at_ms: number | null;
+      reason_codes: string[];
+    }[];
+    cases: {
+      case_id: string;
+      name_en: string;
+      name_ko: string;
+      status: string;
+      input_samples: number;
+      matched_samples: number;
+      excluded_samples: number;
+      accepted_traversals: number;
+      excluded_traversals: number;
+    }[];
+  };
   limitations: { message_en: string; message_ko: string }[];
 }
 export function renderSimulationReport(data: SimulationReportData): string {
@@ -101,6 +140,12 @@ export function renderSimulationReport(data: SimulationReportData): string {
       --truth: #1264b8;
       --observed: #d96b28;
       --success: #23775d;
+    }
+    [hidden] {
+      display: none !important;
+    }
+    #matching-decisions {
+      overflow-wrap: anywhere;
     }
     * {
       box-sizing: border-box;
@@ -293,7 +338,7 @@ export function renderSimulationReport(data: SimulationReportData): string {
   <main>
     <header>
       <div>
-        <div class="eyebrow">ROUTELENS / P03</div>
+        <div class="eyebrow">ROUTELENS / ${data.matching ? "P03 + P04" : "P03"}</div>
         <h1
           data-en="Vehicle &amp; GPS simulation"
           data-ko="차량·GPS 시뮬레이션"
@@ -332,6 +377,12 @@ export function renderSimulationReport(data: SimulationReportData): string {
               data-en="○ Scheduled omission"
               data-ko="○ 예정된 누락"
             ></span>
+            <label id="matching-toggle" hidden style="color: #7945b2"
+              ><input id="matched" type="checkbox" checked /><span
+                data-en="◇ Matching results"
+                data-ko="◇ 도로 매칭 결과"
+              ></span
+            ></label>
           </div>
           <output id="omissions" class="timeline" aria-live="off"></output>
           <div class="controls">
@@ -382,6 +433,26 @@ export function renderSimulationReport(data: SimulationReportData): string {
         <div class="provenance" id="provenance"></div>
       </aside>
     </div>
+    <section id="matching-section" class="checks" hidden>
+      <h2
+        data-en="Map matching and complete traversals"
+        data-ko="도로 매칭과 완전 통과"
+      ></h2>
+      <p
+        data-en="Matching a GPS point does not prove a complete edge traversal. Counts below cover the full run; map points follow replay time. Purple filled diamonds are matched points; hollow diamonds are excluded observations."
+        data-ko="GPS 표본의 도로 매칭은 구간 완전 통과를 뜻하지 않습니다. 아래 수치는 전체 실행이며 지도 표본은 재생 시각을 따릅니다. 보라색 채운 마름모는 매칭점, 빈 마름모는 제외된 관측입니다."
+      ></p>
+      <p id="matching-counts"></p>
+      <details>
+        <summary
+          data-en="Traversal decisions and point exclusions"
+          data-ko="통과 판정과 표본 제외"
+        ></summary>
+        <div id="matching-decisions"></div>
+      </details>
+      <h2 data-en="Additional case coverage" data-ko="추가 시험 사례 범위"></h2>
+      <div id="matching-cases"></div>
+    </section>
     <section class="checks">
       <h2 data-en="Assertions and boundaries" data-ko="검사 결과와 한계"></h2>
       <div id="checks"></div>
@@ -416,6 +487,101 @@ export function renderSimulationReport(data: SimulationReportData): string {
       )
         a.href = path;
       else a.removeAttribute("href");
+    }
+    const reasons = {
+      AMBIGUOUS_PARALLEL: ["Ambiguous parallel roads", "평행도로 구분 불가"],
+      PARTIAL_ENTRY: ["Entry not fully observed", "진입 관측 부족"],
+      PARTIAL_EXIT: ["Exit not fully observed", "진출 관측 부족"],
+      OBSERVATION_GAP: ["Observation gap", "관측 누락 구간"],
+      DISCONTINUITY: ["Discontinuous movement", "이동 연속성 단절"],
+      UNMATCHED: ["No road match", "대응 도로 없음"],
+      DISTANCE_EXCEEDED: ["Match distance exceeded", "대응 거리 초과"],
+      INSUFFICIENT_POINTS: ["Insufficient observations", "관측 표본 부족"],
+    };
+    function reasonText(codes) {
+      return codes
+        .map(
+          (code) =>
+            code +
+            " · " +
+            (reasons[code]?.[lang === "en" ? 0 : 1] ||
+              (lang === "en" ? "Unrecognized reason" : "미등록 사유")),
+        )
+        .join("; ");
+    }
+    function matchingSummary(m) {
+      return lang === "en"
+        ? m.matched_samples +
+            "/" +
+            m.input_samples +
+            " points matched; " +
+            m.excluded_samples +
+            " points excluded · " +
+            m.accepted_traversals +
+            " complete traversals accepted; " +
+            m.excluded_traversals +
+            " traversal candidates excluded"
+        : m.input_samples +
+            "개 표본 중 " +
+            m.matched_samples +
+            "개 매칭·" +
+            m.excluded_samples +
+            "개 제외 · 완전 통과 " +
+            m.accepted_traversals +
+            "개 수용·통과 후보 " +
+            m.excluded_traversals +
+            "개 제외";
+    }
+    function matchingDetails() {
+      const m = data.matching;
+      if (!m) return;
+      $("matching-counts").textContent =
+        m.policy_id + " · " + matchingSummary(m);
+      $("matching-decisions").replaceChildren();
+      m.traversals.forEach((t) => {
+        const e = node(
+          "p",
+          t.vehicle_id +
+            " · " +
+            t.label +
+            " · " +
+            (t.status === "ACCEPTED"
+              ? lang === "en"
+                ? "Complete traversal accepted"
+                : "완전 통과 수용"
+              : lang === "en"
+                ? "Traversal excluded"
+                : "통과 제외") +
+            " · " +
+            reasonText(t.reason_codes),
+          $("matching-decisions"),
+        );
+        node("code", t.traversal_id, e);
+        node(
+          "span",
+          " · " +
+            (t.entered_at_ms === null ? "?" : t.entered_at_ms + " ms") +
+            " → " +
+            (t.exited_at_ms === null ? "?" : t.exited_at_ms + " ms"),
+          e,
+        );
+      });
+      const excluded = m.points.filter((p) => p.status === "EXCLUDED");
+      excluded.forEach((p) =>
+        node(
+          "p",
+          p.sample_id + " · " + reasonText(p.reason_codes),
+          $("matching-decisions"),
+        ),
+      );
+      $("matching-cases").replaceChildren();
+      m.cases.forEach((c) => {
+        const e = node("div", undefined, $("matching-cases"));
+        e.className = "stage";
+        node("strong", c.status + " · " + c["name_" + lang], e);
+        node("p", matchingSummary(c), e);
+        node("code", c.case_id, e);
+      });
     }
     function translate() {
       document.documentElement.lang = lang;
@@ -485,9 +651,11 @@ export function renderSimulationReport(data: SimulationReportData): string {
       );
       const v = $("vehicle").options[0];
       if (v) v.textContent = lang === "en" ? "All vehicles" : "전체 차량";
+      matchingDetails();
       draw();
     }
-    let viewportWidth = 900, viewportHeight = 560;
+    let viewportWidth = 900,
+      viewportHeight = 560;
     function bounds() {
       const truth = data.vehicles.flatMap((v) =>
         v.truth.map((p) => [p.longitude, p.latitude]),
@@ -532,7 +700,10 @@ export function renderSimulationReport(data: SimulationReportData): string {
     function draw() {
       viewportWidth = $("map").clientWidth || 900;
       viewportHeight = $("map").clientHeight || 560;
-      $("map").setAttribute("viewBox", "0 0 " + viewportWidth + " " + viewportHeight);
+      $("map").setAttribute(
+        "viewBox",
+        "0 0 " + viewportWidth + " " + viewportHeight,
+      );
       ({ minX, maxX, minY, maxY, scale } = bounds());
       $("map").replaceChildren();
       data.roads.forEach((r) => {
@@ -546,7 +717,8 @@ export function renderSimulationReport(data: SimulationReportData): string {
         const first = r.coordinates[0];
         const last = r.coordinates[r.coordinates.length - 1];
         const p = xy([(first[0] + last[0]) / 2, (first[1] + last[1]) / 2]);
-        const horizontal = Math.abs(last[0] - first[0]) >= Math.abs(last[1] - first[1]);
+        const horizontal =
+          Math.abs(last[0] - first[0]) >= Math.abs(last[1] - first[1]);
         const below = ["ab", "bc"].includes(r.label.toLowerCase());
         const t = svg("text", {
           x: p[0] + (horizontal ? 0 : 12),
@@ -618,6 +790,31 @@ export function renderSimulationReport(data: SimulationReportData): string {
               }
             });
         });
+      if (data.matching && $("matched").checked)
+        data.matching.points
+          .filter(
+            (p) =>
+              p.offset_ms <= time &&
+              ($("vehicle").value === "*" ||
+                p.vehicle_id === $("vehicle").value),
+          )
+          .forEach((p) => {
+            const q = point(p);
+            const marker = svg("path", {
+              d: "M" + q[0] + "," + (q[1] - 5) + "l5,5l-5,5l-5,-5Z",
+              fill: p.status === "MATCHED" ? "#7945B2" : "white",
+              stroke: "#7945B2",
+              "stroke-width": 1.5,
+            });
+            const title = document.createElementNS(ns, "title");
+            title.textContent =
+              p.sample_id +
+              " · " +
+              p.status +
+              " · " +
+              reasonText(p.reason_codes);
+            marker.append(title);
+          });
       $("clock").textContent =
         (time / 1000).toFixed(1) +
         " / " +
@@ -629,6 +826,8 @@ export function renderSimulationReport(data: SimulationReportData): string {
           : "현재까지 예정된 누락: ") + omissions;
       $("time").value = String(time);
     }
+    $("matching-section").hidden = !data.matching;
+    $("matching-toggle").hidden = !data.matching;
     $("time").max = String(data.summary.duration_ms);
     node("option", "All vehicles", $("vehicle")).value = "*";
     data.vehicles.forEach(
@@ -649,7 +848,7 @@ export function renderSimulationReport(data: SimulationReportData): string {
       time = Number($("time").value);
       draw();
     };
-    ["vehicle", "truth", "observed", "all-roads"].forEach(
+    ["vehicle", "truth", "observed", "all-roads", "matched"].forEach(
       (id) => ($(id).onchange = draw),
     );
     function tick(now) {

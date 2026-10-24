@@ -1,3 +1,8 @@
+import {
+  evaluateTraversals,
+  verifyMatchingEvidence,
+} from "../tools/matching_checks.js";
+import { evidenceHashes } from "../tools/map_matcher.js";
 import assert from "node:assert/strict";
 import test from "node:test";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -137,4 +142,136 @@ test("integration refuses existing output and CLI help stays explicit / 통합 �
   const help = captured();
   assert.equal(main(["--help"], help.io), 0);
   assert.match(help.output[0]!, /Fresh corpus.*새로 실행/);
+});
+
+test("P04 evaluation counts false and missed traversals and enforces timing / P04 잘못된·누락 통과와 시간 오차 검사", () => {
+  const truth = {
+    samples: [],
+    traversals: [
+      {
+        vehicle_id: "v",
+        edge_id: "1",
+        label: "DE",
+        forward: true,
+        entered_at_ms: 1000,
+        exited_at_ms: 2000,
+        distance_m: 10,
+      },
+    ],
+  };
+  const traversal = {
+    traversal_id: "t",
+    vehicle_id: "v",
+    edge_id: "1",
+    label: "DE",
+    forward: true,
+    status: "ACCEPTED" as const,
+    entered_at_ms: 1001,
+    exited_at_ms: 2002,
+    reason_codes: [],
+    source_sample_ids: [],
+    entry_bracket: null,
+    exit_bracket: null,
+    reason_messages: [],
+  };
+  const result = {
+    policy_id: "p",
+    matching_id: "m",
+    graph_id: "g",
+    input_samples: 2,
+    matched_samples: 2,
+    excluded_samples: 0,
+    accepted_traversals: 1,
+    excluded_traversals: 0,
+    points: [],
+    traversals: [traversal],
+    semantic_sha256: "",
+  };
+  assert.equal(evaluateTraversals(result, truth, "v", 5).passed, true);
+  assert.equal(
+    evaluateTraversals(
+      { ...result, traversals: [{ ...traversal, exited_at_ms: 2010 }] },
+      truth,
+      "v",
+      5,
+    ).passed,
+    false,
+  );
+  const wrong = evaluateTraversals(
+    { ...result, traversals: [{ ...traversal, edge_id: "wrong" }] },
+    truth,
+    "v",
+    5,
+  );
+  assert.equal(wrong.false_traversals, 1);
+  assert.equal(wrong.missed_traversals, 1);
+  assert.equal(wrong.passed, false);
+  assert.equal(
+    evaluateTraversals(result, truth, "v", 750, ["EF"]).passed,
+    false,
+  );
+});
+test("P04 evidence verifier binds source, graph, raw files and result semantics / P04 출처·그래프·원본·결과 의미 연결 검사", (t) => {
+  const root = temporary(t);
+  const input = join(root, "envelope.json");
+  writeFileSync(input, "{}");
+  const directory = join(root, "matching");
+  mkdirSync(directory);
+  const source = { commit: "a".repeat(40), dirty: true };
+  const graph = { graphId: "g", manifestSha256: "graph-hash" } as GraphBundle;
+  const core = {
+    policy_id: "p",
+    matching_id: "m",
+    graph_id: "g",
+    input_samples: 0,
+    matched_samples: 0,
+    excluded_samples: 0,
+    accepted_traversals: 0,
+    excluded_traversals: 0,
+    points: [],
+    traversals: [],
+  };
+  const result = { ...core, semantic_sha256: sha256(canonical(core)) };
+  for (const [name, value] of Object.entries({
+    "input.json": {},
+    "result.json": result,
+    "assertions.json": [],
+    "commands.json": [],
+    "summary.md": "fixture",
+  }))
+    writeFileSync(join(directory, name), JSON.stringify(value));
+  const manifest = {
+    status: "PASS",
+    cleanup_verified: true,
+    graph_id: "g",
+    graph_manifest_sha256: "graph-hash",
+    source,
+    input_sha256: sha256(readFileSync(input)),
+    semantic_sha256: result.semantic_sha256,
+    output_sha256: evidenceHashes(directory),
+  };
+  writeFileSync(join(directory, "manifest.json"), JSON.stringify(manifest));
+  verifyMatchingEvidence(directory, input, graph, source, result);
+  assert.throws(() =>
+    verifyMatchingEvidence(
+      directory,
+      input,
+      graph,
+      { ...source, dirty: false },
+      result,
+    ),
+  );
+  assert.throws(() =>
+    verifyMatchingEvidence(
+      directory,
+      input,
+      { ...graph, graphId: "wrong" },
+      source,
+      result,
+    ),
+  );
+  writeFileSync(join(directory, "commands.json"), "tampered");
+  assert.throws(() =>
+    verifyMatchingEvidence(directory, input, graph, source, result),
+  );
 });

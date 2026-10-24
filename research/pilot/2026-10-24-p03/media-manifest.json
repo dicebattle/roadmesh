@@ -1,0 +1,34 @@
+{
+  "source_commit": "5422399dcfbce746990600fbdda7ab2cca183f09",
+  "implementation_sha256": "d7bedeb54be6ca1c15f27603fd6094e817416c9b64f83b0cd93850906f192324",
+  "report_path": "research/pilot/2026-10-24-p03/report.html",
+  "report_sha256": "a1a3c9cb9848c3cb418cfae2ad0c869b56dce4f7d4dfe2144f0ee4ab18e57442",
+  "capture_method": "Actual isolated Chrome playback recorded with Playwright CLI 0.1.22; raw recording trimmed to seconds 7–38 and transcoded to H.264, 1280×720, 20 fps; GIF is recorded seconds 9.5–23.5 at 10 fps. No synthetic animation replacement. / 격리된 Chrome의 실제 재생을 Playwright CLI로 녹화하고 원본7~38초를 H.264로 변환했습니다. GIF는 원본9.5~23.5초이며 가짜 애니메이션으로 대체하지 않았습니다.",
+  "raw_capture_sha256": "a61055dd1f3fc496705d60ad55c4e746128f25d1314d5e400a8bff21cb2096d7",
+  "assets": [
+    {
+      "path": "docs/media/demo.mp4",
+      "sha256": "6e4b7241dc4815e0eb2da760485a731067b566d32bef2ccaecce4b072e6088cb"
+    },
+    {
+      "path": "docs/media/demo.gif",
+      "sha256": "704aaffb8be8a3ea673603677efd172e92296fa0d2cdc37bfaa25be6781f0f14"
+    },
+    {
+      "path": "docs/media/report-en.png",
+      "sha256": "c0ef5d8950fdb1fe5a1a85bad584d2a4a1a0221784edafe3c5a53edae81b0cba"
+    },
+    {
+      "path": "docs/media/report-ko.png",
+      "sha256": "ae49cf0b052a94ffb00de2107a64ddb9ad76b14cd6398254cf62e6d958807b7d"
+    },
+    {
+      "path": "docs/media/report-checks.png",
+      "sha256": "c5c1c12081d50f14e43f2167706c030694b497c745da2e0372fe2314f0dcca73"
+    },
+    {
+      "path": "research/pilot/2026-10-24-p03/report-data.json",
+      "sha256": "1b8420a23049977ded781067d86478b67d3d01cf9916c928b02e10642ed3bc3f"
+    }
+  ]
+}

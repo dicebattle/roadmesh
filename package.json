@@ -16,7 +16,8 @@
     "simulate": "node dist/tools/vehicle_simulator.js",
     "simulation:check": "node dist/tools/simulation_checks.js",
     "report:serve": "node dist/tools/report_server.js",
-    "media:check": "node dist/tools/media_manifest.js"
+    "media:check": "node dist/tools/media_manifest.js",
+    "match": "node dist/tools/map_matcher.js"
   },
   "dependencies": {
     "jsonc-parser": "3.3.1",
