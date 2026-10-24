@@ -53,6 +53,6 @@ python3 -m unittest discover -s tests -p 'test_evaluation_corpus.py' -v
 
 2026-10-24 집중 테스트 10개 통과. 합성 경로 1개·매칭 1개는 형식 유효, 실제 검토 사례는 각각 0개이며 `ready=false`입니다. [저장된 결과](../../research/evaluation-corpus/2026-10-24-synthetic-report.json)의 SHA-256은 검사한 입력 파일 바이트에 해당합니다.
 
-For this geographic-input module, RM-001b still supplies reviewed real-road sources. The project's next implementation is separately P01/P14a on the [local pilot track](../../docs/11-local-pilot.md). Do not generate arbitrary coordinates and label them reviewed. Machine-checkable route expectations and graph-edge references will be added when the engine interface is fixed.
+For this geographic-input module, RM-001b still supplies reviewed real-road sources. P01/P14a on the [local pilot track](../../docs/11-local-pilot.md) are now verified; P02 follows. Do not generate arbitrary coordinates and label them reviewed. Machine-checkable route expectations and graph-edge references will be added when the engine interface is fixed.
 
-이 실제 지역 입력 모듈에는 RM-001b의 검토된 도로 자료가 여전히 필요합니다. 프로젝트의 다음 구현은 별도로 [로컬 파일럿 경로](../../docs/11-local-pilot.md)의 P01/P14a입니다. 임의의 좌표를 만들어 검토 자료로 표시하지 않습니다. 기계 판정 가능한 기대 경로와 그래프 구간 참조는 엔진 인터페이스가 정해질 때 추가합니다.
+이 실제 지역 입력 모듈에는 RM-001b의 검토된 도로 자료가 여전히 필요합니다. [로컬 파일럿 경로](../../docs/11-local-pilot.md)의 P01/P14a는 검증됐고 다음은 P02입니다. 임의의 좌표를 만들어 검토 자료로 표시하지 않습니다. 기계 판정 가능한 기대 경로와 그래프 구간 참조는 엔진 인터페이스가 정해질 때 추가합니다.

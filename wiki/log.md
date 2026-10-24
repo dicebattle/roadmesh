@@ -99,3 +99,27 @@
   메인은 같은 시각의 의미상 순서·장애 표식 순서·완료 목록의 마지막 기록과 기록 실패 시 제거·실패/생략 종료코드 1·입력 오류 2·기존 출력 보존을 확인했습니다. 지원 검사는 이벤트 증거를 가리키며 미지원 검사는 증거 경로가 없습니다.
 - Local direct execution, hosted workflow run and required-check registration follow from the committed implementation and will be recorded in subsequent entries, without rewriting this pre-verification state.
   커밋된 구현의 로컬 직접 실행·원격 워크플로·필수 검사 등록은 이어서 수행하고 이후 항목에 기록하며 검증 전 상태를 소급 변경하지 않습니다.
+
+## 2026-10-24 P01 direct local verification / P01 직접 로컬 검증
+
+- Tested clean source: `a2f3d905cbb979bce672d30f4894cc068b516826`. Main command: `python3 -m tools.pilot_checks --output data/p01-main-verification-20261024`. All five CLI cases passed their expected behavior; failed/unsupported scenarios correctly returned 1 and invalid input returned 2.
+  검사한 깨끗한 소스는 위 커밋이며 메인이 위 명령을 실행했습니다. CLI 다섯 사례가 기대 동작을 충족했고 실패·미지원 시나리오는 1, 잘못된 입력은 2를 반환했습니다.
+- Main independently checked event count/order/time against seven authored expectations, recomputed the digest from saved events, checked all four manifests against HEAD and clean state, and verified distinct run IDs with equal replay hashes.
+  메인이 독립적으로 작성한 일곱 기대 이벤트와 수·순서·시각을 대조하고 저장 이벤트의 해시를 다시 계산했습니다. 실행 목록 네 개의 HEAD·깨끗한 상태와 서로 다른 실행 ID·동일 재생 해시를 확인했습니다.
+- An additional CLI attempt targeting an existing evidence directory returned 2; all existing file hashes remained identical. Invalid input created no run directory. [Evidence](../research/pilot/p01-local-2026-10-24.json) is retained; generated raw bundles remain in ignored `data/`.
+  기존 증거 폴더를 대상으로 추가 CLI를 실행하자 2를 반환했고 모든 기존 파일 해시가 그대로였습니다. 잘못된 입력은 실행 폴더를 만들지 않았습니다. [증거](../research/pilot/p01-local-2026-10-24.json)를 보존하고 생성 원본은 Git 제외 경로에 남깁니다.
+- P01 remains synthetic scheduling only; hosted checks are evaluated separately after the branch push. No real graph, GPS, service, container or deployment was started.
+  P01은 합성 일정 실행이며 원격 검사는 브랜치 푸시 후 별도로 확인합니다. 실제 그래프·GPS·서비스·컨테이너·배포는 시작하지 않았습니다.
+
+## 2026-10-24 P14a hosted proof and main gate / P14a 원격 증명과 main 검사 조건
+
+- [Actions run 40065929029](https://github.com/dicebattle/routelens/actions/runs/40065929029) completed successfully on implementation SHA `a2f3d905cbb979bce672d30f4894cc068b516826`. `Python 3.11`, `Python 3.13` and `Required checks` all succeeded. The main agent inspected individual steps and downloaded both evidence artifacts.
+  위 구현 SHA의 [Actions 실행 40065929029](https://github.com/dicebattle/routelens/actions/runs/40065929029)에서 Python 두 버전과 종합 검사가 모두 성공했습니다. 메인이 단계별 결과를 확인하고 두 증거 결과물을 내려받았습니다.
+- Both artifact sets contained the expected five case results and four completed manifests. Their clean source SHA and event digest matched the local proof; intentional failure and unsupported checks retained FAIL/SKIPPED correctly. [Persisted hosted evidence](../research/pilot/p14a-ci-2026-10-24.json). Artifacts expire after seven days, so compact inspected evidence is committed.
+  두 결과물 모두 다섯 사례 결과·완성 목록 네 개를 포함했고 깨끗한 소스 SHA와 이벤트 해시가 로컬 증거와 일치했습니다. 의도적 실패·미지원 검사의 실패/생략도 보존됐습니다. [원격 증거](../research/pilot/p14a-ci-2026-10-24.json)를 기록합니다. 원본 결과물은 7일 후 만료되므로 검사한 핵심 증거를 커밋합니다.
+- Main protection now requires `Required checks` from the observed GitHub Actions app ID `15368`, with strict up-to-date checks. PR requirement, administrator enforcement, blocked force pushes/deletion and conversation resolution remain enabled. [Protection read-back](../research/repository/main-protection-p14a-2026-10-24.json).
+  main은 실제 GitHub Actions 앱 ID `15368`의 종합 검사와 최신 기준 브랜치 반영을 요구합니다. PR 필수·관리자 적용·강제 푸시/삭제 차단·대화 해결 규칙은 유지합니다. [설정 재조회](../research/repository/main-protection-p14a-2026-10-24.json)를 보존합니다.
+- API adjustment: a request specifying both legacy `contexts` and app-bound `checks` was rejected with 422 and did not apply. The corrected request used `checks` only; the successful state was read back. No protection bypass or main update occurred.
+  API 보정: 구형 `contexts`와 앱 지정 `checks`를 함께 전달한 요청은 422로 거부돼 적용되지 않았습니다. `checks`만 사용하도록 고친 요청은 성공했고 설정을 재조회했습니다. 보호 우회나 main 변경은 없었습니다.
+- Completion boundary: P01 and P14a verified; P02, real engines, geographic evaluation and P14b remain. The workflow prerequisite failure path was inspected and CLI failure handling was tested; no intentionally red hosted workflow was manufactured. Final documentation/evidence commits preserve the tested implementation files and are pushed to the feature branch.
+  완료 범위: P01·P14a 검증, P02·실제 엔진·실제 지역 평가·P14b는 남아 있습니다. 워크플로 선행 실패 처리 코드를 확인하고 CLI 실패 동작을 검사했으며 원격 워크플로를 일부러 실패시키는 커밋은 만들지 않았습니다. 최종 문서·증거 커밋은 검사한 구현 파일을 유지한 채 작업 브랜치로 푸시합니다.

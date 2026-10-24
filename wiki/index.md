@@ -1,8 +1,8 @@
 # RouteLens 프로젝트 위키
 
-Current increment: [P01 event runner and P14a fast checks](modules/pilot-runner.md), with verification tracked in the work log. Next module after verification: **P02 test graph builder**. The complete pilot and geographic 100/100 gate remain separate. [Development workflow](../docs/12-development-workflow.md): protected main, descriptive bilingual commits and feature-branch pushes.
+Verified increment: [P01 event runner and P14a fast checks](modules/pilot-runner.md), locally and on hosted Python 3.11/3.13. Next module: **P02 test graph builder**. The complete pilot and geographic 100/100 gate remain separate. [Development workflow](../docs/12-development-workflow.md): protected main with required CI, descriptive bilingual commits and feature-branch pushes.
 
-현재 구현 단위는 [P01 이벤트 실행기와 P14a 빠른 검사](modules/pilot-runner.md)이며 검증은 작업 기록에 남깁니다. 검증 이후 다음 모듈은 **P02 시험 그래프 생성기**입니다. 전체 파일럿과 실제 도로 자료 100/100개 조건은 별도입니다. [개발 절차](../docs/12-development-workflow.md)는 main 보호·상세한 이중 언어 커밋·작업 브랜치 푸시입니다.
+[P01 이벤트 실행기와 P14a 빠른 검사](modules/pilot-runner.md)를 로컬 및 원격 Python 3.11/3.13에서 검증했습니다. 다음 모듈은 **P02 시험 그래프 생성기**입니다. 전체 파일럿과 실제 도로 자료 100/100개 조건은 별도입니다. [개발 절차](../docs/12-development-workflow.md)는 필수 CI를 포함한 main 보호·상세한 이중 언어 커밋·작업 브랜치 푸시입니다.
 
 Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases in each category. The corpus validator and P01 tools exist; navigation and deployment do not.
 
@@ -41,6 +41,9 @@ Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases i
 - [검사 모듈 실행 결과](../research/evaluation-corpus/2026-10-24-synthetic-report.json): 합성 예제의 미준비 판정과 파일 해시.
 - [집중 테스트](../tests/test_evaluation_corpus.py): 오류 입력·중복·출처·준비 수 경계 검증.
 - [Bilingual CLI verification / 이중 언어 CLI 검증](../research/evaluation-corpus/2026-10-24-bilingual-cli-verification.json): direct commands and outputs from a clean committed source / 커밋된 깨끗한 소스의 직접 명령과 출력.
+- [P01 direct local proof / P01 로컬 직접 증거](../research/pilot/p01-local-2026-10-24.json): five cases, exact source identity, independent event order and output preservation / 다섯 사례·정확한 소스·독립 이벤트 순서·출력 보존.
+- [P14a hosted proof / P14a 원격 증거](../research/pilot/p14a-ci-2026-10-24.json): two Python versions and downloaded-artifact inspection / Python 두 버전과 다운로드 결과물 검사.
+- [Required CI protection / 필수 CI 보호](../research/repository/main-protection-p14a-2026-10-24.json): observed Actions check bound to main / 실제 Actions 검사를 main에 연결.
 
 ## 기록 방법
 

@@ -1,5 +1,9 @@
 # P01 runner and P14a checks / P01 실행기와 P14a 검사
 
+Status: **P01 and P14a implemented and verified**, 2026-10-24. Hosted run [40065929029](https://github.com/dicebattle/routelens/actions/runs/40065929029) passed Python 3.11, Python 3.13 and `Required checks`. Downloaded artifacts match the implementation commit and local event digest. [CI evidence](../../research/pilot/p14a-ci-2026-10-24.json). The observed aggregate check is now required by main protection. Next module: P02.
+
+상태: 2026-10-24 **P01·P14a 구현·검증 완료**. [원격 실행 40065929029](https://github.com/dicebattle/routelens/actions/runs/40065929029)의 Python 3.11·3.13·종합 검사가 통과했고, 내려받은 결과물이 구현 커밋·로컬 이벤트 해시와 일치합니다. [CI 증거](../../research/pilot/p14a-ci-2026-10-24.json)를 보존하며 해당 종합 검사를 main 필수 조건으로 등록했습니다. 다음 모듈은 P02입니다.
+
 Scope: a deterministic **fixture-label event schedule**, assertion evaluation and evidence files. It does not produce GPS, load a graph, call Valhalla, inject network/process failures, or measure real-road accuracy. Those boundaries remain P02 onward.
 
 범위는 결정적인 **시험 도로 이름표 이벤트 일정**, 검사 판정, 증거 파일입니다. GPS 생성·그래프 로딩·Valhalla 호출·프로세스/통신 장애 주입·실제 도로 정확도 측정은 하지 않습니다. 해당 기능은 P02 이후에 남아 있습니다.
@@ -43,6 +47,10 @@ The [fixture](../../fixtures/pilot/success.json) independently expects 7 events:
 [예제](../../fixtures/pilot/success.json)의 기대값은 독립적으로 계산한 출발 2개·도로 이름표 진입 3개·장애 표식 2개, 총 7개입니다. 마지막 표식은 500ms입니다. 같은 시각에서는 출발·도로 진입·표식 순서이며, 표식이 실제 장애를 주입하지는 않습니다.
 
 ## P14a workflow / P14a 워크플로
+
+Main-agent local verification on clean implementation commit `a2f3d905cbb979bce672d30f4894cc068b516826` passed all five CLI cases. The main agent independently checked the seven-event schedule, canonical digest, source identity, different run IDs, and preserved output after a rejected overwrite. [Recorded local evidence](../../research/pilot/p01-local-2026-10-24.json).
+
+메인이 미커밋 변경 없는 구현 커밋 `a2f3d905cbb979bce672d30f4894cc068b516826`에서 CLI 다섯 사례를 직접 통과시켰습니다. 독립적으로 계산한 이벤트 7개·정규 해시·소스 식별·서로 다른 실행 ID·덮어쓰기 거부 후 파일 보존도 확인했습니다. [로컬 증거](../../research/pilot/p01-local-2026-10-24.json)를 보존합니다.
 
 [Fast checks](../../.github/workflows/fast-checks.yml) runs the existing corpus and new P01 tests under Python 3.11 and 3.13. Job names are `Python 3.11`, `Python 3.13` and the aggregate `Required checks`. Evidence upload runs even after a test fails; absence of expected artifacts is an error. Matrix failure, cancellation or skipping prevents aggregate success. Artifacts are retained for seven days.
 

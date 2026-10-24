@@ -1,0 +1,319 @@
+{
+  "checked_on": "2026-10-24",
+  "timezone": "Asia/Seoul",
+  "source_commit": "a2f3d905cbb979bce672d30f4894cc068b516826",
+  "source_clean": true,
+  "command": "python3 -m tools.pilot_checks --output data/p01-main-verification-20261024",
+  "checks": [
+    {
+      "case": "success-a",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "success-b",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "failed",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "unsupported",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "invalid",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "status": "PASS",
+      "errors": []
+    }
+  ],
+  "outputs": {
+    "success-a": {
+      "manifest": {
+        "schema_version": "0.1",
+        "run_id": "757a5648-ed0b-4957-819c-3228a5153693",
+        "scenario_id": "synthetic-scheduler",
+        "source": {
+          "commit": "a2f3d905cbb979bce672d30f4894cc068b516826",
+          "dirty": false
+        },
+        "python": "3.13.7",
+        "platform": "macOS-15.7.7-arm64-arm-64bit-Mach-O",
+        "scenario_sha256": "17d53ba1e92496ae06c581106e4d08af8f474b5e29eb18524da9a95a627255a7",
+        "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+        "started_at_utc": "2026-10-24T05:20:38.971Z",
+        "completed_at_utc": "2026-10-24T05:20:39.014Z",
+        "event_count": 7,
+        "fixture_graph_id": "unloaded-grid",
+        "graph_resolved": false,
+        "graph_loaded": false,
+        "engine_executed": false,
+        "image_digests": [],
+        "aggregation_policy": null,
+        "status": "PASS",
+        "seed": 7,
+        "evidence": {
+          "events": "events.json",
+          "assertions": "assertions.json",
+          "summary": "summary.md"
+        }
+      },
+      "assertions": [
+        {
+          "assertion_id": "seven-events",
+          "kind": "event_count",
+          "expected": 7,
+          "required": true,
+          "status": "PASS",
+          "actual": 7,
+          "evidence_path": "events.json",
+          "message_en": "Expectation matched.",
+          "message_ko": "기대값과 일치합니다."
+        },
+        {
+          "assertion_id": "three-edge-events",
+          "kind": "event_kind_count",
+          "event_kind": "fixture_edge_enter",
+          "expected": 3,
+          "required": true,
+          "status": "PASS",
+          "actual": 3,
+          "evidence_path": "events.json",
+          "message_en": "Expectation matched.",
+          "message_ko": "기대값과 일치합니다."
+        },
+        {
+          "assertion_id": "last-marker-at-500",
+          "kind": "last_event_ms",
+          "expected": 500,
+          "required": true,
+          "status": "PASS",
+          "actual": 500,
+          "evidence_path": "events.json",
+          "message_en": "Expectation matched.",
+          "message_ko": "기대값과 일치합니다."
+        }
+      ]
+    },
+    "success-b": {
+      "manifest": {
+        "schema_version": "0.1",
+        "run_id": "15636e80-9ecc-46a0-9315-3dd21aebea20",
+        "scenario_id": "synthetic-scheduler",
+        "source": {
+          "commit": "a2f3d905cbb979bce672d30f4894cc068b516826",
+          "dirty": false
+        },
+        "python": "3.13.7",
+        "platform": "macOS-15.7.7-arm64-arm-64bit-Mach-O",
+        "scenario_sha256": "17d53ba1e92496ae06c581106e4d08af8f474b5e29eb18524da9a95a627255a7",
+        "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+        "started_at_utc": "2026-10-24T05:20:39.047Z",
+        "completed_at_utc": "2026-10-24T05:20:39.081Z",
+        "event_count": 7,
+        "fixture_graph_id": "unloaded-grid",
+        "graph_resolved": false,
+        "graph_loaded": false,
+        "engine_executed": false,
+        "image_digests": [],
+        "aggregation_policy": null,
+        "status": "PASS",
+        "seed": 7,
+        "evidence": {
+          "events": "events.json",
+          "assertions": "assertions.json",
+          "summary": "summary.md"
+        }
+      },
+      "assertions": [
+        {
+          "assertion_id": "seven-events",
+          "kind": "event_count",
+          "expected": 7,
+          "required": true,
+          "status": "PASS",
+          "actual": 7,
+          "evidence_path": "events.json",
+          "message_en": "Expectation matched.",
+          "message_ko": "기대값과 일치합니다."
+        },
+        {
+          "assertion_id": "three-edge-events",
+          "kind": "event_kind_count",
+          "event_kind": "fixture_edge_enter",
+          "expected": 3,
+          "required": true,
+          "status": "PASS",
+          "actual": 3,
+          "evidence_path": "events.json",
+          "message_en": "Expectation matched.",
+          "message_ko": "기대값과 일치합니다."
+        },
+        {
+          "assertion_id": "last-marker-at-500",
+          "kind": "last_event_ms",
+          "expected": 500,
+          "required": true,
+          "status": "PASS",
+          "actual": 500,
+          "evidence_path": "events.json",
+          "message_en": "Expectation matched.",
+          "message_ko": "기대값과 일치합니다."
+        }
+      ]
+    },
+    "failed": {
+      "manifest": {
+        "schema_version": "0.1",
+        "run_id": "638a12ab-f328-46eb-ba32-950ca856dbc1",
+        "scenario_id": "synthetic-scheduler",
+        "source": {
+          "commit": "a2f3d905cbb979bce672d30f4894cc068b516826",
+          "dirty": false
+        },
+        "python": "3.13.7",
+        "platform": "macOS-15.7.7-arm64-arm-64bit-Mach-O",
+        "scenario_sha256": "c55835313ca8e1217087d15cc9f5ed662acf0513ae503cc6cfc5b1f52240f267",
+        "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+        "started_at_utc": "2026-10-24T05:20:39.114Z",
+        "completed_at_utc": "2026-10-24T05:20:39.147Z",
+        "event_count": 7,
+        "fixture_graph_id": "unloaded-grid",
+        "graph_resolved": false,
+        "graph_loaded": false,
+        "engine_executed": false,
+        "image_digests": [],
+        "aggregation_policy": null,
+        "status": "FAIL",
+        "seed": 7,
+        "evidence": {
+          "events": "events.json",
+          "assertions": "assertions.json",
+          "summary": "summary.md"
+        }
+      },
+      "assertions": [
+        {
+          "assertion_id": "seven-events",
+          "kind": "event_count",
+          "expected": 0,
+          "required": true,
+          "status": "FAIL",
+          "actual": 7,
+          "evidence_path": "events.json",
+          "message_en": "Expectation did not match.",
+          "message_ko": "기대값과 일치하지 않습니다."
+        },
+        {
+          "assertion_id": "three-edge-events",
+          "kind": "event_kind_count",
+          "event_kind": "fixture_edge_enter",
+          "expected": 3,
+          "required": true,
+          "status": "PASS",
+          "actual": 3,
+          "evidence_path": "events.json",
+          "message_en": "Expectation matched.",
+          "message_ko": "기대값과 일치합니다."
+        },
+        {
+          "assertion_id": "last-marker-at-500",
+          "kind": "last_event_ms",
+          "expected": 500,
+          "required": true,
+          "status": "PASS",
+          "actual": 500,
+          "evidence_path": "events.json",
+          "message_en": "Expectation matched.",
+          "message_ko": "기대값과 일치합니다."
+        }
+      ]
+    },
+    "unsupported": {
+      "manifest": {
+        "schema_version": "0.1",
+        "run_id": "64819be9-0dad-461a-8929-c5eeced39c4a",
+        "scenario_id": "synthetic-scheduler",
+        "source": {
+          "commit": "a2f3d905cbb979bce672d30f4894cc068b516826",
+          "dirty": false
+        },
+        "python": "3.13.7",
+        "platform": "macOS-15.7.7-arm64-arm-64bit-Mach-O",
+        "scenario_sha256": "5f06ef33a791db58af4559a2fb7bb64e0fef4492e058d5d4c96b245a3a23311a",
+        "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+        "started_at_utc": "2026-10-24T05:20:39.179Z",
+        "completed_at_utc": "2026-10-24T05:20:39.211Z",
+        "event_count": 7,
+        "fixture_graph_id": "unloaded-grid",
+        "graph_resolved": false,
+        "graph_loaded": false,
+        "engine_executed": false,
+        "image_digests": [],
+        "aggregation_policy": null,
+        "status": "FAIL",
+        "seed": 7,
+        "evidence": {
+          "events": "events.json",
+          "assertions": "assertions.json",
+          "summary": "summary.md"
+        }
+      },
+      "assertions": [
+        {
+          "assertion_id": "seven-events",
+          "kind": "future-check",
+          "expected": 7,
+          "required": true,
+          "status": "SKIPPED",
+          "actual": null,
+          "evidence_path": null,
+          "message_en": "Unsupported assertion; required check was skipped.",
+          "message_ko": "지원하지 않는 검사이며 필수 검사가 생략되었습니다."
+        },
+        {
+          "assertion_id": "three-edge-events",
+          "kind": "event_kind_count",
+          "event_kind": "fixture_edge_enter",
+          "expected": 3,
+          "required": true,
+          "status": "PASS",
+          "actual": 3,
+          "evidence_path": "events.json",
+          "message_en": "Expectation matched.",
+          "message_ko": "기대값과 일치합니다."
+        },
+        {
+          "assertion_id": "last-marker-at-500",
+          "kind": "last_event_ms",
+          "expected": 500,
+          "required": true,
+          "status": "PASS",
+          "actual": 500,
+          "evidence_path": "events.json",
+          "message_en": "Expectation matched.",
+          "message_ko": "기대값과 일치합니다."
+        }
+      ]
+    }
+  },
+  "existing_output_preserved": true,
+  "existing_output_exit": 2,
+  "manual_event_order_verified": true,
+  "conclusion_en": "Five CLI cases, independent seven-event expectation and existing-output preservation verified by the main agent. No engine or GPS execution.",
+  "conclusion_ko": "메인이 CLI 다섯 사례·독립적으로 계산한 이벤트 7개·기존 출력 보존을 확인했습니다. 엔진·GPS 실행은 없습니다."
+}

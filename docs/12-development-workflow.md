@@ -14,15 +14,15 @@ Effective 2026-10-24. Every task with repository changes ends with a descriptive
 | Branch deletion / 브랜치 삭제 | Blocked / 차단 |
 | Resolve review conversations / 리뷰 대화 해결 | Required / 필수 |
 | Independent approving reviewers / 별도 승인자 | 0 for the initial solo-maintainer repository / 초기 단독 유지관리 저장소이므로 0명 |
-| Required automated status checks / 필수 자동 검사 | None yet; add actual successful check names in P14a / 아직 없음; P14a에서 실제 성공한 검사 이름을 등록 |
+| Required automated status checks / 필수 자동 검사 | `Required checks`, GitHub Actions app 15368; strict up-to-date branch / GitHub Actions 앱 15368의 종합 검사와 최신 기준 브랜치 반영 필수 |
 
 This protection blocks ordinary direct pushes, including administrator pushes. It does not prevent the owner from explicitly changing settings. Requiring a pull request is not the same as requiring an independent approval. Increase approval requirements when another maintainer is available. Do not invent a required CI check that has never run.
 
 이 보호는 관리자를 포함한 일반적인 직접 푸시를 막습니다. 소유자가 설정 자체를 변경하는 권한까지 없애지는 않습니다. PR 필수와 독립된 사람의 승인 필수는 다릅니다. 다른 유지관리자가 생기면 승인 조건을 강화합니다. 실행한 적 없는 CI 검사 이름을 임의로 필수 등록하지 않습니다.
 
-The settings were applied and read back through GitHub's branch-protection API; see [recorded settings](../research/repository/main-protection-2026-10-24.json). No direct push was attempted as a destructive test. The [GitHub API documentation](https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection) defines these settings.
+The settings were applied and read back through GitHub's branch-protection API. [Initial settings](../research/repository/main-protection-2026-10-24.json) are retained; [P14a settings](../research/repository/main-protection-p14a-2026-10-24.json) add the observed successful `Required checks` from [run 40065929029](https://github.com/dicebattle/routelens/actions/runs/40065929029). No direct push was attempted as a destructive test. The [GitHub API documentation](https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection) defines these settings.
 
-GitHub 브랜치 보호 API로 적용 후 재조회했습니다. [기록된 설정](../research/repository/main-protection-2026-10-24.json)을 참고하세요. 보호 확인을 위해 실제 직접 푸시를 시도하지는 않았습니다. 설정의 의미는 [GitHub API 문서](https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection)에 따릅니다.
+GitHub 브랜치 보호 API로 적용 후 재조회했습니다. [최초 설정](../research/repository/main-protection-2026-10-24.json)은 보존하고 [P14a 설정](../research/repository/main-protection-p14a-2026-10-24.json)에 [실행 40065929029](https://github.com/dicebattle/routelens/actions/runs/40065929029)에서 성공한 종합 검사를 추가했습니다. 보호 확인을 위해 실제 직접 푸시를 시도하지는 않았습니다. 설정의 의미는 [GitHub API 문서](https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection)에 따릅니다.
 
 ## Task sequence / 작업 순서
 
