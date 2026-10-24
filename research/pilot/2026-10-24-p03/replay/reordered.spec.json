@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1",
+  "simulation_id": "tiny-city-demo",
+  "fixture_id": "tiny-city-v1",
+  "graph_id": "c1d06ace33d8e9184749e7b09c946f632489cdca5064672396e970d9c299aa0a",
+  "seed": 7,
+  "start_time_utc": "2026-01-01T00:00:00Z",
+  "duration_ms": 120000,
+  "sample_interval_ms": 1000,
+  "vehicles": [
+    {
+      "vehicle_id": "upper-waiting",
+      "departure_ms": 0,
+      "path": [
+        {
+          "label": "ad",
+          "forward": true
+        },
+        {
+          "label": "de",
+          "forward": true
+        },
+        {
+          "label": "ef",
+          "forward": true
+        },
+        {
+          "label": "fc",
+          "forward": true
+        }
+      ],
+      "speed_profile": [
+        {
+          "duration_ms": 5000,
+          "speed_mps": 0
+        },
+        {
+          "duration_ms": 115000,
+          "speed_mps": 10
+        }
+      ],
+      "noise_radius_m": 0,
+      "drop_intervals": []
+    },
+    {
+      "vehicle_id": "baseline-noisy",
+      "departure_ms": 0,
+      "path": [
+        {
+          "label": "ab",
+          "forward": true
+        },
+        {
+          "label": "bc",
+          "forward": true
+        }
+      ],
+      "speed_profile": [
+        {
+          "duration_ms": 120000,
+          "speed_mps": 10
+        }
+      ],
+      "noise_radius_m": 3,
+      "drop_intervals": [
+        {
+          "start_ms": 15000,
+          "end_ms": 25000
+        }
+      ]
+    },
+    {
+      "vehicle_id": "baseline-clean",
+      "departure_ms": 0,
+      "path": [
+        {
+          "label": "ab",
+          "forward": true
+        },
+        {
+          "label": "bc",
+          "forward": true
+        }
+      ],
+      "speed_profile": [
+        {
+          "duration_ms": 120000,
+          "speed_mps": 10
+        }
+      ],
+      "noise_radius_m": 0,
+      "drop_intervals": []
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "assertion_id": "complete-edge-mapping",
+    "status": "PASS",
+    "message_en": "All source ways mapped in both directions with verified car access.",
+    "message_ko": "모든 원본 도로의 양방향과 자동차 접근 허용을 검증했습니다.",
+    "evidence_path": "edge-map.json"
+  },
+  {
+    "assertion_id": "baseline",
+    "status": "PASS",
+    "message_en": "Independent route expectation matched actual engine evidence.",
+    "message_ko": "독립 경로 기대값과 실제 엔진 증거가 일치합니다.",
+    "evidence_path": "route-baseline.response.json"
+  },
+  {
+    "assertion_id": "upper-alternative",
+    "status": "PASS",
+    "message_en": "Independent route expectation matched actual engine evidence.",
+    "message_ko": "독립 경로 기대값과 실제 엔진 증거가 일치합니다.",
+    "evidence_path": "route-upper-alternative.response.json"
+  },
+  {
+    "assertion_id": "restriction-detour",
+    "status": "PASS",
+    "message_en": "Independent route expectation matched actual engine evidence.",
+    "message_ko": "독립 경로 기대값과 실제 엔진 증거가 일치합니다.",
+    "evidence_path": "route-restriction-detour.response.json"
+  },
+  {
+    "assertion_id": "oneway-forward",
+    "status": "PASS",
+    "message_en": "Independent route expectation matched actual engine evidence.",
+    "message_ko": "독립 경로 기대값과 실제 엔진 증거가 일치합니다.",
+    "evidence_path": "route-oneway-forward.response.json"
+  },
+  {
+    "assertion_id": "oneway-reverse",
+    "status": "PASS",
+    "message_en": "Independent route expectation matched actual engine evidence.",
+    "message_ko": "독립 경로 기대값과 실제 엔진 증거가 일치합니다.",
+    "evidence_path": "route-oneway-reverse.response.json"
+  },
+  {
+    "assertion_id": "disconnected",
+    "status": "PASS",
+    "message_en": "Independent route expectation matched actual engine evidence.",
+    "message_ko": "독립 경로 기대값과 실제 엔진 증거가 일치합니다.",
+    "evidence_path": "route-disconnected.response.json"
+  },
+  {
+    "assertion_id": "cleanup",
+    "status": "PASS",
+    "message_en": "Owned container absence verified.",
+    "message_ko": "소유 컨테이너가 없는 것을 확인했습니다.",
+    "evidence_path": "commands.json"
+  }
+]

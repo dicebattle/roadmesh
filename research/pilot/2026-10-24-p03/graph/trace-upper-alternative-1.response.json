@@ -1,0 +1,138 @@
+{
+  "units": "kilometers",
+  "osm_changeset": 4002,
+  "shape": "_|Bo}@?o}@?o}@",
+  "confidence_score": 1,
+  "raw_score": 0,
+  "admins": [
+    {
+      "country_text": "None",
+      "state_text": "None"
+    }
+  ],
+  "edges": [
+    {
+      "truck_route": false,
+      "speed_limit": 30,
+      "density": 0,
+      "sac_scale": 0,
+      "shoulder": false,
+      "sidewalk": "none",
+      "bicycle_network": 0,
+      "cycle_lane": "none",
+      "lane_count": 1,
+      "max_downward_grade": -500,
+      "max_upward_grade": -500,
+      "weighted_grade": 0,
+      "way_id": 104,
+      "id": 138370690,
+      "travel_mode": "drive",
+      "vehicle_type": "car",
+      "surface": "paved_smooth",
+      "drive_on_right": true,
+      "internal_intersection": false,
+      "roundabout": false,
+      "bridge": false,
+      "tunnel": false,
+      "unpaved": false,
+      "toll": false,
+      "use": "road",
+      "traversability": "both",
+      "end_shape_index": 1,
+      "begin_shape_index": 0,
+      "end_heading": 90,
+      "begin_heading": 90,
+      "road_class": "residential",
+      "speed": 30,
+      "speed_type": "tagged",
+      "speeds_non_faded": {
+        "no_flow": 30
+      },
+      "country_crossing": false,
+      "forward": true,
+      "traffic_signal": false,
+      "length": 0.111,
+      "source_percent_along": 0.499,
+      "names": [
+        "de"
+      ],
+      "end_node": {
+        "intersecting_edges": [
+          {
+            "walkability": "both",
+            "cyclability": "both",
+            "driveability": "both",
+            "from_edge_name_consistency": false,
+            "to_edge_name_consistency": false,
+            "begin_heading": 180,
+            "use": "road",
+            "road_class": "residential"
+          }
+        ],
+        "elapsed_time": 13.401,
+        "elapsed_cost": 11.391,
+        "admin_index": 0,
+        "type": "street_intersection",
+        "traffic_signal": false,
+        "fork": false,
+        "transition_time": 0.006
+      }
+    },
+    {
+      "truck_route": false,
+      "speed_limit": 30,
+      "density": 0,
+      "sac_scale": 0,
+      "shoulder": false,
+      "sidewalk": "none",
+      "bicycle_network": 0,
+      "cycle_lane": "none",
+      "lane_count": 1,
+      "max_downward_grade": -500,
+      "max_upward_grade": -500,
+      "weighted_grade": 0,
+      "way_id": 105,
+      "id": 205479554,
+      "travel_mode": "drive",
+      "vehicle_type": "car",
+      "surface": "paved_smooth",
+      "drive_on_right": true,
+      "internal_intersection": false,
+      "roundabout": false,
+      "bridge": false,
+      "tunnel": false,
+      "unpaved": false,
+      "toll": false,
+      "use": "road",
+      "traversability": "both",
+      "end_shape_index": 2,
+      "begin_shape_index": 1,
+      "end_heading": 90,
+      "begin_heading": 90,
+      "road_class": "residential",
+      "speed": 30,
+      "speed_type": "tagged",
+      "speeds_non_faded": {
+        "no_flow": 30
+      },
+      "country_crossing": false,
+      "forward": true,
+      "traffic_signal": false,
+      "length": 0.111,
+      "target_percent_along": 0.499,
+      "names": [
+        "ef"
+      ],
+      "end_node": {
+        "elapsed_time": 26.766,
+        "elapsed_cost": 29.246,
+        "admin_index": 0,
+        "type": "street_intersection",
+        "traffic_signal": false,
+        "fork": false,
+        "transition_time": 0
+      }
+    }
+  ],
+  "alternate_paths": []
+}

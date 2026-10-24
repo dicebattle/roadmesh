@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  /><title>RouteLens · Simulation evidence / 시뮬레이션 증거</title
+  ><style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f8fc;
+      --ink: #172d46;
+      --road: #9baec2;
+      --truth: #1264b8;
+      --observed: #d96b28;
+      --success: #23775d;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font:
+        15px/1.5 system-ui,
+        sans-serif;
+    }
+    main {
+      max-width: 1500px;
+      margin: auto;
+      padding: 32px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: start;
+    }
+    h1,
+    h2 {
+      font-family: "Avenir Next", "Trebuchet MS", sans-serif;
+    }
+    h1 {
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.15;
+      margin: 4px 0 12px;
+    }
+    h2 {
+      font-size: 21px;
+      margin: 0 0 16px;
+    }
+    p {
+      margin: 8px 0;
+    }
+    .eyebrow,
+    code,
+    output {
+      font-family: ui-monospace, monospace;
+    }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+    }
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(250px, 1fr);
+      gap: 28px;
+      margin-top: 28px;
+    }
+    .map {
+      background: white;
+      border: 1px solid #d7e0e9;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    svg {
+      width: 100%;
+      height: clamp(240px, calc(100vh - 430px), 480px);
+      display: block;
+    }
+    svg text {
+      font: 14px system-ui;
+      fill: var(--ink);
+    }
+    .controls {
+      padding: 18px;
+      border-top: 1px solid #d7e0e9;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    button,
+    select {
+      font: inherit;
+      color: inherit;
+      background: white;
+      border: 1px solid var(--road);
+      border-radius: 6px;
+      padding: 8px 12px;
+      min-height: 42px;
+    }
+    button {
+      cursor: pointer;
+    }
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    a:focus-visible {
+      outline: 3px solid var(--truth);
+      outline-offset: 3px;
+    }
+    input[type="range"] {
+      flex: 1;
+      min-width: 130px;
+      accent-color: var(--truth);
+    }
+    label {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+    }
+    a {
+      color: var(--truth);
+      overflow-wrap: anywhere;
+    }
+    .ledger {
+      border-top: 3px solid var(--ink);
+      padding-top: 18px;
+    }
+    .stage {
+      padding: 13px 0;
+      border-bottom: 1px solid #d7e0e9;
+    }
+    .status {
+      color: var(--success);
+      font-weight: 700;
+    }
+    .legend {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 14px 18px;
+    }
+    .truth {
+      color: var(--truth);
+    }
+    .observed {
+      color: var(--observed);
+    }
+    .provenance {
+      font-size: 12px;
+      overflow-wrap: anywhere;
+      margin-top: 24px;
+    }
+    .checks {
+      margin-top: 32px;
+    }
+    details {
+      border-top: 1px solid var(--road);
+      padding: 14px 0;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      font-size: 12px;
+    }
+    .notice {
+      max-width: 80ch;
+    }
+    .timeline {
+      display: block;
+      width: 100%;
+      font-size: 13px;
+      padding: 0 18px 12px;
+    }
+    @media (max-width: 760px) {
+      main {
+        padding: 20px 14px;
+      }
+      .workspace {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      header {
+        flex-wrap: wrap;
+      }
+      .controls {
+        gap: 10px;
+      }
+      svg {
+        height: 340px;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+  <main>
+    <header>
+      <div>
+        <div class="eyebrow">ROUTELENS / P03</div>
+        <h1
+          data-en="Vehicle &amp; GPS simulation"
+          data-ko="차량·GPS 시뮬레이션"
+        ></h1>
+        <p
+          class="notice"
+          data-en="Synthetic trajectories and GPS observations on an authored fictional road network. Test evidence, not live traffic or a navigation client."
+          data-ko="직접 만든 가상 도로망의 합성 이동 경로와 GPS 관측입니다. 실시간 교통정보나 내비게이션 화면이 아닌 검사 증거입니다."
+        ></p>
+      </div>
+      <button id="language" aria-label="Switch language / 언어 변경">
+        한국어
+      </button>
+    </header>
+    <div class="workspace">
+      <section>
+        <div class="map">
+          <svg
+            id="map"
+            viewBox="0 0 900 560"
+            role="img"
+            aria-label="Fictional road replay / 가상 도로 재생"
+          ></svg>
+          <div class="legend">
+            <span
+              class="truth"
+              data-en="● Ground truth"
+              data-ko="● 정답 위치"
+            ></span
+            ><span
+              class="observed"
+              data-en="× GPS observation"
+              data-ko="× GPS 관측"
+            ></span
+            ><span
+              data-en="○ Scheduled omission"
+              data-ko="○ 예정된 누락"
+            ></span>
+          </div>
+          <output id="omissions" class="timeline" aria-live="off"></output>
+          <div class="controls">
+            <button id="play"></button
+            ><label
+              ><span data-en="Time" data-ko="시간"></span
+              ><input
+                id="time"
+                type="range"
+                min="0"
+                step="100"
+                value="0" /></label
+            ><output id="clock"></output
+            ><label
+              ><span data-en="Speed" data-ko="배속"></span
+              ><select id="speed">
+                <option>1</option>
+                <option>2</option>
+                <option selected>5</option>
+                <option>10</option>
+              </select></label
+            ><label
+              ><span data-en="Vehicle" data-ko="차량"></span
+              ><select id="vehicle"></select></label
+            ><label
+              ><input id="all-roads" type="checkbox" /><span
+                data-en="All fixture roads"
+                data-ko="전체 시험도로"
+              ></span></label
+            ><label
+              ><input id="truth" type="checkbox" checked /><span
+                data-en="Truth"
+                data-ko="정답"
+              ></span></label
+            ><label
+              ><input id="observed" type="checkbox" checked /><span
+                data-en="Observed"
+                data-ko="관측"
+              ></span
+            ></label>
+          </div>
+        </div>
+      </section>
+      <aside class="ledger">
+        <h2 data-en="Execution evidence" data-ko="실행 증거"></h2>
+        <p id="result"></p>
+        <div id="stages"></div>
+        <div class="provenance" id="provenance"></div>
+      </aside>
+    </div>
+    <section class="checks">
+      <h2 data-en="Assertions and boundaries" data-ko="검사 결과와 한계"></h2>
+      <div id="checks"></div>
+      <ul id="limits"></ul>
+    </section>
+  </main>
+  <script id="report-data" type="application/json">
+    {"schema_version":"0.1","source":{"commit":"5422399dcfbce746990600fbdda7ab2cca183f09","dirty":false},"graph_id":"c1d06ace33d8e9184749e7b09c946f632489cdca5064672396e970d9c299aa0a","generated_at_utc":"2026-10-24T08:58:32.753Z","implementation_sha256":"d7bedeb54be6ca1c15f27603fd6094e817416c9b64f83b0cd93850906f192324","summary":{"status":"PASS","assertions_passed":30,"assertions_total":30,"vehicle_count":3,"observation_count":177,"omission_count":10,"duration_ms":120000},"stages":[{"id":"corpus","name_en":"Synthetic corpus validation","name_ko":"합성 자료 검사","status":"PASS","evidence_path":"corpus/report.json","duration_ms":580.5515829999999},{"id":"p01","name_en":"Fresh schedule replay and required checks","name_ko":"새 일정 재생·필수 검사","status":"PASS","evidence_path":"p01/checks.json","duration_ms":330.992083},{"id":"p02","name_en":"Fresh real-engine graph and routing","name_ko":"실제 엔진의 새 그래프·경로","status":"PASS","evidence_path":"graph/manifest.json","duration_ms":3521.1079580000005},{"id":"p03","name_en":"Seeded geographic truth and observations","name_ko":"시드 기반 지리 정답·관측","status":"PASS","evidence_path":"simulation/manifest.json","duration_ms":81.41858299999967},{"id":"replay","name_en":"Fresh replay and fault invariance","name_ko":"새 재생·장애 불변성","status":"PASS","evidence_path":"replay/checks.json","duration_ms":397.32225000000017}],"roads":[{"label":"ab","edge_id":"4152962","forward":true,"car_access":true,"coordinates":[[0,0],[0.002,0]]},{"label":"bc","edge_id":"339697282","forward":true,"car_access":true,"coordinates":[[0.002,0],[0.004,0]]},{"label":"ad","edge_id":"37707394","forward":true,"car_access":true,"coordinates":[[0,0],[0,0.002]]},{"label":"de","edge_id":"138370690","forward":true,"car_access":true,"coordinates":[[0,0.002],[0.002,0.002]]},{"label":"ef","edge_id":"205479554","forward":true,"car_access":true,"coordinates":[[0.002,0.002],[0.004,0.002]]},{"label":"fc","edge_id":"541023874","forward":true,"car_access":true,"coordinates":[[0.004,0.002],[0.004,0]]},{"label":"eb","edge_id":"239033986","forward":true,"car_access":true,"coordinates":[[0.002,0.002],[0.002,0]]},{"label":"bg","edge_id":"406806146","forward":true,"car_access":true,"coordinates":[[0.002,0],[0.002,-0.002]]},{"label":"oneway","edge_id":"608132738","forward":true,"car_access":true,"coordinates":[[0.01,0],[0.012,0]]},{"label":"disconnected","edge_id":"574578306","forward":true,"car_access":true,"coordinates":[[0.01,0.003],[0.012,0.003]]},{"label":"parallel","edge_id":"71261826","forward":true,"car_access":true,"coordinates":[[0,0.0001],[0.002,0.0001]]}],"vehicles":[{"vehicle_id":"baseline-clean","truth":[{"offset_ms":0,"longitude":0,"latitude":0,"edge_id":"4152962"},{"offset_ms":1000,"longitude":0.000089932,"latitude":0,"edge_id":"4152962"},{"offset_ms":2000,"longitude":0.000179864,"latitude":0,"edge_id":"4152962"},{"offset_ms":3000,"longitude":0.000269796,"latitude":0,"edge_id":"4152962"},{"offset_ms":4000,"longitude":0.000359728,"latitude":0,"edge_id":"4152962"},{"offset_ms":5000,"longitude":0.00044966,"latitude":0,"edge_id":"4152962"},{"offset_ms":6000,"longitude":0.000539592,"latitude":0,"edge_id":"4152962"},{"offset_ms":7000,"longitude":0.000629524,"latitude":0,"edge_id":"4152962"},{"offset_ms":8000,"longitude":0.000719456,"latitude":0,"edge_id":"4152962"},{"offset_ms":9000,"longitude":0.000809388,"latitude":0,"edge_id":"4152962"},{"offset_ms":10000,"longitude":0.00089932,"latitude":0,"edge_id":"4152962"},{"offset_ms":11000,"longitude":0.000989252,"latitude":0,"edge_id":"4152962"},{"offset_ms":12000,"longitude":0.001079184,"latitude":0,"edge_id":"4152962"},{"offset_ms":13000,"longitude":0.001169116,"latitude":0,"edge_id":"4152962"},{"offset_ms":14000,"longitude":0.001259049,"latitude":0,"edge_id":"4152962"},{"offset_ms":15000,"longitude":0.001348981,"latitude":0,"edge_id":"4152962"},{"offset_ms":16000,"longitude":0.001438913,"latitude":0,"edge_id":"4152962"},{"offset_ms":17000,"longitude":0.001528845,"latitude":0,"edge_id":"4152962"},{"offset_ms":18000,"longitude":0.001618777,"latitude":0,"edge_id":"4152962"},{"offset_ms":19000,"longitude":0.001708709,"latitude":0,"edge_id":"4152962"},{"offset_ms":20000,"longitude":0.001798641,"latitude":0,"edge_id":"4152962"},{"offset_ms":21000,"longitude":0.001888573,"latitude":0,"edge_id":"4152962"},{"offset_ms":22000,"longitude":0.001978505,"latitude":0,"edge_id":"4152962"},{"offset_ms":23000,"longitude":0.002068437,"latitude":0,"edge_id":"339697282"},{"offset_ms":24000,"longitude":0.002158369,"latitude":0,"edge_id":"339697282"},{"offset_ms":25000,"longitude":0.002248301,"latitude":0,"edge_id":"339697282"},{"offset_ms":26000,"longitude":0.002338233,"latitude":0,"edge_id":"339697282"},{"offset_ms":27000,"longitude":0.002428165,"latitude":0,"edge_id":"339697282"},{"offset_ms":28000,"longitude":0.002518097,"latitude":0,"edge_id":"339697282"},{"offset_ms":29000,"longitude":0.002608029,"latitude":0,"edge_id":"339697282"},{"offset_ms":30000,"longitude":0.002697961,"latitude":0,"edge_id":"339697282"},{"offset_ms":31000,"longitude":0.002787893,"latitude":0,"edge_id":"339697282"},{"offset_ms":32000,"longitude":0.002877825,"latitude":0,"edge_id":"339697282"},{"offset_ms":33000,"longitude":0.002967757,"latitude":0,"edge_id":"339697282"},{"offset_ms":34000,"longitude":0.003057689,"latitude":0,"edge_id":"339697282"},{"offset_ms":35000,"longitude":0.003147621,"latitude":0,"edge_id":"339697282"},{"offset_ms":36000,"longitude":0.003237553,"latitude":0,"edge_id":"339697282"},{"offset_ms":37000,"longitude":0.003327485,"latitude":0,"edge_id":"339697282"},{"offset_ms":38000,"longitude":0.003417417,"latitude":0,"edge_id":"339697282"},{"offset_ms":39000,"longitude":0.003507349,"latitude":0,"edge_id":"339697282"},{"offset_ms":40000,"longitude":0.003597281,"latitude":0,"edge_id":"339697282"},{"offset_ms":41000,"longitude":0.003687213,"latitude":0,"edge_id":"339697282"},{"offset_ms":42000,"longitude":0.003777146,"latitude":0,"edge_id":"339697282"},{"offset_ms":43000,"longitude":0.003867078,"latitude":0,"edge_id":"339697282"},{"offset_ms":44000,"longitude":0.00395701,"latitude":0,"edge_id":"339697282"},{"offset_ms":44479,"longitude":0.004,"latitude":0,"edge_id":"339697282"}],"observations":[{"offset_ms":0,"longitude":0,"latitude":0,"accuracy_m":0.01},{"offset_ms":1000,"longitude":0.000089932,"latitude":0,"accuracy_m":0.01},{"offset_ms":2000,"longitude":0.000179864,"latitude":0,"accuracy_m":0.01},{"offset_ms":3000,"longitude":0.000269796,"latitude":0,"accuracy_m":0.01},{"offset_ms":4000,"longitude":0.000359728,"latitude":0,"accuracy_m":0.01},{"offset_ms":5000,"longitude":0.00044966,"latitude":0,"accuracy_m":0.01},{"offset_ms":6000,"longitude":0.000539592,"latitude":0,"accuracy_m":0.01},{"offset_ms":7000,"longitude":0.000629524,"latitude":0,"accuracy_m":0.01},{"offset_ms":8000,"longitude":0.000719456,"latitude":0,"accuracy_m":0.01},{"offset_ms":9000,"longitude":0.000809388,"latitude":0,"accuracy_m":0.01},{"offset_ms":10000,"longitude":0.00089932,"latitude":0,"accuracy_m":0.01},{"offset_ms":11000,"longitude":0.000989252,"latitude":0,"accuracy_m":0.01},{"offset_ms":12000,"longitude":0.001079184,"latitude":0,"accuracy_m":0.01},{"offset_ms":13000,"longitude":0.001169116,"latitude":0,"accuracy_m":0.01},{"offset_ms":14000,"longitude":0.001259049,"latitude":0,"accuracy_m":0.01},{"offset_ms":15000,"longitude":0.001348981,"latitude":0,"accuracy_m":0.01},{"offset_ms":16000,"longitude":0.001438913,"latitude":0,"accuracy_m":0.01},{"offset_ms":17000,"longitude":0.001528845,"latitude":0,"accuracy_m":0.01},{"offset_ms":18000,"longitude":0.001618777,"latitude":0,"accuracy_m":0.01},{"offset_ms":19000,"longitude":0.001708709,"latitude":0,"accuracy_m":0.01},{"offset_ms":20000,"longitude":0.001798641,"latitude":0,"accuracy_m":0.01},{"offset_ms":21000,"longitude":0.001888573,"latitude":0,"accuracy_m":0.01},{"offset_ms":22000,"longitude":0.001978505,"latitude":0,"accuracy_m":0.01},{"offset_ms":23000,"longitude":0.002068437,"latitude":0,"accuracy_m":0.01},{"offset_ms":24000,"longitude":0.002158369,"latitude":0,"accuracy_m":0.01},{"offset_ms":25000,"longitude":0.002248301,"latitude":0,"accuracy_m":0.01},{"offset_ms":26000,"longitude":0.002338233,"latitude":0,"accuracy_m":0.01},{"offset_ms":27000,"longitude":0.002428165,"latitude":0,"accuracy_m":0.01},{"offset_ms":28000,"longitude":0.002518097,"latitude":0,"accuracy_m":0.01},{"offset_ms":29000,"longitude":0.002608029,"latitude":0,"accuracy_m":0.01},{"offset_ms":30000,"longitude":0.002697961,"latitude":0,"accuracy_m":0.01},{"offset_ms":31000,"longitude":0.002787893,"latitude":0,"accuracy_m":0.01},{"offset_ms":32000,"longitude":0.002877825,"latitude":0,"accuracy_m":0.01},{"offset_ms":33000,"longitude":0.002967757,"latitude":0,"accuracy_m":0.01},{"offset_ms":34000,"longitude":0.003057689,"latitude":0,"accuracy_m":0.01},{"offset_ms":35000,"longitude":0.003147621,"latitude":0,"accuracy_m":0.01},{"offset_ms":36000,"longitude":0.003237553,"latitude":0,"accuracy_m":0.01},{"offset_ms":37000,"longitude":0.003327485,"latitude":0,"accuracy_m":0.01},{"offset_ms":38000,"longitude":0.003417417,"latitude":0,"accuracy_m":0.01},{"offset_ms":39000,"longitude":0.003507349,"latitude":0,"accuracy_m":0.01},{"offset_ms":40000,"longitude":0.003597281,"latitude":0,"accuracy_m":0.01},{"offset_ms":41000,"longitude":0.003687213,"latitude":0,"accuracy_m":0.01},{"offset_ms":42000,"longitude":0.003777146,"latitude":0,"accuracy_m":0.01},{"offset_ms":43000,"longitude":0.003867078,"latitude":0,"accuracy_m":0.01},{"offset_ms":44000,"longitude":0.00395701,"latitude":0,"accuracy_m":0.01},{"offset_ms":44479,"longitude":0.004,"latitude":0,"accuracy_m":0.01}],"omissions":[],"traversals":[{"edge_id":"4152962","label":"ab","forward":true,"entered_at_ms":0,"exited_at_ms":22240,"distance_m":222.3901604670658},{"edge_id":"339697282","label":"bc","forward":true,"entered_at_ms":22240,"exited_at_ms":44479,"distance_m":222.3901604670658}]},{"vehicle_id":"baseline-noisy","truth":[{"offset_ms":0,"longitude":0,"latitude":0,"edge_id":"4152962"},{"offset_ms":1000,"longitude":0.000089932,"latitude":0,"edge_id":"4152962"},{"offset_ms":2000,"longitude":0.000179864,"latitude":0,"edge_id":"4152962"},{"offset_ms":3000,"longitude":0.000269796,"latitude":0,"edge_id":"4152962"},{"offset_ms":4000,"longitude":0.000359728,"latitude":0,"edge_id":"4152962"},{"offset_ms":5000,"longitude":0.00044966,"latitude":0,"edge_id":"4152962"},{"offset_ms":6000,"longitude":0.000539592,"latitude":0,"edge_id":"4152962"},{"offset_ms":7000,"longitude":0.000629524,"latitude":0,"edge_id":"4152962"},{"offset_ms":8000,"longitude":0.000719456,"latitude":0,"edge_id":"4152962"},{"offset_ms":9000,"longitude":0.000809388,"latitude":0,"edge_id":"4152962"},{"offset_ms":10000,"longitude":0.00089932,"latitude":0,"edge_id":"4152962"},{"offset_ms":11000,"longitude":0.000989252,"latitude":0,"edge_id":"4152962"},{"offset_ms":12000,"longitude":0.001079184,"latitude":0,"edge_id":"4152962"},{"offset_ms":13000,"longitude":0.001169116,"latitude":0,"edge_id":"4152962"},{"offset_ms":14000,"longitude":0.001259049,"latitude":0,"edge_id":"4152962"},{"offset_ms":15000,"longitude":0.001348981,"latitude":0,"edge_id":"4152962"},{"offset_ms":16000,"longitude":0.001438913,"latitude":0,"edge_id":"4152962"},{"offset_ms":17000,"longitude":0.001528845,"latitude":0,"edge_id":"4152962"},{"offset_ms":18000,"longitude":0.001618777,"latitude":0,"edge_id":"4152962"},{"offset_ms":19000,"longitude":0.001708709,"latitude":0,"edge_id":"4152962"},{"offset_ms":20000,"longitude":0.001798641,"latitude":0,"edge_id":"4152962"},{"offset_ms":21000,"longitude":0.001888573,"latitude":0,"edge_id":"4152962"},{"offset_ms":22000,"longitude":0.001978505,"latitude":0,"edge_id":"4152962"},{"offset_ms":23000,"longitude":0.002068437,"latitude":0,"edge_id":"339697282"},{"offset_ms":24000,"longitude":0.002158369,"latitude":0,"edge_id":"339697282"},{"offset_ms":25000,"longitude":0.002248301,"latitude":0,"edge_id":"339697282"},{"offset_ms":26000,"longitude":0.002338233,"latitude":0,"edge_id":"339697282"},{"offset_ms":27000,"longitude":0.002428165,"latitude":0,"edge_id":"339697282"},{"offset_ms":28000,"longitude":0.002518097,"latitude":0,"edge_id":"339697282"},{"offset_ms":29000,"longitude":0.002608029,"latitude":0,"edge_id":"339697282"},{"offset_ms":30000,"longitude":0.002697961,"latitude":0,"edge_id":"339697282"},{"offset_ms":31000,"longitude":0.002787893,"latitude":0,"edge_id":"339697282"},{"offset_ms":32000,"longitude":0.002877825,"latitude":0,"edge_id":"339697282"},{"offset_ms":33000,"longitude":0.002967757,"latitude":0,"edge_id":"339697282"},{"offset_ms":34000,"longitude":0.003057689,"latitude":0,"edge_id":"339697282"},{"offset_ms":35000,"longitude":0.003147621,"latitude":0,"edge_id":"339697282"},{"offset_ms":36000,"longitude":0.003237553,"latitude":0,"edge_id":"339697282"},{"offset_ms":37000,"longitude":0.003327485,"latitude":0,"edge_id":"339697282"},{"offset_ms":38000,"longitude":0.003417417,"latitude":0,"edge_id":"339697282"},{"offset_ms":39000,"longitude":0.003507349,"latitude":0,"edge_id":"339697282"},{"offset_ms":40000,"longitude":0.003597281,"latitude":0,"edge_id":"339697282"},{"offset_ms":41000,"longitude":0.003687213,"latitude":0,"edge_id":"339697282"},{"offset_ms":42000,"longitude":0.003777146,"latitude":0,"edge_id":"339697282"},{"offset_ms":43000,"longitude":0.003867078,"latitude":0,"edge_id":"339697282"},{"offset_ms":44000,"longitude":0.00395701,"latitude":0,"edge_id":"339697282"},{"offset_ms":44479,"longitude":0.004,"latitude":0,"edge_id":"339697282"}],"observations":[{"offset_ms":0,"longitude":0.000004309,"latitude":-0.000008675,"accuracy_m":3},{"offset_ms":1000,"longitude":0.000071129,"latitude":0.000002103,"accuracy_m":3},{"offset_ms":2000,"longitude":0.00018932,"latitude":-0.000004861,"accuracy_m":3},{"offset_ms":3000,"longitude":0.000259969,"latitude":0.000011748,"accuracy_m":3},{"offset_ms":4000,"longitude":0.000357552,"latitude":-0.000003514,"accuracy_m":3},{"offset_ms":5000,"longitude":0.000446766,"latitude":-0.000017113,"accuracy_m":3},{"offset_ms":6000,"longitude":0.000521676,"latitude":0.000001835,"accuracy_m":3},{"offset_ms":7000,"longitude":0.000627313,"latitude":-0.000020866,"accuracy_m":3},{"offset_ms":8000,"longitude":0.000723106,"latitude":0.000001445,"accuracy_m":3},{"offset_ms":9000,"longitude":0.000806822,"latitude":0.000016848,"accuracy_m":3},{"offset_ms":10000,"longitude":0.000873827,"latitude":-0.000001143,"accuracy_m":3},{"offset_ms":11000,"longitude":0.000983488,"latitude":0.000002875,"accuracy_m":3},{"offset_ms":12000,"longitude":0.001074315,"latitude":-0.000006115,"accuracy_m":3},{"offset_ms":13000,"longitude":0.001158056,"latitude":0.000015246,"accuracy_m":3},{"offset_ms":14000,"longitude":0.001256075,"latitude":-0.00001017,"accuracy_m":3},{"offset_ms":25000,"longitude":0.002241302,"latitude":0.000014053,"accuracy_m":3},{"offset_ms":26000,"longitude":0.002327923,"latitude":-0.000005576,"accuracy_m":3},{"offset_ms":27000,"longitude":0.002423112,"latitude":-0.000005568,"accuracy_m":3},{"offset_ms":28000,"longitude":0.002492938,"latitude":0.000005726,"accuracy_m":3},{"offset_ms":29000,"longitude":0.002599166,"latitude":-0.000007616,"accuracy_m":3},{"offset_ms":30000,"longitude":0.002718488,"latitude":0.000011049,"accuracy_m":3},{"offset_ms":31000,"longitude":0.002794597,"latitude":0.000013077,"accuracy_m":3},{"offset_ms":32000,"longitude":0.002868399,"latitude":-0.000003963,"accuracy_m":3},{"offset_ms":33000,"longitude":0.002958994,"latitude":-0.000008695,"accuracy_m":3},{"offset_ms":34000,"longitude":0.003061301,"latitude":0.000003701,"accuracy_m":3},{"offset_ms":35000,"longitude":0.003157577,"latitude":-0.000009632,"accuracy_m":3},{"offset_ms":36000,"longitude":0.003240977,"latitude":-0.000002789,"accuracy_m":3},{"offset_ms":37000,"longitude":0.003344685,"latitude":0.000003002,"accuracy_m":3},{"offset_ms":38000,"longitude":0.003413344,"latitude":0.000014872,"accuracy_m":3},{"offset_ms":39000,"longitude":0.003497133,"latitude":-0.000011063,"accuracy_m":3},{"offset_ms":40000,"longitude":0.003598825,"latitude":0.000023365,"accuracy_m":3},{"offset_ms":41000,"longitude":0.003708042,"latitude":0.000013899,"accuracy_m":3},{"offset_ms":42000,"longitude":0.003777167,"latitude":0.000013679,"accuracy_m":3},{"offset_ms":43000,"longitude":0.003849533,"latitude":0.000018564,"accuracy_m":3},{"offset_ms":44000,"longitude":0.003960002,"latitude":0.000002543,"accuracy_m":3},{"offset_ms":44479,"longitude":0.003983357,"latitude":0.000011163,"accuracy_m":3}],"omissions":[{"offset_ms":15000,"reason":"SCHEDULED_DROP"},{"offset_ms":16000,"reason":"SCHEDULED_DROP"},{"offset_ms":17000,"reason":"SCHEDULED_DROP"},{"offset_ms":18000,"reason":"SCHEDULED_DROP"},{"offset_ms":19000,"reason":"SCHEDULED_DROP"},{"offset_ms":20000,"reason":"SCHEDULED_DROP"},{"offset_ms":21000,"reason":"SCHEDULED_DROP"},{"offset_ms":22000,"reason":"SCHEDULED_DROP"},{"offset_ms":23000,"reason":"SCHEDULED_DROP"},{"offset_ms":24000,"reason":"SCHEDULED_DROP"}],"traversals":[{"edge_id":"4152962","label":"ab","forward":true,"entered_at_ms":0,"exited_at_ms":22240,"distance_m":222.3901604670658},{"edge_id":"339697282","label":"bc","forward":true,"entered_at_ms":22240,"exited_at_ms":44479,"distance_m":222.3901604670658}]},{"vehicle_id":"upper-waiting","truth":[{"offset_ms":0,"longitude":0,"latitude":0,"edge_id":"37707394"},{"offset_ms":1000,"longitude":0,"latitude":0,"edge_id":"37707394"},{"offset_ms":2000,"longitude":0,"latitude":0,"edge_id":"37707394"},{"offset_ms":3000,"longitude":0,"latitude":0,"edge_id":"37707394"},{"offset_ms":4000,"longitude":0,"latitude":0,"edge_id":"37707394"},{"offset_ms":5000,"longitude":0,"latitude":0,"edge_id":"37707394"},{"offset_ms":6000,"longitude":0,"latitude":0.000089932,"edge_id":"37707394"},{"offset_ms":7000,"longitude":0,"latitude":0.000179864,"edge_id":"37707394"},{"offset_ms":8000,"longitude":0,"latitude":0.000269796,"edge_id":"37707394"},{"offset_ms":9000,"longitude":0,"latitude":0.000359728,"edge_id":"37707394"},{"offset_ms":10000,"longitude":0,"latitude":0.00044966,"edge_id":"37707394"},{"offset_ms":11000,"longitude":0,"latitude":0.000539592,"edge_id":"37707394"},{"offset_ms":12000,"longitude":0,"latitude":0.000629524,"edge_id":"37707394"},{"offset_ms":13000,"longitude":0,"latitude":0.000719456,"edge_id":"37707394"},{"offset_ms":14000,"longitude":0,"latitude":0.000809388,"edge_id":"37707394"},{"offset_ms":15000,"longitude":0,"latitude":0.00089932,"edge_id":"37707394"},{"offset_ms":16000,"longitude":0,"latitude":0.000989252,"edge_id":"37707394"},{"offset_ms":17000,"longitude":0,"latitude":0.001079184,"edge_id":"37707394"},{"offset_ms":18000,"longitude":0,"latitude":0.001169116,"edge_id":"37707394"},{"offset_ms":19000,"longitude":0,"latitude":0.001259049,"edge_id":"37707394"},{"offset_ms":20000,"longitude":0,"latitude":0.001348981,"edge_id":"37707394"},{"offset_ms":21000,"longitude":0,"latitude":0.001438913,"edge_id":"37707394"},{"offset_ms":22000,"longitude":0,"latitude":0.001528845,"edge_id":"37707394"},{"offset_ms":23000,"longitude":0,"latitude":0.001618777,"edge_id":"37707394"},{"offset_ms":24000,"longitude":0,"latitude":0.001708709,"edge_id":"37707394"},{"offset_ms":25000,"longitude":0,"latitude":0.001798641,"edge_id":"37707394"},{"offset_ms":26000,"longitude":0,"latitude":0.001888573,"edge_id":"37707394"},{"offset_ms":27000,"longitude":0,"latitude":0.001978505,"edge_id":"37707394"},{"offset_ms":28000,"longitude":0.000068437,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":29000,"longitude":0.000158369,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":30000,"longitude":0.000248301,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":31000,"longitude":0.000338233,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":32000,"longitude":0.000428165,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":33000,"longitude":0.000518097,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":34000,"longitude":0.000608029,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":35000,"longitude":0.000697961,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":36000,"longitude":0.000787893,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":37000,"longitude":0.000877825,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":38000,"longitude":0.000967757,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":39000,"longitude":0.001057689,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":40000,"longitude":0.001147621,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":41000,"longitude":0.001237553,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":42000,"longitude":0.001327485,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":43000,"longitude":0.001417417,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":44000,"longitude":0.001507349,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":45000,"longitude":0.001597281,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":46000,"longitude":0.001687213,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":47000,"longitude":0.001777146,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":48000,"longitude":0.001867078,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":49000,"longitude":0.00195701,"latitude":0.002,"edge_id":"138370690"},{"offset_ms":50000,"longitude":0.002046942,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":51000,"longitude":0.002136874,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":52000,"longitude":0.002226806,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":53000,"longitude":0.002316738,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":54000,"longitude":0.00240667,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":55000,"longitude":0.002496602,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":56000,"longitude":0.002586534,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":57000,"longitude":0.002676466,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":58000,"longitude":0.002766398,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":59000,"longitude":0.00285633,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":60000,"longitude":0.002946262,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":61000,"longitude":0.003036194,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":62000,"longitude":0.003126126,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":63000,"longitude":0.003216058,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":64000,"longitude":0.00330599,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":65000,"longitude":0.003395922,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":66000,"longitude":0.003485854,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":67000,"longitude":0.003575786,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":68000,"longitude":0.003665718,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":69000,"longitude":0.00375565,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":70000,"longitude":0.003845582,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":71000,"longitude":0.003935514,"latitude":0.002,"edge_id":"205479554"},{"offset_ms":72000,"longitude":0.004,"latitude":0.001974554,"edge_id":"541023874"},{"offset_ms":73000,"longitude":0.004,"latitude":0.001884622,"edge_id":"541023874"},{"offset_ms":74000,"longitude":0.004,"latitude":0.001794689,"edge_id":"541023874"},{"offset_ms":75000,"longitude":0.004,"latitude":0.001704757,"edge_id":"541023874"},{"offset_ms":76000,"longitude":0.004,"latitude":0.001614825,"edge_id":"541023874"},{"offset_ms":77000,"longitude":0.004,"latitude":0.001524893,"edge_id":"541023874"},{"offset_ms":78000,"longitude":0.004,"latitude":0.001434961,"edge_id":"541023874"},{"offset_ms":79000,"longitude":0.004,"latitude":0.001345029,"edge_id":"541023874"},{"offset_ms":80000,"longitude":0.004,"latitude":0.001255097,"edge_id":"541023874"},{"offset_ms":81000,"longitude":0.004,"latitude":0.001165165,"edge_id":"541023874"},{"offset_ms":82000,"longitude":0.004,"latitude":0.001075233,"edge_id":"541023874"},{"offset_ms":83000,"longitude":0.004,"latitude":0.000985301,"edge_id":"541023874"},{"offset_ms":84000,"longitude":0.004,"latitude":0.000895369,"edge_id":"541023874"},{"offset_ms":85000,"longitude":0.004,"latitude":0.000805437,"edge_id":"541023874"},{"offset_ms":86000,"longitude":0.004,"latitude":0.000715505,"edge_id":"541023874"},{"offset_ms":87000,"longitude":0.004,"latitude":0.000625573,"edge_id":"541023874"},{"offset_ms":88000,"longitude":0.004,"latitude":0.000535641,"edge_id":"541023874"},{"offset_ms":89000,"longitude":0.004,"latitude":0.000445709,"edge_id":"541023874"},{"offset_ms":90000,"longitude":0.004,"latitude":0.000355777,"edge_id":"541023874"},{"offset_ms":91000,"longitude":0.004,"latitude":0.000265845,"edge_id":"541023874"},{"offset_ms":92000,"longitude":0.004,"latitude":0.000175913,"edge_id":"541023874"},{"offset_ms":93000,"longitude":0.004,"latitude":0.000085981,"edge_id":"541023874"},{"offset_ms":93957,"longitude":0.004,"latitude":0,"edge_id":"541023874"}],"observations":[{"offset_ms":0,"longitude":0,"latitude":0,"accuracy_m":0.01},{"offset_ms":1000,"longitude":0,"latitude":0,"accuracy_m":0.01},{"offset_ms":2000,"longitude":0,"latitude":0,"accuracy_m":0.01},{"offset_ms":3000,"longitude":0,"latitude":0,"accuracy_m":0.01},{"offset_ms":4000,"longitude":0,"latitude":0,"accuracy_m":0.01},{"offset_ms":5000,"longitude":0,"latitude":0,"accuracy_m":0.01},{"offset_ms":6000,"longitude":0,"latitude":0.000089932,"accuracy_m":0.01},{"offset_ms":7000,"longitude":0,"latitude":0.000179864,"accuracy_m":0.01},{"offset_ms":8000,"longitude":0,"latitude":0.000269796,"accuracy_m":0.01},{"offset_ms":9000,"longitude":0,"latitude":0.000359728,"accuracy_m":0.01},{"offset_ms":10000,"longitude":0,"latitude":0.00044966,"accuracy_m":0.01},{"offset_ms":11000,"longitude":0,"latitude":0.000539592,"accuracy_m":0.01},{"offset_ms":12000,"longitude":0,"latitude":0.000629524,"accuracy_m":0.01},{"offset_ms":13000,"longitude":0,"latitude":0.000719456,"accuracy_m":0.01},{"offset_ms":14000,"longitude":0,"latitude":0.000809388,"accuracy_m":0.01},{"offset_ms":15000,"longitude":0,"latitude":0.00089932,"accuracy_m":0.01},{"offset_ms":16000,"longitude":0,"latitude":0.000989252,"accuracy_m":0.01},{"offset_ms":17000,"longitude":0,"latitude":0.001079184,"accuracy_m":0.01},{"offset_ms":18000,"longitude":0,"latitude":0.001169116,"accuracy_m":0.01},{"offset_ms":19000,"longitude":0,"latitude":0.001259049,"accuracy_m":0.01},{"offset_ms":20000,"longitude":0,"latitude":0.001348981,"accuracy_m":0.01},{"offset_ms":21000,"longitude":0,"latitude":0.001438913,"accuracy_m":0.01},{"offset_ms":22000,"longitude":0,"latitude":0.001528845,"accuracy_m":0.01},{"offset_ms":23000,"longitude":0,"latitude":0.001618777,"accuracy_m":0.01},{"offset_ms":24000,"longitude":0,"latitude":0.001708709,"accuracy_m":0.01},{"offset_ms":25000,"longitude":0,"latitude":0.001798641,"accuracy_m":0.01},{"offset_ms":26000,"longitude":0,"latitude":0.001888573,"accuracy_m":0.01},{"offset_ms":27000,"longitude":0,"latitude":0.001978505,"accuracy_m":0.01},{"offset_ms":28000,"longitude":0.000068437,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":29000,"longitude":0.000158369,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":30000,"longitude":0.000248301,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":31000,"longitude":0.000338233,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":32000,"longitude":0.000428165,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":33000,"longitude":0.000518097,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":34000,"longitude":0.000608029,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":35000,"longitude":0.000697961,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":36000,"longitude":0.000787893,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":37000,"longitude":0.000877825,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":38000,"longitude":0.000967757,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":39000,"longitude":0.001057689,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":40000,"longitude":0.001147621,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":41000,"longitude":0.001237553,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":42000,"longitude":0.001327485,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":43000,"longitude":0.001417417,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":44000,"longitude":0.001507349,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":45000,"longitude":0.001597281,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":46000,"longitude":0.001687213,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":47000,"longitude":0.001777146,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":48000,"longitude":0.001867078,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":49000,"longitude":0.00195701,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":50000,"longitude":0.002046942,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":51000,"longitude":0.002136874,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":52000,"longitude":0.002226806,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":53000,"longitude":0.002316738,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":54000,"longitude":0.00240667,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":55000,"longitude":0.002496602,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":56000,"longitude":0.002586534,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":57000,"longitude":0.002676466,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":58000,"longitude":0.002766398,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":59000,"longitude":0.00285633,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":60000,"longitude":0.002946262,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":61000,"longitude":0.003036194,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":62000,"longitude":0.003126126,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":63000,"longitude":0.003216058,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":64000,"longitude":0.00330599,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":65000,"longitude":0.003395922,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":66000,"longitude":0.003485854,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":67000,"longitude":0.003575786,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":68000,"longitude":0.003665718,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":69000,"longitude":0.00375565,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":70000,"longitude":0.003845582,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":71000,"longitude":0.003935514,"latitude":0.002,"accuracy_m":0.01},{"offset_ms":72000,"longitude":0.004,"latitude":0.001974554,"accuracy_m":0.01},{"offset_ms":73000,"longitude":0.004,"latitude":0.001884622,"accuracy_m":0.01},{"offset_ms":74000,"longitude":0.004,"latitude":0.001794689,"accuracy_m":0.01},{"offset_ms":75000,"longitude":0.004,"latitude":0.001704757,"accuracy_m":0.01},{"offset_ms":76000,"longitude":0.004,"latitude":0.001614825,"accuracy_m":0.01},{"offset_ms":77000,"longitude":0.004,"latitude":0.001524893,"accuracy_m":0.01},{"offset_ms":78000,"longitude":0.004,"latitude":0.001434961,"accuracy_m":0.01},{"offset_ms":79000,"longitude":0.004,"latitude":0.001345029,"accuracy_m":0.01},{"offset_ms":80000,"longitude":0.004,"latitude":0.001255097,"accuracy_m":0.01},{"offset_ms":81000,"longitude":0.004,"latitude":0.001165165,"accuracy_m":0.01},{"offset_ms":82000,"longitude":0.004,"latitude":0.001075233,"accuracy_m":0.01},{"offset_ms":83000,"longitude":0.004,"latitude":0.000985301,"accuracy_m":0.01},{"offset_ms":84000,"longitude":0.004,"latitude":0.000895369,"accuracy_m":0.01},{"offset_ms":85000,"longitude":0.004,"latitude":0.000805437,"accuracy_m":0.01},{"offset_ms":86000,"longitude":0.004,"latitude":0.000715505,"accuracy_m":0.01},{"offset_ms":87000,"longitude":0.004,"latitude":0.000625573,"accuracy_m":0.01},{"offset_ms":88000,"longitude":0.004,"latitude":0.000535641,"accuracy_m":0.01},{"offset_ms":89000,"longitude":0.004,"latitude":0.000445709,"accuracy_m":0.01},{"offset_ms":90000,"longitude":0.004,"latitude":0.000355777,"accuracy_m":0.01},{"offset_ms":91000,"longitude":0.004,"latitude":0.000265845,"accuracy_m":0.01},{"offset_ms":92000,"longitude":0.004,"latitude":0.000175913,"accuracy_m":0.01},{"offset_ms":93000,"longitude":0.004,"latitude":0.000085981,"accuracy_m":0.01},{"offset_ms":93957,"longitude":0.004,"latitude":0,"accuracy_m":0.01}],"omissions":[],"traversals":[{"edge_id":"37707394","label":"ad","forward":true,"entered_at_ms":0,"exited_at_ms":27240,"distance_m":222.3901604670658},{"edge_id":"138370690","label":"de","forward":true,"entered_at_ms":27240,"exited_at_ms":49479,"distance_m":222.3901604670658},{"edge_id":"205479554","label":"ef","forward":true,"entered_at_ms":49479,"exited_at_ms":71718,"distance_m":222.3901604670658},{"edge_id":"541023874","label":"fc","forward":true,"entered_at_ms":71718,"exited_at_ms":93957,"distance_m":222.3901604670658}]}],"assertions":[{"assertion_id":"synthetic-quota-refusal","status":"PASS","message_en":"Synthetic corpus is valid but cannot satisfy the real-road quota.","message_ko":"합성 자료는 유효하지만 실제 도로 사례 기준을 충족하지 않습니다.","expected":false,"actual":false,"evidence_path":"corpus/report.json"},{"assertion_id":"p01-replay-failure-skip","status":"PASS","message_en":"Fresh P01 replay, deliberate failure, skip and invalid-input checks passed.","message_ko":"새 P01 재생·의도적 실패·생략·잘못된 입력 검사가 통과했습니다.","expected":5,"actual":5,"evidence_path":"p01/checks.json"},{"assertion_id":"p02-cleanup-and-graph","status":"PASS","message_en":"Fresh real Valhalla graph, road legality and container cleanup verified.","message_ko":"새 실제 Valhalla 그래프·통행 규칙·컨테이너 정리를 확인했습니다.","expected":true,"actual":true,"evidence_path":"graph/manifest.json"},{"assertion_id":"p02-p03-graph-binding","status":"PASS","message_en":"Simulation uses this run’s verified graph identity.","message_ko":"시뮬레이션이 이번 실행에서 검증한 그래프 식별자를 사용합니다.","expected":"c1d06ace33d8e9184749e7b09c946f632489cdca5064672396e970d9c299aa0a","actual":"c1d06ace33d8e9184749e7b09c946f632489cdca5064672396e970d9c299aa0a","evidence_path":"simulation/manifest.json"},{"assertion_id":"authored-truth-count","status":"PASS","message_en":"Counts match independent hand calculations.","message_ko":"개수가 독립 수작업 계산과 일치합니다.","expected":187,"actual":187,"evidence_path":"simulation/truth.json"},{"assertion_id":"authored-observation-count","status":"PASS","message_en":"Counts match independent hand calculations.","message_ko":"개수가 독립 수작업 계산과 일치합니다.","expected":177,"actual":177,"evidence_path":"simulation/truth.json"},{"assertion_id":"authored-omission-count","status":"PASS","message_en":"Counts match independent hand calculations.","message_ko":"개수가 독립 수작업 계산과 일치합니다.","expected":10,"actual":10,"evidence_path":"simulation/truth.json"},{"assertion_id":"authored-traversal-count","status":"PASS","message_en":"Counts match independent hand calculations.","message_ko":"개수가 독립 수작업 계산과 일치합니다.","expected":8,"actual":8,"evidence_path":"simulation/truth.json"},{"assertion_id":"authored-arrival-baseline-clean","status":"PASS","message_en":"Arrival matches independent distance/speed calculation.","message_ko":"도착 시각이 독립 거리·속도 계산과 일치합니다.","expected":44479,"actual":44479,"evidence_path":"simulation/truth.json"},{"assertion_id":"authored-ab-exit-baseline-clean","status":"PASS","message_en":"AB exit matches hand calculation.","message_ko":"AB 진출이 수작업 계산과 일치합니다.","expected":22240,"actual":22240,"evidence_path":"simulation/truth.json"},{"assertion_id":"authored-arrival-baseline-noisy","status":"PASS","message_en":"Arrival matches independent distance/speed calculation.","message_ko":"도착 시각이 독립 거리·속도 계산과 일치합니다.","expected":44479,"actual":44479,"evidence_path":"simulation/truth.json"},{"assertion_id":"authored-ab-exit-baseline-noisy","status":"PASS","message_en":"AB exit matches hand calculation.","message_ko":"AB 진출이 수작업 계산과 일치합니다.","expected":22240,"actual":22240,"evidence_path":"simulation/truth.json"},{"assertion_id":"authored-upper-exits","status":"PASS","message_en":"Upper crossings match independently calculated wait and distance.","message_ko":"상단 통과 시각이 독립 대기·거리 계산과 일치합니다.","expected":[27240,49479,71718,93957],"actual":[27240,49479,71718,93957],"evidence_path":"simulation/truth.json"},{"assertion_id":"authored-zero-speed-wait","status":"PASS","message_en":"Upper vehicle remains still through the initial five seconds.","message_ko":"상단 차량이 처음 5초 동안 정지합니다.","expected":true,"actual":true,"evidence_path":"simulation/truth.json"},{"assertion_id":"authored-drop-boundaries","status":"PASS","message_en":"Independent half-open drop times and 25 s observation match.","message_ko":"독립 반열린 누락 시각과 25초 관측이 일치합니다.","expected":[15000,16000,17000,18000,19000,20000,21000,22000,23000,24000],"actual":[15000,16000,17000,18000,19000,20000,21000,22000,23000,24000],"evidence_path":"simulation/omissions.json"},{"assertion_id":"p03-complete-sample-partition","status":"PASS","message_en":"Every true sample is observed or explicitly omitted.","message_ko":"모든 정답 표본은 관측되거나 누락으로 기록됩니다.","expected":187,"actual":187,"evidence_path":"simulation/truth.json"},{"assertion_id":"p03-bounded-noise","status":"PASS","message_en":"Observed coordinates stay within the declared noise radius.","message_ko":"관측 좌표가 선언한 잡음 반경 안에 있습니다.","expected":true,"actual":true,"evidence_path":"simulation/observations.json"},{"assertion_id":"p03-synthetic-observations","status":"PASS","message_en":"Observations are synthetic and contain no truth edge IDs.","message_ko":"관측은 합성이며 정답 구간 식별자를 포함하지 않습니다.","expected":true,"actual":true,"evidence_path":"simulation/observations.json"},{"assertion_id":"p03-half-open-drops","status":"PASS","message_en":"Omissions follow half-open intervals.","message_ko":"누락이 반열린 구간을 따릅니다.","expected":true,"actual":true,"evidence_path":"simulation/omissions.json"},{"assertion_id":"p03-completed-traversals","status":"PASS","message_en":"All independently authored paths complete within the scenario.","message_ko":"독립적으로 작성한 모든 경로가 시나리오 안에 완료됩니다.","expected":true,"actual":true,"evidence_path":"simulation/truth.json"},{"assertion_id":"truth-invariance-same-seed","status":"PASS","message_en":"Replay/fault changes preserve independent truth.","message_ko":"재생·장애 변경이 독립 정답을 보존합니다.","expected":"268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff","actual":"268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff","evidence_path":"replay/same-seed/manifest.json"},{"assertion_id":"observation-replay-same-seed","status":"PASS","message_en":"Same seeded observations and omissions replay exactly.","message_ko":"같은 시드의 관측·누락이 정확히 재생됩니다.","expected":"c756bedf503ee9933514643c7d133e3867093d7f0fde0b5a61e2111c4c0edc6a","actual":"c756bedf503ee9933514643c7d133e3867093d7f0fde0b5a61e2111c4c0edc6a","evidence_path":"replay/same-seed/manifest.json"},{"assertion_id":"truth-invariance-clean","status":"PASS","message_en":"Replay/fault changes preserve independent truth.","message_ko":"재생·장애 변경이 독립 정답을 보존합니다.","expected":"268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff","actual":"268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff","evidence_path":"replay/clean/manifest.json"},{"assertion_id":"truth-invariance-other-seed","status":"PASS","message_en":"Replay/fault changes preserve independent truth.","message_ko":"재생·장애 변경이 독립 정답을 보존합니다.","expected":"268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff","actual":"268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff","evidence_path":"replay/other-seed/manifest.json"},{"assertion_id":"noise-seed-changes","status":"PASS","message_en":"A different seed changes noise, while truth remains fixed.","message_ko":"다른 시드는 잡음만 바꾸고 정답은 유지합니다.","expected":true,"actual":true,"evidence_path":"replay/other-seed/manifest.json"},{"assertion_id":"truth-invariance-reordered","status":"PASS","message_en":"Replay/fault changes preserve independent truth.","message_ko":"재생·장애 변경이 독립 정답을 보존합니다.","expected":"268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff","actual":"268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff","evidence_path":"replay/reordered/manifest.json"},{"assertion_id":"observation-replay-reordered","status":"PASS","message_en":"Same seeded observations and omissions replay exactly.","message_ko":"같은 시드의 관측·누락이 정확히 재생됩니다.","expected":"c756bedf503ee9933514643c7d133e3867093d7f0fde0b5a61e2111c4c0edc6a","actual":"c756bedf503ee9933514643c7d133e3867093d7f0fde0b5a61e2111c4c0edc6a","evidence_path":"replay/reordered/manifest.json"},{"assertion_id":"clean-noisy-paired-truth","status":"PASS","message_en":"Authored clean/noisy vehicle pair has identical independent truth.","message_ko":"직접 작성한 깨끗한·잡음 차량 쌍의 독립 정답이 같습니다.","expected":true,"actual":true,"evidence_path":"simulation/truth.json"},{"assertion_id":"invalid-path-rejected","status":"PASS","message_en":"Invalid authored path was rejected; no successful simulation produced.","message_ko":"잘못된 작성 경로를 거부했으며 성공 시뮬레이션을 만들지 않았습니다.","expected":false,"actual":false,"evidence_path":"invalid-path.stderr.txt"},{"assertion_id":"tampered-graph-rejected","status":"PASS","message_en":"Tampered graph bundle was rejected; no successful simulation produced.","message_ko":"변조된 그래프 묶음을 거부했으며 성공 시뮬레이션을 만들지 않았습니다.","expected":false,"actual":false,"evidence_path":"tampered-bundle.stderr.txt"}],"limitations":[{"message_en":"Original fictional equatorial roads and controlled kinematics; not real-road accuracy or driver behavior.","message_ko":"직접 만든 가상의 적도 도로와 통제된 운동학이며 실제 도로 정확도·운전자 행동 검증이 아닙니다."},{"message_en":"No noisy map-matching, traffic aggregation/publication, distributed-node or mobile execution proof yet.","message_ko":"잡음 도로 매칭·교통 집계/게시·분산 노드·모바일 실행은 아직 검증하지 않았습니다."},{"message_en":"Current implemented-module integration, not the full P12/P14b fault matrix or complete navigation client.","message_ko":"현재 구현 모듈의 통합 검사이며 P12/P14b 전체 장애 행렬이나 완전한 내비게이션 클라이언트가 아닙니다."}]}
+  </script>
+  <script>
+    const data = JSON.parse(document.getElementById("report-data").textContent);
+    let lang = "en",
+      playing = false,
+      time = 0,
+      last = 0;
+    const $ = (id) => document.getElementById(id),
+      ns = "http://www.w3.org/2000/svg";
+    function node(tag, text, parent) {
+      const n = document.createElement(tag);
+      if (text !== undefined) n.textContent = text;
+      parent.append(n);
+      return n;
+    }
+    function evidence(path, parent) {
+      if (typeof path !== "string") return;
+      const a = node("a", path, parent);
+      if (
+        !path.startsWith("/") &&
+        !path.includes("\\") &&
+        !path.split("/").includes("..") &&
+        !/^[a-z][a-z0-9+.-]*:/i.test(path)
+      )
+        a.href = path;
+      else a.removeAttribute("href");
+    }
+    function translate() {
+      document.documentElement.lang = lang;
+      document
+        .querySelectorAll("[data-en]")
+        .forEach((e) => (e.textContent = e.dataset[lang]));
+      $("language").textContent = lang === "en" ? "한국어" : "English";
+      $("play").textContent = playing
+        ? lang === "en"
+          ? "Pause"
+          : "일시정지"
+        : lang === "en"
+          ? "Play"
+          : "재생";
+      $("result").textContent =
+        data.summary.status +
+        " · " +
+        data.summary.assertions_passed +
+        "/" +
+        data.summary.assertions_total +
+        (lang === "en" ? " assertions" : " 검사");
+      $("stages").replaceChildren();
+      data.stages.forEach((s) => {
+        const e = node("div", undefined, $("stages"));
+        e.className = "stage";
+        node("strong", s["name_" + lang], e);
+        node(
+          "p",
+          s.status + " · " + (s.duration_ms / 1000).toFixed(2) + " s",
+          e,
+        );
+        evidence(s.evidence_path, e);
+      });
+      $("provenance").replaceChildren();
+      node(
+        "p",
+        (lang === "en" ? "Source: " : "소스: ") +
+          data.source.commit +
+          (data.source.dirty ? " (dirty / 미커밋 변경)" : ""),
+        $("provenance"),
+      );
+      node("p", "Graph: " + data.graph_id, $("provenance"));
+      node("p", data.generated_at_utc, $("provenance"));
+      node("p", "SHA-256: " + data.implementation_sha256, $("provenance"));
+      $("checks").replaceChildren();
+      data.assertions.forEach((a) => {
+        const e = node("details", undefined, $("checks"));
+        node("summary", a.status + " · " + a["message_" + lang], e);
+        node(
+          "pre",
+          JSON.stringify(
+            {
+              assertion_id: a.assertion_id,
+              expected: a.expected,
+              actual: a.actual,
+            },
+            null,
+            2,
+          ),
+          e,
+        );
+        evidence(a.evidence_path, e);
+      });
+      $("limits").replaceChildren();
+      data.limitations.forEach((l) =>
+        node("li", l["message_" + lang], $("limits")),
+      );
+      const v = $("vehicle").options[0];
+      if (v) v.textContent = lang === "en" ? "All vehicles" : "전체 차량";
+      draw();
+    }
+    let viewportWidth = 900, viewportHeight = 560;
+    function bounds() {
+      const truth = data.vehicles.flatMap((v) =>
+        v.truth.map((p) => [p.longitude, p.latitude]),
+      );
+      const coords =
+        $("all-roads").checked || !truth.length
+          ? data.roads.flatMap((r) => r.coordinates)
+          : truth;
+      const xs = coords.map((p) => p[0]),
+        ys = coords.map((p) => p[1]);
+      const minX = Math.min(...xs),
+        maxX = Math.max(...xs),
+        minY = Math.min(...ys),
+        maxY = Math.max(...ys);
+      return {
+        minX,
+        maxX,
+        minY,
+        maxY,
+        scale: Math.min(
+          Math.max(100, viewportWidth - 120) / (maxX - minX || 0.001),
+          Math.max(100, viewportHeight - 110) / (maxY - minY || 0.001),
+        ),
+      };
+    }
+    let { minX, maxX, minY, maxY, scale } = bounds();
+    function xy(p) {
+      return [
+        viewportWidth / 2 + (p[0] - (minX + maxX) / 2) * scale,
+        viewportHeight / 2 - (p[1] - (minY + maxY) / 2) * scale,
+      ];
+    }
+    function svg(tag, attrs) {
+      const e = document.createElementNS(ns, tag);
+      Object.entries(attrs).forEach(([k, v]) => e.setAttribute(k, String(v)));
+      $("map").append(e);
+      return e;
+    }
+    function point(p) {
+      return xy([p.longitude, p.latitude]);
+    }
+    function draw() {
+      viewportWidth = $("map").clientWidth || 900;
+      viewportHeight = $("map").clientHeight || 560;
+      $("map").setAttribute("viewBox", "0 0 " + viewportWidth + " " + viewportHeight);
+      ({ minX, maxX, minY, maxY, scale } = bounds());
+      $("map").replaceChildren();
+      data.roads.forEach((r) => {
+        svg("polyline", {
+          points: r.coordinates.map((p) => xy(p).join(",")).join(" "),
+          fill: "none",
+          stroke: "#9BAEC2",
+          "stroke-width": 12,
+          "stroke-linecap": "round",
+        });
+        const first = r.coordinates[0];
+        const last = r.coordinates[r.coordinates.length - 1];
+        const p = xy([(first[0] + last[0]) / 2, (first[1] + last[1]) / 2]);
+        const horizontal = Math.abs(last[0] - first[0]) >= Math.abs(last[1] - first[1]);
+        const below = ["ab", "bc"].includes(r.label.toLowerCase());
+        const t = svg("text", {
+          x: p[0] + (horizontal ? 0 : 12),
+          y: p[1] + (horizontal ? (below ? 24 : -14) : 4),
+          "text-anchor": horizontal ? "middle" : "start",
+        });
+        t.textContent = r.label;
+      });
+      let omissions = 0;
+      data.vehicles
+        .filter(
+          (v) =>
+            $("vehicle").value === "*" || v.vehicle_id === $("vehicle").value,
+        )
+        .forEach((v, index) => {
+          const truth = v.truth.filter((p) => p.offset_ms <= time),
+            obs = v.observations.filter((p) => p.offset_ms <= time);
+          if ($("truth").checked && truth.length) {
+            svg("polyline", {
+              points: truth.map((p) => point(p).join(",")).join(" "),
+              fill: "none",
+              stroke: "#1264B8",
+              "stroke-width": 3,
+            });
+            const p = point(truth[truth.length - 1]);
+            svg("circle", {
+              cx: p[0],
+              cy: p[1],
+              r: 8,
+              fill: "#1264B8",
+              stroke: "white",
+              "stroke-width": 2,
+            });
+            const rightHalf = p[0] > viewportWidth / 2;
+            const lowerHalf = p[1] > viewportHeight / 2;
+            const t = svg("text", {
+              x: p[0] + (rightHalf ? -12 : 12),
+              y: p[1] + (lowerHalf ? -20 - index * 20 : 22 + index * 20),
+              "text-anchor": rightHalf ? "end" : "start",
+            });
+            t.textContent = v.vehicle_id;
+          }
+          if ($("observed").checked)
+            obs.forEach((p) => {
+              const q = point(p);
+              svg("path", {
+                d: "M" + (q[0] - 3) + "," + (q[1] - 3) + "l6,6m-6,0l6,-6",
+                stroke: "#D96B28",
+                "stroke-width": 2,
+                opacity: 0.75,
+              });
+            });
+          v.omissions
+            .filter((p) => p.offset_ms <= time)
+            .forEach((o) => {
+              omissions++;
+              const p = v.truth.find((t) => t.offset_ms === o.offset_ms);
+              if (p && $("observed").checked) {
+                const q = point(p);
+                svg("circle", {
+                  cx: q[0],
+                  cy: q[1],
+                  r: 6,
+                  fill: "white",
+                  stroke: "#172D46",
+                  "stroke-width": 1.5,
+                  "stroke-dasharray": "2 2",
+                });
+              }
+            });
+        });
+      $("clock").textContent =
+        (time / 1000).toFixed(1) +
+        " / " +
+        (data.summary.duration_ms / 1000).toFixed(1) +
+        " s";
+      $("omissions").textContent =
+        (lang === "en"
+          ? "Scheduled omissions so far: "
+          : "현재까지 예정된 누락: ") + omissions;
+      $("time").value = String(time);
+    }
+    $("time").max = String(data.summary.duration_ms);
+    node("option", "All vehicles", $("vehicle")).value = "*";
+    data.vehicles.forEach(
+      (v) => (node("option", v.vehicle_id, $("vehicle")).value = v.vehicle_id),
+    );
+    $("language").onclick = () => {
+      lang = lang === "en" ? "ko" : "en";
+      translate();
+    };
+    $("play").onclick = () => {
+      if (time >= data.summary.duration_ms) time = 0;
+      playing = !playing;
+      last = 0;
+      translate();
+      if (playing) requestAnimationFrame(tick);
+    };
+    $("time").oninput = () => {
+      time = Number($("time").value);
+      draw();
+    };
+    ["vehicle", "truth", "observed", "all-roads"].forEach(
+      (id) => ($(id).onchange = draw),
+    );
+    function tick(now) {
+      if (!playing) return;
+      if (last)
+        time = Math.min(
+          data.summary.duration_ms,
+          time + (now - last) * Number($("speed").value),
+        );
+      last = now;
+      draw();
+      if (time >= data.summary.duration_ms) {
+        playing = false;
+        translate();
+      } else requestAnimationFrame(tick);
+    }
+    window.addEventListener("resize", draw);
+    translate();
+  </script>
+</html>

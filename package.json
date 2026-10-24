@@ -12,7 +12,11 @@
     "corpus": "node dist/tools/evaluation_corpus.js",
     "pilot": "node dist/tools/pilot_runner.js",
     "pilot:checks": "node dist/tools/pilot_checks.js",
-    "graph:check": "node dist/tools/test_graph.js"
+    "graph:check": "node dist/tools/test_graph.js",
+    "simulate": "node dist/tools/vehicle_simulator.js",
+    "simulation:check": "node dist/tools/simulation_checks.js",
+    "report:serve": "node dist/tools/report_server.js",
+    "media:check": "node dist/tools/media_manifest.js"
   },
   "dependencies": {
     "jsonc-parser": "3.3.1",

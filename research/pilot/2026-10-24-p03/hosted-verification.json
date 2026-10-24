@@ -1,0 +1,125 @@
+{
+  "run_id": 40080824622,
+  "url": "https://github.com/dicebattle/routelens/actions/runs/40080824622",
+  "source_commit": "3f735adc6c6ad2b5b9e6a1ba101d81504a1b78f5",
+  "implementation_sha256": "d7bedeb54be6ca1c15f27603fd6094e817416c9b64f83b0cd93850906f192324",
+  "jobs": [
+    {
+      "name": "Node 22",
+      "status": "success"
+    },
+    {
+      "name": "Implemented-module simulation",
+      "status": "success"
+    },
+    {
+      "name": "Node 24",
+      "status": "success"
+    },
+    {
+      "name": "Required checks",
+      "status": "success"
+    }
+  ],
+  "unit_summary": [
+    "Node 22\tFocused tests / 집중 테스트\t2026-10-24T09:09:29.3018222Z # tests 71",
+    "Node 22\tFocused tests / 집중 테스트\t2026-10-24T09:09:29.3018659Z # pass 71",
+    "Node 22\tFocused tests / 집중 테스트\t2026-10-24T09:09:29.3018876Z # fail 0",
+    "Node 22\tFocused tests / 집중 테스트\t2026-10-24T09:09:29.3019578Z # skipped 0",
+    "Node 24\tFocused tests / 집중 테스트\t2026-10-24T09:09:28.1497447Z ℹ tests 71",
+    "Node 24\tFocused tests / 집중 테스트\t2026-10-24T09:09:28.1498171Z ℹ pass 71",
+    "Node 24\tFocused tests / 집중 테스트\t2026-10-24T09:09:28.1498525Z ℹ fail 0",
+    "Node 24\tFocused tests / 집중 테스트\t2026-10-24T09:09:28.1499293Z ℹ skipped 0"
+  ],
+  "manifest": {
+    "schema_version": "0.1",
+    "source": {
+      "commit": "3f735adc6c6ad2b5b9e6a1ba101d81504a1b78f5",
+      "dirty": false
+    },
+    "node": "22.23.3",
+    "host_architecture": "x64",
+    "host_platform": "linux",
+    "graph_id": "6b700e24e798b3b5dce0aff5c3661dcef2108896c9f1d222ec91db8762884bf6",
+    "implementation_sha256": "d7bedeb54be6ca1c15f27603fd6094e817416c9b64f83b0cd93850906f192324",
+    "status": "PASS",
+    "stages": [
+      {
+        "id": "corpus",
+        "name_en": "Synthetic corpus validation",
+        "name_ko": "합성 자료 검사",
+        "status": "PASS",
+        "evidence_path": "corpus/report.json",
+        "duration_ms": 255.307865
+      },
+      {
+        "id": "p01",
+        "name_en": "Fresh schedule replay and required checks",
+        "name_ko": "새 일정 재생·필수 검사",
+        "status": "PASS",
+        "evidence_path": "p01/checks.json",
+        "duration_ms": 329.964163
+      },
+      {
+        "id": "p02",
+        "name_en": "Fresh real-engine graph and routing",
+        "name_ko": "실제 엔진의 새 그래프·경로",
+        "status": "PASS",
+        "evidence_path": "graph/manifest.json",
+        "duration_ms": 33816.775814
+      },
+      {
+        "id": "p03",
+        "name_en": "Seeded geographic truth and observations",
+        "name_ko": "시드 기반 지리 정답·관측",
+        "status": "PASS",
+        "evidence_path": "simulation/manifest.json",
+        "duration_ms": 98.74618699999701
+      },
+      {
+        "id": "replay",
+        "name_en": "Fresh replay and fault invariance",
+        "name_ko": "새 재생·장애 불변성",
+        "status": "PASS",
+        "evidence_path": "replay/checks.json",
+        "duration_ms": 508.86084700000356
+      }
+    ],
+    "output_sha256": {
+      "report-data.json": "8812ee36c213935125a2956dd49171f1b5ce7489ca09262ebf7b64d9b50d46e5",
+      "report.html": "9d60a19b7287561731c2efe861f791f1110492052f36783c536c2022ccf78330",
+      "assertions.json": "3e081cc9649b4ad2ddd2da486f5c1b31cd2046dac3f67f46da8645072170453d",
+      "summary.md": "7478e6c650be36e80b9dead2bc7af3fed6904b5f2d143247e09f6930eae9a853",
+      "commands.json": "ed7810e2a0f08e555a973a2839d0651273dfd93d71a773f30e0039bf7526c4a3"
+    },
+    "cleanup_verified": true,
+    "completed_at_utc": "2026-10-24T09:10:06.902Z"
+  },
+  "graph": {
+    "id": "6b700e24e798b3b5dce0aff5c3661dcef2108896c9f1d222ec91db8762884bf6",
+    "image": {
+      "id": "sha256:6a5d587e894676d3a73e86e5ca5974e9cb1de491ace02c92f2e6cb4d706bb0f9",
+      "platform": "linux/amd64",
+      "dockerfile_sha256": "063afdc0e67da85ca88eb5713600cf76b663508e66682ace5859628b465001bc"
+    },
+    "engine": {
+      "valhalla": "3.9.1",
+      "osmium": "osmium version 1.16.0\nlibosmium version 2.20.0\nSupported PBF compression types: none zlib lz4\n\nCopyright (C) 2013-2023  Jochen Topf <jochen@topf.org>\nLicense: GNU GENERAL PUBLIC LICENSE Version 3 <https://gnu.org/licenses/gpl.html>.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law."
+    },
+    "cleanup_verified": true
+  },
+  "summary": {
+    "status": "PASS",
+    "assertions_passed": 30,
+    "assertions_total": 30,
+    "vehicle_count": 3,
+    "observation_count": 177,
+    "omission_count": 10,
+    "duration_ms": 120000
+  },
+  "downloaded_artifacts_inspected": true,
+  "raw_hashes_recomputed": true,
+  "counts_and_crossings_independently_verified": true,
+  "note_en": "Hosted Linux amd64 graph identity differs from local arm64 because the image identity is intentionally bound. Each run internally preserves its exact graph identity.",
+  "note_ko": "이미지 식별을 결합하므로 원격 Linux amd64 그래프 식별은 로컬 arm64와 다릅니다. 각 실행 내부에서는 정확한 그래프 식별을 유지합니다."
+}

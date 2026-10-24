@@ -36,9 +36,9 @@ Graph, image and output identity are recorded with actual source commit/dirty st
 
 실제 커밋/미커밋 상태에 그래프·이미지·출력 식별을 연결합니다. 자신이 만든 자원을 정리한 뒤 완료 목록을 기록합니다. 생성 PBF·타일·원본 로그는 Git 제외 경로, 검사한 핵심 증거는 커밋에 보존합니다. 기존 보고서 폴더를 덮어쓰지 않습니다.
 
-This proves the synthetic graph's routing/access behavior with Valhalla. It does not prove noisy GPS matching, live traffic changes, two-node failover, Korean road accuracy, hosted engine CI or actual driver behavior. A resource limit is not a peak-memory measurement. Next: [P03 vehicle/GPS design](../../docs/16-p03-vehicle-simulation.md).
+This proves the synthetic graph's routing/access behavior with Valhalla. It does not prove noisy GPS matching, live traffic changes, two-node failover, Korean road accuracy, hosted engine CI or actual driver behavior. A resource limit is not a peak-memory measurement. P03 now has [integrated evidence](vehicle-simulation.md); next is P04 matching.
 
-이는 Valhalla의 합성 그래프 경로·접근 규칙을 검증합니다. 잡음 GPS 매칭·실시간 교통 변화·두 노드 장애 전환·한국 도로 정확도·원격 엔진 CI·실제 운전자 행동은 검증하지 않습니다. 자원 한도는 최대 메모리 실측값이 아닙니다. 다음은 위 P03 차량·GPS 생성 설계입니다.
+이는 Valhalla의 합성 그래프 경로·접근 규칙을 검증합니다. 잡음 GPS 매칭·실시간 교통 변화·두 노드 장애 전환·한국 도로 정확도·원격 엔진 CI·실제 운전자 행동은 검증하지 않습니다. 자원 한도는 최대 메모리 실측값이 아닙니다. P03도 [통합 증거](vehicle-simulation.md)를 갖췄으며 다음은 P04 매칭입니다.
 
 Cleanup coverage is normal completion and handled command/validation failures. Killing the supervising Node process with an uncatchable signal is not a verified recovery scenario here; P12 must add whole-process interruption/recovery proof. P02's container command is time-bounded, and the final test checks that no owned container remains.
 

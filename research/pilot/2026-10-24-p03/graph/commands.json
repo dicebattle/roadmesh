@@ -1,0 +1,550 @@
+[
+  {
+    "sequence": 1,
+    "args": [
+      "version",
+      "--format",
+      "{{.Server.Version}}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 390.44220899999993,
+    "stdout": "commands/001.stdout.txt",
+    "stderr": "commands/001.stderr.txt"
+  },
+  {
+    "sequence": 2,
+    "args": [
+      "build",
+      "--tag",
+      "routelens-p02:063afdc0e67da85c",
+      "--file",
+      "/Users/dice/Documents/routelens/infra/pilot/Dockerfile",
+      "/Users/dice/Documents/routelens/infra/pilot"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 775.3617920000002,
+    "stdout": "commands/002.stdout.txt",
+    "stderr": "commands/002.stderr.txt"
+  },
+  {
+    "sequence": 3,
+    "args": [
+      "image",
+      "inspect",
+      "routelens-p02:063afdc0e67da85c"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 38.38541699999996,
+    "stdout": "commands/003.stdout.txt",
+    "stderr": "commands/003.stderr.txt"
+  },
+  {
+    "sequence": 4,
+    "args": [
+      "create",
+      "--name",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "--label",
+      "io.routelens.run_id=d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "--network",
+      "none",
+      "--cpus",
+      "2",
+      "--memory",
+      "2g",
+      "--stop-timeout",
+      "1",
+      "--mount",
+      "type=bind,src=/Users/dice/Documents/routelens/data/p03-main-20261024/graph,dst=/work",
+      "--entrypoint",
+      "/bin/sh",
+      "sha256:8b4a0609466e08dd6b384be7104ffa3f1c43270d9a8e931f3d93e2243566b4b6",
+      "-c",
+      "sleep 900"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 83.95962499999996,
+    "stdout": "commands/004.stdout.txt",
+    "stderr": "commands/004.stderr.txt"
+  },
+  {
+    "sequence": 5,
+    "args": [
+      "start",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 103.13695800000005,
+    "stdout": "commands/005.stdout.txt",
+    "stderr": "commands/005.stderr.txt"
+  },
+  {
+    "sequence": 6,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "--version"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 64.68270800000028,
+    "stdout": "commands/006.stdout.txt",
+    "stderr": "commands/006.stderr.txt"
+  },
+  {
+    "sequence": 7,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "osmium",
+      "--version"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 52.15591600000016,
+    "stdout": "commands/007.stdout.txt",
+    "stderr": "commands/007.stderr.txt"
+  },
+  {
+    "sequence": 8,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_build_config",
+      "--mjolnir-tile-dir",
+      "/work/tiles",
+      "--mjolnir-tile-extract",
+      "/work/unused.tar"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 80.74829200000022,
+    "stdout": "commands/008.stdout.txt",
+    "stderr": "commands/008.stderr.txt"
+  },
+  {
+    "sequence": 9,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "osmium",
+      "cat",
+      "/work/tiny-city.osm.xml",
+      "-o",
+      "/work/tiny-city.osm.pbf"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 55.51991700000008,
+    "stdout": "commands/009.stdout.txt",
+    "stderr": "commands/009.stderr.txt"
+  },
+  {
+    "sequence": 10,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_build_tiles",
+      "-c",
+      "/work/config.json",
+      "/work/tiny-city.osm.pbf"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 97.70033299999977,
+    "stdout": "commands/010.stdout.txt",
+    "stderr": "commands/010.stderr.txt"
+  },
+  {
+    "sequence": 11,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "locate",
+      "{\"locations\":[{\"lon\":0.001,\"lat\":0,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"pedestrian\",\"verbose\":true}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 62.232750000000124,
+    "stdout": "commands/011.stdout.txt",
+    "stderr": "commands/011.stderr.txt"
+  },
+  {
+    "sequence": 12,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "locate",
+      "{\"locations\":[{\"lon\":0.003,\"lat\":0,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"pedestrian\",\"verbose\":true}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 57.288332999999966,
+    "stdout": "commands/012.stdout.txt",
+    "stderr": "commands/012.stderr.txt"
+  },
+  {
+    "sequence": 13,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "locate",
+      "{\"locations\":[{\"lon\":0,\"lat\":0.001,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"pedestrian\",\"verbose\":true}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 57.94225000000006,
+    "stdout": "commands/013.stdout.txt",
+    "stderr": "commands/013.stderr.txt"
+  },
+  {
+    "sequence": 14,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "locate",
+      "{\"locations\":[{\"lon\":0.001,\"lat\":0.002,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"pedestrian\",\"verbose\":true}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 58.73387500000035,
+    "stdout": "commands/014.stdout.txt",
+    "stderr": "commands/014.stderr.txt"
+  },
+  {
+    "sequence": 15,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "locate",
+      "{\"locations\":[{\"lon\":0.003,\"lat\":0.002,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"pedestrian\",\"verbose\":true}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 64.46079199999986,
+    "stdout": "commands/015.stdout.txt",
+    "stderr": "commands/015.stderr.txt"
+  },
+  {
+    "sequence": 16,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "locate",
+      "{\"locations\":[{\"lon\":0.004,\"lat\":0.001,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"pedestrian\",\"verbose\":true}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 57.312417000000096,
+    "stdout": "commands/016.stdout.txt",
+    "stderr": "commands/016.stderr.txt"
+  },
+  {
+    "sequence": 17,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "locate",
+      "{\"locations\":[{\"lon\":0.002,\"lat\":0.001,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"pedestrian\",\"verbose\":true}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 57.422207999999955,
+    "stdout": "commands/017.stdout.txt",
+    "stderr": "commands/017.stderr.txt"
+  },
+  {
+    "sequence": 18,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "locate",
+      "{\"locations\":[{\"lon\":0.002,\"lat\":-0.001,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"pedestrian\",\"verbose\":true}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 55.80054199999995,
+    "stdout": "commands/018.stdout.txt",
+    "stderr": "commands/018.stderr.txt"
+  },
+  {
+    "sequence": 19,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "locate",
+      "{\"locations\":[{\"lon\":0.011,\"lat\":0,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"pedestrian\",\"verbose\":true}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 56.365792000000056,
+    "stdout": "commands/019.stdout.txt",
+    "stderr": "commands/019.stderr.txt"
+  },
+  {
+    "sequence": 20,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "locate",
+      "{\"locations\":[{\"lon\":0.011,\"lat\":0.003,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"pedestrian\",\"verbose\":true}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 62.018916999999874,
+    "stdout": "commands/020.stdout.txt",
+    "stderr": "commands/020.stderr.txt"
+  },
+  {
+    "sequence": 21,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "locate",
+      "{\"locations\":[{\"lon\":0.001,\"lat\":0.0001,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"pedestrian\",\"verbose\":true}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 58.66800000000012,
+    "stdout": "commands/021.stdout.txt",
+    "stderr": "commands/021.stderr.txt"
+  },
+  {
+    "sequence": 22,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "route",
+      "{\"locations\":[{\"lon\":0.0003,\"lat\":0,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0},{\"lon\":0.0037,\"lat\":0,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"auto\",\"shape_format\":\"polyline6\"}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 90.60404100000005,
+    "stdout": "commands/022.stdout.txt",
+    "stderr": "commands/022.stderr.txt"
+  },
+  {
+    "sequence": 23,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "trace_attributes",
+      "{\"encoded_polyline\":\"?wQ?giB?giB\",\"shape_match\":\"edge_walk\",\"costing\":\"auto\"}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 68.77987499999972,
+    "stdout": "commands/023.stdout.txt",
+    "stderr": "commands/023.stderr.txt"
+  },
+  {
+    "sequence": 24,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "route",
+      "{\"locations\":[{\"lon\":0.0003,\"lat\":0,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0},{\"lon\":0.001,\"lat\":0.002,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0},{\"lon\":0.003,\"lat\":0.002,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0},{\"lon\":0.0037,\"lat\":0,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"auto\",\"shape_format\":\"polyline6\"}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 86.00695799999994,
+    "stdout": "commands/024.stdout.txt",
+    "stderr": "commands/024.stderr.txt"
+  },
+  {
+    "sequence": 25,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "trace_attributes",
+      "{\"encoded_polyline\":\"?wQ?vQ_|B??o}@\",\"shape_match\":\"edge_walk\",\"costing\":\"auto\"}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 65.64295900000025,
+    "stdout": "commands/025.stdout.txt",
+    "stderr": "commands/025.stderr.txt"
+  },
+  {
+    "sequence": 26,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "trace_attributes",
+      "{\"encoded_polyline\":\"_|Bo}@?o}@?o}@\",\"shape_match\":\"edge_walk\",\"costing\":\"auto\"}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 67.58024999999998,
+    "stdout": "commands/026.stdout.txt",
+    "stderr": "commands/026.stderr.txt"
+  },
+  {
+    "sequence": 27,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "trace_attributes",
+      "{\"encoded_polyline\":\"_|BozD?o}@~{B??vQ\",\"shape_match\":\"edge_walk\",\"costing\":\"auto\"}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 66.80724999999984,
+    "stdout": "commands/027.stdout.txt",
+    "stderr": "commands/027.stderr.txt"
+  },
+  {
+    "sequence": 28,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "route",
+      "{\"locations\":[{\"lon\":0.0004,\"lat\":0,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0},{\"lon\":0.002,\"lat\":-0.0016,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"auto\",\"shape_format\":\"polyline6\"}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 86.25945899999988,
+    "stdout": "commands/028.stdout.txt",
+    "stderr": "commands/028.stderr.txt"
+  },
+  {
+    "sequence": 29,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "trace_attributes",
+      "{\"encoded_polyline\":\"?_X?~W_|B??_|B~{B?~bB?\",\"shape_match\":\"edge_walk\",\"costing\":\"auto\"}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 68.34375,
+    "stdout": "commands/029.stdout.txt",
+    "stderr": "commands/029.stderr.txt"
+  },
+  {
+    "sequence": 30,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "route",
+      "{\"locations\":[{\"lon\":0.0103,\"lat\":0,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0},{\"lon\":0.0117,\"lat\":0,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"auto\",\"shape_format\":\"polyline6\"}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 89.19770900000049,
+    "stdout": "commands/030.stdout.txt",
+    "stderr": "commands/030.stderr.txt"
+  },
+  {
+    "sequence": 31,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "trace_attributes",
+      "{\"encoded_polyline\":\"?wbS?ovA\",\"shape_match\":\"edge_walk\",\"costing\":\"auto\"}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 68.65729199999987,
+    "stdout": "commands/031.stdout.txt",
+    "stderr": "commands/031.stderr.txt"
+  },
+  {
+    "sequence": 32,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "route",
+      "{\"locations\":[{\"lon\":0.0117,\"lat\":0,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0},{\"lon\":0.0103,\"lat\":0,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"auto\",\"shape_format\":\"polyline6\"}"
+    ],
+    "exit_code": 1,
+    "elapsed_ms": 67.36337500000081,
+    "stdout": "commands/032.stdout.txt",
+    "stderr": "commands/032.stderr.txt"
+  },
+  {
+    "sequence": 33,
+    "args": [
+      "exec",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea",
+      "valhalla_service",
+      "/work/config.json",
+      "route",
+      "{\"locations\":[{\"lon\":0.0003,\"lat\":0,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0},{\"lon\":0.0105,\"lat\":0.003,\"search_cutoff\":5,\"radius\":2,\"minimum_reachability\":0}],\"costing\":\"auto\",\"shape_format\":\"polyline6\"}"
+    ],
+    "exit_code": 1,
+    "elapsed_ms": 69.65741700000035,
+    "stdout": "commands/033.stdout.txt",
+    "stderr": "commands/033.stderr.txt"
+  },
+  {
+    "sequence": 34,
+    "args": [
+      "container",
+      "inspect",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 34.92162499999995,
+    "stdout": "commands/034.stdout.txt",
+    "stderr": "commands/034.stderr.txt"
+  },
+  {
+    "sequence": 35,
+    "args": [
+      "rm",
+      "-f",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 79.43220800000017,
+    "stdout": "commands/035.stdout.txt",
+    "stderr": "commands/035.stderr.txt"
+  },
+  {
+    "sequence": 36,
+    "args": [
+      "container",
+      "inspect",
+      "routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea"
+    ],
+    "exit_code": 1,
+    "elapsed_ms": 38.229582999999366,
+    "stdout": "commands/036.stdout.txt",
+    "stderr": "commands/036.stderr.txt"
+  },
+  {
+    "sequence": 37,
+    "args": [
+      "ps",
+      "-a",
+      "--filter",
+      "name=^/routelens-p02-d1dcef32-2bde-4f30-a8ed-752bfbb962ea$",
+      "--format",
+      "{{.Names}}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 31.790500000000065,
+    "stdout": "commands/037.stdout.txt",
+    "stderr": "commands/037.stderr.txt"
+  }
+]

@@ -1,0 +1,55 @@
+[
+    {
+        "Id": "sha256:8b4a0609466e08dd6b384be7104ffa3f1c43270d9a8e931f3d93e2243566b4b6",
+        "RepoTags": [
+            "routelens-p02:063afdc0e67da85c",
+            "routelens-p02:osmium-1.16.0"
+        ],
+        "RepoDigests": [],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-24T15:21:00.457037561+09:00",
+        "Config": {
+            "User": "root",
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LD_LIBRARY_PATH=/usr/local/lib:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/lib32:/usr/lib32"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "Labels": {
+                "org.opencontainers.image.authors": "Kevin Kreiser <kevinkreiser@gmail.com>",
+                "org.opencontainers.image.description": "Open Source Routing Engine for OpenStreetMap and Other Datasources",
+                "org.opencontainers.image.source": "https://github.com/valhalla/valhalla",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Architecture": "arm64",
+        "Os": "linux",
+        "Size": 676312691,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/80a78762b31921e4fa9a2630f27ff71707472b277ec4f9661abf0052185d6138/diff:/var/lib/docker/overlay2/8d93b470fef86172bfc3551632878daaef1815ad5a18621f12b7eca3364202dd/diff:/var/lib/docker/overlay2/f20f7bc86d5e467939ae72bbc77d8daa8fb047ba9f43f6c66071b7e6ef7154fa/diff:/var/lib/docker/overlay2/1a58760cd2a789d82a5e045325a62f460620935a3014a48726a6851265eba239/diff:/var/lib/docker/overlay2/6ecae2f12c05d295348e24ce1471cc3a7d726bc3eb448ec92446ea25ec75bfc0/diff:/var/lib/docker/overlay2/ca6f2be6658d2ce1b63aae5cb69c2ec44d6a73927739451ed9bd7627aea9da52/diff",
+                "MergedDir": "/var/lib/docker/overlay2/kc7ohnf4kc2s8th08s2iqagut/merged",
+                "UpperDir": "/var/lib/docker/overlay2/kc7ohnf4kc2s8th08s2iqagut/diff",
+                "WorkDir": "/var/lib/docker/overlay2/kc7ohnf4kc2s8th08s2iqagut/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:1e9178dc90058fa454a60803300219ee8c17e515be8718817ed824b96fa1207b",
+                "sha256:bb8f4caaad45acf0d38d6c5453817ecf69d8065c4ea743dbae40bfc6daf1f2c2",
+                "sha256:7966d4b7078076db160ded0d7350620623fa05d742ab824f4fb660493e37ebee",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:66765fe1f6b20c5eb2eada9f67da537c8b69fa20eb9f6529566fc15427263939",
+                "sha256:7db586dd82830f563e2fa85ed013dc01147d8abcfe7c3b632ae64b6242f2824e",
+                "sha256:8ae1fc076aa9f2fcd93ee0e315664832ff74aba0d1a436ae9c78f4acbf6a3538"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-10-24T17:58:29.838666092+09:00"
+        }
+    }
+]

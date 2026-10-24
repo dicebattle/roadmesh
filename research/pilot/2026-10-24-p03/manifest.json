@@ -1,0 +1,64 @@
+{
+  "schema_version": "0.1",
+  "source": {
+    "commit": "5422399dcfbce746990600fbdda7ab2cca183f09",
+    "dirty": false
+  },
+  "node": "22.23.4",
+  "host_architecture": "arm64",
+  "host_platform": "darwin",
+  "graph_id": "c1d06ace33d8e9184749e7b09c946f632489cdca5064672396e970d9c299aa0a",
+  "implementation_sha256": "d7bedeb54be6ca1c15f27603fd6094e817416c9b64f83b0cd93850906f192324",
+  "status": "PASS",
+  "stages": [
+    {
+      "id": "corpus",
+      "name_en": "Synthetic corpus validation",
+      "name_ko": "합성 자료 검사",
+      "status": "PASS",
+      "evidence_path": "corpus/report.json",
+      "duration_ms": 580.5515829999999
+    },
+    {
+      "id": "p01",
+      "name_en": "Fresh schedule replay and required checks",
+      "name_ko": "새 일정 재생·필수 검사",
+      "status": "PASS",
+      "evidence_path": "p01/checks.json",
+      "duration_ms": 330.992083
+    },
+    {
+      "id": "p02",
+      "name_en": "Fresh real-engine graph and routing",
+      "name_ko": "실제 엔진의 새 그래프·경로",
+      "status": "PASS",
+      "evidence_path": "graph/manifest.json",
+      "duration_ms": 3521.1079580000005
+    },
+    {
+      "id": "p03",
+      "name_en": "Seeded geographic truth and observations",
+      "name_ko": "시드 기반 지리 정답·관측",
+      "status": "PASS",
+      "evidence_path": "simulation/manifest.json",
+      "duration_ms": 81.41858299999967
+    },
+    {
+      "id": "replay",
+      "name_en": "Fresh replay and fault invariance",
+      "name_ko": "새 재생·장애 불변성",
+      "status": "PASS",
+      "evidence_path": "replay/checks.json",
+      "duration_ms": 397.32225000000017
+    }
+  ],
+  "output_sha256": {
+    "report-data.json": "1b8420a23049977ded781067d86478b67d3d01cf9916c928b02e10642ed3bc3f",
+    "report.html": "a1a3c9cb9848c3cb418cfae2ad0c869b56dce4f7d4dfe2144f0ee4ab18e57442",
+    "assertions.json": "3224428affe417b5fd6f6bd095577c703ed22b1614fc7b65d4f04b9cfd7519c3",
+    "summary.md": "7478e6c650be36e80b9dead2bc7af3fed6904b5f2d143247e09f6930eae9a853",
+    "commands.json": "6f2752928ec92b4dc4c33aafff40b781fe48fbaa1f16e416f0996c0debbacbe2"
+  },
+  "cleanup_verified": true,
+  "completed_at_utc": "2026-10-24T08:58:32.755Z"
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.1",
+  "scenario_id": "synthetic-scheduler",
+  "fixture_graph_id": "unloaded-grid",
+  "seed": 7,
+  "start_time_utc": "2026-10-24T00:00:00Z",
+  "duration_s": 1,
+  "vehicles": [
+    {
+      "vehicle_id": "car-b",
+      "departure_ms": 0,
+      "step_ms": 100,
+      "start_jitter_ms": 100,
+      "route_labels": [
+        "edge-b"
+      ]
+    },
+    {
+      "vehicle_id": "car-a",
+      "departure_ms": 0,
+      "step_ms": 100,
+      "start_jitter_ms": 100,
+      "route_labels": [
+        "edge-a",
+        "edge-c"
+      ]
+    }
+  ],
+  "faults": [
+    {
+      "fault_id": "marker-b",
+      "at_ms": 500,
+      "target_vehicle_id": "car-a",
+      "kind": "marker"
+    },
+    {
+      "fault_id": "marker-a",
+      "at_ms": 500,
+      "target_vehicle_id": "car-a",
+      "kind": "marker"
+    }
+  ],
+  "assertions": [
+    {
+      "assertion_id": "seven-events",
+      "kind": "event_count",
+      "expected": 0
+    },
+    {
+      "assertion_id": "three-edge-events",
+      "kind": "event_kind_count",
+      "event_kind": "fixture_edge_enter",
+      "expected": 3
+    },
+    {
+      "assertion_id": "last-marker-at-500",
+      "kind": "last_event_ms",
+      "expected": 500
+    }
+  ]
+}

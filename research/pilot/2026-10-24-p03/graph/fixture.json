@@ -1,0 +1,250 @@
+{
+  "schema_version": "0.1",
+  "fixture_id": "tiny-city-v1",
+  "description_en": "Original fictional equatorial roads; not public road observations.",
+  "description_ko": "직접 만든 가상의 적도 도로이며 실제 도로 관측이 아닙니다.",
+  "ways": [
+    {
+      "label": "ab",
+      "osm_way_id": 101,
+      "from": 1001,
+      "to": 1002,
+      "oneway": false,
+      "from_coordinate": [0, 0],
+      "to_coordinate": [0.002, 0]
+    },
+    {
+      "label": "bc",
+      "osm_way_id": 102,
+      "from": 1002,
+      "to": 1003,
+      "oneway": false,
+      "from_coordinate": [0.002, 0],
+      "to_coordinate": [0.004, 0]
+    },
+    {
+      "label": "ad",
+      "osm_way_id": 103,
+      "from": 1001,
+      "to": 1004,
+      "oneway": false,
+      "from_coordinate": [0, 0],
+      "to_coordinate": [0, 0.002]
+    },
+    {
+      "label": "de",
+      "osm_way_id": 104,
+      "from": 1004,
+      "to": 1005,
+      "oneway": false,
+      "from_coordinate": [0, 0.002],
+      "to_coordinate": [0.002, 0.002]
+    },
+    {
+      "label": "ef",
+      "osm_way_id": 105,
+      "from": 1005,
+      "to": 1006,
+      "oneway": false,
+      "from_coordinate": [0.002, 0.002],
+      "to_coordinate": [0.004, 0.002]
+    },
+    {
+      "label": "fc",
+      "osm_way_id": 106,
+      "from": 1006,
+      "to": 1003,
+      "oneway": false,
+      "from_coordinate": [0.004, 0.002],
+      "to_coordinate": [0.004, 0]
+    },
+    {
+      "label": "eb",
+      "osm_way_id": 107,
+      "from": 1005,
+      "to": 1002,
+      "oneway": false,
+      "from_coordinate": [0.002, 0.002],
+      "to_coordinate": [0.002, 0]
+    },
+    {
+      "label": "bg",
+      "osm_way_id": 108,
+      "from": 1002,
+      "to": 1007,
+      "oneway": false,
+      "from_coordinate": [0.002, 0],
+      "to_coordinate": [0.002, -0.002]
+    },
+    {
+      "label": "oneway",
+      "osm_way_id": 201,
+      "from": 2001,
+      "to": 2002,
+      "oneway": true,
+      "from_coordinate": [0.01, 0],
+      "to_coordinate": [0.012, 0]
+    },
+    {
+      "label": "disconnected",
+      "osm_way_id": 301,
+      "from": 3001,
+      "to": 3002,
+      "oneway": false,
+      "from_coordinate": [0.01, 0.003],
+      "to_coordinate": [0.012, 0.003]
+    },
+    {
+      "label": "parallel",
+      "osm_way_id": 401,
+      "from": 4001,
+      "to": 4002,
+      "oneway": false,
+      "from_coordinate": [0, 0.0001],
+      "to_coordinate": [0.002, 0.0001]
+    }
+  ],
+  "restriction": {
+    "from_way": 101,
+    "via_node": 1002,
+    "to_way": 108
+  },
+  "routes": [
+    {
+      "id": "baseline",
+      "locations": [
+        {
+          "lon": 0.0003,
+          "lat": 0,
+          "search_cutoff": 5,
+          "radius": 2,
+          "minimum_reachability": 0
+        },
+        {
+          "lon": 0.0037,
+          "lat": 0,
+          "search_cutoff": 5,
+          "radius": 2,
+          "minimum_reachability": 0
+        }
+      ],
+      "expected_ways": [101, 102]
+    },
+    {
+      "id": "upper-alternative",
+      "locations": [
+        {
+          "lon": 0.0003,
+          "lat": 0,
+          "search_cutoff": 5,
+          "radius": 2,
+          "minimum_reachability": 0
+        },
+        {
+          "lon": 0.001,
+          "lat": 0.002,
+          "search_cutoff": 5,
+          "radius": 2,
+          "minimum_reachability": 0
+        },
+        {
+          "lon": 0.003,
+          "lat": 0.002,
+          "search_cutoff": 5,
+          "radius": 2,
+          "minimum_reachability": 0
+        },
+        {
+          "lon": 0.0037,
+          "lat": 0,
+          "search_cutoff": 5,
+          "radius": 2,
+          "minimum_reachability": 0
+        }
+      ],
+      "expected_ways": [101, 103, 104, 105, 106, 102]
+    },
+    {
+      "id": "restriction-detour",
+      "locations": [
+        {
+          "lon": 0.0004,
+          "lat": 0,
+          "search_cutoff": 5,
+          "radius": 2,
+          "minimum_reachability": 0
+        },
+        {
+          "lon": 0.002,
+          "lat": -0.0016,
+          "search_cutoff": 5,
+          "radius": 2,
+          "minimum_reachability": 0
+        }
+      ],
+      "first_way": 101,
+      "last_way": 108,
+      "forbidden_transition": [101, 108]
+    },
+    {
+      "id": "oneway-forward",
+      "locations": [
+        {
+          "lon": 0.0103,
+          "lat": 0,
+          "search_cutoff": 5,
+          "radius": 2,
+          "minimum_reachability": 0
+        },
+        {
+          "lon": 0.0117,
+          "lat": 0,
+          "search_cutoff": 5,
+          "radius": 2,
+          "minimum_reachability": 0
+        }
+      ],
+      "expected_ways": [201]
+    },
+    {
+      "id": "oneway-reverse",
+      "locations": [
+        {
+          "lon": 0.0117,
+          "lat": 0,
+          "search_cutoff": 5,
+          "radius": 2,
+          "minimum_reachability": 0
+        },
+        {
+          "lon": 0.0103,
+          "lat": 0,
+          "search_cutoff": 5,
+          "radius": 2,
+          "minimum_reachability": 0
+        }
+      ],
+      "expected_error_code": 442
+    },
+    {
+      "id": "disconnected",
+      "locations": [
+        {
+          "lon": 0.0003,
+          "lat": 0,
+          "search_cutoff": 5,
+          "radius": 2,
+          "minimum_reachability": 0
+        },
+        {
+          "lon": 0.0105,
+          "lat": 0.003,
+          "search_cutoff": 5,
+          "radius": 2,
+          "minimum_reachability": 0
+        }
+      ],
+      "expected_error_code": 442
+    }
+  ]
+}

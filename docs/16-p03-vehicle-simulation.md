@@ -1,8 +1,8 @@
 # P03 vehicle/GPS design / P03 차량·GPS 설계
 
-Status: design only, to implement after P02 evidence passes. Main owns this design; Sol will implement. This adds geographic samples and independent traversal truth without changing P01 schema 0.1 or claiming noisy map matching has passed.
+Status: implemented and directly verified; see the [integrated report](../research/pilot/2026-10-24-p03/report.md). Main owns this design; Sol will implement. This adds geographic samples and independent traversal truth without changing P01 schema 0.1 or claiming noisy map matching has passed.
 
-상태: 설계이며 P02 증거 통과 후 구현합니다. 메인이 설계하고 Sol이 구현합니다. P01 규격 0.1을 변경하지 않고 좌표 표본·독립 통과 정답을 추가하며 잡음 도로 매칭 성공을 주장하지 않습니다.
+상태: 구현·직접 검증을 마쳤으며 [통합 보고서](../research/pilot/2026-10-24-p03/report.md)에 기록했습니다. 메인이 설계하고 Sol이 구현합니다. P01 규격 0.1을 변경하지 않고 좌표 표본·독립 통과 정답을 추가하며 잡음 도로 매칭 성공을 주장하지 않습니다.
 
 ## Inputs / 입력
 
