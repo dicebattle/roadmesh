@@ -1,0 +1,15 @@
+# Working directory: /Users/dice/Documents/routelens
+# Preparation (first inspect failed because pinned image was not local)
+git check-ignore data/p08-abi-probe/probe.txt
+docker image inspect ghcr.io/valhalla/valhalla@sha256:4fd114eb1d26b8fc2f43bcb3df234c1b63a0bf13c277405e5943d5361dc575de --format '{{json .}}'
+docker pull ghcr.io/valhalla/valhalla@sha256:4fd114eb1d26b8fc2f43bcb3df234c1b63a0bf13c277405e5943d5361dc575de > data/p08-abi-probe/pull.log 2>&1
+docker image inspect ghcr.io/valhalla/valhalla@sha256:4fd114eb1d26b8fc2f43bcb3df234c1b63a0bf13c277405e5943d5361dc575de > data/p08-abi-probe/image-inspect.json
+docker run --rm --name routelens-p08-abi-probe-20261025 --label routelens.owner=p08-abi-probe-20261025 --network none --cpus 2 --memory 4g --entrypoint /bin/sh --mount type=bind,src=/Users/dice/Documents/routelens/data/p08-abi-probe,dst=/probe ghcr.io/valhalla/valhalla@sha256:4fd114eb1d26b8fc2f43bcb3df234c1b63a0bf13c277405e5943d5361dc575de /probe/probe-tools.sh > data/p08-abi-probe/tools-output.log 2>&1
+docker run --rm --name routelens-p08-abi-details-20261025 --label routelens.owner=p08-abi-probe-20261025 --network none --cpus 2 --memory 4g --entrypoint /bin/sh --mount type=bind,src=/Users/dice/Documents/routelens/data/p08-abi-probe,dst=/probe ghcr.io/valhalla/valhalla@sha256:4fd114eb1d26b8fc2f43bcb3df234c1b63a0bf13c277405e5943d5361dc575de /probe/probe-details.sh > data/p08-abi-probe/details-output.log 2>&1
+docker ps -a --filter label=routelens.owner=p08-abi-probe-20261025 --format '{{.ID}} {{.Names}} {{.Status}}' > data/p08-abi-probe/cleanup-output.log
+# Parent follow-up: actual local pilot-derived image
+# Each docker run retains --rm, --network none, --cpus 2, --memory 4g and the same owner label/mount.
+docker run --rm --name routelens-p08-abi-derived-20261025 --label routelens.owner=p08-abi-probe-20261025 --network none --cpus 2 --memory 4g --entrypoint /bin/sh --mount type=bind,src=/Users/dice/Documents/routelens/data/p08-abi-probe,dst=/probe sha256:8b4a0609466e08dd6b384be7104ffa3f1c43270d9a8e931f3d93e2243566b4b6 /probe/probe-tools.sh > data/p08-abi-probe/derived-tools-output.log 2>&1
+docker image inspect sha256:8b4a0609466e08dd6b384be7104ffa3f1c43270d9a8e931f3d93e2243566b4b6 > data/p08-abi-probe/derived-image-inspect.json
+docker run --rm --name routelens-p08-abi-derived-details-20261025 --label routelens.owner=p08-abi-probe-20261025 --network none --cpus 2 --memory 4g --entrypoint /bin/sh --mount type=bind,src=/Users/dice/Documents/routelens/data/p08-abi-probe,dst=/probe sha256:8b4a0609466e08dd6b384be7104ffa3f1c43270d9a8e931f3d93e2243566b4b6 /probe/probe-details.sh > data/p08-abi-probe/derived-details-output.log 2>&1
+docker ps -a --filter label=routelens.owner=p08-abi-probe-20261025 --format '{{.ID}} {{.Names}} {{.Status}}' > data/p08-abi-probe/cleanup-output.log

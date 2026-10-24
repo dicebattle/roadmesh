@@ -1,6 +1,6 @@
 # Signed traffic publication / 교통정보 서명 게시
 
-P07 publishes P06 synthetic candidates as immutable JSON bytes with a standard Ed25519 compact JWS manifest, serves them over actual loopback HTTP, and persists a separate consumer's verified acceptance. Main designed the contract and reviewed the evidence; Sol implemented the production modules and tests. [Canonical contract](../../docs/25-p07-publication-contract.md) · [Actual execution report](../../research/pilot/2026-10-25-p07/report.md).
+P07 publishes P06 synthetic candidates as immutable JSON bytes with a standard Ed25519 compact JWS manifest, serves them over actual loopback HTTP, and persists a separate consumer's verified acceptance. Main designed the contract and reviewed the evidence; Sol implemented the production modules and tests. [Canonical contract](../../docs/25-p07-publication-contract.md) · [Actual execution report](../../research/pilot/2026-10-25-p07-claim-fix/report.md).
 
 P07은 P06 합성 후보를 불변 JSON과 표준 Ed25519 JWS 목록으로 게시하고 실제 로컬 HTTP로 제공하며 별도 수신자의 검증·수용 상태를 영속 저장합니다. 메인이 계약 설계·증거 검토를, Sol이 생산 코드·테스트 구현을 맡았습니다.
 

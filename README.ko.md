@@ -19,7 +19,7 @@ RouteLens는 **Metro Lens에서 파생된 오픈소스 프로젝트**입니다. 
 
 [![실제 RouteLens 시뮬레이션 녹화: 정답 궤적, GPS 관측, 누락 표본](docs/media/demo.gif)](docs/media/demo.mp4)
 
-[MP4 보기·내려받기](docs/media/demo.mp4) · [화면을 포함한 검사 보고서](research/pilot/2026-10-25-p07/report.md) · [녹화 출처](docs/media/latest.json)
+[MP4 보기·내려받기](docs/media/demo.mp4) · [화면을 포함한 검사 보고서](research/pilot/2026-10-25-p07-claim-fix/report.md) · [녹화 출처](docs/media/latest.json)
 
 실제 테헤란로의 짧은 여행과 서명 게시 근거를 녹화했습니다. 키 교체·동의 철회·높은 순번의 정정·만료된 수신 상태를 확인할 수 있습니다. 전체 실행에는 테헤란로·도심·마포대교의 차량 9대, GPS 관측 3,204개, 최대 3m 잡음과 누락 60개도 포함합니다. 정답 통과 237개 중 220개를 각각 한 번만 저장했으며 실제 HTTP 전송·프로세스 중단·DB 재시작·잠금·서명 검증·삭제를 포함한 **206개 검사**를 통과했습니다. 도로는 실제 자료이고 차량·속도·GPS는 합성입니다. 독립 실주행 정확도나 실시간 교통정보를 증명하지는 않습니다.
 
@@ -100,7 +100,7 @@ RouteLens는 계약·실행 관리·시뮬레이션·수집/처리자 조정·�
 
 모듈마다 **설계 → 구현 → 직접 실행 → 증거 확인 → 이중 언어 기록 → 푸시**를 거칩니다. 메인 에이전트가 설계·검토하고 [저장소 지침](AGENTS.md)에 따라 구현을 위임합니다. AI 사용 여부를 품질 보증으로 삼지 않고 실제 검사·한계와 함께 기록합니다.
 
-- [최신 통합 검사 보고서](research/pilot/2026-10-25-p07/report.md)
+- [최신 통합 검사 보고서](research/pilot/2026-10-25-p07-claim-fix/report.md)
 - [현재 구현과 남은 전체 목표](docs/18-goal-progress.md)
 - [누적 작업 기록](wiki/log.md)
 - [P01~P14 모듈 계약](docs/11-local-pilot.md)

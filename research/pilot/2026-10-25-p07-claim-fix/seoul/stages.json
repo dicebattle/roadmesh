@@ -1,0 +1,26 @@
+[
+  {
+    "id": "tiny-regression",
+    "name_en": "Preserved tiny-city whole-system regression",
+    "name_ko": "기존 tiny-city 전체 회귀",
+    "status": "PASS",
+    "evidence_path": "tiny/manifest.json",
+    "duration_ms": 7414.218916
+  },
+  {
+    "id": "seoul-graph",
+    "name_en": "Pinned OSM source and fresh Seoul graph",
+    "name_ko": "고정 OSM 원본·새 서울 그래프",
+    "status": "PASS",
+    "evidence_path": "graph/manifest.json",
+    "duration_ms": 49163.956542
+  },
+  {
+    "id": "seoul-workload",
+    "name_en": "Nine synthetic vehicles on actual Seoul roads",
+    "name_ko": "실제 서울 도로의 합성 차량9대",
+    "status": "PASS",
+    "evidence_path": "workload/manifest.json",
+    "duration_ms": 25854.386624999992
+  }
+]

@@ -74,3 +74,5 @@ Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases i
 - [Traffic aggregation module / 교통 집계 모듈](modules/traffic-aggregation.md): fixed window, contributor median and deletion behavior. / 고정 창·기여자 중앙값·삭제 동작.
 
 - [P07 publication contract / P07 게시 계약](../docs/25-p07-publication-contract.md): implemented and locally verified; [report](../research/pilot/2026-10-25-p07/report.md), [module](modules/signed-publication.md). / 구현·로컬·원격206개·Node각200개 검증 완료.
+
+- [Latest corrected206-run report / 최신수정206개보고서](../research/pilot/2026-10-25-p07-claim-fix/report.md): reproduced P05 claim race fixed; local proof and new recording complete; corrected hosted checks pending. / P05작업선택경쟁재현·수정, 새로컬검증·녹화완료·수정후원격검사전.

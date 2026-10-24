@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "4b8bf793d44beb110614987359e7a76fcd651159",
+    "dirty": false
+  },
+  "capture": {
+    "duration_seconds": 26.95,
+    "width": 1280,
+    "height": 720,
+    "fps": 20,
+    "full_mp4_decode": true,
+    "screenshots_and_frame_inspected": true,
+    "owned_pids_absent": 8,
+    "report_server_pid": 85042,
+    "report_server_absent": true,
+    "iab_tabs_closed": true,
+    "viewport_reset": true
+  },
+  "ui": {
+    "english_and_korean": true,
+    "mobile_width": 390,
+    "mobile_scroll_width": 375,
+    "desktop_width": 1280,
+    "desktop_scroll_width": 1265,
+    "javascript_errors": []
+  },
+  "privacy": {
+    "text_files_scanned": 3471,
+    "no_private_key_or_credential_dsn_patterns": true
+  },
+  "discarded_capture": {
+    "reason_en": "First recording scrolled horizontally during a scripted Korean section jump. Ordinary UI had no overflow; capture scrolling was corrected and recorded again without rerunning the simulation.",
+    "reason_ko": "첫녹화의한국어영역이동에서가로위치가치우쳤습니다. 일반화면의넘침은없었고촬영스크롤만고쳐다시녹화했으며시뮬레이션은반복하지않았습니다.",
+    "local_file": "output/playwright/p07-claim-fix-framing01.webm"
+  }
+}

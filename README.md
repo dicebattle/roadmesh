@@ -19,7 +19,7 @@ RouteLens is an open-source project derived from **Metro Lens**. The intended sy
 
 [![Recorded RouteLens simulation: true trajectories, GPS observations and missing samples](docs/media/demo.gif)](docs/media/demo.mp4)
 
-[Watch/download the MP4](docs/media/demo.mp4) · [Captured test report](research/pilot/2026-10-25-p07/report.md) · [Recording provenance](docs/media/latest.json)
+[Watch/download the MP4](docs/media/demo.mp4) · [Captured test report](research/pilot/2026-10-25-p07-claim-fix/report.md) · [Recording provenance](docs/media/latest.json)
 
 This recording shows short trips on actual Teheran-ro geometry and the signed publication evidence: key rotation, consent revocation, higher-sequence corrections and expired consumer state. The complete run also replays nine vehicles across Teheran-ro, downtown Seoul and Mapo Bridge: 3,204 GPS observations, up to 3 m noise, 60 omissions, and 220 of 237 true traversals stored exactly once. All **206 assertions** passed, including actual HTTP transfer, process interruptions, database restart, locking, signature checks and deletion. Roads are real; vehicles, speeds and GPS are synthetic. This does not establish independent real-driving accuracy or live traffic.
 
@@ -100,7 +100,7 @@ The planned production design has a managed ingestion path and approved independ
 
 Each module follows **design → implementation → direct execution → inspected evidence → bilingual record → push**. The main agent owns design and review; implementation is delegated according to [repository instructions](AGENTS.md). AI assistance is recorded with the actual checks and limits, not used as a quality claim.
 
-- [Latest integrated test report](research/pilot/2026-10-25-p07/report.md)
+- [Latest integrated test report](research/pilot/2026-10-25-p07-claim-fix/report.md)
 - [Current implementation and remaining goal](docs/18-goal-progress.md)
 - [Append-only work log](wiki/log.md)
 - [P01–P14 module contracts](docs/11-local-pilot.md)
