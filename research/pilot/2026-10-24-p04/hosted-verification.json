@@ -1,0 +1,113 @@
+{
+  "run_id": 40084172093,
+  "run_url": "https://github.com/dicebattle/routelens/actions/runs/40084172093",
+  "source": {
+    "commit": "11f83a6e9aae683773f6c521ad6250d607b530d7",
+    "dirty": false
+  },
+  "graph_id": "0c51787d34847edcd4b229d5d85ee0a9f3bb36a81cae15ed468b258b3a4ab7b4",
+  "platform": "linux",
+  "status": "PASS",
+  "jobs": [
+    {
+      "name": "Node 22",
+      "conclusion": "success"
+    },
+    {
+      "name": "Implemented-module simulation",
+      "conclusion": "success"
+    },
+    {
+      "name": "Node 24",
+      "conclusion": "success"
+    },
+    {
+      "name": "Required checks",
+      "conclusion": "success"
+    }
+  ],
+  "node_tests": {
+    "22": {
+      "tests": 96,
+      "passed": 96,
+      "failed": 0
+    },
+    "24": {
+      "tests": 96,
+      "passed": 96,
+      "failed": 0
+    }
+  },
+  "integrated_assertions": 48,
+  "matching_file_hashes_verified": 137,
+  "clean_boundary_max_ms": 1,
+  "noise_internal_boundary_max_ms": 444,
+  "baseline_coverage": [
+    {
+      "vehicle_id": "baseline-clean",
+      "tolerance_ms": 5,
+      "passed": true,
+      "expected": 2,
+      "accepted": 2,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "boundary_errors_ms": [
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "vehicle_id": "baseline-noisy",
+      "tolerance_ms": 5,
+      "passed": false,
+      "expected": 2,
+      "accepted": 0,
+      "false_traversals": 0,
+      "missed_traversals": 2,
+      "boundary_errors_ms": []
+    },
+    {
+      "vehicle_id": "upper-waiting",
+      "tolerance_ms": 5,
+      "passed": true,
+      "expected": 4,
+      "accepted": 4,
+      "false_traversals": 0,
+      "missed_traversals": 0,
+      "boundary_errors_ms": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ]
+    }
+  ],
+  "noise_all_edges": {
+    "tolerance_ms": 750,
+    "passed": false,
+    "expected": 4,
+    "accepted": 3,
+    "false_traversals": 0,
+    "missed_traversals": 1,
+    "boundary_errors_ms": [
+      0,
+      444,
+      444,
+      13,
+      13,
+      103
+    ]
+  },
+  "parallel_excluded": 21,
+  "split_overlap_raw_results_identical": true,
+  "actual_engine_failure_exit": 1,
+  "failure_cleanup": "PASS",
+  "message_en": "Main downloaded hosted artifacts and independently checked raw matching hashes, outcomes, source and actual engine failure cleanup. Different image architecture intentionally produces a different graph identity.",
+  "message_ko": "메인이 원격 자료를 내려받아 매칭 원문 해시·결과·소스·실제 엔진 실패 정리를 독립 확인했습니다. 이미지 아키텍처가 달라 그래프 식별자는 의도적으로 다릅니다."
+}

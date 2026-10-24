@@ -1,6 +1,6 @@
 # P04 map matching / P04 도로 매칭
 
-Status: independently verified locally:48/48 whole-pipeline checks. Hosted verification pending. / 상태: 메인 로컬 전체 실행48/48을 검증했으며 원격 검증은 아직 전입니다.
+Status: independently verified locally and on hosted Docker:48/48 whole-pipeline checks; Node22/24 each96/96. / 상태: 메인이 로컬·원격Docker 전체 실행48/48과 Node22·24각각96/96을 검증했습니다.
 
 Main designed the [bounded contract](../../docs/19-p04-matching-design.md). Sol implemented the TypeScript adapter and report integration. Valhalla3.9.1 performs actual map snapping; RouteLens validates input/graph identity, excludes uncertain evidence and computes observed traversal times. Truth is supplied only to the post-match evaluator.
 

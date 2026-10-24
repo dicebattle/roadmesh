@@ -11,16 +11,16 @@ The goal remains the complete local pilot in [P01–P14](11-local-pilot.md), not
 | P01 scenario/replay and P14a fast checks / 일정·재생·빠른 검사 | [P01 module](../wiki/modules/pilot-runner.md) | Verified / 검증 |
 | P02 real engine graph / 실제 엔진 그래프 | [P02 proof](../research/pilot/p02-main-2026-10-24.json) | Verified / 검증 |
 | P03 vehicle/GPS / 차량·GPS | [Clean integrated proof](../research/pilot/2026-10-24-p04/report.md) | Locally verified / 로컬 검증 |
-| P04 real matching and ambiguity handling / 실제 매칭·모호성 처리 | [48-check report](../research/pilot/2026-10-24-p04/report.md) | Locally verified; hosted pending / 로컬 검증·원격 대기 |
+| P04 real matching and ambiguity handling / 실제 매칭·모호성 처리 | [48-check report](../research/pilot/2026-10-24-p04/report.md) | Local and hosted verified / 로컬·원격 검증 |
 | P05 durable ingestion, P06 aggregation / 영속 수집·집계 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P07 signed publication, P08 actual traffic consumption / 서명 게시·속도 반영 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P09 two nodes, P10 gateway/failover / 두 노드·중계/장애 전환 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
-| P11 complete client, P12 complete fault matrix / 전체 화면·장애 행렬 | Evidence replay and incremental runner begin now / 증거 재생·점진 실행기부터 시작 | Partial design / 일부 설계 |
+| P11 complete client, P12 complete fault matrix / 전체 화면·장애 행렬 | Evidence replay and incremental runner implemented / 증거 재생·점진 실행기 구현 | Partial implementation / 일부 구현 |
 | P13 local Cloudflare parity / Cloudflare 로컬 비교 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P14b engine integration / 엔진 통합 검사 | Extend CI with current whole-system runner / 현재 전체 실행기를 CI에 연결 | Hosted current-module run verified; full matrix remains / 현재 모듈 원격 검증·전체 행렬 남음 |
 | Whole implemented-system simulation / 구현 모듈 전체 시뮬레이션 | [Fresh 6-stage report](../research/pilot/2026-10-24-p04/report.md) / 새6단계 보고서 | Locally verified / 로컬 검증 |
-| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/pilot/2026-10-24-p04/report.md) / 보고서·캡처 | P04 local capture complete; push/hosted pending / P04 로컬 캡처 완료·푸시/원격 대기 |
-| README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | P04 media refreshed; publication pending / P04 미디어 갱신·게시 대기 |
+| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/pilot/2026-10-24-p04/report.md) / 보고서·캡처 | P04 pushed and hosted inspected / P04 푸시·원격 검사 |
+| README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | P04 pushed; media checks passed / P04 푸시·미디어 검사 통과 |
 | Refresh on implementation changes / 구현 변경 때 갱신 | `media:check` fingerprint/hash/README checks / 지문·해시·README 검사 | Locally verified / 로컬 검증 |
 | Research other AI-development READMEs / 다른 AI 개발 README 참고 | [Research notes](../wiki/sources/readme-presentation.md) | Source inspection complete / 출처 확인 |
 

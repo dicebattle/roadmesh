@@ -1,8 +1,8 @@
 # P04 matching and whole-system simulation / P04 매칭·전체 구현 시뮬레이션
 
-**Local result:48/48 integrated assertions passed. Hosted verification is pending.** This runs every currently implemented module, not the complete future P01–P14 pilot.
+**Local and hosted results:48/48 integrated assertions passed; Node22/24 each passed96/96 tests.** This runs every currently implemented module, not the complete future P01–P14 pilot.
 
-**로컬 결과:통합 검사48/48 통과. 원격 검증은 아직 전입니다.** 현재 구현한 모든 모듈을 실행한 결과이며 향후 P01~P14 전체 파일럿의 완료는 아닙니다.
+**로컬·원격 결과:통합 검사48/48 통과, Node22·24 각각96/96 통과.** 현재 구현한 모든 모듈을 실행한 결과이며 향후 P01~P14 전체 파일럿의 완료는 아닙니다.
 
 [Actual recorded playback / 실제 재생 녹화](../../../docs/media/demo.mp4) · [Offline report / 오프라인 보고서](report.html) · [Manifest / 실행 목록](manifest.json) · [Independent main inspection / 메인 독립 검사](main-verification.json) · [Media provenance / 미디어 출처](../../../docs/media/latest.json)
 
@@ -53,3 +53,9 @@ This policy is bounded, synthetic-only, finalized at trip end and specific to th
 The compact archive preserves requests, responses, configuration and results; local PBF/tiles and duplicated tampered graph bundles are omitted. Manifests retain the original full inventory. Reproduce a fresh local run to verify those binary paths. Main owns design/review; Sol agents `bilingual_cli` and `simulation_viewer` implemented separate runtime and integration/viewer scopes.
 
 작은 공개 자료에는 요청·응답·설정·결과를 보존하며 로컬 PBF/타일·중복 변조 묶음은 생략합니다. 목록의 원래 전체 해시는 유지합니다. 바이너리 경로 검증은 새 로컬 실행으로 재현합니다. 메인이 설계·검토했고 Sol두명이 실행 코드와 통합/화면을 나눠 구현했습니다.
+
+## Hosted evidence / 원격 증거
+
+[GitHub run40084172093](https://github.com/dicebattle/routelens/actions/runs/40084172093) passed Node22, Node24, actual Docker integration and Required checks on clean `11f83a6e9aae683773f6c521ad6250d607b530d7`. Main downloaded its artifact and verified137 matching-file hashes, all48 assertions, clean max1ms/noisy internal max444ms,21 parallel exclusions, identical full/split/overlap result bytes and real engine failure exit1 with cleanup. [Inspection record](hosted-verification.json). The hosted graph is bound to its actual image/build identity and differs from the local arm64 graph; it is not silently substituted.
+
+위 원격 실행은 깨끗한 소스에서 Node22·24·실제Docker통합·필수검사를 통과했습니다. 메인이 결과물을 내려받아137매칭파일해시·48검사·정상최대1ms/잡음내부444ms·평행21제외·전체/분할/중첩바이트·실제엔진종료1과정리를 검증했습니다. 기록에 실제 식별자를 남겼으며 원격 그래프는 해당 이미지/생성 식별에 연결되므로 로컬arm64그래프와 다릅니다. 임의 대체하지 않았습니다.
