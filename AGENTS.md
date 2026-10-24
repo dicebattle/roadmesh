@@ -10,6 +10,17 @@
 - Use the in-app browser for ordinary manual web checks, close temporary tabs, and stop only temporary processes started for this task.
 - For implementation, follow the model-specific delegation rules below even for small scoped work. Avoid additional delegation for small investigations or documentation-only changes.
 
+## Delivery and language / 결과 전달과 언어
+
+- Follow docs/12-development-workflow.md. Main is protected: work on a focused branch, finish repository changes with a descriptive commit and push, then verify the remote SHA. Never bypass protection or merge without authorization.
+  docs/12-development-workflow.md를 따릅니다. main은 보호되어 있으므로 작업 브랜치에서 변경하고, 이유가 드러나는 커밋과 푸시 후 원격 SHA를 확인합니다. 임의로 보호를 우회하거나 병합하지 않습니다.
+- Write new or changed repository artifacts in English first with Korean included: UI, CLI, application diagnostics, reports, documentation and commit messages. Conversation with this user stays Korean-only unless requested otherwise. Preserve protocol identifiers and standard tool output; add bilingual context for third-party diagnostics. Do not change the host OS language.
+  저장소에 새로 작성하거나 수정하는 UI·CLI·진단·보고서·문서·커밋은 영어 우선에 한국어를 병기합니다. 이 사용자와의 대화는 별도 요청이 없으면 한국어만 사용합니다. 규격 식별자와 표준 도구 원문은 유지하고 외부 오류에는 이중 언어 설명을 추가합니다. 운영체제 언어 설정은 변경하지 않습니다.
+- Use .gitmessage as a guide: why, changes, validation and limitations must be understandable to humans and agents. Preserve old commits and immutable reports rather than rewriting history for translation.
+  .gitmessage를 기준으로 이유·변경·검증·한계를 사람과 에이전트가 이해하게 작성합니다. 번역을 위해 과거 커밋·보존 보고서를 다시 쓰지 않습니다.
+- Local pilot implementation follows docs/11-local-pilot.md. Each module needs a direct test and inspected evidence before completion. Synthetic pipeline proof is separate from real-road accuracy, real mobile behavior and hosted-cloud validation.
+  로컬 파일럿 구현은 docs/11-local-pilot.md를 따릅니다. 모듈마다 직접 테스트와 증거 확인 후 완료 처리합니다. 합성 처리 흐름의 검증은 실제 도로 정확도·모바일 동작·클라우드 검증과 구분합니다.
+
 ## Design and implementation ownership
 
 - The main agent owns requirements, architecture, interfaces, implementation scope, acceptance criteria and the project plan. It also reviews the implementation and verification evidence before reporting completion.

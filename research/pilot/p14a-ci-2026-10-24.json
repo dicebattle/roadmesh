@@ -1,0 +1,247 @@
+{
+  "checked_on": "2026-10-24",
+  "run_id": 40065929029,
+  "run_url": "https://github.com/dicebattle/routelens/actions/runs/40065929029",
+  "source_commit": "a2f3d905cbb979bce672d30f4894cc068b516826",
+  "jobs": [
+    {
+      "id": 120789064789,
+      "name": "Python 3.11",
+      "conclusion": "success"
+    },
+    {
+      "id": 120789064922,
+      "name": "Python 3.13",
+      "conclusion": "success"
+    },
+    {
+      "id": 120789098264,
+      "name": "Required checks",
+      "conclusion": "success"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 12549571257,
+      "name": "pilot-evidence-python-3.13",
+      "digest": "sha256:d3ea9423e35710d8b952157fcfb564fe37dd3b60ec9ae0d50fe963a2affc3cce",
+      "expires_at": "2026-10-31T05:21:31Z"
+    },
+    {
+      "id": 12549441123,
+      "name": "pilot-evidence-python-3.11",
+      "digest": "sha256:e06272f4e6e7205c08210e5bce2a69cc0be06f6353d4f5770e3d1a31f37ed359",
+      "expires_at": "2026-10-31T05:21:32Z"
+    }
+  ],
+  "downloaded_evidence_verification": [
+    {
+      "python": "3.11",
+      "checks": [
+        {
+          "case": "success-a",
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "status": "PASS",
+          "errors": []
+        },
+        {
+          "case": "success-b",
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "status": "PASS",
+          "errors": []
+        },
+        {
+          "case": "failed",
+          "expected_exit": 1,
+          "actual_exit": 1,
+          "status": "PASS",
+          "errors": []
+        },
+        {
+          "case": "unsupported",
+          "expected_exit": 1,
+          "actual_exit": 1,
+          "status": "PASS",
+          "errors": []
+        },
+        {
+          "case": "invalid",
+          "expected_exit": 2,
+          "actual_exit": 2,
+          "status": "PASS",
+          "errors": []
+        }
+      ],
+      "manifests_checked": [
+        {
+          "case": "success-a",
+          "source": {
+            "commit": "a2f3d905cbb979bce672d30f4894cc068b516826",
+            "dirty": false
+          },
+          "python": "3.11.17",
+          "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+          "run_status": "PASS",
+          "assertion_statuses": [
+            "PASS",
+            "PASS",
+            "PASS"
+          ]
+        },
+        {
+          "case": "success-b",
+          "source": {
+            "commit": "a2f3d905cbb979bce672d30f4894cc068b516826",
+            "dirty": false
+          },
+          "python": "3.11.17",
+          "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+          "run_status": "PASS",
+          "assertion_statuses": [
+            "PASS",
+            "PASS",
+            "PASS"
+          ]
+        },
+        {
+          "case": "failed",
+          "source": {
+            "commit": "a2f3d905cbb979bce672d30f4894cc068b516826",
+            "dirty": false
+          },
+          "python": "3.11.17",
+          "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+          "run_status": "FAIL",
+          "assertion_statuses": [
+            "FAIL",
+            "PASS",
+            "PASS"
+          ]
+        },
+        {
+          "case": "unsupported",
+          "source": {
+            "commit": "a2f3d905cbb979bce672d30f4894cc068b516826",
+            "dirty": false
+          },
+          "python": "3.11.17",
+          "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+          "run_status": "FAIL",
+          "assertion_statuses": [
+            "SKIPPED",
+            "PASS",
+            "PASS"
+          ]
+        }
+      ],
+      "matches_local_digest": true
+    },
+    {
+      "python": "3.13",
+      "checks": [
+        {
+          "case": "success-a",
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "status": "PASS",
+          "errors": []
+        },
+        {
+          "case": "success-b",
+          "expected_exit": 0,
+          "actual_exit": 0,
+          "status": "PASS",
+          "errors": []
+        },
+        {
+          "case": "failed",
+          "expected_exit": 1,
+          "actual_exit": 1,
+          "status": "PASS",
+          "errors": []
+        },
+        {
+          "case": "unsupported",
+          "expected_exit": 1,
+          "actual_exit": 1,
+          "status": "PASS",
+          "errors": []
+        },
+        {
+          "case": "invalid",
+          "expected_exit": 2,
+          "actual_exit": 2,
+          "status": "PASS",
+          "errors": []
+        }
+      ],
+      "manifests_checked": [
+        {
+          "case": "success-a",
+          "source": {
+            "commit": "a2f3d905cbb979bce672d30f4894cc068b516826",
+            "dirty": false
+          },
+          "python": "3.13.16",
+          "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+          "run_status": "PASS",
+          "assertion_statuses": [
+            "PASS",
+            "PASS",
+            "PASS"
+          ]
+        },
+        {
+          "case": "success-b",
+          "source": {
+            "commit": "a2f3d905cbb979bce672d30f4894cc068b516826",
+            "dirty": false
+          },
+          "python": "3.13.16",
+          "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+          "run_status": "PASS",
+          "assertion_statuses": [
+            "PASS",
+            "PASS",
+            "PASS"
+          ]
+        },
+        {
+          "case": "failed",
+          "source": {
+            "commit": "a2f3d905cbb979bce672d30f4894cc068b516826",
+            "dirty": false
+          },
+          "python": "3.13.16",
+          "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+          "run_status": "FAIL",
+          "assertion_statuses": [
+            "FAIL",
+            "PASS",
+            "PASS"
+          ]
+        },
+        {
+          "case": "unsupported",
+          "source": {
+            "commit": "a2f3d905cbb979bce672d30f4894cc068b516826",
+            "dirty": false
+          },
+          "python": "3.13.16",
+          "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+          "run_status": "FAIL",
+          "assertion_statuses": [
+            "SKIPPED",
+            "PASS",
+            "PASS"
+          ]
+        }
+      ],
+      "matches_local_digest": true
+    }
+  ],
+  "conclusion_en": "Downloaded evidence from both hosted Python versions matches the clean implementation commit and local deterministic event digest.",
+  "conclusion_ko": "두 원격 Python 버전의 결과물을 내려받아 깨끗한 구현 커밋과 로컬 결정적 이벤트 해시 일치를 확인했습니다."
+}

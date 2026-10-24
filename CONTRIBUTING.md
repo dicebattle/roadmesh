@@ -2,6 +2,10 @@
 
 RouteLens is in early M0 implementation. Start with the [wiki index](wiki/index.md) and [roadmap](docs/05-roadmap.md), then propose a small, testable change. Korean and English contributions are welcome.
 
+New and changed guidance must be English-first with Korean included. Follow the [development workflow](docs/12-development-workflow.md): `main` requires a pull request, and each task ends with a descriptive bilingual commit and feature-branch push. Record direct test evidence for each implemented pilot module.
+
+새로 작성하거나 수정하는 안내는 영어 우선에 한국어를 병기합니다. [개발 작업 절차](docs/12-development-workflow.md)에 따라 main 반영에는 PR이 필요하며, 각 작업은 이유를 설명하는 이중 언어 커밋과 작업 브랜치 푸시로 마무리합니다. 구현한 파일럿 모듈마다 직접 테스트한 증거를 기록합니다.
+
 - Keep routing algorithms, rendering, cryptographic primitives and transport internals in maintained upstream projects. Prefer adapters over forks.
 - Use synthetic fixtures by default. Do not submit real driving traces, precise personal locations, credentials, private conversations, or third-party data without redistribution rights.
 - Explain the user-visible behavior, the change, and the evidence. Distinguish a local test, a deployment, and a real driving validation.

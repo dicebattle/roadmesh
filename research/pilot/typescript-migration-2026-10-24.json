@@ -1,0 +1,230 @@
+{
+  "source_commit": "65e97bc07365dacfa0696bc943fe6246d126e8fb",
+  "dirty": false,
+  "node": "22.23.4",
+  "checks": [
+    {
+      "case": "success-a",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "success-b",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "failed",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "unsupported",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "case": "invalid",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "status": "PASS",
+      "errors": []
+    }
+  ],
+  "independent_event_offsets": [
+    19,
+    19,
+    41,
+    41,
+    141,
+    500,
+    500
+  ],
+  "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+  "overwrite_exit": 2,
+  "existing_files_preserved": true,
+  "invalid_created_output": false,
+  "corpus_strict_exit": 1,
+  "corpus": {
+    "schema_version": "0.1",
+    "region_id": "seoul-synthetic-example",
+    "counts": {
+      "route": {
+        "total": 1,
+        "reviewed_open_data": 0,
+        "synthetic": 1,
+        "draft": 1,
+        "uncertain": 0
+      },
+      "match": {
+        "total": 1,
+        "reviewed_open_data": 0,
+        "synthetic": 1,
+        "draft": 1,
+        "uncertain": 0
+      }
+    },
+    "ready_for_m0_measurement": false,
+    "blockers": [
+      "route: 0/100 reviewed open-data cases",
+      "match: 0/100 reviewed open-data cases"
+    ],
+    "blockers_ko": [
+      "route: 검토된 공개 자료 사례 0/100개",
+      "match: 검토된 공개 자료 사례 0/100개"
+    ],
+    "corpus_sha256": "94dc327a01644928415f102557c0a98fbc3e4c8fe7276eb945075c78e4dc88d9"
+  },
+  "summary_en": "Main independently checked clean-source CLI behavior, event order/hash, provenance and output preservation.",
+  "summary_ko": "메인이 깨끗한 소스의 CLI 동작·이벤트 순서/해시·출처·출력 보존을 독립 확인했습니다.",
+  "ci": {
+    "run_id": 40069570003,
+    "url": "https://github.com/dicebattle/routelens/actions/runs/40069570003",
+    "head": "65e97bc07365dacfa0696bc943fe6246d126e8fb",
+    "jobs": [
+      {
+        "name": "Node 24",
+        "conclusion": "success"
+      },
+      {
+        "name": "Node 22",
+        "conclusion": "success"
+      },
+      {
+        "name": "Required checks",
+        "conclusion": "success"
+      }
+    ],
+    "downloaded_artifacts_inspected": true,
+    "observations": [
+      {
+        "node": "22.23.3",
+        "case": "success-a",
+        "source": {
+          "commit": "65e97bc07365dacfa0696bc943fe6246d126e8fb",
+          "dirty": false
+        },
+        "status": "PASS",
+        "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+        "assertion_statuses": [
+          "PASS",
+          "PASS",
+          "PASS"
+        ]
+      },
+      {
+        "node": "22.23.3",
+        "case": "success-b",
+        "source": {
+          "commit": "65e97bc07365dacfa0696bc943fe6246d126e8fb",
+          "dirty": false
+        },
+        "status": "PASS",
+        "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+        "assertion_statuses": [
+          "PASS",
+          "PASS",
+          "PASS"
+        ]
+      },
+      {
+        "node": "22.23.3",
+        "case": "failed",
+        "source": {
+          "commit": "65e97bc07365dacfa0696bc943fe6246d126e8fb",
+          "dirty": false
+        },
+        "status": "FAIL",
+        "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+        "assertion_statuses": [
+          "FAIL",
+          "PASS",
+          "PASS"
+        ]
+      },
+      {
+        "node": "22.23.3",
+        "case": "unsupported",
+        "source": {
+          "commit": "65e97bc07365dacfa0696bc943fe6246d126e8fb",
+          "dirty": false
+        },
+        "status": "FAIL",
+        "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+        "assertion_statuses": [
+          "SKIPPED",
+          "PASS",
+          "PASS"
+        ]
+      },
+      {
+        "node": "24.21.0",
+        "case": "success-a",
+        "source": {
+          "commit": "65e97bc07365dacfa0696bc943fe6246d126e8fb",
+          "dirty": false
+        },
+        "status": "PASS",
+        "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+        "assertion_statuses": [
+          "PASS",
+          "PASS",
+          "PASS"
+        ]
+      },
+      {
+        "node": "24.21.0",
+        "case": "success-b",
+        "source": {
+          "commit": "65e97bc07365dacfa0696bc943fe6246d126e8fb",
+          "dirty": false
+        },
+        "status": "PASS",
+        "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+        "assertion_statuses": [
+          "PASS",
+          "PASS",
+          "PASS"
+        ]
+      },
+      {
+        "node": "24.21.0",
+        "case": "failed",
+        "source": {
+          "commit": "65e97bc07365dacfa0696bc943fe6246d126e8fb",
+          "dirty": false
+        },
+        "status": "FAIL",
+        "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+        "assertion_statuses": [
+          "FAIL",
+          "PASS",
+          "PASS"
+        ]
+      },
+      {
+        "node": "24.21.0",
+        "case": "unsupported",
+        "source": {
+          "commit": "65e97bc07365dacfa0696bc943fe6246d126e8fb",
+          "dirty": false
+        },
+        "status": "FAIL",
+        "event_sha256": "ed8ebc875052b4a7365d079d35265fa7867334c40d84b6626f402263f7fe7eb6",
+        "assertion_statuses": [
+          "SKIPPED",
+          "PASS",
+          "PASS"
+        ]
+      }
+    ]
+  }
+}

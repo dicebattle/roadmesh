@@ -17,6 +17,13 @@
 | ADR-011 | 제품명 RouteLens, 저장소·폴더 routelens | 사용자가 경로 탐색 의미와 Metro Lens 계열 이름을 선택 | 사용자가 이름 변경을 요청할 때 |
 | ADR-012 | 설계 문서 + 프로젝트 위키 + 출처·누적 기록 | 계획·구현 근거가 대화에만 남지 않도록 함 | 중복·낡은 정보는 페이지 통합과 교차 참조로 해결 |
 | ADR-013 | 첫 모듈은 RM-001 시험자료 검사 | 엔진 성능을 판단하기 전에 평가 입력과 근거를 구분해야 함 | 실제 도로 사례 확보 후 RM-002 착수 |
+| ADR-014 | Separate local simulation from geographic evidence / 로컬 합성 검증과 실제 지역 증거 분리 | Exercise the complete pipeline without pretending synthetic cases are reviewed roads / 합성을 검토된 실제 도로로 꾸미지 않고 전체 흐름 검증 | Geographic evaluation still requires reviewed inputs / 실제 지역 평가는 검토 자료 필요 |
+| ADR-015 | Protect main; finish with branch pushes / main 보호·작업 브랜치 푸시로 마무리 | Preserve a review boundary and remote handoff / 검토 경계와 원격 결과 보존 | Add required checks after P14a succeeds / P14a 성공 후 필수 검사 추가 |
+| ADR-016 | English first with Korean messages / 영어 우선·한국어 병기 | Human and agent readability across interfaces and commits / 인터페이스·커밋을 사람과 에이전트가 이해 | Keep machine identifiers and historical evidence intact / 규격 식별자·과거 증거 유지 |
+| ADR-017 | P01 schedules fixture-label events only / P01은 도로 이름표 이벤트 일정만 생성 | Build truthful replay and evidence before GPS or engine integration / GPS·엔진 연결 전에 정직한 재현·증거 기반 마련 | Extend at P02/P03 without presenting P01 as real routing / P02/P03에서 확장하고 P01을 실제 경로 계산으로 표현하지 않음 |
+| ADR-018 | Korean chat, bilingual project artifacts / 대화는 한국어·프로젝트 기록물은 이중 언어 | User clarified the scope of the language rule / 사용자가 언어 규칙의 범위를 정정 | Follow explicit user language requests / 명시적인 사용자 언어 요청을 따름 |
+
+| ADR-019 | TypeScript for verification and production coordination / 검증과 운영 조정에 TypeScript 통일 | User-requested shared toolchain and future type reuse; preserve P01 replay parity / 사용자 요청에 따른 도구 통일·후속 타입 공유, P01 재생 동등성 유지 | Revisit only with measured requirements; see [migration](14-typescript-migration.md) / 실측 요구에 따라 재검토 |
 
 ## 아직 확정하지 않은 것
 

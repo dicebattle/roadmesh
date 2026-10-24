@@ -1,12 +1,18 @@
 # RouteLens 프로젝트 위키
 
-현재 단계는 **M0 / RM-001 진행 중**입니다. 시험자료 검사 모듈만 구현됐으며 실제 도로 검토 사례는 경로·매칭 각각 0개입니다. 실행 가능한 내비게이션과 배포 환경은 없습니다.
+Verified: [TypeScript P01/P14a tools](modules/pilot-runner.md), 33 tests and independent local/Node 22/24 hosted evidence. [Migration proof](../research/pilot/typescript-migration-2026-10-24.json). Next module: **P02 test graph builder**. The complete pilot and geographic 100/100 gate remain separate. [Development workflow](../docs/12-development-workflow.md): protected main with required CI, descriptive bilingual commits and feature-branch pushes.
+
+[TypeScript P01/P14a](modules/pilot-runner.md)의 33개 검사·독립 로컬 실행·Node 22/24 원격 증거를 검증했습니다. [전환 증거](../research/pilot/typescript-migration-2026-10-24.json)를 보존합니다. 다음 모듈은 **P02 시험 그래프 생성기**입니다. 전체 파일럿과 실제 도로 자료 100/100개 조건은 별도입니다. [개발 절차](../docs/12-development-workflow.md)는 필수 CI를 포함한 main 보호·상세한 이중 언어 커밋·작업 브랜치 푸시입니다.
+
+Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases in each category. The corpus validator and P01 tools exist; navigation and deployment do not.
+
+실제 지역 M0 / RM-001은 진행 중이며 검토한 실제 도로 사례는 각각 0개입니다. 자료 검사기와 P01 도구는 구현됐지만 내비게이션·배포는 없습니다.
 
 ## 현재 구현과 다음 작업
 
 - [시험자료 검사 모듈](modules/evaluation-corpus.md): 실행법, 입력 계약, 검사 범위, 검증 근거.
 - [누적 작업 기록](log.md): 요청·설계 결정·실행 결과·남은 일.
-- 다음 작업: 실제 시험 지역·공개 원본을 정하고 소수의 실제 도로 사례를 검토하는 RM-001b.
+- Geographic work remains pending: RM-001b selects real test regions and reviewed sources. / 실제 지역 작업 RM-001b의 시험 지역·검토 출처 선정은 별도로 남아 있습니다.
 
 ## 기준 문서
 
@@ -24,13 +30,23 @@
 | [버스 확장](../docs/08-transit-extension.md) | 별도 제품으로 남긴 방향 |
 | [설계 결정](../docs/09-decisions.md) | 채택·보류·미결정 사항 |
 | [공식 출처](../docs/10-sources.md) | 기존 조사 출처와 공개 메타데이터 |
+| [Local pilot / 로컬 파일럿](../docs/11-local-pilot.md) | Modules, contracts, scenarios and evidence / 모듈·계약·시나리오·증거 |
+| [Workflow / 개발 절차](../docs/12-development-workflow.md) | Branch protection and bilingual delivery / 브랜치 보호·이중 언어 결과 전달 |
+| [P01/P14a contract / P01·P14a 계약](../docs/13-p01-p14a-contract.md) | Executable scope and acceptance checks / 실행 범위와 통과 검사 |
+
+- [TypeScript migration / TypeScript 전환](../docs/14-typescript-migration.md)
+- [P02 graph contract / P02 그래프 계약](../docs/15-p02-test-graph.md)
 
 ## 출처와 검증 자료
 
 - [LLM-Wiki 적용 판단](sources/llm-wiki.md): 사용자가 지정한 글과 이 저장소에 적용한 규칙.
 - [오픈소스 조사 스냅샷](../research/upstream-snapshot.json): 최초 조회 결과, 기존 내용을 덮어쓰지 않음.
 - [검사 모듈 실행 결과](../research/evaluation-corpus/2026-10-24-synthetic-report.json): 합성 예제의 미준비 판정과 파일 해시.
-- [집중 테스트](../tests/test_evaluation_corpus.py): 오류 입력·중복·출처·준비 수 경계 검증.
+- [집중 테스트](../tests/evaluation_corpus.test.ts): 오류 입력·중복·출처·준비 수 경계 검증.
+- [Bilingual CLI verification / 이중 언어 CLI 검증](../research/evaluation-corpus/2026-10-24-bilingual-cli-verification.json): direct commands and outputs from a clean committed source / 커밋된 깨끗한 소스의 직접 명령과 출력.
+- [P01 direct local proof / P01 로컬 직접 증거](../research/pilot/p01-local-2026-10-24.json): five cases, exact source identity, independent event order and output preservation / 다섯 사례·정확한 소스·독립 이벤트 순서·출력 보존.
+- [P14a hosted proof / P14a 원격 증거](../research/pilot/p14a-ci-2026-10-24.json): two Python versions and downloaded-artifact inspection / Python 두 버전과 다운로드 결과물 검사.
+- [Required CI protection / 필수 CI 보호](../research/repository/main-protection-p14a-2026-10-24.json): observed Actions check bound to main / 실제 Actions 검사를 main에 연결.
 
 ## 기록 방법
 

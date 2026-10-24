@@ -1,0 +1,77 @@
+# P01 runner and P14a checks / P01 실행기와 P14a 검사
+
+Status: **TypeScript P01/P14a verified**, 2026-10-24. Strict build and 33 tests passed on Node 22.23.4. Main independently verified clean source `65e97bc` and inspected Node 22/24 artifacts from [run 40069570003](https://github.com/dicebattle/routelens/actions/runs/40069570003). [Migration evidence](../../research/pilot/typescript-migration-2026-10-24.json). `Required checks` remains mandatory. Earlier Python evidence is historical. Next: P02.
+
+상태: 2026-10-24 **TypeScript P01/P14a 검증 완료**. Node 22.23.4 엄격 빌드·33개 검사, 메인의 깨끗한 소스 독립 실행, Node 22/24 원격 결과물 검사가 통과했습니다. 위 전환 증거를 보존하고 종합 검사를 계속 필수로 적용합니다. 기존 Python 증거는 과거 기록이며 다음은 P02입니다.
+
+## Evidence interpretation / 증거 해석
+
+### Original Python decision, superseded / 대체된 최초 Python 선택
+
+The user subsequently chose TypeScript for all project verification tools. [Migration design](../../docs/14-typescript-migration.md) preserves behavior and removes the second project toolchain. The paragraphs below explain the historical decision.
+
+사용자의 후속 요청으로 프로젝트 검증 도구를 TypeScript로 통일합니다. [전환 설계](../../docs/14-typescript-migration.md)는 행동을 보존하며 프로젝트의 이중 도구 체계를 없앱니다. 아래는 과거 결정의 설명입니다.
+
+The original architecture assigned Python to evaluation/replay tools while keeping server coordination and traffic aggregation in TypeScript. The first corpus validator used Python's standard library; P01 continued that tooling choice. Its implemented work is JSON validation, seeded event scheduling, hashing, filesystem reports and subprocess checks, all covered by the standard library without package installation or a build step. This was a tooling-simplicity choice, not a benchmark-based performance decision or a choice to build the navigation backend in Python.
+
+최초 아키텍처는 평가·재생 도구에 Python, 서버 조정·교통정보 집계에 TypeScript를 배정했습니다. 첫 자료 검사기가 Python 표준 라이브러리를 사용했고 P01도 그 도구 선택을 이어갔습니다. 실제 작업은 JSON 검사·시드 기반 일정·해시·파일 보고서·프로세스 검사로, 외부 패키지 설치나 빌드 단계 없이 표준 라이브러리로 처리할 수 있습니다. 개발 도구를 단순하게 만드는 선택이었으며 성능 비교 결과나 내비게이션 서버 전체를 Python으로 만든다는 결정은 아닙니다.
+
+TypeScript/Node.js could perform these tasks too. Keeping Python adds a second toolchain and prevents direct reuse of TypeScript types. That tradeoff was not quantitatively compared before implementation. Python should remain an external test driver, not a second implementation of production traffic rules. The planned production core stays TypeScript; Valhalla performs routing in C++, and Android is planned in Kotlin. If test logic increasingly needs shared production types or core code, reassess the harness language before duplicating behavior. That explanation itself did not perform a migration; the later user request superseded this boundary.
+
+TypeScript/Node.js로도 같은 작업을 할 수 있습니다. Python을 유지하면 도구 체계가 하나 늘고 TypeScript 타입을 직접 공유하지 못합니다. 이 비용을 구현 전에 정량 비교하지는 않았습니다. Python은 외부 시험 도구로 한정하고 운영 교통 규칙을 별도로 다시 구현하지 않아야 합니다. 운영 핵심은 TypeScript, 경로 계산은 Valhalla C++, Android는 Kotlin 계획을 유지합니다. 검증 도구가 운영 타입·핵심 코드 공유를 자주 요구하게 되면 동작을 중복 작성하기 전에 언어를 재검토합니다. 당시 설명은 언어 이전을 수행하지 않았으며 이후 사용자 요청이 이 경계를 대체했습니다.
+
+References: [original module layout](../../docs/02-architecture.md), [P01 implementation contract](../../docs/13-p01-p14a-contract.md), and [actual imports and implementation](../../tools/pilot_runner.ts).
+
+근거: [최초 모듈 구성](../../docs/02-architecture.md), [P01 구현 계약](../../docs/13-p01-p14a-contract.md), [실제 사용 모듈과 구현](../../tools/pilot_runner.ts).
+
+- Event hashes are comparable across repeated runs; run UUIDs and wall-clock timestamps are deliberately different.
+  반복 실행의 이벤트 해시는 비교 가능하며 실행 UUID·현실 시작시각은 의도적으로 다릅니다.
+- `source_commit` and `dirty_tree` describe the actual checkout at execution. A later documentation commit does not retroactively change the tested code identity.
+  `source_commit`·`dirty_tree`는 실제 실행 체크아웃 상태입니다. 이후 문서 커밋이 검사한 소스 식별자를 소급 변경하지 않습니다.
+- A failed or unsupported required assertion makes the run unsuccessful even when evidence files were written successfully.
+  결과 파일을 정상 저장했어도 필수 검사가 실패하거나 미지원이면 실행은 성공이 아닙니다.
+- CI's intentional negative scenarios must fail as expected. Their expected rejection is a successful check of error handling, not a claim that those scenarios passed.
+  CI의 의도적 실패 시나리오는 실제로 예상대로 실패해야 합니다. 예상된 거부는 오류 처리 검사의 성공이며 시나리오 자체의 성공이 아닙니다.
+- Graph identity in a scenario is a future reference only. The run manifest must clearly identify the lack of engine execution.
+  시나리오의 그래프 식별자는 후속 연결용 참조이며, 실행 목록은 엔진을 실행하지 않았음을 명시해야 합니다.
+
+## Run commands / 실행 명령
+
+From the repository root, choose output directories that do not yet exist. Repeating a command with the same directory is intentionally rejected.
+
+저장소 루트에서 아직 존재하지 않는 출력 폴더를 지정합니다. 같은 폴더로 명령을 반복하면 의도적으로 거부됩니다.
+
+```bash
+mkdir -p data
+npm run --silent pilot -- fixtures/pilot/success.json --output data/p01-example
+npm run --silent pilot:checks -- --output data/p01-checks
+npm test
+```
+
+The [runner](../../tools/pilot_runner.ts) writes events, assertions, a bilingual summary and a final manifest. Completion manifests are written last. Existing paths are preserved. The [direct-check wrapper](../../tools/pilot_checks.ts) runs five CLI cases: two successful replays, an expected assertion failure, an unsupported assertion and invalid input. It checks report contents as well as exit codes, and fails if the expected behavior is violated.
+
+[실행기](../../tools/pilot_runner.ts)는 이벤트·판정·이중 언어 요약과 최종 실행 목록을 저장하며 완료 목록은 마지막에 기록합니다. 기존 경로는 보존합니다. [직접 검사 도구](../../tools/pilot_checks.ts)는 성공 재생 두 번·의도적 실패·미지원 검사·잘못된 입력의 다섯 CLI 사례를 실행하고, 종료코드뿐 아니라 보고서도 검사하여 기대 동작이 깨지면 실패합니다.
+
+The [fixture](../../fixtures/pilot/success.json) independently expects 7 events: 2 departures, 3 fixture-label entries and 2 scheduled markers. The last marker occurs at 500 ms. Same-time order is departure, edge entry, then fault marker. Markers do not inject actual failures.
+
+[예제](../../fixtures/pilot/success.json)의 기대값은 독립적으로 계산한 출발 2개·도로 이름표 진입 3개·장애 표식 2개, 총 7개입니다. 마지막 표식은 500ms입니다. 같은 시각에서는 출발·도로 진입·표식 순서이며, 표식이 실제 장애를 주입하지는 않습니다.
+
+## P14a workflow / P14a 워크플로
+
+Main-agent local verification on clean implementation commit `a2f3d905cbb979bce672d30f4894cc068b516826` passed all five CLI cases. The main agent independently checked the seven-event schedule, canonical digest, source identity, different run IDs, and preserved output after a rejected overwrite. [Recorded local evidence](../../research/pilot/p01-local-2026-10-24.json).
+
+메인이 미커밋 변경 없는 구현 커밋 `a2f3d905cbb979bce672d30f4894cc068b516826`에서 CLI 다섯 사례를 직접 통과시켰습니다. 독립적으로 계산한 이벤트 7개·정규 해시·소스 식별·서로 다른 실행 ID·덮어쓰기 거부 후 파일 보존도 확인했습니다. [로컬 증거](../../research/pilot/p01-local-2026-10-24.json)를 보존합니다.
+
+[Fast checks](../../.github/workflows/fast-checks.yml) runs the corpus and P01 tests under Node.js 22 and 24. Job names are `Node 22`, `Node 24` and the aggregate `Required checks`. Evidence upload runs even after a test fails; absence of expected artifacts is an error. Matrix failure, cancellation or skipping prevents aggregate success. Artifacts are retained for seven days.
+
+[빠른 검사](../../.github/workflows/fast-checks.yml)는 Node.js 22·24에서 자료 검사와 P01 테스트를 실행합니다. 작업 이름은 위와 같고 종합 검사는 `Required checks`입니다. 실패 후에도 증거를 업로드하며 필요한 결과물이 없으면 오류입니다. 버전별 검사 실패·취소·생략은 종합 성공을 막습니다. 결과물 보관은 7일입니다.
+
+Sol's first focused suite passed 26 tests. Main review found ordering and interrupted-output gaps, which Sol corrected with two regression tests. The revised focused suite passed 28 tests in one additional run. Clean-commit direct verification and hosted CI evidence are recorded separately in the work log; unit success alone is not proof of hosted CI.
+
+Sol의 최초 집중 검사 26개 통과 후 메인 검토에서 순서·저장 중단 문제가 발견됐고 Sol이 회귀 테스트 두 개와 함께 수정했습니다. 수정된 집중 검사 28개는 추가 한 번 실행으로 통과했습니다. 깨끗한 커밋 직접 검증과 원격 CI 증거는 작업 기록에 별도로 남기며 단위 검사 성공만으로 원격 CI를 증명하지 않습니다.
+
+## Sources and boundaries / 출처와 경계
+
+The workflow follows GitHub's [push and pull-request triggers](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows) and [minimal permissions and pinned actions](https://docs.github.com/en/actions/reference/security/secure-use) guidance. Action revisions are recorded in the contract. No upstream routing code or private dataset is bundled.
+
+워크플로는 GitHub의 [푸시·PR 이벤트](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows)와 [최소 권한·Actions 버전 고정](https://docs.github.com/en/actions/reference/security/secure-use) 지침을 따릅니다. Actions 커밋은 구현 계약에 기록합니다. 외부 경로 엔진 코드·비공개 데이터는 포함하지 않습니다.
