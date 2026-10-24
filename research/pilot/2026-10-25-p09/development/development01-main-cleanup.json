@@ -1,0 +1,20 @@
+{
+  "process_ids": [
+    41101,
+    41102
+  ],
+  "processes_absent": true,
+  "resources": [
+    {
+      "type": "container",
+      "id": "routelens-p05-1cea93dc-0b24-4cc8-a9f3-2b6dd75e0787",
+      "absent": true
+    },
+    {
+      "type": "volume",
+      "id": "routelens-p05-1cea93dc-0b24-4cc8-a9f3-2b6dd75e0787-db",
+      "absent": true
+    }
+  ],
+  "status": "PASS"
+}

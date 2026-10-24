@@ -1,8 +1,8 @@
 # P09 persistent routing nodes / 지속 실행 경로 노드
 
-Status: design fixed by main before coding; not implemented. Sol implements, main reviews and executes. The primary integration uses a freshly built actual Seoul OSM graph. The [bounded native-service probe](../research/pilot/2026-10-25-p09-preparation/retry/README.md) proves two original route requests on one daemon; it proves no lifecycle guarantee.
+Status: implemented and actual development32/32 verified; clean whole270, new media and hosted delivery remain pending. Main fixed this design before coding, Sol implemented, and main reviewed and directly executed. The primary integration uses a freshly built actual Seoul OSM graph. The [bounded native-service probe](../research/pilot/2026-10-25-p09-preparation/retry/README.md) proves two original route requests on one daemon; it proves no lifecycle guarantee.
 
-상태: 메인이 구현 전에 고정한 설계이며 아직 미구현입니다. Sol이 구현하고 메인이 검토·직접 실행합니다. 주요 통합에는 새로 만든 실제 서울 OSM 그래프를 사용합니다. 사전 실험은 한 데몬의 원래 경로 요청 두 번만 입증하며 수명주기 보장은 별도로 검증합니다.
+상태: 구현과 실제 개발32개 검증을 마쳤으며 깨끗한 전체270개·새 미디어·원격 반영은 남아 있습니다. 메인이 구현 전 설계를 고정하고 Sol이 구현했으며 메인이 검토·직접 실행했습니다. 주요 통합에는 새로 만든 실제 서울 OSM 그래프를 사용합니다. 사전 실험은 한 데몬의 원래 경로 요청 두 번만 입증하며 수명주기 보장은 별도로 검증합니다.
 
 ## Scope and reuse / 범위·재사용
 
@@ -26,9 +26,9 @@ A serialized reconcile loop reads current accepted state, optionally pulls the p
 
 순차 조정 루프에서 현재 수용상태를 읽고 같은 관측시각으로 P07 게시자를 조회한 뒤 다시 확인합니다. 전송 실패 때 이미 수용한 미만료 자료는 유지할 수 있지만 DB 실패를 캐시 서비스 권한으로 해석하지 않습니다. 활성 참조와 별도로 후보를 준비하고 실제 준비 완료 뒤·교체 직전에 영속 상태를 다시 검사합니다. 순번·자료·만료가 달라지면 후보를 버립니다. 준비 실패는 기존 참조를 바꾸지 않지만 기존 세대도 현재 수용상태와 일치해야 서비스합니다.
 
-A route obtains one active-generation lease after request validation and current acceptance check. The lease pins node instance, graph, snapshot, high-water, generation/file hash and native daemon identity for the entire real HTTP calculation and trace. Recheck current accepted state and daemon identity before returning. No successful result may combine old geometry with new metadata. A newer accepted version, key revocation, expiry or state-store failure during work discards the completed result with an explicit failure. This preserves P08's conservative freshness rule. Draining means the old daemon survives until its last admitted request settles; it does not mean an obsolete result is accepted. New requests only enter the active ready generation. Retire the old daemon after its last lease, with a30s wall-clock ceiling and explicit failed requests if forced termination is needed.
+A route obtains one active-generation lease after request validation and current acceptance check. The lease pins node instance, graph, snapshot, high-water, generation/file hash and native daemon identity for the entire real HTTP calculation and trace. Recheck current accepted state and daemon identity before returning. No successful result may combine old geometry with new metadata. A newer accepted version, cleared accepted state, expiry or state-store failure during work discards the completed result with an explicit failure. This preserves P08's conservative freshness rule. Draining means the old daemon survives until its last admitted request settles; it does not mean an obsolete result is accepted. New requests only enter the active ready generation. Retire the old daemon after its last lease, with a30s wall-clock ceiling and explicit failed requests if forced termination is needed.
 
-각 요청은 검증 후 활성 세대 하나를 고정하며 계산·통과 확인 전체에서 노드실행·지도·자료·순번·파일해시·엔진 식별을 유지합니다. 응답 직전에 DB 수용상태와 엔진 식별을 다시 검사합니다. 새 메타데이터와 옛 경로를 섞지 않으며 도중의 새 버전·키철회·만료·DB실패는 계산결과를 폐기하고 명시적으로 실패합니다. P08의 보수적 신선도 규칙을 유지합니다. 기존 요청 마무리는 프로세스를 요청 종료까지 살려두는 뜻이며 낡은 성공을 허용한다는 뜻이 아닙니다. 새 요청은 활성 준비 세대만 사용하고 마지막 요청이 끝나면 옛 엔진을 종료합니다. 실제30초 상한을 넘기면 명시적인 실패로 종료합니다.
+각 요청은 검증 후 활성 세대 하나를 고정하며 계산·통과 확인 전체에서 노드실행·지도·자료·순번·파일해시·엔진 식별을 유지합니다. 응답 직전에 DB 수용상태와 엔진 식별을 다시 검사합니다. 새 메타데이터와 옛 경로를 섞지 않으며 도중의 새 버전·수용상태해제·만료·DB실패는 계산결과를 폐기하고 명시적으로 실패합니다. P08의 보수적 신선도 규칙을 유지합니다. 기존 요청 마무리는 프로세스를 요청 종료까지 살려두는 뜻이며 낡은 성공을 허용한다는 뜻이 아닙니다. 새 요청은 활성 준비 세대만 사용하고 마지막 요청이 끝나면 옛 엔진을 종료합니다. 실제30초 상한을 넘기면 명시적인 실패로 종료합니다.
 
 At exact event-time expiry, no request may use expired live speeds. A verified blank baseline generation is prepared/selected automatically by periodic reconciliation; if it is not ready, return unavailable until ready. Baseline provenance retains durable high-water, nullable snapshot and explicit NO_USABLE_SNAPSHOT. Polling time is a real monotonic interval (500ms default, no overlap); TTL/window time remains persisted simulation event time. No public endpoint can move the event clock. Two nodes can legitimately hold different accepted versions while one is offline; each response must identify its own actual version. P10 will choose compatible nodes.
 
@@ -56,3 +56,21 @@ Fresh actual P05→P06→P07 input drives two independent nodes. Reuse the autho
 Final delivery: clean whole-module execution, main's raw-byte/state/route inspection, fresh bilingual report, real recorded two-node switching/expiry playback, both READMEs, hosted artifacts, protected PR. Display observed facts and incomplete scope without claiming production availability or real-driving accuracy.
 
 최종 결과는 깨끗한 전체 실행·메인의 원문/상태/경로검사·새 한영보고서·두노드교체/만료 실제재생녹화·두README·원격원문·보호PR입니다. 실제 확인과 미완료 범위를 구분하고 운영가용성·실주행정확도를 주장하지 않습니다.
+
+## Bounded implementation decisions / 구현 범위 구체화
+
+Trust configuration and database connection changes take effect on a new node process; no live consumer-reload endpoint or IPC operation is added in P09. The key-revocation case restarts the same durable consumer identity with revoked trust and verifies rejection plus retained high-water. Deterministic private controls have control_id acknowledgements; network-outage evidence uses an actual owned HTTP proxy returning502, and store-outage evidence pauses/unpauses the actual owned PostgreSQL container. A configured502 is not packet-loss proof. These choices avoid adding a separate live configuration-swap state machine.
+
+신뢰키·DB접속설정 변경은 새 노드프로세스에 적용하며 P09에 실행중소비자교체 기능을 추가하지 않습니다. 키철회 사례는 같은 영속소비자를 철회된신뢰설정으로 재시작해 거부·최고순번보존을 확인합니다. 부모제어에는 요청별확인응답을 두고 전송장애는 실제소유HTTP중계의502, DB장애는 실제컨테이너일시정지/복구로 검증합니다. 설정된502를패킷손실증거로표현하지않습니다. 별도실행설정교체상태기계를추가하지않기위한범위결정입니다.
+
+Fixed required P09 case suffixes (prefix p09-),32 total; all are required, none skipped. Existing238 cases remain, yielding270 total after integration:
+
+필수 P09 검사접미사는 아래32개이며 앞에p09-를붙입니다. 모두필수이고생략을통과로세지않습니다. 기존238개를보존하여통합전체270개입니다.
+
+`fresh-source, independent-nodes, baseline-same-daemon, native-readiness, unauthorized, invalid-input, body-limit, generation-mismatch, capacity-eight, signed-http-pull, two-node-live-detour, held-old-lease, activation-new-request, obsolete-result-rejected, last-lease-cleanup, expired-candidate, before-expiry, automatic-baseline-expiry, offline-node-expiry, publisher-outage, store-outage, corrupt-generation, engine-kill, node-kill, parent-reaping, durable-restart, two-slot-coalescing, non-live-correction, accepted-key-revoked, deadline-drain-bound, public-privacy, owned-cleanup`.
+
+### One drain budget / 요청 마무리 시간의 단일 기준
+
+RouteLens owns the30s request/draining budget. After all leases settle, native HTTP drain_seconds and shutdown_seconds are zero so its own grace period does not stack on top. Keep exact-daemon TERM, bounded process-exit observation and owned-container cleanup. Development03 returned the request deadline correctly at30.023s but retired the old slot about30.347s after DRAINING with native1s+1s grace. Preserve that failure; the30s acceptance ceiling is unchanged.
+
+요청·기존세대 마무리의30초 기준은 RouteLens가 관리합니다. 모든 고정 요청이 끝난 뒤에는 엔진의 추가 대기를0으로 두어 이중 대기를 없앱니다. 정확한 데몬 종료·종료상태 관찰·소유 컨테이너 회수는 유지합니다. 개발03은 요청을30.023초에 올바르게 실패시켰지만 엔진의1초+1초 추가 대기로 옛 세대 회수가 약30.347초 걸렸습니다. 이 실패를 보존하며 통과 기준30초는 늘리지 않습니다.

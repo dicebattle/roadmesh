@@ -22,8 +22,8 @@ The user now requires real Seoul OSM roads for the primary simulation. Complete 
 | P05 durable ingestion / 영속 수집 | [111-check report](../research/pilot/2026-10-24-p05/report.md) | Local and hosted verified / 로컬·원격 검증 |
 | P06 aggregation / 집계 | [P06 report](../research/pilot/2026-10-24-p06/report.md) | Local/hosted151 and Node22/24 each183 verified / 로컬·원격151·Node각183 검증 |
 | P07 signed publication / 서명 게시 | [P07 report](../research/pilot/2026-10-25-p07-claim-fix/report.md) | Corrected local/hosted206 and Node22/24 each202 verified / 수정후로컬·원격206·Node각202검증 |
-| P08 actual traffic consumption / 속도 반영 | [Contract](27-p08-traffic-activation.md), [report](../research/pilot/2026-10-25-p08-portability/report.md) | Local/hosted238 and Node22/24 each217 verified; protected merge pending / 로컬·원격238·Node각217 검증·보호병합 대기 |
-| P09 two nodes, P10 gateway/failover / 두 노드·중계/장애 전환 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
+| P08 actual traffic consumption / 속도 반영 | [Contract](27-p08-traffic-activation.md), [report](../research/pilot/2026-10-25-p08-portability/report.md) | Local/hosted238 and Node22/24 each217 verified; protected PR9 merged / 로컬·원격238·Node각217 검증·보호PR9병합 |
+| P09 two nodes, P10 gateway/failover / 두 노드·중계/장애 전환 | [P09 contract](28-p09-routing-nodes.md) | P09 implementation in progress; P10 pending / P09구현중·P10미구현 |
 | P11 complete client, P12 complete fault matrix / 전체 화면·장애 행렬 | Evidence replay and incremental runner implemented / 증거 재생·점진 실행기 구현 | Partial implementation / 일부 구현 |
 | P13 local Cloudflare parity / Cloudflare 로컬 비교 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P14b engine integration / 엔진 통합 검사 | Extend CI with current whole-system runner / 현재 전체 실행기를 CI에 연결 | Hosted current-module run verified; full matrix remains / 현재 모듈 원격 검증·전체 행렬 남음 |
@@ -37,10 +37,16 @@ A green unit suite does not finish this goal. Completion requires the full modul
 
 단위 검사 성공만으로 목표를 완료하지 않습니다. 전체 모듈·시나리오 계약, 필요한 실제 프로세스/통신 장애, 검사한 통합 증거, 최신 미디어/문서, GitHub 반영이 필요합니다. 누락·약한 증거는 미완료로 둡니다. 실제 지역 100/100·운영 배포·실제 모바일 시험은 별도이며 합성 성공으로 주장하지 않습니다.
 
-Seoul transition merged through protected PR#5 and P05 through PR#6 (`920d48d`); all existing branch tips were ancestors of main. Current: P06 is merged through PR#7. P07 plus the P05 stale-selection correction passed local/hosted206 and Node22/24 each202; protected PR#8 merged asa70ee70; P08 design is fixed. / P06은PR#7로병합했습니다. P07과P05작업선택경쟁수정은로컬·원격206개·Node각202개를검증했고PR#8을a70ee70으로보호병합했고P08설계를고정했습니다.
+## Current delivery / 현재 반영 상태
 
-Latest correction: clean4b8bf79 passed the full206 locally after a reproduced P05 stale-selection fix. Current media/report are refreshed; corrected hosted validation passed; protected PR#8 merge is verified. / 최신수정: 재현한P05작업선택경쟁수정후깨끗한4b8bf79로전체206개를다시통과하고최신영상/보고서를갱신했습니다. 수정후원격검증도통과했고PR#8보호병합도확인했습니다.
+P01–P08 and the Seoul transition are merged through protected PRs. P08 PR9 merged as `db50502a75c71b3956987b3ce263c2a523e9d6f0` after both final-head required runs40123401439/40123407594 passed on16f1049. All pre-existing branch tips are ancestors of main; only the newly started P09 branch remains open. No branches were deleted or protection bypassed. [Merge evidence](../research/repository/p08-protected-merge-2026-10-25.json).
 
-Latest increment: clean `eb541399` passed the fresh whole238. Main inspected4,153 distinct hashes, independent signatures/traffic bytes, actual detour/expiry and owned cleanup. Both READMEs and the actual34.7s recording are refreshed; P08 hosted checks and protected delivery follow. / 최신 구현: 깨끗한 소스로 새 전체238개를 통과했습니다. 메인이4,153고유해시·독립서명/교통바이트·실제우회/만료·소유정리를 확인하고 README두언어·34.7초 실제녹화를 갱신했습니다. P08원격검사·보호반영을 이어갑니다.
+P01~P08·서울전환을 보호PR로병합했습니다. P08은 최종커밋의 필수검사 두건 통과뒤 위커밋으로병합했고, 기존모든브랜치는main에포함되며 새P09브랜치만진행중입니다. 브랜치를삭제하거나보호를우회하지않았습니다.
 
-Current correction: clean4e3265fb passed the fresh whole238 after bounded endpoint-grid selection; main independently checked4,159 original hashes and refreshed the34.7s recording. Corrected hosted checks are next. / 현재 정정: 끝점 격자 비교 보완 후 깨끗한 소스의 새 전체238개·독립해시4,159개를 확인하고34.7초 영상을 갱신했습니다. 다음은 수정 후 원격 검사입니다.
+The corrected clean local source4e3265fb passed238 actual cases and4,159 independent hashes, with a new34.7s recording. Hosted merge-test5f25a578 passed238 cases and Node22/24 each217; main inspected4,122 present hashes and the exact declared map omissions. [Current report](../research/pilot/2026-10-25-p08-portability/report.md), [hosted originals](../research/pilot/2026-10-25-p08-portability/hosted/README.md). Earlier failures and superseded reports remain in the work log and dated evidence, not as current completion claims.
+
+수정한 깨끗한 로컬소스에서 실제238개·독립해시4,159개와새녹화를확인했고, 원격에서도238개·Node각217개·존재하는해시4,122개와명시한지도제외범위를검사했습니다. 앞선실패와이전보고서는작업기록·날짜별근거로보존하되현재완료주장과구분합니다.
+
+Next: [P09 persistent-node contract](28-p09-routing-nodes.md), fixed by main and assigned to Sol.32 required actual lifecycle cases are planned in addition to the existing238; no P09 completion claim until execution, independent review, refreshed media and protected delivery pass. P10–P14 remain in scope.
+
+다음은메인이고정하고Sol에맡긴P09지속노드입니다. 기존238개에필수실제32사례를추가할계획이며실행·독립검토·새미디어·보호반영전에는P09완료로보지않습니다. P10~P14도전체목표에남아있습니다.

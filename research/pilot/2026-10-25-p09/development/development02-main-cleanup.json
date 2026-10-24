@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "process_ids": [
+    43126,
+    43393,
+    44222,
+    45101,
+    47129,
+    47340,
+    47495,
+    47626,
+    47756,
+    47873,
+    47989,
+    48103,
+    48261,
+    48423,
+    48577,
+    48708,
+    48865,
+    48866,
+    48890,
+    49850,
+    50675,
+    50844,
+    51335,
+    52125,
+    52295,
+    52296,
+    53253
+  ],
+  "processes_absent": true,
+  "resources": [
+    {
+      "type": "container",
+      "id": "routelens-p05-471899a2-b4ec-4599-afd6-f6e78b71a15f",
+      "absent": true
+    },
+    {
+      "type": "container",
+      "id": "routelens-p02-1a13cdfb-70d5-4281-848b-8c6af4de589a",
+      "absent": true
+    },
+    {
+      "type": "container",
+      "id": "routelens-p02-3ed71d81-73d1-4c10-a882-8456e8b2fd47",
+      "absent": true
+    },
+    {
+      "type": "container",
+      "id": "routelens-p02-656d6413-5ae3-420d-bacc-85e7675bd794",
+      "absent": true
+    },
+    {
+      "type": "container",
+      "id": "routelens-p02-72d7cd5d-dadc-479b-9ade-481fd80975f5",
+      "absent": true
+    },
+    {
+      "type": "container",
+      "id": "routelens-p02-7a5d6f97-72bb-47fc-8960-da6c2bc410a1",
+      "absent": true
+    },
+    {
+      "type": "container",
+      "id": "routelens-p02-acf192ea-6044-44ae-b641-8d64b064ec24",
+      "absent": true
+    },
+    {
+      "type": "container",
+      "id": "routelens-p02-199cbaeb-2677-4714-a30a-93a083722222",
+      "absent": true
+    },
+    {
+      "type": "container",
+      "id": "routelens-p02-abc95fb1-b599-4e12-b1fd-8a0dd26aaebc",
+      "absent": true
+    },
+    {
+      "type": "container",
+      "id": "routelens-p02-4ffa6333-d6c4-4608-8232-380612880cc1",
+      "absent": true
+    },
+    {
+      "type": "container",
+      "id": "routelens-p02-7f4005ef-5c5e-4066-ad77-0c0c4a4eb366",
+      "absent": true
+    },
+    {
+      "type": "volume",
+      "id": "routelens-p05-471899a2-b4ec-4599-afd6-f6e78b71a15f-db",
+      "absent": true
+    }
+  ]
+}

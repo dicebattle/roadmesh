@@ -1,3 +1,4 @@
+import type { NodeReport } from "./node_checks.js";
 import type { TrafficReport } from "./traffic_checks.js";
 import type { AggregationDraft } from "./aggregation_types.js";
 /** Offline evidence viewer. Input provenance is rendered verbatim, never refreshed. */
@@ -131,6 +132,7 @@ export interface SimulationReportData {
     assertions_total: number;
     cleanup_verified: boolean;
   };
+  nodes?: NodeReport;
   traffic?: TrafficReport;
   publication?: {
     publisher_id: string;
@@ -624,6 +626,17 @@ export function renderSimulationReport(data: SimulationReportData): string {
       ></p>
       <div id="aggregate-evidence"></div>
     </section>
+    <section id="nodes-section" class="checks" hidden>
+      <h2 data-en="P09 recorded two-node native routing" data-ko="P09 기록된 두 노드 지속 엔진 경로"></h2>
+      <p data-en="Recorded evidence from 15 fresh synthetic Teheran-ro trips on actual Seoul roads. Each node has an independent consumer and persistent native daemon. Replay shows observed ACTIVE/DRAINING slots, pinned requests, rejected obsolete results and exact expiry. An owned HTTP 502 proxy models publisher transport failure; it is not packet loss. Local adapter proof does not establish production availability or real-driving accuracy." data-ko="실제 서울 도로의 새 합성 테헤란로 여행 15개로 기록한 근거입니다. 각 노드는 독립 수신자·지속 실행 엔진을 가집니다. 관측한 활성/마무리 세대·고정 요청·낡은 결과 거부·정확한 만료를 재생합니다. 소유 HTTP 502 대리 접속으로 게시 전송 장애를 만들며 패킷 손실 검사가 아닙니다. 로컬 연결기 근거이며 운영 가용성·실주행 정확도를 입증하지 않습니다."></p>
+      <label><span data-en="Recorded transition" data-ko="기록된 전환"></span><select id="node-event"></select></label>
+      <button id="node-replay" type="button" data-en="Replay recorded transitions" data-ko="기록된 전환 재생"></button>
+      <div id="node-status-replay" aria-live="polite"></div>
+      <label><span data-en="Original node route" data-ko="노드 원본 경로"></span><select id="node-route"></select></label>
+      <div id="node-route-map"></div><div id="node-route-detail"></div>
+      <div id="node-evidence"></div>
+      <details><summary data-en="Native node checks and original evidence" data-ko="지속 노드 검사·원문 근거"></summary><div id="node-cases"></div></details>
+    </section>
     <section id="traffic-section" class="checks" hidden>
       <h2 data-en="P08 recorded traffic routing and expiry" data-ko="P08 기록된 교통 경로·만료"></h2>
       <p data-en="Evidence playback of 15 authored synthetic trips on three target edges of the actual Teheran-ro road network in Seoul. Baseline, accepted live traffic and exact event-clock expiry use the same two-point request. The engine uses its own current wall clock for native speed blending. This is not a complete navigation client, real driving accuracy or live traffic." data-ko="실제 서울 테헤란로 도로망의 대상 3개 구간에 직접 만든 합성 여행 15개를 적용한 증거 재생입니다. 기본·수용 실시간·관측시계의 정확한 만료에 같은 두 좌표 요청을 씁니다. 엔진의 속도 혼합에는 엔진의 현재 현실시각을 사용합니다. 완성 내비게이션·실주행 정확도·실시간 교통 증거가 아닙니다."></p>
@@ -1008,6 +1021,17 @@ export function renderSimulationReport(data: SimulationReportData): string {
       );
       const v = $("vehicle").options[0];
       if (v) v.textContent = lang === "en" ? "All vehicles" : "전체 차량";
+      $("nodes-section").hidden = !data.nodes;
+      if(data.nodes){
+        const n=data.nodes, selector=$("node-event"),selectedEvent=selector.value,routeSelector=$("node-route"),selectedRoute=routeSelector.value;
+        selector.replaceChildren(); n.events.forEach((e,index)=>{const option=node("option",e.node_id+" · "+e["message_"+lang],selector);option.value=String(index);});
+        selector.value=selectedEvent||"0";
+        routeSelector.replaceChildren();n.routes.forEach((r,index)=>{const option=node("option",r.node_id+" · "+r.label+" · "+r.traffic_mode,routeSelector);option.value=String(index);});routeSelector.value=selectedRoute||String(Math.max(0,n.routes.findIndex(r=>r.label==="live-a")));
+        drawNodeEvent();drawNodeRoute();setNodeReplayLabel();
+        $("node-evidence").replaceChildren();node("p",n.assertions_passed+"/"+n.assertions_total+(lang==="en"?" checks; owned cleanup: ":"검사 · 소유자원 정리: ")+n.cleanup_verified,$("node-evidence"));
+        n.evidence.forEach(e=>{const row=node("p",e["name_"+lang]+" · ",$("node-evidence"));evidence(e.path,row);});
+        $("node-cases").replaceChildren();n.cases.forEach(c=>{const row=node("p",c.status+" · "+c["message_"+lang]+" · ",$("node-cases"));evidence(c.evidence_path,row);});
+      }
       $("traffic-section").hidden = !data.traffic;
       if (data.traffic) {
         const t = data.traffic, comparison = $("traffic-route-comparison"), map = $("traffic-route-map");
@@ -1500,6 +1524,40 @@ export function renderSimulationReport(data: SimulationReportData): string {
           : "현재까지 예정된 누락: ") + omissions;
       $("time").value = String(time);
     }
+    let nodeReplayTimer=null;
+    function drawNodeEvent(){
+      if(!data.nodes)return;
+      const index=Number($("node-event").value),event=data.nodes.events[index],root=$("node-status-replay");root.replaceChildren();if(!event)return;
+      node("p",event.recorded_at_utc+" · "+event["message_"+lang],root);evidence(event.evidence_path,root);
+      const latest=new Map();data.nodes.events.slice(0,index+1).forEach(e=>{if(e.status)latest.set(e.node_id,e);});
+      latest.forEach(e=>{const s=e.status,card=node("article","",root);card.style.border="1px solid #CAD4DF";card.style.padding="12px";card.style.margin="10px 0";
+        node("h3",s.node_id+" · "+(s.ready?(lang==="en"?"ready":"준비됨"):(lang==="en"?"unavailable":"사용불가")),card);
+        node("p",(lang==="en"?"Instance: ":"실행 식별자: ")+s.instance_id+" · "+(lang==="en"?"in flight: ":"처리 중: ")+s.in_flight,card).style.overflowWrap="anywhere";
+        if(s.active)node("p",s.active.traffic_mode+" · "+(lang==="en"?"sequence ":"순번 ")+(s.active.sequence??"—")+(lang==="en"?" · epoch ":" · 활성화 순번 ")+s.active.activation_epoch+" · "+s.active.checked_at_event_time,card);
+        s.slots.forEach(slot=>{const row=node("p",slot.state+" · "+slot.generation_id+" · "+slot.in_flight+(lang==="en"?" leases":"개 고정 요청")+" · PID "+(slot.native_daemon?.pid??"—")+(lang==="en"?" / ticks ":" / 시작 눈금 ")+(slot.native_daemon?.start_ticks??"—"),card);row.style.overflowWrap="anywhere";});
+        node("p",s["message_"+lang],card);evidence(e.evidence_path,card);
+      });
+    }
+    function drawNodeRoute(){
+      if(!data.nodes)return;const r=data.nodes.routes[Number($("node-route").value)],map=$("node-route-map"),detail=$("node-route-detail");map.replaceChildren();detail.replaceChildren();if(!r)return;
+      const coords=r.coordinates,lons=coords.map(c=>c[0]),lats=coords.map(c=>c[1]);if(coords.length){const minX=Math.min(...lons),maxX=Math.max(...lons),minY=Math.min(...lats),maxY=Math.max(...lats),cosine=Math.cos((minY+maxY)/2*Math.PI/180),scale=Math.min(740/Math.max((maxX-minX)*cosine,1e-9),240/Math.max(maxY-minY,1e-9));const view=document.createElementNS(ns,"svg");view.setAttribute("viewBox","0 0 800 300");view.setAttribute("role","img");view.setAttribute("aria-label",lang==="en"?"Original recorded node route":"기록한 노드 원본 경로");view.style.width="100%";view.style.maxHeight="360px";view.style.background="#F5F7F9";const line=(coordinates,color,width)=>{const p=document.createElementNS(ns,"polyline");p.setAttribute("points",coordinates.map(c=>(400+(c[0]-(minX+maxX)/2)*cosine*scale)+","+(150-(c[1]-(minY+maxY)/2)*scale)).join(" "));p.setAttribute("fill","none");p.setAttribute("stroke",color);p.setAttribute("stroke-width",width);view.append(p);};(data.context_roads||[]).filter(road=>road.coordinates.some(c=>c[0]>=minX&&c[0]<=maxX&&c[1]>=minY&&c[1]<=maxY)).forEach(road=>line(road.coordinates,"#D8DFE6","1"));line(coords,r.traffic_mode==="LIVE"?"#CC481D":"#18816B","5");map.append(view);}
+      node("h3",r.node_id+" · "+r.label,detail);node("p",r.traffic_mode+" · "+r.distance_m.toFixed(1)+" m · "+r.eta_s.toFixed(6)+" s",detail);
+      node("p",(lang==="en"?"Actual instance / epoch / daemon: ":"실제 실행 식별자 / 활성화 순번 / 엔진: ")+r.instance_id+" / "+r.activation_epoch+" / PID "+r.native_daemon.pid+(lang==="en"?" ticks ":" 시작 눈금 ")+r.native_daemon.start_ticks,detail).style.overflowWrap="anywhere";
+      node("p",(lang==="en"?"Sequence / snapshot: ":"순번 / 스냅샷: ")+(r.sequence??"—")+" / "+(r.snapshot_id||"—"),detail).style.overflowWrap="anywhere";
+      node("p",(lang==="en"?"Generation / checked event time / valid until: ":"파일 세대 / 검사 관측시각 / 기한: ")+r.generation_id+" / "+r.checked_at_event_time+" / "+(r.valid_until||"—"),detail).style.overflowWrap="anywhere";evidence(r.evidence_path,detail);
+    }
+    $("node-event").onchange=drawNodeEvent;$("node-route").onchange=drawNodeRoute;
+    function setNodeReplayLabel(){
+      const button=$("node-replay"),label=nodeReplayTimer?(lang==="en"?"Pause recorded replay":"기록 재생 일시정지"):(lang==="en"?"Replay recorded transitions":"기록된 전환 재생");
+      button.textContent=label;button.setAttribute("aria-label",label);button.setAttribute("aria-pressed",String(nodeReplayTimer!==null));
+    }
+    $("node-replay").onclick=()=>{
+      if(!data.nodes?.events.length)return;
+      if(nodeReplayTimer){clearInterval(nodeReplayTimer);nodeReplayTimer=null;setNodeReplayLabel();return;}
+      let index=0;$("node-event").value="0";drawNodeEvent();
+      nodeReplayTimer=setInterval(()=>{index++;if(index>=data.nodes.events.length){clearInterval(nodeReplayTimer);nodeReplayTimer=null;setNodeReplayLabel();return;}$("node-event").value=String(index);drawNodeEvent();},1500);
+      setNodeReplayLabel();
+    };
     $("aggregation-note").hidden = !data.aggregation;
     $("aggregation-section").hidden = !data.aggregation;
     data.aggregation?.cases

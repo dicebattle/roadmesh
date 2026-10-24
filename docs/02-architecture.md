@@ -36,14 +36,16 @@ packages/traffic-core/          외부 서비스에 의존하지 않는 TypeScri
 services/gateway/               수집·경로 중계 HTTP 처리
 services/aggregator/            Cloudflare / PostgreSQL 실행 어댑터
 services/node-agent/            TypeScript/Node.js, Valhalla 프로세스 관리·버전 교체
-services/traffic-compiler/      고정된 Valhalla 버전에 맞춘 C++ 변환 도구
+services/traffic-compiler/      TypeScript validated traffic-file adapter / 검증된 교통파일 연결기
 tools/map-builder/              OSM 가져오기·그래프 생성·검증·목록 작성
 tools/replay/                   TypeScript evaluation/replay tools / 평가·기록 재생
 deploy/cloudflare/              Workers, Queues, Durable Objects, R2
 deploy/compose/                 일반 서버용 PostgreSQL/PostGIS + 서비스 구성
 ```
 
-서버 조정과 집계에 TypeScript를 공통으로 사용합니다. Valhalla 내부 바이너리 형식을 쓰는 변환 도구만 기존 C++ 자료구조를 재사용합니다. 네트워크·배포 부분을 별도로 만들기 위해 처음부터 Go/Rust 서비스까지 늘리지 않습니다. 이후 libp2p 구현체 선택은 노드 실행 언어와 별도로 비교합니다.
+RouteLens orchestration, aggregation and verification use TypeScript. P08 reuses the pinned upstream traffic skeleton generator and patches validated speed records in TypeScript; the earlier custom C++ compiler plan is superseded by [ADR-026](09-decisions.md). Upstream implementation languages remain upstream. P09 adds a narrow persistent-process adapter under [its fixed contract](28-p09-routing-nodes.md). The directory tree above remains a proposed packaging layout, not the current tools/ implementation.
+
+RouteLens 조정·집계·검증은 TypeScript로 통일합니다. P08은 고정 상위도구로 빈 교통파일을 만들고 검증된 속도기록만 TypeScript로 반영하므로 기존 별도C++변환기 계획을 ADR-026으로 대체합니다. 상위 도구의 내부 언어는 그대로 재사용합니다. P09는 고정계약에 따라 좁은 지속프로세스 연결기를 추가합니다. 위 폴더 구조는 향후 패키징 계획이며 현재 tools/ 구현경로와 구분합니다.
 
 ## Cloudflare 운영 구성
 
