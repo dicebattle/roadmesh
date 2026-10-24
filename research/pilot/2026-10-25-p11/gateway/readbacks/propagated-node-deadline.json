@@ -1,0 +1,161 @@
+{
+  "phase": {
+    "type": "PHASE",
+    "phase": "AFTER_NODE_ENGINE_RESULT",
+    "pid": 21289,
+    "node_id": "seoul-gateway-node-a",
+    "instance_id": "b2758458-cfb8-44b5-8f0d-4ab6733b73a0",
+    "generation_id": "bcd73f3c8464af3dd41f8c125cca0625e7535d2822181e0fe0f937898dd8718e",
+    "request_id": "propagated-node-deadline",
+    "engine_container": "routelens-p02-ac7f11dc-993d-4561-be7b-f2c63985957f",
+    "engine_run_directory": "/Users/dice/Documents/routelens/data/p11-main-20261025/gateway/nodes/seoul-gateway-node-a/runtime-ff0b6fb2-fff4-4abd-be73-f5dc64fc59f5/engines/ac7f11dc-993d-4561-be7b-f2c63985957f"
+  },
+  "leased": {
+    "node_id": "seoul-gateway-node-a",
+    "instance_id": "b2758458-cfb8-44b5-8f0d-4ab6733b73a0",
+    "ready": true,
+    "active": {
+      "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+      "high_water": 1,
+      "sequence": 1,
+      "traffic_snapshot_id": "2a059828e0fde1017e071199435eb848b474e6cec3ed326fc3a45d3ba677970a",
+      "compiler_policy": "valhalla-current-v1",
+      "generation_id": "bcd73f3c8464af3dd41f8c125cca0625e7535d2822181e0fe0f937898dd8718e",
+      "traffic_sha256": "8b155cf2bfb59fde5c9fc6ebe33d0bae59748c38b992e72f687ef59bb8974ab4",
+      "traffic_byte_length": 8663040,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "valid_until": "2026-10-24T00:07:00.000Z",
+      "traffic_mode": "LIVE",
+      "engine": {
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "version": "3.9.1"
+      },
+      "message_en": "Fresh accepted synthetic traffic is applied.",
+      "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+      "activation_epoch": 1,
+      "native_daemon": {
+        "pid": 16,
+        "start_ticks": "2445935"
+      }
+    },
+    "in_flight": 1,
+    "slots": [
+      {
+        "generation_id": "bcd73f3c8464af3dd41f8c125cca0625e7535d2822181e0fe0f937898dd8718e",
+        "state": "ACTIVE",
+        "in_flight": 1,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2445935"
+        }
+      }
+    ],
+    "reason": "READY",
+    "message_en": "A current verified engine is ready.",
+    "message_ko": "현재 검증된 엔진이 준비됐습니다."
+  },
+  "released": {
+    "node_id": "seoul-gateway-node-a",
+    "instance_id": "b2758458-cfb8-44b5-8f0d-4ab6733b73a0",
+    "ready": true,
+    "active": {
+      "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+      "high_water": 1,
+      "sequence": 1,
+      "traffic_snapshot_id": "2a059828e0fde1017e071199435eb848b474e6cec3ed326fc3a45d3ba677970a",
+      "compiler_policy": "valhalla-current-v1",
+      "generation_id": "bcd73f3c8464af3dd41f8c125cca0625e7535d2822181e0fe0f937898dd8718e",
+      "traffic_sha256": "8b155cf2bfb59fde5c9fc6ebe33d0bae59748c38b992e72f687ef59bb8974ab4",
+      "traffic_byte_length": 8663040,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "valid_until": "2026-10-24T00:07:00.000Z",
+      "traffic_mode": "LIVE",
+      "engine": {
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "version": "3.9.1"
+      },
+      "message_en": "Fresh accepted synthetic traffic is applied.",
+      "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+      "activation_epoch": 1,
+      "native_daemon": {
+        "pid": 16,
+        "start_ticks": "2445935"
+      }
+    },
+    "in_flight": 0,
+    "slots": [
+      {
+        "generation_id": "bcd73f3c8464af3dd41f8c125cca0625e7535d2822181e0fe0f937898dd8718e",
+        "state": "ACTIVE",
+        "in_flight": 0,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "2445935"
+        }
+      }
+    ],
+    "reason": "READY",
+    "message_en": "A current verified engine is ready.",
+    "message_ko": "현재 검증된 엔진이 준비됐습니다."
+  },
+  "reply": {
+    "status": 503,
+    "headers": {
+      "cache-control": "no-store",
+      "connection": "keep-alive",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Sat, 24 Oct 2026 22:53:53 GMT",
+      "keep-alive": "timeout=5",
+      "transfer-encoding": "chunked"
+    },
+    "body": {
+      "code": "ERROR",
+      "reason": "NO_HEALTHY_NODE",
+      "message_en": "The gateway cannot return a current verified route for this request.",
+      "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+    },
+    "elapsed_ms": 4925.956917000003
+  },
+  "lease_observed_elapsed_ms": 4138.283999999985,
+  "lease_bound_ms": 4500,
+  "proxy_requests": [
+    {
+      "node_id": "seoul-gateway-node-a",
+      "path": "/internal/v1/route",
+      "mode": "normal",
+      "request": {
+        "request_id": "propagated-node-deadline",
+        "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+        "locations": [
+          {
+            "lon": 127.03739724982245,
+            "lat": 37.50083690018144
+          },
+          {
+            "lon": 127.0375277498224,
+            "lat": 37.500877100181434
+          }
+        ],
+        "expected_generation_id": "bcd73f3c8464af3dd41f8c125cca0625e7535d2822181e0fe0f937898dd8718e"
+      },
+      "deadline_ms": "4000",
+      "test_proxy": true,
+      "received_at_monotonic_ms": 565186.652042,
+      "original_status": 503,
+      "original_body": {
+        "code": "UNAVAILABLE",
+        "reason": "REQUEST_DEADLINE",
+        "message_en": "The routing node cannot return a verified route for this request.",
+        "message_ko": "이 요청에 검증된 경로를 반환할 수 없습니다."
+      },
+      "status": 503,
+      "body": {
+        "code": "UNAVAILABLE",
+        "reason": "REQUEST_DEADLINE",
+        "message_en": "The routing node cannot return a verified route for this request.",
+        "message_ko": "이 요청에 검증된 경로를 반환할 수 없습니다."
+      },
+      "elapsed_ms": 4019.2691249999916
+    }
+  ]
+}

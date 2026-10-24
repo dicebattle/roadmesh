@@ -1,0 +1,64 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "primary-unavailable-retry",
+    "origin": {
+      "longitude": 127.03739724982245,
+      "latitude": 37.50083690018144
+    },
+    "destination": {
+      "longitude": 127.0375277498224,
+      "latitude": 37.500877100181434
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live"
+  },
+  "status": 200,
+  "headers": {
+    "cache-control": "no-store",
+    "connection": "keep-alive",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sat, 24 Oct 2026 22:53:38 GMT",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked"
+  },
+  "body": {
+    "request_id": "primary-unavailable-retry",
+    "request_sha256": "a4161ee961de1ab30925b589ba6915c71fe1ce41606ee8eed64395c52bb497a2",
+    "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+    "snapshot_id": "2a059828e0fde1017e071199435eb848b474e6cec3ed326fc3a45d3ba677970a",
+    "sequence": 1,
+    "generation_id": "bcd73f3c8464af3dd41f8c125cca0625e7535d2822181e0fe0f937898dd8718e",
+    "traffic_sha256": "8b155cf2bfb59fde5c9fc6ebe33d0bae59748c38b992e72f687ef59bb8974ab4",
+    "engine_version": "3.9.1",
+    "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "costing_config_id": "valhalla-current-v1",
+    "node_id": "seoul-gateway-node-b",
+    "traffic_mode": "LIVE_MIXED",
+    "distance_m": 12,
+    "duration_s": 22.254,
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.037397,
+          37.500837
+        ],
+        [
+          127.037528,
+          37.500877
+        ]
+      ]
+    },
+    "live_coverage_ratio": 1,
+    "warnings": [],
+    "high_water": 1,
+    "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+    "traffic_published_at": "2026-10-24T00:04:30.000Z",
+    "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+    "source_class": "SYNTHETIC",
+    "clock_basis": "SIMULATION_EVENT_TIME",
+    "calculated_at": "2026-10-24T22:53:38.903Z"
+  },
+  "elapsed_ms": 1501.137166999979
+}

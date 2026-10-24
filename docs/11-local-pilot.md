@@ -1,8 +1,8 @@
 # Local pilot design / 로컬 파일럿 설계
 
-Status: P01–P09 and the Seoul transition are protected-merged. P10 worker correction passed clean local302 and unit262, independent originals and a new recording after final-head hosted concurrency failures; new hosted verification and protected delivery are pending. [Current report](../research/pilot/2026-10-25-p10-worker/report.md). Full P11/P12, P13 and the remaining P14b matrix are unfinished. No production, real-driving or public-peer reliability claim is implied.
+Status: P01–P10 are protected-merged. P11 passed clean local whole334, unit285, independent original inspection, manual IAB review and an actual102.8s client recording; hosted delivery is pending. [Current report](../research/pilot/2026-10-25-p11/report.md). P12 scenario gaps, P13 and P14b remain unfinished.
 
-상태: P01~P09와 서울 도로망 전환은 보호 병합했습니다. P10은 최종 원격 동시 요청 실패를 수정한 뒤 깨끗한 로컬302개·단위262개·독립 원문·새 녹화를 통과했고 새 원격 검증·보호 반영을 진행합니다. P11/P12 전체·P13·남은 P14b 행렬은 미완료이며 운영·실주행·공개 노드 안정성을 주장하지 않습니다.
+상태: P01~P10은 보호 병합했습니다. P11은 깨끗한 전체334개·단위285개·독립 원문·내장 브라우저·실제102.8초 화면 녹화를 통과했고 원격 반영이 남았습니다. P12 장애 공백·P13·P14b는 미완료입니다.
 
 Primary simulation now uses [actual Seoul roads](21-seoul-road-simulation.md); tiny-city stays a regression fixture. [Local proof](../research/seoul/2026-10-24/report.md) passes tiny48 + Seoul29 locally and on hosted Linux.
 

@@ -576,3 +576,17 @@ IAB English/Korean390px had no overflow or console warnings/errors. Main capture
 Main merged the locally verified P10 worker correction and current report at a5be89e into the separately implemented P11 branch. Runtime changes merged without conflict; both append-only histories are retained and current status selects the corrected P10 and P11 development rows. Public browser contracts, six freshness fields, client lifecycle and worker cleanup remain together. The combined source still needs its own clean unit/whole334 verification and recording. P10 hosted checks continue separately; protected main ancestry remains required before P11 delivery.
 
 메인이 로컬 검증한 P10 작업 스레드 수정·최신 보고서를 별도 P11 브랜치에 연결했습니다. 실행 코드는 충돌 없이 합쳐졌고 양쪽 누적 기록을 보존하며 현재 상태에는 수정 P10·P11 개발 근거를 함께 유지했습니다. 공개 브라우저 계약·신선도 여섯 필드·클라이언트 수명·작업 스레드 정리를 보존합니다. 합쳐진 소스의 깨끗한 단위·전체334개와 녹화는 이제 검증하며 P10 원격 검사는 별도로 진행합니다. P11 최종 반영 전 보호 main 이력을 포함해야 합니다.
+
+## 2026-10-25 — P10 protected merge and P11 whole/client proof / P10 보호 병합·P11 전체와 화면 검증
+
+Main Sol continued the fixed P11 design and existing Sol core/integration implementation. Clean c63c556: Node22 npm test285; fresh actual-Seoul whole334; main independent12,225 inventoried hashes, client2,411 hashes/4 signatures/27 native pairs/12 browser-map bindings; prior module audits and exact cleanup passed. Read-only live SQL confirmed15 traversals and identical accepted state across gateway/two nodes. Main IAB390px EN/KO and actual Chrome102.8s capture passed baseline→publication invalidation→detour/short coverage→nodeB failover→expiry→unavailable. Demo8 successes bind to native originals;22 owned container names, volume and processes absent;9 capture identities gone. Archive12,898 originals with29 exact map omissions and separate supplemental audits. [Report](../research/pilot/2026-10-25-p11/report.md).
+
+메인 Sol이 기존 확정 설계와 Sol 코어·통합 구현을 이어받아 단위285개·실제 서울 전체334개를 직접 실행했습니다. 원문12,225개와 클라이언트 서명·엔진·브라우저 연결, 이전 모듈·정리를 확인했습니다. 실제 SQL의15통과와 세 수신자 동일 상태도 읽었습니다. 내장 브라우저390픽셀 한영·실제102.8초 녹화에서 경로 변경·장애 전환·만료·사용 불가를 확인했고 시연8성공·컨테이너22개·녹화9프로세스 정리를 검증했습니다. 원문12,898개·지도 제외29개·추가 감사를 구분해 보존했습니다.
+
+P10 push40139486989/PR40139490949 passed302 and Node22/24 each262. Main inspected9,932 hosted hashes,38 native pairs/18 replies and73 worker jobs. Two audit invocation-scope mistakes are preserved and corrected; no product rerun. PR11 merged the exact checked a5be89e as a4b96c6 with protection retained. P11 merged that ancestry after its clean run and capture; runtime bytes are unchanged. Remote/merge records are committed here rather than adding a documentation-only premerge CI cycle. [Hosted proof](../research/pilot/2026-10-25-p10-worker/hosted/README.md).
+
+P10 원격 두 건302개·Node각262개와 해시9,932개·엔진38쌍/응답18건·작업73개를 확인했습니다. 감사 호출 범위 실수 두 건은 보존·정정했고 제품을 다시 실행하지 않았습니다. 검사한 커밋 그대로 보호 병합하고 P11 실행·촬영 뒤 이력을 포함했으며 실행 바이트는 같습니다. 문서만 바꾼 병합 전 재검사 대신 원격·병합 근거를 이번 기록에 포함합니다.
+
+Next: P11 push, hosted original inspection and protected delivery; then fix P12's actual transport/no-path/revocation/vehicle-class/interrupt contract. The [gap draft](../docs/31-p12-scenario-gap-review.md) is explicitly not implemented. P13/P14b and geographic/production gates remain.
+
+다음은 P11 푸시·원격 원문·보호 반영과 P12 통신/경로 없음/철회/차량 종류/중단 계약 확정입니다. 공백 초안은 구현 완료가 아니며 P13/P14b와 실제 지역·운영 기준은 남습니다.

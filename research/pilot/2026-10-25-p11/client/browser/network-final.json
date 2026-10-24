@@ -1,0 +1,754 @@
+[
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/",
+    "method": "GET",
+    "resource_type": "document"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/client.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/client.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/bootstrap",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/maplibre-worker.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "resource_type": "fetch",
+    "body": {
+      "schema_version": "0.1",
+      "request_id": "browser-7548c541-7699-4942-8e1b-c5b743693164",
+      "origin": {
+        "latitude": 37.4984,
+        "longitude": 127.029
+      },
+      "destination": {
+        "latitude": 37.5045,
+        "longitude": 127.049
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    }
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "resource_type": "fetch",
+    "body": {
+      "schema_version": "0.1",
+      "request_id": "browser-2e18efd5-99d4-44ed-a8b5-eca4af5b05f8",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    }
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "resource_type": "fetch",
+    "body": {
+      "schema_version": "0.1",
+      "request_id": "browser-48b8e359-b777-4905-bce8-a6cddf50dfad",
+      "origin": {
+        "latitude": 37.4984,
+        "longitude": 127.029
+      },
+      "destination": {
+        "latitude": 37.5045,
+        "longitude": 127.049
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    }
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "resource_type": "fetch",
+    "body": {
+      "schema_version": "0.1",
+      "request_id": "browser-7b2eeeed-6d35-4530-b201-e27a6d5fab73",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    }
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "resource_type": "fetch",
+    "body": {
+      "schema_version": "0.1",
+      "request_id": "browser-bd201d13-17f0-484e-9f84-c2977ad1bb1f",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    }
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "resource_type": "fetch",
+    "body": {
+      "schema_version": "0.1",
+      "request_id": "browser-64a32017-49f9-477a-88a4-9ce8e19cc4c8",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    }
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "resource_type": "fetch",
+    "body": {
+      "schema_version": "0.1",
+      "request_id": "browser-16d6e793-251b-4578-bc18-7885c876a9ff",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    }
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "requestfailed",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "failure": "net::ERR_ABORTED"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "resource_type": "fetch",
+    "body": {
+      "schema_version": "0.1",
+      "request_id": "browser-d7a5ca7b-9113-4282-81bd-fcc9a1ee2e2d",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    }
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "resource_type": "fetch",
+    "body": {
+      "schema_version": "0.1",
+      "request_id": "browser-a831ad0f-1d7e-4cf1-b74f-e1c87eacc719",
+      "origin": {
+        "latitude": 37.4984,
+        "longitude": 127.029
+      },
+      "destination": {
+        "latitude": 37.5045,
+        "longitude": 127.049
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    }
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "resource_type": "fetch",
+    "body": {
+      "schema_version": "0.1",
+      "request_id": "browser-7f6222bf-95a6-4b0a-bd00-4ac51c2d03c5",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    }
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "resource_type": "fetch",
+    "body": {
+      "schema_version": "0.1",
+      "request_id": "browser-206a02df-5bc7-4bda-af6f-00880a615e74",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    }
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "resource_type": "fetch",
+    "body": {
+      "schema_version": "0.1",
+      "request_id": "browser-5c308fdd-ba03-4c9e-97a4-2e5aadff74ae",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    }
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "resource_type": "fetch",
+    "body": {
+      "schema_version": "0.1",
+      "request_id": "browser-350998f8-651d-4250-8c5b-44a06682f720",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    }
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "resource_type": "fetch",
+    "body": {
+      "schema_version": "0.1",
+      "request_id": "browser-e5f7fec4-fe43-47b8-a84d-82583a8a4f06",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    }
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "resource_type": "fetch",
+    "body": {
+      "schema_version": "0.1",
+      "request_id": "browser-0772b9ef-cbff-4508-9f8d-381375e2a560",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    }
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/routes",
+    "method": "POST",
+    "resource_type": "fetch",
+    "body": {
+      "schema_version": "0.1",
+      "request_id": "browser-f31a0a1e-80e2-4199-af80-38d7704e33c9",
+      "origin": {
+        "latitude": 37.4984,
+        "longitude": 127.029
+      },
+      "destination": {
+        "latitude": 37.5045,
+        "longitude": 127.049
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    }
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/",
+    "method": "GET",
+    "resource_type": "document"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/client.css",
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/client.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/bootstrap",
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/maplibre-worker.js",
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "event": "request",
+    "url": "http://127.0.0.1:62975/api/route-context",
+    "method": "GET",
+    "resource_type": "fetch"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "lang": "en",
+  "state": "empty",
+  "request_id": "",
+  "map_ready": "true",
+  "map_active_route": "false",
+  "map_request_id": "",
+  "map_rendered_request_id": "",
+  "status": "Choose two locations, then calculate a route.",
+  "summary": "",
+  "evidence": {
+    "request": null,
+    "response": null,
+    "authority": {
+      "schema_version": "0.1",
+      "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+      "traffic_snapshot_id": "eadd6fb20a56557d1b14c2e1b6be833c6e67d6b6dd6319e38621ab9adc2fbe60",
+      "sequence": 1,
+      "high_water": 1,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "traffic_published_at": "2026-10-24T00:04:30.000Z",
+      "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+      "source_class": "SYNTHETIC",
+      "clock_basis": "SIMULATION_EVENT_TIME"
+    },
+    "state": "empty",
+    "reason": "",
+    "map_source_geometry": null
+  },
+  "scroll_width": 1280,
+  "viewport_width": 1280
+}

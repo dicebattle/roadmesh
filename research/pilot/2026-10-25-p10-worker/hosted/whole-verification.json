@@ -1,0 +1,472 @@
+{
+  "omitted_map_bytes": [
+    {
+      "path": "seoul/graph/seoul.osm.pbf",
+      "sha256": "926d2a35d09d0b98ad6a715c78732533ede080dffccf04cf793cf99ae0e29ad0",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/0/002/866.gph",
+      "sha256": "53f958f5a607d3c408fb5ab902d6ec589f287cdde4d3125cb0e0883efd597c84",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/1/046/026.gph",
+      "sha256": "6bbf188977f2c1da7bde35615c3f0444759504838e501bd318087709a6d75a4e",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/1/046/027.gph",
+      "sha256": "491a9644b99b29dd728b0fc1b7de8a1d89cea6b49f0ac6fcabc7518fa517be57",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/734/186.gph",
+      "sha256": "8ac75dcd8cc1431503b0f30310bcd9ec74524bdbe15cc3d1309341605b6bc397",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/734/187.gph",
+      "sha256": "accc997c2f0cc161904bb4522565c0cf9755a0233d215ba95324cb5df9ae0650",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/734/188.gph",
+      "sha256": "8a087e9df1178b9a4fc6e00da3eb7c76ea1cee8ed15ef8ee4d2b22465b655959",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/734/189.gph",
+      "sha256": "f78a36c256e4826b87ad68f85c4dc327a6739815a7ff2b2e9e25b13e865203d6",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/735/626.gph",
+      "sha256": "f2a2c1365ab4260139ea0556c2fb6e096ad704bb97f06abc9095989e1f875156",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/735/627.gph",
+      "sha256": "a196804c2175985dc5edd500ed40af0dfcbe94de69f9c6dca147576c819e1be7",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/735/628.gph",
+      "sha256": "b2cf3924250d310e42db06346be1fb459d1aa3fe629bf3ab661ade04c6d03e2b",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/735/629.gph",
+      "sha256": "89f2ddb7d752b30ba790fabf310e77ebefd96ad8196cb78753748b8282ff2adc",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/737/066.gph",
+      "sha256": "a69fa68438c24dea17611676b25acf8f4c741bf6466e352538de201d4bccdced",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/737/067.gph",
+      "sha256": "0107e80dbcc18912687a43a8ae61e79d5081ae961d1faf5fe8fceb8bdbeb8d23",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/737/068.gph",
+      "sha256": "ac477eccd4874f906563b16383ee66e72e6f0c09fa7f330f0147baec2f60fb4a",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "traffic/bundle/graph.tar",
+      "sha256": "523c27db4d7b2d25d55486ee9b628690fbc79c50a3b4a2a42af74cf205ea9805",
+      "declared_by": "traffic/bundle/manifest.json"
+    },
+    {
+      "path": "traffic/negative/corrupt-bundle/graph.tar",
+      "sha256": "523c27db4d7b2d25d55486ee9b628690fbc79c50a3b4a2a42af74cf205ea9805",
+      "declared_by": "traffic/negative/corrupt-bundle/manifest.json"
+    },
+    {
+      "path": "nodes/bundle/graph.tar",
+      "sha256": "27e937c5335fd501778dcf7aa6e486d6df1278e47f0e51d75edc823288a8b29e",
+      "declared_by": "nodes/bundle/manifest.json"
+    },
+    {
+      "path": "gateway/bundle/graph.tar",
+      "sha256": "2f7bfa6d21ad1b538977ce2bf56515f7163ebdefcce7a13c6e1021a6714c274f",
+      "declared_by": "gateway/bundle/manifest.json"
+    }
+  ],
+  "allowed_map_omissions": [
+    {
+      "path": "seoul/graph/seoul.osm.pbf",
+      "sha256": "926d2a35d09d0b98ad6a715c78732533ede080dffccf04cf793cf99ae0e29ad0",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/0/002/866.gph",
+      "sha256": "53f958f5a607d3c408fb5ab902d6ec589f287cdde4d3125cb0e0883efd597c84",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/1/046/026.gph",
+      "sha256": "6bbf188977f2c1da7bde35615c3f0444759504838e501bd318087709a6d75a4e",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/1/046/027.gph",
+      "sha256": "491a9644b99b29dd728b0fc1b7de8a1d89cea6b49f0ac6fcabc7518fa517be57",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/734/186.gph",
+      "sha256": "8ac75dcd8cc1431503b0f30310bcd9ec74524bdbe15cc3d1309341605b6bc397",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/734/187.gph",
+      "sha256": "accc997c2f0cc161904bb4522565c0cf9755a0233d215ba95324cb5df9ae0650",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/734/188.gph",
+      "sha256": "8a087e9df1178b9a4fc6e00da3eb7c76ea1cee8ed15ef8ee4d2b22465b655959",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/734/189.gph",
+      "sha256": "f78a36c256e4826b87ad68f85c4dc327a6739815a7ff2b2e9e25b13e865203d6",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/735/626.gph",
+      "sha256": "f2a2c1365ab4260139ea0556c2fb6e096ad704bb97f06abc9095989e1f875156",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/735/627.gph",
+      "sha256": "a196804c2175985dc5edd500ed40af0dfcbe94de69f9c6dca147576c819e1be7",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/735/628.gph",
+      "sha256": "b2cf3924250d310e42db06346be1fb459d1aa3fe629bf3ab661ade04c6d03e2b",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/735/629.gph",
+      "sha256": "89f2ddb7d752b30ba790fabf310e77ebefd96ad8196cb78753748b8282ff2adc",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/737/066.gph",
+      "sha256": "a69fa68438c24dea17611676b25acf8f4c741bf6466e352538de201d4bccdced",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/737/067.gph",
+      "sha256": "0107e80dbcc18912687a43a8ae61e79d5081ae961d1faf5fe8fceb8bdbeb8d23",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "seoul/graph/tiles/2/000/737/068.gph",
+      "sha256": "ac477eccd4874f906563b16383ee66e72e6f0c09fa7f330f0147baec2f60fb4a",
+      "declared_by": "seoul/graph/manifest.json"
+    },
+    {
+      "path": "traffic/bundle/graph.tar",
+      "sha256": "523c27db4d7b2d25d55486ee9b628690fbc79c50a3b4a2a42af74cf205ea9805",
+      "declared_by": "traffic/bundle/manifest.json"
+    },
+    {
+      "path": "traffic/negative/corrupt-bundle/graph.tar",
+      "sha256": "523c27db4d7b2d25d55486ee9b628690fbc79c50a3b4a2a42af74cf205ea9805",
+      "declared_by": "traffic/negative/corrupt-bundle/manifest.json"
+    },
+    {
+      "path": "nodes/bundle/graph.tar",
+      "sha256": "27e937c5335fd501778dcf7aa6e486d6df1278e47f0e51d75edc823288a8b29e",
+      "declared_by": "nodes/bundle/manifest.json"
+    },
+    {
+      "path": "gateway/bundle/graph.tar",
+      "sha256": "2f7bfa6d21ad1b538977ce2bf56515f7163ebdefcce7a13c6e1021a6714c274f",
+      "declared_by": "gateway/bundle/manifest.json"
+    }
+  ],
+  "live_resource_queries_performed": false,
+  "selected_artifact_scope_en": "Only exact inventoried map binaries may be omitted; present binaries and all original .log/.pid/.exit/.sh/traffic.tar files remain required and hashed. Uninventoried tiny-city originals are not byte-verified.",
+  "selected_artifact_scope_ko": "정확한 목록의 지도 바이너리만 누락 가능하며 존재 바이너리와 원 .log/.pid/.exit/.sh/traffic.tar는 필수 해시검사입니다. 목록 밖 작은 지도 원본의 바이트 검증을 주장하지 않습니다.",
+  "cleanup_limitation_en": "Recorded cleanup only. No current remote-host container, volume, PID or port absence is established by querying this machine.",
+  "cleanup_limitation_ko": "기록된 정리만 검사합니다. 이 컴퓨터에 질의하여 현재 원격 호스트의 컨테이너·볼륨·PID·포트 부재를 입증하지 않습니다.",
+  "expected_source": "a5be89e842855d4572280a0062365c7045fcb96e",
+  "scope_en": "Whole hosted P01–P10 selected-artifact linkage, hashes, fixed cases and recorded cleanup; detailed P10 proof is inspected separately.",
+  "scope_ko": "원격 P01–P10 선별 원문 연결·해시·고정사례·기록된 정리이며 상세 P10 근거는 별도 검사합니다.",
+  "gateway_public_successes_allowlist_checked": 18,
+  "gateway_recorded_owned_containers": [
+    "routelens-p02-02c4f7c4-2ede-44e5-b327-99ff171284dc",
+    "routelens-p02-1185ee25-046b-42cf-a86a-aa896c296018",
+    "routelens-p02-13d8ab37-51ce-4fbe-8574-78452887a713",
+    "routelens-p02-19b84751-b983-4049-9573-4ddba910b9ac",
+    "routelens-p02-208aa953-86ef-42f5-90a7-d7474802dc6f",
+    "routelens-p02-22aa8634-944d-4276-96d2-b3e47746477a",
+    "routelens-p02-34e5d47a-d561-4b97-ac3f-5e589338d700",
+    "routelens-p02-4007789b-0069-458a-8e29-3834b0883b41",
+    "routelens-p02-5d8ed930-20ce-4abc-beec-67bf86b0e4c3",
+    "routelens-p02-64f91e29-7ec2-41cf-a024-68922aade658",
+    "routelens-p02-713fb1aa-07ca-49a8-93ad-b6e8d40ba2e0",
+    "routelens-p02-90456072-f491-4b9a-bf31-5027c0186705",
+    "routelens-p02-988e0444-a368-4ff6-aceb-8bd8b297a31b",
+    "routelens-p02-a0d404e6-714f-47e7-9b92-44a20bb4aed2",
+    "routelens-p02-a2e57f46-8bd9-41cd-b583-b7de04cb65da",
+    "routelens-p02-a3e27ff4-d49f-43ec-b2e9-beac7dc792e0",
+    "routelens-p02-af8bc262-ff59-47d6-a932-dd3a82584048",
+    "routelens-p02-b16a620e-7609-4168-b64c-4f4a36d8bfa7",
+    "routelens-p02-b239052d-50ee-4862-a3c7-8775fc134e8a",
+    "routelens-p02-ba6436bb-cf25-4491-810d-820205561708",
+    "routelens-p02-c3323bc3-3d2f-4b38-8d5b-55de51a56c2b",
+    "routelens-p02-c559d4c2-d8ff-4fb0-b3e9-8dcf54b8d1aa",
+    "routelens-p02-dd459cca-35da-474f-a98d-77169455f097",
+    "routelens-p02-e0a0781b-1e2c-43d0-8565-27de15c6aabd",
+    "routelens-p02-e3f4bbfd-1dab-43a2-a2f4-9a0be1208029",
+    "routelens-p02-f7797591-a93b-42fe-9778-df778ba3c707",
+    "routelens-p02-fe04136b-9a86-4927-aeff-8f1e81924204",
+    "routelens-p05-919762e2-1c41-4c65-8bc0-74af269190b2"
+  ],
+  "gateway_recorded_owned_volumes": [
+    "routelens-p05-919762e2-1c41-4c65-8bc0-74af269190b2-db"
+  ],
+  "gateway_recorded_owned_ports": [
+    46297,
+    43295,
+    43775,
+    45291,
+    44433,
+    35689,
+    33519,
+    40321
+  ],
+  "gateway_cleanup_files_verified": [
+    "gateway/bundle/cleanup.json",
+    "gateway/gateway/runtime.compiler-df21b5da-ef9a-4ff7-830a-5c1cdb1acd11/cleanup.json",
+    "gateway/gateway/runtime/cleanup.json",
+    "gateway/nodes/seoul-gateway-node-a/runtime-646bf478-af5d-4507-95f2-1dc511e5a10b/cleanup.json",
+    "gateway/nodes/seoul-gateway-node-a/runtime-646bf478-af5d-4507-95f2-1dc511e5a10b/engines/19b84751-b983-4049-9573-4ddba910b9ac/cleanup.json",
+    "gateway/nodes/seoul-gateway-node-a/runtime-646bf478-af5d-4507-95f2-1dc511e5a10b/engines/22aa8634-944d-4276-96d2-b3e47746477a/cleanup.json",
+    "gateway/nodes/seoul-gateway-node-a/runtime-646bf478-af5d-4507-95f2-1dc511e5a10b/engines/a0d404e6-714f-47e7-9b92-44a20bb4aed2/cleanup.json",
+    "gateway/nodes/seoul-gateway-node-a/runtime-646bf478-af5d-4507-95f2-1dc511e5a10b/engines/a3e27ff4-d49f-43ec-b2e9-beac7dc792e0/cleanup.json",
+    "gateway/nodes/seoul-gateway-node-a/runtime-8567be76-f261-4880-914a-7af9d8fb5713/engines/b239052d-50ee-4862-a3c7-8775fc134e8a/cleanup.json",
+    "gateway/nodes/seoul-gateway-node-b/runtime-c5929141-f338-434a-9039-18aad6374ada/cleanup.json",
+    "gateway/nodes/seoul-gateway-node-b/runtime-c5929141-f338-434a-9039-18aad6374ada/engines/208aa953-86ef-42f5-90a7-d7474802dc6f/cleanup.json",
+    "gateway/nodes/seoul-gateway-node-b/runtime-c5929141-f338-434a-9039-18aad6374ada/engines/64f91e29-7ec2-41cf-a024-68922aade658/cleanup.json",
+    "gateway/nodes/seoul-gateway-node-b/runtime-c5929141-f338-434a-9039-18aad6374ada/engines/713fb1aa-07ca-49a8-93ad-b6e8d40ba2e0/cleanup.json",
+    "gateway/nodes/seoul-gateway-node-b/runtime-c5929141-f338-434a-9039-18aad6374ada/engines/988e0444-a368-4ff6-aceb-8bd8b297a31b/cleanup.json",
+    "gateway/nodes/seoul-gateway-node-b/runtime-c5929141-f338-434a-9039-18aad6374ada/engines/c559d4c2-d8ff-4fb0-b3e9-8dcf54b8d1aa/cleanup.json",
+    "gateway/runtime/cleanup.json"
+  ],
+  "recorded_owned_pids": 139,
+  "status": "PASS",
+  "node_recorded_owned_containers": [
+    "routelens-p02-006aaa23-c802-4051-a2aa-6bffa68549e5",
+    "routelens-p02-1488de7a-ae09-4549-94b5-4a03ffc4e114",
+    "routelens-p02-160b2a5a-993a-40b7-ba76-d3c192c5a353",
+    "routelens-p02-1fa5f1e9-e44f-416c-a0e0-74353810a6a8",
+    "routelens-p02-223f1fa8-4249-43de-9a36-c53490195d3f",
+    "routelens-p02-28b4bdb0-7f21-4171-a926-fccce140713f",
+    "routelens-p02-337dc6ba-85fa-4bdc-aa5a-fce7e39ad435",
+    "routelens-p02-3c813883-4118-4c99-8176-80274a70537e",
+    "routelens-p02-3e6020a2-e081-452c-94b4-fa701a2ad7a5",
+    "routelens-p02-41155367-7da2-4daf-b658-30a5871249f3",
+    "routelens-p02-45780c3b-9886-4223-b541-992719a6e4f5",
+    "routelens-p02-50c76a21-054b-4c7a-97a9-a00896094e7b",
+    "routelens-p02-5933dde4-2685-4e5c-82e3-2b51f73e6d29",
+    "routelens-p02-68abb440-942b-453b-be0b-523fb0e73536",
+    "routelens-p02-6933ba09-dd20-491f-8604-fa564d39c8be",
+    "routelens-p02-6a7c09bc-b190-4e59-b910-6a03bb88b2ab",
+    "routelens-p02-72144026-fb3e-4e9e-b978-17c8f439dc6a",
+    "routelens-p02-754a6f3b-5fd8-46d5-b9e3-014a2ac79b6d",
+    "routelens-p02-755e34b0-660f-4255-b1f9-c6c2c4262d9b",
+    "routelens-p02-7de15e4d-74dc-4d1b-8761-b3ac03f101be",
+    "routelens-p02-80551be7-db66-4602-9d6c-c7d35e6440af",
+    "routelens-p02-a0ae0d5d-86ca-4048-8457-4a50f91d095d",
+    "routelens-p02-a3378af6-bd06-4d68-a0b2-b85cca678c5b",
+    "routelens-p02-c22aa1c7-ae9d-490f-9607-2fa0f9fba0fe",
+    "routelens-p02-ce50d7f7-e884-49f5-8f02-7c03160a4349",
+    "routelens-p02-df92f79c-bb4b-4fd9-ac9b-69a2b5cb1b27",
+    "routelens-p02-e046e25f-d89b-453b-a256-af7d4a30a4db",
+    "routelens-p02-e8f4aa4e-dfb3-4029-8aa8-a6920b3b0e36",
+    "routelens-p02-eaa25fea-ee50-424a-aeee-1f99de17ead0",
+    "routelens-p02-eed4695c-25d8-4955-8ebe-d0267f3cffe9",
+    "routelens-p02-f886b8fc-bb92-407f-b1fe-2e6ee5a08992",
+    "routelens-p02-f9aff739-80ec-45b7-a5fd-0c6dd8a2551f",
+    "routelens-p02-fa6bf33c-c276-4296-a192-adbb17d06bda",
+    "routelens-p02-fae2d430-9dc2-4801-9a2a-1ed56e5f65a8",
+    "routelens-p05-76046013-8fac-44db-aaee-2d9ac89bdb4c"
+  ],
+  "node_recorded_owned_volumes": [
+    "routelens-p05-76046013-8fac-44db-aaee-2d9ac89bdb4c-db"
+  ],
+  "node_cleanup_files_verified": [
+    "nodes/bundle/cleanup.json",
+    "nodes/nodes/seoul-node-a/runtime-33a6ea54-4eec-4d72-a514-4df9388e0862/engines/1fa5f1e9-e44f-416c-a0e0-74353810a6a8/cleanup.json",
+    "nodes/nodes/seoul-node-a/runtime-33a6ea54-4eec-4d72-a514-4df9388e0862/engines/28b4bdb0-7f21-4171-a926-fccce140713f/cleanup.json",
+    "nodes/nodes/seoul-node-a/runtime-33a6ea54-4eec-4d72-a514-4df9388e0862/engines/5933dde4-2685-4e5c-82e3-2b51f73e6d29/cleanup.json",
+    "nodes/nodes/seoul-node-a/runtime-33a6ea54-4eec-4d72-a514-4df9388e0862/engines/80551be7-db66-4602-9d6c-c7d35e6440af/cleanup.json",
+    "nodes/nodes/seoul-node-a/runtime-33a6ea54-4eec-4d72-a514-4df9388e0862/engines/eaa25fea-ee50-424a-aeee-1f99de17ead0/cleanup.json",
+    "nodes/nodes/seoul-node-a/runtime-33a6ea54-4eec-4d72-a514-4df9388e0862/engines/f886b8fc-bb92-407f-b1fe-2e6ee5a08992/cleanup.json",
+    "nodes/nodes/seoul-node-a/runtime-restarted-0494c784-17af-4e21-aba3-2336dcfde2fc/cleanup.json",
+    "nodes/nodes/seoul-node-a/runtime-restarted-0494c784-17af-4e21-aba3-2336dcfde2fc/engines/006aaa23-c802-4051-a2aa-6bffa68549e5/cleanup.json",
+    "nodes/nodes/seoul-node-a/runtime-restarted-0494c784-17af-4e21-aba3-2336dcfde2fc/engines/45780c3b-9886-4223-b541-992719a6e4f5/cleanup.json",
+    "nodes/nodes/seoul-node-a/runtime-restarted-0494c784-17af-4e21-aba3-2336dcfde2fc/engines/6a7c09bc-b190-4e59-b910-6a03bb88b2ab/cleanup.json",
+    "nodes/nodes/seoul-node-a/runtime-restarted-0494c784-17af-4e21-aba3-2336dcfde2fc/engines/755e34b0-660f-4255-b1f9-c6c2c4262d9b/cleanup.json",
+    "nodes/nodes/seoul-node-a/runtime-restarted-0494c784-17af-4e21-aba3-2336dcfde2fc/engines/fa6bf33c-c276-4296-a192-adbb17d06bda/cleanup.json",
+    "nodes/nodes/seoul-node-b/runtime-21903f2a-e8a3-413b-b53e-bd8a08b9233f/cleanup.json",
+    "nodes/nodes/seoul-node-b/runtime-21903f2a-e8a3-413b-b53e-bd8a08b9233f/engines/6933ba09-dd20-491f-8604-fa564d39c8be/cleanup.json",
+    "nodes/nodes/seoul-node-b/runtime-21903f2a-e8a3-413b-b53e-bd8a08b9233f/engines/fae2d430-9dc2-4801-9a2a-1ed56e5f65a8/cleanup.json",
+    "nodes/nodes/seoul-node-b/runtime-corrupt-e14b2b8c-4fd2-4147-8710-c4e2dd017622/cleanup.json",
+    "nodes/nodes/seoul-node-b/runtime-key-revoked-81e7fc36-efc1-44dc-8e38-7b575a28e138/cleanup.json",
+    "nodes/nodes/seoul-node-b/runtime-key-revoked-81e7fc36-efc1-44dc-8e38-7b575a28e138/engines/7de15e4d-74dc-4d1b-8761-b3ac03f101be/cleanup.json",
+    "nodes/nodes/seoul-node-b/runtime-key-revoked-81e7fc36-efc1-44dc-8e38-7b575a28e138/engines/c22aa1c7-ae9d-490f-9607-2fa0f9fba0fe/cleanup.json",
+    "nodes/nodes/seoul-node-b/runtime-restored-833ec6b2-5444-421a-abc0-e3595894b349/cleanup.json",
+    "nodes/nodes/seoul-node-b/runtime-restored-833ec6b2-5444-421a-abc0-e3595894b349/engines/223f1fa8-4249-43de-9a36-c53490195d3f/cleanup.json",
+    "nodes/nodes/seoul-node-b/runtime-restored-833ec6b2-5444-421a-abc0-e3595894b349/engines/e8f4aa4e-dfb3-4029-8aa8-a6920b3b0e36/cleanup.json",
+    "nodes/runtime/cleanup.json"
+  ],
+  "source": {
+    "commit": "a5be89e842855d4572280a0062365c7045fcb96e",
+    "dirty": false
+  },
+  "graph_id": "cbfc6be390f29d5cfb66e4a9ab4fa9647315fba862003cab6407f57f33057454",
+  "implementation_sha256": "0b37b365f8ffc8636f7455d5ac64f0c7734d94ba09497813f015150d7badc521",
+  "assertions": {
+    "tiny": 48,
+    "seoul": 35,
+    "ingestion": 34,
+    "aggregation": 34,
+    "publication": 55,
+    "traffic": 32,
+    "nodes": 32,
+    "gateway": 32,
+    "total": 302
+  },
+  "unique_file_hashes_checked": 9932,
+  "inventories": {
+    "manifest.json": 13,
+    "seoul/manifest.json": 8,
+    "seoul/tiny/manifest.json": 6,
+    "seoul/graph/manifest.json": 94,
+    "seoul/workload/manifest.json": 826,
+    "ingestion/manifest.json": 970,
+    "aggregation/manifest.json": 761,
+    "publication/manifest.json": 404,
+    "traffic/manifest.json": 1083,
+    "nodes/manifest.json": 2952,
+    "gateway/manifest.json": 2834
+  },
+  "source_sha256": "282d012b7629c643695f286d4424d7f6d88548d99edb5577ca5b678906f13c17",
+  "matching_policy": "seoul-observed-v3",
+  "stored_reference_traversals": 220,
+  "unique_stored_ids": 220,
+  "successful_trips": 9,
+  "raw_after_success": 0,
+  "independent_geometry_max_difference_m": 5.17506038022475e-10,
+  "independent_boundary_error_max_ms": 260,
+  "recovery_attempt_byte_parity": [
+    {
+      "phase": "AFTER_MATCH",
+      "interrupted_pid": 12596,
+      "recovered_pid": 12928,
+      "sha256": "20491e8d1f818ba6c1d3b13863e6eddebe969bafa1be1402a57403fd5ec86ab9",
+      "byte_identical": true
+    },
+    {
+      "phase": "AFTER_INSERT",
+      "interrupted_pid": 13263,
+      "recovered_pid": 13574,
+      "sha256": "a25a1234f832e52af50434b7d73fc7892315c6c1ab9406f8e4de622f83ffb295",
+      "byte_identical": true
+    }
+  ],
+  "database_restart": {
+    "same_container_id": true,
+    "same_named_volume": "routelens-p05-e2724ad9-ae27-42e2-8057-b411b862a212-db",
+    "restarted": true,
+    "previous_host_port": 32768,
+    "current_host_port": 32769,
+    "host_tcp_ready": true,
+    "host_tcp_wait_ms": 0.9847590000135824
+  },
+  "api_durable_samples": 2,
+  "engine_failure_attempts": 3,
+  "clock_only_expiry_refused_before_sweep": true,
+  "retention_readback": {
+    "contributors": 22,
+    "trips": 0,
+    "batches": 0,
+    "samples": 0,
+    "traversals": 0,
+    "events": 0,
+    "raw_payloads": 0
+  },
+  "stopped_engine": {
+    "pid": 145,
+    "exe": "/usr/local/bin/valhalla_service",
+    "state": "T",
+    "action": "locate"
+  },
+  "killed_worker_pid": 18336,
+  "orphan_engine_id": "fbb1080d0cbea41e8e4edab39b1145793e256455b739bc8e99ce49a36fab973e",
+  "current_db_volume_engine_absence_verified": false,
+  "traffic_recorded_owned_containers": [
+    "routelens-p02-138f1330-54ab-42e0-91d9-b6fd6e8872ae",
+    "routelens-p02-19b50245-147d-4b85-9674-7044f2e0fcc2",
+    "routelens-p02-1e36542e-25ce-4107-baa6-446c8d06a9cd",
+    "routelens-p02-2487a18c-57ef-4629-9e22-3a4aef162f23",
+    "routelens-p02-2d8c6e4e-30b7-4508-b740-6688a38a7a27",
+    "routelens-p02-3412ba55-0466-4b49-9b64-5b985bbea703",
+    "routelens-p02-34a3fbcf-9a52-4e54-ac44-a54cf0230ce0",
+    "routelens-p02-46d8e163-4940-4edf-b9d7-336bf9cf09ef",
+    "routelens-p02-4add534a-44e8-4390-aaf7-7f2c1518ba29",
+    "routelens-p02-537642b3-a790-454f-921e-1ff1e0ebb0f3",
+    "routelens-p02-6837f3a8-3a0e-4e8f-8b55-fda9603817e4",
+    "routelens-p02-6a37ee5e-c6eb-4c23-9546-8a045ff11819",
+    "routelens-p02-6b352325-dcd8-44fa-94b4-4071e684f2bf",
+    "routelens-p02-73947232-0fb0-4d15-87c8-a6f1da854680",
+    "routelens-p02-77105676-a8c0-4bc1-9f93-6dcdfab97b93",
+    "routelens-p02-7e454bc5-e9f4-4312-9918-e6b571fa75bf",
+    "routelens-p02-8a3b7490-df40-45ee-b2c5-fc079b9e8125",
+    "routelens-p02-8d5d9c34-134f-48c1-ad54-114c022ff4b2",
+    "routelens-p02-9c8df55b-f22a-4953-85a0-f0b553ada917",
+    "routelens-p02-a181452d-7969-41aa-b726-559cd26025f8",
+    "routelens-p02-ac52d2a3-2350-459a-9251-ca5adc22f85a",
+    "routelens-p02-bd96342c-2e79-4522-8795-733738c77712",
+    "routelens-p02-c8ea4a29-0c44-4e15-8701-ae7e372a4c88",
+    "routelens-p02-cd2c152d-2b38-489f-952b-1de233d5b2ab",
+    "routelens-p02-d17b8f26-4bed-4fcf-8f1c-5f2793e384fe",
+    "routelens-p02-d962fc88-91aa-4449-9e67-1a7378d2aac1",
+    "routelens-p02-d9653360-d438-4f82-8c2a-50935eb59b99",
+    "routelens-p02-e3a497e3-abd3-459a-837b-3f3fb0eb9a79",
+    "routelens-p05-bfa788bb-87ff-47a7-af10-a1cd77f4e16b"
+  ],
+  "traffic_recorded_owned_volumes": [
+    "routelens-p05-bfa788bb-87ff-47a7-af10-a1cd77f4e16b-db"
+  ],
+  "traffic_cleanup_files_verified": [
+    "traffic/bundle/cleanup.json",
+    "traffic/generations/engine-unavailable/runtime/30c46827-77e1-442f-8fe6-df350d67b5d5/cleanup.json",
+    "traffic/generations/expiry-route/runtime/87dab913-e008-452d-ba28-35d030a95a56/cleanup.json",
+    "traffic/generations/main/runtime/37dbb3df-a801-4d36-b2da-5d6d75ead572/cleanup.json",
+    "traffic/generations/main/runtime/4340f4e5-7780-428e-ab95-b48ae0de6a3d/cleanup.json",
+    "traffic/generations/main/runtime/5767f48c-8df4-4af8-b48b-29537502dcd0/cleanup.json",
+    "traffic/generations/main/runtime/680cd9be-01ba-42e8-958b-eef6f2698dd8/cleanup.json",
+    "traffic/generations/main/runtime/80608fed-713e-4892-80ee-cef99d5f26df/cleanup.json",
+    "traffic/generations/main/runtime/8b39a8be-144a-4b75-87be-f91e4774668a/cleanup.json",
+    "traffic/generations/main/runtime/9c1701c6-f879-46a4-8607-4e6379c87bf0/cleanup.json",
+    "traffic/generations/main/runtime/a8bf0dc9-b22a-48f3-a226-c2e555ee6b6d/cleanup.json",
+    "traffic/generations/main/runtime/b70a68da-94ae-4acb-8e10-08314883922a/cleanup.json",
+    "traffic/generations/main/runtime/fde7396f-0e94-445a-bb8e-20f2f5a946ea/cleanup.json",
+    "traffic/negative/corrupt-bundle/cleanup.json",
+    "traffic/runtime/cleanup.json"
+  ],
+  "message_en": "Main independently checked artifact bytes, all stored traversal contents and geometry/timing, retry result bytes, durable restart/expiry/revocation read-backs and recorded owned-resource cleanup. This proves the bounded synthetic local pilot, not production authentication or real-driving accuracy.",
+  "message_ko": "메인이 원문 해시·저장 통과 전체의 지형/시간·재시도 결과 바이트·재시작/만료/철회 재조회·기록된 정확한 소유 자원 정리를 독립 검사했습니다. 제한된 합성 로컬 파일럿 증거이며 운영 인증·실주행 정확도는 별도입니다."
+}

@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "observed_at": "2026-10-24T22:55:33.669Z",
+  "container": "routelens-p05-25707c3f-3840-46a3-99f9-527e5a5af269",
+  "sql": "BEGIN READ ONLY; SET LOCAL statement_timeout='2s'; SELECT json_build_object('traversals',(SELECT count(*) FROM routelens_p05.traversals),'publications',(SELECT count(*) FROM routelens_p07.publications),'consumers',(SELECT json_agg(x) FROM (SELECT consumer_id, high_water, last_snapshot_id, octet_length(artifact) AS artifact_bytes FROM routelens_p07.consumer_states ORDER BY consumer_id) x)); COMMIT;",
+  "exit_status": 0,
+  "stdout": "BEGIN\nSET\n{\"traversals\" : 15, \"publications\" : 1, \"consumers\" : [{\"consumer_id\":\"p11-gateway\",\"high_water\":1,\"last_snapshot_id\":\"eadd6fb20a56557d1b14c2e1b6be833c6e67d6b6dd6319e38621ab9adc2fbe60\",\"artifact_bytes\":10469}, \n {\"consumer_id\":\"p11-node-a\",\"high_water\":1,\"last_snapshot_id\":\"eadd6fb20a56557d1b14c2e1b6be833c6e67d6b6dd6319e38621ab9adc2fbe60\",\"artifact_bytes\":10469}, \n {\"consumer_id\":\"p11-node-b\",\"high_water\":1,\"last_snapshot_id\":\"eadd6fb20a56557d1b14c2e1b6be833c6e67d6b6dd6319e38621ab9adc2fbe60\",\"artifact_bytes\":10469}]}\nCOMMIT\n",
+  "stderr": "",
+  "parsed": {
+    "traversals": 15,
+    "publications": 1,
+    "consumers": [
+      {
+        "consumer_id": "p11-gateway",
+        "high_water": 1,
+        "last_snapshot_id": "eadd6fb20a56557d1b14c2e1b6be833c6e67d6b6dd6319e38621ab9adc2fbe60",
+        "artifact_bytes": 10469
+      },
+      {
+        "consumer_id": "p11-node-a",
+        "high_water": 1,
+        "last_snapshot_id": "eadd6fb20a56557d1b14c2e1b6be833c6e67d6b6dd6319e38621ab9adc2fbe60",
+        "artifact_bytes": 10469
+      },
+      {
+        "consumer_id": "p11-node-b",
+        "high_water": 1,
+        "last_snapshot_id": "eadd6fb20a56557d1b14c2e1b6be833c6e67d6b6dd6319e38621ab9adc2fbe60",
+        "artifact_bytes": 10469
+      }
+    ]
+  },
+  "message_en": "Read-only live database observation of the actual client pilot.",
+  "message_ko": "실제 클라이언트 파일럿 DB를 읽기 전용으로 직접 관찰했습니다."
+}
