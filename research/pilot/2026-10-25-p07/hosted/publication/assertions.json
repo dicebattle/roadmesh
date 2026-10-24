@@ -1,0 +1,1061 @@
+[
+  {
+    "assertion_id": "p07-actual-source",
+    "status": "PASS",
+    "message_en": "Fresh actual GPS, HTTP, P05 workers and P06 create the complete eligible catalog.",
+    "message_ko": "새 실제 GPS·HTTP·P05 처리자·P06이 적격 전체구간 후보를 만듭니다.",
+    "expected": {
+      "entries": 79,
+      "status": "LIVE",
+      "relative_tolerance": 0.02
+    },
+    "actual": {
+      "entries": 79,
+      "target": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "LIVE",
+        "speed_mps": 2.70958,
+        "sample_bucket": "5-9"
+      }
+    },
+    "evidence_path": "readbacks/source-candidate.json"
+  },
+  {
+    "assertion_id": "p07-publisher-precommit-kill",
+    "status": "PASS",
+    "message_en": "Publisher SIGKILL before commit leaves no artifact or pointer.",
+    "message_ko": "커밋 전 게시자 강제종료가 내용·현재참조를 남기지 않습니다.",
+    "expected": 0,
+    "actual": 0,
+    "evidence_path": "readbacks/publisher-precommit.json"
+  },
+  {
+    "assertion_id": "p07-publisher-postcommit-kill",
+    "status": "PASS",
+    "message_en": "Committed publication survives lost acknowledgement and publisher death.",
+    "message_ko": "응답 유실·게시자 종료 후 커밋된 게시가 남습니다.",
+    "expected": 1,
+    "actual": [
+      {
+        "publisher_id": "seoul-synthetic-publisher",
+        "region_id": "seoul-pilot-corridors-v1",
+        "high_water": 1,
+        "current_snapshot_id": "4f3c1a1dfa207fe05ce0227f6c5b999b1232b803d0afa15d134cefa8877debe3"
+      }
+    ],
+    "evidence_path": "readbacks/publisher-postcommit.json"
+  },
+  {
+    "assertion_id": "p07-publisher-retry",
+    "status": "PASS",
+    "message_en": "Restarted retry returns identical committed JWS and artifact bytes.",
+    "message_ko": "재시작 재시도가 동일 JWS·내용 바이트를 돌려줍니다.",
+    "expected": {
+      "sequence": 1,
+      "rows": 1
+    },
+    "actual": {
+      "type": "RESULT",
+      "code": "UNCHANGED",
+      "sequence": 1,
+      "traffic_snapshot_id": "4f3c1a1dfa207fe05ce0227f6c5b999b1232b803d0afa15d134cefa8877debe3"
+    },
+    "evidence_path": "readbacks/publisher-retry.json"
+  },
+  {
+    "assertion_id": "p07-publisher-concurrency",
+    "status": "PASS",
+    "message_en": "Two actual publisher workers converge on one immutable version.",
+    "message_ko": "실제 게시자 두 개가 불변 게시 한 개로 모입니다.",
+    "expected": 1,
+    "actual": 1,
+    "evidence_path": "readbacks/publisher-concurrency.json"
+  },
+  {
+    "assertion_id": "p07-publisher-initial-concurrency",
+    "status": "PASS",
+    "message_en": "Two workers creating a new stream converge on one committed first version.",
+    "message_ko": "새 발행계열을 만드는 처리자 두 개가 첫 커밋 한 개로 모입니다.",
+    "expected": {
+      "rows": 1,
+      "sequence": 1
+    },
+    "actual": {
+      "rows": 1,
+      "streams": [
+        {
+          "publisher_id": "initial-race-publisher",
+          "region_id": "seoul-pilot-corridors-v1",
+          "high_water": 1,
+          "current_snapshot_id": "1755db2ac3af7cd70cb41d6cf40b3c469626d061d1c0560b26d47f3d5f3a2b7a"
+        }
+      ]
+    },
+    "evidence_path": "readbacks/publisher-initial-concurrency.json"
+  },
+  {
+    "assertion_id": "p07-http-exact-bytes",
+    "status": "PASS",
+    "message_en": "HTTP provides exact immutable bytes, hash, length, no-store JWS and method rejection.",
+    "message_ko": "HTTP가 정확한 불변 바이트·해시·길이·JWS 캐시금지·메서드 거부를 제공합니다.",
+    "expected": {
+      "hash": "4f3c1a1dfa207fe05ce0227f6c5b999b1232b803d0afa15d134cefa8877debe3",
+      "method_status": 405
+    },
+    "actual": {
+      "hash": "4f3c1a1dfa207fe05ce0227f6c5b999b1232b803d0afa15d134cefa8877debe3",
+      "method_status": 405
+    },
+    "evidence_path": "public/sequence-1/http.json"
+  },
+  {
+    "assertion_id": "p07-consumer-durable",
+    "status": "PASS",
+    "message_en": "Separate consumer process durably stores the exact signed and downloaded bytes.",
+    "message_ko": "별도 수신 프로세스가 정확한 서명·다운로드 바이트를 영속 저장합니다.",
+    "expected": "4f3c1a1dfa207fe05ce0227f6c5b999b1232b803d0afa15d134cefa8877debe3",
+    "actual": "4f3c1a1dfa207fe05ce0227f6c5b999b1232b803d0afa15d134cefa8877debe3",
+    "evidence_path": "readbacks/consumer-accepted-1.json"
+  },
+  {
+    "assertion_id": "p07-consumer-postcommit-kill",
+    "status": "PASS",
+    "message_en": "Consumer commit survives SIGKILL and process restart returns DUPLICATE.",
+    "message_ko": "수신 커밋이 강제종료 후 남고 재시작은 DUPLICATE입니다.",
+    "expected": {
+      "code": "DUPLICATE",
+      "high_water": 1
+    },
+    "actual": {
+      "type": "RESULT",
+      "code": "DUPLICATE",
+      "high_water": 1,
+      "traffic_snapshot_id": "4f3c1a1dfa207fe05ce0227f6c5b999b1232b803d0afa15d134cefa8877debe3"
+    },
+    "evidence_path": "readbacks/consumer-commit-crash.json"
+  },
+  {
+    "assertion_id": "p07-rotation",
+    "status": "PASS",
+    "message_en": "Preconfigured key rotation preserves the stream and advances its sequence.",
+    "message_ko": "사전설정 키 교체가 동일 발행계열의 순번을 올립니다.",
+    "expected": 2,
+    "actual": 2,
+    "evidence_path": "public/sequence-2/http.json"
+  },
+  {
+    "assertion_id": "p07-accepted-key-revoked",
+    "status": "PASS",
+    "message_en": "Restarted configured key revocation clears accepted bytes but preserves high-water.",
+    "message_ko": "재시작 설정의 키 철회가 수용 바이트를 지우고 최고순번은 보존합니다.",
+    "expected": {
+      "reason": "REVOKED_KEY",
+      "high_water": 2,
+      "active": null
+    },
+    "actual": {
+      "type": "RESULT",
+      "code": "REJECTED",
+      "reason": "REVOKED_KEY",
+      "high_water": 2,
+      "traffic_snapshot_id": null
+    },
+    "evidence_path": "readbacks/accepted-key-revoked-db-row.json"
+  },
+  {
+    "assertion_id": "p07-consumer-order-race",
+    "status": "PASS",
+    "message_en": "A delayed older verified consumer cannot lower the newer committed high-water.",
+    "message_ko": "늦게 끝난 옛 검증 수신자가 새 최고순번을 낮추지 못합니다.",
+    "expected": 2,
+    "actual": 2,
+    "evidence_path": "readbacks/consumer-order-race.json"
+  },
+  {
+    "assertion_id": "p07-bad-signature",
+    "status": "PASS",
+    "message_en": "A changed signature is rejected without state mutation.",
+    "message_ko": "변경된 서명이 상태변경 없이 거부됩니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "INVALID_SIGNATURE_OR_METADATA"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_SIGNATURE_OR_METADATA",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 201.5863820000086
+    },
+    "evidence_path": "negative/bad-signature/readback.json"
+  },
+  {
+    "assertion_id": "p07-changed-artifact",
+    "status": "PASS",
+    "message_en": "Changed artifact bytes fail the signed hash.",
+    "message_ko": "변경된 내용 바이트가 서명된 해시에 실패합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "HASH_MISMATCH"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "HASH_MISMATCH",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 202.28950200002873
+    },
+    "evidence_path": "negative/changed-artifact/readback.json"
+  },
+  {
+    "assertion_id": "p07-wrong-length",
+    "status": "PASS",
+    "message_en": "A valid signature cannot authorize an incorrect byte length.",
+    "message_ko": "유효한 서명도 틀린 바이트 길이를 허용하지 못합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "LENGTH_MISMATCH"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "LENGTH_MISMATCH",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 201.69247800001176
+    },
+    "evidence_path": "negative/wrong-length/readback.json"
+  },
+  {
+    "assertion_id": "p07-truncated",
+    "status": "PASS",
+    "message_en": "A real truncated HTTP body is rejected.",
+    "message_ko": "실제 잘린 HTTP 본문이 거부됩니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "TRANSPORT_FAILED"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "TRANSPORT_FAILED",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 221.6073889999534
+    },
+    "evidence_path": "negative/truncated/readback.json"
+  },
+  {
+    "assertion_id": "p07-manifest-oversize",
+    "status": "PASS",
+    "message_en": "The manifest streaming bound rejects oversized bytes.",
+    "message_ko": "서명목록 스트림 상한이 초과 바이트를 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "OVERSIZE"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "OVERSIZE",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 201.21218700002646
+    },
+    "evidence_path": "negative/manifest-oversize/readback.json"
+  },
+  {
+    "assertion_id": "p07-artifact-oversize",
+    "status": "PASS",
+    "message_en": "The artifact streaming bound rejects oversized bytes.",
+    "message_ko": "내용 스트림 상한이 초과 바이트를 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "OVERSIZE"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "OVERSIZE",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 200.39044599997578
+    },
+    "evidence_path": "negative/artifact-oversize/readback.json"
+  },
+  {
+    "assertion_id": "p07-duplicate-manifest-key",
+    "status": "PASS",
+    "message_en": "Duplicate JSON manifest keys fail despite a valid signature.",
+    "message_ko": "유효한 서명이어도 서명목록 JSON 중복키는 실패합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "INVALID_JSON"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_JSON",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 202.51875400001882
+    },
+    "evidence_path": "negative/duplicate-manifest-key/readback.json"
+  },
+  {
+    "assertion_id": "p07-duplicate-artifact-key",
+    "status": "PASS",
+    "message_en": "Duplicate artifact JSON keys are rejected after exact hashing.",
+    "message_ko": "정확한 해시 확인 뒤 내용 JSON 중복키를 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "INVALID_JSON"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_JSON",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 202.37833199999295
+    },
+    "evidence_path": "negative/duplicate-artifact-key/readback.json"
+  },
+  {
+    "assertion_id": "p07-unknown-manifest-field",
+    "status": "PASS",
+    "message_en": "Unknown signed manifest fields are rejected.",
+    "message_ko": "미지원 서명목록 필드를 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "INVALID_SIGNATURE_OR_METADATA"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_SIGNATURE_OR_METADATA",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 200.98195400001714
+    },
+    "evidence_path": "negative/unknown-manifest-field/readback.json"
+  },
+  {
+    "assertion_id": "p07-unknown-artifact-field",
+    "status": "PASS",
+    "message_en": "Unknown artifact fields are rejected.",
+    "message_ko": "미지원 내용 필드를 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "INVALID_METADATA"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_METADATA",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 202.1074850000441
+    },
+    "evidence_path": "negative/unknown-artifact-field/readback.json"
+  },
+  {
+    "assertion_id": "p07-unsupported-algorithm",
+    "status": "PASS",
+    "message_en": "An unsupported protected algorithm is rejected.",
+    "message_ko": "미지원 보호 알고리즘을 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "INVALID_HEADER"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_HEADER",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 201.46864999999525
+    },
+    "evidence_path": "negative/unsupported-algorithm/readback.json"
+  },
+  {
+    "assertion_id": "p07-unsupported-header",
+    "status": "PASS",
+    "message_en": "An injected remote key header is rejected without discovery.",
+    "message_ko": "삽입된 원격키 헤더를 키 검색 없이 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "INVALID_SIGNATURE_OR_METADATA"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_SIGNATURE_OR_METADATA",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 201.16935999999987
+    },
+    "evidence_path": "negative/unsupported-header/readback.json"
+  },
+  {
+    "assertion_id": "p07-unknown-kid",
+    "status": "PASS",
+    "message_en": "An unconfigured signing key ID is rejected.",
+    "message_ko": "미설정 서명키 식별자를 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "UNKNOWN_KEY"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "UNKNOWN_KEY",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 201.4853010000079
+    },
+    "evidence_path": "negative/unknown-kid/readback.json"
+  },
+  {
+    "assertion_id": "p07-duplicate-kid",
+    "status": "PASS",
+    "message_en": "Duplicate local trust IDs fail before acceptance.",
+    "message_ko": "중복 로컬 신뢰키 식별자가 수용 전에 실패합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "expected_exit": 2,
+      "no_ready_or_result": true
+    },
+    "actual": {
+      "exit": 2,
+      "state_unchanged": true,
+      "elapsed_ms": 120.09900699998252
+    },
+    "evidence_path": "negative/duplicate-kid/readback.json"
+  },
+  {
+    "assertion_id": "p07-disallowed-key",
+    "status": "PASS",
+    "message_en": "A non-Ed25519 public key configuration is rejected.",
+    "message_ko": "Ed25519이 아닌 공개키 설정을 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "expected_exit": 2,
+      "no_ready_or_result": true
+    },
+    "actual": {
+      "exit": 2,
+      "state_unchanged": true,
+      "elapsed_ms": 120.9729899999802
+    },
+    "evidence_path": "negative/disallowed-key/readback.json"
+  },
+  {
+    "assertion_id": "p07-private-root",
+    "status": "PASS",
+    "message_en": "A public trust root containing private material is rejected.",
+    "message_ko": "비공개 필드가 든 공개 신뢰키를 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "expected_exit": 2,
+      "no_ready_or_result": true
+    },
+    "actual": {
+      "exit": 2,
+      "state_unchanged": true,
+      "elapsed_ms": 120.84045400004834
+    },
+    "evidence_path": "negative/private-root/readback.json"
+  },
+  {
+    "assertion_id": "p07-invalid-utf8",
+    "status": "PASS",
+    "message_en": "Invalid UTF-8 artifact bytes fail despite a matching signed hash.",
+    "message_ko": "서명 해시가 일치해도 잘못된 UTF-8 내용은 실패합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "INVALID_JSON"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_JSON",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 200.66668100003153
+    },
+    "evidence_path": "negative/invalid-utf8/readback.json"
+  },
+  {
+    "assertion_id": "p07-wrong-graph",
+    "status": "PASS",
+    "message_en": "A valid signature for a different graph is rejected.",
+    "message_ko": "다른 그래프의 유효 서명을 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "WRONG_SCOPE"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "WRONG_SCOPE",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 182.03039299999364
+    },
+    "evidence_path": "negative/wrong-graph/readback.json"
+  },
+  {
+    "assertion_id": "p07-wrong-namespace",
+    "status": "PASS",
+    "message_en": "A valid signature for a different namespace is rejected.",
+    "message_ko": "다른 시험영역의 유효 서명을 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "WRONG_SCOPE"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "WRONG_SCOPE",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 200.09567999996943
+    },
+    "evidence_path": "negative/wrong-namespace/readback.json"
+  },
+  {
+    "assertion_id": "p07-wrong-region",
+    "status": "PASS",
+    "message_en": "A valid signature for a different region is rejected.",
+    "message_ko": "다른 지역의 유효 서명을 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "WRONG_SCOPE"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "WRONG_SCOPE",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 201.1441009999835
+    },
+    "evidence_path": "negative/wrong-region/readback.json"
+  },
+  {
+    "assertion_id": "p07-wrong-publisher",
+    "status": "PASS",
+    "message_en": "A valid signature for a different publisher is rejected.",
+    "message_ko": "다른 발행자의 유효 서명을 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "WRONG_SCOPE"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "WRONG_SCOPE",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 201.12405599997146
+    },
+    "evidence_path": "negative/wrong-publisher/readback.json"
+  },
+  {
+    "assertion_id": "p07-revoked-key",
+    "status": "PASS",
+    "message_en": "A revoked key cannot authorize a new acceptance.",
+    "message_ko": "철회된 키가 새 수용을 허용하지 못합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "REVOKED_KEY"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "REVOKED_KEY",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 199.41178800002672
+    },
+    "evidence_path": "negative/revoked-key/readback.json"
+  },
+  {
+    "assertion_id": "p07-expired-key",
+    "status": "PASS",
+    "message_en": "An expired key cannot authorize a new acceptance.",
+    "message_ko": "만료된 키가 새 수용을 허용하지 못합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "KEY_TIME_INVALID"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "KEY_TIME_INVALID",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 201.56532799999695
+    },
+    "evidence_path": "negative/expired-key/readback.json"
+  },
+  {
+    "assertion_id": "p07-future-key",
+    "status": "PASS",
+    "message_en": "A not-yet-valid key cannot authorize a new acceptance.",
+    "message_ko": "아직 유효하지 않은 키가 새 수용을 허용하지 못합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "KEY_TIME_INVALID"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "KEY_TIME_INVALID",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 201.62546499999007
+    },
+    "evidence_path": "negative/future-key/readback.json"
+  },
+  {
+    "assertion_id": "p07-future-published",
+    "status": "PASS",
+    "message_en": "A future published-at timestamp is rejected.",
+    "message_ko": "미래 발행시각을 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "INVALID_TIME"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_TIME",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 200.84421499999007
+    },
+    "evidence_path": "negative/future-published/readback.json"
+  },
+  {
+    "assertion_id": "p07-old-sequence",
+    "status": "PASS",
+    "message_en": "A restarted consumer rejects an older actual published sequence.",
+    "message_ko": "재시작한 수신자가 실제 게시된 낮은 순번을 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "REPLAY"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "REPLAY",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 220.32519200001843
+    },
+    "evidence_path": "negative/old-sequence/readback.json"
+  },
+  {
+    "assertion_id": "p07-sequence-conflict",
+    "status": "PASS",
+    "message_en": "Different content at the same sequence cannot replace durable state.",
+    "message_ko": "동일 순번의 다른 내용이 영속 상태를 바꾸지 못합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "SEQUENCE_CONFLICT"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "SEQUENCE_CONFLICT",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 202.0716389999725
+    },
+    "evidence_path": "negative/sequence-conflict/readback.json"
+  },
+  {
+    "assertion_id": "p07-older-window",
+    "status": "PASS",
+    "message_en": "A higher sequence cannot move the accepted window backwards.",
+    "message_ko": "높은 순번도 수용된 창을 뒤로 옮기지 못합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "WINDOW_ROLLBACK"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "WINDOW_ROLLBACK",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 222.8232990000397
+    },
+    "evidence_path": "negative/older-window/readback.json"
+  },
+  {
+    "assertion_id": "p07-redirect",
+    "status": "PASS",
+    "message_en": "The configured-origin fetcher refuses redirects.",
+    "message_ko": "설정된 연결주소의 수신기가 리다이렉트를 거부합니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "HTTP_302"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "HTTP_302",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 200.26486599998316
+    },
+    "evidence_path": "negative/redirect/readback.json"
+  },
+  {
+    "assertion_id": "p07-fetch-timeout",
+    "status": "PASS",
+    "message_en": "A real stalled HTTP response is bounded by the five-second deadline.",
+    "message_ko": "실제 지연 HTTP 응답이 5초 제한으로 종료됩니다.",
+    "expected": {
+      "accepted": false,
+      "state_unchanged": true,
+      "reason": "TRANSPORT_FAILED"
+    },
+    "actual": {
+      "exit": 1,
+      "message": {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "TRANSPORT_FAILED",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      },
+      "state_unchanged": true,
+      "elapsed_ms": 5156.053894999961
+    },
+    "evidence_path": "negative/fetch-timeout/readback.json"
+  },
+  {
+    "assertion_id": "p07-revoke-lock-wait",
+    "status": "PASS",
+    "message_en": "Actual HTTP revocation waits on the owned paused publisher database lock.",
+    "message_ko": "실제 HTTP 철회가 대기 중인 소유 게시자의 DB 잠금을 기다립니다.",
+    "expected": 1,
+    "actual": 1,
+    "evidence_path": "readbacks/revoke-lock-wait.json"
+  },
+  {
+    "assertion_id": "p07-revoke-current-invalidation",
+    "status": "PASS",
+    "message_en": "Acknowledged revocation has already invalidated current, while immutable history and high-water remain.",
+    "message_ko": "철회 응답 전에 현재참조가 무효화되고 불변 이력·최고순번은 남습니다.",
+    "expected": {
+      "http_status": 404,
+      "high_water": 3
+    },
+    "actual": [
+      {
+        "publisher_id": "seoul-synthetic-publisher",
+        "region_id": "seoul-pilot-corridors-v1",
+        "high_water": 3,
+        "current_snapshot_id": null
+      }
+    ],
+    "evidence_path": "readbacks/revoke-http.json"
+  },
+  {
+    "assertion_id": "p07-revoked-correction",
+    "status": "PASS",
+    "message_en": "Fresh recomputation publishes a higher-sequence INSUFFICIENT correction.",
+    "message_ko": "새 재집계가 높은 순번의 INSUFFICIENT 정정본을 게시합니다.",
+    "expected": {
+      "sequence": 4,
+      "status": "INSUFFICIENT"
+    },
+    "actual": {
+      "sequence": 4,
+      "target": {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "INSUFFICIENT",
+        "speed_mps": null,
+        "sample_bucket": null
+      }
+    },
+    "evidence_path": "readbacks/consumer-accepted-4.json"
+  },
+  {
+    "assertion_id": "p07-new-empty-window",
+    "status": "PASS",
+    "message_en": "A newer signed empty window replaces all previous speeds.",
+    "message_ko": "새 서명된 빈 창이 이전 속도를 모두 대체합니다.",
+    "expected": {
+      "sequence": 5,
+      "status": "UNKNOWN"
+    },
+    "actual": {
+      "type": "RESULT",
+      "code": "ACCEPTED",
+      "high_water": 5,
+      "traffic_snapshot_id": "9a4d9378343840489e0cb0592355aa1ddc79ce747abee2db797bc7c8f375ccba"
+    },
+    "evidence_path": "readbacks/consumer-accepted-5.json"
+  },
+  {
+    "assertion_id": "p07-publisher-older-window",
+    "status": "PASS",
+    "message_en": "An older authoritative candidate cannot move publication current backwards.",
+    "message_ko": "이전 창의 정식 후보가 현재 게시를 뒤로 돌리지 못합니다.",
+    "expected": "OLDER_WINDOW",
+    "actual": "OLDER_WINDOW",
+    "evidence_path": "readbacks/publisher-older-window.json"
+  },
+  {
+    "assertion_id": "p07-publisher-outage",
+    "status": "PASS",
+    "message_en": "Actual service outage retains still-valid accepted bytes without changing high-water.",
+    "message_ko": "실제 서버 장애에서도 아직 유효한 수용 바이트·최고순번을 보존합니다.",
+    "expected": {
+      "primary": 5,
+      "cached_live": 1
+    },
+    "actual": {
+      "primary": 5,
+      "cached": 1
+    },
+    "evidence_path": "readbacks/outage-live-cache.json"
+  },
+  {
+    "assertion_id": "p07-before-expiry",
+    "status": "PASS",
+    "message_en": "The actual LIVE version remains usable at 239.999 seconds.",
+    "message_ko": "실제 LIVE 버전이 239.999초에 유효합니다.",
+    "expected": 1,
+    "actual": 1,
+    "evidence_path": "readbacks/expiry-239999.json"
+  },
+  {
+    "assertion_id": "p07-exact-expiry",
+    "status": "PASS",
+    "message_en": "Clock-only exact expiry clears LIVE acceptance and retains highest sequence.",
+    "message_ko": "시계만 진행한 정확한 만료가 LIVE 수용을 지우고 최고순번을 남깁니다.",
+    "expected": {
+      "active": null,
+      "high_water": 1
+    },
+    "actual": {
+      "high_water": 1,
+      "active": null
+    },
+    "evidence_path": "readbacks/expiry-240000.json"
+  },
+  {
+    "assertion_id": "p07-verify-then-expire",
+    "status": "PASS",
+    "message_en": "Clock expiry after crypto verification prevents transactional acceptance.",
+    "message_ko": "암호 검증 뒤 시계 만료가 트랜잭션 수용을 막습니다.",
+    "expected": {
+      "reason": "EXPIRED",
+      "high_water": 0
+    },
+    "actual": {
+      "type": "RESULT",
+      "code": "REJECTED",
+      "reason": "EXPIRED",
+      "high_water": 0,
+      "traffic_snapshot_id": null
+    },
+    "evidence_path": "readbacks/verify-then-expire.json"
+  },
+  {
+    "assertion_id": "p07-stale-caller",
+    "status": "PASS",
+    "message_en": "A stale caller cannot extend the TTL or restore expired accepted data.",
+    "message_ko": "과거 호출시각이 유효기한을 늘리거나 만료 자료를 복원하지 못합니다.",
+    "expected": {
+      "code": "REJECTED",
+      "reason": "EXPIRED"
+    },
+    "actual": {
+      "code": "REJECTED",
+      "reason": "EXPIRED",
+      "high_water": 1,
+      "traffic_snapshot_id": null
+    },
+    "evidence_path": "readbacks/stale-caller.json"
+  },
+  {
+    "assertion_id": "p07-current-expired",
+    "status": "PASS",
+    "message_en": "Restarted HTTP service and consumer use persisted expiry and preserve high-water.",
+    "message_ko": "재시작한 HTTP 서버·수신자가 저장된 만료시각을 쓰고 최고순번을 보존합니다.",
+    "expected": {
+      "http": 410,
+      "high_water": 5
+    },
+    "actual": {
+      "http": 410,
+      "high_water": 5
+    },
+    "evidence_path": "readbacks/current-expired-http.json"
+  },
+  {
+    "assertion_id": "p07-public-privacy",
+    "status": "PASS",
+    "message_en": "Archived public roots and exact signed public bytes contain no private keys, credentials or raw observations.",
+    "message_ko": "보존된 공개키·정확한 서명 공개바이트에 비공개키·인증·원시관측이 없습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "public/trust-roots.json"
+  },
+  {
+    "assertion_id": "p07-owned-cleanup",
+    "status": "PASS",
+    "message_en": "All owned processes, engines, database, volume, private files and HTTP ports are removed.",
+    "message_ko": "소유 프로세스·엔진·DB·볼륨·비공개파일·HTTP 포트를 제거했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "runtime/cleanup.json"
+  }
+]

@@ -1,0 +1,1228 @@
+[
+  {
+    "role": "p07-source-api",
+    "pid": 24823,
+    "exit_code": null,
+    "signal": "SIGTERM",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "service",
+        "port": 42343
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-source-worker-0",
+    "pid": 24836,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p07-source-0"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-source-worker-1",
+    "pid": 25083,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p07-source-1"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-source-worker-2",
+    "pid": 25330,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p07-source-2"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-source-worker-3",
+    "pid": 25549,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p07-source-3"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-source-worker-4",
+    "pid": 25770,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p07-source-4"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 3
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-publisher-6",
+    "pid": 25994,
+    "exit_code": null,
+    "signal": "SIGKILL",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publisher",
+        "pid": 25994
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_PUBLICATION_WRITE",
+        "pid": 25994
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-publisher-7",
+    "pid": 26008,
+    "exit_code": null,
+    "signal": "SIGKILL",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publisher",
+        "pid": 26008
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_PUBLICATION_COMMIT",
+        "pid": 26008
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-publisher-8",
+    "pid": 26021,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publisher",
+        "pid": 26021
+      },
+      {
+        "type": "RESULT",
+        "code": "UNCHANGED",
+        "sequence": 1,
+        "traffic_snapshot_id": "4f3c1a1dfa207fe05ce0227f6c5b999b1232b803d0afa15d134cefa8877debe3"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-publisher-9",
+    "pid": 26034,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publisher",
+        "pid": 26034
+      },
+      {
+        "type": "RESULT",
+        "code": "UNCHANGED",
+        "sequence": 1,
+        "traffic_snapshot_id": "4f3c1a1dfa207fe05ce0227f6c5b999b1232b803d0afa15d134cefa8877debe3"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-publisher-10",
+    "pid": 26035,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publisher",
+        "pid": 26035
+      },
+      {
+        "type": "RESULT",
+        "code": "UNCHANGED",
+        "sequence": 1,
+        "traffic_snapshot_id": "4f3c1a1dfa207fe05ce0227f6c5b999b1232b803d0afa15d134cefa8877debe3"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-initial-race-0",
+    "pid": 26061,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publisher",
+        "pid": 26061
+      },
+      {
+        "type": "RESULT",
+        "code": "PUBLISHED",
+        "sequence": 1,
+        "traffic_snapshot_id": "1755db2ac3af7cd70cb41d6cf40b3c469626d061d1c0560b26d47f3d5f3a2b7a"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-initial-race-1",
+    "pid": 26067,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publisher",
+        "pid": 26067
+      },
+      {
+        "type": "RESULT",
+        "code": "UNCHANGED",
+        "sequence": 1,
+        "traffic_snapshot_id": "1755db2ac3af7cd70cb41d6cf40b3c469626d061d1c0560b26d47f3d5f3a2b7a"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-http-13",
+    "pid": 26088,
+    "exit_code": null,
+    "signal": "SIGKILL",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publication-service",
+        "pid": 26088,
+        "port": 44857
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-14",
+    "pid": 26105,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26105
+      },
+      {
+        "type": "RESULT",
+        "code": "ACCEPTED",
+        "high_water": 1,
+        "traffic_snapshot_id": "4f3c1a1dfa207fe05ce0227f6c5b999b1232b803d0afa15d134cefa8877debe3"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-15",
+    "pid": 26120,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26120
+      },
+      {
+        "type": "RESULT",
+        "code": "ACCEPTED",
+        "high_water": 1,
+        "traffic_snapshot_id": "4f3c1a1dfa207fe05ce0227f6c5b999b1232b803d0afa15d134cefa8877debe3"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-16",
+    "pid": 26135,
+    "exit_code": null,
+    "signal": "SIGKILL",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26135
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_CONSUMER_COMMIT",
+        "pid": 26135
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-17",
+    "pid": 26149,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26149
+      },
+      {
+        "type": "RESULT",
+        "code": "DUPLICATE",
+        "high_water": 1,
+        "traffic_snapshot_id": "4f3c1a1dfa207fe05ce0227f6c5b999b1232b803d0afa15d134cefa8877debe3"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-18",
+    "pid": 26163,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26163
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_CONSUMER_VERIFY",
+        "pid": 26163
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "REPLAY",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-publisher-19",
+    "pid": 26177,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publisher",
+        "pid": 26177
+      },
+      {
+        "type": "RESULT",
+        "code": "PUBLISHED",
+        "sequence": 2,
+        "traffic_snapshot_id": "d8932d16c38fc9bb04ad1396e1a88deeda211f74d1639c13f4da6ce7081b516c"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-publisher-20",
+    "pid": 26178,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publisher",
+        "pid": 26178
+      },
+      {
+        "type": "RESULT",
+        "code": "UNCHANGED",
+        "sequence": 2,
+        "traffic_snapshot_id": "d8932d16c38fc9bb04ad1396e1a88deeda211f74d1639c13f4da6ce7081b516c"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-21",
+    "pid": 26203,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26203
+      },
+      {
+        "type": "RESULT",
+        "code": "ACCEPTED",
+        "high_water": 2,
+        "traffic_snapshot_id": "d8932d16c38fc9bb04ad1396e1a88deeda211f74d1639c13f4da6ce7081b516c"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-22",
+    "pid": 26218,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26218
+      },
+      {
+        "type": "RESULT",
+        "code": "ACCEPTED",
+        "high_water": 2,
+        "traffic_snapshot_id": "d8932d16c38fc9bb04ad1396e1a88deeda211f74d1639c13f4da6ce7081b516c"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-23",
+    "pid": 26232,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26232
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "REVOKED_KEY",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-24",
+    "pid": 26247,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26247
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_SIGNATURE_OR_METADATA",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-25",
+    "pid": 26261,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26261
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "HASH_MISMATCH",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-26",
+    "pid": 26276,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26276
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "LENGTH_MISMATCH",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-27",
+    "pid": 26290,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26290
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "TRANSPORT_FAILED",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-28",
+    "pid": 26304,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26304
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "OVERSIZE",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-29",
+    "pid": 26318,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26318
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "OVERSIZE",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-30",
+    "pid": 26332,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26332
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_JSON",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-31",
+    "pid": 26346,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26346
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_JSON",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-32",
+    "pid": 26360,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26360
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_SIGNATURE_OR_METADATA",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-33",
+    "pid": 26374,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26374
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_METADATA",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-34",
+    "pid": 26388,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26388
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_HEADER",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-35",
+    "pid": 26402,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26402
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_SIGNATURE_OR_METADATA",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-36",
+    "pid": 26416,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26416
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "UNKNOWN_KEY",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-37",
+    "pid": 26430,
+    "exit_code": 2,
+    "signal": null,
+    "messages": [],
+    "diagnostics": "Use --config PRIVATE_JSON for the consumer worker / 수신 작업자는 --config PRIVATE_JSON을 사용하세요\n"
+  },
+  {
+    "role": "p07-consumer-38",
+    "pid": 26437,
+    "exit_code": 2,
+    "signal": null,
+    "messages": [],
+    "diagnostics": "Use --config PRIVATE_JSON for the consumer worker / 수신 작업자는 --config PRIVATE_JSON을 사용하세요\n"
+  },
+  {
+    "role": "p07-consumer-39",
+    "pid": 26444,
+    "exit_code": 2,
+    "signal": null,
+    "messages": [],
+    "diagnostics": "Use --config PRIVATE_JSON for the consumer worker / 수신 작업자는 --config PRIVATE_JSON을 사용하세요\n"
+  },
+  {
+    "role": "p07-consumer-40",
+    "pid": 26451,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26451
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_JSON",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-41",
+    "pid": 26465,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26465
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "WRONG_SCOPE",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-42",
+    "pid": 26479,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26479
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "WRONG_SCOPE",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-43",
+    "pid": 26493,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26493
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "WRONG_SCOPE",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-44",
+    "pid": 26507,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26507
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "WRONG_SCOPE",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-45",
+    "pid": 26521,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26521
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "REVOKED_KEY",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-46",
+    "pid": 26535,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26535
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "KEY_TIME_INVALID",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-47",
+    "pid": 26549,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26549
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "KEY_TIME_INVALID",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-48",
+    "pid": 26563,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26563
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "INVALID_TIME",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-49",
+    "pid": 26577,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26577
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "REPLAY",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-50",
+    "pid": 26591,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26591
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "SEQUENCE_CONFLICT",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-51",
+    "pid": 26605,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26605
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "WINDOW_ROLLBACK",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-52",
+    "pid": 26619,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26619
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "HTTP_302",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-53",
+    "pid": 26634,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26634
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "TRANSPORT_FAILED",
+        "high_water": 2,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-publisher-54",
+    "pid": 26649,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publisher",
+        "pid": 26649
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_PUBLICATION_WRITE",
+        "pid": 26649
+      },
+      {
+        "type": "RESULT",
+        "code": "PUBLISHED",
+        "sequence": 3,
+        "traffic_snapshot_id": "3b49c319d01a6ff98f87c5a79e2244cfbb2477dc478f24ff8a314d634aab474d"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-publisher-55",
+    "pid": 26668,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publisher",
+        "pid": 26668
+      },
+      {
+        "type": "RESULT",
+        "code": "PUBLISHED",
+        "sequence": 4,
+        "traffic_snapshot_id": "c6eb7c46ce01ab10dc8c6abf887fb9f967fd6fc105b72d9f4923f20f0edb204a"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-56",
+    "pid": 26681,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26681
+      },
+      {
+        "type": "RESULT",
+        "code": "ACCEPTED",
+        "high_water": 4,
+        "traffic_snapshot_id": "c6eb7c46ce01ab10dc8c6abf887fb9f967fd6fc105b72d9f4923f20f0edb204a"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-57",
+    "pid": 26696,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26696
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_CONSUMER_VERIFY",
+        "pid": 26696
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "EXPIRED",
+        "high_water": 0,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-publisher-58",
+    "pid": 26711,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publisher",
+        "pid": 26711
+      },
+      {
+        "type": "RESULT",
+        "code": "PUBLISHED",
+        "sequence": 5,
+        "traffic_snapshot_id": "9a4d9378343840489e0cb0592355aa1ddc79ce747abee2db797bc7c8f375ccba"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-59",
+    "pid": 26724,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26724
+      },
+      {
+        "type": "RESULT",
+        "code": "ACCEPTED",
+        "high_water": 5,
+        "traffic_snapshot_id": "9a4d9378343840489e0cb0592355aa1ddc79ce747abee2db797bc7c8f375ccba"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-consumer-60",
+    "pid": 26739,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "consumer",
+        "pid": 26739
+      },
+      {
+        "type": "RESULT",
+        "code": "REJECTED",
+        "reason": "TRANSPORT_FAILED",
+        "high_water": 5,
+        "traffic_snapshot_id": null
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p07-http-61",
+    "pid": 26756,
+    "exit_code": null,
+    "signal": "SIGTERM",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publication-service",
+        "pid": 26756,
+        "port": 45991
+      }
+    ],
+    "diagnostics": ""
+  }
+]

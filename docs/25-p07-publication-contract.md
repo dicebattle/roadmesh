@@ -99,4 +99,4 @@ The whole runner retains all151 existing checks and appends P07 groups; no weake
 
 전체 실행은 기존151개를 유지하고 P07을 추가하며 분모나 생략 성공을 바꾸지 않습니다. 기존/P06재생에 실제게시/수용/거부/만료근거를 연결하되 경로 반영과 구분합니다. 메인은 공개키로 표준JWS·다운로드바이트·저장상태·장애·정리를 독립 검사하고 한영화면/모바일/실제녹화/README/보고서를 갱신해 푸시·원격검사·보호병합합니다.
 
-Implementation evidence / 구현 근거: [Local206-check report](../research/pilot/2026-10-25-p07/report.md). Main independently inspected the actual signed bytes and durable states; hosted checks are pending. / 메인이 실제 서명 바이트·영속 상태를 독립 검사했고 로컬206개를 통과했으며 원격 검증은 남아 있습니다.
+Implementation evidence / 구현 근거: [Local206-check report](../research/pilot/2026-10-25-p07/report.md). Main independently inspected the actual signed bytes and durable states; hosted206 and Node22/24 each200 also passed. / 메인이 실제 서명 바이트·영속 상태를 독립 검사했고 로컬206개를 통과했으며 원격206개·Node각200개도 통과했습니다.

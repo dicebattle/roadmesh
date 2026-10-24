@@ -1,0 +1,132 @@
+{
+  "omitted_graph_binary_paths": [
+    "seoul/graph/seoul.osm.pbf",
+    "seoul/graph/tiles/0/002/866.gph",
+    "seoul/graph/tiles/1/046/026.gph",
+    "seoul/graph/tiles/1/046/027.gph",
+    "seoul/graph/tiles/2/000/734/186.gph",
+    "seoul/graph/tiles/2/000/734/187.gph",
+    "seoul/graph/tiles/2/000/734/188.gph",
+    "seoul/graph/tiles/2/000/734/189.gph",
+    "seoul/graph/tiles/2/000/735/626.gph",
+    "seoul/graph/tiles/2/000/735/627.gph",
+    "seoul/graph/tiles/2/000/735/628.gph",
+    "seoul/graph/tiles/2/000/735/629.gph",
+    "seoul/graph/tiles/2/000/737/066.gph",
+    "seoul/graph/tiles/2/000/737/067.gph",
+    "seoul/graph/tiles/2/000/737/068.gph"
+  ],
+  "run_url": "https://github.com/dicebattle/routelens/actions/runs/40110857288",
+  "full_split_overlap_bytes_identical": true,
+  "status": "PASS",
+  "source": {
+    "commit": "7ccaabfb269eb689011e5cca6449f6f71d342710",
+    "dirty": false
+  },
+  "graph_id": "be72b68d2b37cf5411af8ca2bd5014fc17e8a6835c689661bf5ca8b85e792675",
+  "implementation_sha256": "80cefb7edfcb5055139da48b886073b6dc9d2cce87366e3832093dbb12ae59e9",
+  "assertions": {
+    "tiny": 48,
+    "seoul": 35,
+    "ingestion": 34,
+    "aggregation": 34,
+    "publication": 55,
+    "total": 206
+  },
+  "unique_file_hashes_checked": 3064,
+  "inventories": {
+    "manifest.json": 10,
+    "seoul/manifest.json": 8,
+    "seoul/tiny/manifest.json": 6,
+    "seoul/graph/manifest.json": 94,
+    "seoul/workload/manifest.json": 826,
+    "ingestion/manifest.json": 970,
+    "aggregation/manifest.json": 761,
+    "publication/manifest.json": 404
+  },
+  "source_sha256": "282d012b7629c643695f286d4424d7f6d88548d99edb5577ca5b678906f13c17",
+  "matching_policy": "seoul-observed-v3",
+  "stored_reference_traversals": 220,
+  "unique_stored_ids": 220,
+  "successful_trips": 9,
+  "raw_after_success": 0,
+  "independent_geometry_max_difference_m": 5.17506038022475e-10,
+  "independent_boundary_error_max_ms": 260,
+  "recovery_attempt_byte_parity": [
+    {
+      "phase": "AFTER_MATCH",
+      "interrupted_pid": 12108,
+      "recovered_pid": 12445,
+      "sha256": "ca5e6b5e218909f4e69c061a8cc19806a59cd59bcffe9902abfa5bdd47f3b340",
+      "byte_identical": true
+    },
+    {
+      "phase": "AFTER_INSERT",
+      "interrupted_pid": 12777,
+      "recovered_pid": 13085,
+      "sha256": "21ee9ba5d77111e4d773c786843a09ff304805f065e326067b48c456fef2417b",
+      "byte_identical": true
+    }
+  ],
+  "database_restart": {
+    "same_container_id": true,
+    "same_named_volume": "routelens-p05-015d2096-9994-4184-9e6d-c8f00fadab7a-db",
+    "restarted": true,
+    "previous_host_port": 32768,
+    "current_host_port": 32769,
+    "host_tcp_ready": true,
+    "host_tcp_wait_ms": 0.9461580000061076
+  },
+  "api_durable_samples": 2,
+  "engine_failure_attempts": 3,
+  "clock_only_expiry_refused_before_sweep": true,
+  "retention_readback": {
+    "contributors": 22,
+    "trips": 0,
+    "batches": 0,
+    "samples": 0,
+    "traversals": 0,
+    "events": 0,
+    "raw_payloads": 0
+  },
+  "stopped_engine": {
+    "pid": 135,
+    "exe": "/usr/local/bin/valhalla_service",
+    "state": "T",
+    "action": "locate"
+  },
+  "killed_worker_pid": 17764,
+  "orphan_engine_id": "c709efa3a1fa5175655281b2252efd972f72726314945343447a1c5bb7f2e43d",
+  "recorded_db_volume_engine_cleanup_verified": true,
+  "message_en": "Main independently checked artifact bytes, all stored traversal contents and geometry/timing, retry result bytes, durable restart/expiry/revocation read-backs and recorded hosted cleanup (not a live remote process query). This proves the bounded synthetic local pilot, not production authentication or real-driving accuracy.",
+  "message_ko": "메인이 원문 해시·저장 통과 전체의 지형/시간·재시도 결과 바이트·재시작/만료/철회 재조회·원격 정리 진단(실시간 원격 프로세스 조회 아님)를 독립 검사했습니다. 제한된 합성 로컬 파일럿 증거이며 운영 인증·실주행 정확도는 별도입니다.",
+  "node_suites": {
+    "node22": {
+      "tests": 200,
+      "passed": 200,
+      "failed": 0,
+      "original_summary": [
+        "Node 22\tFocused tests / 집중 테스트\t2026-10-24T16:17:35.2493969Z # tests 200",
+        "Node 22\tFocused tests / 집중 테스트\t2026-10-24T16:17:35.2504210Z # pass 200",
+        "Node 22\tFocused tests / 집중 테스트\t2026-10-24T16:17:35.2504540Z # fail 0",
+        "Node 22\tFocused tests / 집중 테스트\t2026-10-24T16:17:35.2504840Z # cancelled 0",
+        "Node 22\tFocused tests / 집중 테스트\t2026-10-24T16:17:35.2505067Z # skipped 0",
+        "Node 22\tFocused tests / 집중 테스트\t2026-10-24T16:17:35.2505269Z # todo 0"
+      ]
+    },
+    "node24": {
+      "tests": 200,
+      "passed": 200,
+      "failed": 0,
+      "original_summary": [
+        "Node 24\tFocused tests / 집중 테스트\t2026-10-24T16:17:36.9341025Z ℹ tests 200",
+        "Node 24\tFocused tests / 집중 테스트\t2026-10-24T16:17:36.9341801Z ℹ pass 200",
+        "Node 24\tFocused tests / 집중 테스트\t2026-10-24T16:17:36.9342056Z ℹ fail 0",
+        "Node 24\tFocused tests / 집중 테스트\t2026-10-24T16:17:36.9342281Z ℹ cancelled 0",
+        "Node 24\tFocused tests / 집중 테스트\t2026-10-24T16:17:36.9342534Z ℹ skipped 0",
+        "Node 24\tFocused tests / 집중 테스트\t2026-10-24T16:17:36.9342753Z ℹ todo 0"
+      ]
+    }
+  },
+  "required_checks": "success"
+}

@@ -140,7 +140,7 @@ Use actual process termination for crash claims and actual request timeout/drop 
 
 ## 6. Implementation order and proof gates / 구현 순서와 증명 기준
 
-1. **P01 + P14a:** scenario/result contracts and a small local runner; CI for the existing validator and new contract tests. Deterministic output and deliberate failure reporting are verified; see the module evidence. P02 is also verified; P03 is locally verified; P04–P06 are locally and on hosted Linux verified; P07 is locally verified with206 whole checks; hosted delivery is pending.
+1. **P01 + P14a:** scenario/result contracts and a small local runner; CI for the existing validator and new contract tests. Deterministic output and deliberate failure reporting are verified; see the module evidence. P02 is also verified; P03 is locally verified; P04–P06 are locally and on hosted Linux verified; P07 local/hosted206 and Node22/24 each200 passed.
 2. **P02:** build the tiny real Valhalla graph and prove baseline legal routing. Pin source/image identity after inspecting actual release artifacts.
 3. **P03 → P04:** generate trajectories, run real map matching, compare with known ground truth.
 4. **P05 → P06:** reliable collection and pure aggregation, with crash/retry and event-time boundary evidence.
@@ -149,7 +149,7 @@ Use actual process termination for crash claims and actual request timeout/drop 
 7. **P11 → P12:** inspect the user flow in the in-app browser, then execute the complete fault matrix through one runner.
 8. **P13 + P14b:** local Cloudflare adapter parity and required integration checks; geographic and hosted tests remain separately labeled.
 
-1. **P01 + P14a:** 시나리오·결과 계약과 작은 로컬 실행기, 기존 검사 도구와 새 계약 검사의 CI. 결정적 결과와 의도적 실패 판정을 검증했으며 모듈 증거에 기록했습니다. P02도 검증했으며 P03도 로컬 검증했으며 P05·P06도 로컬·원격 검증했으며 P07도 로컬 전체206개 검증을 통과했고 원격 반영이 남아 있습니다.
+1. **P01 + P14a:** 시나리오·결과 계약과 작은 로컬 실행기, 기존 검사 도구와 새 계약 검사의 CI. 결정적 결과와 의도적 실패 판정을 검증했으며 모듈 증거에 기록했습니다. P02도 검증했으며 P03도 로컬 검증했으며 P05·P06도 로컬·원격 검증했으며 P07도 로컬·원격206개와 Node22/24각200개를 통과했습니다.
 2. **P02:** 작은 실제 Valhalla 그래프 생성과 합법 기본 경로 확인. 실제 릴리스 자료를 확인한 뒤 소스·이미지를 고정합니다.
 3. **P03 → P04:** 궤적 생성, 실제 도로 매칭, 독립 정답과 비교.
 4. **P05 → P06:** 중단·재시도·관측시간 경계를 검사하는 수집·집계.

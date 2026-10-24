@@ -1,0 +1,26 @@
+[
+  {
+    "message": {
+      "type": "RESULT",
+      "code": "PUBLISHED",
+      "sequence": 2,
+      "traffic_snapshot_id": "d8932d16c38fc9bb04ad1396e1a88deeda211f74d1639c13f4da6ce7081b516c"
+    },
+    "exit": {
+      "code": 0,
+      "signal": null
+    }
+  },
+  {
+    "message": {
+      "type": "RESULT",
+      "code": "UNCHANGED",
+      "sequence": 2,
+      "traffic_snapshot_id": "d8932d16c38fc9bb04ad1396e1a88deeda211f74d1639c13f4da6ce7081b516c"
+    },
+    "exit": {
+      "code": 0,
+      "signal": null
+    }
+  }
+]

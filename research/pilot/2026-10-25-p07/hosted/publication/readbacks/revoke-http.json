@@ -1,0 +1,15 @@
+{
+  "response": {
+    "status": 200,
+    "body": {
+      "code": "REVOKED",
+      "message_en": "Consent revoked; raw observations and stored traversals were removed.",
+      "message_ko": "동의를 철회하고 원시 관측과 저장된 통과 기록을 삭제했습니다."
+    }
+  },
+  "current": {
+    "code": "MISSING",
+    "publication": null
+  },
+  "http_status": 404
+}

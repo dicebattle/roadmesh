@@ -1,8 +1,8 @@
 # Seoul signed traffic publication / 서울 교통정보 서명 게시 검증
 
-**Local PASS: 206/206 = tiny48 + Seoul35 + P05 ingestion34 + P06 aggregation34 + P07 publication55.** Clean source `d78b2c1aaee471360dd59b5a277d7b83f23dc77f`. Main designed the contract, reviewed the implementation and directly inspected original outputs. Sol (`gpt-6.1-sol`) implemented the production modules and tests. Hosted verification is pending at this publication checkpoint.
+**Local PASS: 206/206 = tiny48 + Seoul35 + P05 ingestion34 + P06 aggregation34 + P07 publication55.** Clean source `d78b2c1aaee471360dd59b5a277d7b83f23dc77f`. Main designed the contract, reviewed the implementation and directly inspected original outputs. Sol (`gpt-6.1-sol`) implemented the production modules and tests. Hosted Node22/24 each200/200 and the actual Linux206/206 run passed; main independently inspected the downloaded artifacts below.
 
-**로컬206개 모두 통과: 작은 회귀48·서울35·수집34·집계34·게시55.** 위 깨끗한 소스에서 실행했습니다. 메인이 계약 설계·구현 검토·원문 직접 검사를, Sol이 생산 코드·테스트 구현을 담당했습니다. 이 게시 준비 시점에는 원격 검증이 남아 있습니다.
+**로컬206개 모두 통과: 작은 회귀48·서울35·수집34·집계34·게시55.** 위 깨끗한 소스에서 실행했습니다. 메인이 계약 설계·구현 검토·원문 직접 검사를, Sol이 생산 코드·테스트 구현을 담당했습니다. 원격 Node22/24 각각200개·실제Linux206개도 통과했고 메인이 다운로드 결과를 아래와 같이 독립 검사했습니다.
 
 [Actual recording / 실제 녹화](../../../docs/media/demo.mp4) · [Interactive report / 재생 보고서](report.html) · [Whole inspection / 전체 검사](main-verification.json) · [Independent signatures / 독립 서명 검사](publication/main-signature-verification.json) · [Durable state / 영속 상태 검사](publication/main-state-verification.json) · [Contract / 계약](../../../docs/25-p07-publication-contract.md) · [Module / 모듈](../../../wiki/modules/signed-publication.md)
 
@@ -74,3 +74,13 @@ P07은 서명 게시·영속 수용을 검증하며 **P08의 Valhalla 속도 반
 Actual recording:27.05s at1280×720/20fps; the entire recording was converted and MP4 fully decoded. Main inspected screenshots and a moving frame, bilingual controls and390px mobile layout without horizontal overflow or recorded JavaScript errors. All8 capture processes, report server and temporary IAB tab were closed. [Capture inspection](media-verification.json) · [Original WebM](capture.webm).
 
 실제27.05초를1280×720·20fps로 녹화해 전체 변환·MP4 전체 디코딩을 확인했습니다. 메인이 화면·움직이는 프레임·한영 조작·390px 모바일을 확인했고 가로 넘침·기록된 JavaScript 오류는 없었습니다. 촬영 프로세스8개·보고서 서버·임시 내장 탭을 정리했습니다.
+
+## Hosted verification / 원격 검증
+
+[Run40110857288](https://github.com/dicebattle/routelens/actions/runs/40110857288), clean push `7ccaabfb269eb689011e5cca6449f6f71d342710`, passed Node22/24 each200/200, actual Linux Docker206/206 and Required checks. Main checked3,064 available original hashes, all220 stored/reference traversals and independent geometry/timing, P06 stored populations, five standard signatures/four HTTP captures,30 exact negative reasons, durable accepted bytes/order, real SIGKILL/lock/revoke/expiry and original cleanup diagnostics. [Whole proof](hosted-verification.json) · [Aggregation](hosted-aggregation-verification.json) · [Signatures](hosted-signature-verification.json) · [Publication state](hosted-publication-verification.json) · [Original CI](hosted/ci.json).
+
+깨끗한 푸시에서 원격 Node22/24 각각200개·실제 Linux Docker206개·필수 검사를 통과했습니다. 메인이 가능한 원문3,064해시·저장/기준220통과·독립거리/시간·P06차량군·서명5개/HTTP4개·정확한부정30사례·영속내용/순서·실제강제종료/잠금/철회/만료·원래정리진단을검사했습니다.
+
+Remote graph `be72b68d2b37cf5411af8ca2bd5014fc17e8a6835c689661bf5ca8b85e792675` has a distinct verified identity. Fifteen graph binaries omitted by CI are explicitly listed and were not rehashed after download. Remote cleanup is supported by execution diagnostics, not a later live remote PID query. Selected original files are retained under hosted/; the complete CI artifact uses workflow retention. Main inspected the public README GIF and confirmed public MP4 bytes equal the local recording. Final documentation-head checks precede protected PR#8 merge.
+
+원격 그래프는 별도 식별자를 검증했습니다. CI가 제외한 그래프 바이너리15개는 명시하고 다운로드 후 검사한 것으로 세지 않았습니다. 원격 정리는 실행 진단 근거이고 실시간 원격 PID 조회는 아닙니다. 주요 원문은 hosted에 보존하며 전체 CI 결과물에는 보관기간이 적용됩니다. 공개 README GIF·MP4의 로컬동일바이트를 확인했고 최종 문서 커밋 검사 후 보호된 PR#8을 병합합니다.
