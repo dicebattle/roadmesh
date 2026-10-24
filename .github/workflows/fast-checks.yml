@@ -2,6 +2,7 @@ name: Fast checks
 on:
   push:
   pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
@@ -15,6 +16,8 @@ jobs:
         node: ['22', '24']
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: ${{ matrix.node }}
@@ -23,6 +26,8 @@ jobs:
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Focused tests / 집중 테스트
         run: npm test
+      - name: Check current recording evidence / 현재 녹화 증거 검사
+        run: npm run media:check
       - name: Direct CLI evidence / CLI 직접 검증 증거
         if: ${{ always() }}
         run: npm run pilot:checks -- --output "${{ runner.temp }}/pilot-evidence"
@@ -34,18 +39,62 @@ jobs:
           path: ${{ runner.temp }}/pilot-evidence
           if-no-files-found: error
           retention-days: 7
+  simulation:
+    name: Implemented-module simulation
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install locked dependencies / 잠금 의존성 설치
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Compile strict TypeScript / 엄격 TypeScript 컴파일
+        run: npm run build
+      - name: Fresh real-engine simulation / 실제 엔진의 새 통합 시뮬레이션
+        run: npm run simulation:check -- --output "${{ runner.temp }}/simulation-evidence"
+      - name: Preserve compact integration evidence / 작은 통합 증거 보존
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: implemented-module-simulation
+          path: |
+            ${{ runner.temp }}/simulation-evidence/report-data.json
+            ${{ runner.temp }}/simulation-evidence/report.html
+            ${{ runner.temp }}/simulation-evidence/simulation/*.json
+            ${{ runner.temp }}/simulation-evidence/corpus/report.json
+            ${{ runner.temp }}/simulation-evidence/simulation-spec.json
+            ${{ runner.temp }}/simulation-evidence/graph/route*.response.json
+            ${{ runner.temp }}/simulation-evidence/graph/trace*.response.json
+            ${{ runner.temp }}/simulation-evidence/graph/config.json
+            ${{ runner.temp }}/simulation-evidence/**/*manifest.json
+            ${{ runner.temp }}/simulation-evidence/**/assertions.json
+            ${{ runner.temp }}/simulation-evidence/**/checks.json
+            ${{ runner.temp }}/simulation-evidence/**/summary.md
+            ${{ runner.temp }}/simulation-evidence/**/commands.json
+            ${{ runner.temp }}/simulation-evidence/graph/edge-map.json
+            ${{ runner.temp }}/simulation-evidence/graph/*.way-sequence.json
+            ${{ runner.temp }}/simulation-evidence/*.stdout.txt
+            ${{ runner.temp }}/simulation-evidence/*.stderr.txt
+          if-no-files-found: error
+          retention-days: 7
   required:
     name: Required checks
     if: ${{ always() }}
-    needs: [node]
+    needs: [node, simulation]
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
       - name: Require successful prerequisites / 선행 검사 성공 필수
         env:
-          PREREQUISITE_RESULT: ${{ needs.node.result }}
+          NODE_RESULT: ${{ needs.node.result }}
+          SIMULATION_RESULT: ${{ needs.simulation.result }}
         run: |
-          if [ "$PREREQUISITE_RESULT" != success ]; then
+          if [ "$NODE_RESULT" != success ] || [ "$SIMULATION_RESULT" != success ]; then
             echo "Prerequisite failed, was cancelled or skipped. / 선행 검사가 실패·취소·생략되었습니다."
             exit 1
           fi
