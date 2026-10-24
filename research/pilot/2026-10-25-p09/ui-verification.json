@@ -1,0 +1,35 @@
+{
+  "source_commit": "537cf0cd8f34509fa24023420d71bfa6dabe7614",
+  "status": "PASS",
+  "inspection": "Main directly inspected IAB and recorded frames. / 메인이 내장 브라우저와 녹화 프레임을 직접 검사했습니다.",
+  "languages": [
+    "en",
+    "ko"
+  ],
+  "mobile_viewport_width": 390,
+  "mobile_document_width": 390,
+  "expanded_node_cases": 32,
+  "console_errors": 0,
+  "recording_seconds": 48.7,
+  "recording_pixels": [
+    1280,
+    720
+  ],
+  "recording_fps": 20,
+  "mp4_full_decode": "PASS",
+  "reviewed_frames": [
+    "baseline.png",
+    "checks-ko.png",
+    "expired-ko.png",
+    "expired.png",
+    "live.png",
+    "map.png",
+    "nodes-en.png",
+    "nodes-ko.png",
+    "obsolete-en.png"
+  ],
+  "owned_capture_processes_absent": 9,
+  "owned_report_server_pid_absent": 64199,
+  "owned_iab_tabs_closed": true,
+  "viewport_reset": true
+}

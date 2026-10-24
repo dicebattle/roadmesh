@@ -24,6 +24,11 @@ import {
   requireTrafficCases,
   TRAFFIC_CASE_IDS,
 } from "./traffic_checks.js";
+import {
+  runNodeChecks,
+  requireNodeCases,
+  NODE_CASE_IDS,
+} from "./node_checks.js";
 import type { SimulationAssertion } from "./vehicle_simulator.js";
 import {
   renderSimulationReport,
@@ -261,6 +266,57 @@ export async function runPilotIntegration(
       throw new Error(
         "Whole assertion inventory mismatch / 전체 검사 목록 불일치",
       );
+    if (
+      Number(data.assertions.length) !== 238 ||
+      data.assertions.some((a) => a.status !== "PASS")
+    )
+      throw new Error(
+        "All 238 prior fresh cases are required / 기존 새 검사238개 전체 통과 필요",
+      );
+    const nodesStarted = performance.now();
+    const nodes = await runNodeChecks(
+      join(output, "seoul/graph"),
+      join(output, "nodes"),
+    );
+    verifyRegionalChild(join(output, "nodes"), verified, data.graph_id);
+    requireNodeCases(nodes.assertions);
+    data.nodes = {
+      ...nodes.nodes,
+      routes: nodes.nodes.routes.map((r) => ({
+        ...r,
+        evidence_path: "nodes/" + r.evidence_path,
+      })),
+      events: nodes.nodes.events.map((e) => ({
+        ...e,
+        evidence_path: "nodes/" + e.evidence_path,
+      })),
+      cases: nodes.nodes.cases.map((c) => ({
+        ...c,
+        evidence_path: "nodes/" + c.evidence_path,
+      })),
+      evidence: nodes.nodes.evidence.map((e) => ({
+        ...e,
+        path: "nodes/" + e.path,
+      })),
+    };
+    data.stages.push({
+      id: "p09",
+      name_en: "Persistent native two-node routing, draining and expiry",
+      name_ko: "지속 엔진 두 노드 경로·요청 마무리·만료",
+      status: "PASS",
+      evidence_path: "nodes/manifest.json",
+      duration_ms: performance.now() - nodesStarted,
+    });
+    data.assertions.push(
+      ...nodes.assertions.map((a) => ({
+        ...a,
+        evidence_path: "nodes/" + a.evidence_path,
+      })),
+    );
+    if (Number(data.assertions.length) !== 238 + NODE_CASE_IDS.length)
+      throw new Error(
+        "P09 whole case inventory mismatch / P09 전체 검사 목록 불일치",
+      );
     data.summary.assertions_passed = data.assertions.filter(
       (a) => a.status === "PASS",
     ).length;
@@ -269,11 +325,11 @@ export async function runPilotIntegration(
       ...item,
       message_en: item.message_en.replace(
         "P05–P14 remain incomplete",
-        "P09–P14 remain incomplete",
+        "P10–P14 remain incomplete",
       ),
       message_ko: item.message_ko.replace(
         "P05~P14는 미완료",
-        "P09~P14는 미완료",
+        "P10~P14는 미완료",
       ),
     }));
     data.generated_at_utc = new Date().toISOString();
@@ -304,7 +360,7 @@ export async function runPilotIntegration(
     );
     writeFileSync(
       join(output, "summary.md"),
-      "# Whole implemented-system pilot / 구현된 전체 파일럿\n\nPASS: fresh tiny → Seoul → P05 durable ingestion, interruption/recovery and deletion read-back → P06 unsigned synthetic aggregation → P07 signed HTTP publication and durable verification → P08 accepted immutable traffic files, real routing and exact expiry.\n통과: 새 tiny→서울→P05영속수집·실제중단/복구·삭제재조회→P06서명전합성집계→P07서명HTTP게시·영속검증→P08수용불변교통파일·실제경로·정확한만료.\n\nP09–P14 remain incomplete; no production authentication or real driver traces.\nP09~P14는 미완료이며 운영인증·실주행자료가 아닙니다.\n",
+      "# Whole implemented-system pilot / 구현된 전체 파일럿\n\nPASS: fresh tiny → Seoul → P05 durable ingestion, interruption/recovery and deletion read-back → P06 unsigned synthetic aggregation → P07 signed HTTP publication and durable verification → P08 accepted immutable traffic files, real routing and exact expiry → P09 persistent native two-node routing, draining and automatic expiry.\n통과: 새 tiny→서울→P05영속수집·실제중단/복구·삭제재조회→P06서명전합성집계→P07서명HTTP게시·영속검증→P08수용불변교통파일·실제경로·정확한만료→P09지속엔진두노드경로·요청마무리·자동만료.\n\nP10–P14 remain incomplete; no production authentication or real driver traces.\nP10~P14는 미완료이며 운영인증·실주행자료가 아닙니다.\n",
     );
   } catch (error) {
     failure = error;
@@ -341,6 +397,7 @@ export async function runPilotIntegration(
     "aggregation/manifest.json",
     "publication/manifest.json",
     "traffic/manifest.json",
+    "nodes/manifest.json",
     "lifecycle/cleanup.json",
     "report-data.json",
     "report.html",

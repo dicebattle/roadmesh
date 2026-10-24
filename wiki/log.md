@@ -450,3 +450,51 @@ Main inspected the successful PR40122629962 artifact for head6153689 (merge-test
 Main separately reviewed Sol's bounded P09 retry: one persistent engine, two ordinary routes, both147.404s/2.119km, same PID24/start1007057,268 hashes, actual owned-container absence. Original failed probe remains. Review-only filename, Docker message-case and inspect-object assumptions were corrected without another engine run; no P09 production code exists yet. [Capability evidence](../research/pilot/2026-10-25-p09-preparation/retry/README.md).
 
 메인은 Sol의 P09제한재검사도 별도로 검토했습니다. 지속엔진한개·경로두건·같은PID/시작눈금·해시268개·소유컨테이너부재를 확인했습니다. 검토기의 파일명·Docker문구대소문자·객체형식 가정만 고쳤고 엔진을 재실행하지 않았습니다. 첫실패를보존하며 P09생산구현은 아직 없습니다.
+
+## 2026-10-25 — P09 design fixed / P09 설계 고정
+
+Main fixed [the persistent-node contract](../docs/28-p09-routing-nodes.md) using the verified native HTTP probe. Two independent local nodes reuse P07 acceptance and P08 immutable generations; one active pointer and per-request leases prevent mixed-version results. Superseded/expired results remain rejected while old engines drain. Scope includes actual Seoul inputs, exact ownership, bounded slots, real process faults and fresh whole-system/media delivery. Sol owns implementation. P08 PR#9 final checks are still running; this new branch starts at its unchanged-runtime documentation head16f1049 and must incorporate the protected main merge before delivery.
+
+메인은 실제HTTP실험을 근거로 지속노드 계약을 고정했습니다. 독립 두 노드가 기존 수용/불변세대를 재사용하고 활성참조·요청별고정으로 버전혼합을 막습니다. 옛 엔진의 요청을 마무리하더라도 교체/만료된 결과는 거부합니다. 실제서울입력·정확한소유권·세대상한·실제프로세스장애·새전체검증/녹화를 범위로 정했으며 Sol이 구현합니다. P08 최종검사는 진행중이고 새 브랜치는 실행코드가 같은 문서커밋에서 시작하므로 결과 전달 전에 보호된 main 병합을 반영해야 합니다.
+
+## 2026-10-25 — P08 protected merge, P09 starts / P08 보호병합·P09 착수
+
+Both final-head required runs passed on16f1049. Main merged PR9 with exact-head matching and no bypass; remote main is db50502a75c71b3956987b3ce263c2a523e9d6f0. Local main was advanced only after checking ancestry and the single checkout. All older branches are contained in main; only new feat/p09-routing-nodes remains. Main merged that official ancestry into the P09 branch without changing source or other agents' edits. [Merge](../research/repository/p08-protected-merge-2026-10-25.json).
+
+최종커밋의필수검사두건을통과한뒤정확한커밋을지정해PR9를보호병합했습니다. 로컬main도선조관계·단일작업폴더를확인한뒤진행했고기존브랜치는모두포함됐습니다. 새P09에공식main이력을연결하면서다른에이전트수정은보존했습니다.
+
+Main clarified the P09 scope: no live consumer-config reload, actualHTTP502 proxy fault and actualDBpause/unpause, key revocation by a new process with the same durable consumer ID. Sol core owns node types/engine/controller/service and focused core tests; Sol integration owns32 fixed actual cases, whole-runner integration and evidence viewer. Main corrected the obsolete custom C++ compiler paragraph to the implemented TypeScript adapter. These are plans/in-progress work, not P09 execution proof.
+
+P09는실행중설정교체를추가하지않고실제HTTP502·DB일시정지/복구·같은영속소비자의새프로세스키철회로범위를명확히했습니다. 코어Sol과통합Sol의파일소유권을나눴고기존별도C++변환기문구를실제TypeScript연결기로정정했습니다. 아직계획·구현중이며P09실행근거는아닙니다.
+
+## 2026-10-25 — P09 actual development and corrections / P09 실제 개발 검증·수정
+
+Main directly ran the actual node pipeline four times. Development01 failed the existing P05 synthetic-output path guard; the integration helper's path was corrected without changing that guard. Development02 passed19 cases, then slow failed preparation plus periodic pending work prevented RECONCILE acknowledgement. The core now skips periodic ticks during reconciliation while preserving explicit updates; its new deferred regression and affected focused suite passed14/14. Development03 passed24 cases but native grace stacked after the request deadline exceeded the unchanged30s drain ceiling. Native grace is now zero after RouteLens lease draining; exact TERM, process identity and owned cleanup remain.
+
+메인이 실제 노드 파이프라인을 네 차례 실행했습니다. 첫 실행은 기존 합성 출력 경로 보호조건에서 실패해 연결기의 경로만 고쳤습니다. 두 번째는19개 통과 뒤 느린 준비 실패와 주기 작업 누적으로 조정 응답이 끝나지 않아 주기 호출만 건너뛰게 했고 새 회귀·영향 집중14개를 통과했습니다. 세 번째는24개 통과 뒤 요청 종료에 엔진 대기가 더해져 기존30초 정리 한도를 넘었습니다. RouteLens 요청 마무리 뒤 엔진 추가 대기를 없앴으며 정확한 프로세스 종료·소유 자원 정리는 유지했습니다.
+
+Development04 passed32/32. Main independently checked2,938 original hashes, nine standard Ed25519 signatures, same-daemon repeated baseline, original two-node detours and exact-expiry baseline shapes/ETA. Request deadline30.028s and observed drain28.974s met the original bounds. Main confirmed32 processes,19 containers and one volume absent. Earlier failures and main cleanup observations are retained in the [development report](../research/pilot/2026-10-25-p09/development/README.md). The initial unit source, fixes and compile evidence are separately archived; none of these dirty development runs replaces the required clean whole270 execution or fresh media.
+
+네 번째 실행은32개를 모두 통과했습니다. 메인은 원문 해시2,938개·표준서명9개·같은 엔진 반복 계산·두 노드 우회와 정확한 만료의 원경로를 독립 확인했습니다. 요청30.028초·정리28.974초로 원래 기준을 통과했고 프로세스32개·컨테이너19개·볼륨1개 부재를 확인했습니다. 앞선 실패와 별도 정리 확인을 보존하고, 미커밋 개발 결과를 깨끗한 전체270개·새 녹화의 대체 근거로 삼지 않습니다.
+
+## 2026-10-25 — Clean270 passed, mobile correction / 깨끗한270개 통과·모바일 보완
+
+Main ran clean ead1914:235 tests and the fresh whole270 passed. Independent whole/node/traffic plus prior aggregation/signature/state audits passed;7,112 original hashes and44 native P09 requests were checked. Main separately observed the owned P07/P08/P09 databases. The first standalone P09 inspector omitted the standard JWS typ field; only that inspector was corrected to the existing exact P07 contract, and its original failure remains preserved.
+
+메인이 깨끗한 커밋의235개와 새 전체270개를 실행했고, 독립 전체/노드/교통 및 기존 집계/서명/영속 상태 검사를 통과했습니다. 원문 해시7,112개·P09실제요청44건을 검사하고 실제 세 단계 DB도 별도로 조회했습니다. 최초 P09검사기의 표준JWS헤더 가정 오류만 기존 계약에 맞게 고쳤으며 실패 원문을 보존했습니다.
+
+Actual IAB review then found P09 selectors overflowing390px to534px. Sol integration added only scoped label/select layout rules. Main confirmed both languages and expanded expiry view at390px with32 cases and no script errors. The old execution remains preserved and is not relabeled. A new clean whole run and fresh recording follow the CSS correction. [Layout evidence](../research/pilot/2026-10-25-p09/layout/README.md).
+
+실제 내장브라우저 검토에서 P09선택상자가390화면을534로 늘리는 문제를 확인했습니다. Sol통합이 해당 선택상자/라벨 규칙만 추가했고 메인이 두 언어·펼친32개·만료화면을390픽셀·스크립트오류없음으로 확인했습니다. 이전 실행은 보존하고 소스를 바꿔 적지 않으며 수정 뒤 새 전체 실행·녹화를 진행합니다.
+
+## 2026-10-25 — P09 final local evidence / P09 최종 로컬 근거
+
+Main directly ran the corrected clean537cf0c whole270 and independent whole/node/traffic/aggregation/signature/state inspections.7,062 listed hashes passed;44 native route/trace pairs and21 API responses were tied to original evidence. Request deadline30.027s and raw drain28.076s met the unchanged bounds. Main recorded48.7s, decoded the MP4, inspected nine frames and EN/KO390px controls, and confirmed capture/server/tab cleanup. The archive preserves7,743 files with27 exact declared map omissions;270 UI links remain directly available. Both READMEs/media and [report](../research/pilot/2026-10-25-p09/report.md) are refreshed. Implementation remains by the existing Sol agents; main owns design and verification, and now runs as Sol per user instruction. Hosted inspection/protected merge follow.
+
+메인이 수정 후 깨끗한 소스의 전체270개와 독립 전체/노드/교통/집계/서명/상태 검사를 실행했습니다. 목록 해시7,062개·실제 경로/추적44쌍·API응답21개를 원문과 연결했고 요청30.027초·원문 정리28.076초로 기존 기준을 통과했습니다. 실제48.7초 녹화·전체 디코딩·9화면·한영390픽셀을 검토하고 촬영/서버/탭 정리를 확인했습니다. 압축은 지도27개를 정확히 제외한7,743개를 보존하고 UI링크270개를 별도 제공합니다. 한영README·영상·보고서를 갱신했습니다. 기존Sol담당자가 구현했고 메인이 설계·검증했으며 사용자 지시에 따라 메인도Sol로 이어갑니다. 다음은 원격 검사·보호 병합입니다.
+
+## 2026-10-25 — Hosted P09 inspected / 원격 P09 검사
+
+PR40130640754 passed270 and Node22/24 each235 on merge-test f84050c6, head e1b5932, with matching runtime d95a3627. Main independently inspected6,988 present listed hashes, original native44 route/trace pairs,21 API successes, signatures/state and recorded cleanup; exact18 whole/16 node map exclusions remain explicit. Public README GIF loaded and MP4 matched b567e3a8. [Archived evidence](../research/pilot/2026-10-25-p09/hosted/README.md). Runtime and recording are unchanged; final-head protected checks and merge follow. In parallel, main fixed P10 design in a separate worktree and assigned existing Sol owners; that work does not modify P09 evidence.
+
+원격PR의270개·Node각235개와같은실행지문을확인했습니다. 메인이존재목록해시6,988개·원경로/추적44쌍·성공응답21개·서명/상태·기록된정리를검사하고정확한지도제외18/16개를명시했습니다. 공개GIF로딩·MP4해시도확인했습니다. 실행소스와녹화는동일하며최종커밋필수검사·보호병합을이어갑니다. 별도작업폴더의P10설계·Sol구현은P09근거를바꾸지않습니다.

@@ -77,6 +77,12 @@ jobs:
             ${{ runner.temp }}/simulation-evidence/**/context-edges.tsv
             ${{ runner.temp }}/simulation-evidence/traffic/**/traffic.tar
             ${{ runner.temp }}/simulation-evidence/traffic/public/*.jws.txt
+            ${{ runner.temp }}/simulation-evidence/nodes/**/traffic.tar
+            ${{ runner.temp }}/simulation-evidence/nodes/public/*.jws.txt
+            ${{ runner.temp }}/simulation-evidence/nodes/**/*.log
+            ${{ runner.temp }}/simulation-evidence/nodes/**/*.pid
+            ${{ runner.temp }}/simulation-evidence/nodes/**/*.exit
+            ${{ runner.temp }}/simulation-evidence/nodes/**/*.sh
             !${{ runner.temp }}/simulation-evidence/**/tiles/**
           if-no-files-found: error
           retention-days: 7

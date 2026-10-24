@@ -1,0 +1,58 @@
+{
+  "source_commit": "537cf0cd8f34509fa24023420d71bfa6dabe7614",
+  "implementation_sha256": "d95a3627c0711e8df618e31ceb34c25bc17c7518ac06d0260eed358437152798",
+  "report_path": "research/pilot/2026-10-25-p09/report.html",
+  "report_sha256": "c8c8d3196bb6fc400d6d44648d059a6407f728b8f3711e93d0c3b10f11101530",
+  "capture_method": "Actual Chrome playback, 48.7 seconds at 1280x720/20fps; full H.264/GIF conversion. / 실제 48.7초·1280x720·20fps 화면 녹화와 전체 H.264/GIF 변환.",
+  "raw_capture_sha256": "a5c65a6fdcb9ba9fcab01c42808f585f0cff85026a0fade11765ef5f2cf923ca",
+  "assets": [
+    {
+      "path": "docs/media/demo.mp4",
+      "sha256": "b567e3a8af9bc3ac7bf56d30ce872d6ca1b2085686ace25b1b26abc20c5b9791"
+    },
+    {
+      "path": "docs/media/demo.gif",
+      "sha256": "9cdb004a53461abc2496148c1ef3c46decbb84014db6757f04c05b6e2a809ca2"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p09/report-data.json",
+      "sha256": "b6c68c589eca43a54f6d207898ca7c64aef85eed5e5b333afd553d440ff204b0"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p09/frames/baseline.png",
+      "sha256": "96bc1df6e61b63b94c387938bae8f402f7594e3202f65bc8b4009b1784e6298c"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p09/frames/checks-ko.png",
+      "sha256": "8463be68aef58eff628777e754aa0f09742fe053c2dc77ea9ae6457d393fe772"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p09/frames/expired-ko.png",
+      "sha256": "abd3877a657d89aac546bc299993a9cc66e6172f837af6c61158745fa7ea5c51"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p09/frames/expired.png",
+      "sha256": "6c4ad85e08178709bc5061f50b869ae72dc0c977cb968342e77e4dbd7c464131"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p09/frames/live.png",
+      "sha256": "783ba9150bd0d906d4e0d780e68a0cc53e69326a9326caf587f4ec2668ca3c26"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p09/frames/map.png",
+      "sha256": "8238c9cf94d616f66b3f9768411afa4d74d370e3160ef0a8830ee972293ba0be"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p09/frames/nodes-en.png",
+      "sha256": "4d029d853b85980c732f45d3cc386bcc19182213520526b77a020c199eec0ef4"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p09/frames/nodes-ko.png",
+      "sha256": "b90afce54c7a34c595c74ae6acc1168fb6ef0991cc2eba2a6ce6bfc57c41fc86"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p09/frames/obsolete-en.png",
+      "sha256": "9202fa058c1020d3ebc46b390039e0060888e3b87a6fcc0fbc720f08d0b225d2"
+    }
+  ]
+}

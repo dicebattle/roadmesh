@@ -177,3 +177,5 @@ export async function runTrafficOperation(
     await consumer?.close();
   }
 }
+
+export { sameSelection as assertSameTrafficSelection, provenance as trafficProvenance };

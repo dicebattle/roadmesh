@@ -1,0 +1,17 @@
+{
+  "status": 422,
+  "headers": {
+    "cache-control": "no-store",
+    "connection": "keep-alive",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sat, 24 Oct 2026 20:17:15 GMT",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked"
+  },
+  "body": {
+    "code": "UNAVAILABLE",
+    "reason": "BODY_TOO_LARGE",
+    "message_en": "The routing node cannot return a verified route for this request.",
+    "message_ko": "이 요청에 검증된 경로를 반환할 수 없습니다."
+  }
+}

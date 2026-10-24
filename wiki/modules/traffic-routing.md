@@ -1,8 +1,8 @@
 # Accepted traffic routing / 수용 교통정보 경로 반영
 
-P08 connects durable P07 acceptance to actual Valhalla routing. The [contract](../../docs/27-p08-traffic-activation.md) is authoritative; [development evidence](../../research/pilot/2026-10-25-p08/development/README.md) records 32 passing real-process cases and two earlier failures. The [fresh whole-system report](../../research/pilot/2026-10-25-p08-portability/report.md) verifies all238 local cases and independent inspection. Corrected hosted238 and Node22/24 each217 also passed; main inspected4,122 present original hashes and12 P08 audits. Protected merge is pending.
+P08 connects durable P07 acceptance to actual Valhalla routing. The [contract](../../docs/27-p08-traffic-activation.md) is authoritative; [development evidence](../../research/pilot/2026-10-25-p08/development/README.md) records 32 passing real-process cases and two earlier failures. The [fresh whole-system report](../../research/pilot/2026-10-25-p08-portability/report.md) verifies all238 local cases and independent inspection. Corrected hosted238 and Node22/24 each217 also passed; main inspected4,122 present original hashes and12 P08 audits. Protected PR9 merged as db50502a after final-head checks passed.
 
-P08은 영속 P07 수용을 실제 Valhalla 경로 계산에 연결합니다. 기준은 설계 문서이며, 개발 근거에 실제 프로세스 검사32개 통과와 앞선 두 실패를 함께 기록했습니다. 새 전체보고서의 로컬238개·독립검사도 통과했으며 수정 후 원격238개·Node각217개도 통과했고 메인이 존재하는 원문해시4,122개·P08감사12개를 검사했습니다. 보호병합은 남아 있습니다.
+P08은 영속 P07 수용을 실제 Valhalla 경로 계산에 연결합니다. 기준은 설계 문서이며, 개발 근거에 실제 프로세스 검사32개 통과와 앞선 두 실패를 함께 기록했습니다. 새 전체보고서의 로컬238개·독립검사도 통과했으며 수정 후 원격238개·Node각217개도 통과했고 메인이 존재하는 원문해시4,122개·P08감사12개를 검사했습니다. 최종필수검사후 보호PR9를 db50502a로병합했습니다.
 
 The adapter validates the upstream traffic archive, compiles only accepted LIVE speeds into an immutable graph-specific generation and invokes the actual engine with the original two-point request. It checks accepted state before selection and after the response. Exact event-clock expiry selects default speeds on the next request; results crossing expiry or replacement are refused rather than relabeled.
 

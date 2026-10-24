@@ -1,0 +1,66 @@
+[
+  {
+    "run": "development01",
+    "archive": "development01.tar.gz",
+    "archive_sha256": "0ffe9ff33a8a6b06787b24aa3049b48ecd63b4e8c795b75c316e1fa835e9502d",
+    "archive_bytes": 165773,
+    "archived_files": 73,
+    "omitted": [
+      {
+        "path": "bundle/graph.tar",
+        "sha256": "d3540b752487d99c2b280ab9b847edd46edd6804fbce7af41b174d12df0e8a25",
+        "bytes": 90787840,
+        "reason_en": "Regenerable graph extract omitted; original bytes checked locally only.",
+        "reason_ko": "재생성할 지도 묶음 제외·원바이트는 로컬에서만 확인."
+      }
+    ]
+  },
+  {
+    "run": "development02",
+    "archive": "development02.tar.gz",
+    "archive_sha256": "01ecde7c600b23b347fb86be753ff2e22757dd559cdb1ab78d63ff876590f7be",
+    "archive_bytes": 5320267,
+    "archived_files": 2831,
+    "omitted": [
+      {
+        "path": "bundle/graph.tar",
+        "sha256": "a9d5cefd1287493b96af7f524cda297a92c339433fc507299770382f1871e289",
+        "bytes": 90787840,
+        "reason_en": "Regenerable graph extract omitted; original bytes checked locally only.",
+        "reason_ko": "재생성할 지도 묶음 제외·원바이트는 로컬에서만 확인."
+      }
+    ]
+  },
+  {
+    "run": "development03",
+    "archive": "development03.tar.gz",
+    "archive_sha256": "49fac40d7d9322689be5295f84726f550a067775fd8bd2828980dae2f486ed7c",
+    "archive_bytes": 5434455,
+    "archived_files": 2866,
+    "omitted": [
+      {
+        "path": "bundle/graph.tar",
+        "sha256": "031ad2d1d14fad4b54cc930ee65797673a403cdafec1769eebf3a3fef0665cb2",
+        "bytes": 90787840,
+        "reason_en": "Regenerable graph extract omitted; original bytes checked locally only.",
+        "reason_ko": "재생성할 지도 묶음 제외·원바이트는 로컬에서만 확인."
+      }
+    ]
+  },
+  {
+    "run": "development04",
+    "archive": "development04.tar.gz",
+    "archive_sha256": "a7b1eaff3ce4f7b056d049ce267e735908552cc9b53d363c5610718a234749ae",
+    "archive_bytes": 5636304,
+    "archived_files": 2938,
+    "omitted": [
+      {
+        "path": "bundle/graph.tar",
+        "sha256": "efaeca32591f198e484c85d0c0c51b89968fa33661cd55ada7b4853f4f882061",
+        "bytes": 90787840,
+        "reason_en": "Regenerable graph extract omitted; original bytes checked locally only.",
+        "reason_ko": "재생성할 지도 묶음 제외·원바이트는 로컬에서만 확인."
+      }
+    ]
+  }
+]
