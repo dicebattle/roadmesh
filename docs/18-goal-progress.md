@@ -4,6 +4,12 @@ The goal remains the complete local pilot in [P01–P14](11-local-pilot.md), not
 
 목표는 이번 차례에 끝낸 모듈만이 아니라 [P01~P14](11-local-pilot.md)의 전체 로컬 파일럿입니다. 구현 단위마다 구현된 모든 모듈을 함께 실행하고 실제 결과를 검사한 뒤 영어·한국어 보고서·캡처·최신 녹화·두 README를 갱신해 검증된 작업을 푸시합니다. 메인은 설계·최종 증거, Sol은 구현을 담당합니다.
 
+## Seoul requirement / 서울 요구사항
+
+The user now requires real Seoul OSM roads for the primary simulation. Complete [the Seoul transition](21-seoul-road-simulation.md) before P05; tiny-city remains regression-only. Implementation is pending despite successful source/build probes.
+
+사용자 요구에 따라 주요 시뮬레이션을 실제 서울 OSM 도로로 전환한 뒤 P05를 진행합니다. tiny-city는 회귀용입니다. 자료·생성 조사 성공과 별개로 구현은 아직 전입니다.
+
 ## Completion audit / 완료 판정표
 
 | Requirement / 요구사항 | Current evidence / 현재 근거 | State / 상태 |
@@ -28,4 +34,4 @@ A green unit suite does not finish this goal. Completion requires the full modul
 
 단위 검사 성공만으로 목표를 완료하지 않습니다. 전체 모듈·시나리오 계약, 필요한 실제 프로세스/통신 장애, 검사한 통합 증거, 최신 미디어/문서, GitHub 반영이 필요합니다. 누락·약한 증거는 미완료로 둡니다. 실제 지역 100/100·운영 배포·실제 모바일 시험은 별도이며 합성 성공으로 주장하지 않습니다.
 
-Next design: [P05 durable ingestion](20-p05-ingestion-design.md). / 다음 설계는 P05 영속 수집입니다.
+Next: [Seoul road-network transition](21-seoul-road-simulation.md), then P05. / 다음은 서울 도로망 전환 후 P05입니다.

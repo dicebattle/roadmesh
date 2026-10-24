@@ -14,10 +14,11 @@
     "pilot:checks": "node dist/tools/pilot_checks.js",
     "graph:check": "node dist/tools/test_graph.js",
     "simulate": "node dist/tools/vehicle_simulator.js",
-    "simulation:check": "node dist/tools/simulation_checks.js",
+    "simulation:check": "node dist/tools/seoul_checks.js",
     "report:serve": "node dist/tools/report_server.js",
     "media:check": "node dist/tools/media_manifest.js",
-    "match": "node dist/tools/map_matcher.js"
+    "match": "node dist/tools/map_matcher.js",
+    "simulation:tiny": "node dist/tools/simulation_checks.js"
   },
   "dependencies": {
     "jsonc-parser": "3.3.1",

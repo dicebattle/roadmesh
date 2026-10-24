@@ -1,0 +1,72 @@
+{
+    "file": {
+        "name": "/work/seoul.osm.pbf",
+        "format": "PBF",
+        "compression": "none",
+        "size": 39784193
+    },
+    "header": {
+        "boxes": [],
+        "with_history": false,
+        "option": {
+            "generator": "osmium/1.16.0",
+            "pbf_dense_nodes": "true",
+            "pbf_optional_feature_0": "Sort.Type_then_ID",
+            "sorting": "Type_then_ID"
+        }
+    },
+    "data": {
+        "bbox": [
+            126.5829062,
+            37.2014375,
+            127.5106405,
+            37.8849226
+        ],
+        "timestamp": {
+            "first": "2008-08-03T16:20:52Z",
+            "last": "2026-10-23T16:49:39Z"
+        },
+        "objects_ordered": true,
+        "multiple_versions": false,
+        "crc32": "77931cce",
+        "count": {
+            "changesets": 0,
+            "nodes": 4050074,
+            "ways": 625257,
+            "relations": 16543
+        },
+        "minid": {
+            "changesets": 0,
+            "nodes": 26608957,
+            "ways": 22785095,
+            "relations": 27411
+        },
+        "maxid": {
+            "changesets": 0,
+            "nodes": 14313320818,
+            "ways": 1571072092,
+            "relations": 21760924
+        },
+        "buffers": {
+            "count": 6879,
+            "size": 431572912,
+            "capacity": 453378048
+        },
+        "metadata": {
+            "all_objects": {
+                "version": true,
+                "timestamp": true,
+                "changeset": false,
+                "user": false,
+                "uid": false
+            },
+            "some_objects": {
+                "version": true,
+                "timestamp": true,
+                "changeset": false,
+                "user": false,
+                "uid": false
+            }
+        }
+    }
+}

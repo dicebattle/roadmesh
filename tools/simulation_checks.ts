@@ -866,4 +866,5 @@ export function main(
     return error instanceof IntegrationFailure ? 1 : 2;
   }
 }
+export const runTinyChecks = runChecks;
 if (isMain(import.meta.url)) process.exitCode = main();

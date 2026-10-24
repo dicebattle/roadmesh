@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1",
+  "source_id": "geofabrik-south-korea-20261023",
+  "url": "https://download.geofabrik.de/asia/south-korea-261023.osm.pbf",
+  "file_name": "south-korea-261023.osm.pbf",
+  "size_bytes": 289916859,
+  "sha256": "282d012b7629c643695f286d4424d7f6d88548d99edb5577ca5b678906f13c17",
+  "md5": "a80fd58c46e050f34644071d0360646c",
+  "license": "ODbL-1.0",
+  "attribution": "© OpenStreetMap contributors",
+  "license_url": "https://www.openstreetmap.org/copyright",
+  "source_url": "https://download.geofabrik.de/asia/south-korea.html",
+  "extract": {
+    "bounds": [126.7, 37.4, 127.25, 37.75],
+    "strategy": "smart",
+    "strategy_options": ["types=restriction"]
+  },
+  "description_en": "Pinned public map bytes; supplied files must have the same hash. Missing source fails closed.",
+  "description_ko": "공개 지도 원본 바이트를 고정하며 직접 지정한 파일도 같은 해시여야 합니다. 원본이 없으면 실패합니다."
+}

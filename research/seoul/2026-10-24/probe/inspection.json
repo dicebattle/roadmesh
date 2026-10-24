@@ -1,0 +1,35 @@
+{
+  "source_file_name": "south-korea-261023.osm.pbf",
+  "source_size_bytes": 289916859,
+  "source_sha256": "282d012b7629c643695f286d4424d7f6d88548d99edb5577ca5b678906f13c17",
+  "upstream_md5": "a80fd58c46e050f34644071d0360646c",
+  "extraction_bytes": 39784193,
+  "bounds": [
+    126.7,
+    37.4,
+    127.25,
+    37.75
+  ],
+  "data_kind": "OPENSTREETMAP_ROAD_GEOMETRY",
+  "vehicle_activity": "not generated in this design probe",
+  "license": "ODbL-1.0",
+  "attribution": "© OpenStreetMap contributors",
+  "graph_build_ms": 11160,
+  "extract_ms": 7811,
+  "resources": {
+    "cpus": 2,
+    "memory_gib": 4,
+    "network": "none"
+  },
+  "route_interior_edges": {
+    "teheran": 37,
+    "downtown": 24,
+    "mapo-bridge": 18
+  },
+  "context_export_sha256": "39cebc4b140f9682d0c7fc1afd00f09b41c3f49b4458c2128f0e5937080cc634",
+  "context_export_size": 8297919,
+  "context_valid_lines": 149857,
+  "cleanup_verified": true,
+  "limitations_en": "Design probe, not final module acceptance. Large PBF/tiles/export stdout omitted; hashes and compact raw responses retained. First extraction attempt rejected an unsupported long flag before reading data and removed its container.",
+  "limitations_ko": "설계 조사이며 최종 모듈 수용 증거가 아닙니다. 큰 PBF·타일·내보내기원문은 생략하고 해시·작은 응답을 보존합니다. 첫 추출은 지원하지 않는 긴 옵션으로 데이터 읽기 전 거부됐고 컨테이너를 제거했습니다."
+}

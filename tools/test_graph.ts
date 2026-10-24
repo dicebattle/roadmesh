@@ -132,7 +132,12 @@ export class OwnedGraphContainer {
   readonly name = `routelens-p02-${this.runId}`;
   private attempted = false;
   constructor(private readonly commands: GraphCommands) {}
-  start(image: string, output: string, readOnlyGraph?: string): void {
+  start(
+    image: string,
+    output: string,
+    readOnlyGraph?: string,
+    options: { memory?: "2g" | "4g"; sourcePath?: string } = {},
+  ): void {
     this.attempted = true;
     this.commands.command(
       [
@@ -146,7 +151,7 @@ export class OwnedGraphContainer {
         "--cpus",
         "2",
         "--memory",
-        "2g",
+        options.memory ?? "2g",
         "--stop-timeout",
         "1",
         "--mount",
@@ -155,6 +160,12 @@ export class OwnedGraphContainer {
           ? [
               "--mount",
               `type=bind,src=${resolve(readOnlyGraph)},dst=/graph,readonly`,
+            ]
+          : []),
+        ...(options.sourcePath
+          ? [
+              "--mount",
+              `type=bind,src=${resolve(options.sourcePath)},dst=/source/source.osm.pbf,readonly`,
             ]
           : []),
         "--entrypoint",
@@ -262,7 +273,7 @@ function writeJson(output: string, name: string, value: unknown): void {
     "utf8",
   );
 }
-function prepareImage(commands: GraphCommands): {
+export function prepareImage(commands: GraphCommands): {
   id: string;
   platform: string;
   dockerfile_sha256: string;

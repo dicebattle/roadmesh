@@ -1,10 +1,27 @@
 RouteLens
 Copyright 2026 RouteLens contributors
 
-This repository currently contains original planning documentation, an evaluation
-input validator, synthetic examples, tests and public upstream metadata. No
-routing engine, map dataset, real GPS trace, or third-party runtime is bundled.
+Project code and documentation are licensed under Apache-2.0.
+프로젝트 코드와 문서는 Apache-2.0입니다.
 
-Future distributions must preserve all applicable upstream notices. The
-Apache-2.0 license for this repository does not relicense OpenStreetMap data,
-external traffic datasets, or third-party components.
+OpenStreetMap data and derived road geometry are © OpenStreetMap contributors,
+available under the Open Database License (ODbL)1.0. The project license does
+not relicense those datasets. The Seoul simulation uses a pinned Geofabrik
+South Korea extract; see wiki/sources/seoul-osm.md and the recorded source
+manifest. Map-derived files under research/seoul/ retain ODbL attribution;
+large source PBF and built tiles remain local/ignored unless explicitly
+published with their data license. Synthetic vehicle activity is not actual
+personal GPS history.
+
+OpenStreetMap 원본·파생 도로 지형은 OSM 기여자의 ODbL1.0 자료이며
+프로젝트 라이선스로 바뀌지 않습니다. 서울 시뮬레이션은 고정 Geofabrik
+추출본을 사용하고 출처 기록·목록을 보존합니다. research/seoul/의 파생
+지도는 ODbL 표기를 유지하며 큰 PBF·타일은 별도 라이선스와 명시적으로
+공개하지 않는 한 로컬/Git제외로 둡니다. 합성 차량은 개인 GPS 이력이 아닙니다.
+
+https://www.openstreetmap.org/copyright
+https://opendatacommons.org/licenses/odbl/1-0/
+https://download.geofabrik.de/asia/south-korea.html
+
+Upstream tools and external data retain their respective licenses.
+외부 도구와 데이터는 각각의 라이선스를 유지합니다.

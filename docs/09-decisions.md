@@ -47,3 +47,9 @@
 Use pinned Valhalla map snapping behind a TypeScript adapter; do not fork its matcher. The P04 adapter accepts only supported synthetic observations on a verified graph, keeps ambiguous/gapped/partial evidence explicit, and derives complete traversal times from observation timestamps rather than engine ETA. A bounded session finalizes once after all batches; no streaming or durable queue claim. [Contract and fixed checks](19-p04-matching-design.md). Revisit thresholds only with documented new evidence; real-road matching quality remains unmeasured.
 
 고정 Valhalla 매칭을 TypeScript 연결기로 재사용하며 엔진 매칭기를 포크하지 않습니다. 검증 그래프의 지원 합성 관측만 받고 모호·누락·일부 증거를 명시하며 예상 주행시간 대신 원래 관측시각으로 완전 통과시간을 만듭니다. 크기가 제한된 세션이 모든 배치 후 한 번 확정하며 실시간·영속 큐로 주장하지 않습니다. 새 근거를 기록한 뒤에만 기준을 재검토하며 실제 도로 매칭 품질은 아직 측정하지 않았습니다.
+
+## ADR-021: Actual Seoul roads for the main pilot / 주요 파일럿에 실제 서울 도로 사용
+
+The user requires actual Seoul roads rather than a simplified invented network. Keep tiny-city as regression coverage and make a pinned OSM Seoul-envelope graph the primary integration/demo. Add explicit latitude-aware curved-polyline geometry, independent synthetic movement and observations-only matching. Preserve source/ODbL attribution and full-denominator evaluation. This transition now precedes P05; prior tiny-city evidence remains valid only within its original scope. [Contract](21-seoul-road-simulation.md).
+
+사용자가 단순 가상망 대신 실제 서울 도로를 요구했습니다. tiny-city는 회귀용으로 유지하고 고정 OSM 서울 범위 그래프를 주요 통합·데모로 사용합니다. 위도를 반영한 곡선 계산·독립 합성 이동·관측 전용 매칭을 추가하고 출처/ODbL·전체 분모 평가를 보존합니다. P05보다 먼저 전환하며 과거 tiny-city 증거는 원래 범위 안에서만 유효합니다.

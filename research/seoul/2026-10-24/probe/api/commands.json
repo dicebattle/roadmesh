@@ -1,0 +1,159 @@
+[
+  {
+    "args": [
+      "create",
+      "--name",
+      "routelens-seoul-api-2f0c10e2-d059-464e-9732-80434d88ad32",
+      "--label",
+      "io.routelens.run_id=2f0c10e2-d059-464e-9732-80434d88ad32",
+      "--network",
+      "none",
+      "--cpus",
+      "2",
+      "--memory",
+      "2g",
+      "--mount",
+      "type=bind,src=/Users/dice/Documents/routelens/data/seoul-probe-20261024-r2,dst=/graph,readonly",
+      "--mount",
+      "type=bind,src=/Users/dice/Documents/routelens/data/seoul-api-probe-20261024,dst=/work",
+      "--entrypoint",
+      "/bin/sh",
+      "sha256:8b4a0609466e08dd6b384be7104ffa3f1c43270d9a8e931f3d93e2243566b4b6",
+      "-c",
+      "sleep 600"
+    ],
+    "status": 0,
+    "stdout": "000.stdout.txt",
+    "stderr": "000.stderr.txt"
+  },
+  {
+    "args": [
+      "start",
+      "routelens-seoul-api-2f0c10e2-d059-464e-9732-80434d88ad32"
+    ],
+    "status": 0,
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt"
+  },
+  {
+    "args": [
+      "exec",
+      "routelens-seoul-api-2f0c10e2-d059-464e-9732-80434d88ad32",
+      "valhalla_service",
+      "/work/config.json",
+      "trace_attributes",
+      "/work/teheran.request.json"
+    ],
+    "status": 0,
+    "stdout": "002.stdout.txt",
+    "stderr": "002.stderr.txt"
+  },
+  {
+    "args": [
+      "exec",
+      "routelens-seoul-api-2f0c10e2-d059-464e-9732-80434d88ad32",
+      "valhalla_service",
+      "/work/config.json",
+      "locate",
+      "/work/teheran.locate.request.json"
+    ],
+    "status": 0,
+    "stdout": "003.stdout.txt",
+    "stderr": "003.stderr.txt"
+  },
+  {
+    "args": [
+      "exec",
+      "routelens-seoul-api-2f0c10e2-d059-464e-9732-80434d88ad32",
+      "valhalla_service",
+      "/work/config.json",
+      "trace_attributes",
+      "/work/downtown.request.json"
+    ],
+    "status": 0,
+    "stdout": "004.stdout.txt",
+    "stderr": "004.stderr.txt"
+  },
+  {
+    "args": [
+      "exec",
+      "routelens-seoul-api-2f0c10e2-d059-464e-9732-80434d88ad32",
+      "valhalla_service",
+      "/work/config.json",
+      "locate",
+      "/work/downtown.locate.request.json"
+    ],
+    "status": 0,
+    "stdout": "005.stdout.txt",
+    "stderr": "005.stderr.txt"
+  },
+  {
+    "args": [
+      "exec",
+      "routelens-seoul-api-2f0c10e2-d059-464e-9732-80434d88ad32",
+      "valhalla_service",
+      "/work/config.json",
+      "trace_attributes",
+      "/work/mapo-bridge.request.json"
+    ],
+    "status": 0,
+    "stdout": "006.stdout.txt",
+    "stderr": "006.stderr.txt"
+  },
+  {
+    "args": [
+      "exec",
+      "routelens-seoul-api-2f0c10e2-d059-464e-9732-80434d88ad32",
+      "valhalla_service",
+      "/work/config.json",
+      "locate",
+      "/work/mapo-bridge.locate.request.json"
+    ],
+    "status": 0,
+    "stdout": "007.stdout.txt",
+    "stderr": "007.stderr.txt"
+  },
+  {
+    "args": [
+      "exec",
+      "routelens-seoul-api-2f0c10e2-d059-464e-9732-80434d88ad32",
+      "valhalla_export_edges",
+      "-c",
+      "/work/config.json",
+      "-u",
+      "-x",
+      "\t"
+    ],
+    "status": 0,
+    "stdout": "008.stdout.txt",
+    "stderr": "008.stderr.txt"
+  },
+  {
+    "args": [
+      "inspect",
+      "routelens-seoul-api-2f0c10e2-d059-464e-9732-80434d88ad32"
+    ],
+    "status": 0,
+    "stdout": "009.stdout.txt",
+    "stderr": "009.stderr.txt"
+  },
+  {
+    "args": [
+      "rm",
+      "-f",
+      "routelens-seoul-api-2f0c10e2-d059-464e-9732-80434d88ad32"
+    ],
+    "status": 0,
+    "stdout": "010.stdout.txt",
+    "stderr": "010.stderr.txt"
+  },
+  {
+    "args": [
+      "inspect",
+      "routelens-seoul-api-2f0c10e2-d059-464e-9732-80434d88ad32"
+    ],
+    "status": 1,
+    "stdout": "011.stdout.txt",
+    "stderr": "011.stderr.txt"
+  }
+]

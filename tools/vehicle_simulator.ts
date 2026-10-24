@@ -27,8 +27,18 @@ import {
 import { loadGraphBundle, type GraphBundle } from "./graph_bundle.js";
 import { PythonRandom } from "./python_random.js";
 import { sourceIdentity } from "./pilot_runner.js";
+import { geodesicSphere } from "./geodesy.js";
 import type { EdgeMapping } from "./graph_evidence.js";
 
+export interface SimulationGraph {
+  graphId: string;
+  edges: EdgeMapping[];
+  fixture: {
+    fixture_id: string;
+    restriction?: { from_way: number; via_node: number; to_way: number };
+  };
+  geometry_policy?: "geodesic-sphere-v1";
+}
 export const EARTH_RADIUS_M = 6371008.8;
 export const GENERATOR_POLICY = "tiny-city-kinematics-v1";
 export const NOISE_POLICY = "gps-noise-v1";
@@ -121,7 +131,9 @@ export function localDistance(a: number[], b: number[]): number {
     (b[1]! - a[1]!) * METRES_PER_DEGREE,
   );
 }
-function segmentLength(edge: EdgeMapping): number {
+function segmentLength(edge: EdgeMapping, bundle?: SimulationGraph): number {
+  if (bundle?.geometry_policy === "geodesic-sphere-v1")
+    return geodesicSphere.length(edge.directed_geometry);
   return edge.directed_geometry
     .slice(1)
     .reduce(
@@ -132,7 +144,7 @@ function segmentLength(edge: EdgeMapping): number {
 }
 function pathEdges(
   vehicle: SimulationVehicle,
-  bundle: GraphBundle,
+  bundle: SimulationGraph,
 ): EdgeMapping[] {
   const edges = vehicle.path.map((segment) => {
     const edge = bundle.edges.find(
@@ -151,7 +163,9 @@ function pathEdges(
     const previous = edges[index - 1]!,
       next = edges[index]!;
     if (
-      localDistance(
+      (bundle.geometry_policy === "geodesic-sphere-v1"
+        ? geodesicSphere.distance
+        : localDistance)(
         previous.directed_geometry.at(-1)!,
         next.directed_geometry[0]!,
       ) > 0.001
@@ -163,6 +177,7 @@ function pathEdges(
       );
     const restriction = bundle.fixture.restriction;
     if (
+      restriction &&
       previous.osm_way_id === restriction.from_way &&
       next.osm_way_id === restriction.to_way &&
       previous.forward &&
@@ -174,7 +189,7 @@ function pathEdges(
 }
 export function validateSimulation(
   value: unknown,
-  bundle: GraphBundle,
+  bundle: SimulationGraph,
 ): SimulationSpec {
   record(value, "simulation", [
     "schema_version",
@@ -189,7 +204,11 @@ export function validateSimulation(
   ]);
   if (
     value.schema_version !== "0.1" ||
-    value.fixture_id !== "tiny-city-v1" ||
+    (value.fixture_id !== "tiny-city-v1" &&
+      !(
+        value.fixture_id === "seoul-osm-20261023-v1" &&
+        bundle.geometry_policy === "geodesic-sphere-v1"
+      )) ||
     value.fixture_id !== bundle.fixture.fixture_id ||
     value.graph_id !== bundle.graphId
   )
@@ -238,7 +257,12 @@ export function validateSimulation(
     ids.add(raw.vehicle_id);
     integer(raw.departure_ms, "departure_ms", 0, value.duration_ms);
     number(raw.noise_radius_m, "noise_radius_m", 0, 20);
-    array(raw.path, "path", 1, 20);
+    array(
+      raw.path,
+      "path",
+      1,
+      bundle.geometry_policy === "geodesic-sphere-v1" ? 128 : 20,
+    );
     for (const segment of raw.path) {
       record(segment, "path segment", ["label", "forward"]);
       identifier(segment.label, "label");
@@ -287,7 +311,10 @@ export function validateSimulation(
     }
     const vehicle = raw as unknown as SimulationVehicle,
       edges = pathEdges(vehicle, bundle);
-    const distance = edges.reduce((sum, edge) => sum + segmentLength(edge), 0);
+    const distance = edges.reduce(
+      (sum, edge) => sum + segmentLength(edge, bundle),
+      0,
+    );
     if (!(distance > 0) || !Number.isFinite(timeAtDistance(vehicle, distance)))
       fail(
         "speed_profile",
@@ -351,7 +378,7 @@ function noiseSeed(seed: number, vehicleId: string): number {
 }
 export function generateSimulation(
   spec: SimulationSpec,
-  bundle: GraphBundle,
+  bundle: SimulationGraph,
 ): SimulationResult {
   const truth: SimulationTruth = { samples: [], traversals: [] },
     observations: Observation[] = [],
@@ -360,7 +387,7 @@ export function generateSimulation(
     a.vehicle_id < b.vehicle_id ? -1 : 1,
   )) {
     const edges = pathEdges(vehicle, bundle),
-      lengths = edges.map(segmentLength),
+      lengths = edges.map((edge) => segmentLength(edge, bundle)),
       total = lengths.reduce((a, b) => a + b, 0),
       arrival = timeAtDistance(vehicle, total),
       arrivalMs = Math.ceil(arrival);
@@ -402,7 +429,13 @@ export function generateSimulation(
         index++;
       }
       const edge = edges[index]!,
-        position = positionAtDistance(edge, travelled - preceding);
+        position =
+          bundle.geometry_policy === "geodesic-sphere-v1"
+            ? geodesicSphere.position(
+                edge.directed_geometry,
+                travelled - preceding,
+              )
+            : positionAtDistance(edge, travelled - preceding);
       const identity: SampleIdentity = {
         sample_id: `${spec.simulation_id}:${vehicle.vehicle_id}:${offset}`,
         vehicle_id: vehicle.vehicle_id,
@@ -427,18 +460,31 @@ export function generateSimulation(
         )
       )
         omissions.push({ ...identity, reason: "SCHEDULED_DROP" });
-      else
+      else {
+        const noisy =
+          bundle.geometry_policy === "geodesic-sphere-v1"
+            ? geodesicSphere.offset(
+                position,
+                radius * Math.cos(angle),
+                radius * Math.sin(angle),
+              )
+            : undefined;
         observations.push({
           ...identity,
           longitude: roundedCoordinate(
-            position[0]! + (radius * Math.cos(angle)) / METRES_PER_DEGREE,
+            noisy
+              ? noisy[0]!
+              : position[0]! + (radius * Math.cos(angle)) / METRES_PER_DEGREE,
           ),
           latitude: roundedCoordinate(
-            position[1]! + (radius * Math.sin(angle)) / METRES_PER_DEGREE,
+            noisy
+              ? noisy[1]!
+              : position[1]! + (radius * Math.sin(angle)) / METRES_PER_DEGREE,
           ),
           accuracy_m: Math.max(0.01, vehicle.noise_radius_m),
           source_class: "SYNTHETIC",
         });
+      }
     }
   }
   const order = (a: SampleIdentity, b: SampleIdentity): number =>
@@ -460,7 +506,9 @@ export function generateSimulation(
         (item) => item.vehicle_id === sample.vehicle_id,
       )!;
     return (
-      localDistance(
+      (bundle.geometry_policy === "geodesic-sphere-v1"
+        ? geodesicSphere.distance
+        : localDistance)(
         [actual.longitude, actual.latitude],
         [sample.longitude, sample.latitude],
       ) <=
@@ -555,7 +603,7 @@ export function generateSimulation(
 }
 export function loadSimulationSpec(
   path: string,
-  bundle: GraphBundle,
+  bundle: SimulationGraph,
 ): { spec: SimulationSpec; digest: string } {
   const fd = openSync(path, "r"),
     bytes = Buffer.alloc(1024 * 1024 + 1);
