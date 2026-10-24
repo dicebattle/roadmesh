@@ -1,0 +1,28 @@
+{
+  "status": "INTERRUPTED",
+  "source": "040117b936498a1178a4f2d23b1e821b82c121e8",
+  "observed_at": "2026-10-24T16:06:56.707Z",
+  "parent_pid_absent": 31424,
+  "observer_pid_absent": 32028,
+  "original_sessions_missing": [
+    80157,
+    88813
+  ],
+  "docker_at_resume": "daemon unavailable; orb status Stopped",
+  "completed_stages": [
+    "tiny48",
+    "Seoul35",
+    "P05 34",
+    "P06 34"
+  ],
+  "publication": "Database readiness polling; no assertions or final manifest",
+  "whole_success": false,
+  "cause": "Unknown; stopped runtime and absent processes observed, not an application exception",
+  "cleanup": {
+    "container": "routelens-p05-fe0b9a64-a78a-474b-8306-3825efe54f9e",
+    "volume": "routelens-p05-fe0b9a64-a78a-474b-8306-3825efe54f9e-db",
+    "label_verified": "fe0b9a64-a78a-474b-8306-3825efe54f9e",
+    "removed": true,
+    "private_directory_removed": true
+  }
+}
