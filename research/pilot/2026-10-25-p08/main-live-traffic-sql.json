@@ -1,0 +1,42 @@
+{
+  "observed_at_utc": "2026-10-24T18:06:50.037Z",
+  "owned_container": "routelens-p05-2ac5324d-897c-4424-a348-d3c04684a7f2",
+  "namespace": "p08-2ac5324d897c4424",
+  "query": "SELECT jsonb_build_object('clock',(SELECT event_time_utc FROM routelens_p05.namespace_clock WHERE namespace='p08-2ac5324d897c4424'),'traversals',(SELECT count(*) FROM routelens_p05.traversals WHERE namespace='p08-2ac5324d897c4424'),'publications',(SELECT jsonb_agg(to_jsonb(p)) FROM (SELECT publisher_id,sequence,traffic_snapshot_id,encode(sha256(artifact),'hex') AS actual_artifact_sha256,octet_length(artifact) AS byte_length,published_at,valid_until FROM routelens_p07.publications WHERE namespace='p08-2ac5324d897c4424' ORDER BY publisher_id,sequence)p),'consumers',(SELECT jsonb_agg(to_jsonb(c)) FROM (SELECT consumer_id,high_water,last_snapshot_id,octet_length(artifact) AS active_byte_length FROM routelens_p07.consumer_states WHERE namespace='p08-2ac5324d897c4424' ORDER BY consumer_id)c));",
+  "readback": {
+    "clock": "2026-10-24T00:04:30+00:00",
+    "consumers": [
+      {
+        "high_water": 1,
+        "consumer_id": "p08-key-revocation",
+        "last_snapshot_id": "3b5005d55c206eef7ea76830e519ab5c1795ce112f38e4e53fb5e53f9540b144",
+        "active_byte_length": 10469
+      },
+      {
+        "high_water": 1,
+        "consumer_id": "p08-main",
+        "last_snapshot_id": "3b5005d55c206eef7ea76830e519ab5c1795ce112f38e4e53fb5e53f9540b144",
+        "active_byte_length": 10469
+      },
+      {
+        "high_water": 1,
+        "consumer_id": "p08-offline-ttl",
+        "last_snapshot_id": "3b5005d55c206eef7ea76830e519ab5c1795ce112f38e4e53fb5e53f9540b144",
+        "active_byte_length": 10469
+      }
+    ],
+    "traversals": 15,
+    "publications": [
+      {
+        "sequence": 1,
+        "byte_length": 10469,
+        "valid_until": "2026-10-24T00:07:00+00:00",
+        "published_at": "2026-10-24T00:04:30+00:00",
+        "publisher_id": "seoul-p08-publisher",
+        "traffic_snapshot_id": "3b5005d55c206eef7ea76830e519ab5c1795ce112f38e4e53fb5e53f9540b144",
+        "actual_artifact_sha256": "3b5005d55c206eef7ea76830e519ab5c1795ce112f38e4e53fb5e53f9540b144"
+      }
+    ]
+  },
+  "point_in_time_only": true
+}

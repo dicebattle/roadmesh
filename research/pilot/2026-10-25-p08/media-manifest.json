@@ -1,0 +1,50 @@
+{
+  "source_commit": "eb541399ed11c7fd26a14f9336a0a7c4ebc51639",
+  "implementation_sha256": "21b3fc4aa287e009a293bbfab3046b0b8535540d6b683e239b2fe9c57ac2e1ff",
+  "report_path": "research/pilot/2026-10-25-p08/report.html",
+  "report_sha256": "10eb8dc0bf1e49392583eda91e2ceb985b203b55d622a296ed38166a87a062e7",
+  "capture_method": "Actual isolated Chrome UI playback, 34.7 seconds at 1280x720/20fps, full H.264/GIF conversion. / 실제 격리 Chrome 화면을 34.7초·1280x720·20fps로 녹화하고 전체를 H.264/GIF로 변환했습니다.",
+  "raw_capture_sha256": "771f6b8c42bda7ffe4c0b6f7f6ed0f37b71e525df601450d487246ca384b3b05",
+  "assets": [
+    {
+      "path": "docs/media/demo.mp4",
+      "sha256": "dab246d5926f793b1173c9986641bb51228661055b7f58a443beec21f316a320"
+    },
+    {
+      "path": "docs/media/demo.gif",
+      "sha256": "9bf1248b1279ea9973dd3f6b334443144c4874bb8d9a4a7690a25c67ecd8015a"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p08/report-data.json",
+      "sha256": "31ba32c4bb43c81a0237e0b347ff1bd63451fe02d44f6746624791815c8ff784"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p08/frames/checks.png",
+      "sha256": "a2829c8bd59fd7746435c56cf2b7861caade87edbdeec39aa988abf62ec0b879"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p08/frames/comparison-ko.png",
+      "sha256": "bd7a261ff5534d7ba80b0213cc4cbc6a0581d60f468a0667d7926179b5e802bc"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p08/frames/expired.png",
+      "sha256": "bf2be278c98e43afe0b59d2140e44142ccb3622586c7572c380438bb44f503b5"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p08/frames/live.png",
+      "sha256": "a08185404bed3ef01182409229eef1e6697ec12ca1e7411b9b35bf188443d593"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p08/frames/map.png",
+      "sha256": "7f258b1be5f67e829e502323530724a4dfabbfa83a6baf424bafde123f1af91a"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p08/frames/traffic-en.png",
+      "sha256": "44c6048253048504351559c29cdee1f56b5b1f9fd23831ca0521adfd1f13e3c2"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p08/frames/traffic-ko.png",
+      "sha256": "758965638449e955616a27f54bcd3f14a6dba761807483e7396d69880f5984c3"
+    }
+  ]
+}

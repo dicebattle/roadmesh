@@ -22,14 +22,14 @@ The user now requires real Seoul OSM roads for the primary simulation. Complete 
 | P05 durable ingestion / 영속 수집 | [111-check report](../research/pilot/2026-10-24-p05/report.md) | Local and hosted verified / 로컬·원격 검증 |
 | P06 aggregation / 집계 | [P06 report](../research/pilot/2026-10-24-p06/report.md) | Local/hosted151 and Node22/24 each183 verified / 로컬·원격151·Node각183 검증 |
 | P07 signed publication / 서명 게시 | [P07 report](../research/pilot/2026-10-25-p07-claim-fix/report.md) | Corrected local/hosted206 and Node22/24 each202 verified / 수정후로컬·원격206·Node각202검증 |
-| P08 actual traffic consumption / 속도 반영 | [Contract](27-p08-traffic-activation.md), [development proof](../research/pilot/2026-10-25-p08/development/README.md) | Actual development32 passed; fresh whole and hosted delivery pending / 실제 개발32 통과·새 전체/원격 반영 대기 |
+| P08 actual traffic consumption / 속도 반영 | [Contract](27-p08-traffic-activation.md), [report](../research/pilot/2026-10-25-p08/report.md) | Clean local238 and independent inspection passed; hosted delivery pending / 깨끗한 로컬238·독립 검사 통과·원격 반영 대기 |
 | P09 two nodes, P10 gateway/failover / 두 노드·중계/장애 전환 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P11 complete client, P12 complete fault matrix / 전체 화면·장애 행렬 | Evidence replay and incremental runner implemented / 증거 재생·점진 실행기 구현 | Partial implementation / 일부 구현 |
 | P13 local Cloudflare parity / Cloudflare 로컬 비교 | [Module plan](11-local-pilot.md) | Pending / 미구현 |
 | P14b engine integration / 엔진 통합 검사 | Extend CI with current whole-system runner / 현재 전체 실행기를 CI에 연결 | Hosted current-module run verified; full matrix remains / 현재 모듈 원격 검증·전체 행렬 남음 |
-| Whole implemented-system simulation / 구현 모듈 전체 시뮬레이션 | [Tiny, Seoul, P05, P06 and P07 report](../research/pilot/2026-10-25-p07-claim-fix/report.md) / 작은 회귀·서울·P05·P06·P07 보고서 | Locally verified / 로컬 검증 |
-| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/pilot/2026-10-25-p07-claim-fix/report.md) / 보고서·캡처 | P07 local/hosted evidence inspected / P07 로컬·원격 증거 검사 |
-| README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | Current Seoul/P07 recording and media hashes verified / 현재 서울·P07 녹화·해시 검증 |
+| Whole implemented-system simulation / 구현 모듈 전체 시뮬레이션 | [P01–P08 report](../research/pilot/2026-10-25-p08/report.md) / P01~P08 보고서 | Clean local238 verified / 깨끗한 로컬238 검증 |
+| Captured test reports on GitHub / 캡처·보고서 게시 | [Report and captures](../research/pilot/2026-10-25-p08/report.md) / 보고서·캡처 | P08 local evidence inspected; push pending / P08 로컬 원문 검사·푸시 대기 |
+| README EN/KO with recorded demo / 한영 README·실제 녹화 | [English](../README.md), [한국어](../README.ko.md), [recording](media/latest.json) | Current Seoul/P08 34.7s recording and hashes verified / 현재 서울·P08 34.7초 녹화·해시 검증 |
 | Refresh on implementation changes / 구현 변경 때 갱신 | `media:check` fingerprint/hash/README checks / 지문·해시·README 검사 | Locally verified / 로컬 검증 |
 | Research other AI-development READMEs / 다른 AI 개발 README 참고 | [Research notes](../wiki/sources/readme-presentation.md) | Source inspection complete / 출처 확인 |
 
@@ -40,3 +40,5 @@ A green unit suite does not finish this goal. Completion requires the full modul
 Seoul transition merged through protected PR#5 and P05 through PR#6 (`920d48d`); all existing branch tips were ancestors of main. Current: P06 is merged through PR#7. P07 plus the P05 stale-selection correction passed local/hosted206 and Node22/24 each202; protected PR#8 merged asa70ee70; P08 design is fixed. / P06은PR#7로병합했습니다. P07과P05작업선택경쟁수정은로컬·원격206개·Node각202개를검증했고PR#8을a70ee70으로보호병합했고P08설계를고정했습니다.
 
 Latest correction: clean4b8bf79 passed the full206 locally after a reproduced P05 stale-selection fix. Current media/report are refreshed; corrected hosted validation passed; protected PR#8 merge is verified. / 최신수정: 재현한P05작업선택경쟁수정후깨끗한4b8bf79로전체206개를다시통과하고최신영상/보고서를갱신했습니다. 수정후원격검증도통과했고PR#8보호병합도확인했습니다.
+
+Latest increment: clean `eb541399` passed the fresh whole238. Main inspected4,153 distinct hashes, independent signatures/traffic bytes, actual detour/expiry and owned cleanup. Both READMEs and the actual34.7s recording are refreshed; P08 hosted checks and protected delivery follow. / 최신 구현: 깨끗한 소스로 새 전체238개를 통과했습니다. 메인이4,153고유해시·독립서명/교통바이트·실제우회/만료·소유정리를 확인하고 README두언어·34.7초 실제녹화를 갱신했습니다. P08원격검사·보호반영을 이어갑니다.

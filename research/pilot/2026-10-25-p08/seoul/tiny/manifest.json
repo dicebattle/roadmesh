@@ -1,0 +1,73 @@
+{
+  "schema_version": "0.1",
+  "source": {
+    "commit": "eb541399ed11c7fd26a14f9336a0a7c4ebc51639",
+    "dirty": false
+  },
+  "node": "22.23.4",
+  "host_architecture": "arm64",
+  "host_platform": "darwin",
+  "graph_id": "6c3b6b6f450f592cad2c721811377532af6be197a1ebea277c84af25bd368942",
+  "implementation_sha256": "21b3fc4aa287e009a293bbfab3046b0b8535540d6b683e239b2fe9c57ac2e1ff",
+  "status": "PASS",
+  "stages": [
+    {
+      "id": "corpus",
+      "name_en": "Synthetic corpus validation",
+      "name_ko": "합성 자료 검사",
+      "status": "PASS",
+      "evidence_path": "corpus/report.json",
+      "duration_ms": 65.384083
+    },
+    {
+      "id": "p01",
+      "name_en": "Fresh schedule replay and required checks",
+      "name_ko": "새 일정 재생·필수 검사",
+      "status": "PASS",
+      "evidence_path": "p01/checks.json",
+      "duration_ms": 342.452958
+    },
+    {
+      "id": "p02",
+      "name_en": "Fresh real-engine graph and routing",
+      "name_ko": "실제 엔진의 새 그래프·경로",
+      "status": "PASS",
+      "evidence_path": "graph/manifest.json",
+      "duration_ms": 3723.5472919999997
+    },
+    {
+      "id": "p03",
+      "name_en": "Seeded geographic truth and observations",
+      "name_ko": "시드 기반 지리 정답·관측",
+      "status": "PASS",
+      "evidence_path": "simulation/manifest.json",
+      "duration_ms": 87.13566700000047
+    },
+    {
+      "id": "replay",
+      "name_en": "Fresh replay and fault invariance",
+      "name_ko": "새 재생·장애 불변성",
+      "status": "PASS",
+      "evidence_path": "replay/checks.json",
+      "duration_ms": 435.49283300000025
+    },
+    {
+      "id": "p04",
+      "name_en": "Actual engine matching and conservative traversal evidence",
+      "name_ko": "실제 엔진 매칭·보수적인 통과 증거",
+      "status": "PASS",
+      "evidence_path": "matching/manifest.json",
+      "duration_ms": 3464.937583
+    }
+  ],
+  "output_sha256": {
+    "report-data.json": "4ee26d1674ee778152439bf8b1653324d5a45491623b23e5aec6b4eb7a06cb48",
+    "report.html": "b33d46e192f3116db04c9aafe17fec975fd49859ec90e640aa6b6659a2463bf1",
+    "assertions.json": "d8029fa632e4ec4aa6abbf699d9ce2f724ad26838a106d921eae3751bc0edae5",
+    "summary.md": "d81c3ab6efd3d52456d362ff8fd0779ae662d1803c7ad6fb94ba006a8ecb9f4c",
+    "commands.json": "37dd339044d1cae31591034983d4ec6a41a88d9223d7445c35a24c9e7ed1e480",
+    "matching/manifest.json": "249fcfeb8d23a8897042624cfe926319c651b2cb896cff2e56715a22ed48f53e"
+  },
+  "cleanup_verified": true,
+  "completed_at_utc": "2026-10-24T18:01:52.966Z"
+}

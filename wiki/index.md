@@ -79,3 +79,4 @@ Geographic M0 / RM-001 remains in progress, with zero reviewed real-road cases i
 
 - [P08 activation contract / P08 속도반영계약](../docs/27-p08-traffic-activation.md): fixed after protected P07 merge; fresh15-trip source, immutable traffic generations and exact expiry are required. / P07보호병합후고정·새15여행자료/불변속도세대/정확만료필수.
 - [P08 routing module / P08 경로 반영 모듈](modules/traffic-routing.md): actual Seoul development32 passed; [failures and original evidence](../research/pilot/2026-10-25-p08/development/README.md) retained. Fresh whole-system delivery follows. / 실제 서울 개발32개 통과·실패와 원문 보존·새 전체 반영 예정.
+- [Current238-case report / 현재238개 보고서](../research/pilot/2026-10-25-p08/report.md): fresh actual Seoul graph, accepted traffic detour, exact expiry, independent inspection and34.7s recording. Hosted delivery pending. / 새 실제 서울 그래프·수용 교통 우회·정확 만료·독립검사·34.7초 녹화, 원격 반영 대기.

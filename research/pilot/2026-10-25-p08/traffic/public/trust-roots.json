@@ -1,0 +1,20 @@
+[
+  {
+    "kid": "p08-key",
+    "public_jwk": {
+      "crv": "Ed25519",
+      "x": "G1fzw9KDFYP66ZiLxXYKmwU8sdkz_aupShWk8abceCk",
+      "kty": "OKP"
+    },
+    "publisher_id": "seoul-p08-publisher",
+    "simulation_namespace": "p08-2ac5324d897c4424",
+    "region_id": "seoul-pilot-corridors-v1",
+    "allowed_graph_ids": [
+      "41a52d348bfeb0a71a988b0fb1680affe510626ac6865cc9b0f775716ffca070"
+    ],
+    "source_class": "SYNTHETIC",
+    "valid_from": "2026-10-23T23:59:00.000Z",
+    "valid_until": "2026-10-24T01:00:00.000Z",
+    "revoked": false
+  }
+]
