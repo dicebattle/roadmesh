@@ -1,0 +1,13 @@
+{
+  "engine_id": "e203538a0545398b5cc65ca2b1afbd24215ea9e3b7fdfd01f3c89f5945583c5a",
+  "worker_pid": 56233,
+  "worker_exit": {
+    "code": null,
+    "signal": "SIGKILL"
+  },
+  "attempt_mount": "/Users/dice/Documents/routelens-p13/data/nav01-whole01/ingestion/synthetic-engine/a4b90a73d444ba2a56a7c96461741a031bbe1cd99c8923415af33791eb4c7eb7-1-3bbe8615-f38d-4cf7-a708-9abe67602369",
+  "engine_running": true,
+  "engine_paused": true,
+  "message_en": "An executing engine was paused, then its worker was killed; the exact orphan remains for cleanup.",
+  "message_ko": "실행중 엔진을 일시정지한 뒤 처리자를 종료했으며 정확한 잔여 컨테이너가 정리 대상으로 남았습니다."
+}

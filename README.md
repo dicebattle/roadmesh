@@ -17,13 +17,13 @@ RouteLens is an open-source project for car navigation, derived from **[Metro Le
 
 The system has two jobs: turn driving observations into shared road-speed information, and use that information to find routes. RouteLens builds the coordination between those jobs and reuses existing open-source map, routing and database tools.
 
-**Current stage: a local browser pilot on actual Seoul roads, with synthetic vehicles and traffic.** You can choose two points, calculate a route and inspect the result on a map. Phone GPS collection, turn-by-turn driving guidance and production deployment are future work.
+**Current stage: a local browser pilot on actual Seoul roads, with synthetic vehicles and traffic.** You can choose two points, calculate a route and inspect the result on a map. The result now includes validated native English/Korean turn instructions. Phone GPS tracking, rerouting, spoken guidance and production deployment are future work.
 
 ## 2. See it from the user's side
 
 [![Using the Seoul route client](docs/media/demo.gif)](docs/media/demo.gif)
 
-[Watch the 32-second walkthrough (GIF)](docs/media/demo.gif) · [MP4 file](docs/media/demo.mp4) · [한국어 GIF](docs/media/demo.ko.gif)
+[Watch the 28.5-second walkthrough (GIF)](docs/media/demo.gif) · [MP4 file](docs/media/demo.mp4) · [한국어 GIF](docs/media/demo.ko.gif)
 
 The GIF plays in this README. To download the MP4, open its file page and choose **Raw**.
 
@@ -32,6 +32,7 @@ The walkthrough shows the actual browser client:
 1. Choose the Teheran-ro route preset.
 2. Press **Calculate route**.
 3. Read the route, distance and estimated time on the Seoul map.
+4. Scroll through the original turn instructions, ending at the destination.
 
 The sample traffic slows three road segments, so the calculated route takes surrounding streets. The displayed traffic is synthetic; this is a reproducible local example. Captions explain the actions, and the underlying application recording is retained. [Recording details](docs/media/latest.json).
 
@@ -92,9 +93,11 @@ Append `/report.html` to its printed URL. This is the completed evidence report,
 
 ## 5. Implementation and verification
 
-The local pipeline covers simulation, durable ingestion, aggregation, signed traffic, routing, two independent nodes, a gateway, the browser client, fault scenarios and a local Cloudflare aggregation comparison. Local and GitHub Actions runs passed **390 integration assertions**; Node.js 22 and 24 each passed **303 tests**. See the linked report for original evidence and [PR #14](https://github.com/dicebattle/routelens/pull/14) for protected integration.
+The local pipeline now also includes validated turn instructions. NAV-01 passed **406 fresh local integration assertions** (all 390 previous checks plus 16 guidance checks), **310 tests on Node.js 22**, direct original-byte inspection and an actual 28.5-second user recording. Hosted CI for this branch is reported separately; it is not inferred from local success. The protected P01–P14 baseline had 390 hosted checks and 303 tests on each of Node.js 22/24; see [PR #14](https://github.com/dicebattle/routelens/pull/14).
 
-- [Latest test report and original evidence](research/pilot/2026-10-25-p13/report.md)
+The next implementation is **GPS route progress and replay**. Reviewed road quality, device lifecycle, rerouting/voice, stable HTTPS operation and real traffic/ETA evaluation remain. [Prioritized navigation plan](docs/35-usable-navigation-roadmap.md).
+
+- [Latest test report and original evidence](research/pilot/2026-10-25-nav01/report.md)
 - [Current implementation status](docs/18-goal-progress.md)
 - [Development and decision log](wiki/log.md)
 - [Contribution guide](CONTRIBUTING.md) · [Protected-branch workflow](docs/12-development-workflow.md)

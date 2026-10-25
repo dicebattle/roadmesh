@@ -30,3 +30,9 @@ Implement [NAV-01](36-nav01-turn-guidance.md) first: request a supported narrati
 Acceptance: focused tests; fresh full simulation of all implemented modules plus NAV-01; inspected original native/browser outputs; actual IAB review and refreshed user recordings/media fingerprint; dated bilingual report and a descriptive branch commit/push. This request ends at a verified branch push. Protected merge or deployment is not included in this increment's finish line.
 
 통과 기준은 집중 검사·기존 전체 모듈과 NAV-01의 새 통합 실행·실제 엔진/브라우저 원본 검사·내장 브라우저 직접 확인·새 녹화와 미디어 지문·한영 보고서·이유가 드러나는 커밋과 작업 브랜치 푸시입니다. 이번 요청은 검증한 브랜치 푸시까지이며 병합·배포는 포함하지 않습니다.
+
+## NAV-01 local acceptance / NAV-01 로컬 수용
+
+Implemented and directly verified: fresh406, Node22 tests310, exact native EN/KO binding,390px manual review and refreshed actual28.5s recording. [Dated report](../research/pilot/2026-10-25-nav01/report.md). This is feature-branch delivery, not protected merge or deployment. NAV-02 route progress/replay is the next implementation; the independent quality gate remains open.
+
+새 전체406개·Node22 검사310개·한영 엔진 원문·390픽셀 직접 화면·새 실제28.5초 녹화를 검증했습니다. 작업 브랜치 전달이며 보호 병합·배포는 수행하지 않습니다. 다음은 NAV-02 경로 진행·재생이고 독립 품질 조건은 남아 있습니다.

@@ -7,3 +7,7 @@ Accessed 2026-10-25; primary pinned 3.9.1 source, high confidence for wire behav
 - [Korean locale](https://github.com/valhalla/valhalla/blob/3.9.1/locales/ko-KR.json): reuse upstream Korean instructions. Some upstream phrases remain English; do not promise complete translation or invent replacements. / 상위 한국어 안내 재사용·일부 영어 문장은 남아 있으므로 완전 번역을 주장하거나 임의 번역하지 않습니다.
 
 Decision: [ADR-031](../../docs/09-decisions.md), [contract36](../../docs/36-nav01-turn-guidance.md). Actual direct native evidence remains required; reading source is not runtime proof. / 결정은 연결 문서에 기록하며 소스 조회와 실제 실행 검증을 구분합니다.
+
+- [Serialization precision](https://github.com/valhalla/valhalla/blob/3.9.1/valhalla/tyr/serializers.h): default precision3 confirms the0.001s rounding used in contract36. / 기본 정밀도3으로 계약의0.001초 반올림을 확인했습니다.
+
+[Actual local guidance proof](../../research/pilot/2026-10-25-nav01/report.md) now supplies runtime evidence separately from the source reading. / 공식 소스 조회와 구분한 실제 로컬 안내 근거를 추가했습니다.

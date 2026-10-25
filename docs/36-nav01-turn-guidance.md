@@ -57,3 +57,9 @@ Preserve the existing 390 checks. Add real native English/Korean requests and ac
 The sixteen `nav01-` IDs are fixed before implementation: `native-baseline-en`, `native-baseline-ko`, `native-traffic-en`, `native-traffic-ko`, `exact-native-binding`, `legacy-wire`, `unknown-locale`, `missing-guidance`, `wrong-locale`, `invalid-index`, `broken-continuity`, `inconsistent-metrics`, `unsafe-text`, `language-reset`, `input-clears`, `mobile-readable`. They run inside the owned P11 browser lifecycle, are reported separately, and are added after preserving all 390 original whole-pilot checks: **406 total**. Fault cases mutate a same-run real result and exercise the shared boundary validator; they are not claimed as native engine faults or geographic ground truth. Actual engine/browser cases use retained originals. P11 Korean acceptance now recalculates after switching language instead of reusing an English result.
 
 구현 전에 위 16개 ID를 고정합니다. P11 소유 브라우저 수명주기 안에서 실행하되 별도로 보고하고 기존 전체 390개 뒤에 추가해 **전체 406개**로 검사합니다. 오류 사례는 같은 실행의 실제 결과를 변형해 공통 경계 검증기에 넣으며 엔진 자체 장애나 실도로 정답으로 주장하지 않습니다. 실제 엔진·브라우저 사례는 원본을 보존합니다. P11 한국어 검사는 영어 결과를 재사용하던 방식에서 언어 변경 후 재계산으로 바꿉니다.
+
+## Implementation outcome / 구현 결과
+
+The fixed sixteen cases passed inside the actual P11 runtime on a fresh Seoul graph, preserving all390 previous cases for406 total. Strict build and310 tests passed; main independently checked every original published instruction/metric/index against daemon bytes and exact geometry. See [the dated evidence](../research/pilot/2026-10-25-nav01/report.md). Native Korean phrasing is retained as produced; driving/localization usability, GPS progress and speech remain future acceptance.
+
+새 서울 지도의 실제 P11 실행 안에서 고정16개를 통과하고 기존390개를 유지해 전체406개를 통과했습니다. 엄격 빌드·검사310개와 메인의 공개 원 안내 전체/수치/인덱스·데몬 바이트/정확한 지형 대조를 기록했습니다. 한국어 문장은 엔진 원문을 유지하며 실주행 표현·GPS 진행·음성 검증은 후속입니다.

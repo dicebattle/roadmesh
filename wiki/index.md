@@ -1,8 +1,8 @@
 # Current navigation work / 현재 내비게이션 작업
 
-[Usable navigation roadmap](../docs/35-usable-navigation-roadmap.md) · [NAV-01 fixed contract](../docs/36-nav01-turn-guidance.md). Design fixed; implementation/acceptance in progress on `feat/navigation-guidance`. P01–P14 historical checkpoints below remain preserved.
+[Usable navigation roadmap](../docs/35-usable-navigation-roadmap.md) · [NAV-01 fixed contract](../docs/36-nav01-turn-guidance.md). Locally implemented and directly verified on `feat/navigation-guidance`:406 fresh integration cases,310 tests, actual28.5s recording. [Report](../research/pilot/2026-10-25-nav01/report.md), [module](modules/turn-guidance.md). Branch delivery; no new merge/deployment claim. P01–P14 historical checkpoints below remain preserved.
 
-실사용 내비게이션 계획·NAV-01 계약을 확정했고 작업 브랜치에서 구현·검증을 진행합니다. 아래 P01~P14 중간 기록은 과거 시점으로 보존합니다.
+실사용 계획의 NAV-01을 새 통합406개·검사310개·실제28.5초 영상으로 직접 검증했습니다. 작업 브랜치 전달이며 이번 병합·배포는 수행하지 않습니다. 아래 P01~P14 중간 기록은 과거 시점으로 보존합니다.
 
 # RouteLens 프로젝트 위키
 

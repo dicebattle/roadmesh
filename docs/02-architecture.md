@@ -95,3 +95,9 @@ M0에서는 작은 그래프의 속도 파일 전체를 생성하고 두 프로�
 ## Cloudflare Containers의 위치
 
 Valhalla를 Containers에 올리는 것은 비교 실험 후보입니다. 일반 서버의 지속 디스크와 상시 준비 상태가 첫 기준입니다. 현재 Containers에는 파일시스템 스냅샷 기능도 있으므로 '재시작할 때 항상 전부 다운로드해야 한다'고 단정하지 않습니다. 지원되는 실행 정책, 복원 시간, 그래프 메모리 사용, 활성 시간 비용을 측정한 뒤 선택합니다. [Containers](https://developers.cloudflare.com/containers/), [스냅샷](https://developers.cloudflare.com/containers/guides/snapshots/)
+
+## Native turn instructions / 엔진 회전 안내
+
+NAV-01 adds no new service: the gateway projects validated Valhalla narrative onto the exact returned polyline, and the client displays the requested locale. Existing graph/traffic generation/final freshness checks cover the enclosing route. [Executable contract](36-nav01-turn-guidance.md). The high-level diagram topology is unchanged; GPS progress/voice will consume this DTO later.
+
+NAV-01은 서비스를 추가하지 않고 중계에서 엔진 원 안내를 정확한 반환 지형과 검증해 화면 언어로 표시합니다. 바깥 경로의 지도·교통 세대·최종 신선도 검사를 유지합니다. 큰 구조도의 연결은 같으며 이후 GPS 진행·음성이 이 자료를 사용합니다.

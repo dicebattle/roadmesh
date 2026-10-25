@@ -1,0 +1,159 @@
+{
+  "status": "PASS",
+  "original_run_status": "PASS",
+  "source": {
+    "commit": "eca1f9c4c8f705388d8d9f14a3016249470c9603",
+    "dirty": false
+  },
+  "implementation_sha256": "e45cd76833284c384ef280f57fdedd3a62bf3af5eba4535363ae1a03f37c632e",
+  "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+  "original_hashes_checked": 184,
+  "canonical_postgresql_worker_pairs": 11,
+  "actual_sqlite_actors": [
+    {
+      "scope_id": "count-5",
+      "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+      "namespace": "p06-bcb534a9a424-count-5",
+      "clock": "2026-10-24T00:01:30.000Z",
+      "rows": 18,
+      "receipts": 1,
+      "candidates": 1,
+      "queue_events": 1
+    },
+    {
+      "scope_id": "expired",
+      "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+      "namespace": "p06-bcb534a9a424-expiry-five",
+      "clock": "2026-10-24T00:04:00.000Z",
+      "rows": 15,
+      "receipts": 1,
+      "candidates": 1,
+      "queue_events": 1
+    },
+    {
+      "scope_id": "window-open",
+      "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+      "namespace": "p06-bcb534a9a424-count-5",
+      "clock": "2026-10-24T00:01:29.999Z",
+      "rows": 21,
+      "receipts": 1,
+      "candidates": 0,
+      "queue_events": 1
+    },
+    {
+      "scope_id": "count-1",
+      "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+      "namespace": "p06-bcb534a9a424-count-1",
+      "clock": "2026-10-24T00:01:30.000Z",
+      "rows": 6,
+      "receipts": 1,
+      "candidates": 1,
+      "queue_events": 1
+    },
+    {
+      "scope_id": "count-4",
+      "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+      "namespace": "p06-bcb534a9a424-count-4",
+      "clock": "2026-10-24T00:01:30.000Z",
+      "rows": 12,
+      "receipts": 1,
+      "candidates": 1,
+      "queue_events": 1
+    },
+    {
+      "scope_id": "outbox",
+      "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+      "namespace": "p06-bcb534a9a424-count-5",
+      "clock": "2026-10-24T00:01:30.000Z",
+      "rows": 21,
+      "receipts": 1,
+      "candidates": 1,
+      "queue_events": 1
+    },
+    {
+      "scope_id": "new-empty-window",
+      "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+      "namespace": "p06-bcb534a9a424-expiry-five",
+      "clock": "2026-10-24T00:02:30.000Z",
+      "rows": 0,
+      "receipts": 1,
+      "candidates": 1,
+      "queue_events": 1
+    },
+    {
+      "scope_id": "revoked",
+      "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+      "namespace": "p06-bcb534a9a424-count-5",
+      "clock": "2026-10-24T00:01:30.000Z",
+      "rows": 18,
+      "receipts": 1,
+      "candidates": 1,
+      "queue_events": 1
+    },
+    {
+      "scope_id": "isolated",
+      "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+      "namespace": "p13-isolated",
+      "clock": "2026-10-24T00:01:30.000Z",
+      "rows": 0,
+      "receipts": 0,
+      "candidates": 0,
+      "queue_events": 0
+    },
+    {
+      "scope_id": "count-0",
+      "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+      "namespace": "p06-bcb534a9a424-count-0",
+      "clock": "2026-10-24T00:01:30.000Z",
+      "rows": 0,
+      "receipts": 1,
+      "candidates": 1,
+      "queue_events": 1
+    },
+    {
+      "scope_id": "late-after",
+      "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+      "namespace": "p06-bcb534a9a424-late-after",
+      "clock": "2026-10-24T00:01:30.001Z",
+      "rows": 3,
+      "receipts": 1,
+      "candidates": 1,
+      "queue_events": 1
+    },
+    {
+      "scope_id": "late-just-before",
+      "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+      "namespace": "p06-bcb534a9a424-late-just-before",
+      "clock": "2026-10-24T00:01:30.000Z",
+      "rows": 3,
+      "receipts": 1,
+      "candidates": 1,
+      "queue_events": 1
+    },
+    {
+      "scope_id": "late-exact",
+      "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+      "namespace": "p06-bcb534a9a424-late-exact",
+      "clock": "2026-10-24T00:01:30.000Z",
+      "rows": 3,
+      "receipts": 1,
+      "candidates": 1,
+      "queue_events": 1
+    },
+    {
+      "scope_id": "queue",
+      "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+      "namespace": "p06-bcb534a9a424-count-5",
+      "clock": "2026-10-25T00:01:00.000Z",
+      "rows": 0,
+      "receipts": 2,
+      "candidates": 0,
+      "queue_events": 7
+    }
+  ],
+  "sqlite_integrity_files": 21,
+  "original_bytes_unchanged_after_audit": true,
+  "original_owned_process_identities_absent": 20,
+  "scope_en": "Independent built-in Node audit of all recorded bytes, eleven canonical PostgreSQL/Worker pairs and actual SQLite copies including retained WAL. Originals are hashed again after read-only copied-database inspection. DEVELOPMENT_ONLY remains development, not clean whole390.",
+  "scope_ko": "기본 Node로 기록 바이트·PostgreSQL/Worker 표준11쌍·WAL을 포함한 실제 SQLite 복사본을 독립 검사하고 원문 해시를 다시 대조했습니다. 개발 전용은 깨끗한 전체390개로 수용하지 않습니다."
+}

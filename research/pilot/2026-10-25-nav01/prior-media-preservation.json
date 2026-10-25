@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "unchanged_prior_recording_assets": [
+    {
+      "file": "demo.mp4",
+      "sha256": "8f38969bac39926b0c9baaa3f19d85ee2179dd07d6220918cb9f43393986f6c1",
+      "bytes": 858444
+    },
+    {
+      "file": "demo.ko.mp4",
+      "sha256": "2daf3060fe4dd0c9db4173d011dba8e992369342e0ccf9439c0a2158998e68c9",
+      "bytes": 854402
+    },
+    {
+      "file": "demo.gif",
+      "sha256": "be77288f725894a53c3610cc8264308de1db137bfcd09a08d3ce89df2a0ab6fd",
+      "bytes": 2829982
+    },
+    {
+      "file": "demo.ko.gif",
+      "sha256": "4476d36724a87287d98915f4329d60effa7a35dd9773c5a98a94da2f28295736",
+      "bytes": 2833994
+    },
+    {
+      "file": "demo-poster.ko.png",
+      "sha256": "0fdd54b7fcecb19de51d75d3acafe4619dde52e5c0c924f94c49b93176d5ab0a",
+      "bytes": 678878
+    }
+  ],
+  "message_en": "Previous P13 assets retain the exact prior committed bytes at stable paths before updating latest media.",
+  "message_ko": "최신 미디어 갱신 전에 이전 P13 녹화의 커밋 바이트를 그대로 고정 경로에 보존했습니다."
+}
