@@ -101,3 +101,9 @@ The final P10 hosted concurrency failures and local timer measurement showed tha
 P12 reuses pinned Valhalla3.9.1's100m search option and original route400 codes170/171/442. It does not fork routing or silently change legacy defaults. Strict bounded error parsing and private request/native hashes preserve the selected generation and instance; both node and gateway recheck accepted state before returning the four-field public error. Unknown upstream failures remain unavailable. Trusted CAR admission and administrative node exclusion stay outside public request claims. [Fixed design](32-p12-whole-scenarios.md); final clean integration remains pending.
 
 P12는 고정 엔진의 탐색 옵션과 원래 경로 오류를 재사용하며 엔진을 포크하거나 기존 기본값을 바꾸지 않습니다. 제한된 엄격 해석·비공개 요청/엔진 해시로 선택한 세대·실행을 연결하고 노드·중계 모두 최종 수용 상태를 검사한 뒤 네 필드 공개 오류를 반환합니다. 미확인 엔진 실패는 사용 불가로 유지하며 자동차 접수·관리 노드 제외는 공개 요청의 주장에 맡기지 않습니다. 최종 깨끗한 통합 판정은 남아 있습니다.
+
+## ADR-030: Same-core local post-matching parity / 같은 규칙의 로컬 매칭 후 비교
+
+P13 reuses the unchanged aggregation core behind actual local Worker/Queue/SQLite DO adapters and compares exact same-run PostgreSQL input/result originals. Persist receipt/outbox and deduplicated effects transactionally; do not assume queue exactly-once or cross-service atomicity. Keep native matching/routing and P07 publication outside ordinary Workers. [Contract](33-p13-local-cloudflare-parity.md), [CI gate](34-p14b-final-integration.md). This is a candidate until clean390 and hosted evidence pass.
+
+P13은 같은 실행의 PostgreSQL 원 입력/결과와 실제 로컬 Worker·큐·SQLite DO를 비교하고 기존 집계 규칙을 재사용합니다. 접수/발신 대기·중복 제거 효과를 트랜잭션으로 저장하며 큐의 정확히 한 번·서비스 간 원자성을 가정하지 않습니다. 엔진 매칭/경로·서명 게시의 기존 경계를 유지하고 깨끗한390개·원격 근거 전까지 후보로 둡니다.

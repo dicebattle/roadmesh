@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "files_scanned": 919,
+  "bytes_scanned": 110168939,
+  "secret_pattern_findings": [],
+  "allowed_synthetic_markers": [],
+  "tracked_markdown_links": 1044,
+  "missing_index_links": [],
+  "message_en": "Scanned original text before upload and checked Markdown targets against Git index, not merely local existence. This is a bounded credential-pattern check, not a universal secret detector.",
+  "message_ko": "업로드 전 원문 텍스트를 검사하고 Markdown 대상을 로컬 존재만이 아닌 Git 목록과 대조했습니다. 지정 자격정보 패턴 검사이며 모든 비밀 탐지는 아닙니다."
+}

@@ -15,36 +15,21 @@ import {
   type StoreConfig,
   type CompletionInput,
 } from "./ingestion_types.js";
-export function issue(
-  status: number,
-  code: IngestionError["code"],
-  en: string,
-  ko: string,
-): never {
-  throw new IngestionError(status, code, en, ko);
-}
-export function utc(value: unknown): number {
-  if (
-    typeof value !== "string" ||
-    !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?Z$/.test(value) ||
-    value.startsWith("0000") ||
-    !Number.isFinite(Date.parse(value)) ||
-    new Date(value).toISOString() !==
-      value.replace(/Z$/, value.includes(".") ? "Z" : ".000Z")
-  )
-    issue(
-      422,
-      "OBSERVATION_TIME_INVALID",
-      "UTC timestamp is invalid.",
-      "UTC 시각이 유효하지 않습니다.",
-    );
-  return Date.parse(value);
-}
+import { issue, utc } from "./time_validation.js";
+export { issue, utc } from "./time_validation.js";
 export function principalValid(principal: Principal): void {
   identifier(principal.contributor_id, "contributor_id");
   identifier(principal.vehicle_id, "vehicle_id");
-  if (principal.vehicle_class !== undefined && !["CAR", "BUS", "OTHER"].includes(principal.vehicle_class))
-    issue(422, "INVALID_INPUT", "Vehicle class is unsupported.", "차량 종류를 지원하지 않습니다.");
+  if (
+    principal.vehicle_class !== undefined &&
+    !["CAR", "BUS", "OTHER"].includes(principal.vehicle_class)
+  )
+    issue(
+      422,
+      "INVALID_INPUT",
+      "Vehicle class is unsupported.",
+      "차량 종류를 지원하지 않습니다.",
+    );
   if (principal.consent_version !== "pilot-consent-v1")
     issue(
       409,
@@ -56,7 +41,12 @@ export function principalValid(principal: Principal): void {
 export function requireCarPrincipal(principal: Principal): void {
   principalValid(principal);
   if ((principal.vehicle_class ?? "CAR") !== "CAR")
-    issue(403, "VEHICLE_NOT_ALLOWED", "Only car observations are admitted to this pilot.", "이 파일럿은 자동차 관측만 접수합니다.");
+    issue(
+      403,
+      "VEHICLE_NOT_ALLOWED",
+      "Only car observations are admitted to this pilot.",
+      "이 파일럿은 자동차 관측만 접수합니다.",
+    );
 }
 export function batchValid(
   value: unknown,

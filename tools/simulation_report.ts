@@ -1,3 +1,4 @@
+import type { CloudflareReport } from "./cloudflare_checks.js";
 import type { ClientReport } from "./client_checks.js";
 import type { ScenarioReport } from "./scenario_checks.js";
 import type { GatewayReport } from "./gateway_checks.js";
@@ -139,6 +140,7 @@ export interface SimulationReportData {
   gateway?: GatewayReport;
   client?: ClientReport;
   scenarios?: ScenarioReport;
+  cloudflare?: CloudflareReport;
   traffic?: TrafficReport;
   publication?: {
     publisher_id: string;
@@ -647,6 +649,11 @@ export function renderSimulationReport(data: SimulationReportData): string {
       ></p>
       <div id="aggregate-evidence"></div>
     </section>
+    <section id="cloudflare-section" class="checks" hidden>
+      <h2 data-en="P13 recorded local Cloudflare parity" data-ko="P13 기록된 로컬 Cloudflare 비교"></h2>
+      <p data-en="Actual local Worker, Queue and SQLite Durable Objects replay matched synthetic inputs from this same run's PostgreSQL originals. This section shows completed evidence, not a hosted Cloudflare deployment. Public GPS ingestion, cloud placement and hosted consumer concurrency remain separate." data-ko="실제 로컬 Worker·큐·SQLite Durable Object가 같은 실행의 PostgreSQL 원문에서 합성 매칭 입력을 재생했습니다. 완료된 근거이며 Cloudflare 원격 배포 화면이 아닙니다. 공개 GPS 수집·지역 배치·원격 소비자 동시성은 별도입니다."></p>
+      <div id="cloudflare-evidence"></div><div id="cloudflare-parity"></div><details><summary data-en="32 parity and recovery checks" data-ko="비교·복구 검사32개"></summary><div id="cloudflare-cases"></div></details>
+    </section>
     <section id="scenario-section" class="checks" hidden>
       <h2 data-en="P12 whole-system faults and S01–S15 evidence" data-ko="P12 전체 장애·S01~S15 근거"></h2>
       <p data-en="Actual Seoul routing with opt-in bounded road search, trusted vehicle and node rules, controlled TCP reset/stall, exact partition expiry and two real outer-supervisor interruptions. The matrix binds this run's original evidence. Tiny waiting/parallel-road regressions are labeled separately. This is local synthetic evidence, not Internet loss measurement or independent road accuracy." data-ko="실제 서울 경로·선택형 제한 도로 탐색·신뢰 차량/노드 규칙·통제한 TCP 중단/무응답·연결 중단 중 정확한 만료·실제 상위 감독 두 장애를 검사합니다. 행렬은 이번 실행의 원문을 연결하고 작은 대기/평행도로 회귀는 따로 표시합니다. 로컬 합성 근거이며 인터넷 손실률·독립 도로 정확도 검증이 아닙니다."></p>
@@ -1061,6 +1068,8 @@ export function renderSimulationReport(data: SimulationReportData): string {
       );
       const v = $("vehicle").options[0];
       if (v) v.textContent = lang === "en" ? "All vehicles" : "전체 차량";
+      $("cloudflare-section").hidden=!data.cloudflare;
+      if(data.cloudflare){const c=data.cloudflare,root=$("cloudflare-evidence");root.replaceChildren();node("p",c.assertions_passed+"/"+c.assertions_total+(lang==="en"?" checks · owned cleanup ":"개 검사 · 소유 정리 ")+c.cleanup_verified,root);node("p",c["runtime_"+lang],root);const parity=$("cloudflare-parity");parity.replaceChildren();c.parity.forEach(p=>{const row=node("p",p.case_id+" · "+(p.canonical_sha256||"WINDOW_OPEN")+" · ",parity);evidence(p.evidence_path,row);});const cases=$("cloudflare-cases");cases.replaceChildren();c.cases.forEach(a=>{const row=node("p",a.status+" · "+a["message_"+lang]+" · ",cases);evidence(a.evidence_path,row);});}
       $("scenario-section").hidden=!data.scenarios;
       if(data.scenarios){
         const s=data.scenarios,root=$("scenario-evidence");root.replaceChildren();node("p",s.assertions_passed+"/"+s.assertions_total+(lang==="en"?" checks · owned cleanup ":"개 검사 · 소유 정리 ")+s.cleanup_verified,root);if(s.matrix_path)evidence(s.matrix_path,root);

@@ -24,7 +24,7 @@ import { loadSeoulGraph } from "./seoul_bundle.js";
 import { createAggregationScenario } from "./aggregation_scenario.js";
 import { IngestionStore } from "./ingestion_store.js";
 import { AggregationStore } from "./aggregation_store.js";
-import { normalizedCatalog } from "./traffic_aggregation.js";
+import { normalizedCatalog, aggregateWindow } from "./traffic_aggregation.js";
 import {
   OwnedIngestionRuntime,
   type OwnedIngestionProcess,
@@ -129,6 +129,7 @@ export async function runAggregationChecks(
   const output = resolve(outputPath);
   mkdirSync(output);
   for (const name of [
+    "parity-inputs",
     "drafts",
     "synthetic-evaluation",
     "readbacks",
@@ -430,6 +431,26 @@ export async function runAggregationChecks(
     });
     return r.draft;
   };
+  const parity = async (
+    c: Context,
+    id: string,
+    result: AggregationResult,
+    start = windowStart,
+  ) => {
+    const input = await c.aggregation.exportInput(start);
+    if (!canonical(aggregateWindow(input)).equals(canonical(result)))
+      throw new Error(
+        "Parity export differs from actual PostgreSQL result / 비교 입력이 실제 PostgreSQL 결과와 다릅니다",
+      );
+    write(output, "parity-inputs/" + id + ".json", {
+      schema_version: "p13-input-0.1",
+      source,
+      implementation_sha256: fingerprint,
+      graph_id: graph.graphId,
+      input,
+      result,
+    });
+  };
   const snapshot = async (c: Context, name: string) => {
     const state = await c.aggregation.inspect();
     write(output, "readbacks/" + name + ".json", state);
@@ -667,6 +688,7 @@ export async function runAggregationChecks(
       if (count < 5) {
         await advance(c, at(90000));
         const r = await c.aggregation.finalize(windowStart, c.now);
+        await parity(c, "count-" + count, r);
         const d = saveResult(
           "count-" + count,
           count + (count === 1 ? " contributor" : " contributors"),
@@ -698,6 +720,7 @@ export async function runAggregationChecks(
     const five = populations.get(5)!;
     await advance(five, at(89999));
     const open = await five.aggregation.finalize(windowStart, five.now);
+    await parity(five, "window-open", open);
     const openState = await snapshot(five, "before-deadline");
     check(
       "exact-open-deadline",
@@ -758,6 +781,7 @@ export async function runAggregationChecks(
       "readbacks/aggregate-concurrent-retry.json",
     );
     const full = await five.aggregation.finalize(windowStart, five.now);
+    await parity(five, "count-5", full);
     const live = saveResult(
       "count-5",
       "Five contributors, repeat and explicitly PARKED moving sixth",
@@ -815,6 +839,7 @@ export async function runAggregationChecks(
         throw new Error("Late matching did not commit / 지연매칭 저장실패");
       if (completedAt < 90000) await advance(c, at(90000));
       const finalized = await c.aggregation.finalize(windowStart, c.now);
+      await parity(c, "late-" + label, finalized);
       const draft = saveResult(
         "late-" + label,
         "P05 completion " + label,
@@ -954,6 +979,7 @@ export async function runAggregationChecks(
       windowStart,
       five.now,
     );
+    await parity(five, "revoked", revokedResult);
     const revokedDraft = saveResult(
       "revoked",
       "Revoked: five become four",
@@ -994,6 +1020,7 @@ export async function runAggregationChecks(
       );
     await advance(expiry, at(150000));
     const newer = await expiry.aggregation.finalize(at(60000), expiry.now);
+    await parity(expiry, "new-empty-window", newer, at(60000));
     const newerDraft = saveResult(
       "new-empty-window",
       "New empty window",
@@ -1046,6 +1073,7 @@ export async function runAggregationChecks(
       "readbacks/cache-after-expiry.json",
     );
     const stale = await expiry.aggregation.finalize(windowStart, expiry.now);
+    await parity(expiry, "expired", stale);
     const staleDraft = saveResult(
       "expired",
       "Expired at 240 seconds",

@@ -105,3 +105,5 @@ Latest: [P11 actual client proof](../research/pilot/2026-10-25-p11/report.md), [
 [P12 fixed design / P12 확정 설계](../docs/32-p12-whole-scenarios.md) · [P11 hosted proof / P11 원격 근거](../research/pilot/2026-10-25-p11/hosted/README.md)
 
 - [P12 scenario runner candidate / P12 시나리오 실행 후보](modules/scenario-runner.md): clean358/296 and independent saved bytes passed; hosted/protected delivery remains. / 깨끗한358/296개·독립 저장 바이트 통과·원격/보호 반영 남음.
+
+[P13 local parity candidate / P13 로컬 비교 후보](modules/cloudflare-parity.md) · [fixed design / 확정 설계](../docs/33-p13-local-cloudflare-parity.md) · [P14b final CI gate / P14b 최종 CI 조건](../docs/34-p14b-final-integration.md). Unit303, actual P06 export34 and development31/11-byte-pairs passed; new clean390/media/hosted remain. / 단위303개·실제 P06 입력34개·개발31개/바이트11쌍 통과·새 깨끗한390개/미디어/원격 남음.

@@ -16,8 +16,8 @@ The goal remains the complete local P01–P14 pilot. Each increment needs fresh 
 | P10 gateway and failover / 중계·장애 전환 | [Hosted proof](../research/pilot/2026-10-25-p10-worker/hosted/README.md) | Corrected local/hosted302, unit262; protected PR11 merged / 수정 로컬·원격302·단위262·PR11 보호 병합 |
 | P11 actual client / 실제 경로 클라이언트 | [Report](../research/pilot/2026-10-25-p11/report.md) | Local/hosted334 and285 tests, actual102.8s recording; protected PR12 merged / 로컬·원격334·단위285·실제102.8초 녹화·PR12 보호 병합 |
 | P12 full fault matrix / 전체 장애 행렬 | [Fixed design](32-p12-whole-scenarios.md) | Local358/296,15,888 original hashes and actual126.45s edited capture passed; hosted/protected delivery pending / 로컬358/296·원문15,888개·실제126.45초 편집 녹화 통과·원격/보호 반영 남음 |
-| P13 local Cloudflare parity / 로컬 Cloudflare 비교 | [Pilot plan](11-local-pilot.md) | Not implemented / 미구현 |
-| P14b final integration CI / 최종 통합 CI | Existing required actual-engine job / 필수 실제 엔진 작업 | Current modules tested; complete pilot matrix remains / 현재 모듈 검사·전체 파일럿 행렬은 남음 |
+| P13 local Cloudflare parity / 로컬 Cloudflare 비교 | [Contract](33-p13-local-cloudflare-parity.md) | Candidate303 units, P06 export34 and development31/11 pairs; clean390 pending / 후보 단위303개·P06 입력34개·개발31개/11쌍·깨끗한390개 남음 |
+| P14b final integration CI / 최종 통합 CI | [Fixed gate](34-p14b-final-integration.md) | Candidate390 required gate plus XML/SQLite originals; hosted acceptance remains / 후보390개 필수 조건·XML/SQLite 원문·원격 판정 남음 |
 | Current demo and README / 최신 데모·README | [Media](media/latest.json), [EN](../README.md), [KO](../README.ko.md) | P12 actual126.45s excerpts plus recorded report evidence, exact source/hash and390px IAB / P12 실제126.45초 발췌·기록 보고서 근거·출처/해시·390픽셀 수동 확인 |
 | AI-project README research / AI 프로젝트 README 참고 | [Source notes](../wiki/sources/readme-presentation.md) | Completed source review / 출처 검토 완료 |
 

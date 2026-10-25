@@ -40,6 +40,10 @@ import {
   CLIENT_CASE_IDS,
 } from "./client_checks.js";
 import type { SimulationAssertion } from "./vehicle_simulator.js";
+import {
+  runCloudflareChecks,
+  requireCloudflareCases,
+} from "./cloudflare_checks.js";
 import { runScenarioChecks, requireScenarioCases } from "./scenario_checks.js";
 import {
   renderSimulationReport,
@@ -436,7 +440,8 @@ export async function runPilotIntegration(
       );
     const scenarioStarted = performance.now();
     const scenarios = await runScenarioChecks(
-      join(output, "seoul/graph"), join(output, "scenarios"),
+      join(output, "seoul/graph"),
+      join(output, "scenarios"),
       { root: output, assertions: data.assertions as SimulationAssertion[] },
     );
     verifyRegionalChild(join(output, "scenarios"), verified, data.graph_id);
@@ -444,15 +449,72 @@ export async function runPilotIntegration(
     data.scenarios = {
       ...scenarios.scenarios,
       matrix_path: "scenarios/matrix.json",
-      cases: scenarios.scenarios.cases.map(c => ({...c,evidence_path:"scenarios/"+c.evidence_path})),
-      screenshots: scenarios.scenarios.screenshots.map(s => ({...s,path:"scenarios/"+s.path})),
+      cases: scenarios.scenarios.cases.map((c) => ({
+        ...c,
+        evidence_path: "scenarios/" + c.evidence_path,
+      })),
+      screenshots: scenarios.scenarios.screenshots.map((s) => ({
+        ...s,
+        path: "scenarios/" + s.path,
+      })),
     };
-    data.stages.push({id:"p12",name_en:"Whole-system faults and same-run S01–S15 evidence",
-      name_ko:"전체 장애·같은 실행 S01~S15 근거",status:"PASS",evidence_path:"scenarios/manifest.json",
-      duration_ms:performance.now()-scenarioStarted});
-    data.assertions.push(...scenarios.assertions.map(a=>({...a,evidence_path:"scenarios/"+a.evidence_path})));
-    if (Number(data.assertions.length) !== 358 || data.assertions.some(a=>a.status!=="PASS"))
+    data.stages.push({
+      id: "p12",
+      name_en: "Whole-system faults and same-run S01–S15 evidence",
+      name_ko: "전체 장애·같은 실행 S01~S15 근거",
+      status: "PASS",
+      evidence_path: "scenarios/manifest.json",
+      duration_ms: performance.now() - scenarioStarted,
+    });
+    data.assertions.push(
+      ...scenarios.assertions.map((a) => ({
+        ...a,
+        evidence_path: "scenarios/" + a.evidence_path,
+      })),
+    );
+    if (
+      Number(data.assertions.length) !== 358 ||
+      data.assertions.some((a) => a.status !== "PASS")
+    )
       throw Error("All358 cases required / 전체358개 통과 필요");
+    const cloudflareStarted = performance.now();
+    const cloudflare = await runCloudflareChecks(
+      join(output, "seoul/graph"),
+      join(output, "aggregation"),
+      join(output, "cloudflare"),
+    );
+    verifyRegionalChild(join(output, "cloudflare"), verified, data.graph_id);
+    requireCloudflareCases(cloudflare.assertions);
+    data.cloudflare = {
+      ...cloudflare.cloudflare,
+      cases: cloudflare.cloudflare.cases.map((c) => ({
+        ...c,
+        evidence_path: "cloudflare/" + c.evidence_path,
+      })),
+      parity: cloudflare.cloudflare.parity.map((p) => ({
+        ...p,
+        evidence_path: "cloudflare/" + p.evidence_path,
+      })),
+    };
+    data.stages.push({
+      id: "p13",
+      name_en: "Actual local Worker, Queue and SQLite aggregation parity",
+      name_ko: "실제 로컬 Worker·큐·SQLite 집계 비교",
+      status: "PASS",
+      evidence_path: "cloudflare/manifest.json",
+      duration_ms: performance.now() - cloudflareStarted,
+    });
+    data.assertions.push(
+      ...cloudflare.assertions.map((a) => ({
+        ...a,
+        evidence_path: "cloudflare/" + a.evidence_path,
+      })),
+    );
+    if (
+      Number(data.assertions.length) !== 390 ||
+      data.assertions.some((a) => a.status !== "PASS")
+    )
+      throw Error("All390 cases required / 전체390개 통과 필요");
     data.summary.assertions_passed = data.assertions.filter(
       (a) => a.status === "PASS",
     ).length;
@@ -461,11 +523,11 @@ export async function runPilotIntegration(
       ...item,
       message_en: item.message_en.replace(
         "P05–P14 remain incomplete",
-        "P13–P14 remain incomplete",
+        "P14b delivery and geographic/production gates remain separate",
       ),
       message_ko: item.message_ko.replace(
         "P05~P14는 미완료",
-        "P13~P14는 미완료",
+        "P14b 반영·실제 지역/운영 기준은 별도입니다",
       ),
     }));
     data.generated_at_utc = new Date().toISOString();
@@ -537,6 +599,7 @@ export async function runPilotIntegration(
     "gateway/manifest.json",
     "client/manifest.json",
     "scenarios/manifest.json",
+    "cloudflare/manifest.json",
     "lifecycle/cleanup.json",
     "report-data.json",
     "report.html",
