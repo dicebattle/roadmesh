@@ -650,3 +650,17 @@ Main Sol fixed the post-matching scope before coding, retrieved official Cloudfl
 Direct evidence: focused6,303 final units and generated bindings passed. Actual P06 export34 passed; independent784 hashes, median/timing and cleanup passed. Actual workerd development31 (clean-source gate deliberately omitted) matched11 PostgreSQL result pairs. Main independently inspected185 hashes,14 actor DBs and21 SQLite/WAL copies with original-byte recheck and exact PID identity absence. Preserve initial TextDecoder/RPC type errors, earlier302 tests and the source-limited artificial smoke. Later error/capacity/credential-scan changes require the upcoming final clean390. No P13 completion, media refresh or production claim yet. Continue clean390, independent final originals, actual media, bilingual delivery, hosted inspection and protected merge.
 
 집중6개·최종 단위303개·생성 바인딩, 실제 P06 입력34개와 독립784해시/중앙값/시간/정리를 통과했습니다. 깨끗한 출처를 제외한 실제 workerd 개발31개·PostgreSQL 결과11쌍, 독립185해시·객체 DB14개·SQLite/WAL21개·원 바이트 재검사·원래 프로세스 부재를 확인했습니다. 초기 타입 오류·302개 단위·소스가 제한된 인공 준비 검사를 보존합니다. 뒤의 오류/용량/자격정보 변경은 최종390개에서 검증해야 하며 P13 완료·미디어·운영을 아직 주장하지 않습니다. 새 전체390개·최종 원문·실제 녹화·한영 반영·원격·보호 병합을 이어갑니다.
+
+## 2026-10-25 — P13 first clean390 and narrow-report rejection / P13 첫 깨끗한390개·좁은 보고서 거부
+
+Main Sol ran clean085fb91 with runtime2a6674ea: all390 assertions and owned cleanup passed on fresh Seoul graph d904c37d. Independent whole, P12 domain, P11 browser/native, gateway, node, traffic and SQLite audits passed; eleven full PostgreSQL/Worker pairs matched,185 Cloudflare original hashes and21 SQLite/WAL copies were inspected. Live read-only SQL confirmed15 traversals and one exact publication accepted by three consumers. These original results remain immutable under data/p13-main-20261025 until their delivery archive is produced.
+
+메인 Sol이 깨끗한085fb91·실행지문2a6674ea·새 서울 지도d904c37d에서390개와 소유 정리를 통과했습니다. 전체·업무 장애·브라우저/엔진·중계·노드·교통·SQLite를 독립 확인했고 PostgreSQL/Worker 전체11쌍·Cloudflare 원문185해시·SQLite/WAL21개를 검사했습니다. 실제 읽기 전용 SQL의15통과·게시 하나·수신자 세 곳 동일 수용도 확인했습니다. 원문은 전달 묶음을 만들 때까지 위 로컬 실행 경로에서 불변 보존합니다.
+
+Manual IAB inspection then rejected final media readiness: at390px the newly added Cloudflare hash paragraphs enlarged document scroll width to568px in both languages. Completed P12 images loaded, but this does not excuse the overflow. Extend the existing overflow-wrap:anywhere rule to only cloudflare-parity/cloudflare-cases. No original report is edited. The first interactive demo was stopped normally before any recording; preserve its lifecycle evidence. Run the corrected committed source through fresh390 and repeat manual capture before final acceptance. No threshold or media gate is weakened.
+
+뒤의 내장 브라우저 수동 검사에서 새 Cloudflare 해시 문단 때문에390픽셀 화면의 문서 폭이 양쪽 언어 모두568픽셀로 늘어나 최종 미디어 준비를 거부했습니다. 기존 줄바꿈 규칙을 해당 두 영역에만 확대하며 원 보고서를 고치지 않습니다. 첫 대화형 시연은 촬영 전 정상 종료하고 수명 근거를 보존합니다. 수정 커밋으로 새390개와 수동 촬영을 다시 수행하며 기준·미디어 검사는 완화하지 않습니다.
+
+The corrected renderer preview (a separate generated HTML, not a modified original) passed direct IAB390px English and Korean with document width390px in both. Strict build and the two existing report suites passed9/9. The next committed full run must provide new provenance and media; the preview is only focused layout verification.
+
+수정 렌더러의 별도 생성 미리보기에서 내장 브라우저 한영390픽셀 문서 폭이 모두390픽셀임을 직접 확인했습니다. 엄격 빌드·기존 보고서 두 시험9/9개를 통과했습니다. 미리보기는 화면 집중 검사이며 다음 커밋 전체 실행·새 출처·미디어를 대신하지 않습니다.

@@ -303,7 +303,7 @@ export function renderSimulationReport(data: SimulationReportData): string {
     [hidden] {
       display: none !important;
     }
-    #matching-decisions, #aggregate-evidence, #publication-evidence {
+    #matching-decisions, #aggregate-evidence, #publication-evidence, #cloudflare-parity, #cloudflare-cases {
       overflow-wrap: anywhere;
     }
     * {
