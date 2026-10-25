@@ -1,0 +1,32 @@
+2026-10-25 15:53:46.528009523 [31;1m[ERROR][0m (stat):  No such file or directory
+2026-10-25 15:53:46.528761968 [33;1m[WARN][0m Tile extract could not be loaded
+2026-10-25 15:53:46.528044898 [31;1m[ERROR][0m (stat):  No such file or directory
+2026-10-25 15:53:46.528802384 [33;1m[WARN][0m Tile extract could not be loaded
+2026-10-25 15:53:46.529008964 [32;1m[INFO][0m Traffic tile extract successfully loaded with tile count: 14
+2026-10-25 15:53:46.529694285 [32;1m[INFO][0m Traffic tile extract successfully loaded with tile count: 14
+2026-10-25 15:53:46.851679445 [32;1m[INFO][0m Got Loki Request 0
+0 2026/10/25 15:53:46.851626 POST /route HTTP/1.1
+2026-10-25 15:53:46.897032599 [32;1m[INFO][0m Got Thor Request 0
+2026-10-25 15:53:46.897259428 [32;1m[INFO][0m algorithm::time_dependent_forward_a*
+2026-10-25 15:53:46.899417765 [33;1m[WARN][0m No timezone for location using default
+2026-10-25 15:53:46.899493472 [33;1m[WARN][0m No timezone for location using default
+2026-10-25 15:53:46.901753056 [32;1m[INFO][0m Got Odin Request 0
+0 2026/10/25 15:53:46.901921 200 1788
+1 2026/10/25 15:53:46.977512 POST /trace_attributes HTTP/1.1
+2026-10-25 15:53:46.977571669 [32;1m[INFO][0m Got Loki Request 1
+2026-10-25 15:53:46.977874997 [32;1m[INFO][0m Got Thor Request 1
+2026-10-25 15:53:46.977941663 [33;1m[WARN][0m No timezone for location using default
+1 2026/10/25 15:53:46.978021 200 304
+2026-10-25 15:53:47.287313672 [32;1m[INFO][0m Got Loki Request 2
+2 2026/10/25 15:53:47.287963 POST /route HTTP/1.1
+2026-10-25 15:53:47.288766229 [32;1m[INFO][0m Got Thor Request 2
+2026-10-25 15:53:47.288829186 [32;1m[INFO][0m algorithm::time_dependent_forward_a*
+2026-10-25 15:53:47.288843769 [33;1m[WARN][0m No timezone for location using default
+2026-10-25 15:53:47.288911643 [33;1m[WARN][0m No timezone for location using default
+2026-10-25 15:53:47.289032933 [32;1m[INFO][0m Got Odin Request 2
+2 2026/10/25 15:53:47.289143 200 1729
+2026-10-25 15:53:47.383355300 [32;1m[INFO][0m Got Loki Request 3
+3 2026/10/25 15:53:47.383618 POST /trace_attributes HTTP/1.1
+2026-10-25 15:53:47.383641462 [32;1m[INFO][0m Got Thor Request 3
+2026-10-25 15:53:47.383720169 [33;1m[WARN][0m No timezone for location using default
+3 2026/10/25 15:53:47.383795 200 304

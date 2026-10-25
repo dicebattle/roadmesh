@@ -1,0 +1,19 @@
+2026-10-25 15:33:53.129537841 [31;1m[ERROR][0m (stat):  No such file or directory
+2026-10-25 15:33:53.129543882 [31;1m[ERROR][0m (stat):  No such file or directory
+2026-10-25 15:33:53.132763253 [33;1m[WARN][0m Tile extract could not be loaded
+2026-10-25 15:33:53.132920751 [32;1m[INFO][0m Traffic tile extract successfully loaded with tile count: 14
+2026-10-25 15:33:53.133639115 [33;1m[WARN][0m Tile extract could not be loaded
+2026-10-25 15:33:53.137753139 [32;1m[INFO][0m Traffic tile extract successfully loaded with tile count: 14
+2026-10-25 15:33:53.441401392 [32;1m[INFO][0m Got Loki Request 0
+0 2026/10/25 15:33:53.441362 POST /route HTTP/1.1
+2026-10-25 15:33:53.516449562 [32;1m[INFO][0m Got Thor Request 0
+2026-10-25 15:33:53.516512436 [32;1m[INFO][0m algorithm::time_dependent_forward_a*
+2026-10-25 15:33:53.517760585 [33;1m[WARN][0m No timezone for location using default
+2026-10-25 15:33:53.517793293 [33;1m[WARN][0m No timezone for location using default
+2026-10-25 15:33:53.519081566 [32;1m[INFO][0m Got Odin Request 0
+0 2026/10/25 15:33:53.519228 200 1795
+1 2026/10/25 15:33:53.592780 POST /trace_attributes HTTP/1.1
+2026-10-25 15:33:53.592850379 [32;1m[INFO][0m Got Loki Request 1
+2026-10-25 15:33:53.593170082 [32;1m[INFO][0m Got Thor Request 1
+2026-10-25 15:33:53.593232831 [33;1m[WARN][0m No timezone for location using default
+1 2026/10/25 15:33:53.593301 200 304
