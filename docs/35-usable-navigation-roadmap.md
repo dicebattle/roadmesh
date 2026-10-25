@@ -11,6 +11,7 @@ Baseline: protected main 9b88a46, P01–P14 local pilot accepted. This proves a 
 | P0 quality gate / 품질 조건 | Reviewed Seoul route/matching corpus; one-way, turn restriction, ramps, parallel roads, tunnels and uncertain cases / 서울 경로·매칭 검토 자료와 일방통행·회전금지·연결로·평행도로·터널·불확실 사례 | A defensible route rather than an attractive line / 선만 그리는 것을 넘어 경로의 근거 확보 | Preserve RM-001's 100/100 reviewed quota, exclusions and source rights; independent expectations, not same-engine answers / 기존 100/100 기준·제외·사용권·독립 기대 결과 유지 |
 | P0 implementation foundation / 구현 기반 | NAV-01 validated turn instructions / 검증한 회전별 길안내 | Read where to turn along the calculated route / 계산 경로에서 어디로 가야 하는지 확인 | Native English/Korean instructions bound to the exact returned geometry and version; malformed guidance rejected / 실제 한영 엔진 안내·지형·버전 연결·잘못된 안내 거부 |
 | P1 | NAV-02 route progress and replay / 경로 진행·재생 | Current position, next maneuver and remaining distance / 현재 위치·다음 회전·남은 거리 | Authored noisy GPS replay, parallel-road ambiguity, stale/reordered points and arrival tests / 자체 GPS 오차·평행도로·오래된/역순 표본·도착 검사 |
+| P1 | NAV-06 destination search and selection / 목적지 검색·선택 | Enter an address/place, inspect candidates and confirm the car-access destination / 주소·장소를 검색하고 후보와 자동차 접근 지점을 확인 | Search ambiguity, coordinate precision, provider/source rights, failure recovery and explicit final destination; no automatic choice among ambiguous places / 동명이장소·좌표 정밀도·이용 조건·오류 복구·최종 목적지 확인 |
 | P1 | NAV-03 Android location lifecycle / Android 위치 수명주기 | Continue guidance with permissions, screen lock and temporary network loss / 권한·화면 잠금·일시 통신 단절 대응 | Device tests, explicit consent, local retention/deletion and battery/data measurements / 실제 기기·동의·보관/삭제·배터리/데이터 실측 |
 | P1 | NAV-04 rerouting and spoken guidance / 재탐색·음성 안내 | Recover after leaving the route and hear timely instructions / 이탈 후 복구·시점에 맞는 음성 | Off-route hysteresis, bounded requests, changed-route cancellation and voice deduplication / 이탈 누적 판정·요청 제한·이전 경로 취소·중복 발화 방지 |
 | P1 | NAV-05 deployable private preview / 배포 가능한 제한 미리보기 | Use a stable HTTPS service without a development machine / 개발 PC 없이 안정된 HTTPS로 사용 | Real-clock traffic mode, authentication, regional map updates, owned service restart and metrics; deployment separately authorized / 실제 시계·인증·지도 갱신·재시작·지표·배포 별도 승인 |
@@ -36,3 +37,17 @@ Acceptance: focused tests; fresh full simulation of all implemented modules plus
 Implemented and directly verified: fresh406, Node22 tests310, exact native EN/KO binding,390px manual review and refreshed actual28.5s recording. [Dated report](../research/pilot/2026-10-25-nav01/report.md). This is feature-branch delivery, not protected merge or deployment. NAV-02 route progress/replay is the next implementation; the independent quality gate remains open.
 
 새 전체406개·Node22 검사310개·한영 엔진 원문·390픽셀 직접 화면·새 실제28.5초 녹화를 검증했습니다. 작업 브랜치 전달이며 보호 병합·배포는 수행하지 않습니다. 다음은 NAV-02 경로 진행·재생이고 독립 품질 조건은 남아 있습니다.
+
+## User entry, reuse and disconnection / 사용자 입력·재사용·통신 단절
+
+The current coordinate/preset form is a developer pilot. After NAV-02 progress/replay, NAV-06 should add address/place search and a map-confirmed car-access destination before claiming ordinary user usability. NAV IDs are identifiers, not a numeric execution order: the intended sequence is NAV-01 → NAV-02 → NAV-06 → NAV-03/NAV-04 → NAV-05, while the P0 quality gate remains open. An arrival maneuver is a route endpoint, not proof that the user reached an accessible entrance or parking area.
+
+현재 좌표·미리 정한 경로 입력은 개발 파일럿입니다. NAV-02 다음에는 주소·장소 검색과 지도에서 자동차 접근 지점을 확인하는 NAV-06이 필요합니다. NAV 번호는 식별자이며 실제 순서는 위와 같습니다. 도착 안내는 경로 끝점이지 실제 출입구·주차장에 도달했다는 증거가 아닙니다. P0 도로 품질 조건도 계속 유지합니다.
+
+Reuse Valhalla for routing, native narrative and matching; use the device platform's location and speech facilities. Choose a maintained search implementation/provider after evaluating source rights, hosting cost and limits; no provider is selected or provisioned here. RouteLens should own the narrow adapters, route-bound progress, off-route/reroute rules, cancellation, authority/expiry handling and consent/deletion controls.
+
+경로·원 안내·매칭은 Valhalla, 위치·음성은 단말 기능을 재사용합니다. 검색은 출처 이용 조건·운영 비용·한도를 검토한 뒤 기존 구현/제공자를 고르며 이번에 선택·구축하지 않습니다. RouteLens는 연결기·경로에 연결한 진행·이탈/재탐색 규칙·취소·승인/만료·동의/삭제를 직접 구현합니다.
+
+During temporary disconnection, NAV-03 must distinguish continuing along already received geometry/instructions from computing a new route. Keep cached geometry and map data usable where supported, mark stale traffic and explicitly report when a new route cannot be calculated. Full offline regional map/search/routing downloads are a later optional module with storage, update, attribution and device-capacity acceptance; ordinary server availability does not prove offline navigation.
+
+일시 통신 단절에서는 받은 경로·안내를 계속 쓰는 동작과 새 경로 계산을 구분해야 합니다. 지원하는 지도·지형 캐시를 유지하고 오래된 교통정보와 재탐색 불가를 명확히 표시합니다. 지역 지도·검색·경로를 모두 내려받는 완전 오프라인 기능은 저장공간·갱신·출처·단말 용량을 검증할 후속 선택 모듈이며 서버 정상 동작으로 대신하지 않습니다.
