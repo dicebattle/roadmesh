@@ -795,7 +795,7 @@ export async function runClientChecks(
     guidance.route("native-baseline-en", baseline.body, "en-US", false, baseline.state.maneuvers);
     progressInput={route:baseline.body,roads:pilot.bootstrap.roads.features.map(f=>f.geometry.coordinates)};
     await p.locator("#replay-step").click();
-    let replayState=JSON.parse(await p.locator("#progress-evidence").innerText());
+    let replayState=await p.locator("#progress-evidence").evaluate(el=>JSON.parse(el.textContent!));
     const stepData=await p.evaluate(()=>({next:document.getElementById("next-maneuver")?.textContent,remaining:document.getElementById("remaining-distance")?.textContent,raw:document.querySelectorAll(".synthetic-gps").length,confirmed:document.querySelectorAll(".confirmed-gps").length}));
     progress.check("replay-ui-step",replayState.cursor===1 && replayState.state?.status==="ON_ROUTE" && stepData.next?.includes(baseline.body.guidance.maneuvers[1].instruction)===true && stepData.raw===1 && stepData.confirmed===1,
       "An ordinary browser step shows the bound native next turn, distance and distinct synthetic/confirmed markers.","실제 화면 한 표본에서 원 다음 안내·거리·합성/확정 표시 확인.",{replay:replayState,dom:stepData});
@@ -803,18 +803,18 @@ export async function runClientChecks(
     await p.locator("#replay-play").click();
     await p.waitForFunction(()=>document.getElementById("progress")?.dataset.state==="OFF_ROUTE",undefined,{timeout:15000});
     await p.locator("#replay-play").click();
-    const paused=JSON.parse(await p.locator("#progress-evidence").innerText());
+    const paused=await p.locator("#progress-evidence").evaluate(el=>JSON.parse(el.textContent!));
     await p.waitForTimeout(650);
-    replayState=JSON.parse(await p.locator("#progress-evidence").innerText());
+    replayState=await p.locator("#progress-evidence").evaluate(el=>JSON.parse(el.textContent!));
     await p.locator("#replay-play").click();
     await p.waitForFunction(()=>document.getElementById("progress")?.dataset.state==="ARRIVED",undefined,{timeout:45000});
-    const arrivedReplay=JSON.parse(await p.locator("#progress-evidence").innerText());
+    const arrivedReplay=await p.locator("#progress-evidence").evaluate(el=>JSON.parse(el.textContent!));
     progress.check("replay-ui-play-pause",paused.playing===false && replayState.cursor===paused.cursor && paused.state.status==="OFF_ROUTE" && paused.state.next_maneuver===null && arrivedReplay.state.remaining_m===0,
       "The actual browser confirms departure, pauses, rejoins and reaches the replay endpoint.","실제 브라우저 이탈 확정·정지·복귀·재생 끝점 도착 확인.",{paused,after:replayState,arrived:arrivedReplay});
     await p.locator("#replay-play").click();
     await p.locator("#origin-latitude").fill(String(pilot.bootstrap.presets.long.origin.latitude+.000001));
     await p.waitForTimeout(650);
-    const stopped=JSON.parse(await p.locator("#progress-evidence").innerText());
+    const stopped=await p.locator("#progress-evidence").evaluate(el=>JSON.parse(el.textContent!));
     progress.check("replay-ui-invalidation",stopped.state===null && stopped.playing===false && stopped.cursor===0 && await p.locator(".synthetic-gps,.confirmed-gps").count()===0 && await p.locator("#replay-play").isDisabled(),
       "Changing route input invalidates replay, removes markers and prevents old timer completion.","입력 변경 때 재생·표시·옛 타이머를 무효화.",stopped);
     await calculate("progress-restored","long");
