@@ -635,6 +635,12 @@ IAB English/Korean390px, keyboard and57-point rendered geometry passed. Actual C
 
 내장 브라우저 한영390픽셀·키보드·57점 지형을 확인했습니다. 실제281.45초 원본과 원속도126.45초 발췌·MP4/GIF를 보존하고 마지막 보고서 근거를 실시간 화면과 구분했습니다. 시연 성공7건을 엔진 원문에 연결하고 컨테이너 이름22개·볼륨·파일럿 PID21개/포트·녹화9개 원래 식별자 종료를 확인했습니다. 전체 원문16,229개/지도 제외32개·별도 시연4,553개/제외1개의 정확한 목록·복원을 검증했습니다. 한영 README·미디어 지문을 갱신하고 앞선 행렬 거부를 유지합니다. 다음은 게시 파일 검사·푸시·원격 원문·보호 병합과 P13/P14b입니다.
 
+## 2026-10-25 — P12 hosted artifact omission / P12 원격 원문 보존 누락
+
+Push40148864432 and PR40148884198 passed whole358 and Node22/24 each296 at0e37654. Main inspected domain3,313 hashes and client2,530 hashes/27 native pairs, but the expanded whole auditor rejected missing tiny matching XML map sources omitted by the upload projection. This is a delivery gap, not accepted final proof. Add XML to the existing original-artifact upload, preserve the rejected archive/audit diagnostics, and require a new hosted run before protected merge. No runtime, assertion, media or acceptance threshold changes. The gateway audit first lacked its explicit expected-source argument; the corrected invocation passed and both logs remain.
+
+푸시·PR의 전체358개·Node22/24 각296개는 통과했습니다. 메인이 업무 해시3,313개·클라이언트 해시2,530개/엔진27쌍을 확인했지만 확대 전체 감사가 업로드에서 빠진 작은 매칭 XML 지도 원본을 거부했습니다. 반영 공백이며 최종 근거로 수용하지 않습니다. XML 보존을 추가하고 거부한 묶음·감사 진단을 남긴 뒤 새 원격 실행 후에만 보호 병합합니다. 실행 코드·판정·미디어·통과 기준은 바꾸지 않습니다. 중계 감사 첫 호출의 기대 소스 인자 누락도 수정 후 통과했고 두 로그를 보존합니다.
+
 ## 2026-10-25 — P13 Sol design and local parity candidate / P13 Sol 설계·로컬 비교 후보
 
 Main Sol fixed the post-matching scope before coding, retrieved official Cloudflare docs and pinned Wrangler4.152.0/workerd1.20261019.1/types5.20261024.1. Extracted existing strict JSON/canonical/UTC helpers without protocol changes; both stores call the same aggregation core. Added actual local Worker/Queue/SQLite DO receipts/outbox, once-only effects, retry, revocation, exact expiry, retention and owned process restarts. Existing P06 exports exact read-only finalization input through its own SQL/clock. Integrated32 additional cases and report evidence for390; required CI also verifies generated bindings and retains SQLite/WAL/SHM/XML. P12 hosted measured1468s motivates35min whole-job budget; request deadlines are unchanged. [Development record](../research/pilot/2026-10-25-p13/development/README.md).
