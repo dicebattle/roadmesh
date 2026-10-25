@@ -1,0 +1,21 @@
+{
+  "realSource": {
+    "status": 403,
+    "body": {
+      "code": "SOURCE_NOT_ALLOWED",
+      "message_en": "Only synthetic pilot observations are allowed.",
+      "message_ko": "합성 파일럿 관측만 허용합니다."
+    }
+  },
+  "refused": {
+    "code": "REJECTED",
+    "reason": "WRONG_SCOPE",
+    "high_water": 0,
+    "traffic_snapshot_id": null
+  },
+  "foreignState": {
+    "high_water": 0,
+    "active": null,
+    "checked_at_event_time": "2026-10-24T00:04:30.000Z"
+  }
+}

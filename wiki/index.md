@@ -1,6 +1,6 @@
 # NAV-02 locally accepted / NAV-02 로컬 수용
 
-[Progress/replay contract](../docs/37-nav02-route-progress.md) · [module](modules/route-progress.md) · [actual report](../research/pilot/2026-10-25-nav02/report.md). Fresh438/438, Node22 full320, actual EN/KO390px, independent original inspection and42.7s recording passed. Protected merge follows exact-head hosted checks; no deployment. / 새438개·전체320개·한영390픽셀·독립 원문·42.7초 녹화를 확인했고 정확한 원격 검사 뒤 보호 병합합니다. 배포는 없습니다.
+[Progress/replay contract](../docs/37-nav02-route-progress.md) · [module](modules/route-progress.md) · [actual report](../research/pilot/2026-10-25-nav02-clock/report.md). Corrected fresh438/438, Node22 full320, actual EN/KO390px, independent original inspection and43.5s recording passed. Protected merge follows exact-head hosted checks; no deployment. / 새438개·전체320개·한영390픽셀·독립 원문·42.7초 녹화를 확인했고 정확한 원격 검사 뒤 보호 병합합니다. 배포는 없습니다.
 
 The NAV-01 section and P01–P14 checkpoints below are historical. / 아래 NAV-01·P01~P14는 과거 검증 시점을 보존합니다.
 
@@ -135,4 +135,7 @@ Latest: [P11 actual client proof](../research/pilot/2026-10-25-p11/report.md), [
 
 현재 로컬 전체390개·독립 해시16,061개·Cloudflare32개/전체 결과11쌍·실제 사용자32초/개발155.05초 녹화를 확인했습니다. P12는 수정 원격·보호 반영을 마쳤고 P13/P14b의 원격·보호 반영은 남습니다. 위 진행 기록은 과거 중간 상태입니다.
 
-- [NAV-02 route progress and replay / 경로 진행·재생](modules/route-progress.md) · [dated evidence / 날짜별 근거](../research/pilot/2026-10-25-nav02/report.md)
+- [NAV-02 route progress and replay / 경로 진행·재생](modules/route-progress.md) · [dated evidence / 날짜별 근거](../research/pilot/2026-10-25-nav02-clock/report.md)
+
+
+Corrected NAV-02 acceptance / 수정 NAV-02 수용: clean fe49b55/runtime70af32dc passed fresh438/438, focused10/full320 and new43.5s actual recording on graph a859e9ad. Strengthened future-sample expiry is included; first local evidence remains historical. Independent progress191 states/168 positions and IAB EN/KO390px passed. [Final dated report](../research/pilot/2026-10-25-nav02-clock/report.md). The user-authorized protected merge follows exact-head CI; no deployment. / 미래 표본 때 옛 안내 만료를 보강한 깨끗한 소스의 새438개·집중10개/전체320개·새43.5초·독립191상태/168위치·내장 한영390픽셀을 확인했습니다. 첫 결과는 과거 근거로 보존하고 정확한 원격 검사 뒤 보호 병합하며 배포하지 않습니다.

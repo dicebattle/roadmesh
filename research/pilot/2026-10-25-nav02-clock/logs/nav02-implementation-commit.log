@@ -1,0 +1,9 @@
+[feat/navigation-progress 0342202] Add conservative route progress and authored Seoul GPS replay
+ 18 files changed, 1880 insertions(+), 7 deletions(-)
+ create mode 100644 docs/37-nav02-route-progress.md
+ create mode 100644 tests/route_progress.test.ts
+ create mode 100644 tools/input_error.ts
+ create mode 100644 tools/progress_checks.ts
+ create mode 100644 tools/progress_replay.ts
+ create mode 100644 tools/route_progress.ts
+ create mode 100644 web/pilot/replay.ts

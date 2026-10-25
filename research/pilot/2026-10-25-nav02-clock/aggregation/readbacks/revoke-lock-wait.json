@@ -1,0 +1,204 @@
+{
+  "paused_worker_pid": 54204,
+  "waiters": [
+    {
+      "pid": 202,
+      "wait_event_type": "Lock",
+      "wait_event": "transactionid",
+      "aggregation_blockers": [
+        233
+      ]
+    }
+  ],
+  "locks": [
+    {
+      "pid": 202,
+      "locktype": "relation",
+      "mode": "RowShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.contributors_pkey"
+    },
+    {
+      "pid": 202,
+      "locktype": "relation",
+      "mode": "RowShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.namespace_clock"
+    },
+    {
+      "pid": 202,
+      "locktype": "relation",
+      "mode": "RowShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.contributors"
+    },
+    {
+      "pid": 202,
+      "locktype": "relation",
+      "mode": "RowShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.namespace_clock_pkey"
+    },
+    {
+      "pid": 202,
+      "locktype": "transactionid",
+      "mode": "ExclusiveLock",
+      "granted": true,
+      "relation_name": null
+    },
+    {
+      "pid": 202,
+      "locktype": "transactionid",
+      "mode": "ShareLock",
+      "granted": false,
+      "relation_name": null
+    },
+    {
+      "pid": 202,
+      "locktype": "tuple",
+      "mode": "AccessExclusiveLock",
+      "granted": true,
+      "relation_name": "routelens_p05.contributors"
+    },
+    {
+      "pid": 202,
+      "locktype": "virtualxid",
+      "mode": "ExclusiveLock",
+      "granted": true,
+      "relation_name": null
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "AccessShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.traversals_pkey"
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "AccessShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.p05_ready"
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "AccessShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.trips_pkey"
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "AccessShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.trips"
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "AccessShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.events"
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "AccessShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.traversals"
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "AccessShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.contributors_pkey"
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "AccessShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.events_pkey"
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "AccessShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.contributors"
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "RowExclusiveLock",
+      "granted": true,
+      "relation_name": "routelens_p06.candidates_pkey"
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "RowExclusiveLock",
+      "granted": true,
+      "relation_name": "routelens_p06.candidates"
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "RowShareLock",
+      "granted": true,
+      "relation_name": "routelens_p06.candidates_pkey"
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "RowShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.contributors"
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "RowShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.contributors_pkey"
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "RowShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.namespace_clock_pkey"
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "RowShareLock",
+      "granted": true,
+      "relation_name": "routelens_p05.namespace_clock"
+    },
+    {
+      "pid": 233,
+      "locktype": "relation",
+      "mode": "RowShareLock",
+      "granted": true,
+      "relation_name": "routelens_p06.candidates"
+    },
+    {
+      "pid": 233,
+      "locktype": "transactionid",
+      "mode": "ExclusiveLock",
+      "granted": true,
+      "relation_name": null
+    },
+    {
+      "pid": 233,
+      "locktype": "virtualxid",
+      "mode": "ExclusiveLock",
+      "granted": true,
+      "relation_name": null
+    }
+  ]
+}

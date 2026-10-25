@@ -753,3 +753,8 @@ Next: descriptive bilingual commit/push, exact remote SHA, exact-head hosted ori
 ## 2026-10-25 — NAV-02 pre-merge clock-boundary finding / 병합 전 시간 경계 발견
 
 Main's final review reproduced FUTURE_FIX returning ON_ROUTE at6000ms after the last valid fix at0. Retain the first local438 proof and currently running bbc4a4a CI as historical, not corrected-source acceptance. Minimum change calls the existing monotonic advance after route/clock checks, before sample-time rejection; strengthen existing future case/unit test, then run a fresh clean whole438 and refresh the recording/fingerprint. / 최종 검토에서 유효 위치 뒤6초의 미래 표본 거부 때 옛 안내가 남는 것을 직접 재현했습니다. 기존438개·진행 중 CI를 과거 근거로 보존하고 기존 시계 만료 호출과 기존 검사를 강화한 뒤 새 전체 실행·녹화를 진행합니다.
+
+
+## 2026-10-25 — Corrected NAV-02 final local acceptance / 수정 NAV-02 최종 로컬 수용
+
+Clean fe49b55/runtime70af32dc passed fresh whole438, strict Node22 build, focused10/full320, independent current-source native/signature/state/SQLite/progress inspection and newly captured whole43.5s. Future expiry regression is now included in the existing case without changing quotas. Actual IAB EN/KO390px, departure withholding and rejoin passed; owned demo/capture cleanup verified. First438/42.7s remains preserved as historical, with before/after reproducer. [Final report](../research/pilot/2026-10-25-nav02-clock/report.md). / 시간 경계 회귀를 기존 사례에 추가한 깨끗한 새438개·엄격 빌드·집중10개/전체320개·현재 소스 독립 원문·새43.5초·내장 한영390픽셀·이탈/복귀·정리를 확인했습니다. 첫438개/42.7초와 문제 전후 재현은 과거 근거로 보존합니다.

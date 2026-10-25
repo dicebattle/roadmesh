@@ -1,0 +1,74 @@
+{
+  "before": {
+    "counts": {
+      "contributors": 1,
+      "trips": 1,
+      "batches": 1,
+      "samples": 60,
+      "traversals": 0,
+      "events": 1,
+      "raw_payloads": 60
+    },
+    "trips": [
+      {
+        "contributor_id": "legacy-person",
+        "trip_id": "migration",
+        "vehicle_id": "p06-speed-3",
+        "state": "WAITING",
+        "fence": "0",
+        "owner_id": null,
+        "attempt": 0,
+        "final_seq": null,
+        "first_received_at": "2026-10-24T00:00:29.500Z",
+        "last_activity_at": "2026-10-24T00:00:29.500Z",
+        "raw_expires_at": "2026-10-24T00:10:29.500Z",
+        "tombstone_expires_at": "2026-10-25T00:00:29.500Z",
+        "lease_until_utc": null,
+        "sample_count": 60,
+        "batch_count": 1,
+        "raw_payload_count": 60,
+        "traversal_count": 0,
+        "matching_digest": null
+      }
+    ],
+    "traversals": []
+  },
+  "after": {
+    "counts": {
+      "contributors": 1,
+      "trips": 1,
+      "batches": 1,
+      "samples": 60,
+      "traversals": 0,
+      "events": 1,
+      "raw_payloads": 60
+    },
+    "trips": [
+      {
+        "contributor_id": "legacy-person",
+        "trip_id": "migration",
+        "vehicle_id": "p06-speed-3",
+        "state": "WAITING",
+        "fence": "0",
+        "owner_id": null,
+        "attempt": 0,
+        "final_seq": null,
+        "first_received_at": "2026-10-24T00:00:29.500Z",
+        "last_activity_at": "2026-10-24T00:00:29.500Z",
+        "raw_expires_at": "2026-10-24T00:10:29.500Z",
+        "tombstone_expires_at": "2026-10-25T00:00:29.500Z",
+        "lease_until_utc": null,
+        "sample_count": 60,
+        "batch_count": 1,
+        "raw_payload_count": 60,
+        "traversal_count": 0,
+        "matching_digest": null
+      }
+    ],
+    "traversals": []
+  },
+  "response": {
+    "status": 409,
+    "code": "TRIP_CONFLICT"
+  }
+}

@@ -23,7 +23,7 @@ The system has two jobs: turn driving observations into shared road-speed inform
 
 [![Using the Seoul route client](docs/media/demo.gif)](docs/media/demo.gif)
 
-[Watch the 42.7-second walkthrough (GIF)](docs/media/demo.gif) · [MP4 file](docs/media/demo.mp4) · [한국어 GIF](docs/media/demo.ko.gif)
+[Watch the 43.5-second walkthrough (GIF)](docs/media/demo.gif) · [MP4 file](docs/media/demo.mp4) · [한국어 GIF](docs/media/demo.ko.gif)
 
 The GIF plays in this README. To download the MP4, open its file page and choose **Raw**.
 
@@ -35,7 +35,7 @@ The walkthrough shows the actual browser client:
 4. Choose **Departure and rejoin**, then play the synthetic GPS replay.
 5. Follow the next turn and remaining distance; watch guidance pause after departure and recover on rejoin, ending at the route endpoint.
 
-This recording uses actual Seoul road geometry and authored synthetic positions at an explicitly labeled4× replay speed. The video itself retains the whole42.7s at1×. Default speeds apply because the synthetic traffic snapshot has expired. Departure is confirmed from consecutive positions; current turns and distances are withheld until rejoin. This does not use phone GPS. [Recording details](docs/media/latest.json).
+This recording uses actual Seoul road geometry and authored synthetic positions at an explicitly labeled 4× replay speed. The video itself retains the whole 43.5s at 1×. The signed synthetic snapshot produces a detour, whose returned road segments have zero live coverage; this is not measured live traffic. Departure is confirmed from consecutive positions; current turns and distances are withheld until rejoin. This does not use phone GPS. [Recording details](docs/media/latest.json).
 
 The longer [developer walkthrough](research/pilot/2026-10-25-p13/developer-walkthrough.mp4) separately shows publication changes, node failure, expiry and completed test reports.
 
@@ -94,11 +94,11 @@ Append `/report.html` to its printed URL. This is the completed evidence report,
 
 ## 5. Implementation and verification
 
-NAV-02 passed **438 fresh local integration assertions** (all406 previous checks plus32 progress/replay checks), **320 tests on Node.js22**, independent original inspection and an actual42.7-second user recording. Independent geometry checks inspected190 progress states and168 confirmed positions, with a maximum2.23m difference from authored route progress; this is synthetic evidence, not measured phone GPS accuracy. Hosted checks and protected merge are recorded separately from local results.
+NAV-02 passed **438 fresh local integration assertions** (all 406 previous checks plus 32 progress/replay checks), **320 tests on Node.js 22**, independent original inspection and an actual 43.5-second user recording. Independent geometry checks inspected 191 progress states and 168 confirmed positions, with a maximum 2.23m difference from authored route progress; this is synthetic evidence, not measured phone GPS accuracy. The pre-merge clock-boundary fix is included: an expired previous position loses current guidance even when a new future-dated position is rejected. Hosted checks and protected merge are recorded separately from local results.
 
 The next implementation is **destination search and confirmation**. Reviewed road quality, device lifecycle, rerouting/voice, stable HTTPS operation and real traffic/ETA evaluation remain. [Prioritized navigation plan](docs/35-usable-navigation-roadmap.md).
 
-- [Latest test report and original evidence](research/pilot/2026-10-25-nav02/report.md)
+- [Latest test report and original evidence](research/pilot/2026-10-25-nav02-clock/report.md)
 - [Current implementation status](docs/18-goal-progress.md)
 - [Development and decision log](wiki/log.md)
 - [Contribution guide](CONTRIBUTING.md) · [Protected-branch workflow](docs/12-development-workflow.md)

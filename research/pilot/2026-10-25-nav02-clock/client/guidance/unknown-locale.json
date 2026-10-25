@@ -1,0 +1,24 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "nav01-locale-2fc8582d-4bab-43cb-b2d8-00610a4b4c1d",
+    "origin": {
+      "longitude": 127.029,
+      "latitude": 37.4984
+    },
+    "destination": {
+      "longitude": 127.049,
+      "latitude": 37.5045
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live",
+    "guidance_language": "ja-JP"
+  },
+  "status": 422,
+  "body": {
+    "code": "ERROR",
+    "reason": "INVALID_INPUT",
+    "message_en": "Enter two finite locations inside the displayed Seoul pilot map bounds.",
+    "message_ko": "표시된 서울 파일럿 지도 범위 안의 유효한 두 위치를 입력하세요."
+  }
+}

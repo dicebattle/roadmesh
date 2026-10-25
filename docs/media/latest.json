@@ -1,21 +1,21 @@
 {
-  "source_commit": "7078d6f6b83572286408a5d8cfcf1beee74d4364",
-  "implementation_sha256": "6d853cf2d924ea6a424a7d5338c16c6be7cc70df87d7e8b8b1a2ea0ec9ffe58d",
-  "report_path": "research/pilot/2026-10-25-nav02/report.html",
-  "report_sha256": "a8ee5a1bad96a66ff01e1cee6f9186ba5e73bae16bc28d79f552f2a723784460",
-  "capture_method": "Actual automatic Seoul pilot full42.7s at1x; app explicitly replays authored GPS at4x. Captions outside original1280x720. / 실제 서울 자동 파일럿 전체42.7초 원속도·화면 GPS만4배속·원1280x720밖 자막.",
+  "source_commit": "fe49b55cad5b61a9f2dd6043922b4480e5bf2bbb",
+  "implementation_sha256": "70af32dc05269aee3a739e234e8db66718bfd1ee86c70b4d84c776be2c5a1db4",
+  "report_path": "research/pilot/2026-10-25-nav02-clock/report.html",
+  "report_sha256": "64cb083f7af8a9331034154e8a9aadcf7ad012e96c186c94b4c04f9ec77f4e32",
+  "capture_method": "Actual automatic Seoul pilot full43.5s at1x; app explicitly replays authored GPS at4x. Captions outside original1280x720. / 실제 서울 자동 파일럿 전체43.5초 원속도·화면 GPS만4배속·원1280x720밖 자막.",
   "user_capture": {
-    "source_commit": "7078d6f6b83572286408a5d8cfcf1beee74d4364",
+    "source_commit": "fe49b55cad5b61a9f2dd6043922b4480e5bf2bbb",
     "source_dirty": false,
-    "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
-    "raw_capture_seconds": 42.7,
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "raw_capture_seconds": 43.5,
     "retained_raw_intervals_seconds": [
       [
         0,
-        42.7
+        43.5
       ]
     ],
-    "published_seconds": 42.7,
+    "published_seconds": 43.5,
     "captions_languages": [
       "en",
       "ko"
@@ -34,43 +34,43 @@
   "assets": [
     {
       "path": "docs/media/demo.mp4",
-      "sha256": "9a2d4aaa1f3bf6ea26e6b3efd47c98a45897a96b46fc7f6d25508c459fec825a"
+      "sha256": "e56bfce9310a55fb893cf7dbc4cd5f71160321c33079480357890b96bc47fd56"
     },
     {
       "path": "docs/media/demo.ko.mp4",
-      "sha256": "0cfae57dcc272f0fc6e453522be01d5185a2fc88198812039cfdbd194bbcba33"
+      "sha256": "60962d8feb7a5d13722f3d1bfc8daf03e3fed1687af695d458346f2a7bdc761e"
     },
     {
       "path": "docs/media/demo.gif",
-      "sha256": "a84912fc8bdab477c0c3f209a19e67c9b0c9c6a6a4d46a2d7dabbbb26f53b006"
+      "sha256": "534cbec31d34128d73ffa161b41f9ced3c6e7caf3a9fea342bf477a464c71957"
     },
     {
       "path": "docs/media/demo.ko.gif",
-      "sha256": "b03a4bdc4be568e0a4a59749c62cd7ec3630761c2340217cc825335a8e285356"
+      "sha256": "463ab0871297adc930de4c2e186213ee360f0a02e65b4c24ac6e880d9150e2d0"
     },
     {
       "path": "docs/media/demo-poster.ko.png",
-      "sha256": "1e6b349054672a1b143d534c23297f7426367ae7ae3d2827f14ac5f0ebc08cf4"
+      "sha256": "ab17337e85f32f388504364dac257be7d895e1174b0838012327333397e2c187"
     },
     {
-      "path": "research/pilot/2026-10-25-nav02/capture-original.webm",
-      "sha256": "bac17a58f18c9b141d01398a24370dc8b7f5df8713f7611862730fb2d7c97aee"
+      "path": "research/pilot/2026-10-25-nav02-clock/capture-original.webm",
+      "sha256": "68fc4f788cf966a6a67ba60ef1acc41fbcf4a7e8a78085f23e20731244158dd7"
     },
     {
-      "path": "research/pilot/2026-10-25-nav02/frames/client-onroute.png",
-      "sha256": "8b334860310d8cd342736973e6de1afdf7940a2275d4c5c188aae14245d7837e"
+      "path": "research/pilot/2026-10-25-nav02-clock/frames/client-onroute.png",
+      "sha256": "46318f71845488ba36127f04d961b96b0d1a6ad6552680ca321ede2a3bd2b6b7"
     },
     {
-      "path": "research/pilot/2026-10-25-nav02/frames/client-offroute.png",
-      "sha256": "a31a9b7537c9d0a799744a85d0e26add40f43c969b6d73da148baf9472fbb701"
+      "path": "research/pilot/2026-10-25-nav02-clock/frames/client-offroute.png",
+      "sha256": "b9f9b723fa6ba85ea88f74f40d175ae12767c4f0424e8c5962a39efda3415a7f"
     },
     {
-      "path": "research/pilot/2026-10-25-nav02/frames/client-arrived.png",
-      "sha256": "824d6afe3f9fcee95e664c4bf04496ed9ebd4f56cd82a2d5aa8b040a35d47523"
+      "path": "research/pilot/2026-10-25-nav02-clock/frames/client-arrived.png",
+      "sha256": "0ee9b7e369a36e6f9ef8f6d894e9749acbbd1391bde6b09d2ebf7ca846bb9373"
     },
     {
-      "path": "research/pilot/2026-10-25-nav02/report-data.json",
-      "sha256": "337606ef6c4f6e4edc87163da44ffffcd4258beb2df1b6a2274023517c27d234"
+      "path": "research/pilot/2026-10-25-nav02-clock/report-data.json",
+      "sha256": "7024605506332f8e8a8da08d0f1b0eac4f43d0057fd29ca921b3f05b2840e18a"
     }
   ]
 }

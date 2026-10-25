@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "source_commit": "fe49b55cad5b61a9f2dd6043922b4480e5bf2bbb",
+  "implementation_sha256": "70af32dc05269aee3a739e234e8db66718bfd1ee86c70b4d84c776be2c5a1db4",
+  "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+  "bindings": [
+    {
+      "request_id": "browser-7ea2f73c-d471-4416-a9f2-18af6454c98e",
+      "language": "ko-KR",
+      "maneuvers": 9,
+      "distance_m": 2412,
+      "duration_s": 184.731,
+      "calculated_at": "2026-10-25T13:13:59.051Z",
+      "native_route_path": "pilot/nodes/client-node-a/runtime-2ef27b32-94f4-456d-8048-ff8d9149c31a/engines/e133df20-c797-4abe-b912-7838ff8144af/requests/59a1d6af-5477-4721-9ab1-f3ddb3a6633d/route.response.json",
+      "native_sha256": "70f660b30abd605b7d1908db988a902bd76bbc9f7f9088a268b7e7c2f88ed572"
+    },
+    {
+      "request_id": "browser-76ed9985-8e63-4932-a229-1ee27fedf52a",
+      "language": "en-US",
+      "maneuvers": 9,
+      "distance_m": 2412,
+      "duration_s": 184.731,
+      "calculated_at": "2026-10-25T13:14:44.279Z",
+      "native_route_path": "pilot/nodes/client-node-a/runtime-2ef27b32-94f4-456d-8048-ff8d9149c31a/engines/e133df20-c797-4abe-b912-7838ff8144af/requests/09409db8-d0cb-4611-af22-ea18fdee9bd8/route.response.json",
+      "native_sha256": "50f0330b8d295f15d8c1b21ea9f2f173128ce413c27432458628e632ed30672a"
+    },
+    {
+      "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+      "language": "ko-KR",
+      "maneuvers": 9,
+      "distance_m": 2412,
+      "duration_s": 184.731,
+      "calculated_at": "2026-10-25T13:14:56.348Z",
+      "native_route_path": "pilot/nodes/client-node-a/runtime-2ef27b32-94f4-456d-8048-ff8d9149c31a/engines/e133df20-c797-4abe-b912-7838ff8144af/requests/253143e8-d52f-4cc3-b7ca-48e3a62da7ce/route.response.json",
+      "native_sha256": "890268432b6b5f07c2522750043207f573d056654f79bb48794c0fdb61bcca30"
+    }
+  ],
+  "raw_capture_seconds": 43.5,
+  "retained_intervals": [
+    [
+      0,
+      43.5
+    ]
+  ],
+  "captions_outside_application": true,
+  "application_frame": {
+    "width": 1280,
+    "height": 720
+  },
+  "published_frame": {
+    "width": 1280,
+    "height": 828
+  },
+  "capture_browser_processes_absent": 9,
+  "owned_containers_absent": [
+    "routelens-p05-38ca913e-bfef-46d3-ba5c-3e5886c314d1",
+    "routelens-p02-b5230a51-3497-4689-a3da-ce9645c22f91",
+    "routelens-p02-43edcdad-bb19-4688-a68f-d8fd24b25812",
+    "routelens-p02-e133df20-c797-4abe-b912-7838ff8144af",
+    "routelens-p02-01b7e5ea-3753-411b-915d-32196490cd22",
+    "routelens-p02-ee64d56e-c631-4718-a892-c56183deb5ff",
+    "routelens-p02-35806a36-e9d2-499d-80af-932da8a7b857",
+    "routelens-p02-02981972-2726-4df2-99dc-4a4d60f1979e",
+    "routelens-p02-69c55302-f117-4755-9dc1-3cb61217ee4c",
+    "routelens-p02-0c5bce4c-423a-4c61-9912-42b272738d51",
+    "routelens-p02-a0891ded-cd2d-4e88-88c2-78e4e0a2dfbf",
+    "routelens-p02-603f7a8c-80aa-42c3-994e-7626a049af59",
+    "routelens-p02-e4fa5780-0252-4718-bde0-1e761e7931bc",
+    "routelens-p02-ffeb2330-0be8-42c3-8eaa-2f83f97d648d",
+    "routelens-p02-1693e7c5-4a62-4e76-be08-962a030da46f",
+    "routelens-p02-435a861c-2786-446a-b856-e51bb6c29c75",
+    "routelens-p02-847e7207-2cdd-472f-a1da-cdf46682b1de",
+    "routelens-p02-a5c596eb-5963-4f63-a0cb-8a6ca3fca6d1",
+    "routelens-p02-ba69f88f-6783-46c0-83a9-42bc5be3215b",
+    "routelens-p02-89607a6c-885f-4e89-bf84-2daf3d2697ef",
+    "routelens-p02-2a77ca2b-ea84-4c54-be9d-7217cbfa855e"
+  ],
+  "owned_volume_absent": "routelens-p05-38ca913e-bfef-46d3-ba5c-3e5886c314d1-db",
+  "app_port_closed": 49824,
+  "iab_languages": [
+    "en",
+    "ko"
+  ],
+  "mobile_width": 390,
+  "horizontal_overflow": false,
+  "message_en": "Actual automatic pilot on this fresh Seoul graph; three successful routes, nine original turns, IAB progress/departure/rejoin, recorded full flow and exact owned cleanup checked. The signed synthetic snapshot is accepted, but the returned detour has zero live segment coverage; no real traffic is claimed.",
+  "message_ko": "이번 새 서울 지도·자동 파일럿에서 성공3건·원 안내9개·내장 진행/이탈/복귀·전체 녹화·정확한 소유 정리를 확인했습니다. 서명한 합성 자료를 수용했지만 우회 반환 구간 적용률은0이며 실제 교통을 주장하지 않습니다."
+}

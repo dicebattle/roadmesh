@@ -1,0 +1,39 @@
+{
+  "source_class": "SYNTHETIC",
+  "binding": {
+    "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+    "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+  },
+  "metric_scope": "EXACT_RETURNED_ROUTE_NOT_ROAD_NETWORK_MATCHING",
+  "output": {
+    "accepted": true,
+    "reason": "START_NOT_CONFIRMED",
+    "state": {
+      "policy_id": "route-progress-v1",
+      "source_class": "SYNTHETIC",
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "status": "UNCERTAIN",
+      "reason": "START_NOT_CONFIRMED",
+      "event_time_ms": 0,
+      "accuracy_m": 4,
+      "raw_position": [
+        127.04901900000004,
+        37.50450500000001
+      ],
+      "confirmed_position": null,
+      "geometry_length_m": 2117.011521689528,
+      "last_confirmed_progress_m": null,
+      "progress_m": null,
+      "remaining_m": null,
+      "distance_to_route_m": 1.4146481319698978e-9,
+      "next_maneuver": null
+    }
+  }
+}

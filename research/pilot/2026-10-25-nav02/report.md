@@ -21,9 +21,9 @@ NAV-02 implements route-bound synthetic GPS replay on the actual Seoul OSM graph
 
 ## Actual recording / 실제 녹화
 
-[![Route progress replay](../../../docs/media/demo-poster.ko.png)](../../../docs/media/demo.ko.gif)
+[![Route progress replay](user-demo/demo-poster.ko.png)](user-demo/demo.ko.gif)
 
-[English GIF](../../../docs/media/demo.gif) · [한국어 GIF](../../../docs/media/demo.ko.gif) · [한국어 MP4](../../../docs/media/demo.ko.mp4) · [untouched original42.7s](capture-original.webm).
+[English GIF](user-demo/demo.gif) · [한국어 GIF](user-demo/demo.ko.gif) · [한국어 MP4](user-demo/demo.ko.mp4) · [untouched original42.7s](capture-original.webm).
 
 The whole original recording is retained at1×; the application explicitly plays authored GPS at4×. English/Korean captions occupy a108px band below the original1280×720 application. There is no frame replacement, result replacement or fabricated location. The recorded route uses default speeds because the synthetic traffic snapshot had expired, and all three actual requests bind to original native outputs. It is not a live traffic demonstration. [Demo audit](demo-verification.json), [capture source](capture/), [media provenance](../../../docs/media/latest.json).
 
@@ -46,3 +46,5 @@ Inspectors and exact commands are retained under [inspectors](inspectors/); orig
 This proves authored route-bound behavior on original Seoul geometry. It does not measure real phone GPS accuracy, actual driving safety, legal road correctness, accessible destination entrances, real ETA or hosted Cloudflare operation. RM-001's independent100-route/100-matching quality gate remains open. Next is NAV-06 destination search/confirmation, followed by device lifecycle, rerouting/voice and separately authorized HTTPS deployment. / 서울 원 지형 위 자체 입력 동작을 증명했으며 실제 단말 정확도·실주행 안전·도로 법규·접근 출입구·실제 도착시간·운영 Cloudflare 검증이 아닙니다. 독립100/100기준을 유지하며 다음은 목적지 검색/확인입니다.
 
 Hosted exact-head CI and merge results are appended only after observed completion. Main protection remains enabled; no deployment is performed. / 원격 정확한 커밋의 CI·병합 결과는 실제 확인 후 추가하며 보호를 유지하고 배포하지 않습니다.
+
+Media preservation2026-10-25: First NAV-02 original42.7s assets now use stable paths; corrected runtime and new43.5s recording supersede this first acceptance. Historical measurements are unchanged. / 첫 NAV-02 원42.7초 자료를 고정 경로로 보존하고 수정 소스·새43.5초 녹화로 대체했으며 과거 측정은 그대로입니다.

@@ -1,0 +1,25 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "no-suitable-road",
+    "origin": {
+      "longitude": 127.029,
+      "latitude": 37.4984
+    },
+    "destination": {
+      "longitude": 127.080961,
+      "latitude": 37.549272
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live",
+    "snap_policy": "nearest_road_100m"
+  },
+  "status": 422,
+  "body": {
+    "code": "ERROR",
+    "reason": "NO_SUITABLE_ROAD",
+    "message_en": "No suitable road was found within the selected search range.",
+    "message_ko": "선택한 탐색 범위에서 적합한 도로를 찾지 못했습니다."
+  },
+  "elapsed_ms": 1556.4176250000019
+}

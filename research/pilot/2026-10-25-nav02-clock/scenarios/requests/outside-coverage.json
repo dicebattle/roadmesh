@@ -1,0 +1,25 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "outside-coverage",
+    "origin": {
+      "longitude": 127.029,
+      "latitude": 37.4984
+    },
+    "destination": {
+      "longitude": 127.26,
+      "latitude": 37.5
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live",
+    "snap_policy": "nearest_road_100m"
+  },
+  "status": 422,
+  "body": {
+    "code": "ERROR",
+    "reason": "OUT_OF_COVERAGE",
+    "message_en": "A location is outside the verified map coverage.",
+    "message_ko": "위치가 검증한 지도 범위 밖에 있습니다."
+  },
+  "elapsed_ms": 0.9529580000089481
+}

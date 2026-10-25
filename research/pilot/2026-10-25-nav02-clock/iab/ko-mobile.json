@@ -1,0 +1,2054 @@
+{
+  "progress": {
+    "cursor": 20,
+    "playing": false,
+    "replay": {
+      "alternate_road": 957,
+      "binding": {
+        "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+        "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+      },
+      "samples": [
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 0,
+            "heading_degrees": 248.2822064023221,
+            "latitude": 37.498447,
+            "longitude": 127.028976,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 0
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 1000,
+            "heading_degrees": 248.2820461675589,
+            "latitude": 37.4983727978418,
+            "longitude": 127.02873540034284,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 25
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 2000,
+            "heading_degrees": 248.6627809184855,
+            "latitude": 37.49827185599796,
+            "longitude": 127.02842666909294,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 50
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 3000,
+            "heading_degrees": 247.94506495677737,
+            "latitude": 37.498178418240755,
+            "longitude": 127.0282305360613,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 75
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 4000,
+            "heading_degrees": 229.95988773639291,
+            "latitude": 37.498091508934614,
+            "longitude": 127.02794217290987,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 100
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 5000,
+            "heading_degrees": 69.01255246127852,
+            "latitude": 37.49803826973747,
+            "longitude": 127.02810417164484,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 125
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 6000,
+            "heading_degrees": 68.6196286433804,
+            "latitude": 37.498128124254734,
+            "longitude": 127.02839126338426,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 150
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 7000,
+            "heading_degrees": 69.35428315039877,
+            "latitude": 37.49819012848848,
+            "longitude": 127.02861075978046,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 175
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 8000,
+            "heading_degrees": 69.02419220283457,
+            "latitude": 37.4982837064079,
+            "longitude": 127.02890956129148,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 200
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 9000,
+            "heading_degrees": 69.02435309319105,
+            "latitude": 37.498355196175176,
+            "longitude": 127.02915149681996,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 225
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 10000,
+            "heading_degrees": 69.27883617781686,
+            "latitude": 37.49844013836464,
+            "longitude": 127.02942745687562,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 250
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 11000,
+            "heading_degrees": 69.27899759784248,
+            "latitude": 37.4985286807315,
+            "longitude": 127.02971518299933,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 275
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 12000,
+            "heading_degrees": 69.27915903684743,
+            "latitude": 37.49859024289744,
+            "longitude": 127.02993489689857,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 300
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 13000,
+            "heading_degrees": 69.2793204758791,
+            "latitude": 37.49868328068553,
+            "longitude": 127.03023395965556,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 325
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 14000,
+            "heading_degrees": 69.07168742342765,
+            "latitude": 37.49875451827889,
+            "longitude": 127.03047601793251,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 350
+        },
+        {
+          "event": "ACTUAL_CONTEXT_ROAD_DEPARTURE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 18000,
+            "heading_degrees": null,
+            "latitude": 37.49937736946276,
+            "longitude": 127.03019655296704,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 0
+          },
+          "truth_along_m": null
+        },
+        {
+          "event": "ACTUAL_CONTEXT_ROAD_DEPARTURE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 19000,
+            "heading_degrees": null,
+            "latitude": 37.49936165082395,
+            "longitude": 127.03014345075552,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 0
+          },
+          "truth_along_m": null
+        },
+        {
+          "event": "ACTUAL_CONTEXT_ROAD_DEPARTURE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 20000,
+            "heading_degrees": null,
+            "latitude": 37.49934593216135,
+            "longitude": 127.03009034856645,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 0
+          },
+          "truth_along_m": null
+        },
+        {
+          "event": "REJOIN_FIRST",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 21000,
+            "heading_degrees": null,
+            "latitude": 37.49875901488126,
+            "longitude": 127.0304873534285,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 0
+          },
+          "truth_along_m": 350
+        },
+        {
+          "event": "REJOIN_SECOND",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 22000,
+            "heading_degrees": null,
+            "latitude": 37.49875901488126,
+            "longitude": 127.0304873534285,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 0
+          },
+          "truth_along_m": 350
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 23000,
+            "heading_degrees": 69.07184874594043,
+            "latitude": 37.49883932380186,
+            "longitude": 127.03075204551874,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 375
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 24000,
+            "heading_degrees": 70.03992709204499,
+            "latitude": 37.4989270019799,
+            "longitude": 127.03104017197438,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 400
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 25000,
+            "heading_degrees": 68.69396436279663,
+            "latitude": 37.498989677769906,
+            "longitude": 127.03125933798005,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 425
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 26000,
+            "heading_degrees": 69.8073164285899,
+            "latitude": 37.499080990817866,
+            "longitude": 127.031559211684,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 450
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 27000,
+            "heading_degrees": 69.80747825171585,
+            "latitude": 37.4991496037969,
+            "longitude": 127.0318025115971,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 475
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 28000,
+            "heading_degrees": 68.63808858966644,
+            "latitude": 37.49923296140405,
+            "longitude": 127.03207921834428,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 500
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 29000,
+            "heading_degrees": 68.63824914605118,
+            "latitude": 37.49932385041795,
+            "longitude": 127.03236580965743,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 525
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 30000,
+            "heading_degrees": 68.63841012107906,
+            "latitude": 37.499387759235994,
+            "longitude": 127.03258438803516,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 550
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 31000,
+            "heading_degrees": 68.80189354848972,
+            "latitude": 37.49948304416449,
+            "longitude": 127.03288236498702,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 575
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 32000,
+            "heading_degrees": 69.40214673302796,
+            "latitude": 37.499555270854245,
+            "longitude": 127.0331239458609,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 600
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 33000,
+            "heading_degrees": 69.40230811025458,
+            "latitude": 37.49963886386478,
+            "longitude": 127.03340055583442,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 625
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 34000,
+            "heading_degrees": 69.40246972760394,
+            "latitude": 37.499726952881254,
+            "longitude": 127.03368850203958,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 650
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 35000,
+            "heading_degrees": 69.4026309910845,
+            "latitude": 37.49978806169579,
+            "longitude": 127.03390843492627,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 675
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 36000,
+            "heading_degrees": 69.33538874762735,
+            "latitude": 37.499880831243985,
+            "longitude": 127.03420763009468,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 700
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 37000,
+            "heading_degrees": 69.33555012165357,
+            "latitude": 37.499951179608026,
+            "longitude": 127.03445011788756,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 725
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 38000,
+            "heading_degrees": 69.33571155258824,
+            "latitude": 37.50003501718543,
+            "longitude": 127.03472661326624,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 750
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 39000,
+            "heading_degrees": 69.33587307257301,
+            "latitude": 37.500123350769265,
+            "longitude": 127.03501444493838,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 775
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 40000,
+            "heading_degrees": 69.33603470634188,
+            "latitude": 37.500184704151685,
+            "longitude": 127.03523426293236,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 800
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 41000,
+            "heading_degrees": 69.36051351732306,
+            "latitude": 37.50027753315579,
+            "longitude": 127.03553343147736,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 825
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 42000,
+            "heading_degrees": 68.59909848179404,
+            "latitude": 37.50034793306287,
+            "longitude": 127.03577588376208,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 850
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 43000,
+            "heading_degrees": 69.69589288634586,
+            "latitude": 37.5004327293992,
+            "longitude": 127.03605190802784,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 875
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 44000,
+            "heading_degrees": 69.69605458977321,
+            "latitude": 37.50051973899199,
+            "longitude": 127.036340364666,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 900
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 45000,
+            "heading_degrees": 69.50876954926957,
+            "latitude": 37.50058040253754,
+            "longitude": 127.03656051002348,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 925
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 46000,
+            "heading_degrees": 69.28610278230173,
+            "latitude": 37.50067311596874,
+            "longitude": 127.03685973353411,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 950
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 47000,
+            "heading_degrees": 159.78860443887402,
+            "latitude": 37.50061161301099,
+            "longitude": 127.03702616241172,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 975
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 48000,
+            "heading_degrees": 159.87802857597808,
+            "latitude": 37.50040511647473,
+            "longitude": 127.03713537178874,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1000
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 49000,
+            "heading_degrees": 159.85046262510014,
+            "latitude": 37.50020301712809,
+            "longitude": 127.03725558579822,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1025
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 50000,
+            "heading_degrees": 159.85052198149003,
+            "latitude": 37.49997396091633,
+            "longitude": 127.03730786349342,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1050
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 51000,
+            "heading_degrees": 159.8505813038023,
+            "latitude": 37.499776380838576,
+            "longitude": 127.03743949044406,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1075
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 52000,
+            "heading_degrees": 159.85064064089784,
+            "latitude": 37.49955631766979,
+            "longitude": 127.0375144385606,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1100
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 53000,
+            "heading_degrees": 69.26032802242446,
+            "latitude": 37.49941344807617,
+            "longitude": 127.03766008013372,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1125
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 54000,
+            "heading_degrees": 69.26048924192747,
+            "latitude": 37.49950205836803,
+            "longitude": 127.03794777760412,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1150
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 55000,
+            "heading_degrees": 69.25977501457436,
+            "latitude": 37.49956368969734,
+            "longitude": 127.03816746137296,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1175
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 56000,
+            "heading_degrees": 69.25993621447861,
+            "latitude": 37.4996567986239,
+            "longitude": 127.03846649409184,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1200
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 57000,
+            "heading_degrees": 37.092801336230934,
+            "latitude": 37.49978619047426,
+            "longitude": 127.03865338777416,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1225
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 58000,
+            "heading_degrees": 37.09290501485356,
+            "latitude": 37.49997002485867,
+            "longitude": 127.03883563935337,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1250
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 59000,
+            "heading_degrees": 340.74847023688545,
+            "latitude": 37.500161792080974,
+            "longitude": 127.03900395565132,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1275
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 60000,
+            "heading_degrees": 340.7484128007115,
+            "latitude": 37.50035606327776,
+            "longitude": 127.03886517341924,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1300
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 61000,
+            "heading_degrees": 336.84748776932344,
+            "latitude": 37.50057982063585,
+            "longitude": 127.03879927463038,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1325
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 62000,
+            "heading_degrees": 338.2624727660405,
+            "latitude": 37.500778986182965,
+            "longitude": 127.03866956008255,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1350
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 63000,
+            "heading_degrees": 336.75867417815584,
+            "latitude": 37.50099064655862,
+            "longitude": 127.03857082779687,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1375
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 64000,
+            "heading_degrees": 68.4082825766148,
+            "latitude": 37.50118992923279,
+            "longitude": 127.03853150280952,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1400
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 65000,
+            "heading_degrees": 68.40844281766829,
+            "latitude": 37.501254677790186,
+            "longitude": 127.0387496702009,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1425
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 66000,
+            "heading_degrees": 68.40860338323847,
+            "latitude": 37.50135090197663,
+            "longitude": 127.03904718930016,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1450
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 67000,
+            "heading_degrees": 68.78015055652162,
+            "latitude": 37.50142411549603,
+            "longitude": 127.03928828998892,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1475
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 68000,
+            "heading_degrees": 68.78031148889215,
+            "latitude": 37.501509988503095,
+            "longitude": 127.03956380893862,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1500
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 69000,
+            "heading_degrees": 68.78047215663753,
+            "latitude": 37.50160035752094,
+            "longitude": 127.0398506644192,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1525
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 70000,
+            "heading_degrees": 69.80878471201504,
+            "latitude": 37.501661172138824,
+            "longitude": 127.04007073578862,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1550
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 71000,
+            "heading_degrees": 69.80894675051172,
+            "latitude": 37.50175226272123,
+            "longitude": 127.0403707263747,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1575
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 72000,
+            "heading_degrees": 67.00864765583111,
+            "latitude": 37.501824341144534,
+            "longitude": 127.04061230606852,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1600
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 73000,
+            "heading_degrees": 67.00880654638974,
+            "latitude": 37.501916654338025,
+            "longitude": 127.04088452926568,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1625
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 74000,
+            "heading_degrees": 67.00896523116245,
+            "latitude": 37.502013463556885,
+            "longitude": 127.04116808909612,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1650
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 75000,
+            "heading_degrees": 69.67855167567166,
+            "latitude": 37.50207738567085,
+            "longitude": 127.04138658999136,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1675
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 76000,
+            "heading_degrees": 69.67871352478176,
+            "latitude": 37.502168955685306,
+            "longitude": 127.04168635922724,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1700
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 77000,
+            "heading_degrees": 69.67887523137853,
+            "latitude": 37.502238042093694,
+            "longitude": 127.04192944896454,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1725
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 78000,
+            "heading_degrees": 69.67903695701199,
+            "latitude": 37.502320617712705,
+            "longitude": 127.04220654732173,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1750
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 79000,
+            "heading_degrees": 69.43052449838376,
+            "latitude": 37.5024073190314,
+            "longitude": 127.04249515109666,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1775
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 80000,
+            "heading_degrees": 67.9439129074724,
+            "latitude": 37.50247034165394,
+            "longitude": 127.04271414738923,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1800
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 81000,
+            "heading_degrees": 70.27745393199166,
+            "latitude": 37.502562426300145,
+            "longitude": 127.04301363725448,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1825
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 82000,
+            "heading_degrees": 67.89050455839345,
+            "latitude": 37.502634817525475,
+            "longitude": 127.0432550867107,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1850
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 83000,
+            "heading_degrees": 68.8449015964236,
+            "latitude": 37.50272266245418,
+            "longitude": 127.04352962170697,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1875
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 84000,
+            "heading_degrees": 68.84506269212665,
+            "latitude": 37.50281279515032,
+            "longitude": 127.04381659731324,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1900
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 85000,
+            "heading_degrees": 68.84522354268569,
+            "latitude": 37.502875947648846,
+            "longitude": 127.044035556802,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1925
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 86000,
+            "heading_degrees": 68.84538437436953,
+            "latitude": 37.50297057577286,
+            "longitude": 127.04433386971266,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1950
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 87000,
+            "heading_degrees": 68.22585949978702,
+            "latitude": 37.50304414878444,
+            "longitude": 127.04457479453868,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 1975
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 88000,
+            "heading_degrees": 68.22601975146591,
+            "latitude": 37.503132045534,
+            "longitude": 127.04484931477236,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2000
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 89000,
+            "heading_degrees": 68.22617982764916,
+            "latitude": 37.503224438298794,
+            "longitude": 127.04513517179612,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2025
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 90000,
+            "heading_degrees": 68.22634006053931,
+            "latitude": 37.50328985087095,
+            "longitude": 127.04535301233987,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2050
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 91000,
+            "heading_degrees": 68.22650052540178,
+            "latitude": 37.503386739073584,
+            "longitude": 127.04565020675852,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2075
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 92000,
+            "heading_degrees": 70.22217364737554,
+            "latitude": 37.5034559960574,
+            "longitude": 127.04589318246484,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2100
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 93000,
+            "heading_degrees": 70.22233589023568,
+            "latitude": 37.5035365689658,
+            "longitude": 127.04617120663976,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2125
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 94000,
+            "heading_degrees": 70.22249836569694,
+            "latitude": 37.50362163787379,
+            "longitude": 127.04646056761815,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2150
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 95000,
+            "heading_degrees": 70.2226607230424,
+            "latitude": 37.50367972657349,
+            "longitude": 127.04668191171277,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2175
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 96000,
+            "heading_degrees": 70.22282302322287,
+            "latitude": 37.50376929088801,
+            "longitude": 127.0469826100533,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2200
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 97000,
+            "heading_degrees": 70.22298538064712,
+            "latitude": 37.503836371592264,
+            "longitude": 127.04722662766744,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2225
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 98000,
+            "heading_degrees": 68.72988840503024,
+            "latitude": 37.50392148176061,
+            "longitude": 127.04750251213818,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2250
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 99000,
+            "heading_degrees": 68.73004918041323,
+            "latitude": 37.504012035192375,
+            "longitude": 127.04778928650931,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2275
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 100000,
+            "heading_degrees": 68.7302101453738,
+            "latitude": 37.50407560842742,
+            "longitude": 127.04800804367278,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2300
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 101000,
+            "heading_degrees": 68.73037099632916,
+            "latitude": 37.50417065728887,
+            "longitude": 127.04830615553556,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2325
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 102000,
+            "heading_degrees": 68.7305315822199,
+            "latitude": 37.504243222551615,
+            "longitude": 127.0485475864018,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2350
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 103000,
+            "heading_degrees": 68.73069241433592,
+            "latitude": 37.5043292770324,
+            "longitude": 127.04882302682188,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2375
+        },
+        {
+          "event": "ROUTE_WITH_AUTHORED_NOISE",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 104000,
+            "heading_degrees": 340.13483171092383,
+            "latitude": 37.50443071243834,
+            "longitude": 127.04907960257776,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 25
+          },
+          "truth_along_m": 2400
+        },
+        {
+          "event": "ENDPOINT",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 105000,
+            "heading_degrees": null,
+            "latitude": 37.504505,
+            "longitude": 127.049019,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 0
+          },
+          "truth_along_m": 2409.846318165437
+        },
+        {
+          "event": "ENDPOINT",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 106000,
+            "heading_degrees": null,
+            "latitude": 37.504505,
+            "longitude": 127.049019,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 0
+          },
+          "truth_along_m": 2409.846318165437
+        },
+        {
+          "event": "ENDPOINT",
+          "fix": {
+            "accuracy_m": 4,
+            "binding": {
+              "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+              "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+              "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+              "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+            },
+            "event_time_ms": 107000,
+            "heading_degrees": null,
+            "latitude": 37.504505,
+            "longitude": 127.049019,
+            "source_class": "SYNTHETIC",
+            "speed_mps": 0
+          },
+          "truth_along_m": 2409.846318165437
+        }
+      ],
+      "scenario": "departure-rejoin",
+      "schema_version": "0.1",
+      "source_class": "SYNTHETIC",
+      "truth_scope": "AUTHORED_ROUTE_GEOMETRY_NOT_REAL_GPS"
+    },
+    "sample_count": 105,
+    "scenario": "departure-rejoin",
+    "source_class": "SYNTHETIC",
+    "state": {
+      "accuracy_m": 4,
+      "binding": {
+        "generation_id": "c1239ab5b97b31b44b05f74d8875fb0b3a9cc61d7b5c04685aabe0087bbc86b7",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "request_id": "browser-1eda1a99-b067-4694-9bc1-683e61f879a8",
+        "request_sha256": "a54bee58d8f7ca5b4eaecbda75f9c1b2f5b3a78d515c74fec6983d6d9e6ab9cc"
+      },
+      "confirmed_position": [
+        127.0304873534285,
+        37.49875901488128
+      ],
+      "distance_to_route_m": 2.121972197954846e-9,
+      "event_time_ms": 22000,
+      "geometry_length_m": 2409.846318165437,
+      "last_confirmed_progress_m": 350.00000000541405,
+      "next_maneuver": {
+        "distance_m": 613.6378263519669,
+        "index": 3,
+        "instruction": "논현로에서 우회전"
+      },
+      "policy_id": "route-progress-v1",
+      "progress_m": 350.00000000541405,
+      "raw_position": [
+        127.0304873534285,
+        37.49875901488126
+      ],
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "remaining_m": 2059.8463181600227,
+      "source_class": "SYNTHETIC",
+      "status": "ON_ROUTE"
+    }
+  },
+  "scroll_width": 390,
+  "text": "RouteLens\n서울 경로 파일럿\nEnglish\n\n실제 서울 도로 · 합성 교통정보\n\n경로를 선택하세요\n미리 정한 경로\n테헤란로 · 장거리 경로\n테헤란로 · 짧은 교통 적용 구간\n좌표 직접 입력\n출발지\n위도\n경도\n도착지\n위도\n경도\n경로 계산\n경로 결과\n\n수용한 교통 문맥으로 확인한 경로입니다.\n\n2.41 km · 3.1분\n\n이 경로에 기본 속도 적용\n\n경로 실시간 적용률: 0.00%\n\n교통정보 나이 · 모의 시각 기준: 76.8 초\n\n확인한 모의 시각: 2026-10-24T00:05:46.805Z\n\n이 경로에 수용된 실시간 구간이 없어 기본 속도를 적용합니다.\n\n합성 GPS 경로 재생\n\n이 경로 위 자체 합성 위치입니다. 단말 GPS·위치 업로드를 사용하지 않으며 재생 시계와 교통 시계는 별개입니다.\n\n재생 시나리오\n위치 오차\n경로 이탈·복귀\n4배속 재생\n다음 표본\n초기화\n\n이 경로 위 위치 확인\n\n일시정지 · 재생 시각: 22.0 s · 보고된 위치 오차: 4 m\n\n남은 경로: 2060 m\n\n다음 안내: 논현로에서 우회전\n\n다음 안내까지 거리: 614 m\n\n재생 근거\n회전별 길안내\n\n경로 미리보기입니다. GPS 추적·음성 안내는 아직 제공하지 않습니다.\n\n테헤란로/90에서 서쪽으로 주행\n\n68 m · 4.3 초\n\n왼편\n\n47 m · 1.8 초\n\n테헤란로/90에서 좌회전\n\n850 m · 60.8 초\n\n논현로에서 우회전\n\n155 m · 14.1 초\n\n논현로86길에서 좌회전\n\n154 m · 19.7 초\n\n테헤란로28길에서 좌회전\n\n123 m · 12.3 초\n\n테헤란로/90에서 우회전\n\n1002 m · 65.6 초\n\n선릉로에서 좌회전\n\n12 m · 6.0 초\n\n목적지 도착\n\n0 m · 0.0 초\n요청과 버전 근거\n\n로컬 합성 파일럿입니다. 실시간 교통·주행 안내·독립 검증한 도로 정확도 근거가 아닙니다.\n\nA\nB\n\n입력란에서 좌표를 선택하세요. 지도를 이동하거나 확대해 원래 도로를 살펴볼 수 있습니다.\n\n© OpenStreetMap contributors · ODbL",
+  "width": 390
+}

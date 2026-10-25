@@ -1,0 +1,1220 @@
+{
+  "code": "FINALIZED",
+  "draft": {
+    "schema_version": "0.1",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "region_id": "seoul-pilot-corridors-v1",
+    "aggregation_policy": "seoul-window-median-v1",
+    "window_start": "2026-10-24T00:00:00.000Z",
+    "window_end": "2026-10-24T00:01:00.000Z",
+    "valid_until": "2026-10-24T00:04:00.000Z",
+    "entries": [
+      {
+        "edge_id": "1236917395025",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1236984503889",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1237152276049",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1237185830481",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1237454265937",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1241849551248",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1242117986704",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1242185095568",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1242252204432",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1242319313296",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1296274839952",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "INSUFFICIENT",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1296744602000",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1296878819728",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1296945928592",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1297013037456",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1297281472912",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1297415690640",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1297617017232",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "INSUFFICIENT",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1297751234960",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "INSUFFICIENT",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1297851898256",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1337345464720",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1337479682448",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1337580345744",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1338083662224",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1338251434384",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1338553424272",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1338687642000",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1338754750864",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1338922523024",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1344828103056",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1344962320784",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1345096538512",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1345499191696",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1345566300560",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1345767627152",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1345901844880",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1345968953744",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1346170280336",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1346640042384",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1346774260112",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1346975586704",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1347042695568",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1620176117329",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1620276780625",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1620310335057",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "1620377443921",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "478620440976",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "660653234576",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "660821006736",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "661122996624",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "661190105488",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "661257214352",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "661324323216",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "661458540944",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "661525649808",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "661592758672",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "661794085264",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "661961857424",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "662498728336",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "671826860432",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "671994632592",
+        "forward": false,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "672195959184",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "672330176912",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "672397285776",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "672598612368",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "672766384528",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "673638799760",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "674242779536",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "674444106128",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "674813204880",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "674947422608",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "764940409232",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "765007518096",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "765510834576",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "766282586512",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "767020784016",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "768329406864",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "9151104797786",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      },
+      {
+        "edge_id": "9151239015514",
+        "forward": true,
+        "source_class": "SYNTHETIC",
+        "status": "UNKNOWN",
+        "speed_mps": null,
+        "sample_bucket": null
+      }
+    ]
+  },
+  "canonical_sha256": "71c5e4598aa8953f440e0a9515cec89b8183a3f2af7a3cab3ce58be87abd4c8c",
+  "input_sha256": "76888ea0ac3e32d66e9db1d6b0e534bd7e9df0eb787d7411c50ad649b7ceb819",
+  "catalog_sha256": "b27cd56bb0bfd39d4d3d071384fc5d2d8f1ba30a17214f3413c50f2f17278491",
+  "selections": [
+    {
+      "edge_id": "1236917395025",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1236984503889",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1237152276049",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1237185830481",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1237454265937",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1241849551248",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1242117986704",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1242185095568",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1242252204432",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1242319313296",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1296274839952",
+      "forward": true,
+      "eligible_contributors": 4,
+      "selected_observation_ids": [
+        "260e121b80f7e92eae3f021b7afaf49078757af204acd6f13b2c57492a82e42e",
+        "cf988b4ffa15be4212e014fee2e47c3d008c2455f93909a2dd5111c7b814aeb1",
+        "2e8b0420039af499cdfdae53883c934a8050856dc9e6534d351d7abff93050f2",
+        "cd4cd7f00338c696a3e8d70801bf9905cfccee3e65f4e13f50c4ea36d07d364e"
+      ],
+      "median_duration_s": 6.3575
+    },
+    {
+      "edge_id": "1296744602000",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1296878819728",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1296945928592",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1297013037456",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1297281472912",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1297415690640",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1297617017232",
+      "forward": true,
+      "eligible_contributors": 4,
+      "selected_observation_ids": [
+        "e9ecbb7cfb4c082401216e8ed36dc8f61db4e9f28fd7bda445ae166969f2356e",
+        "dd45e0cd8c613e559686528f1fb3f54d11a0341e02f014a07199398e2a4ef6e2",
+        "4045dbc9823c1caa009041bfc99659b7baa122d3a33a8f743ff976e090c5437f",
+        "fd7842329d6f7df9cdbb8ead784446027d4e3c7644993e5d3779f6b1ebffba99"
+      ],
+      "median_duration_s": 5.157
+    },
+    {
+      "edge_id": "1297751234960",
+      "forward": true,
+      "eligible_contributors": 4,
+      "selected_observation_ids": [
+        "2547da59120c4c627e317cac6afdb6e71263400f44c0474f02536bdc93c9ce29",
+        "64e99ce90f2850668a0f153a5728e237b4631a8a4e3ad2a515a7430e09aed405",
+        "e4a94f0800246eea2366ee5fe59ea0b20ad0ec6e545b1674040a0d28801d5ddc",
+        "40a3b0546aae5fbbf9213ae09ae79e72e23f9d2240726c463644885d30fc5ce4"
+      ],
+      "median_duration_s": 18.646
+    },
+    {
+      "edge_id": "1297851898256",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1337345464720",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1337479682448",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1337580345744",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1338083662224",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1338251434384",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1338553424272",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1338687642000",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1338754750864",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1338922523024",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1344828103056",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1344962320784",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1345096538512",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1345499191696",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1345566300560",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1345767627152",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1345901844880",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1345968953744",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1346170280336",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1346640042384",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1346774260112",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1346975586704",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1347042695568",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1620176117329",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1620276780625",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1620310335057",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "1620377443921",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "478620440976",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "660653234576",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "660821006736",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "661122996624",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "661190105488",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "661257214352",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "661324323216",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "661458540944",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "661525649808",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "661592758672",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "661794085264",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "661961857424",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "662498728336",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "671826860432",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "671994632592",
+      "forward": false,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "672195959184",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "672330176912",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "672397285776",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "672598612368",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "672766384528",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "673638799760",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "674242779536",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "674444106128",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "674813204880",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "674947422608",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "764940409232",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "765007518096",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "765510834576",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "766282586512",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "767020784016",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "768329406864",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "9151104797786",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    },
+    {
+      "edge_id": "9151239015514",
+      "forward": true,
+      "eligible_contributors": 0,
+      "selected_observation_ids": [],
+      "median_duration_s": null
+    }
+  ],
+  "rejections": []
+}

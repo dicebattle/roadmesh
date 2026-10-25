@@ -1,0 +1,197 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "fe49b55cad5b61a9f2dd6043922b4480e5bf2bbb",
+    "dirty": false
+  },
+  "implementation_sha256": "70af32dc05269aee3a739e234e8db66718bfd1ee86c70b4d84c776be2c5a1db4",
+  "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+  "original_hashes_checked": 2880,
+  "required_cases": 32,
+  "publications_verified": 4,
+  "native_pairs": 31,
+  "browser_successes_bound": 15,
+  "bindings": [
+    {
+      "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-c665cfc8-0bbf-4c94-9d93-7e4feebd5dcf/engines/43672919-afd3-47c7-8110-4e7de84c391b/requests/5906e01d-ebc8-4452-b822-647ccfcf5606",
+      "matching_candidates": 4,
+      "coverage": 0,
+      "sequence": null
+    },
+    {
+      "request_id": "browser-102edf34-a6aa-4c09-96e9-2a06a3feaa8a",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-c665cfc8-0bbf-4c94-9d93-7e4feebd5dcf/engines/43672919-afd3-47c7-8110-4e7de84c391b/requests/5c149889-a835-40f2-86c4-9cfe6c7d728e",
+      "matching_candidates": 3,
+      "coverage": 0,
+      "sequence": null
+    },
+    {
+      "request_id": "browser-aa347387-1596-4d53-b8e8-e1db70767e06",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-c665cfc8-0bbf-4c94-9d93-7e4feebd5dcf/engines/43672919-afd3-47c7-8110-4e7de84c391b/requests/7a80ff87-46f2-47c3-bddd-c672d0aa3b4a",
+      "matching_candidates": 1,
+      "coverage": 0,
+      "sequence": null
+    },
+    {
+      "request_id": "browser-3f32deed-dd9a-4d08-ac88-802106389561",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-c665cfc8-0bbf-4c94-9d93-7e4feebd5dcf/engines/2fa1eea0-920f-4253-8f44-348232abe7b4/requests/ebec18eb-ad87-4b90-9bfb-ac329b369174",
+      "matching_candidates": 1,
+      "coverage": 1,
+      "sequence": 1
+    },
+    {
+      "request_id": "browser-733628a2-8073-4a77-bdee-bbab7fc003af",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-c665cfc8-0bbf-4c94-9d93-7e4feebd5dcf/engines/2fa1eea0-920f-4253-8f44-348232abe7b4/requests/4c8e78dc-97d6-4791-b757-1a2258ba09c5",
+      "matching_candidates": 2,
+      "coverage": 0,
+      "sequence": 1
+    },
+    {
+      "request_id": "browser-ee65b8ad-e0b3-4a99-8808-9774954a1286",
+      "node_id": "client-node-b",
+      "native_directory": "fixture/nodes/client-node-b/runtime-0a5de54b-7ae9-4b2e-b4b9-c0dbe74ce561/engines/b4e5cace-cb6f-457c-8214-c073b181e74e/requests/bbe07679-e134-4c21-b0ae-381ba28153d5",
+      "matching_candidates": 1,
+      "coverage": 1,
+      "sequence": 1
+    },
+    {
+      "request_id": "browser-19938787-fadd-4e9d-9d8e-3892e787e12f",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-4033f03d-fe34-47d8-ac30-f0e6e07fd2f9/engines/d63808e8-1e32-49a5-b3f0-bdf5a8b56b96/requests/5be55e10-eab0-473c-9d41-9fd36cffaf40",
+      "matching_candidates": 2,
+      "coverage": 0,
+      "sequence": 1
+    },
+    {
+      "request_id": "browser-de356084-8786-4d37-95ca-194538f51268",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-4033f03d-fe34-47d8-ac30-f0e6e07fd2f9/engines/d63808e8-1e32-49a5-b3f0-bdf5a8b56b96/requests/f0941a5a-e4c5-468d-8c54-28f110a6f553",
+      "matching_candidates": 2,
+      "coverage": 1,
+      "sequence": 1
+    },
+    {
+      "request_id": "browser-24734ffb-10d7-495c-b23e-d4a5107780e2",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-4033f03d-fe34-47d8-ac30-f0e6e07fd2f9/engines/1c20869b-43c4-4898-9849-9598a878bd7e/requests/d44d326a-9a11-4078-a151-fcd3985dbbc7",
+      "matching_candidates": 1,
+      "coverage": 1,
+      "sequence": 2
+    },
+    {
+      "request_id": "browser-87d72978-e9d4-4432-91cd-c20b292280a9",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-4033f03d-fe34-47d8-ac30-f0e6e07fd2f9/engines/3f086bc6-5b22-450a-bdae-91e5beab1c7d/requests/34942c49-d14d-4aac-a3b7-be867e45bd40",
+      "matching_candidates": 2,
+      "coverage": 1,
+      "sequence": 3
+    },
+    {
+      "request_id": "browser-6b225d38-f16c-4c2c-b0d0-8d80b36e4a3f",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-4033f03d-fe34-47d8-ac30-f0e6e07fd2f9/engines/3f086bc6-5b22-450a-bdae-91e5beab1c7d/requests/b8710169-af47-43ae-9def-50172edba7d9",
+      "matching_candidates": 1,
+      "coverage": 1,
+      "sequence": 3
+    },
+    {
+      "request_id": "browser-926bcd5e-57e7-4b2c-be94-fdf803a7c1eb",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-4033f03d-fe34-47d8-ac30-f0e6e07fd2f9/engines/3f086bc6-5b22-450a-bdae-91e5beab1c7d/requests/f88952f0-9ea4-4de6-ad57-ca705405296e",
+      "matching_candidates": 1,
+      "coverage": 1,
+      "sequence": 3
+    },
+    {
+      "request_id": "browser-0d9df6e4-74ae-41ae-89e8-eed453973763",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-4033f03d-fe34-47d8-ac30-f0e6e07fd2f9/engines/f62aca80-eccc-414a-9a91-a75950e2fadf/requests/2dfa47c1-eac4-429a-bcda-bb2785c5305c",
+      "matching_candidates": 2,
+      "coverage": 0,
+      "sequence": 4
+    },
+    {
+      "request_id": "browser-144858fe-f7da-44ad-bbcc-154d73065252",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-4033f03d-fe34-47d8-ac30-f0e6e07fd2f9/engines/f62aca80-eccc-414a-9a91-a75950e2fadf/requests/9fd70bc6-d3c9-4f1c-aac0-7f15f5312a69",
+      "matching_candidates": 1,
+      "coverage": 0,
+      "sequence": 4
+    },
+    {
+      "request_id": "browser-da430ad1-5d15-48f8-8d7b-a7263e50390e",
+      "node_id": "client-node-a",
+      "native_directory": "fixture/nodes/client-node-a/runtime-4033f03d-fe34-47d8-ac30-f0e6e07fd2f9/engines/091e0915-0185-4725-8941-547dd7ea1d24/requests/b970f659-2c34-4261-87bc-fa4df75b2389",
+      "matching_candidates": 1,
+      "coverage": 0,
+      "sequence": null
+    }
+  ],
+  "browser_processes_absent": 4,
+  "owned_containers_absent": [
+    "routelens-p05-e4e1cf92-e66d-4697-ab92-4a0d08b7086c",
+    "0f686092a79f0153690266605653f062c0602b8d88e5bf244541f8d53e760410",
+    "a687b4790d9eb59ef0bdea42534d91f7267b36c9e3311cc374fe3e81f79e17ec",
+    "d3da1d524ebb08192a930ce81d3c71839f5ed1c13a63e8284e7e379db5de5a8c",
+    "c9fccc7695ce77440c20dfdbdbacebd96d9ec377c725e6277e6d1e4dbbd82762",
+    "5dffaf899bf3f953beef017e9af3e12ba36a8edbe94773eb9cc137bc60604dc3",
+    "72fa2475bf6b6a3bd232207e682bd7bbceb619abf5288fb57636802f589b4d07",
+    "698c3c28cde0d61c914bd0157437f672983bcfb3b15094e798031d451452de15",
+    "8aba1c821da28733fff903760964ebcd22161ad4f6c044ea405433bbf282d50c",
+    "805927e35a8f98ccf9bd17792ace27d746ce0bd46f33bf1abeda337b7f08cd7f",
+    "65fb6e9d34311096686f44e3fdbfe2b4008bdcf694ba5b38dc790a18f771c6e5",
+    "9e5b79363b83e634983212e6dc25785e99cd255677a61ea68e6cc2a058f830cf",
+    "c1d24b8edefc51b4a746281f2982d10d439e4437fb200d618bec78fe508819e3",
+    "8df60c61204ff40dbf1ca291ade44c3d41ddb62683a91f00e7081304eb42d9d4",
+    "44a9ca9299154e6e1d2dc4cb687bcf738d4351900b657c8a2c34366324ccd759",
+    "routelens-p02-7e5baaeb-e1b5-4285-ab37-d02122faa3ca",
+    "routelens-p02-091e0915-0185-4725-8941-547dd7ea1d24",
+    "routelens-p02-1c20869b-43c4-4898-9849-9598a878bd7e",
+    "routelens-p02-3f086bc6-5b22-450a-bdae-91e5beab1c7d",
+    "routelens-p02-d63808e8-1e32-49a5-b3f0-bdf5a8b56b96",
+    "routelens-p02-f62aca80-eccc-414a-9a91-a75950e2fadf",
+    "routelens-p02-2fa1eea0-920f-4253-8f44-348232abe7b4",
+    "routelens-p02-43672919-afd3-47c7-8110-4e7de84c391b",
+    "routelens-p02-91d29c29-0a14-41db-a62a-effdeb6f68b9",
+    "routelens-p02-b4e5cace-cb6f-457c-8214-c073b181e74e",
+    "routelens-p02-2cef97ef-2221-4d34-8aa1-3f44c1f3e1c6",
+    "routelens-p02-37e4e476-203a-41f3-b718-b25815a83739",
+    "routelens-p02-6c9c5e77-66b0-4c6f-b920-4db644827d78",
+    "routelens-p02-72c5d3d2-8d24-4b96-8043-d3c8ff3b6c9a",
+    "routelens-p02-fb156179-6b01-4af1-92d4-2779ce8bcb2f",
+    "routelens-p02-f56f3cfc-38c7-4c57-a7a0-fb5420c9b2eb",
+    "routelens-p02-4631b195-16b3-41bd-bbfc-a110e84177b7",
+    "routelens-p02-63a66a36-af9a-48c5-a514-70f5c01ceb20",
+    "routelens-p02-54bfa135-7639-4c7e-aa72-d0b9e7942421",
+    "routelens-p02-8fd46b8f-b960-43b3-b641-c0126a6d38c5",
+    "routelens-p02-028a4acc-355c-4fb3-a00a-8a36e2bda80b",
+    "routelens-p02-7914de29-9659-4b40-a8ff-33c1f2d632f8",
+    "routelens-p02-c83267ba-6dde-4ef8-a803-73b2772e055f",
+    "routelens-p02-199a07c4-f0b6-4308-b354-168d986ed262",
+    "routelens-p02-b1ea07fe-cae0-4b67-a295-7de59b356163",
+    "routelens-p02-443ceaa6-7f13-411c-ba8a-cb4a8075b173",
+    "routelens-p02-30b787d2-2373-41c7-880c-f5c5a388d16e",
+    "routelens-p02-62d1bbf2-fd22-4c8e-a73d-714dd1a02cf3",
+    "routelens-p02-f2a26a6f-4e14-4157-a7b5-125b3b074ce4",
+    "routelens-p02-67c42b49-590f-4985-b8e1-f1fcc8f0d637"
+  ],
+  "owned_volume_absent": "routelens-p05-e4e1cf92-e66d-4697-ab92-4a0d08b7086c-db",
+  "limitations_en": [
+    "Synthetic actual-road pilot, not real-driving accuracy.",
+    "Transport proxies are explicitly marked and do not establish ordinary native success.",
+    "Native protocol has no public request ID; exact repeated computations can have multiple matching candidates.",
+    "Application response/map-source binding and screenshots do not alone prove pixel-perfect geometry; main visual inspection is separate."
+  ],
+  "limitations_ko": [
+    "실제 도로 위 합성 파일럿이며 실주행 정확도 근거가 아닙니다.",
+    "전송 시험 대리 서버는 명시하며 일반 엔진 성공의 근거로 사용하지 않습니다.",
+    "네이티브 규격에 공개 요청 ID가 없어 동일 계산은 여러 원문 후보와 일치할 수 있습니다.",
+    "응답·지도 자료 연결과 화면만으로 픽셀 정확도를 주장하지 않으며 메인 시각 검토는 별도입니다."
+  ]
+}
