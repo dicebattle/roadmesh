@@ -1,0 +1,120 @@
+TAP version 13
+# (node:12862) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Current context is authorized independently of node readiness and clears expired metadata / 현재 문맥은 노드 준비와 별개이며 만료 메타데이터 해제
+ok 1 - Current context is authorized independently of node readiness and clears expired metadata / 현재 문맥은 노드 준비와 별개이며 만료 메타데이터 해제
+  ---
+  duration_ms: 28.388209
+  type: 'test'
+  ...
+# Subtest: Context store timeout returns503 and late store data is not cached / 문맥 저장소 시간초과는503이며 늦은 값을 캐시하지 않음
+ok 2 - Context store timeout returns503 and late store data is not cached / 문맥 저장소 시간초과는503이며 늦은 값을 캐시하지 않음
+  ---
+  duration_ms: 30.616333
+  type: 'test'
+  ...
+# Subtest: Interactive pilot lifetime cannot exceed fifteen minutes / 대화형 파일럿 수명은15분을 넘길 수 없음
+ok 3 - Interactive pilot lifetime cannot exceed fifteen minutes / 대화형 파일럿 수명은15분을 넘길 수 없음
+  ---
+  duration_ms: 0.218666
+  type: 'test'
+  ...
+# Subtest: Session, exact Host and Origin protect local APIs without leaking gateway secrets / 세션·정확 호스트·출처로 보호하며 인증값 비공개
+ok 4 - Session, exact Host and Origin protect local APIs without leaking gateway secrets / 세션·정확 호스트·출처로 보호하며 인증값 비공개
+  ---
+  duration_ms: 47.078542
+  type: 'test'
+  ...
+# Subtest: POST needs exact Origin, rejects out-of-envelope input and only serves allowlisted assets / POST 출처·서버범위·정적 허용목록
+ok 5 - POST needs exact Origin, rejects out-of-envelope input and only serves allowlisted assets / POST 출처·서버범위·정적 허용목록
+  ---
+  duration_ms: 34.17875
+  type: 'test'
+  ...
+# Subtest: Malformed or private upstream fields cannot cross the same-origin proxy / 잘못된 또는 비공개 상위 응답 필드는 화면으로 전달하지 않음
+ok 6 - Malformed or private upstream fields cannot cross the same-origin proxy / 잘못된 또는 비공개 상위 응답 필드는 화면으로 전달하지 않음
+  ---
+  duration_ms: 12.773916
+  type: 'test'
+  ...
+# Subtest: input/new requests fence late route and failure completion / 입력·새요청이늦은응답·실패를차단
+ok 7 - input/new requests fence late route and failure completion / 입력·새요청이늦은응답·실패를차단
+  ---
+  duration_ms: 1.759917
+  type: 'test'
+  ...
+# Subtest: authority is monotonic in both high-water and event time / 승인순번·관측시간의동시단조성
+ok 8 - authority is monotonic in both high-water and event time / 승인순번·관측시간의동시단조성
+  ---
+  duration_ms: 0.175666
+  type: 'test'
+  ...
+# Subtest: fresh response may establish newer authority but old snapshot is rejected / 새응답승인확립·옛스냅샷거부
+ok 9 - fresh response may establish newer authority but old snapshot is rejected / 새응답승인확립·옛스냅샷거부
+  ---
+  duration_ms: 0.176292
+  type: 'test'
+  ...
+# Subtest: exact event expiry removes route independently of browser real time / 실제브라우저시계와독립한관측시각만료
+ok 10 - exact event expiry removes route independently of browser real time / 실제브라우저시계와독립한관측시각만료
+  ---
+  duration_ms: 0.083375
+  type: 'test'
+  ...
+# Subtest: freshness/route failure clears current line and stale error cannot return it / 신선도·요청실패의현재경로제거
+ok 11 - freshness/route failure clears current line and stale error cannot return it / 신선도·요청실패의현재경로제거
+  ---
+  duration_ms: 0.143875
+  type: 'test'
+  ...
+# Subtest: unknown authority and nonfinite route content never become current / 알수없는승인·비유한경로의현재표시거부
+ok 12 - unknown authority and nonfinite route content never become current / 알수없는승인·비유한경로의현재표시거부
+  ---
+  duration_ms: 0.087583
+  type: 'test'
+  ...
+# Subtest: Route domain errors clear geometry and preserve distinct states / 경로 업무 오류는 지형을 지우고 서로 다른 상태 유지
+ok 13 - Route domain errors clear geometry and preserve distinct states / 경로 업무 오류는 지형을 지우고 서로 다른 상태 유지
+  ---
+  duration_ms: 0.1325
+  type: 'test'
+  ...
+# Subtest: source and clock must form an explicit pair / 출처·시계의 명시 쌍 검사
+ok 14 - source and clock must form an explicit pair / 출처·시계의 명시 쌍 검사
+  ---
+  duration_ms: 0.36975
+  type: 'test'
+  ...
+# Subtest: public server/browser validate the same current source metadata / 서버·화면의 같은 현재 공공 문맥 검사
+ok 15 - public server/browser validate the same current source metadata / 서버·화면의 같은 현재 공공 문맥 검사
+  ---
+  duration_ms: 1.141083
+  type: 'test'
+  ...
+# Subtest: coverage counts, future source time and made-up expiry cannot authorize public traffic / 적용 수·미래 시각·수명 위조 승인 금지
+ok 16 - coverage counts, future source time and made-up expiry cannot authorize public traffic / 적용 수·미래 시각·수명 위조 승인 금지
+  ---
+  duration_ms: 0.26275
+  type: 'test'
+  ...
+# Subtest: public fallback still exposes absence or expiry without a live snapshot / 공공 기본값의 부재·만료 상태 표시
+ok 17 - public fallback still exposes absence or expiry without a live snapshot / 공공 기본값의 부재·만료 상태 표시
+  ---
+  duration_ms: 0.176875
+  type: 'test'
+  ...
+# Subtest: browser vetoes expiry or source change even when identifiers match / 식별자가 같아도 만료·출처 변경 때 화면 거부
+ok 18 - browser vetoes expiry or source change even when identifiers match / 식별자가 같아도 만료·출처 변경 때 화면 거부
+  ---
+  duration_ms: 0.104666
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 207.036875

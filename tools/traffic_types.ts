@@ -4,6 +4,7 @@ import type {
   VerifiedPublication,
 } from "./publication_types.js";
 import type { CatalogEdge } from "./aggregation_types.js";
+import type { PublicTrafficPublication } from "./public_speed_publication.js";
 export const COMPILER_POLICY = "valhalla-current-v1" as const;
 export interface TrafficMember {
   tile_base: number;
@@ -142,4 +143,4 @@ export type TrafficMessage =
   | ({
       type: "RESULT";
     } & TrafficResult);
-export type VerifiedTrafficInput = VerifiedPublication | null;
+export type VerifiedTrafficInput = VerifiedPublication | PublicTrafficPublication | null;

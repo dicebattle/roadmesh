@@ -1,0 +1,114 @@
+Browser tab: 38, Title: "RouteLens · Seoul pilot / 서울 파일럿", URL: "http://127.0.0.1:56254/".
+0 AXWebArea RouteLens · Seoul pilot / 서울 파일럿, URL: 127.0.0.1:56254/
+	1 container
+		2 link Description: RouteLens 서울 공공 속도 미리보기, Value: 127.0.0.1:56254/
+		3 button Description: Switch to English / 영어로 전환, ID: language
+	4 container
+		5 container 경로를 선택하세요
+			107 text 실제 서울 도로 · 공공 도로 속도
+			7 heading 경로를 선택하세요, Value: 1, ID: route-heading
+				108 text 경로를 선택하세요
+			9 container Description: Public traffic source / 공공 교통 출처, ID: public-traffic-source
+				109 heading 공공 도로 속도, Value: 3
+					110 text 공공 도로 속도
+				111 link Description: 출처: 국토교통부 국가교통정보센터, Value: its.go.kr/opendata/intro
+				112 text 확인한 도로에 유효한 공공 속도가 있습니다.
+				113 text 유효한 공공 속도가 있는 도로 구간: 31 / 79
+				114 text 가장 오래된 관측: 2026. 10. 26. 0시 55분 0초 KST
+				115 text 자료 조회: 2026. 10. 26. 0시 57분 2초 KST
+			12 container route-form
+				116 text 미리 정한 경로
+				14 pop up button (collapsed, settable) 미리 정한 경로, Value: 테헤란로 · 장거리 경로, ID: preset, Secondary Actions: Expand
+					15 menu
+						16 (selected) 테헤란로 · 장거리 경로
+						17 테헤란로 · 짧은 교통 적용 구간
+						18 좌표 직접 입력
+				19 container 출발지
+					117 text 출발지
+					21 container
+						118 text 위도
+						23 stepper (settable, float) 위도, Value: 37.4984016418457, Details: 37.4984, ID: origin-latitude
+					24 container
+						119 text 경도
+						26 stepper (settable, float) 경도, Value: 127.02899932861328, Details: 127.029, ID: origin-longitude
+				27 container 도착지
+					120 text 도착지
+					29 container
+						121 text 위도
+						31 stepper (settable, float) 위도, Value: 37.50450134277344, Details: 37.5045, ID: destination-latitude
+					32 container
+						122 text 경도
+						34 stepper (settable, float) 경도, Value: 127.04900360107422, Details: 127.049, ID: destination-longitude
+				35 button 경로 계산, ID: request-route
+			36 container 경로 결과, ID: result
+				37 heading 경로 결과, Value: 2, ID: result-heading
+					123 text 경로 결과
+				124 text 수용한 교통 문맥으로 확인한 경로입니다.
+				90 container route-summary
+					125 text 2.12 km · 4.5분
+					126 text 이 경로의 일부 구간에 공공 속도 적용
+					127 text 경로 실시간 적용률: 84.31%
+					128 text 사용 가능한 가장 오래된 공공 관측: 230.9 초
+					129 text 확인한 실제 UTC 시각: 2026-10-25T15:58:50.915Z
+				40 container 합성 GPS 경로 재생, ID: progress
+					41 heading 합성 GPS 경로 재생, Value: 3, ID: progress-heading
+						130 text 합성 GPS 경로 재생
+					131 text 이 경로 위 자체 합성 위치입니다. 단말 GPS·위치 업로드를 사용하지 않으며 재생 시계와 교통 시계는 별개입니다.
+					132 text 재생 시나리오
+					45 pop up button (collapsed, settable) 재생 시나리오, Value: 위치 오차, ID: replay-scenario, Secondary Actions: Expand
+						46 menu
+							47 (selected) Value: 위치 오차, ID: replay-noisy
+							48 Value: 경로 이탈·복귀, ID: replay-departure
+					49 button 4배속 재생, ID: replay-play
+					50 button 다음 표본, ID: replay-step
+					51 button 초기화, ID: replay-reset
+					133 text 이 경로 위 위치 확인
+					134 text 일시정지 · 재생 시각: 1.0 s · 보고된 위치 오차: 4 m
+					135 container progress-metrics
+						136 text 남은 경로: 2094 m
+						137 text 다음 안내: 왼편
+						138 text 다음 안내까지 거리: 46 m
+					54 button (collapsed) 재생 근거, ID: replay-evidence-label, Secondary Actions: Expand
+						139 text 재생 근거
+				102 container 회전별 길안내, ID: guidance
+					103 heading 회전별 길안내, Value: 3, ID: guidance-heading
+						140 text 회전별 길안내
+					141 text 경로 미리보기입니다. GPS 추적·음성 안내는 아직 제공하지 않습니다.
+					106 content list maneuvers
+						142 container
+							143 AXListMarker 1. 
+							144 text 테헤란로/90에서 서쪽으로 주행 68 m · 6.3 초
+						145 container
+							146 AXListMarker 2. 
+							147 text 왼편 47 m · 1.8 초
+						148 container
+							149 AXListMarker 3. 
+							150 text 테헤란로/90에서 좌회전 1991 m · 255.8 초
+						151 container
+							152 AXListMarker 4. 
+							153 text 선릉로에서 좌회전 12 m · 6.0 초
+						154 container
+							155 AXListMarker 5. 
+							156 text 목적지 도착 0 m · 0.0 초
+			56 button (collapsed) 요청과 버전 근거, Secondary Actions: Expand
+				157 text 요청과 버전 근거
+			158 text 로컬 공공 자료 미리보기입니다. 확인한 도로에만 속도를 적용합니다. GPS 재생은 자체 합성이며 실주행 정확도는 미검증입니다.
+		59 container Seoul road map / 서울 도로 지도
+			60 container Description: Interactive Seoul road map / 서울 도로 조작 지도, ID: map
+				61 container
+					62 container 서울 도로 조작 지도
+					159 container Synthetic raw position / 합성 원 위치
+					160 container Confirmed route position / 확정한 경로 위치
+					161 container 출발지 표시
+						162 text A
+					163 container 도착지 표시
+						164 text B
+				65 container
+					66 button 지도 확대
+					67 button 지도 축소
+			165 text 입력란에서 좌표를 선택하세요. 지도를 이동하거나 확대해 원래 도로를 살펴볼 수 있습니다.
+			69 container attribution
+				70 text © 
+				71 link Description: OpenStreetMap contributors · ODbL, Value: openstreetmap.org/copyright
+
+The focused UI element is 50 button 다음 표본, ID: replay-step

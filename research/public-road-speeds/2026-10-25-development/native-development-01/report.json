@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "scope": "DEVELOPMENT_ONLY",
+  "source": "PUBLIC_AGENCY",
+  "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+  "coverage": {
+    "graph_edges": 79,
+    "mapped_edges": 22,
+    "unmapped_edges": 57,
+    "live_edges": 3,
+    "missing_observations": 4,
+    "expired_observations": 0,
+    "invalid_observations": 0,
+    "node_mismatches": 15
+  },
+  "target_edge_id": "1241849551248",
+  "source_observation": {
+    "edge_id": "1241849551248",
+    "forward": true,
+    "link_id": "1220024102",
+    "start_node_id": "1220032000",
+    "end_node_id": "1220032500",
+    "status": "LIVE",
+    "speed_mps": 10,
+    "observed_at": "2026-10-25T14:35:00.000Z",
+    "valid_until": "2026-10-25T14:45:00.000Z"
+  },
+  "encoded_speed_kph": 36,
+  "baseline": {
+    "summary": {
+      "has_time_restrictions": false,
+      "has_toll": false,
+      "has_highway": false,
+      "has_ferry": false,
+      "min_lat": 37.499862,
+      "min_lon": 127.034151,
+      "max_lat": 37.50023,
+      "max_lon": 127.035378,
+      "time": 7.315,
+      "length": 0.115,
+      "cost": 8.961
+    },
+    "edge": {
+      "id": 1241849551248,
+      "speed": 57,
+      "length": 0.115,
+      "source_percent_along": 0.099,
+      "target_percent_along": 0.898
+    }
+  },
+  "public": {
+    "summary": {
+      "has_time_restrictions": false,
+      "has_toll": false,
+      "has_highway": false,
+      "has_ferry": false,
+      "min_lat": 37.499862,
+      "min_lon": 127.034151,
+      "max_lat": 37.50023,
+      "max_lon": 127.035378,
+      "time": 11.583,
+      "length": 0.115,
+      "cost": 14.189
+    },
+    "edge": {
+      "id": 1241849551248,
+      "speed": 36,
+      "length": 0.115,
+      "source_percent_along": 0.099,
+      "target_percent_along": 0.898
+    }
+  },
+  "checked_at": "2026-10-25T14:40:41.976Z",
+  "valid_until": "2026-10-25T14:45:00.000Z",
+  "message_en": "Actual public API→reviewed geometry→Ed25519 verification→immutable traffic→native route proof. Existing source graph reused for development; full fresh acceptance/client/polling delivery is still incomplete.",
+  "message_ko": "실제 공공 API·검토 지형·서명·불변 속도·실제 엔진 개발 근거이며 새 전체 검증·화면·갱신 반영은 미완료입니다."
+}

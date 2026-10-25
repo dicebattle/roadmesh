@@ -1,0 +1,859 @@
+[
+  {
+    "assertion_id": "public-speed-bootstrap",
+    "status": "PASS",
+    "expected": true,
+    "actual": "public-route-0.1",
+    "message_en": "Public client uses the distinct public schema.",
+    "message_ko": "공공 화면의 별도 규격을 확인했습니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-current",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "schema_version": "public-route-0.1",
+      "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+      "traffic_snapshot_id": "58db5b19baa0f1fde291c7c2d1ba7dfeca414865d66fb2d6667633cda3079e7f",
+      "sequence": 1,
+      "high_water": 1,
+      "checked_at_event_time": "2026-10-25T15:53:35.000Z",
+      "traffic_published_at": "2026-10-25T15:53:35.000Z",
+      "traffic_valid_until": "2026-10-25T16:02:35.000Z",
+      "source_class": "PUBLIC_AGENCY",
+      "clock_basis": "WALL_CLOCK_UTC",
+      "public_traffic": {
+        "provider": "kr-its",
+        "source_state": "CURRENT",
+        "refresh_state": "OK",
+        "retrieved_at": "2026-10-25T15:53:35.000Z",
+        "observed_from": "2026-10-25T15:52:35.000Z",
+        "observed_until": "2026-10-25T15:53:35.000Z",
+        "graph_edges": 79,
+        "mapped_edges": 2,
+        "live_edges": 2
+      }
+    },
+    "message_en": "Two authored provider entries are currently accepted.",
+    "message_ko": "자체 규격 응답 두 구간의 유효 수용을 확인했습니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-source-identity",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "schema_version": "public-route-0.1",
+      "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+      "traffic_snapshot_id": "58db5b19baa0f1fde291c7c2d1ba7dfeca414865d66fb2d6667633cda3079e7f",
+      "sequence": 1,
+      "high_water": 1,
+      "checked_at_event_time": "2026-10-25T15:53:35.000Z",
+      "traffic_published_at": "2026-10-25T15:53:35.000Z",
+      "traffic_valid_until": "2026-10-25T16:02:35.000Z",
+      "source_class": "PUBLIC_AGENCY",
+      "clock_basis": "WALL_CLOCK_UTC",
+      "public_traffic": {
+        "provider": "kr-its",
+        "source_state": "CURRENT",
+        "refresh_state": "OK",
+        "retrieved_at": "2026-10-25T15:53:35.000Z",
+        "observed_from": "2026-10-25T15:52:35.000Z",
+        "observed_until": "2026-10-25T15:53:35.000Z",
+        "graph_edges": 79,
+        "mapped_edges": 2,
+        "live_edges": 2
+      }
+    },
+    "message_en": "Source and clock are explicit; these test responses remain labeled authored.",
+    "message_ko": "출처·시계가 명시되며 검사 응답은 자체 규격으로 구분합니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-full-denominator",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "provider": "kr-its",
+      "source_state": "CURRENT",
+      "refresh_state": "OK",
+      "retrieved_at": "2026-10-25T15:53:35.000Z",
+      "observed_from": "2026-10-25T15:52:35.000Z",
+      "observed_until": "2026-10-25T15:53:35.000Z",
+      "graph_edges": 79,
+      "mapped_edges": 2,
+      "live_edges": 2
+    },
+    "message_en": "Unmapped roads remain in the full graph denominator.",
+    "message_ko": "미대응 도로를 전체 분모에 유지합니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-session-required",
+    "status": "PASS",
+    "expected": true,
+    "actual": 403,
+    "message_en": "Public client requires its loopback session.",
+    "message_ko": "로컬 세션이 필요합니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-origin-required",
+    "status": "PASS",
+    "expected": true,
+    "actual": 403,
+    "message_en": "Cross-origin route submissions are rejected.",
+    "message_ko": "다른 출처의 경로 제출을 거부합니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-malformed-input",
+    "status": "PASS",
+    "expected": true,
+    "actual": 422,
+    "message_en": "Malformed client input cannot reach native routing.",
+    "message_ko": "잘못된 입력을 엔진에 전달하지 않습니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-native-speed",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "request_id": "initial-http",
+      "request_sha256": "fa33fe0a9b0276599bea692e94c5e9f6e136b92802539eb790041922d7aec803",
+      "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+      "snapshot_id": "58db5b19baa0f1fde291c7c2d1ba7dfeca414865d66fb2d6667633cda3079e7f",
+      "sequence": 1,
+      "generation_id": "ae4f1c5660fc55616d2cf8d4e89d2582cf94a934841e9ed99c544b5e270ab832",
+      "traffic_sha256": "9eeb9f49ca97528caf8a968e2e3ab2d2477304ed724bf10460b54a23cf19c5b1",
+      "engine_version": "3.9.1",
+      "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+      "costing_config_id": "valhalla-current-v1",
+      "node_id": "local-public-node",
+      "traffic_mode": "LIVE_MIXED",
+      "distance_m": 62,
+      "duration_s": 18.877,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.0295,
+            37.498462
+          ],
+          [
+            127.030167,
+            37.498662
+          ]
+        ]
+      },
+      "guidance": {
+        "schema_version": "0.1",
+        "language": "ko-KR",
+        "maneuvers": [
+          {
+            "index": 0,
+            "native_type": 1,
+            "instruction": "테헤란로/90에서 동쪽으로 주행",
+            "distance_m": 62,
+            "duration_s": 18.877,
+            "begin_shape_index": 0,
+            "end_shape_index": 1
+          },
+          {
+            "index": 1,
+            "native_type": 4,
+            "instruction": "목적지 도착",
+            "distance_m": 0,
+            "duration_s": 0,
+            "begin_shape_index": 1,
+            "end_shape_index": 1
+          }
+        ]
+      },
+      "live_coverage_ratio": 1,
+      "warnings": [],
+      "calculated_at": "2026-10-25T15:53:35.000Z",
+      "high_water": 1,
+      "checked_at_event_time": "2026-10-25T15:53:35.000Z",
+      "traffic_published_at": "2026-10-25T15:53:35.000Z",
+      "traffic_valid_until": "2026-10-25T16:02:35.000Z",
+      "source_class": "PUBLIC_AGENCY",
+      "clock_basis": "WALL_CLOCK_UTC",
+      "public_traffic": {
+        "provider": "kr-its",
+        "source_state": "CURRENT",
+        "refresh_state": "OK",
+        "retrieved_at": "2026-10-25T15:53:35.000Z",
+        "observed_from": "2026-10-25T15:52:35.000Z",
+        "observed_until": "2026-10-25T15:53:35.000Z",
+        "graph_edges": 79,
+        "mapped_edges": 2,
+        "live_edges": 2
+      }
+    },
+    "message_en": "Authored provider speed reaches actual native routing through both HTTP servers.",
+    "message_ko": "자체 규격 속도가 두 HTTP 서버를 거쳐 실제 엔진에 반영됩니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-native-guidance",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "schema_version": "0.1",
+      "language": "ko-KR",
+      "maneuvers": [
+        {
+          "index": 0,
+          "native_type": 1,
+          "instruction": "테헤란로/90에서 동쪽으로 주행",
+          "distance_m": 62,
+          "duration_s": 18.877,
+          "begin_shape_index": 0,
+          "end_shape_index": 1
+        },
+        {
+          "index": 1,
+          "native_type": 4,
+          "instruction": "목적지 도착",
+          "distance_m": 0,
+          "duration_s": 0,
+          "begin_shape_index": 1,
+          "end_shape_index": 1
+        }
+      ]
+    },
+    "message_en": "Native Korean guidance remains bound to the public route.",
+    "message_ko": "공공 경로에 엔진 한국어 안내가 연결됩니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-slow-refresh",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "duration_ms": 1.4546660000005431,
+      "context": {
+        "schema_version": "public-route-0.1",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "traffic_snapshot_id": "58db5b19baa0f1fde291c7c2d1ba7dfeca414865d66fb2d6667633cda3079e7f",
+        "sequence": 1,
+        "high_water": 1,
+        "checked_at_event_time": "2026-10-25T15:55:35.000Z",
+        "traffic_published_at": "2026-10-25T15:53:35.000Z",
+        "traffic_valid_until": "2026-10-25T16:02:35.000Z",
+        "source_class": "PUBLIC_AGENCY",
+        "clock_basis": "WALL_CLOCK_UTC",
+        "public_traffic": {
+          "provider": "kr-its",
+          "source_state": "CURRENT",
+          "refresh_state": "OK",
+          "retrieved_at": "2026-10-25T15:53:35.000Z",
+          "observed_from": "2026-10-25T15:52:35.000Z",
+          "observed_until": "2026-10-25T15:53:35.000Z",
+          "graph_edges": 79,
+          "mapped_edges": 2,
+          "live_edges": 2
+        }
+      }
+    },
+    "message_en": "A pending provider call does not block current context.",
+    "message_ko": "느린 기관 응답이 현재 문맥 조회를 막지 않습니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-provider-outage",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "schema_version": "public-route-0.1",
+      "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+      "traffic_snapshot_id": "58db5b19baa0f1fde291c7c2d1ba7dfeca414865d66fb2d6667633cda3079e7f",
+      "sequence": 1,
+      "high_water": 1,
+      "checked_at_event_time": "2026-10-25T15:55:35.000Z",
+      "traffic_published_at": "2026-10-25T15:53:35.000Z",
+      "traffic_valid_until": "2026-10-25T16:02:35.000Z",
+      "source_class": "PUBLIC_AGENCY",
+      "clock_basis": "WALL_CLOCK_UTC",
+      "public_traffic": {
+        "provider": "kr-its",
+        "source_state": "CURRENT",
+        "refresh_state": "FAILED",
+        "retrieved_at": "2026-10-25T15:53:35.000Z",
+        "observed_from": "2026-10-25T15:52:35.000Z",
+        "observed_until": "2026-10-25T15:53:35.000Z",
+        "graph_edges": 79,
+        "mapped_edges": 2,
+        "live_edges": 2
+      }
+    },
+    "message_en": "Provider failure retains original validity without renewing observations.",
+    "message_ko": "기관 장애에서도 원래 만료 시각을 연장하지 않습니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-partial-expiry",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "schema_version": "public-route-0.1",
+      "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+      "traffic_snapshot_id": "5b4c604b773a703c8fa44dcf837da08165c3dfcbc46b6d2adb53a0181a9611b0",
+      "sequence": 2,
+      "high_water": 2,
+      "checked_at_event_time": "2026-10-25T16:02:35.000Z",
+      "traffic_published_at": "2026-10-25T16:02:35.000Z",
+      "traffic_valid_until": "2026-10-25T16:03:35.000Z",
+      "source_class": "PUBLIC_AGENCY",
+      "clock_basis": "WALL_CLOCK_UTC",
+      "public_traffic": {
+        "provider": "kr-its",
+        "source_state": "CURRENT",
+        "refresh_state": "FAILED",
+        "retrieved_at": "2026-10-25T15:53:35.000Z",
+        "observed_from": "2026-10-25T15:53:35.000Z",
+        "observed_until": "2026-10-25T15:53:35.000Z",
+        "graph_edges": 79,
+        "mapped_edges": 2,
+        "live_edges": 1
+      }
+    },
+    "message_en": "Exact first expiry removes only expired edges, preserving the remaining original deadline.",
+    "message_ko": "첫 만료 때 해당 구간만 빼고 남은 원 만료를 유지합니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-partial-route-coverage",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "request_id": "partial",
+      "request_sha256": "ee8fa827c33ce0cbe26ae56c482e35d79581b75c05ff2c6ff1270f3e95f232cf",
+      "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+      "snapshot_id": "5b4c604b773a703c8fa44dcf837da08165c3dfcbc46b6d2adb53a0181a9611b0",
+      "sequence": 2,
+      "generation_id": "a97726e1cdde9bb4e7fbcb4046f619d2403a1e88c2a197d92e29da39defd7d58",
+      "traffic_sha256": "2100696d2998faf1ff1afcca3b5772a7caee7f2474f43c826b7e475313a9e14f",
+      "engine_version": "3.9.1",
+      "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+      "costing_config_id": "valhalla-current-v1",
+      "node_id": "local-public-node",
+      "traffic_mode": "BASE_ONLY",
+      "distance_m": 62,
+      "duration_s": 3.974,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.0295,
+            37.498462
+          ],
+          [
+            127.030167,
+            37.498662
+          ]
+        ]
+      },
+      "guidance": {
+        "schema_version": "0.1",
+        "language": "ko-KR",
+        "maneuvers": [
+          {
+            "index": 0,
+            "native_type": 1,
+            "instruction": "테헤란로/90에서 동쪽으로 주행",
+            "distance_m": 62,
+            "duration_s": 3.974,
+            "begin_shape_index": 0,
+            "end_shape_index": 1
+          },
+          {
+            "index": 1,
+            "native_type": 4,
+            "instruction": "목적지 도착",
+            "distance_m": 0,
+            "duration_s": 0,
+            "begin_shape_index": 1,
+            "end_shape_index": 1
+          }
+        ]
+      },
+      "live_coverage_ratio": 0,
+      "warnings": [
+        {
+          "code": "NO_ROUTE_LIVE_COVERAGE",
+          "message_en": "This route has no accepted live edge coverage; default speeds apply.",
+          "message_ko": "이 경로에 수용된 실시간 구간이 없어 기본 속도를 적용합니다."
+        }
+      ],
+      "calculated_at": "2026-10-25T16:02:35.000Z",
+      "high_water": 2,
+      "checked_at_event_time": "2026-10-25T16:02:35.000Z",
+      "traffic_published_at": "2026-10-25T16:02:35.000Z",
+      "traffic_valid_until": "2026-10-25T16:03:35.000Z",
+      "source_class": "PUBLIC_AGENCY",
+      "clock_basis": "WALL_CLOCK_UTC",
+      "public_traffic": {
+        "provider": "kr-its",
+        "source_state": "CURRENT",
+        "refresh_state": "FAILED",
+        "retrieved_at": "2026-10-25T15:53:35.000Z",
+        "observed_from": "2026-10-25T15:53:35.000Z",
+        "observed_until": "2026-10-25T15:53:35.000Z",
+        "graph_edges": 79,
+        "mapped_edges": 2,
+        "live_edges": 1
+      }
+    },
+    "message_en": "Graph-level current data does not imply coverage on this particular route.",
+    "message_ko": "전체에 유효 자료가 있어도 해당 경로 적용률은 별도로 계산합니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-exact-expiry",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "schema_version": "public-route-0.1",
+      "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+      "traffic_snapshot_id": null,
+      "sequence": null,
+      "high_water": 2,
+      "checked_at_event_time": "2026-10-25T16:03:35.000Z",
+      "traffic_published_at": null,
+      "traffic_valid_until": null,
+      "source_class": "PUBLIC_AGENCY",
+      "clock_basis": "WALL_CLOCK_UTC",
+      "public_traffic": {
+        "provider": "kr-its",
+        "source_state": "EXPIRED",
+        "refresh_state": "FAILED",
+        "retrieved_at": "2026-10-25T15:53:35.000Z",
+        "observed_from": "2026-10-25T15:52:35.000Z",
+        "observed_until": "2026-10-25T15:53:35.000Z",
+        "graph_edges": 79,
+        "mapped_edges": 2,
+        "live_edges": 0
+      }
+    },
+    "message_en": "The exact final expiry clears authority without resetting order.",
+    "message_ko": "마지막 정확한 만료에서 순서를 유지하고 사용을 중단합니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-native-fallback",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "request_id": "baseline",
+      "request_sha256": "a1bc6ab9330ad8885c0b092078e7569cd9b6bc69bfab028d324985187fb86125",
+      "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+      "snapshot_id": null,
+      "sequence": null,
+      "generation_id": "11010f0e6ab84ab50054b1de21e12074f127e5897f12696b5d89008c3075aac0",
+      "traffic_sha256": "ed7aeb9732a06366b41990190a8c9437154d5254aad5664fc5e9b7ee9fbffe27",
+      "engine_version": "3.9.1",
+      "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+      "costing_config_id": "valhalla-current-v1",
+      "node_id": "local-public-node",
+      "traffic_mode": "BASE_ONLY",
+      "distance_m": 62,
+      "duration_s": 3.974,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.0295,
+            37.498462
+          ],
+          [
+            127.030167,
+            37.498662
+          ]
+        ]
+      },
+      "guidance": {
+        "schema_version": "0.1",
+        "language": "ko-KR",
+        "maneuvers": [
+          {
+            "index": 0,
+            "native_type": 1,
+            "instruction": "테헤란로/90에서 동쪽으로 주행",
+            "distance_m": 62,
+            "duration_s": 3.974,
+            "begin_shape_index": 0,
+            "end_shape_index": 1
+          },
+          {
+            "index": 1,
+            "native_type": 4,
+            "instruction": "목적지 도착",
+            "distance_m": 0,
+            "duration_s": 0,
+            "begin_shape_index": 1,
+            "end_shape_index": 1
+          }
+        ]
+      },
+      "live_coverage_ratio": 0,
+      "warnings": [
+        {
+          "code": "NO_USABLE_SNAPSHOT",
+          "message_en": "No usable snapshot is accepted; default speeds apply.",
+          "message_ko": "사용 가능한 수용 자료가 없어 기본 속도를 적용합니다."
+        }
+      ],
+      "calculated_at": "2026-10-25T16:03:35.000Z",
+      "high_water": 2,
+      "checked_at_event_time": "2026-10-25T16:03:35.000Z",
+      "traffic_published_at": null,
+      "traffic_valid_until": null,
+      "source_class": "PUBLIC_AGENCY",
+      "clock_basis": "WALL_CLOCK_UTC",
+      "public_traffic": {
+        "provider": "kr-its",
+        "source_state": "EXPIRED",
+        "refresh_state": "FAILED",
+        "retrieved_at": "2026-10-25T15:53:35.000Z",
+        "observed_from": "2026-10-25T15:52:35.000Z",
+        "observed_until": "2026-10-25T15:53:35.000Z",
+        "graph_edges": 79,
+        "mapped_edges": 2,
+        "live_edges": 0
+      }
+    },
+    "message_en": "Actual native routing returns to unchanged base speeds and geometry after expiry.",
+    "message_ko": "만료 뒤 실제 엔진이 같은 경로의 기본 속도로 복귀합니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-recovery-order",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "schema_version": "public-route-0.1",
+      "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+      "traffic_snapshot_id": "0b804a94a1b58551820d3022b8d387ecdca29614c02c4d0dcb5db7bc87663f9c",
+      "sequence": 3,
+      "high_water": 3,
+      "checked_at_event_time": "2026-10-25T16:05:35.000Z",
+      "traffic_published_at": "2026-10-25T16:05:35.000Z",
+      "traffic_valid_until": "2026-10-25T16:15:35.000Z",
+      "source_class": "PUBLIC_AGENCY",
+      "clock_basis": "WALL_CLOCK_UTC",
+      "public_traffic": {
+        "provider": "kr-its",
+        "source_state": "CURRENT",
+        "refresh_state": "OK",
+        "retrieved_at": "2026-10-25T16:05:35.000Z",
+        "observed_from": "2026-10-25T16:05:35.000Z",
+        "observed_until": "2026-10-25T16:05:35.000Z",
+        "graph_edges": 79,
+        "mapped_edges": 2,
+        "live_edges": 2
+      }
+    },
+    "message_en": "Fresh recovery uses a higher signed sequence.",
+    "message_ko": "새 관측 복구에서 높은 서명 순번을 사용합니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-native-recovery",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "request_id": "recovered",
+      "request_sha256": "cead1f0e61a132ebc042a0e0c1d9bbcdf232a8efd5afa6f08bc137c7308418c6",
+      "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+      "snapshot_id": "0b804a94a1b58551820d3022b8d387ecdca29614c02c4d0dcb5db7bc87663f9c",
+      "sequence": 3,
+      "generation_id": "33cf4e68ff195c85218a2f272daa8003fbf6165239664f759a1b64e76f485903",
+      "traffic_sha256": "8fe9dc0cae7bd9da3507479887b1dda051accbd4f0194d66ed4b6349ffda677f",
+      "engine_version": "3.9.1",
+      "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+      "costing_config_id": "valhalla-current-v1",
+      "node_id": "local-public-node",
+      "traffic_mode": "LIVE_MIXED",
+      "distance_m": 62,
+      "duration_s": 6.292,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.0295,
+            37.498462
+          ],
+          [
+            127.030167,
+            37.498662
+          ]
+        ]
+      },
+      "guidance": {
+        "schema_version": "0.1",
+        "language": "ko-KR",
+        "maneuvers": [
+          {
+            "index": 0,
+            "native_type": 1,
+            "instruction": "테헤란로/90에서 동쪽으로 주행",
+            "distance_m": 62,
+            "duration_s": 6.292,
+            "begin_shape_index": 0,
+            "end_shape_index": 1
+          },
+          {
+            "index": 1,
+            "native_type": 4,
+            "instruction": "목적지 도착",
+            "distance_m": 0,
+            "duration_s": 0,
+            "begin_shape_index": 1,
+            "end_shape_index": 1
+          }
+        ]
+      },
+      "live_coverage_ratio": 1,
+      "warnings": [],
+      "calculated_at": "2026-10-25T16:05:35.000Z",
+      "high_water": 3,
+      "checked_at_event_time": "2026-10-25T16:05:35.000Z",
+      "traffic_published_at": "2026-10-25T16:05:35.000Z",
+      "traffic_valid_until": "2026-10-25T16:15:35.000Z",
+      "source_class": "PUBLIC_AGENCY",
+      "clock_basis": "WALL_CLOCK_UTC",
+      "public_traffic": {
+        "provider": "kr-its",
+        "source_state": "CURRENT",
+        "refresh_state": "OK",
+        "retrieved_at": "2026-10-25T16:05:35.000Z",
+        "observed_from": "2026-10-25T16:05:35.000Z",
+        "observed_until": "2026-10-25T16:05:35.000Z",
+        "graph_edges": 79,
+        "mapped_edges": 2,
+        "live_edges": 2
+      }
+    },
+    "message_en": "New public speed produces a new native generation and changed travel duration.",
+    "message_ko": "새 속도에 새 엔진 자료와 달라진 소요시간을 확인했습니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-zero-withdrawal",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "schema_version": "public-route-0.1",
+      "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+      "traffic_snapshot_id": null,
+      "sequence": null,
+      "high_water": 3,
+      "checked_at_event_time": "2026-10-25T16:07:35.000Z",
+      "traffic_published_at": null,
+      "traffic_valid_until": null,
+      "source_class": "PUBLIC_AGENCY",
+      "clock_basis": "WALL_CLOCK_UTC",
+      "public_traffic": {
+        "provider": "kr-its",
+        "source_state": "NO_MAPPED_SPEEDS",
+        "refresh_state": "OK",
+        "retrieved_at": "2026-10-25T16:07:35.000Z",
+        "observed_from": "2026-10-25T16:07:35.000Z",
+        "observed_until": "2026-10-25T16:07:35.000Z",
+        "graph_edges": 79,
+        "mapped_edges": 2,
+        "live_edges": 0
+      }
+    },
+    "message_en": "New zero values withdraw old positive speed rather than declaring a road closure.",
+    "message_ko": "새0값은 폐쇄로 바꾸지 않고 이전 양수 속도를 철회합니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-restart-order",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "schema_version": "public-route-0.1",
+      "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+      "traffic_snapshot_id": null,
+      "sequence": null,
+      "high_water": 3,
+      "checked_at_event_time": "2026-10-25T16:07:35.000Z",
+      "traffic_published_at": null,
+      "traffic_valid_until": null,
+      "source_class": "PUBLIC_AGENCY",
+      "clock_basis": "WALL_CLOCK_UTC",
+      "public_traffic": {
+        "provider": "kr-its",
+        "source_state": "NO_MAPPED_SPEEDS",
+        "refresh_state": "FAILED",
+        "retrieved_at": "2026-10-25T16:07:35.000Z",
+        "observed_from": "2026-10-25T16:07:35.000Z",
+        "observed_until": "2026-10-25T16:07:35.000Z",
+        "graph_edges": 79,
+        "mapped_edges": 2,
+        "live_edges": 0
+      }
+    },
+    "message_en": "Restart preserves the durable sequence and prior withdrawal during provider failure.",
+    "message_ko": "기관 장애 재시작에서 순번과 철회 상태를 유지합니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-restart-baseline",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "request_id": "restarted",
+      "request_sha256": "555d52a157835e72584222c7629577fd8a4c83c542c878f7be570f059c1db06a",
+      "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+      "snapshot_id": null,
+      "sequence": null,
+      "generation_id": "11010f0e6ab84ab50054b1de21e12074f127e5897f12696b5d89008c3075aac0",
+      "traffic_sha256": "ed7aeb9732a06366b41990190a8c9437154d5254aad5664fc5e9b7ee9fbffe27",
+      "engine_version": "3.9.1",
+      "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+      "costing_config_id": "valhalla-current-v1",
+      "node_id": "local-public-node",
+      "traffic_mode": "BASE_ONLY",
+      "distance_m": 62,
+      "duration_s": 3.974,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.0295,
+            37.498462
+          ],
+          [
+            127.030167,
+            37.498662
+          ]
+        ]
+      },
+      "guidance": {
+        "schema_version": "0.1",
+        "language": "ko-KR",
+        "maneuvers": [
+          {
+            "index": 0,
+            "native_type": 1,
+            "instruction": "테헤란로/90에서 동쪽으로 주행",
+            "distance_m": 62,
+            "duration_s": 3.974,
+            "begin_shape_index": 0,
+            "end_shape_index": 1
+          },
+          {
+            "index": 1,
+            "native_type": 4,
+            "instruction": "목적지 도착",
+            "distance_m": 0,
+            "duration_s": 0,
+            "begin_shape_index": 1,
+            "end_shape_index": 1
+          }
+        ]
+      },
+      "live_coverage_ratio": 0,
+      "warnings": [
+        {
+          "code": "NO_USABLE_SNAPSHOT",
+          "message_en": "No usable snapshot is accepted; default speeds apply.",
+          "message_ko": "사용 가능한 수용 자료가 없어 기본 속도를 적용합니다."
+        }
+      ],
+      "calculated_at": "2026-10-25T16:07:35.000Z",
+      "high_water": 3,
+      "checked_at_event_time": "2026-10-25T16:07:35.000Z",
+      "traffic_published_at": null,
+      "traffic_valid_until": null,
+      "source_class": "PUBLIC_AGENCY",
+      "clock_basis": "WALL_CLOCK_UTC",
+      "public_traffic": {
+        "provider": "kr-its",
+        "source_state": "NO_MAPPED_SPEEDS",
+        "refresh_state": "FAILED",
+        "retrieved_at": "2026-10-25T16:07:35.000Z",
+        "observed_from": "2026-10-25T16:07:35.000Z",
+        "observed_until": "2026-10-25T16:07:35.000Z",
+        "graph_edges": 79,
+        "mapped_edges": 2,
+        "live_edges": 0
+      }
+    },
+    "message_en": "Restarted native routing cannot resurrect the withdrawn positive speed.",
+    "message_ko": "재시작한 엔진이 철회된 속도를 되살리지 않습니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-deadline",
+    "status": "PASS",
+    "expected": true,
+    "actual": true,
+    "message_en": "Expired request deadlines cannot start a route.",
+    "message_ko": "기한이 지난 요청을 실행하지 않습니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-input-scope",
+    "status": "PASS",
+    "expected": true,
+    "actual": true,
+    "message_en": "Out-of-graph coordinates cannot request public routing.",
+    "message_ko": "지도 범위 밖 입력을 거부합니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-original-evidence",
+    "status": "PASS",
+    "expected": true,
+    "actual": 3,
+    "message_en": "Original artifact hashes and standard Ed25519 signatures verify independently.",
+    "message_ko": "표준 서명 검사로 원 파일 해시를 독립 확인했습니다.",
+    "evidence_path": "readbacks.json"
+  },
+  {
+    "assertion_id": "public-speed-cleanup",
+    "status": "PASS",
+    "expected": true,
+    "actual": {
+      "clean": true,
+      "containers": [
+        {
+          "container_name": "routelens-p02-243c75d4-de0a-458d-8428-2ccc02c75b24",
+          "receipt": true,
+          "independently_absent": true
+        },
+        {
+          "container_name": "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+          "receipt": true,
+          "independently_absent": true
+        },
+        {
+          "container_name": "routelens-p02-90fb0339-83d6-491d-a4c8-c33068dddabe",
+          "receipt": true,
+          "independently_absent": true
+        },
+        {
+          "container_name": "routelens-p02-c4a4e201-6523-414a-8fe4-99b88abf7262",
+          "receipt": true,
+          "independently_absent": true
+        },
+        {
+          "container_name": "routelens-p02-6a279fae-440a-4abf-b9e3-a3b69dd19ab4",
+          "receipt": true,
+          "independently_absent": true
+        }
+      ]
+    },
+    "message_en": "Owned native daemons, compiler, loopback servers and SQLite closed.",
+    "message_ko": "소유 엔진·변환·로컬 서버·SQLite를 종료했습니다.",
+    "evidence_path": "readbacks.json"
+  }
+]

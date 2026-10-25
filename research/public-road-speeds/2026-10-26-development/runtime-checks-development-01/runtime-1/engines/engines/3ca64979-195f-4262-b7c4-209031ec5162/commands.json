@@ -1,0 +1,447 @@
+[
+  {
+    "sequence": 1,
+    "args": [
+      "create",
+      "--name",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "--label",
+      "io.routelens.run_id=3ca64979-195f-4262-b7c4-209031ec5162",
+      "--network",
+      "none",
+      "--cpus",
+      "2",
+      "--memory",
+      "4g",
+      "--stop-timeout",
+      "1",
+      "--mount",
+      "type=bind,src=/Users/dice/Documents/routelens-p13/data/public-road-research/runtime-checks-development-01/runtime-1/engines/engines/3ca64979-195f-4262-b7c4-209031ec5162,dst=/work",
+      "--mount",
+      "type=bind,src=/Users/dice/Documents/routelens-p13/data/nav02-whole02/seoul/graph,dst=/graph,readonly",
+      "--entrypoint",
+      "/bin/sh",
+      "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+      "-c",
+      "exec sleep infinity"
+    ],
+    "started_at_utc": "2026-10-25T15:53:46.035Z",
+    "status": 0,
+    "stdout": "0001.stdout.log",
+    "stderr": "0001.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:46.115Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 2,
+    "args": [
+      "inspect",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162"
+    ],
+    "started_at_utc": "2026-10-25T15:53:46.131Z",
+    "status": 0,
+    "stdout": "0002.stdout.log",
+    "stderr": "0002.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:46.179Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 3,
+    "args": [
+      "start",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162"
+    ],
+    "started_at_utc": "2026-10-25T15:53:46.199Z",
+    "status": 0,
+    "stdout": "0003.stdout.log",
+    "stderr": "0003.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:46.361Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 4,
+    "args": [
+      "exec",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "valhalla_service",
+      "--version"
+    ],
+    "started_at_utc": "2026-10-25T15:53:46.370Z",
+    "status": 0,
+    "stdout": "0004.stdout.log",
+    "stderr": "0004.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:46.445Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 5,
+    "args": [
+      "exec",
+      "-d",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "/bin/sh",
+      "/work/start-service.sh"
+    ],
+    "started_at_utc": "2026-10-25T15:53:46.454Z",
+    "status": 0,
+    "stdout": "0005.stdout.log",
+    "stderr": "0005.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:46.518Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 6,
+    "args": [
+      "exec",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "/bin/sh",
+      "-c",
+      "test -s /work/daemon.pid || exit 2; p=$(cat /work/daemon.pid); kill -0 \"$p\" || exit 3; awk '($2==\"0100007F:1F42\" || $2==\"0000000000000000FFFF00000100007F:1F42\") && $4==\"0A\" {found=1; print} END{exit !found}' /proc/net/tcp /proc/net/tcp6"
+    ],
+    "started_at_utc": "2026-10-25T15:53:46.528Z",
+    "status": 0,
+    "stdout": "0006.stdout.log",
+    "stderr": "0006.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:46.589Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 7,
+    "args": [
+      "exec",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "/bin/sh",
+      "-c",
+      "cat \"/proc/$(cat /work/daemon.pid)/stat\""
+    ],
+    "started_at_utc": "2026-10-25T15:53:46.599Z",
+    "status": 0,
+    "stdout": "0007.stdout.log",
+    "stderr": "0007.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:46.666Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 8,
+    "args": [
+      "exec",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "/bin/sh",
+      "-c",
+      "p=$(cat /work/daemon.pid); kill -0 \"$p\" && cat \"/proc/$p/stat\""
+    ],
+    "started_at_utc": "2026-10-25T15:53:46.686Z",
+    "status": 0,
+    "stdout": "0008.stdout.log",
+    "stderr": "0008.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:46.757Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 9,
+    "args": [
+      "exec",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "curl",
+      "--silent",
+      "--show-error",
+      "--connect-timeout",
+      "2",
+      "--max-time",
+      "29.918635541000004",
+      "--request",
+      "POST",
+      "--header",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@/work/requests/72c73812-4025-43ab-8b73-c71885a9cf03/route.request.json",
+      "--dump-header",
+      "/work/requests/72c73812-4025-43ab-8b73-c71885a9cf03/route.headers.txt",
+      "--output",
+      "/work/requests/72c73812-4025-43ab-8b73-c71885a9cf03/route.response.json",
+      "--write-out",
+      "%{http_code}",
+      "http://127.0.0.1:8002/route"
+    ],
+    "started_at_utc": "2026-10-25T15:53:46.768Z",
+    "status": 0,
+    "stdout": "0009.stdout.log",
+    "stderr": "0009.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:46.906Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 10,
+    "args": [
+      "exec",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "curl",
+      "--silent",
+      "--show-error",
+      "--connect-timeout",
+      "2",
+      "--max-time",
+      "29.771347333",
+      "--request",
+      "POST",
+      "--header",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@/work/requests/72c73812-4025-43ab-8b73-c71885a9cf03/trace_attributes.request.json",
+      "--dump-header",
+      "/work/requests/72c73812-4025-43ab-8b73-c71885a9cf03/trace_attributes.headers.txt",
+      "--output",
+      "/work/requests/72c73812-4025-43ab-8b73-c71885a9cf03/trace_attributes.response.json",
+      "--write-out",
+      "%{http_code}",
+      "http://127.0.0.1:8002/trace_attributes"
+    ],
+    "started_at_utc": "2026-10-25T15:53:46.915Z",
+    "status": 0,
+    "stdout": "0010.stdout.log",
+    "stderr": "0010.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:46.982Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 11,
+    "args": [
+      "exec",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "/bin/sh",
+      "-c",
+      "p=$(cat /work/daemon.pid); kill -0 \"$p\" && cat \"/proc/$p/stat\""
+    ],
+    "started_at_utc": "2026-10-25T15:53:46.992Z",
+    "status": 0,
+    "stdout": "0011.stdout.log",
+    "stderr": "0011.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:47.058Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 12,
+    "args": [
+      "exec",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "/bin/sh",
+      "-c",
+      "p=$(cat /work/daemon.pid); kill -0 \"$p\" && cat \"/proc/$p/stat\""
+    ],
+    "started_at_utc": "2026-10-25T15:53:47.133Z",
+    "status": 0,
+    "stdout": "0012.stdout.log",
+    "stderr": "0012.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:47.204Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 13,
+    "args": [
+      "exec",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "curl",
+      "--silent",
+      "--show-error",
+      "--connect-timeout",
+      "2",
+      "--max-time",
+      "9.999935541",
+      "--request",
+      "POST",
+      "--header",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@/work/requests/556a03d5-0252-4b20-9131-35d232f00e32/route.request.json",
+      "--dump-header",
+      "/work/requests/556a03d5-0252-4b20-9131-35d232f00e32/route.headers.txt",
+      "--output",
+      "/work/requests/556a03d5-0252-4b20-9131-35d232f00e32/route.response.json",
+      "--write-out",
+      "%{http_code}",
+      "http://127.0.0.1:8002/route"
+    ],
+    "started_at_utc": "2026-10-25T15:53:47.216Z",
+    "status": 0,
+    "stdout": "0013.stdout.log",
+    "stderr": "0013.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:47.292Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 14,
+    "args": [
+      "exec",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "curl",
+      "--silent",
+      "--show-error",
+      "--connect-timeout",
+      "2",
+      "--max-time",
+      "9.91187825",
+      "--request",
+      "POST",
+      "--header",
+      "Content-Type: application/json",
+      "--data-binary",
+      "@/work/requests/556a03d5-0252-4b20-9131-35d232f00e32/trace_attributes.request.json",
+      "--dump-header",
+      "/work/requests/556a03d5-0252-4b20-9131-35d232f00e32/trace_attributes.headers.txt",
+      "--output",
+      "/work/requests/556a03d5-0252-4b20-9131-35d232f00e32/trace_attributes.response.json",
+      "--write-out",
+      "%{http_code}",
+      "http://127.0.0.1:8002/trace_attributes"
+    ],
+    "started_at_utc": "2026-10-25T15:53:47.304Z",
+    "status": 0,
+    "stdout": "0014.stdout.log",
+    "stderr": "0014.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:47.387Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 15,
+    "args": [
+      "exec",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "/bin/sh",
+      "-c",
+      "p=$(cat /work/daemon.pid); kill -0 \"$p\" && cat \"/proc/$p/stat\""
+    ],
+    "started_at_utc": "2026-10-25T15:53:47.400Z",
+    "status": 0,
+    "stdout": "0015.stdout.log",
+    "stderr": "0015.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:47.474Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 16,
+    "args": [
+      "inspect",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162"
+    ],
+    "started_at_utc": "2026-10-25T15:53:50.712Z",
+    "status": 0,
+    "stdout": "0016.stdout.log",
+    "stderr": "0016.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:50.762Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 17,
+    "args": [
+      "exec",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "/bin/sh",
+      "-c",
+      "p=$(cat /work/daemon.pid); test -e \"/proc/$p/stat\" && cat \"/proc/$p/stat\""
+    ],
+    "started_at_utc": "2026-10-25T15:53:50.773Z",
+    "status": 0,
+    "stdout": "0017.stdout.log",
+    "stderr": "0017.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:50.863Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 18,
+    "args": [
+      "exec",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "/bin/sh",
+      "-c",
+      "kill -TERM \"$(cat /work/daemon.pid)\""
+    ],
+    "started_at_utc": "2026-10-25T15:53:50.875Z",
+    "status": 0,
+    "stdout": "0018.stdout.log",
+    "stderr": "0018.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:50.944Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 19,
+    "args": [
+      "exec",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "/bin/sh",
+      "-c",
+      "p=$(cat /work/daemon.pid); test ! -e \"/proc/$p/stat\""
+    ],
+    "started_at_utc": "2026-10-25T15:53:50.954Z",
+    "status": 0,
+    "stdout": "0019.stdout.log",
+    "stderr": "0019.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:51.024Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 20,
+    "args": [
+      "exec",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+      "/bin/sh",
+      "-c",
+      "test -f /work/daemon.exit && cat /work/daemon.exit"
+    ],
+    "started_at_utc": "2026-10-25T15:53:51.035Z",
+    "status": 0,
+    "stdout": "0020.stdout.log",
+    "stderr": "0020.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:51.099Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 21,
+    "args": [
+      "rm",
+      "-f",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162"
+    ],
+    "started_at_utc": "2026-10-25T15:53:51.114Z",
+    "status": 0,
+    "stdout": "0021.stdout.log",
+    "stderr": "0021.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:51.230Z",
+    "timed_out": false,
+    "aborted": false
+  },
+  {
+    "sequence": 22,
+    "args": [
+      "container",
+      "inspect",
+      "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162"
+    ],
+    "started_at_utc": "2026-10-25T15:53:51.247Z",
+    "status": 1,
+    "stdout": "0022.stdout.log",
+    "stderr": "0022.stderr.log",
+    "completed_at_utc": "2026-10-25T15:53:51.290Z",
+    "timed_out": false,
+    "aborted": false
+  }
+]

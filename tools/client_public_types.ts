@@ -11,10 +11,10 @@ export interface ClientPreset {
 }
 
 export interface ClientBootstrap {
-  schema_version: "0.1";
+  schema_version: "0.1" | "public-route-0.1";
   graph_id: string;
-  source_class: "SYNTHETIC";
-  clock_basis: "SIMULATION_EVENT_TIME";
+  source_class: "SYNTHETIC" | "PUBLIC_AGENCY";
+  clock_basis: "SIMULATION_EVENT_TIME" | "WALL_CLOCK_UTC";
   bounds: [number, number, number, number];
   roads: {
     type: "FeatureCollection";

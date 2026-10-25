@@ -5,8 +5,7 @@ import { mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { canonical, sha256 } from "./shared.js";
 import { durableNodeJSON } from "./node_engine.js";
-import type { VerifiedPublication } from "./publication_types.js";
-import type { TrafficBundle, TrafficGeneration } from "./traffic_types.js";
+import type { TrafficBundle, TrafficGeneration, VerifiedTrafficInput } from "./traffic_types.js";
 import type {
   GatewayCompilerJob,
   GatewayCompilerPaths,
@@ -206,7 +205,7 @@ export class GatewayCompilerAdapter {
   loadBundle(): Promise<TrafficBundle> {
     return this.submit({ operation: "load" });
   }
-  prepare(input: VerifiedPublication | null): Promise<TrafficGeneration> {
+  prepare(input: VerifiedTrafficInput): Promise<TrafficGeneration> {
     if (this.closed || this.failure)
       return Promise.reject(
         new GatewayCompilerError(this.failure ?? "COMPILER_CLOSED"),

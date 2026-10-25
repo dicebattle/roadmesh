@@ -13,7 +13,7 @@ import { sphericalDistance, polylineLength } from "./geodesy.js";
 import { nativeRouteRequest, routeRejectionReason, type RouteRejectionReason } from "./route_contract.js";
 import type { NodeRouteRequest } from "./node_types.js";
 import type { AcceptedInspection } from "./publication_types.js";
-import type { TrafficGeneration } from "./traffic_types.js";
+import type { TrafficBundle, TrafficGeneration } from "./traffic_types.js";
 import type {
   GatewayConfig,
   GatewayFreshness,
@@ -338,7 +338,15 @@ export function validateGatewayNodeResult(
     typeof v.instance_id !== "string"
   )
     throw new PeerError("WRONG_REQUEST");
-  const e = object(v.engine_result);
+  return validateNativeRouteResult(v.engine_result, r, node.node_id, bundle, g);
+}
+/** Shared native request/geometry/partial-coverage validation; peer authorization stays above.
+ * 공통 엔진 요청·지형·부분 적용률 검사이며 원격 노드 승인은 위 경계에 유지합니다. */
+export function validateNativeRouteResult(
+  raw: unknown, r: GatewayRequest, node_id: string,
+  bundle: Pick<TrafficBundle, "graph_id" | "image_id">, g: TrafficGeneration,
+): Omit<GatewaySuccess, "calculated_at" | keyof GatewayFreshness> {
+  const e = object(raw);
   record(e, "native result", ["request", "route", "trace"]);
   if (!canonical(e.request).equals(canonical(expectedNative(r))))
     throw new PeerError("WRONG_REQUEST");
@@ -428,7 +436,7 @@ export function validateGatewayNodeResult(
     engine_version: "3.9.1",
     image_id: bundle.image_id,
     costing_config_id: g.compiler_policy,
-    node_id: node.node_id,
+    node_id,
     traffic_mode: ratio > 0 ? "LIVE_MIXED" : "BASE_ONLY",
     distance_m: distance,
     duration_s: summary.time,

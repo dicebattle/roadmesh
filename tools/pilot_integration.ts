@@ -41,6 +41,7 @@ import {
 } from "./client_checks.js";
 import { requireProgressCases } from "./progress_checks.js";
 import { requireGuidanceCases } from "./guidance_checks.js";
+import { runPublicSpeedChecks, requirePublicSpeedCases } from "./public_speed_checks.js";
 import type { SimulationAssertion } from "./vehicle_simulator.js";
 import {
   runCloudflareChecks,
@@ -528,6 +529,14 @@ export async function runPilotIntegration(
     data.assertions.push(...data.progress);
     data.stages.push({id:"nav02",name_en:"Actual Seoul route progress and synthetic GPS replay",name_ko:"실제 서울 경로 진행·합성 GPS 재생",status:"PASS",evidence_path:"client/progress/assertions.json",duration_ms:0});
     if(Number(data.assertions.length)!==438||data.assertions.some(a=>a.status!=="PASS"))throw Error("All438 cases required / 전체438개 통과 필요");
+    const publicStarted=performance.now();
+    const publicSpeeds=await runPublicSpeedChecks(join(output,"seoul/graph"),join(output,"traffic/bundle"),join(output,"public-speeds"));
+    verifyRegionalChild(join(output,"public-speeds"),verified,data.graph_id);
+    requirePublicSpeedCases(publicSpeeds.assertions);
+    data.assertions.push(...publicSpeeds.assertions.map(a=>({...a,evidence_path:"public-speeds/"+a.evidence_path})));
+    data.stages.push({id:"public-speeds",name_en:"Public-source native refresh, expiry, recovery and durable withdrawal",name_ko:"공공 출처 엔진 갱신·만료·복구·영속 철회",
+      status:"PASS",evidence_path:"public-speeds/manifest.json",duration_ms:performance.now()-publicStarted});
+    if(Number(data.assertions.length)!==462||data.assertions.some(a=>a.status!=="PASS"))throw Error("All462 cases required / 전체462개 통과 필요");
     data.summary.assertions_passed = data.assertions.filter(
       (a) => a.status === "PASS",
     ).length;
@@ -571,7 +580,10 @@ export async function runPilotIntegration(
     );
     writeFileSync(
       join(output, "summary.md"),
-      "# Whole implemented-system pilot / 구현된 전체 파일럿\n\nPASS: fresh tiny → Seoul → P05 durable ingestion, interruption/recovery and deletion read-back → P06 unsigned synthetic aggregation → P07 signed HTTP publication and durable verification → P08 accepted immutable traffic files, real routing and exact expiry → P09 persistent native two-node routing, draining and automatic expiry → P10 version-aware route gateway and bounded native failover → P11 actual same-origin browser requests and event-time freshness → P12 actual TCP interruption/stall, trusted admission, native domain errors and same-run S01–S15 matrix.\n통과: 새 tiny→서울→P05영속수집·실제중단/복구·삭제재조회→P06서명전합성집계→P07서명HTTP게시·영속검증→P08수용불변교통파일·실제경로·정확한만료→P09지속엔진두노드경로·요청마무리·자동만료→P10버전확인경로중계·제한된지속엔진전환→P11실제같은출처브라우저요청·모의시각신선도→P12실제TCP중단/무응답·신뢰접수·엔진업무오류·같은실행S01~S15행렬.\n\nP13–P14 remain incomplete; no production authentication or real driver traces.\nP13~P14는 미완료이며 운영인증·실주행자료가 아닙니다.\n",
+      "# Whole implemented-system pilot / 구현된 전체 파일럿\n\n" +
+      `PASS: ${data.summary.assertions_passed}/${data.summary.assertions_total} assertions. / 전체 ${data.summary.assertions_total}개 중 ${data.summary.assertions_passed}개 통과.\n\n` +
+      data.stages.map(s=>`- ${s.id}: ${s.name_en} / ${s.name_ko}\n`).join("") +
+      "\nActual Seoul OSM; authored movement, traffic and provider-protocol faults. Actual agency acquisition/browser proof is separate. Geographic quality, device behavior and production gates remain open.\n실제 서울 OSM 위 자체 이동·교통·제공자 규격 장애 검사입니다. 실제 기관 수집/화면 근거는 별도이며 실도로 품질·단말·운영 기준은 남아 있습니다.\n",
     );
   } catch (error) {
     failure = error;

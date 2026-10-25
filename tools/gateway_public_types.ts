@@ -37,12 +37,25 @@ export interface GatewayFreshness {
   checked_at_event_time: string;
   traffic_published_at: string | null;
   traffic_valid_until: string | null;
-  source_class: "SYNTHETIC";
-  clock_basis: "SIMULATION_EVENT_TIME";
+  source_class: "SYNTHETIC" | "PUBLIC_AGENCY";
+  clock_basis: "SIMULATION_EVENT_TIME" | "WALL_CLOCK_UTC";
+  public_traffic?: PublicTrafficContext;
+}
+
+export interface PublicTrafficContext {
+  provider: "kr-its";
+  source_state: "CURRENT" | "EXPIRED" | "UNAVAILABLE" | "NO_MAPPED_SPEEDS";
+  refresh_state: "OK" | "FAILED" | "WAITING";
+  retrieved_at: string | null;
+  observed_from: string | null;
+  observed_until: string | null;
+  graph_edges: number;
+  mapped_edges: number;
+  live_edges: number;
 }
 
 export interface GatewayRouteContext extends GatewayFreshness {
-  schema_version: "0.1";
+  schema_version: "0.1" | "public-route-0.1";
   graph_id: string;
   traffic_snapshot_id: string | null;
   sequence: number | null;

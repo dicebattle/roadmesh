@@ -1,0 +1,19 @@
+[
+  {
+    "code": "PUBLIC_ENGINE_READY",
+    "at_utc": "2026-10-25T15:57:05.285Z",
+    "detail": {
+      "generation_id": "36d97df5309c198f3e6387947046b49ce210b765c1cd59d24ba8820a9e1cc60a",
+      "snapshot_id": "b4663314fa176764f66281eef163479898583d304dd585089f3a88656b373219"
+    }
+  },
+  {
+    "code": "PUBLIC_CLIENT_READY",
+    "at_utc": "2026-10-25T15:57:05.296Z",
+    "detail": {
+      "origin": "http://127.0.0.1:56254",
+      "stream": "4aa283e3b6f6cb95c155b928a0c5a46f33105a4760f74419d5c95cb3d3cc10f8",
+      "source_class": "PUBLIC_AGENCY"
+    }
+  }
+]

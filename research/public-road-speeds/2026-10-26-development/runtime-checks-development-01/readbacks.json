@@ -1,0 +1,607 @@
+{
+  "fixture_kind": "AUTHORED_PROVIDER_PROTOCOL_NOT_ACTUAL_AGENCY_SPEED",
+  "clock_basis": "CONTROLLED_TEST_CLOCK",
+  "initial": {
+    "schema_version": "public-route-0.1",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "traffic_snapshot_id": "58db5b19baa0f1fde291c7c2d1ba7dfeca414865d66fb2d6667633cda3079e7f",
+    "sequence": 1,
+    "high_water": 1,
+    "checked_at_event_time": "2026-10-25T15:53:35.000Z",
+    "traffic_published_at": "2026-10-25T15:53:35.000Z",
+    "traffic_valid_until": "2026-10-25T16:02:35.000Z",
+    "source_class": "PUBLIC_AGENCY",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "public_traffic": {
+      "provider": "kr-its",
+      "source_state": "CURRENT",
+      "refresh_state": "OK",
+      "retrieved_at": "2026-10-25T15:53:35.000Z",
+      "observed_from": "2026-10-25T15:52:35.000Z",
+      "observed_until": "2026-10-25T15:53:35.000Z",
+      "graph_edges": 79,
+      "mapped_edges": 2,
+      "live_edges": 2
+    }
+  },
+  "native-initial": {
+    "status": 200,
+    "body": {
+      "request_id": "initial-http",
+      "request_sha256": "fa33fe0a9b0276599bea692e94c5e9f6e136b92802539eb790041922d7aec803",
+      "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+      "snapshot_id": "58db5b19baa0f1fde291c7c2d1ba7dfeca414865d66fb2d6667633cda3079e7f",
+      "sequence": 1,
+      "generation_id": "ae4f1c5660fc55616d2cf8d4e89d2582cf94a934841e9ed99c544b5e270ab832",
+      "traffic_sha256": "9eeb9f49ca97528caf8a968e2e3ab2d2477304ed724bf10460b54a23cf19c5b1",
+      "engine_version": "3.9.1",
+      "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+      "costing_config_id": "valhalla-current-v1",
+      "node_id": "local-public-node",
+      "traffic_mode": "LIVE_MIXED",
+      "distance_m": 62,
+      "duration_s": 18.877,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.0295,
+            37.498462
+          ],
+          [
+            127.030167,
+            37.498662
+          ]
+        ]
+      },
+      "guidance": {
+        "schema_version": "0.1",
+        "language": "ko-KR",
+        "maneuvers": [
+          {
+            "index": 0,
+            "native_type": 1,
+            "instruction": "테헤란로/90에서 동쪽으로 주행",
+            "distance_m": 62,
+            "duration_s": 18.877,
+            "begin_shape_index": 0,
+            "end_shape_index": 1
+          },
+          {
+            "index": 1,
+            "native_type": 4,
+            "instruction": "목적지 도착",
+            "distance_m": 0,
+            "duration_s": 0,
+            "begin_shape_index": 1,
+            "end_shape_index": 1
+          }
+        ]
+      },
+      "live_coverage_ratio": 1,
+      "warnings": [],
+      "calculated_at": "2026-10-25T15:53:35.000Z",
+      "high_water": 1,
+      "checked_at_event_time": "2026-10-25T15:53:35.000Z",
+      "traffic_published_at": "2026-10-25T15:53:35.000Z",
+      "traffic_valid_until": "2026-10-25T16:02:35.000Z",
+      "source_class": "PUBLIC_AGENCY",
+      "clock_basis": "WALL_CLOCK_UTC",
+      "public_traffic": {
+        "provider": "kr-its",
+        "source_state": "CURRENT",
+        "refresh_state": "OK",
+        "retrieved_at": "2026-10-25T15:53:35.000Z",
+        "observed_from": "2026-10-25T15:52:35.000Z",
+        "observed_until": "2026-10-25T15:53:35.000Z",
+        "graph_edges": 79,
+        "mapped_edges": 2,
+        "live_edges": 2
+      }
+    }
+  },
+  "slow-refresh": {
+    "schema_version": "public-route-0.1",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "traffic_snapshot_id": "58db5b19baa0f1fde291c7c2d1ba7dfeca414865d66fb2d6667633cda3079e7f",
+    "sequence": 1,
+    "high_water": 1,
+    "checked_at_event_time": "2026-10-25T15:55:35.000Z",
+    "traffic_published_at": "2026-10-25T15:53:35.000Z",
+    "traffic_valid_until": "2026-10-25T16:02:35.000Z",
+    "source_class": "PUBLIC_AGENCY",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "public_traffic": {
+      "provider": "kr-its",
+      "source_state": "CURRENT",
+      "refresh_state": "OK",
+      "retrieved_at": "2026-10-25T15:53:35.000Z",
+      "observed_from": "2026-10-25T15:52:35.000Z",
+      "observed_until": "2026-10-25T15:53:35.000Z",
+      "graph_edges": 79,
+      "mapped_edges": 2,
+      "live_edges": 2
+    }
+  },
+  "outage": {
+    "schema_version": "public-route-0.1",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "traffic_snapshot_id": "58db5b19baa0f1fde291c7c2d1ba7dfeca414865d66fb2d6667633cda3079e7f",
+    "sequence": 1,
+    "high_water": 1,
+    "checked_at_event_time": "2026-10-25T15:55:35.000Z",
+    "traffic_published_at": "2026-10-25T15:53:35.000Z",
+    "traffic_valid_until": "2026-10-25T16:02:35.000Z",
+    "source_class": "PUBLIC_AGENCY",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "public_traffic": {
+      "provider": "kr-its",
+      "source_state": "CURRENT",
+      "refresh_state": "FAILED",
+      "retrieved_at": "2026-10-25T15:53:35.000Z",
+      "observed_from": "2026-10-25T15:52:35.000Z",
+      "observed_until": "2026-10-25T15:53:35.000Z",
+      "graph_edges": 79,
+      "mapped_edges": 2,
+      "live_edges": 2
+    }
+  },
+  "partial": {
+    "schema_version": "public-route-0.1",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "traffic_snapshot_id": "5b4c604b773a703c8fa44dcf837da08165c3dfcbc46b6d2adb53a0181a9611b0",
+    "sequence": 2,
+    "high_water": 2,
+    "checked_at_event_time": "2026-10-25T16:02:35.000Z",
+    "traffic_published_at": "2026-10-25T16:02:35.000Z",
+    "traffic_valid_until": "2026-10-25T16:03:35.000Z",
+    "source_class": "PUBLIC_AGENCY",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "public_traffic": {
+      "provider": "kr-its",
+      "source_state": "CURRENT",
+      "refresh_state": "FAILED",
+      "retrieved_at": "2026-10-25T15:53:35.000Z",
+      "observed_from": "2026-10-25T15:53:35.000Z",
+      "observed_until": "2026-10-25T15:53:35.000Z",
+      "graph_edges": 79,
+      "mapped_edges": 2,
+      "live_edges": 1
+    }
+  },
+  "native-partial": {
+    "request_id": "partial",
+    "request_sha256": "ee8fa827c33ce0cbe26ae56c482e35d79581b75c05ff2c6ff1270f3e95f232cf",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "snapshot_id": "5b4c604b773a703c8fa44dcf837da08165c3dfcbc46b6d2adb53a0181a9611b0",
+    "sequence": 2,
+    "generation_id": "a97726e1cdde9bb4e7fbcb4046f619d2403a1e88c2a197d92e29da39defd7d58",
+    "traffic_sha256": "2100696d2998faf1ff1afcca3b5772a7caee7f2474f43c826b7e475313a9e14f",
+    "engine_version": "3.9.1",
+    "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "costing_config_id": "valhalla-current-v1",
+    "node_id": "local-public-node",
+    "traffic_mode": "BASE_ONLY",
+    "distance_m": 62,
+    "duration_s": 3.974,
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.0295,
+          37.498462
+        ],
+        [
+          127.030167,
+          37.498662
+        ]
+      ]
+    },
+    "guidance": {
+      "schema_version": "0.1",
+      "language": "ko-KR",
+      "maneuvers": [
+        {
+          "index": 0,
+          "native_type": 1,
+          "instruction": "테헤란로/90에서 동쪽으로 주행",
+          "distance_m": 62,
+          "duration_s": 3.974,
+          "begin_shape_index": 0,
+          "end_shape_index": 1
+        },
+        {
+          "index": 1,
+          "native_type": 4,
+          "instruction": "목적지 도착",
+          "distance_m": 0,
+          "duration_s": 0,
+          "begin_shape_index": 1,
+          "end_shape_index": 1
+        }
+      ]
+    },
+    "live_coverage_ratio": 0,
+    "warnings": [
+      {
+        "code": "NO_ROUTE_LIVE_COVERAGE",
+        "message_en": "This route has no accepted live edge coverage; default speeds apply.",
+        "message_ko": "이 경로에 수용된 실시간 구간이 없어 기본 속도를 적용합니다."
+      }
+    ],
+    "calculated_at": "2026-10-25T16:02:35.000Z",
+    "high_water": 2,
+    "checked_at_event_time": "2026-10-25T16:02:35.000Z",
+    "traffic_published_at": "2026-10-25T16:02:35.000Z",
+    "traffic_valid_until": "2026-10-25T16:03:35.000Z",
+    "source_class": "PUBLIC_AGENCY",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "public_traffic": {
+      "provider": "kr-its",
+      "source_state": "CURRENT",
+      "refresh_state": "FAILED",
+      "retrieved_at": "2026-10-25T15:53:35.000Z",
+      "observed_from": "2026-10-25T15:53:35.000Z",
+      "observed_until": "2026-10-25T15:53:35.000Z",
+      "graph_edges": 79,
+      "mapped_edges": 2,
+      "live_edges": 1
+    }
+  },
+  "expired": {
+    "schema_version": "public-route-0.1",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "traffic_snapshot_id": null,
+    "sequence": null,
+    "high_water": 2,
+    "checked_at_event_time": "2026-10-25T16:03:35.000Z",
+    "traffic_published_at": null,
+    "traffic_valid_until": null,
+    "source_class": "PUBLIC_AGENCY",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "public_traffic": {
+      "provider": "kr-its",
+      "source_state": "EXPIRED",
+      "refresh_state": "FAILED",
+      "retrieved_at": "2026-10-25T15:53:35.000Z",
+      "observed_from": "2026-10-25T15:52:35.000Z",
+      "observed_until": "2026-10-25T15:53:35.000Z",
+      "graph_edges": 79,
+      "mapped_edges": 2,
+      "live_edges": 0
+    }
+  },
+  "native-baseline": {
+    "request_id": "baseline",
+    "request_sha256": "a1bc6ab9330ad8885c0b092078e7569cd9b6bc69bfab028d324985187fb86125",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "snapshot_id": null,
+    "sequence": null,
+    "generation_id": "11010f0e6ab84ab50054b1de21e12074f127e5897f12696b5d89008c3075aac0",
+    "traffic_sha256": "ed7aeb9732a06366b41990190a8c9437154d5254aad5664fc5e9b7ee9fbffe27",
+    "engine_version": "3.9.1",
+    "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "costing_config_id": "valhalla-current-v1",
+    "node_id": "local-public-node",
+    "traffic_mode": "BASE_ONLY",
+    "distance_m": 62,
+    "duration_s": 3.974,
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.0295,
+          37.498462
+        ],
+        [
+          127.030167,
+          37.498662
+        ]
+      ]
+    },
+    "guidance": {
+      "schema_version": "0.1",
+      "language": "ko-KR",
+      "maneuvers": [
+        {
+          "index": 0,
+          "native_type": 1,
+          "instruction": "테헤란로/90에서 동쪽으로 주행",
+          "distance_m": 62,
+          "duration_s": 3.974,
+          "begin_shape_index": 0,
+          "end_shape_index": 1
+        },
+        {
+          "index": 1,
+          "native_type": 4,
+          "instruction": "목적지 도착",
+          "distance_m": 0,
+          "duration_s": 0,
+          "begin_shape_index": 1,
+          "end_shape_index": 1
+        }
+      ]
+    },
+    "live_coverage_ratio": 0,
+    "warnings": [
+      {
+        "code": "NO_USABLE_SNAPSHOT",
+        "message_en": "No usable snapshot is accepted; default speeds apply.",
+        "message_ko": "사용 가능한 수용 자료가 없어 기본 속도를 적용합니다."
+      }
+    ],
+    "calculated_at": "2026-10-25T16:03:35.000Z",
+    "high_water": 2,
+    "checked_at_event_time": "2026-10-25T16:03:35.000Z",
+    "traffic_published_at": null,
+    "traffic_valid_until": null,
+    "source_class": "PUBLIC_AGENCY",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "public_traffic": {
+      "provider": "kr-its",
+      "source_state": "EXPIRED",
+      "refresh_state": "FAILED",
+      "retrieved_at": "2026-10-25T15:53:35.000Z",
+      "observed_from": "2026-10-25T15:52:35.000Z",
+      "observed_until": "2026-10-25T15:53:35.000Z",
+      "graph_edges": 79,
+      "mapped_edges": 2,
+      "live_edges": 0
+    }
+  },
+  "recovery": {
+    "schema_version": "public-route-0.1",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "traffic_snapshot_id": "0b804a94a1b58551820d3022b8d387ecdca29614c02c4d0dcb5db7bc87663f9c",
+    "sequence": 3,
+    "high_water": 3,
+    "checked_at_event_time": "2026-10-25T16:05:35.000Z",
+    "traffic_published_at": "2026-10-25T16:05:35.000Z",
+    "traffic_valid_until": "2026-10-25T16:15:35.000Z",
+    "source_class": "PUBLIC_AGENCY",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "public_traffic": {
+      "provider": "kr-its",
+      "source_state": "CURRENT",
+      "refresh_state": "OK",
+      "retrieved_at": "2026-10-25T16:05:35.000Z",
+      "observed_from": "2026-10-25T16:05:35.000Z",
+      "observed_until": "2026-10-25T16:05:35.000Z",
+      "graph_edges": 79,
+      "mapped_edges": 2,
+      "live_edges": 2
+    }
+  },
+  "native-recovered": {
+    "request_id": "recovered",
+    "request_sha256": "cead1f0e61a132ebc042a0e0c1d9bbcdf232a8efd5afa6f08bc137c7308418c6",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "snapshot_id": "0b804a94a1b58551820d3022b8d387ecdca29614c02c4d0dcb5db7bc87663f9c",
+    "sequence": 3,
+    "generation_id": "33cf4e68ff195c85218a2f272daa8003fbf6165239664f759a1b64e76f485903",
+    "traffic_sha256": "8fe9dc0cae7bd9da3507479887b1dda051accbd4f0194d66ed4b6349ffda677f",
+    "engine_version": "3.9.1",
+    "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "costing_config_id": "valhalla-current-v1",
+    "node_id": "local-public-node",
+    "traffic_mode": "LIVE_MIXED",
+    "distance_m": 62,
+    "duration_s": 6.292,
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.0295,
+          37.498462
+        ],
+        [
+          127.030167,
+          37.498662
+        ]
+      ]
+    },
+    "guidance": {
+      "schema_version": "0.1",
+      "language": "ko-KR",
+      "maneuvers": [
+        {
+          "index": 0,
+          "native_type": 1,
+          "instruction": "테헤란로/90에서 동쪽으로 주행",
+          "distance_m": 62,
+          "duration_s": 6.292,
+          "begin_shape_index": 0,
+          "end_shape_index": 1
+        },
+        {
+          "index": 1,
+          "native_type": 4,
+          "instruction": "목적지 도착",
+          "distance_m": 0,
+          "duration_s": 0,
+          "begin_shape_index": 1,
+          "end_shape_index": 1
+        }
+      ]
+    },
+    "live_coverage_ratio": 1,
+    "warnings": [],
+    "calculated_at": "2026-10-25T16:05:35.000Z",
+    "high_water": 3,
+    "checked_at_event_time": "2026-10-25T16:05:35.000Z",
+    "traffic_published_at": "2026-10-25T16:05:35.000Z",
+    "traffic_valid_until": "2026-10-25T16:15:35.000Z",
+    "source_class": "PUBLIC_AGENCY",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "public_traffic": {
+      "provider": "kr-its",
+      "source_state": "CURRENT",
+      "refresh_state": "OK",
+      "retrieved_at": "2026-10-25T16:05:35.000Z",
+      "observed_from": "2026-10-25T16:05:35.000Z",
+      "observed_until": "2026-10-25T16:05:35.000Z",
+      "graph_edges": 79,
+      "mapped_edges": 2,
+      "live_edges": 2
+    }
+  },
+  "zero": {
+    "schema_version": "public-route-0.1",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "traffic_snapshot_id": null,
+    "sequence": null,
+    "high_water": 3,
+    "checked_at_event_time": "2026-10-25T16:07:35.000Z",
+    "traffic_published_at": null,
+    "traffic_valid_until": null,
+    "source_class": "PUBLIC_AGENCY",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "public_traffic": {
+      "provider": "kr-its",
+      "source_state": "NO_MAPPED_SPEEDS",
+      "refresh_state": "OK",
+      "retrieved_at": "2026-10-25T16:07:35.000Z",
+      "observed_from": "2026-10-25T16:07:35.000Z",
+      "observed_until": "2026-10-25T16:07:35.000Z",
+      "graph_edges": 79,
+      "mapped_edges": 2,
+      "live_edges": 0
+    }
+  },
+  "restarted": {
+    "schema_version": "public-route-0.1",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "traffic_snapshot_id": null,
+    "sequence": null,
+    "high_water": 3,
+    "checked_at_event_time": "2026-10-25T16:07:35.000Z",
+    "traffic_published_at": null,
+    "traffic_valid_until": null,
+    "source_class": "PUBLIC_AGENCY",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "public_traffic": {
+      "provider": "kr-its",
+      "source_state": "NO_MAPPED_SPEEDS",
+      "refresh_state": "FAILED",
+      "retrieved_at": "2026-10-25T16:07:35.000Z",
+      "observed_from": "2026-10-25T16:07:35.000Z",
+      "observed_until": "2026-10-25T16:07:35.000Z",
+      "graph_edges": 79,
+      "mapped_edges": 2,
+      "live_edges": 0
+    }
+  },
+  "native-restarted": {
+    "request_id": "restarted",
+    "request_sha256": "555d52a157835e72584222c7629577fd8a4c83c542c878f7be570f059c1db06a",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "snapshot_id": null,
+    "sequence": null,
+    "generation_id": "11010f0e6ab84ab50054b1de21e12074f127e5897f12696b5d89008c3075aac0",
+    "traffic_sha256": "ed7aeb9732a06366b41990190a8c9437154d5254aad5664fc5e9b7ee9fbffe27",
+    "engine_version": "3.9.1",
+    "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "costing_config_id": "valhalla-current-v1",
+    "node_id": "local-public-node",
+    "traffic_mode": "BASE_ONLY",
+    "distance_m": 62,
+    "duration_s": 3.974,
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.0295,
+          37.498462
+        ],
+        [
+          127.030167,
+          37.498662
+        ]
+      ]
+    },
+    "guidance": {
+      "schema_version": "0.1",
+      "language": "ko-KR",
+      "maneuvers": [
+        {
+          "index": 0,
+          "native_type": 1,
+          "instruction": "테헤란로/90에서 동쪽으로 주행",
+          "distance_m": 62,
+          "duration_s": 3.974,
+          "begin_shape_index": 0,
+          "end_shape_index": 1
+        },
+        {
+          "index": 1,
+          "native_type": 4,
+          "instruction": "목적지 도착",
+          "distance_m": 0,
+          "duration_s": 0,
+          "begin_shape_index": 1,
+          "end_shape_index": 1
+        }
+      ]
+    },
+    "live_coverage_ratio": 0,
+    "warnings": [
+      {
+        "code": "NO_USABLE_SNAPSHOT",
+        "message_en": "No usable snapshot is accepted; default speeds apply.",
+        "message_ko": "사용 가능한 수용 자료가 없어 기본 속도를 적용합니다."
+      }
+    ],
+    "calculated_at": "2026-10-25T16:07:35.000Z",
+    "high_water": 3,
+    "checked_at_event_time": "2026-10-25T16:07:35.000Z",
+    "traffic_published_at": null,
+    "traffic_valid_until": null,
+    "source_class": "PUBLIC_AGENCY",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "public_traffic": {
+      "provider": "kr-its",
+      "source_state": "NO_MAPPED_SPEEDS",
+      "refresh_state": "FAILED",
+      "retrieved_at": "2026-10-25T16:07:35.000Z",
+      "observed_from": "2026-10-25T16:07:35.000Z",
+      "observed_until": "2026-10-25T16:07:35.000Z",
+      "graph_edges": 79,
+      "mapped_edges": 2,
+      "live_edges": 0
+    }
+  },
+  "independent-signatures": {
+    "signatures": 3
+  },
+  "cleanup": {
+    "clean": true,
+    "containers": [
+      {
+        "container_name": "routelens-p02-243c75d4-de0a-458d-8428-2ccc02c75b24",
+        "receipt": true,
+        "independently_absent": true
+      },
+      {
+        "container_name": "routelens-p02-3ca64979-195f-4262-b7c4-209031ec5162",
+        "receipt": true,
+        "independently_absent": true
+      },
+      {
+        "container_name": "routelens-p02-90fb0339-83d6-491d-a4c8-c33068dddabe",
+        "receipt": true,
+        "independently_absent": true
+      },
+      {
+        "container_name": "routelens-p02-c4a4e201-6523-414a-8fe4-99b88abf7262",
+        "receipt": true,
+        "independently_absent": true
+      },
+      {
+        "container_name": "routelens-p02-6a279fae-440a-4abf-b9e3-a3b69dd19ab4",
+        "receipt": true,
+        "independently_absent": true
+      }
+    ]
+  }
+}

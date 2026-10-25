@@ -1,0 +1,214 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "browser-65bbda3c-5203-4aeb-8147-b34573008173",
+    "origin": {
+      "latitude": 37.499862900892595,
+      "longitude": 127.03415139915137
+    },
+    "destination": {
+      "latitude": 37.5002301008926,
+      "longitude": 127.03537859915139
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live",
+    "guidance_language": "en-US"
+  },
+  "native": {
+    "request": {
+      "locations": [
+        {
+          "lon": 127.03415139915137,
+          "lat": 37.499862900892595
+        },
+        {
+          "lon": 127.03537859915139,
+          "lat": 37.5002301008926
+        }
+      ],
+      "costing": "auto",
+      "units": "kilometers",
+      "language": "en-US",
+      "date_time": {
+        "type": 0
+      }
+    },
+    "route": {
+      "trip": {
+        "locations": [
+          {
+            "type": "break",
+            "lat": 37.499862,
+            "lon": 127.034151,
+            "date_time": "2026-10-25T15:36",
+            "original_index": 0
+          },
+          {
+            "type": "break",
+            "lat": 37.50023,
+            "lon": 127.035378,
+            "original_index": 1
+          }
+        ],
+        "legs": [
+          {
+            "maneuvers": [
+              {
+                "type": 1,
+                "instruction": "Drive east on 테헤란로/90.",
+                "verbal_succinct_transition_instruction": "Drive east. Then You will arrive at your destination.",
+                "verbal_pre_transition_instruction": "Drive east on 테헤란로, 90. Then You will arrive at your destination.",
+                "verbal_post_transition_instruction": "Continue for 100 meters.",
+                "street_names": [
+                  "테헤란로",
+                  "90"
+                ],
+                "bearing_after": 69,
+                "time": 8.687,
+                "length": 0.115,
+                "cost": 10.642,
+                "begin_shape_index": 0,
+                "end_shape_index": 1,
+                "verbal_multi_cue": true,
+                "travel_mode": "drive",
+                "travel_type": "car"
+              },
+              {
+                "type": 4,
+                "instruction": "You have arrived at your destination.",
+                "verbal_transition_alert_instruction": "You will arrive at your destination.",
+                "verbal_pre_transition_instruction": "You have arrived at your destination.",
+                "bearing_before": 69,
+                "time": 0,
+                "length": 0,
+                "cost": 0,
+                "begin_shape_index": 1,
+                "end_shape_index": 1,
+                "travel_mode": "drive",
+                "travel_type": "car"
+              }
+            ],
+            "summary": {
+              "has_time_restrictions": false,
+              "has_toll": false,
+              "has_highway": false,
+              "has_ferry": false,
+              "min_lat": 37.499862,
+              "min_lon": 127.034151,
+              "max_lat": 37.50023,
+              "max_lon": 127.035378,
+              "time": 8.687,
+              "length": 0.115,
+              "cost": 10.642
+            },
+            "shape": "m|xofAmqphqF}UwkA"
+          }
+        ],
+        "summary": {
+          "has_time_restrictions": false,
+          "has_toll": false,
+          "has_highway": false,
+          "has_ferry": false,
+          "min_lat": 37.499862,
+          "min_lon": 127.034151,
+          "max_lat": 37.50023,
+          "max_lon": 127.035378,
+          "time": 8.687,
+          "length": 0.115,
+          "cost": 10.642
+        },
+        "status_message": "Found route between points",
+        "status": 0,
+        "units": "kilometers",
+        "language": "en-US"
+      }
+    },
+    "trace": {
+      "units": "kilometers",
+      "shape": "m|xofAmqphqF}UwkA",
+      "edges": [
+        {
+          "id": 1241849551248,
+          "speed": 48,
+          "length": 0.115,
+          "source_percent_along": 0.099,
+          "target_percent_along": 0.898
+        }
+      ],
+      "alternate_paths": []
+    }
+  },
+  "response": {
+    "request_id": "browser-65bbda3c-5203-4aeb-8147-b34573008173",
+    "request_sha256": "0a458df03fa32343aab804e45dc3a88998070c61194149c3c025688a7455d90d",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "snapshot_id": "fd4f557cf9a00c23e037ec14ed8365540a438cc3743e10f79d26b1deb8a02c21",
+    "sequence": 4,
+    "generation_id": "9004dd4b89cf47e298c86912d805115a1c99d44b325ab641b84abb22ee5f2fa4",
+    "traffic_sha256": "d692457dd3a99936d8d5a38a99a2ba178397ff3480495b7dc718df5e6cb56fe3",
+    "engine_version": "3.9.1",
+    "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "costing_config_id": "valhalla-current-v1",
+    "node_id": "local-public-node",
+    "traffic_mode": "LIVE_MIXED",
+    "distance_m": 115,
+    "duration_s": 8.687,
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.034151,
+          37.499863
+        ],
+        [
+          127.035379,
+          37.50023
+        ]
+      ]
+    },
+    "guidance": {
+      "schema_version": "0.1",
+      "language": "en-US",
+      "maneuvers": [
+        {
+          "index": 0,
+          "native_type": 1,
+          "instruction": "Drive east on 테헤란로/90.",
+          "distance_m": 115,
+          "duration_s": 8.687,
+          "begin_shape_index": 0,
+          "end_shape_index": 1
+        },
+        {
+          "index": 1,
+          "native_type": 4,
+          "instruction": "You have arrived at your destination.",
+          "distance_m": 0,
+          "duration_s": 0,
+          "begin_shape_index": 1,
+          "end_shape_index": 1
+        }
+      ]
+    },
+    "live_coverage_ratio": 1,
+    "warnings": [],
+    "calculated_at": "2026-10-25T15:36:31.404Z",
+    "high_water": 4,
+    "checked_at_event_time": "2026-10-25T15:36:31.402Z",
+    "traffic_published_at": "2026-10-25T15:35:52.659Z",
+    "traffic_valid_until": "2026-10-25T15:40:00.000Z",
+    "source_class": "PUBLIC_AGENCY",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "public_traffic": {
+      "provider": "kr-its",
+      "source_state": "CURRENT",
+      "refresh_state": "OK",
+      "retrieved_at": "2026-10-25T15:35:52.532Z",
+      "observed_from": "2026-10-25T15:30:00.000Z",
+      "observed_until": "2026-10-25T15:30:00.000Z",
+      "graph_edges": 79,
+      "mapped_edges": 22,
+      "live_edges": 3
+    }
+  }
+}

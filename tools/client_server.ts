@@ -21,6 +21,7 @@ import type { ClientServerConfig } from "./client_types.js";
 import type { GatewayRouteContext, GatewaySuccess } from "./gateway_types.js";
 import { validateRequestedGuidance, type GuidanceLanguage } from "./guidance.js";
 import type { GatewayRequest } from "./gateway_public_types.js";
+import { validSourceClock, validPublicTrafficContext } from "./public_traffic_context.js";
 export const CLIENT_COOKIE = "routelens_session";
 const freshnessKeys = [
   "high_water",
@@ -57,10 +58,13 @@ function freshness(raw: Record<string, unknown>): void {
     Number(raw.high_water) < 0 ||
     typeof raw.checked_at_event_time !== "string" ||
     !Number.isFinite(Date.parse(raw.checked_at_event_time)) ||
-    raw.source_class !== "SYNTHETIC" ||
-    raw.clock_basis !== "SIMULATION_EVENT_TIME"
+    !validSourceClock(raw.source_class, raw.clock_basis)
   )
     throw Error("freshness");
+  if (raw.source_class === "SYNTHETIC" ? Object.hasOwn(raw, "public_traffic") :
+      !validPublicTrafficContext(raw.public_traffic, raw.checked_at_event_time as string,
+        typeof (raw.traffic_snapshot_id ?? raw.snapshot_id) === "string"))
+    throw Error("public freshness");
   for (const f of ["traffic_published_at", "traffic_valid_until"])
     if (
       raw[f] !== null &&
@@ -79,9 +83,9 @@ export function validateClientContext(
     "traffic_snapshot_id",
     "sequence",
     ...freshnessKeys,
-  ]);
+  ], ["public_traffic"]);
   freshness(raw);
-  if (raw.schema_version !== "0.1" || raw.graph_id !== graph)
+  if (raw.schema_version !== (raw.source_class === "PUBLIC_AGENCY" ? "public-route-0.1" : "0.1") || raw.graph_id !== graph)
     throw Error("context identity");
   if (raw.traffic_snapshot_id === null) {
     if (
@@ -102,13 +106,16 @@ export function validateClientContext(
       Date.parse(raw.traffic_valid_until as string)
   )
     throw Error("live context");
+  if (raw.source_class === "PUBLIC_AGENCY" && raw.traffic_snapshot_id !== null &&
+      Date.parse(raw.traffic_valid_until as string) !== Date.parse((raw.public_traffic as {observed_from: string}).observed_from) + 600000)
+    throw Error("public expiry");
 }
 export function validateClientRoute(
   raw: unknown,
   graph: string,
   language?: GuidanceLanguage,
 ): asserts raw is GatewaySuccess {
-  record(raw, "route", routeKeys, ["guidance"]);
+  record(raw, "route", routeKeys, ["guidance", "public_traffic"]);
   freshness(raw);
   if (
     raw.graph_id !== graph ||
@@ -143,11 +150,12 @@ export function validateClientRoute(
       throw Error("coordinate");
   validateClientContext(
     {
-      schema_version: "0.1",
+      schema_version: raw.source_class === "PUBLIC_AGENCY" ? "public-route-0.1" : "0.1",
       graph_id: graph,
       traffic_snapshot_id: raw.snapshot_id,
       sequence: raw.sequence,
       ...Object.fromEntries(freshnessKeys.map((k) => [k, raw[k]])),
+      ...(Object.hasOwn(raw, "public_traffic") ? {public_traffic: raw.public_traffic} : {}),
     },
     graph,
   );
@@ -198,6 +206,8 @@ export async function startClientServer(
 ): Promise<RunningClientServer> {
   const target = new URL(config.gateway_origin);
   if (
+    !validSourceClock(config.bootstrap.source_class, config.bootstrap.clock_basis) ||
+    config.bootstrap.schema_version !== (config.bootstrap.source_class === "PUBLIC_AGENCY" ? "public-route-0.1" : "0.1") ||
     config.gateway_origin !== `http://127.0.0.1:${target.port}` ||
     target.protocol !== "http:" ||
     !target.port ||
@@ -321,6 +331,9 @@ export async function startClientServer(
           if (upstream.status === 200) {
             if (route) validateClientRoute(body, config.bootstrap.graph_id, (input as GatewayRequest).guidance_language);
             else validateClientContext(body, config.bootstrap.graph_id);
+            if ((body as GatewayRouteContext).source_class !== config.bootstrap.source_class ||
+                (body as GatewayRouteContext).clock_basis !== config.bootstrap.clock_basis)
+              throw Error("Gateway source changed / 중계 출처 변경");
           } else {
             record(body, "failure", [
               "code",

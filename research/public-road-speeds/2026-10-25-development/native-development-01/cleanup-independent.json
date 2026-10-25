@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "checked": [
+    {
+      "lane": "baseline",
+      "container": "routelens-p02-f01c108c-3f5a-4c8b-9d6a-524b8bf2abe4",
+      "absent": true
+    },
+    {
+      "lane": "public",
+      "container": "routelens-p02-4ea5e0d0-06b1-409d-a993-8c00ed55bd78",
+      "absent": true
+    }
+  ],
+  "message_en": "Only the two owned native containers were inspected; both are absent.",
+  "message_ko": "소유 엔진 컨테이너 두 개만 검사했으며 모두 부재합니다."
+}

@@ -1,0 +1,80 @@
+TAP version 13
+# (node:15546) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: durable sequence rejects rollback/conflict and preserves duplicate bytes / 영속 순서·충돌 거부·중복 원문 유지
+ok 1 - durable sequence rejects rollback/conflict and preserves duplicate bytes / 영속 순서·충돌 거부·중복 원문 유지
+  ---
+  duration_ms: 19.653167
+  type: 'test'
+  ...
+# Subtest: expiry/revocation remove active speed without resetting durable order / 만료·철회 뒤 순서를 유지하며 현재 속도 제거
+ok 2 - expiry/revocation remove active speed without resetting durable order / 만료·철회 뒤 순서를 유지하며 현재 속도 제거
+  ---
+  duration_ms: 31.617
+  type: 'test'
+  ...
+# Subtest: two independent connections cannot overwrite a higher sequence / 독립 연결의 낮은 순번 덮어쓰기 금지
+ok 3 - two independent connections cannot overwrite a higher sequence / 독립 연결의 낮은 순번 덮어쓰기 금지
+  ---
+  duration_ms: 17.921375
+  type: 'test'
+  ...
+# Subtest: bad signature and older source time leave the previous acceptance intact / 서명·관측 역행 오류 때 기존 수용 유지
+ok 4 - bad signature and older source time leave the previous acceptance intact / 서명·관측 역행 오류 때 기존 수용 유지
+  ---
+  duration_ms: 5.5915
+  type: 'test'
+  ...
+# Subtest: stored-state corruption or another mapping fails closed on restart / 저장 상태 손상·다른 대응표 재시작 거부
+ok 5 - stored-state corruption or another mapping fails closed on restart / 저장 상태 손상·다른 대응표 재시작 거부
+  ---
+  duration_ms: 6.179875
+  type: 'test'
+  ...
+# Subtest: owned SQLite handle closes idempotently and refuses later work / 소유 SQLite 종료·이후 작업 거부
+ok 6 - owned SQLite handle closes idempotently and refuses later work / 소유 SQLite 종료·이후 작업 거부
+  ---
+  duration_ms: 13.457333
+  type: 'test'
+  ...
+# (node:15547) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: source producer signs original bytes once and exposes original observation time / 발급 원문·한 번 게시·원 관측 시각
+ok 7 - source producer signs original bytes once and exposes original observation time / 발급 원문·한 번 게시·원 관측 시각
+  ---
+  duration_ms: 50.386541
+  type: 'test'
+  ...
+# Subtest: outage preserves original expiry, then selects remaining entries and baseline / 장애 원기한 유지·부분 만료·기본값
+ok 8 - outage preserves original expiry, then selects remaining entries and baseline / 장애 원기한 유지·부분 만료·기본값
+  ---
+  duration_ms: 28.317625
+  type: 'test'
+  ...
+# Subtest: new all-unknown source durably withdraws old positive traffic and duplicate replay cannot restore it / 최신 미확인 자료의 영속 철회·중복 복구 금지
+ok 9 - new all-unknown source durably withdraws old positive traffic and duplicate replay cannot restore it / 최신 미확인 자료의 영속 철회·중복 복구 금지
+  ---
+  duration_ms: 44.710083
+  type: 'test'
+  ...
+# Subtest: slow refresh coalesces without blocking currently accepted context / 느린 수집 병합·현재 문맥 비차단
+ok 10 - slow refresh coalesces without blocking currently accepted context / 느린 수집 병합·현재 문맥 비차단
+  ---
+  duration_ms: 25.048041
+  type: 'test'
+  ...
+# Subtest: forged normalized payload or older retrieval cannot replace actual cached bytes / 정규화 객체 위조·검색 역행 거부
+ok 11 - forged normalized payload or older retrieval cannot replace actual cached bytes / 정규화 객체 위조·검색 역행 거부
+  ---
+  duration_ms: 18.409375
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 257.127209

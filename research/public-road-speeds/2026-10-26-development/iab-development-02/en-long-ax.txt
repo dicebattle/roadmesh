@@ -1,0 +1,114 @@
+Browser tab: 38, Title: "RouteLens · Seoul pilot / 서울 파일럿", URL: "http://127.0.0.1:56254/".
+0 AXWebArea RouteLens · Seoul pilot / 서울 파일럿, URL: 127.0.0.1:56254/
+	1 container
+		2 link Description: RouteLens Seoul public-speed preview, Value: 127.0.0.1:56254/
+		3 button Description: Switch to Korean / 한국어로 전환, ID: language
+	4 container
+		5 container Choose your route
+			107 text Actual Seoul roads · public road speeds
+			7 heading Choose your route, Value: 1, ID: route-heading
+				108 text Choose your route
+			9 container Description: Public traffic source / 공공 교통 출처, ID: public-traffic-source
+				109 heading Public road speeds, Value: 3
+					110 text Public road speeds
+				111 link Description: Source: MOLIT National Traffic Information Center, Value: its.go.kr/opendata/intro
+				112 text Fresh public speeds are available on verified roads.
+				113 text Road segments with usable public speeds: 31 / 79
+				114 text Oldest observation: 26/10/2026, 00:55:00 KST
+				115 text Retrieved: 26/10/2026, 00:57:02 KST
+			12 container route-form
+				116 text Route preset
+				14 pop up button (collapsed, settable) Route preset, Value: Teheran-ro · long route, ID: preset, Secondary Actions: Expand
+					15 menu
+						16 (selected) Teheran-ro · long route
+						17 Teheran-ro · short live segment
+						18 Enter coordinates
+				19 container Origin
+					117 text Origin
+					21 container
+						118 text Latitude
+						23 stepper (settable, float) Latitude, Value: 37.4984016418457, Details: 37.4984, ID: origin-latitude
+					24 container
+						119 text Longitude
+						26 stepper (settable, float) Longitude, Value: 127.02899932861328, Details: 127.029, ID: origin-longitude
+				27 container Destination
+					120 text Destination
+					29 container
+						121 text Latitude
+						31 stepper (settable, float) Latitude, Value: 37.50450134277344, Details: 37.5045, ID: destination-latitude
+					32 container
+						122 text Longitude
+						34 stepper (settable, float) Longitude, Value: 127.04900360107422, Details: 127.049, ID: destination-longitude
+				35 button Calculate route, ID: request-route
+			36 container Route result, ID: result
+				37 heading Route result, Value: 2, ID: result-heading
+					123 text Route result
+				124 text Route checked against the accepted traffic context.
+				90 container route-summary
+					125 text 2.12 km · 4.5 min
+					126 text Public road speeds applied to parts of this route
+					127 text Route live coverage: 84.31%
+					128 text Oldest usable public observation: 168.9 s
+					129 text Checked actual UTC time: 2026-10-25T15:57:48.920Z
+				40 container Synthetic GPS route replay, ID: progress
+					41 heading Synthetic GPS route replay, Value: 3, ID: progress-heading
+						130 text Synthetic GPS route replay
+					131 text Authored positions on this route. No device GPS or location upload. Replay clock is separate from traffic time.
+					132 text Replay scenario
+					45 pop up button (collapsed, settable) Replay scenario, Value: Position noise, ID: replay-scenario, Secondary Actions: Expand
+						46 menu
+							47 (selected) Value: Position noise, ID: replay-noisy
+							48 Value: Departure and rejoin, ID: replay-departure
+					49 button Play at 4×, ID: replay-play
+					50 button Next sample, ID: replay-step
+					51 button Reset, ID: replay-reset
+					133 text Position confirmed on this route
+					134 text Paused · Replay time: 1.0 s · Reported accuracy: 4 m
+					135 container progress-metrics
+						136 text Remaining route: 2094 m
+						137 text Next instruction: Bear left.
+						138 text Distance to next instruction: 46 m
+					54 button (collapsed) Replay evidence, ID: replay-evidence-label, Secondary Actions: Expand
+						139 text Replay evidence
+				102 container Turn instructions, ID: guidance
+					103 heading Turn instructions, Value: 3, ID: guidance-heading
+						140 text Turn instructions
+					141 text Route preview. GPS tracking and spoken guidance are not available yet.
+					106 content list maneuvers
+						142 container
+							143 AXListMarker 1. 
+							144 text Drive west on 테헤란로/90. 68 m · 6.3 s
+						145 container
+							146 AXListMarker 2. 
+							147 text Bear left. 47 m · 1.8 s
+						148 container
+							149 AXListMarker 3. 
+							150 text Turn left onto 테헤란로/90. 1991 m · 255.8 s
+						151 container
+							152 AXListMarker 4. 
+							153 text Turn left onto 선릉로. 12 m · 6.0 s
+						154 container
+							155 AXListMarker 5. 
+							156 text You have arrived at your destination. 0 m · 0.0 s
+			56 button (collapsed) Request and version evidence, Secondary Actions: Expand
+				157 text Request and version evidence
+			158 text Local public-data preview. Speeds cover only verified roads. GPS replay is authored; real driving accuracy is not established.
+		59 container Seoul road map / 서울 도로 지도
+			60 container Description: Interactive Seoul road map / 서울 도로 조작 지도, ID: map
+				61 container
+					62 container Interactive Seoul road map
+					159 container Synthetic raw position / 합성 원 위치
+					160 container Confirmed route position / 확정한 경로 위치
+					161 container Origin marker
+						162 text A
+					163 container Destination marker
+						164 text B
+				65 container
+					66 button Zoom in
+					67 button Zoom out
+			165 text Select coordinates with the form. Pan or zoom the map to explore the original roads.
+			69 container attribution
+				70 text © 
+				71 link Description: OpenStreetMap contributors · ODbL, Value: openstreetmap.org/copyright
+
+The focused UI element is 50 button Next sample, ID: replay-step

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "b4b4eeb689a5a7f32b2dcc1dd180fe62fda44d75",
+    "dirty": true
+  },
+  "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+  "implementation_sha256": "1775206db44359c6fb37f04e7d53f2fc7cc3e344593aba9a58c902564da3b84b",
+  "fixture_kind": "AUTHORED_PROVIDER_PROTOCOL_NOT_ACTUAL_AGENCY_SPEED",
+  "scope_en": "Actual native Seoul routing with authored provider faults; actual live acquisition is separate.",
+  "scope_ko": "서울 실제 엔진·자체 제공자 장애 검사이며 실제 공공 수집은 별도입니다.",
+  "assertions": 24,
+  "cleanup_verified": true
+}

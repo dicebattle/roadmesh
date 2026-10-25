@@ -1,0 +1,138 @@
+[
+  {
+    "sequence": 1,
+    "args": [
+      "create",
+      "--name",
+      "routelens-p02-75adabd6-1b67-40dd-afd0-3c4ba83d3360",
+      "--label",
+      "io.routelens.run_id=75adabd6-1b67-40dd-afd0-3c4ba83d3360",
+      "--network",
+      "none",
+      "--cpus",
+      "2",
+      "--memory",
+      "4g",
+      "--stop-timeout",
+      "1",
+      "--mount",
+      "type=bind,src=/Users/dice/Documents/routelens-p13/data/public-road-research/broader-baseline-development-01/baseline/runtime/f44bc29e-37c4-4399-a1c5-6c2c81c6d3f2,dst=/work",
+      "--mount",
+      "type=bind,src=/Users/dice/Documents/routelens-p13/data/nav02-whole02/seoul/graph,dst=/graph,readonly",
+      "--entrypoint",
+      "/bin/sh",
+      "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+      "-c",
+      "sleep 900"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 187.94904199999996,
+    "stdout": "commands/001.stdout.txt",
+    "stderr": "commands/001.stderr.txt"
+  },
+  {
+    "sequence": 2,
+    "args": [
+      "start",
+      "routelens-p02-75adabd6-1b67-40dd-afd0-3c4ba83d3360"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 142.1768340000001,
+    "stdout": "commands/002.stdout.txt",
+    "stderr": "commands/002.stderr.txt"
+  },
+  {
+    "sequence": 3,
+    "args": [
+      "exec",
+      "routelens-p02-75adabd6-1b67-40dd-afd0-3c4ba83d3360",
+      "valhalla_service",
+      "--version"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 78.5808750000001,
+    "stdout": "commands/003.stdout.txt",
+    "stderr": "commands/003.stderr.txt"
+  },
+  {
+    "sequence": 4,
+    "args": [
+      "exec",
+      "routelens-p02-75adabd6-1b67-40dd-afd0-3c4ba83d3360",
+      "valhalla_service",
+      "/work/config.json",
+      "route",
+      "/work/route.request.json"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 133.36850000000004,
+    "stdout": "commands/004.stdout.txt",
+    "stderr": "commands/004.stderr.txt"
+  },
+  {
+    "sequence": 5,
+    "args": [
+      "exec",
+      "routelens-p02-75adabd6-1b67-40dd-afd0-3c4ba83d3360",
+      "valhalla_service",
+      "/work/config.json",
+      "trace_attributes",
+      "/work/trace.request.json"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 81.54516600000011,
+    "stdout": "commands/005.stdout.txt",
+    "stderr": "commands/005.stderr.txt"
+  },
+  {
+    "sequence": 6,
+    "args": [
+      "container",
+      "inspect",
+      "routelens-p02-75adabd6-1b67-40dd-afd0-3c4ba83d3360"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 36.98812500000008,
+    "stdout": "commands/006.stdout.txt",
+    "stderr": "commands/006.stderr.txt"
+  },
+  {
+    "sequence": 7,
+    "args": [
+      "rm",
+      "-f",
+      "routelens-p02-75adabd6-1b67-40dd-afd0-3c4ba83d3360"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 87.04787499999998,
+    "stdout": "commands/007.stdout.txt",
+    "stderr": "commands/007.stderr.txt"
+  },
+  {
+    "sequence": 8,
+    "args": [
+      "container",
+      "inspect",
+      "routelens-p02-75adabd6-1b67-40dd-afd0-3c4ba83d3360"
+    ],
+    "exit_code": 1,
+    "elapsed_ms": 36.352499999999964,
+    "stdout": "commands/008.stdout.txt",
+    "stderr": "commands/008.stderr.txt"
+  },
+  {
+    "sequence": 9,
+    "args": [
+      "ps",
+      "-a",
+      "--filter",
+      "name=^/routelens-p02-75adabd6-1b67-40dd-afd0-3c4ba83d3360$",
+      "--format",
+      "{{.Names}}"
+    ],
+    "exit_code": 0,
+    "elapsed_ms": 32.74029100000007,
+    "stdout": "commands/009.stdout.txt",
+    "stderr": "commands/009.stderr.txt"
+  }
+]

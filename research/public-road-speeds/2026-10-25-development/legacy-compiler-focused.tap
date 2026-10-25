@@ -1,0 +1,188 @@
+TAP version 13
+# Subtest: Exact in-flight preparation is shared; settled and corrupt bytes are revalidated / 정확한 진행 준비만 공유하고 완료·손상 바이트를 재검증
+ok 1 - Exact in-flight preparation is shared; settled and corrupt bytes are revalidated / 정확한 진행 준비만 공유하고 완료·손상 바이트를 재검증
+  ---
+  duration_ms: 412.644459
+  type: 'test'
+  ...
+# Subtest: Changed full input cannot borrow another input's successful in-flight preparation / 변경된 전체 입력은 다른 입력의 진행 성공을 빌리지 못함
+ok 2 - Changed full input cannot borrow another input's successful in-flight preparation / 변경된 전체 입력은 다른 입력의 진행 성공을 빌리지 못함
+  ---
+  duration_ms: 337.407375
+  type: 'test'
+  ...
+# Subtest: CPU work in the owned thread does not block the parent's timer / 소유 스레드 CPU 작업은 부모 타이머를 막지 않음
+ok 3 - CPU work in the owned thread does not block the parent's timer / 소유 스레드 CPU 작업은 부모 타이머를 막지 않음
+  ---
+  duration_ms: 332.058125
+  type: 'test'
+  ...
+# Subtest: Owned worker test-crash rejects pending jobs and stays closed until restart / 소유 작업자 test-crash는 대기를 거부하고 재시작 전까지 실패 유지
+ok 4 - Owned worker test-crash rejects pending jobs and stays closed until restart / 소유 작업자 test-crash는 대기를 거부하고 재시작 전까지 실패 유지
+  ---
+  duration_ms: 180.35225
+  type: 'test'
+  ...
+# Subtest: Owned worker test-exit rejects pending jobs and stays closed until restart / 소유 작업자 test-exit는 대기를 거부하고 재시작 전까지 실패 유지
+ok 5 - Owned worker test-exit rejects pending jobs and stays closed until restart / 소유 작업자 test-exit는 대기를 거부하고 재시작 전까지 실패 유지
+  ---
+  duration_ms: 187.86025
+  type: 'test'
+  ...
+# (node:12080) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Sixteen distinct pending jobs and a twelve-second deadline fail closed and terminate / 서로 다른 대기16개·12초 기한은 실패를 닫고 종료
+ok 6 - Sixteen distinct pending jobs and a twelve-second deadline fail closed and terminate / 서로 다른 대기16개·12초 기한은 실패를 닫고 종료
+  ---
+  duration_ms: 463.822708
+  type: 'test'
+  ...
+# Subtest: Worker construction failure records no live resource and production startup failure terminates its thread / 작업자 생성 실패와 실제 준비 실패의 종료 기록
+ok 7 - Worker construction failure records no live resource and production startup failure terminates its thread / 작업자 생성 실패와 실제 준비 실패의 종료 기록
+  ---
+  duration_ms: 211.07675
+  type: 'test'
+  ...
+# (node:12081) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Domain rejection binds policy, request, selected instance and final authority / 업무 거부는 정책·요청·선택 실행·최종 승인을 연결
+ok 8 - Domain rejection binds policy, request, selected instance and final authority / 업무 거부는 정책·요청·선택 실행·최종 승인을 연결
+  ---
+  duration_ms: 424.319459
+  type: 'test'
+  ...
+# Subtest: Coverage is checked before dispatch and exclusions skip healthy peers / 범위는 전달 전에 검사하고 제외한 정상 노드는 건너뜀
+ok 9 - Coverage is checked before dispatch and exclusions skip healthy peers / 범위는 전달 전에 검사하고 제외한 정상 노드는 건너뜀
+  ---
+  duration_ms: 217.613167
+  type: 'test'
+  ...
+# Subtest: Strict public input and exact configured origins / 정확 공개 입력·설정 주소
+ok 10 - Strict public input and exact configured origins / 정확 공개 입력·설정 주소
+  ---
+  duration_ms: 34.588916
+  type: 'test'
+  ...
+# Subtest: Stable node order, canonical public hash and route-local partial coverage / 고정 노드 순서·공개 정규해시·부분구간 적용률
+ok 11 - Stable node order, canonical public hash and route-local partial coverage / 고정 노드 순서·공개 정규해시·부분구간 적용률
+  ---
+  duration_ms: 196.227
+  type: 'test'
+  ...
+# Subtest: One retry preserves the pinned generation and invalid first response is retained / 한 번 재시도는 고정 세대를 유지하고 첫 잘못된 원문 보존
+ok 12 - One retry preserves the pinned generation and invalid first response is retained / 한 번 재시도는 고정 세대를 유지하고 첫 잘못된 원문 보존
+  ---
+  duration_ms: 90.240916
+  type: 'test'
+  ...
+# Subtest: No compatible node and two unavailable peers cannot silently downgrade / 호환 노드 부재·두 장애는 몰래 이전 버전을 반환하지 않음
+ok 13 - No compatible node and two unavailable peers cannot silently downgrade / 호환 노드 부재·두 장애는 몰래 이전 버전을 반환하지 않음
+  ---
+  duration_ms: 169.685042
+  type: 'test'
+  ...
+# Subtest: 409 stops retry and final durable version change discards the route /409는 재시도를 멈추고 최종 영속 변경은 결과 폐기
+ok 14 - 409 stops retry and final durable version change discards the route /409는 재시도를 멈추고 최종 영속 변경은 결과 폐기
+  ---
+  duration_ms: 241.395875
+  type: 'test'
+  ...
+# Subtest: Malformed shapes, wrong native request and discontinuous trace are rejected / 잘못된 지형·원요청·불연속 추적 거부
+ok 15 - Malformed shapes, wrong native request and discontinuous trace are rejected / 잘못된 지형·원요청·불연속 추적 거부
+  ---
+  duration_ms: 33.0205
+  type: 'test'
+  ...
+# Subtest: Overall deadline and client cancellation discard a held result / 전체 기한·연결 취소는 대기 결과 폐기
+ok 16 - Overall deadline and client cancellation discard a held result / 전체 기한·연결 취소는 대기 결과 폐기
+  ---
+  duration_ms: 267.083458
+  type: 'test'
+  ...
+# Subtest: Eight admitted requests have no public waiting queue / 동시 여덟 요청 뒤 공개 대기열 없음
+ok 17 - Eight admitted requests have no public waiting queue / 동시 여덟 요청 뒤 공개 대기열 없음
+  ---
+  duration_ms: 644.631125
+  type: 'test'
+  ...
+# Subtest: Timed-out underlying store blocks new work, discards late values and requires a fresh read / 저장소 시간초과는 새 작업을 막고 늦은 값을 버린 뒤 새 조회
+ok 18 - Timed-out underlying store blocks new work, discards late values and requires a fresh read / 저장소 시간초과는 새 작업을 막고 늦은 값을 버린 뒤 새 조회
+  ---
+  duration_ms: 21.819667
+  type: 'test'
+  ...
+# Subtest: Evidence directory failure releases admission and recovery accepts a fresh request / 근거 폴더 실패는 접수를 회수하고 복원 뒤 새 요청 허용
+ok 19 - Evidence directory failure releases admission and recovery accepts a fresh request / 근거 폴더 실패는 접수를 회수하고 복원 뒤 새 요청 허용
+  ---
+  duration_ms: 83.236625
+  type: 'test'
+  ...
+# Subtest: Both generation byte checks are awaited and final verification failure is terminal / 세대 바이트 검사 두 번을 기다리고 마지막 실패는 재시도하지 않음
+ok 20 - Both generation byte checks are awaited and final verification failure is terminal / 세대 바이트 검사 두 번을 기다리고 마지막 실패는 재시도하지 않음
+  ---
+  duration_ms: 183.231958
+  type: 'test'
+  ...
+# Subtest: Cancelling one caller stops its wait without authorizing late shared preparation / 한 요청 취소는 대기만 멈추고 늦은 공유 준비로 승인하지 않음
+ok 21 - Cancelling one caller stops its wait without authorizing late shared preparation / 한 요청 취소는 대기만 멈추고 늦은 공유 준비로 승인하지 않음
+  ---
+  duration_ms: 131.464584
+  type: 'test'
+  ...
+# Subtest: Optional compiler shutdown is awaited and unsuccessful termination makes cleanup fail / 선택적 작업자 종료를 기다리고 종료 실패는 정리 실패
+ok 22 - Optional compiler shutdown is awaited and unsuccessful termination makes cleanup fail / 선택적 작업자 종료를 기다리고 종료 실패는 정리 실패
+  ---
+  duration_ms: 49.626041
+  type: 'test'
+  ...
+# Subtest: guided gateway validates native locale geometry and maneuver boundaries / 안내 중계의 엔진 언어·지형·회전 경계 검증
+ok 23 - guided gateway validates native locale geometry and maneuver boundaries / 안내 중계의 엔진 언어·지형·회전 경계 검증
+  ---
+  duration_ms: 27.382208
+  type: 'test'
+  ...
+# Subtest: Strict TAR layout binds index, members and every catalog edge / 엄격 TAR 배치는 목록·멤버·전체 구간을 연결
+ok 24 - Strict TAR layout binds index, members and every catalog edge / 엄격 TAR 배치는 목록·멤버·전체 구간을 연결
+  ---
+  duration_ms: 1.814208
+  type: 'test'
+  ...
+# Subtest: Positive speeds never encode closure or unknown and reject malformed values / 양수 속도는 폐쇄·미확인으로 변환하지 않고 잘못된 값 거부
+ok 25 - Positive speeds never encode closure or unknown and reject malformed values / 양수 속도는 폐쇄·미확인으로 변환하지 않고 잘못된 값 거부
+  ---
+  duration_ms: 0.232
+  type: 'test'
+  ...
+# Subtest: Compiler preserves non-live/index/header bytes and publishes reproducibly / 변환기는 비LIVE·목록·헤더 바이트를 보존하고 재현 가능한 세대 게시
+ok 26 - Compiler preserves non-live/index/header bytes and publishes reproducibly / 변환기는 비LIVE·목록·헤더 바이트를 보존하고 재현 가능한 세대 게시
+  ---
+  duration_ms: 106.9955
+  type: 'test'
+  ...
+# Subtest: Compiler rejects altered publication and status/speed pairs before writing / 변환기는 바뀐 게시자료·상태속도쌍을 쓰기 전에 거부
+ok 27 - Compiler rejects altered publication and status/speed pairs before writing / 변환기는 바뀐 게시자료·상태속도쌍을 쓰기 전에 거부
+  ---
+  duration_ms: 4.296083
+  type: 'test'
+  ...
+# Subtest: Concurrent identical writers reuse only fully matching immutable content / 동시 동일 작성자는 완전히 일치하는 불변 내용만 재사용
+ok 28 - Concurrent identical writers reuse only fully matching immutable content / 동시 동일 작성자는 완전히 일치하는 불변 내용만 재사용
+  ---
+  duration_ms: 76.705458
+  type: 'test'
+  ...
+# Subtest: Traffic request validates two global coordinates and pinned graph; coverage is checked from the bundle / 교통정보 요청의 지구 좌표 두 개·고정 지도 검사, 범위는 묶음 기준
+ok 29 - Traffic request validates two global coordinates and pinned graph; coverage is checked from the bundle / 교통정보 요청의 지구 좌표 두 개·고정 지도 검사, 범위는 묶음 기준
+  ---
+  duration_ms: 0.272667
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2920.565417

@@ -110,6 +110,13 @@ jobs:
             ${{ runner.temp }}/simulation-evidence/cloudflare/**/*.sqlite
             ${{ runner.temp }}/simulation-evidence/cloudflare/**/*.sqlite-wal
             ${{ runner.temp }}/simulation-evidence/cloudflare/**/*.sqlite-shm
+            ${{ runner.temp }}/simulation-evidence/public-speeds/**/*.jws
+            ${{ runner.temp }}/simulation-evidence/public-speeds/**/*.sqlite
+            ${{ runner.temp }}/simulation-evidence/public-speeds/**/traffic.tar
+            ${{ runner.temp }}/simulation-evidence/public-speeds/**/*.log
+            ${{ runner.temp }}/simulation-evidence/public-speeds/**/*.pid
+            ${{ runner.temp }}/simulation-evidence/public-speeds/**/*.exit
+            ${{ runner.temp }}/simulation-evidence/public-speeds/**/*.sh
             !${{ runner.temp }}/simulation-evidence/**/tiles/**
           if-no-files-found: error
           retention-days: 7

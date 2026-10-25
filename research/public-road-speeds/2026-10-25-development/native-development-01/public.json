@@ -1,0 +1,124 @@
+{
+  "request": {
+    "locations": [
+      {
+        "lon": 127.03415139915137,
+        "lat": 37.499862900892595
+      },
+      {
+        "lon": 127.03537859915139,
+        "lat": 37.5002301008926
+      }
+    ],
+    "costing": "auto",
+    "units": "kilometers",
+    "language": "ko-KR",
+    "date_time": {
+      "type": 0
+    }
+  },
+  "route": {
+    "trip": {
+      "locations": [
+        {
+          "type": "break",
+          "lat": 37.499862,
+          "lon": 127.034151,
+          "date_time": "2026-10-25T14:40",
+          "original_index": 0
+        },
+        {
+          "type": "break",
+          "lat": 37.50023,
+          "lon": 127.035378,
+          "original_index": 1
+        }
+      ],
+      "legs": [
+        {
+          "maneuvers": [
+            {
+              "type": 1,
+              "instruction": "테헤란로/90에서 동쪽으로 주행",
+              "verbal_succinct_transition_instruction": "동쪽으로 주행 그리고 목적지 도착 ",
+              "verbal_pre_transition_instruction": "테헤란로, 90에서 동쪽으로 주행 그리고 목적지 도착 ",
+              "verbal_post_transition_instruction": "100m 동안 계속",
+              "street_names": [
+                "테헤란로",
+                "90"
+              ],
+              "bearing_after": 69,
+              "time": 11.583,
+              "length": 0.115,
+              "cost": 14.189,
+              "begin_shape_index": 0,
+              "end_shape_index": 1,
+              "verbal_multi_cue": true,
+              "travel_mode": "drive",
+              "travel_type": "car"
+            },
+            {
+              "type": 4,
+              "instruction": "목적지 도착",
+              "verbal_transition_alert_instruction": "목적지 도착",
+              "verbal_pre_transition_instruction": "목적지 도착 완료",
+              "bearing_before": 69,
+              "time": 0,
+              "length": 0,
+              "cost": 0,
+              "begin_shape_index": 1,
+              "end_shape_index": 1,
+              "travel_mode": "drive",
+              "travel_type": "car"
+            }
+          ],
+          "summary": {
+            "has_time_restrictions": false,
+            "has_toll": false,
+            "has_highway": false,
+            "has_ferry": false,
+            "min_lat": 37.499862,
+            "min_lon": 127.034151,
+            "max_lat": 37.50023,
+            "max_lon": 127.035378,
+            "time": 11.583,
+            "length": 0.115,
+            "cost": 14.189
+          },
+          "shape": "m|xofAmqphqF}UwkA"
+        }
+      ],
+      "summary": {
+        "has_time_restrictions": false,
+        "has_toll": false,
+        "has_highway": false,
+        "has_ferry": false,
+        "min_lat": 37.499862,
+        "min_lon": 127.034151,
+        "max_lat": 37.50023,
+        "max_lon": 127.035378,
+        "time": 11.583,
+        "length": 0.115,
+        "cost": 14.189
+      },
+      "status_message": "Found route between points",
+      "status": 0,
+      "units": "kilometers",
+      "language": "ko-KR"
+    }
+  },
+  "trace": {
+    "units": "kilometers",
+    "shape": "m|xofAmqphqF}UwkA",
+    "edges": [
+      {
+        "id": 1241849551248,
+        "speed": 36,
+        "length": 0.115,
+        "source_percent_along": 0.099,
+        "target_percent_along": 0.898
+      }
+    ],
+    "alternate_paths": []
+  }
+}

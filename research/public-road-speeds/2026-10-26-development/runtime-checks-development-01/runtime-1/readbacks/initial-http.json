@@ -1,0 +1,214 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "initial-http",
+    "origin": {
+      "longitude": 127.02950029974897,
+      "latitude": 37.49846200026321
+    },
+    "destination": {
+      "longitude": 127.03016669974897,
+      "latitude": 37.4986620002632
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live",
+    "guidance_language": "ko-KR"
+  },
+  "native": {
+    "request": {
+      "locations": [
+        {
+          "lon": 127.02950029974897,
+          "lat": 37.49846200026321
+        },
+        {
+          "lon": 127.03016669974897,
+          "lat": 37.4986620002632
+        }
+      ],
+      "costing": "auto",
+      "units": "kilometers",
+      "language": "ko-KR",
+      "date_time": {
+        "type": 0
+      }
+    },
+    "route": {
+      "trip": {
+        "locations": [
+          {
+            "type": "break",
+            "lat": 37.498462,
+            "lon": 127.0295,
+            "date_time": "2026-10-25T15:53",
+            "original_index": 0
+          },
+          {
+            "type": "break",
+            "lat": 37.498662,
+            "lon": 127.030166,
+            "original_index": 1
+          }
+        ],
+        "legs": [
+          {
+            "maneuvers": [
+              {
+                "type": 1,
+                "instruction": "테헤란로/90에서 동쪽으로 주행",
+                "verbal_succinct_transition_instruction": "동쪽으로 주행 그리고 목적지 도착 ",
+                "verbal_pre_transition_instruction": "테헤란로, 90에서 동쪽으로 주행 그리고 목적지 도착 ",
+                "verbal_post_transition_instruction": "60m 동안 계속",
+                "street_names": [
+                  "테헤란로",
+                  "90"
+                ],
+                "bearing_after": 69,
+                "time": 18.877,
+                "length": 0.062,
+                "cost": 23.125,
+                "begin_shape_index": 0,
+                "end_shape_index": 1,
+                "verbal_multi_cue": true,
+                "travel_mode": "drive",
+                "travel_type": "car"
+              },
+              {
+                "type": 4,
+                "instruction": "목적지 도착",
+                "verbal_transition_alert_instruction": "목적지 도착",
+                "verbal_pre_transition_instruction": "목적지 도착 완료",
+                "bearing_before": 69,
+                "time": 0,
+                "length": 0,
+                "cost": 0,
+                "begin_shape_index": 1,
+                "end_shape_index": 1,
+                "travel_mode": "drive",
+                "travel_type": "car"
+              }
+            ],
+            "summary": {
+              "has_time_restrictions": false,
+              "has_toll": false,
+              "has_highway": false,
+              "has_ferry": false,
+              "min_lat": 37.498461,
+              "min_lon": 127.0295,
+              "max_lat": 37.498661,
+              "max_lon": 127.030166,
+              "time": 18.877,
+              "length": 0.062,
+              "cost": 23.125
+            },
+            "shape": "{dvofAwnghqFoKuh@"
+          }
+        ],
+        "summary": {
+          "has_time_restrictions": false,
+          "has_toll": false,
+          "has_highway": false,
+          "has_ferry": false,
+          "min_lat": 37.498461,
+          "min_lon": 127.0295,
+          "max_lat": 37.498661,
+          "max_lon": 127.030166,
+          "time": 18.877,
+          "length": 0.062,
+          "cost": 23.125
+        },
+        "status_message": "Found route between points",
+        "status": 0,
+        "units": "kilometers",
+        "language": "ko-KR"
+      }
+    },
+    "trace": {
+      "units": "kilometers",
+      "shape": "{dvofAwnghqFoKuh@",
+      "edges": [
+        {
+          "id": 1296744602000,
+          "speed": 12,
+          "length": 0.062,
+          "source_percent_along": 0.099,
+          "target_percent_along": 0.896
+        }
+      ],
+      "alternate_paths": []
+    }
+  },
+  "response": {
+    "request_id": "initial-http",
+    "request_sha256": "fa33fe0a9b0276599bea692e94c5e9f6e136b92802539eb790041922d7aec803",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "snapshot_id": "58db5b19baa0f1fde291c7c2d1ba7dfeca414865d66fb2d6667633cda3079e7f",
+    "sequence": 1,
+    "generation_id": "ae4f1c5660fc55616d2cf8d4e89d2582cf94a934841e9ed99c544b5e270ab832",
+    "traffic_sha256": "9eeb9f49ca97528caf8a968e2e3ab2d2477304ed724bf10460b54a23cf19c5b1",
+    "engine_version": "3.9.1",
+    "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "costing_config_id": "valhalla-current-v1",
+    "node_id": "local-public-node",
+    "traffic_mode": "LIVE_MIXED",
+    "distance_m": 62,
+    "duration_s": 18.877,
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.0295,
+          37.498462
+        ],
+        [
+          127.030167,
+          37.498662
+        ]
+      ]
+    },
+    "guidance": {
+      "schema_version": "0.1",
+      "language": "ko-KR",
+      "maneuvers": [
+        {
+          "index": 0,
+          "native_type": 1,
+          "instruction": "테헤란로/90에서 동쪽으로 주행",
+          "distance_m": 62,
+          "duration_s": 18.877,
+          "begin_shape_index": 0,
+          "end_shape_index": 1
+        },
+        {
+          "index": 1,
+          "native_type": 4,
+          "instruction": "목적지 도착",
+          "distance_m": 0,
+          "duration_s": 0,
+          "begin_shape_index": 1,
+          "end_shape_index": 1
+        }
+      ]
+    },
+    "live_coverage_ratio": 1,
+    "warnings": [],
+    "calculated_at": "2026-10-25T15:53:35.000Z",
+    "high_water": 1,
+    "checked_at_event_time": "2026-10-25T15:53:35.000Z",
+    "traffic_published_at": "2026-10-25T15:53:35.000Z",
+    "traffic_valid_until": "2026-10-25T16:02:35.000Z",
+    "source_class": "PUBLIC_AGENCY",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "public_traffic": {
+      "provider": "kr-its",
+      "source_state": "CURRENT",
+      "refresh_state": "OK",
+      "retrieved_at": "2026-10-25T15:53:35.000Z",
+      "observed_from": "2026-10-25T15:52:35.000Z",
+      "observed_until": "2026-10-25T15:53:35.000Z",
+      "graph_edges": 79,
+      "mapped_edges": 2,
+      "live_edges": 2
+    }
+  }
+}

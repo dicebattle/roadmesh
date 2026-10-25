@@ -125,3 +125,9 @@ The accepted P01–P14 pilot is the baseline. Continue toward usable navigation 
 NAV-02 reuses spherical geodesy and native maneuver indexes on the exact validated route. Separate reported fixes, confirmed projection and ambiguous/off-route states; bad GPS cannot fabricate progress, a turn or arrival. Use deterministic authored replay on the actual Seoul road context first, with no device permission or upload. Traffic authority still invalidates the entire route/replay. [Fixed contract](37-nav02-route-progress.md). Main Sol designs, implements and directly reviews; the requested finish includes protected main merge.
 
 NAV-02는 검증한 원 경로·회전 인덱스·구면 계산을 재사용합니다. 원 위치·확정 투영·모호함/이탈을 구분하고 잘못된 위치로 진행·회전·도착을 만들지 않습니다. 실제 서울 주변 도로에서 합성 재생부터 검증하며 단말 권한·업로드는 후속입니다. 교통 승인 변경은 경로·재생 전체를 무효화합니다. 메인 Sol이 설계·구현·검토하고 보호 main 병합까지 수행합니다.
+
+## ADR-033: Public agency observations before crowd scale / 사용자 규모 확보 전 공공 관측
+
+Bootstrap actual traffic from the verified ITS HTTPS numeric feed under an explicit PUBLIC_AGENCY contract, not synthetic labels or fabricated crowd contributors. Preserve provider-local collection time, strict units, bounded polling and original-time expiry. Use official directed link/node geometry and the actual projection definition with upstream shapefile/proj4; bind mappings to exact source/graph hashes and reject ambiguous geometry. Reuse traffic encoding, signatures and native routing through a distinct public-source authority path without weakening P01–NAV02. [Full objective and fixed contract](38-public-road-speeds.md). Main Sol owns design, implementation and evidence review. Completion requires actual acquisition→mapping→routing/client proof, not research/API success alone.
+
+실제 확인한 ITS 수치를 별도 공공 계약으로 도입하고 합성 표시·제보자 수를 위조하지 않습니다. 기관 관측시각·단위·수집 제한·원시각 만료, 공식 방향 지형·좌표계·해시를 유지하며 모호한 대응을 거부합니다. 기존 변환·서명·엔진을 별도 승인 경로로 재사용하고 이전 검증을 약화하지 않습니다. 메인 Sol이 담당하며 실제 수집부터 경로·화면까지 입증해야 완료입니다.

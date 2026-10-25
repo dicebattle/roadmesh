@@ -1,0 +1,339 @@
+{
+  "schema_version": "kr-directed-mapping-0.1",
+  "policy": "kr-directed-envelope-v1",
+  "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+  "geometry_sha256": "5dd2cad1e591ff6b487136d3e7e1704f04d05283b0aff5dd63a3920740f102ff",
+  "graph_edges_sha256": "fc9b1eb67d6b7a1eae8718f711d08f7b321fca3254e67f183fb5f5d73bbe6ef6",
+  "entries": [
+    {
+      "edge_id": "1296744602000",
+      "forward": true,
+      "link_id": "9000000002",
+      "start_node_id": "9000000000",
+      "end_node_id": "9000000001",
+      "max_distance_m": 0,
+      "start_fraction": 0,
+      "end_fraction": 1
+    },
+    {
+      "edge_id": "1242252204432",
+      "forward": true,
+      "link_id": "9000000003",
+      "start_node_id": "9000000000",
+      "end_node_id": "9000000001",
+      "max_distance_m": 0,
+      "start_fraction": 0,
+      "end_fraction": 1
+    }
+  ],
+  "excluded": [
+    {
+      "edge_id": "1297617017232",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1297751234960",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1296274839952",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1297851898256",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1297415690640",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1297281472912",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1296878819728",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1297013037456",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1296945928592",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1242319313296",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1242185095568",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1242117986704",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1241849551248",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1337345464720",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1337580345744",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1337479682448",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1338553424272",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1338251434384",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1338083662224",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1338687642000",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1338754750864",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1338922523024",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1346170280336",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1345968953744",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1345901844880",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1345767627152",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1345566300560",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1345499191696",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1344828103056",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1344962320784",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1345096538512",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1346640042384",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1346774260112",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1346975586704",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1347042695568",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "671994632592",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "671826860432",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "672397285776",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "672195959184",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "672330176912",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "672598612368",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "672766384528",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "674947422608",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "674813204880",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "673638799760",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "674444106128",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "674242779536",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "660821006736",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "660653234576",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "661122996624",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "661190105488",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "661257214352",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "661458540944",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "661324323216",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "661525649808",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "661592758672",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "661794085264",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "661961857424",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "662498728336",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "9151104797786",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "9151239015514",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1236917395025",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1236984503889",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1237152276049",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1237185830481",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1237454265937",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "478620440976",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "768329406864",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "766282586512",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "767020784016",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "765510834576",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "765007518096",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "764940409232",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1620310335057",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1620276780625",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1620176117329",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1620377443921",
+      "reason": "NO_MATCH"
+    }
+  ]
+}

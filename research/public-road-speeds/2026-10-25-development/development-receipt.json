@@ -1,0 +1,80 @@
+{
+  "zip": {
+    "url": "https://www.its.go.kr/opendata/nodelinkFileSDownload/DF_221/0",
+    "revision": "2026-10-14",
+    "byte_length": 271402628,
+    "sha256": "ccddb655a96a4544cf71fbd91715aa4b2d0a617f92aa1b89a0cfc062118b70f3"
+  },
+  "geometry": {
+    "schema_version": "kr-standard-links-0.1",
+    "provider": "kr-its",
+    "revision": "2026-10-14",
+    "bounds": [
+      126.98,
+      37.46,
+      127.1,
+      37.56
+    ],
+    "projection_wkt": "PROJCS[\"ITRF2000_Central_Belt_60\",GEOGCS[\"GCS_ITRF_2000\",DATUM[\"D_ITRF_2000\",SPHEROID[\"GRS_1980\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"False_Easting\",200000.0],PARAMETER[\"False_Northing\",600000.0],PARAMETER[\"Central_Meridian\",127.0],PARAMETER[\"Scale_Factor\",1.0],PARAMETER[\"Latitude_Of_Origin\",38.0],UNIT[\"Meter\",1.0]]",
+    "source_files": [
+      {
+        "name": "MOCT_LINK.shp",
+        "byte_length": 276348932,
+        "sha256": "d9758a1e00016151f4f779dd8396fd13ba4a8b18f24c543d7f13bb94a60de478"
+      },
+      {
+        "name": "MOCT_LINK.dbf",
+        "byte_length": 336265436,
+        "sha256": "327fada194e3bb4783db9123134cc2d1072c7bb97100fb5629587fab721028b1"
+      },
+      {
+        "name": "MOCT_LINK.prj",
+        "byte_length": 410,
+        "sha256": "1c8a54c46851660d21b9e0a4c5a23cf506369ef7856c786d39319910906986f5"
+      },
+      {
+        "name": "MOCT_NODE.shp",
+        "byte_length": 33161620,
+        "sha256": "b2bb99ecc98f3d9203f83ee85b202e625632f5db5c666f56d14adcd958d4e4c9"
+      },
+      {
+        "name": "MOCT_NODE.dbf",
+        "byte_length": 166992230,
+        "sha256": "cb3123c3e49a921f369e5c3ccce52493616526156101a2d8b5a7f3a0086de1de"
+      },
+      {
+        "name": "MOCT_NODE.prj",
+        "byte_length": 410,
+        "sha256": "1c8a54c46851660d21b9e0a4c5a23cf506369ef7856c786d39319910906986f5"
+      }
+    ],
+    "total_link_records": 1564022,
+    "total_node_records": 1184340,
+    "selected_link_records": 11279,
+    "rejected_geometry_records": 6,
+    "rejected_node_records": 0
+  },
+  "collection": {
+    "schema_version": "public-source-0.1",
+    "source_class": "PUBLIC_AGENCY",
+    "provider": "kr-its",
+    "policy": "kr-its-v1",
+    "endpoint": "https://openapi.its.go.kr:9443/trafficInfo",
+    "bounds": [
+      126.98,
+      37.46,
+      127.1,
+      37.56
+    ],
+    "retrieved_at": "2026-10-25T14:25:49.235Z",
+    "raw_sha256": "71f8e863411e4e4d75f17ef90bdebe7bf4d817ca65e0bbab3978330ffe7b1ccd",
+    "raw_byte_length": 801046,
+    "received_rows": 4064,
+    "invalid_id_rows": 0,
+    "duplicate_rows": 0,
+    "live_links": 4064
+  },
+  "status": "DEVELOPMENT_ONLY",
+  "message_en": "Original official bytes imported and live source normalized. Routing integration remains incomplete.",
+  "message_ko": "공식 원 바이트 가져오기·실제 수집 정규화 개발 근거이며 경로 통합은 미완료입니다."
+}

@@ -50,8 +50,8 @@
   docs/18-goal-progress.md의 전체 파일럿 목표를 유지합니다. 일부 통과를 미구현 모듈의 완료로 보지 않습니다. 구현 단위마다 새 통합 명령으로 구현된 모든 모듈을 실행하고 단위 검사·과거 성공 파일뿐 아니라 실제 결과를 검사합니다.
 - Publish bilingual dated reports with exact source/graph identity, screenshots and actual recorded playback. Refresh README.md, README.ko.md and demo assets when runtime behavior changes. Keep the media implementation fingerprint and file hashes valid; do not weaken the check to avoid recapturing.
   정확한 소스·그래프 식별·스크린샷·실제 재생 녹화를 날짜별 이중 언어 보고서로 게시합니다. 실행 동작이 바뀌면 한영 README·데모를 갱신하고 미디어 구현 지문·파일 해시 검사를 유지합니다. 재촬영을 피하려고 검사를 완화하지 않습니다.
-- Capture and replay only authored synthetic data. Keep roadmap behavior visibly separate from demonstrated behavior. Record when a viewer is evidence playback rather than a complete navigation client; never imply live traffic or real-road accuracy from synthetic success.
-  자체 합성 자료만 캡처·재생합니다. 계획과 실제 시연을 구분하고 증거 재생 화면을 완성된 내비게이션으로 표현하지 않습니다. 합성 성공으로 실시간 교통·실제 도로 정확도를 주장하지 않습니다.
+- Capture and replay only authored synthetic movement/GPS. Separately authorized public-agency traffic ingestion may preserve actual public observations with explicit PUBLIC_AGENCY source, original time, credential protection and dataset-specific reuse terms; never relabel it SYNTHETIC. Keep roadmap behavior visibly separate from demonstrated behavior. Record when a viewer is evidence playback rather than a complete navigation client; never imply live traffic or real-road accuracy from synthetic success.
+  이동·GPS 캡처/재생은 자체 합성만 사용합니다. 별도로 승인된 공공 교통 수집은 출처·원시각·키 보호·자료별 이용 조건을 유지한 실제 공공 관측을 보존하되 합성으로 바꾸지 않습니다. 계획과 실제 시연을 구분하고 증거 재생 화면을 완성된 내비게이션으로 표현하지 않습니다. 합성 성공으로 실시간 교통·실제 도로 정확도를 주장하지 않습니다.
 
 ## Primary Seoul simulation / 주요 서울 시뮬레이션
 

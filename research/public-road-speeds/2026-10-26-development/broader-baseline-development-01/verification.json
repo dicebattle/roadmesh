@@ -1,0 +1,228 @@
+{
+  "status": "FAIL",
+  "scope": "ACTUAL_PUBLIC_DEVELOPMENT_NOT_FRESH_WHOLE",
+  "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+  "source_class": "PUBLIC_AGENCY",
+  "graph_coverage": {
+    "provider": "kr-its",
+    "source_state": "CURRENT",
+    "refresh_state": "OK",
+    "retrieved_at": "2026-10-25T15:57:02.536Z",
+    "observed_from": "2026-10-25T15:55:00.000Z",
+    "observed_until": "2026-10-25T15:55:00.000Z",
+    "graph_edges": 79,
+    "mapped_edges": 31,
+    "live_edges": 31
+  },
+  "route_coverage": 0.8431001890359168,
+  "public": {
+    "distance_m": 2119,
+    "duration_s": 269.977,
+    "checked_at": "2026-10-25T15:57:22.102Z",
+    "valid_until": "2026-10-25T16:05:00.000Z"
+  },
+  "baseline": {
+    "has_time_restrictions": false,
+    "has_toll": false,
+    "has_highway": false,
+    "has_ferry": false,
+    "min_lat": 37.498008,
+    "min_lon": 127.02792,
+    "max_lat": 37.504505,
+    "max_lon": 127.049065,
+    "time": 147.404,
+    "length": 2.119,
+    "cost": 289.959
+  },
+  "same_geometry": true,
+  "speeds": [
+    {
+      "edge_id": "1297617017232",
+      "native_kph": 24,
+      "compiled_kph": 24,
+      "ok": true
+    },
+    {
+      "edge_id": "1296274839952",
+      "native_kph": 28,
+      "compiled_kph": 28,
+      "ok": true
+    },
+    {
+      "edge_id": "1297415690640",
+      "native_kph": 28,
+      "compiled_kph": 28,
+      "ok": true
+    },
+    {
+      "edge_id": "1297281472912",
+      "native_kph": 28,
+      "compiled_kph": 28,
+      "ok": true
+    },
+    {
+      "edge_id": "1296744602000",
+      "native_kph": 28,
+      "compiled_kph": 28,
+      "ok": true
+    },
+    {
+      "edge_id": "1296878819728",
+      "native_kph": 28,
+      "compiled_kph": 28,
+      "ok": true
+    },
+    {
+      "edge_id": "1297013037456",
+      "native_kph": 28,
+      "compiled_kph": 28,
+      "ok": true
+    },
+    {
+      "edge_id": "1296945928592",
+      "native_kph": 34,
+      "compiled_kph": 34,
+      "ok": true
+    },
+    {
+      "edge_id": "1242319313296",
+      "native_kph": 34,
+      "compiled_kph": 34,
+      "ok": true
+    },
+    {
+      "edge_id": "1242252204432",
+      "native_kph": 34,
+      "compiled_kph": 34,
+      "ok": true
+    },
+    {
+      "edge_id": "1242185095568",
+      "native_kph": 34,
+      "compiled_kph": 34,
+      "ok": true
+    },
+    {
+      "edge_id": "1242117986704",
+      "native_kph": 34,
+      "compiled_kph": 34,
+      "ok": true
+    },
+    {
+      "edge_id": "1241849551248",
+      "native_kph": 50,
+      "compiled_kph": 50,
+      "ok": true
+    },
+    {
+      "edge_id": "1337345464720",
+      "native_kph": 50,
+      "compiled_kph": 50,
+      "ok": true
+    },
+    {
+      "edge_id": "1337580345744",
+      "native_kph": 14,
+      "compiled_kph": 14,
+      "ok": true
+    },
+    {
+      "edge_id": "1337479682448",
+      "native_kph": 14,
+      "compiled_kph": 14,
+      "ok": true
+    },
+    {
+      "edge_id": "1338553424272",
+      "native_kph": 14,
+      "compiled_kph": 14,
+      "ok": true
+    },
+    {
+      "edge_id": "1338251434384",
+      "native_kph": 14,
+      "compiled_kph": 14,
+      "ok": true
+    },
+    {
+      "edge_id": "1338083662224",
+      "native_kph": 42,
+      "compiled_kph": 42,
+      "ok": true
+    },
+    {
+      "edge_id": "1338687642000",
+      "native_kph": 42,
+      "compiled_kph": 42,
+      "ok": true
+    },
+    {
+      "edge_id": "1338922523024",
+      "native_kph": 30,
+      "compiled_kph": 30.000000000000004,
+      "ok": true
+    },
+    {
+      "edge_id": "1346170280336",
+      "native_kph": 30,
+      "compiled_kph": 30.000000000000004,
+      "ok": true
+    },
+    {
+      "edge_id": "1345968953744",
+      "native_kph": 30,
+      "compiled_kph": 30.000000000000004,
+      "ok": true
+    },
+    {
+      "edge_id": "1345901844880",
+      "native_kph": 30,
+      "compiled_kph": 30.000000000000004,
+      "ok": true
+    },
+    {
+      "edge_id": "1345767627152",
+      "native_kph": 13,
+      "compiled_kph": 12,
+      "ok": false
+    },
+    {
+      "edge_id": "1345499191696",
+      "native_kph": 13,
+      "compiled_kph": 12,
+      "ok": false
+    },
+    {
+      "edge_id": "1344828103056",
+      "native_kph": 13,
+      "compiled_kph": 12,
+      "ok": false
+    },
+    {
+      "edge_id": "1345096538512",
+      "native_kph": 28,
+      "compiled_kph": 28,
+      "ok": true
+    },
+    {
+      "edge_id": "1346774260112",
+      "native_kph": 46,
+      "compiled_kph": 46,
+      "ok": true
+    },
+    {
+      "edge_id": "1346975586704",
+      "native_kph": 46,
+      "compiled_kph": 46,
+      "ok": true
+    },
+    {
+      "edge_id": "1347042695568",
+      "native_kph": 19,
+      "compiled_kph": 18,
+      "ok": false
+    }
+  ],
+  "message_en": "Captured valid public native trace agrees with immutable encoded speeds; baseline reruns the identical authored request. This is provider influence, not ETA accuracy or a current observation claim.",
+  "message_ko": "유효할 때 캡처한 공공 엔진 구간 속도를 불변 변환 값과 대조하고 같은 자체 요청의 기본 경로를 다시 계산했습니다. 기관 자료 반영 근거이며 도착시간 정확도·현재 관측 주장은 아닙니다."
+}

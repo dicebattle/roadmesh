@@ -1,0 +1,45 @@
+{
+  "schema_version": "public-source-0.1",
+  "source_class": "PUBLIC_AGENCY",
+  "provider": "kr-its",
+  "policy": "kr-its-v1",
+  "endpoint": "https://openapi.its.go.kr:9443/trafficInfo",
+  "bounds": [
+    126.98,
+    37.46,
+    127.1,
+    37.56
+  ],
+  "retrieved_at": "2026-10-25T16:07:35.000Z",
+  "raw_sha256": "9cc6bcf7cfefca4c5e688249752efc822b05324c1a3e342bfa347ebc574ba271",
+  "raw_byte_length": 531,
+  "received_rows": 2,
+  "invalid_id_rows": 0,
+  "duplicate_rows": 0,
+  "observations": [
+    {
+      "link_id": "9000000002",
+      "start_node_id": "9000000000",
+      "end_node_id": "9000000001",
+      "road_name": "Authored provider protocol / 자체 제공자 규격",
+      "observed_at": "2026-10-25T16:07:35.000Z",
+      "valid_until": "2026-10-25T16:17:35.000Z",
+      "speed_mps": null,
+      "travel_time_s": 10,
+      "status": "UNKNOWN",
+      "reason": "INVALID_SPEED"
+    },
+    {
+      "link_id": "9000000003",
+      "start_node_id": "9000000000",
+      "end_node_id": "9000000001",
+      "road_name": "Authored provider protocol / 자체 제공자 규격",
+      "observed_at": "2026-10-25T16:07:35.000Z",
+      "valid_until": "2026-10-25T16:17:35.000Z",
+      "speed_mps": null,
+      "travel_time_s": 10,
+      "status": "UNKNOWN",
+      "reason": "INVALID_SPEED"
+    }
+  ]
+}

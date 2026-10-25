@@ -5,8 +5,7 @@ import {
   compileTrafficGeneration,
   verifyTrafficGeneration,
 } from "./traffic_compiler.js";
-import type { VerifiedPublication } from "./publication_types.js";
-import type { TrafficGeneration } from "./traffic_types.js";
+import type { TrafficGeneration, VerifiedTrafficInput } from "./traffic_types.js";
 export interface GatewayCompilerPaths {
   bundle_directory: string;
   graph_directory: string;
@@ -14,13 +13,13 @@ export interface GatewayCompilerPaths {
 }
 export type GatewayCompilerJob =
   | { id: number; operation: "load" }
-  | { id: number; operation: "prepare"; input: VerifiedPublication | null }
+  | { id: number; operation: "prepare"; input: VerifiedTrafficInput }
   | { id: number; operation: "verify"; generation: TrafficGeneration };
 /** Structured clone turns Buffer into Uint8Array; preserve its exact view bytes.
  * 구조 복제가 Buffer를 Uint8Array로 바꾸므로 정확한 보기 바이트를 복원합니다. */
 export function restoreCompilerInput(
-  input: VerifiedPublication | null,
-): VerifiedPublication | null {
+  input: VerifiedTrafficInput,
+): VerifiedTrafficInput {
   if (input === null) return null;
   if (!(input.artifact instanceof Uint8Array))
     throw Error("INVALID_ARTIFACT_BYTES");

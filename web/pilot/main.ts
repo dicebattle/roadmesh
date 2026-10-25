@@ -3,6 +3,7 @@ import "./style.css";
 import { ReplayController } from "./replay.js";
 import type { ProgressState } from "../../tools/route_progress.js";
 import { RouteClientState } from "./state.js";
+import { validSourceClock } from "../../tools/public_traffic_context.js";
 import type {
   ClientBootstrap,
   ClientLocation,
@@ -117,6 +118,31 @@ const copy = {
     mapDestination: "도착지 표시",
   },
 } as const;
+const publicCopy: Record<Language, Partial<Record<keyof typeof copy.en, string>>> = {
+  en: {
+    subtitle: "Seoul public-speed preview",
+    synthetic: "Actual Seoul roads · public road speeds",
+    scope: "Local public-data preview. Speeds cover only verified roads. GPS replay is authored; real driving accuracy is not established.",
+    expired: "The public traffic observations expired. Recalculate to use current defaults.",
+    applied: "Public road speeds applied to parts of this route",
+    age: "Oldest usable public observation",
+    noAge: "No usable public observation · default speeds",
+    clock: "Checked actual UTC time",
+  },
+  ko: {
+    subtitle: "서울 공공 속도 미리보기",
+    synthetic: "실제 서울 도로 · 공공 도로 속도",
+    scope: "로컬 공공 자료 미리보기입니다. 확인한 도로에만 속도를 적용합니다. GPS 재생은 자체 합성이며 실주행 정확도는 미검증입니다.",
+    expired: "공공 교통 관측의 기한이 지났습니다. 다시 계산하면 현재 기본 속도를 사용합니다.",
+    applied: "이 경로의 일부 구간에 공공 속도 적용",
+    age: "사용 가능한 가장 오래된 공공 관측",
+    noAge: "사용 가능한 공공 관측 없음 · 기본 속도",
+    clock: "확인한 실제 UTC 시각",
+  },
+};
+function uiText(key: keyof typeof copy.en): string {
+  return (bootstrap?.source_class === "PUBLIC_AGENCY" ? publicCopy[lang][key] : undefined) ?? copy[lang][key];
+}
 const $ = <T extends HTMLElement = HTMLElement>(id: string) => {
   const element = document.getElementById(id);
   if (!element)
@@ -136,6 +162,7 @@ let bootstrap: ClientBootstrap | undefined,
   contextAbort: AbortController | undefined,
   polling = false,
   lastRequest: GatewayRequest | undefined;
+let publicContextCurrent = false;
 let markers: maplibregl.Marker[] = [];
 let renderedGeometry: unknown = null;
 let progressMarkers: maplibregl.Marker[] = [];
@@ -270,11 +297,50 @@ function mapLanguage(): void {
       lang === "en" ? "Interactive Seoul road map" : "서울 도로 조작 지도",
     );
 }
+function renderPublicSource(): void {
+  const panel = $("public-traffic-source");
+  panel.replaceChildren();
+  panel.hidden = bootstrap?.source_class !== "PUBLIC_AGENCY";
+  if (panel.hidden) return;
+  const add = (text: string) => {const p = document.createElement("p"); p.textContent = text; panel.append(p);};
+  const title = document.createElement("h3");
+  title.textContent = lang === "en" ? "Public road speeds" : "공공 도로 속도";
+  panel.append(title);
+  const link = document.createElement("a"); link.href = "https://www.its.go.kr/opendata/intro";
+  link.rel = "noreferrer";
+  link.textContent = lang === "en" ? "Source: MOLIT National Traffic Information Center" : "출처: 국토교통부 국가교통정보센터";
+  panel.append(link);
+  const context = state.authority, v = context?.public_traffic;
+  const verified = publicContextCurrent && context && Date.now() - Date.parse(context.checked_at_event_time) <= 5000 &&
+    Date.now() >= Date.parse(context.checked_at_event_time) - 30000;
+  if (!v || !verified) {
+    panel.dataset.sourceState = "UNVERIFIED";
+    add(lang === "en" ? "Current public traffic could not be verified." : "현재 공공 교통정보의 유효성을 확인할 수 없습니다.");
+    return;
+  }
+  const sourceState = v.source_state === "CURRENT" && context.traffic_valid_until !== null &&
+    Date.now() >= Date.parse(context.traffic_valid_until) ? "EXPIRED" : v.source_state;
+  panel.dataset.sourceState = sourceState;
+  const messages = {
+    en: {CURRENT: "Fresh public speeds are available on verified roads.", EXPIRED: "Public observations expired. Routing uses default speeds.",
+      UNAVAILABLE: "Public traffic could not be collected. Routing uses default speeds.", NO_MAPPED_SPEEDS: "No current public speed matches the verified roads. Routing uses default speeds."},
+    ko: {CURRENT: "확인한 도로에 유효한 공공 속도가 있습니다.", EXPIRED: "공공 관측이 만료되어 기본 속도로 계산합니다.",
+      UNAVAILABLE: "공공 속도를 수집하지 못해 기본 속도로 계산합니다.", NO_MAPPED_SPEEDS: "확인한 도로에 대응하는 현재 공공 속도가 없어 기본 속도로 계산합니다."},
+  };
+  add(messages[lang][sourceState]);
+  if (v.refresh_state === "FAILED") add(lang === "en" ? "The latest refresh failed. Previous observations keep their original expiry." :
+    "최근 갱신에 실패했습니다. 이전 관측의 원래 만료 시각을 유지합니다.");
+  add((lang === "en" ? "Road segments with usable public speeds: " : "유효한 공공 속도가 있는 도로 구간: ") +
+    (sourceState === "CURRENT" ? v.live_edges : 0) + " / " + v.graph_edges);
+  const timestamp = (value: string) => new Date(value).toLocaleString(lang === "en" ? "en-GB" : "ko-KR", {timeZone: "Asia/Seoul", hour12: false}) + " KST";
+  if (v.observed_from) add((lang === "en" ? "Oldest observation: " : "가장 오래된 관측: ") + timestamp(v.observed_from));
+  if (v.retrieved_at) add((lang === "en" ? "Retrieved: " : "자료 조회: ") + timestamp(v.retrieved_at));
+}
 function render(): void {
   document.documentElement.lang = lang;
   document.querySelectorAll<HTMLElement>("[data-i18n]").forEach((el) => {
     const key = el.dataset.i18n as keyof typeof copy.en;
-    if (key in copy[lang]) el.textContent = copy[lang][key];
+    if (key in copy[lang]) el.textContent = uiText(key);
   });
   const language = $("language");
   language.textContent = lang === "en" ? "한국어" : "English";
@@ -286,7 +352,8 @@ function render(): void {
   );
   $("result").dataset.state = state.phase;
   $("result").dataset.requestId = state.route?.request_id ?? "";
-  $("route-status").textContent = copy[lang][state.phase];
+  $("route-status").textContent = uiText(state.phase);
+  renderPublicSource();
   $("recalculate").hidden = ["empty", "loading", "current"].includes(
     state.phase,
   );
@@ -327,7 +394,7 @@ function render(): void {
       "route-measure",
     );
     const mode = add(
-      copy[lang][r.traffic_mode === "LIVE_MIXED" ? "applied" : "baseline"],
+      uiText(r.traffic_mode === "LIVE_MIXED" ? "applied" : "baseline"),
       "mode",
     );
     mode.dataset.mode = r.traffic_mode;
@@ -339,19 +406,19 @@ function render(): void {
     );
     if (r.traffic_published_at !== null)
       add(
-        copy[lang].age +
+        uiText("age") +
           ": " +
           Math.max(
             0,
             (Date.parse((state.authority ?? r).checked_at_event_time) -
-              Date.parse(r.traffic_published_at)) /
+              Date.parse(r.source_class === "PUBLIC_AGENCY" ? r.public_traffic!.observed_from! : r.traffic_published_at)) /
               1000,
           ).toFixed(1) +
           " " +
           copy[lang].seconds,
       );
-    else add(copy[lang].noAge);
-    add(copy[lang].clock + ": " + (state.authority ?? r).checked_at_event_time);
+    else add(uiText("noAge"));
+    add(uiText("clock") + ": " + (state.authority ?? r).checked_at_event_time);
     r.warnings.forEach((w) =>
       add(w[lang === "en" ? "message_en" : "message_ko"]),
     );
@@ -397,8 +464,9 @@ async function pollContext(): Promise<void> {
     });
     if (!response.ok)
       throw new Error("Freshness unavailable / 신선도 조회 불가");
-    state.context(await response.json());
+    publicContextCurrent = state.context(await response.json());
   } catch {
+    publicContextCurrent = false;
     state.freshnessFailed();
   } finally {
     clearTimeout(timer);
@@ -446,6 +514,7 @@ async function submit(): Promise<void> {
     } else if (
       state.result(generation, request.request_id, body as GatewaySuccess, request.guidance_language)
     ) {
+      publicContextCurrent = true;
       if (mapReady && map) {
         const coords = body.geometry.coordinates as number[][];
         const bounds = new maplibregl.LngLatBounds();
@@ -480,8 +549,8 @@ async function start(): Promise<void> {
     if (!response.ok) throw new Error("Bootstrap unavailable");
     bootstrap = (await response.json()) as ClientBootstrap;
     if (
-      bootstrap.source_class !== "SYNTHETIC" ||
-      bootstrap.clock_basis !== "SIMULATION_EVENT_TIME"
+      !validSourceClock(bootstrap.source_class, bootstrap.clock_basis) ||
+      bootstrap.schema_version !== (bootstrap.source_class === "PUBLIC_AGENCY" ? "public-route-0.1" : "0.1")
     )
       throw new Error("Unexpected bootstrap");
     for (const endpoint of ["origin", "destination"])

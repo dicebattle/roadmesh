@@ -16,6 +16,7 @@ import {
 import { join, resolve } from "node:path";
 import { canonical, parseJson, sha256 } from "./shared.js";
 import { verifyArtifact } from "./publication_crypto.js";
+import { isPublicTraffic, readPublicTrafficArtifact } from "./public_speed_publication.js";
 import { bundlePath } from "./graph_bundle.js";
 import {
   boundedTrafficFile,
@@ -60,6 +61,12 @@ function checkedInput(
   input: VerifiedTrafficInput,
 ): void {
   if (!input) return;
+  if (isPublicTraffic(input)) {
+    if (input.manifest.graph_id !== bundle.graph_id || input.snapshot.graph_id !== bundle.graph_id ||
+        !canonical(readPublicTrafficArtifact(input.manifest, input.artifact, bundle.catalog)).equals(canonical(input.snapshot)))
+      trafficReject("PUBLICATION_BYTES_MISMATCH");
+    return;
+  }
   const { manifest, snapshot, artifact } = input;
   if (
     manifest.graph_id !== bundle.graph_id ||

@@ -5,6 +5,7 @@ import type {
   GatewaySuccess,
 } from "../../tools/gateway_public_types.js";
 import { validateRequestedGuidance, type GuidanceLanguage } from "../../tools/guidance.js";
+import { validSourceClock, validPublicTrafficContext } from "../../tools/public_traffic_context.js";
 export type ClientPhase =
   | "empty"
   | "loading"
@@ -20,13 +21,14 @@ export function validContext(value: unknown): value is GatewayRouteContext {
   if (!value || typeof value !== "object") return false;
   const v = value as GatewayRouteContext;
   const common =
-    v.schema_version === "0.1" &&
+    v.schema_version === (v.source_class === "PUBLIC_AGENCY" ? "public-route-0.1" : "0.1") &&
     /^[a-f0-9]{64}$/.test(v.graph_id) &&
     Number.isSafeInteger(v.high_water) &&
     v.high_water >= 0 &&
     Number.isFinite(Date.parse(v.checked_at_event_time)) &&
-    v.source_class === "SYNTHETIC" &&
-    v.clock_basis === "SIMULATION_EVENT_TIME";
+    validSourceClock(v.source_class, v.clock_basis) &&
+    (v.source_class === "SYNTHETIC" ? !Object.hasOwn(v, "public_traffic") :
+      validPublicTrafficContext(v.public_traffic, v.checked_at_event_time, v.traffic_snapshot_id !== null));
   if (!common) return false;
   if (v.traffic_snapshot_id === null)
     return (
@@ -44,12 +46,14 @@ export function validContext(value: unknown): value is GatewayRouteContext {
     v.traffic_valid_until !== null &&
     Number.isFinite(Date.parse(v.traffic_published_at)) &&
     Number.isFinite(Date.parse(v.traffic_valid_until)) &&
-    Date.parse(v.checked_at_event_time) < Date.parse(v.traffic_valid_until)
+    Date.parse(v.checked_at_event_time) < Date.parse(v.traffic_valid_until) &&
+    (v.source_class !== "PUBLIC_AGENCY" ||
+      Date.parse(v.traffic_valid_until) === Date.parse(v.public_traffic!.observed_from!) + 600000)
   );
 }
 export function routeContext(route: GatewaySuccess): GatewayRouteContext {
   return {
-    schema_version: "0.1",
+    schema_version: route.source_class === "PUBLIC_AGENCY" ? "public-route-0.1" : "0.1",
     graph_id: route.graph_id,
     traffic_snapshot_id: route.snapshot_id,
     sequence: route.sequence,
@@ -59,6 +63,7 @@ export function routeContext(route: GatewaySuccess): GatewayRouteContext {
     traffic_valid_until: route.traffic_valid_until,
     source_class: route.source_class,
     clock_basis: route.clock_basis,
+    ...(route.public_traffic ? {public_traffic: route.public_traffic} : {}),
   };
 }
 export function olderAuthority(
@@ -77,12 +82,14 @@ export function routeCurrent(
 ): boolean {
   return (
     route.graph_id === authority.graph_id &&
+    route.source_class === authority.source_class && route.clock_basis === authority.clock_basis &&
     route.snapshot_id === authority.traffic_snapshot_id &&
     route.high_water === authority.high_water &&
     route.sequence === authority.sequence &&
     (route.traffic_valid_until === null ||
       Date.parse(authority.checked_at_event_time) <
-        Date.parse(route.traffic_valid_until))
+        Date.parse(route.traffic_valid_until)) &&
+    (route.source_class !== "PUBLIC_AGENCY" || route.traffic_valid_until === null || Date.now() < Date.parse(route.traffic_valid_until))
   );
 }
 export class RouteClientState {

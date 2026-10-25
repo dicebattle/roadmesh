@@ -1,0 +1,490 @@
+{
+  "schema_version": "kr-provider-map-0.1",
+  "policy": "dual-official-layer-v1",
+  "retrieved_at": "2026-10-25T15:46:35.925Z",
+  "bounds": [
+    126.98,
+    37.46,
+    127.1,
+    37.56
+  ],
+  "numeric_source_sha256": "71f8e863411e4e4d75f17ef90bdebe7bf4d817ca65e0bbab3978330ffe7b1ccd",
+  "graph_edges_sha256": "fc9b1eb67d6b7a1eae8718f711d08f7b321fca3254e67f183fb5f5d73bbe6ef6",
+  "source_files": [
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.02737399993927%2C37.49725750006171%2C127.02937399993928%2C37.4992575000617&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:38.064Z",
+      "byte_length": 1272,
+      "sha256": "d140c339beee9b9d05134de1cd67e798d736cc732329b924e81068e43a5fb56e"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.02737399993927%2C37.49725750006171%2C127.02937399993928%2C37.4992575000617&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:38.145Z",
+      "byte_length": 1055,
+      "sha256": "ae87a4a5bc90fc663a1cf820111915545351e9540f084981bf0284d7454ea15a"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.02703564501846%2C37.49712036152755%2C127.02903564501847%2C37.499120361527545&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:38.299Z",
+      "byte_length": 1205,
+      "sha256": "1db39a62dc9f1a6c5980126c7ee427f9cfaca79ef3c8bb7f03521a0215ed1362"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.02703564501846%2C37.49712036152755%2C127.02903564501847%2C37.499120361527545&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:38.394Z",
+      "byte_length": 1051,
+      "sha256": "e97af5d43a67159848d9c1d3e937000b5327b2570cd6c7ba21f27330f05935f5"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.02715749990895%2C37.4970545000942%2C127.02915749990896%2C37.499054500094196&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:38.470Z",
+      "byte_length": 1205,
+      "sha256": "45cd1225b43117a379adbfd4bddcb9ac3ac0cc94df7667dc0095078ef58e2448"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.02715749990895%2C37.4970545000942%2C127.02915749990896%2C37.499054500094196&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:38.578Z",
+      "byte_length": 1049,
+      "sha256": "3c8b6ac501fa67dbffb715af9601b89083f636729d856a0a2a01208a67c21b69"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.02806849950534%2C37.49733100051187%2C127.03006849950535%2C37.499331000511866&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:48.737Z",
+      "byte_length": 1272,
+      "sha256": "6e3c1dae8a76758e24429ce36f0e1e297c9285128d887af9f0182cdf4ffdf11f"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.02806849950534%2C37.49733100051187%2C127.03006849950535%2C37.499331000511866&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:48.807Z",
+      "byte_length": 1053,
+      "sha256": "6189e627d29d13dfef7536d180a3c9c72dd0f65440f7e061eef9824c3c3d24a2"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.02883349930275%2C37.497562000731115%2C127.03083349930276%2C37.49956200073111&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:48.965Z",
+      "byte_length": 1272,
+      "sha256": "1119a247ddaafcd4c548a0a9fcb84a85d663d766aab66ce9395f53b5da66a83f"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.02883349930275%2C37.497562000731115%2C127.03083349930276%2C37.49956200073111&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:49.042Z",
+      "byte_length": 1051,
+      "sha256": "9e75776951fade439f2c185d9a137ecd655d3c9d1363f1d6154e064f27700e49"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.02957299957606%2C37.4977850004397%2C127.03157299957607%2C37.499785000439694&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:49.119Z",
+      "byte_length": 1205,
+      "sha256": "4136e43038b2a131e8d0d31a15cc8ae60c3124158d10d1ac542c4a9a80485e10"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.02957299957606%2C37.4977850004397%2C127.03157299957607%2C37.499785000439694&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:49.220Z",
+      "byte_length": 1051,
+      "sha256": "3b825bed306c3c234effad57f5ced245f3ca0134a7e7c88b7004e44c8e64fd1d"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.0299844999698%2C37.497908500033006%2C127.03198449996981%2C37.499908500033&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:49.280Z",
+      "byte_length": 537,
+      "sha256": "a09a102996bb3f960cc0bd698e97fd093d1aedc558c5e775e0e338adcc001f47"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.0299844999698%2C37.497908500033006%2C127.03198449996981%2C37.499908500033&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:49.384Z",
+      "byte_length": 3083,
+      "sha256": "c92ee28b31de536f5a7fa1f85cf8944a4c9ca64bc16a48ece17e263e67c30fda"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03018449994849%2C37.49796850005241%2C127.0321844999485%2C37.499968500052404&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:56.531Z",
+      "byte_length": 2191,
+      "sha256": "0b4cbfc0ee6526aa85cb5c8e30d16aeb51bd55677e2a2e73ce558a8ab073c5cf"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03018449994849%2C37.49796850005241%2C127.0321844999485%2C37.499968500052404&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:56.622Z",
+      "byte_length": 2270,
+      "sha256": "106a73a109dc37c34974d5f6e87f196085759c8b531641de5d4a467c1884d20d"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03064899951309%2C37.49810600052519%2C127.0326489995131%2C37.500106000525186&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:56.770Z",
+      "byte_length": 1272,
+      "sha256": "a4f4525a78e6d895ba855f4f8b3cf4efc6598f6f1ec6051e8bc4f4c370d4992e"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03064899951309%2C37.49810600052519%2C127.0326489995131%2C37.500106000525186&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:56.842Z",
+      "byte_length": 1039,
+      "sha256": "b83993db8fdd49e3e869be71596b46553cc06c781ab3e10db4a0ce4aa60ad10b"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03141449929294%2C37.49833700071715%2C127.03341449929295%2C37.500337000717145&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:56.913Z",
+      "byte_length": 720,
+      "sha256": "7ebaa8805dd49c826a69e20da9adf7d026cf5f7c1cbb85bb7dd9c6f70c51cbe6"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03141449929294%2C37.49833700071715%2C127.03341449929295%2C37.500337000717145&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:56.981Z",
+      "byte_length": 1043,
+      "sha256": "db9fac372aa23ba8a8d0bed7bfca1bab97f8257849f6cb534d173c8b0892b8b8"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03197649990793%2C37.4985110000942%2C127.03397649990794%2C37.50051100009419&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:57.128Z",
+      "byte_length": 1272,
+      "sha256": "b33bec721421cb79246fdab05de5f3a918f10af86b6521972ef16bfea4a373f8"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03197649990793%2C37.4985110000942%2C127.03397649990794%2C37.50051100009419&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:57.195Z",
+      "byte_length": 1039,
+      "sha256": "8d1fe9426307ed2b30b522dbe4ddd318fa02b467df5e02186fe7eccdbe500474"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03256199924098%2C37.498687000801205%2C127.03456199924099%2C37.5006870008012&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:57.266Z",
+      "byte_length": 1272,
+      "sha256": "a022141b0f0e2278027d7ed87682b5f0f3779d070744cbac22aaca1e31a2adb5"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03256199924098%2C37.498687000801205%2C127.03456199924099%2C37.5006870008012&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:57.361Z",
+      "byte_length": 1037,
+      "sha256": "b66349c3892bc6c72c9c548c3c1c3c1c5e927143dc2f26d1b119dc4c4b5e1f36"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03376499764258%2C37.49904650247944%2C127.03576499764259%2C37.50104650247943&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:57.429Z",
+      "byte_length": 723,
+      "sha256": "f2dee658c9af289309d79aa3a3fece86a6431ca8c64e6ff839171d4f18e6037d"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03376499764258%2C37.49904650247944%2C127.03576499764259%2C37.50104650247943&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:57.501Z",
+      "byte_length": 648,
+      "sha256": "513262adecbd3f1184f11e4cf0de3bc00ecc5e7c957c0062e7b4394ee9a4bdf2"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03461549997266%2C37.49930050002939%2C127.03661549997267%2C37.50130050002939&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:57.569Z",
+      "byte_length": 2200,
+      "sha256": "a5600dbe7ece6701a2fcd1e87a4d48a55f6fc84f488ccb933464204f8eddd9c4"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03461549997266%2C37.49930050002939%2C127.03661549997267%2C37.50130050002939&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:57.658Z",
+      "byte_length": 1900,
+      "sha256": "b2fc9b5bd46318255dc9ac565970c41126dd4fff60801cf8902f5fb3241c3a19"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03481799994105%2C37.49936200005968%2C127.03681799994106%2C37.50136200005968&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:57.741Z",
+      "byte_length": 2181,
+      "sha256": "461a6c6ed3e398f9899a091d0de00268d7f08ee481cb5362605bb74180e4e5fa"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03481799994105%2C37.49936200005968%2C127.03681799994106%2C37.50136200005968&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:57.818Z",
+      "byte_length": 2307,
+      "sha256": "4237899c4e49c68f710f87fba528224b9089581809bfc171e261440b0dcf678d"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03513799984123%2C37.49945800017028%2C127.03713799984124%2C37.501458000170274&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:57.896Z",
+      "byte_length": 1272,
+      "sha256": "fe85609bf0059c7a340a6635f5003cefca300861389c25a125e673360b3550f3"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03513799984123%2C37.49945800017028%2C127.03713799984124%2C37.501458000170274&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:57.974Z",
+      "byte_length": 648,
+      "sha256": "e0c2ab038432d5cd487e8520088515470a14aa851ff5c2fa001322f297a4d3ac"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03556608272478%2C37.499584326243266%2C127.0375660827248%2C37.50158432624326&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:58.061Z",
+      "byte_length": 723,
+      "sha256": "4828df38c3444006ae076a7ae78e5a66042f6812aab69907409ae3674ee99056"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03556608272478%2C37.499584326243266%2C127.0375660827248%2C37.50158432624326&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:58.148Z",
+      "byte_length": 646,
+      "sha256": "4d50e737fd6809d80ce5fff3f4405feed45c36c8cb4354d8f7beffd352a4ef7a"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03589299995983%2C37.49968200004215%2C127.03789299995984%2C37.501682000042145&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:58.231Z",
+      "byte_length": 1272,
+      "sha256": "9fa150c1950e96c7b4f54a0e881ffb57c680f35a25412a886a4b7839e1bda498"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03589299995983%2C37.49968200004215%2C127.03789299995984%2C37.501682000042145&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:58.308Z",
+      "byte_length": 2276,
+      "sha256": "a6dea5fc07d1ffdc512f7ca4c69d8b3d8fd96c90853f4dbd23e2b6e4cfe3b077"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03611909855826%2C37.49975079955908%2C127.03811909855827%2C37.501750799559076&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:58.357Z",
+      "byte_length": 537,
+      "sha256": "a09a102996bb3f960cc0bd698e97fd093d1aedc558c5e775e0e338adcc001f47"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03611909855826%2C37.49975079955908%2C127.03811909855827%2C37.501750799559076&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:58.453Z",
+      "byte_length": 1456,
+      "sha256": "4d1e2b934f998ab76250633efc7af70196e5609f85676781cfe683c8c849fbcc"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03646249980486%2C37.499857000199384%2C127.03846249980487%2C37.50185700019938&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:58.516Z",
+      "byte_length": 723,
+      "sha256": "bafb554236c999e2faf6e603e4b4d4de2cd3e1fd2500756c15b643b5fa43f124"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03646249980486%2C37.499857000199384%2C127.03846249980487%2C37.50185700019938&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:58.598Z",
+      "byte_length": 646,
+      "sha256": "d19926af419df6cf3e24b399b502802bc5d71b3fceff41276b557e0583179318"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.037076999346%2C37.50004700066428%2C127.03907699934601%2C37.50204700066428&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:58.673Z",
+      "byte_length": 723,
+      "sha256": "30c0000d989e4fdd291cec0c0465f866fd1ecbe568190933bd9d9d452bbccba9"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.037076999346%2C37.50004700066428%2C127.03907699934601%2C37.50204700066428&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:58.770Z",
+      "byte_length": 645,
+      "sha256": "29c7c3016caf4181c97801830227b5b6fdb64900ecc8cd75a953b86a1ac94789"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03783549945044%2C37.500283500550786%2C127.03983549945045%2C37.50228350055078&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:58.833Z",
+      "byte_length": 726,
+      "sha256": "d40339e8492a4e3162d2e73b6f268cf1e0cda002a885e875a7cbf52ff8dc11bb"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03783549945044%2C37.500283500550786%2C127.03983549945045%2C37.50228350055078&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:58.911Z",
+      "byte_length": 649,
+      "sha256": "f891d1590ed9206883588fa7f9cfa8b4155ec5b9ead64f274fb0586ad878e4fa"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03853949951608%2C37.500502500494406%2C127.04053949951609%2C37.5025025004944&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:58.990Z",
+      "byte_length": 1272,
+      "sha256": "eb87dc7b6861d74249700884b0797f879bc97ee574e2895c9d06c94b30645285"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03853949951608%2C37.500502500494406%2C127.04053949951609%2C37.5025025004944&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:59.060Z",
+      "byte_length": 649,
+      "sha256": "8fa4f32ca2b76d14a1f337a0e2f3b72e906de7471371c33896bfd85938c80181"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.0392083998149%2C37.5007037145297%2C127.0412083998149%2C37.502703714529694&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:59.133Z",
+      "byte_length": 726,
+      "sha256": "8814cf05903b042bd387a03e2d96a4588f9df7e804f57d4fb95e987d90493564"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.0392083998149%2C37.5007037145297%2C127.0412083998149%2C37.502703714529694&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:59.210Z",
+      "byte_length": 651,
+      "sha256": "d0375757d75cf9b018a8b0cf04a8b9415020b447e856d27feb591c1b9a1be761"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03989149942706%2C37.50091900053566%2C127.04189149942707%2C37.502919000535655&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:59.276Z",
+      "byte_length": 726,
+      "sha256": "54a96537cf28e589c1fd10b603123ed746e7249f2ae2f25209838542c446d0f4"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.03989149942706%2C37.50091900053566%2C127.04189149942707%2C37.502919000535655&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:59.350Z",
+      "byte_length": 649,
+      "sha256": "3c187019d0ab101662f485b8dad80ccf49d17ec27f2b693f05df165ffcb774b2"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.04079599881831%2C37.5012000012657%2C127.04279599881832%2C37.5032000012657&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:59.424Z",
+      "byte_length": 726,
+      "sha256": "c205594723b25335b35674f09b3b5ba2921ca1b0138b9e8373f1ce7d1fbfaa5c"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.04079599881831%2C37.5012000012657%2C127.04279599881832%2C37.5032000012657&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:59.505Z",
+      "byte_length": 650,
+      "sha256": "feab57ee55c5ebdb9ac0562791ba95545aeb51674739a862a2356c3acf481fd4"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.0415269762851%2C37.50141455020608%2C127.04352697628511%2C37.503414550206074&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:59.557Z",
+      "byte_length": 537,
+      "sha256": "a09a102996bb3f960cc0bd698e97fd093d1aedc558c5e775e0e338adcc001f47"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.0415269762851%2C37.50141455020608%2C127.04352697628511%2C37.503414550206074&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:59.633Z",
+      "byte_length": 649,
+      "sha256": "ece7dd861d1f92a7271d4925d89cb093c1599a1441fb31ba3e8f2d019b77288e"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.04171550780833%2C37.50147248466631%2C127.04371550780834%2C37.503472484666304&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:59.705Z",
+      "byte_length": 1692,
+      "sha256": "2ef96f5cc50bdac79b77c1f656cb344e73986a54640222482eeddb93d609c148"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.04171550780833%2C37.50147248466631%2C127.04371550780834%2C37.503472484666304&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:59.778Z",
+      "byte_length": 1865,
+      "sha256": "d2c28b7e3dd58000d107123ae8bb47a5950ee35b032a8f57ecfed5c80f8218e7"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.04199179766928%2C37.50155494060028%2C127.04399179766929%2C37.503554940600274&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:46:59.851Z",
+      "byte_length": 1207,
+      "sha256": "5d3c2d4e8f4b78e18e6fc2ffd8eaeae41945cfb243c0e72c8a4eac522db8e925"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.04199179766928%2C37.50155494060028%2C127.04399179766929%2C37.503554940600274&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:46:59.937Z",
+      "byte_length": 1054,
+      "sha256": "9cbbc449058466791f395c6c8eaa526d7f76694c23f9a5435adb6470565bcac4"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.04275939812939%2C37.501793202430406%2C127.0447593981294%2C37.5037932024304&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:47:00.013Z",
+      "byte_length": 1272,
+      "sha256": "5cb88eb66a9aabccfe8307c1d53a3b10e888f6196d1446b77d44ea31b79f0f7a"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.04275939812939%2C37.501793202430406%2C127.0447593981294%2C37.5037932024304&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:47:00.115Z",
+      "byte_length": 1490,
+      "sha256": "ca00c4d7983c36f05b9483430bf591e3f12064474bac51601108c31ba59148a4"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.04406849821507%2C37.50220150177254%2C127.04606849821508%2C37.504201501772535&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:47:00.173Z",
+      "byte_length": 537,
+      "sha256": "a09a102996bb3f960cc0bd698e97fd093d1aedc558c5e775e0e338adcc001f47"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.04406849821507%2C37.50220150177254%2C127.04606849821508%2C37.504201501772535&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:47:00.605Z",
+      "byte_length": 1051,
+      "sha256": "48a288f18b47427a02932404c645871c7f3ba7e48d511ccf28aed78de2492923"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.0455004976545%2C37.502630502587344%2C127.04750049765451%2C37.50463050258734&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:47:00.684Z",
+      "byte_length": 723,
+      "sha256": "dedb51c7747b44721a7b46e71767174191b4493c930d6e606ad1eb7cd33075ff"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.0455004976545%2C37.502630502587344%2C127.04750049765451%2C37.50463050258734&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:47:00.780Z",
+      "byte_length": 645,
+      "sha256": "8a4f6377ad0e60798458982172d33578a96ef2057cc6ee09522224a3633ca8bc"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AT_COB_MOCT_LINK_M&query_layers=ntic%3AT_COB_MOCT_LINK_M&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.04717449671986%2C37.50312900334231%2C127.04917449671987%2C37.505129003342304&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:T_COB_MOCT_LINK_M",
+      "retrieved_at": "2026-10-25T15:47:00.852Z",
+      "byte_length": 726,
+      "sha256": "bff5b8e7cb3e79fcdfd0d156fcac42d7be193bfe5393a24538c48837115c7328"
+    },
+    {
+      "url": "https://its.go.kr:9443/geoserver/ntic/wms?service=WMS&version=1.1.1&request=GetFeatureInfo&layers=ntic%3AN_LEVEL_15&query_layers=ntic%3AN_LEVEL_15&styles=&format=image%2Fpng&info_format=application%2Fjson&srs=EPSG%3A4326&bbox=127.04717449671986%2C37.50312900334231%2C127.04917449671987%2C37.505129003342304&width=200&height=200&x=100&y=100&feature_count=20&buffer=12",
+      "layer": "ntic:N_LEVEL_15",
+      "retrieved_at": "2026-10-25T15:47:00.937Z",
+      "byte_length": 649,
+      "sha256": "3b0d78e971d43f92b2b5be62f057c5e80bfd790738dcaa6be4657b4ea30d32f5"
+    }
+  ],
+  "requested_points": 34,
+  "failed_requests": 15,
+  "links_verified": 18,
+  "mapped_edges": 31,
+  "excluded_edges": 48,
+  "exclusions": [
+    {
+      "link_id": "1220021700",
+      "reason": "PROVIDER_GEOMETRY_MISMATCH"
+    }
+  ],
+  "note_en": "Raw government geometry remains local under separate reuse terms; provenance hashes are preserved.",
+  "note_ko": "정부 지형 원문은 별도 이용 조건에 따라 로컬에 남기고 출처 해시를 보존합니다."
+}

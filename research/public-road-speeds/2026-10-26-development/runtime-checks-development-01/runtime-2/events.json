@@ -1,0 +1,19 @@
+[
+  {
+    "code": "PUBLIC_ENGINE_READY",
+    "at_utc": "2026-10-25T16:07:35.000Z",
+    "detail": {
+      "generation_id": "11010f0e6ab84ab50054b1de21e12074f127e5897f12696b5d89008c3075aac0",
+      "snapshot_id": null
+    }
+  },
+  {
+    "code": "PUBLIC_CLIENT_READY",
+    "at_utc": "2026-10-25T16:07:35.000Z",
+    "detail": {
+      "origin": "http://127.0.0.1:55577",
+      "stream": "9d7916aecd68516461bd5e279f2b926fac0a140025f99b775de1fb1a7cc93689",
+      "source_class": "PUBLIC_AGENCY"
+    }
+  }
+]

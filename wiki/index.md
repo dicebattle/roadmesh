@@ -139,3 +139,11 @@ Latest: [P11 actual client proof](../research/pilot/2026-10-25-p11/report.md), [
 
 
 Corrected NAV-02 acceptance / 수정 NAV-02 수용: clean fe49b55/runtime70af32dc passed fresh438/438, focused10/full320 and new43.5s actual recording on graph a859e9ad. Strengthened future-sample expiry is included; first local evidence remains historical. Independent progress191 states/168 positions and IAB EN/KO390px passed. [Final dated report](../research/pilot/2026-10-25-nav02-clock/report.md). The user-authorized protected merge follows exact-head CI; no deployment. / 미래 표본 때 옛 안내 만료를 보강한 깨끗한 소스의 새438개·집중10개/전체320개·새43.5초·독립191상태/168위치·내장 한영390픽셀을 확인했습니다. 첫 결과는 과거 근거로 보존하고 정확한 원격 검사 뒤 보호 병합하며 배포하지 않습니다.
+
+## Active public speed bootstrap / 공공 속도 확보 진행
+
+[Implemented development modules and commands / 개발 모듈·명령](modules/public-road-speeds.md).
+
+[Full objective and implementation requirements](../docs/38-public-road-speeds.md) · [official source research](sources/public-road-speeds.md) · [actual development proof](../research/public-road-speeds/2026-10-25-development/README.md). Actual API→reviewed directed geometry→signature→native115m route passed; source11, geometry/publication/authority22 and legacy compiler29 focused cases passed. Only3/79 pilot edges currently qualify. Browser/automatic lifecycle, broader useful coverage, full fresh integration/media and branch delivery remain. / 실제 수집·검토 지형·서명·엔진115m 개발 반영과 집중 검사를 통과했지만 파일럿79구간 중3개만 적용합니다. 화면·자동 갱신/만료·적용률 확대·새 전체/영상·브랜치 전달은 남습니다.
+
+- [Public runtime development originals, actual broader-source routes and controlled faults](../research/public-road-speeds/2026-10-26-development/README.md) / 공공 실행 개발 원문·넓어진 실제 자료 경로·통제 장애 근거.
