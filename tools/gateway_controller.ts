@@ -9,6 +9,8 @@ import { assertSameTrafficSelection } from "./traffic_controller.js";
 import { durableNodeJSON } from "./node_engine.js";
 import { GatewayCompilerAdapter } from "./gateway_compiler.js";
 import { sphericalDistance, polylineLength } from "./geodesy.js";
+import { nativeRouteRequest, routeRejectionReason, type RouteRejectionReason } from "./route_contract.js";
+import type { NodeRouteRequest } from "./node_types.js";
 import type { AcceptedInspection } from "./publication_types.js";
 import type { TrafficGeneration } from "./traffic_types.js";
 import type {
@@ -43,12 +45,17 @@ class PeerError extends Error {
   }
 }
 export function gatewayFailure(reason: GatewayReason): GatewayFailure {
+  const domain = {
+    OUT_OF_COVERAGE: ["A location is outside the verified map coverage.", "위치가 검증한 지도 범위 밖에 있습니다."],
+    NO_SUITABLE_ROAD: ["No suitable road was found within the selected search range.", "선택한 탐색 범위에서 적합한 도로를 찾지 못했습니다."],
+    NO_PATH: ["No car route connects these locations under the selected policy.", "선택한 정책으로 두 위치를 잇는 자동차 경로가 없습니다."],
+  }[reason as "OUT_OF_COVERAGE" | "NO_SUITABLE_ROAD" | "NO_PATH"];
   return {
     code: "ERROR",
     reason,
     message_en:
-      "The gateway cannot return a current verified route for this request.",
-    message_ko: "이 요청에 현재 검증된 경로를 반환할 수 없습니다.",
+      domain?.[0] ?? "The gateway cannot return a current verified route for this request.",
+    message_ko: domain?.[1] ?? "이 요청에 현재 검증된 경로를 반환할 수 없습니다.",
   };
 }
 export function gatewayHttpStatus(reason: GatewayReason): number {
@@ -56,6 +63,9 @@ export function gatewayHttpStatus(reason: GatewayReason): number {
     {
       AUTH_REQUIRED: 401,
       INVALID_INPUT: 422,
+      OUT_OF_COVERAGE: 422,
+      NO_SUITABLE_ROAD: 422,
+      NO_PATH: 422,
       UNSUPPORTED_POLICY: 422,
       RATE_LIMITED: 429,
       VERSION_MISMATCH: 409,
@@ -120,6 +130,10 @@ export function validateGatewayConfig(c: GatewayConfig): void {
       new Set(c.nodes.map((n) => n.origin)).size !== 2
     )
       throw Error();
+    if (c.excluded_node_ids !== undefined &&
+        (!Array.isArray(c.excluded_node_ids) ||
+         new Set(c.excluded_node_ids).size !== c.excluded_node_ids.length ||
+         c.excluded_node_ids.some(id => !c.nodes.some(n => n.node_id === id)))) throw Error();
   } catch {
     reject("INVALID_INPUT");
   }
@@ -135,7 +149,8 @@ export function validateGatewayRequest(
       "destination",
       "profile",
       "traffic_policy",
-    ]);
+    ], ["snap_policy"]);
+    if (Object.hasOwn(value, "snap_policy") && value.snap_policy !== "nearest_road_100m") throw Error();
     identifier(value.request_id, "request_id");
     if (value.schema_version !== "0.1" || value.profile !== "car")
       throw Error();
@@ -214,15 +229,23 @@ function sameState(a: AcceptedInspection, b: AcceptedInspection): void {
   }
 }
 function expectedNative(r: GatewayRequest) {
-  return {
+  return nativeRouteRequest({
     locations: [
       { lon: r.origin.longitude, lat: r.origin.latitude },
       { lon: r.destination.longitude, lat: r.destination.latitude },
     ],
-    costing: "auto",
-    units: "kilometers",
-    language: "en-US",
-    date_time: { type: 0 },
+    ...(r.snap_policy ? { snap_policy: r.snap_policy } : {}),
+  });
+}
+function internalRequest(r: GatewayRequest, graph_id: string, generation_id: string): NodeRouteRequest {
+  return {
+    request_id: r.request_id, graph_id,
+    locations: [
+      { lon: r.origin.longitude, lat: r.origin.latitude },
+      { lon: r.destination.longitude, lat: r.destination.latitude },
+    ],
+    ...(r.snap_policy ? { snap_policy: r.snap_policy } : {}),
+    expected_generation_id: generation_id,
   };
 }
 function compatible(
@@ -251,6 +274,38 @@ function compatible(
   } catch {
     return false;
   }
+}
+/** Authenticate a bounded private domain result before the final gateway authority read.
+ * 마지막 중계 승인 조회 전에 제한된 비공개 업무 결과의 연결을 검사합니다. */
+export function validateGatewayNodeRejection(
+  raw: unknown, request: GatewayRequest, node: GatewayNode,
+  bundle: GatewayDependencies["bundle"], generation: TrafficGeneration,
+  expectedInstance: unknown,
+): RouteRejectionReason {
+  const v = object(raw);
+  record(v, "node rejection", ["code", "request_id", "request_sha256", "native_request_sha256",
+    "node_id", "instance_id", "reason", "native_code", "provenance"]);
+  if (v.code !== "ROUTE_REJECTED" || v.request_id !== request.request_id ||
+      v.request_sha256 !== sha256(canonical(internalRequest(request, bundle.graph_id, generation.generation_id))) ||
+      v.native_request_sha256 !== sha256(canonical(expectedNative(request))) ||
+      v.node_id !== node.node_id || typeof expectedInstance !== "string" || !expectedInstance ||
+      v.instance_id !== expectedInstance || typeof v.native_code !== "number" || !routeRejectionReason(v.native_code) ||
+      v.reason !== routeRejectionReason(v.native_code) ||
+      !compatible(v.provenance, node, bundle, generation)) throw new PeerError("INVALID_DOMAIN_RESULT");
+  const p = object(v.provenance);
+  record(p, "node provenance", ["graph_id", "high_water", "sequence", "traffic_snapshot_id",
+    "compiler_policy", "generation_id", "traffic_sha256", "traffic_byte_length",
+    "checked_at_event_time", "valid_until", "traffic_mode", "engine", "message_en", "message_ko",
+    "activation_epoch", "native_daemon"]);
+  record(p.engine, "engine", ["image_id", "version"]);
+  record(p.native_daemon, "daemon", ["pid", "start_ticks"]);
+  if (typeof p.activation_epoch !== "number" || !Number.isSafeInteger(p.activation_epoch) || p.activation_epoch < 1 ||
+      typeof p.native_daemon.pid !== "number" || !Number.isSafeInteger(p.native_daemon.pid) || p.native_daemon.pid <= 1 ||
+      typeof p.native_daemon.start_ticks !== "string" || !/^\d+$/.test(p.native_daemon.start_ticks) ||
+      typeof p.checked_at_event_time !== "string" || !Number.isFinite(Date.parse(p.checked_at_event_time)) ||
+      typeof p.traffic_mode !== "string" || !["LIVE", "NO_USABLE_SNAPSHOT", "NO_LIVE_COVERAGE"].includes(p.traffic_mode) ||
+      typeof p.message_en !== "string" || typeof p.message_ko !== "string") throw new PeerError("INVALID_DOMAIN_RESULT");
+  return routeRejectionReason(v.native_code as number)!;
 }
 /** Derive public geometry and live distance only from the original native route/trace.
  * 원래 네이티브 경로·추적에서만 공개 지형과 실시간 적용 거리를 계산합니다. */
@@ -433,12 +488,14 @@ export class GatewayController {
   private closeSignal = new AbortController();
   private requests = new Set<AbortController>();
   private reason = "NOT_READY";
+  private readonly excluded: ReadonlySet<string>;
   constructor(
     readonly config: GatewayConfig,
     private readonly dependencies: GatewayDependencies,
     private readonly hooks: GatewayHooks = {},
   ) {
     validateGatewayConfig(config);
+    this.excluded = new Set(config.excluded_node_ids ?? []);
     mkdirSync(resolve(config.runtime_root));
     mkdirSync(join(config.runtime_root, "requests"));
     durableNodeJSON(join(config.runtime_root, "gateway-ownership.json"), {
@@ -752,6 +809,9 @@ export class GatewayController {
   ): Promise<GatewayReply> {
     try {
       validateGatewayRequest(raw);
+      const [west, south, east, north] = this.dependencies.bundle.coverage_bounds;
+      if ([raw.origin, raw.destination].some(p =>
+        p.longitude < west || p.longitude > east || p.latitude < south || p.latitude > north)) reject("OUT_OF_COVERAGE");
     } catch (e) {
       const reason = gatewayReason(e);
       return {
@@ -830,7 +890,7 @@ export class GatewayController {
         abort.signal,
       );
       const statuses = await Promise.all(
-        this.config.nodes.map(async (node) => {
+        this.config.nodes.filter(node => !this.excluded.has(node.node_id)).map(async (node) => {
           try {
             const result = await this.peer(
               node,
@@ -875,12 +935,7 @@ export class GatewayController {
         const attempt = attempts.length + 1,
           elapsedStart = performance.now() - started,
           routeBudget = budget(4000);
-        const nativeRequest = {
-          request_id: raw.request_id,
-          graph_id: this.dependencies.bundle.graph_id,
-          locations: expectedNative(raw).locations,
-          expected_generation_id: generation.generation_id,
-        };
+        const nativeRequest = internalRequest(raw, this.dependencies.bundle.graph_id, generation.generation_id);
         let response: { status: number; body: unknown } | undefined;
         try {
           response = await this.peer(
@@ -898,8 +953,12 @@ export class GatewayController {
                 : "TRAFFIC_CHANGED",
             );
           }
-          if (response.status !== 200) throw new PeerError("NODE_UNAVAILABLE");
-          const success = validateGatewayNodeResult(
+          if (response.status !== 200 && response.status !== 422) throw new PeerError("NODE_UNAVAILABLE");
+          const domainReason = response.status === 422 ? validateGatewayNodeRejection(
+            response.body, raw, node, this.dependencies.bundle, generation,
+            object(statuses.find(s => s.node_id === node.node_id)?.body).instance_id,
+          ) : null;
+          const success = domainReason ? null : validateGatewayNodeResult(
             response.body,
             raw,
             node,
@@ -939,10 +998,12 @@ export class GatewayController {
           sameState(selected, final);
           budget(12000);
           if (this.closing) reject("NO_HEALTHY_NODE");
-          const reply = {
+          const reply: GatewayReply = domainReason ? {
+            status: 422, body: gatewayFailure(domainReason),
+          } : {
             status: 200,
             body: {
-              ...success,
+              ...success!,
               ...freshness(final),
               calculated_at: new Date().toISOString(),
             },

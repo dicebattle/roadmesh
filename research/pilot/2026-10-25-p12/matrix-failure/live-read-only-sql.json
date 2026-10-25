@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "inspected_at": "2026-10-25T00:13:15.289Z",
+  "transaction": "BEGIN READ ONLY",
+  "queries": {
+    "clock": "SELECT event_time_utc FROM routelens_p05.namespace_clock WHERE namespace=$1",
+    "traversals": "SELECT count(*)::int AS count FROM routelens_p05.traversals WHERE namespace=$1",
+    "publications": "SELECT sequence,traffic_snapshot_id,octet_length(artifact) AS artifact_bytes FROM routelens_p07.publications WHERE namespace=$1 ORDER BY sequence",
+    "consumers": "SELECT consumer_id,high_water,last_snapshot_id,octet_length(artifact) AS artifact_bytes FROM routelens_p07.consumer_states WHERE namespace=$1 ORDER BY consumer_id"
+  },
+  "namespace": "p09-57655f06c9ac4145",
+  "clock": [
+    {
+      "event_time_utc": "2026-10-24T00:04:30.000Z"
+    }
+  ],
+  "traversals": [
+    {
+      "count": 15
+    }
+  ],
+  "publications": [
+    {
+      "sequence": "1",
+      "traffic_snapshot_id": "6328bd8a53e7aa66bc21fb26fc29a8982c6bc8ad221f12e34edd6bed0b835fbe",
+      "artifact_bytes": 10469
+    }
+  ],
+  "consumers": [
+    {
+      "consumer_id": "scenario-gateway",
+      "high_water": "1",
+      "last_snapshot_id": "6328bd8a53e7aa66bc21fb26fc29a8982c6bc8ad221f12e34edd6bed0b835fbe",
+      "artifact_bytes": 10469
+    },
+    {
+      "consumer_id": "scenario-node-a",
+      "high_water": "1",
+      "last_snapshot_id": "6328bd8a53e7aa66bc21fb26fc29a8982c6bc8ad221f12e34edd6bed0b835fbe",
+      "artifact_bytes": 10469
+    },
+    {
+      "consumer_id": "scenario-node-b",
+      "high_water": "1",
+      "last_snapshot_id": "6328bd8a53e7aa66bc21fb26fc29a8982c6bc8ad221f12e34edd6bed0b835fbe",
+      "artifact_bytes": 10469
+    }
+  ],
+  "scope_en": "Actual same-run owned local SQL at accepted sequence1; credentials are excluded.",
+  "scope_ko": "같은 실행의 소유 로컬 SQL에서 수용 순번1을 조회했으며 인증값은 제외했습니다."
+}

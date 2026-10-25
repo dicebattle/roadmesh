@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.1",
+  "run_id": "54c9899f-8859-4a24-b1ab-10c7b70d4811",
+  "simulation_id": "tiny-city-demo",
+  "source": {
+    "commit": "5c9d4c4b07a513cd67c7f0f2bed3bb9c74548d69",
+    "dirty": false
+  },
+  "node": "22.23.4",
+  "host_architecture": "arm64",
+  "host_platform": "darwin",
+  "graph_id": "6c3b6b6f450f592cad2c721811377532af6be197a1ebea277c84af25bd368942",
+  "graph_manifest_sha256": "fd1132e709e4dec4a8fd0b0870156b8b4d7222820d7373b553e2d04f5ee065c2",
+  "spec_sha256": "c0290fb027169989b821fc7ec3fd8e15d645b065b79898789f3517cfeeb30c5a",
+  "generator_policy": "tiny-city-kinematics-v1",
+  "noise_policy": "gps-noise-v1",
+  "distance_model": {
+    "policy": "equatorial-equirectangular-v1",
+    "earth_radius_m": 6371008.8
+  },
+  "boundary_policy": "exit-before-enter",
+  "truth_sha256": "268ab6a27baa117fc0263cc56cc6e2cf2ce90dfe18ba95cad0078ea9f0ea57ff",
+  "observations_sha256": "c60bd70f18da53294f50e6d3c9e4fa809771065b6928468b5957c3012482c9af",
+  "omissions_sha256": "f28d7900591f954d39f94c2ac0fd19d7c5a46b94dcb7951989cecfed5d04f027",
+  "output_sha256": {
+    "truth.json": "07d499b210828ebb7dd50ee046babd881a0155a707ac95f8aeb41495dc2e1853",
+    "observations.json": "61d53b63144c8d0deac8214d5d7125d96859a18202d6c3b1bd57c3ecebd3b83f",
+    "omissions.json": "fa0a4350dbd9d69e2a612ebbafc1326e3de85d08390d663169bc75c754c90d45",
+    "assertions.json": "946f61f0a4bcbeb24c10e15eb94b32987ca034453b0c43aa7caa7750af2b08a7",
+    "summary.md": "7052ac55b1c3b385d3b15ee4aeca762d236351b59404598f48409437eaece4ca"
+  },
+  "status": "PASS",
+  "completed_at_utc": "2026-10-25T00:26:09.069Z",
+  "source_class": "SYNTHETIC",
+  "engine_executed": false
+}

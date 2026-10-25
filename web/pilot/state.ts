@@ -11,6 +11,8 @@ export type ClientPhase =
   | "unverified"
   | "expired"
   | "invalid"
+  | "noRoad"
+  | "noPath"
   | "unavailable"
   | "timeout";
 export function validContext(value: unknown): value is GatewayRouteContext {
@@ -178,7 +180,11 @@ export class RouteClientState {
     this.phase =
       reason === "DEADLINE_EXCEEDED"
         ? "timeout"
-        : reason === "INVALID_INPUT"
+        : reason === "NO_SUITABLE_ROAD"
+          ? "noRoad"
+          : reason === "NO_PATH"
+            ? "noPath"
+        : reason === "INVALID_INPUT" || reason === "OUT_OF_COVERAGE"
           ? "invalid"
           : reason === "TRAFFIC_CHANGED" || reason === "VERSION_MISMATCH"
             ? "unverified"

@@ -15,15 +15,15 @@ RouteLens is an open-source project derived from **Metro Lens**. The intended sy
 
 **Today, the local prototype simulates GPS on actual Seoul roads, durably ingests and matches observations, aggregates at least five contributors, and signs and publishes traffic snapshots. A separate consumer verifies them before an immutable speed file changes actual Valhalla routes. Exact expiry restores default routing.** Two independent persistent nodes now activate verified generations, reject stale results and restore baseline routing at expiry. A local gateway independently selects the accepted version and switches to the other approved node after a failure. A local browser client now calculates actual routes, draws their original geometry and clears results when the accepted traffic changes or expires.
 
-The complete implemented pipeline passed334 fresh assertions and285 unit tests. The gateway preserves responsive deadlines with an owned worker thread. The actual client adds English/Korean controls,390px layout, cancellation, expiry and unavailable-service handling. Earlier failed runs remain preserved.
+The complete implemented pipeline passed 358 fresh assertions and 296 unit tests. The gateway preserves responsive deadlines with an owned worker thread. The actual client adds English/Korean controls,390px layout, cancellation, expiry and unavailable-service handling. The P12 stage adds bounded road-search errors, trusted node exclusion and vehicle classes, actual TCP reset/stall, disconnected expiry, and live supervisor cleanup. Earlier failed runs remain preserved.
 
 ## Watch the current simulation
 
 [![Recorded Seoul routes: baseline, congestion detour and exact expiry](docs/media/demo.gif)](docs/media/demo.mp4)
 
-[Watch/download the MP4](docs/media/demo.mp4) · [Captured test report](research/pilot/2026-10-25-p11/report.md) · [Recording provenance](docs/media/latest.json)
+[Watch/download the MP4](docs/media/demo.mp4) · [Captured test report](research/pilot/2026-10-25-p12/report.md) · [Recording provenance](docs/media/latest.json)
 
-This102.8-second recording shows the actual route client sending requests to the gateway and native nodes. A2.119km/147.404s baseline changes to a2.412km/184.731s detour after signed synthetic traffic is published. A short interior segment shows100% accepted coverage. Killing nodeA switches the next request to nodeB; exact420s expiry removes the old route, and recalculation restores baseline. When both nodes stop, the client shows unavailable status without an old route line. The fresh full run retains the Seoul vehicle/GPS/ingestion pipeline and passes all **334 assertions**. Roads are actual OSM; vehicles, speeds and GPS are synthetic. This does not establish real-driving accuracy, live traffic or every Seoul road.
+This 126.45-second recording joins two unchanged-speed excerpts from a retained 281.45-second actual capture. The client shows baseline routing, signed synthetic traffic and a brief 2.412 km detour, a short covered segment, node failover, exact expiry, baseline restoration and unavailable service. Its last section opens the completed **P12 evidence report**; those screenshots are recorded test evidence. The fresh whole run passed **358 assertions**, including the fixed S01–S15 matrix. Roads are actual Seoul OSM; vehicles, speeds and GPS are synthetic. This does not establish real-driving accuracy, live traffic or every Seoul road.
 
 ## What you can run today
 
@@ -39,15 +39,16 @@ This102.8-second recording shows the actual route client sending requests to the
 | **P08 — accepted traffic routing** | Immutable graph-specific speed files, actual detour, automatic expiry, concurrent generation, real process/database faults and stale-result refusal |
 | **P09 — persistent routing nodes** | Two independent nodes, native daemon reuse, request leases, bounded generation draining, durable restart and actual fault recovery |
 | **P10 — route gateway** | Independent accepted-version authority, one matching-node retry, actual primary kill,12s shared deadline,4s node budget and public route coverage |
-| **P11 — actual route client** | MapLibre local roads, real gateway requests, exact rendered geometry, freshness invalidation, cancellation, English/Korean and390px browser checks |
-| **Integrated evidence** | Fresh tiny regression (48), Seoul graph/simulation/matching (35), durable ingestion (34), aggregation (34), publication (55), traffic routing (32), persistent nodes (32), gateway (32) and client (32): **334 assertions**, with source/artifact hashes |
+| **P11 — actual route client** | MapLibre local roads, real gateway requests, exact rendered geometry, freshness invalidation, cancellation, English/Korean and 390px browser checks |
+| **P12 — full fault matrix** | Fifteen scenarios bound to same-run originals; 24 added checks for domain failures, approved-node exclusion, actual TCP faults, trusted vehicle admission, disconnected expiry and live supervisor shutdown |
+| **Integrated evidence** | Fresh tiny regression (48), Seoul graph/simulation/matching (35), durable ingestion (34), aggregation (34), publication (55), traffic routing (32), persistent nodes (32), gateway (32) and client (32) and full scenarios (24): **358 assertions**, with source/artifact hashes |
 | **Replay report** | Offline Seoul playback, baseline/live/expired route comparison and actual recovery evidence; English/Korean controls and source links |
 
 Synthetic observations never count toward the separate **100 route / 100 map-matching real-road evaluation**. The geographic validator currently has no reviewed real-road corpus.
 
 ## Run the whole implemented pipeline
 
-Requirements: **Node.js 22 or 24**, npm, curl, and Docker with Linux containers. Initial preparation downloads the pinned engine/Osmium and a 289.9 MB dated South Korea OSM file, verifies its SHA-256, then caches only the source. Every run builds a fresh Seoul graph with networking disabled (2 CPU / 4 GiB limits). P05–P11 automatically start pinned PostgreSQL containers with dedicated volumes and loopback ports, plus separate API, worker and engine processes, then remove their owned resources. No external database, Cloudflare account, map API key or real GPS trace is needed.
+Requirements: **Node.js 22 or 24**, npm, curl, and Docker with Linux containers. Initial preparation downloads the pinned engine/Osmium and a 289.9 MB dated South Korea OSM file, verifies its SHA-256, then caches only the source. Every run builds a fresh Seoul graph with networking disabled (2 CPU / 4 GiB limits). P05–P12 automatically start pinned PostgreSQL containers with dedicated volumes and loopback ports, plus separate API, worker and engine processes, then remove their owned resources. No external database, Cloudflare account, map API key or real GPS trace is needed.
 
 ```sh
 git clone https://github.com/dicebattle/routelens.git
@@ -59,7 +60,7 @@ npm run simulation:check -- --output data/my-first-run
 npm run report:serve -- data/my-first-run
 ```
 
-To use the actual client after a successful full run, start a fresh interactive fixture with `npm run pilot:serve -- --graph data/my-first-run/seoul/graph --output data/my-client` and open its printed URL. It stops after15minutes; synthetic traffic expires naturally. On Linux, install browser system dependencies with `npx playwright install --with-deps chromium`.
+To use the actual client after a successful full run, start a fresh interactive fixture with `npm run pilot:serve -- --graph data/my-first-run/seoul/graph --output data/my-client` and open its printed URL. It stops after 15 minutes; synthetic traffic expires naturally. On Linux, install browser system dependencies with `npx playwright install --with-deps chromium`.
 
 For the archived report, open the loopback URL printed by the server with `/report.html` appended. The server stops after 15 minutes. Use a **new output directory** for every run; existing evidence is never overwritten.
 
@@ -113,13 +114,13 @@ The planned production design has a managed ingestion path and approved independ
 
 Each module follows **design → implementation → direct execution → inspected evidence → bilingual record → push**. The main agent owns design and review; implementation is delegated according to [repository instructions](AGENTS.md). AI assistance is recorded with the actual checks and limits, not used as a quality claim.
 
-- [Latest integrated test report](research/pilot/2026-10-25-p11/report.md)
+- [Latest integrated test report](research/pilot/2026-10-25-p12/report.md)
 - [Current implementation and remaining goal](docs/18-goal-progress.md)
 - [Append-only work log](wiki/log.md)
 - [P01–P14 module contracts](docs/11-local-pilot.md)
 - [Architecture](docs/02-architecture.md) · [Protocol](docs/04-protocol.md) · [Privacy and trust](docs/07-privacy-and-trust.md)
 
-**Next: P12 whole-scenario gaps**, followed by local Cloudflare parity and final integration CI. P11 is locally verified; hosted delivery follows. P10 serves authenticated local requests through two approved nodes; public enrollment, signed node responses and explicit base_only requests remain unsupported. P09 keeps native engines alive, while P08 remains the lower-level reference. Local synthetic success does not establish production latency or availability. Previously downloaded artifacts cannot be recalled from offline consumers; expiry, a newer received version or configured key revocation limits their use. Production authentication, continuous GPS ingestion and forensic deletion from WAL/backups remain unimplemented. The evidence viewer remains separate from the actual local route client. Turn-by-turn guidance and real mobile driving remain unimplemented.
+**Next: P13 local Cloudflare parity**, followed by P14b final integration CI. P12 passed local358/296 and independent original-byte audits; hosted inspection and protected delivery remain pending. P11 is verified locally and on hosted CI and is protected-merged. P10 serves authenticated local requests through two approved nodes; public enrollment, signed node responses and explicit base_only requests remain unsupported. P09 keeps native engines alive, while P08 remains the lower-level reference. Local synthetic success does not establish production latency or availability. Previously downloaded artifacts cannot be recalled from offline consumers; expiry, a newer received version or configured key revocation limits their use. Production authentication, continuous GPS ingestion and forensic deletion from WAL/backups remain unimplemented. The evidence viewer remains separate from the actual local route client. Turn-by-turn guidance and real mobile driving remain unimplemented.
 
 ## Contribute
 

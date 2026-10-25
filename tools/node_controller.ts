@@ -20,6 +20,7 @@ import {
   trafficProvenance,
 } from "./traffic_controller.js";
 import { validateTrafficRequest } from "./traffic_runtime.js";
+import { NativeRouteRejection, nativeRouteRequest } from "./route_contract.js";
 import {
   COMPILER_POLICY,
   type TrafficGeneration,
@@ -99,6 +100,7 @@ export function validateNodeRequest(
         "graph_id",
         "locations",
         "expected_generation_id",
+        "snap_policy",
       ];
     if (
       Object.keys(r).some((k) => !allowed.includes(k)) ||
@@ -113,7 +115,9 @@ export function validateNodeRequest(
     )
       throw Error();
     validateTrafficRequest(
-      { graph_id: r.graph_id, locations: r.locations } as TrafficRouteRequest,
+      { graph_id: r.graph_id, locations: r.locations,
+        ...(Object.hasOwn(r, "snap_policy") ? { snap_policy: r.snap_policy } : {}),
+      } as TrafficRouteRequest,
       graphId,
     );
   } catch {
@@ -632,14 +636,24 @@ export class RoutingNodeController {
         slot.engine!.inspect(abort.signal),
         abort.signal,
       );
+      const trafficRequest = {
+        graph_id: request.graph_id,
+        locations: request.locations,
+        ...(request.snap_policy ? { snap_policy: request.snap_policy } : {}),
+      };
+      let rejection: NativeRouteRejection | undefined;
       const engine_result = await abortable(
         slot.engine!.route(
-          { graph_id: request.graph_id, locations: request.locations },
+          trafficRequest,
           abort.signal,
           deadline,
         ),
         abort.signal,
-      );
+      ).catch(error => {
+        if (!(error instanceof NativeRouteRejection)) throw error;
+        rejection = error;
+        return undefined;
+      });
       await abortable(
         this.hooks.phase?.(
           "AFTER_NODE_ENGINE_RESULT",
@@ -659,6 +673,20 @@ export class RoutingNodeController {
       assertSameTrafficSelection(selected, final);
       assertSameTrafficSelection(slot.selection, final);
       if (abort.signal.aborted) trafficReject("REQUEST_DEADLINE");
+      if (rejection) return {
+        status: 422,
+        body: {
+          code: "ROUTE_REJECTED",
+          request_id: request.request_id,
+          request_sha256: sha256(canonical(request)),
+          native_request_sha256: sha256(canonical(nativeRouteRequest(trafficRequest))),
+          node_id: this.config.node_id,
+          instance_id: this.instance_id,
+          reason: rejection.reason,
+          native_code: rejection.native_code,
+          provenance: this.publicProvenance(slot, final),
+        },
+      };
       return {
         status: 200,
         body: {
@@ -666,7 +694,7 @@ export class RoutingNodeController {
           request_id: request.request_id,
           node_id: this.config.node_id,
           instance_id: this.instance_id,
-          engine_result,
+          engine_result: engine_result!,
           provenance: this.publicProvenance(slot, final),
         },
       };

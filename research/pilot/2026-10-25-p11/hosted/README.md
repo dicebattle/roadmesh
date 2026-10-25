@@ -1,0 +1,17 @@
+# P11 hosted verification / P11 원격 검증
+
+Both [push40141450307](https://github.com/dicebattle/routelens/actions/runs/40141450307) and [PR40141478545](https://github.com/dicebattle/routelens/actions/runs/40141478545) passed the fresh 334-case simulation and 285 tests on each Node22/24 at head `eda6f680032f7ae90d2d76f0fc0a64934cba1d1f`. Main inspected the **push** originals. Runtime fingerprint `bcc635c55326ef1306aa04805355c14ea62b3fd115bb4385bcd002942e8c3430` matches the clean local proof and actual client recording. [Run metadata](run.json), [PR checks](pr-checks.json).
+
+위 커밋에서 푸시·PR 모두 새 전체334개와 Node22/24 각각285개를 통과했습니다. 메인은 **푸시 원문**을 검사했고 실행 지문은 깨끗한 로컬 근거·실제 화면 녹화와 같습니다.
+
+The independent whole audit checked 12,054 present inventoried hashes and all fixed cases. Client evidence includes 2,367 hashes, four standard signatures, 27 native route/trace pairs and 12 browser/API/rendered-map bindings. Gateway evidence includes 2,685 hashes, 38 native pairs, 18 public successes and 73 compiler jobs. Previous module signatures, durable state and recorded cleanup passed. [Whole](whole-verification.json), [client](client-verification.json), [gateway](gateway-verification.json), [nodes](node-verification.json), [traffic](traffic-verification.json), [aggregation](aggregation-verification.json), [signatures](publication-signature-verification.json), [state](publication-state-verification.json).
+
+독립 전체 감사에서 목록 해시12,054개와 고정 판정 전체를 확인했습니다. 클라이언트는 해시2,367개·표준 서명4개·엔진27쌍·브라우저/API/표시지도12건, 중계는 해시2,685개·엔진38쌍·공개 성공18건·작업73개를 확인했습니다. 이전 모듈 서명·영속 상태·기록된 정리도 통과했습니다.
+
+[Archive inventory](archive-verification.json) preserves 12,744 original files in four ordered parts; three supplemental audit files are separate. Exactly 20 declared map files are omitted from the whole audit, including one graph archive in the client stage. Present original bytes are always hashed. Remote cleanup is assessed from recorded diagnostics only; local absence is not remote absence. The independent scripts use Node built-ins and ran locally on Node25; product execution was Node22 and unit checks22/24. [Whole inspector](inspectors/inspect-p10-whole.mjs), [client inspector](inspectors/inspect-client.mjs), [gateway inspector](inspectors/inspect-p10-evidence.mjs), [node inspector](inspectors/inspect-p09.mjs). Historical inspector filenames do not change the explicit P11 source and case requirements in their content.
+
+원문12,744개를 순서 있는4조각으로 보존하고 추가 감사3개를 분리했습니다. 클라이언트 그래프 묶음1개를 포함해 전체에서 정확한 지도20개만 제외했으며 존재하는 원문은 모두 해시 검사합니다. 원격 정리는 기록만 검사하고 로컬의 부재를 원격 부재로 해석하지 않습니다. 기본 라이브러리 감사는 로컬 Node25, 제품은 Node22, 단위 검사는22/24에서 실행했습니다. 이전 검사기 파일명은 내용의 명시적인 P11 소스·사례 요구를 바꾸지 않습니다.
+
+[Public README and MP4](public-media-verification.json) were verified after push: 334 assertions, actual-client section, 102.8s recording, loaded800×450 GIF and matching MP4 bytes. [PR12](https://github.com/dicebattle/routelens/pull/12) then merged the exact checked head as `b7e383c56363f223736ca27fd6e7944381ce9022`, with required checks, strict freshness and administrator protection retained. [Merge](../../../repository/p11-protected-merge-2026-10-25.json), [protection](../../../repository/main-protection-p11-2026-10-25.json). This evidence is recorded in the subsequent P12 planning commit; no extra runtime claim is attached to that documentation commit. P12–P14 remain unfinished.
+
+푸시 후 공개 README의334개·실제 화면 항목·102.8초 녹화·800×450 GIF와 MP4 바이트를 확인했습니다. 이후 검사한 커밋 그대로 PR12를 보호 병합했고 필수 검사·최신 기준·관리자 보호를 유지했습니다. 이 근거는 후속 P12 설계 커밋에 기록하며 문서 커밋에 새로운 실행 결과를 주장하지 않습니다. P12~P14는 미완료입니다.

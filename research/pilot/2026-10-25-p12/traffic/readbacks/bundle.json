@@ -1,0 +1,517 @@
+{
+  "directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/traffic/bundle",
+  "graph_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/seoul/graph",
+  "graph_id": "2e7db7d29f48f8896d57a49989d42a37454068c54e15ccf9e4fa0a56d3038ed3",
+  "graph_manifest_sha256": "997d98d8de0cf887a12710b313563ff07dcec839b9f00abf1ba9852193253e57",
+  "coverage_bounds": [
+    126.7,
+    37.4,
+    127.25,
+    37.75
+  ],
+  "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+  "skeleton_path": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/traffic/bundle/traffic.tar",
+  "skeleton_sha256": "3079933c26e448b3ce61dfe07c5890136f3a4f2157790b47e6400eb3db92fa99",
+  "skeleton_byte_length": 8663040,
+  "graph_extract_path": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/traffic/bundle/graph.tar",
+  "graph_extract_sha256": "e8271b4630166603d5648a2794402f7df2c315685d2a70986dfe2ad6c58fb77f",
+  "catalog": [
+    {
+      "edge_id": "1236917395025",
+      "forward": true,
+      "distance_m": 64.5309380886824
+    },
+    {
+      "edge_id": "1236984503889",
+      "forward": true,
+      "distance_m": 32.5201708582339
+    },
+    {
+      "edge_id": "1237152276049",
+      "forward": true,
+      "distance_m": 90.77725996476627
+    },
+    {
+      "edge_id": "1237185830481",
+      "forward": true,
+      "distance_m": 8.54249284010019
+    },
+    {
+      "edge_id": "1237454265937",
+      "forward": true,
+      "distance_m": 121.08494741376802
+    },
+    {
+      "edge_id": "1241849551248",
+      "forward": true,
+      "distance_m": 144.6296224922921
+    },
+    {
+      "edge_id": "1242117986704",
+      "forward": true,
+      "distance_m": 82.17887752971397
+    },
+    {
+      "edge_id": "1242185095568",
+      "forward": true,
+      "distance_m": 28.2913539569506
+    },
+    {
+      "edge_id": "1242252204432",
+      "forward": true,
+      "distance_m": 78.14850549075946
+    },
+    {
+      "edge_id": "1242319313296",
+      "forward": true,
+      "distance_m": 66.3606311047321
+    },
+    {
+      "edge_id": "1296274839952",
+      "forward": true,
+      "distance_m": 28.25181720346565
+    },
+    {
+      "edge_id": "1296744602000",
+      "forward": true,
+      "distance_m": 78.5683668839378
+    },
+    {
+      "edge_id": "1296878819728",
+      "forward": true,
+      "distance_m": 61.01431330801867
+    },
+    {
+      "edge_id": "1296945928592",
+      "forward": true,
+      "distance_m": 21.11587573721582
+    },
+    {
+      "edge_id": "1297013037456",
+      "forward": true,
+      "distance_m": 16.612540305433818
+    },
+    {
+      "edge_id": "1297281472912",
+      "forward": true,
+      "distance_m": 65.8525091322822
+    },
+    {
+      "edge_id": "1297415690640",
+      "forward": true,
+      "distance_m": 26.49086537642638
+    },
+    {
+      "edge_id": "1297617017232",
+      "forward": true,
+      "distance_m": 22.920070813648966
+    },
+    {
+      "edge_id": "1297751234960",
+      "forward": true,
+      "distance_m": 47.31739401566697
+    },
+    {
+      "edge_id": "1297851898256",
+      "forward": true,
+      "distance_m": 12.50555834875305
+    },
+    {
+      "edge_id": "1337345464720",
+      "forward": true,
+      "distance_m": 15.707445877916847
+    },
+    {
+      "edge_id": "1337479682448",
+      "forward": true,
+      "distance_m": 37.812515873869565
+    },
+    {
+      "edge_id": "1337580345744",
+      "forward": true,
+      "distance_m": 22.5503862077061
+    },
+    {
+      "edge_id": "1338083662224",
+      "forward": true,
+      "distance_m": 23.862530396509133
+    },
+    {
+      "edge_id": "1338251434384",
+      "forward": true,
+      "distance_m": 18.862540652510287
+    },
+    {
+      "edge_id": "1338553424272",
+      "forward": true,
+      "distance_m": 42.77114428020431
+    },
+    {
+      "edge_id": "1338687642000",
+      "forward": true,
+      "distance_m": 41.16520610199686
+    },
+    {
+      "edge_id": "1338754750864",
+      "forward": true,
+      "distance_m": 75.19511653017554
+    },
+    {
+      "edge_id": "1338922523024",
+      "forward": true,
+      "distance_m": 68.59288233403927
+    },
+    {
+      "edge_id": "1344828103056",
+      "forward": true,
+      "distance_m": 15.703147709790334
+    },
+    {
+      "edge_id": "1344962320784",
+      "forward": true,
+      "distance_m": 7.958941141931424
+    },
+    {
+      "edge_id": "1345096538512",
+      "forward": true,
+      "distance_m": 20.467113348990715
+    },
+    {
+      "edge_id": "1345499191696",
+      "forward": true,
+      "distance_m": 19.97039206324704
+    },
+    {
+      "edge_id": "1345566300560",
+      "forward": true,
+      "distance_m": 7.219577219854612
+    },
+    {
+      "edge_id": "1345767627152",
+      "forward": true,
+      "distance_m": 103.09986233442723
+    },
+    {
+      "edge_id": "1345901844880",
+      "forward": true,
+      "distance_m": 68.32445408154031
+    },
+    {
+      "edge_id": "1345968953744",
+      "forward": true,
+      "distance_m": 61.39492157849825
+    },
+    {
+      "edge_id": "1346170280336",
+      "forward": true,
+      "distance_m": 64.82242093107146
+    },
+    {
+      "edge_id": "1346640042384",
+      "forward": true,
+      "distance_m": 124.96993811076783
+    },
+    {
+      "edge_id": "1346774260112",
+      "forward": true,
+      "distance_m": 123.20237100165798
+    },
+    {
+      "edge_id": "1346975586704",
+      "forward": true,
+      "distance_m": 146.89399836153368
+    },
+    {
+      "edge_id": "1347042695568",
+      "forward": true,
+      "distance_m": 168.58955159354088
+    },
+    {
+      "edge_id": "1620176117329",
+      "forward": true,
+      "distance_m": 6.58024373044553
+    },
+    {
+      "edge_id": "1620276780625",
+      "forward": true,
+      "distance_m": 8.533732346058525
+    },
+    {
+      "edge_id": "1620310335057",
+      "forward": true,
+      "distance_m": 17.236725432059387
+    },
+    {
+      "edge_id": "1620377443921",
+      "forward": true,
+      "distance_m": 66.40685022754671
+    },
+    {
+      "edge_id": "478620440976",
+      "forward": true,
+      "distance_m": 1095.3053228976112
+    },
+    {
+      "edge_id": "660653234576",
+      "forward": true,
+      "distance_m": 108.19832642257052
+    },
+    {
+      "edge_id": "660821006736",
+      "forward": true,
+      "distance_m": 6.242497687545211
+    },
+    {
+      "edge_id": "661122996624",
+      "forward": true,
+      "distance_m": 10.243605193435629
+    },
+    {
+      "edge_id": "661190105488",
+      "forward": true,
+      "distance_m": 9.675577663767044
+    },
+    {
+      "edge_id": "661257214352",
+      "forward": true,
+      "distance_m": 107.68892544421344
+    },
+    {
+      "edge_id": "661324323216",
+      "forward": true,
+      "distance_m": 155.64018708004014
+    },
+    {
+      "edge_id": "661458540944",
+      "forward": true,
+      "distance_m": 15.131773072494253
+    },
+    {
+      "edge_id": "661525649808",
+      "forward": true,
+      "distance_m": 39.268579731881864
+    },
+    {
+      "edge_id": "661592758672",
+      "forward": true,
+      "distance_m": 51.18009622480316
+    },
+    {
+      "edge_id": "661794085264",
+      "forward": true,
+      "distance_m": 28.4759049428545
+    },
+    {
+      "edge_id": "661961857424",
+      "forward": true,
+      "distance_m": 10.132558605460241
+    },
+    {
+      "edge_id": "662498728336",
+      "forward": true,
+      "distance_m": 10.054701487102056
+    },
+    {
+      "edge_id": "671826860432",
+      "forward": true,
+      "distance_m": 217.08233516211973
+    },
+    {
+      "edge_id": "671994632592",
+      "forward": false,
+      "distance_m": 11.38701656029258
+    },
+    {
+      "edge_id": "672195959184",
+      "forward": true,
+      "distance_m": 27.46645756586499
+    },
+    {
+      "edge_id": "672330176912",
+      "forward": true,
+      "distance_m": 85.06686953559661
+    },
+    {
+      "edge_id": "672397285776",
+      "forward": true,
+      "distance_m": 13.566945014786409
+    },
+    {
+      "edge_id": "672598612368",
+      "forward": true,
+      "distance_m": 96.74457768414345
+    },
+    {
+      "edge_id": "672766384528",
+      "forward": true,
+      "distance_m": 80.95176722706695
+    },
+    {
+      "edge_id": "673638799760",
+      "forward": true,
+      "distance_m": 10.128343333278787
+    },
+    {
+      "edge_id": "674242779536",
+      "forward": true,
+      "distance_m": 14.683665666087315
+    },
+    {
+      "edge_id": "674444106128",
+      "forward": true,
+      "distance_m": 15.618052211342045
+    },
+    {
+      "edge_id": "674813204880",
+      "forward": true,
+      "distance_m": 25.68690764653092
+    },
+    {
+      "edge_id": "674947422608",
+      "forward": true,
+      "distance_m": 22.90889924109042
+    },
+    {
+      "edge_id": "764940409232",
+      "forward": true,
+      "distance_m": 50.60368680670964
+    },
+    {
+      "edge_id": "765007518096",
+      "forward": true,
+      "distance_m": 26.014497199649668
+    },
+    {
+      "edge_id": "765510834576",
+      "forward": true,
+      "distance_m": 32.174628953955754
+    },
+    {
+      "edge_id": "766282586512",
+      "forward": true,
+      "distance_m": 71.65018778704646
+    },
+    {
+      "edge_id": "767020784016",
+      "forward": true,
+      "distance_m": 159.02136234795188
+    },
+    {
+      "edge_id": "768329406864",
+      "forward": true,
+      "distance_m": 123.48469022161171
+    },
+    {
+      "edge_id": "9151104797786",
+      "forward": true,
+      "distance_m": 17.622410311100804
+    },
+    {
+      "edge_id": "9151239015514",
+      "forward": true,
+      "distance_m": 43.452927361404164
+    }
+  ],
+  "tile_paths": [
+    "0/002/866.gph",
+    "1/046/026.gph",
+    "1/046/027.gph",
+    "2/000/734/186.gph",
+    "2/000/734/187.gph",
+    "2/000/734/188.gph",
+    "2/000/734/189.gph",
+    "2/000/735/626.gph",
+    "2/000/735/627.gph",
+    "2/000/735/628.gph",
+    "2/000/735/629.gph",
+    "2/000/737/066.gph",
+    "2/000/737/067.gph",
+    "2/000/737/068.gph"
+  ],
+  "members": [
+    {
+      "tile_base": 22928,
+      "offset": 1536,
+      "byte_length": 478736,
+      "directed_edge_count": 59838
+    },
+    {
+      "tile_base": 368209,
+      "offset": 481280,
+      "byte_length": 576456,
+      "directed_edge_count": 72053
+    },
+    {
+      "tile_base": 368217,
+      "offset": 1058304,
+      "byte_length": 431048,
+      "directed_edge_count": 53877
+    },
+    {
+      "tile_base": 5873490,
+      "offset": 1489920,
+      "byte_length": 156928,
+      "directed_edge_count": 19612
+    },
+    {
+      "tile_base": 5873498,
+      "offset": 1647616,
+      "byte_length": 751376,
+      "directed_edge_count": 93918
+    },
+    {
+      "tile_base": 5873506,
+      "offset": 2399744,
+      "byte_length": 669368,
+      "directed_edge_count": 83667
+    },
+    {
+      "tile_base": 5873514,
+      "offset": 3069952,
+      "byte_length": 424,
+      "directed_edge_count": 49
+    },
+    {
+      "tile_base": 5885010,
+      "offset": 3070976,
+      "byte_length": 355872,
+      "directed_edge_count": 44480
+    },
+    {
+      "tile_base": 5885018,
+      "offset": 3427840,
+      "byte_length": 2476808,
+      "directed_edge_count": 309597
+    },
+    {
+      "tile_base": 5885026,
+      "offset": 5905408,
+      "byte_length": 2743776,
+      "directed_edge_count": 342968
+    },
+    {
+      "tile_base": 5885034,
+      "offset": 8649728,
+      "byte_length": 1096,
+      "directed_edge_count": 133
+    },
+    {
+      "tile_base": 5896530,
+      "offset": 8651776,
+      "byte_length": 320,
+      "directed_edge_count": 36
+    },
+    {
+      "tile_base": 5896538,
+      "offset": 8652800,
+      "byte_length": 624,
+      "directed_edge_count": 74
+    },
+    {
+      "tile_base": 5896546,
+      "offset": 8654336,
+      "byte_length": 2560,
+      "directed_edge_count": 316
+    }
+  ]
+}

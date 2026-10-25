@@ -10,6 +10,7 @@ import {
 } from "./test_graph.js";
 import { verifyTrafficGeneration } from "./traffic_compiler.js";
 import { boundedTrafficFile, trafficReject } from "./traffic_bundle.js";
+import { nativeRouteRequest } from "./route_contract.js";
 import type {
   TrafficBundle,
   TrafficGeneration,
@@ -62,7 +63,8 @@ export function validateTrafficRequest(
 ): asserts request is TrafficRouteRequest {
   if (
     !request ||
-    Object.keys(request).sort().join(",") !== "graph_id,locations" ||
+    !["graph_id,locations", "graph_id,locations,snap_policy"].includes(Object.keys(request).sort().join(",")) ||
+    (Object.hasOwn(request, "snap_policy") && request.snap_policy !== "nearest_road_100m") ||
     request.graph_id !== graphId ||
     !Array.isArray(request.locations) ||
     request.locations.length !== 2
@@ -74,10 +76,8 @@ export function validateTrafficRequest(
       Object.keys(point).sort().join(",") !== "lat,lon" ||
       !Number.isFinite(point.lon) ||
       !Number.isFinite(point.lat) ||
-      point.lon < 126.7 ||
-      point.lon > 127.3 ||
-      point.lat < 37.3 ||
-      point.lat > 37.8
+      Math.abs(point.lon) > 180 ||
+      Math.abs(point.lat) > 90
     )
       trafficReject("INVALID_ROUTE_REQUEST");
   }
@@ -153,13 +153,7 @@ export async function runTrafficEngine(
       .exec(["valhalla_service", "--version"])
       .stdout.trim();
     if (version !== "3.9.1") trafficReject("ENGINE_IDENTITY");
-    const native = {
-      locations: request.locations,
-      costing: "auto",
-      units: "kilometers",
-      language: "en-US",
-      date_time: { type: 0 },
-    };
+    const native = nativeRouteRequest(request);
     writeFileSync(
       join(output, "route.request.json"),
       JSON.stringify(native, null, 2) + "\n",

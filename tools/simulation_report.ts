@@ -1,4 +1,5 @@
 import type { ClientReport } from "./client_checks.js";
+import type { ScenarioReport } from "./scenario_checks.js";
 import type { GatewayReport } from "./gateway_checks.js";
 import type { NodeReport } from "./node_checks.js";
 import type { TrafficReport } from "./traffic_checks.js";
@@ -137,6 +138,7 @@ export interface SimulationReportData {
   nodes?: NodeReport;
   gateway?: GatewayReport;
   client?: ClientReport;
+  scenarios?: ScenarioReport;
   traffic?: TrafficReport;
   publication?: {
     publisher_id: string;
@@ -645,6 +647,11 @@ export function renderSimulationReport(data: SimulationReportData): string {
       ></p>
       <div id="aggregate-evidence"></div>
     </section>
+    <section id="scenario-section" class="checks" hidden>
+      <h2 data-en="P12 whole-system faults and S01–S15 evidence" data-ko="P12 전체 장애·S01~S15 근거"></h2>
+      <p data-en="Actual Seoul routing with opt-in bounded road search, trusted vehicle and node rules, controlled TCP reset/stall, exact partition expiry and two real outer-supervisor interruptions. The matrix binds this run's original evidence. Tiny waiting/parallel-road regressions are labeled separately. This is local synthetic evidence, not Internet loss measurement or independent road accuracy." data-ko="실제 서울 경로·선택형 제한 도로 탐색·신뢰 차량/노드 규칙·통제한 TCP 중단/무응답·연결 중단 중 정확한 만료·실제 상위 감독 두 장애를 검사합니다. 행렬은 이번 실행의 원문을 연결하고 작은 대기/평행도로 회귀는 따로 표시합니다. 로컬 합성 근거이며 인터넷 손실률·독립 도로 정확도 검증이 아닙니다."></p>
+      <div id="scenario-evidence"></div><div id="scenario-screenshots"></div><div id="scenario-cases"></div>
+    </section>
     <section id="client-section" class="checks" hidden>
       <h2 data-en="P11 recorded actual browser route client" data-ko="P11 기록된 실제 브라우저 경로 화면"></h2>
       <p data-en="Recorded automated browser requests use a fresh 15-trip source on actual Seoul roads, the independent gateway and two native nodes. These screenshots and states replay completed evidence. Start pilot:serve separately for the interactive client. Simulation time authorizes freshness; browser wall time does not. Explicit transport test proxies are not successful native-route proof. This is not production authentication, real-time traffic or independently verified driving accuracy." data-ko="실제 서울 도로의 새 합성15여행·독립 중계·두 지속노드로 자동 브라우저 요청을 기록했습니다. 화면과 상태는 완료된 근거 재생이며 실제 조작 화면은 pilot:serve로 별도 실행합니다. 신선도는 모의 시각으로 확인하고 브라우저 실제 시각을 쓰지 않습니다. 명시 전송 시험대리서버를 지속엔진 성공 근거로 세지 않습니다. 운영 인증·실시간 교통·독립 검증한 주행 정확도 근거가 아닙니다."></p>
@@ -1054,6 +1061,12 @@ export function renderSimulationReport(data: SimulationReportData): string {
       );
       const v = $("vehicle").options[0];
       if (v) v.textContent = lang === "en" ? "All vehicles" : "전체 차량";
+      $("scenario-section").hidden=!data.scenarios;
+      if(data.scenarios){
+        const s=data.scenarios,root=$("scenario-evidence");root.replaceChildren();node("p",s.assertions_passed+"/"+s.assertions_total+(lang==="en"?" checks · owned cleanup ":"개 검사 · 소유 정리 ")+s.cleanup_verified,root);if(s.matrix_path)evidence(s.matrix_path,root);
+        const cases=$("scenario-cases");cases.replaceChildren();s.cases.forEach(a=>{const row=node("p",a.status+" · "+a["message_"+lang]+" · ",cases);evidence(a.evidence_path,row);});
+        const shots=$("scenario-screenshots");shots.replaceChildren();s.screenshots.forEach(s=>{const figure=node("figure","",shots);if(typeof s.path==="string"&&!s.path.split("/").includes("..")&&/^[a-zA-Z0-9_./-]+\.png$/.test(s.path)){const image=node("img","",figure);image.src=s.path;image.alt=s["label_"+lang];image.loading="lazy";image.style.maxWidth="100%";}node("figcaption",s["label_"+lang],figure);});
+      }
       $("client-section").hidden=!data.client;
       if(data.client){
         const c=data.client,root=$("client-evidence");root.replaceChildren();node("p",c.assertions_passed+"/"+c.assertions_total+(lang==="en"?" checks · browser ":"개 검사 · 브라우저 ")+c.browser_version,root);

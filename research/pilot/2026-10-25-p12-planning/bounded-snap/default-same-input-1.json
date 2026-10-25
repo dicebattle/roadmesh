@@ -1,0 +1,246 @@
+{
+  "candidate": {
+    "component_edges": 13,
+    "longitude": 127.070395,
+    "latitude": 37.507408,
+    "name": "",
+    "other_names": []
+  },
+  "request": {
+    "locations": [
+      {
+        "lon": 127.029,
+        "lat": 37.4984
+      },
+      {
+        "lon": 127.070395,
+        "lat": 37.507408
+      }
+    ],
+    "costing": "auto",
+    "units": "kilometers",
+    "language": "en-US",
+    "date_time": {
+      "type": 0
+    }
+  },
+  "identity": {
+    "container_id": "2857d3d6f43ba873b14cf7cc17478bfa7337eb397052dbec3a6a16c61533a678",
+    "container_name": "routelens-p02-9e7edb67-c795-431c-aa3f-e47c1151fe8d",
+    "owner_id": "9e7edb67-c795-431c-aa3f-e47c1151fe8d",
+    "pid": 16,
+    "start_ticks": "2616602"
+  },
+  "status": 0,
+  "http_status": "200",
+  "stdout": "{\"trip\":{\"locations\":[{\"type\":\"break\",\"lat\":37.4984,\"lon\":127.029,\"date_time\":\"2026-10-24T23:22\",\"side_of_street\":\"left\",\"original_index\":0},{\"type\":\"break\",\"lat\":37.507408,\"lon\":127.070395,\"side_of_street\":\"right\",\"original_index\":1}],\"legs\":[{\"maneuvers\":[{\"type\":3,\"instruction\":\"Drive west on 테헤란로/90.\",\"verbal_succinct_transition_instruction\":\"Drive west. Then Bear left.\",\"verbal_pre_transition_instruction\":\"Drive west on 테헤란로, 90. Then Bear left.\",\"verbal_post_transition_instruction\":\"Continue for 70 meters.\",\"street_names\":[\"테헤란로\",\"90\"],\"bearing_after\":248,\"time\":4.326,\"length\":0.068,\"cost\":5.291,\"begin_shape_index\":0,\"end_shape_index\":2,\"verbal_multi_cue\":true,\"travel_mode\":\"drive\",\"travel_type\":\"car\"},{\"type\":16,\"instruction\":\"Bear left.\",\"verbal_transition_alert_instruction\":\"Bear left.\",\"verbal_succinct_transition_instruction\":\"Bear left. Then Turn left onto 테헤란로.\",\"verbal_pre_transition_instruction\":\"Bear left. Then Turn left onto 테헤란로.\",\"verbal_post_transition_instruction\":\"Continue for 50 meters.\",\"bearing_before\":249,\"bearing_after\":239,\"time\":1.838,\"length\":0.047,\"cost\":2.204,\"begin_shape_index\":2,\"end_shape_index\":13,\"verbal_multi_cue\":true,\"travel_mode\":\"drive\",\"travel_type\":\"car\"},{\"type\":15,\"instruction\":\"Turn left onto 테헤란로/90. Continue on 90.\",\"verbal_transition_alert_instruction\":\"Turn left onto 테헤란로.\",\"verbal_succinct_transition_instruction\":\"Turn left.\",\"verbal_pre_transition_instruction\":\"Turn left onto 테헤란로, 90.\",\"verbal_post_transition_instruction\":\"Continue on 90 for 4 kilometers.\",\"street_names\":[\"90\"],\"begin_street_names\":[\"테헤란로\",\"90\"],\"bearing_before\":180,\"bearing_after\":69,\"time\":269.02,\"length\":4.105,\"cost\":503.622,\"begin_shape_index\":13,\"end_shape_index\":95,\"travel_mode\":\"drive\",\"travel_type\":\"car\"},{\"type\":9,\"instruction\":\"Bear right.\",\"verbal_transition_alert_instruction\":\"Bear right.\",\"verbal_succinct_transition_instruction\":\"Bear right.\",\"verbal_pre_transition_instruction\":\"Bear right.\",\"verbal_post_transition_instruction\":\"Continue for 200 meters.\",\"bearing_before\":75,\"bearing_after\":113,\"time\":17.637,\"length\":0.195,\"cost\":25.182,\"begin_shape_index\":95,\"end_shape_index\":100,\"travel_mode\":\"drive\",\"travel_type\":\"car\"},{\"type\":10,\"instruction\":\"Turn right onto 올림픽로4길.\",\"verbal_transition_alert_instruction\":\"Turn right onto 올림픽로4길.\",\"verbal_succinct_transition_instruction\":\"Turn right.\",\"verbal_pre_transition_instruction\":\"Turn right onto 올림픽로4길.\",\"verbal_post_transition_instruction\":\"Continue for 200 meters.\",\"street_names\":[\"올림픽로4길\"],\"bearing_before\":78,\"bearing_after\":169,\"time\":28.863,\"length\":0.222,\"cost\":43.32,\"begin_shape_index\":100,\"end_shape_index\":104,\"travel_mode\":\"drive\",\"travel_type\":\"car\"},{\"type\":10,\"instruction\":\"Turn right.\",\"verbal_transition_alert_instruction\":\"Turn right.\",\"verbal_succinct_transition_instruction\":\"Turn right.\",\"verbal_pre_transition_instruction\":\"Turn right.\",\"verbal_post_transition_instruction\":\"Continue for 300 meters.\",\"bearing_before\":169,\"bearing_after\":260,\"time\":33.408,\"length\":0.26,\"cost\":46.699,\"begin_shape_index\":104,\"end_shape_index\":105,\"travel_mode\":\"drive\",\"travel_type\":\"car\"},{\"type\":15,\"instruction\":\"Turn left onto 도곡로61길.\",\"verbal_transition_alert_instruction\":\"Turn left onto 도곡로61길.\",\"verbal_succinct_transition_instruction\":\"Turn left.\",\"verbal_pre_transition_instruction\":\"Turn left onto 도곡로61길.\",\"verbal_post_transition_instruction\":\"Continue for 100 meters.\",\"street_names\":[\"도곡로61길\"],\"bearing_before\":260,\"bearing_after\":173,\"time\":17.947,\"length\":0.107,\"cost\":43238.611,\"begin_shape_index\":105,\"end_shape_index\":107,\"travel_mode\":\"drive\",\"travel_type\":\"car\"},{\"type\":5,\"instruction\":\"Your destination is on the right.\",\"verbal_transition_alert_instruction\":\"Your destination will be on the right.\",\"verbal_pre_transition_instruction\":\"Your destination is on the right.\",\"bearing_before\":172,\"time\":0.0,\"length\":0.0,\"cost\":0.0,\"begin_shape_index\":107,\"end_shape_index\":107,\"travel_mode\":\"drive\",\"travel_type\":\"car\"}],\"summary\":{\"has_time_restrictions\":false,\"has_toll\":false,\"has_highway\":false,\"has_ferry\":false,\"min_lat\":37.498008,\"min_lon\":127.02792,\"max_lat\":37.510832,\"max_lon\":127.074196,\"time\":373.043,\"length\":5.005,\"cost\":43864.933},\"shape\":\"}cvofA_nfhqFnH`]tCbNx@NVRPv@pCvNR\\\\`@\\\\l@Hb@WNWHi@LuAuDuQqAgGgDqPgLqj@sNas@gKkg@eBaJiC}L{Kck@_Oqr@wDuQgOou@u[{~AaBmIsC{MkFcXkF{Wa@oBwBoKoAcGkAsFkGeZkNsp@eMel@eLyi@{AwHaHa^_Nqk@cSocAk@yCmAeGo@aDa@iBgA_Fo@iD_AyE}@yEuEwS}Qu|@uXapA}Z}`Bka@inBuEkS{Zu{AkT_dAuO_w@uAaHyg@icCoVolAiDyP}AqGiDoQgCqM}CcOkKof@}Kmg@iGuW_DwMeCwLySkcAwR}nAwKyg@u@yD{@oE}@}EoFsYqDkKyA_FuQou@qEwK_Qgr@yLqi@_AkFgK{w@y@gJyJoeAmMomBKkAs@qH{AuRcBoNuCeUfCqJdBgP_@oKcE{a@cI}x@jHgAp`AqN`KkBlb@oGbWrtDj[oCl^wD\"}],\"summary\":{\"has_time_restrictions\":false,\"has_toll\":false,\"has_highway\":false,\"has_ferry\":false,\"min_lat\":37.498008,\"min_lon\":127.02792,\"max_lat\":37.510832,\"max_lon\":127.074196,\"time\":373.043,\"length\":5.005,\"cost\":43864.933},\"status_message\":\"Found route between points\",\"status\":0,\"units\":\"kilometers\",\"language\":\"en-US\"}}\n200",
+  "stderr": "",
+  "body": {
+    "trip": {
+      "locations": [
+        {
+          "type": "break",
+          "lat": 37.4984,
+          "lon": 127.029,
+          "date_time": "2026-10-24T23:22",
+          "side_of_street": "left",
+          "original_index": 0
+        },
+        {
+          "type": "break",
+          "lat": 37.507408,
+          "lon": 127.070395,
+          "side_of_street": "right",
+          "original_index": 1
+        }
+      ],
+      "legs": [
+        {
+          "maneuvers": [
+            {
+              "type": 3,
+              "instruction": "Drive west on 테헤란로/90.",
+              "verbal_succinct_transition_instruction": "Drive west. Then Bear left.",
+              "verbal_pre_transition_instruction": "Drive west on 테헤란로, 90. Then Bear left.",
+              "verbal_post_transition_instruction": "Continue for 70 meters.",
+              "street_names": [
+                "테헤란로",
+                "90"
+              ],
+              "bearing_after": 248,
+              "time": 4.326,
+              "length": 0.068,
+              "cost": 5.291,
+              "begin_shape_index": 0,
+              "end_shape_index": 2,
+              "verbal_multi_cue": true,
+              "travel_mode": "drive",
+              "travel_type": "car"
+            },
+            {
+              "type": 16,
+              "instruction": "Bear left.",
+              "verbal_transition_alert_instruction": "Bear left.",
+              "verbal_succinct_transition_instruction": "Bear left. Then Turn left onto 테헤란로.",
+              "verbal_pre_transition_instruction": "Bear left. Then Turn left onto 테헤란로.",
+              "verbal_post_transition_instruction": "Continue for 50 meters.",
+              "bearing_before": 249,
+              "bearing_after": 239,
+              "time": 1.838,
+              "length": 0.047,
+              "cost": 2.204,
+              "begin_shape_index": 2,
+              "end_shape_index": 13,
+              "verbal_multi_cue": true,
+              "travel_mode": "drive",
+              "travel_type": "car"
+            },
+            {
+              "type": 15,
+              "instruction": "Turn left onto 테헤란로/90. Continue on 90.",
+              "verbal_transition_alert_instruction": "Turn left onto 테헤란로.",
+              "verbal_succinct_transition_instruction": "Turn left.",
+              "verbal_pre_transition_instruction": "Turn left onto 테헤란로, 90.",
+              "verbal_post_transition_instruction": "Continue on 90 for 4 kilometers.",
+              "street_names": [
+                "90"
+              ],
+              "begin_street_names": [
+                "테헤란로",
+                "90"
+              ],
+              "bearing_before": 180,
+              "bearing_after": 69,
+              "time": 269.02,
+              "length": 4.105,
+              "cost": 503.622,
+              "begin_shape_index": 13,
+              "end_shape_index": 95,
+              "travel_mode": "drive",
+              "travel_type": "car"
+            },
+            {
+              "type": 9,
+              "instruction": "Bear right.",
+              "verbal_transition_alert_instruction": "Bear right.",
+              "verbal_succinct_transition_instruction": "Bear right.",
+              "verbal_pre_transition_instruction": "Bear right.",
+              "verbal_post_transition_instruction": "Continue for 200 meters.",
+              "bearing_before": 75,
+              "bearing_after": 113,
+              "time": 17.637,
+              "length": 0.195,
+              "cost": 25.182,
+              "begin_shape_index": 95,
+              "end_shape_index": 100,
+              "travel_mode": "drive",
+              "travel_type": "car"
+            },
+            {
+              "type": 10,
+              "instruction": "Turn right onto 올림픽로4길.",
+              "verbal_transition_alert_instruction": "Turn right onto 올림픽로4길.",
+              "verbal_succinct_transition_instruction": "Turn right.",
+              "verbal_pre_transition_instruction": "Turn right onto 올림픽로4길.",
+              "verbal_post_transition_instruction": "Continue for 200 meters.",
+              "street_names": [
+                "올림픽로4길"
+              ],
+              "bearing_before": 78,
+              "bearing_after": 169,
+              "time": 28.863,
+              "length": 0.222,
+              "cost": 43.32,
+              "begin_shape_index": 100,
+              "end_shape_index": 104,
+              "travel_mode": "drive",
+              "travel_type": "car"
+            },
+            {
+              "type": 10,
+              "instruction": "Turn right.",
+              "verbal_transition_alert_instruction": "Turn right.",
+              "verbal_succinct_transition_instruction": "Turn right.",
+              "verbal_pre_transition_instruction": "Turn right.",
+              "verbal_post_transition_instruction": "Continue for 300 meters.",
+              "bearing_before": 169,
+              "bearing_after": 260,
+              "time": 33.408,
+              "length": 0.26,
+              "cost": 46.699,
+              "begin_shape_index": 104,
+              "end_shape_index": 105,
+              "travel_mode": "drive",
+              "travel_type": "car"
+            },
+            {
+              "type": 15,
+              "instruction": "Turn left onto 도곡로61길.",
+              "verbal_transition_alert_instruction": "Turn left onto 도곡로61길.",
+              "verbal_succinct_transition_instruction": "Turn left.",
+              "verbal_pre_transition_instruction": "Turn left onto 도곡로61길.",
+              "verbal_post_transition_instruction": "Continue for 100 meters.",
+              "street_names": [
+                "도곡로61길"
+              ],
+              "bearing_before": 260,
+              "bearing_after": 173,
+              "time": 17.947,
+              "length": 0.107,
+              "cost": 43238.611,
+              "begin_shape_index": 105,
+              "end_shape_index": 107,
+              "travel_mode": "drive",
+              "travel_type": "car"
+            },
+            {
+              "type": 5,
+              "instruction": "Your destination is on the right.",
+              "verbal_transition_alert_instruction": "Your destination will be on the right.",
+              "verbal_pre_transition_instruction": "Your destination is on the right.",
+              "bearing_before": 172,
+              "time": 0,
+              "length": 0,
+              "cost": 0,
+              "begin_shape_index": 107,
+              "end_shape_index": 107,
+              "travel_mode": "drive",
+              "travel_type": "car"
+            }
+          ],
+          "summary": {
+            "has_time_restrictions": false,
+            "has_toll": false,
+            "has_highway": false,
+            "has_ferry": false,
+            "min_lat": 37.498008,
+            "min_lon": 127.02792,
+            "max_lat": 37.510832,
+            "max_lon": 127.074196,
+            "time": 373.043,
+            "length": 5.005,
+            "cost": 43864.933
+          },
+          "shape": "}cvofA_nfhqFnH`]tCbNx@NVRPv@pCvNR\\`@\\l@Hb@WNWHi@LuAuDuQqAgGgDqPgLqj@sNas@gKkg@eBaJiC}L{Kck@_Oqr@wDuQgOou@u[{~AaBmIsC{MkFcXkF{Wa@oBwBoKoAcGkAsFkGeZkNsp@eMel@eLyi@{AwHaHa^_Nqk@cSocAk@yCmAeGo@aDa@iBgA_Fo@iD_AyE}@yEuEwS}Qu|@uXapA}Z}`Bka@inBuEkS{Zu{AkT_dAuO_w@uAaHyg@icCoVolAiDyP}AqGiDoQgCqM}CcOkKof@}Kmg@iGuW_DwMeCwLySkcAwR}nAwKyg@u@yD{@oE}@}EoFsYqDkKyA_FuQou@qEwK_Qgr@yLqi@_AkFgK{w@y@gJyJoeAmMomBKkAs@qH{AuRcBoNuCeUfCqJdBgP_@oKcE{a@cI}x@jHgAp`AqN`KkBlb@oGbWrtDj[oCl^wD"
+        }
+      ],
+      "summary": {
+        "has_time_restrictions": false,
+        "has_toll": false,
+        "has_highway": false,
+        "has_ferry": false,
+        "min_lat": 37.498008,
+        "min_lon": 127.02792,
+        "max_lat": 37.510832,
+        "max_lon": 127.074196,
+        "time": 373.043,
+        "length": 5.005,
+        "cost": 43864.933
+      },
+      "status_message": "Found route between points",
+      "status": 0,
+      "units": "kilometers",
+      "language": "en-US"
+    }
+  }
+}

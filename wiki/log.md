@@ -590,3 +590,53 @@ P10 원격 두 건302개·Node각262개와 해시9,932개·엔진38쌍/응답18�
 Next: P11 push, hosted original inspection and protected delivery; then fix P12's actual transport/no-path/revocation/vehicle-class/interrupt contract. The [gap draft](../docs/31-p12-scenario-gap-review.md) is explicitly not implemented. P13/P14b and geographic/production gates remain.
 
 다음은 P11 푸시·원격 원문·보호 반영과 P12 통신/경로 없음/철회/차량 종류/중단 계약 확정입니다. 공백 초안은 구현 완료가 아니며 P13/P14b와 실제 지역·운영 기준은 남습니다.
+
+## 2026-10-25 — P12 source and negative-fixture investigation / P12 소스·부정 입력 조사
+
+Main Sol opened feat/p12-whole-scenarios from the pushed P11 head while P11 CI runs. This branch changes no runtime yet. Pinned Valhalla3.9.1 definitions distinguish disconnected/no-nearby-edge/no-path outcomes. The exploratory actual-Seoul engine probe returned20 routes; its outside input was blocked by the existing RouteLens guard. No no-path proof was obtained. Preserve all candidates/results and owned cleanup; continue contract design instead of inventing failure. [Research](../research/pilot/2026-10-25-p12-planning/README.md).
+
+메인 Sol이 P11 원격 검사 중 푸시된 소스에서 P12 작업 브랜치를 만들었으며 아직 실행 코드는 바꾸지 않았습니다. 고정 Valhalla 오류와 실제 서울 후보를 조사했고20개 경로 성공·기존 검사 거부1개를 확인했습니다. 경로 없음 증거는 얻지 못했으므로 후보·결과·정리를 보존하고 실패를 꾸미지 않은 채 계약 설계를 이어갑니다.
+
+The follow-up all-vertex probe found actual native171 and442 at two fixed Seoul targets under explicit100m/minimum-reachability0 options; unchanged defaults return routes at both. All owned probe engines were checked absent. Main fixed [P12's opt-in request/domain-error, trusted exclusion/class and24-case design](../docs/32-p12-whole-scenarios.md). No runtime implementation is claimed yet. Preserve the original unsuccessful candidate method and all comparisons.
+
+후속 모든 점 연결 조사에서 선택형100m·연결 규모 제외 없는 옵션의 실제171·442를 찾았고 기존 기본값은 같은 좌표에서 모두 경로를 반환했습니다. 조사 엔진 부재를 확인하고 메인이 선택형 요청/업무 오류·신뢰 제외/차량 종류·24개 사례 설계를 고정했습니다. 아직 실행 구현은 아니며 앞선 후보 방식과 비교를 모두 보존합니다.
+
+## 2026-10-25 — P11 hosted/protected delivery and archive correction / P11 원격·보호 반영과 기록 정정
+
+Main inspected push40141450307 after push and PR40141478545 passed334/285. Checked12,054 present hashes, client27 native pairs/12 browser bindings and gateway73 worker jobs, with recorded hosted cleanup and exact map omissions. PR12 merged eda6f68 as b7e383c with all protection retained. Hosted/merge evidence is recorded on the P12 branch. Fresh-worktree review found two historical log links depended on ignored local files; gzip originals now ship. Eight P11 recording/audit logs omitted by the same rule are now archived. The earlier917-link check was local availability, not clean-checkout deliverability. No test results or video bytes changed.
+
+메인은 원격 두 실행334/285개 통과 후 푸시 원문 해시12,054개·클라이언트 엔진/브라우저·중계 작업·기록 정리·지도 제외를 확인했습니다. 검사한 커밋을 PR12로 보호 병합하고 P12 브랜치에 근거를 기록합니다. 새 작업 폴더에서 과거 로그 링크2개가 Git 제외 로컬 파일에 의존함을 찾아 원본 gzip을 추가했고 P11 녹화/감사 로그8개도 묶음으로 보존했습니다. 앞선917링크 검사는 새 체크아웃 전달이 아닌 로컬 존재 확인이었으며 테스트 결과·영상 바이트는 바꾸지 않았습니다.
+
+## 2026-10-25 — P12 Sol implementation and actual development faults / P12 Sol 구현·실제 개발 장애
+
+Main Sol owns design, code and direct verification. Added opt-in100m native search, verified map bounds, bounded strict native domain errors, the same node/gateway final-authority checks, trusted CAR admission and immutable node exclusion. Added a separate actual TCP scenario runtime, fixed24-case gate, exact same-run S01–S15 matrix and two real outer-supervisor/browser fixtures. Existing334 remain required. [Development originals](../research/pilot/2026-10-25-p12/development/README.md) preserve the pre-ready503 error, keep-alive listener warning, asynchronous-map gate error and upstream signal-handler race; none is rewritten as success. Actual runtime19, two supervisor cases and main1,391-hash/standard-signature inspection passed. Focused43+9 passed; the initial full unit run was295/296 because of a new invalid report fixture, with its corrections recorded separately. Clean358/media/hosted/protected delivery follow before completion or push of the final candidate.
+
+메인 Sol이 설계·코드·직접 검증을 맡았습니다. 선택형100m 탐색·검증 지도 범위·제한된 엄격 엔진 업무 오류·동일한 노드/중계 최종 승인 검사·신뢰 자동차 접수·불변 노드 제외와 별도 실제 TCP 실행기·고정24개 조건·같은 실행 S01~S15 행렬·실제 상위 감독/브라우저 두 경우를 추가했습니다. 기존334개를 유지합니다. 개발 원문에 준비 전503 오해·연결 리스너 경고·비동기 지도 대기·도구 신호 경쟁을 보존했고 성공으로 바꾸지 않았습니다. 실제19개·감독 두 경우·메인 해시1,391개/표준서명 검사는 통과했습니다. 집중43+9개는 통과했고 첫 전체 단위295/296은 신규 보고서 시험 입력 오류로 보정 기록을 분리했습니다. 완료 주장과 최종 후보 푸시 전에 깨끗한358개·미디어·원격·보호 반영을 이어갑니다.
+
+### P12 candidate final unit gate / P12 후보 최종 단위 판정
+
+After the report-fixture correction and explicit diagnostic-secret guards, final `npm test` passed296/296 on Node22.23.4. Main verified27 owned container names,14 original engine IDs and13 volume names absent from a successful fresh Docker inventory. Development evidence remains dirty-scoped; the next clean committed run must rebuild Seoul and prove358. No latest-media or full-P12 completion claim is made by this checkpoint.
+
+보고서 시험 입력 보정과 진단 비밀값 거부를 추가한 최종 단위 명령이296/296을 통과했습니다. 메인이 새 Docker 목록으로 소유 컨테이너 이름27개·원 엔진ID14개·볼륨13개의 부재를 확인했습니다. 개발 근거는 미커밋 범위로 유지하고 다음 깨끗한 커밋 실행에서 서울 재생성·358개를 증명해야 합니다. 이번 중간 기록으로 최신 미디어·P12 전체 완료를 주장하지 않습니다.
+
+## 2026-10-25 — P12 independent matrix rejection and wire-form correction / P12 독립 행렬 거부·저장 표현 보정
+
+Clean8821c4d completed internal358, but main independently rejected its saved matrix hash. Three raw pg Date values in P06 late completion caused memory-vs-JSON hash divergence; reviving those exact dates reproduces the old hash. An initial Buffer attribution was unconfirmed and corrected after inspecting the actual JSON. Main kept global canonical/request/JWS behavior intact and normalizes only matrix assertion snapshots to strict persisted JSON. Date/Buffer/typed-array round-trip regression, focused2 and full296 passed. [Immutable rejected originals and diagnosis](../research/pilot/2026-10-25-p12/matrix-failure/README.md) retain16,223 files/32 exact map omissions/four verified parts, the failed independent audit and actual SQL/native partial proofs. Demo preparation was stopped cleanly before recording. A new clean358 plus independent read-back is required; no old original is patched or counted as final success.
+
+깨끗한8821c4d가 내부358개를 마쳤지만 메인이 저장 행렬 해시를 독립 거부했습니다. P06 지연 완료의 pg Date 세 값이 메모리/JSON 차이를 만들었고 정확히 복원해 원 해시를 재현했습니다. 초기 Buffer 설명은 미확인 추정이었으며 실제 JSON 검사 뒤 정정했습니다. 메인은 전체 정규화/요청/서명 의미를 유지하고 행렬 판정 복사본만 저장 JSON으로 확정했습니다. 날짜/바이트 왕복·집중2개·전체296개를 통과했고 거부한 불변 원문16,223개·지도 제외32개·검증 네 조각·감사 실패·SQL/엔진 부분 근거를 보존했습니다. 녹화 전 데모를 정상 중단했으며 원문을 고쳐 성공으로 세지 않고 새358개·독립 재조회를 요구합니다.
+
+## 2026-10-25 — P12 corrected whole proof and actual media / P12 수정 전체 검증·실제 녹화
+
+Main Sol designed, implemented and verified clean5c9d4c4. Final Node22 unit296 and fresh actual-Seoul whole358 passed. Main independently checked15,888 original hashes, fixed15-row matrix and exact persisted354-input prefix; P12 domain3,302 hashes, actual171/442 errors, TCP reset/stall, CAR admission/isolation and two live supervisor faults; previous module/native/signature/browser audits all passed. Actual read-only SQL confirmed15 traversals and one snapshot accepted by both nodes/gateway. The initial corrected-run auditor omitted a tiny matching child inventory; its failure remains and the corrected inventory passed without product changes. [Report](../research/pilot/2026-10-25-p12/report.md).
+
+메인 Sol이 깨끗한5c9d4c4에서 설계·구현·검증했습니다. Node22 단위296개·새 실제 서울 전체358개와 독립 원문15,888개·행렬15행·저장 입력354개, P12 해시3,302개·엔진171/442·실제 TCP·차량 접수/분리·살아 있는 감독 두 장애 및 이전 모듈 감사를 통과했습니다. 실행 중 읽기 전용 SQL의15통과·같은 수용 자료도 확인했습니다. 독립 감사의 작은 매칭 목록 누락 실패는 보존하고 제품 변경 없이 목록을 고쳐 통과했습니다.
+
+IAB English/Korean390px, keyboard and57-point rendered geometry passed. Actual Chrome capture281.45s is preserved; source-speed excerpts30–50 and175–281.45 form126.45s MP4/GIF. Final footage shows completed report evidence separately from the live client. Seven demo successes bind to distinct native originals;22 owned container names, volume,21 pilot PIDs/app port absent and9 capture PID/start identities gone. Full archive16,229 originals/32 exact map omissions; separate demo4,553/one omission; exact inventories/reconstruction verified. Updated README EN/KO and media fingerprints. Earlier matrix rejection remains unchanged. Next: staged privacy/link/media checks, push, hosted originals and protected merge, then P13/P14b.
+
+내장 브라우저 한영390픽셀·키보드·57점 지형을 확인했습니다. 실제281.45초 원본과 원속도126.45초 발췌·MP4/GIF를 보존하고 마지막 보고서 근거를 실시간 화면과 구분했습니다. 시연 성공7건을 엔진 원문에 연결하고 컨테이너 이름22개·볼륨·파일럿 PID21개/포트·녹화9개 원래 식별자 종료를 확인했습니다. 전체 원문16,229개/지도 제외32개·별도 시연4,553개/제외1개의 정확한 목록·복원을 검증했습니다. 한영 README·미디어 지문을 갱신하고 앞선 행렬 거부를 유지합니다. 다음은 게시 파일 검사·푸시·원격 원문·보호 병합과 P13/P14b입니다.
+
+## 2026-10-25 — P12 hosted artifact omission / P12 원격 원문 보존 누락
+
+Push40148864432 and PR40148884198 passed whole358 and Node22/24 each296 at0e37654. Main inspected domain3,313 hashes and client2,530 hashes/27 native pairs, but the expanded whole auditor rejected missing tiny matching XML map sources omitted by the upload projection. This is a delivery gap, not accepted final proof. Add XML to the existing original-artifact upload, preserve the rejected archive/audit diagnostics, and require a new hosted run before protected merge. No runtime, assertion, media or acceptance threshold changes. The gateway audit first lacked its explicit expected-source argument; the corrected invocation passed and both logs remain.
+
+푸시·PR의 전체358개·Node22/24 각296개는 통과했습니다. 메인이 업무 해시3,313개·클라이언트 해시2,530개/엔진27쌍을 확인했지만 확대 전체 감사가 업로드에서 빠진 작은 매칭 XML 지도 원본을 거부했습니다. 반영 공백이며 최종 근거로 수용하지 않습니다. XML 보존을 추가하고 거부한 묶음·감사 진단을 남긴 뒤 새 원격 실행 후에만 보호 병합합니다. 실행 코드·판정·미디어·통과 기준은 바꾸지 않습니다. 중계 감사 첫 호출의 기대 소스 인자 누락도 수정 후 통과했고 두 로그를 보존합니다.

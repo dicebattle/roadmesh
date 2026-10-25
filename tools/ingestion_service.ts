@@ -11,7 +11,7 @@ import {
   type ParentMessage,
   type Principal,
 } from "./ingestion_types.js";
-import { utc, issue, principalValid } from "./ingestion_validation.js";
+import { utc, issue, principalValid, requireCarPrincipal } from "./ingestion_validation.js";
 import { privateConfig, notify, barrier } from "./ingestion_ipc.js";
 import { parseJson, isMain } from "./shared.js";
 const response = (res: ServerResponse, status: number, body: unknown) => {
@@ -139,6 +139,7 @@ export async function startService(
         }
         const principal = authenticate(req);
         if (req.method === "POST" && path === "/v1/observations/batches") {
+          requireCarPrincipal(principal);
           const body = await readBoundedBody(req);
           let value: unknown;
           try {

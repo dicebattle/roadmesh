@@ -1,6 +1,6 @@
 # P08 installed-tool reconnaissance / P08 설치 도구 사전 조사
 
-Main specified the bounded inspection and Sol ran it against the pinned Valhalla base and actual Seoul pilot image `sha256:8b4a0609466e08dd6b384be7104ffa3f1c43270d9a8e931f3d93e2243566b4b6`, Linux/arm64. Containers used network none,2CPU/4GiB, unique names/labels and automatic removal. [Executed commands](commands.txt), [actual pilot tool output](derived-tools-output.log), [empty final owned-container inventory](cleanup-output.log). Original scripts, full installed-header output and image inspection remain locally under `data/p08-abi-probe`.
+Main specified the bounded inspection and Sol ran it against the pinned Valhalla base and actual Seoul pilot image `sha256:8b4a0609466e08dd6b384be7104ffa3f1c43270d9a8e931f3d93e2243566b4b6`, Linux/arm64. Containers used network none,2CPU/4GiB, unique names/labels and automatic removal. [Executed commands](commands.txt), [actual pilot tool output](derived-tools-output.log.gz), [empty final owned-container inventory](cleanup-output.log.gz). Original scripts, full installed-header output and image inspection remain locally under `data/p08-abi-probe`.
 
 메인이 제한된 조사 범위를 정하고 Sol이 고정 Valhalla 기반 이미지와 실제 서울 파일럿 이미지에서 실행했습니다. 네트워크 차단·2CPU/4GiB·고유이름/라벨·자동삭제를 사용하고 명령·실제도구출력·마지막 소유컨테이너부재를 보존합니다. 스크립트·설치헤더전체·이미지검사원문은 로컬 data폴더에 남아 있습니다.
 
@@ -25,3 +25,7 @@ No graph mutation, route execution, traffic encoder or P08 completion is claimed
 Compressed archives in each experiment retain requests/responses, configuration, scripts and traffic byte artifacts. The87MiB generated graph.tar is omitted from the first archive; its hash and underlying graph identity remain recorded. Experiments2/3 reuse the first skeleton. OSM-derived data retains © OpenStreetMap contributors and ODbL1.0. These are direct-engine probes using archived sample identities, not fresh P05/P06/P07 flow, automatic expiry or complete P08 implementation. Next design must produce five qualifying synthetic contributors per target edge in one event window, publish/accept that real aggregate and exercise compiler activation/expiry.
 
 각압축에요청/응답·설정·스크립트·교통바이트를보존하며첫실험의생성graph.tar87MiB는제외하고해시·원그래프식별은유지합니다. 후속둘은첫뼈대를재사용하고OSM기여자·ODbL1.0을유지합니다. 역사표본식별자를쓴직접엔진실험이며새수집/집계/서명수용·자동만료·P08완료가아닙니다. 다음설계는대상구간마다적격합성5명을같은관측창에완료시켜실제집계의게시/수용·변환/활성화/만료를연결해야합니다.
+
+Delivery correction2026-10-25: the two original logs existed locally but were ignored by Git. Their exact bytes are now retained as gzip files and links updated. No experiment result changed.
+
+2026-10-25 반영 정정: 두 원래 로그는 로컬에 있었지만 Git에서 제외돼 있었습니다. 같은 바이트를 gzip으로 보존하고 링크를 갱신했으며 실험 결과는 바꾸지 않았습니다.

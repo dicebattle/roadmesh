@@ -1,0 +1,56 @@
+[
+  {
+    "kid": "key-a",
+    "public_jwk": {
+      "crv": "Ed25519",
+      "x": "wohxZaXHprRQFoJADrT1pSHZPeEYphswYklqs2vZVq0",
+      "kty": "OKP"
+    },
+    "publisher_id": "seoul-synthetic-publisher",
+    "simulation_namespace": "p07-b01fa7eb43b243a5",
+    "region_id": "seoul-pilot-corridors-v1",
+    "allowed_graph_ids": [
+      "2e7db7d29f48f8896d57a49989d42a37454068c54e15ccf9e4fa0a56d3038ed3"
+    ],
+    "source_class": "SYNTHETIC",
+    "valid_from": "2026-10-23T23:59:00.000Z",
+    "valid_until": "2026-10-24T01:00:00.000Z",
+    "revoked": false
+  },
+  {
+    "kid": "key-b",
+    "public_jwk": {
+      "crv": "Ed25519",
+      "x": "bA9J0jQmXCVLgoDeZeG50t3iEwxdYQE-PqaDvSS1hp0",
+      "kty": "OKP"
+    },
+    "publisher_id": "seoul-synthetic-publisher",
+    "simulation_namespace": "p07-b01fa7eb43b243a5",
+    "region_id": "seoul-pilot-corridors-v1",
+    "allowed_graph_ids": [
+      "2e7db7d29f48f8896d57a49989d42a37454068c54e15ccf9e4fa0a56d3038ed3"
+    ],
+    "source_class": "SYNTHETIC",
+    "valid_from": "2026-10-23T23:59:00.000Z",
+    "valid_until": "2026-10-24T01:00:00.000Z",
+    "revoked": false
+  },
+  {
+    "kid": "key-c",
+    "public_jwk": {
+      "crv": "Ed25519",
+      "x": "O2LrjvqdlQJJIADiylDh_71JCtRaXKn2cpWZlFuc51Q",
+      "kty": "OKP"
+    },
+    "publisher_id": "seoul-synthetic-publisher",
+    "simulation_namespace": "p07-b01fa7eb43b243a5",
+    "region_id": "seoul-pilot-corridors-v1",
+    "allowed_graph_ids": [
+      "2e7db7d29f48f8896d57a49989d42a37454068c54e15ccf9e4fa0a56d3038ed3"
+    ],
+    "source_class": "SYNTHETIC",
+    "valid_from": "2026-10-23T23:59:00.000Z",
+    "valid_until": "2026-10-24T01:00:00.000Z",
+    "revoked": false
+  }
+]

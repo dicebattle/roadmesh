@@ -43,6 +43,8 @@ export function utc(value: unknown): number {
 export function principalValid(principal: Principal): void {
   identifier(principal.contributor_id, "contributor_id");
   identifier(principal.vehicle_id, "vehicle_id");
+  if (principal.vehicle_class !== undefined && !["CAR", "BUS", "OTHER"].includes(principal.vehicle_class))
+    issue(422, "INVALID_INPUT", "Vehicle class is unsupported.", "차량 종류를 지원하지 않습니다.");
   if (principal.consent_version !== "pilot-consent-v1")
     issue(
       409,
@@ -51,13 +53,18 @@ export function principalValid(principal: Principal): void {
       "동의 버전을 지원하지 않습니다.",
     );
 }
+export function requireCarPrincipal(principal: Principal): void {
+  principalValid(principal);
+  if ((principal.vehicle_class ?? "CAR") !== "CAR")
+    issue(403, "VEHICLE_NOT_ALLOWED", "Only car observations are admitted to this pilot.", "이 파일럿은 자동차 관측만 접수합니다.");
+}
 export function batchValid(
   value: unknown,
   principal: Principal,
   config: StoreConfig,
 ): IngestBatch {
   try {
-    principalValid(principal);
+    requireCarPrincipal(principal);
     record(
       value,
       "batch",

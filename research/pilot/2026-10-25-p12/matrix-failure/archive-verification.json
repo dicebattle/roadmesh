@@ -1,0 +1,38 @@
+{
+  "status": "REJECTED_INDEPENDENT_MATRIX_HASH",
+  "source": {
+    "commit": "8821c4d10a219f94ea1f2dd97fa6444c597d1efd",
+    "dirty": false
+  },
+  "original_internal_assertions": 358,
+  "archived_original_files": 16223,
+  "map_omissions": 32,
+  "archive_bytes": 83684898,
+  "archive_sha256": "893befb236521d6a100338281df820017d176b4319d200d4c2e7b60b33565795",
+  "parts": [
+    {
+      "path": "originals.tar.gz.part01",
+      "bytes": 20971520,
+      "sha256": "0f7a07b13280964ef61e46bc08f53e52d6c990bfbe6e38f5dfc3d88602db7cf5"
+    },
+    {
+      "path": "originals.tar.gz.part02",
+      "bytes": 20971520,
+      "sha256": "ed6280f4bad457ae8d7a64bbc7e9aae7e3009798f47b71bd4733e9511f267f71"
+    },
+    {
+      "path": "originals.tar.gz.part03",
+      "bytes": 20971520,
+      "sha256": "abae0179a6eaff195075b77ee36d9ae0954d2feee99048357d0a9b64e888232f"
+    },
+    {
+      "path": "originals.tar.gz.part04",
+      "bytes": 20770338,
+      "sha256": "b8ac13ee979afd8b9deb28fb5d937e1dc41b71e4af45a7023251269d2a4e73e6"
+    }
+  ],
+  "exact_inventory_match": true,
+  "reconstruction_match": true,
+  "scope_en": "Original internal PASS is preserved but not accepted as final proof. Main rejected the persisted matrix assertion hash.",
+  "scope_ko": "원 내부 통과는 보존하되 최종 근거로 수용하지 않으며 메인이 저장 행렬 판정 해시를 거부했습니다."
+}

@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "226d73d8c0b4d55cb6812505b0ae3efdf30facf9",
+    "dirty": true
+  },
+  "implementation_sha256": "05cf88f6aa7ae5ea8d68657304a98db15a43a6521c20d4092da09f233e0a7485",
+  "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+  "original_hashes_checked": 1391,
+  "runtime_only_cases": 19,
+  "standard_signatures_verified": 1,
+  "native_domain_originals": [
+    {
+      "id": "no-suitable-road",
+      "code": 171,
+      "original_native_candidates": [
+        "nodes/scenario-node-a/runtime/engines/726b0782-c4c4-421a-9c45-265c13f8c337/requests/ceec4fed-a206-4084-a535-cf29548c07ec/route.request.json"
+      ],
+      "unique_native_request_claim": false
+    },
+    {
+      "id": "no-path",
+      "code": 442,
+      "original_native_candidates": [
+        "nodes/scenario-node-a/runtime/engines/726b0782-c4c4-421a-9c45-265c13f8c337/requests/00c74214-f715-4a61-bc89-d4f4a9a1dfb1/route.request.json",
+        "nodes/scenario-node-a/runtime/engines/726b0782-c4c4-421a-9c45-265c13f8c337/requests/c0a92a2c-2b6b-4b6a-8f69-d593f0a1c4bf/route.request.json"
+      ],
+      "unique_native_request_claim": false
+    }
+  ],
+  "reset_elapsed_ms": 1581.1257909999986,
+  "stall_elapsed_ms": 5591.3763340000005,
+  "stall_peer_elapsed_ms": 4004.289875000001,
+  "cleanup_verified": true,
+  "scope_en": "Development-only runtime proof; supervisors and full same-run matrix remain separate.",
+  "scope_ko": "개발 실행 근거이며 감독·같은 실행 전체 행렬은 별도입니다."
+}

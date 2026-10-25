@@ -69,6 +69,7 @@ function fixture() {
     graph_directory: directory,
     graph_id: graphId,
     graph_manifest_sha256: "b".repeat(64),
+    coverage_bounds: [126.7, 37.4, 127.25, 37.75],
     image_id: "sha256:" + "c".repeat(64),
     skeleton_path: path,
     skeleton_sha256: sha256(bytes),
@@ -270,7 +271,7 @@ test("Concurrent identical writers reuse only fully matching immutable content /
     f.close();
   }
 });
-test("Traffic request admits only two Seoul coordinates and pinned graph / 교통정보 요청은 서울 좌표 두 개와 고정 지도만 허용", () => {
+test("Traffic request validates two global coordinates and pinned graph; coverage is checked from the bundle / 교통정보 요청의 지구 좌표 두 개·고정 지도 검사, 범위는 묶음 기준", () => {
   const request = {
     graph_id: graphId,
     locations: [
@@ -284,7 +285,7 @@ test("Traffic request admits only two Seoul coordinates and pinned graph / 교�
     { ...request, exclude_locations: [] },
     { ...request, locations: [request.locations[0]] },
     { ...request, locations: [{ lon: NaN, lat: 37.5 }, request.locations[1]] },
-    { ...request, locations: [{ lon: 0, lat: 0 }, request.locations[1]] },
+    { ...request, locations: [{ lon: 181, lat: 0 }, request.locations[1]] },
   ])
     assert.throws(() => validateTrafficRequest(bad as never, graphId));
 });

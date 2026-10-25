@@ -1,0 +1,872 @@
+[
+  {
+    "role": "p09-source-api",
+    "pid": 16752,
+    "exit_code": null,
+    "signal": "SIGTERM",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "service",
+        "port": 60475
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p09-source-worker-0",
+    "pid": 16754,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p09-source-0"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 1
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p09-source-worker-1",
+    "pid": 16861,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p09-source-1"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 1
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p09-source-worker-2",
+    "pid": 16967,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p09-source-2"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 1
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p09-source-worker-3",
+    "pid": 17075,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p09-source-3"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 1
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p09-source-worker-4",
+    "pid": 17182,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p09-source-4"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 1
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p09-source-worker-5",
+    "pid": 17286,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p09-source-5"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 1
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p09-source-worker-6",
+    "pid": 17408,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p09-source-6"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 1
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p09-source-worker-7",
+    "pid": 17529,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p09-source-7"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 1
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p09-source-worker-8",
+    "pid": 17642,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p09-source-8"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 1
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p09-source-worker-9",
+    "pid": 17753,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p09-source-9"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 1
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p09-source-worker-10",
+    "pid": 17866,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p09-source-10"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 1
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p09-source-worker-11",
+    "pid": 18007,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p09-source-11"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 1
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p09-source-worker-12",
+    "pid": 18143,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p09-source-12"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 1
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p09-source-worker-13",
+    "pid": 18271,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p09-source-13"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 1
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p09-source-worker-14",
+    "pid": 18401,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "worker",
+        "owner_id": "p09-source-14"
+      },
+      {
+        "type": "RESULT",
+        "code": "SUCCEEDED",
+        "stored_count": 1
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p10-publication-service",
+    "pid": 18529,
+    "exit_code": null,
+    "signal": "SIGTERM",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publication-service",
+        "pid": 18529,
+        "port": 60572
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p10-native-node-0",
+    "pid": 18530,
+    "exit_code": null,
+    "signal": "SIGKILL",
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "routing-node",
+        "node_id": "seoul-gateway-node-a",
+        "instance_id": "8393222a-d76c-4874-84e1-84f39efe0a9a",
+        "pid": 18530,
+        "port": 60577
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "b30281ff-6aff-4f4c-85cb-de0511fc0907",
+        "code": "RECONCILED",
+        "reason": "READY"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p10-native-node-1",
+    "pid": 18531,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "routing-node",
+        "node_id": "seoul-gateway-node-b",
+        "instance_id": "c9d61c13-beed-4824-bf8d-55207784b829",
+        "pid": 18531,
+        "port": 60582
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "03c46ccb-a7f5-466e-b756-17988eff7398",
+        "code": "RECONCILED",
+        "reason": "READY"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "57fc0935-d23d-440d-b496-3699f9c50195",
+        "code": "RECONCILED",
+        "reason": "READY"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "ecec407c-5257-4ced-844c-0f120f1ba414",
+        "code": "RECONCILED",
+        "reason": "READY"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "d25896a9-3d48-4f44-a5a6-9bc858976fba",
+        "code": "RECONCILED",
+        "reason": "READY"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "11f12d1e-8909-4963-85e0-90052e5c417b",
+        "code": "CLOSING"
+      },
+      {
+        "type": "STOPPED",
+        "node_id": "seoul-gateway-node-b",
+        "cleanup_verified": true
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p10-gateway",
+    "pid": 18774,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "route-gateway",
+        "gateway_id": "seoul-route-gateway",
+        "instance_id": "e7939460-15ae-4102-815d-79751f0f034f",
+        "pid": 18774,
+        "port": 60590
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "15d3df8b-c71d-4f2c-b565-3d7ed9b3d976",
+        "code": "RECONCILED",
+        "status": {
+          "gateway_id": "seoul-route-gateway",
+          "instance_id": "e7939460-15ae-4102-815d-79751f0f034f",
+          "in_flight": 0,
+          "closing": false,
+          "high_water": 1,
+          "snapshot_id": "e4160a97c3d06f63b206894a823dbb657a35af92f3f3fae72d42097b3b95b913",
+          "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+          "reason": "READY"
+        }
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "81f56cb3-e83b-449c-86f6-f7bd1181c1e1",
+        "code": "APPLIED"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_GATEWAY_SELECTION",
+        "pid": 18774,
+        "request_id": "admission-0",
+        "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_GATEWAY_SELECTION",
+        "pid": 18774,
+        "request_id": "admission-1",
+        "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_GATEWAY_SELECTION",
+        "pid": 18774,
+        "request_id": "admission-2",
+        "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_GATEWAY_SELECTION",
+        "pid": 18774,
+        "request_id": "admission-3",
+        "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_GATEWAY_SELECTION",
+        "pid": 18774,
+        "request_id": "admission-4",
+        "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_GATEWAY_SELECTION",
+        "pid": 18774,
+        "request_id": "admission-5",
+        "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_GATEWAY_SELECTION",
+        "pid": 18774,
+        "request_id": "admission-6",
+        "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_GATEWAY_SELECTION",
+        "pid": 18774,
+        "request_id": "admission-7",
+        "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "99fdaf81-82bf-40ed-b82f-5efc2d972d5b",
+        "code": "STATUS",
+        "status": {
+          "gateway_id": "seoul-route-gateway",
+          "instance_id": "e7939460-15ae-4102-815d-79751f0f034f",
+          "in_flight": 8,
+          "closing": false,
+          "high_water": 1,
+          "snapshot_id": "e4160a97c3d06f63b206894a823dbb657a35af92f3f3fae72d42097b3b95b913",
+          "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+          "reason": "READY"
+        }
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "12b22cac-3743-41dc-8d6b-574451be147b",
+        "code": "APPLIED"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "54c3bdcb-f5fc-47ce-b7de-04b5c4e92335",
+        "code": "APPLIED"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "04b8b8a7-8609-4ea3-bac1-3ca3b6b15e52",
+        "code": "APPLIED"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_GATEWAY_SELECTION",
+        "pid": 18774,
+        "request_id": "shared-deadline",
+        "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "e6244464-a12e-4ea3-9a9b-ac19aff417b2",
+        "code": "APPLIED"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "d6e0d418-5490-4450-a2aa-ec7a8460a944",
+        "code": "APPLIED"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "43d755c7-89f5-4a96-970a-ddf6efaa060e",
+        "code": "STATUS",
+        "status": {
+          "gateway_id": "seoul-route-gateway",
+          "instance_id": "e7939460-15ae-4102-815d-79751f0f034f",
+          "in_flight": 0,
+          "closing": false,
+          "high_water": 1,
+          "snapshot_id": "e4160a97c3d06f63b206894a823dbb657a35af92f3f3fae72d42097b3b95b913",
+          "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+          "reason": "READY"
+        }
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "ae7fd7af-471b-42b6-92ed-c1c7cd1f9363",
+        "code": "STATUS",
+        "status": {
+          "gateway_id": "seoul-route-gateway",
+          "instance_id": "e7939460-15ae-4102-815d-79751f0f034f",
+          "in_flight": 0,
+          "closing": false,
+          "high_water": 1,
+          "snapshot_id": "e4160a97c3d06f63b206894a823dbb657a35af92f3f3fae72d42097b3b95b913",
+          "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+          "reason": "READY"
+        }
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "25c4f59a-845b-4391-b268-a871368f309b",
+        "code": "STATUS",
+        "status": {
+          "gateway_id": "seoul-route-gateway",
+          "instance_id": "e7939460-15ae-4102-815d-79751f0f034f",
+          "in_flight": 0,
+          "closing": false,
+          "high_water": 1,
+          "snapshot_id": "e4160a97c3d06f63b206894a823dbb657a35af92f3f3fae72d42097b3b95b913",
+          "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+          "reason": "READY"
+        }
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "d211df44-bd21-4480-8c28-7e56f49d1f61",
+        "code": "STATUS",
+        "status": {
+          "gateway_id": "seoul-route-gateway",
+          "instance_id": "e7939460-15ae-4102-815d-79751f0f034f",
+          "in_flight": 0,
+          "closing": false,
+          "high_water": 1,
+          "snapshot_id": "e4160a97c3d06f63b206894a823dbb657a35af92f3f3fae72d42097b3b95b913",
+          "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+          "reason": "READY"
+        }
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "8a80b185-5e0c-42e2-94ca-aaa54cc2af53",
+        "code": "APPLIED"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_GATEWAY_NODE_RESULT",
+        "pid": 18774,
+        "request_id": "result-version-change",
+        "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838",
+        "node_id": "seoul-gateway-node-a",
+        "attempt": 1
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "dee5738a-1995-4e0d-ac03-c49a8c790a0b",
+        "code": "RECONCILED",
+        "status": {
+          "gateway_id": "seoul-route-gateway",
+          "instance_id": "e7939460-15ae-4102-815d-79751f0f034f",
+          "in_flight": 1,
+          "closing": false,
+          "high_water": 2,
+          "snapshot_id": "9d445aa0ec7d6ae9357a991f8f81fc0170775cfdbdd70794b6f821e453da91db",
+          "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+          "reason": "READY"
+        }
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "1f2a417b-3277-431f-ad68-7b08e1937c93",
+        "code": "APPLIED"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "a4d40ecb-b41a-4493-b1bf-a8376f826a7c",
+        "code": "APPLIED"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "524161d9-3925-4791-9c6a-267e58a03f94",
+        "code": "RECONCILED",
+        "status": {
+          "gateway_id": "seoul-route-gateway",
+          "instance_id": "e7939460-15ae-4102-815d-79751f0f034f",
+          "in_flight": 0,
+          "closing": false,
+          "high_water": 2,
+          "snapshot_id": "9d445aa0ec7d6ae9357a991f8f81fc0170775cfdbdd70794b6f821e453da91db",
+          "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+          "reason": "READY"
+        }
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "ae8f059f-da34-40f0-902e-81c0788d6c44",
+        "code": "RECONCILED",
+        "status": {
+          "gateway_id": "seoul-route-gateway",
+          "instance_id": "e7939460-15ae-4102-815d-79751f0f034f",
+          "in_flight": 0,
+          "closing": false,
+          "high_water": 2,
+          "snapshot_id": "9d445aa0ec7d6ae9357a991f8f81fc0170775cfdbdd70794b6f821e453da91db",
+          "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+          "reason": "READY"
+        }
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "ad4ad5d7-f7cc-42dd-8f04-e27734e88d7e",
+        "code": "RECONCILED",
+        "status": {
+          "gateway_id": "seoul-route-gateway",
+          "instance_id": "e7939460-15ae-4102-815d-79751f0f034f",
+          "in_flight": 0,
+          "closing": false,
+          "high_water": 3,
+          "snapshot_id": "6072035a1ae9e8c99574190c041e09779f97b6815cdf8ba8fbd5b74e54839949",
+          "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+          "reason": "READY"
+        }
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "fcfc8d02-de4b-4092-b305-16791508f63d",
+        "code": "RECONCILED",
+        "status": {
+          "gateway_id": "seoul-route-gateway",
+          "instance_id": "e7939460-15ae-4102-815d-79751f0f034f",
+          "in_flight": 0,
+          "closing": false,
+          "high_water": 3,
+          "snapshot_id": null,
+          "checked_at_event_time": "2026-10-24T00:07:00.000Z",
+          "reason": "READY"
+        }
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "27b9fd04-ea00-4cc9-bfd1-1a9a28311d5c",
+        "code": "CLOSING"
+      },
+      {
+        "type": "STOPPED",
+        "gateway_id": "seoul-route-gateway",
+        "cleanup_verified": true
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p10-invalid-config",
+    "pid": 18808,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [],
+    "diagnostics": "Gateway failed; inspect owned evidence / 중계 실패: 소유 근거를 확인하세요\n"
+  },
+  {
+    "role": "p10-invalid-config",
+    "pid": 18809,
+    "exit_code": 1,
+    "signal": null,
+    "messages": [],
+    "diagnostics": "Gateway failed; inspect owned evidence / 중계 실패: 소유 근거를 확인하세요\n"
+  },
+  {
+    "role": "p10-publisher-22",
+    "pid": 18925,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publisher",
+        "pid": 18925
+      },
+      {
+        "type": "RESULT",
+        "code": "PUBLISHED",
+        "sequence": 1,
+        "traffic_snapshot_id": "e4160a97c3d06f63b206894a823dbb657a35af92f3f3fae72d42097b3b95b913"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p10-native-node-0",
+    "pid": 20753,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "routing-node",
+        "node_id": "seoul-gateway-node-a",
+        "instance_id": "6ae8eff2-6a4d-4f39-8e90-a7d4a135d05a",
+        "pid": 20753,
+        "port": 60651
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "fcf33e41-bed1-4210-b8d9-557c18a2e45e",
+        "code": "APPLIED"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_NODE_ENGINE_RESULT",
+        "pid": 20753,
+        "node_id": "seoul-gateway-node-a",
+        "instance_id": "6ae8eff2-6a4d-4f39-8e90-a7d4a135d05a",
+        "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838",
+        "request_id": "propagated-node-deadline",
+        "engine_container": "routelens-p02-cf62b646-f7fc-41cc-b3f0-998b6028e998",
+        "engine_run_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/gateway/nodes/seoul-gateway-node-a/runtime-ca386b9c-731c-4811-9391-6f34d95ef7d3/engines/cf62b646-f7fc-41cc-b3f0-998b6028e998"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "eb944dd8-c7cc-4773-995d-5578d5d5b4a9",
+        "code": "APPLIED"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "ca6a7724-a55e-4561-ad7b-8128d2bde9b1",
+        "code": "APPLIED"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "266802d7-8a99-45d4-a6ab-b159175ee090",
+        "code": "APPLIED"
+      },
+      {
+        "type": "PHASE",
+        "phase": "AFTER_NODE_ENGINE_RESULT",
+        "pid": 20753,
+        "node_id": "seoul-gateway-node-a",
+        "instance_id": "6ae8eff2-6a4d-4f39-8e90-a7d4a135d05a",
+        "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838",
+        "request_id": "client-disconnect",
+        "engine_container": "routelens-p02-cf62b646-f7fc-41cc-b3f0-998b6028e998",
+        "engine_run_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/gateway/nodes/seoul-gateway-node-a/runtime-ca386b9c-731c-4811-9391-6f34d95ef7d3/engines/cf62b646-f7fc-41cc-b3f0-998b6028e998"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "bad37ce6-c045-405a-b491-e02d63e41f1e",
+        "code": "APPLIED"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "74df662d-5a9a-4bd1-8a7b-aaa8af52f4d9",
+        "code": "APPLIED"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "c291d200-c43f-4c62-92b8-b8180920df68",
+        "code": "RECONCILED",
+        "reason": "READY"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "5a9ba54c-df9d-4f18-8e3d-56d642c51f3d",
+        "code": "RECONCILED",
+        "reason": "READY"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "4c6b3b2b-cf26-4ad8-836f-9f8813b102c1",
+        "code": "RECONCILED",
+        "reason": "READY"
+      },
+      {
+        "type": "CONTROL_RESULT",
+        "control_id": "f658b5f8-80de-4841-ad4a-ee252fb4ccb6",
+        "code": "CLOSING"
+      },
+      {
+        "type": "STOPPED",
+        "node_id": "seoul-gateway-node-a",
+        "cleanup_verified": true
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p10-publisher-24",
+    "pid": 22662,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publisher",
+        "pid": 22662
+      },
+      {
+        "type": "RESULT",
+        "code": "PUBLISHED",
+        "sequence": 2,
+        "traffic_snapshot_id": "9d445aa0ec7d6ae9357a991f8f81fc0170775cfdbdd70794b6f821e453da91db"
+      }
+    ],
+    "diagnostics": ""
+  },
+  {
+    "role": "p10-publisher-25",
+    "pid": 23215,
+    "exit_code": 0,
+    "signal": null,
+    "messages": [
+      {
+        "type": "READY",
+        "kind": "publisher",
+        "pid": 23215
+      },
+      {
+        "type": "RESULT",
+        "code": "PUBLISHED",
+        "sequence": 3,
+        "traffic_snapshot_id": "6072035a1ae9e8c99574190c041e09779f97b6815cdf8ba8fbd5b74e54839949"
+      }
+    ],
+    "diagnostics": ""
+  }
+]

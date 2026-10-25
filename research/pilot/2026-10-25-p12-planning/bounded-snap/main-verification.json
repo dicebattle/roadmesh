@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "scope_en": "Actual upstream HTTP errors with explicitly bounded snapping, not existing RouteLens public behavior.",
+  "scope_ko": "명시적인 제한 거리 대응 옵션을 사용한 실제 상위 엔진 오류이며 기존 RouteLens 공개 동작이 아닙니다.",
+  "native_codes": [
+    171,
+    442
+  ],
+  "same_inputs_with_legacy_defaults_returned_routes": true,
+  "runs": [
+    {
+      "run": "p12-bounded-snap01",
+      "container_absent": "routelens-p02-5dce5be3-05ce-4abd-b12f-323df3321a90",
+      "archive": "p12-bounded-snap01.tar.gz",
+      "bytes": 98392,
+      "sha256": "22fe57c8eecc04edb2f2e76b80375388f820471dee834ca103352e2d0dab8833"
+    },
+    {
+      "run": "p12-all-vertices-snap01",
+      "container_absent": "routelens-p02-0b86882a-0f3b-4157-8d02-605fd4478c59",
+      "archive": "p12-all-vertices-snap01.tar.gz",
+      "bytes": 40969,
+      "sha256": "4a6168a651419b9e8e3abf1826950da245b542fa77b56de392d1a2e8cecc93be"
+    },
+    {
+      "run": "p12-all-vertices-default01",
+      "container_absent": "routelens-p02-9e7edb67-c795-431c-aa3f-e47c1151fe8d",
+      "archive": "p12-all-vertices-default01.tar.gz",
+      "bytes": 45978,
+      "sha256": "806a7f6692990b040e3221640986a3bdbad467febaa1fc47471ba0bdd9f1766a"
+    }
+  ]
+}

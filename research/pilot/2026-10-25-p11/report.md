@@ -48,3 +48,11 @@ The initial demo audit assumed request directory names equaled request IDs; actu
 Road geometry is actual Seoul OSM; vehicles, speeds, waits and GPS remain synthetic. Neither whole334 nor the demo proves real-driving accuracy, live traffic, public-peer honesty, production authentication, hardware performance or geographic100/100 completion. Independent audits use only Node built-ins and ran on local Node25; product execution used Node22. Browser regression used Chromium156.0.8078.4 with software WebGL; manual IAB and recording Chrome are separate observations. This is a local route client, not turn-by-turn navigation. P11 hosted delivery is pending; P12 scenario gaps, P13 local Cloudflare parity and P14b final integration remain.
 
 도로는 실제 서울 OSM이며 차량·속도·대기·GPS는 합성입니다. 전체334개나 시연으로 실주행 정확도·실시간 교통·공개 노드 정직성·운영 인증·하드웨어 성능·실제 지역100/100 완료를 주장하지 않습니다. 기본 라이브러리만 쓰는 독립 감사는 로컬 Node25, 제품은 Node22에서 실행했습니다. 자동 브라우저는 Chromium156.0.8078.4와 소프트웨어 WebGL이며 수동 내장 브라우저·녹화 Chrome은 별도 관찰입니다. 로컬 경로 클라이언트이며 회전별 주행 안내는 아닙니다. P11 원격 반영과 P12 장애 공백·P13 로컬 Cloudflare 비교·P14b 최종 통합이 남았습니다.
+
+Delivery correction: [recording diagnostics](recording-diagnostics.tar.gz) archives the eight original recording/audit logs that the general Git ignore rule omitted from the first push. The prior local link check was not a clean-checkout delivery check; the next check uses only versioned files.
+
+반영 정정: 첫 푸시에서 일반 Git 제외 규칙에 걸린 녹화/감사 로그8개를 위 묶음에 보존했습니다. 앞선 로컬 링크 검사는 새 체크아웃의 전달 검사가 아니었으므로 다음 검사는 버전 관리 파일만 사용합니다.
+
+Hosted delivery update: [both runs and inspected originals](hosted/README.md) passed334/285; protected PR12 merged the checked source. Earlier pending statements describe the local checkpoint.
+
+원격 반영 갱신: 두 실행·독립 원문334/285개를 통과하고 검사한 소스를 PR12로 보호 병합했습니다. 앞선 대기 문구는 로컬 검증 당시 상태입니다.

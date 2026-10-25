@@ -1,0 +1,413 @@
+{
+  "source": {
+    "commit": "5c9d4c4b07a513cd67c7f0f2bed3bb9c74548d69",
+    "dirty": false
+  },
+  "implementation_sha256": "45f3b1315195c5374ae89dd9e6b8a3ee3357ae77ceb2475b9b505d06fc81d12d",
+  "graph_id": "2e7db7d29f48f8896d57a49989d42a37454068c54e15ccf9e4fa0a56d3038ed3",
+  "schema_version": "p12-0.1",
+  "assertions_sha256": "4214f0dd4ad5ddcbfac7da0fa5c4885b839ad075bf0e4b4e21482dcc00b4993e",
+  "cleanup_verified": true,
+  "modules": [
+    {
+      "path": "seoul/manifest.json",
+      "sha256": "02e9766d27156d26ea44db094f85d6ff3c20f40b502bcdf36c093a11bdfa04c9"
+    },
+    {
+      "path": "ingestion/manifest.json",
+      "sha256": "6cbb19db71c7620df54fba25c126d48d6b8c35c41de2b0adc55e1bac56236bc9"
+    },
+    {
+      "path": "aggregation/manifest.json",
+      "sha256": "5d04a1126f499aa2b0e09d75aaaa44f598f829e4ae599a489d80e4dda3b4e796"
+    },
+    {
+      "path": "publication/manifest.json",
+      "sha256": "c41d15cc432e156d76a756e059964bd66f26a0bc463006653e54402df73b4b1a"
+    },
+    {
+      "path": "traffic/manifest.json",
+      "sha256": "b924b21e24a1e97302722e3897ab18dc9694d0c7c103f732bfff549d12cf6503"
+    },
+    {
+      "path": "nodes/manifest.json",
+      "sha256": "3aa9600809a579d50cd285dfe7fa2f33d2f99829bdb3fc1c4ac2671a9ef4ead2"
+    },
+    {
+      "path": "gateway/manifest.json",
+      "sha256": "0e96f05b3ff5e424b7c6ae2de32207298a9e7868bde5045e9b34b8c07ecadcd3"
+    },
+    {
+      "path": "client/manifest.json",
+      "sha256": "2b03d19b2bb3a89e53edf57fb9dbde14d62b45bddef646184075f110d02bd7d4"
+    },
+    {
+      "path": "scenarios/runtime-manifest.json",
+      "sha256": "80aca2abe6053f0435424e419a83115547fba7e65a8cf5931f7de811d6d5f335"
+    }
+  ],
+  "rows": [
+    {
+      "scenario_id": "S01",
+      "basis": "ACTUAL_SEOUL_WITH_EXPLICIT_TINY_REGRESSIONS",
+      "references": [
+        {
+          "assertion_id": "p09-baseline-same-daemon",
+          "assertion_sha256": "a68e1abca6cc68bb7768896dc25a01a0cf0d127d4c1361ff43ba98b27b9cb4d1",
+          "evidence_path": "nodes/requests/baseline-a-2.json",
+          "evidence_sha256": "e4846c19e59adb849e71756e0d286c550ac376f6eba7213233cb5351bfc1b007"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S02",
+      "basis": "ACTUAL_SEOUL_WITH_EXPLICIT_TINY_REGRESSIONS",
+      "references": [
+        {
+          "assertion_id": "p09-two-node-live-detour",
+          "assertion_sha256": "cdeb22187da1996032211a003847f914c7e91127430e076f4d06cfa5740a1b1b",
+          "evidence_path": "nodes/requests/live-a.json",
+          "evidence_sha256": "7c8fe1fb05fede13b803463b99132ed67f9a0e25855fc7375440e3e28f2a8603"
+        },
+        {
+          "assertion_id": "p06-live-independent-median",
+          "assertion_sha256": "2395daeb1e926474e5db1c31a2000aa425f0e54b073a21ea77a49c13622bba6a",
+          "evidence_path": "aggregation/synthetic-evaluation/count-5.json",
+          "evidence_sha256": "e1d415f074bf79099cbc322f07b7af3f1972053ad3baae3b25dd1a795d801e31"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S03",
+      "basis": "ACTUAL_SEOUL_WITH_EXPLICIT_TINY_REGRESSIONS",
+      "references": [
+        {
+          "assertion_id": "p06-count-0",
+          "assertion_sha256": "70699c438cba46cef7734d628121adf3a5d2b2a1eec05cc04ec27f6cfc332fa0",
+          "evidence_path": "aggregation/drafts/count-0.json",
+          "evidence_sha256": "f8f339263e28ea045348a6baa6b2b466edcb0825b845cd59cf28d40600fee496"
+        },
+        {
+          "assertion_id": "p06-count-1",
+          "assertion_sha256": "35de133625458799131cfd26dcc4c64b70e4a70bba04a0605851bd56a24f9bdd",
+          "evidence_path": "aggregation/drafts/count-1.json",
+          "evidence_sha256": "24fd12373a7d3197daaaa05d1a87898078a949143abc251824bcfa29ee81ce17"
+        },
+        {
+          "assertion_id": "p06-count-4",
+          "assertion_sha256": "1700ff149a5ef3a3a5faec5b8ada214d0bd6ade6ae66efae54c490c4f883f2d4",
+          "evidence_path": "aggregation/drafts/count-4.json",
+          "evidence_sha256": "24fd12373a7d3197daaaa05d1a87898078a949143abc251824bcfa29ee81ce17"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S04",
+      "basis": "ACTUAL_SEOUL_WITH_EXPLICIT_TINY_REGRESSIONS",
+      "references": [
+        {
+          "assertion_id": "tiny-p04-waiting-retained",
+          "assertion_sha256": "1e43d9ab63cb0fef4747b58538ded86f6f19827e2d4fc76ab8c2ec134ee5b14f",
+          "evidence_path": "seoul/tiny/matching/baseline/result.json",
+          "evidence_sha256": "2e30856bbf2e6981ccf1f2541b9456c3ae9c10d787853617b424d729aeafb937"
+        },
+        {
+          "assertion_id": "p06-mid-trip-activity-conflict",
+          "assertion_sha256": "d2f4bba6cf9c4d15cf5954d33693cd4aadbd0043e7de60a0e7ea44cdb7791058",
+          "evidence_path": "aggregation/synthetic-evaluation/activity-conflict.json",
+          "evidence_sha256": "0cda591ebb54c42c10a722b331ebf2e4f0face26898eeb411ebcb7ec5f077c66"
+        },
+        {
+          "assertion_id": "p06-live-independent-median",
+          "assertion_sha256": "2395daeb1e926474e5db1c31a2000aa425f0e54b073a21ea77a49c13622bba6a",
+          "evidence_path": "aggregation/synthetic-evaluation/count-5.json",
+          "evidence_sha256": "e1d415f074bf79099cbc322f07b7af3f1972053ad3baae3b25dd1a795d801e31"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S05",
+      "basis": "ACTUAL_SEOUL_WITH_EXPLICIT_TINY_REGRESSIONS",
+      "references": [
+        {
+          "assertion_id": "teheran-noise-accepted-precision",
+          "assertion_sha256": "4f6f287ebbaa124a61e27748c392a81b6dbaeac00ac30469433ef6a2b3148f7f",
+          "evidence_path": "seoul/workload/evaluation.json",
+          "evidence_sha256": "9eb18cb85b50c148f8fb571089b26c2fe9b0fd828b92718f25d7045483d08c63"
+        },
+        {
+          "assertion_id": "teheran-gap-no-gap-bridging",
+          "assertion_sha256": "6bc108268ac22f0805e601a647a2410053e71f78ee6fcb9de55ed553070f3be4",
+          "evidence_path": "seoul/workload/evaluation.json",
+          "evidence_sha256": "9eb18cb85b50c148f8fb571089b26c2fe9b0fd828b92718f25d7045483d08c63"
+        },
+        {
+          "assertion_id": "tiny-p04-parallel-excluded",
+          "assertion_sha256": "ab0b27d4cd3a461f8d875e5a9aea7d1894ccb9f94b19615867a7211325a616cd",
+          "evidence_path": "seoul/tiny/matching/parallel-midpoint/result.json",
+          "evidence_sha256": "c24ec085595842ea1412ae13bef623ab6bf69056fe0b8f4ce79bb7448d67737c"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S06",
+      "basis": "ACTUAL_SEOUL_WITH_EXPLICIT_TINY_REGRESSIONS",
+      "references": [
+        {
+          "assertion_id": "p05-concurrent-duplicates",
+          "assertion_sha256": "0d52b0f80974e84c7e006aa28ace7318f032b6475490dccb43ea4bff06a22ef1",
+          "evidence_path": "ingestion/readbacks/duplicates.json",
+          "evidence_sha256": "d8379a3a4bee4e9b0d6f4acfef1e7243080b8dcbbd625e8a052820b46211b7e1"
+        },
+        {
+          "assertion_id": "p05-filled-gap-and-final-lock",
+          "assertion_sha256": "be68c1059c5de683beb97a7d1d0d7b02baab9b6d4fb5be98e3835c82a455bbe6",
+          "evidence_path": "ingestion/readbacks/sequence-ready.json",
+          "evidence_sha256": "78fdb4085d7b7d13906a55b6970e503f2b53995c861678b18885b32b09f3cf6e"
+        },
+        {
+          "assertion_id": "p06-late-exact",
+          "assertion_sha256": "b04805ff50c4102b60571dd97adb91a5a4010bed7135d7cdb7d2e1b749e40160",
+          "evidence_path": "aggregation/synthetic-evaluation/late-exact-availability.json",
+          "evidence_sha256": "a0b5359574bb3d2280f87eb7dbc3de39f4310adef4eafe09960c51e1a324eba5"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S07",
+      "basis": "ACTUAL_SEOUL_WITH_EXPLICIT_TINY_REGRESSIONS",
+      "references": [
+        {
+          "assertion_id": "p05-recover-after_lease",
+          "assertion_sha256": "02afe76802448f44524a152c752e5b9cdebecf2990ef91e134edbf0ed911def3",
+          "evidence_path": "ingestion/events.json",
+          "evidence_sha256": "c776d1a6bc48fe86ddb5784081d856a2074e791f2cc0fb50dddaf1e96cbd44cb"
+        },
+        {
+          "assertion_id": "p05-recover-after_insert",
+          "assertion_sha256": "9234a022e06083f31fdc046288a2e8e34c115d34e8731b7fc00102fa0524380b",
+          "evidence_path": "ingestion/events.json",
+          "evidence_sha256": "c776d1a6bc48fe86ddb5784081d856a2074e791f2cc0fb50dddaf1e96cbd44cb"
+        },
+        {
+          "assertion_id": "p06-aggregate-commit-retry",
+          "assertion_sha256": "475ba68418a6d043b99ed895019bc4224746da15eb89455dfbee2a473b6085b2",
+          "evidence_path": "aggregation/readbacks/aggregate-concurrent-retry.json",
+          "evidence_sha256": "708031061229228445b066985cd9e2c6dbbb627618aacdd26c0cc2d241ba359e"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S08",
+      "basis": "ACTUAL_SEOUL_WITH_EXPLICIT_TINY_REGRESSIONS",
+      "references": [
+        {
+          "assertion_id": "p12-publisher-reset",
+          "assertion_sha256": "524603926e5f1874bac00ada4457a10bd2113ac56300f1da748b6121865f0894",
+          "evidence_path": "scenarios/readbacks/publisher-reset.json",
+          "evidence_sha256": "56960e2e2f32623051017e392f72db294a8bed03ed7b068fcd450a7a636812b2"
+        },
+        {
+          "assertion_id": "p12-partition-expiry",
+          "assertion_sha256": "9ccc5fecb6b0d98b142a1f83ca2e06ab5fbf2ff5b517b4080f58f953f1aa336e",
+          "evidence_path": "scenarios/readbacks/partition-expiry.json",
+          "evidence_sha256": "bb170850514045ef92193798af2a7c9a3eadea0419919207d8d14c0d6af24ca1"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S09",
+      "basis": "ACTUAL_SEOUL_WITH_EXPLICIT_TINY_REGRESSIONS",
+      "references": [
+        {
+          "assertion_id": "p07-bad-signature",
+          "assertion_sha256": "2e26d26fbf7dfdb279c26474e0aae3c77de008381a6ceea027596f1d026b6bc7",
+          "evidence_path": "publication/negative/bad-signature/readback.json",
+          "evidence_sha256": "5828bdd470a8da26d1d2ec6300a39b2695f544dab76f05573010bd078e5fcf20"
+        },
+        {
+          "assertion_id": "p07-old-sequence",
+          "assertion_sha256": "72aea8159948e533f7cfd37159e6e66652286fde3ff0d29e13228e4d716858ff",
+          "evidence_path": "publication/negative/old-sequence/readback.json",
+          "evidence_sha256": "bb18fdec007815f13c37b4167b9230a49393818770425b7979bf5e941958277c"
+        },
+        {
+          "assertion_id": "p07-wrong-graph",
+          "assertion_sha256": "4179704b03c34d67a8b8979f29afbdcef18c8972c6ed3604c36b60abcd8a36af",
+          "evidence_path": "publication/negative/wrong-graph/readback.json",
+          "evidence_sha256": "e650bac83aa2c3b26a3a694b6f261461c0a43d072ccd941703e75a5a71964629"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S10",
+      "basis": "ACTUAL_SEOUL_WITH_EXPLICIT_TINY_REGRESSIONS",
+      "references": [
+        {
+          "assertion_id": "p09-obsolete-result-rejected",
+          "assertion_sha256": "ce614f457172058fce1f2a42962d4ce1d0fd1f507000a32cc6fdb6189ddff2d1",
+          "evidence_path": "nodes/requests/old-held.json",
+          "evidence_sha256": "6fa5bff9a3df4c027141880a3ec8c54e9e6deceb43bab4bf355a465b4946b99a"
+        },
+        {
+          "assertion_id": "p10-result-version-change",
+          "assertion_sha256": "5fe304bba650a8e8ecd0fefd37bc6ea438ab38b502a802212abca3913fd1d9b6",
+          "evidence_path": "gateway/requests/result-version-change.json",
+          "evidence_sha256": "14918564e202eeee01a2f3ab6b19d23f0b3779c3e02b9ebf44d1bc012df8500c"
+        },
+        {
+          "assertion_id": "p12-domain-version-change",
+          "assertion_sha256": "4d035d46afb0a1bc0834b4477b6fdbf4e310d69ed137b2e3ffebd46bec532097",
+          "evidence_path": "scenarios/requests/changed-domain.json",
+          "evidence_sha256": "08645b509f1e30c9bb1c84766b0a48906f844c7542a24e2f9dc110b8558ff76d"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S11",
+      "basis": "ACTUAL_SEOUL_WITH_EXPLICIT_TINY_REGRESSIONS",
+      "references": [
+        {
+          "assertion_id": "p12-transport-reset",
+          "assertion_sha256": "cc133e134f0f713c6fdd6223790ed88d495b5511b696d6a0acc002d1c7224b0c",
+          "evidence_path": "scenarios/readbacks/tcp-reset.json",
+          "evidence_sha256": "89839327d5b5f03487255238389d2e9b7f6fb456fe03f5b5b5022e920e3af0ee"
+        },
+        {
+          "assertion_id": "p12-transport-blackhole",
+          "assertion_sha256": "6788922484817d84b23b600c709ea5ac37bbb4a722b1c88e7de46f3b48371051",
+          "evidence_path": "scenarios/readbacks/tcp-blackhole.json",
+          "evidence_sha256": "83cdc20995b2bd492e0ed7a7b660641fc427b0ce3f63699284f3cdf0fc42df9c"
+        },
+        {
+          "assertion_id": "p10-both-down",
+          "assertion_sha256": "45186de9c35ed9c68000052b7044cef368852dad3301ae21c6b263a505da7cf4",
+          "evidence_path": "gateway/requests/both-down.json",
+          "evidence_sha256": "aa0a1f7e0ddebd272697ca17ac48dd497aafaffb79aaa501fb9f84ebfc49ea45"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S12",
+      "basis": "ACTUAL_SEOUL_WITH_EXPLICIT_TINY_REGRESSIONS",
+      "references": [
+        {
+          "assertion_id": "p12-outside-coverage",
+          "assertion_sha256": "ae1fd76e05250af713130e5cbe7de83ed3ed56f46a0ad98da7f6cadae420c083",
+          "evidence_path": "scenarios/requests/outside-coverage.json",
+          "evidence_sha256": "432233a85903a8f5fb298a9e3d45578a63182ea3a8d7e733b3b2a2aff328f46d"
+        },
+        {
+          "assertion_id": "p12-no-path",
+          "assertion_sha256": "7a38ba79705d76cda418d5d16b7f89dbcf42b2dd85bc0037c51990f9993469c8",
+          "evidence_path": "scenarios/requests/no-path.json",
+          "evidence_sha256": "e2106c5c76152e8effa9b051201a8ca2bbbd7ef726c38e2ff096c9df8209acc8"
+        },
+        {
+          "assertion_id": "p12-no-suitable-road",
+          "assertion_sha256": "1d6df46b09c8903efc33c0b3b9887077d66ff754c005324bf741a93e6e18ce10",
+          "evidence_path": "scenarios/requests/no-suitable-road.json",
+          "evidence_sha256": "635b2e4d284c78ec35a40ba8f65c3eda246c43e11fbdddb6b7c9256ea705acd4"
+        },
+        {
+          "assertion_id": "p12-excluded-node-not-selected",
+          "assertion_sha256": "6f4a9f9c1e5c1a059a41db7c8c4366c101e26996dbcda6beb5296eda5ff5f732",
+          "evidence_path": "scenarios/requests/excluded-a.json",
+          "evidence_sha256": "60341ca9896ee2bbd18c093e67f42d898e6f7c0c34de82c95afe88eee85e1dbd"
+        },
+        {
+          "assertion_id": "p12-both-excluded",
+          "assertion_sha256": "39ce2a583092366b8a51db9dd484cf35117c97555cc36de586fd653e6021dd8f",
+          "evidence_path": "scenarios/requests/both-excluded.json",
+          "evidence_sha256": "c121459e16ac07ed4b9c6ac624d02b6d4fbc31900de496a4d64a398b671eaa39"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S13",
+      "basis": "ACTUAL_SEOUL_WITH_EXPLICIT_TINY_REGRESSIONS",
+      "references": [
+        {
+          "assertion_id": "p12-non-car-http",
+          "assertion_sha256": "4d691b60b39e5cf35e401f2db70ff61e762e129db80617122a23e810a90e7f49",
+          "evidence_path": "scenarios/readbacks/non-car.json",
+          "evidence_sha256": "ea8ac547197d04c7def221243594268e4e94c3e5ff15f8f9b81c8089cbc4fb8f"
+        },
+        {
+          "assertion_id": "p12-non-car-body-spoof",
+          "assertion_sha256": "8270a1574884a7c6f7affd94102f78968374c77586528ec00f101a8cc29e0610",
+          "evidence_path": "scenarios/readbacks/non-car-spoof.json",
+          "evidence_sha256": "5b4cad2326b3e415bdce124d62a8652e7cabd8eb47a64527a98956b8d6e69042"
+        },
+        {
+          "assertion_id": "p12-car-retry-preserved",
+          "assertion_sha256": "84eb0994627f22659288065c23bd2d6f841a2fa7510fdc585823903176739a1e",
+          "evidence_path": "scenarios/readbacks/car-after.json",
+          "evidence_sha256": "0611261d37049bfb9700f7efaa10e2876c7cfe7e21fa456398059408c4172872"
+        },
+        {
+          "assertion_id": "p12-namespace-isolation",
+          "assertion_sha256": "3f7fd96985f00983379a540b56002e0db02586de4b683183525a1916e4580688",
+          "evidence_path": "scenarios/readbacks/isolation.json",
+          "evidence_sha256": "d32fcded0c1a658f64c7db1c9345c2fa4d3cacde723c6fe01c36d8a42661350b"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S14",
+      "basis": "ACTUAL_SEOUL_WITH_EXPLICIT_TINY_REGRESSIONS",
+      "references": [
+        {
+          "assertion_id": "p05-pending-revoke-fenced",
+          "assertion_sha256": "b4d8bf2d5571e26686b58bc310145d183eba0d338c665830e9b02cb459aa63ef",
+          "evidence_path": "ingestion/readbacks/pending-revoke.json",
+          "evidence_sha256": "1c1975b98eb8678f12a2a96b552bd87b50d25ffd0eeba06bab23ae478e66171f"
+        },
+        {
+          "assertion_id": "p05-retention-no-revival",
+          "assertion_sha256": "d2c76ad87f2841614121496ae4cc4e7f41dbbf5e5953df43e2c97a087fc8aa3e",
+          "evidence_path": "ingestion/readbacks/retention-24h.json",
+          "evidence_sha256": "6ae801ef67e8c19da1e62dc2d86143203329a57efe6350d376fec8b123ed077a"
+        },
+        {
+          "assertion_id": "p06-all-candidates-purged",
+          "assertion_sha256": "83be69be17815cb3917ec537714eff7b9e803ca4e48c390473e653ac413058fd",
+          "evidence_path": "aggregation/readbacks/all-purge-results.json",
+          "evidence_sha256": "0c92d3bad1162517e6da102dbf119853873714a9b80b898f920878137ddf9830"
+        }
+      ]
+    },
+    {
+      "scenario_id": "S15",
+      "basis": "ACTUAL_SEOUL_WITH_EXPLICIT_TINY_REGRESSIONS",
+      "references": [
+        {
+          "assertion_id": "p12-supervisor-abort",
+          "assertion_sha256": "b387ddb61b44461b3c513555a2fa638d7e6465c9d6ad940070747e256c5ea61c",
+          "evidence_path": "scenarios/readbacks/supervisor-abort-after.json",
+          "evidence_sha256": "c4a699655820271eef31f9a3b698a44dbe752602ccca5b282dfb008f6ae7652b"
+        },
+        {
+          "assertion_id": "p12-supervisor-failure",
+          "assertion_sha256": "dee450f5b8fc5cfe8a081c617e82c4647c1eed2028c33ede397388427ead97d5",
+          "evidence_path": "scenarios/readbacks/supervisor-failure-after.json",
+          "evidence_sha256": "a505b8fa0c06fa84a57d588bdac88b0ce5ed12f838191bd971211523ef8bc223"
+        },
+        {
+          "assertion_id": "p11-owned-cleanup",
+          "assertion_sha256": "36b51b631744e1b9f9a634c1d165a5fa92602ce299eb2a2fc0b2dc6b168e105e",
+          "evidence_path": "client/fixture/cleanup.json",
+          "evidence_sha256": "0f26a6f59766723b25555b814c2d1f2e242f2e14e9d2fb16d8b1cd3f2bba9c2e"
+        },
+        {
+          "assertion_id": "p11-browser-cleanup",
+          "assertion_sha256": "446fc8a34a11d58dc19caae2701c85319e9617c743d8b40303551fab77dcfbf3",
+          "evidence_path": "client/browser/cleanup.json",
+          "evidence_sha256": "ca34029f0362bd9e0eeaaad6bd848d06e6288014146ca788f112210d79300f31"
+        }
+      ]
+    }
+  ],
+  "note_en": "The primary graph is actual Seoul OSM. Waiting and parallel-road checks explicitly include tiny synthetic regressions. Controlled local faults are not Internet loss measurements or real-road accuracy certification.",
+  "note_ko": "주요 지도는 실제 서울 OSM이며 대기·평행도로 검사는 작은 합성 회귀 자료를 명시적으로 포함합니다. 통제한 로컬 장애는 인터넷 손실률 측정이나 실제 도로 정확도 인증이 아닙니다."
+}

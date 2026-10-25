@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "scope_en": "Probe execution and exact owned container cleanup only; no native no-path outcome found.",
+  "scope_ko": "조사 실행과 정확한 소유 컨테이너 정리만 확인했으며 엔진 경로 없음은 찾지 못했습니다.",
+  "graph_id": "4df7433fbbdb6c66a951e23feaff2ede7ab1b0f7eb97310bc60308c6d1569e95",
+  "source_commit": "eda6f680032f7ae90d2d76f0fc0a64934cba1d1f",
+  "native_route_successes": 20,
+  "pre_native_rejections": 1,
+  "exact_owned_container_absent": "routelens-p02-b8890e46-3d1f-4192-9798-2ff39ace3d04"
+}

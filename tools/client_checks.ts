@@ -134,13 +134,13 @@ export async function boundedClientOperation<T>(
     signal?.removeEventListener("abort", abort);
   }
 }
-type ProcessIdentity = {
+export type ProcessIdentity = {
   pid: number;
   parent: number;
   started_at: string;
   command: string;
 };
-function processTree(rootPid: number): ProcessIdentity[] {
+export function processTree(rootPid: number): ProcessIdentity[] {
   const rows = execFileSync("ps", ["-axo", "pid=,ppid=,lstart=,comm="], {
     encoding: "utf8",
     env: { ...process.env, LC_ALL: "C" },
@@ -170,7 +170,7 @@ function processTree(rootPid: number): ProcessIdentity[] {
   }
   return rows.filter((row) => ids.has(row.pid));
 }
-function identityAlive(p: ProcessIdentity): boolean {
+export function identityAlive(p: ProcessIdentity): boolean {
   const result = spawnSync("ps", ["-p", String(p.pid), "-o", "lstart=,comm="], {
     encoding: "utf8",
     env: { ...process.env, LC_ALL: "C" },

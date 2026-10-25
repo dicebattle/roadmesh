@@ -7,11 +7,15 @@ export interface GatewayRequest {
   destination: { latitude: number; longitude: number };
   profile: "car";
   traffic_policy: "prefer_live";
+  snap_policy?: "nearest_road_100m";
 }
 
 export type GatewayReason =
   | "AUTH_REQUIRED"
   | "INVALID_INPUT"
+  | "OUT_OF_COVERAGE"
+  | "NO_SUITABLE_ROAD"
+  | "NO_PATH"
   | "UNSUPPORTED_POLICY"
   | "RATE_LIMITED"
   | "VERSION_MISMATCH"

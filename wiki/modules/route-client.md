@@ -13,3 +13,7 @@ Historical development checkpoint / 이전 개발 단계: focused core26 and int
 Clean c63c556 passed whole334 and unit285; main checked12,225 hashes,27 native pairs/12 browser bindings and cleanup. Manual390px IAB and an actual102.8s client recording passed. [Report](../../research/pilot/2026-10-25-p11/report.md). P10 protected ancestry is included; P11 hosted delivery remains.
 
 깨끗한 소스에서 전체334개·단위285개를 통과하고 원문·엔진/브라우저 연결·정리를 독립 확인했습니다. 내장 브라우저390픽셀과 실제102.8초 화면 녹화도 통과했습니다. P10 보호 병합 이력을 포함했으며 P11 원격 반영이 남았습니다.
+
+P11 hosted334/285 and protected PR12 now passed. [Hosted originals](../../research/pilot/2026-10-25-p11/hosted/README.md) include12,054 independently checked hashes.
+
+P11 원격334/285개와 PR12 보호 병합을 완료하고 독립 해시12,054개의 근거를 보존했습니다.

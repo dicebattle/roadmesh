@@ -1,0 +1,233 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "5c9d4c4b07a513cd67c7f0f2bed3bb9c74548d69",
+    "dirty": false
+  },
+  "graph_id": "2e7db7d29f48f8896d57a49989d42a37454068c54e15ccf9e4fa0a56d3038ed3",
+  "implementation_sha256": "45f3b1315195c5374ae89dd9e6b8a3ee3357ae77ceb2475b9b505d06fc81d12d",
+  "unique_artifact_hashes_checked": 418,
+  "assertions": 55,
+  "source_candidates_match_all_five_signed_artifacts": true,
+  "publisher_initial_race_single_winner": true,
+  "key_rotation_race_single_winner": true,
+  "accepted_db_artifact_bytes_equal": true,
+  "original_negative_cases": [
+    {
+      "id": "artifact-oversize",
+      "reason": "OVERSIZE",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "bad-signature",
+      "reason": "INVALID_SIGNATURE_OR_METADATA",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "changed-artifact",
+      "reason": "HASH_MISMATCH",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "disallowed-key",
+      "reason": null,
+      "exit_code": 2,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "duplicate-artifact-key",
+      "reason": "INVALID_JSON",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "duplicate-kid",
+      "reason": null,
+      "exit_code": 2,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "duplicate-manifest-key",
+      "reason": "INVALID_JSON",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "expired-key",
+      "reason": "KEY_TIME_INVALID",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "fetch-timeout",
+      "reason": "TRANSPORT_FAILED",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "future-key",
+      "reason": "KEY_TIME_INVALID",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "future-published",
+      "reason": "INVALID_TIME",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "invalid-utf8",
+      "reason": "INVALID_JSON",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "manifest-oversize",
+      "reason": "OVERSIZE",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "old-sequence",
+      "reason": "REPLAY",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "older-window",
+      "reason": "WINDOW_ROLLBACK",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "private-root",
+      "reason": null,
+      "exit_code": 2,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "redirect",
+      "reason": "HTTP_302",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "revoked-key",
+      "reason": "REVOKED_KEY",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "sequence-conflict",
+      "reason": "SEQUENCE_CONFLICT",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "truncated",
+      "reason": "TRANSPORT_FAILED",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "unknown-artifact-field",
+      "reason": "INVALID_METADATA",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "unknown-kid",
+      "reason": "UNKNOWN_KEY",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "unknown-manifest-field",
+      "reason": "INVALID_SIGNATURE_OR_METADATA",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "unsupported-algorithm",
+      "reason": "INVALID_HEADER",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "unsupported-header",
+      "reason": "INVALID_SIGNATURE_OR_METADATA",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "wrong-graph",
+      "reason": "WRONG_SCOPE",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "wrong-length",
+      "reason": "LENGTH_MISMATCH",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "wrong-namespace",
+      "reason": "WRONG_SCOPE",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "wrong-publisher",
+      "reason": "WRONG_SCOPE",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    },
+    {
+      "id": "wrong-region",
+      "reason": "WRONG_SCOPE",
+      "exit_code": 1,
+      "original_state_unchanged": true
+    }
+  ],
+  "actual_kills": [
+    {
+      "pid": 4285,
+      "role": "p07-publisher-6",
+      "phases": [
+        "AFTER_PUBLICATION_WRITE"
+      ]
+    },
+    {
+      "pid": 4287,
+      "role": "p07-publisher-7",
+      "phases": [
+        "AFTER_PUBLICATION_COMMIT"
+      ]
+    },
+    {
+      "pid": 4293,
+      "role": "p07-http-13",
+      "phases": []
+    },
+    {
+      "pid": 4296,
+      "role": "p07-consumer-16",
+      "phases": [
+        "AFTER_CONSUMER_COMMIT"
+      ]
+    }
+  ],
+  "actual_revoke_lock_wait": true,
+  "revoke_current_404_after_ack": true,
+  "expiry_410": true,
+  "expired_or_revoked_active_bytes_cleared_with_high_water_preserved": true,
+  "owned_process_count": 62,
+  "cleanup_evidence": "main exact current PID/container/volume absence verified",
+  "message_en": "Main checked original artifact hashes, source-to-signed bytes, durable acceptance/order, real crashes and lock/revoke/expiry, exact negative rejection reasons and cleanup. Development/hosted scope follows the recorded source.",
+  "message_ko": "메인이 원문해시·원후보와서명내용·영속수용/순번·실제중단/잠금/철회/만료·정확한거부사유·정리를검사했습니다. 개발/원격범위는기록된소스를따릅니다."
+}
