@@ -1,6 +1,6 @@
 # Public road speeds before crowd scale / 사용자 규모 확보 전 공공 도로 속도
 
-Status: collection→signed/native routing→actual browser connected in development; fresh whole462 and final broader-source evidence remain pending. / 상태: 개발에서 수집→서명/엔진→실제 화면을 연결했으며 새 전체462개·넓어진 출처의 최종 근거는 진행 전입니다.
+Status: local actual-source/native/browser acceptance completed; fresh whole462, tests369, current media and independent originals passed. Feature-branch delivery follows. / 상태: 실제 출처/엔진/화면의 로컬 수용과 새462개·전체369개·현재 미디어·원문 검토를 마쳤으며 브랜치 전달을 이어갑니다.
 
 ## Objective / 목표
 
@@ -84,3 +84,11 @@ Add a distinct versioned provider-map import, retaining retrieval time, exact la
 Preserve438 previous assertions and add24 fixed public-runtime cases (462 total): public bootstrap/current/source identity/full denominator; session/origin/malformed input; actual native speed and Korean guidance; slow refresh/context responsiveness; outage/original expiry; partial expiry and route-specific zero coverage; exact full expiry and actual baseline routing; higher-sequence recovery and changed native duration; zero-speed durable withdrawal; restart sequence/baseline; deadline/input-scope rejection; independently verified signed originals and owned cleanup. These deterministic fault tests use clearly labeled authored provider-protocol responses with a controlled clock on a freshly rebuilt actual Seoul graph. They are not evidence of an agency's actual speed. Separately acquire actual numeric data and verified official geometry, drive native routes and inspect the real browser before claiming the public-source path works.
 
 기존438개에 위24개를 더해462개를 요구합니다. 새 서울 그래프 위 통제 시계·자체 제공자 규격 응답으로 갱신 지연/장애·부분/전체 만료·기본 경로·재수집·0속도 철회·재시작·기한/입력·원문 서명·정리를 검사합니다. 장애 검사는 실제 기관 속도 수치의 근거로 세지 않습니다. 실제 수치·공식 지형·엔진 경로·화면 검증을 별도로 수행해야 공공 자료의 연결을 주장할 수 있습니다.
+
+## 2026-10-26 local acceptance / 로컬 수용
+
+Clean8e153bd/runtime84395cf3/fresh graph3d897cd5 passed462/462 and Node22 full369. Independent original audits cover17,063 hashes plus public source/crypto/native/SQLite boundaries. Actual provider reads on the fresh graph produced31/79 mapped edges from11 source links and a2119m route with84.31% returned-length coverage. The full46.95s recording, EN/KO/390px review, real refresh invalidation/recalculation, original archives/restoration and exact owned cleanup passed. [Dated report and original evidence](../research/pilot/2026-10-26-public-speeds/report.md). Feature push is the remaining delivery action; no new main merge/deployment. This is useful local public-speed bootstrap, not nationwide coverage, production operation or measured field accuracy.
+
+깨끗한 새 소스/서울 지도 전체462개·전체369개·독립 원문·실제11링크→31/79구간·2119m/84.31%·46.95초·한영390픽셀·실제 갱신/재계산·원문 복원·소유 정리를 확인했습니다. 날짜별 보고서를 보존하고 마지막 작업 브랜치 푸시를 이어갑니다. 전국 적용·운영·현장 정확도·새 main 병합·배포를 주장하지 않습니다.
+
+Provider-map reads are limited to200 input graph edges,100 midpoint pairs,10s/1MiB per response, fewer than20 features per result and complete20m–20km curves. Failed HTTP/JSON/shape reads remain explicit exclusions. Numeric observation freshness and static geometry retrieval identity are separate; the operator must rebuild/review mapping when provider nodes or the pinned graph change. / 공식 지도 조회는 입력200구간·중점100쌍·응답10초/1MiB·결과20개 미만·전체20m~20km 곡선으로 제한합니다. 실패는 제외하고 수치 신선도와 고정 지형 조회 식별을 구분하며 노드/지도 변경 때 대응을 다시 확인합니다.

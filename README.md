@@ -17,13 +17,13 @@ RouteLens is an open-source project for car navigation, derived from **[Metro Le
 
 The system has two jobs: turn driving observations into shared road-speed information, and use that information to find routes. RouteLens builds the coordination between those jobs and reuses existing open-source map, routing and database tools.
 
-**Current stage: a local browser pilot on actual Seoul roads, with synthetic vehicles and traffic.** You can choose two points, calculate a route and inspect the result on a map. The result includes validated native English/Korean turn instructions. Replay authored GPS positions to see the next turn, remaining distance, departure and rejoin. Phone GPS tracking, rerouting, spoken guidance and production deployment are future work.
+**Current stage: a local browser pilot on actual Seoul roads, with an actual public-speed option and authored GPS replay.** You can choose two points, calculate a route and inspect the result on a map. The result includes validated native English/Korean turn instructions. An opt-in local collector uses [MOLIT ITS](https://www.data.go.kr/data/15040463/openapi.do) speeds before enough users contribute; the key-free simulation keeps synthetic traffic. Replay authored GPS positions to see the next turn, remaining distance, departure and rejoin. Phone GPS tracking, rerouting, spoken guidance and production deployment are future work.
 
 ## 2. See it from the user's side
 
 [![Using the Seoul route client](docs/media/demo.gif)](docs/media/demo.gif)
 
-[Watch the 43.5-second walkthrough (GIF)](docs/media/demo.gif) · [MP4 file](docs/media/demo.mp4) · [한국어 GIF](docs/media/demo.ko.gif)
+[Watch the 46.95-second walkthrough (GIF)](docs/media/demo.gif) · [MP4 file](docs/media/demo.mp4) · [한국어 GIF](docs/media/demo.ko.gif)
 
 The GIF plays in this README. To download the MP4, open its file page and choose **Raw**.
 
@@ -35,7 +35,7 @@ The walkthrough shows the actual browser client:
 4. Choose **Departure and rejoin**, then play the synthetic GPS replay.
 5. Follow the next turn and remaining distance; watch guidance pause after departure and recover on rejoin, ending at the route endpoint.
 
-This recording uses actual Seoul road geometry and authored synthetic positions at an explicitly labeled 4× replay speed. The video itself retains the whole 43.5s at 1×. The signed synthetic snapshot produces a detour, whose returned road segments have zero live coverage; this is not measured live traffic. Departure is confirmed from consecutive positions; current turns and distances are withheld until rejoin. This does not use phone GPS. [Recording details](docs/media/latest.json).
+This recording uses actual MOLIT ITS speed observations on a freshly built Seoul graph and retains the complete 46.95 seconds at 1×. The 2,119 m route has 84.31% live length coverage: 1,784 m of the 2,116 m rounded native trace, derived from 11 official links mapped to 31 graph edges. Uncovered roads use default speeds. GPS positions are authored and explicitly replayed at 4×; this does not measure phone accuracy or ETA accuracy. [Recording details](docs/media/latest.json) · [Actual observations and full proof](research/pilot/2026-10-26-public-speeds/report.md).
 
 The longer [developer walkthrough](research/pilot/2026-10-25-p13/developer-walkthrough.mp4) separately shows publication changes, node failure, expiry and completed test reports.
 
@@ -47,7 +47,9 @@ The diagram follows information from observations to the user's route:
 
 [Figure sources and reproduction](docs/diagrams/README.md)
 
-**Traffic preparation:** a managed ingestion service receives observations, matches them to roads, and aggregates eligible traversals. A road-speed value needs at least five contributors under the current policy. The service signs the resulting traffic version. Raw GPS stays inside the collection and matching boundary; public traffic artifacts contain aggregate road values.
+**Public-speed bootstrap:** an operator polls the actual ITS feed over HTTPS, matches exact directed official map links to the pinned graph, and signs a separate public artifact. The local runtime refreshes every 120 seconds and expires each value 600 seconds after its original observation. It uses baseline speeds when data is missing or expired. This local public path is implemented; the two-node architecture pictured above is verified with synthetic traffic. Source-specific reuse terms and API credentials are documented in the [public module](wiki/modules/public-road-speeds.md).
+
+**Crowd traffic preparation:** a managed ingestion service receives observations, matches them to roads, and aggregates eligible traversals. A road-speed value needs at least five contributors under the current policy. The service signs the resulting traffic version. Raw GPS stays inside the collection and matching boundary; public traffic artifacts contain aggregate road values.
 
 **Route calculation:** each approved routing node has a compatible map and verifies the signed traffic version before using it. The gateway receives the browser's request, chooses an available node with the required version, and allows one bounded retry on another node. Expired traffic is removed and default road speeds apply. The browser clears a route when its traffic context changes and lets the user recalculate.
 
@@ -57,6 +59,8 @@ The diagram follows information from observations to the user's route:
 | Seoul road data | **OpenStreetMap + Osmium** | Build a reproducible regional graph from pinned source data |
 | Receipt, aggregation and recovery | **PostgreSQL** | Keep committed observations, jobs and accepted versions durable |
 | Signed traffic artifacts | **jose / Ed25519 JWS** | Verify exact shared bytes and reject changed or out-of-scope versions |
+| Official road geometry | **shapefile + proj4** | Read official projection metadata and compare directed geometry |
+| Local public acceptance | **Node SQLite** | Retain signed order, original source data and withdrawal across restarts |
 | Browser map | **MapLibre** | Draw local road geometry and actual calculated routes |
 | Coordination and contracts | **TypeScript / Node.js** | Implement ingestion rules, version checks, failover and reproducible simulation |
 | Alternative aggregation runtime | **Local Cloudflare Worker, Queue and SQLite Durable Objects** | Compare the same aggregation rules with PostgreSQL; hosted deployment is separate |
@@ -65,7 +69,7 @@ RouteLens owns the contracts, privacy and expiry rules, orchestration, traffic-f
 
 ## 4. Try the local client
 
-Requirements: **Node.js 22 or 24**, npm, curl and Docker with Linux containers. Initial preparation downloads pinned engine images and a dated South Korea OSM source of about 290 MB. Every full run builds a fresh Seoul graph and starts its own local services. No map API key, external database or Cloudflare account is required.
+Requirements: **Node.js 22.13 or later, or Node.js 24**, npm, curl and Docker with Linux containers. Initial preparation downloads pinned engine images and a dated South Korea OSM source of about 290 MB. Every full run builds a fresh Seoul graph and starts its own local services. The synthetic full run requires no map API key, external database or Cloudflare account. Actual public-speed collection needs an operator-provided ITS key.
 
 ```sh
 git clone https://github.com/dicebattle/routelens.git
@@ -92,13 +96,15 @@ npm run report:serve -- data/my-first-run
 
 Append `/report.html` to its printed URL. This is the completed evidence report, separate from the interactive client. [Detailed setup and source reuse](wiki/modules/seoul-simulation.md).
 
+For actual public speeds, privately set `ROUTELENS_ITS_API_KEY`, then follow the [collect → provider-map → map → serve commands](wiki/modules/public-road-speeds.md). Use the graph and traffic bundle from your completed full run. Never put the key into browser inputs or command arguments.
+
 ## 5. Implementation and verification
 
-NAV-02 passed **438 fresh local integration assertions** (all 406 previous checks plus 32 progress/replay checks), **320 tests on Node.js 22**, independent original inspection and an actual 43.5-second user recording. Independent geometry checks inspected 191 progress states and 168 confirmed positions, with a maximum 2.23m difference from authored route progress; this is synthetic evidence, not measured phone GPS accuracy. The pre-merge clock-boundary fix is included: an expired previous position loses current guidance even when a new future-dated position is rejected. Hosted checks and protected merge are recorded separately from local results.
+The public-speed increment passed **462 fresh local integration assertions** (the 438 prior checks plus 24 public-runtime faults), **369 tests on Node.js 22**, independent original inspection and an actual 46.95 second recording. The real collector→signed traffic→native routing→browser path was checked separately from authored provider faults. Actual source refresh invalidated an old route and recalculation restored current guidance. Original failures, signed bytes, copied SQLite, screenshots and reconstructable archives are retained. This is local implementation and verification; production hosting and measured driving quality remain separate.
 
-The next implementation is **destination search and confirmation**. Reviewed road quality, device lifecycle, rerouting/voice, stable HTTPS operation and real traffic/ETA evaluation remain. [Prioritized navigation plan](docs/35-usable-navigation-roadmap.md).
+The next implementation is **destination search and confirmation**. Reviewed road quality, device lifecycle, rerouting/voice, stable HTTPS operation, broader road coverage and measured ETA evaluation remain. [Prioritized navigation plan](docs/35-usable-navigation-roadmap.md).
 
-- [Latest test report and original evidence](research/pilot/2026-10-25-nav02-clock/report.md)
+- [Latest test report and original evidence](research/pilot/2026-10-26-public-speeds/report.md)
 - [Current implementation status](docs/18-goal-progress.md)
 - [Development and decision log](wiki/log.md)
 - [Contribution guide](CONTRIBUTING.md) · [Protected-branch workflow](docs/12-development-workflow.md)

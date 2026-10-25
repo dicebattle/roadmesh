@@ -1,0 +1,84 @@
+### Page
+- Page URL: http://127.0.0.1:63856/
+- Page Title: RouteLens · Seoul pilot / 서울 파일럿
+- Console: 1 errors, 0 warnings
+### Snapshot
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "RouteLens Seoul public-speed preview" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - text: RouteLens
+      - generic [ref=e4]: Seoul public-speed preview
+    - button "Switch to Korean / 한국어로 전환" [ref=e5] [cursor=pointer]: 한국어
+  - main [ref=e6]:
+    - region [ref=e7]:
+      - paragraph [ref=e8]: Actual Seoul roads · public road speeds
+      - heading "Choose your route" [level=1] [ref=e9]
+      - region "Public traffic source / 공공 교통 출처" [ref=e10]:
+        - heading "Public road speeds" [level=3] [ref=e66]
+        - 'link "Source: MOLIT National Traffic Information Center" [ref=e67] [cursor=pointer]':
+          - /url: https://www.its.go.kr/opendata/intro
+        - paragraph [ref=e68]: Fresh public speeds are available on verified roads.
+        - paragraph [ref=e69]: "Road segments with usable public speeds: 31 / 79"
+        - paragraph [ref=e70]: "Oldest observation: 26/10/2026, 01:25:00 KST"
+        - paragraph [ref=e71]: "Retrieved: 26/10/2026, 01:27:18 KST"
+      - generic [ref=e14]:
+        - generic [ref=e15]: Route preset
+        - combobox "Route preset" [ref=e16]:
+          - option "Teheran-ro · long route" [selected]
+          - option "Teheran-ro · short live segment"
+          - option "Enter coordinates"
+        - group "Origin" [ref=e17]:
+          - generic [ref=e19]:
+            - generic [ref=e20]:
+              - generic [ref=e21]: Latitude
+              - spinbutton "Latitude" [ref=e22]: "37.4984"
+            - generic [ref=e23]:
+              - generic [ref=e24]: Longitude
+              - spinbutton "Longitude" [ref=e25]: "127.029"
+        - group "Destination" [ref=e26]:
+          - generic [ref=e28]:
+            - generic [ref=e29]:
+              - generic [ref=e30]: Latitude
+              - spinbutton "Latitude" [ref=e31]: "37.5045"
+            - generic [ref=e32]:
+              - generic [ref=e33]: Longitude
+              - spinbutton "Longitude" [ref=e34]: "127.049"
+        - button "Calculate route" [ref=e35] [cursor=pointer]
+      - region [ref=e36]:
+        - heading "Route result" [level=2] [ref=e37]
+        - status [ref=e38]: Choose two locations, then calculate a route.
+        - region [ref=e39]:
+          - heading "Synthetic GPS route replay" [level=3] [ref=e40]
+          - paragraph [ref=e41]: Authored positions on this route. No device GPS or location upload. Replay clock is separate from traffic time.
+          - generic [ref=e42]: Replay scenario
+          - combobox "Replay scenario" [disabled] [ref=e43]:
+            - option "Position noise" [selected]
+            - option "Departure and rejoin"
+          - generic [ref=e44]:
+            - button "Play at 4×" [disabled] [ref=e45] [cursor=pointer]
+            - button "Next sample" [disabled] [ref=e46] [cursor=pointer]
+            - button "Reset" [disabled] [ref=e47] [cursor=pointer]
+          - status [ref=e48]: Calculate a route, then replay its positions.
+          - paragraph [ref=e49]: Paused
+          - group [ref=e50]:
+            - generic "Replay evidence" [ref=e51] [cursor=pointer]
+      - group [ref=e52]:
+        - generic "Request and version evidence" [ref=e53] [cursor=pointer]
+      - paragraph [ref=e54]: Local public-data preview. Speeds cover only verified roads. GPS replay is authored; real driving accuracy is not established.
+    - region "Seoul road map / 서울 도로 지도" [ref=e55]:
+      - region "Interactive Seoul road map / 서울 도로 조작 지도" [ref=e56]:
+        - generic:
+          - region "Interactive Seoul road map" [ref=e72]
+          - generic "Origin marker" [ref=e73]: A
+          - generic "Destination marker" [ref=e74]: B
+        - generic [ref=e58]:
+          - button "Zoom in" [ref=e59] [cursor=pointer]
+          - button "Zoom out" [ref=e61] [cursor=pointer]
+      - paragraph: Select coordinates with the form. Pan or zoom the map to explore the original roads.
+      - paragraph [ref=e64]:
+        - text: ©
+        - link "OpenStreetMap contributors · ODbL" [ref=e65] [cursor=pointer]:
+          - /url: https://www.openstreetmap.org/copyright
+```

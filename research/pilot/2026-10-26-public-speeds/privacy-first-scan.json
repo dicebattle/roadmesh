@@ -1,0 +1,14 @@
+{
+  "status": "FAIL",
+  "original_files_scanned": 17662,
+  "bytes_scanned": 3234802521,
+  "findings": [
+    {
+      "path": "data/public-whole01/publication/negative/private-root/public-trust-config.json",
+      "kind": "POSSIBLE_PRIVATE_JWK"
+    }
+  ],
+  "allowed_exact_invalid_fixture_markers": [],
+  "message_en": "Bounded exact-credential, PEM and private-JWK pattern inspection over every archived original, before upload. This is not a universal secret detector.",
+  "message_ko": "업로드 전 모든 보존 원문에서 지정 키·PEM·비밀 JWK 패턴을 검사했으며 모든 비밀 탐지는 아닙니다."
+}

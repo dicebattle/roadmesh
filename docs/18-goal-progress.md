@@ -72,3 +72,9 @@ Main Sol directly implemented contract37. Clean7078d6f/runtime6d853cf2 passed fr
 
 
 Corrected NAV-02 acceptance / 수정 NAV-02 수용: clean fe49b55/runtime70af32dc passed fresh438/438, focused10/full320 and new43.5s actual recording on graph a859e9ad. Strengthened future-sample expiry is included; first local evidence remains historical. Independent progress191 states/168 positions and IAB EN/KO390px passed. [Final dated report](../research/pilot/2026-10-25-nav02-clock/report.md). The user-authorized protected merge follows exact-head CI; no deployment. / 미래 표본 때 옛 안내 만료를 보강한 깨끗한 소스의 새438개·집중10개/전체320개·새43.5초·독립191상태/168위치·내장 한영390픽셀을 확인했습니다. 첫 결과는 과거 근거로 보존하고 정확한 원격 검사 뒤 보호 병합하며 배포하지 않습니다.
+
+## 2026-10-26 — Public-source increment / 공공 출처 구현
+
+Actual public-speed bootstrap is locally accepted: clean source8e153bd, fresh Seoul graph3d897cd5, whole462 (previous438+public24), Node22 full369, independent original inspection and actual46.95s source/browser recording. Fresh actual traffic covers31/79 native catalog edges from11 source links,84.31% on the2119m example route. [Acceptance and limits](../research/pilot/2026-10-26-public-speeds/report.md). Public fixtures in the whole fault suite remain explicitly authored. Next ordinary navigation priority is NAV-06 destination search/confirmation; wider independently reviewed roads, device GPS, reroute/voice, field accuracy and hosting remain separate gates. The authorized delivery is a feature-branch push, not a new main merge.
+
+새 서울·전체462개·전체369개·독립 원문·실제 공공 화면46.95초를 수용했습니다.11공식 링크의 속도를31/79엔진 구간에 적용하고2119m예제의84.31%를 확인했습니다. 전체 장애 입력은 합성으로 유지하며 다음 목적지 검색과 독립 도로/단말/재탐색/음성/현장/운영 기준은 별도입니다. 이번 전달은 작업 브랜치 푸시입니다.

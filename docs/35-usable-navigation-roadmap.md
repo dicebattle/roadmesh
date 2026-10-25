@@ -1,6 +1,6 @@
 # From local pilot to usable navigation / 로컬 파일럿에서 실사용 내비게이션까지
 
-Current2026-10-25: NAV-01 and NAV-02 are locally accepted; the current branch is `feat/navigation-progress`. NAV-06 destination search/confirmation is next. The latest request includes protected merge after exact-head CI; earlier branch-only finish lines below are historical. [Current evidence](../research/pilot/2026-10-25-nav02/report.md). / 현재 NAV-01·NAV-02 로컬 수용을 마쳤고 다음은 NAV-06입니다. 이번 요청은 원격 검사 뒤 보호 병합까지이며 아래 이전 브랜치 전달 조건은 과거 기록입니다.
+Current2026-10-26: NAV-01/02 are merged; actual public-speed bootstrap is locally accepted on `feat/public-road-speeds` (fresh462, tests369). NAV-06 destination search/confirmation is next. [Current evidence](../research/pilot/2026-10-26-public-speeds/report.md). / 현재 NAV-01/02는 병합됐고 실제 공공 속도 연결은 작업 브랜치에서 로컬 수용을 마쳤습니다. 다음은 목적지 검색/확인이며 아래 이전 전달 조건은 날짜별 과거 기록입니다.
 
 
 Baseline: protected main 9b88a46, P01–P14 local pilot accepted. This proves a synthetic workflow on real Seoul OSM, not a navigation service ready for driving. New work starts on `feat/navigation-guidance`. Design, implementation and direct evidence review remain with the main Sol agent.
@@ -64,3 +64,9 @@ Main Sol directly implemented contract37. Clean7078d6f/runtime6d853cf2 passed fr
 
 
 Corrected NAV-02 acceptance / 수정 NAV-02 수용: clean fe49b55/runtime70af32dc passed fresh438/438, focused10/full320 and new43.5s actual recording on graph a859e9ad. Strengthened future-sample expiry is included; first local evidence remains historical. Independent progress191 states/168 positions and IAB EN/KO390px passed. [Final dated report](../research/pilot/2026-10-25-nav02-clock/report.md). The user-authorized protected merge follows exact-head CI; no deployment. / 미래 표본 때 옛 안내 만료를 보강한 깨끗한 소스의 새438개·집중10개/전체320개·새43.5초·독립191상태/168위치·내장 한영390픽셀을 확인했습니다. 첫 결과는 과거 근거로 보존하고 정확한 원격 검사 뒤 보호 병합하며 배포하지 않습니다.
+
+## 2026-10-26 — Actual public speeds before crowd scale / 사용자 확보 전 실제 공공 속도
+
+The user-directed public-source increment is locally accepted (whole462, tests369, actual source/native/browser proof), on `feat/public-road-speeds`. [Current report](../research/pilot/2026-10-26-public-speeds/report.md). It supplies actual public link averages to verified pilot roads; broader geographic coverage, a second independently accessed provider, measured ETA accuracy and production delivery remain future work. NAV-06 destination search/confirmation stays the next ordinary usability priority. NAV-01/02's earlier protected merge is already complete; do not infer a new merge from this public-source task.
+
+사용자가 요청한 공공 자료 연결을 로컬에서 검증했고 다음 일반 사용성 작업은 목적지 검색/확인입니다. 넓은 도로 적용·다른 실제 제공자·도착시간 실측·운영은 후속으로 유지합니다. 이전 NAV-01/02 병합은 완료됐으며 이번 공공 작업의 새 병합 승인으로 확대하지 않습니다.

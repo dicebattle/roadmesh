@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "source": "8e153bde900f64ab719ac9c10bb12965a41ae3f0",
+  "runtime": "84395cf3393b71677b2268d1ed1dcfbb57f653703fd3c273fb060501b8921f3d",
+  "results": [
+    {
+      "name": "whole",
+      "script": "data/inspect-public-whole.mjs",
+      "args": [
+        "data/public-whole01",
+        "--output",
+        "data/public-whole01-whole-independent.json",
+        "--expected-source",
+        "8e153bde900f64ab719ac9c10bb12965a41ae3f0"
+      ],
+      "exit": 0,
+      "log": "data/public-road-research/audit-whole-01.log"
+    },
+    {
+      "name": "progress",
+      "script": "research/pilot/2026-10-25-nav02-clock/inspectors/inspect-nav02-progress.mjs",
+      "args": [
+        "data/public-whole01/client",
+        "8e153bde900f64ab719ac9c10bb12965a41ae3f0",
+        "84395cf3393b71677b2268d1ed1dcfbb57f653703fd3c273fb060501b8921f3d",
+        "data/public-whole01-progress-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/public-road-research/audit-progress-01.log"
+    },
+    {
+      "name": "guidance",
+      "script": "research/pilot/2026-10-25-nav02-clock/inspectors/inspect-nav01-guidance.mjs",
+      "args": [
+        "data/public-whole01/client",
+        "8e153bde900f64ab719ac9c10bb12965a41ae3f0",
+        "84395cf3393b71677b2268d1ed1dcfbb57f653703fd3c273fb060501b8921f3d",
+        "data/public-whole01-guidance-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/public-road-research/audit-guidance-01.log"
+    },
+    {
+      "name": "client",
+      "script": "research/pilot/2026-10-25-nav02-clock/inspectors/inspect-nav01-client.mjs",
+      "args": [
+        "data/public-whole01/client",
+        "8e153bde900f64ab719ac9c10bb12965a41ae3f0",
+        "84395cf3393b71677b2268d1ed1dcfbb57f653703fd3c273fb060501b8921f3d",
+        "data/public-whole01-client-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/public-road-research/audit-client-01.log"
+    },
+    {
+      "name": "gateway",
+      "script": "research/pilot/2026-10-25-nav02-clock/inspectors/inspect-p10-in-p11.mjs",
+      "args": [
+        "data/public-whole01/gateway",
+        "data/public-whole01/seoul/graph",
+        "--output",
+        "data/public-whole01-gateway-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/public-road-research/audit-gateway-01.log"
+    },
+    {
+      "name": "domain",
+      "script": "research/pilot/2026-10-25-nav02-clock/inspectors/inspect-p12-domain.mjs",
+      "args": [
+        "data/public-whole01/scenarios",
+        "data/public-whole01-domain-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/public-road-research/audit-domain-01.log"
+    },
+    {
+      "name": "cloudflare",
+      "script": "research/pilot/2026-10-25-nav02-clock/inspectors/inspect-p13-parity.mjs",
+      "args": [
+        "data/public-whole01/cloudflare",
+        "data/public-whole01-cloudflare-independent.json",
+        "data/public-whole01-sqlite-copy"
+      ],
+      "exit": 0,
+      "log": "data/public-road-research/audit-cloudflare-01.log"
+    },
+    {
+      "name": "public-runtime",
+      "script": "data/inspect-public-runtime-originals.mjs",
+      "args": [
+        "data/public-whole01/public-speeds",
+        "8e153bde900f64ab719ac9c10bb12965a41ae3f0",
+        "data/public-whole01-public-runtime-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/public-road-research/audit-public-runtime-01.log"
+    }
+  ]
+}

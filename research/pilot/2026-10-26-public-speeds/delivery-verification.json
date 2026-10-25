@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "changed_files_scanned": 1031,
+  "bytes_scanned": 152602013,
+  "secret_pattern_findings": [],
+  "tracked_markdown_links": 1320,
+  "missing_index_links": [],
+  "tracked_archive_files": [
+    "research/pilot/2026-10-26-public-speeds/originals/whole/archive-verification.json",
+    "research/pilot/2026-10-26-public-speeds/originals/whole/omitted-files.json",
+    "research/pilot/2026-10-26-public-speeds/originals/whole/original-files.json.gz",
+    "research/pilot/2026-10-26-public-speeds/originals/whole/originals.tar.gz.part01",
+    "research/pilot/2026-10-26-public-speeds/originals/whole/originals.tar.gz.part02",
+    "research/pilot/2026-10-26-public-speeds/originals/whole/originals.tar.gz.part03",
+    "research/pilot/2026-10-26-public-speeds/originals/whole/originals.tar.gz.part04",
+    "research/pilot/2026-10-26-public-speeds/originals/whole/originals.tar.gz.part05",
+    "research/pilot/2026-10-26-public-speeds/originals/actual-public/archive-verification.json",
+    "research/pilot/2026-10-26-public-speeds/originals/actual-public/omitted-files.json",
+    "research/pilot/2026-10-26-public-speeds/originals/actual-public/original-files.json.gz",
+    "research/pilot/2026-10-26-public-speeds/originals/actual-public/originals.tar.gz.part01"
+  ],
+  "message_en": "Checked changed indexed bytes for the private audit credential and PEM/JWK patterns, and every Markdown target against the Git index. Archive originals were separately scanned and restored. This is a bounded check, not universal secret detection.",
+  "message_ko": "변경한 Git 목록 바이트의 지정 키·PEM/JWK 패턴과 전체 Markdown 대상을 검사했습니다. 묶음 내부 원문은 별도 검사·복원했으며 모든 비밀 탐지를 보장하지 않습니다."
+}

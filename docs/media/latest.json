@@ -1,21 +1,23 @@
 {
-  "source_commit": "fe49b55cad5b61a9f2dd6043922b4480e5bf2bbb",
-  "implementation_sha256": "70af32dc05269aee3a739e234e8db66718bfd1ee86c70b4d84c776be2c5a1db4",
-  "report_path": "research/pilot/2026-10-25-nav02-clock/report.html",
-  "report_sha256": "64cb083f7af8a9331034154e8a9aadcf7ad012e96c186c94b4c04f9ec77f4e32",
-  "capture_method": "Actual automatic Seoul pilot full43.5s at1x; app explicitly replays authored GPS at4x. Captions outside original1280x720. / 실제 서울 자동 파일럿 전체43.5초 원속도·화면 GPS만4배속·원1280x720밖 자막.",
+  "source_commit": "8e153bde900f64ab719ac9c10bb12965a41ae3f0",
+  "implementation_sha256": "84395cf3393b71677b2268d1ed1dcfbb57f653703fd3c273fb060501b8921f3d",
+  "report_path": "research/pilot/2026-10-26-public-speeds/report.html",
+  "report_sha256": "b8d9908d06222cba2ad2d3cd147bd5b7468a45c97112854f0a15fa50d69e4f74",
+  "capture_method": "Actual public-speed Seoul client, full46.95s retained at1x; authored GPS replay explicitly4x. Captions outside original1280x720. / 실제 공공 속도 서울 화면 전체46.95초 원속도·GPS만 명시4배속·원1280x720밖 자막.",
   "user_capture": {
-    "source_commit": "fe49b55cad5b61a9f2dd6043922b4480e5bf2bbb",
+    "source_commit": "8e153bde900f64ab719ac9c10bb12965a41ae3f0",
     "source_dirty": false,
-    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
-    "raw_capture_seconds": 43.5,
+    "graph_id": "3d897cd5570af3a31a161e915c0dd8ae27bc03985f585fd94ea2b313fbc22e42",
+    "source_class": "PUBLIC_AGENCY",
+    "movement_source_class": "SYNTHETIC",
+    "raw_capture_seconds": 46.95,
     "retained_raw_intervals_seconds": [
       [
         0,
-        43.5
+        46.95
       ]
     ],
-    "published_seconds": 43.5,
+    "published_seconds": 46.95,
     "captions_languages": [
       "en",
       "ko"
@@ -34,43 +36,43 @@
   "assets": [
     {
       "path": "docs/media/demo.mp4",
-      "sha256": "e56bfce9310a55fb893cf7dbc4cd5f71160321c33079480357890b96bc47fd56"
+      "sha256": "00d87aa897a00357c9480cfaf14e735a0c15c540d9370a6d93f302984632f667"
     },
     {
       "path": "docs/media/demo.ko.mp4",
-      "sha256": "60962d8feb7a5d13722f3d1bfc8daf03e3fed1687af695d458346f2a7bdc761e"
+      "sha256": "463d8434c376bd683930ca95c3f0a41e507a0b04f121d40004fc77a03b74c6a6"
     },
     {
       "path": "docs/media/demo.gif",
-      "sha256": "534cbec31d34128d73ffa161b41f9ced3c6e7caf3a9fea342bf477a464c71957"
+      "sha256": "ce434d7748181e21bf295b58793a5b8c9c5662f176c7a001c7584ca502836b6f"
     },
     {
       "path": "docs/media/demo.ko.gif",
-      "sha256": "463ab0871297adc930de4c2e186213ee360f0a02e65b4c24ac6e880d9150e2d0"
+      "sha256": "69022a946dcd0a59160e62e57bf14220cd22c54eb5bdb4ac44a5b7d8eb41f395"
     },
     {
       "path": "docs/media/demo-poster.ko.png",
-      "sha256": "ab17337e85f32f388504364dac257be7d895e1174b0838012327333397e2c187"
+      "sha256": "66f9f471cc6cdb82b24cbcbcf759f079203edf791fa13b116b15f4da5c9e2416"
     },
     {
-      "path": "research/pilot/2026-10-25-nav02-clock/capture-original.webm",
-      "sha256": "68fc4f788cf966a6a67ba60ef1acc41fbcf4a7e8a78085f23e20731244158dd7"
+      "path": "research/pilot/2026-10-26-public-speeds/capture-original.webm",
+      "sha256": "260d7476a1d541d8d927f87a74bdab2157b0a7ffe0b00fe12b2bbe38d4a754fe"
     },
     {
-      "path": "research/pilot/2026-10-25-nav02-clock/frames/client-onroute.png",
-      "sha256": "46318f71845488ba36127f04d961b96b0d1a6ad6552680ca321ede2a3bd2b6b7"
+      "path": "research/pilot/2026-10-26-public-speeds/frames/onroute.png",
+      "sha256": "792b66397724e21f9ea66d7de8c95533fc3839ed1d2f1bba0782bfb008d46e95"
     },
     {
-      "path": "research/pilot/2026-10-25-nav02-clock/frames/client-offroute.png",
-      "sha256": "b9f9b723fa6ba85ea88f74f40d175ae12767c4f0424e8c5962a39efda3415a7f"
+      "path": "research/pilot/2026-10-26-public-speeds/frames/offroute.png",
+      "sha256": "280525b991c5fe8251c80e5f6c3a180bbcc508e595be5378567501eb26326cc9"
     },
     {
-      "path": "research/pilot/2026-10-25-nav02-clock/frames/client-arrived.png",
-      "sha256": "0ee9b7e369a36e6f9ef8f6d894e9749acbbd1391bde6b09d2ebf7ca846bb9373"
+      "path": "research/pilot/2026-10-26-public-speeds/frames/arrived.png",
+      "sha256": "d95761129d31b396e0dac1111acacb06ad4051d690304a5f24816cca16949e56"
     },
     {
-      "path": "research/pilot/2026-10-25-nav02-clock/report-data.json",
-      "sha256": "7024605506332f8e8a8da08d0f1b0eac4f43d0057fd29ca921b3f05b2840e18a"
+      "path": "research/pilot/2026-10-26-public-speeds/report-data.json",
+      "sha256": "1a197a2007e84a96a9bd1ee4341f67c3f72ac08846217ce1396be72dc8c1ce8d"
     }
   ]
 }

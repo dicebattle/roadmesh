@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "archives": [
+    {
+      "archive": "data/public-whole01-originals",
+      "originals": 17409,
+      "sha256": "f74eb0ce5d244a9987a44c9368cec36e97abaaab8959a32059a1e3ced4bf5c6f",
+      "all_sizes_and_hashes_equal": true
+    },
+    {
+      "archive": "data/public-live-final01-originals",
+      "originals": 253,
+      "sha256": "76e175bfe11e8805dd357267f5618dfab4ee87c0d40daaa9b29756cb297f954c",
+      "all_sizes_and_hashes_equal": true
+    }
+  ],
+  "message_en": "Fresh extraction independently checked every retained original size and SHA256; exact declared map omissions are separate.",
+  "message_ko": "새 폴더에 복원해 보존 원문 전체의 크기·SHA256을 독립 검사했으며 정확히 선언한 지도 제외는 구분합니다."
+}

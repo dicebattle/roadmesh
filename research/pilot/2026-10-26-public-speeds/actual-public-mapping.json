@@ -1,0 +1,513 @@
+{
+  "schema_version": "kr-directed-mapping-0.1",
+  "policy": "kr-directed-envelope-v1",
+  "graph_id": "3d897cd5570af3a31a161e915c0dd8ae27bc03985f585fd94ea2b313fbc22e42",
+  "geometry_sha256": "7482ec913fdad79ee90247441b9848fad4eaa582b6eeba3995f06bc0822150a6",
+  "graph_edges_sha256": "fc9b1eb67d6b7a1eae8718f711d08f7b321fca3254e67f183fb5f5d73bbe6ef6",
+  "entries": [
+    {
+      "edge_id": "1241849551248",
+      "forward": true,
+      "link_id": "1220024102",
+      "start_node_id": "1220032000",
+      "end_node_id": "1220032500",
+      "max_distance_m": 9.230877950315952,
+      "start_fraction": 0,
+      "end_fraction": 0.8831517751501547
+    },
+    {
+      "edge_id": "1242117986704",
+      "forward": true,
+      "link_id": "1220024101",
+      "start_node_id": "1220031500",
+      "end_node_id": "1220032000",
+      "max_distance_m": 8.53076565165411,
+      "start_fraction": 0.6880405369685867,
+      "end_fraction": 0.987163296483863
+    },
+    {
+      "edge_id": "1242185095568",
+      "forward": true,
+      "link_id": "1220024101",
+      "start_node_id": "1220031500",
+      "end_node_id": "1220032000",
+      "max_distance_m": 7.431922730787746,
+      "start_fraction": 0.5850541102282364,
+      "end_fraction": 0.688040536982179
+    },
+    {
+      "edge_id": "1242252204432",
+      "forward": true,
+      "link_id": "1220024101",
+      "start_node_id": "1220031500",
+      "end_node_id": "1220032000",
+      "max_distance_m": 7.3499297070957565,
+      "start_fraction": 0.3005760630152087,
+      "end_fraction": 0.5850541102301682
+    },
+    {
+      "edge_id": "1242319313296",
+      "forward": true,
+      "link_id": "1220024101",
+      "start_node_id": "1220031500",
+      "end_node_id": "1220032000",
+      "max_distance_m": 7.346206251273391,
+      "start_fraction": 0.0590590765983203,
+      "end_fraction": 0.3005760630245372
+    },
+    {
+      "edge_id": "1296274839952",
+      "forward": true,
+      "link_id": "1220023402",
+      "start_node_id": "1210034100",
+      "end_node_id": "1220031500",
+      "max_distance_m": 0.9624512332081606,
+      "start_fraction": 0.09180113754021825,
+      "end_fraction": 0.17899927448199338
+    },
+    {
+      "edge_id": "1296744602000",
+      "forward": true,
+      "link_id": "1220023402",
+      "start_node_id": "1210034100",
+      "end_node_id": "1220031500",
+      "max_distance_m": 3.913865339844413,
+      "start_fraction": 0.5026035903387034,
+      "end_fraction": 0.7450756934187102
+    },
+    {
+      "edge_id": "1296878819728",
+      "forward": true,
+      "link_id": "1220023402",
+      "start_node_id": "1210034100",
+      "end_node_id": "1220031500",
+      "max_distance_m": 5.251528790203891,
+      "start_fraction": 0.7450756934115426,
+      "end_fraction": 0.9333899404464092
+    },
+    {
+      "edge_id": "1296945928592",
+      "forward": true,
+      "link_id": "1220024101",
+      "start_node_id": "1220031500",
+      "end_node_id": "1220032000",
+      "max_distance_m": 7.715730579311997,
+      "start_fraction": 0,
+      "end_fraction": 0.05905907659836688
+    },
+    {
+      "edge_id": "1297013037456",
+      "forward": true,
+      "link_id": "1220023402",
+      "start_node_id": "1210034100",
+      "end_node_id": "1220031500",
+      "max_distance_m": 5.896246623527038,
+      "start_fraction": 0.9333899404508174,
+      "end_fraction": 0.9846364856906215
+    },
+    {
+      "edge_id": "1297281472912",
+      "forward": true,
+      "link_id": "1220023402",
+      "start_node_id": "1210034100",
+      "end_node_id": "1220031500",
+      "max_distance_m": 1.9064883934507681,
+      "start_fraction": 0.2993532094667614,
+      "end_fraction": 0.5026035903307233
+    },
+    {
+      "edge_id": "1297415690640",
+      "forward": true,
+      "link_id": "1220023402",
+      "start_node_id": "1210034100",
+      "end_node_id": "1220031500",
+      "max_distance_m": 0.5162177602689892,
+      "start_fraction": 0.21760182659552896,
+      "end_fraction": 0.29935320947034505
+    },
+    {
+      "edge_id": "1297617017232",
+      "forward": true,
+      "link_id": "1220023302",
+      "start_node_id": "1220031500",
+      "end_node_id": "1210034100",
+      "max_distance_m": 0.898371346365896,
+      "start_fraction": 0.7360581737022905,
+      "end_fraction": 0.8068078850656403
+    },
+    {
+      "edge_id": "1337345464720",
+      "forward": true,
+      "link_id": "1220024102",
+      "start_node_id": "1220032000",
+      "end_node_id": "1220032500",
+      "max_distance_m": 7.788929679695315,
+      "start_fraction": 0.8831517751575042,
+      "end_fraction": 0.9813584647428317
+    },
+    {
+      "edge_id": "1337479682448",
+      "forward": true,
+      "link_id": "1220024103",
+      "start_node_id": "1220032500",
+      "end_node_id": "1220032700",
+      "max_distance_m": 8.254045932619528,
+      "start_fraction": 0.15814367898604553,
+      "end_fraction": 0.46551423846454887
+    },
+    {
+      "edge_id": "1337580345744",
+      "forward": true,
+      "link_id": "1220024103",
+      "start_node_id": "1220032500",
+      "end_node_id": "1220032700",
+      "max_distance_m": 8.340097581998275,
+      "start_fraction": 0,
+      "end_fraction": 0.15814367897654347
+    },
+    {
+      "edge_id": "1338083662224",
+      "forward": true,
+      "link_id": "1220025301",
+      "start_node_id": "1220032700",
+      "end_node_id": "1220033200",
+      "max_distance_m": 9.804632389471621,
+      "start_fraction": 0,
+      "end_fraction": 0.15203808008347794
+    },
+    {
+      "edge_id": "1338251434384",
+      "forward": true,
+      "link_id": "1220024103",
+      "start_node_id": "1220032500",
+      "end_node_id": "1220032700",
+      "max_distance_m": 8.899785014023054,
+      "start_fraction": 0.8132112511705146,
+      "end_fraction": 0.9665543710352331
+    },
+    {
+      "edge_id": "1338553424272",
+      "forward": true,
+      "link_id": "1220024103",
+      "start_node_id": "1220032500",
+      "end_node_id": "1220032700",
+      "max_distance_m": 8.740407001991548,
+      "start_fraction": 0.46551423846454887,
+      "end_fraction": 0.8132112511610123
+    },
+    {
+      "edge_id": "1338687642000",
+      "forward": true,
+      "link_id": "1220025301",
+      "start_node_id": "1220032700",
+      "end_node_id": "1220033200",
+      "max_distance_m": 8.369533717382755,
+      "start_fraction": 0.15203808009246314,
+      "end_fraction": 0.46554114938352015
+    },
+    {
+      "edge_id": "1338922523024",
+      "forward": true,
+      "link_id": "1220025302",
+      "start_node_id": "1220033200",
+      "end_node_id": "1220033600",
+      "max_distance_m": 6.099708078639228,
+      "start_fraction": 0.018001501470332065,
+      "end_fraction": 0.27537192533525545
+    },
+    {
+      "edge_id": "1344828103056",
+      "forward": true,
+      "link_id": "1220025303",
+      "start_node_id": "1220033600",
+      "end_node_id": "1220034100",
+      "max_distance_m": 10.533469229863032,
+      "start_fraction": 0.8682742406762445,
+      "end_fraction": 0.9717852650174647
+    },
+    {
+      "edge_id": "1345096538512",
+      "forward": true,
+      "link_id": "1220026104",
+      "start_node_id": "1220034100",
+      "end_node_id": "1220034101",
+      "max_distance_m": 10.219610296976246,
+      "start_fraction": 0.05750118960500404,
+      "end_fraction": 0.3050189019861701
+    },
+    {
+      "edge_id": "1345499191696",
+      "forward": true,
+      "link_id": "1220025303",
+      "start_node_id": "1220033600",
+      "end_node_id": "1220034100",
+      "max_distance_m": 10.533469229863032,
+      "start_fraction": 0.7366474261076639,
+      "end_fraction": 0.8682742406762445
+    },
+    {
+      "edge_id": "1345767627152",
+      "forward": true,
+      "link_id": "1220025303",
+      "start_node_id": "1220033600",
+      "end_node_id": "1220034100",
+      "max_distance_m": 9.983997079737692,
+      "start_fraction": 0.00958259178611422,
+      "end_fraction": 0.6890765145351095
+    },
+    {
+      "edge_id": "1345901844880",
+      "forward": true,
+      "link_id": "1220025302",
+      "start_node_id": "1220033200",
+      "end_node_id": "1220033600",
+      "max_distance_m": 8.992625135467271,
+      "start_fraction": 0.7488312532089795,
+      "end_fraction": 1
+    },
+    {
+      "edge_id": "1345968953744",
+      "forward": true,
+      "link_id": "1220025302",
+      "start_node_id": "1220033200",
+      "end_node_id": "1220033600",
+      "max_distance_m": 8.992625133870243,
+      "start_fraction": 0.5185771294219095,
+      "end_fraction": 0.7488312532002604
+    },
+    {
+      "edge_id": "1346170280336",
+      "forward": true,
+      "link_id": "1220025302",
+      "start_node_id": "1220033200",
+      "end_node_id": "1220033600",
+      "max_distance_m": 7.045854048352368,
+      "start_fraction": 0.2753719253168203,
+      "end_fraction": 0.5185771294306287
+    },
+    {
+      "edge_id": "1346774260112",
+      "forward": true,
+      "link_id": "1220026102",
+      "start_node_id": "1220034900",
+      "end_node_id": "1220035700",
+      "max_distance_m": 4.270847938865868,
+      "start_fraction": 0.03529734083095294,
+      "end_fraction": 0.4837910054435252
+    },
+    {
+      "edge_id": "1346975586704",
+      "forward": true,
+      "link_id": "1220026102",
+      "start_node_id": "1220034900",
+      "end_node_id": "1220035700",
+      "max_distance_m": 9.003816855405594,
+      "start_fraction": 0.4837910054502108,
+      "end_fraction": 1
+    },
+    {
+      "edge_id": "1347042695568",
+      "forward": true,
+      "link_id": "1220026103",
+      "start_node_id": "1220035700",
+      "end_node_id": "1220035900",
+      "max_distance_m": 7.187878861760595,
+      "start_fraction": 0.030707595460359848,
+      "end_fraction": 0.984198070168418
+    }
+  ],
+  "excluded": [
+    {
+      "edge_id": "1236917395025",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1236984503889",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1237152276049",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1237185830481",
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "edge_id": "1237454265937",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1297751234960",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1297851898256",
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "edge_id": "1338754750864",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1344962320784",
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "edge_id": "1345566300560",
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "edge_id": "1346640042384",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1620176117329",
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "edge_id": "1620276780625",
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "edge_id": "1620310335057",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "1620377443921",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "478620440976",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "660653234576",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "660821006736",
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "edge_id": "661122996624",
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "edge_id": "661190105488",
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "edge_id": "661257214352",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "661324323216",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "661458540944",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "661525649808",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "661592758672",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "661794085264",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "661961857424",
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "edge_id": "662498728336",
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "edge_id": "671826860432",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "671994632592",
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "edge_id": "672195959184",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "672330176912",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "672397285776",
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "edge_id": "672598612368",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "672766384528",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "673638799760",
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "edge_id": "674242779536",
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "edge_id": "674444106128",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "674813204880",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "674947422608",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "764940409232",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "765007518096",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "765510834576",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "766282586512",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "767020784016",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "768329406864",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "9151104797786",
+      "reason": "NO_MATCH"
+    },
+    {
+      "edge_id": "9151239015514",
+      "reason": "NO_MATCH"
+    }
+  ]
+}

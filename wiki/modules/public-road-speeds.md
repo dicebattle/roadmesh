@@ -1,8 +1,8 @@
 # Public road-speed bootstrap / 공공 도로 속도 확보
 
-Development status: actual collection, official geometry import, dual-layer provider geometry, signed artifacts, durable public acceptance, automatic refresh/native lifecycle and browser routing are implemented. [First actual115m engine proof](../../research/public-road-speeds/2026-10-25-development/README.md). Actual IAB EN/KO/390px and24 controlled native-runtime cases passed in development. Compatible geometry increases verified candidates from3 to31 of79 graph edges. Fresh clean whole462 integration, actual broader coverage routes, current bilingual media/report and branch push remain required. Do not call this a completed public navigation service.
+Local acceptance: actual collection, directed official mapping, signed/native routing, automatic refresh/expiry/withdrawal and browser integration passed fresh whole462, tests369 and actual46.95s EN/KO recording. Source-specific31/79 coverage and remaining production/geographic limits are documented in the [final report](../../research/pilot/2026-10-26-public-speeds/report.md). Feature-branch delivery follows.
 
-개발 상태: 실제 수집·공식 지형/호환 지도·서명·영속 수신·자동 갱신/엔진 수명·화면 경로 연결을 구현했습니다. 실제 내장 한영390픽셀과 통제 엔진24개를 확인했고 지형 대응 후보는3개에서31/79로 늘었습니다. 새 깨끗한462개·넓어진 실제 자료 경로·현재 한영 영상/보고서·푸시가 남아 있으며 완성된 공공 내비게이션으로 표현하지 않습니다.
+로컬 수용: 실제 수집·방향 대응·서명/엔진·자동 갱신/만료/철회·화면 연결의 새462개·전체369개·실제46.95초 한영 녹화를 확인했습니다.31/79범위와 운영/지역 한계는 최종 보고서에 기록하고 브랜치 전달을 이어갑니다.
 
 - [Contract and full acceptance](../../docs/38-public-road-speeds.md) · [official sources](../sources/public-road-speeds.md).
 - [Bounded collector/normalizer](../../tools/public_speed_source.ts): HTTPS only, key from environment,120s coalesced polling,10s/8MiB/50k rows, Korean time, km/h→m/s and original-time600s expiry. Failures cannot renew old source time.
@@ -36,3 +36,9 @@ npm run public:check -- --graph data/verified-seoul-graph --bundle data/verified
 `bind-nodes` requires independently obtained official map proofs and fails on unsupported proofs; it does not trim IDs. Prefer the distinct provider-map path when current provider nodes differ from the downloadable national revision. The server lifetime defaults to15min; capture of authored acceptance requests is opt-in (`--capture-evidence true`). The private state contains the operator's local signing key and must stay outside published evidence. Numeric source requests are server-only. The broad goal remains open until the full evidence gates pass.
 
 bind-nodes는 별도 공식 근거를 요구합니다. 최신 전국 지형과 제공자 노드가 다르면 별도 provider-map 경로로 확인합니다. 서버 기본 수명은15분이고 자체 수용 요청 캡처는 명시 선택입니다. 서명 비밀키가 있는 상태 폴더는 공개 증거 밖에 두고 수치 조회는 서버에서만 수행합니다. 전체 근거 조건까지 목표는 진행 중입니다.
+
+## 2026-10-26 acceptance / 수용
+
+Supersedes the development status above: fresh clean whole462/462, Node22 full369/369, current-media fingerprint/hashes, independent originals/restoration and actual new-graph EN/KO/390px passed. Actual public data:31/79 edges from11 provider links;2119m route,84.31% native partial-length coverage. Actual refresh invalidation/recalculation and owned cleanup are retained. [Final local report](../../research/pilot/2026-10-26-public-speeds/report.md). Branch push follows as authorized; no deployment or new main merge.
+
+위 개발 상태 이후 새 전체462개·전체369개·미디어 지문/해시·원문/복원·실제 새 지도 한영390픽셀을 수용했습니다.11제공 링크→31/79구간·2119m/84.31%·실제 갱신/재계산·소유 정리를 보존합니다. 승인된 브랜치 푸시를 이어가며 배포·새 main 병합은 없습니다.

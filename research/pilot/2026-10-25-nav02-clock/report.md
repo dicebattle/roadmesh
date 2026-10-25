@@ -15,9 +15,9 @@ Node22 strict build, focused10/10 and full320/320 passed. Fresh whole438/438 pre
 
 The actual browser checks replay noisy GPS on original Seoul geometry, next turn/remaining distance, actual nearby-road departure, pause, rejoin, endpoint arrival, invalidation and390px layout. The IAB manual review and newly recorded full video use the same corrected runtime. Authored positions and synthetic traffic remain clearly labeled. / 실제 화면으로 서울 원 지형의 합성 오차·다음/남은 거리·주변 도로 이탈·중단·복귀·끝점 도착·초기화·390픽셀을 검증합니다. 내장 브라우저·새 전체 녹화도 수정된 실행을 사용하며 합성 구분을 유지합니다.
 
-[![Final replay](../../../docs/media/demo-poster.ko.png)](../../../docs/media/demo.ko.gif)
+[![Final replay](https://raw.githubusercontent.com/dicebattle/routelens/41bebadf3d4a1b475ab95bceb69f208ce202967e/docs/media/demo-poster.ko.png)](https://raw.githubusercontent.com/dicebattle/routelens/41bebadf3d4a1b475ab95bceb69f208ce202967e/docs/media/demo.ko.gif)
 
-[English GIF](../../../docs/media/demo.gif) · [한국어 GIF](../../../docs/media/demo.ko.gif) · [MP4](../../../docs/media/demo.ko.mp4) · [original](capture-original.webm) · [video provenance](published-video.json) · [manual evidence](iab/review.json).
+[English GIF](https://raw.githubusercontent.com/dicebattle/routelens/41bebadf3d4a1b475ab95bceb69f208ce202967e/docs/media/demo.gif) · [한국어 GIF](https://raw.githubusercontent.com/dicebattle/routelens/41bebadf3d4a1b475ab95bceb69f208ce202967e/docs/media/demo.ko.gif) · [MP4](https://raw.githubusercontent.com/dicebattle/routelens/41bebadf3d4a1b475ab95bceb69f208ce202967e/docs/media/demo.ko.mp4) · [original](capture-original.webm) · [video provenance](published-video.json) · [manual evidence](iab/review.json).
 
 ## Original preservation / 원문 보존
 

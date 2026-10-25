@@ -147,3 +147,5 @@ Corrected NAV-02 acceptance / 수정 NAV-02 수용: clean fe49b55/runtime70af32d
 [Full objective and implementation requirements](../docs/38-public-road-speeds.md) · [official source research](sources/public-road-speeds.md) · [actual development proof](../research/public-road-speeds/2026-10-25-development/README.md). Actual API→reviewed directed geometry→signature→native115m route passed; source11, geometry/publication/authority22 and legacy compiler29 focused cases passed. Only3/79 pilot edges currently qualify. Browser/automatic lifecycle, broader useful coverage, full fresh integration/media and branch delivery remain. / 실제 수집·검토 지형·서명·엔진115m 개발 반영과 집중 검사를 통과했지만 파일럿79구간 중3개만 적용합니다. 화면·자동 갱신/만료·적용률 확대·새 전체/영상·브랜치 전달은 남습니다.
 
 - [Public runtime development originals, actual broader-source routes and controlled faults](../research/public-road-speeds/2026-10-26-development/README.md) / 공공 실행 개발 원문·넓어진 실제 자료 경로·통제 장애 근거.
+
+- [Actual public-speed acceptance: fresh462, source/browser originals and46.95s recording](../research/pilot/2026-10-26-public-speeds/report.md) / 실제 공공 속도 수용·새462개·출처/화면 원문·46.95초 녹화.

@@ -108,3 +108,9 @@ NAV-01은 서비스를 추가하지 않고 중계에서 엔진 원 안내를 정
 The browser's pure TypeScript progress module binds authored synthetic fixes to the exact request hash, graph and generation. It projects on the original route, checks continuity and nearby-road ambiguity, and exposes current next-turn/geometric-distance only after confirmation. The local replay controller owns clock, play/pause/reset and route-change cancellation. It makes no location upload or device permission request. [NAV-02 contract](37-nav02-route-progress.md).
 
 브라우저 TypeScript 진행 모듈은 합성 위치를 정확한 요청 해시·지도·세대와 연결해 원 지형에 투영하고 연속성·주변 도로 모호함을 확인합니다. 확정한 위치에서만 다음 회전·기하 거리를 보여주며 재생기가 시계·재생/중단·초기화·경로 변경 취소를 맡습니다. 위치 업로드·단말 권한 요청은 없습니다.
+
+## Public speed bootstrap, locally implemented / 로컬에 구현한 공공 속도 확보
+
+The first actual public source is MOLIT ITS. A bounded operator-side collector and dual official-map adapter map timestamped link averages onto exact directed graph edges. A distinct public artifact/JWS bypasses crowd eligibility without inventing contributors. Built-in Node SQLite retains original-response identity, signed order and denial-only withdrawal. The local public runtime reuses the immutable compiler/native engine and session/browser contracts, refreshing and falling back at original expiry. Existing synthetic two-node failover remains separate from this one-operator public adapter; distributed public-source failover and hosted operation are future work. [Contract and verified scope](38-public-road-speeds.md).
+
+제한된 운영자 수집·공식 지도 대응으로 실제 ITS 평균 속도를 방향 엔진 구간에 연결합니다. 별도 공공 서명 계약·내장 SQLite 순서/철회·기존 불변 변환/엔진/화면을 사용하고 원 만료에 갱신·기본값 복귀를 수행합니다. 기존 합성 두 노드 검증과 이번 로컬 공공 연결기를 구분하며 분산 공공 출처 전환·운영 배포는 후속입니다.

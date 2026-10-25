@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "full_original_interval_seconds": [
+    0,
+    46.95
+  ],
+  "source_and_mp4_frames": "939",
+  "gif_note_en": "10fps previews sample frames and round timing to GIF centiseconds; full20fps/46.95s is retained by both MP4s.",
+  "gif_note_ko": "GIF는10fps미리보기로 표본화하고 시간 단위를 반올림하며 두MP4가 전체20fps/46.95초를 유지합니다.",
+  "files": [
+    {
+      "path": "output/playwright/public-speeds-user-capture.webm",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "width": 1280,
+            "height": 720,
+            "avg_frame_rate": "20/1",
+            "nb_read_frames": "939"
+          }
+        ],
+        "format": {
+          "duration": "46.950000"
+        }
+      }
+    },
+    {
+      "path": "docs/media/demo.mp4",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "width": 1280,
+            "height": 828,
+            "avg_frame_rate": "20/1",
+            "nb_read_frames": "939"
+          }
+        ],
+        "format": {
+          "duration": "46.950000"
+        }
+      }
+    },
+    {
+      "path": "docs/media/demo.ko.mp4",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "width": 1280,
+            "height": 828,
+            "avg_frame_rate": "20/1",
+            "nb_read_frames": "939"
+          }
+        ],
+        "format": {
+          "duration": "46.950000"
+        }
+      }
+    },
+    {
+      "path": "docs/media/demo.gif",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "width": 960,
+            "height": 621,
+            "avg_frame_rate": "10/1",
+            "nb_read_frames": "470"
+          }
+        ],
+        "format": {
+          "duration": "47.000000"
+        }
+      }
+    },
+    {
+      "path": "docs/media/demo.ko.gif",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "width": 960,
+            "height": 621,
+            "avg_frame_rate": "10/1",
+            "nb_read_frames": "470"
+          }
+        ],
+        "format": {
+          "duration": "47.000000"
+        }
+      }
+    }
+  ]
+}

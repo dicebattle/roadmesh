@@ -1,0 +1,84 @@
+### Page
+- Page URL: http://127.0.0.1:63856/
+- Page Title: RouteLens · Seoul pilot / 서울 파일럿
+- Console: 1 errors, 0 warnings
+### Snapshot
+```yaml
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - link "RouteLens 서울 공공 속도 미리보기" [ref=e75] [cursor=pointer]:
+      - /url: /
+      - text: RouteLens
+      - generic [ref=e4]: 서울 공공 속도 미리보기
+    - button "Switch to English / 영어로 전환" [active] [ref=e76] [cursor=pointer]: English
+  - main [ref=e6]:
+    - region [ref=e77]:
+      - paragraph [ref=e8]: 실제 서울 도로 · 공공 도로 속도
+      - heading "경로를 선택하세요" [level=1] [ref=e78]
+      - region "Public traffic source / 공공 교통 출처" [ref=e10]:
+        - heading "공공 도로 속도" [level=3] [ref=e79]
+        - 'link "출처: 국토교통부 국가교통정보센터" [ref=e80] [cursor=pointer]':
+          - /url: https://www.its.go.kr/opendata/intro
+        - paragraph [ref=e81]: 확인한 도로에 유효한 공공 속도가 있습니다.
+        - paragraph [ref=e82]: "유효한 공공 속도가 있는 도로 구간: 31 / 79"
+        - paragraph [ref=e83]: "가장 오래된 관측: 2026. 10. 26. 1시 25분 0초 KST"
+        - paragraph [ref=e84]: "자료 조회: 2026. 10. 26. 1시 27분 18초 KST"
+      - generic [ref=e14]:
+        - generic [ref=e15]: 미리 정한 경로
+        - combobox "미리 정한 경로" [ref=e85]:
+          - option "테헤란로 · 장거리 경로" [selected]
+          - option "테헤란로 · 짧은 교통 적용 구간"
+          - option "좌표 직접 입력"
+        - group "출발지" [ref=e86]:
+          - generic [ref=e19]:
+            - generic [ref=e20]:
+              - generic [ref=e21]: 위도
+              - spinbutton "위도" [ref=e87]: "37.4984"
+            - generic [ref=e23]:
+              - generic [ref=e24]: 경도
+              - spinbutton "경도" [ref=e88]: "127.029"
+        - group "도착지" [ref=e89]:
+          - generic [ref=e28]:
+            - generic [ref=e29]:
+              - generic [ref=e30]: 위도
+              - spinbutton "위도" [ref=e90]: "37.5045"
+            - generic [ref=e32]:
+              - generic [ref=e33]: 경도
+              - spinbutton "경도" [ref=e91]: "127.049"
+        - button "경로 계산" [ref=e92] [cursor=pointer]
+      - region [ref=e93]:
+        - heading "경로 결과" [level=2] [ref=e94]
+        - status [ref=e38]: 두 위치를 선택한 뒤 경로를 계산하세요.
+        - region [ref=e95]:
+          - heading "합성 GPS 경로 재생" [level=3] [ref=e96]
+          - paragraph [ref=e41]: 이 경로 위 자체 합성 위치입니다. 단말 GPS·위치 업로드를 사용하지 않으며 재생 시계와 교통 시계는 별개입니다.
+          - generic [ref=e42]: 재생 시나리오
+          - combobox "재생 시나리오" [disabled] [ref=e97]:
+            - option "위치 오차" [selected]
+            - option "경로 이탈·복귀"
+          - generic [ref=e44]:
+            - button "4배속 재생" [disabled] [ref=e98] [cursor=pointer]
+            - button "다음 표본" [disabled] [ref=e99] [cursor=pointer]
+            - button "초기화" [disabled] [ref=e100] [cursor=pointer]
+          - status [ref=e48]: 경로를 계산한 뒤 위치를 재생하세요.
+          - paragraph [ref=e49]: 일시정지
+          - group [ref=e50]:
+            - generic "재생 근거" [ref=e101] [cursor=pointer]
+      - group [ref=e52]:
+        - generic "요청과 버전 근거" [ref=e102] [cursor=pointer]
+      - paragraph [ref=e54]: 로컬 공공 자료 미리보기입니다. 확인한 도로에만 속도를 적용합니다. GPS 재생은 자체 합성이며 실주행 정확도는 미검증입니다.
+    - region "Seoul road map / 서울 도로 지도" [ref=e55]:
+      - region "Interactive Seoul road map / 서울 도로 조작 지도" [ref=e56]:
+        - generic:
+          - region "서울 도로 조작 지도" [ref=e103]
+          - generic "출발지 표시" [ref=e104]: A
+          - generic "도착지 표시" [ref=e105]: B
+        - generic [ref=e58]:
+          - button "지도 확대" [ref=e106] [cursor=pointer]
+          - button "지도 축소" [ref=e107] [cursor=pointer]
+      - paragraph: 입력란에서 좌표를 선택하세요. 지도를 이동하거나 확대해 원래 도로를 살펴볼 수 있습니다.
+      - paragraph [ref=e64]:
+        - text: ©
+        - link "OpenStreetMap contributors · ODbL" [ref=e65] [cursor=pointer]:
+          - /url: https://www.openstreetmap.org/copyright
+```

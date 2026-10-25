@@ -54,3 +54,9 @@ Clearway와 OpenTraffic은 아이디어·역사적 구조를 이해하는 자료
 OsmAnd·Organic Maps·Librescoot는 실제 길안내·오프라인 경험을 조사할 후속 후보입니다. 앱 전체를 포크하면 기능뿐 아니라 코드 라이선스, 빌드, 업데이트 부담도 가져오므로 처음부터 채택하지 않습니다. 모바일 길안내 SDK를 추가할 경우 현재 유지보수와 라이선스를 따로 확인합니다.
 
 버스용 Traccar, OneBusAway와 TransitClock 계열의 선택은 [별도 확장 계획](08-transit-extension.md)에 정리합니다.
+
+## Public speeds / 공공 속도
+
+Reuse `shapefile`(BSD-3-Clause) and `proj4`(MIT) for official geometry/projection, built-in Node SQLite for local durable state, existing `jose` for standard Ed25519 JWS and Valhalla's existing traffic ABI/native routing. RouteLens owns strict bounded reads, Korean time/units, directed mapping evidence, source policy/freshness/coverage, signing scope/sequence/withdrawal and lifecycle integration. Do not implement a GIS binary parser, routing engine, cryptography or database. Source data keeps its own terms. [Current contract](38-public-road-speeds.md).
+
+지형/좌표계는 기존 GIS 라이브러리, 영속 상태는 내장 SQLite, 서명은 기존 jose, 경로는 Valhalla를 재사용합니다. 제한 수집·한국 시각/단위·방향 대응 근거·출처/만료/적용률·서명 범위/순서/철회·실행 연결만 직접 구현하며 원 자료 이용 조건은 유지합니다.
