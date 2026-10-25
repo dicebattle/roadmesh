@@ -4,7 +4,7 @@
 
 **Share traffic information. Calculate routes across independent servers.**
 
-[English](README.md) · [한국어](README.ko.md) · [Documentation](wiki/index.md)
+[English](README.md) · [한국어](README.ko.md) · [Documentation](wiki/index.md) · [Metro Lens website](https://metrolens.fyi/)
 
 [![Checks](https://github.com/dicebattle/routelens/actions/workflows/fast-checks.yml/badge.svg)](https://github.com/dicebattle/routelens/actions/workflows/fast-checks.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
@@ -13,7 +13,7 @@
 
 ## 1. What is RouteLens for?
 
-RouteLens is an open-source project for car navigation, derived from **Metro Lens**. Its goal is to let several approved, independently operated servers calculate routes from the **same map and traffic information**. If one routing server becomes unavailable, another compatible server can answer the request.
+RouteLens is an open-source project for car navigation, derived from **[Metro Lens](https://metrolens.fyi/)**. Its goal is to let several approved, independently operated servers calculate routes from the **same map and traffic information**. If one routing server becomes unavailable, another compatible server can answer the request.
 
 The system has two jobs: turn driving observations into shared road-speed information, and use that information to find routes. RouteLens builds the coordination between those jobs and reuses existing open-source map, routing and database tools.
 
@@ -41,17 +41,9 @@ The longer [developer walkthrough](research/pilot/2026-10-25-p13/developer-walkt
 
 The diagram follows information from observations to the user's route:
 
-```mermaid
-flowchart TD
-  O[Driving observations: synthetic GPS in this pilot] --> I[Receive observations and match them to roads]
-  I --> A[Aggregate road speeds and sign a traffic version]
-  A --> T[Shared map-compatible traffic information]
-  T --> N1[Routing node A]
-  T --> N2[Routing node B]
-  N1 --> G[Gateway: select an available compatible node]
-  N2 --> G
-  G --> U[Browser: route, distance, time and map]
-```
+[![Observation processing, shared traffic, independent routing nodes and the browser](docs/diagrams/architecture.svg)](docs/diagrams/architecture.svg)
+
+[Figure sources and reproduction](docs/diagrams/README.md)
 
 **Traffic preparation:** a managed ingestion service receives observations, matches them to roads, and aggregates eligible traversals. A road-speed value needs at least five contributors under the current policy. The service signs the resulting traffic version. Raw GPS stays inside the collection and matching boundary; public traffic artifacts contain aggregate road values.
 

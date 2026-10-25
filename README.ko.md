@@ -4,7 +4,7 @@
 
 **교통정보는 함께 공유하고, 경로 계산은 여러 서버로 나눕니다.**
 
-[English](README.md) · [한국어](README.ko.md) · [문서](wiki/index.md)
+[English](README.md) · [한국어](README.ko.md) · [문서](wiki/index.md) · [Metro Lens 사이트](https://metrolens.fyi/)
 
 [![검사 상태](https://github.com/dicebattle/routelens/actions/workflows/fast-checks.yml/badge.svg)](https://github.com/dicebattle/routelens/actions/workflows/fast-checks.yml)
 [![라이선스: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
@@ -13,7 +13,7 @@
 
 ## 1. 무엇을 만들려는 프로젝트인가요?
 
-RouteLens는 **Metro Lens에서 파생된 자동차 내비게이션 오픈소스 프로젝트**입니다. 승인된 여러 운영자의 서버가 **같은 지도와 교통정보를 사용해 경로를 계산하는 구조**를 목표로 합니다. 경로 서버 한 곳이 응답하지 못하면, 같은 자료를 사용하는 다른 서버가 요청을 처리합니다.
+RouteLens는 **[Metro Lens](https://metrolens.fyi/)에서 파생된 자동차 내비게이션 오픈소스 프로젝트**입니다. 승인된 여러 운영자의 서버가 **같은 지도와 교통정보를 사용해 경로를 계산하는 구조**를 목표로 합니다. 경로 서버 한 곳이 응답하지 못하면, 같은 자료를 사용하는 다른 서버가 요청을 처리합니다.
 
 시스템의 역할은 두 가지입니다. 주행 관측을 모아 공유할 도로 속도를 만들고, 그 자료로 목적지까지의 경로를 계산합니다. RouteLens는 두 과정을 연결하는 규칙과 실행 구조를 만들고, 지도·경로 엔진·데이터베이스는 기존 오픈소스를 재사용합니다.
 
@@ -41,17 +41,9 @@ GIF는 이 README에서 바로 재생됩니다. MP4는 파일 페이지의 **Raw
 
 아래 그림은 관측 자료가 사용자의 경로가 되기까지의 흐름입니다.
 
-```mermaid
-flowchart TD
-  O[주행 관측: 현재 파일럿은 합성 GPS] --> I[관측 수집과 도로 매칭]
-  I --> A[도로 속도 집계와 교통자료 서명]
-  A --> T[지도 버전이 맞는 교통정보 공유]
-  T --> N1[경로 계산 노드 A]
-  T --> N2[경로 계산 노드 B]
-  N1 --> G[중계 서버: 응답 가능한 호환 노드 선택]
-  N2 --> G
-  G --> U[브라우저: 경로·거리·시간·지도 표시]
-```
+[![관측 처리·교통정보 공유·독립 경로 노드·브라우저의 구조](docs/diagrams/architecture.ko.svg)](docs/diagrams/architecture.ko.svg)
+
+[그림 원본과 다시 만드는 방법](docs/diagrams/README.md)
 
 **교통정보를 준비하는 과정:** 운영자가 관리하는 수집 서버가 관측을 받아 도로에 대응시키고, 조건을 충족한 통과 기록을 집계합니다. 현재 규칙에서는 서로 다른 기여자가 최소 5명 있어야 도로 속도를 만듭니다. 만들어진 교통자료에는 서명을 붙입니다. 원시 GPS는 수집·매칭 영역에 두고, 공개 교통자료에는 집계된 도로 값만 넣습니다.
 

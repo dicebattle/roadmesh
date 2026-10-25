@@ -700,3 +700,15 @@ Direct validation: first push 40155530440 and PR 40155546456 passed whole 390 an
 Next: commit/push this evidence-only update, inspect its exact-head required runs and normally merge PR #14 with main protection retained. No runtime or video bytes changed after accepted capture. / 다음은 근거·문서만 커밋/푸시하고 정확한 커밋의 필수 실행 원문을 확인한 뒤 보호를 유지해 PR #14를 정상 병합하는 것입니다. 수용한 촬영 뒤 실행·영상 바이트는 바꾸지 않았습니다.
 
 Final documentation delivery checks / 최종 문서 전달 검사: 16,288 newly downloaded original text files (1,882,532,183 bytes) passed bounded credential checks; the exact invalid private-key marker in the negative fixture is documented. All 1,082 indexed Markdown targets exist; current media provenance and staged whitespace checks passed. No runtime or video files changed. / 새 원문 텍스트 16,288개·1,882,532,183바이트의 지정 자격정보 패턴과 Git 목록 기반 Markdown 대상 1,082개·현재 미디어 출처·추가 파일 공백 검사를 통과했습니다. 거부 시험의 무효 비밀키 표식은 별도 기록했고 실행·영상 파일은 바꾸지 않았습니다.
+
+## 2026-10-25 — Versioned architecture images and Metro Lens link / 구조도 이미지·Metro Lens 링크
+
+The user requested the diagram-design skill and committed image assets. They selected the existing RouteLens colors and fonts. Main Sol redrew the former Mermaid semantics as two self-contained 1280×720 architecture HTML files and exported English/Korean SVG images with the packaged skill helper. Both READMEs now embed these actual images and link https://metrolens.fyi/, confirmed by the Metro Lens checkout and live page. Original eight nodes/eight edges are preserved with no drop or merge. [Source, style and verification](../docs/diagrams/README.md).
+
+사용자가 스킬로 만든 구조도 이미지 커밋과 Metro Lens 사이트 링크를 요청하고 현재 RouteLens 색상·서체를 선택했습니다. 메인 Sol이 기존 의미를 한영 1280×720 HTML과 SVG로 다시 그려 README에 실제 이미지를 넣었습니다. 로컬 문서·운영 화면으로 주소를 확인했고 구성 8개·연결 8개를 모두 유지했습니다.
+
+Direct checks: generator TypeScript compilation, packaged self-check and SVG export passed both languages. IAB visual review and 35 rendered text rectangles per image found no final text overflow or sampled connector collision. The first overlapping zone heading was corrected; an unavailable read-only SVG bbox API was replaced with screen rectangles and declared-path sampling. Native SVG/system font fallback is explicit. Python Playwright was absent, so no PNG or dependency install is claimed. Shared skill settings and runtime/media fingerprints are unchanged. The user has authorized committing these images; final visual style approval is recorded separately from automated acceptance.
+
+직접 확인은 생성 원본 TypeScript 컴파일·스킬 자체 검사·SVG 내보내기와 한영 내장 브라우저 시각 검토입니다. 각 35개 글자의 경계에서 최종 넘침·연결선 표본 충돌이 없었습니다. 처음 겹친 영역 제목은 수정했고 없는 SVG 경계 API는 화면 경계로 대체했습니다. 시스템 서체 대체를 명시하며 PNG·패키지 설치를 주장하지 않습니다. 공용 설정·실행·미디어 지문은 유지합니다. 사용자가 이미지 커밋을 요청했으며 자동 수용과 최종 시각 선호 확인은 구분합니다.
+
+User visual review / 사용자 시각 검토: after seeing the generated Korean figure, the user explicitly chose to use this style. Packaged checks, no-emit TypeScript and current media fingerprint passed; indexed Markdown links passed at 1105. / 생성한 한국어 그림을 본 사용자가 이 스타일로 사용하도록 명시 확인했습니다. 스킬 검사·TypeScript·현재 미디어와 Git 목록 링크 1105개를 통과했습니다.

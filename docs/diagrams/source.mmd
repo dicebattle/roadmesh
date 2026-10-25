@@ -1,0 +1,9 @@
+flowchart TD
+  O[Driving observations: synthetic GPS in this pilot] --> I[Receive observations and match them to roads]
+  I --> A[Aggregate road speeds and sign a traffic version]
+  A --> T[Shared map-compatible traffic information]
+  T --> N1[Routing node A]
+  T --> N2[Routing node B]
+  N1 --> G[Gateway: select an available compatible node]
+  N2 --> G
+  G --> U[Browser: route, distance, time and map]

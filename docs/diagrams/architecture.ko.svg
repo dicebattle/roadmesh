@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="architecture.ko-title architecture.ko-desc" id="architecture-ko-root">
+  <title id="architecture.ko-title">RouteLens: 관측이 경로가 되기까지</title>
+  <desc id="architecture.ko-desc">합성 관측을 도로에 매칭하고 집계·서명한 교통정보를 두 호환 경로 노드가 공유하며 중계 서버가 브라우저에 경로 결과를 반환합니다.</desc>
+  <defs>
+      <style>#architecture-ko-root { color: #172b3a; font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Segoe UI', sans-serif; }
+      #architecture-ko-root .diagram-container { width:100%;overflow-x:auto }
+      #architecture-ko-root text { fill:#172b3a;font-family:'Avenir Next', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif }
+      #architecture-ko-root .title { font-size:40px;font-weight:600 }
+      #architecture-ko-root .name { font-size:16px;font-weight:600 }
+      #architecture-ko-root .detail { font-family:-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Segoe UI', sans-serif;font-size:12px;fill:#526575 }
+      #architecture-ko-root .group { font-family:-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Segoe UI', sans-serif;font-size:14px;font-weight:600;fill:#526575 }
+      #architecture-ko-root .tag { font-family:ui-monospace,monospace;font-size:8px;fill:#526575;letter-spacing:1px }
+      @media print {
+#architecture-ko-root .diagram-container { overflow-x:visible }
+}</style><marker id="architecture-ko-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#526575"/></marker></defs>
+  <rect width="1280" height="720" fill="#f5f7f9"/>
+  <text x="40" y="64" class="title">RouteLens: 관측이 경로가 되기까지</text>
+  <text x="40" y="96" class="detail">실제 서울 도로 · 합성 이동과 교통정보 · 로컬 파일럿</text>
+  <rect x="40" y="120" width="872" height="144" rx="8" fill="#edf1f4" stroke="#cad4df"/>
+  <text x="56" y="140" class="group">01  교통정보 준비</text>
+  <rect x="632" y="304" width="608" height="152" rx="8" fill="#edf1f4" stroke="#cad4df"/>
+  <text x="864" y="332" class="group">02  독립된 경로 서버</text>
+  <g fill="none" stroke="#526575" stroke-width="1.5" marker-end="url(#architecture-ko-arrow)"><path data-from="O" data-to="I" d="M256 200H352"/>
+<path data-from="I" data-to="A" d="M560 200H656"/>
+<path data-from="A" data-to="T" d="M896 200H1008"/>
+<path data-from="T" data-to="N1" d="M1072 240V288Q1072 296 1064 296H776Q768 296 768 304V352"/>
+<path data-from="T" data-to="N2" d="M1120 240V352"/>
+<path data-from="N1" data-to="G" d="M768 432V512"/>
+<path data-from="N2" data-to="G" d="M1120 432V472Q1120 480 1112 480H928Q920 480 920 488V536Q920 544 912 544H880"/>
+<path data-from="G" data-to="U" d="M880 568H1008"/></g>
+  <g data-node-id="O">
+      <rect x="48" y="160" width="208" height="80" rx="6" fill="#e4e9ee" stroke="#526575" stroke-width="1.5"/>
+      <text x="64" y="180" class="tag">INPUT</text>
+      <text x="64" y="204" class="name">주행 관측</text>
+      <text x="64" y="224" class="detail">합성 GPS</text>
+    </g>
+<g data-node-id="I">
+      <rect x="352" y="160" width="208" height="80" rx="6" fill="#ffffff" stroke="#172b3a" stroke-width="1.5"/>
+      <text x="368" y="180" class="tag">MATCH</text>
+      <text x="368" y="204" class="name">도로 매칭</text>
+      <text x="368" y="224" class="detail">관측 수집 · 도로 대응</text>
+    </g>
+<g data-node-id="A">
+      <rect x="656" y="160" width="240" height="80" rx="6" fill="#ffffff" stroke="#172b3a" stroke-width="1.5"/>
+      <text x="672" y="180" class="tag">AGGREGATE</text>
+      <text x="672" y="204" class="name">집계와 서명</text>
+      <text x="672" y="224" class="detail">도로 속도 · 교통자료 서명</text>
+    </g>
+<g data-node-id="T">
+      <rect x="1008" y="160" width="224" height="80" rx="6" fill="#e5f0ec" stroke="#18816b" stroke-width="1.5"/>
+      <text x="1024" y="180" class="tag">SHARE</text>
+      <text x="1024" y="204" class="name">교통정보 공유</text>
+      <text x="1024" y="224" class="detail">같은 지도 버전</text>
+    </g>
+<g data-node-id="N1">
+      <rect x="656" y="352" width="224" height="80" rx="6" fill="#ffffff" stroke="#172b3a" stroke-width="1.5"/>
+      <text x="672" y="372" class="tag">NODE A</text>
+      <text x="672" y="396" class="name">경로 노드 A</text>
+      <text x="672" y="416" class="detail">Valhalla</text>
+    </g>
+<g data-node-id="N2">
+      <rect x="1008" y="352" width="224" height="80" rx="6" fill="#ffffff" stroke="#172b3a" stroke-width="1.5"/>
+      <text x="1024" y="372" class="tag">NODE B</text>
+      <text x="1024" y="396" class="name">경로 노드 B</text>
+      <text x="1024" y="416" class="detail">Valhalla</text>
+    </g>
+<g data-node-id="G">
+      <rect x="656" y="512" width="224" height="80" rx="6" fill="#e5f0ec" stroke="#18816b" stroke-width="1.5"/>
+      <text x="672" y="532" class="tag">GATEWAY</text>
+      <text x="672" y="556" class="name">응답할 노드 선택</text>
+      <text x="672" y="576" class="detail">중계 서버 · 한 번 재시도</text>
+    </g>
+<g data-node-id="U">
+      <rect x="1008" y="512" width="224" height="80" rx="6" fill="#e4e9ee" stroke="#526575" stroke-width="1.5"/>
+      <text x="1024" y="532" class="tag">CLIENT</text>
+      <text x="1024" y="556" class="name">브라우저 결과</text>
+      <text x="1024" y="576" class="detail">지도 · 거리 · 예상 시간</text>
+    </g>
+  <text x="48" y="376" class="name">같은 지도, 같은 교통정보.</text>
+  <text x="48" y="404" class="detail">경로 서버 한 곳이 응답하지 못하면</text>
+  <text x="48" y="428" class="detail">호환되는 다른 서버가 처리합니다.</text>
+  <text x="48" y="624" class="detail">화살표는 교통자료와 경로 결과의 흐름입니다. 요청·응답의 세부 규칙은 아키텍처 문서를 참고하세요.</text>
+  <path d="M40 652H1240" stroke="#cad4df"/>
+  <rect x="48" y="664" width="16" height="16" rx="4" fill="#e4e9ee" stroke="#526575"/><text x="76" y="676" class="detail">관측 · 결과</text>
+<rect x="400" y="664" width="16" height="16" rx="4" fill="#ffffff" stroke="#526575"/><text x="428" y="676" class="detail">처리 · 경로 엔진</text>
+<rect x="816" y="664" width="16" height="16" rx="4" fill="#e5f0ec" stroke="#18816b"/><text x="844" y="676" class="detail">공유 자료 · 서버 선택</text>
+</svg>

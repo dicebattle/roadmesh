@@ -1,0 +1,260 @@
+{
+  "source": "README.md",
+  "diagrams_total": 1,
+  "diagrams": [
+    {
+      "index": 0,
+      "kind": "flowchart",
+      "source_line": 45,
+      "direction": "TD",
+      "analysis": {
+        "nodes_total": 8,
+        "nodes_drawable": 8,
+        "containers": 0,
+        "leaves": 8,
+        "edges_total": 8,
+        "edges_labeled": 0,
+        "edges_dangling": 0,
+        "max_depth": 0,
+        "shapes": {
+          "rect": 8
+        },
+        "has_cycle": false,
+        "hubs": [
+          {
+            "id": "T",
+            "label": "Shared map-compatible traffic information",
+            "degree": 3
+          },
+          {
+            "id": "G",
+            "label": "Gateway: select an available compatible node",
+            "degree": 3
+          },
+          {
+            "id": "N2",
+            "label": "Routing node B",
+            "degree": 2
+          },
+          {
+            "id": "N1",
+            "label": "Routing node A",
+            "degree": 2
+          },
+          {
+            "id": "I",
+            "label": "Receive observations and match them to roads",
+            "degree": 2
+          }
+        ],
+        "entry_points": [
+          "Driving observations: synthetic GPS in this pilot"
+        ],
+        "terminals": [
+          "Browser: route, distance, time and map"
+        ],
+        "orphans": [],
+        "type_candidates": [
+          "architecture"
+        ],
+        "collapsible_groups": [],
+        "over_node_budget": false,
+        "over_edge_budget": false
+      },
+      "discarded": {
+        "style_directives": 0,
+        "click_handlers": 0
+      },
+      "fragments": [],
+      "notes": [],
+      "nodes": [
+        {
+          "id": "O",
+          "label": "Driving observations: synthetic GPS in this pilot",
+          "shape": "rect",
+          "parent": null,
+          "depth": 0,
+          "container": false,
+          "children": [],
+          "fields": [],
+          "in_degree": 0,
+          "out_degree": 1
+        },
+        {
+          "id": "I",
+          "label": "Receive observations and match them to roads",
+          "shape": "rect",
+          "parent": null,
+          "depth": 0,
+          "container": false,
+          "children": [],
+          "fields": [],
+          "in_degree": 1,
+          "out_degree": 1
+        },
+        {
+          "id": "A",
+          "label": "Aggregate road speeds and sign a traffic version",
+          "shape": "rect",
+          "parent": null,
+          "depth": 0,
+          "container": false,
+          "children": [],
+          "fields": [],
+          "in_degree": 1,
+          "out_degree": 1
+        },
+        {
+          "id": "T",
+          "label": "Shared map-compatible traffic information",
+          "shape": "rect",
+          "parent": null,
+          "depth": 0,
+          "container": false,
+          "children": [],
+          "fields": [],
+          "in_degree": 1,
+          "out_degree": 2
+        },
+        {
+          "id": "N1",
+          "label": "Routing node A",
+          "shape": "rect",
+          "parent": null,
+          "depth": 0,
+          "container": false,
+          "children": [],
+          "fields": [],
+          "in_degree": 1,
+          "out_degree": 1
+        },
+        {
+          "id": "N2",
+          "label": "Routing node B",
+          "shape": "rect",
+          "parent": null,
+          "depth": 0,
+          "container": false,
+          "children": [],
+          "fields": [],
+          "in_degree": 1,
+          "out_degree": 1
+        },
+        {
+          "id": "G",
+          "label": "Gateway: select an available compatible node",
+          "shape": "rect",
+          "parent": null,
+          "depth": 0,
+          "container": false,
+          "children": [],
+          "fields": [],
+          "in_degree": 2,
+          "out_degree": 1
+        },
+        {
+          "id": "U",
+          "label": "Browser: route, distance, time and map",
+          "shape": "rect",
+          "parent": null,
+          "depth": 0,
+          "container": false,
+          "children": [],
+          "fields": [],
+          "in_degree": 1,
+          "out_degree": 0
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1",
+          "source": "O",
+          "target": "I",
+          "label": "",
+          "style": "solid",
+          "arrowhead": "arrow",
+          "bidirectional": false,
+          "undirected": false,
+          "order": 1
+        },
+        {
+          "id": "e2",
+          "source": "I",
+          "target": "A",
+          "label": "",
+          "style": "solid",
+          "arrowhead": "arrow",
+          "bidirectional": false,
+          "undirected": false,
+          "order": 2
+        },
+        {
+          "id": "e3",
+          "source": "A",
+          "target": "T",
+          "label": "",
+          "style": "solid",
+          "arrowhead": "arrow",
+          "bidirectional": false,
+          "undirected": false,
+          "order": 3
+        },
+        {
+          "id": "e4",
+          "source": "T",
+          "target": "N1",
+          "label": "",
+          "style": "solid",
+          "arrowhead": "arrow",
+          "bidirectional": false,
+          "undirected": false,
+          "order": 4
+        },
+        {
+          "id": "e5",
+          "source": "T",
+          "target": "N2",
+          "label": "",
+          "style": "solid",
+          "arrowhead": "arrow",
+          "bidirectional": false,
+          "undirected": false,
+          "order": 5
+        },
+        {
+          "id": "e6",
+          "source": "N1",
+          "target": "G",
+          "label": "",
+          "style": "solid",
+          "arrowhead": "arrow",
+          "bidirectional": false,
+          "undirected": false,
+          "order": 6
+        },
+        {
+          "id": "e7",
+          "source": "N2",
+          "target": "G",
+          "label": "",
+          "style": "solid",
+          "arrowhead": "arrow",
+          "bidirectional": false,
+          "undirected": false,
+          "order": 7
+        },
+        {
+          "id": "e8",
+          "source": "G",
+          "target": "U",
+          "label": "",
+          "style": "solid",
+          "arrowhead": "arrow",
+          "bidirectional": false,
+          "undirected": false,
+          "order": 8
+        }
+      ]
+    }
+  ]
+}
