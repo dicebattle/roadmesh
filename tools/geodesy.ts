@@ -1,4 +1,4 @@
-import { fail } from "./shared.js";
+import { fail } from "./input_error.js";
 export const SPHERE_RADIUS_M = 6371008.8;
 const rad = Math.PI / 180,
   deg = 180 / Math.PI;

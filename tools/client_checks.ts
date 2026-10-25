@@ -32,6 +32,7 @@ import {
 import { pause } from "./ingestion_runtime.js";
 import type { GatewaySuccess, GatewayRouteContext } from "./gateway_types.js";
 import type { SimulationAssertion } from "./vehicle_simulator.js";
+import { ProgressChecks } from "./progress_checks.js";
 import { GuidanceChecks } from "./guidance_checks.js";
 export const CLIENT_CASE_IDS = [
   "fresh-source",
@@ -194,7 +195,7 @@ const write = (root: string, file: string, data: unknown) =>
 export async function runClientChecks(
   graphDirectory: string,
   outputPath: string,
-): Promise<{ client: ClientReport; assertions: SimulationAssertion[]; navigation: SimulationAssertion[] }> {
+): Promise<{ client: ClientReport; assertions: SimulationAssertion[]; navigation: SimulationAssertion[]; progress: SimulationAssertion[] }> {
   const output = resolve(outputPath);
   mkdirSync(output);
   for (const dir of [
@@ -216,6 +217,8 @@ export async function runClientChecks(
     apiResponses: Array<any> = [],
     pendingResponses: Promise<void>[] = [];
   const guidance = new GuidanceChecks(output);
+  const progress = new ProgressChecks(output);
+  let progressInput:{route:GatewaySuccess;roads:number[][][]}|undefined;
   let cumulativeGeoCalls = 0;
   let runtime: ClientRuntime | undefined,
     browserServer: BrowserServer | undefined,
@@ -790,6 +793,40 @@ export async function runClientChecks(
       "states/baseline.json",
     );
     guidance.route("native-baseline-en", baseline.body, "en-US", false, baseline.state.maneuvers);
+    progressInput={route:baseline.body,roads:pilot.bootstrap.roads.features.map(f=>f.geometry.coordinates)};
+    await p.locator("#replay-step").click();
+    let replayState=JSON.parse(await p.locator("#progress-evidence").innerText());
+    const stepData=await p.evaluate(()=>({next:document.getElementById("next-maneuver")?.textContent,remaining:document.getElementById("remaining-distance")?.textContent,raw:document.querySelectorAll(".synthetic-gps").length,confirmed:document.querySelectorAll(".confirmed-gps").length}));
+    progress.check("replay-ui-step",replayState.cursor===1 && replayState.state?.status==="ON_ROUTE" && stepData.next?.includes(baseline.body.guidance.maneuvers[1].instruction)===true && stepData.raw===1 && stepData.confirmed===1,
+      "An ordinary browser step shows the bound native next turn, distance and distinct synthetic/confirmed markers.","실제 화면 한 표본에서 원 다음 안내·거리·합성/확정 표시 확인.",{replay:replayState,dom:stepData});
+    await p.locator("#replay-scenario").selectOption("departure-rejoin");
+    await p.locator("#replay-play").click();
+    await p.waitForFunction(()=>document.getElementById("progress")?.dataset.state==="OFF_ROUTE",undefined,{timeout:15000});
+    await p.locator("#replay-play").click();
+    const paused=JSON.parse(await p.locator("#progress-evidence").innerText());
+    await p.waitForTimeout(650);
+    replayState=JSON.parse(await p.locator("#progress-evidence").innerText());
+    await p.locator("#replay-play").click();
+    await p.waitForFunction(()=>document.getElementById("progress")?.dataset.state==="ARRIVED",undefined,{timeout:45000});
+    const arrivedReplay=JSON.parse(await p.locator("#progress-evidence").innerText());
+    progress.check("replay-ui-play-pause",paused.playing===false && replayState.cursor===paused.cursor && paused.state.status==="OFF_ROUTE" && paused.state.next_maneuver===null && arrivedReplay.state.remaining_m===0,
+      "The actual browser confirms departure, pauses, rejoins and reaches the replay endpoint.","실제 브라우저 이탈 확정·정지·복귀·재생 끝점 도착 확인.",{paused,after:replayState,arrived:arrivedReplay});
+    await p.locator("#replay-play").click();
+    await p.locator("#origin-latitude").fill(String(pilot.bootstrap.presets.long.origin.latitude+.000001));
+    await p.waitForTimeout(650);
+    const stopped=JSON.parse(await p.locator("#progress-evidence").innerText());
+    progress.check("replay-ui-invalidation",stopped.state===null && stopped.playing===false && stopped.cursor===0 && await p.locator(".synthetic-gps,.confirmed-gps").count()===0 && await p.locator("#replay-play").isDisabled(),
+      "Changing route input invalidates replay, removes markers and prevents old timer completion.","입력 변경 때 재생·표시·옛 타이머를 무효화.",stopped);
+    await calculate("progress-restored","long");
+    await p.setViewportSize({width:390,height:844});
+    await p.locator("#replay-scenario").selectOption("noisy-route");
+    await p.locator("#replay-step").click();
+    const mobileProgress=await p.evaluate(()=>({width:innerWidth,scroll_width:document.documentElement.scrollWidth,next:document.getElementById("next-maneuver")?.textContent,remaining:document.getElementById("remaining-distance")?.textContent,replay:JSON.parse(document.getElementById("progress-evidence")!.textContent!)}));
+    await screen("progress-mobile390","Synthetic route progress at390px","390픽셀 합성 경로 진행");
+    progress.check("replay-ui-mobile",mobileProgress.width===390 && mobileProgress.scroll_width<=390 && mobileProgress.replay.state?.status==="ON_ROUTE" && !!mobileProgress.next && !!mobileProgress.remaining,
+      "At390px the actual progress UI shows next instruction and remaining distance without overflow.","390픽셀 실제 진행 화면에서 다음 안내·남은 거리·넘침 없음 확인.",mobileProgress);
+    await p.locator("#replay-reset").click();
+    await p.setViewportSize({width:1280,height:800});
     const legacyInput = { schema_version:"0.1",request_id:"nav01-legacy-"+randomUUID(),
       ...pilot.bootstrap.presets.long, profile:"car",traffic_policy:"prefer_live" };
     const legacyResponse = await p.request.post(pilot.origin+"/api/routes", {headers:{origin:pilot.origin},data:legacyInput});
@@ -1398,6 +1435,9 @@ export async function runClientChecks(
   );
   requireClientCases(assertions);
   const navigation=guidance.finish();
+  if(!progressInput)throw Error("Progress route input missing / 진행 경로 입력 누락");
+  progress.exercise(progressInput.route,progressInput.roads);
+  const progressAssertions=progress.finish();
   const report: ClientReport = {
     assertions_passed: assertions.length,
     assertions_total: CLIENT_CASE_IDS.length,
@@ -1455,7 +1495,7 @@ export async function runClientChecks(
     completed_at_utc: new Date().toISOString(),
   });
   renameSync(join(output, "manifest.json.tmp"), join(output, "manifest.json"));
-  return { client: report, assertions, navigation };
+  return { client: report, assertions, navigation, progress:progressAssertions };
 }
 export async function main(
   args = process.argv.slice(2),

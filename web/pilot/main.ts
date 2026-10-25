@@ -1,5 +1,7 @@
 import * as maplibregl from "maplibre-gl";
 import "./style.css";
+import { ReplayController } from "./replay.js";
+import type { ProgressState } from "../../tools/route_progress.js";
 import { RouteClientState } from "./state.js";
 import type {
   ClientBootstrap,
@@ -136,6 +138,21 @@ let bootstrap: ClientBootstrap | undefined,
   lastRequest: GatewayRequest | undefined;
 let markers: maplibregl.Marker[] = [];
 let renderedGeometry: unknown = null;
+let progressMarkers: maplibregl.Marker[] = [];
+let progressState: ProgressState | null = null;
+const replay = new ReplayController((value) => {
+  progressState=value;
+  progressMarkers.forEach(m=>m.remove());progressMarkers=[];
+  if(mapReady&&map&&value){
+    for(const [point,confirmed] of [[value.raw_position,false],[value.confirmed_position,true]] as const){
+      if(!point)continue;
+      const marker=document.createElement("div");marker.className=confirmed?"confirmed-gps":"synthetic-gps";
+      marker.setAttribute("aria-label",confirmed?"Confirmed route position / 확정한 경로 위치":"Synthetic raw position / 합성 원 위치");
+      progressMarkers.push(new maplibregl.Marker({element:marker}).setLngLat([point[0]!,point[1]!]).addTo(map));
+    }
+  }
+  renderEvidence();
+});
 function renderEvidence(): void {
   $("route-evidence").textContent = JSON.stringify(
     {
@@ -145,6 +162,7 @@ function renderEvidence(): void {
       state: state.phase,
       reason: state.reason,
       map_source_geometry: renderedGeometry,
+      progress: progressState,
     },
     null,
     2,
@@ -274,6 +292,7 @@ function render(): void {
   );
   const button = $("request-route");
   button.setAttribute("aria-busy", String(state.phase === "loading"));
+  replay.sync(state.phase==="current"?state.route:null,bootstrap?.roads.features.map(f=>f.geometry.coordinates)??[],lang);
   const guidance = $("guidance"), list = $("maneuvers");
   list.replaceChildren();
   guidance.hidden = !state.route?.guidance;

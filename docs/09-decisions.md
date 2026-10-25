@@ -119,3 +119,9 @@ P12고정 계약은 로컬/원격 검증·보호 병합했고 P13의 지원 로�
 The accepted P01–P14 pilot is the baseline. Continue toward usable navigation in [roadmap35](35-usable-navigation-roadmap.md), beginning with [NAV-01](36-nav01-turn-guidance.md). Reuse pinned Valhalla narrative locales and maneuver geometry indexes; add a narrow optional contract, not another routing/narrative engine. Preserve legacy unguided wire behavior and all freshness checks. Geographic RM-001 remains a release gate with independent reviewed expectations; local interface implementation may proceed with explicitly synthetic acceptance. This clarifies the old milestone order without counting synthetic routes as real-road acceptance. Main Sol owns design, implementation and review. This task ends at a verified feature-branch push.
 
 수용한 P01~P14를 기준으로 실사용 계획과 NAV-01을 진행합니다. 고정 Valhalla의 언어·안내·지형 인덱스를 재사용하고 선택형 계약만 추가합니다. 기존 안내 없는 전송·신선도 검사를 유지합니다. 실제 지역 검토는 독립 기대 결과를 갖춘 실사용 전 조건으로 남기고 합성임을 명시한 로컬 인터페이스 검증을 진행합니다. 기존 순서를 구체화하되 합성 경로를 실도로 수용에 포함하지 않습니다. 메인 Sol이 설계·구현·검토하고 이번 작업은 작업 브랜치 푸시까지입니다.
+
+## ADR-032: Route-bound conservative progress / 경로에 연결한 보수적 진행
+
+NAV-02 reuses spherical geodesy and native maneuver indexes on the exact validated route. Separate reported fixes, confirmed projection and ambiguous/off-route states; bad GPS cannot fabricate progress, a turn or arrival. Use deterministic authored replay on the actual Seoul road context first, with no device permission or upload. Traffic authority still invalidates the entire route/replay. [Fixed contract](37-nav02-route-progress.md). Main Sol designs, implements and directly reviews; the requested finish includes protected main merge.
+
+NAV-02는 검증한 원 경로·회전 인덱스·구면 계산을 재사용합니다. 원 위치·확정 투영·모호함/이탈을 구분하고 잘못된 위치로 진행·회전·도착을 만들지 않습니다. 실제 서울 주변 도로에서 합성 재생부터 검증하며 단말 권한·업로드는 후속입니다. 교통 승인 변경은 경로·재생 전체를 무효화합니다. 메인 Sol이 설계·구현·검토하고 보호 main 병합까지 수행합니다.

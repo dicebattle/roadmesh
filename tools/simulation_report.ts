@@ -140,6 +140,7 @@ export interface SimulationReportData {
   gateway?: GatewayReport;
   client?: ClientReport;
   navigation?: SimulationReportData["assertions"];
+  progress?: SimulationReportData["assertions"];
   scenarios?: ScenarioReport;
   cloudflare?: CloudflareReport;
   traffic?: TrafficReport;
@@ -650,6 +651,7 @@ export function renderSimulationReport(data: SimulationReportData): string {
       ></p>
       <div id="aggregate-evidence"></div>
     </section>
+    <section id="progress-section" class="checks" hidden><h2 data-en="GPS progress and replay acceptance" data-ko="GPS 진행·재생 검증"></h2><div id="progress-cases"></div></section>
     <section id="navigation-section" class="checks" hidden>
       <h2 data-en="Turn guidance acceptance" data-ko="회전 안내 검증"></h2><div id="navigation-cases"></div>
     </section>
@@ -1072,6 +1074,8 @@ export function renderSimulationReport(data: SimulationReportData): string {
       );
       const v = $("vehicle").options[0];
       if (v) v.textContent = lang === "en" ? "All vehicles" : "전체 차량";
+      $("progress-section").hidden=!data.progress;
+      if(data.progress){const root=$("progress-cases");root.replaceChildren();data.progress.forEach(a=>{const row=node("p",a.status+" · "+a["message_"+lang]+" · ",root);evidence(a.evidence_path,row);});}
       $("navigation-section").hidden=!data.navigation;
       if(data.navigation){const root=$("navigation-cases");root.replaceChildren();data.navigation.forEach(a=>{const row=node("p",a.status+" · "+a["message_"+lang]+" · ",root);evidence(a.evidence_path,row);});}
       $("cloudflare-section").hidden=!data.cloudflare;

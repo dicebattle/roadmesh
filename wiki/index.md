@@ -1,3 +1,7 @@
+# NAV-02 in progress / NAV-02 진행 중
+
+[Fixed progress/replay contract](../docs/37-nav02-route-progress.md): main Sol implementation and direct acceptance in progress on `feat/navigation-progress`;438 required including prior406. User authorized protected main merge after exact-head checks. / 메인 Sol이 기존406개+새32개를 구현·직접 검증하고 정확한 원격 검사 뒤 보호 main 병합까지 진행합니다.
+
 # Current navigation work / 현재 내비게이션 작업
 
 [Usable navigation roadmap](../docs/35-usable-navigation-roadmap.md) · [NAV-01 fixed contract](../docs/36-nav01-turn-guidance.md). Locally implemented and directly verified on `feat/navigation-guidance`:406 fresh integration cases,310 tests, actual28.5s recording. [Report](../research/pilot/2026-10-25-nav01/report.md), [module](modules/turn-guidance.md). Branch delivery; no new merge/deployment claim. P01–P14 historical checkpoints below remain preserved.

@@ -730,3 +730,11 @@ Main Sol implemented fixed contract36 without subagents. Optional native EN/KO g
 Verified branch push3ca6fe9 equals the remote head. Clarify two remaining usability gaps in roadmap35: NAV-06 address/place search and confirmed car-access destination after NAV-02; distinguish cached existing guidance during disconnection from full offline new-route calculation. Reuse search/platform facilities where appropriate and keep routing/progress contracts narrow. Documentation only; the accepted runtime/media fingerprint is unchanged, and the next implementation remains NAV-02.
 
 첫 브랜치 푸시3ca6fe9와 원격 일치를 확인했습니다. 실사용 계획에서 NAV-02 이후 주소/장소 검색·자동차 접근 목적지 확인과 통신 단절의 기존 안내/완전 오프라인 새 탐색을 구분했습니다. 문서 변경만이며 수용한 실행·미디어 지문은 그대로이고 다음 구현은 NAV-02입니다.
+
+## 2026-10-25 — NAV-02 design and protected delivery / NAV-02 설계·보호 반영
+
+User requested GPS progress/replay, actual-Seoul error/turn/remaining/off-route verification, bilingual evidence, branch push and main merge. Main Sol owns design, implementation and direct evidence review. Fixed contract37/ADR032 before coding; preserve406 and add32 for438. Branch starts from origin/main and fast-forwards the unmerged NAV-01 dependency; the final PR will include both. Previous NAV-01 exact-head hosted run40189006877 is successful, not merely pending as the historical last report stated. No new subagents or deployment.
+
+사용자가 GPS 진행·재생·위치 오차/다음 회전/남은 거리/이탈 직접 검증·한영 기록·푸시·main 병합을 요청했습니다. 메인 Sol이 계약37·ADR032와 기존406+새32=438개를 구현 전에 고정했습니다. origin/main의 새 브랜치에 NAV-01 의존 이력을 그대로 포함하고 두 기능을 PR로 반영합니다. NAV-01의 원격40189006877 성공도 확인했으며 배포는 수행하지 않습니다.
+
+NAV-02 pre-integration evidence / NAV-02 통합 전 근거: Node22 strict builds, focused31 and full320 tests passed. A development-only reuse of the previous actual Seoul native route passed28 non-browser cases; replay with the complete real context reached ARRIVED in both scenarios (noisy86 ON_ROUTE+2 ARRIVED; departure87 ON_ROUTE+2 pending+2 OFF_ROUTE+2 ARRIVED). These are source-development probes, not the new clean438 acceptance. Next run the actual browser controls and then rebuild the whole graph/pipeline from a clean committed source. / 엄격 빌드·집중31개·전체320개·이전 실제 경로의 개발28개와 주변 도로 포함 두 재생의 도착을 확인했습니다. 새 깨끗한438개 수용으로 주장하지 않고 실제 화면·새 전체 실행을 이어갑니다.
