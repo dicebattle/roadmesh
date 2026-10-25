@@ -91,3 +91,8 @@ All17,662 archived originals (3,234,802,521 bytes) passed an exact configured-cr
 | Native route and actual browser / 엔진·실제 화면 | [Four actual routes](audits/public-final-actual-verification.json), [mobile review](iab/mobile-dom.json), [recording provenance](published-video.json) |
 | Fresh whole test and original restoration / 새 전체·원문 복원 | [462 assertions](assertions.json), [restoration audit](audits/public-final-restoration-verification.json), [full video frame audit](video-frames-verification.json) |
 | Public delivery / 공개 전달 | Descriptive bilingual commits and verified feature-branch remote SHA; protected main unchanged by this increment. / 이중 언어 커밋·작업 브랜치 원격 SHA 확인으로 전달하며 이번 구현에서 보호 main은 변경하지 않습니다. |
+
+
+Delivery: implementation/evidence commit `24db094` was pushed and its identical remote feature-branch SHA read back; main remained `b4b4eeb`. [Remote receipt](remote-delivery.json) · [indexed-file/link inspection](delivery-verification.json). This documentation-only follow-up retains the exact accepted runtime and media; its own latest remote SHA is checked after push.
+
+전달: 구현·증거24db094의 푸시와 원격 일치·main=b4b4eeb 유지를 확인했습니다. 이 후속 문서도 같은 실행/영상 지문을 유지하고 푸시 후 최신 원격 커밋을 확인합니다.

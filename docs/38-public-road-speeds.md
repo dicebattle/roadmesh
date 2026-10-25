@@ -1,6 +1,6 @@
 # Public road speeds before crowd scale / 사용자 규모 확보 전 공공 도로 속도
 
-Status: local actual-source/native/browser acceptance completed; fresh whole462, tests369, current media and independent originals passed. Feature-branch delivery follows. / 상태: 실제 출처/엔진/화면의 로컬 수용과 새462개·전체369개·현재 미디어·원문 검토를 마쳤으며 브랜치 전달을 이어갑니다.
+Status: local actual-source/native/browser acceptance completed; fresh whole462, tests369, current media and independent originals passed. Feature-branch delivery verified; see the dated report receipt. / 상태: 실제 출처/엔진/화면의 로컬 수용과 새462개·전체369개·현재 미디어·원문 검토를 마쳤으며 브랜치 전달을 확인했습니다.
 
 ## Objective / 목표
 
@@ -87,8 +87,8 @@ Preserve438 previous assertions and add24 fixed public-runtime cases (462 total)
 
 ## 2026-10-26 local acceptance / 로컬 수용
 
-Clean8e153bd/runtime84395cf3/fresh graph3d897cd5 passed462/462 and Node22 full369. Independent original audits cover17,063 hashes plus public source/crypto/native/SQLite boundaries. Actual provider reads on the fresh graph produced31/79 mapped edges from11 source links and a2119m route with84.31% returned-length coverage. The full46.95s recording, EN/KO/390px review, real refresh invalidation/recalculation, original archives/restoration and exact owned cleanup passed. [Dated report and original evidence](../research/pilot/2026-10-26-public-speeds/report.md). Feature push is the remaining delivery action; no new main merge/deployment. This is useful local public-speed bootstrap, not nationwide coverage, production operation or measured field accuracy.
+Clean8e153bd/runtime84395cf3/fresh graph3d897cd5 passed462/462 and Node22 full369. Independent original audits cover17,063 hashes plus public source/crypto/native/SQLite boundaries. Actual provider reads on the fresh graph produced31/79 mapped edges from11 source links and a2119m route with84.31% returned-length coverage. The full46.95s recording, EN/KO/390px review, real refresh invalidation/recalculation, original archives/restoration and exact owned cleanup passed. [Dated report and original evidence](../research/pilot/2026-10-26-public-speeds/report.md). Feature delivery is verified in the dated report; no new main merge/deployment. This is useful local public-speed bootstrap, not nationwide coverage, production operation or measured field accuracy.
 
-깨끗한 새 소스/서울 지도 전체462개·전체369개·독립 원문·실제11링크→31/79구간·2119m/84.31%·46.95초·한영390픽셀·실제 갱신/재계산·원문 복원·소유 정리를 확인했습니다. 날짜별 보고서를 보존하고 마지막 작업 브랜치 푸시를 이어갑니다. 전국 적용·운영·현장 정확도·새 main 병합·배포를 주장하지 않습니다.
+깨끗한 새 소스/서울 지도 전체462개·전체369개·독립 원문·실제11링크→31/79구간·2119m/84.31%·46.95초·한영390픽셀·실제 갱신/재계산·원문 복원·소유 정리를 확인했습니다. 날짜별 보고서와 작업 브랜치 전달 확인을 보존합니다. 전국 적용·운영·현장 정확도·새 main 병합·배포를 주장하지 않습니다.
 
 Provider-map reads are limited to200 input graph edges,100 midpoint pairs,10s/1MiB per response, fewer than20 features per result and complete20m–20km curves. Failed HTTP/JSON/shape reads remain explicit exclusions. Numeric observation freshness and static geometry retrieval identity are separate; the operator must rebuild/review mapping when provider nodes or the pinned graph change. / 공식 지도 조회는 입력200구간·중점100쌍·응답10초/1MiB·결과20개 미만·전체20m~20km 곡선으로 제한합니다. 실패는 제외하고 수치 신선도와 고정 지형 조회 식별을 구분하며 노드/지도 변경 때 대응을 다시 확인합니다.
