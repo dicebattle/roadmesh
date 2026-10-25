@@ -1,8 +1,8 @@
 # P13 local Cloudflare parity / P13 로컬 Cloudflare 비교
 
-Status: main Sol design before runtime implementation. Preserve every P01–P12 gate. Add32 P13 assertions, for390 total. Run Workers, SQLite Durable Objects and Queues through pinned local Wrangler/workerd; no account, remote binding, provisioning or deployment is needed. This is supported **post-matching aggregation parity**, not a claim that raw GPS ingestion, publication, gateway or Valhalla already run on Cloudflare.
+Status: main Sol design, implementation and local acceptance completed; hosted/protected delivery remains. See the [actual report](../research/pilot/2026-10-25-p13/report.md). Preserve every P01–P12 gate. Add32 P13 assertions, for390 total. Run Workers, SQLite Durable Objects and Queues through pinned local Wrangler/workerd; no account, remote binding, provisioning or deployment is needed. This is supported **post-matching aggregation parity**, not a claim that raw GPS ingestion, publication, gateway or Valhalla already run on Cloudflare.
 
-상태: 실행 구현 전 메인 Sol 설계입니다. P01~P12를 유지하고 P13의32개를 더해390개로 검사합니다. 고정 로컬 Wrangler/workerd의 Worker·SQLite Durable Object·Queues를 사용하며 계정·원격 바인딩·자원 생성·배포가 필요하지 않습니다. 지원 범위는 **매칭 후 집계의 동등성**이며 원시 GPS 수집·서명 게시·중계·Valhalla의 Cloudflare 운영 완료가 아닙니다.
+상태: 메인 Sol 설계·구현·로컬 수용을 마쳤으며 원격·보호 반영은 남습니다. P01~P12를 유지하고 P13의32개를 더해390개로 검사합니다. 고정 로컬 Wrangler/workerd의 Worker·SQLite Durable Object·Queues를 사용하며 계정·원격 바인딩·자원 생성·배포가 필요하지 않습니다. 지원 범위는 **매칭 후 집계의 동등성**이며 원시 GPS 수집·서명 게시·중계·Valhalla의 Cloudflare 운영 완료가 아닙니다.
 
 ## Shared core and baseline / 공유 규칙·비교 기준
 

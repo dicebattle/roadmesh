@@ -1,0 +1,54 @@
+[
+  {
+    "attempt": 1,
+    "node_id": "seoul-gateway-node-a",
+    "request": {
+      "request_id": "redirect-rejected",
+      "graph_id": "7d07bab4cc4e8a9928ed77c2263a8986ed7aa43e82eb0ac1c1b835d6990f218d",
+      "locations": [
+        {
+          "lon": 127.03739724982245,
+          "lat": 37.50083690018144
+        },
+        {
+          "lon": 127.0375277498224,
+          "lat": 37.500877100181434
+        }
+      ],
+      "expected_generation_id": "9f193385d48441d5b1a733e53a89bc329e437c4cf59e4fbcfa69d15274024170"
+    },
+    "deadline_ms": 4000,
+    "status": 0,
+    "body": null,
+    "outcome": "REJECTED",
+    "reason": "REDIRECT_REJECTED",
+    "elapsed_start_ms": 868.8387910000001,
+    "elapsed_end_ms": 870.3908329999995
+  },
+  {
+    "attempt": 2,
+    "node_id": "seoul-gateway-node-b",
+    "request": {
+      "request_id": "redirect-rejected",
+      "graph_id": "7d07bab4cc4e8a9928ed77c2263a8986ed7aa43e82eb0ac1c1b835d6990f218d",
+      "locations": [
+        {
+          "lon": 127.03739724982245,
+          "lat": 37.50083690018144
+        },
+        {
+          "lon": 127.0375277498224,
+          "lat": 37.500877100181434
+        }
+      ],
+      "expected_generation_id": "9f193385d48441d5b1a733e53a89bc329e437c4cf59e4fbcfa69d15274024170"
+    },
+    "deadline_ms": 4000,
+    "status": 0,
+    "body": null,
+    "outcome": "REJECTED",
+    "reason": "REDIRECT_REJECTED",
+    "elapsed_start_ms": 883.5470829999995,
+    "elapsed_end_ms": 884.2131250000002
+  }
+]

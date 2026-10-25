@@ -1,0 +1,18 @@
+{
+  "phase": {
+    "type": "PHASE",
+    "phase": "AFTER_NODE_CANDIDATE_READY",
+    "pid": 87278,
+    "node_id": "seoul-node-a",
+    "instance_id": "98fe2f18-d3e0-431e-ad93-3f8857069ca9",
+    "generation_id": "636f774e21cc94141c85c954bdc146262a8bb811cd046396a7621150e5b77fba",
+    "engine_container": "routelens-p02-e43bfb0e-0b35-4732-9cae-c3927ef68e99",
+    "engine_run_directory": "/Users/dice/Documents/routelens-p13/data/p13-final-20261025/nodes/nodes/seoul-node-a/runtime-restarted-a61d1695-8596-47c9-84f1-a442d7644d5f/engines/e43bfb0e-0b35-4732-9cae-c3927ef68e99"
+  },
+  "publication": {
+    "sequence": 9,
+    "snapshot_id": "bf3770c6b3d2201d45a372804970cbe73457a17cacdce9752ad63f1463a7cb74",
+    "valid_until": "2026-10-24T00:07:00.000Z"
+  },
+  "before_clock": "2026-10-24T00:06:59.999Z"
+}

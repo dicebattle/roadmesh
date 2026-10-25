@@ -1,5 +1,8 @@
 # RouteLens 프로젝트 위키
 
+Current: [P13 clean390 and user walkthrough](../research/pilot/2026-10-25-p13/report.md). P12 is protected-merged; P13/P14b hosted/protected acceptance remains. / 현재: P13 깨끗한390개·사용자 영상 수용, P12보호 병합·P13/P14b원격/보호 반영 남음.
+
+
 Current P12 checkpoint: local358/296,15,888 original hashes, actual126.45s excerpts and390px IAB passed; hosted/protected delivery pending. [P12 report](../research/pilot/2026-10-25-p12/report.md). / 현재 P12는 로컬358/296개·원문15,888개·실제126.45초 발췌·390픽셀 수동 확인을 통과했고 원격/보호 반영은 남습니다.
 
 Previous checkpoint / 이전 상태: P01–P11 are protected-merged. P11 passed clean whole334, unit285, independent originals,390px manual IAB and a102.8s actual client recording. [Latest report](../research/pilot/2026-10-25-p11/report.md). P11 hosted334/285 and protected PR12 passed; P12–P14 remain. Earlier entries are historical. / P01~P11은 보호 병합했고 P11은 전체334개·단위285개·독립 원문·390픽셀 수동 화면·102.8초 녹화를 통과했습니다. P11 원격334/285·PR12 보호 반영을 확인했으며 P12~P14는 남아 있고 아래 기록은 당시 상태입니다.
@@ -107,3 +110,9 @@ Latest: [P11 actual client proof](../research/pilot/2026-10-25-p11/report.md), [
 - [P12 scenario runner candidate / P12 시나리오 실행 후보](modules/scenario-runner.md): clean358/296 and independent saved bytes passed; hosted/protected delivery remains. / 깨끗한358/296개·독립 저장 바이트 통과·원격/보호 반영 남음.
 
 [P13 local parity candidate / P13 로컬 비교 후보](modules/cloudflare-parity.md) · [fixed design / 확정 설계](../docs/33-p13-local-cloudflare-parity.md) · [P14b final CI gate / P14b 최종 CI 조건](../docs/34-p14b-final-integration.md). Unit303, actual P06 export34 and development31/11-byte-pairs passed; new clean390/media/hosted remain. / 단위303개·실제 P06 입력34개·개발31개/바이트11쌍 통과·새 깨끗한390개/미디어/원격 남음.
+
+## Current local acceptance / 현재 로컬 수용
+
+[P13 clean390 report](../research/pilot/2026-10-25-p13/report.md): actual Seoul, independent16,061 hashes,32 local Cloudflare checks/11 full result pairs, actual32s user video and155.05s developer capture. [P12 corrected hosted/protected record](../research/pilot/2026-10-25-p12/hosted/README.md). P13/P14b hosted/protected delivery remains. Earlier progress entries above are historical checkpoints.
+
+현재 로컬 전체390개·독립 해시16,061개·Cloudflare32개/전체 결과11쌍·실제 사용자32초/개발155.05초 녹화를 확인했습니다. P12는 수정 원격·보호 반영을 마쳤고 P13/P14b의 원격·보호 반영은 남습니다. 위 진행 기록은 과거 중간 상태입니다.

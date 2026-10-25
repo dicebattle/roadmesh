@@ -1,0 +1,194 @@
+[
+  {
+    "path": "client/fixture/bundle/graph.tar",
+    "bytes": 90787840,
+    "sha256": "e0d19319cd0083225f7e9d29f54539b2c0991ed92f51f0fee17789d808e64096",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "gateway/bundle/graph.tar",
+    "bytes": 90787840,
+    "sha256": "81b8d1cefd1368554c56493d24295ebe3ebfbe75993da5067a5c0378e94c6e13",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "nodes/bundle/graph.tar",
+    "bytes": 90787840,
+    "sha256": "ee54d308720afbc98156a37ffb775cd8167b3decc59f5207ca0e20b95f4cc5ad",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "scenarios/bundle/graph.tar",
+    "bytes": 90787840,
+    "sha256": "029db908af42ca64a18f9a22634a4295eb13926f258575c62897f78b0c3d0286",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "scenarios/supervisors/abort/client/bundle/graph.tar",
+    "bytes": 90787840,
+    "sha256": "57456fb4eb848d6c5b7768053a1fa2f8b2f4f3c36428a7211eb82229203f1391",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "scenarios/supervisors/failure/client/bundle/graph.tar",
+    "bytes": 90787840,
+    "sha256": "91529233977af3f393643c43d716805430df34ba003a70a754f4c07f0a753794",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/graph/seoul.osm.pbf",
+    "bytes": 39784193,
+    "sha256": "926d2a35d09d0b98ad6a715c78732533ede080dffccf04cf793cf99ae0e29ad0",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/graph/tiles/0/002/866.gph",
+    "bytes": 5094248,
+    "sha256": "3e606f8d2cbaf3ad3a91e70d5ff61fc6e573142d08f78e7a3865b394b5af9d3c",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/graph/tiles/1/046/026.gph",
+    "bytes": 5864896,
+    "sha256": "0b283f39c2f5ceb79f801284bb88975ed4e3b8acf58fdaf60b290f5cdec123c4",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/graph/tiles/1/046/027.gph",
+    "bytes": 4427872,
+    "sha256": "dfc3f051271eb48c8decc489fbe3b5778bba9b92b67eb7dfb4d3abe615ef9629",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/graph/tiles/2/000/734/186.gph",
+    "bytes": 1686272,
+    "sha256": "7ec73c4c509fc2e9b29bbd915717a2169b90beec6dab4ad8aa667d999a2d4de9",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/graph/tiles/2/000/734/187.gph",
+    "bytes": 8025248,
+    "sha256": "4dd4040c03fa163a8be5dc5bf94c12cc14b121dabf654d3787734a19f97a58d6",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/graph/tiles/2/000/734/188.gph",
+    "bytes": 7091592,
+    "sha256": "451539ec61eb4309a3c72297ca0ec056e80b8e629c78e9c5a48afcf75fa34e58",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/graph/tiles/2/000/734/189.gph",
+    "bytes": 8792,
+    "sha256": "d9b947b85f5e14e2e15c0a40cfa9d44d19685f18165e463044e77a5ec3c58f95",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/graph/tiles/2/000/735/626.gph",
+    "bytes": 3790008,
+    "sha256": "5a4b80d7f343eed6df9335f3af73fcc9d087c33d0a7d828c2f6d92c772568e47",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/graph/tiles/2/000/735/627.gph",
+    "bytes": 25947328,
+    "sha256": "e4b132cfa61a993ba2ab4ffc797d757f603c2bb402ba369fc6dc42a3e7309a59",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/graph/tiles/2/000/735/628.gph",
+    "bytes": 28730488,
+    "sha256": "78d1af9fd389f31db1d026e39d18b077f7f891db3080bc10f63548a3051ee80b",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/graph/tiles/2/000/735/629.gph",
+    "bytes": 24144,
+    "sha256": "8431df06a4e6e3891198b205e6b1b86584be9b1610b6fb91c2c6d820e2b6bdb8",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/graph/tiles/2/000/737/066.gph",
+    "bytes": 4400,
+    "sha256": "71af456c7e2b87e11edee080632a9fcde03c933d7ff98f3309dd24773c1cbf43",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/graph/tiles/2/000/737/067.gph",
+    "bytes": 14920,
+    "sha256": "fc55260e0d6e9c5d2bab277d3bd696b2f7302d665b7b4288ba0275db992b3f11",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/graph/tiles/2/000/737/068.gph",
+    "bytes": 40272,
+    "sha256": "7e39a214a68eb2e4671e6abab4e02ed87a9313e10ec1ef3357813d32b0ca5989",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/tiny/graph/tiles/2/000/517/680.gph",
+    "bytes": 424,
+    "sha256": "b0a6b98531862c89bb3bcb63f2c72c888ad0697cbe06185a9495f3018e4dfd92",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/tiny/graph/tiles/2/000/519/120.gph",
+    "bytes": 2144,
+    "sha256": "98d5313fceaaf231932b4debcfc36d403bbcd72d37c5d2bd0eff0d3ec836c748",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/tiny/graph/tiny-city.osm.pbf",
+    "bytes": 609,
+    "sha256": "394294b08c222c472172310e2e97cc2d3b7e6fc6741bf670c3e5d8f1b0f548ce",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/tiny/matching/tampered-graph/tiles/2/000/517/680.gph",
+    "bytes": 424,
+    "sha256": "b0a6b98531862c89bb3bcb63f2c72c888ad0697cbe06185a9495f3018e4dfd92",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/tiny/matching/tampered-graph/tiles/2/000/519/120.gph",
+    "bytes": 2144,
+    "sha256": "98d5313fceaaf231932b4debcfc36d403bbcd72d37c5d2bd0eff0d3ec836c748",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/tiny/matching/tampered-graph/tiny-city.osm.pbf",
+    "bytes": 609,
+    "sha256": "394294b08c222c472172310e2e97cc2d3b7e6fc6741bf670c3e5d8f1b0f548ce",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/tiny/replay/tampered-graph/tiles/2/000/517/680.gph",
+    "bytes": 424,
+    "sha256": "b0a6b98531862c89bb3bcb63f2c72c888ad0697cbe06185a9495f3018e4dfd92",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/tiny/replay/tampered-graph/tiles/2/000/519/120.gph",
+    "bytes": 2144,
+    "sha256": "98d5313fceaaf231932b4debcfc36d403bbcd72d37c5d2bd0eff0d3ec836c748",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "seoul/tiny/replay/tampered-graph/tiny-city.osm.pbf",
+    "bytes": 609,
+    "sha256": "394294b08c222c472172310e2e97cc2d3b7e6fc6741bf670c3e5d8f1b0f548ce",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "traffic/bundle/graph.tar",
+    "bytes": 90787840,
+    "sha256": "9d9e3a85407b6e16c6c5bb1f3eef1682641b896e82d77d13f2cc1b73848193ff",
+    "actual_bytes_verified": true
+  },
+  {
+    "path": "traffic/negative/corrupt-bundle/graph.tar",
+    "bytes": 90787840,
+    "sha256": "9d9e3a85407b6e16c6c5bb1f3eef1682641b896e82d77d13f2cc1b73848193ff",
+    "actual_bytes_verified": true
+  }
+]

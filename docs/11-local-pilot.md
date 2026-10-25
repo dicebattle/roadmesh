@@ -1,12 +1,8 @@
 # Local pilot design / 로컬 파일럿 설계
 
-Status: P12 now passed local358/296 with original-byte inspection and refreshed actual media; hosted/protected delivery pending. P01–P11 are protected-merged. P11 passed local/hosted whole334, unit285, independent originals, manual IAB and an actual102.8s client recording. [Current P12 report](../research/pilot/2026-10-25-p12/report.md). P13 and P14b remain unimplemented.
+Status: P01–P13 are locally implemented and accepted on actual Seoul OSM: fresh390, independent16,061 original hashes, eleven complete PostgreSQL/Worker pairs and actual client recordings. P12 is protected-merged with corrected hosted358/296 evidence. P13/P14b hosted inspection and protected delivery remain. [Current report](../research/pilot/2026-10-25-p13/report.md).
 
-상태: P12는 로컬358/296개·원문 검사·최신 실제 녹화를 통과했고 원격/보호 반영은 남습니다. P01~P11은 보호 병합했습니다. P11은 로컬·원격 전체334개·단위285개·독립 원문·내장 브라우저·실제102.8초 화면 녹화를 통과했습니다. P13·P14b는 미구현입니다.
-
-Primary simulation now uses [actual Seoul roads](21-seoul-road-simulation.md); tiny-city stays a regression fixture. [Local proof](../research/seoul/2026-10-24/report.md) passes tiny48 + Seoul29 locally and on hosted Linux.
-
-주요 시뮬레이션을 실제 서울 도로로 전환했고 tiny-city는 회귀용으로 유지합니다. 로컬·원격Linux에서 tiny48·서울29를 통과했습니다.
+상태: 실제 서울 OSM의 P01~P13 로컬 구현을 새390개·독립 원문16,061해시·집계 전체11쌍·실제 화면 녹화로 수용했습니다. P12는 수정 원격358/296개와 함께 보호 병합했고 P13/P14b의 원격 검사·보호 반영은 남습니다.
 
 ## 1. What completion means / 완료의 의미
 

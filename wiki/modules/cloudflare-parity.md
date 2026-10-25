@@ -1,8 +1,8 @@
 # Local Cloudflare parity / 로컬 Cloudflare 비교
 
-Status: main Sol implementation candidate;303 unit tests, actual P06 export34 and local development31 passed. Clean whole390, refreshed media and hosted/protected delivery remain. [Contract](../../docs/33-p13-local-cloudflare-parity.md), [development originals](../../research/pilot/2026-10-25-p13/development/README.md).
+Status: local acceptance at clean d2fb964; whole390 and32 Cloudflare cases passed. Main independently checked184 Cloudflare original hashes,11 full PostgreSQL/Worker pairs,14 actor databases and21 SQLite/WAL copies. Main Sol designed, implemented and reviewed. Hosted/protected acceptance remains. [Report](../../research/pilot/2026-10-25-p13/report.md), [contract](../../docs/33-p13-local-cloudflare-parity.md), [development originals](../../research/pilot/2026-10-25-p13/development/README.md).
 
-상태: 메인 Sol 구현 후보이며 단위303개·실제 P06 입력 보존34개·로컬 개발31개를 통과했습니다. 깨끗한 전체390개·최신 녹화·원격/보호 반영은 남습니다.
+상태: 깨끗한 소스의 로컬 전체390개·Cloudflare32개·독립 원문184해시·집계11쌍·객체DB14개·SQLite/WAL21개를 수용했습니다. 메인 Sol이 설계·구현·검토했고 원격/보호 반영은 남습니다.
 
 `npm run simulation:check -- --output NEW_DIRECTORY` now includes32 required post-matching parity/recovery checks after P12. `npm run cloudflare:check -- --graph VERIFIED_GRAPH --aggregation SAME_RUN_P06 --output NEW_DIRECTORY` requires exactly matching clean source/runtime. The explicit `--development-only` path omits the clean-source gate and cannot declare full completion. `npm run cloudflare:types -- --check` verifies generated bindings.
 

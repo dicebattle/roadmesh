@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "d2fb9643e2b6d69826c5eaf2f8918dfe2108e9ab",
+    "dirty": false
+  },
+  "implementation_sha256": "ba9395ec5ba3ac6dc5d1e296a9334b0bbebd72053b46674692f1c58a84556bfa",
+  "graph_id": "7d07bab4cc4e8a9928ed77c2263a8986ed7aa43e82eb0ac1c1b835d6990f218d",
+  "archived_original_files": 16402,
+  "map_omissions": 32,
+  "archive_bytes": 84986410,
+  "archive_sha256": "fa5b9c01a67d6ed23a57a2848774fad2020393d5eb1d981043cd7058c63da43c",
+  "parts": [
+    {
+      "path": "originals.tar.gz.part01",
+      "bytes": 20971520,
+      "sha256": "c600440335874fa4cb35304c756ba8b72c0badafdc1e3999611d5e1e853e5280"
+    },
+    {
+      "path": "originals.tar.gz.part02",
+      "bytes": 20971520,
+      "sha256": "a0470b6938c4f77c4e9b46fd61572c7fa7e389de7cb412b591d44ad4b93f96db"
+    },
+    {
+      "path": "originals.tar.gz.part03",
+      "bytes": 20971520,
+      "sha256": "4add92b8be2aba92de764d9f3d969b1e6ef701a7427017c75ba4efa9de01e156"
+    },
+    {
+      "path": "originals.tar.gz.part04",
+      "bytes": 20971520,
+      "sha256": "e5475a14078b95e23ac554614504ab664517aaa6dd515af62f426f5a707c2c93"
+    },
+    {
+      "path": "originals.tar.gz.part05",
+      "bytes": 1100330,
+      "sha256": "2d5836c4960a081b927c21dc42a918d3b74c2409973c760f69191126ae35392d"
+    }
+  ],
+  "exact_inventory_match": true,
+  "reconstruction_match": true,
+  "scope_en": "Archive integrity only. Original run status and independent acceptance are separate. Every present original except exact manifest-declared map bytes is retained, including XML and SQLite/WAL/SHM. No missing file is fabricated.",
+  "scope_ko": "묶음 무결성만의 판정입니다. 원 실행·독립 수용과 구분하며 정확한 목록 지도 바이트 외 모든 원문과 XML·SQLite/WAL/SHM을 보존합니다. 없는 파일을 만들지 않습니다."
+}

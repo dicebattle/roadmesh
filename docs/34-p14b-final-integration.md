@@ -1,8 +1,8 @@
 # P14b complete implemented-pilot CI / P14b 구현 파일럿 전체 CI
 
-Status: candidate gate, not final acceptance. Keep protected main and the existing GitHub-App-bound strict `Required checks`. Both Node22/24 unit suites, media provenance and generated Worker bindings must pass. The actual-engine job rebuilds pinned Seoul roads, starts every implemented P01–P13 module and requires all390 assertions, including32 P13 and the unchanged P12 S01–S15 matrix.
+Status: implemented gate with clean local390 acceptance; final hosted/protected acceptance remains. See the [actual report](../research/pilot/2026-10-25-p13/report.md). Keep protected main and the existing GitHub-App-bound strict `Required checks`. Both Node22/24 unit suites, media provenance and generated Worker bindings must pass. The actual-engine job rebuilds pinned Seoul roads, starts every implemented P01–P13 module and requires all390 assertions, including32 P13 and the unchanged P12 S01–S15 matrix.
 
-상태: 후보 조건이며 최종 완료가 아닙니다. main 보호와 기존 GitHub 앱에 연결한 엄격 필수 검사를 유지합니다. Node22/24 단위·미디어 출처·생성 Worker 바인딩을 요구하고 실제 엔진 작업이 고정 서울 지도를 새로 만들어 P01~P13 전체·390개·P13의32개·기존 P12 행렬을 검사합니다.
+상태: 조건을 구현하고 깨끗한 로컬390개를 수용했으며 최종 원격·보호 반영은 남습니다. main 보호와 기존 GitHub 앱에 연결한 엄격 필수 검사를 유지합니다. Node22/24 단위·미디어 출처·생성 Worker 바인딩을 요구하고 실제 엔진 작업이 고정 서울 지도를 새로 만들어 P01~P13 전체·390개·P13의32개·기존 P12 행렬을 검사합니다.
 
 Preserve original XML in addition to JSON/text/SQL/HTML, native logs/process identities/traffic archives, browser PNG/WebM and the complete local Cloudflare SQLite/WAL/SHM set. Exact declared map binary omissions remain explicit. Missing required original evidence is incomplete even if the test count is green. Temporary local processes and private configuration must be cleaned before a manifest can pass; diagnostics stay available after failure.
 

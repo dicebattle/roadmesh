@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "bindings": [
+    {
+      "request_id": "browser-2f8e157e-d0ea-4c0a-9a26-80ef621b6aea",
+      "node": "client-node-a",
+      "distance_m": 2412,
+      "duration_s": 184.731,
+      "snapshot_id": "fa99317ca18712fc2811bdb11e72171d7115f18f6a8391c5550df5e55755e06c",
+      "coverage": 0,
+      "checked_at": "2026-10-24T00:05:35.681Z",
+      "native_directory": "data/p13-user-demo02/pilot/nodes/client-node-a/runtime-c92696f9-8a22-4e40-a1b3-3d046419b411/engines/d6ba99e7-8e8c-47d5-9d8d-76fa57997026/requests/ba59f141-993a-470b-b8d4-8103f4236726",
+      "matching_candidates": 1
+    }
+  ],
+  "actual_native_pairs": 5,
+  "owned_container_names_absent": [
+    "routelens-p05-6b0f7613-6a3e-41a7-9463-8dace9945f58",
+    "routelens-p02-3c1b6dee-a2f4-4df8-b8a5-e0ba2dcf210f",
+    "routelens-p02-3a741037-4a9e-474e-ba7b-7bdd620d346b",
+    "routelens-p02-d6ba99e7-8e8c-47d5-9d8d-76fa57997026",
+    "routelens-p02-130d66fc-8c62-4798-a965-13f31a6c3388",
+    "routelens-p02-44c2fe01-f645-41b5-81c4-ab0e48fb27cb",
+    "routelens-p02-37f7863c-a109-4d61-8e8a-716131d9dd14",
+    "routelens-p02-7246ba3f-abc9-4749-aec9-61574ba18c14",
+    "routelens-p02-3734befb-f36d-4e27-837e-44c5a0e31d1d",
+    "routelens-p02-7e38193d-8df7-46e8-8b00-c9d689925b78",
+    "routelens-p02-9e5ccafe-4c94-47c6-bb79-e3440e2ae6e2",
+    "routelens-p02-90257f36-66d4-4850-b929-a3d5799a12d6",
+    "routelens-p02-0079c6e6-3ab3-433d-ac59-7addf3e0138a",
+    "routelens-p02-122929fa-93d7-4a55-b30f-ad64924985c7",
+    "routelens-p02-0b0837f5-5780-4a32-b79a-9a5ec2196b7e",
+    "routelens-p02-5e073355-e1bd-4932-9bdb-413a7bee1409",
+    "routelens-p02-893bd2ce-8ef2-4a73-8b94-407eee6045db",
+    "routelens-p02-a1114eae-9fc6-4dc3-9249-c15a128226fe",
+    "routelens-p02-7111d2c2-3296-4ee4-8621-4e645ba49634",
+    "routelens-p02-c947cc6f-1642-4c2d-b5ba-65fcda938691",
+    "routelens-p02-da880810-5327-4b3d-8b21-82bafefd20ba"
+  ],
+  "owned_volume_absent": "routelens-p05-6b0f7613-6a3e-41a7-9463-8dace9945f58-db",
+  "owned_processes_absent": 21,
+  "closed_app_port": 61399,
+  "source_commit": "d2fb9643e2b6d69826c5eaf2f8918dfe2108e9ab",
+  "implementation_sha256": "ba9395ec5ba3ac6dc5d1e296a9334b0bbebd72053b46674692f1c58a84556bfa",
+  "graph_id": "7d07bab4cc4e8a9928ed77c2263a8986ed7aa43e82eb0ac1c1b835d6990f218d",
+  "message_en": "Actual Korean user recording on the ordinary automatic client. Its one successful HTTP route binds to native request/route/trace originals. Browser geometry behavior is independently checked in the clean whole390.",
+  "message_ko": "일반 자동 진행 클라이언트의 실제 한국어 사용자 녹화이며 성공 HTTP 한 건을 엔진 원요청·경로·추적에 연결했습니다. 브라우저 지형 동작은 깨끗한 전체390개에서 독립 검사했습니다."
+}

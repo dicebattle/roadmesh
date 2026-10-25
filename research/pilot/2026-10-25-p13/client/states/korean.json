@@ -1,0 +1,94 @@
+{
+  "lang": "ko",
+  "state": "current",
+  "request_id": "browser-afe213c5-2626-44b3-bfc5-e37d47f3064a",
+  "map_ready": "true",
+  "map_active_route": "true",
+  "map_request_id": "browser-afe213c5-2626-44b3-bfc5-e37d47f3064a",
+  "map_rendered_request_id": "browser-afe213c5-2626-44b3-bfc5-e37d47f3064a",
+  "status": "수용한 교통 문맥으로 확인한 경로입니다.",
+  "summary": "0.01 km · 0.4분이 경로에 수용한 교통정보 적용경로 실시간 적용률: 100.00%교통정보 나이 · 모의 시각 기준: 0.0 초확인한 모의 시각: 2026-10-24T00:04:30.000Z",
+  "evidence": {
+    "request": {
+      "schema_version": "0.1",
+      "request_id": "browser-afe213c5-2626-44b3-bfc5-e37d47f3064a",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live"
+    },
+    "response": {
+      "request_id": "browser-afe213c5-2626-44b3-bfc5-e37d47f3064a",
+      "request_sha256": "6eb7808ca1df4427a7d078cd993fca115c48e95a73be5aab669343e2b973e912",
+      "graph_id": "7d07bab4cc4e8a9928ed77c2263a8986ed7aa43e82eb0ac1c1b835d6990f218d",
+      "snapshot_id": "14d8ba06da22e399d52951ac7a030c24e8645a0e63513f63479cd69d26410d79",
+      "sequence": 3,
+      "generation_id": "c6fe255dad0ede8abda630d3abe3193a6a6b85a2ce63f5a8c5c93ea0824e8f98",
+      "traffic_sha256": "dc01c496e70cce424b5a34ac4acfc16e228d606245b84bdce17647efc8611325",
+      "engine_version": "3.9.1",
+      "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+      "costing_config_id": "valhalla-current-v1",
+      "node_id": "client-node-a",
+      "traffic_mode": "LIVE_MIXED",
+      "distance_m": 12,
+      "duration_s": 22.254,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.037397,
+            37.500837
+          ],
+          [
+            127.037528,
+            37.500877
+          ]
+        ]
+      },
+      "live_coverage_ratio": 1,
+      "warnings": [],
+      "high_water": 3,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "traffic_published_at": "2026-10-24T00:04:30.000Z",
+      "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+      "source_class": "SYNTHETIC",
+      "clock_basis": "SIMULATION_EVENT_TIME",
+      "calculated_at": "2026-10-25T02:05:28.570Z"
+    },
+    "authority": {
+      "schema_version": "0.1",
+      "graph_id": "7d07bab4cc4e8a9928ed77c2263a8986ed7aa43e82eb0ac1c1b835d6990f218d",
+      "traffic_snapshot_id": "14d8ba06da22e399d52951ac7a030c24e8645a0e63513f63479cd69d26410d79",
+      "sequence": 3,
+      "high_water": 3,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "traffic_published_at": "2026-10-24T00:04:30.000Z",
+      "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+      "source_class": "SYNTHETIC",
+      "clock_basis": "SIMULATION_EVENT_TIME"
+    },
+    "state": "current",
+    "reason": "",
+    "map_source_geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.037397,
+          37.500837
+        ],
+        [
+          127.037528,
+          37.500877
+        ]
+      ]
+    }
+  },
+  "scroll_width": 1280,
+  "viewport_width": 1280
+}

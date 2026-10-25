@@ -1,0 +1,53 @@
+{
+  "node_id": "seoul-node-a",
+  "instance_id": "98fe2f18-d3e0-431e-ad93-3f8857069ca9",
+  "ready": true,
+  "active": {
+    "graph_id": "7d07bab4cc4e8a9928ed77c2263a8986ed7aa43e82eb0ac1c1b835d6990f218d",
+    "high_water": 7,
+    "sequence": 7,
+    "traffic_snapshot_id": "73bdf2252a222dc9cf65e15a76fdd0ebfa7160b8313b374cc15c6b72ecf4bd3c",
+    "compiler_policy": "valhalla-current-v1",
+    "generation_id": "01867a34c95b46c23d6b8742b3bc4324ed281c23b74b91415daa543e60702082",
+    "traffic_sha256": "14fc1c55806b68cfa9928c2a5a10f499fc818b874880d95e2fdbcc7eb9a1b612",
+    "traffic_byte_length": 8663040,
+    "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+    "valid_until": "2026-10-24T00:07:00.000Z",
+    "traffic_mode": "LIVE",
+    "engine": {
+      "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+      "version": "3.9.1"
+    },
+    "message_en": "Fresh accepted synthetic traffic is applied.",
+    "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+    "activation_epoch": 2,
+    "native_daemon": {
+      "pid": 16,
+      "start_ticks": "3569019"
+    }
+  },
+  "in_flight": 1,
+  "slots": [
+    {
+      "generation_id": "57c31935de57048a0fdafdb26fdff6b7069a03b554c9e4aca4bf3c9f47113f1f",
+      "state": "DRAINING",
+      "in_flight": 1,
+      "native_daemon": {
+        "pid": 16,
+        "start_ticks": "3568687"
+      }
+    },
+    {
+      "generation_id": "01867a34c95b46c23d6b8742b3bc4324ed281c23b74b91415daa543e60702082",
+      "state": "ACTIVE",
+      "in_flight": 0,
+      "native_daemon": {
+        "pid": 16,
+        "start_ticks": "3569019"
+      }
+    }
+  ],
+  "reason": "READY",
+  "message_en": "A current verified engine is ready.",
+  "message_ko": "현재 검증된 엔진이 준비됐습니다."
+}

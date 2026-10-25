@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "matching_id": "p04-parallel",
+  "policy_id": "tiny-city-matching-v1",
+  "source": {
+    "commit": "d2fb9643e2b6d69826c5eaf2f8918dfe2108e9ab",
+    "dirty": false
+  },
+  "node": "22.23.4",
+  "host_architecture": "arm64",
+  "host_platform": "darwin",
+  "graph_id": "6c3b6b6f450f592cad2c721811377532af6be197a1ebea277c84af25bd368942",
+  "graph_manifest_sha256": "27bbca5046fe4d68583a55553af238776088a7bd385066d1329e0a6220ee3df2",
+  "input_sha256": "37c21b995620911bba6423dc6cb3284e7fe937e091873f08e841ab3ad624058c",
+  "semantic_sha256": "5de9e19a2a72e4dad41240be9cfbcd50d27f11ad8369561e08b769cead7fb409",
+  "status": "PASS",
+  "cleanup_verified": true,
+  "engine_executed": false,
+  "image": {
+    "id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "platform": "linux/arm64",
+    "dockerfile_sha256": "063afdc0e67da85ca88eb5713600cf76b663508e66682ace5859628b465001bc"
+  },
+  "base_image": "ghcr.io/valhalla/valhalla@sha256:4fd114eb1d26b8fc2f43bcb3df234c1b63a0bf13c277405e5943d5361dc575de",
+  "runtime_config_sha256": null,
+  "graph_mount": "read-only",
+  "resource_limits": {
+    "cpus": 2,
+    "memory_bytes": 2147483648,
+    "network": "none"
+  },
+  "batch_context": {
+    "mode": "bounded-finalize-once",
+    "batch_size": 21,
+    "overlap": 0
+  },
+  "output_sha256": {
+    "assertions.json": "07aeae1d8e0db4bf1829f8e52046095fe4061b64fad1cba6815bf3fef70b111e",
+    "commands.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "input.json": "37c21b995620911bba6423dc6cb3284e7fe937e091873f08e841ab3ad624058c",
+    "result.json": "c24ec085595842ea1412ae13bef623ab6bf69056fe0b8f4ce79bb7448d67737c",
+    "summary.md": "6d686c5cf5d849aa8f86f45fe6932d0e177e5d7d299f72f0b6c8cc1ccaa1a866"
+  },
+  "completed_at_utc": "2026-10-25T01:53:31.954Z"
+}

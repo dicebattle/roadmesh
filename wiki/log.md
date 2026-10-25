@@ -664,3 +664,25 @@ Manual IAB inspection then rejected final media readiness: at390px the newly add
 The corrected renderer preview (a separate generated HTML, not a modified original) passed direct IAB390px English and Korean with document width390px in both. Strict build and the two existing report suites passed9/9. The next committed full run must provide new provenance and media; the preview is only focused layout verification.
 
 수정 렌더러의 별도 생성 미리보기에서 내장 브라우저 한영390픽셀 문서 폭이 모두390픽셀임을 직접 확인했습니다. 엄격 빌드·기존 보고서 두 시험9/9개를 통과했습니다. 미리보기는 화면 집중 검사이며 다음 커밋 전체 실행·새 출처·미디어를 대신하지 않습니다.
+
+## 2026-10-25 — P13 clean390 accepted and user-first README / P13 깨끗한390개 수용·사용자 중심 README
+
+Main Sol owns design, implementation and direct review. Clean d2fb964/runtime ba9395ec/fresh Seoul graph7d07bab4 passed390 and cleanup. Main independently checked16,061 original hashes; P13 checked184 originals,11 full PostgreSQL/Worker pairs,14 actor databases and21 SQLite/WAL copies with original-byte recheck. P12 domain/native171/442/TCP/supervisor/matrix, client27 native pairs/12 browser bindings, gateway38 pairs/18 replies, previous aggregation/signatures/state and actual read-only SQL15-traversal/three-consumer proof passed. Focused renderer9 passed after candidate303 units/generated bindings. Immutable earlier390/media-layout rejection remains separate. [Report](../research/pilot/2026-10-25-p13/report.md).
+
+메인 Sol이 설계·구현·직접 검토했습니다. 깨끗한 소스·실행 지문·새 서울 지도에서390개·정리와 독립16,061해시·Cloudflare184원문/전체집계11쌍/객체14개/SQLite21개를 확인했습니다. 업무 오류·실제 통신/감독·행렬·클라이언트/중계 엔진·집계/서명/상태·실행SQL15통과/세 수신자도 통과했습니다. 후보303개/생성 바인딩 이후 렌더러 집중9개를 통과했고 앞선390개·화면 거부를 별도 보존합니다.
+
+The first actual155.05s developer capture proves baseline→publication invalidation→detour→short live coverage→nodeB→exact expiry→baseline→unavailable, then completed P13/P12 reports. Manual IAB EN/KO390px has57-point actual map equality, no overflow and no warning/error; all owned tabs/ports are closed. Seven developer UI successes bind to native originals;22 container names,21 pilot PIDs and9 recording identities are gone. Two favicon404s and the deliberate503 are preserved, not hidden.
+
+실제155.05초 개발 녹화로 경로·교통 변경·전환·만료·불가·완료 보고서를 보존했습니다. 수동 내장 브라우저의 한영390픽셀·실제57좌표·넘침/경고 없음과 소유 탭/포트, 성공7건/엔진 원문·컨테이너22개·파일럿21PID·녹화9식별 정리를 확인했습니다. favicon404와 의도한503도 숨기지 않습니다.
+
+The user then requested an understandable purpose, big-picture architecture and actual user video. Rewrite both READMEs around those three questions, explain each reused tool's job and move assertion counts/fault reports below ordinary use. A fresh clean d2fb964 checkout runs the ordinary automatic client. Actual Korean preset→calculate→map/distance/time succeeds at2412m/184.731s and binds to native originals. Publish32s at unchanged speed from raw95s[20,52), with authored EN/KO captions only in a new108px band below the untouched1280x720 app. Keep the raw and developer footage. No driver/GPS/live-traffic or complete guidance claim.
+
+사용자가 목적·큰 아키텍처·이해하기 쉬운 실제 사용 영상을 요청해 양쪽 README를 그 세 질문 중심으로 다시 쓰고 기술별 역할을 설명했습니다. 검사 수·장애 보고서는 일반 사용 뒤로 옮겼습니다. 새 깨끗한 같은 소스에서 일반 자동 클라이언트의 한국어 경로 선택·계산·지도/거리/시간을 실제 촬영하고2412m/184.731초·엔진 원문을 확인했습니다.95초 원본의[20,52)구간을 원속도로 남겨32초로 만들고 원 화면 밖108픽셀 띠에만 한영 설명 자막을 넣었습니다. 원본·개발 영상은 보존하고 실주행·실제GPS·실시간 교통·완성 주행 안내를 주장하지 않습니다.
+
+Two capture preparation issues remain explicit: a node_modules symlink appeared as an untracked file, so the clean-source guard rejected it and the preparing runtime was stopped with verified cleanup; an ordinary cloned dependency directory restored the unchanged clean source. A later optional zoom used an English locator in Korean UI and timed out; no zoom occurred or is claimed by the three-step published story. The successful actual route was already captured. A packager parent/child diagnostic-log filename collision left a mixed text log; original archive/inventory/reconstruction receipts are valid and the log/note are preserved. No healthy product suite was restarted for those corrections.
+
+촬영 준비의 두 문제를 보존합니다. 의존성 심볼릭 링크가 미추적 파일로 보여 소스 검사가 거부했고 준비 실행을 중단·정리한 뒤 일반 의존성 폴더 복제로 깨끗한 같은 소스를 복원했습니다. 선택형 확대는 한국어 화면에 영어 이름을 사용해 시간 초과됐으며 확대가 일어나거나 공개 세 단계 영상에 확대를 주장하지 않습니다. 실제 성공 경로는 먼저 녹화됐습니다. 묶음 도구의 부모/자식 진단 파일명 충돌도 혼합 로그·설명으로 보존하고 원문·목록·복원 영수증은 유지했습니다. 해당 정정을 위해 정상 제품 검사를 재실행하지 않았습니다.
+
+P12 corrected push40150705384 and PR40150709172 passed358 and Node22/24 each296; main inspected15,975 hosted hashes and standard signatures/state. PR13 normal-protected merged checked e393d1f as1f1f1a0 with strict Required checks/App15368/enforced admins/no force/delete retained. First hosted missing-XML rejection and the runtime-seal auditor correction remain separate. P13 merged this ancestry after capture with unchanged runtime. Next: final file/privacy/media checks, branch push, exact-source hosted390/303 evidence and normal protected delivery. P13/P14b are not declared complete before that gate.
+
+P12수정 원격 두 실행358개/Node각296개와15,975해시·표준서명/상태를 확인하고 정확한 커밋을 PR13으로 정상 보호 병합했습니다. 엄격 필수 검사·앱15368·관리자 포함·강제/삭제 금지를 유지했고 XML누락 거부·봉인 감사기 정정을 구분합니다. P13은 촬영 뒤 같은 실행바이트로 이력을 포함했습니다. 다음은 최종 링크/개인정보/미디어·푸시·정확한 원격390/303개·정상 보호 반영이며 그 전에는 P13/P14b전체 완료를 주장하지 않습니다.

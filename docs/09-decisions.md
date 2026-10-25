@@ -107,3 +107,9 @@ P12는 고정 엔진의 탐색 옵션과 원래 경로 오류를 재사용하며
 P13 reuses the unchanged aggregation core behind actual local Worker/Queue/SQLite DO adapters and compares exact same-run PostgreSQL input/result originals. Persist receipt/outbox and deduplicated effects transactionally; do not assume queue exactly-once or cross-service atomicity. Keep native matching/routing and P07 publication outside ordinary Workers. [Contract](33-p13-local-cloudflare-parity.md), [CI gate](34-p14b-final-integration.md). This is a candidate until clean390 and hosted evidence pass.
 
 P13은 같은 실행의 PostgreSQL 원 입력/결과와 실제 로컬 Worker·큐·SQLite DO를 비교하고 기존 집계 규칙을 재사용합니다. 접수/발신 대기·중복 제거 효과를 트랜잭션으로 저장하며 큐의 정확히 한 번·서비스 간 원자성을 가정하지 않습니다. 엔진 매칭/경로·서명 게시의 기존 경계를 유지하고 깨끗한390개·원격 근거 전까지 후보로 둡니다.
+
+### Current acceptance note / 현재 수용 기록
+
+P12's fixed contract is locally/hosted verified and protected-merged. P13's supported local post-matching contract passed clean390/32 with11 full PostgreSQL/Worker pairs; hosted acceptance remains. Initial undecided items above are historical; ADR026–030 and their linked reports supersede the local traffic, map/client and adapter implementation questions. Production identity, real-world accuracy and deployment remain unresolved.
+
+P12고정 계약은 로컬/원격 검증·보호 병합했고 P13의 지원 로컬 매칭 후 계약은 깨끗한390/32개·집계11쌍을 통과했으며 원격 수용은 남습니다. 초기 미결정 목록의 로컬 교통·지도/화면·연결기 구현 사항은 ADR026~030과 보고서로 구체화됐고 운영 신원·실환경 정확도·배포는 남습니다.
