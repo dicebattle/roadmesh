@@ -1,5 +1,11 @@
 # P13 local Cloudflare parity / P13 로컬 Cloudflare 비교
 
+Current acceptance / 현재 수용 (2026-10-25): P01–P14 local-pilot runtime acceptance is complete locally and on GitHub Actions: whole 390, Node.js 22/24 each 303. Main independently checked 16,236 hosted original hashes, 11 complete PostgreSQL/Worker pairs and 21 SQLite copies across 14 actors. The runtime fingerprint matches the accepted local run and actual recordings. Protected integration and the latest checked head are tracked by [PR #14](https://github.com/dicebattle/routelens/pull/14). Geographic 100/100, real driving, live traffic and production deployment remain separate.
+
+P01~P14 로컬 파일럿의 실행 검증을 로컬과 GitHub Actions에서 마쳤습니다. 전체 390개와 Node.js 22·24 각각 303개를 통과했고, 메인이 원격 원문 해시 16,236개·집계 전체 11쌍·객체 14개의 SQLite 복사본 21개를 독립 확인했습니다. 실행 지문은 수용한 로컬 실행·실제 녹화와 같습니다. 보호 병합과 최신 검사 커밋은 [PR #14](https://github.com/dicebattle/routelens/pull/14)에서 확인합니다. 실제 지역 100/100·실주행·실시간 교통·운영 배포는 별도입니다.
+
+Earlier checkpoint / 이전 중간 기록:
+
 Status: main Sol design, implementation and local acceptance completed; hosted/protected delivery remains. See the [actual report](../research/pilot/2026-10-25-p13/report.md). Preserve every P01–P12 gate. Add32 P13 assertions, for390 total. Run Workers, SQLite Durable Objects and Queues through pinned local Wrangler/workerd; no account, remote binding, provisioning or deployment is needed. This is supported **post-matching aggregation parity**, not a claim that raw GPS ingestion, publication, gateway or Valhalla already run on Cloudflare.
 
 상태: 메인 Sol 설계·구현·로컬 수용을 마쳤으며 원격·보호 반영은 남습니다. P01~P12를 유지하고 P13의32개를 더해390개로 검사합니다. 고정 로컬 Wrangler/workerd의 Worker·SQLite Durable Object·Queues를 사용하며 계정·원격 바인딩·자원 생성·배포가 필요하지 않습니다. 지원 범위는 **매칭 후 집계의 동등성**이며 원시 GPS 수집·서명 게시·중계·Valhalla의 Cloudflare 운영 완료가 아닙니다.

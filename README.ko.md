@@ -21,9 +21,11 @@ RouteLens는 **Metro Lens에서 파생된 자동차 내비게이션 오픈소스
 
 ## 2. 사용자 입장에서 사용해 보기
 
-[![서울 경로 클라이언트 실제 사용](docs/media/demo.ko.gif)](docs/media/demo.ko.mp4)
+[![서울 경로 클라이언트 실제 사용](docs/media/demo.ko.gif)](docs/media/demo.ko.gif)
 
-[한국어 사용 영상 보기](docs/media/demo.ko.mp4) · [English walkthrough](docs/media/demo.mp4)
+[32초 사용 영상 바로 보기 (GIF)](docs/media/demo.ko.gif) · [MP4 파일](docs/media/demo.ko.mp4) · [English GIF](docs/media/demo.gif)
+
+GIF는 이 README에서 바로 재생됩니다. MP4는 파일 페이지의 **Raw**를 눌러 내려받을 수 있습니다.
 
 영상은 실제 브라우저 화면에서 다음 과정을 보여줍니다.
 
@@ -98,7 +100,7 @@ npm run report:serve -- data/my-first-run
 
 ## 5. 어디까지 만들고 검증했나요?
 
-로컬 구현에는 차량 생성, 영속 수집, 집계, 서명 게시, 교통정보를 반영한 경로, 독립 노드 두 개, 중계 서버, 브라우저, 장애 시나리오, Cloudflare 로컬 집계 비교가 들어 있습니다. 최신 깨끗한 전체 실행은 **390개 검사**를 통과했습니다. P13 후보의 단위 검사 303개와 보고서 화면 수정의 기존 집중 검사 9개도 통과했습니다. 원격 검증과 보호 병합 상태는 아래 보고서에 진행에 맞춰 기록합니다.
+로컬 구현에는 차량 생성, 관측 저장, 집계, 서명 게시, 교통정보를 반영한 경로, 독립 노드 두 개, 중계 서버, 브라우저, 장애 시나리오, Cloudflare 로컬 집계 비교가 들어 있습니다. 로컬과 GitHub Actions의 **통합 검사 390개**를 통과했고, Node.js 22·24에서도 각각 **303개 검사**를 통과했습니다. 원본 근거는 아래 보고서에, 보호 브랜치 반영은 [PR #14](https://github.com/dicebattle/routelens/pull/14)에 기록합니다.
 
 - [최신 검사 보고서와 원본 근거](research/pilot/2026-10-25-p13/report.md)
 - [현재 구현 상태](docs/18-goal-progress.md)

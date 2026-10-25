@@ -1,5 +1,11 @@
 # P14b complete implemented-pilot CI / P14b 구현 파일럿 전체 CI
 
+Current acceptance / 현재 수용 (2026-10-25): P01–P14 local-pilot runtime acceptance is complete locally and on GitHub Actions: whole 390, Node.js 22/24 each 303. Main independently checked 16,236 hosted original hashes, 11 complete PostgreSQL/Worker pairs and 21 SQLite copies across 14 actors. The runtime fingerprint matches the accepted local run and actual recordings. Protected integration and the latest checked head are tracked by [PR #14](https://github.com/dicebattle/routelens/pull/14). Geographic 100/100, real driving, live traffic and production deployment remain separate.
+
+P01~P14 로컬 파일럿의 실행 검증을 로컬과 GitHub Actions에서 마쳤습니다. 전체 390개와 Node.js 22·24 각각 303개를 통과했고, 메인이 원격 원문 해시 16,236개·집계 전체 11쌍·객체 14개의 SQLite 복사본 21개를 독립 확인했습니다. 실행 지문은 수용한 로컬 실행·실제 녹화와 같습니다. 보호 병합과 최신 검사 커밋은 [PR #14](https://github.com/dicebattle/routelens/pull/14)에서 확인합니다. 실제 지역 100/100·실주행·실시간 교통·운영 배포는 별도입니다.
+
+Earlier checkpoint / 이전 중간 기록:
+
 Status: implemented gate with clean local390 acceptance; final hosted/protected acceptance remains. See the [actual report](../research/pilot/2026-10-25-p13/report.md). Keep protected main and the existing GitHub-App-bound strict `Required checks`. Both Node22/24 unit suites, media provenance and generated Worker bindings must pass. The actual-engine job rebuilds pinned Seoul roads, starts every implemented P01–P13 module and requires all390 assertions, including32 P13 and the unchanged P12 S01–S15 matrix.
 
 상태: 조건을 구현하고 깨끗한 로컬390개를 수용했으며 최종 원격·보호 반영은 남습니다. main 보호와 기존 GitHub 앱에 연결한 엄격 필수 검사를 유지합니다. Node22/24 단위·미디어 출처·생성 Worker 바인딩을 요구하고 실제 엔진 작업이 고정 서울 지도를 새로 만들어 P01~P13 전체·390개·P13의32개·기존 P12 행렬을 검사합니다.

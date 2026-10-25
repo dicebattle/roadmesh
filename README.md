@@ -21,9 +21,11 @@ The system has two jobs: turn driving observations into shared road-speed inform
 
 ## 2. See it from the user's side
 
-[![Using the Seoul route client](docs/media/demo.gif)](docs/media/demo.mp4)
+[![Using the Seoul route client](docs/media/demo.gif)](docs/media/demo.gif)
 
-[Watch the English walkthrough](docs/media/demo.mp4) · [한국어 영상](docs/media/demo.ko.mp4)
+[Watch the 32-second walkthrough (GIF)](docs/media/demo.gif) · [MP4 file](docs/media/demo.mp4) · [한국어 GIF](docs/media/demo.ko.gif)
+
+The GIF plays in this README. To download the MP4, open its file page and choose **Raw**.
 
 The walkthrough shows the actual browser client:
 
@@ -69,7 +71,7 @@ RouteLens owns the contracts, privacy and expiry rules, orchestration, traffic-f
 
 ## 4. Try the local client
 
-Requirements: **Node.js 22 or 24**, npm, curl and Docker with Linux containers. Initial preparation downloads pinned engine images and a dated South Korea OSM source of about290MB. Every full run builds a fresh Seoul graph and starts its own local services. No map API key, external database or Cloudflare account is required.
+Requirements: **Node.js 22 or 24**, npm, curl and Docker with Linux containers. Initial preparation downloads pinned engine images and a dated South Korea OSM source of about 290 MB. Every full run builds a fresh Seoul graph and starts its own local services. No map API key, external database or Cloudflare account is required.
 
 ```sh
 git clone https://github.com/dicebattle/routelens.git
@@ -86,7 +88,7 @@ After the full simulation succeeds, start an interactive client:
 npm run pilot:serve -- --graph data/my-first-run/seoul/graph --output data/my-client
 ```
 
-Open the printed local URL, choose the Teheran-ro preset and calculate. This starts a fresh synthetic traffic fixture, not a video player. Its clock advances automatically, traffic expires, and the pilot stops after15minutes. Use a new output directory for every run. On Linux, browser dependencies can be installed with `npx playwright install --with-deps chromium`.
+Open the printed local URL, choose the Teheran-ro preset and calculate. This starts a fresh synthetic traffic fixture, not a video player. Its clock advances automatically, traffic expires, and the pilot stops after 15 minutes. Use a new output directory for every run. On Linux, browser dependencies can be installed with `npx playwright install --with-deps chromium`.
 
 To inspect the completed simulation instead:
 
@@ -98,7 +100,7 @@ Append `/report.html` to its printed URL. This is the completed evidence report,
 
 ## 5. Implementation and verification
 
-The implemented local pipeline covers simulation, durable ingestion, aggregation, signed publication, traffic-aware routing, two persistent nodes, a gateway, the browser client, fault scenarios and local Cloudflare aggregation comparison. The latest clean whole run passed **390 assertions**. The P13 candidate passed303 unit tests; the report layout correction passed the existing9 focused report tests. Hosted acceptance and protected delivery are recorded as they complete in the linked report.
+The local pipeline covers simulation, durable ingestion, aggregation, signed traffic, routing, two independent nodes, a gateway, the browser client, fault scenarios and a local Cloudflare aggregation comparison. Local and GitHub Actions runs passed **390 integration assertions**; Node.js 22 and 24 each passed **303 tests**. See the linked report for original evidence and [PR #14](https://github.com/dicebattle/routelens/pull/14) for protected integration.
 
 - [Latest test report and original evidence](research/pilot/2026-10-25-p13/report.md)
 - [Current implementation status](docs/18-goal-progress.md)
@@ -111,6 +113,6 @@ npm run media:check
 npm run cloudflare:types -- --check
 ```
 
-Local synthetic success is separate from the reviewed100-route/100-matching real-road evaluation, real driving, live traffic and hosted Cloudflare operation. [Roadmap and limits](docs/11-local-pilot.md).
+Local synthetic success is separate from the reviewed 100-route/100-matching real-road evaluation, real driving, live traffic and hosted Cloudflare operation. [Roadmap and limits](docs/11-local-pilot.md).
 
-The map uses © OpenStreetMap contributors, [ODbL1.0](https://www.openstreetmap.org/copyright), through [Geofabrik](https://download.geofabrik.de/asia/south-korea.html), snapshot2026-10-23. The extraction envelope includes Seoul and adjacent roads. Code and documentation use [Apache-2.0](LICENSE); upstream tools and map data retain their own licenses. [NOTICE](NOTICE) · [Security](SECURITY.md).
+The map uses © OpenStreetMap contributors, [ODbL 1.0](https://www.openstreetmap.org/copyright), through [Geofabrik](https://download.geofabrik.de/asia/south-korea.html), snapshot 2026-10-23. The extraction envelope includes Seoul and adjacent roads. Code and documentation use [Apache-2.0](LICENSE); upstream tools and map data retain their own licenses. [NOTICE](NOTICE) · [Security](SECURITY.md).

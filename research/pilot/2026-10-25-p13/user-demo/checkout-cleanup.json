@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "owned_temporary_checkout": "/Users/dice/Documents/routelens-user-demo",
+  "removed_without_force": true,
+  "source_commit_preserved": "d2fb9643e2b6d69826c5eaf2f8918dfe2108e9ab",
+  "existing_worktrees_preserved": [
+    "/Users/dice/Documents/routelens",
+    "/Users/dice/Documents/routelens-p10",
+    "/Users/dice/Documents/routelens-p12",
+    "/Users/dice/Documents/routelens-p13"
+  ],
+  "message_en": "Only the clean temporary source checkout created for the user recording and its rejected dependency link were removed after capture and cleanup. Original code, captures and existing worktrees remain.",
+  "message_ko": "사용자 녹화를 위해 만든 깨끗한 임시 소스와 거부한 의존성 링크만 촬영·정리 뒤 강제 옵션 없이 제거했습니다. 원 코드·녹화·기존 작업 폴더는 보존합니다."
+}

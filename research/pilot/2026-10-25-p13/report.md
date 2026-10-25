@@ -1,6 +1,6 @@
 # P13 local parity and P14b gate / P13 로컬 비교·P14b 조건
 
-Status: local acceptance complete; hosted original inspection and protected delivery pending. Main Sol owns design, implementation and direct review. / 상태: 로컬 수용 완료·원격 원문 검사와 보호 반영 남음. 메인 Sol이 설계·구현·직접 검토했습니다.
+Status: local and hosted runtime acceptance complete. Main Sol owns design, implementation and direct review. Protected delivery is tracked by [PR #14](https://github.com/dicebattle/routelens/pull/14). / 상태: 로컬·원격 실행 수용 완료. 메인 Sol이 설계·구현·직접 검토했으며 보호 반영은 PR #14에서 확인합니다.
 
 The fresh clean whole run passed390 on actual Seoul OSM, including32 local Worker/Queue/SQLite cases. Main independently checked16061 original hashes; the Cloudflare audit checked184, eleven complete PostgreSQL/Worker pairs,14 actor databases and21 SQLite/WAL copies. Originals were hashed again after copied-database inspection. / 실제 서울 OSM의 새 깨끗한 전체390개·로컬 Worker/큐/SQLite32개를 통과했습니다. 메인이 원문16061해시·Cloudflare184해시·전체집계11쌍·객체DB14개·SQLite/WAL21개를 독립 확인하고 복사본 검사 뒤 원문 해시를 재대조했습니다.
 
@@ -43,3 +43,11 @@ P12's first hosted run was rejected for missing XML. Its corrected run passed in
 ## Scope / 범위
 
 P13 proves supported local post-matching aggregation parity using one unchanged core. It does not establish hosted Cloudflare consumer concurrency, cloud placement, public GPS authentication, production deployment, independent real-road accuracy or live traffic. Geographic100/100 and real mobile driving remain separate gates. / P13은 같은 집계 함수를 쓰는 로컬 매칭 후 비교입니다. 원격 소비자 동시성·배치·공개GPS인증·운영 배포·독립 실도로 정확도·실시간 교통을 증명하지 않으며 실제 지역100/100·모바일 주행은 별도입니다.
+
+## Hosted original inspection / 원격 원문 검사
+
+P01–P14 local-pilot runtime acceptance is complete locally and on GitHub Actions: whole 390, Node.js 22/24 each 303. Main independently checked 16,236 hosted original hashes, 11 complete PostgreSQL/Worker pairs and 21 SQLite copies across 14 actors. The runtime fingerprint matches the accepted local run and actual recordings. Protected integration and the latest checked head are tracked by [PR #14](https://github.com/dicebattle/routelens/pull/14). Geographic 100/100, real driving, live traffic and production deployment remain separate.
+
+P01~P14 로컬 파일럿의 실행 검증을 로컬과 GitHub Actions에서 마쳤습니다. 전체 390개와 Node.js 22·24 각각 303개를 통과했고, 메인이 원격 원문 해시 16,236개·집계 전체 11쌍·객체 14개의 SQLite 복사본 21개를 독립 확인했습니다. 실행 지문은 수용한 로컬 실행·실제 녹화와 같습니다. 보호 병합과 최신 검사 커밋은 [PR #14](https://github.com/dicebattle/routelens/pull/14)에서 확인합니다. 실제 지역 100/100·실주행·실시간 교통·운영 배포는 별도입니다.
+
+[Permanent downloaded originals, audits and reconstruction / 다운로드 원문·감사·복원](hosted/README.md). Push run 40155530440 and PR run 40155546456 both passed at 5c4f098. The final documentation commit must pass its own required checks before normal protected merge. / 두 원격 실행이 같은 소스에서 통과했습니다. 최종 문서 커밋도 자체 필수 검사를 통과한 뒤 정상 보호 병합합니다.

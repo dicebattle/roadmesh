@@ -1,5 +1,11 @@
 # 개발 순서와 통과 기준
 
+P01–P14 local-pilot runtime acceptance is complete locally and on GitHub Actions: whole 390, Node.js 22/24 each 303. Main independently checked 16,236 hosted original hashes, 11 complete PostgreSQL/Worker pairs and 21 SQLite copies across 14 actors. The runtime fingerprint matches the accepted local run and actual recordings. Protected integration and the latest checked head are tracked by [PR #14](https://github.com/dicebattle/routelens/pull/14). Geographic 100/100, real driving, live traffic and production deployment remain separate.
+
+P01~P14 로컬 파일럿의 실행 검증을 로컬과 GitHub Actions에서 마쳤습니다. 전체 390개와 Node.js 22·24 각각 303개를 통과했고, 메인이 원격 원문 해시 16,236개·집계 전체 11쌍·객체 14개의 SQLite 복사본 21개를 독립 확인했습니다. 실행 지문은 수용한 로컬 실행·실제 녹화와 같습니다. 보호 병합과 최신 검사 커밋은 [PR #14](https://github.com/dicebattle/routelens/pull/14)에서 확인합니다. 실제 지역 100/100·실주행·실시간 교통·운영 배포는 별도입니다.
+
+[Hosted evidence / 원격 근거](../research/pilot/2026-10-25-p13/hosted/README.md). Older progress below is historical. / 아래 진행 기록은 과거 시점입니다.
+
 ## Local pilot track / 로컬 파일럿 경로
 
 P01/P14a status: implemented and directly verified locally and in GitHub Actions on Node 22/24 after the TypeScript migration. Required CI is now active on main. [Module and evidence](../wiki/modules/pilot-runner.md). [P02 graph checks](../wiki/modules/test-graph.md) are verified; P03 is locally verified with an integrated recording; P04 is next and the full P14b matrix remains.

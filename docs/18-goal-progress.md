@@ -16,8 +16,8 @@ The goal remains the complete local P01–P14 pilot. Each increment needs fresh 
 | P10 gateway and failover / 중계·장애 전환 | [Hosted proof](../research/pilot/2026-10-25-p10-worker/hosted/README.md) | Corrected local/hosted302, unit262; protected PR11 merged / 수정 로컬·원격302·단위262·PR11 보호 병합 |
 | P11 actual client / 실제 경로 클라이언트 | [Report](../research/pilot/2026-10-25-p11/report.md) | Local/hosted334 and285 tests, actual102.8s recording; protected PR12 merged / 로컬·원격334·단위285·실제102.8초 녹화·PR12 보호 병합 |
 | P12 full fault matrix / 전체 장애 행렬 | [Fixed design](32-p12-whole-scenarios.md) | Local/hosted358/296 and independent15,975 hosted hashes; protected PR13 merged / 로컬·원격358/296개·독립 원격15,975해시·PR13 보호 병합 |
-| P13 local Cloudflare parity / 로컬 Cloudflare 비교 | [Contract](33-p13-local-cloudflare-parity.md) | Clean390/32 local,11 full pairs and SQLite originals accepted; hosted remains / 깨끗한 로컬390/32개·전체11쌍·SQLite원문 수용·원격 남음 |
-| P14b final integration CI / 최종 통합 CI | [Fixed gate](34-p14b-final-integration.md) | Implemented390 required gate and XML/SQLite originals; hosted acceptance remains / 구현390개 필수 조건·XML/SQLite원문·원격 판정 남음 |
+| P13 local Cloudflare parity / 로컬 Cloudflare 비교 | [Contract](33-p13-local-cloudflare-parity.md) | Local/hosted 390/32, 11 full pairs and actual SQLite accepted; protected delivery in PR #14 / 로컬·원격 390/32개·전체 11쌍·실제 SQLite 수용·보호 반영 PR #14 |
+| P14b final integration CI / 최종 통합 CI | [Fixed gate](34-p14b-final-integration.md) | Local/hosted 390 and Node 22/24 each 303 accepted; XML/SQLite originals retained / 로컬·원격 390개·Node 각 303개 수용·XML/SQLite 원문 보존 |
 | Current demo and README / 최신 데모·README | [Media](media/latest.json), [EN](../README.md), [KO](../README.ko.md) | P13 actual32s user flow with EN/KO captions, separate155.05s developer video and390px IAB / P13 실제32초 한영 사용자 영상·별도155.05초 개발 영상·390픽셀 수동 확인 |
 | AI-project README research / AI 프로젝트 README 참고 | [Source notes](../wiki/sources/readme-presentation.md) | Completed source review / 출처 검토 완료 |
 
@@ -48,3 +48,11 @@ Clean d2fb964/runtime ba9395ec passed fresh390 after the narrow report correctio
 Remaining for the full pilot: push P13, inspect actual hosted390 and Node22/24 results with XML/SQLite originals, retain hosted evidence and complete normal protected delivery. Geographic100/100, real driving/live traffic and production deployment remain separate.
 
 전체 파일럿의 남은 조건은 P13푸시·실제 원격390개/Node22·24와 XML/SQLite원문 검사·원격 근거 보존·정상 보호 반영입니다. 실제 지역100/100·실주행/실시간 수집·운영 배포는 별도입니다.
+
+## Final hosted runtime acceptance / 최종 원격 실행 수용
+
+P01–P14 local-pilot runtime acceptance is complete locally and on GitHub Actions: whole 390, Node.js 22/24 each 303. Main independently checked 16,236 hosted original hashes, 11 complete PostgreSQL/Worker pairs and 21 SQLite copies across 14 actors. The runtime fingerprint matches the accepted local run and actual recordings. Protected integration and the latest checked head are tracked by [PR #14](https://github.com/dicebattle/routelens/pull/14). Geographic 100/100, real driving, live traffic and production deployment remain separate.
+
+P01~P14 로컬 파일럿의 실행 검증을 로컬과 GitHub Actions에서 마쳤습니다. 전체 390개와 Node.js 22·24 각각 303개를 통과했고, 메인이 원격 원문 해시 16,236개·집계 전체 11쌍·객체 14개의 SQLite 복사본 21개를 독립 확인했습니다. 실행 지문은 수용한 로컬 실행·실제 녹화와 같습니다. 보호 병합과 최신 검사 커밋은 [PR #14](https://github.com/dicebattle/routelens/pull/14)에서 확인합니다. 실제 지역 100/100·실주행·실시간 교통·운영 배포는 별도입니다.
+
+[Hosted originals and inspection / 원격 원문·검사](../research/pilot/2026-10-25-p13/hosted/README.md). Earlier remaining-work statements above describe their dated checkpoint. / 위 남은 작업 설명은 각 시점의 중간 기록입니다.

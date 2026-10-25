@@ -82,7 +82,7 @@ const verifyBytes = (base, relative, expected, key) => {
 const expectedRuntime =
   "ba9395ec5ba3ac6dc5d1e296a9334b0bbebd72053b46674692f1c58a84556bfa";
 const local = JSON.parse(
-  fs.readFileSync("data/p13-final-20261025/manifest.json"),
+  fs.readFileSync("research/pilot/2026-10-25-p13/manifest.json"),
 );
 assert.equal(local.implementation_sha256, expectedRuntime);
 assert.equal(m.implementation_sha256, expectedRuntime);
@@ -887,7 +887,8 @@ const proof = {
   stopped_engine: stopped,
   killed_worker_pid: orphan.worker_pid,
   orphan_engine_id: orphan.engine_id,
-  current_db_volume_engine_absence_verified: false,
+  recorded_db_volume_engine_cleanup_verified: true,
+  current_remote_resource_absence_verified: false,
   traffic_recorded_owned_containers: [...trafficContainers].sort(),
   traffic_recorded_owned_volumes: [...trafficVolumes].sort(),
   traffic_cleanup_files_verified: trafficCleanupFiles.sort(),

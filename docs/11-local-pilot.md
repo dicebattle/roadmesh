@@ -1,5 +1,11 @@
 # Local pilot design / 로컬 파일럿 설계
 
+Current acceptance / 현재 수용 (2026-10-25): P01–P14 local-pilot runtime acceptance is complete locally and on GitHub Actions: whole 390, Node.js 22/24 each 303. Main independently checked 16,236 hosted original hashes, 11 complete PostgreSQL/Worker pairs and 21 SQLite copies across 14 actors. The runtime fingerprint matches the accepted local run and actual recordings. Protected integration and the latest checked head are tracked by [PR #14](https://github.com/dicebattle/routelens/pull/14). Geographic 100/100, real driving, live traffic and production deployment remain separate.
+
+P01~P14 로컬 파일럿의 실행 검증을 로컬과 GitHub Actions에서 마쳤습니다. 전체 390개와 Node.js 22·24 각각 303개를 통과했고, 메인이 원격 원문 해시 16,236개·집계 전체 11쌍·객체 14개의 SQLite 복사본 21개를 독립 확인했습니다. 실행 지문은 수용한 로컬 실행·실제 녹화와 같습니다. 보호 병합과 최신 검사 커밋은 [PR #14](https://github.com/dicebattle/routelens/pull/14)에서 확인합니다. 실제 지역 100/100·실주행·실시간 교통·운영 배포는 별도입니다.
+
+Earlier checkpoint / 이전 중간 기록:
+
 Status: P01–P13 are locally implemented and accepted on actual Seoul OSM: fresh390, independent16,061 original hashes, eleven complete PostgreSQL/Worker pairs and actual client recordings. P12 is protected-merged with corrected hosted358/296 evidence. P13/P14b hosted inspection and protected delivery remain. [Current report](../research/pilot/2026-10-25-p13/report.md).
 
 상태: 실제 서울 OSM의 P01~P13 로컬 구현을 새390개·독립 원문16,061해시·집계 전체11쌍·실제 화면 녹화로 수용했습니다. P12는 수정 원격358/296개와 함께 보호 병합했고 P13/P14b의 원격 검사·보호 반영은 남습니다.
