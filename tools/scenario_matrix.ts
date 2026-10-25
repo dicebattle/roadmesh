@@ -1,12 +1,19 @@
 /** Exact same-run scenario references, never historical PASS concatenation. / 과거 통과를 합치지 않는 같은 실행 시나리오 참조. */
 import { lstatSync, readFileSync, realpathSync } from "node:fs";
 import { resolve, relative, isAbsolute } from "node:path";
-import { canonical, sha256 } from "./shared.js";
+import { canonical, parseJson, sha256 } from "./shared.js";
 import type { SimulationAssertion } from "./vehicle_simulator.js";
 export interface ScenarioIdentity {
   source: { commit: string; dirty: boolean };
   implementation_sha256: string;
   graph_id: string;
+}
+/** Hash persisted JSON, including Date/Buffer.toJSON, rather than a memory-only prototype view.
+ * 메모리 전용 프로토타입 표현 대신 Date/Buffer.toJSON을 포함한 저장 JSON 형태를 해시합니다. */
+export function persistedScenarioAssertions(
+  assertions: SimulationAssertion[],
+): SimulationAssertion[] {
+  return parseJson(JSON.stringify(assertions)) as SimulationAssertion[];
 }
 export const SCENARIO_BINDINGS = {
   S01: ["p09-baseline-same-daemon"],
@@ -109,6 +116,7 @@ export function buildScenarioMatrix(
   identity: ScenarioIdentity,
   assertions: SimulationAssertion[],
 ): ScenarioMatrix {
+  assertions = persistedScenarioAssertions(assertions);
   const byId = new Map(assertions.map((a) => [a.assertion_id, a]));
   if (
     byId.size !== assertions.length ||

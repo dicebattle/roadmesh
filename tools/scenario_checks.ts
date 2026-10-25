@@ -15,6 +15,7 @@ import { IngestionStore } from "./ingestion_store.js";
 import { PublicationConsumer } from "./publication_consumer.js";
 import {
   buildScenarioMatrix,
+  persistedScenarioAssertions,
   verifyScenarioMatrix,
   type ScenarioIdentity,
 } from "./scenario_matrix.js";
@@ -613,18 +614,20 @@ export async function runScenarioChecks(
   if (prior) {
     if (!supervisors || prior.assertions.length !== 334)
       throw Error("Whole prior334 required / 같은 실행 기존334개 필요");
-    const combined = [
+    const combined = persistedScenarioAssertions([
       ...prior.assertions,
       ...assertions.map((a) => ({
         ...a,
         evidence_path: "scenarios/" + a.evidence_path,
       })),
-    ];
+    ]);
     h.write("runtime-manifest.json", {
       ...identity,
       status: "PASS",
       cleanup_verified: cleanup,
-      assertions_sha256: sha256(canonical(assertions)),
+      assertions_sha256: sha256(
+        canonical(persistedScenarioAssertions(assertions)),
+      ),
     });
     h.write("matrix-inputs.json", { ...identity, assertions: combined });
     const matrix = buildScenarioMatrix(prior.root, identity, combined);

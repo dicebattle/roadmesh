@@ -1,0 +1,15 @@
+{
+  "status": "CONFIRMED",
+  "original_hash": "e8fba21822d114cee1f8bb35f85e12e6944992f431f163833b73055fc46f4813",
+  "persisted_hash": "ace98afd85b73430c08272e86f6dc93f00b17328f9cb352f1269bd3c35f67a76",
+  "revived_three_pg_dates_hash": "e8fba21822d114cee1f8bb35f85e12e6944992f431f163833b73055fc46f4813",
+  "exact_original_hash_reproduced": true,
+  "date_assertions": [
+    "p06-late-just-before",
+    "p06-late-exact",
+    "p06-late-after"
+  ],
+  "serialized_buffer_assertions": [],
+  "scope_en": "Three raw pg timestamp Date objects reproduce the exact original in-memory hash; no serialized Buffer values were found. Prior Buffer attribution was an unconfirmed inference and is corrected.",
+  "scope_ko": "pg 시각 Date 객체 세 개를 복원하면 원 메모리 해시가 정확히 재현되며 직렬화된 Buffer 값은 없습니다. 앞선 Buffer 원인 설명은 미확인 추정이었고 정정합니다."
+}

@@ -1,0 +1,36 @@
+{
+  "status": "STOPPED_BEFORE_RECORDING",
+  "messages": [
+    {
+      "type": "READY",
+      "kind": "route-client",
+      "pid": 91252,
+      "origin": "http://127.0.0.1:58049",
+      "graph_id": "4bbd483ce6f41b82bde5c082f9f315ef2a7c9751c368b6ee919fced75923993c",
+      "clock_mode": "supervised"
+    },
+    {
+      "type": "CONTROL_RESULT",
+      "control_id": "p12-stop-before-matrix-fix",
+      "code": "APPLIED"
+    },
+    {
+      "type": "STOPPED",
+      "cleanup_verified": true
+    }
+  ],
+  "exit": {
+    "pid": 91252,
+    "code": 0,
+    "signal": null
+  },
+  "cleanup": {
+    "cleanup_verified": true,
+    "app_closed": true,
+    "source_class": "SYNTHETIC",
+    "message_en": "Owned interactive pilot resources stopped; failures remain explicit.",
+    "message_ko": "소유 대화형 파일럿 자원을 종료하며 실패는 명시합니다."
+  },
+  "scope_en": "Preparation was stopped with private shutdown after the independent matrix failure; no demo pass or video is claimed.",
+  "scope_ko": "독립 행렬 실패 뒤 비공개 종료로 준비를 멈췄으며 데모 통과·영상을 주장하지 않습니다."
+}

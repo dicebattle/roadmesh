@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "negative_regression_only": true,
+  "original_matrix_rejected": true,
+  "original_hash": "e8fba21822d114cee1f8bb35f85e12e6944992f431f163833b73055fc46f4813",
+  "persisted_hash": "ace98afd85b73430c08272e86f6dc93f00b17328f9cb352f1269bd3c35f67a76",
+  "corrected_copy_hash": "ace98afd85b73430c08272e86f6dc93f00b17328f9cb352f1269bd3c35f67a76",
+  "rows": 15,
+  "original_inputs_unchanged": true,
+  "scope_en": "Corrected code on immutable old failed-run copies; not a new whole run or acceptance of the old result.",
+  "scope_ko": "불변인 이전 실패 입력 복사본의 보정 코드 회귀이며 새 전체 실행·이전 결과 수용이 아닙니다."
+}

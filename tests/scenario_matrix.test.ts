@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
+import { canonical, sha256 } from "../tools/shared.js";
 import {
   buildScenarioMatrix,
   verifyScenarioMatrix,
@@ -62,6 +63,29 @@ test("Matrix rejects missing, duplicate, failed, changed, foreign and forged ori
     const matrix = buildScenarioMatrix(root, identity, assertions);
     verifyScenarioMatrix(root, identity, assertions, matrix);
     assert.equal(matrix.rows.length, 15);
+    const buffered = assertions.map((a) => ({
+      ...a,
+      actual: {
+        at_event_utc: new Date("2026-10-24T00:01:30.000Z"),
+        buffer: Buffer.from("Seoul / 서울"),
+        typed: new Uint8Array([1, 2, 255]),
+        omitted: undefined,
+      },
+    }));
+    const saved = JSON.parse(JSON.stringify(buffered)) as SimulationAssertion[];
+    const bufferedMatrix = buildScenarioMatrix(root, identity, buffered);
+    assert.equal(bufferedMatrix.assertions_sha256, sha256(canonical(saved)));
+    verifyScenarioMatrix(
+      root,
+      identity,
+      saved,
+      JSON.parse(JSON.stringify(bufferedMatrix)),
+    );
+    for (const row of bufferedMatrix.rows)
+      for (const ref of row.references) {
+        const item = saved.find((a) => a.assertion_id === ref.assertion_id)!;
+        assert.equal(ref.assertion_sha256, sha256(canonical(item)));
+      }
     for (const altered of [
       { ...matrix, rows: matrix.rows.slice(1) },
       { ...matrix, rows: [...matrix.rows, matrix.rows[0]] },
