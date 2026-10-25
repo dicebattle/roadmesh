@@ -15,10 +15,10 @@ The goal remains the complete local P01–P14 pilot. Each increment needs fresh 
 | P09 persistent nodes / 지속 노드 | [Report](../research/pilot/2026-10-25-p09/report.md) | Local/hosted270, Node22/24 each235; protected PR10 / 로컬·원격270·Node각235·보호 PR10 |
 | P10 gateway and failover / 중계·장애 전환 | [Hosted proof](../research/pilot/2026-10-25-p10-worker/hosted/README.md) | Corrected local/hosted302, unit262; protected PR11 merged / 수정 로컬·원격302·단위262·PR11 보호 병합 |
 | P11 actual client / 실제 경로 클라이언트 | [Report](../research/pilot/2026-10-25-p11/report.md) | Local/hosted334 and285 tests, actual102.8s recording; protected PR12 merged / 로컬·원격334·단위285·실제102.8초 녹화·PR12 보호 병합 |
-| P12 full fault matrix / 전체 장애 행렬 | [Fixed design](32-p12-whole-scenarios.md) | Actual171/442 probes and24-case design recorded; runtime implementation remains / 실제171/442 조사·24개 사례 설계 기록·실행 구현 남음 |
+| P12 full fault matrix / 전체 장애 행렬 | [Fixed design](32-p12-whole-scenarios.md) | Local358/296,15,888 original hashes and actual126.45s edited capture passed; hosted/protected delivery pending / 로컬358/296·원문15,888개·실제126.45초 편집 녹화 통과·원격/보호 반영 남음 |
 | P13 local Cloudflare parity / 로컬 Cloudflare 비교 | [Pilot plan](11-local-pilot.md) | Not implemented / 미구현 |
 | P14b final integration CI / 최종 통합 CI | Existing required actual-engine job / 필수 실제 엔진 작업 | Current modules tested; complete pilot matrix remains / 현재 모듈 검사·전체 파일럿 행렬은 남음 |
-| Current demo and README / 최신 데모·README | [Media](media/latest.json), [EN](../README.md), [KO](../README.ko.md) | Actual102.8s P11 client recording, source/hash binding and390px IAB review / 실제102.8초 클라이언트 녹화·출처/해시·390픽셀 내장 브라우저 확인 |
+| Current demo and README / 최신 데모·README | [Media](media/latest.json), [EN](../README.md), [KO](../README.ko.md) | P12 actual126.45s excerpts plus recorded report evidence, exact source/hash and390px IAB / P12 실제126.45초 발췌·기록 보고서 근거·출처/해시·390픽셀 수동 확인 |
 | AI-project README research / AI 프로젝트 README 참고 | [Source notes](../wiki/sources/readme-presentation.md) | Completed source review / 출처 검토 완료 |
 
 ## Current delivery / 현재 반영
@@ -34,3 +34,7 @@ P11은 깨끗한 소스에서 단위285개·새 전체334개를 통과했습니�
 P12–P14 remain unfinished. Geographic100/100, real mobile trials, live traffic, public-peer honesty and production deployment are separate gates; synthetic success never satisfies them.
 
 P12~P14는 아직 미완료입니다. 실제 지역100/100·실제 모바일·실시간 교통·공개 노드 정직성·운영 배포는 별도 기준이며 합성 성공으로 충족하지 않습니다.
+
+P12 local acceptance now passed at clean5c9d4c4: whole358, unit296, independent15,888 hashes, saved354-input matrix, live SQL, actual native/transport/supervisor proof and refreshed bilingual media. The first clean matrix rejection and corrected-auditor inventory omission remain preserved. [Report](../research/pilot/2026-10-25-p12/report.md). Next: push, inspect hosted originals and protected-merge; then P13/P14b.
+
+P12는 깨끗한5c9d4c4에서 전체358개·단위296개·독립 해시15,888개·저장 입력354개 행렬·실행 중 SQL·실제 엔진/통신/감독·최신 한영 미디어를 통과했습니다. 첫 행렬 거부와 감사 목록 누락을 보존합니다. 다음은 푸시·원격 원문·보호 병합과 P13/P14b입니다.

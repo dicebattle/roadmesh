@@ -1,0 +1,180 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "client-disconnect",
+    "origin": {
+      "longitude": 127.03739724982245,
+      "latitude": 37.50083690018144
+    },
+    "destination": {
+      "longitude": 127.0375277498224,
+      "latitude": 37.500877100181434
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live"
+  },
+  "phase": {
+    "type": "PHASE",
+    "phase": "AFTER_NODE_ENGINE_RESULT",
+    "pid": 20753,
+    "node_id": "seoul-gateway-node-a",
+    "instance_id": "6ae8eff2-6a4d-4f39-8e90-a7d4a135d05a",
+    "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838",
+    "request_id": "client-disconnect",
+    "engine_container": "routelens-p02-cf62b646-f7fc-41cc-b3f0-998b6028e998",
+    "engine_run_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/gateway/nodes/seoul-gateway-node-a/runtime-ca386b9c-731c-4811-9391-6f34d95ef7d3/engines/cf62b646-f7fc-41cc-b3f0-998b6028e998"
+  },
+  "before": {
+    "node_id": "seoul-gateway-node-a",
+    "instance_id": "6ae8eff2-6a4d-4f39-8e90-a7d4a135d05a",
+    "ready": true,
+    "active": {
+      "graph_id": "2e7db7d29f48f8896d57a49989d42a37454068c54e15ccf9e4fa0a56d3038ed3",
+      "high_water": 1,
+      "sequence": 1,
+      "traffic_snapshot_id": "e4160a97c3d06f63b206894a823dbb657a35af92f3f3fae72d42097b3b95b913",
+      "compiler_policy": "valhalla-current-v1",
+      "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838",
+      "traffic_sha256": "b199f9ad07b0f479bb0bc79f380f28f37d6f06b26d3fbe3f31fa221150baece9",
+      "traffic_byte_length": 8663040,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "valid_until": "2026-10-24T00:07:00.000Z",
+      "traffic_mode": "LIVE",
+      "engine": {
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "version": "3.9.1"
+      },
+      "message_en": "Fresh accepted synthetic traffic is applied.",
+      "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+      "activation_epoch": 1,
+      "native_daemon": {
+        "pid": 16,
+        "start_ticks": "3057198"
+      }
+    },
+    "in_flight": 1,
+    "slots": [
+      {
+        "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838",
+        "state": "ACTIVE",
+        "in_flight": 1,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "3057198"
+        }
+      }
+    ],
+    "reason": "READY",
+    "message_en": "A current verified engine is ready.",
+    "message_ko": "현재 검증된 엔진이 준비됐습니다."
+  },
+  "after": {
+    "node_id": "seoul-gateway-node-a",
+    "instance_id": "6ae8eff2-6a4d-4f39-8e90-a7d4a135d05a",
+    "ready": true,
+    "active": {
+      "graph_id": "2e7db7d29f48f8896d57a49989d42a37454068c54e15ccf9e4fa0a56d3038ed3",
+      "high_water": 1,
+      "sequence": 1,
+      "traffic_snapshot_id": "e4160a97c3d06f63b206894a823dbb657a35af92f3f3fae72d42097b3b95b913",
+      "compiler_policy": "valhalla-current-v1",
+      "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838",
+      "traffic_sha256": "b199f9ad07b0f479bb0bc79f380f28f37d6f06b26d3fbe3f31fa221150baece9",
+      "traffic_byte_length": 8663040,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "valid_until": "2026-10-24T00:07:00.000Z",
+      "traffic_mode": "LIVE",
+      "engine": {
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "version": "3.9.1"
+      },
+      "message_en": "Fresh accepted synthetic traffic is applied.",
+      "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+      "activation_epoch": 1,
+      "native_daemon": {
+        "pid": 16,
+        "start_ticks": "3057198"
+      }
+    },
+    "in_flight": 0,
+    "slots": [
+      {
+        "generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838",
+        "state": "ACTIVE",
+        "in_flight": 0,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "3057198"
+        }
+      }
+    ],
+    "reason": "READY",
+    "message_en": "A current verified engine is ready.",
+    "message_ko": "현재 검증된 엔진이 준비됐습니다."
+  },
+  "elapsed_ms": 4968.431375000044,
+  "gateway_release_after_abort_ms": 31.851207999978215,
+  "gateway_after_abort": {
+    "gateway_id": "seoul-route-gateway",
+    "instance_id": "e7939460-15ae-4102-815d-79751f0f034f",
+    "in_flight": 0,
+    "closing": false,
+    "high_water": 1,
+    "snapshot_id": "e4160a97c3d06f63b206894a823dbb657a35af92f3f3fae72d42097b3b95b913",
+    "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+    "reason": "READY"
+  },
+  "node_lease_observed_elapsed_ms": 4036.81012499996,
+  "propagated_deadline_ms": 4000,
+  "proxy_requests": [
+    {
+      "node_id": "seoul-gateway-node-a",
+      "path": "/internal/v1/route",
+      "mode": "normal",
+      "request": {
+        "request_id": "client-disconnect",
+        "graph_id": "2e7db7d29f48f8896d57a49989d42a37454068c54e15ccf9e4fa0a56d3038ed3",
+        "locations": [
+          {
+            "lon": 127.03739724982245,
+            "lat": 37.50083690018144
+          },
+          {
+            "lon": 127.0375277498224,
+            "lat": 37.500877100181434
+          }
+        ],
+        "expected_generation_id": "402341b72c216d7d216f87786cc4ee89314830fc5b72b00424765d481072c838"
+      },
+      "deadline_ms": "4000",
+      "test_proxy": true,
+      "received_at_monotonic_ms": 594317.835708,
+      "original_status": 503,
+      "original_body": {
+        "code": "UNAVAILABLE",
+        "reason": "REQUEST_DEADLINE",
+        "message_en": "The routing node cannot return a verified route for this request.",
+        "message_ko": "이 요청에 검증된 경로를 반환할 수 없습니다."
+      },
+      "status": 503,
+      "body": {
+        "code": "UNAVAILABLE",
+        "reason": "REQUEST_DEADLINE",
+        "message_en": "The routing node cannot return a verified route for this request.",
+        "message_ko": "이 요청에 검증된 경로를 반환할 수 없습니다."
+      },
+      "elapsed_ms": 4021.919750000001
+    }
+  ],
+  "gateway": {
+    "gateway_id": "seoul-route-gateway",
+    "instance_id": "e7939460-15ae-4102-815d-79751f0f034f",
+    "in_flight": 0,
+    "closing": false,
+    "high_water": 1,
+    "snapshot_id": "e4160a97c3d06f63b206894a823dbb657a35af92f3f3fae72d42097b3b95b913",
+    "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+    "reason": "READY"
+  },
+  "client_destroyed": true
+}

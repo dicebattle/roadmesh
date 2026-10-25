@@ -1,8 +1,8 @@
 # Whole-system scenarios / 전체 시나리오
 
-Status: P12 implementation candidate, development-only proof. [Canonical contract](../../docs/32-p12-whole-scenarios.md), [development originals](../../research/pilot/2026-10-25-p12/development/README.md). Main Sol designs, implements and verifies. The fixed acceptance adds24 to the prior334; full358 remains pending.
+Status: P12 local acceptance passed at clean5c9d4c4; [report](../../research/pilot/2026-10-25-p12/report.md). Hosted/protected delivery pending. [Canonical contract](../../docs/32-p12-whole-scenarios.md), [development originals](../../research/pilot/2026-10-25-p12/development/README.md). Main Sol designs, implements and verifies. The fixed acceptance adds24 to the prior334; whole358 and296 unit tests passed.
 
-상태: P12 구현 후보·개발 근거입니다. 설계·구현·검증은 메인 Sol이 맡고 고정 판정은 기존334개에24개를 더하며 전체358개는 남아 있습니다.
+상태: 깨끗한5c9d4c4에서 P12 로컬 판정을 통과했고 원격/보호 반영은 남습니다. 설계·구현·검증은 메인 Sol이 맡고 고정 판정은 기존334개에24개를 더하며 전체358개·단위296개를 통과했습니다.
 
 `npm run simulation:check -- --output NEW_DIRECTORY` builds fresh Seoul roads and executes every implemented module before assembling S01–S15 from exact same-run assertion IDs, original hashes, source/runtime/graph identities and successful cleanup. `npm run scenario:check -- --graph VERIFIED_GRAPH --output NEW_DIRECTORY [--runtime-only]` is a faster development command; it explicitly cannot declare the full matrix complete.
 

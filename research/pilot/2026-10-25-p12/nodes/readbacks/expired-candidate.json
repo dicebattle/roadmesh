@@ -1,0 +1,86 @@
+{
+  "phase": {
+    "type": "PHASE",
+    "phase": "AFTER_NODE_CANDIDATE_READY",
+    "pid": 13751,
+    "node_id": "seoul-node-a",
+    "instance_id": "b7db30e3-688a-415f-89f0-919a562c7ac0",
+    "generation_id": "213180ffd3e36b2b25f93017fd5e50d68150760ae3767c55d007c60fe75c6b67",
+    "engine_container": "routelens-p02-342b69e3-b57c-4e76-a6c5-d9bdbea2611c",
+    "engine_run_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/nodes/nodes/seoul-node-a/runtime-restarted-7ad6f653-a0bf-4d83-9e92-3da57eb099d6/engines/342b69e3-b57c-4e76-a6c5-d9bdbea2611c"
+  },
+  "engines": [
+    {
+      "file": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/nodes/nodes/seoul-node-a/runtime-restarted-7ad6f653-a0bf-4d83-9e92-3da57eb099d6/engines/342b69e3-b57c-4e76-a6c5-d9bdbea2611c/ownership.json",
+      "record": {
+        "schema_version": "p09-engine-0.1",
+        "owner_id": "342b69e3-b57c-4e76-a6c5-d9bdbea2611c",
+        "container_name": "routelens-p02-342b69e3-b57c-4e76-a6c5-d9bdbea2611c",
+        "container_id": "8ce6523d82a244ddc18cc2e713b36fadcb3d4e46a4eda8385e955095707e4d5a",
+        "owner_label": "io.routelens.run_id=342b69e3-b57c-4e76-a6c5-d9bdbea2611c",
+        "work_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/nodes/nodes/seoul-node-a/runtime-restarted-7ad6f653-a0bf-4d83-9e92-3da57eb099d6/engines/342b69e3-b57c-4e76-a6c5-d9bdbea2611c",
+        "graph_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/seoul/graph",
+        "generation_id": "213180ffd3e36b2b25f93017fd5e50d68150760ae3767c55d007c60fe75c6b67",
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "3048180"
+        },
+        "planned_before_creation": true,
+        "cleanup_verified": true
+      }
+    }
+  ],
+  "state": {
+    "node_id": "seoul-node-a",
+    "instance_id": "b7db30e3-688a-415f-89f0-919a562c7ac0",
+    "ready": true,
+    "active": {
+      "graph_id": "2e7db7d29f48f8896d57a49989d42a37454068c54e15ccf9e4fa0a56d3038ed3",
+      "high_water": 9,
+      "sequence": null,
+      "traffic_snapshot_id": null,
+      "compiler_policy": "valhalla-current-v1",
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "traffic_sha256": "93103f183df704bf8d8a69ddea2d2bfc2006faaa7d8336a51c2b4ecf140c9b7a",
+      "traffic_byte_length": 8663040,
+      "checked_at_event_time": "2026-10-24T00:07:00.000Z",
+      "valid_until": null,
+      "traffic_mode": "NO_USABLE_SNAPSHOT",
+      "engine": {
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "version": "3.9.1"
+      },
+      "message_en": "No usable accepted snapshot; default speeds are used.",
+      "message_ko": "사용 가능한 수용 자료가 없어 기본 속도를 사용합니다.",
+      "activation_epoch": 4,
+      "native_daemon": {
+        "pid": 16,
+        "start_ticks": "3048453"
+      }
+    },
+    "in_flight": 0,
+    "slots": [
+      {
+        "generation_id": "cadd8b5412e4bf2968d2ee04052022267c0ac2747b7ad277664ee1babfc4c742",
+        "state": "DRAINING",
+        "in_flight": 0,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "3047803"
+        }
+      },
+      {
+        "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+        "state": "ACTIVE",
+        "in_flight": 0,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "3048453"
+        }
+      }
+    ],
+    "reason": "READY",
+    "message_en": "A current verified engine is ready.",
+    "message_ko": "현재 검증된 엔진이 준비됐습니다."
+  }
+}

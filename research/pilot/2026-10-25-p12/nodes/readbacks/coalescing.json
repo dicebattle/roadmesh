@@ -1,0 +1,791 @@
+{
+  "slot_history": [
+    {
+      "code": "CREATED",
+      "at_utc": "2026-10-25T00:32:40.873Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 0,
+      "generation_id": null,
+      "activation_epoch": null,
+      "in_flight": 0
+    },
+    {
+      "code": "PREPARING",
+      "at_utc": "2026-10-25T00:32:40.936Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 0,
+      "in_flight": 0
+    },
+    {
+      "code": "ACTIVATED",
+      "at_utc": "2026-10-25T00:32:42.862Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 0
+    },
+    {
+      "code": "LEASED",
+      "at_utc": "2026-10-25T00:32:43.685Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 1
+    },
+    {
+      "code": "LEASE_RELEASED",
+      "at_utc": "2026-10-25T00:32:44.255Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 0
+    },
+    {
+      "code": "LEASED",
+      "at_utc": "2026-10-25T00:32:44.287Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 1
+    },
+    {
+      "code": "LEASE_RELEASED",
+      "at_utc": "2026-10-25T00:32:44.848Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 0
+    },
+    {
+      "code": "LEASED",
+      "at_utc": "2026-10-25T00:32:45.643Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 8
+    },
+    {
+      "code": "LEASED",
+      "at_utc": "2026-10-25T00:32:45.677Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 8
+    },
+    {
+      "code": "LEASED",
+      "at_utc": "2026-10-25T00:32:45.713Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 8
+    },
+    {
+      "code": "LEASED",
+      "at_utc": "2026-10-25T00:32:45.785Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 8
+    },
+    {
+      "code": "LEASED",
+      "at_utc": "2026-10-25T00:32:45.905Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 8
+    },
+    {
+      "code": "LEASED",
+      "at_utc": "2026-10-25T00:32:46.056Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 8
+    },
+    {
+      "code": "LEASED",
+      "at_utc": "2026-10-25T00:32:46.230Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 8
+    },
+    {
+      "code": "LEASED",
+      "at_utc": "2026-10-25T00:32:46.431Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 8
+    },
+    {
+      "code": "LEASE_RELEASED",
+      "at_utc": "2026-10-25T00:32:47.268Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 7
+    },
+    {
+      "code": "LEASE_RELEASED",
+      "at_utc": "2026-10-25T00:32:47.283Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 6
+    },
+    {
+      "code": "LEASE_RELEASED",
+      "at_utc": "2026-10-25T00:32:47.296Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 5
+    },
+    {
+      "code": "LEASE_RELEASED",
+      "at_utc": "2026-10-25T00:32:47.311Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 4
+    },
+    {
+      "code": "LEASE_RELEASED",
+      "at_utc": "2026-10-25T00:32:47.330Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 3
+    },
+    {
+      "code": "LEASE_RELEASED",
+      "at_utc": "2026-10-25T00:32:47.345Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 2
+    },
+    {
+      "code": "LEASE_RELEASED",
+      "at_utc": "2026-10-25T00:32:47.361Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 1
+    },
+    {
+      "code": "LEASE_RELEASED",
+      "at_utc": "2026-10-25T00:32:47.377Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 0
+    },
+    {
+      "code": "PREPARING",
+      "at_utc": "2026-10-25T00:32:47.785Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "0a8457ef4d5b46df3e5679a0960ca345f8e25810de2f60f5b59865676e0b9534",
+      "activation_epoch": 0,
+      "in_flight": 0
+    },
+    {
+      "code": "ACTIVATED",
+      "at_utc": "2026-10-25T00:32:49.841Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "0a8457ef4d5b46df3e5679a0960ca345f8e25810de2f60f5b59865676e0b9534",
+      "activation_epoch": 2,
+      "in_flight": 0
+    },
+    {
+      "code": "DRAINING",
+      "at_utc": "2026-10-25T00:32:49.852Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 0
+    },
+    {
+      "code": "LEASED",
+      "at_utc": "2026-10-25T00:32:50.206Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "0a8457ef4d5b46df3e5679a0960ca345f8e25810de2f60f5b59865676e0b9534",
+      "activation_epoch": 2,
+      "in_flight": 1
+    },
+    {
+      "code": "RETIRED",
+      "at_utc": "2026-10-25T00:32:50.604Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "activation_epoch": 1,
+      "in_flight": 1
+    },
+    {
+      "code": "LEASE_RELEASED",
+      "at_utc": "2026-10-25T00:32:50.840Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "0a8457ef4d5b46df3e5679a0960ca345f8e25810de2f60f5b59865676e0b9534",
+      "activation_epoch": 2,
+      "in_flight": 0
+    },
+    {
+      "code": "PREPARING",
+      "at_utc": "2026-10-25T00:32:56.125Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "d7a5224b5775648c20eca7a99151f831094bf7f5384bc2d1510ba6b293fe7ada",
+      "activation_epoch": 0,
+      "in_flight": 0
+    },
+    {
+      "code": "ACTIVATED",
+      "at_utc": "2026-10-25T00:32:58.092Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "d7a5224b5775648c20eca7a99151f831094bf7f5384bc2d1510ba6b293fe7ada",
+      "activation_epoch": 3,
+      "in_flight": 0
+    },
+    {
+      "code": "DRAINING",
+      "at_utc": "2026-10-25T00:32:58.108Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "0a8457ef4d5b46df3e5679a0960ca345f8e25810de2f60f5b59865676e0b9534",
+      "activation_epoch": 2,
+      "in_flight": 0
+    },
+    {
+      "code": "LEASED",
+      "at_utc": "2026-10-25T00:32:58.364Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "d7a5224b5775648c20eca7a99151f831094bf7f5384bc2d1510ba6b293fe7ada",
+      "activation_epoch": 3,
+      "in_flight": 1
+    },
+    {
+      "code": "RETIRED",
+      "at_utc": "2026-10-25T00:32:58.746Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "0a8457ef4d5b46df3e5679a0960ca345f8e25810de2f60f5b59865676e0b9534",
+      "activation_epoch": 2,
+      "in_flight": 1
+    },
+    {
+      "code": "PREPARING",
+      "at_utc": "2026-10-25T00:32:59.056Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "50ec9bda3fc729460fac896b4cb0bbf07022e6180ffa149b4ee74e3d9ee2d5c8",
+      "activation_epoch": 0,
+      "in_flight": 1
+    },
+    {
+      "code": "ACTIVATED",
+      "at_utc": "2026-10-25T00:33:00.919Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "50ec9bda3fc729460fac896b4cb0bbf07022e6180ffa149b4ee74e3d9ee2d5c8",
+      "activation_epoch": 4,
+      "in_flight": 1
+    },
+    {
+      "code": "DRAINING",
+      "at_utc": "2026-10-25T00:33:00.928Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "d7a5224b5775648c20eca7a99151f831094bf7f5384bc2d1510ba6b293fe7ada",
+      "activation_epoch": 3,
+      "in_flight": 1
+    },
+    {
+      "code": "LEASED",
+      "at_utc": "2026-10-25T00:33:01.186Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "50ec9bda3fc729460fac896b4cb0bbf07022e6180ffa149b4ee74e3d9ee2d5c8",
+      "activation_epoch": 4,
+      "in_flight": 2
+    },
+    {
+      "code": "LEASE_RELEASED",
+      "at_utc": "2026-10-25T00:33:01.713Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "50ec9bda3fc729460fac896b4cb0bbf07022e6180ffa149b4ee74e3d9ee2d5c8",
+      "activation_epoch": 4,
+      "in_flight": 1
+    },
+    {
+      "code": "LEASE_RELEASED",
+      "at_utc": "2026-10-25T00:33:01.868Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "d7a5224b5775648c20eca7a99151f831094bf7f5384bc2d1510ba6b293fe7ada",
+      "activation_epoch": 3,
+      "in_flight": 0
+    },
+    {
+      "code": "RETIRED",
+      "at_utc": "2026-10-25T00:33:02.424Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "d7a5224b5775648c20eca7a99151f831094bf7f5384bc2d1510ba6b293fe7ada",
+      "activation_epoch": 3,
+      "in_flight": 0
+    },
+    {
+      "code": "LEASED",
+      "at_utc": "2026-10-25T00:33:02.652Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "50ec9bda3fc729460fac896b4cb0bbf07022e6180ffa149b4ee74e3d9ee2d5c8",
+      "activation_epoch": 4,
+      "in_flight": 1
+    },
+    {
+      "code": "PREPARING",
+      "at_utc": "2026-10-25T00:33:03.227Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "e6fa06ee0c16a42cc2b5147cdd81c6dcb0572d68ff800081ac24dc9106f1e750",
+      "activation_epoch": 0,
+      "in_flight": 1
+    },
+    {
+      "code": "ACTIVATED",
+      "at_utc": "2026-10-25T00:33:05.097Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "e6fa06ee0c16a42cc2b5147cdd81c6dcb0572d68ff800081ac24dc9106f1e750",
+      "activation_epoch": 5,
+      "in_flight": 1
+    },
+    {
+      "code": "DRAINING",
+      "at_utc": "2026-10-25T00:33:05.105Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "50ec9bda3fc729460fac896b4cb0bbf07022e6180ffa149b4ee74e3d9ee2d5c8",
+      "activation_epoch": 4,
+      "in_flight": 1
+    },
+    {
+      "code": "COALESCED",
+      "at_utc": "2026-10-25T00:33:05.467Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": null,
+      "activation_epoch": null,
+      "in_flight": 1
+    },
+    {
+      "code": "COALESCED",
+      "at_utc": "2026-10-25T00:33:05.512Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": null,
+      "activation_epoch": null,
+      "in_flight": 1
+    },
+    {
+      "code": "COALESCED",
+      "at_utc": "2026-10-25T00:33:05.701Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": null,
+      "activation_epoch": null,
+      "in_flight": 1
+    },
+    {
+      "code": "LEASE_RELEASED",
+      "at_utc": "2026-10-25T00:33:05.820Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "50ec9bda3fc729460fac896b4cb0bbf07022e6180ffa149b4ee74e3d9ee2d5c8",
+      "activation_epoch": 4,
+      "in_flight": 0
+    },
+    {
+      "code": "COALESCED",
+      "at_utc": "2026-10-25T00:33:05.989Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": null,
+      "activation_epoch": null,
+      "in_flight": 0
+    },
+    {
+      "code": "RETIRED",
+      "at_utc": "2026-10-25T00:33:06.478Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "50ec9bda3fc729460fac896b4cb0bbf07022e6180ffa149b4ee74e3d9ee2d5c8",
+      "activation_epoch": 4,
+      "in_flight": 0
+    },
+    {
+      "code": "PREPARING",
+      "at_utc": "2026-10-25T00:33:06.500Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "30bf53cdd2b5d0864386b72429f608870afcd6aa9e9e5dbda0834e92a717880c",
+      "activation_epoch": 0,
+      "in_flight": 0
+    },
+    {
+      "code": "ACTIVATED",
+      "at_utc": "2026-10-25T00:33:08.412Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "30bf53cdd2b5d0864386b72429f608870afcd6aa9e9e5dbda0834e92a717880c",
+      "activation_epoch": 6,
+      "in_flight": 0
+    },
+    {
+      "code": "DRAINING",
+      "at_utc": "2026-10-25T00:33:08.422Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 2,
+      "generation_id": "e6fa06ee0c16a42cc2b5147cdd81c6dcb0572d68ff800081ac24dc9106f1e750",
+      "activation_epoch": 5,
+      "in_flight": 0
+    },
+    {
+      "code": "RETIRED",
+      "at_utc": "2026-10-25T00:33:09.013Z",
+      "node_id": "seoul-node-a",
+      "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+      "slot_count": 1,
+      "generation_id": "e6fa06ee0c16a42cc2b5147cdd81c6dcb0572d68ff800081ac24dc9106f1e750",
+      "activation_epoch": 5,
+      "in_flight": 0
+    }
+  ],
+  "fifthWaiting": {
+    "node_id": "seoul-node-a",
+    "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+    "ready": false,
+    "active": null,
+    "in_flight": 1,
+    "slots": [
+      {
+        "generation_id": "50ec9bda3fc729460fac896b4cb0bbf07022e6180ffa149b4ee74e3d9ee2d5c8",
+        "state": "DRAINING",
+        "in_flight": 1,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "3041598"
+        }
+      },
+      {
+        "generation_id": "e6fa06ee0c16a42cc2b5147cdd81c6dcb0572d68ff800081ac24dc9106f1e750",
+        "state": "ACTIVE",
+        "in_flight": 0,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "3042013"
+        }
+      }
+    ],
+    "reason": "ACCEPTED_STATE_CHANGED",
+    "message_en": "No currently verified engine is ready.",
+    "message_ko": "현재 검증된 준비 엔진이 없습니다."
+  },
+  "sixthWaiting": {
+    "node_id": "seoul-node-a",
+    "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+    "ready": false,
+    "active": null,
+    "in_flight": 1,
+    "slots": [
+      {
+        "generation_id": "50ec9bda3fc729460fac896b4cb0bbf07022e6180ffa149b4ee74e3d9ee2d5c8",
+        "state": "DRAINING",
+        "in_flight": 1,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "3041598"
+        }
+      },
+      {
+        "generation_id": "e6fa06ee0c16a42cc2b5147cdd81c6dcb0572d68ff800081ac24dc9106f1e750",
+        "state": "ACTIVE",
+        "in_flight": 0,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "3042013"
+        }
+      }
+    ],
+    "reason": "ACCEPTED_STATE_CHANGED",
+    "message_en": "No currently verified engine is ready.",
+    "message_ko": "현재 검증된 준비 엔진이 없습니다."
+  },
+  "coalesced": {
+    "node_id": "seoul-node-a",
+    "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+    "ready": true,
+    "active": {
+      "graph_id": "2e7db7d29f48f8896d57a49989d42a37454068c54e15ccf9e4fa0a56d3038ed3",
+      "high_water": 6,
+      "sequence": 6,
+      "traffic_snapshot_id": "bbda291e1f872ce9601048fe3539ee5ff0d63a0b293074e3ada14af0e57f789b",
+      "compiler_policy": "valhalla-current-v1",
+      "generation_id": "30bf53cdd2b5d0864386b72429f608870afcd6aa9e9e5dbda0834e92a717880c",
+      "traffic_sha256": "139dab6ee66372914540cb2a0e8c58206827d359d29db4029d5375588b68d784",
+      "traffic_byte_length": 8663040,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "valid_until": "2026-10-24T00:07:00.000Z",
+      "traffic_mode": "LIVE",
+      "engine": {
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "version": "3.9.1"
+      },
+      "message_en": "Fresh accepted synthetic traffic is applied.",
+      "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+      "activation_epoch": 6,
+      "native_daemon": {
+        "pid": 16,
+        "start_ticks": "3042350"
+      }
+    },
+    "in_flight": 0,
+    "slots": [
+      {
+        "generation_id": "30bf53cdd2b5d0864386b72429f608870afcd6aa9e9e5dbda0834e92a717880c",
+        "state": "ACTIVE",
+        "in_flight": 0,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "3042350"
+        }
+      }
+    ],
+    "reason": "READY",
+    "message_en": "A current verified engine is ready.",
+    "message_ko": "현재 검증된 엔진이 준비됐습니다."
+  },
+  "engines": [
+    {
+      "file": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/nodes/nodes/seoul-node-a/runtime-430219f0-110d-4d86-bd58-473ee3bba030/engines/09a38d95-5592-43d0-b285-96f47177aa5a/ownership.json",
+      "record": {
+        "schema_version": "p09-engine-0.1",
+        "owner_id": "09a38d95-5592-43d0-b285-96f47177aa5a",
+        "container_name": "routelens-p02-09a38d95-5592-43d0-b285-96f47177aa5a",
+        "container_id": "484fd8633b7bbe42ddf4013e3b33fb61be835128e36dedc68792be9a7795fd8c",
+        "owner_label": "io.routelens.run_id=09a38d95-5592-43d0-b285-96f47177aa5a",
+        "work_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/nodes/nodes/seoul-node-a/runtime-430219f0-110d-4d86-bd58-473ee3bba030/engines/09a38d95-5592-43d0-b285-96f47177aa5a",
+        "graph_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/seoul/graph",
+        "generation_id": "e6fa06ee0c16a42cc2b5147cdd81c6dcb0572d68ff800081ac24dc9106f1e750",
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "3042013"
+        },
+        "planned_before_creation": true,
+        "cleanup_verified": true
+      }
+    },
+    {
+      "file": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/nodes/nodes/seoul-node-a/runtime-430219f0-110d-4d86-bd58-473ee3bba030/engines/2609b42a-1af6-4cb3-9153-09390679893f/ownership.json",
+      "record": {
+        "schema_version": "p09-engine-0.1",
+        "owner_id": "2609b42a-1af6-4cb3-9153-09390679893f",
+        "container_name": "routelens-p02-2609b42a-1af6-4cb3-9153-09390679893f",
+        "container_id": "800998c7eabcc2a0bbf5f1b752a9e0ee7987960efe07a791f3b22036d72505d1",
+        "owner_label": "io.routelens.run_id=2609b42a-1af6-4cb3-9153-09390679893f",
+        "work_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/nodes/nodes/seoul-node-a/runtime-430219f0-110d-4d86-bd58-473ee3bba030/engines/2609b42a-1af6-4cb3-9153-09390679893f",
+        "graph_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/seoul/graph",
+        "generation_id": "50ec9bda3fc729460fac896b4cb0bbf07022e6180ffa149b4ee74e3d9ee2d5c8",
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "3041598"
+        },
+        "planned_before_creation": true,
+        "cleanup_verified": true
+      }
+    },
+    {
+      "file": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/nodes/nodes/seoul-node-a/runtime-430219f0-110d-4d86-bd58-473ee3bba030/engines/a96af0e3-20ca-47e9-b937-1f5a100b324f/ownership.json",
+      "record": {
+        "schema_version": "p09-engine-0.1",
+        "owner_id": "a96af0e3-20ca-47e9-b937-1f5a100b324f",
+        "container_name": "routelens-p02-a96af0e3-20ca-47e9-b937-1f5a100b324f",
+        "container_id": "724122859e87b3c3842452438784a68c4d7bbbc5622521d078764657c17b05c7",
+        "owner_label": "io.routelens.run_id=a96af0e3-20ca-47e9-b937-1f5a100b324f",
+        "work_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/nodes/nodes/seoul-node-a/runtime-430219f0-110d-4d86-bd58-473ee3bba030/engines/a96af0e3-20ca-47e9-b937-1f5a100b324f",
+        "graph_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/seoul/graph",
+        "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "3039793"
+        },
+        "planned_before_creation": true,
+        "cleanup_verified": true
+      }
+    },
+    {
+      "file": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/nodes/nodes/seoul-node-a/runtime-430219f0-110d-4d86-bd58-473ee3bba030/engines/ce29611d-d692-434d-92e7-133b68134f1c/ownership.json",
+      "record": {
+        "schema_version": "p09-engine-0.1",
+        "owner_id": "ce29611d-d692-434d-92e7-133b68134f1c",
+        "container_name": "routelens-p02-ce29611d-d692-434d-92e7-133b68134f1c",
+        "container_id": "c8eed26e564ae454fbe765e516f3c80f8fc8230a1a554db1ec59a49162580ffe",
+        "owner_label": "io.routelens.run_id=ce29611d-d692-434d-92e7-133b68134f1c",
+        "work_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/nodes/nodes/seoul-node-a/runtime-430219f0-110d-4d86-bd58-473ee3bba030/engines/ce29611d-d692-434d-92e7-133b68134f1c",
+        "graph_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/seoul/graph",
+        "generation_id": "0a8457ef4d5b46df3e5679a0960ca345f8e25810de2f60f5b59865676e0b9534",
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "3040486"
+        },
+        "planned_before_creation": true,
+        "cleanup_verified": true
+      }
+    },
+    {
+      "file": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/nodes/nodes/seoul-node-a/runtime-430219f0-110d-4d86-bd58-473ee3bba030/engines/e591e303-49bb-43fb-a8af-14ee397ebd0c/ownership.json",
+      "record": {
+        "schema_version": "p09-engine-0.1",
+        "owner_id": "e591e303-49bb-43fb-a8af-14ee397ebd0c",
+        "container_name": "routelens-p02-e591e303-49bb-43fb-a8af-14ee397ebd0c",
+        "container_id": "76c10271fe1d2e8c6bb7c81955aa4cf578ef7e86cdeecc54d24eb1ab1a44155e",
+        "owner_label": "io.routelens.run_id=e591e303-49bb-43fb-a8af-14ee397ebd0c",
+        "work_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/nodes/nodes/seoul-node-a/runtime-430219f0-110d-4d86-bd58-473ee3bba030/engines/e591e303-49bb-43fb-a8af-14ee397ebd0c",
+        "graph_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/seoul/graph",
+        "generation_id": "30bf53cdd2b5d0864386b72429f608870afcd6aa9e9e5dbda0834e92a717880c",
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "3042350"
+        },
+        "planned_before_creation": true,
+        "cleanup_verified": false
+      }
+    },
+    {
+      "file": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/nodes/nodes/seoul-node-a/runtime-430219f0-110d-4d86-bd58-473ee3bba030/engines/ee18fc4e-93c2-4c93-b9cc-6f325facee66/ownership.json",
+      "record": {
+        "schema_version": "p09-engine-0.1",
+        "owner_id": "ee18fc4e-93c2-4c93-b9cc-6f325facee66",
+        "container_name": "routelens-p02-ee18fc4e-93c2-4c93-b9cc-6f325facee66",
+        "container_id": "4707c792d4373eb5a31990bdf9d955ee9862f48ab3f41ba67cc26f89e6022592",
+        "owner_label": "io.routelens.run_id=ee18fc4e-93c2-4c93-b9cc-6f325facee66",
+        "work_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/nodes/nodes/seoul-node-a/runtime-430219f0-110d-4d86-bd58-473ee3bba030/engines/ee18fc4e-93c2-4c93-b9cc-6f325facee66",
+        "graph_directory": "/Users/dice/Documents/routelens-p12/data/p12-main-json-20261025/seoul/graph",
+        "generation_id": "d7a5224b5775648c20eca7a99151f831094bf7f5384bc2d1510ba6b293fe7ada",
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "3041312"
+        },
+        "planned_before_creation": true,
+        "cleanup_verified": true
+      }
+    }
+  ],
+  "old_response": {
+    "status": 409,
+    "headers": {
+      "cache-control": "no-store",
+      "connection": "keep-alive",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Sun, 25 Oct 2026 00:33:05 GMT",
+      "keep-alive": "timeout=5",
+      "transfer-encoding": "chunked"
+    },
+    "body": {
+      "code": "UNAVAILABLE",
+      "reason": "ACCEPTED_STATE_CHANGED",
+      "message_en": "The routing node cannot return a verified route for this request.",
+      "message_ko": "이 요청에 검증된 경로를 반환할 수 없습니다."
+    }
+  }
+}

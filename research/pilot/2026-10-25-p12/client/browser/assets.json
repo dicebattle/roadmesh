@@ -1,0 +1,11 @@
+{
+  "schema_version": "0.1",
+  "message_en": "Bundled local frontend and map worker; no remote assets are required.",
+  "message_ko": "로컬 화면·지도 작업자를 묶었으며 외부 자료가 필요하지 않습니다.",
+  "files_sha256": {
+    "index.html": "1133a1eb3dd47cad3cafe1af7355a06f7c6d0be6817e89baffca840b806f0e9b",
+    "client.js": "00fd5efcc3088ab61d1d9583f5c82f201f1ea4ccfd0841dfe75eae498a8dae35",
+    "client.css": "cfe524a314cd5297082205f4b4693fb902c7a1fd400a2cb7c3e976cda3cbecdb",
+    "maplibre-worker.js": "1c69066368331aae63967ed24a9affcf962cf55fcc6d8f532a8b040f736dbcfa"
+  }
+}

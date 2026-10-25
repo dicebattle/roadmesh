@@ -1,8 +1,8 @@
 # P12 whole-system faults and scenario evidence / P12 전체 장애·시나리오 근거
 
-Status: main Sol design, before implementation. P11's original334 cases remain required. Add a separate24-case P12 stage, for358 total, after the existing actual Seoul stages. This is a local synthetic pilot contract; actual road geometry is retained and negative inputs come from measured upstream behavior. Do not lower existing deadlines, privacy rules, graph checks or case counts.
+Current status: locally implemented and verified358/296 at clean5c9d4c4; [report](../research/pilot/2026-10-25-p12/report.md). Hosted/protected delivery pending. The following fixed design is retained. P11's original334 cases remain required. Add a separate24-case P12 stage, for358 total, after the existing actual Seoul stages. This is a local synthetic pilot contract; actual road geometry is retained and negative inputs come from measured upstream behavior. Do not lower existing deadlines, privacy rules, graph checks or case counts.
 
-상태: 구현 전 메인 Sol 설계입니다. 기존 P11까지334개를 유지하고 별도 P12 단계24개를 추가해 총358개로 검사합니다. 실제 서울 도로를 유지하는 로컬 합성 계약이며 부정 입력은 실제 관측한 상위 엔진 동작을 사용합니다. 기존 기한·개인정보·그래프 검사·판정 수를 낮추지 않습니다.
+현재 상태: 깨끗한5c9d4c4에서 로컬 구현·358/296개 검증을 마쳤고 원격/보호 반영은 남았습니다. 아래 확정 설계는 보존합니다. 기존 P11까지334개를 유지하고 별도 P12 단계24개를 추가해 총358개로 검사합니다. 실제 서울 도로를 유지하는 로컬 합성 계약이며 부정 입력은 실제 관측한 상위 엔진 동작을 사용합니다. 기존 기한·개인정보·그래프 검사·판정 수를 낮추지 않습니다.
 
 ## Request and failure contract / 요청·실패 계약
 
@@ -67,3 +67,9 @@ The main Sol implementation now exists. Actual development19 and two live outer-
 The first clean358 run at8821c4d completed its internal gates, but main's independent audit could not reproduce the matrix assertion hash from the saved JSON. The confirmed cause is three raw pg timestamp Date objects in P06 late-completion assertions: in-memory canonicalization treated them as empty objects, while JSON.stringify wrote ISO strings. Reviving precisely those three dates reproduces the exact original hash. No serialized Buffer values were found; an initial Buffer attribution was an unconfirmed inference and is corrected. The first run is therefore not accepted as final proof. Preserve its originals and failed audit. Before hashing matrix inputs or individual assertion references, materialize the strict JSON representation actually written to disk, and use that same representation during verification. Add an explicit Date/Buffer/typed-array JSON round-trip regression, then require a new clean whole358 run and independent read-back. Never alter old hash fields to conceal the failure.
 
 첫 깨끗한358개 실행은 내부 판정을 마쳤지만 메인의 독립 검사가 저장 JSON에서 행렬 판정 해시를 재현하지 못했습니다. 확인한 원인은 P06 지연 완료 판정의 pg 시각 Date 객체 세 개입니다. 메모리 정규화는 이를 빈 객체로, JSON 저장은 ISO 문자열로 표현했습니다. 정확히 그 세 날짜를 복원하면 처음 해시가 재현됩니다. 직렬화된 Buffer 값은 없었으며 처음의 Buffer 원인 설명은 미확인 추정으로 정정합니다. 첫 실행을 최종 근거로 수용하지 않고 원문·감사 실패를 보존합니다. 행렬 전체와 개별 판정 참조를 해시하기 전에 실제 저장되는 엄격한 JSON 표현을 확정하고 검증에도 같은 표현을 사용합니다. Date/Buffer/타입 배열의 JSON 왕복 회귀를 추가한 뒤 새 깨끗한 전체358개·독립 재조회를 요구하며, 과거 해시를 바꾸어 실패를 숨기지 않습니다.
+
+## Corrected clean acceptance / 수정 후 깨끗한 판정
+
+The new clean5c9d4c4 run passed358 and independent saved-byte verification:15,888 unique hashes, all15 matrix rows, and354 persisted assertions matching the exact whole-run prefix. Refreshed actual capture and IAB checks are in the report. The old rejected run remains immutable. Hosted inspection/protected merge and P13/P14b remain.
+
+새 깨끗한5c9d4c4 실행의358개와 저장 바이트 독립 검사를 통과했습니다. 원문 해시15,888개·행렬15행·전체 저장 판정 앞354개 일치를 확인했고 최신 녹화·내장 브라우저 근거를 보고서에 기록했습니다. 앞선 거부 실행은 불변으로 보존하며 원격/보호 반영과 P13/P14b는 남습니다.

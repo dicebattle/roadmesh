@@ -1,0 +1,17 @@
+{
+  "status": 503,
+  "headers": {
+    "cache-control": "no-store",
+    "connection": "keep-alive",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sun, 25 Oct 2026 00:33:15 GMT",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked"
+  },
+  "body": {
+    "code": "UNAVAILABLE",
+    "reason": "STORE_UNAVAILABLE",
+    "message_en": "The routing node cannot return a verified route for this request.",
+    "message_ko": "이 요청에 검증된 경로를 반환할 수 없습니다."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "node_id": "seoul-node-a",
+  "instance_id": "e8eae2be-0560-40a1-bb73-65ca5c97640f",
+  "ready": true,
+  "active": {
+    "graph_id": "2e7db7d29f48f8896d57a49989d42a37454068c54e15ccf9e4fa0a56d3038ed3",
+    "high_water": 0,
+    "sequence": null,
+    "traffic_snapshot_id": null,
+    "compiler_policy": "valhalla-current-v1",
+    "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+    "traffic_sha256": "93103f183df704bf8d8a69ddea2d2bfc2006faaa7d8336a51c2b4ecf140c9b7a",
+    "traffic_byte_length": 8663040,
+    "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+    "valid_until": null,
+    "traffic_mode": "NO_USABLE_SNAPSHOT",
+    "engine": {
+      "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+      "version": "3.9.1"
+    },
+    "message_en": "No usable accepted snapshot; default speeds are used.",
+    "message_ko": "사용 가능한 수용 자료가 없어 기본 속도를 사용합니다.",
+    "activation_epoch": 1,
+    "native_daemon": {
+      "pid": 16,
+      "start_ticks": "3039793"
+    }
+  },
+  "in_flight": 0,
+  "slots": [
+    {
+      "generation_id": "2554ec9774534462886308d0e692a6f5f8887b012817e126c490989f0c145bcf",
+      "state": "ACTIVE",
+      "in_flight": 0,
+      "native_daemon": {
+        "pid": 16,
+        "start_ticks": "3039793"
+      }
+    }
+  ],
+  "reason": "READY",
+  "message_en": "A current verified engine is ready.",
+  "message_ko": "현재 검증된 엔진이 준비됐습니다."
+}

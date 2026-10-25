@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "5c9d4c4b07a513cd67c7f0f2bed3bb9c74548d69",
+    "dirty": false
+  },
+  "implementation_sha256": "45f3b1315195c5374ae89dd9e6b8a3ee3357ae77ceb2475b9b505d06fc81d12d",
+  "graph_id": "2e7db7d29f48f8896d57a49989d42a37454068c54e15ccf9e4fa0a56d3038ed3",
+  "original_hashes_checked": 3302,
+  "p12_cases": 24,
+  "standard_signatures_verified": 1,
+  "native_domain_originals": [
+    {
+      "id": "no-suitable-road",
+      "code": 171,
+      "original_native_candidates": [
+        "nodes/scenario-node-a/runtime/engines/9049d5c0-f807-4f54-95d9-aa8035c98e9e/requests/683a4f2e-e004-40d3-aef1-7f8ca6dcaaa7/route.request.json"
+      ],
+      "unique_native_request_claim": false
+    },
+    {
+      "id": "no-path",
+      "code": 442,
+      "original_native_candidates": [
+        "nodes/scenario-node-a/runtime/engines/9049d5c0-f807-4f54-95d9-aa8035c98e9e/requests/6ef8cb1f-51dd-4e55-b068-0fe049376deb/route.request.json",
+        "nodes/scenario-node-a/runtime/engines/9049d5c0-f807-4f54-95d9-aa8035c98e9e/requests/92ca82ed-a6c2-4757-b96c-790b3d2927af/route.request.json"
+      ],
+      "unique_native_request_claim": false
+    }
+  ],
+  "reset_elapsed_ms": 1656.4406250000466,
+  "stall_elapsed_ms": 5634.699166000006,
+  "stall_peer_elapsed_ms": 4004.6030419999997,
+  "cleanup_verified": true,
+  "scope_en": "P12 domain originals, signature, controlled transport timings and CAR isolation; whole matrix/supervisor proof is inspected separately.",
+  "scope_ko": "P12 업무 원문·서명·통제 전송 시간·자동차 분리를 확인하고 전체 행렬·감독은 별도 검사합니다."
+}
