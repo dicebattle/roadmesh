@@ -101,6 +101,11 @@
           <h2 id="result-heading" data-i18n="result">Route result</h2>
           <p id="route-status" role="status" aria-live="polite"></p>
           <div id="route-summary" hidden></div>
+          <section id="guidance" aria-labelledby="guidance-heading" hidden>
+            <h3 id="guidance-heading" data-i18n="guidance">Turn instructions</h3>
+            <p class="scope" data-i18n="guidanceScope">Route preview. GPS tracking and spoken guidance are not available yet.</p>
+            <ol id="maneuvers"></ol>
+          </section>
           <button id="recalculate" type="button" hidden data-i18n="recalculate">
             Recalculate route
           </button>

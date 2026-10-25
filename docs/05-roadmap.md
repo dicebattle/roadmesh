@@ -99,3 +99,9 @@ TUF 구현체 고정, 키 폐기, 서명 사고 복구 훈련, 프로세스 자�
 Local pilot: **P01/P14a → P02 → P03/P04 → P05/P06 → P07/P08 → P09/P10 → P11/P12 → P13/P14b**. Geographic evaluation retains **RM-001b → RM-001c → RM-002 → RM-003/RM-004**. Do not use synthetic success as real-road proof. The original development-week estimates do not include a measured estimate for this expanded pilot; revise them after P02 integration.
 
 로컬 파일럿은 **P01/P14a → P02 → P03/P04 → P05/P06 → P07/P08 → P09/P10 → P11/P12 → P13/P14b** 순서입니다. 실제 지역 평가는 **RM-001b → RM-001c → RM-002 → RM-003/RM-004**를 유지합니다. 합성 시험 성공을 실제 도로 증명으로 사용하지 않습니다. 기존 개발 주차 추정에는 확대된 파일럿의 실측 공수가 포함되지 않으며 P02 연결 이후 재산정합니다.
+
+## Post-pilot navigation / 파일럿 이후 내비게이션
+
+P01–P14 is accepted. The current work order and remaining real-world release conditions are in [roadmap35](35-usable-navigation-roadmap.md); [ADR-031](09-decisions.md) clarifies local synthetic implementation versus geographic release acceptance.
+
+P01~P14를 수용했습니다. 현재 작업 순서와 남은 실환경 조건은 후속 계획에 있으며 ADR-031에서 로컬 합성 구현과 실제 지역 출시 검증을 구분합니다.

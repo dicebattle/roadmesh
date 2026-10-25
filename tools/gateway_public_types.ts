@@ -1,5 +1,6 @@
 /** Pure public gateway wire contracts; no Node/runtime imports.
  * Node·실행 모듈을 가져오지 않는 순수 공개 중계 전송 계약입니다. */
+import type { GuidanceLanguage, RouteGuidance } from "./guidance.js";
 export interface GatewayRequest {
   schema_version: "0.1";
   request_id: string;
@@ -8,6 +9,7 @@ export interface GatewayRequest {
   profile: "car";
   traffic_policy: "prefer_live";
   snap_policy?: "nearest_road_100m";
+  guidance_language?: GuidanceLanguage;
 }
 
 export type GatewayReason =
@@ -70,6 +72,7 @@ export interface GatewaySuccess extends GatewayFreshness {
   distance_m: number;
   duration_s: number;
   geometry: { type: "LineString"; coordinates: number[][] };
+  guidance?: RouteGuidance;
   live_coverage_ratio: number;
   warnings: GatewayWarning[];
 }

@@ -758,3 +758,30 @@ test("Optional compiler shutdown is awaited and unsuccessful termination makes c
     await bad.close();
   }
 });
+
+test("guided gateway validates native locale geometry and maneuver boundaries / 안내 중계의 엔진 언어·지형·회전 경계 검증", async () => {
+  const f=fixture();
+  try {
+    const r: GatewayRequest={...request,guidance_language:"ko-KR"};
+    const raw:any=f.result("node-a",r);
+    raw.engine_result.request.language="ko-KR";
+    const trip=raw.engine_result.route.trip;
+    trip.language="ko-KR";trip.units="kilometers";
+    trip.legs[0].maneuvers=[
+      {type:1,instruction:"동쪽으로 주행하세요.",length:.088,time:8,begin_shape_index:0,end_shape_index:1,travel_mode:"drive",travel_type:"car"},
+      {type:4,instruction:"도착했습니다.",length:0,time:0,begin_shape_index:1,end_shape_index:1,travel_mode:"drive",travel_type:"car"},
+    ];
+    const validated=validateGatewayNodeResult(raw,r,f.config.nodes[0],f.bundle,f.g);
+    assert.equal(validated.guidance!.language,"ko-KR");
+    assert.equal(validated.request_sha256,sha256(canonical(r)));
+    for(const mutate of [
+      (v:any)=>delete v.engine_result.route.trip.legs[0].maneuvers,
+      (v:any)=>v.engine_result.route.trip.language="en-US",
+      (v:any)=>v.engine_result.request.language="en-US",
+      (v:any)=>v.engine_result.route.trip.legs[0].maneuvers[0].end_shape_index=2,
+      (v:any)=>v.engine_result.route.trip.legs[0].maneuvers[0].time=10,
+    ]) {const bad=structuredClone(raw);mutate(bad);assert.throws(()=>validateGatewayNodeResult(bad,r,f.config.nodes[0],f.bundle,f.g));}
+    const legacy=f.result("node-a",request);
+    assert.equal(Object.hasOwn(validateGatewayNodeResult(legacy,request,f.config.nodes[0],f.bundle,f.g),"guidance"),false);
+  } finally { await f.controller.close();rmSync(f.root,{recursive:true,force:true}); }
+});

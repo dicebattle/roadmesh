@@ -1,3 +1,4 @@
+import { isGuidanceLanguage, nativeRouteGuidance } from "./guidance.js";
 /** Independent durable authority and bounded two-node routing / 독립 영속 승인·제한된 두 노드 계산. */
 import { randomUUID } from "node:crypto";
 import { mkdirSync } from "node:fs";
@@ -149,7 +150,8 @@ export function validateGatewayRequest(
       "destination",
       "profile",
       "traffic_policy",
-    ], ["snap_policy"]);
+    ], ["snap_policy", "guidance_language"]);
+    if (Object.hasOwn(value, "guidance_language") && !isGuidanceLanguage(value.guidance_language)) throw Error();
     if (Object.hasOwn(value, "snap_policy") && value.snap_policy !== "nearest_road_100m") throw Error();
     identifier(value.request_id, "request_id");
     if (value.schema_version !== "0.1" || value.profile !== "car")
@@ -235,6 +237,7 @@ function expectedNative(r: GatewayRequest) {
       { lon: r.destination.longitude, lat: r.destination.latitude },
     ],
     ...(r.snap_policy ? { snap_policy: r.snap_policy } : {}),
+    ...(r.guidance_language ? { guidance_language: r.guidance_language } : {}),
   });
 }
 function internalRequest(r: GatewayRequest, graph_id: string, generation_id: string): NodeRouteRequest {
@@ -245,6 +248,7 @@ function internalRequest(r: GatewayRequest, graph_id: string, generation_id: str
       { lon: r.destination.longitude, lat: r.destination.latitude },
     ],
     ...(r.snap_policy ? { snap_policy: r.snap_policy } : {}),
+    ...(r.guidance_language ? { guidance_language: r.guidance_language } : {}),
     expected_generation_id: generation_id,
   };
 }
@@ -429,6 +433,7 @@ export function validateGatewayNodeResult(
     distance_m: distance,
     duration_s: summary.time,
     geometry: { type: "LineString", coordinates },
+    ...(r.guidance_language ? { guidance: nativeRouteGuidance(trip, r.guidance_language, coordinates.length, distance, summary.time) } : {}),
     live_coverage_ratio: ratio,
     warnings:
       ratio > 0

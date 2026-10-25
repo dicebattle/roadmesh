@@ -712,3 +712,9 @@ Direct checks: generator TypeScript compilation, packaged self-check and SVG exp
 직접 확인은 생성 원본 TypeScript 컴파일·스킬 자체 검사·SVG 내보내기와 한영 내장 브라우저 시각 검토입니다. 각 35개 글자의 경계에서 최종 넘침·연결선 표본 충돌이 없었습니다. 처음 겹친 영역 제목은 수정했고 없는 SVG 경계 API는 화면 경계로 대체했습니다. 시스템 서체 대체를 명시하며 PNG·패키지 설치를 주장하지 않습니다. 공용 설정·실행·미디어 지문은 유지합니다. 사용자가 이미지 커밋을 요청했으며 자동 수용과 최종 시각 선호 확인은 구분합니다.
 
 User visual review / 사용자 시각 검토: after seeing the generated Korean figure, the user explicitly chose to use this style. Packaged checks, no-emit TypeScript and current media fingerprint passed; indexed Markdown links passed at 1105. / 생성한 한국어 그림을 본 사용자가 이 스타일로 사용하도록 명시 확인했습니다. 스킬 검사·TypeScript·현재 미디어와 Git 목록 링크 1105개를 통과했습니다.
+
+## 2026-10-25 — Usable navigation design / 실사용 내비게이션 설계
+
+Request: assess remaining navigation work, implement highest priority, directly verify and push the branch. Main Sol owns design, implementation and evidence review. Fixed roadmap35/contract36/ADR031 before coding: native validated EN/KO maneuver previews first, 390 existing plus 16 new checks. Independent road quality remains a release gate; GPS lifecycle/progress, reroute, speech, private deployment and real traffic remain subsequent work. No new PR/merge/deployment authorization is inferred. Verification pending.
+
+실사용까지 남은 일을 정리하고 우선 구현·직접 검증·브랜치 푸시하는 요청입니다. 메인 Sol이 설계·구현·검토합니다. 코딩 전에 계획35·계약36·ADR031에서 한영 엔진 회전 안내·기존390개+새16개를 고정했습니다. 독립 도로 품질은 출시 조건이며 GPS·진행·재탐색·음성·배포·실제 교통은 후속입니다. 검증은 아직 진행 전입니다.

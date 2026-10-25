@@ -32,6 +32,7 @@ import {
 import { pause } from "./ingestion_runtime.js";
 import type { GatewaySuccess, GatewayRouteContext } from "./gateway_types.js";
 import type { SimulationAssertion } from "./vehicle_simulator.js";
+import { GuidanceChecks } from "./guidance_checks.js";
 export const CLIENT_CASE_IDS = [
   "fresh-source",
   "bundled-offline",
@@ -193,7 +194,7 @@ const write = (root: string, file: string, data: unknown) =>
 export async function runClientChecks(
   graphDirectory: string,
   outputPath: string,
-): Promise<{ client: ClientReport; assertions: SimulationAssertion[] }> {
+): Promise<{ client: ClientReport; assertions: SimulationAssertion[]; navigation: SimulationAssertion[] }> {
   const output = resolve(outputPath);
   mkdirSync(output);
   for (const dir of [
@@ -214,6 +215,7 @@ export async function runClientChecks(
     consoleEvents: Array<any> = [],
     apiResponses: Array<any> = [],
     pendingResponses: Promise<void>[] = [];
+  const guidance = new GuidanceChecks(output);
   let cumulativeGeoCalls = 0;
   let runtime: ClientRuntime | undefined,
     browserServer: BrowserServer | undefined,
@@ -534,6 +536,8 @@ export async function runClientChecks(
           document.getElementById("map")?.dataset.renderedRouteRequestId,
         status: document.getElementById("route-status")?.textContent,
         summary: document.getElementById("route-summary")?.textContent,
+        maneuvers: [...document.querySelectorAll("#maneuvers li p")].map(el => el.textContent ?? ""),
+        guidance_hidden: document.getElementById("guidance")?.hidden,
         evidence: JSON.parse(
           document.getElementById("route-evidence")?.textContent ?? "{}",
         ),
@@ -785,6 +789,32 @@ export async function runClientChecks(
       baseline.body,
       "states/baseline.json",
     );
+    guidance.route("native-baseline-en", baseline.body, "en-US", false, baseline.state.maneuvers);
+    const legacyInput = { schema_version:"0.1",request_id:"nav01-legacy-"+randomUUID(),
+      ...pilot.bootstrap.presets.long, profile:"car",traffic_policy:"prefer_live" };
+    const legacyResponse = await p.request.post(pilot.origin+"/api/routes", {headers:{origin:pilot.origin},data:legacyInput});
+    const legacy = await legacyResponse.json();
+    guidance.check("legacy-wire", legacyResponse.status()===200 && !Object.hasOwn(legacy,"guidance") &&
+      legacy.request_sha256===sha256(canonical(legacyInput)),
+      "Unguided HTTP requests retain the original public wire contract.", "안내 없는 HTTP 요청의 기존 공개 전송 계약 유지.", {request:legacyInput,status:legacyResponse.status(),body:legacy});
+    const badInput={...legacyInput,request_id:"nav01-locale-"+randomUUID(),guidance_language:"ja-JP"};
+    const badResponse=await p.request.post(pilot.origin+"/api/routes",{headers:{origin:pilot.origin},data:badInput});
+    const bad=await badResponse.json();
+    guidance.check("unknown-locale",badResponse.status()===422 && bad.reason==="INVALID_INPUT" &&
+      !readdirSync(join(output,"fixture/gateway/runtime/requests")).some(n=>n.startsWith(badInput.request_id+"-")),
+      "Unsupported locale is rejected before routing.","지원하지 않는 언어를 경로 계산 전에 거부.",{request:badInput,status:badResponse.status(),body:bad});
+    await p.locator("#language").click();
+    const languageReset=await snapshot("guidance-language-reset");
+    guidance.check("language-reset", languageReset.state==="empty" && languageReset.maneuvers.length===0 &&
+      languageReset.guidance_hidden===true && languageReset.map_active_route==="false",
+      "Language changes clear the route and instructions before recalculation.","언어 변경 때 재계산 전 경로·안내를 제거.",languageReset);
+    const baselineKo=await calculate("guidance-baseline-ko","long");
+    guidance.route("native-baseline-ko",baselineKo.body,"ko-KR",false,baselineKo.state.maneuvers);
+    await p.locator("#origin-latitude").fill(String(pilot.bootstrap.presets.long.origin.latitude + 0.000001));
+    const inputCleared=await snapshot("guidance-input-cleared");
+    guidance.check("input-clears",inputCleared.maneuvers.length===0 && inputCleared.guidance_hidden===true && inputCleared.map_active_route==="false",
+      "Editing coordinates removes every former instruction and route line.","좌표 변경 때 이전 안내 전체·경로선을 제거.",inputCleared);
+    await p.locator("#language").click();
     await boundedClientOperation(
       pilot.publishLive(),
       180000,
@@ -802,6 +832,7 @@ export async function runClientChecks(
       live.body,
       "states/live.json",
     );
+    guidance.route("native-traffic-en",live.body,"en-US",true,live.state.maneuvers);
     const firstContext = (await (
       await p.request.get(pilot.origin + "/api/route-context")
     ).json()) as GatewayRouteContext;
@@ -1123,6 +1154,8 @@ export async function runClientChecks(
       "states/keyboard.json",
     );
     await p.locator("#language").click();
+    const koreanRoute=await calculate("guidance-traffic-ko","short");
+    guidance.route("native-traffic-ko",koreanRoute.body,"ko-KR",true,koreanRoute.state.maneuvers);
     const korean = await snapshot("korean");
     await screen(
       "korean-live",
@@ -1139,8 +1172,8 @@ export async function runClientChecks(
           .getAttribute("aria-label")) === "지도 확대" &&
         (await p.locator(".maplibregl-ctrl-zoom-out").getAttribute("title")) ===
           "지도 축소",
-      "Korean labels, spacing and route status remain readable with the same original result.",
-      "같은 원결과에서 한국어 이름·띄어쓰기·경로 상태를 읽을 수 있습니다.",
+      "Korean labels and native guidance remain readable after recalculating in Korean.",
+      "한국어로 재계산한 뒤 한국어 화면·엔진 안내·경로 상태를 읽을 수 있습니다.",
       korean,
       "states/korean.json",
     );
@@ -1161,6 +1194,8 @@ export async function runClientChecks(
       mobile,
       "states/mobile390.json",
     );
+    guidance.check("mobile-readable",mobile.scroll_width===390 && mobile.maneuvers.length===koreanRoute.body.guidance.maneuvers.length && mobile.guidance_hidden===false,
+      "Ordered Korean native guidance remains readable at390px without horizontal overflow.","390픽셀에서 한국어 원 안내 목록을 가로 넘침 없이 읽습니다.",mobile);
     // Real consent deletion and new signed correction precede exact expiry; old LIVE bytes are never restored.
     // 실제 동의 삭제·새 서명 정정 뒤 만료로 진행하며 옛 LIVE 바이트를 복원하지 않습니다.
     await boundedClientOperation(
@@ -1362,6 +1397,7 @@ export async function runClientChecks(
     "fixture/cleanup.json",
   );
   requireClientCases(assertions);
+  const navigation=guidance.finish();
   const report: ClientReport = {
     assertions_passed: assertions.length,
     assertions_total: CLIENT_CASE_IDS.length,
@@ -1419,7 +1455,7 @@ export async function runClientChecks(
     completed_at_utc: new Date().toISOString(),
   });
   renameSync(join(output, "manifest.json.tmp"), join(output, "manifest.json"));
-  return { client: report, assertions };
+  return { client: report, assertions, navigation };
 }
 export async function main(
   args = process.argv.slice(2),

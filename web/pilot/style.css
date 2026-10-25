@@ -325,3 +325,8 @@ a {
     scroll-behavior: auto !important;
   }
 }
+
+#maneuvers { padding-inline-start: 1.6rem; margin: 0; }
+#maneuvers li { padding: .65rem 0; border-bottom: 1px solid #CAD4DF; overflow-wrap: anywhere; }
+#maneuvers p { margin: 0 0 .2rem; }
+#maneuvers span { font-size: .85rem; color: #526172; }

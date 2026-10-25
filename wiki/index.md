@@ -1,3 +1,9 @@
+# Current navigation work / 현재 내비게이션 작업
+
+[Usable navigation roadmap](../docs/35-usable-navigation-roadmap.md) · [NAV-01 fixed contract](../docs/36-nav01-turn-guidance.md). Design fixed; implementation/acceptance in progress on `feat/navigation-guidance`. P01–P14 historical checkpoints below remain preserved.
+
+실사용 내비게이션 계획·NAV-01 계약을 확정했고 작업 브랜치에서 구현·검증을 진행합니다. 아래 P01~P14 중간 기록은 과거 시점으로 보존합니다.
+
 # RouteLens 프로젝트 위키
 
 P01–P14 local-pilot runtime acceptance is complete locally and on GitHub Actions: whole 390, Node.js 22/24 each 303. Main independently checked 16,236 hosted original hashes, 11 complete PostgreSQL/Worker pairs and 21 SQLite copies across 14 actors. The runtime fingerprint matches the accepted local run and actual recordings. Protected integration and the latest checked head are tracked by [PR #14](https://github.com/dicebattle/routelens/pull/14). Geographic 100/100, real driving, live traffic and production deployment remain separate.

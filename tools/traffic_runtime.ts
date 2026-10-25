@@ -1,3 +1,4 @@
+import { isGuidanceLanguage } from "./guidance.js";
 /** Owned real engine invocation and private phase barriers / 소유 실제 엔진 실행·비공개 단계 대기. */
 import { randomUUID } from "node:crypto";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -63,7 +64,9 @@ export function validateTrafficRequest(
 ): asserts request is TrafficRouteRequest {
   if (
     !request ||
-    !["graph_id,locations", "graph_id,locations,snap_policy"].includes(Object.keys(request).sort().join(",")) ||
+    Object.keys(request).some(k => !["graph_id", "locations", "snap_policy", "guidance_language"].includes(k)) ||
+    !["graph_id", "locations"].every(k => Object.hasOwn(request, k)) ||
+    (Object.hasOwn(request, "guidance_language") && !isGuidanceLanguage(request.guidance_language)) ||
     (Object.hasOwn(request, "snap_policy") && request.snap_policy !== "nearest_road_100m") ||
     request.graph_id !== graphId ||
     !Array.isArray(request.locations) ||

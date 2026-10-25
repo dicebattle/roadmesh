@@ -23,7 +23,7 @@ export class NativeRouteRejection extends Error {
   }
 }
 export function nativeRouteRequest(
-  request: Pick<TrafficRouteRequest, "locations" | "snap_policy">,
+  request: Pick<TrafficRouteRequest, "locations" | "snap_policy" | "guidance_language">,
 ) {
   return {
     locations:
@@ -36,7 +36,7 @@ export function nativeRouteRequest(
         : request.locations,
     costing: "auto",
     units: "kilometers",
-    language: "en-US",
+    language: request.guidance_language ?? "en-US",
     date_time: { type: 0 },
   };
 }
