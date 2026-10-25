@@ -126,6 +126,12 @@ test("stale future samples and clock rewind cannot revive guidance / 오래됨·
     t = new RouteProgress(r);
   t.observe(fix(r, 0, 0), 0);
   assert.equal(t.observe(fix(r, 10, 2000), 1000).reason, "FUTURE_FIX");
+  const expiredFuture = t.observe(fix(r, 10, 7000), 6000);
+  assert.equal(expiredFuture.reason, "FUTURE_FIX");
+  assert.equal(expiredFuture.state.status, "STALE");
+  assert.equal(expiredFuture.state.next_maneuver, null);
+  assert.equal(expiredFuture.state.remaining_m, null);
+  assert.equal(expiredFuture.state.confirmed_position, null);
   assert.equal(t.advance(6000).status, "STALE");
   assert.equal(t.snapshot().confirmed_position, null);
   assert.equal(t.observe(fix(r, 10, 6001), 5999).reason, "INVALID_CLOCK");

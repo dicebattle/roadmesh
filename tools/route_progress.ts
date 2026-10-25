@@ -292,7 +292,7 @@ export class RouteProgress {
       this.streaks();
       return this.result(false, "INVALID_CLOCK");
     }
-    this.clock = now;
+    this.advance(now);
     if (fix.event_time_ms > now) {
       this.streaks();
       return this.result(false, "FUTURE_FIX");

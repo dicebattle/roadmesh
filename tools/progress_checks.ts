@@ -330,14 +330,19 @@ export class ProgressChecks {
     );
     s = seed(0);
     u = s.tracker.observe(fix(10, 2000), 1000);
+    const expiredFuture = s.tracker.observe(fix(10, 7000), 6000);
     check(
       "future-sample",
       !u.accepted &&
         u.reason === "FUTURE_FIX" &&
-        u.state.last_confirmed_progress_m === 0,
-      "Future positions cannot move progress.",
-      "미래 위치로 진행 불가.",
-      { output: u },
+        u.state.last_confirmed_progress_m === 0 &&
+        expiredFuture.reason === "FUTURE_FIX" &&
+        expiredFuture.state.status === "STALE" &&
+        expiredFuture.state.next_maneuver === null &&
+        expiredFuture.state.remaining_m === null,
+      "Future positions cannot move progress or retain expired guidance.",
+      "미래 위치로 진행·만료된 안내 유지 불가.",
+      { output: u, expired_future: expiredFuture },
     );
     s = seed(20);
     u = s.tracker.observe(fix(10, 0), s.time);

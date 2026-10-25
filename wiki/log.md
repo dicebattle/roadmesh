@@ -749,3 +749,7 @@ Main Sol designed, coded and reviewed without subagents. Fresh clean7078d6f/runt
 메인 Sol이 설계·구현·검토했고 새438개·엄격 빌드·집중31개·전체320개·독립 원문·진행190상태/168위치/자체 거리 최대2.229310488m를 확인했습니다. 진단 읽기 실패와 수정 후 한 번 재검사 원문을 보존하고 내장 한영390픽셀·이탈 보류/복귀·전체42.7초 원속도 녹화·명시4배속 합성 재생·만료 교통 기본값·정확한 소유 정리를 확인했습니다. 최초 묶음 명령의 잘못된 루트/충돌 경로 오류도 보존하고 새 출력으로 바로잡았습니다. 원문 묶음은 선언 지도 외 엔진·XML·SQLite를 유지하고 독립 복원합니다.
 
 Next: descriptive bilingual commit/push, exact remote SHA, exact-head hosted original inspection and normal protected PR merge as authorized. No deployment; NAV-06 destination search is next, independent100/100 road quality and real device measurements remain open. / 다음은 상세 한영 커밋·푸시·원격 SHA·정확한 커밋의 원격 원문 감사·승인된 보호 PR 병합입니다. 배포 없이 다음 NAV-06과 독립 실도로/단말 검증을 남깁니다.
+
+## 2026-10-25 — NAV-02 pre-merge clock-boundary finding / 병합 전 시간 경계 발견
+
+Main's final review reproduced FUTURE_FIX returning ON_ROUTE at6000ms after the last valid fix at0. Retain the first local438 proof and currently running bbc4a4a CI as historical, not corrected-source acceptance. Minimum change calls the existing monotonic advance after route/clock checks, before sample-time rejection; strengthen existing future case/unit test, then run a fresh clean whole438 and refresh the recording/fingerprint. / 최종 검토에서 유효 위치 뒤6초의 미래 표본 거부 때 옛 안내가 남는 것을 직접 재현했습니다. 기존438개·진행 중 CI를 과거 근거로 보존하고 기존 시계 만료 호출과 기존 검사를 강화한 뒤 새 전체 실행·녹화를 진행합니다.
