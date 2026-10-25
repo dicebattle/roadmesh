@@ -38,7 +38,7 @@ Focused58 and full310 tests passed. First standalone actual-browser32 + guidance
 
 ## Actual recording / 실제 녹화
 
-[![Actual guidance walkthrough / 실제 안내 사용 영상](../../../docs/media/demo.ko.gif)](../../../docs/media/demo.ko.mp4)
+[![Actual guidance walkthrough / 실제 안내 사용 영상](user-demo/demo.ko.gif)](user-demo/demo.ko.mp4)
 
 A fresh automatic pilot on this run's Seoul graph produced three successes: desktop English,390px Korean IAB and the actual captured Korean route. Each is2412m/184.731s with9 native instructions. Synthetic traffic detours around three slow edges, so the returned path has0 live coverage despite an accepted snapshot. No live-traffic accuracy is inferred.
 
@@ -79,3 +79,5 @@ The current media fingerprint/hashes passed. The bounded credential-pattern scan
 현재 미디어 지문·해시와 원문 텍스트21,018개의 지정 자격정보 검사를 통과했습니다. 암호 비밀이 아닌 거부 검사 표식은 별도로 구분했고 최종 Git 목록의 문서 링크1,153개가 모두 연결됐습니다. 전체 묶음의16,619개 원문 크기·해시를 새 폴더에서 확인하고 이전 P13영상을 고정 경로에 그대로 보존했습니다. 모든 비밀의 탐지나 이번 원격 CI 통과를 주장하지 않습니다.
 
 [Publication check receipt](delivery-check.json), [restoration proof](restoration-verification.json), [previous recording preservation](prior-media-preservation.json). / 공개 검사·복원·이전 녹화 보존 영수증입니다.
+
+Media preservation2026-10-25: NAV-01 original28.5s assets now use stable paths; latest advances to NAV-02. Historical measurements are unchanged. / NAV-01 원28.5초 자료를 고정 경로로 보존하고 최신은 NAV-02로 갱신했으며 과거 측정은 그대로입니다.

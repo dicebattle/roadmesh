@@ -1,0 +1,269 @@
+{
+  "source_class": "SYNTHETIC",
+  "binding": {
+    "request_id": "browser-d717334e-f6af-48be-8769-1b6499c2a89d",
+    "request_sha256": "27c7e6ec2d5127c85643fceec798a5a5da737fdc0968444167a5470182f26425",
+    "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+    "generation_id": "24f541e59bc78a0b20e91b334bd7d5bbe45aac7c4141ccc5b43af48d1193b75c"
+  },
+  "metric_scope": "EXACT_RETURNED_ROUTE_NOT_ROAD_NETWORK_MATCHING",
+  "inputs": [
+    {
+      "binding": {
+        "request_id": "browser-d717334e-f6af-48be-8769-1b6499c2a89d",
+        "request_sha256": "27c7e6ec2d5127c85643fceec798a5a5da737fdc0968444167a5470182f26425",
+        "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+        "generation_id": "24f541e59bc78a0b20e91b334bd7d5bbe45aac7c4141ccc5b43af48d1193b75c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 0,
+      "longitude": 127.028976,
+      "latitude": 37.498447,
+      "accuracy_m": 4,
+      "heading_degrees": 248.28220632004133,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-d717334e-f6af-48be-8769-1b6499c2a89d",
+        "request_sha256": "27c7e6ec2d5127c85643fceec798a5a5da737fdc0968444167a5470182f26425",
+        "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+        "generation_id": "24f541e59bc78a0b20e91b334bd7d5bbe45aac7c4141ccc5b43af48d1193b75c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 1000,
+      "longitude": 127.02876538352632,
+      "latitude": 37.498380443759004,
+      "accuracy_m": 4,
+      "heading_degrees": 248.28207821240568,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-d717334e-f6af-48be-8769-1b6499c2a89d",
+        "request_sha256": "27c7e6ec2d5127c85643fceec798a5a5da737fdc0968444167a5470182f26425",
+        "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+        "generation_id": "24f541e59bc78a0b20e91b334bd7d5bbe45aac7c4141ccc5b43af48d1193b75c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 2000,
+      "longitude": 127.0285547674282,
+      "latitude": 37.49831388714409,
+      "accuracy_m": 4,
+      "heading_degrees": 248.28195027976875,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-d717334e-f6af-48be-8769-1b6499c2a89d",
+        "request_sha256": "27c7e6ec2d5127c85643fceec798a5a5da737fdc0968444167a5470182f26425",
+        "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+        "generation_id": "24f541e59bc78a0b20e91b334bd7d5bbe45aac7c4141ccc5b43af48d1193b75c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 3000,
+      "longitude": 127.02834375560258,
+      "latitude": 37.49824812681186,
+      "accuracy_m": 4,
+      "heading_degrees": 248.6627162735736,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-d717334e-f6af-48be-8769-1b6499c2a89d",
+        "request_sha256": "27c7e6ec2d5127c85643fceec798a5a5da737fdc0968444167a5470182f26425",
+        "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+        "generation_id": "24f541e59bc78a0b20e91b334bd7d5bbe45aac7c4141ccc5b43af48d1193b75c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 4000,
+      "longitude": 127.02824063006949,
+      "latitude": 37.498185756084006,
+      "accuracy_m": 4,
+      "heading_degrees": 213.47043955222608,
+      "speed_mps": 20
+    }
+  ],
+  "outputs": [
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-d717334e-f6af-48be-8769-1b6499c2a89d",
+          "request_sha256": "27c7e6ec2d5127c85643fceec798a5a5da737fdc0968444167a5470182f26425",
+          "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+          "generation_id": "24f541e59bc78a0b20e91b334bd7d5bbe45aac7c4141ccc5b43af48d1193b75c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 0,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.028976,
+          37.498447
+        ],
+        "confirmed_position": [
+          127.028976,
+          37.498447
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 0,
+        "progress_m": 0,
+        "remaining_m": 2117.011521689528,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 1,
+          "instruction": "Bear left.",
+          "distance_m": 68.59556257952534
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-d717334e-f6af-48be-8769-1b6499c2a89d",
+          "request_sha256": "27c7e6ec2d5127c85643fceec798a5a5da737fdc0968444167a5470182f26425",
+          "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+          "generation_id": "24f541e59bc78a0b20e91b334bd7d5bbe45aac7c4141ccc5b43af48d1193b75c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 1000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.02876538352632,
+          37.498380443759004
+        ],
+        "confirmed_position": [
+          127.02876538352632,
+          37.498380443759
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 20.00000000356295,
+        "progress_m": 20.00000000356295,
+        "remaining_m": 2097.011521685965,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 1,
+          "instruction": "Bear left.",
+          "distance_m": 48.59556257596239
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-d717334e-f6af-48be-8769-1b6499c2a89d",
+          "request_sha256": "27c7e6ec2d5127c85643fceec798a5a5da737fdc0968444167a5470182f26425",
+          "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+          "generation_id": "24f541e59bc78a0b20e91b334bd7d5bbe45aac7c4141ccc5b43af48d1193b75c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 2000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.0285547674282,
+          37.49831388714409
+        ],
+        "confirmed_position": [
+          127.0285547674282,
+          37.4983138871441
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 39.99999999750637,
+        "progress_m": 39.99999999750637,
+        "remaining_m": 2077.0115216920217,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 1,
+          "instruction": "Bear left.",
+          "distance_m": 28.595562582018964
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-d717334e-f6af-48be-8769-1b6499c2a89d",
+          "request_sha256": "27c7e6ec2d5127c85643fceec798a5a5da737fdc0968444167a5470182f26425",
+          "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+          "generation_id": "24f541e59bc78a0b20e91b334bd7d5bbe45aac7c4141ccc5b43af48d1193b75c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 3000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.02834375560258,
+          37.49824812681186
+        ],
+        "confirmed_position": [
+          127.02834375560258,
+          37.498248126811845
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 60.00000000293637,
+        "progress_m": 60.00000000293637,
+        "remaining_m": 2057.0115216865915,
+        "distance_to_route_m": 1.4146481319698978e-9,
+        "next_maneuver": {
+          "index": 1,
+          "instruction": "Bear left.",
+          "distance_m": 8.595562576588968
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-d717334e-f6af-48be-8769-1b6499c2a89d",
+          "request_sha256": "27c7e6ec2d5127c85643fceec798a5a5da737fdc0968444167a5470182f26425",
+          "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+          "generation_id": "24f541e59bc78a0b20e91b334bd7d5bbe45aac7c4141ccc5b43af48d1193b75c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 4000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.02824063006949,
+          37.498185756084006
+        ],
+        "confirmed_position": [
+          127.02824063006949,
+          37.498185756084
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 72.59556258077573,
+        "progress_m": 72.59556258077573,
+        "remaining_m": 2044.415959108752,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 2,
+          "instruction": "Turn left onto 테헤란로/90.",
+          "distance_m": 43.317394014416564
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "live-primary",
+    "origin": {
+      "longitude": 127.03739724982245,
+      "latitude": 37.50083690018144
+    },
+    "destination": {
+      "longitude": 127.0375277498224,
+      "latitude": 37.500877100181434
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live"
+  },
+  "status": 200,
+  "headers": {
+    "cache-control": "no-store",
+    "connection": "keep-alive",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sun, 25 Oct 2026 12:52:41 GMT",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked"
+  },
+  "body": {
+    "request_id": "live-primary",
+    "request_sha256": "97b94cb3bf75f84d3c09369604ae93f09b01036c58107acdb57494115e5d13d3",
+    "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+    "snapshot_id": "23ebc1f382c5c0ea52480749733841ddb765c8a9e05713fe6841927728d17c5d",
+    "sequence": 1,
+    "generation_id": "82562ffb12f31ed82e8519397be478bdd06e5ec9795d706ebf2fe9741d6b5199",
+    "traffic_sha256": "29d0dad29273b448b09c994a5c87cbf17f15ce6a95b79da80e055a72136e4ffa",
+    "engine_version": "3.9.1",
+    "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "costing_config_id": "valhalla-current-v1",
+    "node_id": "seoul-gateway-node-a",
+    "traffic_mode": "LIVE_MIXED",
+    "distance_m": 12,
+    "duration_s": 22.254,
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.037397,
+          37.500837
+        ],
+        [
+          127.037528,
+          37.500877
+        ]
+      ]
+    },
+    "live_coverage_ratio": 1,
+    "warnings": [],
+    "high_water": 1,
+    "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+    "traffic_published_at": "2026-10-24T00:04:30.000Z",
+    "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+    "source_class": "SYNTHETIC",
+    "clock_basis": "SIMULATION_EVENT_TIME",
+    "calculated_at": "2026-10-25T12:52:41.378Z"
+  },
+  "elapsed_ms": 1618.8392920000479
+}

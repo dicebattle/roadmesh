@@ -1,0 +1,49 @@
+{
+  "lang": "en",
+  "state": "timeout",
+  "request_id": "",
+  "map_ready": "true",
+  "map_active_route": "false",
+  "map_request_id": "",
+  "map_rendered_request_id": "",
+  "status": "The route request timed out. Recalculate to try again.",
+  "summary": "",
+  "maneuvers": [],
+  "guidance_hidden": true,
+  "evidence": {
+    "request": {
+      "schema_version": "0.1",
+      "request_id": "browser-fbf3434a-37a8-460c-8ac8-6ec9ecedba32",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live",
+      "guidance_language": "en-US"
+    },
+    "response": null,
+    "authority": {
+      "schema_version": "0.1",
+      "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+      "traffic_snapshot_id": "313e055eef2f61820572d6faabdb886b0d23e336fe584b81c53ffa051d0f1038",
+      "sequence": 1,
+      "high_water": 1,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "traffic_published_at": "2026-10-24T00:04:30.000Z",
+      "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+      "source_class": "SYNTHETIC",
+      "clock_basis": "SIMULATION_EVENT_TIME"
+    },
+    "state": "timeout",
+    "reason": "DEADLINE_EXCEEDED",
+    "map_source_geometry": null,
+    "progress": null
+  },
+  "scroll_width": 1280,
+  "viewport_width": 1280
+}

@@ -2,6 +2,8 @@
 
 Status: main Sol design fixed before implementation. NAV-01 is a dependency; this branch includes its existing commits and will deliver both through a protected PR. The user explicitly authorized branch push and main merge. No deployment is authorized. / 상태: 메인 Sol이 구현 전에 설계합니다. NAV-01의 기존 커밋을 의존성으로 포함해 보호 PR로 함께 반영합니다. 사용자는 푸시·main 병합을 승인했으며 배포는 범위 밖입니다.
 
+Current status: fresh local438/438 and direct evidence review passed; exact-head hosted checks and authorized protected merge follow. See the outcome at the end. / 현재 새 로컬438개·직접 근거 검토를 통과했고 정확한 원격 검사·승인된 보호 병합을 이어갑니다. 아래 결과를 참조합니다.
+
 ## Scope and reuse / 범위·재사용
 
 Track progress against the exact validated native route/guidance and expose current synthetic position, upcoming native maneuver, distance to it, remaining geometric distance and off-route state. Reuse the existing spherical geodesy math in Node and browser by separating its unchanged error helper from Node-only byte utilities. This is route-bound projection, not a replacement for Valhalla's road-network matcher. Read the actual Seoul road context to withhold a confident snap near competing roads. It cannot resolve grade-separated roads from two-dimensional coordinates alone.
@@ -51,3 +53,10 @@ Preserve all406 current cases; add32 fixed `nav02-` cases for **438 total**:
 Acceptance sequence: focused tests, actual development run, clean-source fresh full438 simulation, independent original-output and copied-SQLite inspection, IAB manual review, refreshed actual bilingual video/media, dated bilingual report, descriptive branch push, exact-head hosted CI artifact inspection and a normal protected PR merge. Preserve failures, main protection and unrelated worktrees. Verify the merged commit/tree and remote main after merging; no deployment is included.
 
 집중 검사·실제 개발 실행·깨끗한 새 전체438개·원문/SQLite 독립 감사·내장 화면·새 한영 녹화·날짜별 기록·푸시·정확한 원격 검사와 원문·정상 보호 PR 병합까지 수행합니다. 병합 커밋/내용과 원격 main을 확인하며 배포는 포함하지 않습니다.
+
+
+## NAV-02 local acceptance2026-10-25 / NAV-02 로컬 수용
+
+Main Sol directly implemented contract37. Clean7078d6f/runtime6d853cf2 passed fresh438/438 and Node22 full320; independent progress190states/168positions/max authored error2.23m, actual IAB EN/KO390px and full42.7s recording passed. Existing406 checks remain. [Dated report](../research/pilot/2026-10-25-nav02/report.md). The user authorized branch push and normal protected PR merge; exact-head hosted results are recorded separately. No deployment. Next NAV-06 destination search/confirmation; independent100/100 road review and device GPS accuracy remain open.
+
+메인 Sol이 계약37을 구현하고 깨끗한 소스의 새438개·전체320개·독립 진행190상태/168위치/자체 거리 최대2.23m·실제 한영390픽셀·42.7초 녹화를 직접 확인했습니다. 기존406개를 유지하며 사용자 승인에 따라 작업 브랜치 푸시·정상 보호 PR 병합까지 진행합니다. 원격 결과는 별도 기록하고 배포하지 않습니다. 다음은 NAV-06 목적지 검색/확인이며 독립100/100·단말 정확도는 남습니다.

@@ -1,6 +1,8 @@
-# NAV-02 in progress / NAV-02 진행 중
+# NAV-02 locally accepted / NAV-02 로컬 수용
 
-[Fixed progress/replay contract](../docs/37-nav02-route-progress.md): main Sol implementation and direct acceptance in progress on `feat/navigation-progress`;438 required including prior406. User authorized protected main merge after exact-head checks. / 메인 Sol이 기존406개+새32개를 구현·직접 검증하고 정확한 원격 검사 뒤 보호 main 병합까지 진행합니다.
+[Progress/replay contract](../docs/37-nav02-route-progress.md) · [module](modules/route-progress.md) · [actual report](../research/pilot/2026-10-25-nav02/report.md). Fresh438/438, Node22 full320, actual EN/KO390px, independent original inspection and42.7s recording passed. Protected merge follows exact-head hosted checks; no deployment. / 새438개·전체320개·한영390픽셀·독립 원문·42.7초 녹화를 확인했고 정확한 원격 검사 뒤 보호 병합합니다. 배포는 없습니다.
+
+The NAV-01 section and P01–P14 checkpoints below are historical. / 아래 NAV-01·P01~P14는 과거 검증 시점을 보존합니다.
 
 # Current navigation work / 현재 내비게이션 작업
 
@@ -132,3 +134,5 @@ Latest: [P11 actual client proof](../research/pilot/2026-10-25-p11/report.md), [
 [P13 clean390 report](../research/pilot/2026-10-25-p13/report.md): actual Seoul, independent16,061 hashes,32 local Cloudflare checks/11 full result pairs, actual32s user video and155.05s developer capture. [P12 corrected hosted/protected record](../research/pilot/2026-10-25-p12/hosted/README.md). P13/P14b hosted/protected delivery remains. Earlier progress entries above are historical checkpoints.
 
 현재 로컬 전체390개·독립 해시16,061개·Cloudflare32개/전체 결과11쌍·실제 사용자32초/개발155.05초 녹화를 확인했습니다. P12는 수정 원격·보호 반영을 마쳤고 P13/P14b의 원격·보호 반영은 남습니다. 위 진행 기록은 과거 중간 상태입니다.
+
+- [NAV-02 route progress and replay / 경로 진행·재생](modules/route-progress.md) · [dated evidence / 날짜별 근거](../research/pilot/2026-10-25-nav02/report.md)

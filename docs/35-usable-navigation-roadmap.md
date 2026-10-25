@@ -1,5 +1,8 @@
 # From local pilot to usable navigation / 로컬 파일럿에서 실사용 내비게이션까지
 
+Current2026-10-25: NAV-01 and NAV-02 are locally accepted; the current branch is `feat/navigation-progress`. NAV-06 destination search/confirmation is next. The latest request includes protected merge after exact-head CI; earlier branch-only finish lines below are historical. [Current evidence](../research/pilot/2026-10-25-nav02/report.md). / 현재 NAV-01·NAV-02 로컬 수용을 마쳤고 다음은 NAV-06입니다. 이번 요청은 원격 검사 뒤 보호 병합까지이며 아래 이전 브랜치 전달 조건은 과거 기록입니다.
+
+
 Baseline: protected main 9b88a46, P01–P14 local pilot accepted. This proves a synthetic workflow on real Seoul OSM, not a navigation service ready for driving. New work starts on `feat/navigation-guidance`. Design, implementation and direct evidence review remain with the main Sol agent.
 
 기준은 P01~P14 로컬 파일럿을 보호 병합한 main 9b88a46입니다. 실제 서울 지도 위 합성 처리 흐름을 검증했으며 실주행 서비스가 완성됐다는 뜻은 아닙니다. 이번 작업 브랜치는 `feat/navigation-guidance`이며 메인 Sol이 설계·구현·직접 검증을 맡습니다.
@@ -51,3 +54,10 @@ Reuse Valhalla for routing, native narrative and matching; use the device platfo
 During temporary disconnection, NAV-03 must distinguish continuing along already received geometry/instructions from computing a new route. Keep cached geometry and map data usable where supported, mark stale traffic and explicitly report when a new route cannot be calculated. Full offline regional map/search/routing downloads are a later optional module with storage, update, attribution and device-capacity acceptance; ordinary server availability does not prove offline navigation.
 
 일시 통신 단절에서는 받은 경로·안내를 계속 쓰는 동작과 새 경로 계산을 구분해야 합니다. 지원하는 지도·지형 캐시를 유지하고 오래된 교통정보와 재탐색 불가를 명확히 표시합니다. 지역 지도·검색·경로를 모두 내려받는 완전 오프라인 기능은 저장공간·갱신·출처·단말 용량을 검증할 후속 선택 모듈이며 서버 정상 동작으로 대신하지 않습니다.
+
+
+## NAV-02 local acceptance2026-10-25 / NAV-02 로컬 수용
+
+Main Sol directly implemented contract37. Clean7078d6f/runtime6d853cf2 passed fresh438/438 and Node22 full320; independent progress190states/168positions/max authored error2.23m, actual IAB EN/KO390px and full42.7s recording passed. Existing406 checks remain. [Dated report](../research/pilot/2026-10-25-nav02/report.md). The user authorized branch push and normal protected PR merge; exact-head hosted results are recorded separately. No deployment. Next NAV-06 destination search/confirmation; independent100/100 road review and device GPS accuracy remain open.
+
+메인 Sol이 계약37을 구현하고 깨끗한 소스의 새438개·전체320개·독립 진행190상태/168위치/자체 거리 최대2.23m·실제 한영390픽셀·42.7초 녹화를 직접 확인했습니다. 기존406개를 유지하며 사용자 승인에 따라 작업 브랜치 푸시·정상 보호 PR 병합까지 진행합니다. 원격 결과는 별도 기록하고 배포하지 않습니다. 다음은 NAV-06 목적지 검색/확인이며 독립100/100·단말 정확도는 남습니다.

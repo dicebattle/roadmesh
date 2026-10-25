@@ -1,0 +1,9 @@
+
+> routelens@0.0.0 cloudflare:types
+> wrangler types infra/cloudflare/env.d.ts --config infra/cloudflare/wrangler.jsonc --include-runtime false --strict-vars=false --check
+
+
+ ⛅️ wrangler 4.152.0
+────────────────────
+✨ Types at infra/cloudflare/env.d.ts are up to date.
+

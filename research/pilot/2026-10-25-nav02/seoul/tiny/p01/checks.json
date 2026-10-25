@@ -1,0 +1,37 @@
+[
+  {
+    "case": "success-a",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "case": "success-b",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "case": "failed",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "case": "unsupported",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "case": "invalid",
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "status": "PASS",
+    "errors": []
+  }
+]

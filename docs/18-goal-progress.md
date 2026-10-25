@@ -62,3 +62,10 @@ P01~P14 로컬 파일럿의 실행 검증을 로컬과 GitHub Actions에서 마�
 P01–P14 remains accepted. The separate [usable navigation roadmap](35-usable-navigation-roadmap.md) now has locally verified NAV-01:406 integration checks and310 tests. This does not reopen or redefine the pilot goal, or satisfy independent geographic/mobile/production gates. [Evidence](../research/pilot/2026-10-25-nav01/report.md).
 
 P01~P14 수용을 유지하고 별도 실사용 계획의 NAV-01을 통합406개·검사310개로 로컬 검증했습니다. 기존 파일럿 목표를 다시 정의하거나 독립 지역·모바일·운영 조건을 충족했다고 보지 않습니다.
+
+
+## NAV-02 local acceptance2026-10-25 / NAV-02 로컬 수용
+
+Main Sol directly implemented contract37. Clean7078d6f/runtime6d853cf2 passed fresh438/438 and Node22 full320; independent progress190states/168positions/max authored error2.23m, actual IAB EN/KO390px and full42.7s recording passed. Existing406 checks remain. [Dated report](../research/pilot/2026-10-25-nav02/report.md). The user authorized branch push and normal protected PR merge; exact-head hosted results are recorded separately. No deployment. Next NAV-06 destination search/confirmation; independent100/100 road review and device GPS accuracy remain open.
+
+메인 Sol이 계약37을 구현하고 깨끗한 소스의 새438개·전체320개·독립 진행190상태/168위치/자체 거리 최대2.23m·실제 한영390픽셀·42.7초 녹화를 직접 확인했습니다. 기존406개를 유지하며 사용자 승인에 따라 작업 브랜치 푸시·정상 보호 PR 병합까지 진행합니다. 원격 결과는 별도 기록하고 배포하지 않습니다. 다음은 NAV-06 목적지 검색/확인이며 독립100/100·단말 정확도는 남습니다.

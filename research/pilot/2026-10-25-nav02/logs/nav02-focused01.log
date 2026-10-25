@@ -1,0 +1,196 @@
+TAP version 13
+# Subtest: input/new requests fence late route and failure completion / 입력·새요청이늦은응답·실패를차단
+ok 1 - input/new requests fence late route and failure completion / 입력·새요청이늦은응답·실패를차단
+  ---
+  duration_ms: 1.579292
+  type: 'test'
+  ...
+# Subtest: authority is monotonic in both high-water and event time / 승인순번·관측시간의동시단조성
+ok 2 - authority is monotonic in both high-water and event time / 승인순번·관측시간의동시단조성
+  ---
+  duration_ms: 0.463667
+  type: 'test'
+  ...
+# Subtest: fresh response may establish newer authority but old snapshot is rejected / 새응답승인확립·옛스냅샷거부
+ok 3 - fresh response may establish newer authority but old snapshot is rejected / 새응답승인확립·옛스냅샷거부
+  ---
+  duration_ms: 0.153375
+  type: 'test'
+  ...
+# Subtest: exact event expiry removes route independently of browser real time / 실제브라우저시계와독립한관측시각만료
+ok 4 - exact event expiry removes route independently of browser real time / 실제브라우저시계와독립한관측시각만료
+  ---
+  duration_ms: 0.077458
+  type: 'test'
+  ...
+# Subtest: freshness/route failure clears current line and stale error cannot return it / 신선도·요청실패의현재경로제거
+ok 5 - freshness/route failure clears current line and stale error cannot return it / 신선도·요청실패의현재경로제거
+  ---
+  duration_ms: 0.128667
+  type: 'test'
+  ...
+# Subtest: unknown authority and nonfinite route content never become current / 알수없는승인·비유한경로의현재표시거부
+ok 6 - unknown authority and nonfinite route content never become current / 알수없는승인·비유한경로의현재표시거부
+  ---
+  duration_ms: 0.081917
+  type: 'test'
+  ...
+# Subtest: Route domain errors clear geometry and preserve distinct states / 경로 업무 오류는 지형을 지우고 서로 다른 상태 유지
+ok 7 - Route domain errors clear geometry and preserve distinct states / 경로 업무 오류는 지형을 지우고 서로 다른 상태 유지
+  ---
+  duration_ms: 0.127875
+  type: 'test'
+  ...
+# Subtest: same geodesy and error identity reach browser without changing legacy failures / 브라우저 구면 계산·기존 오류 식별 유지
+ok 8 - same geodesy and error identity reach browser without changing legacy failures / 브라우저 구면 계산·기존 오류 식별 유지
+  ---
+  duration_ms: 0.450959
+  type: 'test'
+  ...
+# Subtest: next native instruction and remaining geometry advance only after a crossed boundary / 경계를 지난 뒤 다음 원 안내·남은 거리
+ok 9 - next native instruction and remaining geometry advance only after a crossed boundary / 경계를 지난 뒤 다음 원 안내·남은 거리
+  ---
+  duration_ms: 0.915125
+  type: 'test'
+  ...
+# Subtest: wrong route invalid input duplicate and time order never fabricate progress / 다른 경로·오류·중복·역순 진행 차단
+ok 10 - wrong route invalid input duplicate and time order never fabricate progress / 다른 경로·오류·중복·역순 진행 차단
+  ---
+  duration_ms: 1.239709
+  type: 'test'
+  ...
+# Subtest: stale future samples and clock rewind cannot revive guidance / 오래됨·미래·시각 역행으로 안내 복구 금지
+ok 11 - stale future samples and clock rewind cannot revive guidance / 오래됨·미래·시각 역행으로 안내 복구 금지
+  ---
+  duration_ms: 0.293083
+  type: 'test'
+  ...
+# Subtest: one GPS outlier cannot confirm off-route and invalid points break the streak / 단일 오차 이탈 확정 금지·거부 표본 연속 차단
+ok 12 - one GPS outlier cannot confirm off-route and invalid points break the streak / 단일 오차 이탈 확정 금지·거부 표본 연속 차단
+  ---
+  duration_ms: 0.443875
+  type: 'test'
+  ...
+# Subtest: jitter cannot reverse progress and a forward jump cannot skip maneuvers / 흔들림 역행·큰 도약 회전 건너뛰기 금지
+ok 13 - jitter cannot reverse progress and a forward jump cannot skip maneuvers / 흔들림 역행·큰 도약 회전 건너뛰기 금지
+  ---
+  duration_ms: 0.15875
+  type: 'test'
+  ...
+# Subtest: competing context roads withhold position and turns / 경쟁하는 주변 도로에서 위치·회전 보류
+ok 14 - competing context roads withhold position and turns / 경쟁하는 주변 도로에서 위치·회전 보류
+  ---
+  duration_ms: 0.234833
+  type: 'test'
+  ...
+# Subtest: arrival needs observed travel and two accurate endpoint positions / 실제 진행·정확한 끝점 표본 두 개 뒤 도착
+ok 15 - arrival needs observed travel and two accurate endpoint positions / 실제 진행·정확한 끝점 표본 두 개 뒤 도착
+  ---
+  duration_ms: 0.179083
+  type: 'test'
+  ...
+# Subtest: route snapshot is isolated from caller mutation and invalidation is final / 원자료 변경 격리·무효화 후 재사용 금지
+ok 16 - route snapshot is isolated from caller mutation and invalidation is final / 원자료 변경 격리·무효화 후 재사용 금지
+  ---
+  duration_ms: 0.311125
+  type: 'test'
+  ...
+# Subtest: authored replay is deterministic, explicit synthetic data and requires a real alternate road / 합성 재생 결정성·실제 대체 도로 필수
+ok 17 - authored replay is deterministic, explicit synthetic data and requires a real alternate road / 합성 재생 결정성·실제 대체 도로 필수
+  ---
+  duration_ms: 0.853541
+  type: 'test'
+  ...
+# Subtest: archived real bundle integrity is independently recomputed / 보존된 실제 묶음의 무결성을 다시 계산
+ok 18 - archived real bundle integrity is independently recomputed / 보존된 실제 묶음의 무결성을 다시 계산
+  ---
+  duration_ms: 34.489041
+  type: 'test'
+  ...
+# Subtest: bundle rejects tampered inputs, mapping and completion / 묶음 입력·구간 대응·완료 변조 거부
+ok 19 - bundle rejects tampered inputs, mapping and completion / 묶음 입력·구간 대응·완료 변조 거부
+  ---
+  duration_ms: 188.172209
+  type: 'test'
+  ...
+# Subtest: bundle rejects escapes and symlinks at every evidence boundary / 증거 경로 탈출·심볼릭 링크 거부
+ok 20 - bundle rejects escapes and symlinks at every evidence boundary / 증거 경로 탈출·심볼릭 링크 거부
+  ---
+  duration_ms: 25.706667
+  type: 'test'
+  ...
+# Subtest: independent equatorial distance and baseline crossings / 독립 적도 거리·기본 경로 통과 시각
+ok 21 - independent equatorial distance and baseline crossings / 독립 적도 거리·기본 경로 통과 시각
+  ---
+  duration_ms: 29.595875
+  type: 'test'
+  ...
+# Subtest: authored demo counts and zero-speed wait match hand calculations / 시연 개수·정지 대기를 수작업 계산과 대조
+ok 22 - authored demo counts and zero-speed wait match hand calculations / 시연 개수·정지 대기를 수작업 계산과 대조
+  ---
+  duration_ms: 27.250666
+  type: 'test'
+  ...
+# Subtest: on-grid arrival is included exactly once and exit precedes entry / 정시 도착 중복 방지·진출 후 진입
+ok 23 - on-grid arrival is included exactly once and exit precedes entry / 정시 도착 중복 방지·진출 후 진입
+  ---
+  duration_ms: 25.623458
+  type: 'test'
+  ...
+# Subtest: speed changes integrate continuously and round once / 속도 변경을 연속 적분하고 한 번 올림
+ok 24 - speed changes integrate continuously and round once / 속도 변경을 연속 적분하고 한 번 올림
+  ---
+  duration_ms: 24.565166
+  type: 'test'
+  ...
+# Subtest: same seed and declaration reorder preserve all deterministic content / 같은 시드·선언 순서의 결정성
+ok 25 - same seed and declaration reorder preserve all deterministic content / 같은 시드·선언 순서의 결정성
+  ---
+  duration_ms: 28.507667
+  type: 'test'
+  ...
+# Subtest: faults and seeds never alter truth or traversal times / 장애·시드가 정답·통과 시각을 바꾸지 않음
+ok 26 - faults and seeds never alter truth or traversal times / 장애·시드가 정답·통과 시각을 바꾸지 않음
+  ---
+  duration_ms: 26.703792
+  type: 'test'
+  ...
+# Subtest: drop boundaries preserve IDs and surviving noise stream / 누락 경계·식별자·남은 잡음 흐름 보존
+ok 27 - drop boundaries preserve IDs and surviving noise stream / 누락 경계·식별자·남은 잡음 흐름 보존
+  ---
+  duration_ms: 25.631416
+  type: 'test'
+  ...
+# Subtest: unrelated vehicle does not perturb existing streams or leak edge IDs / 다른 차량 추가의 흐름 독립·정답 식별자 비노출
+ok 28 - unrelated vehicle does not perturb existing streams or leak edge IDs / 다른 차량 추가의 흐름 독립·정답 식별자 비노출
+  ---
+  duration_ms: 25.788208
+  type: 'test'
+  ...
+# Subtest: invalid values, illegal turns and disconnected paths fail early / 잘못된 값·금지 회전·경로 단절 조기 거부
+ok 29 - invalid values, illegal turns and disconnected paths fail early / 잘못된 값·금지 회전·경로 단절 조기 거부
+  ---
+  duration_ms: 24.143458
+  type: 'test'
+  ...
+# Subtest: CLI writes reproducible bound evidence and refuses existing output / 재현 가능한 결합 증거·기존 출력 거부
+ok 30 - CLI writes reproducible bound evidence and refuses existing output / 재현 가능한 결합 증거·기존 출력 거부
+  ---
+  duration_ms: 206.88675
+  type: 'test'
+  ...
+# Subtest: simulation help identifies template and invalid CLI / 시뮬레이션 틀 안내·인자 오류
+ok 31 - simulation help identifies template and invalid CLI / 시뮬레이션 틀 안내·인자 오류
+  ---
+  duration_ms: 0.336
+  type: 'test'
+  ...
+1..31
+# tests 31
+# suites 0
+# pass 31
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 747.99925

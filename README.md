@@ -17,13 +17,13 @@ RouteLens is an open-source project for car navigation, derived from **[Metro Le
 
 The system has two jobs: turn driving observations into shared road-speed information, and use that information to find routes. RouteLens builds the coordination between those jobs and reuses existing open-source map, routing and database tools.
 
-**Current stage: a local browser pilot on actual Seoul roads, with synthetic vehicles and traffic.** You can choose two points, calculate a route and inspect the result on a map. The result now includes validated native English/Korean turn instructions. Phone GPS tracking, rerouting, spoken guidance and production deployment are future work.
+**Current stage: a local browser pilot on actual Seoul roads, with synthetic vehicles and traffic.** You can choose two points, calculate a route and inspect the result on a map. The result includes validated native English/Korean turn instructions. Replay authored GPS positions to see the next turn, remaining distance, departure and rejoin. Phone GPS tracking, rerouting, spoken guidance and production deployment are future work.
 
 ## 2. See it from the user's side
 
 [![Using the Seoul route client](docs/media/demo.gif)](docs/media/demo.gif)
 
-[Watch the 28.5-second walkthrough (GIF)](docs/media/demo.gif) · [MP4 file](docs/media/demo.mp4) · [한국어 GIF](docs/media/demo.ko.gif)
+[Watch the 42.7-second walkthrough (GIF)](docs/media/demo.gif) · [MP4 file](docs/media/demo.mp4) · [한국어 GIF](docs/media/demo.ko.gif)
 
 The GIF plays in this README. To download the MP4, open its file page and choose **Raw**.
 
@@ -32,9 +32,10 @@ The walkthrough shows the actual browser client:
 1. Choose the Teheran-ro route preset.
 2. Press **Calculate route**.
 3. Read the route, distance and estimated time on the Seoul map.
-4. Scroll through the original turn instructions, ending at the destination.
+4. Choose **Departure and rejoin**, then play the synthetic GPS replay.
+5. Follow the next turn and remaining distance; watch guidance pause after departure and recover on rejoin, ending at the route endpoint.
 
-The sample traffic slows three road segments, so the calculated route takes surrounding streets. The displayed traffic is synthetic; this is a reproducible local example. Captions explain the actions, and the underlying application recording is retained. [Recording details](docs/media/latest.json).
+This recording uses actual Seoul road geometry and authored synthetic positions at an explicitly labeled4× replay speed. The video itself retains the whole42.7s at1×. Default speeds apply because the synthetic traffic snapshot has expired. Departure is confirmed from consecutive positions; current turns and distances are withheld until rejoin. This does not use phone GPS. [Recording details](docs/media/latest.json).
 
 The longer [developer walkthrough](research/pilot/2026-10-25-p13/developer-walkthrough.mp4) separately shows publication changes, node failure, expiry and completed test reports.
 
@@ -93,11 +94,11 @@ Append `/report.html` to its printed URL. This is the completed evidence report,
 
 ## 5. Implementation and verification
 
-The local pipeline now also includes validated turn instructions. NAV-01 passed **406 fresh local integration assertions** (all 390 previous checks plus 16 guidance checks), **310 tests on Node.js 22**, direct original-byte inspection and an actual 28.5-second user recording. Hosted CI for this branch is reported separately; it is not inferred from local success. The protected P01–P14 baseline had 390 hosted checks and 303 tests on each of Node.js 22/24; see [PR #14](https://github.com/dicebattle/routelens/pull/14).
+NAV-02 passed **438 fresh local integration assertions** (all406 previous checks plus32 progress/replay checks), **320 tests on Node.js22**, independent original inspection and an actual42.7-second user recording. Independent geometry checks inspected190 progress states and168 confirmed positions, with a maximum2.23m difference from authored route progress; this is synthetic evidence, not measured phone GPS accuracy. Hosted checks and protected merge are recorded separately from local results.
 
-The next implementation is **GPS route progress and replay**. Reviewed road quality, device lifecycle, rerouting/voice, stable HTTPS operation and real traffic/ETA evaluation remain. [Prioritized navigation plan](docs/35-usable-navigation-roadmap.md).
+The next implementation is **destination search and confirmation**. Reviewed road quality, device lifecycle, rerouting/voice, stable HTTPS operation and real traffic/ETA evaluation remain. [Prioritized navigation plan](docs/35-usable-navigation-roadmap.md).
 
-- [Latest test report and original evidence](research/pilot/2026-10-25-nav01/report.md)
+- [Latest test report and original evidence](research/pilot/2026-10-25-nav02/report.md)
 - [Current implementation status](docs/18-goal-progress.md)
 - [Development and decision log](wiki/log.md)
 - [Contribution guide](CONTRIBUTING.md) · [Protected-branch workflow](docs/12-development-workflow.md)
