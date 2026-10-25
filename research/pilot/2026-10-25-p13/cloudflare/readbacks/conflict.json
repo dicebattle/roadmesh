@@ -1,0 +1,9 @@
+{
+  "status": 409,
+  "body": {
+    "code": "BATCH_CONFLICT",
+    "message_en": "This batch ID has different committed bytes.",
+    "message_ko": "같은 배치 ID의 저장 바이트가 다릅니다."
+  },
+  "text": "{\"code\":\"BATCH_CONFLICT\",\"message_en\":\"This batch ID has different committed bytes.\",\"message_ko\":\"같은 배치 ID의 저장 바이트가 다릅니다.\"}"
+}

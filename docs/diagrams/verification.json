@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "date": "2026-10-25",
+  "skill": {
+    "name": "diagram-design",
+    "installed_version": "2.6.120",
+    "source": "https://github.com/cathrynlavery/diagram-design",
+    "license": "MIT"
+  },
+  "dials": {
+    "type": "architecture",
+    "format": "html+svg",
+    "size": "slide-16x9",
+    "detail": "balanced",
+    "audience": "mixed",
+    "variant": "minimal light"
+  },
+  "fidelity": {
+    "source_nodes": 8,
+    "drawn_nodes": 8,
+    "source_edges": 8,
+    "drawn_edges": 8,
+    "merged_nodes": [],
+    "dropped_nodes": [],
+    "dropped_edges": []
+  },
+  "style": {
+    "selected_by_user": "Existing RouteLens colors and fonts / 현재 RouteLens 색상·서체",
+    "source": "web/pilot/style.css",
+    "shared_skill_settings_modified": false,
+    "global_profile_created": false,
+    "font_source": "system",
+    "font_files_redistributed": false,
+    "final_user_style_review": "Approved by explicit user reply on 2026-10-25 / 2026-10-25 사용자가 이 스타일로 사용하도록 명시 확인"
+  },
+  "checks": {
+    "typescript_no_emit": "PASS",
+    "packaged_self_check_en": "PASS",
+    "packaged_self_check_ko": "PASS",
+    "system_font_svg_export_en": "PASS",
+    "system_font_svg_export_ko": "PASS",
+    "manual_iab_visual_en": "PASS",
+    "manual_iab_visual_ko": "PASS",
+    "actual_dom_texts_each": 35,
+    "connector_text_collisions_en": [],
+    "connector_text_collisions_ko": [],
+    "node_text_overflow_en": [],
+    "node_text_overflow_ko": [],
+    "computed_title_font": "Avenir Next, Apple SD Gothic Neo, Segoe UI, sans-serif",
+    "png_export": "Not generated: packaged Python Playwright unavailable; no dependency installed. SVG images satisfy the requested repository image delivery. / PNG 도구 의존성이 없어 설치 없이 SVG 이미지로 제공합니다."
+  },
+  "corrections": [
+    {
+      "message_en": "First visual review found a connector crossing the routing-zone heading; moved that heading and re-exported both figures.",
+      "message_ko": "첫 시각 검토에서 연결선과 영역 제목이 겹쳐 제목 위치를 옮기고 두 그림을 다시 내보냈습니다."
+    },
+    {
+      "message_en": "Read-only browser getBBox was unavailable. Geometry review used actual screen text rectangles and sampled declared paths; it is not a pixel-perfect proof.",
+      "message_ko": "읽기 전용 브라우저의 getBBox가 없어 실제 화면 글자 경계와 선언 경로 표본으로 확인했습니다. 픽셀 단위 완전성 증거는 아닙니다."
+    }
+  ],
+  "metro_lens": {
+    "url": "https://metrolens.fyi/",
+    "checked": "2026-10-25",
+    "local_readme_declares_url": true,
+    "live_page_title": "Metro Lens — 대중교통 접근성과 주거정보를 연결한 생활권 지도"
+  },
+  "assets": [
+    {
+      "path": "architecture.html",
+      "sha256": "300ef2124c34083912434da29be27037deb20bf8ff0845155efe0e089cca546e"
+    },
+    {
+      "path": "architecture.ko.html",
+      "sha256": "a9a33c747b8311affec80130df5b52e080b39b679bf0702f60ffd6e2f5fec7f6"
+    },
+    {
+      "path": "architecture.svg",
+      "sha256": "431d13e5e058458ea59f72d6f8b9125c3209a30da1f0a7ff44186c94540d3bcb"
+    },
+    {
+      "path": "architecture.ko.svg",
+      "sha256": "7cebf3c1e92974049d09091e9d05223508e2ae9e2ec422c2bbc7d9f9901ce1e5"
+    },
+    {
+      "path": "render-architecture.ts",
+      "sha256": "39b6ff056124a78d9269a5e0bc5057a8ea6a2ee1fe9d5e36d7a966fa8fceccdc"
+    },
+    {
+      "path": "source.mmd",
+      "sha256": "b6ae712c30a10931edaeabeb2b43bbc895d9636ae51e1e97809d732a5f953c5e"
+    },
+    {
+      "path": "source.ko.mmd",
+      "sha256": "7b622fbfd6a6d6675a8391c9fab5b10bd776b2e1df6c6a19c44dc8d7ce352276"
+    }
+  ],
+  "message_en": "The self-contained HTML and exported SVG figures preserve the existing pilot meaning and embed no remote fonts, scripts or external assets. Media/runtime bytes remain unchanged.",
+  "message_ko": "단일 HTML·SVG는 기존 파일럿 의미를 보존하고 원격 서체·스크립트·외부 자산을 넣지 않습니다. 녹화·실행 바이트는 그대로입니다."
+}

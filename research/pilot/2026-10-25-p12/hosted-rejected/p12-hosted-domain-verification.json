@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "omitted_map_bytes": [
+    {
+      "path": "bundle/graph.tar",
+      "sha256": "664081946b71cecaf9b003c8fca15105431c3873d63018bdd27fd7da1bb4cbcb",
+      "actual_bytes_verified": false
+    },
+    {
+      "path": "supervisors/abort/client/bundle/graph.tar",
+      "sha256": "1fe1c98cc497230a80abdb8cc4e1d632df4d8ee35cae58b2529879f7e4306e5d",
+      "actual_bytes_verified": false
+    },
+    {
+      "path": "supervisors/failure/client/bundle/graph.tar",
+      "sha256": "0632e2aee59bbcc7c69a21a76164a64945c20e9fad9403e9a2b3478518b40086",
+      "actual_bytes_verified": false
+    }
+  ],
+  "live_resource_queries_performed": false,
+  "source": {
+    "commit": "0e37654f5aca0ddaba679a3efa6e8cd5520a9f89",
+    "dirty": false
+  },
+  "implementation_sha256": "45f3b1315195c5374ae89dd9e6b8a3ee3357ae77ceb2475b9b505d06fc81d12d",
+  "graph_id": "f465981b2850c0b79aea9ca751171842125cc964113ef05a53766edc0a465b20",
+  "original_hashes_checked": 3313,
+  "p12_cases": 24,
+  "standard_signatures_verified": 1,
+  "native_domain_originals": [
+    {
+      "id": "no-suitable-road",
+      "code": 171,
+      "original_native_candidates": [
+        "nodes/scenario-node-a/runtime/engines/003054de-9771-4ca0-86e6-060584ca2fed/requests/0cbe9922-14af-48f9-a99c-319c767fc2ea/route.request.json"
+      ],
+      "unique_native_request_claim": false
+    },
+    {
+      "id": "no-path",
+      "code": 442,
+      "original_native_candidates": [
+        "nodes/scenario-node-a/runtime/engines/003054de-9771-4ca0-86e6-060584ca2fed/requests/75c70cc4-f711-486a-9a25-8ec182d3f35e/route.request.json",
+        "nodes/scenario-node-a/runtime/engines/003054de-9771-4ca0-86e6-060584ca2fed/requests/8a97270f-62fc-44f0-aa70-b1879b2588a1/route.request.json"
+      ],
+      "unique_native_request_claim": false
+    }
+  ],
+  "reset_elapsed_ms": 1968.7094379998744,
+  "stall_elapsed_ms": 5909.553995999973,
+  "stall_peer_elapsed_ms": 4001.148466,
+  "cleanup_verified": true,
+  "scope_en": "P12 domain originals, signature, controlled transport timings and CAR isolation; whole matrix/supervisor proof is inspected separately.",
+  "scope_ko": "P12 업무 원문·서명·통제 전송 시간·자동차 분리를 확인하고 전체 행렬·감독은 별도 검사합니다."
+}

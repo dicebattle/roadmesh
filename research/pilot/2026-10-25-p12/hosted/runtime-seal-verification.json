@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "e393d1fd6271053748afe079526577ffce259e64",
+    "dirty": false
+  },
+  "graph_id": "b9d8adaa6611cc3ffd666e06b908280a0381873f189ffcbc8ef1f74107acf92d",
+  "original_assertions": 20,
+  "assertions_sha256": "093e2440a7df2643221538b1ca6afab8ea6c006cb8849b948f08fb97739316e8",
+  "excluded_derived_checks": [
+    "p12-same-run-matrix",
+    "p12-matrix-missing-rejected",
+    "p12-matrix-forged-success-rejected",
+    "p12-owned-cleanup"
+  ],
+  "message_en": "Independent canonical recomputation of the original runtime seal from its twenty pre-matrix assertions. No original was changed.",
+  "message_ko": "행렬 전 원래 판정20개로 실행 봉인의 표준 해시를 독립 재계산했고 원문은 바꾸지 않았습니다."
+}

@@ -183,3 +183,15 @@ Playwright: Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under Apache-2.0; see the repository LICENSE and installed
 node_modules/@playwright/test/LICENSE for the complete terms.
 Apache-2.0 전체 조건은 저장소 LICENSE와 설치한 상위 LICENSE에 있습니다.
+
+Cloudflare local development runtime / Cloudflare 로컬 개발 실행 환경
+
+- Wrangler4.152.0 and @cloudflare/workers-types5.20261024.1 declare MIT OR Apache-2.0. workerd1.20261019.1 declares Apache-2.0. These upstream components retain their distributed license/notice files. RouteLens reuses their local Worker, Queue, SQLite Durable Object runtime and generated bindings; it does not claim a hosted Cloudflare deployment.
+- Wrangler·Workers 타입은 MIT 또는 Apache-2.0, workerd는 Apache-2.0으로 고지하며 배포된 상위 라이선스·고지를 유지합니다. 로컬 Worker·큐·SQLite 실행기·생성 타입을 재사용하며 원격 배포를 주장하지 않습니다.
+
+Checked against the pinned installed package metadata2026-10-25. / 2026-10-25 고정 설치 패키지의 고지 확인.
+
+Diagram Design / 다이어그램 디자인
+
+README architecture figures use layout primitives adapted from Diagram Design, Copyright (c) 2025 Cathryn Lavery, MIT. The full upstream notice is retained at docs/diagrams/diagram-design-LICENSE.txt. No font files are redistributed.
+README 아키텍처 그림은 Diagram Design의 MIT 배치 규칙을 활용하며 전체 상위 고지를 보존합니다. 서체 파일은 배포하지 않습니다.

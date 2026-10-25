@@ -1,0 +1,32 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "result-version-change",
+    "origin": {
+      "longitude": 127.03739724982245,
+      "latitude": 37.50083690018144
+    },
+    "destination": {
+      "longitude": 127.0375277498224,
+      "latitude": 37.500877100181434
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live"
+  },
+  "status": 409,
+  "headers": {
+    "cache-control": "no-store",
+    "connection": "keep-alive",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sun, 25 Oct 2026 02:03:26 GMT",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked"
+  },
+  "body": {
+    "code": "ERROR",
+    "reason": "TRAFFIC_CHANGED",
+    "message_en": "The gateway cannot return a current verified route for this request.",
+    "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+  },
+  "elapsed_ms": 4111.854041000013
+}

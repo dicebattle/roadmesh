@@ -26,6 +26,8 @@ jobs:
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Focused tests / 집중 테스트
         run: npm test
+      - name: Verify generated local Cloudflare bindings / 생성한 로컬 Cloudflare 바인딩 확인
+        run: npm run cloudflare:types -- --check
       - name: Check current recording evidence / 현재 녹화 증거 검사
         run: npm run media:check
       - name: Direct CLI evidence / CLI 직접 검증 증거
@@ -42,7 +44,7 @@ jobs:
   simulation:
     name: Implemented-module simulation
     runs-on: ubuntu-latest
-    timeout-minutes: 25 # Fresh P10 source matching and two persistent nodes add a full native pipeline. / P10 새 원본 매칭·두 지속노드 실행 추가
+    timeout-minutes: 35 # P12 hosted measured1468s; P13 adds actual workerd/queue restarts. / P12 원격1468초·P13 실제 workerd/큐 재시작 추가
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -105,6 +107,9 @@ jobs:
             ${{ runner.temp }}/simulation-evidence/scenarios/**/*.pid
             ${{ runner.temp }}/simulation-evidence/scenarios/**/*.exit
             ${{ runner.temp }}/simulation-evidence/scenarios/**/*.sh
+            ${{ runner.temp }}/simulation-evidence/cloudflare/**/*.sqlite
+            ${{ runner.temp }}/simulation-evidence/cloudflare/**/*.sqlite-wal
+            ${{ runner.temp }}/simulation-evidence/cloudflare/**/*.sqlite-shm
             !${{ runner.temp }}/simulation-evidence/**/tiles/**
           if-no-files-found: error
           retention-days: 7

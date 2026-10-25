@@ -10,6 +10,7 @@ import {
 } from "./traffic_aggregation.js";
 import type {
   AggregationStoreConfig,
+  AggregationInput,
   AggregationResult,
   AggregationInspection,
   AggregationContribution,
@@ -136,6 +137,60 @@ export class AggregationStore {
       client.release();
     }
   }
+  /** Read the exact finalization input under the same durable clock/locks. / 같은 영속 시각·잠금으로 정확한 확정 입력 읽기. */
+  private async input(
+    client: PoolClient,
+    windowStartUtc: string,
+    now: string,
+  ): Promise<AggregationInput> {
+    const times = windowTimes(windowStartUtc),
+      n = this.config.store.namespace;
+    await client.query(
+      "SELECT contributor_id FROM routelens_p05.contributors WHERE namespace=$1 ORDER BY contributor_id FOR SHARE",
+      [n],
+    );
+    const rows = (
+      await client.query(
+        `SELECT v.observation_id,v.contributor_id,v.graph_id,v.matching_policy,v.source_class,t.trip_activity,v.edge_id,v.forward,v.entered_at_utc,v.exited_at_utc,v.distance_m,v.duration_s,available.at_event_utc AS available_at_utc
+   FROM routelens_p05.traversals v JOIN routelens_p05.trips t USING(namespace,contributor_id,trip_id)
+   JOIN routelens_p05.contributors c ON c.namespace=t.namespace AND c.contributor_id=t.contributor_id
+   LEFT JOIN LATERAL(SELECT min(e.at_event_utc) AS at_event_utc FROM routelens_p05.events e WHERE e.namespace=t.namespace AND e.contributor_id=t.contributor_id AND e.trip_id=t.trip_id AND e.code='SUCCEEDED') available ON true
+   WHERE v.namespace=$1 AND v.graph_id=$2 AND v.source_class=$3 AND t.state='SUCCEEDED' AND c.active AND t.tombstone_expires_at>$7::timestamptz AND v.matching_policy=$6 AND t.matching_policy=$6 AND t.graph_id=v.graph_id AND v.exited_at_utc >=$4 AND v.exited_at_utc<$5 ORDER BY v.observation_id`,
+        [
+          n,
+          this.config.store.graph_id,
+          this.config.source_class,
+          new Date(times.start).toISOString(),
+          new Date(times.end).toISOString(),
+          this.config.store.matching_policy,
+          now,
+        ],
+      )
+    ).rows.map((row) => {
+      if (row.available_at_utc === null)
+        throw new Error(
+          "Invalid aggregation availability metadata / 집계 사용 가능 시각 정보가 올바르지 않습니다",
+        );
+      return {
+        ...row,
+        entered_at_utc: iso(row.entered_at_utc),
+        exited_at_utc: iso(row.exited_at_utc),
+        available_at_utc: iso(row.available_at_utc),
+      };
+    }) as AggregationContribution[];
+    return {
+      namespace: n,
+      graph_id: this.config.store.graph_id,
+      source_class: this.config.source_class,
+      window_start: windowStartUtc,
+      now_utc: now,
+      catalog: this.config.catalog,
+      contributions: rows,
+    };
+  }
+  async exportInput(windowStartUtc: string): Promise<AggregationInput> {
+    return this.tx((client, now) => this.input(client, windowStartUtc, now));
+  }
   async finalize(
     windowStartUtc: string,
     eventTimeUtc: string,
@@ -145,48 +200,9 @@ export class AggregationStore {
     await this.ingestion.advanceEventTime(eventTimeUtc);
     return this.tx(async (client, now) => {
       const n = this.config.store.namespace;
-      await client.query(
-        "SELECT contributor_id FROM routelens_p05.contributors WHERE namespace=$1 ORDER BY contributor_id FOR SHARE",
-        [n],
+      const result = aggregateWindow(
+        await this.input(client, windowStartUtc, now),
       );
-      const rows = (
-        await client.query(
-          `SELECT v.observation_id,v.contributor_id,v.graph_id,v.matching_policy,v.source_class,t.trip_activity,v.edge_id,v.forward,v.entered_at_utc,v.exited_at_utc,v.distance_m,v.duration_s,available.at_event_utc AS available_at_utc
-   FROM routelens_p05.traversals v JOIN routelens_p05.trips t USING(namespace,contributor_id,trip_id)
-   JOIN routelens_p05.contributors c ON c.namespace=t.namespace AND c.contributor_id=t.contributor_id
-   LEFT JOIN LATERAL(SELECT min(e.at_event_utc) AS at_event_utc FROM routelens_p05.events e WHERE e.namespace=t.namespace AND e.contributor_id=t.contributor_id AND e.trip_id=t.trip_id AND e.code='SUCCEEDED') available ON true
-   WHERE v.namespace=$1 AND v.graph_id=$2 AND v.source_class=$3 AND t.state='SUCCEEDED' AND c.active AND t.tombstone_expires_at>$7::timestamptz AND v.matching_policy=$6 AND t.matching_policy=$6 AND t.graph_id=v.graph_id AND v.exited_at_utc >=$4 AND v.exited_at_utc<$5 ORDER BY v.observation_id`,
-          [
-            n,
-            this.config.store.graph_id,
-            this.config.source_class,
-            new Date(times.start).toISOString(),
-            new Date(times.end).toISOString(),
-            this.config.store.matching_policy,
-            now,
-          ],
-        )
-      ).rows.map((row) => {
-        if (row.available_at_utc === null)
-          throw new Error(
-            "Invalid aggregation availability metadata / 집계 사용 가능 시각 정보가 올바르지 않습니다",
-          );
-        return {
-          ...row,
-          entered_at_utc: iso(row.entered_at_utc),
-          exited_at_utc: iso(row.exited_at_utc),
-          available_at_utc: iso(row.available_at_utc),
-        };
-      }) as AggregationContribution[];
-      const result = aggregateWindow({
-        namespace: n,
-        graph_id: this.config.store.graph_id,
-        source_class: this.config.source_class,
-        window_start: windowStartUtc,
-        now_utc: now,
-        catalog: this.config.catalog,
-        contributions: rows,
-      });
       if (result.code === "RETENTION_EXPIRED") {
         await client.query(
           "DELETE FROM routelens_p06.candidates WHERE namespace=$1 AND graph_id=$2 AND aggregation_policy=$3 AND source_class=$4 AND window_start=$5",

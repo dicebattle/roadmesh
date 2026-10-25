@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "ports": [
+    {
+      "port": 55229,
+      "listener_absent": true
+    },
+    {
+      "port": 55571,
+      "listener_absent": true
+    }
+  ],
+  "scope_en": "Only the two owned report preview ports were checked.",
+  "scope_ko": "소유한 보고서 미리보기 포트 두 개만 확인했습니다."
+}

@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "5c4f098b476bffa9a950441cf4bc006d90b1d4e0",
+    "dirty": false
+  },
+  "run_id": 40155530440,
+  "original_internal_assertions": 390,
+  "present_original_files": 16603,
+  "archive_bytes": 85290480,
+  "archive_sha256": "bba2cb7330e40102af56f94d8302d4ea3fa0e7e41fba6df2cacefa85bc3b6c58",
+  "parts": [
+    {
+      "path": "originals.tar.gz.part01",
+      "bytes": 20971520,
+      "sha256": "547b0c7db35274aad17e37951d8367398c318120428b056cd1cb2a723ae64be8"
+    },
+    {
+      "path": "originals.tar.gz.part02",
+      "bytes": 20971520,
+      "sha256": "d626e65f9dec6a127a52691492f1e80f40af310722ba4dc89724a9a2aeb75cf0"
+    },
+    {
+      "path": "originals.tar.gz.part03",
+      "bytes": 20971520,
+      "sha256": "e560e701dcffb3f2014e1f11c1642c4e695cd8b65add89b5ffb12d8c5b1d6f09"
+    },
+    {
+      "path": "originals.tar.gz.part04",
+      "bytes": 20971520,
+      "sha256": "0e9ab7e4f922228f832587792159dea7172f154674cf5c7eb21eeb92c52d113c"
+    },
+    {
+      "path": "originals.tar.gz.part05",
+      "bytes": 1404400,
+      "sha256": "bf4e7afd6a02fed94d60a4beda1c8445ee880a7368730249af5a34338453a2c9"
+    }
+  ],
+  "exact_inventory_match": true,
+  "reconstruction_match": true,
+  "scope_en": "All present downloaded originals are retained. Required XML is present; independent wholeindependently checked-hash acceptance is preserved separately. No missing original is fabricated or added.",
+  "scope_ko": "내려받은 원문 전체를 보존합니다. 필수 XML 원문이 있고 독립 전체independently checked해시 수용은 별도 기록합니다. 빠진 원문을 만들거나 추가하지 않습니다."
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "routelens-p13-local",
+  "main": "worker.ts",
+  "compatibility_date": "2026-10-25",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  "preview_urls": false,
+  "vars": {
+    "PILOT_LOCAL_ONLY": "true",
+    "PILOT_SCOPES_JSON": "[]",
+    "PILOT_AUTH_TOKEN": ""
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "TRAFFIC_SHARDS", "class_name": "LocalTrafficShard" }]
+  },
+  "migrations": [{ "tag": "p13-v1", "new_sqlite_classes": ["LocalTrafficShard"] }],
+  "queues": {
+    "producers": [{ "binding": "MATCHED_QUEUE", "queue": "routelens-p13-local" }],
+    "consumers": [{ "queue": "routelens-p13-local", "max_batch_size": 1, "max_batch_timeout": 0, "max_retries": 3 }]
+  },
+  "observability": { "enabled": true, "head_sampling_rate": 1 }
+}

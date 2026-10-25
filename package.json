@@ -7,7 +7,7 @@
     "node": ">=22 <25"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig.browser.json && node dist/tools/client_build.js",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.browser.json && node dist/tools/client_build.js && tsc -p tsconfig.cloudflare.json",
     "test": "npm run build && node --test dist/tests/*.test.js",
     "corpus": "node dist/tools/evaluation_corpus.js",
     "pilot": "node dist/tools/pilot_runner.js",
@@ -36,7 +36,9 @@
     "gateway:check": "node dist/tools/gateway_checks.js",
     "pilot:serve": "node dist/tools/client_serve.js",
     "client:check": "node dist/tools/client_checks.js",
-    "scenario:check": "node dist/tools/scenario_checks.js"
+    "scenario:check": "node dist/tools/scenario_checks.js",
+    "cloudflare:types": "wrangler types infra/cloudflare/env.d.ts --config infra/cloudflare/wrangler.jsonc --include-runtime false --strict-vars=false",
+    "cloudflare:check": "node dist/tools/cloudflare_checks.js"
   },
   "dependencies": {
     "jose": "6.2.13",
@@ -46,10 +48,12 @@
     "random-js": "2.1.0"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "5.20261024.1",
     "@playwright/test": "1.64.1",
     "@types/node": "22.20.5",
     "@types/pg": "8.23.1",
     "esbuild": "0.28.2",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "wrangler": "4.152.0"
   }
 }

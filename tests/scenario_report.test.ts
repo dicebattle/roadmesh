@@ -25,8 +25,8 @@ test("Scenario report preserves bilingual evidence and escapes private fixture t
     generated_at_utc: "2026-10-25T00:00:00Z",
     summary: {
       status: "PASS",
-      assertions_passed: 358,
-      assertions_total: 358,
+      assertions_passed: 390,
+      assertions_total: 390,
       vehicle_count: 1,
       observation_count: 0,
       omission_count: 0,
@@ -56,6 +56,21 @@ test("Scenario report preserves bilingual evidence and escapes private fixture t
     ],
     assertions: [],
     limitations: [],
+    cloudflare: {
+      assertions_passed: 32,
+      assertions_total: 32,
+      cleanup_verified: true,
+      cases: [],
+      parity: [
+        {
+          case_id: "unit-count-5",
+          canonical_sha256: "c".repeat(64),
+          evidence_path: "cloudflare/parity/unit.json",
+        },
+      ],
+      runtime_en: "Local unit fixture",
+      runtime_ko: "로컬 단위 입력",
+    },
     scenarios: {
       assertions_passed: 24,
       assertions_total: 24,
@@ -83,6 +98,9 @@ test("Scenario report preserves bilingual evidence and escapes private fixture t
     )![1]!,
   );
   assert.deepEqual(data.scenarios, input.scenarios);
+  assert.deepEqual(data.cloudflare, input.cloudflare);
+  assert.match(html, /P13 recorded local Cloudflare parity/);
+  assert.match(html, /P13 기록된 로컬 Cloudflare 비교/);
   assert.doesNotThrow(
     () => new Function(html.match(/<script>\s*([\s\S]*?)<\/script>/)![1]!),
   );

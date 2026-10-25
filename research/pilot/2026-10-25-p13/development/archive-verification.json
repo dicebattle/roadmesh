@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "scope_en": "Development-only originals from the three explicitly named runs. No new clean whole390 claim; source scopes stay as originally recorded.",
+  "scope_ko": "명시한 개발 실행 세 개의 원문입니다. 새 깨끗한 전체390개가 아니며 원래 소스 범위를 유지합니다.",
+  "original_files": 1006,
+  "archive_sha256": "eb250f26da8d83d46874a44fd7725ec583525d57c64d18e46181e28cb102cc9d",
+  "archive_bytes": 5111623,
+  "parts": [
+    {
+      "path": "originals.tar.gz.part01",
+      "bytes": 5111623,
+      "sha256": "eb250f26da8d83d46874a44fd7725ec583525d57c64d18e46181e28cb102cc9d"
+    }
+  ],
+  "exact_inventory_match": true,
+  "reconstruction_match": true
+}

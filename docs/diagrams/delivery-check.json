@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "files_scanned": 16288,
+  "bytes_scanned": 1882532183,
+  "secret_pattern_findings": [],
+  "allowed_synthetic_markers": [
+    {
+      "path": "data/p13-hosted-40155530440/publication/negative/private-root/public-trust-config.json",
+      "pattern": "private-jwk",
+      "reason_en": "Exact invalid marker in the preserved negative fixture; not cryptographic private material.",
+      "reason_ko": "보존한 거부 입력의 정확한 무효 표식이며 암호 비밀 자료가 아닙니다."
+    }
+  ],
+  "tracked_markdown_links": 1105,
+  "missing_index_links": [],
+  "message_en": "Scanned original text before upload and checked Markdown targets against Git index, not merely local existence. This is a bounded credential-pattern check, not a universal secret detector.",
+  "message_ko": "업로드 전 원문 텍스트를 검사하고 Markdown 대상을 로컬 존재만이 아닌 Git 목록과 대조했습니다. 지정 자격정보 패턴 검사이며 모든 비밀 탐지는 아닙니다."
+}

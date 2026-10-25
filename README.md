@@ -2,53 +2,68 @@
 
 # RouteLens
 
-**Shared traffic data. Distributed route calculation. Verifiable local experiments.**
+**Share traffic information. Calculate routes across independent servers.**
 
-[English](README.md) · [한국어](README.ko.md) · [Project handbook](wiki/index.md) · [Roadmap](docs/11-local-pilot.md)
+[English](README.md) · [한국어](README.ko.md) · [Documentation](wiki/index.md) · [Metro Lens website](https://metrolens.fyi/)
 
 [![Checks](https://github.com/dicebattle/routelens/actions/workflows/fast-checks.yml/badge.svg)](https://github.com/dicebattle/routelens/actions/workflows/fast-checks.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
 </div>
 
-RouteLens is an open-source project derived from **Metro Lens**. The intended system turns verified driving observations into shared traffic data, then lets independent routing nodes calculate routes using the same map and traffic version.
+## 1. What is RouteLens for?
 
-**Today, the local prototype simulates GPS on actual Seoul roads, durably ingests and matches observations, aggregates at least five contributors, and signs and publishes traffic snapshots. A separate consumer verifies them before an immutable speed file changes actual Valhalla routes. Exact expiry restores default routing.** Two independent persistent nodes now activate verified generations, reject stale results and restore baseline routing at expiry. A local gateway independently selects the accepted version and switches to the other approved node after a failure. A local browser client now calculates actual routes, draws their original geometry and clears results when the accepted traffic changes or expires.
+RouteLens is an open-source project for car navigation, derived from **[Metro Lens](https://metrolens.fyi/)**. Its goal is to let several approved, independently operated servers calculate routes from the **same map and traffic information**. If one routing server becomes unavailable, another compatible server can answer the request.
 
-The complete implemented pipeline passed 358 fresh assertions and 296 unit tests. The gateway preserves responsive deadlines with an owned worker thread. The actual client adds English/Korean controls,390px layout, cancellation, expiry and unavailable-service handling. The P12 stage adds bounded road-search errors, trusted node exclusion and vehicle classes, actual TCP reset/stall, disconnected expiry, and live supervisor cleanup. Earlier failed runs remain preserved.
+The system has two jobs: turn driving observations into shared road-speed information, and use that information to find routes. RouteLens builds the coordination between those jobs and reuses existing open-source map, routing and database tools.
 
-## Watch the current simulation
+**Current stage: a local browser pilot on actual Seoul roads, with synthetic vehicles and traffic.** You can choose two points, calculate a route and inspect the result on a map. Phone GPS collection, turn-by-turn driving guidance and production deployment are future work.
 
-[![Recorded Seoul routes: baseline, congestion detour and exact expiry](docs/media/demo.gif)](docs/media/demo.mp4)
+## 2. See it from the user's side
 
-[Watch/download the MP4](docs/media/demo.mp4) · [Captured test report](research/pilot/2026-10-25-p12/report.md) · [Recording provenance](docs/media/latest.json)
+[![Using the Seoul route client](docs/media/demo.gif)](docs/media/demo.gif)
 
-This 126.45-second recording joins two unchanged-speed excerpts from a retained 281.45-second actual capture. The client shows baseline routing, signed synthetic traffic and a brief 2.412 km detour, a short covered segment, node failover, exact expiry, baseline restoration and unavailable service. Its last section opens the completed **P12 evidence report**; those screenshots are recorded test evidence. The fresh whole run passed **358 assertions**, including the fixed S01–S15 matrix. Roads are actual Seoul OSM; vehicles, speeds and GPS are synthetic. This does not establish real-driving accuracy, live traffic or every Seoul road.
+[Watch the 32-second walkthrough (GIF)](docs/media/demo.gif) · [MP4 file](docs/media/demo.mp4) · [한국어 GIF](docs/media/demo.ko.gif)
 
-## What you can run today
+The GIF plays in this README. To download the MP4, open its file page and choose **Raw**.
 
-| Capability | What is actually checked |
-| --- | --- |
-| **P01 — deterministic scenarios** | Seeded replay, event order, failed/skipped assertions and output preservation |
-| **P02 — real routing graph** | Fresh Seoul graph from a pinned OSM source; 79 directed scene edges. Tiny-city retains 22-edge legal/forbidden-turn regression |
-| **P03 — vehicle and GPS simulation** | Independent trajectories, speed/wait schedules, bounded noise, exact missing-sample intervals and stable sample identities |
-| **P04 — map matching** | Real map snapping, observed traversal boundaries, gap/ambiguity exclusions and identical full/split/overlap results |
-| **P05 — durable ingestion and recovery** | Committed receipt, duplicate/conflict handling, ordered trip finalization, fenced workers, real crash recovery and deletion read-back |
-| **P06 — traffic aggregation** | Five-contributor minimum, median full duration including signal waits, duplicate/PARKED exclusion, strict availability deadline, transactional revocation and expiry |
-| **P07 — signed publication** | Standard Ed25519 JWS, exact HTTP bytes, scoped local public keys, durable consumer order, key rotation, tamper/replay rejection and expiry |
-| **P08 — accepted traffic routing** | Immutable graph-specific speed files, actual detour, automatic expiry, concurrent generation, real process/database faults and stale-result refusal |
-| **P09 — persistent routing nodes** | Two independent nodes, native daemon reuse, request leases, bounded generation draining, durable restart and actual fault recovery |
-| **P10 — route gateway** | Independent accepted-version authority, one matching-node retry, actual primary kill,12s shared deadline,4s node budget and public route coverage |
-| **P11 — actual route client** | MapLibre local roads, real gateway requests, exact rendered geometry, freshness invalidation, cancellation, English/Korean and 390px browser checks |
-| **P12 — full fault matrix** | Fifteen scenarios bound to same-run originals; 24 added checks for domain failures, approved-node exclusion, actual TCP faults, trusted vehicle admission, disconnected expiry and live supervisor shutdown |
-| **Integrated evidence** | Fresh tiny regression (48), Seoul graph/simulation/matching (35), durable ingestion (34), aggregation (34), publication (55), traffic routing (32), persistent nodes (32), gateway (32) and client (32) and full scenarios (24): **358 assertions**, with source/artifact hashes |
-| **Replay report** | Offline Seoul playback, baseline/live/expired route comparison and actual recovery evidence; English/Korean controls and source links |
+The walkthrough shows the actual browser client:
 
-Synthetic observations never count toward the separate **100 route / 100 map-matching real-road evaluation**. The geographic validator currently has no reviewed real-road corpus.
+1. Choose the Teheran-ro route preset.
+2. Press **Calculate route**.
+3. Read the route, distance and estimated time on the Seoul map.
 
-## Run the whole implemented pipeline
+The sample traffic slows three road segments, so the calculated route takes surrounding streets. The displayed traffic is synthetic; this is a reproducible local example. Captions explain the actions, and the underlying application recording is retained. [Recording details](docs/media/latest.json).
 
-Requirements: **Node.js 22 or 24**, npm, curl, and Docker with Linux containers. Initial preparation downloads the pinned engine/Osmium and a 289.9 MB dated South Korea OSM file, verifies its SHA-256, then caches only the source. Every run builds a fresh Seoul graph with networking disabled (2 CPU / 4 GiB limits). P05–P12 automatically start pinned PostgreSQL containers with dedicated volumes and loopback ports, plus separate API, worker and engine processes, then remove their owned resources. No external database, Cloudflare account, map API key or real GPS trace is needed.
+The longer [developer walkthrough](research/pilot/2026-10-25-p13/developer-walkthrough.mp4) separately shows publication changes, node failure, expiry and completed test reports.
+
+## 3. How the system fits together
+
+The diagram follows information from observations to the user's route:
+
+[![Observation processing, shared traffic, independent routing nodes and the browser](docs/diagrams/architecture.svg)](docs/diagrams/architecture.svg)
+
+[Figure sources and reproduction](docs/diagrams/README.md)
+
+**Traffic preparation:** a managed ingestion service receives observations, matches them to roads, and aggregates eligible traversals. A road-speed value needs at least five contributors under the current policy. The service signs the resulting traffic version. Raw GPS stays inside the collection and matching boundary; public traffic artifacts contain aggregate road values.
+
+**Route calculation:** each approved routing node has a compatible map and verifies the signed traffic version before using it. The gateway receives the browser's request, chooses an available node with the required version, and allows one bounded retry on another node. Expired traffic is removed and default road speeds apply. The browser clears a route when its traffic context changes and lets the user recalculate.
+
+| Component | Open-source tool | Purpose |
+| --- | --- | --- |
+| Routing and map matching | **Valhalla** | Reuse a real routing engine instead of writing one |
+| Seoul road data | **OpenStreetMap + Osmium** | Build a reproducible regional graph from pinned source data |
+| Receipt, aggregation and recovery | **PostgreSQL** | Keep committed observations, jobs and accepted versions durable |
+| Signed traffic artifacts | **jose / Ed25519 JWS** | Verify exact shared bytes and reject changed or out-of-scope versions |
+| Browser map | **MapLibre** | Draw local road geometry and actual calculated routes |
+| Coordination and contracts | **TypeScript / Node.js** | Implement ingestion rules, version checks, failover and reproducible simulation |
+| Alternative aggregation runtime | **Local Cloudflare Worker, Queue and SQLite Durable Objects** | Compare the same aggregation rules with PostgreSQL; hosted deployment is separate |
+
+RouteLens owns the contracts, privacy and expiry rules, orchestration, traffic-file adapter, node selection and evidence checks. [Architecture](docs/02-architecture.md) · [Build or reuse](docs/03-build-or-reuse.md) · [Local pilot modules](docs/11-local-pilot.md).
+
+## 4. Try the local client
+
+Requirements: **Node.js 22 or 24**, npm, curl and Docker with Linux containers. Initial preparation downloads pinned engine images and a dated South Korea OSM source of about 290 MB. Every full run builds a fresh Seoul graph and starts its own local services. No map API key, external database or Cloudflare account is required.
 
 ```sh
 git clone https://github.com/dicebattle/routelens.git
@@ -57,75 +72,39 @@ npm ci
 npm run build
 npx playwright install chromium
 npm run simulation:check -- --output data/my-first-run
+```
+
+After the full simulation succeeds, start an interactive client:
+
+```sh
+npm run pilot:serve -- --graph data/my-first-run/seoul/graph --output data/my-client
+```
+
+Open the printed local URL, choose the Teheran-ro preset and calculate. This starts a fresh synthetic traffic fixture, not a video player. Its clock advances automatically, traffic expires, and the pilot stops after 15 minutes. Use a new output directory for every run. On Linux, browser dependencies can be installed with `npx playwright install --with-deps chromium`.
+
+To inspect the completed simulation instead:
+
+```sh
 npm run report:serve -- data/my-first-run
 ```
 
-To use the actual client after a successful full run, start a fresh interactive fixture with `npm run pilot:serve -- --graph data/my-first-run/seoul/graph --output data/my-client` and open its printed URL. It stops after 15 minutes; synthetic traffic expires naturally. On Linux, install browser system dependencies with `npx playwright install --with-deps chromium`.
+Append `/report.html` to its printed URL. This is the completed evidence report, separate from the interactive client. [Detailed setup and source reuse](wiki/modules/seoul-simulation.md).
 
-For the archived report, open the loopback URL printed by the server with `/report.html` appended. The server stops after 15 minutes. Use a **new output directory** for every run; existing evidence is never overwritten.
+## 5. Implementation and verification
 
-For offline source reuse, add `--source /path/to/south-korea-261023.osm.pbf` with the exact pinned SHA-256. The default source cache is `data/seoul-source-cache`; `ROUTELENS_SOURCE_CACHE` overrides its location. `npm run simulation:tiny -- --output data/tiny-only` runs the small regression alone. See the [Seoul module guide](wiki/modules/seoul-simulation.md).
+The local pipeline covers simulation, durable ingestion, aggregation, signed traffic, routing, two independent nodes, a gateway, the browser client, fault scenarios and a local Cloudflare aggregation comparison. Local and GitHub Actions runs passed **390 integration assertions**; Node.js 22 and 24 each passed **303 tests**. See the linked report for original evidence and [PR #14](https://github.com/dicebattle/routelens/pull/14) for protected integration.
 
-For automated checks:
+- [Latest test report and original evidence](research/pilot/2026-10-25-p13/report.md)
+- [Current implementation status](docs/18-goal-progress.md)
+- [Development and decision log](wiki/log.md)
+- [Contribution guide](CONTRIBUTING.md) · [Protected-branch workflow](docs/12-development-workflow.md)
 
 ```sh
 npm test
 npm run media:check
+npm run cloudflare:types -- --check
 ```
 
-`media:check` verifies that the published recording still matches the implementation, report and asset hashes. After changing runtime behavior, regenerate the integration report and recapture the demo before publishing. See the [evidence workflow](docs/17-simulation-evidence-delivery.md).
+Local synthetic success is separate from the reviewed 100-route/100-matching real-road evaluation, real driving, live traffic and hosted Cloudflare operation. [Roadmap and limits](docs/11-local-pilot.md).
 
-## Built here, reused upstream
-
-```mermaid
-flowchart LR
-  F[Pinned actual Seoul OSM source] --> O[Osmium · regional extraction]
-  O --> V[Valhalla · real graph and routing]
-  V --> G[Verified graph bundle]
-  S[Authored paths and speed schedules] --> P[RouteLens · vehicle simulation]
-  G --> P
-  P --> T[Independent trajectory truth]
-  P --> N[Noisy GPS and explicit omissions]
-  T --> R[Captured replay and test report]
-  G --> M[Valhalla · map matching]
-  N --> I[RouteLens · durable HTTP receipt]
-  I --> D[PostgreSQL · trips and fenced jobs]
-  D --> W[RouteLens · worker and crash recovery]
-  W --> M
-  M --> A[RouteLens · observed timing and exclusions]
-  A --> C[PostgreSQL · atomic traversal commit]
-  C --> U[RouteLens · deadline and contributor median]
-  U --> Q[Unsigned candidate · expiry and revocation]
-  Q --> J[jose · Ed25519 JWS]
-  J --> H[RouteLens · immutable HTTP publication]
-  H --> K[RouteLens · verified durable consumer]
-  K --> B[RouteLens · immutable traffic file and expiry]
-  B --> X[Valhalla · actual traffic-aware route]
-  G --> X
-  X --> Y[RouteLens · same-version gateway and one retry]
-  Y --> R
-```
-
-RouteLens owns the contracts, orchestration, simulation, ingestion/worker coordination, traffic-file adapter and evidence checks. **PostgreSQL** supplies durable transactions, row locks and uniqueness; RouteLens defines completion, commit ownership and deletion rules. **Valhalla** builds graphs, prepares traffic archives, calculates routes and performs map matching; **Osmium** extracts the Seoul envelope and converts OSM files. **jose** provides standard JWS signing and verification; RouteLens owns trust scope, exact artifact validation and durable order. The client uses **MapLibre** for local map rendering and **esbuild** for its TypeScript bundle; persistent node activation and approved-node gateway selection are implemented. [Build-or-reuse decisions](docs/03-build-or-reuse.md).
-
-The planned production design has a managed ingestion path and approved independent routing nodes. It keeps raw location data out of public peer-to-peer distribution. A Cloudflare deployment and an independently installable PostgreSQL/HTTP path are planned; neither is required for the current local simulation.
-
-## Evidence before completion
-
-Each module follows **design → implementation → direct execution → inspected evidence → bilingual record → push**. The main agent owns design and review; implementation is delegated according to [repository instructions](AGENTS.md). AI assistance is recorded with the actual checks and limits, not used as a quality claim.
-
-- [Latest integrated test report](research/pilot/2026-10-25-p12/report.md)
-- [Current implementation and remaining goal](docs/18-goal-progress.md)
-- [Append-only work log](wiki/log.md)
-- [P01–P14 module contracts](docs/11-local-pilot.md)
-- [Architecture](docs/02-architecture.md) · [Protocol](docs/04-protocol.md) · [Privacy and trust](docs/07-privacy-and-trust.md)
-
-**Next: P13 local Cloudflare parity**, followed by P14b final integration CI. P12 passed local358/296 and independent original-byte audits; hosted inspection and protected delivery remain pending. P11 is verified locally and on hosted CI and is protected-merged. P10 serves authenticated local requests through two approved nodes; public enrollment, signed node responses and explicit base_only requests remain unsupported. P09 keeps native engines alive, while P08 remains the lower-level reference. Local synthetic success does not establish production latency or availability. Previously downloaded artifacts cannot be recalled from offline consumers; expiry, a newer received version or configured key revocation limits their use. Production authentication, continuous GPS ingestion and forensic deletion from WAL/backups remain unimplemented. The evidence viewer remains separate from the actual local route client. Turn-by-turn guidance and real mobile driving remain unimplemented.
-
-## Contribute
-
-Read [CONTRIBUTING.md](CONTRIBUTING.md) and the [development workflow](docs/12-development-workflow.md). Main is protected; changes must pass required checks. Keep vehicle observations synthetic and all datasets lawfully redistributable with their source licenses, preserve prior evidence, and explain why a change exists in English and Korean.
-
-The map uses © OpenStreetMap contributors, [ODbL 1.0](https://www.openstreetmap.org/copyright), via [Geofabrik](https://download.geofabrik.de/asia/south-korea.html), snapshot 2026-10-23. The extraction envelope includes Seoul and adjacent boundary roads; it is not an exact administrative polygon. The viewer displays 1,268 selected geometries from 149,857 exported records; these are not full car-road counts. Derived map data retains ODbL; see [NOTICE](NOTICE).
-
-Project code and documentation use [Apache-2.0](LICENSE). Upstream tools and datasets retain their own licenses. [Security policy](SECURITY.md) · [Governance](GOVERNANCE.md).
+The map uses © OpenStreetMap contributors, [ODbL 1.0](https://www.openstreetmap.org/copyright), through [Geofabrik](https://download.geofabrik.de/asia/south-korea.html), snapshot 2026-10-23. The extraction envelope includes Seoul and adjacent roads. Code and documentation use [Apache-2.0](LICENSE); upstream tools and map data retain their own licenses. [NOTICE](NOTICE) · [Security](SECURITY.md).

@@ -1,0 +1,124 @@
+{
+  "status": "PASS",
+  "source": "5c4f098b476bffa9a950441cf4bc006d90b1d4e0",
+  "runtime": "ba9395ec5ba3ac6dc5d1e296a9334b0bbebd72053b46674692f1c58a84556bfa",
+  "results": [
+    {
+      "name": "signatures",
+      "script": "data/inspect-p13-hosted-signatures.mjs",
+      "args": [
+        "/Users/dice/Documents/routelens-p13/data/p13-hosted-40155530440/publication",
+        "data/p13-first-hosted-signatures.json"
+      ],
+      "exit": 0,
+      "signal": null,
+      "log": "data/p13-first-hosted-signatures.log"
+    },
+    {
+      "name": "state",
+      "script": "data/inspect-p13-hosted-state.mjs",
+      "args": [
+        "/Users/dice/Documents/routelens-p13/data/p13-hosted-40155530440/publication",
+        "hosted",
+        "data/p13-first-hosted-state.json"
+      ],
+      "exit": 0,
+      "signal": null,
+      "log": "data/p13-first-hosted-state.log"
+    },
+    {
+      "name": "whole",
+      "script": "data/inspect-p13-whole-hosted.mjs",
+      "args": [
+        "/Users/dice/Documents/routelens-p13/data/p13-hosted-40155530440",
+        "--output",
+        "data/p13-first-hosted-whole.json",
+        "--expected-source",
+        "5c4f098b476bffa9a950441cf4bc006d90b1d4e0"
+      ],
+      "exit": 0,
+      "signal": null,
+      "log": "data/p13-first-hosted-whole.log"
+    },
+    {
+      "name": "cloudflare",
+      "script": "data/inspect-p13-parity-hosted.mjs",
+      "args": [
+        "/Users/dice/Documents/routelens-p13/data/p13-hosted-40155530440/cloudflare",
+        "data/p13-first-hosted-cloudflare.json",
+        "data/p13-first-hosted-sqlite-copy"
+      ],
+      "exit": 0,
+      "signal": null,
+      "log": "data/p13-first-hosted-cloudflare.log"
+    },
+    {
+      "name": "domain",
+      "script": "data/inspect-p13-domain-hosted.mjs",
+      "args": [
+        "/Users/dice/Documents/routelens-p13/data/p13-hosted-40155530440/scenarios",
+        "data/p13-first-hosted-domain.json",
+        "5c4f098b476bffa9a950441cf4bc006d90b1d4e0"
+      ],
+      "exit": 0,
+      "signal": null,
+      "log": "data/p13-first-hosted-domain.log"
+    },
+    {
+      "name": "client",
+      "script": "data/inspect-p13-client-hosted.mjs",
+      "args": [
+        "/Users/dice/Documents/routelens-p13/data/p13-hosted-40155530440/client",
+        "5c4f098b476bffa9a950441cf4bc006d90b1d4e0",
+        "ba9395ec5ba3ac6dc5d1e296a9334b0bbebd72053b46674692f1c58a84556bfa",
+        "data/p13-first-hosted-client.json"
+      ],
+      "exit": 0,
+      "signal": null,
+      "log": "data/p13-first-hosted-client.log"
+    },
+    {
+      "name": "gateway",
+      "script": "data/inspect-p10-in-p13-hosted.mjs",
+      "args": [
+        "/Users/dice/Documents/routelens-p13/data/p13-hosted-40155530440/gateway",
+        "/Users/dice/Documents/routelens-p13/data/p13-hosted-40155530440/seoul/graph",
+        "--output",
+        "data/p13-first-hosted-gateway.json",
+        "--expected-source",
+        "5c4f098b476bffa9a950441cf4bc006d90b1d4e0"
+      ],
+      "exit": 0,
+      "signal": null,
+      "log": "data/p13-first-hosted-gateway.log"
+    },
+    {
+      "name": "nodes",
+      "script": "data/inspect-p09-in-p13-hosted.mjs",
+      "args": [
+        "/Users/dice/Documents/routelens-p13/data/p13-hosted-40155530440/nodes",
+        "/Users/dice/Documents/routelens-p13/data/p13-hosted-40155530440/seoul/graph",
+        "--expected-source",
+        "5c4f098b476bffa9a950441cf4bc006d90b1d4e0",
+        "--output",
+        "data/p13-first-hosted-nodes.json"
+      ],
+      "exit": 0,
+      "signal": null,
+      "log": "data/p13-first-hosted-nodes.log"
+    },
+    {
+      "name": "traffic",
+      "script": "/Users/dice/Documents/routelens/data/inspect-p08-hosted.mjs",
+      "args": [
+        "/Users/dice/Documents/routelens-p13/data/p13-hosted-40155530440/traffic",
+        "/Users/dice/Documents/routelens-p13/data/p13-hosted-40155530440/seoul/graph",
+        "--output",
+        "data/p13-first-hosted-traffic.json"
+      ],
+      "exit": 0,
+      "signal": null,
+      "log": "data/p13-first-hosted-traffic.log"
+    }
+  ]
+}

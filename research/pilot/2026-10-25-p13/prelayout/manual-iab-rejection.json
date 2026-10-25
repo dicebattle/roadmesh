@@ -1,0 +1,21 @@
+{
+  "status": "REJECTED_MEDIA_LAYOUT",
+  "source_commit": "085fb9126e01841629c357f85f71fc61d9ca6148",
+  "whole_assertions": 390,
+  "whole_status": "PASS",
+  "manual_viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "observed_scroll_width": {
+    "en": 568,
+    "ko": 568
+  },
+  "cause_en": "New Cloudflare parity hash paragraphs do not wrap.",
+  "cause_ko": "새 Cloudflare 비교 해시 문단에 줄바꿈 규칙이 없습니다.",
+  "corrected_preview": {
+    "en": 390,
+    "ko": 390
+  },
+  "originals_modified": false
+}

@@ -1,0 +1,65 @@
+{
+  "phase": {
+    "type": "PHASE",
+    "phase": "AFTER_GATEWAY_NODE_RESULT",
+    "pid": 91002,
+    "request_id": "browser-515ab025-f1ef-4329-9ef0-811cdb94a193",
+    "generation_id": "f78a2212d157a07ef9449e981c796f2e5b748efe95fa0c6900a8559821d505c0",
+    "node_id": "client-node-a",
+    "attempt": 1
+  },
+  "response": {
+    "status": 409,
+    "body": {
+      "code": "ERROR",
+      "reason": "TRAFFIC_CHANGED",
+      "message_en": "The gateway cannot return a current verified route for this request.",
+      "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+    },
+    "state": {
+      "lang": "en",
+      "state": "unverified",
+      "request_id": "",
+      "map_ready": "true",
+      "map_active_route": "false",
+      "map_request_id": "",
+      "map_rendered_request_id": "",
+      "status": "The route is no longer verified. Recalculate to check the current traffic context.",
+      "summary": "",
+      "evidence": {
+        "request": {
+          "schema_version": "0.1",
+          "request_id": "browser-515ab025-f1ef-4329-9ef0-811cdb94a193",
+          "origin": {
+            "latitude": 37.50083690018144,
+            "longitude": 127.03739724982245
+          },
+          "destination": {
+            "latitude": 37.500877100181434,
+            "longitude": 127.0375277498224
+          },
+          "profile": "car",
+          "traffic_policy": "prefer_live"
+        },
+        "response": null,
+        "authority": {
+          "schema_version": "0.1",
+          "graph_id": "7d07bab4cc4e8a9928ed77c2263a8986ed7aa43e82eb0ac1c1b835d6990f218d",
+          "traffic_snapshot_id": "4c469885bcfe2a53d06dee783e2c0a0a51533f9606b42d291a01766a10cbddf5",
+          "sequence": 2,
+          "high_water": 2,
+          "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+          "traffic_published_at": "2026-10-24T00:04:30.000Z",
+          "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+          "source_class": "SYNTHETIC",
+          "clock_basis": "SIMULATION_EVENT_TIME"
+        },
+        "state": "unverified",
+        "reason": "TRAFFIC_CHANGED",
+        "map_source_geometry": null
+      },
+      "scroll_width": 1280,
+      "viewport_width": 1280
+    }
+  }
+}

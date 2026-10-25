@@ -1,0 +1,33 @@
+{
+  "query": "SELECT namespace,consumer_id,publisher_id,region_id,high_water,last_snapshot_id,octet_length(artifact) FROM routelens_p07.consumer_states WHERE namespace=$1 ORDER BY consumer_id",
+  "namespace": "p09-9e6a824c099f41ff",
+  "rows": [
+    {
+      "namespace": "p09-9e6a824c099f41ff",
+      "consumer_id": "p10-gateway",
+      "publisher_id": "seoul-p09-publisher",
+      "region_id": "seoul-pilot-corridors-v1",
+      "high_water": "1",
+      "last_snapshot_id": "aa86d94c01c2757440db6761a6ad3c2a5a2107e670c6718171e7078eabb4cd5c",
+      "artifact_bytes": 10469
+    },
+    {
+      "namespace": "p09-9e6a824c099f41ff",
+      "consumer_id": "p10-node-a",
+      "publisher_id": "seoul-p09-publisher",
+      "region_id": "seoul-pilot-corridors-v1",
+      "high_water": "1",
+      "last_snapshot_id": "aa86d94c01c2757440db6761a6ad3c2a5a2107e670c6718171e7078eabb4cd5c",
+      "artifact_bytes": 10469
+    },
+    {
+      "namespace": "p09-9e6a824c099f41ff",
+      "consumer_id": "p10-node-b",
+      "publisher_id": "seoul-p09-publisher",
+      "region_id": "seoul-pilot-corridors-v1",
+      "high_water": "1",
+      "last_snapshot_id": "aa86d94c01c2757440db6761a6ad3c2a5a2107e670c6718171e7078eabb4cd5c",
+      "artifact_bytes": 10469
+    }
+  ]
+}

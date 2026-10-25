@@ -1,0 +1,17 @@
+{
+  "engine_name": "routelens-p02-8eb78df2-394b-470e-8e65-5e8a3f6e6e5b",
+  "result": {
+    "message": {
+      "type": "RESULT",
+      "code": "UNAVAILABLE",
+      "reason": "ENGINE_UNAVAILABLE",
+      "message_en": "Traffic operation is unavailable; no successful route is returned.",
+      "message_ko": "교통정보 작업을 사용할 수 없어 성공 경로를 반환하지 않습니다."
+    },
+    "exit": {
+      "code": 1,
+      "signal": null
+    },
+    "pid": 85397
+  }
+}

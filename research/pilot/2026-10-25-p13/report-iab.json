@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "browser": "in-app browser",
+  "owned_tab_id": "24",
+  "source_commit": "d2fb9643e2b6d69826c5eaf2f8918dfe2108e9ab",
+  "report_url": "http://127.0.0.1:58940/report.html",
+  "actual_report_assertions": 390,
+  "cloudflare_checks": 32,
+  "cloudflare_result_links": 11,
+  "narrow_viewport": {"width":390,"height":844},
+  "document_scroll_width": {"en":390,"ko":390},
+  "scenario_checks": 24,
+  "scenario_images_after_scrolling_into_view": [{"complete":true,"naturalWidth":1280},{"complete":true,"naturalWidth":1280}],
+  "message_en": "Main directly inspected completed actual report evidence in both languages. Images are lazy-loaded: the initial offscreen read was not loaded; scrolling to the actual P12 heading loaded both originals. Temporary viewport was reset.",
+  "message_ko": "메인이 실제 완료 보고서를 양쪽 언어로 직접 확인했습니다. 이미지는 지연 로드되어 처음 화면 밖 조회에서는 미완료였고 실제 P12 제목으로 이동한 뒤 양쪽 원문이 표시됐습니다. 임시 화면 크기는 복원했습니다."
+}

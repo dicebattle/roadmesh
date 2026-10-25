@@ -15,3 +15,5 @@ The adapter distinguishes route-domain errors without bypassing generation/expir
 These remain local authored synthetic tests on public OSM roads. Tiny waiting/parallel-road regressions are explicit, and same-engine round trips are not independent road-accuracy or Internet packet-loss measurements. No public node enrollment, production authentication or real driver traces are implemented here.
 
 공개 OSM 도로에서 자체 합성 자료를 쓰는 로컬 검사입니다. 작은 대기/평행도로 회귀를 명시하고 같은 엔진 왕복을 독립 도로 정확도·인터넷 손실률 측정으로 표현하지 않습니다. 공개 노드 등록·운영 인증·실주행 자료는 여기서 구현하지 않습니다.
+
+P12 corrected hosted acceptance and protected PR13 merge are complete; missing-XML rejection and corrected15,975-hash evidence remain separate. [Hosted record](../../research/pilot/2026-10-25-p12/hosted/README.md). / P12 수정 원격 수용·PR13 보호 병합을 마쳤으며 XML누락 거부와 수정15,975해시 근거를 구분해 보존합니다.

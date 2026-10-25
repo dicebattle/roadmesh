@@ -1,5 +1,11 @@
-import { canonical, identifier, number, record, sha256 } from "./shared.js";
-import { utc } from "./ingestion_validation.js";
+import {
+  canonical,
+  identifier,
+  number,
+  record,
+  sha256,
+} from "./value_contract.js";
+import { utc } from "./time_validation.js";
 import type {
   AggregationInput,
   AggregationResult,

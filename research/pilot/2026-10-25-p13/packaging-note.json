@@ -1,0 +1,9 @@
+{
+  "status": "PASS_ARCHIVE_RECEIPTS",
+  "whole_files": 16402,
+  "demo_files": 2535,
+  "whole_archive_sha256": "fa5b9c01a67d6ed23a57a2848774fad2020393d5eb1d981043cd7058c63da43c",
+  "demo_archive_sha256": "3893870f32f9a5864bff63716ac6f4b72f2dafd47ed84db7edd45446943ded04",
+  "message_en": "The parent diagnostic redirection and first child receipt log reused one filename, leaving a mixed parent text log. Preserve that log. Separate logs in the saved packager; original archives, inventories, hash receipts and reconstruction checks are unchanged. No product or healthy test was rerun.",
+  "message_ko": "부모 진단 출력과 첫 자식 접수 로그가 같은 파일명을 사용해 부모 텍스트가 섞였습니다. 해당 로그를 보존하고 저장한 묶음 도구의 로그명을 분리했습니다. 원문 묶음·목록·해시·복원 검사는 그대로이며 제품·정상 검사를 다시 실행하지 않았습니다."
+}
