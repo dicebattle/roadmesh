@@ -1,0 +1,125 @@
+{
+  "lang": "en",
+  "state": "current",
+  "request_id": "browser-10fbca83-f381-4809-8456-3bbede19e2ef",
+  "map_ready": "true",
+  "map_active_route": "true",
+  "map_request_id": "browser-10fbca83-f381-4809-8456-3bbede19e2ef",
+  "map_rendered_request_id": "browser-10fbca83-f381-4809-8456-3bbede19e2ef",
+  "status": "Route checked against the accepted traffic context.",
+  "summary": "0.01 km · 0.4 minAccepted traffic applied on this routeRoute live coverage: 100.00%Traffic age · simulation time: 0.0 sChecked simulation time: 2026-10-24T00:04:30.000Z",
+  "maneuvers": [
+    "Drive east on 테헤란로/90.",
+    "You have arrived at your destination."
+  ],
+  "guidance_hidden": false,
+  "evidence": {
+    "request": {
+      "schema_version": "0.1",
+      "request_id": "browser-10fbca83-f381-4809-8456-3bbede19e2ef",
+      "origin": {
+        "latitude": 37.50083690018144,
+        "longitude": 127.03739724982245
+      },
+      "destination": {
+        "latitude": 37.500877100181434,
+        "longitude": 127.0375277498224
+      },
+      "profile": "car",
+      "traffic_policy": "prefer_live",
+      "guidance_language": "en-US"
+    },
+    "response": {
+      "request_id": "browser-10fbca83-f381-4809-8456-3bbede19e2ef",
+      "request_sha256": "14fe336d1fa0862437686389349309846604b5838c49424d293a2214b9ed21b9",
+      "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+      "snapshot_id": "8e158b251e642ad5bcf76e6fb8b6f66e3e35e4c345644e38e9993644efa08e49",
+      "sequence": 2,
+      "generation_id": "2091cd7cb68a1bacd5c388f919b1c759366b7a1544de7dfb52c7176fb18c887a",
+      "traffic_sha256": "c683fd6539aad3212cdb56e81c2c3c662c4f47babb4d7143bd09750c477b7ab6",
+      "engine_version": "3.9.1",
+      "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+      "costing_config_id": "valhalla-current-v1",
+      "node_id": "client-node-a",
+      "traffic_mode": "LIVE_MIXED",
+      "distance_m": 12,
+      "duration_s": 22.254,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.037397,
+            37.500837
+          ],
+          [
+            127.037528,
+            37.500877
+          ]
+        ]
+      },
+      "guidance": {
+        "schema_version": "0.1",
+        "language": "en-US",
+        "maneuvers": [
+          {
+            "index": 0,
+            "native_type": 1,
+            "instruction": "Drive east on 테헤란로/90.",
+            "distance_m": 12,
+            "duration_s": 22.254,
+            "begin_shape_index": 0,
+            "end_shape_index": 1
+          },
+          {
+            "index": 1,
+            "native_type": 4,
+            "instruction": "You have arrived at your destination.",
+            "distance_m": 0,
+            "duration_s": 0,
+            "begin_shape_index": 1,
+            "end_shape_index": 1
+          }
+        ]
+      },
+      "live_coverage_ratio": 1,
+      "warnings": [],
+      "high_water": 2,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "traffic_published_at": "2026-10-24T00:04:30.000Z",
+      "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+      "source_class": "SYNTHETIC",
+      "clock_basis": "SIMULATION_EVENT_TIME",
+      "calculated_at": "2026-10-25T12:56:41.464Z"
+    },
+    "authority": {
+      "schema_version": "0.1",
+      "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+      "traffic_snapshot_id": "8e158b251e642ad5bcf76e6fb8b6f66e3e35e4c345644e38e9993644efa08e49",
+      "sequence": 2,
+      "high_water": 2,
+      "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+      "traffic_published_at": "2026-10-24T00:04:30.000Z",
+      "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+      "source_class": "SYNTHETIC",
+      "clock_basis": "SIMULATION_EVENT_TIME"
+    },
+    "state": "current",
+    "reason": "",
+    "map_source_geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.037397,
+          37.500837
+        ],
+        [
+          127.037528,
+          37.500877
+        ]
+      ]
+    },
+    "progress": null
+  },
+  "scroll_width": 1280,
+  "viewport_width": 1280
+}

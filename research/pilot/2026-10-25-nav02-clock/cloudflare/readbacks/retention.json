@@ -1,0 +1,83 @@
+{
+  "retained": {
+    "scope_id": "queue",
+    "namespace": "p06-a86f6e00d766-count-5",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "catalog_sha256": "b27cd56bb0bfd39d4d3d071384fc5d2d8f1ba30a17214f3413c50f2f17278491",
+    "now_utc": "2026-10-25T00:01:00.000Z",
+    "receipts": [
+      {
+        "id": "ack-retry",
+        "hash": "d5b7c86a68ac037baf76043d68997946fa90c1aed20800bb0916a11f5e098446",
+        "payload": "[]",
+        "state": "DISCARDED",
+        "deliveries": 4,
+        "ack_loss": 0
+      },
+      {
+        "id": "twins",
+        "hash": "322efacdd27a829d5e95c3089dfa0ffb1840afe17f8bb60a0e0c3bae23c01d2a",
+        "payload": "[]",
+        "state": "DISCARDED",
+        "deliveries": 2,
+        "ack_loss": 0
+      }
+    ],
+    "contributions": [],
+    "revoked": [],
+    "candidates": [],
+    "queue_events": [
+      {
+        "batch": "ack-retry",
+        "hash": "d5b7c86a68ac037baf76043d68997946fa90c1aed20800bb0916a11f5e098446",
+        "attempt": 1,
+        "code": "COMMITTED_ACK_LOST"
+      },
+      {
+        "batch": "ack-retry",
+        "hash": "d5b7c86a68ac037baf76043d68997946fa90c1aed20800bb0916a11f5e098446",
+        "attempt": 2,
+        "code": "DUPLICATE"
+      },
+      {
+        "batch": "ack-retry",
+        "hash": "d5b7c86a68ac037baf76043d68997946fa90c1aed20800bb0916a11f5e098446",
+        "attempt": 1,
+        "code": "DUPLICATE"
+      },
+      {
+        "batch": "twins",
+        "hash": "322efacdd27a829d5e95c3089dfa0ffb1840afe17f8bb60a0e0c3bae23c01d2a",
+        "attempt": 1,
+        "code": "APPLIED"
+      },
+      {
+        "batch": "twins",
+        "hash": "322efacdd27a829d5e95c3089dfa0ffb1840afe17f8bb60a0e0c3bae23c01d2a",
+        "attempt": 1,
+        "code": "DUPLICATE"
+      },
+      {
+        "batch": "ack-retry",
+        "hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "attempt": 1,
+        "code": "NOTICE_REJECTED"
+      },
+      {
+        "batch": "ack-retry",
+        "hash": "d5b7c86a68ac037baf76043d68997946fa90c1aed20800bb0916a11f5e098446",
+        "attempt": 1,
+        "code": "DUPLICATE"
+      }
+    ]
+  },
+  "old": {
+    "status": 410,
+    "body": {
+      "code": "RETENTION_EXPIRED",
+      "message_en": "Matched data is past its retention boundary.",
+      "message_ko": "매칭 자료의 보관 기한이 지났습니다."
+    },
+    "text": "{\"code\":\"RETENTION_EXPIRED\",\"message_en\":\"Matched data is past its retention boundary.\",\"message_ko\":\"매칭 자료의 보관 기한이 지났습니다.\"}"
+  }
+}

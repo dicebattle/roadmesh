@@ -6,10 +6,8 @@ import {
   type Node as JsonNode,
   type ParseError,
 } from "jsonc-parser";
-export class InputError extends Error {}
-export function fail(path: string, en: string, ko: string): never {
-  throw new InputError(`${path}: ${en} / ${ko}`);
-}
+import { InputError, fail } from "./input_error.js";
+export { InputError, fail } from "./input_error.js";
 export function record(
   value: unknown,
   path: string,

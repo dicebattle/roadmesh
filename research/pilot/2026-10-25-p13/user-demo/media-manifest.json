@@ -1,0 +1,94 @@
+{
+  "source_commit": "d2fb9643e2b6d69826c5eaf2f8918dfe2108e9ab",
+  "implementation_sha256": "ba9395ec5ba3ac6dc5d1e296a9334b0bbebd72053b46674692f1c58a84556bfa",
+  "report_path": "research/pilot/2026-10-25-p13/report.html",
+  "report_sha256": "335786742de3b76a2356e3f49927bd652bfff7d23d87706f1866664ffa998ff6",
+  "capture_method": "Actual ordinary automatic-mode Korean client on a separate clean checkout of the same accepted source. The32s user walkthrough keeps raw95s interval[20,52) at unchanged speed. Authored EN/KO captions occupy a new108px band below the untouched1280x720 application frame. Full155.05s fault/report recording is separate. / 같은 수용 소스의 별도 깨끗한 체크아웃에서 일반 자동 진행 한국어 클라이언트를 실제 촬영했습니다. 원본95초 중[20,52)구간을 원속도로 남긴32초 영상이며 한영 설명 자막은 원1280x720화면 밖108픽셀 띠에만 넣었습니다. 전체155.05초 장애·보고서 영상은 별도입니다.",
+  "user_capture": {
+    "source_commit": "d2fb9643e2b6d69826c5eaf2f8918dfe2108e9ab",
+    "source_dirty": false,
+    "graph_id": "7d07bab4cc4e8a9928ed77c2263a8986ed7aa43e82eb0ac1c1b835d6990f218d",
+    "raw_capture_seconds": 95,
+    "retained_raw_intervals_seconds": [
+      [
+        20,
+        52
+      ]
+    ],
+    "published_seconds": 32,
+    "captions_languages": [
+      "en",
+      "ko"
+    ],
+    "application_language": "ko",
+    "application_frame": {
+      "width": 1280,
+      "height": 720
+    },
+    "published_frame": {
+      "width": 1280,
+      "height": 828
+    },
+    "caption_band_pixels": 108
+  },
+  "developer_capture": {
+    "raw_capture_seconds": 155.05,
+    "retained_raw_intervals_seconds": [
+      [
+        0,
+        155.05
+      ]
+    ],
+    "source_commit": "d2fb9643e2b6d69826c5eaf2f8918dfe2108e9ab"
+  },
+  "assets": [
+    {
+      "path": "docs/media/demo.mp4",
+      "sha256": "8f38969bac39926b0c9baaa3f19d85ee2179dd07d6220918cb9f43393986f6c1"
+    },
+    {
+      "path": "docs/media/demo.ko.mp4",
+      "sha256": "2daf3060fe4dd0c9db4173d011dba8e992369342e0ccf9439c0a2158998e68c9"
+    },
+    {
+      "path": "docs/media/demo.gif",
+      "sha256": "be77288f725894a53c3610cc8264308de1db137bfcd09a08d3ce89df2a0ab6fd"
+    },
+    {
+      "path": "docs/media/demo.ko.gif",
+      "sha256": "4476d36724a87287d98915f4329d60effa7a35dd9773c5a98a94da2f28295736"
+    },
+    {
+      "path": "docs/media/demo-poster.ko.png",
+      "sha256": "0fdd54b7fcecb19de51d75d3acafe4619dde52e5c0c924f94c49b93176d5ab0a"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p13/user-demo/capture-original.webm",
+      "sha256": "6809ddd32edb295e8d54b8f236a408f9fd38a5838d53c1fd84de8a35ccecb126"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p13/capture-original.webm",
+      "sha256": "ed6835b6241ca4ea93d412491d2153f3f981d03dbf8fea389722ecab3b8e510e"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p13/developer-walkthrough.mp4",
+      "sha256": "b0245d3bd945aa4f2847010afe225cc006128ecd9a8d4a754608b0179c42ee6a"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p13/report-data.json",
+      "sha256": "5800ba7cf0b47af530e4ed4a611bab3cdf50848e6dbc0c632b2f587199bd5c27"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p13/frames/cloudflare-report-en.png",
+      "sha256": "92dbabd4ac719a86a8d057e47029515e2fd1e9f2f9d7fb8764a25127ca4d8b77"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p13/frames/cloudflare-report-ko.png",
+      "sha256": "07ee7a3d6b14d53420876ffb633e770b261fdbb617bf223f1f7f830a3dc38167"
+    },
+    {
+      "path": "research/pilot/2026-10-25-p13/frames/recording-contact.png",
+      "sha256": "10fceef3b2533bebeec050a75c837fa8f9801d7202e0b9043c72bc070617ad52"
+    }
+  ]
+}

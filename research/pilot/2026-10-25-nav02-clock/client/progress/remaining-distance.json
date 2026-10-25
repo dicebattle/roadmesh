@@ -1,0 +1,3075 @@
+{
+  "source_class": "SYNTHETIC",
+  "binding": {
+    "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+    "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+  },
+  "metric_scope": "EXACT_RETURNED_ROUTE_NOT_ROAD_NETWORK_MATCHING",
+  "inputs": [
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 0,
+      "longitude": 127.028976,
+      "latitude": 37.498447,
+      "accuracy_m": 4,
+      "heading_degrees": 248.28220632004133,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 1000,
+      "longitude": 127.02876538352632,
+      "latitude": 37.498380443759004,
+      "accuracy_m": 4,
+      "heading_degrees": 248.28207821240568,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 2000,
+      "longitude": 127.0285547674282,
+      "latitude": 37.49831388714409,
+      "accuracy_m": 4,
+      "heading_degrees": 248.28195027976875,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 3000,
+      "longitude": 127.02834375560258,
+      "latitude": 37.49824812681186,
+      "accuracy_m": 4,
+      "heading_degrees": 248.6627162735736,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 4000,
+      "longitude": 127.02816612627134,
+      "latitude": 37.49815815964056,
+      "accuracy_m": 4,
+      "heading_degrees": 249.94151212642709,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 5000,
+      "longitude": 127.02795350830525,
+      "latitude": 37.49809600553697,
+      "accuracy_m": 4,
+      "heading_degrees": 229.95988741359673,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 6000,
+      "longitude": 127.02805125472923,
+      "latitude": 37.49802216454317,
+      "accuracy_m": 4,
+      "heading_degrees": 69.01252006188781,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 7000,
+      "longitude": 127.02826292252882,
+      "latitude": 37.498086585178754,
+      "accuracy_m": 4,
+      "heading_degrees": 69.01264880472866,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 8000,
+      "longitude": 127.02847431918394,
+      "latitude": 37.49815155809482,
+      "accuracy_m": 4,
+      "heading_degrees": 69.35418618406413,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 9000,
+      "longitude": 127.02868646778529,
+      "latitude": 37.49821497618003,
+      "accuracy_m": 4,
+      "heading_degrees": 69.35431563639423,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 10000,
+      "longitude": 127.0288982258669,
+      "latitude": 37.498279209806626,
+      "accuracy_m": 4,
+      "heading_degrees": 69.02419233668843,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 11000,
+      "longitude": 127.029109910932,
+      "latitude": 37.498343596230576,
+      "accuracy_m": 4,
+      "heading_degrees": 69.02432082192433,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 12000,
+      "longitude": 127.02932159636214,
+      "latitude": 37.4984079822768,
+      "accuracy_m": 4,
+      "heading_degrees": 69.0244496855882,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 13000,
+      "longitude": 127.02953347888797,
+      "latitude": 37.49847195810187,
+      "accuracy_m": 4,
+      "heading_degrees": 69.2789005277861,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 14000,
+      "longitude": 127.02974552318369,
+      "latitude": 37.49853559729205,
+      "accuracy_m": 4,
+      "heading_degrees": 69.27902966726583,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 15000,
+      "longitude": 127.02995756784071,
+      "latitude": 37.49859923610324,
+      "accuracy_m": 4,
+      "heading_degrees": 69.27915884466546,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 16000,
+      "longitude": 127.03016961285925,
+      "latitude": 37.49866287453543,
+      "accuracy_m": 4,
+      "heading_degrees": 69.279288211606,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 17000,
+      "longitude": 127.0303814767517,
+      "latitude": 37.498726891147655,
+      "accuracy_m": 4,
+      "heading_degrees": 69.07162316352361,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 18000,
+      "longitude": 127.03059323019625,
+      "latitude": 37.49879113852037,
+      "accuracy_m": 4,
+      "heading_degrees": 69.07175220872728,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 19000,
+      "longitude": 127.03080498400516,
+      "latitude": 37.49885538551511,
+      "accuracy_m": 4,
+      "heading_degrees": 69.07188087541698,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 20000,
+      "longitude": 127.03101750092992,
+      "latitude": 37.49891800877844,
+      "accuracy_m": 4,
+      "heading_degrees": 70.03992709667574,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 21000,
+      "longitude": 127.03122920514033,
+      "latitude": 37.49898233258955,
+      "accuracy_m": 4,
+      "heading_degrees": 68.69393234049744,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 22000,
+      "longitude": 127.03144148788715,
+      "latitude": 37.49904545157656,
+      "accuracy_m": 4,
+      "heading_degrees": 69.80725192976297,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 23000,
+      "longitude": 127.03165426447788,
+      "latitude": 37.49910753676122,
+      "accuracy_m": 4,
+      "heading_degrees": 69.80738122629782,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 24000,
+      "longitude": 127.0318670414224,
+      "latitude": 37.499169621564256,
+      "accuracy_m": 4,
+      "heading_degrees": 69.80751048482318,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 25000,
+      "longitude": 127.03207921834428,
+      "latitude": 37.49923296140405,
+      "accuracy_m": 4,
+      "heading_degrees": 68.63808886330918,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 26000,
+      "longitude": 127.03229035441655,
+      "latitude": 37.499298478100975,
+      "accuracy_m": 4,
+      "heading_degrees": 68.63821705862125,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 27000,
+      "longitude": 127.0325014908592,
+      "latitude": 37.499363994422126,
+      "accuracy_m": 4,
+      "heading_degrees": 68.63834593676825,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 28000,
+      "longitude": 127.03271262767237,
+      "latitude": 37.49942951036752,
+      "accuracy_m": 4,
+      "heading_degrees": 68.63847470169742,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 29000,
+      "longitude": 127.03292387234535,
+      "latitude": 37.499494806982845,
+      "accuracy_m": 4,
+      "heading_degrees": 68.80192590264323,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 30000,
+      "longitude": 127.03313528147851,
+      "latitude": 37.49955976745662,
+      "accuracy_m": 4,
+      "heading_degrees": 69.40214674741742,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 31000,
+      "longitude": 127.03334750091835,
+      "latitude": 37.4996230446306,
+      "accuracy_m": 4,
+      "heading_degrees": 69.40227541952368,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 32000,
+      "longitude": 127.03355972071768,
+      "latitude": 37.49968632142496,
+      "accuracy_m": 4,
+      "heading_degrees": 69.4024050140847,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 33000,
+      "longitude": 127.0337719408767,
+      "latitude": 37.49974959783969,
+      "accuracy_m": 4,
+      "heading_degrees": 69.40253457072339,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 34000,
+      "longitude": 127.03398416139555,
+      "latitude": 37.49981287387478,
+      "accuracy_m": 4,
+      "heading_degrees": 69.40266324289269,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 35000,
+      "longitude": 127.03419629442772,
+      "latitude": 37.499876334642714,
+      "accuracy_m": 4,
+      "heading_degrees": 69.33538880098632,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 36000,
+      "longitude": 127.03440842169266,
+      "latitude": 37.499939807944266,
+      "accuracy_m": 4,
+      "heading_degrees": 69.33551768258167,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 37000,
+      "longitude": 127.0346205493181,
+      "latitude": 37.50000328086653,
+      "accuracy_m": 4,
+      "heading_degrees": 69.33564715935586,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 38000,
+      "longitude": 127.0348326773044,
+      "latitude": 37.50006675340949,
+      "accuracy_m": 4,
+      "heading_degrees": 69.33577619266549,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 39000,
+      "longitude": 127.03504480565118,
+      "latitude": 37.500130225573145,
+      "accuracy_m": 4,
+      "heading_degrees": 69.33590511223679,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 40000,
+      "longitude": 127.03525693435859,
+      "latitude": 37.500193697357496,
+      "accuracy_m": 4,
+      "heading_degrees": 69.33603466489865,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 41000,
+      "longitude": 127.03546906342672,
+      "latitude": 37.50025716876254,
+      "accuracy_m": 4,
+      "heading_degrees": 69.33616350866782,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 42000,
+      "longitude": 127.03568155049652,
+      "latitude": 37.50031988009982,
+      "accuracy_m": 4,
+      "heading_degrees": 69.70359540980184,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 43000,
+      "longitude": 127.03589276094897,
+      "latitude": 37.50038524504817,
+      "accuracy_m": 4,
+      "heading_degrees": 68.59916291621721,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 44000,
+      "longitude": 127.03610506500536,
+      "latitude": 37.50044833272509,
+      "accuracy_m": 4,
+      "heading_degrees": 69.69592540588269,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 45000,
+      "longitude": 127.03631769313802,
+      "latitude": 37.50051074579052,
+      "accuracy_m": 4,
+      "heading_degrees": 69.6960545142698,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 46000,
+      "longitude": 127.03653008901972,
+      "latitude": 37.50057365474667,
+      "accuracy_m": 4,
+      "heading_degrees": 69.50873706179306,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 47000,
+      "longitude": 127.03674244323327,
+      "latitude": 37.50063665241158,
+      "accuracy_m": 4,
+      "heading_degrees": 69.06080096166687,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 48000,
+      "longitude": 127.03695442800927,
+      "latitude": 37.50070042843653,
+      "accuracy_m": 4,
+      "heading_degrees": 69.28616733674681,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 49000,
+      "longitude": 127.037165858462,
+      "latitude": 37.50076534937569,
+      "accuracy_m": 4,
+      "heading_degrees": 68.5645094363137,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 50000,
+      "longitude": 127.03737708577171,
+      "latitude": 37.50083068871009,
+      "accuracy_m": 4,
+      "heading_degrees": 68.77935897221892,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 51000,
+      "longitude": 127.0375884293378,
+      "latitude": 37.50089579219839,
+      "accuracy_m": 4,
+      "heading_degrees": 68.77948710573122,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 52000,
+      "longitude": 127.0377996822125,
+      "latitude": 37.500961080827096,
+      "accuracy_m": 4,
+      "heading_degrees": 68.66771047373163,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 53000,
+      "longitude": 127.03801086583849,
+      "latitude": 37.501026510913704,
+      "accuracy_m": 4,
+      "heading_degrees": 68.66783921780859,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 54000,
+      "longitude": 127.03822204983464,
+      "latitude": 37.50109194062437,
+      "accuracy_m": 4,
+      "heading_degrees": 68.66796746833523,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 55000,
+      "longitude": 127.03843323420097,
+      "latitude": 37.501157369959095,
+      "accuracy_m": 4,
+      "heading_degrees": 68.66809598312767,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 56000,
+      "longitude": 127.03864411534255,
+      "latitude": 37.50122341156175,
+      "accuracy_m": 4,
+      "heading_degrees": 68.40836512680227,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 57000,
+      "longitude": 127.0388549242349,
+      "latitude": 37.50128959933993,
+      "accuracy_m": 4,
+      "heading_degrees": 68.40849332718591,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 58000,
+      "longitude": 127.03906573350093,
+      "latitude": 37.50135578674348,
+      "accuracy_m": 4,
+      "heading_degrees": 68.40862152758109,
+      "speed_mps": 20
+    },
+    {
+      "binding": {
+        "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+        "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+      },
+      "source_class": "SYNTHETIC",
+      "event_time_ms": 59000,
+      "longitude": 127.03911165136014,
+      "latitude": 37.501370203425346,
+      "accuracy_m": 4,
+      "heading_degrees": 68.40864904867942,
+      "speed_mps": 20
+    }
+  ],
+  "outputs": [
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 0,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.028976,
+          37.498447
+        ],
+        "confirmed_position": [
+          127.028976,
+          37.498447
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 0,
+        "progress_m": 0,
+        "remaining_m": 2117.011521689528,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 1,
+          "instruction": "Bear left.",
+          "distance_m": 68.59556257952534
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 1000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.02876538352632,
+          37.498380443759004
+        ],
+        "confirmed_position": [
+          127.02876538352632,
+          37.498380443759
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 20.00000000356295,
+        "progress_m": 20.00000000356295,
+        "remaining_m": 2097.011521685965,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 1,
+          "instruction": "Bear left.",
+          "distance_m": 48.59556257596239
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 2000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.0285547674282,
+          37.49831388714409
+        ],
+        "confirmed_position": [
+          127.0285547674282,
+          37.4983138871441
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 39.99999999750637,
+        "progress_m": 39.99999999750637,
+        "remaining_m": 2077.0115216920217,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 1,
+          "instruction": "Bear left.",
+          "distance_m": 28.595562582018964
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 3000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.02834375560258,
+          37.49824812681186
+        ],
+        "confirmed_position": [
+          127.02834375560258,
+          37.498248126811845
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 60.00000000293637,
+        "progress_m": 60.00000000293637,
+        "remaining_m": 2057.0115216865915,
+        "distance_to_route_m": 1.4146481319698978e-9,
+        "next_maneuver": {
+          "index": 1,
+          "instruction": "Bear left.",
+          "distance_m": 8.595562576588968
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 4000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.02816612627134,
+          37.49815815964056
+        ],
+        "confirmed_position": [
+          127.02816612627134,
+          37.49815815964055
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 80.00000000177364,
+        "progress_m": 80.00000000177364,
+        "remaining_m": 2037.011521687754,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 2,
+          "instruction": "Turn left onto 테헤란로/90.",
+          "distance_m": 35.912956593418656
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 5000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.02795350830525,
+          37.49809600553697
+        ],
+        "confirmed_position": [
+          127.02795350830525,
+          37.498096005537
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 99.99999999524994,
+        "progress_m": 99.99999999524994,
+        "remaining_m": 2017.011521694278,
+        "distance_to_route_m": 2.8292962639397955e-9,
+        "next_maneuver": {
+          "index": 2,
+          "instruction": "Turn left onto 테헤란로/90.",
+          "distance_m": 15.912956599942362
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 6000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.02805125472923,
+          37.49802216454317
+        ],
+        "confirmed_position": [
+          127.02805125472923,
+          37.49802216454316
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 119.99999999796887,
+        "progress_m": 119.99999999796887,
+        "remaining_m": 1997.011521691559,
+        "distance_to_route_m": 1.4146481319698978e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1985.0702511989846
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 7000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.02826292252882,
+          37.498086585178754
+        ],
+        "confirmed_position": [
+          127.02826292252882,
+          37.49808658517876
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 140.0000000035435,
+        "progress_m": 140.0000000035435,
+        "remaining_m": 1977.0115216859845,
+        "distance_to_route_m": 1.4146481319698978e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1965.07025119341
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 8000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.02847431918394,
+          37.49815155809482
+        ],
+        "confirmed_position": [
+          127.02847431918394,
+          37.49815155809482
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 160.0000000016217,
+        "progress_m": 160.0000000016217,
+        "remaining_m": 1957.0115216879062,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1945.0702511953318
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 9000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.02868646778529,
+          37.49821497618003
+        ],
+        "confirmed_position": [
+          127.02868646778529,
+          37.49821497618001
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 179.99999999522876,
+        "progress_m": 179.99999999522876,
+        "remaining_m": 1937.011521694299,
+        "distance_to_route_m": 2.1219721979548465e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1925.0702512017247
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 10000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.0288982258669,
+          37.498279209806626
+        ],
+        "confirmed_position": [
+          127.0288982258669,
+          37.49827920980663
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 200.00000000192398,
+        "progress_m": 200.00000000192398,
+        "remaining_m": 1917.0115216876038,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1905.0702511950294
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 11000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.029109910932,
+          37.498343596230576
+        ],
+        "confirmed_position": [
+          127.029109910932,
+          37.498343596230576
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 220.00000000120735,
+        "progress_m": 220.00000000120735,
+        "remaining_m": 1897.0115216883205,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1885.070251195746
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 12000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.02932159636214,
+          37.4984079822768
+        ],
+        "confirmed_position": [
+          127.02932159636214,
+          37.4984079822768
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 240.00000000083423,
+        "progress_m": 240.00000000083423,
+        "remaining_m": 1877.0115216886936,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1865.0702511961192
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 13000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.02953347888797,
+          37.49847195810187
+        ],
+        "confirmed_position": [
+          127.02953347888797,
+          37.498471958101874
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 260.00000000429577,
+        "progress_m": 260.00000000429577,
+        "remaining_m": 1857.011521685232,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1845.0702511926577
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 14000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.02974552318369,
+          37.49853559729205
+        ],
+        "confirmed_position": [
+          127.02974552318369,
+          37.49853559729207
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 280.0000000055185,
+        "progress_m": 280.0000000055185,
+        "remaining_m": 1837.0115216840095,
+        "distance_to_route_m": 2.1219721979548465e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1825.070251191435
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 15000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.02995756784071,
+          37.49859923610324
+        ],
+        "confirmed_position": [
+          127.02995756784071,
+          37.49859923610323
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 299.9999999968164,
+        "progress_m": 299.9999999968164,
+        "remaining_m": 1817.0115216927115,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1805.0702512001371
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 16000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03016961285925,
+          37.49866287453543
+        ],
+        "confirmed_position": [
+          127.03016961285925,
+          37.49866287453541
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 319.9999999965681,
+        "progress_m": 319.9999999965681,
+        "remaining_m": 1797.0115216929598,
+        "distance_to_route_m": 1.4146481319698978e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1785.0702512003854
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 17000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.0303814767517,
+          37.498726891147655
+        ],
+        "confirmed_position": [
+          127.0303814767517,
+          37.49872689114765
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 339.9999999979062,
+        "progress_m": 339.9999999979062,
+        "remaining_m": 1777.0115216916217,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1765.0702511990473
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 18000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03059323019625,
+          37.49879113852037
+        ],
+        "confirmed_position": [
+          127.03059323019625,
+          37.49879113852037
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 360.0000000005238,
+        "progress_m": 360.0000000005238,
+        "remaining_m": 1757.011521689004,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1745.0702511964296
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 19000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03080498400516,
+          37.49885538551511
+        ],
+        "confirmed_position": [
+          127.03080498400516,
+          37.498855385515114
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 380.00000000145644,
+        "progress_m": 380.00000000145644,
+        "remaining_m": 1737.0115216880713,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1725.070251195497
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 20000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03101750092992,
+          37.49891800877844
+        ],
+        "confirmed_position": [
+          127.03101750092992,
+          37.498918008778425
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 399.99999999868425,
+        "progress_m": 399.99999999868425,
+        "remaining_m": 1717.0115216908437,
+        "distance_to_route_m": 1.4146481319698978e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1705.0702511982693
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 21000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03122920514033,
+          37.49898233258955
+        ],
+        "confirmed_position": [
+          127.03122920514033,
+          37.49898233258956
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 420.0000000037927,
+        "progress_m": 420.0000000037927,
+        "remaining_m": 1697.0115216857353,
+        "distance_to_route_m": 1.4146481319698978e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1685.0702511931609
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 22000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03144148788715,
+          37.49904545157656
+        ],
+        "confirmed_position": [
+          127.03144148788715,
+          37.49904545157655
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 439.99999999533827,
+        "progress_m": 439.99999999533827,
+        "remaining_m": 1677.0115216941895,
+        "distance_to_route_m": 1.4146481319698978e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1665.070251201615
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 23000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03165426447788,
+          37.49910753676122
+        ],
+        "confirmed_position": [
+          127.03165426447788,
+          37.49910753676122
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 460.00000000039375,
+        "progress_m": 460.00000000039375,
+        "remaining_m": 1657.011521689134,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1645.0702511965596
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 24000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.0318670414224,
+          37.499169621564256
+        ],
+        "confirmed_position": [
+          127.0318670414224,
+          37.49916962156426
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 480.00000000293494,
+        "progress_m": 480.00000000293494,
+        "remaining_m": 1637.011521686593,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1625.0702511940185
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 25000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03207921834428,
+          37.49923296140405
+        ],
+        "confirmed_position": [
+          127.03207921834428,
+          37.49923296140405
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 499.99999999989603,
+        "progress_m": 499.99999999989603,
+        "remaining_m": 1617.0115216896318,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1605.0702511970574
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 26000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03229035441655,
+          37.499298478100975
+        ],
+        "confirmed_position": [
+          127.03229035441655,
+          37.49929847810099
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 520.00000000495,
+        "progress_m": 520.00000000495,
+        "remaining_m": 1597.011521684578,
+        "distance_to_route_m": 2.1219721979548465e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1585.0702511920035
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 27000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.0325014908592,
+          37.499363994422126
+        ],
+        "confirmed_position": [
+          127.0325014908592,
+          37.499363994422126
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 540.0000000006762,
+        "progress_m": 540.0000000006762,
+        "remaining_m": 1577.0115216888516,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1565.0702511962772
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 28000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03271262767237,
+          37.49942951036752
+        ],
+        "confirmed_position": [
+          127.03271262767237,
+          37.499429510367506
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 559.9999999967843,
+        "progress_m": 559.9999999967843,
+        "remaining_m": 1557.0115216927436,
+        "distance_to_route_m": 1.4146481319698978e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1545.0702512001692
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 29000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03292387234535,
+          37.499494806982845
+        ],
+        "confirmed_position": [
+          127.03292387234535,
+          37.499494806982845
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 580.0000000002801,
+        "progress_m": 580.0000000002801,
+        "remaining_m": 1537.0115216892477,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1525.0702511966733
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 30000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03313528147851,
+          37.49955976745662
+        ],
+        "confirmed_position": [
+          127.03313528147851,
+          37.49955976745661
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 599.9999999958934,
+        "progress_m": 599.9999999958934,
+        "remaining_m": 1517.0115216936344,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1505.07025120106
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 31000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03334750091835,
+          37.4996230446306
+        ],
+        "confirmed_position": [
+          127.03334750091835,
+          37.49962304463063
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 620.0000000065615,
+        "progress_m": 620.0000000065615,
+        "remaining_m": 1497.0115216829663,
+        "distance_to_route_m": 2.8292962639397955e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1485.070251190392
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 32000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03355972071768,
+          37.49968632142496
+        ],
+        "confirmed_position": [
+          127.03355972071768,
+          37.49968632142496
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 640.0000000007065,
+        "progress_m": 640.0000000007065,
+        "remaining_m": 1477.0115216888214,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1465.070251196247
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 33000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.0337719408767,
+          37.49974959783969
+        ],
+        "confirmed_position": [
+          127.0337719408767,
+          37.49974959783968
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 659.9999999972232,
+        "progress_m": 659.9999999972232,
+        "remaining_m": 1457.0115216923045,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1445.0702511997301
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 34000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03398416139555,
+          37.49981287387478
+        ],
+        "confirmed_position": [
+          127.03398416139555,
+          37.499812873874795
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 680.000000005619,
+        "progress_m": 680.000000005619,
+        "remaining_m": 1437.011521683909,
+        "distance_to_route_m": 1.4146481319698978e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1425.0702511913346
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 35000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03419629442772,
+          37.499876334642714
+        ],
+        "confirmed_position": [
+          127.03419629442772,
+          37.499876334642714
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 700.0000000018656,
+        "progress_m": 700.0000000018656,
+        "remaining_m": 1417.0115216876623,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1405.0702511950878
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 36000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03440842169266,
+          37.499939807944266
+        ],
+        "confirmed_position": [
+          127.03440842169266,
+          37.49993980794428
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 720.0000000042746,
+        "progress_m": 720.0000000042746,
+        "remaining_m": 1397.0115216852532,
+        "distance_to_route_m": 1.4146481319698978e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1385.0702511926788
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 37000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.0346205493181,
+          37.50000328086653
+        ],
+        "confirmed_position": [
+          127.0346205493181,
+          37.500003280866515
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 739.9999999957826,
+        "progress_m": 739.9999999957826,
+        "remaining_m": 1377.0115216937452,
+        "distance_to_route_m": 1.4146481319698978e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1365.0702512011708
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 38000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.0348326773044,
+          37.50006675340949
+        ],
+        "confirmed_position": [
+          127.0348326773044,
+          37.500066753409506
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 760.0000000041605,
+        "progress_m": 760.0000000041605,
+        "remaining_m": 1357.0115216853674,
+        "distance_to_route_m": 2.1219721979548465e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1345.070251192793
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 39000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03504480565118,
+          37.500130225573145
+        ],
+        "confirmed_position": [
+          127.03504480565118,
+          37.50013022557315
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 780.0000000011256,
+        "progress_m": 780.0000000011256,
+        "remaining_m": 1337.0115216884024,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1325.070251195828
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 40000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03525693435859,
+          37.500193697357496
+        ],
+        "confirmed_position": [
+          127.03525693435859,
+          37.500193697357496
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 799.9999999964297,
+        "progress_m": 799.9999999964297,
+        "remaining_m": 1317.011521693098,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1305.0702512005237
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 41000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03546906342672,
+          37.50025716876254
+        ],
+        "confirmed_position": [
+          127.03546906342672,
+          37.50025716876254
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 819.999999999076,
+        "progress_m": 819.999999999076,
+        "remaining_m": 1297.011521690452,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1285.0702511978775
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 42000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03568155049652,
+          37.50031988009982
+        ],
+        "confirmed_position": [
+          127.03568155049652,
+          37.50031988009982
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 840.0000000002384,
+        "progress_m": 840.0000000002384,
+        "remaining_m": 1277.0115216892896,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1265.0702511967152
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 43000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03589276094897,
+          37.50038524504817
+        ],
+        "confirmed_position": [
+          127.03589276094897,
+          37.500385245048165
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 859.9999999991651,
+        "progress_m": 859.9999999991651,
+        "remaining_m": 1257.0115216903628,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1245.0702511977884
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 44000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03610506500536,
+          37.50044833272509
+        ],
+        "confirmed_position": [
+          127.03610506500536,
+          37.500448332725085
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 879.9999999967797,
+        "progress_m": 879.9999999967797,
+        "remaining_m": 1237.0115216927481,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1225.0702512001737
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 45000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03631769313802,
+          37.50051074579052
+        ],
+        "confirmed_position": [
+          127.03631769313802,
+          37.500510745790535
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 900.0000000034645,
+        "progress_m": 900.0000000034645,
+        "remaining_m": 1217.0115216860634,
+        "distance_to_route_m": 1.4146481319698978e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1205.070251193489
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 46000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03653008901972,
+          37.50057365474667
+        ],
+        "confirmed_position": [
+          127.03653008901972,
+          37.50057365474667
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 920.0000000011942,
+        "progress_m": 920.0000000011942,
+        "remaining_m": 1197.0115216883337,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1185.0702511957593
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 47000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03674244323327,
+          37.50063665241158
+        ],
+        "confirmed_position": [
+          127.03674244323327,
+          37.5006366524116
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 940.0000000040851,
+        "progress_m": 940.0000000040851,
+        "remaining_m": 1177.0115216854429,
+        "distance_to_route_m": 2.1219721979548465e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1165.0702511928685
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 48000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03695442800927,
+          37.50070042843653
+        ],
+        "confirmed_position": [
+          127.03695442800927,
+          37.50070042843653
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 960.0000000009686,
+        "progress_m": 960.0000000009686,
+        "remaining_m": 1157.0115216885592,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1145.0702511959848
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 49000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.037165858462,
+          37.50076534937569
+        ],
+        "confirmed_position": [
+          127.037165858462,
+          37.50076534937571
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 980.0000000032387,
+        "progress_m": 980.0000000032387,
+        "remaining_m": 1137.0115216862891,
+        "distance_to_route_m": 2.1219721979548465e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1125.0702511937147
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 50000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03737708577171,
+          37.50083068871009
+        ],
+        "confirmed_position": [
+          127.03737708577171,
+          37.50083068871007
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 999.9999999974832,
+        "progress_m": 999.9999999974832,
+        "remaining_m": 1117.0115216920447,
+        "distance_to_route_m": 2.8292962639397955e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1105.0702511994702
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 51000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.0375884293378,
+          37.50089579219839
+        ],
+        "confirmed_position": [
+          127.0375884293378,
+          37.5008957921984
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 1020.0000000018207,
+        "progress_m": 1020.0000000018207,
+        "remaining_m": 1097.011521687707,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1085.0702511951326
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 52000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.0377996822125,
+          37.500961080827096
+        ],
+        "confirmed_position": [
+          127.0377996822125,
+          37.50096108082711
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 1040.0000000046516,
+        "progress_m": 1040.0000000046516,
+        "remaining_m": 1077.0115216848762,
+        "distance_to_route_m": 1.4146481319698978e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1065.0702511923018
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 53000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03801086583849,
+          37.501026510913704
+        ],
+        "confirmed_position": [
+          127.03801086583849,
+          37.501026510913704
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 1060.0000000012692,
+        "progress_m": 1060.0000000012692,
+        "remaining_m": 1057.0115216882587,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1045.0702511956842
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 54000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03822204983464,
+          37.50109194062437
+        ],
+        "confirmed_position": [
+          127.03822204983464,
+          37.50109194062438
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 1080.0000000012624,
+        "progress_m": 1080.0000000012624,
+        "remaining_m": 1037.0115216882655,
+        "distance_to_route_m": 7.073240659849489e-10,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1025.070251195691
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 55000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03843323420097,
+          37.501157369959095
+        ],
+        "confirmed_position": [
+          127.03843323420097,
+          37.50115736995912
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 1100.0000000052582,
+        "progress_m": 1100.0000000052582,
+        "remaining_m": 1017.0115216842696,
+        "distance_to_route_m": 2.1219721979548465e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 1005.0702511916952
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 56000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03864411534255,
+          37.50122341156175
+        ],
+        "confirmed_position": [
+          127.03864411534255,
+          37.50122341156175
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 1119.9999999996362,
+        "progress_m": 1119.9999999996362,
+        "remaining_m": 997.0115216898917,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 985.0702511973172
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 57000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.0388549242349,
+          37.50128959933993
+        ],
+        "confirmed_position": [
+          127.0388549242349,
+          37.50128959933993
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 1140.0000000039822,
+        "progress_m": 1140.0000000039822,
+        "remaining_m": 977.0115216855456,
+        "distance_to_route_m": 0,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 965.0702511929712
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 58000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03906573350093,
+          37.50135578674348
+        ],
+        "confirmed_position": [
+          127.03906573350093,
+          37.50135578674349
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 1160.0000000030461,
+        "progress_m": 1160.0000000030461,
+        "remaining_m": 957.0115216864817,
+        "distance_to_route_m": 1.4146481319698978e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 945.0702511939073
+        }
+      }
+    },
+    {
+      "accepted": true,
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "state": {
+        "policy_id": "route-progress-v1",
+        "source_class": "SYNTHETIC",
+        "binding": {
+          "request_id": "browser-4856ed27-78c7-467b-9151-7b0f3a9178a6",
+          "request_sha256": "a0517e776ba7d7a8c3d7fd46d49b1b09a7c7eb5d72a92cbcdd3b2f95e7610bce",
+          "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+          "generation_id": "d9d19d83538ee8740d5bc99bf6bbf2959148c40cf3cf8a179f577189f19c197c"
+        },
+        "status": "ON_ROUTE",
+        "reason": "CONFIRMED_ROUTE_POSITION",
+        "event_time_ms": 59000,
+        "accuracy_m": 4,
+        "raw_position": [
+          127.03911165136014,
+          37.501370203425346
+        ],
+        "confirmed_position": [
+          127.03911165136014,
+          37.50137020342536
+        ],
+        "geometry_length_m": 2117.011521689528,
+        "last_confirmed_progress_m": 1164.356336942304,
+        "progress_m": 1164.356336942304,
+        "remaining_m": 952.6551847472238,
+        "distance_to_route_m": 2.1219721979548465e-9,
+        "next_maneuver": {
+          "index": 3,
+          "instruction": "Turn left onto 선릉로.",
+          "distance_m": 940.7139142546494
+        }
+      }
+    }
+  ],
+  "expected_remaining_m": 952.6551847667249
+}

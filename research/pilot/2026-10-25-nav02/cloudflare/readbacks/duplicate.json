@@ -1,0 +1,12 @@
+{
+  "status": 202,
+  "body": {
+    "code": "DUPLICATE",
+    "notice": {
+      "scope_id": "queue",
+      "batch_id": "ack-retry",
+      "sha256": "dccee393e7cbda328d6dd1d284ef0434cd759f0606462876e9c745b7bdf8a3c1"
+    }
+  },
+  "text": "{\"code\":\"DUPLICATE\",\"notice\":{\"scope_id\":\"queue\",\"batch_id\":\"ack-retry\",\"sha256\":\"dccee393e7cbda328d6dd1d284ef0434cd759f0606462876e9c745b7bdf8a3c1\"}}"
+}

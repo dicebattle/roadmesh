@@ -64,9 +64,11 @@ export interface TrafficPhaseDetail {
 export interface TrafficHooks {
   phase?: (phase: TrafficPhase, detail?: TrafficPhaseDetail) => Promise<void>;
 }
+import type { GuidanceLanguage } from "./guidance.js";
 export interface TrafficRouteRequest {
   graph_id: string;
   snap_policy?: "nearest_road_100m";
+  guidance_language?: GuidanceLanguage;
   locations: [
     {
       lon: number;

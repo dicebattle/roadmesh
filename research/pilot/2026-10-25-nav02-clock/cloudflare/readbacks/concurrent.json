@@ -1,0 +1,404 @@
+{
+  "twins": [
+    {
+      "status": 202,
+      "body": {
+        "code": "ACCEPTED",
+        "notice": {
+          "scope_id": "queue",
+          "batch_id": "twins",
+          "sha256": "322efacdd27a829d5e95c3089dfa0ffb1840afe17f8bb60a0e0c3bae23c01d2a"
+        }
+      },
+      "text": "{\"code\":\"ACCEPTED\",\"notice\":{\"scope_id\":\"queue\",\"batch_id\":\"twins\",\"sha256\":\"322efacdd27a829d5e95c3089dfa0ffb1840afe17f8bb60a0e0c3bae23c01d2a\"}}"
+    },
+    {
+      "status": 202,
+      "body": {
+        "code": "DUPLICATE",
+        "notice": {
+          "scope_id": "queue",
+          "batch_id": "twins",
+          "sha256": "322efacdd27a829d5e95c3089dfa0ffb1840afe17f8bb60a0e0c3bae23c01d2a"
+        }
+      },
+      "text": "{\"code\":\"DUPLICATE\",\"notice\":{\"scope_id\":\"queue\",\"batch_id\":\"twins\",\"sha256\":\"322efacdd27a829d5e95c3089dfa0ffb1840afe17f8bb60a0e0c3bae23c01d2a\"}}"
+    }
+  ],
+  "state": {
+    "scope_id": "queue",
+    "namespace": "p06-a86f6e00d766-count-5",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "catalog_sha256": "b27cd56bb0bfd39d4d3d071384fc5d2d8f1ba30a17214f3413c50f2f17278491",
+    "now_utc": "2026-10-24T00:01:30.000Z",
+    "receipts": [
+      {
+        "id": "ack-retry",
+        "hash": "d5b7c86a68ac037baf76043d68997946fa90c1aed20800bb0916a11f5e098446",
+        "payload": "[{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-2\",\"distance_m\":22.920070813648966,\"duration_s\":4.584,\"edge_id\":\"1297617017232\",\"entered_at_utc\":\"2026-10-24T00:00:00.000Z\",\"exited_at_utc\":\"2026-10-24T00:00:04.584Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"0ed61308920281da71d24f12c3def7a408a52fbe0af297c2f08a9753c002ac9f\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-0\",\"distance_m\":47.31739401566697,\"duration_s\":23.772,\"edge_id\":\"1297751234960\",\"entered_at_utc\":\"2026-10-24T00:00:07.640Z\",\"exited_at_utc\":\"2026-10-24T00:00:31.412Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"2f254986d7cb10e06abeab889eb788b2921052798fc4dcb9c5aad0dc6e45cd0e\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-3\",\"distance_m\":28.25181720346565,\"duration_s\":4.709,\"edge_id\":\"1296274839952\",\"entered_at_utc\":\"2026-10-24T00:00:19.706Z\",\"exited_at_utc\":\"2026-10-24T00:00:24.415Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"4f514e77e975bdb2bb2ece765284b7764f74bd602dfefce79ec58e80e53ddac1\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-4\",\"distance_m\":22.920070813648966,\"duration_s\":3.274,\"edge_id\":\"1297617017232\",\"entered_at_utc\":\"2026-10-24T00:00:00.000Z\",\"exited_at_utc\":\"2026-10-24T00:00:03.274Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"54ac8971e215e34cb92de22e417979b34b6e15f2a097cfdd105da8fe20a92840\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-2\",\"distance_m\":28.25181720346565,\"duration_s\":5.651,\"edge_id\":\"1296274839952\",\"entered_at_utc\":\"2026-10-24T00:00:22.047Z\",\"exited_at_utc\":\"2026-10-24T00:00:27.698Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"552d601ac3a8717419a46c5cf63b25954e646af042d58fe0bc5e97d75604c0c8\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-4\",\"distance_m\":47.31739401566697,\"duration_s\":14.76,\"edge_id\":\"1297751234960\",\"entered_at_utc\":\"2026-10-24T00:00:03.274Z\",\"exited_at_utc\":\"2026-10-24T00:00:18.034Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"61c3591d5611beebbfef13f34a9a40c0f10cc894f3ac1ca2519b1ee8d025a24c\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-5\",\"distance_m\":22.920070813648966,\"duration_s\":11.46,\"edge_id\":\"1297617017232\",\"entered_at_utc\":\"2026-10-24T00:00:00.000Z\",\"exited_at_utc\":\"2026-10-24T00:00:11.460Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"72e0ecbbb408e740e00eead2f9c0749a07c34c2c447ecd7140581934971e0843\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"PARKED\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-0\",\"distance_m\":22.920070813648966,\"duration_s\":7.64,\"edge_id\":\"1297617017232\",\"entered_at_utc\":\"2026-10-24T00:00:00.000Z\",\"exited_at_utc\":\"2026-10-24T00:00:07.640Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"74e32d666dfccaf753db49cff558486285043d4d6e677d89374397ce52938833\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-2\",\"distance_m\":47.31739401566697,\"duration_s\":17.463,\"edge_id\":\"1297751234960\",\"entered_at_utc\":\"2026-10-24T00:00:04.584Z\",\"exited_at_utc\":\"2026-10-24T00:00:22.047Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"8e14d3feb060b89fba288188e9f8958ebfa9879e121a97ba10abf0664db921f4\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-0\",\"distance_m\":47.31739401566697,\"duration_s\":23.772,\"edge_id\":\"1297751234960\",\"entered_at_utc\":\"2026-10-24T00:00:07.640Z\",\"exited_at_utc\":\"2026-10-24T00:00:31.412Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"9848374281a41f783866186012368458598a5478b2bafd13218bcb1ee7123360\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-0\",\"distance_m\":28.25181720346565,\"duration_s\":9.418,\"edge_id\":\"1296274839952\",\"entered_at_utc\":\"2026-10-24T00:00:31.412Z\",\"exited_at_utc\":\"2026-10-24T00:00:40.830Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"a4ec6ff7ecdec148a409c03bf0bbb033584d388d814e3b831e89eff488ae1c25\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-0\",\"distance_m\":22.920070813648966,\"duration_s\":7.64,\"edge_id\":\"1297617017232\",\"entered_at_utc\":\"2026-10-24T00:00:00.000Z\",\"exited_at_utc\":\"2026-10-24T00:00:07.640Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"b1c56e90c9279bf5808d95ee8ed506f706ed79b444cf017b37728fe94fed03e9\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-5\",\"distance_m\":28.25181720346565,\"duration_s\":14.126,\"edge_id\":\"1296274839952\",\"entered_at_utc\":\"2026-10-24T00:00:43.119Z\",\"exited_at_utc\":\"2026-10-24T00:00:57.245Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"b21fb7639abd9ba7a263b6efc52e83f9e6a6b8237dd3aa7d6b18a37fbd8b9705\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"PARKED\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-0\",\"distance_m\":28.25181720346565,\"duration_s\":9.418,\"edge_id\":\"1296274839952\",\"entered_at_utc\":\"2026-10-24T00:00:31.412Z\",\"exited_at_utc\":\"2026-10-24T00:00:40.830Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"b851b84d9fbbdd9c084aa7b1fff7b99fb350edc283d325ab0c3b1afc6ebaa81f\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-3\",\"distance_m\":47.31739401566697,\"duration_s\":15.886,\"edge_id\":\"1297751234960\",\"entered_at_utc\":\"2026-10-24T00:00:03.820Z\",\"exited_at_utc\":\"2026-10-24T00:00:19.706Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"bca30e12be469e0a50d0e3e89bb3e1970fa81c43a807512757c888f7b3cc5a99\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-3\",\"distance_m\":22.920070813648966,\"duration_s\":3.82,\"edge_id\":\"1297617017232\",\"entered_at_utc\":\"2026-10-24T00:00:00.000Z\",\"exited_at_utc\":\"2026-10-24T00:00:03.820Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"c856c1af6b9f623d30b73551a78c3d995556d2be33c83f01d60f18eb702b430d\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-5\",\"distance_m\":47.31739401566697,\"duration_s\":31.659,\"edge_id\":\"1297751234960\",\"entered_at_utc\":\"2026-10-24T00:00:11.460Z\",\"exited_at_utc\":\"2026-10-24T00:00:43.119Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"d417c48748b61951ba6c82a3a5cf6fa2b4a86cfa503f9175a27e2284f958fed7\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"PARKED\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-1\",\"distance_m\":47.31739401566697,\"duration_s\":19.829,\"edge_id\":\"1297751234960\",\"entered_at_utc\":\"2026-10-24T00:00:05.730Z\",\"exited_at_utc\":\"2026-10-24T00:00:25.559Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"d6313c6286892c74719ebf44ac70f3c42e9b294deed6241e6fc636f5219d385b\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-4\",\"distance_m\":28.25181720346565,\"duration_s\":4.036,\"edge_id\":\"1296274839952\",\"entered_at_utc\":\"2026-10-24T00:00:18.034Z\",\"exited_at_utc\":\"2026-10-24T00:00:22.070Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"d633176359b42f6ed57fca3f8d037568132a692d2c5c147652c9ed884f87026b\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-1\",\"distance_m\":22.920070813648966,\"duration_s\":5.73,\"edge_id\":\"1297617017232\",\"entered_at_utc\":\"2026-10-24T00:00:00.000Z\",\"exited_at_utc\":\"2026-10-24T00:00:05.730Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"e70489dd4b73406e552306f2ae4f95d3c4768457fcb4a719d69fb8523ebb52d0\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-1\",\"distance_m\":28.25181720346565,\"duration_s\":7.064,\"edge_id\":\"1296274839952\",\"entered_at_utc\":\"2026-10-24T00:00:25.559Z\",\"exited_at_utc\":\"2026-10-24T00:00:32.623Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"eee8a87bf5fd175edc7fd4e3db159fd4e5a8ce95f553629e9e66585e07df1d54\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"}]",
+        "state": "APPLIED",
+        "deliveries": 3,
+        "ack_loss": 0
+      },
+      {
+        "id": "twins",
+        "hash": "322efacdd27a829d5e95c3089dfa0ffb1840afe17f8bb60a0e0c3bae23c01d2a",
+        "payload": "[{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-2\",\"distance_m\":22.920070813648966,\"duration_s\":4.584,\"edge_id\":\"1297617017232\",\"entered_at_utc\":\"2026-10-24T00:00:00.000Z\",\"exited_at_utc\":\"2026-10-24T00:00:04.584Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"0ed61308920281da71d24f12c3def7a408a52fbe0af297c2f08a9753c002ac9f\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-0\",\"distance_m\":47.31739401566697,\"duration_s\":23.772,\"edge_id\":\"1297751234960\",\"entered_at_utc\":\"2026-10-24T00:00:07.640Z\",\"exited_at_utc\":\"2026-10-24T00:00:31.412Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"2f254986d7cb10e06abeab889eb788b2921052798fc4dcb9c5aad0dc6e45cd0e\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-3\",\"distance_m\":28.25181720346565,\"duration_s\":4.709,\"edge_id\":\"1296274839952\",\"entered_at_utc\":\"2026-10-24T00:00:19.706Z\",\"exited_at_utc\":\"2026-10-24T00:00:24.415Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"4f514e77e975bdb2bb2ece765284b7764f74bd602dfefce79ec58e80e53ddac1\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-4\",\"distance_m\":22.920070813648966,\"duration_s\":3.274,\"edge_id\":\"1297617017232\",\"entered_at_utc\":\"2026-10-24T00:00:00.000Z\",\"exited_at_utc\":\"2026-10-24T00:00:03.274Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"54ac8971e215e34cb92de22e417979b34b6e15f2a097cfdd105da8fe20a92840\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-2\",\"distance_m\":28.25181720346565,\"duration_s\":5.651,\"edge_id\":\"1296274839952\",\"entered_at_utc\":\"2026-10-24T00:00:22.047Z\",\"exited_at_utc\":\"2026-10-24T00:00:27.698Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"552d601ac3a8717419a46c5cf63b25954e646af042d58fe0bc5e97d75604c0c8\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-4\",\"distance_m\":47.31739401566697,\"duration_s\":14.76,\"edge_id\":\"1297751234960\",\"entered_at_utc\":\"2026-10-24T00:00:03.274Z\",\"exited_at_utc\":\"2026-10-24T00:00:18.034Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"61c3591d5611beebbfef13f34a9a40c0f10cc894f3ac1ca2519b1ee8d025a24c\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-5\",\"distance_m\":22.920070813648966,\"duration_s\":11.46,\"edge_id\":\"1297617017232\",\"entered_at_utc\":\"2026-10-24T00:00:00.000Z\",\"exited_at_utc\":\"2026-10-24T00:00:11.460Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"72e0ecbbb408e740e00eead2f9c0749a07c34c2c447ecd7140581934971e0843\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"PARKED\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-0\",\"distance_m\":22.920070813648966,\"duration_s\":7.64,\"edge_id\":\"1297617017232\",\"entered_at_utc\":\"2026-10-24T00:00:00.000Z\",\"exited_at_utc\":\"2026-10-24T00:00:07.640Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"74e32d666dfccaf753db49cff558486285043d4d6e677d89374397ce52938833\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-2\",\"distance_m\":47.31739401566697,\"duration_s\":17.463,\"edge_id\":\"1297751234960\",\"entered_at_utc\":\"2026-10-24T00:00:04.584Z\",\"exited_at_utc\":\"2026-10-24T00:00:22.047Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"8e14d3feb060b89fba288188e9f8958ebfa9879e121a97ba10abf0664db921f4\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-0\",\"distance_m\":47.31739401566697,\"duration_s\":23.772,\"edge_id\":\"1297751234960\",\"entered_at_utc\":\"2026-10-24T00:00:07.640Z\",\"exited_at_utc\":\"2026-10-24T00:00:31.412Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"9848374281a41f783866186012368458598a5478b2bafd13218bcb1ee7123360\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-0\",\"distance_m\":28.25181720346565,\"duration_s\":9.418,\"edge_id\":\"1296274839952\",\"entered_at_utc\":\"2026-10-24T00:00:31.412Z\",\"exited_at_utc\":\"2026-10-24T00:00:40.830Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"a4ec6ff7ecdec148a409c03bf0bbb033584d388d814e3b831e89eff488ae1c25\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-0\",\"distance_m\":22.920070813648966,\"duration_s\":7.64,\"edge_id\":\"1297617017232\",\"entered_at_utc\":\"2026-10-24T00:00:00.000Z\",\"exited_at_utc\":\"2026-10-24T00:00:07.640Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"b1c56e90c9279bf5808d95ee8ed506f706ed79b444cf017b37728fe94fed03e9\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-5\",\"distance_m\":28.25181720346565,\"duration_s\":14.126,\"edge_id\":\"1296274839952\",\"entered_at_utc\":\"2026-10-24T00:00:43.119Z\",\"exited_at_utc\":\"2026-10-24T00:00:57.245Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"b21fb7639abd9ba7a263b6efc52e83f9e6a6b8237dd3aa7d6b18a37fbd8b9705\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"PARKED\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-0\",\"distance_m\":28.25181720346565,\"duration_s\":9.418,\"edge_id\":\"1296274839952\",\"entered_at_utc\":\"2026-10-24T00:00:31.412Z\",\"exited_at_utc\":\"2026-10-24T00:00:40.830Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"b851b84d9fbbdd9c084aa7b1fff7b99fb350edc283d325ab0c3b1afc6ebaa81f\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-3\",\"distance_m\":47.31739401566697,\"duration_s\":15.886,\"edge_id\":\"1297751234960\",\"entered_at_utc\":\"2026-10-24T00:00:03.820Z\",\"exited_at_utc\":\"2026-10-24T00:00:19.706Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"bca30e12be469e0a50d0e3e89bb3e1970fa81c43a807512757c888f7b3cc5a99\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-3\",\"distance_m\":22.920070813648966,\"duration_s\":3.82,\"edge_id\":\"1297617017232\",\"entered_at_utc\":\"2026-10-24T00:00:00.000Z\",\"exited_at_utc\":\"2026-10-24T00:00:03.820Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"c856c1af6b9f623d30b73551a78c3d995556d2be33c83f01d60f18eb702b430d\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-5\",\"distance_m\":47.31739401566697,\"duration_s\":31.659,\"edge_id\":\"1297751234960\",\"entered_at_utc\":\"2026-10-24T00:00:11.460Z\",\"exited_at_utc\":\"2026-10-24T00:00:43.119Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"d417c48748b61951ba6c82a3a5cf6fa2b4a86cfa503f9175a27e2284f958fed7\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"PARKED\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-1\",\"distance_m\":47.31739401566697,\"duration_s\":19.829,\"edge_id\":\"1297751234960\",\"entered_at_utc\":\"2026-10-24T00:00:05.730Z\",\"exited_at_utc\":\"2026-10-24T00:00:25.559Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"d6313c6286892c74719ebf44ac70f3c42e9b294deed6241e6fc636f5219d385b\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-4\",\"distance_m\":28.25181720346565,\"duration_s\":4.036,\"edge_id\":\"1296274839952\",\"entered_at_utc\":\"2026-10-24T00:00:18.034Z\",\"exited_at_utc\":\"2026-10-24T00:00:22.070Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"d633176359b42f6ed57fca3f8d037568132a692d2c5c147652c9ed884f87026b\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-1\",\"distance_m\":22.920070813648966,\"duration_s\":5.73,\"edge_id\":\"1297617017232\",\"entered_at_utc\":\"2026-10-24T00:00:00.000Z\",\"exited_at_utc\":\"2026-10-24T00:00:05.730Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"e70489dd4b73406e552306f2ae4f95d3c4768457fcb4a719d69fb8523ebb52d0\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"},{\"available_at_utc\":\"2026-10-24T00:00:59.000Z\",\"contributor_id\":\"person-1\",\"distance_m\":28.25181720346565,\"duration_s\":7.064,\"edge_id\":\"1296274839952\",\"entered_at_utc\":\"2026-10-24T00:00:25.559Z\",\"exited_at_utc\":\"2026-10-24T00:00:32.623Z\",\"forward\":true,\"graph_id\":\"a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079\",\"matching_policy\":\"seoul-observed-v3\",\"observation_id\":\"eee8a87bf5fd175edc7fd4e3db159fd4e5a8ce95f553629e9e66585e07df1d54\",\"source_class\":\"SYNTHETIC\",\"trip_activity\":\"TRAVEL\"}]",
+        "state": "APPLIED",
+        "deliveries": 2,
+        "ack_loss": 0
+      }
+    ],
+    "contributions": [
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-2",
+        "distance_m": 22.920070813648966,
+        "duration_s": 4.584,
+        "edge_id": "1297617017232",
+        "entered_at_utc": "2026-10-24T00:00:00.000Z",
+        "exited_at_utc": "2026-10-24T00:00:04.584Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "0ed61308920281da71d24f12c3def7a408a52fbe0af297c2f08a9753c002ac9f",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-0",
+        "distance_m": 47.31739401566697,
+        "duration_s": 23.772,
+        "edge_id": "1297751234960",
+        "entered_at_utc": "2026-10-24T00:00:07.640Z",
+        "exited_at_utc": "2026-10-24T00:00:31.412Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "2f254986d7cb10e06abeab889eb788b2921052798fc4dcb9c5aad0dc6e45cd0e",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-3",
+        "distance_m": 28.25181720346565,
+        "duration_s": 4.709,
+        "edge_id": "1296274839952",
+        "entered_at_utc": "2026-10-24T00:00:19.706Z",
+        "exited_at_utc": "2026-10-24T00:00:24.415Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "4f514e77e975bdb2bb2ece765284b7764f74bd602dfefce79ec58e80e53ddac1",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-4",
+        "distance_m": 22.920070813648966,
+        "duration_s": 3.274,
+        "edge_id": "1297617017232",
+        "entered_at_utc": "2026-10-24T00:00:00.000Z",
+        "exited_at_utc": "2026-10-24T00:00:03.274Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "54ac8971e215e34cb92de22e417979b34b6e15f2a097cfdd105da8fe20a92840",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-2",
+        "distance_m": 28.25181720346565,
+        "duration_s": 5.651,
+        "edge_id": "1296274839952",
+        "entered_at_utc": "2026-10-24T00:00:22.047Z",
+        "exited_at_utc": "2026-10-24T00:00:27.698Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "552d601ac3a8717419a46c5cf63b25954e646af042d58fe0bc5e97d75604c0c8",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-4",
+        "distance_m": 47.31739401566697,
+        "duration_s": 14.76,
+        "edge_id": "1297751234960",
+        "entered_at_utc": "2026-10-24T00:00:03.274Z",
+        "exited_at_utc": "2026-10-24T00:00:18.034Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "61c3591d5611beebbfef13f34a9a40c0f10cc894f3ac1ca2519b1ee8d025a24c",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-5",
+        "distance_m": 22.920070813648966,
+        "duration_s": 11.46,
+        "edge_id": "1297617017232",
+        "entered_at_utc": "2026-10-24T00:00:00.000Z",
+        "exited_at_utc": "2026-10-24T00:00:11.460Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "72e0ecbbb408e740e00eead2f9c0749a07c34c2c447ecd7140581934971e0843",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "PARKED"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-0",
+        "distance_m": 22.920070813648966,
+        "duration_s": 7.64,
+        "edge_id": "1297617017232",
+        "entered_at_utc": "2026-10-24T00:00:00.000Z",
+        "exited_at_utc": "2026-10-24T00:00:07.640Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "74e32d666dfccaf753db49cff558486285043d4d6e677d89374397ce52938833",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-2",
+        "distance_m": 47.31739401566697,
+        "duration_s": 17.463,
+        "edge_id": "1297751234960",
+        "entered_at_utc": "2026-10-24T00:00:04.584Z",
+        "exited_at_utc": "2026-10-24T00:00:22.047Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "8e14d3feb060b89fba288188e9f8958ebfa9879e121a97ba10abf0664db921f4",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-0",
+        "distance_m": 47.31739401566697,
+        "duration_s": 23.772,
+        "edge_id": "1297751234960",
+        "entered_at_utc": "2026-10-24T00:00:07.640Z",
+        "exited_at_utc": "2026-10-24T00:00:31.412Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "9848374281a41f783866186012368458598a5478b2bafd13218bcb1ee7123360",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-0",
+        "distance_m": 28.25181720346565,
+        "duration_s": 9.418,
+        "edge_id": "1296274839952",
+        "entered_at_utc": "2026-10-24T00:00:31.412Z",
+        "exited_at_utc": "2026-10-24T00:00:40.830Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "a4ec6ff7ecdec148a409c03bf0bbb033584d388d814e3b831e89eff488ae1c25",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-0",
+        "distance_m": 22.920070813648966,
+        "duration_s": 7.64,
+        "edge_id": "1297617017232",
+        "entered_at_utc": "2026-10-24T00:00:00.000Z",
+        "exited_at_utc": "2026-10-24T00:00:07.640Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "b1c56e90c9279bf5808d95ee8ed506f706ed79b444cf017b37728fe94fed03e9",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-5",
+        "distance_m": 28.25181720346565,
+        "duration_s": 14.126,
+        "edge_id": "1296274839952",
+        "entered_at_utc": "2026-10-24T00:00:43.119Z",
+        "exited_at_utc": "2026-10-24T00:00:57.245Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "b21fb7639abd9ba7a263b6efc52e83f9e6a6b8237dd3aa7d6b18a37fbd8b9705",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "PARKED"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-0",
+        "distance_m": 28.25181720346565,
+        "duration_s": 9.418,
+        "edge_id": "1296274839952",
+        "entered_at_utc": "2026-10-24T00:00:31.412Z",
+        "exited_at_utc": "2026-10-24T00:00:40.830Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "b851b84d9fbbdd9c084aa7b1fff7b99fb350edc283d325ab0c3b1afc6ebaa81f",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-3",
+        "distance_m": 47.31739401566697,
+        "duration_s": 15.886,
+        "edge_id": "1297751234960",
+        "entered_at_utc": "2026-10-24T00:00:03.820Z",
+        "exited_at_utc": "2026-10-24T00:00:19.706Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "bca30e12be469e0a50d0e3e89bb3e1970fa81c43a807512757c888f7b3cc5a99",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-3",
+        "distance_m": 22.920070813648966,
+        "duration_s": 3.82,
+        "edge_id": "1297617017232",
+        "entered_at_utc": "2026-10-24T00:00:00.000Z",
+        "exited_at_utc": "2026-10-24T00:00:03.820Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "c856c1af6b9f623d30b73551a78c3d995556d2be33c83f01d60f18eb702b430d",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-5",
+        "distance_m": 47.31739401566697,
+        "duration_s": 31.659,
+        "edge_id": "1297751234960",
+        "entered_at_utc": "2026-10-24T00:00:11.460Z",
+        "exited_at_utc": "2026-10-24T00:00:43.119Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "d417c48748b61951ba6c82a3a5cf6fa2b4a86cfa503f9175a27e2284f958fed7",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "PARKED"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-1",
+        "distance_m": 47.31739401566697,
+        "duration_s": 19.829,
+        "edge_id": "1297751234960",
+        "entered_at_utc": "2026-10-24T00:00:05.730Z",
+        "exited_at_utc": "2026-10-24T00:00:25.559Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "d6313c6286892c74719ebf44ac70f3c42e9b294deed6241e6fc636f5219d385b",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-4",
+        "distance_m": 28.25181720346565,
+        "duration_s": 4.036,
+        "edge_id": "1296274839952",
+        "entered_at_utc": "2026-10-24T00:00:18.034Z",
+        "exited_at_utc": "2026-10-24T00:00:22.070Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "d633176359b42f6ed57fca3f8d037568132a692d2c5c147652c9ed884f87026b",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-1",
+        "distance_m": 22.920070813648966,
+        "duration_s": 5.73,
+        "edge_id": "1297617017232",
+        "entered_at_utc": "2026-10-24T00:00:00.000Z",
+        "exited_at_utc": "2026-10-24T00:00:05.730Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "e70489dd4b73406e552306f2ae4f95d3c4768457fcb4a719d69fb8523ebb52d0",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      },
+      {
+        "available_at_utc": "2026-10-24T00:00:59.000Z",
+        "contributor_id": "person-1",
+        "distance_m": 28.25181720346565,
+        "duration_s": 7.064,
+        "edge_id": "1296274839952",
+        "entered_at_utc": "2026-10-24T00:00:25.559Z",
+        "exited_at_utc": "2026-10-24T00:00:32.623Z",
+        "forward": true,
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "matching_policy": "seoul-observed-v3",
+        "observation_id": "eee8a87bf5fd175edc7fd4e3db159fd4e5a8ce95f553629e9e66585e07df1d54",
+        "source_class": "SYNTHETIC",
+        "trip_activity": "TRAVEL"
+      }
+    ],
+    "revoked": [],
+    "candidates": [],
+    "queue_events": [
+      {
+        "batch": "ack-retry",
+        "hash": "d5b7c86a68ac037baf76043d68997946fa90c1aed20800bb0916a11f5e098446",
+        "attempt": 1,
+        "code": "COMMITTED_ACK_LOST"
+      },
+      {
+        "batch": "ack-retry",
+        "hash": "d5b7c86a68ac037baf76043d68997946fa90c1aed20800bb0916a11f5e098446",
+        "attempt": 2,
+        "code": "DUPLICATE"
+      },
+      {
+        "batch": "ack-retry",
+        "hash": "d5b7c86a68ac037baf76043d68997946fa90c1aed20800bb0916a11f5e098446",
+        "attempt": 1,
+        "code": "DUPLICATE"
+      },
+      {
+        "batch": "twins",
+        "hash": "322efacdd27a829d5e95c3089dfa0ffb1840afe17f8bb60a0e0c3bae23c01d2a",
+        "attempt": 1,
+        "code": "APPLIED"
+      },
+      {
+        "batch": "twins",
+        "hash": "322efacdd27a829d5e95c3089dfa0ffb1840afe17f8bb60a0e0c3bae23c01d2a",
+        "attempt": 1,
+        "code": "DUPLICATE"
+      }
+    ]
+  }
+}

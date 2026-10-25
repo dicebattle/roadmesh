@@ -1,0 +1,146 @@
+[
+  {
+    "assertion_id": "nav01-native-baseline-en",
+    "status": "PASS",
+    "message_en": "Actual native route and ordered browser instructions use the requested locale: en-US",
+    "message_ko": "실제 엔진 경로·브라우저 순서 안내의 요청 언어 확인: en-US",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "guidance/native-baseline-en.json"
+  },
+  {
+    "assertion_id": "nav01-legacy-wire",
+    "status": "PASS",
+    "message_en": "Unguided HTTP requests retain the original public wire contract.",
+    "message_ko": "안내 없는 HTTP 요청의 기존 공개 전송 계약 유지.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "guidance/legacy-wire.json"
+  },
+  {
+    "assertion_id": "nav01-unknown-locale",
+    "status": "PASS",
+    "message_en": "Unsupported locale is rejected before routing.",
+    "message_ko": "지원하지 않는 언어를 경로 계산 전에 거부.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "guidance/unknown-locale.json"
+  },
+  {
+    "assertion_id": "nav01-language-reset",
+    "status": "PASS",
+    "message_en": "Language changes clear the route and instructions before recalculation.",
+    "message_ko": "언어 변경 때 재계산 전 경로·안내를 제거.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "guidance/language-reset.json"
+  },
+  {
+    "assertion_id": "nav01-native-baseline-ko",
+    "status": "PASS",
+    "message_en": "Actual native route and ordered browser instructions use the requested locale: ko-KR",
+    "message_ko": "실제 엔진 경로·브라우저 순서 안내의 요청 언어 확인: ko-KR",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "guidance/native-baseline-ko.json"
+  },
+  {
+    "assertion_id": "nav01-input-clears",
+    "status": "PASS",
+    "message_en": "Editing coordinates removes every former instruction and route line.",
+    "message_ko": "좌표 변경 때 이전 안내 전체·경로선을 제거.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "guidance/input-clears.json"
+  },
+  {
+    "assertion_id": "nav01-native-traffic-en",
+    "status": "PASS",
+    "message_en": "Actual native route and ordered browser instructions use the requested locale: en-US",
+    "message_ko": "실제 엔진 경로·브라우저 순서 안내의 요청 언어 확인: en-US",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "guidance/native-traffic-en.json"
+  },
+  {
+    "assertion_id": "nav01-native-traffic-ko",
+    "status": "PASS",
+    "message_en": "Actual native route and ordered browser instructions use the requested locale: ko-KR",
+    "message_ko": "실제 엔진 경로·브라우저 순서 안내의 요청 언어 확인: ko-KR",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "guidance/native-traffic-ko.json"
+  },
+  {
+    "assertion_id": "nav01-mobile-readable",
+    "status": "PASS",
+    "message_en": "Ordered Korean native guidance remains readable at390px without horizontal overflow.",
+    "message_ko": "390픽셀에서 한국어 원 안내 목록을 가로 넘침 없이 읽습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "guidance/mobile-readable.json"
+  },
+  {
+    "assertion_id": "nav01-exact-native-binding",
+    "status": "PASS",
+    "message_en": "Every published maneuver equals retained native originals on the exact geometry.",
+    "message_ko": "공개 안내 전체를 정확한 지형·보존 엔진 원본과 대조했습니다.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "guidance/exact-native-binding.json"
+  },
+  {
+    "assertion_id": "nav01-missing-guidance",
+    "status": "PASS",
+    "message_en": "Invalid same-run guidance is refused by both client boundaries: missing-guidance",
+    "message_ko": "같은 실행 안내 오류를 서버·브라우저 경계에서 거부: missing-guidance",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "guidance/missing-guidance.json"
+  },
+  {
+    "assertion_id": "nav01-wrong-locale",
+    "status": "PASS",
+    "message_en": "Invalid same-run guidance is refused by both client boundaries: wrong-locale",
+    "message_ko": "같은 실행 안내 오류를 서버·브라우저 경계에서 거부: wrong-locale",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "guidance/wrong-locale.json"
+  },
+  {
+    "assertion_id": "nav01-invalid-index",
+    "status": "PASS",
+    "message_en": "Invalid same-run guidance is refused by both client boundaries: invalid-index",
+    "message_ko": "같은 실행 안내 오류를 서버·브라우저 경계에서 거부: invalid-index",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "guidance/invalid-index.json"
+  },
+  {
+    "assertion_id": "nav01-broken-continuity",
+    "status": "PASS",
+    "message_en": "Invalid same-run guidance is refused by both client boundaries: broken-continuity",
+    "message_ko": "같은 실행 안내 오류를 서버·브라우저 경계에서 거부: broken-continuity",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "guidance/broken-continuity.json"
+  },
+  {
+    "assertion_id": "nav01-inconsistent-metrics",
+    "status": "PASS",
+    "message_en": "Invalid same-run guidance is refused by both client boundaries: inconsistent-metrics",
+    "message_ko": "같은 실행 안내 오류를 서버·브라우저 경계에서 거부: inconsistent-metrics",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "guidance/inconsistent-metrics.json"
+  },
+  {
+    "assertion_id": "nav01-unsafe-text",
+    "status": "PASS",
+    "message_en": "Invalid same-run guidance is refused by both client boundaries: unsafe-text",
+    "message_ko": "같은 실행 안내 오류를 서버·브라우저 경계에서 거부: unsafe-text",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "guidance/unsafe-text.json"
+  }
+]

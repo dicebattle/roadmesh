@@ -1,0 +1,25 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "both-excluded",
+    "origin": {
+      "longitude": 127.029,
+      "latitude": 37.4984
+    },
+    "destination": {
+      "longitude": 127.049,
+      "latitude": 37.5045
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live",
+    "snap_policy": "nearest_road_100m"
+  },
+  "status": 503,
+  "body": {
+    "code": "ERROR",
+    "reason": "NO_HEALTHY_NODE",
+    "message_en": "The gateway cannot return a current verified route for this request.",
+    "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+  },
+  "elapsed_ms": 820.8861660000402
+}

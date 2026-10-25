@@ -1,0 +1,29 @@
+{
+  "exit": {
+    "code": 130,
+    "signal": null
+  },
+  "browserCleanup": {
+    "cleanup_verified": true,
+    "root_pid": 21383,
+    "processes_checked": 4,
+    "remaining": [],
+    "errors": []
+  },
+  "nested": {
+    "cleanup_verified": true,
+    "app_closed": true,
+    "source_class": "SYNTHETIC",
+    "message_en": "Owned interactive pilot resources stopped; failures remain explicit.",
+    "message_ko": "소유 대화형 파일럿 자원을 종료하며 실패는 명시합니다."
+  },
+  "outer": {
+    "cleanup_verified": true,
+    "failures": [],
+    "before_cleanup_completed": true,
+    "private_files_removed": true,
+    "processes_exited": true
+  },
+  "remaining": [],
+  "port_closed": true
+}

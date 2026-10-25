@@ -39,6 +39,8 @@ import {
   requireClientCases,
   CLIENT_CASE_IDS,
 } from "./client_checks.js";
+import { requireProgressCases } from "./progress_checks.js";
+import { requireGuidanceCases } from "./guidance_checks.js";
 import type { SimulationAssertion } from "./vehicle_simulator.js";
 import {
   runCloudflareChecks,
@@ -515,6 +517,17 @@ export async function runPilotIntegration(
       data.assertions.some((a) => a.status !== "PASS")
     )
       throw Error("All390 cases required / 전체390개 통과 필요");
+    requireGuidanceCases(client.navigation);
+    data.navigation = client.navigation.map(a=>({...a,evidence_path:"client/"+a.evidence_path}));
+    data.assertions.push(...data.navigation);
+    data.stages.push({id:"nav01",name_en:"Native English/Korean turn guidance and browser boundaries",name_ko:"엔진 한영 회전 안내·브라우저 경계",status:"PASS",evidence_path:"client/guidance/assertions.json",duration_ms:0});
+    if (Number(data.assertions.length) !== 406 || data.assertions.some(a=>a.status!=="PASS"))
+      throw Error("All406 cases required / 전체406개 통과 필요");
+    requireProgressCases(client.progress);
+    data.progress=client.progress.map(a=>({...a,evidence_path:"client/"+a.evidence_path}));
+    data.assertions.push(...data.progress);
+    data.stages.push({id:"nav02",name_en:"Actual Seoul route progress and synthetic GPS replay",name_ko:"실제 서울 경로 진행·합성 GPS 재생",status:"PASS",evidence_path:"client/progress/assertions.json",duration_ms:0});
+    if(Number(data.assertions.length)!==438||data.assertions.some(a=>a.status!=="PASS"))throw Error("All438 cases required / 전체438개 통과 필요");
     data.summary.assertions_passed = data.assertions.filter(
       (a) => a.status === "PASS",
     ).length;

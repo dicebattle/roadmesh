@@ -1,0 +1,15 @@
+### Ran Playwright code
+```js
+await (async (page) => {
+ const began=Date.now();
+ await page.locator("#preset").selectOption("long"); await page.waitForTimeout(3000);
+ const responsePromise=page.waitForResponse(r=>r.url().endsWith("/api/routes")&&r.request().method()==="POST");
+ await page.locator("#request-route").click(); const response=await responsePromise; const body=await response.json();
+ if(response.status()!==200||body.guidance?.language!=="ko-KR")throw Error("Actual Korean guidance required / 실제 한국어 안내 필요");
+ await page.locator("#maneuvers li").first().waitFor({state:"attached"}); await page.waitForTimeout(6000);
+ await page.locator("#guidance-heading").scrollIntoViewIfNeeded(); await page.waitForTimeout(8000);
+ await page.locator("#maneuvers li").last().scrollIntoViewIfNeeded(); await page.waitForTimeout(6000);
+ await page.screenshot({path:"output/playwright/nav01-user-final.png",fullPage:true});
+ console.log(JSON.stringify({began_at_utc:new Date(began).toISOString(),ended_at_utc:new Date().toISOString(),status:response.status(),request:response.request().postDataJSON(),response:body,displayed:await page.locator("#maneuvers li p").allTextContents()}));
+})(page);
+```

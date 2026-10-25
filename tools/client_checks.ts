@@ -32,6 +32,8 @@ import {
 import { pause } from "./ingestion_runtime.js";
 import type { GatewaySuccess, GatewayRouteContext } from "./gateway_types.js";
 import type { SimulationAssertion } from "./vehicle_simulator.js";
+import { ProgressChecks } from "./progress_checks.js";
+import { GuidanceChecks } from "./guidance_checks.js";
 export const CLIENT_CASE_IDS = [
   "fresh-source",
   "bundled-offline",
@@ -193,7 +195,7 @@ const write = (root: string, file: string, data: unknown) =>
 export async function runClientChecks(
   graphDirectory: string,
   outputPath: string,
-): Promise<{ client: ClientReport; assertions: SimulationAssertion[] }> {
+): Promise<{ client: ClientReport; assertions: SimulationAssertion[]; navigation: SimulationAssertion[]; progress: SimulationAssertion[] }> {
   const output = resolve(outputPath);
   mkdirSync(output);
   for (const dir of [
@@ -214,6 +216,9 @@ export async function runClientChecks(
     consoleEvents: Array<any> = [],
     apiResponses: Array<any> = [],
     pendingResponses: Promise<void>[] = [];
+  const guidance = new GuidanceChecks(output);
+  const progress = new ProgressChecks(output);
+  let progressInput:{route:GatewaySuccess;roads:number[][][]}|undefined;
   let cumulativeGeoCalls = 0;
   let runtime: ClientRuntime | undefined,
     browserServer: BrowserServer | undefined,
@@ -534,6 +539,8 @@ export async function runClientChecks(
           document.getElementById("map")?.dataset.renderedRouteRequestId,
         status: document.getElementById("route-status")?.textContent,
         summary: document.getElementById("route-summary")?.textContent,
+        maneuvers: [...document.querySelectorAll("#maneuvers li p")].map(el => el.textContent ?? ""),
+        guidance_hidden: document.getElementById("guidance")?.hidden,
         evidence: JSON.parse(
           document.getElementById("route-evidence")?.textContent ?? "{}",
         ),
@@ -785,6 +792,66 @@ export async function runClientChecks(
       baseline.body,
       "states/baseline.json",
     );
+    guidance.route("native-baseline-en", baseline.body, "en-US", false, baseline.state.maneuvers);
+    progressInput={route:baseline.body,roads:pilot.bootstrap.roads.features.map(f=>f.geometry.coordinates)};
+    await p.locator("#replay-step").click();
+    let replayState=await p.locator("#progress-evidence").evaluate(el=>JSON.parse(el.textContent!));
+    const stepData=await p.evaluate(()=>({next:document.getElementById("next-maneuver")?.textContent,remaining:document.getElementById("remaining-distance")?.textContent,raw:document.querySelectorAll(".synthetic-gps").length,confirmed:document.querySelectorAll(".confirmed-gps").length}));
+    progress.check("replay-ui-step",replayState.cursor===1 && replayState.state?.status==="ON_ROUTE" && stepData.next?.includes(baseline.body.guidance.maneuvers[1].instruction)===true && stepData.raw===1 && stepData.confirmed===1,
+      "An ordinary browser step shows the bound native next turn, distance and distinct synthetic/confirmed markers.","실제 화면 한 표본에서 원 다음 안내·거리·합성/확정 표시 확인.",{replay:replayState,dom:stepData});
+    await p.locator("#replay-scenario").selectOption("departure-rejoin");
+    await p.locator("#replay-play").click();
+    await p.waitForFunction(()=>document.getElementById("progress")?.dataset.state==="OFF_ROUTE",undefined,{timeout:15000});
+    await p.locator("#replay-play").click();
+    const paused=await p.locator("#progress-evidence").evaluate(el=>JSON.parse(el.textContent!));
+    await p.waitForTimeout(650);
+    replayState=await p.locator("#progress-evidence").evaluate(el=>JSON.parse(el.textContent!));
+    await p.locator("#replay-play").click();
+    await p.waitForFunction(()=>document.getElementById("progress")?.dataset.state==="ARRIVED",undefined,{timeout:45000});
+    const arrivedReplay=await p.locator("#progress-evidence").evaluate(el=>JSON.parse(el.textContent!));
+    progress.check("replay-ui-play-pause",paused.playing===false && replayState.cursor===paused.cursor && paused.state.status==="OFF_ROUTE" && paused.state.next_maneuver===null && arrivedReplay.state.remaining_m===0,
+      "The actual browser confirms departure, pauses, rejoins and reaches the replay endpoint.","실제 브라우저 이탈 확정·정지·복귀·재생 끝점 도착 확인.",{paused,after:replayState,arrived:arrivedReplay});
+    await p.locator("#replay-play").click();
+    await p.locator("#origin-latitude").fill(String(pilot.bootstrap.presets.long.origin.latitude+.000001));
+    await p.waitForTimeout(650);
+    const stopped=await p.locator("#progress-evidence").evaluate(el=>JSON.parse(el.textContent!));
+    progress.check("replay-ui-invalidation",stopped.state===null && stopped.playing===false && stopped.cursor===0 && await p.locator(".synthetic-gps,.confirmed-gps").count()===0 && await p.locator("#replay-play").isDisabled(),
+      "Changing route input invalidates replay, removes markers and prevents old timer completion.","입력 변경 때 재생·표시·옛 타이머를 무효화.",stopped);
+    await calculate("progress-restored","long");
+    await p.setViewportSize({width:390,height:844});
+    await p.locator("#replay-scenario").selectOption("noisy-route");
+    await p.locator("#replay-step").click();
+    const mobileProgress=await p.evaluate(()=>({width:innerWidth,scroll_width:document.documentElement.scrollWidth,next:document.getElementById("next-maneuver")?.textContent,remaining:document.getElementById("remaining-distance")?.textContent,replay:JSON.parse(document.getElementById("progress-evidence")!.textContent!)}));
+    await screen("progress-mobile390","Synthetic route progress at390px","390픽셀 합성 경로 진행");
+    progress.check("replay-ui-mobile",mobileProgress.width===390 && mobileProgress.scroll_width<=390 && mobileProgress.replay.state?.status==="ON_ROUTE" && !!mobileProgress.next && !!mobileProgress.remaining,
+      "At390px the actual progress UI shows next instruction and remaining distance without overflow.","390픽셀 실제 진행 화면에서 다음 안내·남은 거리·넘침 없음 확인.",mobileProgress);
+    await p.locator("#replay-reset").click();
+    await p.setViewportSize({width:1280,height:800});
+    const legacyInput = { schema_version:"0.1",request_id:"nav01-legacy-"+randomUUID(),
+      ...pilot.bootstrap.presets.long, profile:"car",traffic_policy:"prefer_live" };
+    const legacyResponse = await p.request.post(pilot.origin+"/api/routes", {headers:{origin:pilot.origin},data:legacyInput});
+    const legacy = await legacyResponse.json();
+    guidance.check("legacy-wire", legacyResponse.status()===200 && !Object.hasOwn(legacy,"guidance") &&
+      legacy.request_sha256===sha256(canonical(legacyInput)),
+      "Unguided HTTP requests retain the original public wire contract.", "안내 없는 HTTP 요청의 기존 공개 전송 계약 유지.", {request:legacyInput,status:legacyResponse.status(),body:legacy});
+    const badInput={...legacyInput,request_id:"nav01-locale-"+randomUUID(),guidance_language:"ja-JP"};
+    const badResponse=await p.request.post(pilot.origin+"/api/routes",{headers:{origin:pilot.origin},data:badInput});
+    const bad=await badResponse.json();
+    guidance.check("unknown-locale",badResponse.status()===422 && bad.reason==="INVALID_INPUT" &&
+      !readdirSync(join(output,"fixture/gateway/runtime/requests")).some(n=>n.startsWith(badInput.request_id+"-")),
+      "Unsupported locale is rejected before routing.","지원하지 않는 언어를 경로 계산 전에 거부.",{request:badInput,status:badResponse.status(),body:bad});
+    await p.locator("#language").click();
+    const languageReset=await snapshot("guidance-language-reset");
+    guidance.check("language-reset", languageReset.state==="empty" && languageReset.maneuvers.length===0 &&
+      languageReset.guidance_hidden===true && languageReset.map_active_route==="false",
+      "Language changes clear the route and instructions before recalculation.","언어 변경 때 재계산 전 경로·안내를 제거.",languageReset);
+    const baselineKo=await calculate("guidance-baseline-ko","long");
+    guidance.route("native-baseline-ko",baselineKo.body,"ko-KR",false,baselineKo.state.maneuvers);
+    await p.locator("#origin-latitude").fill(String(pilot.bootstrap.presets.long.origin.latitude + 0.000001));
+    const inputCleared=await snapshot("guidance-input-cleared");
+    guidance.check("input-clears",inputCleared.maneuvers.length===0 && inputCleared.guidance_hidden===true && inputCleared.map_active_route==="false",
+      "Editing coordinates removes every former instruction and route line.","좌표 변경 때 이전 안내 전체·경로선을 제거.",inputCleared);
+    await p.locator("#language").click();
     await boundedClientOperation(
       pilot.publishLive(),
       180000,
@@ -802,6 +869,7 @@ export async function runClientChecks(
       live.body,
       "states/live.json",
     );
+    guidance.route("native-traffic-en",live.body,"en-US",true,live.state.maneuvers);
     const firstContext = (await (
       await p.request.get(pilot.origin + "/api/route-context")
     ).json()) as GatewayRouteContext;
@@ -1123,6 +1191,8 @@ export async function runClientChecks(
       "states/keyboard.json",
     );
     await p.locator("#language").click();
+    const koreanRoute=await calculate("guidance-traffic-ko","short");
+    guidance.route("native-traffic-ko",koreanRoute.body,"ko-KR",true,koreanRoute.state.maneuvers);
     const korean = await snapshot("korean");
     await screen(
       "korean-live",
@@ -1139,8 +1209,8 @@ export async function runClientChecks(
           .getAttribute("aria-label")) === "지도 확대" &&
         (await p.locator(".maplibregl-ctrl-zoom-out").getAttribute("title")) ===
           "지도 축소",
-      "Korean labels, spacing and route status remain readable with the same original result.",
-      "같은 원결과에서 한국어 이름·띄어쓰기·경로 상태를 읽을 수 있습니다.",
+      "Korean labels and native guidance remain readable after recalculating in Korean.",
+      "한국어로 재계산한 뒤 한국어 화면·엔진 안내·경로 상태를 읽을 수 있습니다.",
       korean,
       "states/korean.json",
     );
@@ -1161,6 +1231,8 @@ export async function runClientChecks(
       mobile,
       "states/mobile390.json",
     );
+    guidance.check("mobile-readable",mobile.scroll_width===390 && mobile.maneuvers.length===koreanRoute.body.guidance.maneuvers.length && mobile.guidance_hidden===false,
+      "Ordered Korean native guidance remains readable at390px without horizontal overflow.","390픽셀에서 한국어 원 안내 목록을 가로 넘침 없이 읽습니다.",mobile);
     // Real consent deletion and new signed correction precede exact expiry; old LIVE bytes are never restored.
     // 실제 동의 삭제·새 서명 정정 뒤 만료로 진행하며 옛 LIVE 바이트를 복원하지 않습니다.
     await boundedClientOperation(
@@ -1362,6 +1434,10 @@ export async function runClientChecks(
     "fixture/cleanup.json",
   );
   requireClientCases(assertions);
+  const navigation=guidance.finish();
+  if(!progressInput)throw Error("Progress route input missing / 진행 경로 입력 누락");
+  progress.exercise(progressInput.route,progressInput.roads);
+  const progressAssertions=progress.finish();
   const report: ClientReport = {
     assertions_passed: assertions.length,
     assertions_total: CLIENT_CASE_IDS.length,
@@ -1419,7 +1495,7 @@ export async function runClientChecks(
     completed_at_utc: new Date().toISOString(),
   });
   renameSync(join(output, "manifest.json.tmp"), join(output, "manifest.json"));
-  return { client: report, assertions };
+  return { client: report, assertions, navigation, progress:progressAssertions };
 }
 export async function main(
   args = process.argv.slice(2),

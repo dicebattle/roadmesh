@@ -1,0 +1,64 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "stale-node-excluded",
+    "origin": {
+      "longitude": 127.03739724982245,
+      "latitude": 37.50083690018144
+    },
+    "destination": {
+      "longitude": 127.0375277498224,
+      "latitude": 37.500877100181434
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live"
+  },
+  "status": 200,
+  "headers": {
+    "cache-control": "no-store",
+    "connection": "keep-alive",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sun, 25 Oct 2026 11:11:38 GMT",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked"
+  },
+  "body": {
+    "request_id": "stale-node-excluded",
+    "request_sha256": "0cbe00d8e9601554b2f975be1226734164a0117745a51e3f28eaf437c7faebd7",
+    "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+    "snapshot_id": "4be86de31035291b0fac2caf39e57cae7ea0e67fe331095d6bca690545d5f4f0",
+    "sequence": 1,
+    "generation_id": "ff7a8ecf18bd5cb5c3f3a3862a3de0b730381c86093b853aeda6da536fde8aab",
+    "traffic_sha256": "6a9d39c889a49e666d74a9e4024908646bd5b99a04eb02d0cf35dee4aea5d528",
+    "engine_version": "3.9.1",
+    "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "costing_config_id": "valhalla-current-v1",
+    "node_id": "seoul-gateway-node-b",
+    "traffic_mode": "LIVE_MIXED",
+    "distance_m": 12,
+    "duration_s": 22.254,
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.037397,
+          37.500837
+        ],
+        [
+          127.037528,
+          37.500877
+        ]
+      ]
+    },
+    "live_coverage_ratio": 1,
+    "warnings": [],
+    "high_water": 1,
+    "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+    "traffic_published_at": "2026-10-24T00:04:30.000Z",
+    "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+    "source_class": "SYNTHETIC",
+    "clock_basis": "SIMULATION_EVENT_TIME",
+    "calculated_at": "2026-10-25T11:11:38.372Z"
+  },
+  "elapsed_ms": 1640.2150420000544
+}

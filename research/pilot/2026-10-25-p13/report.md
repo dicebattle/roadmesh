@@ -12,11 +12,11 @@ The fresh clean whole run passed390 on actual Seoul OSM, including32 local Worke
 
 ## Use the client / 클라이언트 사용
 
-[![User walkthrough / 사용자 사용 영상](../../../docs/media/demo.ko.gif)](../../../docs/media/demo.ko.mp4)
+[![User walkthrough / 사용자 사용 영상](user-demo/demo.ko.gif)](user-demo/demo.ko.mp4)
 
 The first README video is now a32s ordinary user flow: choose a preset, calculate, then read the map/distance/time. The same actual Korean UI has English and Korean explanatory caption versions. Captions are outside the application frame. No result is inserted or relabeled. Raw95s and the exact retained interval are preserved. / README첫 영상은 경로 선택·계산·지도/거리/시간 확인의32초 일반 사용 과정입니다. 같은 실제 한국어 화면에 한영 설명 자막을 별도로 넣었고 원 화면 밖에만 표시합니다. 결과를 삽입하거나 표시를 바꾸지 않았으며 원본95초·정확한 사용 구간을 보존합니다.
 
-- [English video / 영어 영상](../../../docs/media/demo.mp4), [Korean video / 한국어 영상](../../../docs/media/demo.ko.mp4), [original / 원본](user-demo/capture-original.webm), [actual HTTP/native binding / 실제 HTTP·엔진 연결](user-demo/verification.json).
+- [English video / 영어 영상](user-demo/demo.mp4), [Korean video / 한국어 영상](user-demo/demo.ko.mp4), [original / 원본](user-demo/capture-original.webm), [actual HTTP/native binding / 실제 HTTP·엔진 연결](user-demo/verification.json).
 - A fresh clean source checkout runs the ordinary automatic client, matching the documented pilot:serve behavior. Its one successful HTTP route binds to original native request/route/trace bytes:2412m,184.731s, accepted snapshot,0 returned-route live coverage because the route avoids the congested edges. / 새 깨끗한 체크아웃에서 문서와 같은 자동 진행 클라이언트를 실행했고 성공 HTTP한 건을 엔진 원요청/경로/추적과 연결했습니다.2412m·184.731초·수용 자료가 있으며 정체 구간을 피해 반환 경로의 적용률은0입니다.
 - An optional recording-only zoom action used an English locator after switching the UI to Korean and timed out. The current snapshot shows the actual Korean controls. No zoom occurred; the published three-step story claims no zoom. Preserve the failed action log and full raw recording. / 선택형 녹화 확대 동작이 한국어 화면에 영어 이름으로 접근해 시간 초과됐습니다. 실제 한국어 조작 이름을 확인했고 확대는 일어나지 않았습니다. 공개한 세 단계 사용 과정은 확대를 주장하지 않으며 실패 로그·전체 원본을 보존합니다.
 
@@ -51,3 +51,5 @@ P01–P14 local-pilot runtime acceptance is complete locally and on GitHub Actio
 P01~P14 로컬 파일럿의 실행 검증을 로컬과 GitHub Actions에서 마쳤습니다. 전체 390개와 Node.js 22·24 각각 303개를 통과했고, 메인이 원격 원문 해시 16,236개·집계 전체 11쌍·객체 14개의 SQLite 복사본 21개를 독립 확인했습니다. 실행 지문은 수용한 로컬 실행·실제 녹화와 같습니다. 보호 병합과 최신 검사 커밋은 [PR #14](https://github.com/dicebattle/routelens/pull/14)에서 확인합니다. 실제 지역 100/100·실주행·실시간 교통·운영 배포는 별도입니다.
 
 [Permanent downloaded originals, audits and reconstruction / 다운로드 원문·감사·복원](hosted/README.md). Push run 40155530440 and PR run 40155546456 both passed at 5c4f098. The final documentation commit must pass its own required checks before normal protected merge. / 두 원격 실행이 같은 소스에서 통과했습니다. 최종 문서 커밋도 자체 필수 검사를 통과한 뒤 정상 보호 병합합니다.
+
+Media preservation note2026-10-25: the32s P13 walkthrough now has fixed snapshot paths above; global latest assets advance to NAV-01. Original measurements and recording bytes are unchanged. / 미디어 보존 기록: 기존32초 P13영상은 위 고정 경로로 보존하고 공용 최신 자료는 NAV-01로 갱신했습니다. 원 측정·녹화 바이트는 그대로입니다.

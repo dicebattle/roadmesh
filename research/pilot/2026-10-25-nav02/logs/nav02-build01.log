@@ -1,0 +1,5 @@
+
+> routelens@0.0.0 build
+> tsc -p tsconfig.json && tsc -p tsconfig.browser.json && node dist/tools/client_build.js && tsc -p tsconfig.cloudflare.json
+
+Client assets built / 클라이언트 자료 생성: /Users/dice/Documents/routelens-p13/dist/web/pilot

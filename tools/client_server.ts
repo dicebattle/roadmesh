@@ -19,6 +19,8 @@ import {
 import { durableNodeJSON } from "./node_engine.js";
 import type { ClientServerConfig } from "./client_types.js";
 import type { GatewayRouteContext, GatewaySuccess } from "./gateway_types.js";
+import { validateRequestedGuidance, type GuidanceLanguage } from "./guidance.js";
+import type { GatewayRequest } from "./gateway_public_types.js";
 export const CLIENT_COOKIE = "routelens_session";
 const freshnessKeys = [
   "high_water",
@@ -104,8 +106,9 @@ export function validateClientContext(
 export function validateClientRoute(
   raw: unknown,
   graph: string,
+  language?: GuidanceLanguage,
 ): asserts raw is GatewaySuccess {
-  record(raw, "route", routeKeys);
+  record(raw, "route", routeKeys, ["guidance"]);
   freshness(raw);
   if (
     raw.graph_id !== graph ||
@@ -148,6 +151,7 @@ export function validateClientRoute(
     },
     graph,
   );
+  validateRequestedGuidance(raw as unknown as GatewaySuccess, language);
   for (const w of raw.warnings) {
     record(w, "warning", ["code", "message_en", "message_ko"]);
     if (
@@ -315,7 +319,7 @@ export async function startClientServer(
           }
           const body = parseJson(Buffer.concat(chunks));
           if (upstream.status === 200) {
-            if (route) validateClientRoute(body, config.bootstrap.graph_id);
+            if (route) validateClientRoute(body, config.bootstrap.graph_id, (input as GatewayRequest).guidance_language);
             else validateClientContext(body, config.bootstrap.graph_id);
           } else {
             record(body, "failure", [

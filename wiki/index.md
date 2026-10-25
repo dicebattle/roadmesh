@@ -1,3 +1,15 @@
+# NAV-02 locally accepted / NAV-02 로컬 수용
+
+[Progress/replay contract](../docs/37-nav02-route-progress.md) · [module](modules/route-progress.md) · [actual report](../research/pilot/2026-10-25-nav02-clock/report.md). Corrected fresh438/438, Node22 full320, actual EN/KO390px, independent original inspection and43.5s recording passed. Protected merge follows exact-head hosted checks; no deployment. / 새438개·전체320개·한영390픽셀·독립 원문·42.7초 녹화를 확인했고 정확한 원격 검사 뒤 보호 병합합니다. 배포는 없습니다.
+
+The NAV-01 section and P01–P14 checkpoints below are historical. / 아래 NAV-01·P01~P14는 과거 검증 시점을 보존합니다.
+
+# Current navigation work / 현재 내비게이션 작업
+
+[Usable navigation roadmap](../docs/35-usable-navigation-roadmap.md) · [NAV-01 fixed contract](../docs/36-nav01-turn-guidance.md). Locally implemented and directly verified on `feat/navigation-guidance`:406 fresh integration cases,310 tests, actual28.5s recording. [Report](../research/pilot/2026-10-25-nav01/report.md), [module](modules/turn-guidance.md). Branch delivery; no new merge/deployment claim. P01–P14 historical checkpoints below remain preserved.
+
+실사용 계획의 NAV-01을 새 통합406개·검사310개·실제28.5초 영상으로 직접 검증했습니다. 작업 브랜치 전달이며 이번 병합·배포는 수행하지 않습니다. 아래 P01~P14 중간 기록은 과거 시점으로 보존합니다.
+
 # RouteLens 프로젝트 위키
 
 P01–P14 local-pilot runtime acceptance is complete locally and on GitHub Actions: whole 390, Node.js 22/24 each 303. Main independently checked 16,236 hosted original hashes, 11 complete PostgreSQL/Worker pairs and 21 SQLite copies across 14 actors. The runtime fingerprint matches the accepted local run and actual recordings. Protected integration and the latest checked head are tracked by [PR #14](https://github.com/dicebattle/routelens/pull/14). Geographic 100/100, real driving, live traffic and production deployment remain separate.
@@ -122,3 +134,8 @@ Latest: [P11 actual client proof](../research/pilot/2026-10-25-p11/report.md), [
 [P13 clean390 report](../research/pilot/2026-10-25-p13/report.md): actual Seoul, independent16,061 hashes,32 local Cloudflare checks/11 full result pairs, actual32s user video and155.05s developer capture. [P12 corrected hosted/protected record](../research/pilot/2026-10-25-p12/hosted/README.md). P13/P14b hosted/protected delivery remains. Earlier progress entries above are historical checkpoints.
 
 현재 로컬 전체390개·독립 해시16,061개·Cloudflare32개/전체 결과11쌍·실제 사용자32초/개발155.05초 녹화를 확인했습니다. P12는 수정 원격·보호 반영을 마쳤고 P13/P14b의 원격·보호 반영은 남습니다. 위 진행 기록은 과거 중간 상태입니다.
+
+- [NAV-02 route progress and replay / 경로 진행·재생](modules/route-progress.md) · [dated evidence / 날짜별 근거](../research/pilot/2026-10-25-nav02-clock/report.md)
+
+
+Corrected NAV-02 acceptance / 수정 NAV-02 수용: clean fe49b55/runtime70af32dc passed fresh438/438, focused10/full320 and new43.5s actual recording on graph a859e9ad. Strengthened future-sample expiry is included; first local evidence remains historical. Independent progress191 states/168 positions and IAB EN/KO390px passed. [Final dated report](../research/pilot/2026-10-25-nav02-clock/report.md). The user-authorized protected merge follows exact-head CI; no deployment. / 미래 표본 때 옛 안내 만료를 보강한 깨끗한 소스의 새438개·집중10개/전체320개·새43.5초·독립191상태/168위치·내장 한영390픽셀을 확인했습니다. 첫 결과는 과거 근거로 보존하고 정확한 원격 검사 뒤 보호 병합하며 배포하지 않습니다.

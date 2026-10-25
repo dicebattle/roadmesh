@@ -101,6 +101,7 @@ export function validateNodeRequest(
         "locations",
         "expected_generation_id",
         "snap_policy",
+        "guidance_language",
       ];
     if (
       Object.keys(r).some((k) => !allowed.includes(k)) ||
@@ -117,6 +118,7 @@ export function validateNodeRequest(
     validateTrafficRequest(
       { graph_id: r.graph_id, locations: r.locations,
         ...(Object.hasOwn(r, "snap_policy") ? { snap_policy: r.snap_policy } : {}),
+        ...(Object.hasOwn(r, "guidance_language") ? { guidance_language: r.guidance_language } : {}),
       } as TrafficRouteRequest,
       graphId,
     );
@@ -640,6 +642,7 @@ export class RoutingNodeController {
         graph_id: request.graph_id,
         locations: request.locations,
         ...(request.snap_policy ? { snap_policy: request.snap_policy } : {}),
+        ...(request.guidance_language ? { guidance_language: request.guidance_language } : {}),
       };
       let rejection: NativeRouteRejection | undefined;
       const engine_result = await abortable(

@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "source_commit": "7078d6f6b83572286408a5d8cfcf1beee74d4364",
+  "implementation_sha256": "6d853cf2d924ea6a424a7d5338c16c6be7cc70df87d7e8b8b1a2ea0ec9ffe58d",
+  "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+  "bindings": [
+    {
+      "request_id": "browser-37a002a2-b57b-45b7-b998-6d27e74586aa",
+      "language": "en-US",
+      "maneuvers": 5,
+      "distance_m": 2119,
+      "duration_s": 147.404,
+      "calculated_at": "2026-10-25T12:53:23.098Z",
+      "native_route_path": "pilot/nodes/client-node-a/runtime-b36cbb02-4cbd-4e5f-9285-0331eddff34d/engines/4f61053b-8779-48f3-8f4f-353fb8d30319/requests/769e907c-790b-4a38-b10b-9ed86ca2a0de/route.response.json",
+      "native_sha256": "20f3c29f7ee2542bdc1828bb3459ede08081d6f89c0fea6479cf5015a589437e"
+    },
+    {
+      "request_id": "browser-12dd70e9-09ef-47c2-95f6-7e5d343594b7",
+      "language": "ko-KR",
+      "maneuvers": 5,
+      "distance_m": 2119,
+      "duration_s": 147.404,
+      "calculated_at": "2026-10-25T12:53:54.518Z",
+      "native_route_path": "pilot/nodes/client-node-a/runtime-b36cbb02-4cbd-4e5f-9285-0331eddff34d/engines/4f61053b-8779-48f3-8f4f-353fb8d30319/requests/d48fc361-e75d-4d4d-8d68-cae709a8e8c9/route.response.json",
+      "native_sha256": "5599b57fb6b52065dcb680d6116801e838a33379ef587cb0586a917ad977d4fc"
+    },
+    {
+      "request_id": "browser-efdc6037-4b0f-4f0f-8419-dd8376c9ca7d",
+      "language": "ko-KR",
+      "maneuvers": 5,
+      "distance_m": 2119,
+      "duration_s": 147.404,
+      "calculated_at": "2026-10-25T12:54:23.464Z",
+      "native_route_path": "pilot/nodes/client-node-a/runtime-b36cbb02-4cbd-4e5f-9285-0331eddff34d/engines/4f61053b-8779-48f3-8f4f-353fb8d30319/requests/2e2372a4-cef3-41f8-93c7-17a324aab811/route.response.json",
+      "native_sha256": "fbe0a35b614565e3871f9252f4f1734284e445aeb67eec0a29f126336182e45a"
+    }
+  ],
+  "raw_capture_seconds": 42.7,
+  "retained_intervals": [
+    [
+      0,
+      42.7
+    ]
+  ],
+  "captions_outside_application": true,
+  "application_frame": {
+    "width": 1280,
+    "height": 720
+  },
+  "published_frame": {
+    "width": 1280,
+    "height": 828
+  },
+  "capture_browser_processes_absent": 9,
+  "owned_containers_absent": [
+    "routelens-p05-30dfc50b-d28a-44fc-82ed-d5e08eb4a7a9",
+    "routelens-p02-bf28b186-8363-4573-98e1-6adfa07ba391",
+    "routelens-p02-4f61053b-8779-48f3-8f4f-353fb8d30319",
+    "routelens-p02-a77e73ec-ae0f-4d01-b440-2ca0d5162102",
+    "routelens-p02-f9cdbdbe-f9b9-4fd3-a65c-c0dfc01829ed",
+    "routelens-p02-24f2cc84-b0da-441f-884c-cbdcbd0c56ac",
+    "routelens-p02-6cb72668-d258-44b2-9f08-f50537feb90a",
+    "routelens-p02-b7d648c4-46f4-40dc-8a4f-64af2038c955",
+    "routelens-p02-d5734921-719e-4c99-b39c-f4f948a4a0bd",
+    "routelens-p02-24edeb09-64f2-4d98-892d-5df6ff0888ce",
+    "routelens-p02-dc710ba0-3989-41e4-857e-4f08feca8382",
+    "routelens-p02-1ed56528-b16d-45a8-ab9e-6dd852aa8e09",
+    "routelens-p02-56f66a61-83ae-4c9c-9c17-397d19d1d4d5",
+    "routelens-p02-31200beb-cfe1-4744-8e47-d0d703dfdf4c",
+    "routelens-p02-d9ef022c-e183-4307-9d23-8da3da687bed",
+    "routelens-p02-00dc233c-a0e4-492b-a611-79fda629b500",
+    "routelens-p02-066af466-3d6e-48a2-a83a-688deb7ed4ca",
+    "routelens-p02-7b53fabb-672d-4385-b9a2-f9204618af41",
+    "routelens-p02-80112132-1459-4790-b52e-70cd299c494c",
+    "routelens-p02-e46afa53-721c-4ed8-a024-37007fa90b18",
+    "routelens-p02-08975d8e-85bf-4ef7-b5ca-83dd8dbd7809",
+    "routelens-p02-aae896e1-41ff-41ed-8d1e-785c357bd2c8",
+    "routelens-p02-04b6c5a8-4c03-4d18-b233-772e2f7b8382"
+  ],
+  "owned_volume_absent": "routelens-p05-30dfc50b-d28a-44fc-82ed-d5e08eb4a7a9-db",
+  "app_port_closed": 58033,
+  "iab_languages": [
+    "en",
+    "ko"
+  ],
+  "mobile_width": 390,
+  "horizontal_overflow": false,
+  "message_en": "Actual automatic pilot on this fresh Seoul graph; three successful baseline routes, five original turns, IAB progress/departure/rejoin, recorded full flow and exact owned cleanup checked. The recording uses default speeds after the synthetic traffic snapshot expired; no live traffic is claimed.",
+  "message_ko": "이번 새 서울 지도·자동 파일럿에서 기본경로 성공3건·원 안내5개·내장 진행/이탈/복귀·전체 녹화·정확한 소유 정리를 확인했습니다. 녹화 시 합성 교통 자료가 만료되어 기본 속도이며 실시간 교통을 주장하지 않습니다."
+}

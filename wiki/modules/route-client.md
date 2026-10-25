@@ -17,3 +17,9 @@ Clean c63c556 passed whole334 and unit285; main checked12,225 hashes,27 native p
 P11 hosted334/285 and protected PR12 now passed. [Hosted originals](../../research/pilot/2026-10-25-p11/hosted/README.md) include12,054 independently checked hashes.
 
 P11 원격334/285개와 PR12 보호 병합을 완료하고 독립 해시12,054개의 근거를 보존했습니다.
+
+## NAV-01 instructions / NAV-01 안내
+
+Current client requests its native EN/KO locale, displays an ordered maneuver list and invalidates route/instructions on language changes. Existing input/failure/authority fencing remains. [Module](turn-guidance.md), [406-case evidence](../../research/pilot/2026-10-25-nav01/report.md). Earlier P11 checkpoints above are historical.
+
+현재 화면은 한영 엔진 안내를 요청해 순서 목록으로 표시하고 언어 변경 때 경로·안내를 지웁니다. 기존 입력·실패·승인 경계를 유지하며 위 P11 중간 기록은 과거 상태로 보존합니다.

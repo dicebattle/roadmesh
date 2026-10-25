@@ -712,3 +712,49 @@ Direct checks: generator TypeScript compilation, packaged self-check and SVG exp
 직접 확인은 생성 원본 TypeScript 컴파일·스킬 자체 검사·SVG 내보내기와 한영 내장 브라우저 시각 검토입니다. 각 35개 글자의 경계에서 최종 넘침·연결선 표본 충돌이 없었습니다. 처음 겹친 영역 제목은 수정했고 없는 SVG 경계 API는 화면 경계로 대체했습니다. 시스템 서체 대체를 명시하며 PNG·패키지 설치를 주장하지 않습니다. 공용 설정·실행·미디어 지문은 유지합니다. 사용자가 이미지 커밋을 요청했으며 자동 수용과 최종 시각 선호 확인은 구분합니다.
 
 User visual review / 사용자 시각 검토: after seeing the generated Korean figure, the user explicitly chose to use this style. Packaged checks, no-emit TypeScript and current media fingerprint passed; indexed Markdown links passed at 1105. / 생성한 한국어 그림을 본 사용자가 이 스타일로 사용하도록 명시 확인했습니다. 스킬 검사·TypeScript·현재 미디어와 Git 목록 링크 1105개를 통과했습니다.
+
+## 2026-10-25 — Usable navigation design / 실사용 내비게이션 설계
+
+Request: assess remaining navigation work, implement highest priority, directly verify and push the branch. Main Sol owns design, implementation and evidence review. Fixed roadmap35/contract36/ADR031 before coding: native validated EN/KO maneuver previews first, 390 existing plus 16 new checks. Independent road quality remains a release gate; GPS lifecycle/progress, reroute, speech, private deployment and real traffic remain subsequent work. No new PR/merge/deployment authorization is inferred. Verification pending.
+
+실사용까지 남은 일을 정리하고 우선 구현·직접 검증·브랜치 푸시하는 요청입니다. 메인 Sol이 설계·구현·검토합니다. 코딩 전에 계획35·계약36·ADR031에서 한영 엔진 회전 안내·기존390개+새16개를 고정했습니다. 독립 도로 품질은 출시 조건이며 GPS·진행·재탐색·음성·배포·실제 교통은 후속입니다. 검증은 아직 진행 전입니다.
+
+## 2026-10-25 — NAV-01 direct local acceptance / NAV-01 직접 로컬 수용
+
+Main Sol implemented fixed contract36 without subagents. Optional native EN/KO guidance now travels through actual node/gateway requests; strict original geometry/mode/type/text/metrics validation and browser language/input/freshness invalidation are implemented. Focused58, Node22 full310, strict build and generated Cloudflare types passed. Fresh clean eca1f9c/runtimee45cd768 passed whole406 (old390+new16), graph3d73519e. Independent original hashes16276, actual EN/KO baseline/traffic bindings4, browser/native routes, standard signatures, durable state, P12 matrix and Cloudflare11 full pairs/14 actors/21 SQLite copies passed. Actual28.5s recording, IAB390px EN/KO,9 capture-process and21 demo-container cleanup verified. See [dated commands, original errors, reports and reconstruction](../research/pilot/2026-10-25-nav01/report.md). README/media refreshed; previous P13 recording gets stable snapshot paths. Main protection verified unchanged. Finish: descriptive commit/branch push and remote SHA comparison, no PR/merge/deployment. Next NAV-02 progress/replay; geographic100/100, device/voice/real traffic/production remain open.
+
+메인 Sol이 계약36을 직접 구현했습니다. 한영 안내를 실제 노드·중계까지 전달하고 원 지형/수단/종류/문장/수치를 검증하며 언어·입력·신선도 변경 때 화면을 지웁니다. 집중58개·Node22 전체310개·엄격 빌드·생성 바인딩, 깨끗한 소스의 새 전체406개를 통과했습니다. 원문 해시16276개·한영 기본/교통4건·브라우저/엔진·표준서명·영속상태·P12행렬·Cloudflare11쌍/객체14개/SQLite21개를 독립 확인했습니다. 실제28.5초·수동390픽셀·녹화 프로세스9개/시연 컨테이너21개 정리도 확인했습니다. 원 오류·명령·증거는 날짜별 보고서에 보존하고 이전 P13영상은 고정 경로로 남깁니다. main 보호를 유지하며 상세 커밋·브랜치 푸시·원격 SHA 대조까지 마칩니다. 다음은 NAV-02이며 실도로·단말·음성·실제 교통·운영은 남습니다.
+
+## 2026-10-25 — Destination and offline scope / 목적지·오프라인 범위
+
+Verified branch push3ca6fe9 equals the remote head. Clarify two remaining usability gaps in roadmap35: NAV-06 address/place search and confirmed car-access destination after NAV-02; distinguish cached existing guidance during disconnection from full offline new-route calculation. Reuse search/platform facilities where appropriate and keep routing/progress contracts narrow. Documentation only; the accepted runtime/media fingerprint is unchanged, and the next implementation remains NAV-02.
+
+첫 브랜치 푸시3ca6fe9와 원격 일치를 확인했습니다. 실사용 계획에서 NAV-02 이후 주소/장소 검색·자동차 접근 목적지 확인과 통신 단절의 기존 안내/완전 오프라인 새 탐색을 구분했습니다. 문서 변경만이며 수용한 실행·미디어 지문은 그대로이고 다음 구현은 NAV-02입니다.
+
+## 2026-10-25 — NAV-02 design and protected delivery / NAV-02 설계·보호 반영
+
+User requested GPS progress/replay, actual-Seoul error/turn/remaining/off-route verification, bilingual evidence, branch push and main merge. Main Sol owns design, implementation and direct evidence review. Fixed contract37/ADR032 before coding; preserve406 and add32 for438. Branch starts from origin/main and fast-forwards the unmerged NAV-01 dependency; the final PR will include both. Previous NAV-01 exact-head hosted run40189006877 is successful, not merely pending as the historical last report stated. No new subagents or deployment.
+
+사용자가 GPS 진행·재생·위치 오차/다음 회전/남은 거리/이탈 직접 검증·한영 기록·푸시·main 병합을 요청했습니다. 메인 Sol이 계약37·ADR032와 기존406+새32=438개를 구현 전에 고정했습니다. origin/main의 새 브랜치에 NAV-01 의존 이력을 그대로 포함하고 두 기능을 PR로 반영합니다. NAV-01의 원격40189006877 성공도 확인했으며 배포는 수행하지 않습니다.
+
+NAV-02 pre-integration evidence / NAV-02 통합 전 근거: Node22 strict builds, focused31 and full320 tests passed. A development-only reuse of the previous actual Seoul native route passed28 non-browser cases; replay with the complete real context reached ARRIVED in both scenarios (noisy86 ON_ROUTE+2 ARRIVED; departure87 ON_ROUTE+2 pending+2 OFF_ROUTE+2 ARRIVED). These are source-development probes, not the new clean438 acceptance. Next run the actual browser controls and then rebuild the whole graph/pipeline from a clean committed source. / 엄격 빌드·집중31개·전체320개·이전 실제 경로의 개발28개와 주변 도로 포함 두 재생의 도착을 확인했습니다. 새 깨끗한438개 수용으로 주장하지 않고 실제 화면·새 전체 실행을 이어갑니다.
+
+NAV-02 first actual browser development run stopped after the successful native baseline and first replay click: the test read collapsed diagnostics with `innerText()`, which returned an empty string and failed JSON parsing. The app's visible next-turn/remaining/marker output and original screenshot are retained; cleanup passed. Correct only the test to read DOM `textContent`, preserving thresholds/counts and the failed directory. Rebuild and retry this failed target once before whole integration. / 첫 실제 화면 검사는 성공 경로·첫 재생 조작 뒤 접힌 진단의 innerText가 빈 문자열을 반환해 중단됐습니다. 실제 화면·원문·정리 결과를 보존하고 테스트의 DOM 읽기만 바로잡아 한 번 재검사합니다.
+
+
+## 2026-10-25 — NAV-02 direct local acceptance / NAV-02 직접 로컬 수용
+
+Main Sol designed, coded and reviewed without subagents. Fresh clean7078d6f/runtime6d853cf2/Seoul683ff7cf passed438/438; strict Node22 builds, focused31 and full320 tests passed. Independent original inspection checked all prior boundaries plus190 progress states/168 positions/max authored progress error2.229310488m. Development run1's collapsed diagnostic read failed; test-only textContent fix and one retry passed, both originals retained. Actual IAB EN/KO390px confirmed next/remaining, language reset, off-route withholding, rejoin and no overflow/errors. Full42.7s actual recording at1x uses explicit4x synthetic replay; expired traffic defaults are visible. Exact owned demo/capture cleanup verified. All original native/XML/SQLite evidence is archived except declared map binaries and restored independently. An initial archive invocation used the wrong root/colliding scratch path and stopped before packaging; corrected new output paths preserve both diagnostic failures. [Commands and original receipts](../research/pilot/2026-10-25-nav02/report.md).
+
+메인 Sol이 설계·구현·검토했고 새438개·엄격 빌드·집중31개·전체320개·독립 원문·진행190상태/168위치/자체 거리 최대2.229310488m를 확인했습니다. 진단 읽기 실패와 수정 후 한 번 재검사 원문을 보존하고 내장 한영390픽셀·이탈 보류/복귀·전체42.7초 원속도 녹화·명시4배속 합성 재생·만료 교통 기본값·정확한 소유 정리를 확인했습니다. 최초 묶음 명령의 잘못된 루트/충돌 경로 오류도 보존하고 새 출력으로 바로잡았습니다. 원문 묶음은 선언 지도 외 엔진·XML·SQLite를 유지하고 독립 복원합니다.
+
+Next: descriptive bilingual commit/push, exact remote SHA, exact-head hosted original inspection and normal protected PR merge as authorized. No deployment; NAV-06 destination search is next, independent100/100 road quality and real device measurements remain open. / 다음은 상세 한영 커밋·푸시·원격 SHA·정확한 커밋의 원격 원문 감사·승인된 보호 PR 병합입니다. 배포 없이 다음 NAV-06과 독립 실도로/단말 검증을 남깁니다.
+
+## 2026-10-25 — NAV-02 pre-merge clock-boundary finding / 병합 전 시간 경계 발견
+
+Main's final review reproduced FUTURE_FIX returning ON_ROUTE at6000ms after the last valid fix at0. Retain the first local438 proof and currently running bbc4a4a CI as historical, not corrected-source acceptance. Minimum change calls the existing monotonic advance after route/clock checks, before sample-time rejection; strengthen existing future case/unit test, then run a fresh clean whole438 and refresh the recording/fingerprint. / 최종 검토에서 유효 위치 뒤6초의 미래 표본 거부 때 옛 안내가 남는 것을 직접 재현했습니다. 기존438개·진행 중 CI를 과거 근거로 보존하고 기존 시계 만료 호출과 기존 검사를 강화한 뒤 새 전체 실행·녹화를 진행합니다.
+
+
+## 2026-10-25 — Corrected NAV-02 final local acceptance / 수정 NAV-02 최종 로컬 수용
+
+Clean fe49b55/runtime70af32dc passed fresh whole438, strict Node22 build, focused10/full320, independent current-source native/signature/state/SQLite/progress inspection and newly captured whole43.5s. Future expiry regression is now included in the existing case without changing quotas. Actual IAB EN/KO390px, departure withholding and rejoin passed; owned demo/capture cleanup verified. First438/42.7s remains preserved as historical, with before/after reproducer. [Final report](../research/pilot/2026-10-25-nav02-clock/report.md). / 시간 경계 회귀를 기존 사례에 추가한 깨끗한 새438개·엄격 빌드·집중10개/전체320개·현재 소스 독립 원문·새43.5초·내장 한영390픽셀·이탈/복귀·정리를 확인했습니다. 첫438개/42.7초와 문제 전후 재현은 과거 근거로 보존합니다.

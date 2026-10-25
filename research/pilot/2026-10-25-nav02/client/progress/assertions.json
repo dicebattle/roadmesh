@@ -1,0 +1,290 @@
+[
+  {
+    "assertion_id": "nav02-replay-ui-step",
+    "status": "PASS",
+    "message_en": "An ordinary browser step shows the bound native next turn, distance and distinct synthetic/confirmed markers.",
+    "message_ko": "실제 화면 한 표본에서 원 다음 안내·거리·합성/확정 표시 확인.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/replay-ui-step.json"
+  },
+  {
+    "assertion_id": "nav02-replay-ui-play-pause",
+    "status": "PASS",
+    "message_en": "The actual browser confirms departure, pauses, rejoins and reaches the replay endpoint.",
+    "message_ko": "실제 브라우저 이탈 확정·정지·복귀·재생 끝점 도착 확인.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/replay-ui-play-pause.json"
+  },
+  {
+    "assertion_id": "nav02-replay-ui-invalidation",
+    "status": "PASS",
+    "message_en": "Changing route input invalidates replay, removes markers and prevents old timer completion.",
+    "message_ko": "입력 변경 때 재생·표시·옛 타이머를 무효화.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/replay-ui-invalidation.json"
+  },
+  {
+    "assertion_id": "nav02-replay-ui-mobile",
+    "status": "PASS",
+    "message_en": "At390px the actual progress UI shows next instruction and remaining distance without overflow.",
+    "message_ko": "390픽셀 실제 진행 화면에서 다음 안내·남은 거리·넘침 없음 확인.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/replay-ui-mobile.json"
+  },
+  {
+    "assertion_id": "nav02-route-binding",
+    "status": "PASS",
+    "message_en": "A foreign route generation cannot move this session.",
+    "message_ko": "다른 경로 세대로 세션 진행 불가.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/route-binding.json"
+  },
+  {
+    "assertion_id": "nav02-geometry-distance",
+    "status": "PASS",
+    "message_en": "Original polyline length matches independent local metric within5cm.",
+    "message_ko": "원 지형 길이를 독립 거리식과5cm 안에서 대조.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/geometry-distance.json"
+  },
+  {
+    "assertion_id": "nav02-exact-start",
+    "status": "PASS",
+    "message_en": "An exact authored start acquires the beginning of this route.",
+    "message_ko": "원 출발 합성 표본에서 경로 시작 확인.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/exact-start.json"
+  },
+  {
+    "assertion_id": "nav02-next-turn",
+    "status": "PASS",
+    "message_en": "Upcoming text and distance use the next original maneuver boundary.",
+    "message_ko": "다음 원 회전 경계의 문장·거리 사용.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/next-turn.json"
+  },
+  {
+    "assertion_id": "nav02-turn-advance",
+    "status": "PASS",
+    "message_en": "Crossing the first boundary plus3m advances exactly one native turn.",
+    "message_ko": "첫 경계3m 뒤 원 회전을 한 단계 이동.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/turn-advance.json"
+  },
+  {
+    "assertion_id": "nav02-remaining-distance",
+    "status": "PASS",
+    "message_en": "Remaining distance is original geometric length minus confirmed progress.",
+    "message_ko": "남은 거리는 원 지형 길이에서 확정 진행을 뺀 값.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/remaining-distance.json"
+  },
+  {
+    "assertion_id": "nav02-bounded-noise",
+    "status": "PASS",
+    "message_en": "Authored bounded noise tracks within8m when confirmed and withholds ambiguous fixes.",
+    "message_ko": "명시 오차에서 확정 진행8m 이내·모호한 표본 보류.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/bounded-noise.json"
+  },
+  {
+    "assertion_id": "nav02-stationary-jitter",
+    "status": "PASS",
+    "message_en": "Small backward jitter cannot reverse confirmed progress.",
+    "message_ko": "작은 뒤쪽 흔들림으로 확정 진행 역행 불가.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/stationary-jitter.json"
+  },
+  {
+    "assertion_id": "nav02-backward",
+    "status": "PASS",
+    "message_en": "Large backward displacement withholds current turns.",
+    "message_ko": "큰 역행에서 현재 회전 보류.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/backward.json"
+  },
+  {
+    "assertion_id": "nav02-impossible-jump",
+    "status": "PASS",
+    "message_en": "A one-second route-end jump cannot skip maneuvers.",
+    "message_ko": "1초 만의 끝점 도약으로 회전 건너뛰기 금지.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/impossible-jump.json"
+  },
+  {
+    "assertion_id": "nav02-bad-accuracy",
+    "status": "PASS",
+    "message_en": "Invalid position quality/input cannot become current guidance: bad-accuracy",
+    "message_ko": "위치 품질/입력 오류의 현재 안내 차단: bad-accuracy",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/bad-accuracy.json"
+  },
+  {
+    "assertion_id": "nav02-malformed-fix",
+    "status": "PASS",
+    "message_en": "Invalid position quality/input cannot become current guidance: malformed-fix",
+    "message_ko": "위치 품질/입력 오류의 현재 안내 차단: malformed-fix",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/malformed-fix.json"
+  },
+  {
+    "assertion_id": "nav02-stale-sample",
+    "status": "PASS",
+    "message_en": "A six-second-old fix is stale, never current.",
+    "message_ko": "6초 단절·지난 표본은 현재 위치가 아님.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/stale-sample.json"
+  },
+  {
+    "assertion_id": "nav02-future-sample",
+    "status": "PASS",
+    "message_en": "Future positions cannot move progress.",
+    "message_ko": "미래 위치로 진행 불가.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/future-sample.json"
+  },
+  {
+    "assertion_id": "nav02-out-of-order",
+    "status": "PASS",
+    "message_en": "Reordered positions cannot overwrite newer progress.",
+    "message_ko": "역순 위치로 새 진행 덮어쓰기 불가.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/out-of-order.json"
+  },
+  {
+    "assertion_id": "nav02-duplicate",
+    "status": "PASS",
+    "message_en": "Duplicate timestamps do not add confidence or movement.",
+    "message_ko": "중복 시각으로 확신·진행 추가 불가.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/duplicate.json"
+  },
+  {
+    "assertion_id": "nav02-parallel-road-ambiguous",
+    "status": "PASS",
+    "message_en": "A competing actual Seoul context road withholds an uncertain snap.",
+    "message_ko": "경쟁하는 실제 서울 주변 도로에서 불확실 투영 보류.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/parallel-road-ambiguous.json"
+  },
+  {
+    "assertion_id": "nav02-route-self-ambiguity",
+    "status": "PASS",
+    "message_en": "Nearby revisited segments of this actual route do not cause a false forward snap.",
+    "message_ko": "실제 경로의 가까운 재방문 구간에서 잘못된 전방 투영 금지.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/route-self-ambiguity.json"
+  },
+  {
+    "assertion_id": "nav02-offroute-pending",
+    "status": "PASS",
+    "message_en": "One distant actual-road fix is only pending departure.",
+    "message_ko": "실제 다른 도로의 단일 표본은 이탈 대기.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/offroute-pending.json"
+  },
+  {
+    "assertion_id": "nav02-offroute-confirmed",
+    "status": "PASS",
+    "message_en": "Three separated actual-context-road samples confirm departure and hide turns.",
+    "message_ko": "주변 도로 표본3개로 이탈 확정·회전 보류.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/offroute-confirmed.json"
+  },
+  {
+    "assertion_id": "nav02-one-outlier-not-offroute",
+    "status": "PASS",
+    "message_en": "A single outlier followed by the route cannot confirm departure.",
+    "message_ko": "단일 오차 뒤 경로 표본이면 이탈 확정 불가.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/one-outlier-not-offroute.json"
+  },
+  {
+    "assertion_id": "nav02-bad-fix-breaks-streak",
+    "status": "PASS",
+    "message_en": "Rejected accuracy breaks consecutive departure evidence.",
+    "message_ko": "거부한 위치 오차가 연속 이탈 근거를 끊음.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/bad-fix-breaks-streak.json"
+  },
+  {
+    "assertion_id": "nav02-rejoin-hysteresis",
+    "status": "PASS",
+    "message_en": "First rejoin sample does not prematurely restore turns.",
+    "message_ko": "첫 복귀 표본으로 회전 조기 복구 금지.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/rejoin-hysteresis.json"
+  },
+  {
+    "assertion_id": "nav02-rejoin-confirmed",
+    "status": "PASS",
+    "message_en": "Two separated route positions restore confirmed progress.",
+    "message_ko": "시간을 둔 경로 표본2개로 확정 진행 복구.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/rejoin-confirmed.json"
+  },
+  {
+    "assertion_id": "nav02-arrival-hysteresis",
+    "status": "PASS",
+    "message_en": "First endpoint observation does not complete arrival.",
+    "message_ko": "첫 끝점 관측만으로 도착 완료 금지.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/arrival-hysteresis.json"
+  },
+  {
+    "assertion_id": "nav02-arrival-confirmed",
+    "status": "PASS",
+    "message_en": "Observed route travel plus two endpoint fixes completes only the replay endpoint.",
+    "message_ko": "경로 진행·끝점 표본2개 뒤 재생 끝점 도착.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/arrival-confirmed.json"
+  },
+  {
+    "assertion_id": "nav02-destination-shortcut-blocked",
+    "status": "PASS",
+    "message_en": "An initial destination-only point cannot fabricate a completed trip.",
+    "message_ko": "첫 위치를 목적지로 보내 여행 완료 만들기 금지.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/destination-shortcut-blocked.json"
+  },
+  {
+    "assertion_id": "nav02-replay-deterministic",
+    "status": "PASS",
+    "message_en": "Identical route and authored settings reproduce the same trace on actual context geometry.",
+    "message_ko": "같은 경로·설정에서 실제 주변 지형 합성 자료 재현.",
+    "expected": true,
+    "actual": true,
+    "evidence_path": "progress/replay-deterministic.json"
+  }
+]

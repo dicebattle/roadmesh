@@ -1,0 +1,140 @@
+{
+  "test_proxy": true,
+  "served_original_older_context": {
+    "schema_version": "0.1",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "traffic_snapshot_id": "12f22b65ad7d2e9df6203419c46b742711019853480c9cdf0e31ca4ff25db882",
+    "sequence": 1,
+    "high_water": 1,
+    "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+    "traffic_published_at": "2026-10-24T00:04:30.000Z",
+    "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+    "source_class": "SYNTHETIC",
+    "clock_basis": "SIMULATION_EVENT_TIME"
+  },
+  "state": {
+    "lang": "en",
+    "state": "current",
+    "request_id": "browser-87d72978-e9d4-4432-91cd-c20b292280a9",
+    "map_ready": "true",
+    "map_active_route": "true",
+    "map_request_id": "browser-87d72978-e9d4-4432-91cd-c20b292280a9",
+    "map_rendered_request_id": "browser-87d72978-e9d4-4432-91cd-c20b292280a9",
+    "status": "Route checked against the accepted traffic context.",
+    "summary": "0.01 km · 0.4 minAccepted traffic applied on this routeRoute live coverage: 100.00%Traffic age · simulation time: 0.0 sChecked simulation time: 2026-10-24T00:04:30.000Z",
+    "maneuvers": [
+      "Drive east on 테헤란로/90.",
+      "You have arrived at your destination."
+    ],
+    "guidance_hidden": false,
+    "evidence": {
+      "request": {
+        "schema_version": "0.1",
+        "request_id": "browser-87d72978-e9d4-4432-91cd-c20b292280a9",
+        "origin": {
+          "latitude": 37.50083690018144,
+          "longitude": 127.03739724982245
+        },
+        "destination": {
+          "latitude": 37.500877100181434,
+          "longitude": 127.0375277498224
+        },
+        "profile": "car",
+        "traffic_policy": "prefer_live",
+        "guidance_language": "en-US"
+      },
+      "response": {
+        "request_id": "browser-87d72978-e9d4-4432-91cd-c20b292280a9",
+        "request_sha256": "19ea062d66adcf5b472d9a577e0dd4e46361c299f9c4d62fa7e7cf4f783a83de",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "snapshot_id": "3f8c3f50c6b5e157e17385b3bf2c285505f60bb647228ab1a5055c6777eb6cca",
+        "sequence": 3,
+        "generation_id": "ad7f6f421cb1db2ece00c665dbde46892db5910e99f8af2cbbb8d1ac3bac3fce",
+        "traffic_sha256": "21d5d86f95062b70f7cd5a33e7934a8316959dcb727e24a13a2ff9c9f4971f0a",
+        "engine_version": "3.9.1",
+        "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+        "costing_config_id": "valhalla-current-v1",
+        "node_id": "client-node-a",
+        "traffic_mode": "LIVE_MIXED",
+        "distance_m": 12,
+        "duration_s": 22.254,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              127.037397,
+              37.500837
+            ],
+            [
+              127.037528,
+              37.500877
+            ]
+          ]
+        },
+        "guidance": {
+          "schema_version": "0.1",
+          "language": "en-US",
+          "maneuvers": [
+            {
+              "index": 0,
+              "native_type": 1,
+              "instruction": "Drive east on 테헤란로/90.",
+              "distance_m": 12,
+              "duration_s": 22.254,
+              "begin_shape_index": 0,
+              "end_shape_index": 1
+            },
+            {
+              "index": 1,
+              "native_type": 4,
+              "instruction": "You have arrived at your destination.",
+              "distance_m": 0,
+              "duration_s": 0,
+              "begin_shape_index": 1,
+              "end_shape_index": 1
+            }
+          ]
+        },
+        "live_coverage_ratio": 1,
+        "warnings": [],
+        "high_water": 3,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "traffic_published_at": "2026-10-24T00:04:30.000Z",
+        "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+        "source_class": "SYNTHETIC",
+        "clock_basis": "SIMULATION_EVENT_TIME",
+        "calculated_at": "2026-10-25T13:24:33.228Z"
+      },
+      "authority": {
+        "schema_version": "0.1",
+        "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+        "traffic_snapshot_id": "3f8c3f50c6b5e157e17385b3bf2c285505f60bb647228ab1a5055c6777eb6cca",
+        "sequence": 3,
+        "high_water": 3,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "traffic_published_at": "2026-10-24T00:04:30.000Z",
+        "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+        "source_class": "SYNTHETIC",
+        "clock_basis": "SIMULATION_EVENT_TIME"
+      },
+      "state": "current",
+      "reason": "",
+      "map_source_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.037397,
+            37.500837
+          ],
+          [
+            127.037528,
+            37.500877
+          ]
+        ]
+      },
+      "progress": null
+    },
+    "scroll_width": 1280,
+    "viewport_width": 1280
+  }
+}

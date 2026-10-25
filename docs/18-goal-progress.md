@@ -56,3 +56,19 @@ P01–P14 local-pilot runtime acceptance is complete locally and on GitHub Actio
 P01~P14 로컬 파일럿의 실행 검증을 로컬과 GitHub Actions에서 마쳤습니다. 전체 390개와 Node.js 22·24 각각 303개를 통과했고, 메인이 원격 원문 해시 16,236개·집계 전체 11쌍·객체 14개의 SQLite 복사본 21개를 독립 확인했습니다. 실행 지문은 수용한 로컬 실행·실제 녹화와 같습니다. 보호 병합과 최신 검사 커밋은 [PR #14](https://github.com/dicebattle/routelens/pull/14)에서 확인합니다. 실제 지역 100/100·실주행·실시간 교통·운영 배포는 별도입니다.
 
 [Hosted originals and inspection / 원격 원문·검사](../research/pilot/2026-10-25-p13/hosted/README.md). Earlier remaining-work statements above describe their dated checkpoint. / 위 남은 작업 설명은 각 시점의 중간 기록입니다.
+
+## Navigation after the completed pilot / 파일럿 완료 이후 내비게이션
+
+P01–P14 remains accepted. The separate [usable navigation roadmap](35-usable-navigation-roadmap.md) now has locally verified NAV-01:406 integration checks and310 tests. This does not reopen or redefine the pilot goal, or satisfy independent geographic/mobile/production gates. [Evidence](../research/pilot/2026-10-25-nav01/report.md).
+
+P01~P14 수용을 유지하고 별도 실사용 계획의 NAV-01을 통합406개·검사310개로 로컬 검증했습니다. 기존 파일럿 목표를 다시 정의하거나 독립 지역·모바일·운영 조건을 충족했다고 보지 않습니다.
+
+
+## NAV-02 local acceptance2026-10-25 / NAV-02 로컬 수용
+
+Main Sol directly implemented contract37. Clean7078d6f/runtime6d853cf2 passed fresh438/438 and Node22 full320; independent progress190states/168positions/max authored error2.23m, actual IAB EN/KO390px and full42.7s recording passed. Existing406 checks remain. [Dated report](../research/pilot/2026-10-25-nav02/report.md). The user authorized branch push and normal protected PR merge; exact-head hosted results are recorded separately. No deployment. Next NAV-06 destination search/confirmation; independent100/100 road review and device GPS accuracy remain open.
+
+메인 Sol이 계약37을 구현하고 깨끗한 소스의 새438개·전체320개·독립 진행190상태/168위치/자체 거리 최대2.23m·실제 한영390픽셀·42.7초 녹화를 직접 확인했습니다. 기존406개를 유지하며 사용자 승인에 따라 작업 브랜치 푸시·정상 보호 PR 병합까지 진행합니다. 원격 결과는 별도 기록하고 배포하지 않습니다. 다음은 NAV-06 목적지 검색/확인이며 독립100/100·단말 정확도는 남습니다.
+
+
+Corrected NAV-02 acceptance / 수정 NAV-02 수용: clean fe49b55/runtime70af32dc passed fresh438/438, focused10/full320 and new43.5s actual recording on graph a859e9ad. Strengthened future-sample expiry is included; first local evidence remains historical. Independent progress191 states/168 positions and IAB EN/KO390px passed. [Final dated report](../research/pilot/2026-10-25-nav02-clock/report.md). The user-authorized protected merge follows exact-head CI; no deployment. / 미래 표본 때 옛 안내 만료를 보강한 깨끗한 소스의 새438개·집중10개/전체320개·새43.5초·독립191상태/168위치·내장 한영390픽셀을 확인했습니다. 첫 결과는 과거 근거로 보존하고 정확한 원격 검사 뒤 보호 병합하며 배포하지 않습니다.

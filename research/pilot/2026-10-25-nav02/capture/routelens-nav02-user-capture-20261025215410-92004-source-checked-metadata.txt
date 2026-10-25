@@ -1,0 +1,4 @@
+### Ran Playwright code
+```js
+await (async (page) => { await page.setViewportSize({width:1280,height:720}); await page.locator("#request-route").waitFor({state:"visible"}); await page.waitForFunction(()=>document.getElementById("map")?.dataset.ready==="true",undefined,{timeout:15000}); if(await page.locator("html").getAttribute("lang")==="en")await page.locator("#language").click(); console.log(JSON.stringify({url:page.url(),title:await page.title()})); })(page);
+```

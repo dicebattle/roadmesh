@@ -1,0 +1,55 @@
+{
+  "source_class": "SYNTHETIC",
+  "binding": {
+    "request_id": "browser-d717334e-f6af-48be-8769-1b6499c2a89d",
+    "request_sha256": "27c7e6ec2d5127c85643fceec798a5a5da737fdc0968444167a5470182f26425",
+    "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+    "generation_id": "24f541e59bc78a0b20e91b334bd7d5bbe45aac7c4141ccc5b43af48d1193b75c"
+  },
+  "metric_scope": "EXACT_RETURNED_ROUTE_NOT_ROAD_NETWORK_MATCHING",
+  "shape_index": 0,
+  "input": {
+    "binding": {
+      "request_id": "browser-d717334e-f6af-48be-8769-1b6499c2a89d",
+      "request_sha256": "27c7e6ec2d5127c85643fceec798a5a5da737fdc0968444167a5470182f26425",
+      "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+      "generation_id": "24f541e59bc78a0b20e91b334bd7d5bbe45aac7c4141ccc5b43af48d1193b75c"
+    },
+    "source_class": "SYNTHETIC",
+    "event_time_ms": 5000,
+    "longitude": 127.028976,
+    "latitude": 37.498447,
+    "accuracy_m": 25,
+    "heading_degrees": null,
+    "speed_mps": 0
+  },
+  "output": {
+    "accepted": true,
+    "reason": "AMBIGUOUS_ROUTE_SEGMENTS",
+    "state": {
+      "policy_id": "route-progress-v1",
+      "source_class": "SYNTHETIC",
+      "binding": {
+        "request_id": "browser-d717334e-f6af-48be-8769-1b6499c2a89d",
+        "request_sha256": "27c7e6ec2d5127c85643fceec798a5a5da737fdc0968444167a5470182f26425",
+        "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+        "generation_id": "24f541e59bc78a0b20e91b334bd7d5bbe45aac7c4141ccc5b43af48d1193b75c"
+      },
+      "status": "UNCERTAIN",
+      "reason": "AMBIGUOUS_ROUTE_SEGMENTS",
+      "event_time_ms": 5000,
+      "accuracy_m": 25,
+      "raw_position": [
+        127.028976,
+        37.498447
+      ],
+      "confirmed_position": null,
+      "geometry_length_m": 2117.011521689528,
+      "last_confirmed_progress_m": 0,
+      "progress_m": null,
+      "remaining_m": null,
+      "distance_to_route_m": 0,
+      "next_maneuver": null
+    }
+  }
+}

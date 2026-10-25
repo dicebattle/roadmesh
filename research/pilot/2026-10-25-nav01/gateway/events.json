@@ -1,0 +1,72 @@
+[
+  {
+    "event_id": "baseline",
+    "recorded_at_utc": "2026-10-25T11:11:22.250Z",
+    "message_en": "Recorded gateway route: baseline",
+    "message_ko": "기록된 중계 경로: baseline",
+    "evidence_path": "requests/baseline.json"
+  },
+  {
+    "event_id": "live-primary",
+    "recorded_at_utc": "2026-10-25T11:11:26.936Z",
+    "message_en": "Recorded gateway route: live-primary",
+    "message_ko": "기록된 중계 경로: live-primary",
+    "evidence_path": "requests/live-primary.json"
+  },
+  {
+    "event_id": "live-detour",
+    "recorded_at_utc": "2026-10-25T11:11:28.506Z",
+    "message_en": "Recorded gateway route: live-detour",
+    "message_ko": "기록된 중계 경로: live-detour",
+    "evidence_path": "requests/live-detour.json"
+  },
+  {
+    "event_id": "stale-node-excluded",
+    "recorded_at_utc": "2026-10-25T11:11:38.383Z",
+    "message_en": "Recorded gateway route: stale-node-excluded",
+    "message_ko": "기록된 중계 경로: stale-node-excluded",
+    "evidence_path": "requests/stale-node-excluded.json"
+  },
+  {
+    "event_id": "primary-unavailable-retry",
+    "recorded_at_utc": "2026-10-25T11:11:41.660Z",
+    "message_en": "Recorded gateway route: primary-unavailable-retry",
+    "message_ko": "기록된 중계 경로: primary-unavailable-retry",
+    "evidence_path": "requests/primary-unavailable-retry.json"
+  },
+  {
+    "event_id": "primary-kill-failover",
+    "recorded_at_utc": "2026-10-25T11:11:44.206Z",
+    "message_en": "Recorded gateway route: primary-kill-failover",
+    "message_ko": "기록된 중계 경로: primary-kill-failover",
+    "evidence_path": "requests/primary-kill-failover.json"
+  },
+  {
+    "event_id": "publisher-outage",
+    "recorded_at_utc": "2026-10-25T11:12:19.110Z",
+    "message_en": "Recorded gateway route: publisher-outage",
+    "message_ko": "기록된 중계 경로: publisher-outage",
+    "evidence_path": "requests/publisher-outage.json"
+  },
+  {
+    "event_id": "non-live-correction",
+    "recorded_at_utc": "2026-10-25T11:12:25.804Z",
+    "message_en": "Recorded gateway route: non-live-correction",
+    "message_ko": "기록된 중계 경로: non-live-correction",
+    "evidence_path": "requests/non-live-correction.json"
+  },
+  {
+    "event_id": "before-expiry",
+    "recorded_at_utc": "2026-10-25T11:12:27.325Z",
+    "message_en": "Recorded gateway route: before-expiry",
+    "message_ko": "기록된 중계 경로: before-expiry",
+    "evidence_path": "requests/before-expiry.json"
+  },
+  {
+    "event_id": "exact-expiry",
+    "recorded_at_utc": "2026-10-25T11:12:31.470Z",
+    "message_en": "Recorded gateway route: exact-expiry",
+    "message_ko": "기록된 중계 경로: exact-expiry",
+    "evidence_path": "requests/exact-expiry.json"
+  }
+]

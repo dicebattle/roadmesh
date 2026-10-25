@@ -1,0 +1,52 @@
+{
+  "credential_scan_files": 139,
+  "credential_files_quarantined": [],
+  "cleanup_verified": true,
+  "remaining_owned_processes": [],
+  "private_configuration_removed": true,
+  "diagnostic_secret_rejected": false,
+  "sessions": [
+    {
+      "sequence": 1,
+      "pid": 26257,
+      "origin": "http://127.0.0.1:63023",
+      "exit": {
+        "code": 143,
+        "signal": null
+      },
+      "cleanup_verified": true
+    },
+    {
+      "sequence": 2,
+      "pid": 26621,
+      "origin": "http://127.0.0.1:63052",
+      "exit": {
+        "code": 143,
+        "signal": null
+      },
+      "cleanup_verified": true
+    },
+    {
+      "sequence": 3,
+      "pid": 27263,
+      "origin": "http://127.0.0.1:63078",
+      "exit": {
+        "code": 143,
+        "signal": null
+      },
+      "cleanup_verified": true
+    },
+    {
+      "sequence": 4,
+      "pid": 28207,
+      "origin": "http://127.0.0.1:63103",
+      "exit": {
+        "code": 143,
+        "signal": null
+      },
+      "cleanup_verified": true
+    }
+  ],
+  "message_en": "Only this fixture's original process identities and ports were stopped. Persistent synthetic SQLite state remains as evidence.",
+  "message_ko": "이 실행기의 원래 프로세스 식별자·포트만 종료하고 합성 SQLite 상태는 근거로 보존했습니다."
+}

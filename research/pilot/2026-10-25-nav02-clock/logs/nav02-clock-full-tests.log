@@ -1,0 +1,1970 @@
+
+> routelens@0.0.0 test
+> npm run build && node --test dist/tests/*.test.js
+
+
+> routelens@0.0.0 build
+> tsc -p tsconfig.json && tsc -p tsconfig.browser.json && node dist/tools/client_build.js && tsc -p tsconfig.cloudflare.json
+
+Client assets built / 클라이언트 자료 생성: /Users/dice/Documents/routelens-p13/dist/web/pilot
+TAP version 13
+# Subtest: UTC exit window is half-open and finalization deadline is exact / UTC 진출 창과 확정 마감 경계를 검사
+ok 1 - UTC exit window is half-open and finalization deadline is exact / UTC 진출 창과 확정 마감 경계를 검사
+  ---
+  duration_ms: 5.026
+  type: 'test'
+  ...
+# Subtest: Availability strictly precedes deadline and cannot precede exit / 사용 가능 시각은 진출 이후이며 마감 미만
+ok 2 - Availability strictly precedes deadline and cannot precede exit / 사용 가능 시각은 진출 이후이며 마감 미만
+  ---
+  duration_ms: 0.455167
+  type: 'test'
+  ...
+# Subtest: Zero, one, four and five unique contributors produce correct statuses / 고유 기여자 0·1·4·5명 상태
+ok 3 - Zero, one, four and five unique contributors produce correct statuses / 고유 기여자 0·1·4·5명 상태
+  ---
+  duration_ms: 0.411833
+  type: 'test'
+  ...
+# Subtest: Repeated trips count once by earliest exit, entry and ID / 반복 여행은 진출·진입·ID 순으로 한 번 선택
+ok 4 - Repeated trips count once by earliest exit, entry and ID / 반복 여행은 진출·진입·ID 순으로 한 번 선택
+  ---
+  duration_ms: 0.413292
+  type: 'test'
+  ...
+# Subtest: Exact duplicates collapse; conflicting ID content fails closed / 정확 중복은 합치고 같은 ID의 내용 충돌은 거부
+ok 5 - Exact duplicates collapse; conflicting ID content fails closed / 정확 중복은 합치고 같은 ID의 내용 충돌은 거부
+  ---
+  duration_ms: 0.272416
+  type: 'test'
+  ...
+# Subtest: Median duration includes signal wait and averages even middle values / 신호대기 포함 중앙값과 짝수 중앙값 평균
+ok 6 - Median duration includes signal wait and averages even middle values / 신호대기 포함 중앙값과 짝수 중앙값 평균
+  ---
+  duration_ms: 0.187667
+  type: 'test'
+  ...
+# Subtest: Sample buckets switch at ten and twenty / 표본 구간은 10명과 20명에서 전환
+ok 7 - Sample buckets switch at ten and twenty / 표본 구간은 10명과 20명에서 전환
+  ---
+  duration_ms: 3.518209
+  type: 'test'
+  ...
+# Subtest: Source classes partition and explicit parked trips do not contribute / 출처별 분리와 명시 주차 여행 제외
+ok 8 - Source classes partition and explicit parked trips do not contribute / 출처별 분리와 명시 주차 여행 제외
+  ---
+  duration_ms: 0.340917
+  type: 'test'
+  ...
+# Subtest: Only formerly eligible live entries become stale; old callers cannot extend validity / 적격 실시간 값만 만료되며 유효기간 고정
+ok 9 - Only formerly eligible live entries become stale; old callers cannot extend validity / 적격 실시간 값만 만료되며 유효기간 고정
+  ---
+  duration_ms: 0.848208
+  type: 'test'
+  ...
+# Subtest: New empty window does not inherit previous speed / 새 빈 창은 이전 속도를 상속하지 않음
+ok 10 - New empty window does not inherit previous speed / 새 빈 창은 이전 속도를 상속하지 않음
+  ---
+  duration_ms: 1.321
+  type: 'test'
+  ...
+# Subtest: Draft canonical bytes are stable and expose strict public whitelist / 후보 정규 바이트 결정성과 공개 필드 제한
+ok 11 - Draft canonical bytes are stable and expose strict public whitelist / 후보 정규 바이트 결정성과 공개 필드 제한
+  ---
+  duration_ms: 0.42125
+  type: 'test'
+  ...
+# Subtest: Catalog duplicates, malformed direction, bad geometry and metadata are rejected / 목록 중복·방향·지형·정보 오류 거부
+ok 12 - Catalog duplicates, malformed direction, bad geometry and metadata are rejected / 목록 중복·방향·지형·정보 오류 거부
+  ---
+  duration_ms: 2.678584
+  type: 'test'
+  ...
+# Subtest: Trip activity defaults normalize to legacy hash; parked remains distinct / 활동 기본값은 기존 해시와 같고 주차는 구분
+ok 13 - Trip activity defaults normalize to legacy hash; parked remains distinct / 활동 기본값은 기존 해시와 같고 주차는 구분
+  ---
+  duration_ms: 0.385667
+  type: 'test'
+  ...
+# Subtest: authored short trips retain independent signal timing and explicit moving PARKED state / 짧은여행의 독립 신호시간·명시이동PARKED 보존
+ok 14 - authored short trips retain independent signal timing and explicit moving PARKED state / 짧은여행의 독립 신호시간·명시이동PARKED 보존
+  ---
+  duration_ms: 10.930958
+  type: 'test'
+  ...
+# Subtest: candidate validation rejects private fields and unusable-state speed / 후보의 비공개필드·사용불가속도 거부
+ok 15 - candidate validation rejects private fields and unusable-state speed / 후보의 비공개필드·사용불가속도 거부
+  ---
+  duration_ms: 0.311375
+  type: 'test'
+  ...
+# Subtest: report separates original and P06 cohorts and preserves actual unsigned draft bytes / 보고서 기존·P06차량군 분리와 실제서명전 후보 보존
+ok 16 - report separates original and P06 cohorts and preserves actual unsigned draft bytes / 보고서 기존·P06차량군 분리와 실제서명전 후보 보존
+  ---
+  duration_ms: 5.893417
+  type: 'test'
+  ...
+# Subtest: Ingestion pins v2 and v3 separately while preserving legacy identifiers and hashes / 수집 정책을 분리하고 기존 식별자와 해시 보존
+ok 17 - Ingestion pins v2 and v3 separately while preserving legacy identifiers and hashes / 수집 정책을 분리하고 기존 식별자와 해시 보존
+  ---
+  duration_ms: 2.650833
+  type: 'test'
+  ...
+# Subtest: Aggregation requires v3 and rejects positive geometry rounded to zero live speed / 집계는 v3를 요구하고 반올림 후 0인 속도를 거부
+ok 18 - Aggregation requires v3 and rejects positive geometry rounded to zero live speed / 집계는 v3를 요구하고 반올림 후 0인 속도를 거부
+  ---
+  duration_ms: 0.993125
+  type: 'test'
+  ...
+# Subtest: Worker contribution boundary rejects results from a different pinned policy / 처리자는 다른 고정 정책의 결과를 저장하지 않음
+ok 19 - Worker contribution boundary rejects results from a different pinned policy / 처리자는 다른 고정 정책의 결과를 저장하지 않음
+  ---
+  duration_ms: 0.117542
+  type: 'test'
+  ...
+# (node:42299) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Current context is authorized independently of node readiness and clears expired metadata / 현재 문맥은 노드 준비와 별개이며 만료 메타데이터 해제
+ok 20 - Current context is authorized independently of node readiness and clears expired metadata / 현재 문맥은 노드 준비와 별개이며 만료 메타데이터 해제
+  ---
+  duration_ms: 134.837292
+  type: 'test'
+  ...
+# Subtest: Context store timeout returns503 and late store data is not cached / 문맥 저장소 시간초과는503이며 늦은 값을 캐시하지 않음
+ok 21 - Context store timeout returns503 and late store data is not cached / 문맥 저장소 시간초과는503이며 늦은 값을 캐시하지 않음
+  ---
+  duration_ms: 56.508959
+  type: 'test'
+  ...
+# Subtest: Interactive pilot lifetime cannot exceed fifteen minutes / 대화형 파일럿 수명은15분을 넘길 수 없음
+ok 22 - Interactive pilot lifetime cannot exceed fifteen minutes / 대화형 파일럿 수명은15분을 넘길 수 없음
+  ---
+  duration_ms: 0.267125
+  type: 'test'
+  ...
+# Subtest: client fixed inventory rejects skipped, duplicate, failed and substituted browser cases / 고정브라우저검사생략·중복·실패·교체거부
+ok 23 - client fixed inventory rejects skipped, duplicate, failed and substituted browser cases / 고정브라우저검사생략·중복·실패·교체거부
+  ---
+  duration_ms: 0.501458
+  type: 'test'
+  ...
+# Subtest: client CLI fails incomplete input before browser or native resources / 화면명령불완전입력시브라우저·엔진생성전실패
+ok 24 - client CLI fails incomplete input before browser or native resources / 화면명령불완전입력시브라우저·엔진생성전실패
+  ---
+  duration_ms: 0.131334
+  type: 'test'
+  ...
+# Subtest: client report preserves existing replay and safely embeds actual browser evidence / 보고서기존재생보존·안전한브라우저근거삽입
+ok 25 - client report preserves existing replay and safely embeds actual browser evidence / 보고서기존재생보존·안전한브라우저근거삽입
+  ---
+  duration_ms: 1.372917
+  type: 'test'
+  ...
+# Subtest: browser barriers have finite deadlines and signal interruption / 브라우저대기의유한기한·신호중단
+ok 26 - browser barriers have finite deadlines and signal interruption / 브라우저대기의유한기한·신호중단
+  ---
+  duration_ms: 6.156417
+  type: 'test'
+  ...
+# Subtest: Startup failure still cleans when its failure record cannot be written / 시작 실패 기록 불가여도 소유 정리
+ok 27 - Startup failure still cleans when its failure record cannot be written / 시작 실패 기록 불가여도 소유 정리
+  ---
+  duration_ms: 230.653
+  type: 'test'
+  ...
+# (node:42301) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Startup cancellation prevents a late helper from spawning new resources / 준비 취소 뒤 늦은 원본 작업은 새 자원을 만들지 않음
+ok 28 - Startup cancellation prevents a late helper from spawning new resources / 준비 취소 뒤 늦은 원본 작업은 새 자원을 만들지 않음
+  ---
+  duration_ms: 134.8885
+  type: 'test'
+  ...
+# Subtest: Closing bounds active mutations, collects late rejection and skips queued work / 종료는 진행 작업을 제한하고 늦은 거부를 수거하며 대기 작업을 건너뜀
+ok 29 - Closing bounds active mutations, collects late rejection and skips queued work / 종료는 진행 작업을 제한하고 늦은 거부를 수거하며 대기 작업을 건너뜀
+  ---
+  duration_ms: 95.621041
+  type: 'test'
+  ...
+# Subtest: Final evidence failures resolve ended as false after exact resource cleanup / 마지막 근거 실패도 소유 정리 후 ended를 실패로 확정
+ok 30 - Final evidence failures resolve ended as false after exact resource cleanup / 마지막 근거 실패도 소유 정리 후 ended를 실패로 확정
+  ---
+  duration_ms: 63.613834
+  type: 'test'
+  ...
+# Subtest: Owned before-cleanup hook success never skips owner cleanup / 정리 전 훅 success에서도 소유 정리 유지
+ok 31 - Owned before-cleanup hook success never skips owner cleanup / 정리 전 훅 success에서도 소유 정리 유지
+  ---
+  duration_ms: 1.672125
+  type: 'test'
+  ...
+# Subtest: Owned before-cleanup hook failure never skips owner cleanup / 정리 전 훅 failure에서도 소유 정리 유지
+ok 32 - Owned before-cleanup hook failure never skips owner cleanup / 정리 전 훅 failure에서도 소유 정리 유지
+  ---
+  duration_ms: 25.394666
+  type: 'test'
+  ...
+# Subtest: Owned before-cleanup hook timeout never skips owner cleanup / 정리 전 훅 timeout에서도 소유 정리 유지
+ok 33 - Owned before-cleanup hook timeout never skips owner cleanup / 정리 전 훅 timeout에서도 소유 정리 유지
+  ---
+  duration_ms: 33.314916
+  type: 'test'
+  ...
+# Subtest: Session, exact Host and Origin protect local APIs without leaking gateway secrets / 세션·정확 호스트·출처로 보호하며 인증값 비공개
+ok 34 - Session, exact Host and Origin protect local APIs without leaking gateway secrets / 세션·정확 호스트·출처로 보호하며 인증값 비공개
+  ---
+  duration_ms: 164.041459
+  type: 'test'
+  ...
+# Subtest: POST needs exact Origin, rejects out-of-envelope input and only serves allowlisted assets / POST 출처·서버범위·정적 허용목록
+ok 35 - POST needs exact Origin, rejects out-of-envelope input and only serves allowlisted assets / POST 출처·서버범위·정적 허용목록
+  ---
+  duration_ms: 115.839833
+  type: 'test'
+  ...
+# Subtest: Malformed or private upstream fields cannot cross the same-origin proxy / 잘못된 또는 비공개 상위 응답 필드는 화면으로 전달하지 않음
+ok 36 - Malformed or private upstream fields cannot cross the same-origin proxy / 잘못된 또는 비공개 상위 응답 필드는 화면으로 전달하지 않음
+  ---
+  duration_ms: 84.400917
+  type: 'test'
+  ...
+# Subtest: input/new requests fence late route and failure completion / 입력·새요청이늦은응답·실패를차단
+ok 37 - input/new requests fence late route and failure completion / 입력·새요청이늦은응답·실패를차단
+  ---
+  duration_ms: 7.79525
+  type: 'test'
+  ...
+# Subtest: authority is monotonic in both high-water and event time / 승인순번·관측시간의동시단조성
+ok 38 - authority is monotonic in both high-water and event time / 승인순번·관측시간의동시단조성
+  ---
+  duration_ms: 1.864875
+  type: 'test'
+  ...
+# Subtest: fresh response may establish newer authority but old snapshot is rejected / 새응답승인확립·옛스냅샷거부
+ok 39 - fresh response may establish newer authority but old snapshot is rejected / 새응답승인확립·옛스냅샷거부
+  ---
+  duration_ms: 0.352875
+  type: 'test'
+  ...
+# Subtest: exact event expiry removes route independently of browser real time / 실제브라우저시계와독립한관측시각만료
+ok 40 - exact event expiry removes route independently of browser real time / 실제브라우저시계와독립한관측시각만료
+  ---
+  duration_ms: 0.103583
+  type: 'test'
+  ...
+# Subtest: freshness/route failure clears current line and stale error cannot return it / 신선도·요청실패의현재경로제거
+ok 41 - freshness/route failure clears current line and stale error cannot return it / 신선도·요청실패의현재경로제거
+  ---
+  duration_ms: 0.240375
+  type: 'test'
+  ...
+# Subtest: unknown authority and nonfinite route content never become current / 알수없는승인·비유한경로의현재표시거부
+ok 42 - unknown authority and nonfinite route content never become current / 알수없는승인·비유한경로의현재표시거부
+  ---
+  duration_ms: 0.115541
+  type: 'test'
+  ...
+# Subtest: Route domain errors clear geometry and preserve distinct states / 경로 업무 오류는 지형을 지우고 서로 다른 상태 유지
+ok 43 - Route domain errors clear geometry and preserve distinct states / 경로 업무 오류는 지형을 지우고 서로 다른 상태 유지
+  ---
+  duration_ms: 0.177208
+  type: 'test'
+  ...
+# Subtest: portable codec preserves strict JSON and exact ASCII canonical bytes / 이동 가능한 JSON·정확 바이트
+ok 44 - portable codec preserves strict JSON and exact ASCII canonical bytes / 이동 가능한 JSON·정확 바이트
+  ---
+  duration_ms: 1.583792
+  type: 'test'
+  ...
+# Subtest: UTC extraction preserves ingestion error identity / UTC 분리 후 기존 오류 식별 유지
+ok 45 - UTC extraction preserves ingestion error identity / UTC 분리 후 기존 오류 식별 유지
+  ---
+  duration_ms: 3.8535
+  type: 'test'
+  ...
+# Subtest: configured scopes reject duplicate logical owners and catalog edits / 중복 소유자·목록 입력 거부
+ok 46 - configured scopes reject duplicate logical owners and catalog edits / 중복 소유자·목록 입력 거부
+  ---
+  duration_ms: 1.410958
+  type: 'test'
+  ...
+# Subtest: matched boundary rejects changed graph, source, timestamps and extra fields / 매칭 경계의 지도·출처·시각·추가 필드 거부
+ok 47 - matched boundary rejects changed graph, source, timestamps and extra fields / 매칭 경계의 지도·출처·시각·추가 필드 거부
+  ---
+  duration_ms: 2.418917
+  type: 'test'
+  ...
+# Subtest: dispatch control cannot change immutable payload hash / 발신 제어와 불변 바이트 구분
+ok 48 - dispatch control cannot change immutable payload hash / 발신 제어와 불변 바이트 구분
+  ---
+  duration_ms: 0.531417
+  type: 'test'
+  ...
+# Subtest: queue notices contain only bounded configured references / 큐 통지는 제한된 참조만 허용
+ok 49 - queue notices contain only bounded configured references / 큐 통지는 제한된 참조만 허용
+  ---
+  duration_ms: 0.158875
+  type: 'test'
+  ...
+# Subtest: Whole P13 gate rejects missing, duplicated and failed cases / P13 전체 판정의 누락·중복·실패 거부
+ok 50 - Whole P13 gate rejects missing, duplicated and failed cases / P13 전체 판정의 누락·중복·실패 거부
+  ---
+  duration_ms: 259.421416
+  type: 'test'
+  ...
+# Subtest: CPython MT19937 rejection draws match all reference seeds / Python 시드별 거절 추출 동등성
+ok 51 - CPython MT19937 rejection draws match all reference seeds / Python 시드별 거절 추출 동등성
+  ---
+  duration_ms: 1.717042
+  type: 'test'
+  ...
+# Subtest: Python event streams, SHA and assertions remain identical / Python 이벤트·해시·검사 동등성
+ok 52 - Python event streams, SHA and assertions remain identical / Python 이벤트·해시·검사 동등성
+  ---
+  duration_ms: 5241.934875
+  type: 'test'
+  ...
+# Subtest: Python readiness report and exits remain identical / Python 준비 판정·종료 코드 동등성
+ok 53 - Python readiness report and exits remain identical / Python 준비 판정·종료 코드 동등성
+  ---
+  duration_ms: 16.2965
+  type: 'test'
+  ...
+# Subtest: Python invalid JSON exits remain identical / Python 잘못된 JSON 종료 코드 동등성
+ok 54 - Python invalid JSON exits remain identical / Python 잘못된 JSON 종료 코드 동등성
+  ---
+  duration_ms: 4.002708
+  type: 'test'
+  ...
+# Subtest: strict parser rejects comments, trailing commas and unsafe numbers / 엄격 파서의 주석·후행 쉼표·안전 범위 검사
+ok 55 - strict parser rejects comments, trailing commas and unsafe numbers / 엄격 파서의 주석·후행 쉼표·안전 범위 검사
+  ---
+  duration_ms: 0.426584
+  type: 'test'
+  ...
+# Subtest: synthetic example never counts as real-road evidence / 합성 자료는 실제 도로 근거에서 제외
+ok 56 - synthetic example never counts as real-road evidence / 합성 자료는 실제 도로 근거에서 제외
+  ---
+  duration_ms: 2.097375
+  type: 'test'
+  ...
+# Subtest: invalid coordinates / 잘못된 좌표 거부
+ok 57 - invalid coordinates / 잘못된 좌표 거부
+  ---
+  duration_ms: 2.572125
+  type: 'test'
+  ...
+# Subtest: invalid bbox / 잘못된 경계 거부
+ok 58 - invalid bbox / 잘못된 경계 거부
+  ---
+  duration_ms: 2.442709
+  type: 'test'
+  ...
+# Subtest: duplicate cases never inflate quota / 중복 사례의 기준 수 증가 방지
+ok 59 - duplicate cases never inflate quota / 중복 사례의 기준 수 증가 방지
+  ---
+  duration_ms: 9.811291
+  type: 'test'
+  ...
+# Subtest: unknown and duplicate sources / 미등록·중복 출처 거부
+ok 60 - unknown and duplicate sources / 미등록·중복 출처 거부
+  ---
+  duration_ms: 0.8185
+  type: 'test'
+  ...
+# Subtest: review requires evidence and rights / 검토 근거와 재배포 권한 필수
+ok 61 - review requires evidence and rights / 검토 근거와 재배포 권한 필수
+  ---
+  duration_ms: 1.489834
+  type: 'test'
+  ...
+# Subtest: stationary samples allowed and timestamps increase / 정지 표본 허용·시각 증가 필수
+ok 62 - stationary samples allowed and timestamps increase / 정지 표본 허용·시각 증가 필수
+  ---
+  duration_ms: 1.515292
+  type: 'test'
+  ...
+# Subtest: malformed shapes are validation errors / 잘못된 구조를 검증 오류로 처리
+ok 63 - malformed shapes are validation errors / 잘못된 구조를 검증 오류로 처리
+  ---
+  duration_ms: 1.222
+  type: 'test'
+  ...
+# Subtest: readiness threshold excludes uncertain cases / 준비 기준에서 불확실 사례 제외
+ok 64 - readiness threshold excludes uncertain cases / 준비 기준에서 불확실 사례 제외
+  ---
+  duration_ms: 5.599084
+  type: 'test'
+  ...
+# Subtest: readiness explanations retain English and Korean / 준비 설명 영문·국문 보존
+ok 65 - readiness explanations retain English and Korean / 준비 설명 영문·국문 보존
+  ---
+  duration_ms: 0.810833
+  type: 'test'
+  ...
+# Subtest: validation diagnostic has English before Korean / 검증 진단 영어 우선
+ok 66 - validation diagnostic has English before Korean / 검증 진단 영어 우선
+  ---
+  duration_ms: 0.207708
+  type: 'test'
+  ...
+# Subtest: CLI help and argument errors are bilingual / 도움말과 인자 오류 이중 언어
+ok 67 - CLI help and argument errors are bilingual / 도움말과 인자 오류 이중 언어
+  ---
+  duration_ms: 0.216375
+  type: 'test'
+  ...
+# Subtest: CLI exits and nonstandard JSON / 종료 코드와 비표준 JSON 거부
+ok 68 - CLI exits and nonstandard JSON / 종료 코드와 비표준 JSON 거부
+  ---
+  duration_ms: 6.030875
+  type: 'test'
+  ...
+# Subtest: Exact in-flight preparation is shared; settled and corrupt bytes are revalidated / 정확한 진행 준비만 공유하고 완료·손상 바이트를 재검증
+ok 69 - Exact in-flight preparation is shared; settled and corrupt bytes are revalidated / 정확한 진행 준비만 공유하고 완료·손상 바이트를 재검증
+  ---
+  duration_ms: 554.124834
+  type: 'test'
+  ...
+# Subtest: Changed full input cannot borrow another input's successful in-flight preparation / 변경된 전체 입력은 다른 입력의 진행 성공을 빌리지 못함
+ok 70 - Changed full input cannot borrow another input's successful in-flight preparation / 변경된 전체 입력은 다른 입력의 진행 성공을 빌리지 못함
+  ---
+  duration_ms: 286.716625
+  type: 'test'
+  ...
+# Subtest: CPU work in the owned thread does not block the parent's timer / 소유 스레드 CPU 작업은 부모 타이머를 막지 않음
+ok 71 - CPU work in the owned thread does not block the parent's timer / 소유 스레드 CPU 작업은 부모 타이머를 막지 않음
+  ---
+  duration_ms: 283.37675
+  type: 'test'
+  ...
+# Subtest: Owned worker test-crash rejects pending jobs and stays closed until restart / 소유 작업자 test-crash는 대기를 거부하고 재시작 전까지 실패 유지
+ok 72 - Owned worker test-crash rejects pending jobs and stays closed until restart / 소유 작업자 test-crash는 대기를 거부하고 재시작 전까지 실패 유지
+  ---
+  duration_ms: 270.12225
+  type: 'test'
+  ...
+# Subtest: Owned worker test-exit rejects pending jobs and stays closed until restart / 소유 작업자 test-exit는 대기를 거부하고 재시작 전까지 실패 유지
+ok 73 - Owned worker test-exit rejects pending jobs and stays closed until restart / 소유 작업자 test-exit는 대기를 거부하고 재시작 전까지 실패 유지
+  ---
+  duration_ms: 277.464833
+  type: 'test'
+  ...
+# (node:42307) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Sixteen distinct pending jobs and a twelve-second deadline fail closed and terminate / 서로 다른 대기16개·12초 기한은 실패를 닫고 종료
+ok 74 - Sixteen distinct pending jobs and a twelve-second deadline fail closed and terminate / 서로 다른 대기16개·12초 기한은 실패를 닫고 종료
+  ---
+  duration_ms: 631.160292
+  type: 'test'
+  ...
+# Subtest: Worker construction failure records no live resource and production startup failure terminates its thread / 작업자 생성 실패와 실제 준비 실패의 종료 기록
+ok 75 - Worker construction failure records no live resource and production startup failure terminates its thread / 작업자 생성 실패와 실제 준비 실패의 종료 기록
+  ---
+  duration_ms: 278.883584
+  type: 'test'
+  ...
+# (node:42308) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Domain rejection binds policy, request, selected instance and final authority / 업무 거부는 정책·요청·선택 실행·최종 승인을 연결
+ok 76 - Domain rejection binds policy, request, selected instance and final authority / 업무 거부는 정책·요청·선택 실행·최종 승인을 연결
+  ---
+  duration_ms: 541.9505
+  type: 'test'
+  ...
+# Subtest: Coverage is checked before dispatch and exclusions skip healthy peers / 범위는 전달 전에 검사하고 제외한 정상 노드는 건너뜀
+ok 77 - Coverage is checked before dispatch and exclusions skip healthy peers / 범위는 전달 전에 검사하고 제외한 정상 노드는 건너뜀
+  ---
+  duration_ms: 277.646625
+  type: 'test'
+  ...
+# Subtest: Strict public input and exact configured origins / 정확 공개 입력·설정 주소
+ok 78 - Strict public input and exact configured origins / 정확 공개 입력·설정 주소
+  ---
+  duration_ms: 34.718875
+  type: 'test'
+  ...
+# Subtest: Stable node order, canonical public hash and route-local partial coverage / 고정 노드 순서·공개 정규해시·부분구간 적용률
+ok 79 - Stable node order, canonical public hash and route-local partial coverage / 고정 노드 순서·공개 정규해시·부분구간 적용률
+  ---
+  duration_ms: 180.081958
+  type: 'test'
+  ...
+# Subtest: One retry preserves the pinned generation and invalid first response is retained / 한 번 재시도는 고정 세대를 유지하고 첫 잘못된 원문 보존
+ok 80 - One retry preserves the pinned generation and invalid first response is retained / 한 번 재시도는 고정 세대를 유지하고 첫 잘못된 원문 보존
+  ---
+  duration_ms: 196.715291
+  type: 'test'
+  ...
+# Subtest: No compatible node and two unavailable peers cannot silently downgrade / 호환 노드 부재·두 장애는 몰래 이전 버전을 반환하지 않음
+ok 81 - No compatible node and two unavailable peers cannot silently downgrade / 호환 노드 부재·두 장애는 몰래 이전 버전을 반환하지 않음
+  ---
+  duration_ms: 429.782375
+  type: 'test'
+  ...
+# Subtest: 409 stops retry and final durable version change discards the route /409는 재시도를 멈추고 최종 영속 변경은 결과 폐기
+ok 82 - 409 stops retry and final durable version change discards the route /409는 재시도를 멈추고 최종 영속 변경은 결과 폐기
+  ---
+  duration_ms: 485.000375
+  type: 'test'
+  ...
+# Subtest: Malformed shapes, wrong native request and discontinuous trace are rejected / 잘못된 지형·원요청·불연속 추적 거부
+ok 83 - Malformed shapes, wrong native request and discontinuous trace are rejected / 잘못된 지형·원요청·불연속 추적 거부
+  ---
+  duration_ms: 58.915083
+  type: 'test'
+  ...
+# Subtest: Overall deadline and client cancellation discard a held result / 전체 기한·연결 취소는 대기 결과 폐기
+ok 84 - Overall deadline and client cancellation discard a held result / 전체 기한·연결 취소는 대기 결과 폐기
+  ---
+  duration_ms: 464.27325
+  type: 'test'
+  ...
+# Subtest: Eight admitted requests have no public waiting queue / 동시 여덟 요청 뒤 공개 대기열 없음
+ok 85 - Eight admitted requests have no public waiting queue / 동시 여덟 요청 뒤 공개 대기열 없음
+  ---
+  duration_ms: 1084.226209
+  type: 'test'
+  ...
+# Subtest: Timed-out underlying store blocks new work, discards late values and requires a fresh read / 저장소 시간초과는 새 작업을 막고 늦은 값을 버린 뒤 새 조회
+ok 86 - Timed-out underlying store blocks new work, discards late values and requires a fresh read / 저장소 시간초과는 새 작업을 막고 늦은 값을 버린 뒤 새 조회
+  ---
+  duration_ms: 38.826166
+  type: 'test'
+  ...
+# Subtest: Evidence directory failure releases admission and recovery accepts a fresh request / 근거 폴더 실패는 접수를 회수하고 복원 뒤 새 요청 허용
+ok 87 - Evidence directory failure releases admission and recovery accepts a fresh request / 근거 폴더 실패는 접수를 회수하고 복원 뒤 새 요청 허용
+  ---
+  duration_ms: 184.732791
+  type: 'test'
+  ...
+# Subtest: Both generation byte checks are awaited and final verification failure is terminal / 세대 바이트 검사 두 번을 기다리고 마지막 실패는 재시도하지 않음
+ok 88 - Both generation byte checks are awaited and final verification failure is terminal / 세대 바이트 검사 두 번을 기다리고 마지막 실패는 재시도하지 않음
+  ---
+  duration_ms: 212.268792
+  type: 'test'
+  ...
+# Subtest: Cancelling one caller stops its wait without authorizing late shared preparation / 한 요청 취소는 대기만 멈추고 늦은 공유 준비로 승인하지 않음
+ok 89 - Cancelling one caller stops its wait without authorizing late shared preparation / 한 요청 취소는 대기만 멈추고 늦은 공유 준비로 승인하지 않음
+  ---
+  duration_ms: 130.457458
+  type: 'test'
+  ...
+# Subtest: Optional compiler shutdown is awaited and unsuccessful termination makes cleanup fail / 선택적 작업자 종료를 기다리고 종료 실패는 정리 실패
+ok 90 - Optional compiler shutdown is awaited and unsuccessful termination makes cleanup fail / 선택적 작업자 종료를 기다리고 종료 실패는 정리 실패
+  ---
+  duration_ms: 45.10625
+  type: 'test'
+  ...
+# Subtest: guided gateway validates native locale geometry and maneuver boundaries / 안내 중계의 엔진 언어·지형·회전 경계 검증
+ok 91 - guided gateway validates native locale geometry and maneuver boundaries / 안내 중계의 엔진 언어·지형·회전 경계 검증
+  ---
+  duration_ms: 23.401292
+  type: 'test'
+  ...
+# Subtest: gateway fixed inventory rejects missing, duplicate, failed and substituted cases / 중계고정목록누락·중복·실패·교체거부
+ok 92 - gateway fixed inventory rejects missing, duplicate, failed and substituted cases / 중계고정목록누락·중복·실패·교체거부
+  ---
+  duration_ms: 0.506542
+  type: 'test'
+  ...
+# Subtest: gateway negatives bind exact HTTP reason and exclude successful routing fields / 중계실패정확상태·사유·성공필드부재
+ok 93 - gateway negatives bind exact HTTP reason and exclude successful routing fields / 중계실패정확상태·사유·성공필드부재
+  ---
+  duration_ms: 0.104125
+  type: 'test'
+  ...
+# Subtest: gateway CLI rejects incomplete input before resource creation / 중계명령이자원생성전불완전입력거부
+ok 94 - gateway CLI rejects incomplete input before resource creation / 중계명령이자원생성전불완전입력거부
+  ---
+  duration_ms: 0.122708
+  type: 'test'
+  ...
+# Subtest: gateway report retains original evidence and safe bilingual public route playback / 중계보고서원근거·안전한한영공개경로보존
+ok 95 - gateway report retains original evidence and safe bilingual public route playback / 중계보고서원근거·안전한한영공개경로보존
+  ---
+  duration_ms: 1.436417
+  type: 'test'
+  ...
+# Subtest: Native remaining deadline accepts canonical decimal only and absence preserves30s / 네이티브 잔여기한은 정규십진수만 받고 없으면30초
+ok 96 - Native remaining deadline accepts canonical decimal only and absence preserves30s / 네이티브 잔여기한은 정규십진수만 받고 없으면30초
+  ---
+  duration_ms: 0.57375
+  type: 'test'
+  ...
+# Subtest: Gateway auth, chunked64KiB cap and no successful body on failure / 중계 인증·청크64KiB제한·실패의 성공본문 부재
+ok 97 - Gateway auth, chunked64KiB cap and no successful body on failure / 중계 인증·청크64KiB제한·실패의 성공본문 부재
+  ---
+  duration_ms: 21.670666
+  type: 'test'
+  ...
+# Subtest: Propagated deadline includes an incomplete native request body / 전달 기한은 네이티브 미완료 본문 수신도 포함
+ok 98 - Propagated deadline includes an incomplete native request body / 전달 기한은 네이티브 미완료 본문 수신도 포함
+  ---
+  duration_ms: 30.490542
+  type: 'test'
+  ...
+# Subtest: sphere preserves independent known distances and latitude scaling / 독립 구면 거리·위도 보정
+ok 99 - sphere preserves independent known distances and latitude scaling / 독립 구면 거리·위도 보정
+  ---
+  duration_ms: 0.360375
+  type: 'test'
+  ...
+# Subtest: curved polyline distance and interpolation do not use an endpoint chord / 꺾은선 거리·보간은 끝점 직선을 쓰지 않음
+ok 100 - curved polyline distance and interpolation do not use an endpoint chord / 꺾은선 거리·보간은 끝점 직선을 쓰지 않음
+  ---
+  duration_ms: 0.18125
+  type: 'test'
+  ...
+# Subtest: nearest segment projection retains along-polyline distance and tangent / 가까운 선분의 누적 거리·접선
+ok 101 - nearest segment projection retains along-polyline distance and tangent / 가까운 선분의 누적 거리·접선
+  ---
+  duration_ms: 0.536833
+  type: 'test'
+  ...
+# Subtest: metre noise offsets remain metre-bounded away from equator / 적도 밖 미터 잡음의 거리 범위
+ok 102 - metre noise offsets remain metre-bounded away from equator / 적도 밖 미터 잡음의 거리 범위
+  ---
+  duration_ms: 0.55275
+  type: 'test'
+  ...
+# Subtest: native guidance projects only bounded original fields / 엔진 안내 원 필드만 제한 공개
+ok 103 - native guidance projects only bounded original fields / 엔진 안내 원 필드만 제한 공개
+  ---
+  duration_ms: 0.589375
+  type: 'test'
+  ...
+# Subtest: reject missing locale units mode and oversized native input / 누락·언어·단위·수단·크기 거부
+ok 104 - reject missing locale units mode and oversized native input / 누락·언어·단위·수단·크기 거부
+  ---
+  duration_ms: 0.17025
+  type: 'test'
+  ...
+# Subtest: reject invalid shape order types text and metrics / 지형 순서·종류·문장·수치 오류 거부
+ok 105 - reject invalid shape order types text and metrics / 지형 순서·종류·문장·수치 오류 거부
+  ---
+  duration_ms: 0.458792
+  type: 'test'
+  ...
+# Subtest: native serialization tolerances are explicit and bounded / 직렬화 오차의 명시한 한계
+ok 106 - native serialization tolerances are explicit and bounded / 직렬화 오차의 명시한 한계
+  ---
+  duration_ms: 0.064875
+  type: 'test'
+  ...
+# Subtest: all request validators preserve optional locale and legacy native wire / 모든 요청 경계의 언어·기존 전송 호환
+ok 107 - all request validators preserve optional locale and legacy native wire / 모든 요청 경계의 언어·기존 전송 호환
+  ---
+  duration_ms: 0.799708
+  type: 'test'
+  ...
+# Subtest: guided request requires same locale and legacy cannot acquire guidance / 요청한 언어 필수·기존 응답에 안내 삽입 거부
+ok 108 - guided request requires same locale and legacy cannot acquire guidance / 요청한 언어 필수·기존 응답에 안내 삽입 거부
+  ---
+  duration_ms: 0.100958
+  type: 'test'
+  ...
+# Subtest: Stale contributor selection retries after commit and claims remaining work / 오래된 기여자 선택은 커밋 뒤 남은 작업을 재시도
+ok 109 - Stale contributor selection retries after commit and claims remaining work / 오래된 기여자 선택은 커밋 뒤 남은 작업을 재시도
+  ---
+  duration_ms: 2.095292
+  type: 'test'
+  ...
+# Subtest: Genuine empty contributor selection returns null once / 실제 빈 기여자 선택은 한 번 조회하고 종료
+ok 110 - Genuine empty contributor selection returns null once / 실제 빈 기여자 선택은 한 번 조회하고 종료
+  ---
+  duration_ms: 0.148
+  type: 'test'
+  ...
+# Subtest: Strict UTC rejects calendar normalization and offsets / 엄격 UTC는 날짜 자동 보정과 시간대 오프셋을 거부
+ok 111 - Strict UTC rejects calendar normalization and offsets / 엄격 UTC는 날짜 자동 보정과 시간대 오프셋을 거부
+  ---
+  duration_ms: 1.383208
+  type: 'test'
+  ...
+# Subtest: Bounded authenticated batch preserves observation content / 제한된 인증 배치는 관측 내용을 보존
+ok 112 - Bounded authenticated batch preserves observation content / 제한된 인증 배치는 관측 내용을 보존
+  ---
+  duration_ms: 0.931875
+  type: 'test'
+  ...
+# Subtest: Input versions and source are rejected without payload diagnostics / 버전과 출처 거부에 원문을 노출하지 않음
+ok 113 - Input versions and source are rejected without payload diagnostics / 버전과 출처 거부에 원문을 노출하지 않음
+  ---
+  duration_ms: 0.166333
+  type: 'test'
+  ...
+# Subtest: Canonical hashes bind identity and preserve key-order replay / 정규 해시는 식별자를 묶고 키 순서 재시도를 보존
+ok 114 - Canonical hashes bind identity and preserve key-order replay / 정규 해시는 식별자를 묶고 키 순서 재시도를 보존
+  ---
+  duration_ms: 0.465791
+  type: 'test'
+  ...
+# Subtest: Accepted contribution requires UTC duration, distance and no geometry / 수용 기여는 UTC 시간과 거리만 저장
+ok 115 - Accepted contribution requires UTC duration, distance and no geometry / 수용 기여는 UTC 시간과 거리만 저장
+  ---
+  duration_ms: 0.260666
+  type: 'test'
+  ...
+# Subtest: Private config enforces mode and strict JSON / 비공개 설정은 권한과 엄격 JSON을 검증
+ok 116 - Private config enforces mode and strict JSON / 비공개 설정은 권한과 엄격 JSON을 검증
+  ---
+  duration_ms: 27.237375
+  type: 'test'
+  ...
+# Subtest: Failpoint is unavailable without parent IPC / 부모 IPC가 없으면 중단 지점을 켤 수 없음
+ok 117 - Failpoint is unavailable without parent IPC / 부모 IPC가 없으면 중단 지점을 켤 수 없음
+  ---
+  duration_ms: 0.293375
+  type: 'test'
+  ...
+# Subtest: Real HTTP rejects raw credentials and returns bounded 413 JSON / 실제 HTTP는 인증 형식과 본문 한도를 검증
+ok 118 - Real HTTP rejects raw credentials and returns bounded 413 JSON / 실제 HTTP는 인증 형식과 본문 한도를 검증
+  ---
+  duration_ms: 35.310459
+  type: 'test'
+  ...
+# Subtest: Trusted vehicle class rejects non-car admission before body spoofing / 신뢰 차량 종류는 본문 위조 전에 자동차 외 접수 거부
+ok 119 - Trusted vehicle class rejects non-car admission before body spoofing / 신뢰 차량 종류는 본문 위조 전에 자동차 외 접수 거부
+  ---
+  duration_ms: 0.507792
+  type: 'test'
+  ...
+# Subtest: Service uses persisted monotonic clock after IPC and old-config restart / 서비스는 IPC와 과거 설정 재시작 후 영속 단조 시계를 사용
+ok 120 - Service uses persisted monotonic clock after IPC and old-config restart / 서비스는 IPC와 과거 설정 재시작 후 영속 단조 시계를 사용
+  ---
+  duration_ms: 23.333417
+  type: 'test'
+  ...
+# Subtest: HTTP batching retains every sample and bounded exact overlap / HTTP 배치가 모든 표본과 제한된 동일중첩 보존
+ok 121 - HTTP batching retains every sample and bounded exact overlap / HTTP 배치가 모든 표본과 제한된 동일중첩 보존
+  ---
+  duration_ms: 0.895834
+  type: 'test'
+  ...
+# Subtest: stored comparison keeps directed occurrence order and UTC times / 저장 대조의 방향순번·UTC시각 보존
+ok 122 - stored comparison keeps directed occurrence order and UTC times / 저장 대조의 방향순번·UTC시각 보존
+  ---
+  duration_ms: 0.098583
+  type: 'test'
+  ...
+# Subtest: diagnostics reject credentials and raw coordinate fields / 진단의 인증·원시좌표 필드 거부
+ok 123 - diagnostics reject credentials and raw coordinate fields / 진단의 인증·원시좌표 필드 거부
+  ---
+  duration_ms: 0.218542
+  type: 'test'
+  ...
+# Subtest: offline evidence renders ingestion without changing map provenance / 오프라인 수집증거와 지도출처 보존
+ok 124 - offline evidence renders ingestion without changing map provenance / 오프라인 수집증거와 지도출처 보존
+  ---
+  duration_ms: 1.066041
+  type: 'test'
+  ...
+# Subtest: cleanup requires explicit missing-resource evidence, not daemon failure / 정리 부재는 데몬 실패가 아닌 명시적 자료로 확인
+ok 125 - cleanup requires explicit missing-resource evidence, not daemon failure / 정리 부재는 데몬 실패가 아닌 명시적 자료로 확인
+  ---
+  duration_ms: 0.092
+  type: 'test'
+  ...
+# Subtest: whole pilot refuses missing source value before creating output / 전체 파일럿 원본 인자 누락은 출력 생성 전 거부
+ok 126 - whole pilot refuses missing source value before creating output / 전체 파일럿 원본 인자 누락은 출력 생성 전 거부
+  ---
+  duration_ms: 6.477208
+  type: 'test'
+  ...
+# Subtest: runtime uses read-only graph, request files and verified raw evidence hashes / 읽기 전용 그래프·요청 파일·원문 해시
+ok 127 - runtime uses read-only graph, request files and verified raw evidence hashes / 읽기 전용 그래프·요청 파일·원문 해시
+  ---
+  duration_ms: 1374.347625
+  type: 'test'
+  ...
+# Subtest: ambiguity-only valid result writes empty command inventory and completion / 모호성만 있는 정상 제외 결과의 빈 명령 목록·완료
+ok 128 - ambiguity-only valid result writes empty command inventory and completion / 모호성만 있는 정상 제외 결과의 빈 명령 목록·완료
+  ---
+  duration_ms: 2009.085542
+  type: 'test'
+  ...
+# Subtest: malformed engine response is failure one without a completed manifest / 잘못된 엔진 응답은 완료 없는 실행 실패1
+ok 129 - malformed engine response is failure one without a completed manifest / 잘못된 엔진 응답은 완료 없는 실행 실패1
+  ---
+  duration_ms: 313.68075
+  type: 'test'
+  ...
+# Subtest: actual engine error cannot become successful exclusion / 엔진 오류를 성공한 제외로 바꾸지 않음
+ok 130 - actual engine error cannot become successful exclusion / 엔진 오류를 성공한 제외로 바꾸지 않음
+  ---
+  duration_ms: 169.372833
+  type: 'test'
+  ...
+# Subtest: cleanup failure prevents successful completion / 정리 실패는 성공 완료 금지
+ok 131 - cleanup failure prevents successful completion / 정리 실패는 성공 완료 금지
+  ---
+  duration_ms: 198.717417
+  type: 'test'
+  ...
+# Subtest: graph tampering during matching is execution failure before PASS evidence / 매칭 중 그래프 변조는 통과 증거 전 실행 실패
+ok 132 - graph tampering during matching is execution failure before PASS evidence / 매칭 중 그래프 변조는 통과 증거 전 실행 실패
+  ---
+  duration_ms: 178.727375
+  type: 'test'
+  ...
+# Subtest: wrong graph and existing output remain invalid input / 다른 그래프·기존 출력은 입력 오류
+ok 133 - wrong graph and existing output remain invalid input / 다른 그래프·기존 출력은 입력 오류
+  ---
+  duration_ms: 161.873
+  type: 'test'
+  ...
+# Subtest: bounded CLI input refuses over 32 MiB / 명령 입력의32MiB 초과 거부
+ok 134 - bounded CLI input refuses over 32 MiB / 명령 입력의32MiB 초과 거부
+  ---
+  duration_ms: 69.48775
+  type: 'test'
+  ...
+# Subtest: pinned clean/waiting responses produce six observed-time traversals / 고정 깨끗한·정지 응답의 관측 시각 통과 여섯 개
+ok 135 - pinned clean/waiting responses produce six observed-time traversals / 고정 깨끗한·정지 응답의 관측 시각 통과 여섯 개
+  ---
+  duration_ms: 5.537083
+  type: 'test'
+  ...
+# Subtest: physical parallel ambiguity excludes all 21 midpoints before engine calls / 물리 평행도로 중간점21개 사전 제외
+ok 136 - physical parallel ambiguity excludes all 21 midpoints before engine calls / 물리 평행도로 중간점21개 사전 제외
+  ---
+  duration_ms: 0.682125
+  type: 'test'
+  ...
+# Subtest: gap policy splits only above 3000 ms and retains causes / 3000밀리초 초과만 분리하고 누락 원인 보존
+ok 137 - gap policy splits only above 3000 ms and retains causes / 3000밀리초 초과만 분리하고 누락 원인 보존
+  ---
+  duration_ms: 0.10025
+  type: 'test'
+  ...
+# Subtest: unmatched middle cannot join known same-edge entry and exit / 같은 구간 중간 미대응을 건너 완전 통과 금지
+ok 138 - unmatched middle cannot join known same-edge entry and exit / 같은 구간 중간 미대응을 건너 완전 통과 금지
+  ---
+  duration_ms: 0.388708
+  type: 'test'
+  ...
+# Subtest: distance exclusion also breaks same-edge timing continuity / 거리 초과 제외도 동일 구간 시각 연속성 단절
+ok 139 - distance exclusion also breaks same-edge timing continuity / 거리 초과 제외도 동일 구간 시각 연속성 단절
+  ---
+  duration_ms: 0.214583
+  type: 'test'
+  ...
+# Subtest: single-point runs are explicitly insufficient / 한 점 구간의 표본 부족 명시
+ok 140 - single-point runs are explicitly insufficient / 한 점 구간의 표본 부족 명시
+  ---
+  duration_ms: 0.359041
+  type: 'test'
+  ...
+# Subtest: engine cost and clipped returned length never determine timings / 엔진 비용·잘린 반환 길이로 통과 시각 계산 금지
+ok 141 - engine cost and clipped returned length never determine timings / 엔진 비용·잘린 반환 길이로 통과 시각 계산 금지
+  ---
+  duration_ms: 1.900042
+  type: 'test'
+  ...
+# Subtest: large fraction reversal excludes affected occurrence only / 큰 비율 역행은 해당 구간 통과만 제외
+ok 142 - large fraction reversal excludes affected occurrence only / 큰 비율 역행은 해당 구간 통과만 제외
+  ---
+  duration_ms: 0.595291
+  type: 'test'
+  ...
+# Subtest: run gap cause is not attached to unrelated internal partial edges / 누락 원인을 무관한 내부 일부 구간에 붙이지 않음
+ok 143 - run gap cause is not attached to unrelated internal partial edges / 누락 원인을 무관한 내부 일부 구간에 붙이지 않음
+  ---
+  duration_ms: 0.542917
+  type: 'test'
+  ...
+# Subtest: malformed responses remain failures, never exclusions / 잘못된 엔진 응답은 제외가 아닌 실패
+ok 144 - malformed responses remain failures, never exclusions / 잘못된 엔진 응답은 제외가 아닌 실패
+  ---
+  duration_ms: 1.558625
+  type: 'test'
+  ...
+# Subtest: invalid observation domains and order are input errors / 잘못된 관측 범위·순서는 입력 오류
+ok 145 - invalid observation domains and order are input errors / 잘못된 관측 범위·순서는 입력 오류
+  ---
+  duration_ms: 6.07675
+  type: 'test'
+  ...
+# Subtest: bounded split/overlap session is identical and seals exactly once / 제한 분할·중첩 세션 동등성·한 번 종료
+ok 146 - bounded split/overlap session is identical and seals exactly once / 제한 분할·중첩 세션 동등성·한 번 종료
+  ---
+  duration_ms: 1.576916
+  type: 'test'
+  ...
+# Subtest: conflicting overlap and novel out-of-order samples fail / 충돌 중첩·새 역순 표본 거부
+ok 147 - conflicting overlap and novel out-of-order samples fail / 충돌 중첩·새 역순 표본 거부
+  ---
+  duration_ms: 0.209084
+  type: 'test'
+  ...
+# Subtest: Repeated unit routes pin one engine and strict expected generation / 반복 단위 요청은 엔진 하나와 정확 세대를 고정
+ok 148 - Repeated unit routes pin one engine and strict expected generation / 반복 단위 요청은 엔진 하나와 정확 세대를 고정
+  ---
+  duration_ms: 320.024
+  type: 'test'
+  ...
+# (node:42341) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Held old lease survives activation, rejects changed acceptance and coalesces within two slots / 기존 고정 요청은 교체 동안 유지되고 바뀐 수용 결과를 거부하며 두 엔진 상한 유지
+ok 149 - Held old lease survives activation, rejects changed acceptance and coalesces within two slots / 기존 고정 요청은 교체 동안 유지되고 바뀐 수용 결과를 거부하며 두 엔진 상한 유지
+  ---
+  duration_ms: 640.671625
+  type: 'test'
+  ...
+# Subtest: Candidate final acceptance follows deferred engine inspection / 후보의 최종 수용 검사는 지연된 엔진 확인 뒤 수행
+ok 150 - Candidate final acceptance follows deferred engine inspection / 후보의 최종 수용 검사는 지연된 엔진 확인 뒤 수행
+  ---
+  duration_ms: 308.829
+  type: 'test'
+  ...
+# Subtest: Route final acceptance follows deferred native identity check / 경로의 최종 수용 검사는 지연된 네이티브 식별 확인 뒤 수행
+ok 151 - Route final acceptance follows deferred native identity check / 경로의 최종 수용 검사는 지연된 네이티브 식별 확인 뒤 수행
+  ---
+  duration_ms: 230.794
+  type: 'test'
+  ...
+# Subtest: Dead native engine and corrupt generation return explicit failures / 죽은 네이티브 엔진과 손상 세대는 명시 실패
+ok 152 - Dead native engine and corrupt generation return explicit failures / 죽은 네이티브 엔진과 손상 세대는 명시 실패
+  ---
+  duration_ms: 183.898583
+  type: 'test'
+  ...
+# Subtest: Eight held requests are admitted and the ninth is refused / 고정 요청 여덟 개를 접수하고 아홉 번째 거부
+ok 153 - Eight held requests are admitted and the ninth is refused / 고정 요청 여덟 개를 접수하고 아홉 번째 거부
+  ---
+  duration_ms: 477.731125
+  type: 'test'
+  ...
+# Subtest: Held phase respects request deadline and releases its lease / 단계 대기도 요청 시간 상한을 지키고 고정을 해제
+ok 154 - Held phase respects request deadline and releases its lease / 단계 대기도 요청 시간 상한을 지키고 고정을 해제
+  ---
+  duration_ms: 176.787042
+  type: 'test'
+  ...
+# Subtest: Timed-out underlying store work blocks further queries until completion, then requires a fresh read / 시간초과 저장소 작업은 완료까지 새 조회를 막고 다음에는 새로 조회
+ok 155 - Timed-out underlying store work blocks further queries until completion, then requires a fresh read / 시간초과 저장소 작업은 완료까지 새 조회를 막고 다음에는 새로 조회
+  ---
+  duration_ms: 142.100167
+  type: 'test'
+  ...
+# Subtest: Closing discards a late store result and never activates afterward / 종료는 늦은 저장소 결과를 버리고 이후 활성화하지 않음
+ok 156 - Closing discards a late store result and never activates afterward / 종료는 늦은 저장소 결과를 버리고 이후 활성화하지 않음
+  ---
+  duration_ms: 100.075542
+  type: 'test'
+  ...
+# Subtest: Slow reconciliation skips periodic ticks and completes one explicit follow-up serially / 느린 재조정은 주기 호출을 건너뛰고 명시적 후속 한 번을 직렬 완료
+ok 157 - Slow reconciliation skips periodic ticks and completes one explicit follow-up serially / 느린 재조정은 주기 호출을 건너뛰고 명시적 후속 한 번을 직렬 완료
+  ---
+  duration_ms: 118.021208
+  type: 'test'
+  ...
+# Subtest: Domain failures keep leases and reject changed authority before return / 업무 실패도 고정을 유지하고 반환 전 승인 변경 거부
+ok 158 - Domain failures keep leases and reject changed authority before return / 업무 실패도 고정을 유지하고 반환 전 승인 변경 거부
+  ---
+  duration_ms: 214.217334
+  type: 'test'
+  ...
+# Subtest: Native identity rejects dead states and loopback readiness checks both socket tables / 네이티브 식별은 종료 상태를 거부하고 양쪽 소켓 표 검사
+ok 159 - Native identity rejects dead states and loopback readiness checks both socket tables / 네이티브 식별은 종료 상태를 거부하고 양쪽 소켓 표 검사
+  ---
+  duration_ms: 0.918416
+  type: 'test'
+  ...
+# Subtest: Private request-specific barriers can hold several requests and cancel on deadline / 비공개 요청별 대기는 여러 요청을 고정하고 시간초과에서 취소
+ok 160 - Private request-specific barriers can hold several requests and cancel on deadline / 비공개 요청별 대기는 여러 요청을 고정하고 시간초과에서 취소
+  ---
+  duration_ms: 0.265541
+  type: 'test'
+  ...
+# Subtest: Chunked oversized body receives422 without request iterator destroying its socket / 청크 초과본문은 소켓을 파괴하지 않고422반환
+ok 161 - Chunked oversized body receives422 without request iterator destroying its socket / 청크 초과본문은 소켓을 파괴하지 않고422반환
+  ---
+  duration_ms: 9.980459
+  type: 'test'
+  ...
+# Subtest: Incomplete HTTP body expires before dispatch and returns explicit deadline / 미완료HTTP본문은 전달전에만료되고명시적시간초과반환
+ok 162 - Incomplete HTTP body expires before dispatch and returns explicit deadline / 미완료HTTP본문은 전달전에만료되고명시적시간초과반환
+  ---
+  duration_ms: 29.35175
+  type: 'test'
+  ...
+# Subtest: node required inventory rejects missing, duplicate, failed and unexpected evidence / 노드필수목록누락·중복·실패·예상밖근거거부
+ok 163 - node required inventory rejects missing, duplicate, failed and unexpected evidence / 노드필수목록누락·중복·실패·예상밖근거거부
+  ---
+  duration_ms: 0.607042
+  type: 'test'
+  ...
+# Subtest: node negative cases require exact status and reason with no successful result / 노드부정검사가정확한상태·사유와성공결과부재요구
+ok 164 - node negative cases require exact status and reason with no successful result / 노드부정검사가정확한상태·사유와성공결과부재요구
+  ---
+  duration_ms: 0.093875
+  type: 'test'
+  ...
+# Subtest: node CLI refuses incomplete input without creating resources / 노드명령이자원생성전불완전입력거부
+ok 165 - node CLI refuses incomplete input without creating resources / 노드명령이자원생성전불완전입력거부
+  ---
+  duration_ms: 0.138667
+  type: 'test'
+  ...
+# Subtest: node report preserves original datasets and renders safe bilingual recorded transitions / 노드보고서가원래자료와안전한한영전환기록보존
+ok 166 - node report preserves original datasets and renders safe bilingual recorded transitions / 노드보고서가원래자료와안전한한영전환기록보존
+  ---
+  duration_ms: 2.111042
+  type: 'test'
+  ...
+# Subtest: seeded replay and different seed / 동일·다른 시드 재생
+ok 167 - seeded replay and different seed / 동일·다른 시드 재생
+  ---
+  duration_ms: 2.877125
+  type: 'test'
+  ...
+# Subtest: declaration reordering and Unicode canonicalization / 선언 순서·유니코드 표준화
+ok 168 - declaration reordering and Unicode canonicalization / 선언 순서·유니코드 표준화
+  ---
+  duration_ms: 0.455458
+  type: 'test'
+  ...
+# Subtest: clock reversal and injection / 시계 역행·주입
+ok 169 - clock reversal and injection / 시계 역행·주입
+  ---
+  duration_ms: 0.314625
+  type: 'test'
+  ...
+# Subtest: malformed fields and values / 잘못된 필드·값 거부
+ok 170 - malformed fields and values / 잘못된 필드·값 거부
+  ---
+  duration_ms: 1.933167
+  type: 'test'
+  ...
+# Subtest: maximum jitter and collection limits / 최대 지연·배열 한도
+ok 171 - maximum jitter and collection limits / 최대 지연·배열 한도
+  ---
+  duration_ms: 0.186459
+  type: 'test'
+  ...
+# Subtest: event limit boundary / 이벤트 한도 경계
+ok 172 - event limit boundary / 이벤트 한도 경계
+  ---
+  duration_ms: 13.400417
+  type: 'test'
+  ...
+# Subtest: JSON and byte limits / JSON·바이트 한도
+ok 173 - JSON and byte limits / JSON·바이트 한도
+  ---
+  duration_ms: 68.199375
+  type: 'test'
+  ...
+# Subtest: assertion kinds and required skip / 검사 종류·필수 생략 처리
+ok 174 - assertion kinds and required skip / 검사 종류·필수 생략 처리
+  ---
+  duration_ms: 3.196041
+  type: 'test'
+  ...
+# Subtest: CLI evidence exits and provenance / 실행 증거·종료 코드·출처
+ok 175 - CLI evidence exits and provenance / 실행 증거·종료 코드·출처
+  ---
+  duration_ms: 3244.702084
+  type: 'test'
+  ...
+# Subtest: unknown source identity / 소스 확인 실패는 미확인
+ok 176 - unknown source identity / 소스 확인 실패는 미확인
+  ---
+  duration_ms: 0.278542
+  type: 'test'
+  ...
+# Subtest: existing output and symlinks preserved / 기존 출력·심볼릭 링크 보존
+ok 177 - existing output and symlinks preserved / 기존 출력·심볼릭 링크 보존
+  ---
+  duration_ms: 465.564416
+  type: 'test'
+  ...
+# Subtest: write errors and argument errors exit two / 출력·인자 오류 종료 코드 2
+ok 178 - write errors and argument errors exit two / 출력·인자 오류 종료 코드 2
+  ---
+  duration_ms: 192.958292
+  type: 'test'
+  ...
+# Subtest: CLI wrapper checks exits and reports / 검사 도구가 종료 코드·보고서를 함께 확인
+ok 179 - CLI wrapper checks exits and reports / 검사 도구가 종료 코드·보고서를 함께 확인
+  ---
+  duration_ms: 969.442875
+  type: 'test'
+  ...
+# Subtest: same-time priority and stable fault order / 같은 시각 순서·장애 안정 순서
+ok 180 - same-time priority and stable fault order / 같은 시각 순서·장애 안정 순서
+  ---
+  duration_ms: 0.420833
+  type: 'test'
+  ...
+# Subtest: partial write cannot leave completion manifest / 부분 쓰기는 완료 목록을 남기지 않음
+ok 181 - partial write cannot leave completion manifest / 부분 쓰기는 완료 목록을 남기지 않음
+  ---
+  duration_ms: 236.798208
+  type: 'test'
+  ...
+# Subtest: Real Ed25519 JWS verifies exact standard payload and artifact bytes / 실제 Ed25519 서명과 원문 바이트 검증
+ok 182 - Real Ed25519 JWS verifies exact standard payload and artifact bytes / 실제 Ed25519 서명과 원문 바이트 검증
+  ---
+  duration_ms: 6.863542
+  type: 'test'
+  ...
+# Subtest: Protected header rejects unknown metadata, algorithms and keys / 보호 헤더의 미지원 정보·알고리즘·키 거부
+ok 183 - Protected header rejects unknown metadata, algorithms and keys / 보호 헤더의 미지원 정보·알고리즘·키 거부
+  ---
+  duration_ms: 1.858166
+  type: 'test'
+  ...
+# Subtest: Signed duplicate keys and unsupported fields still fail strict parsing / 서명된 중복 키와 미지원 필드도 거부
+ok 184 - Signed duplicate keys and unsupported fields still fail strict parsing / 서명된 중복 키와 미지원 필드도 거부
+  ---
+  duration_ms: 2.187167
+  type: 'test'
+  ...
+# Subtest: Bounds, length, truncation and invalid UTF-8 fail before acceptance / 크기·길이·절단·UTF-8 오류 거부
+ok 185 - Bounds, length, truncation and invalid UTF-8 fail before acceptance / 크기·길이·절단·UTF-8 오류 거부
+  ---
+  duration_ms: 1.80075
+  type: 'test'
+  ...
+# Subtest: Every signed scope field is checked against local trust / 서명된 범위를 로컬 신뢰 설정과 대조
+ok 186 - Every signed scope field is checked against local trust / 서명된 범위를 로컬 신뢰 설정과 대조
+  ---
+  duration_ms: 2.195708
+  type: 'test'
+  ...
+# Subtest: Duplicate, private and non-Ed25519 trust keys are rejected / 중복·비공개·다른 형식 신뢰 키 거부
+ok 187 - Duplicate, private and non-Ed25519 trust keys are rejected / 중복·비공개·다른 형식 신뢰 키 거부
+  ---
+  duration_ms: 0.201
+  type: 'test'
+  ...
+# Subtest: Key revocation and both current/published validity boundaries are enforced / 키 철회와 발행·현재 유효시각 경계
+ok 188 - Key revocation and both current/published validity boundaries are enforced / 키 철회와 발행·현재 유효시각 경계
+  ---
+  duration_ms: 1.115667
+  type: 'test'
+  ...
+# Subtest: Preconfigured key rotation preserves the signed sequence / 사전 설정 키 교환은 서명 순번을 유지
+ok 189 - Preconfigured key rotation preserves the signed sequence / 사전 설정 키 교환은 서명 순번을 유지
+  ---
+  duration_ms: 0.660416
+  type: 'test'
+  ...
+# Subtest: Exact expiry, future publication and immutable TTL are enforced / 정확한 만료·미래 발행·고정 유효기간 검사
+ok 190 - Exact expiry, future publication and immutable TTL are enforced / 정확한 만료·미래 발행·고정 유효기간 검사
+  ---
+  duration_ms: 2.527625
+  type: 'test'
+  ...
+# Subtest: Entries enforce full sorted catalog, finite positive live speed and non-live nulls / 전체 정렬 목록·속도·상태별 null 검사
+ok 191 - Entries enforce full sorted catalog, finite positive live speed and non-live nulls / 전체 정렬 목록·속도·상태별 null 검사
+  ---
+  duration_ms: 4.768333
+  type: 'test'
+  ...
+# Subtest: Duplicated manifest/artifact metadata and unsafe sequences are rejected / 목록·내용 불일치와 안전 범위 밖 순번 거부
+ok 192 - Duplicated manifest/artifact metadata and unsafe sequences are rejected / 목록·내용 불일치와 안전 범위 밖 순번 거부
+  ---
+  duration_ms: 1.272917
+  type: 'test'
+  ...
+# Subtest: Fetcher permits only configured loopback origins / 수신기는 설정된 로컬 출처만 허용
+ok 193 - Fetcher permits only configured loopback origins / 수신기는 설정된 로컬 출처만 허용
+  ---
+  duration_ms: 0.180125
+  type: 'test'
+  ...
+# Subtest: Early type rejection and chunked oversize abort owned HTTP responses / 형식 조기 거부와 분할 크기 초과 후 HTTP 연결 종료
+ok 194 - Early type rejection and chunked oversize abort owned HTTP responses / 형식 조기 거부와 분할 크기 초과 후 HTTP 연결 종료
+  ---
+  duration_ms: 13.718791
+  type: 'test'
+  ...
+# Subtest: Real loopback service returns exact immutable bytes and bounded 404/410/405 errors / 실제 로컬 서비스 바이트와 오류 계약
+ok 195 - Real loopback service returns exact immutable bytes and bounded 404/410/405 errors / 실제 로컬 서비스 바이트와 오류 계약
+  ---
+  duration_ms: 6.731
+  type: 'test'
+  ...
+# Subtest: whole publication gate rejects missing, duplicate and failed actual cases / 전체 게시 관문이 누락·중복·실패 사례 거부
+ok 196 - whole publication gate rejects missing, duplicate and failed actual cases / 전체 게시 관문이 누락·중복·실패 사례 거부
+  ---
+  duration_ms: 0.522042
+  type: 'test'
+  ...
+# Subtest: publication CLI rejects incomplete arguments without starting resources / 게시 명령이 불완전 인자를 자원 생성 전에 거부
+ok 197 - publication CLI rejects incomplete arguments without starting resources / 게시 명령이 불완전 인자를 자원 생성 전에 거부
+  ---
+  duration_ms: 0.145
+  type: 'test'
+  ...
+# Subtest: offline publication report preserves recorded sequence, hashes and bilingual evidence safely / 오프라인 게시보고서가 순번·해시·한영증거 안전 보존
+ok 198 - offline publication report preserves recorded sequence, hashes and bilingual evidence safely / 오프라인 게시보고서가 순번·해시·한영증거 안전 보존
+  ---
+  duration_ms: 0.995833
+  type: 'test'
+  ...
+# Subtest: Native opt-in preserves legacy bytes and constrains both locations / 엔진 선택 정책은 기존 바이트를 보존하고 두 위치를 제한
+ok 199 - Native opt-in preserves legacy bytes and constrains both locations / 엔진 선택 정책은 기존 바이트를 보존하고 두 위치를 제한
+  ---
+  duration_ms: 0.904584
+  type: 'test'
+  ...
+# Subtest: Only bounded regular strict route400 errors170/171/442 become domain failures / 제한된 정상 파일의 엄격 경로400·170·171·442만 업무 오류
+ok 200 - Only bounded regular strict route400 errors170/171/442 become domain failures / 제한된 정상 파일의 엄격 경로400·170·171·442만 업무 오류
+  ---
+  duration_ms: 26.04325
+  type: 'test'
+  ...
+# Subtest: same geodesy and error identity reach browser without changing legacy failures / 브라우저 구면 계산·기존 오류 식별 유지
+ok 201 - same geodesy and error identity reach browser without changing legacy failures / 브라우저 구면 계산·기존 오류 식별 유지
+  ---
+  duration_ms: 0.570333
+  type: 'test'
+  ...
+# Subtest: next native instruction and remaining geometry advance only after a crossed boundary / 경계를 지난 뒤 다음 원 안내·남은 거리
+ok 202 - next native instruction and remaining geometry advance only after a crossed boundary / 경계를 지난 뒤 다음 원 안내·남은 거리
+  ---
+  duration_ms: 1.080834
+  type: 'test'
+  ...
+# Subtest: wrong route invalid input duplicate and time order never fabricate progress / 다른 경로·오류·중복·역순 진행 차단
+ok 203 - wrong route invalid input duplicate and time order never fabricate progress / 다른 경로·오류·중복·역순 진행 차단
+  ---
+  duration_ms: 1.306458
+  type: 'test'
+  ...
+# Subtest: stale future samples and clock rewind cannot revive guidance / 오래됨·미래·시각 역행으로 안내 복구 금지
+ok 204 - stale future samples and clock rewind cannot revive guidance / 오래됨·미래·시각 역행으로 안내 복구 금지
+  ---
+  duration_ms: 0.282375
+  type: 'test'
+  ...
+# Subtest: one GPS outlier cannot confirm off-route and invalid points break the streak / 단일 오차 이탈 확정 금지·거부 표본 연속 차단
+ok 205 - one GPS outlier cannot confirm off-route and invalid points break the streak / 단일 오차 이탈 확정 금지·거부 표본 연속 차단
+  ---
+  duration_ms: 0.488208
+  type: 'test'
+  ...
+# Subtest: jitter cannot reverse progress and a forward jump cannot skip maneuvers / 흔들림 역행·큰 도약 회전 건너뛰기 금지
+ok 206 - jitter cannot reverse progress and a forward jump cannot skip maneuvers / 흔들림 역행·큰 도약 회전 건너뛰기 금지
+  ---
+  duration_ms: 0.167417
+  type: 'test'
+  ...
+# Subtest: competing context roads withhold position and turns / 경쟁하는 주변 도로에서 위치·회전 보류
+ok 207 - competing context roads withhold position and turns / 경쟁하는 주변 도로에서 위치·회전 보류
+  ---
+  duration_ms: 0.233041
+  type: 'test'
+  ...
+# Subtest: arrival needs observed travel and two accurate endpoint positions / 실제 진행·정확한 끝점 표본 두 개 뒤 도착
+ok 208 - arrival needs observed travel and two accurate endpoint positions / 실제 진행·정확한 끝점 표본 두 개 뒤 도착
+  ---
+  duration_ms: 0.190584
+  type: 'test'
+  ...
+# Subtest: route snapshot is isolated from caller mutation and invalidation is final / 원자료 변경 격리·무효화 후 재사용 금지
+ok 209 - route snapshot is isolated from caller mutation and invalidation is final / 원자료 변경 격리·무효화 후 재사용 금지
+  ---
+  duration_ms: 0.324167
+  type: 'test'
+  ...
+# Subtest: authored replay is deterministic, explicit synthetic data and requires a real alternate road / 합성 재생 결정성·실제 대체 도로 필수
+ok 210 - authored replay is deterministic, explicit synthetic data and requires a real alternate road / 합성 재생 결정성·실제 대체 도로 필수
+  ---
+  duration_ms: 0.875958
+  type: 'test'
+  ...
+# Subtest: Matrix rejects missing, duplicate, failed, changed, foreign and forged originals / 행렬은 누락·중복·실패·변경·다른 출처·위조 원문 거부
+ok 211 - Matrix rejects missing, duplicate, failed, changed, foreign and forged originals / 행렬은 누락·중복·실패·변경·다른 출처·위조 원문 거부
+  ---
+  duration_ms: 800.986208
+  type: 'test'
+  ...
+# Subtest: P12 retains exactly24 mandatory original outcomes / P12 원 판정24개 정확히 유지
+ok 212 - P12 retains exactly24 mandatory original outcomes / P12 원 판정24개 정확히 유지
+  ---
+  duration_ms: 0.225792
+  type: 'test'
+  ...
+# Scenario check failed; graph and new output required / 시나리오 검사 실패·지도와 새 출력 경로 필요: Error
+# Scenario check failed; graph and new output required / 시나리오 검사 실패·지도와 새 출력 경로 필요: Error
+# Scenario check failed; graph and new output required / 시나리오 검사 실패·지도와 새 출력 경로 필요: Error
+# Scenario check failed; graph and new output required / 시나리오 검사 실패·지도와 새 출력 경로 필요: Error
+# Scenario check failed; graph and new output required / 시나리오 검사 실패·지도와 새 출력 경로 필요: Error
+# scenario:check --graph VERIFIED_GRAPH --output NEW_DIRECTORY [--runtime-only]
+# Development-only faults; simulation:check assembles full same-run acceptance.
+# 개발 장애 검사이며 같은 실행 전체 통과는 simulation:check로 구성합니다.
+# Subtest: Scenario CLI refuses malformed flags before creating resources / 시나리오 명령은 자원 생성 전 잘못된 옵션 거부
+ok 213 - Scenario CLI refuses malformed flags before creating resources / 시나리오 명령은 자원 생성 전 잘못된 옵션 거부
+  ---
+  duration_ms: 0.678459
+  type: 'test'
+  ...
+# Subtest: Scenario report preserves bilingual evidence and escapes private fixture text / 시나리오 보고서 한영 근거 보존·시험 문장 이스케이프
+ok 214 - Scenario report preserves bilingual evidence and escapes private fixture text / 시나리오 보고서 한영 근거 보존·시험 문장 이스케이프
+  ---
+  duration_ms: 1.434708
+  type: 'test'
+  ...
+# Subtest: actual downtown boundary stop excludes both adjacent candidates without truth repair / 실제 도심 경계 정지는 정답 보정 없이 양쪽 후보 제외
+ok 215 - actual downtown boundary stop excludes both adjacent candidates without truth repair / 실제 도심 경계 정지는 정답 보정 없이 양쪽 후보 제외
+  ---
+  duration_ms: 7.444083
+  type: 'test'
+  ...
+# Subtest: normal 10 m/s boundary crossing is not a stationary cluster / 정상 초속10미터 경계 통과는 정지 묶음 아님
+ok 216 - normal 10 m/s boundary crossing is not a stationary cluster / 정상 초속10미터 경계 통과는 정지 묶음 아님
+  ---
+  duration_ms: 2.194625
+  type: 'test'
+  ...
+# Subtest: interior stop cannot make a distant boundary ambiguous / 구간 내부 정지가 먼 경계를 모호하게 만들지 않음
+ok 217 - interior stop cannot make a distant boundary ambiguous / 구간 내부 정지가 먼 경계를 모호하게 만들지 않음
+  ---
+  duration_ms: 0.097375
+  type: 'test'
+  ...
+# Subtest: cluster requires original uncertainty radius and uninterrupted time / 묶음은 원관측 불확실성 반경·연속 시각 필수
+ok 218 - cluster requires original uncertainty radius and uninterrupted time / 묶음은 원관측 불확실성 반경·연속 시각 필수
+  ---
+  duration_ms: 0.202459
+  type: 'test'
+  ...
+# Subtest: post-transition observations cannot extend stationary eligibility / 전환 이후 관측을 정지 판정 시간에 합산하지 않음
+ok 219 - post-transition observations cannot extend stationary eligibility / 전환 이후 관측을 정지 판정 시간에 합산하지 않음
+  ---
+  duration_ms: 0.077292
+  type: 'test'
+  ...
+# Subtest: regional manifest binds source, graph and files without source cache path / 지역 목록의 출처·그래프·파일 연결과 캐시경로 독립
+ok 220 - regional manifest binds source, graph and files without source cache path / 지역 목록의 출처·그래프·파일 연결과 캐시경로 독립
+  ---
+  duration_ms: 56.992917
+  type: 'test'
+  ...
+# Subtest: regional child refuses missing hashes and symlink evidence / 지역 하위 실행의 해시 누락·심볼릭 링크 거부
+ok 221 - regional child refuses missing hashes and symlink evidence / 지역 하위 실행의 해시 누락·심볼릭 링크 거부
+  ---
+  duration_ms: 53.001
+  type: 'test'
+  ...
+# Subtest: whole-system CLI retains new-only output and source option help / 전체 실행의 새 출력과 원본 선택 도움말
+ok 222 - whole-system CLI retains new-only output and source option help / 전체 실행의 새 출력과 원본 선택 도움말
+  ---
+  duration_ms: 2153.447041
+  type: 'test'
+  ...
+# Subtest: regional mapping preserves full curved geometry and engine direction / 지역 구간 전체 곡선·엔진 방향
+ok 223 - regional mapping preserves full curved geometry and engine direction / 지역 구간 전체 곡선·엔진 방향
+  ---
+  duration_ms: 0.793917
+  type: 'test'
+  ...
+# Subtest: regional mapping keeps split way IDs distinct and preserves access / 분할 구간·접근 값 보존
+ok 224 - regional mapping keeps split way IDs distinct and preserves access / 분할 구간·접근 값 보존
+  ---
+  duration_ms: 0.130708
+  type: 'test'
+  ...
+# Subtest: regional mapping rejects malformed and conflicting original evidence / 잘못되거나 충돌하는 원문 거부
+ok 225 - regional mapping rejects malformed and conflicting original evidence / 잘못되거나 충돌하는 원문 거부
+  ---
+  duration_ms: 0.427959
+  type: 'test'
+  ...
+# Subtest: context geometry is selected from exact decoded export with transparent counts / 실제 내보내기 배경·개수
+ok 226 - context geometry is selected from exact decoded export with transparent counts / 실제 내보내기 배경·개수
+  ---
+  duration_ms: 0.301958
+  type: 'test'
+  ...
+# Subtest: actual tile bytes affect graph identity / 실제 타일 바이트 식별 연결
+ok 227 - actual tile bytes affect graph identity / 실제 타일 바이트 식별 연결
+  ---
+  duration_ms: 0.320125
+  type: 'test'
+  ...
+# Subtest: wrong source and incomplete bundle fail closed / 잘못된 원본·미완료 묶음 거부
+ok 228 - wrong source and incomplete bundle fail closed / 잘못된 원본·미완료 묶음 거부
+  ---
+  duration_ms: 34.79725
+  type: 'test'
+  ...
+# Subtest: actual p06-probe-3 rounded endpoint uses observed projection without changing v2 / 실제 끝점 원문 투영·v2 보존
+ok 229 - actual p06-probe-3 rounded endpoint uses observed projection without changing v2 / 실제 끝점 원문 투영·v2 보존
+  ---
+  duration_ms: 7.172416
+  type: 'test'
+  ...
+# Subtest: actual p06-probe-4 rounded endpoint uses observed projection without changing v2 / 실제 끝점 원문 투영·v2 보존
+ok 230 - actual p06-probe-4 rounded endpoint uses observed projection without changing v2 / 실제 끝점 원문 투영·v2 보존
+  ---
+  duration_ms: 2.379833
+  type: 'test'
+  ...
+# Subtest: actual engine distance rejection remains enforced / 실제 원문 엔진 거리 거부 유지
+ok 231 - actual engine distance rejection remains enforced / 실제 원문 엔진 거리 거부 유지
+  ---
+  duration_ms: 1.818667
+  type: 'test'
+  ...
+# Subtest: connected shared endpoint represents one path position / 연결된 공유 끝점은 동일 진행 위치
+ok 232 - connected shared endpoint represents one path position / 연결된 공유 끝점은 동일 진행 위치
+  ---
+  duration_ms: 1.003041
+  type: 'test'
+  ...
+# Subtest: disconnected neighboring edge cannot repair a point / 비연결 인접 구간으로 표본 보정 금지
+ok 233 - disconnected neighboring edge cannot repair a point / 비연결 인접 구간으로 표본 보정 금지
+  ---
+  duration_ms: 0.138417
+  type: 'test'
+  ...
+# Subtest: a nonadjacent exact geometry cannot repair an engine point / 비인접 지형은 정확히 가까워도 엔진 표본 보정 금지
+ok 234 - a nonadjacent exact geometry cannot repair an engine point / 비인접 지형은 정확히 가까워도 엔진 표본 보정 금지
+  ---
+  duration_ms: 0.124083
+  type: 'test'
+  ...
+# Subtest: a connected returning occurrence with distinct progress is ambiguous / 되돌아오는 연결 경로의 다른 진행 위치는 모호
+ok 235 - a connected returning occurrence with distinct progress is ambiguous / 되돌아오는 연결 경로의 다른 진행 위치는 모호
+  ---
+  duration_ms: 0.139208
+  type: 'test'
+  ...
+# Subtest: a self-returning full shape must have a unique segment projection / 전체 지형 내부의 되돌아오는 선분도 유일 투영 필수
+ok 236 - a self-returning full shape must have a unique segment projection / 전체 지형 내부의 되돌아오는 선분도 유일 투영 필수
+  ---
+  duration_ms: 0.158916
+  type: 'test'
+  ...
+# Subtest: connected projections within one centimetre but different progress are excluded / 1센티미터 이내 동률·다른 진행 위치 제외
+ok 237 - connected projections within one centimetre but different progress are excluded / 1센티미터 이내 동률·다른 진행 위치 제외
+  ---
+  duration_ms: 0.497084
+  type: 'test'
+  ...
+# Subtest: engine flags, unmatched points and reversal guards remain effective / 엔진 단절·미대응·역행 거부 유지
+ok 238 - engine flags, unmatched points and reversal guards remain effective / 엔진 단절·미대응·역행 거부 유지
+  ---
+  duration_ms: 0.74825
+  type: 'test'
+  ...
+# Subtest: parallel ambiguity and long observation gaps retain exclusion / 평행 모호성·긴 관측 누락 제외 유지
+ok 239 - parallel ambiguity and long observation gaps retain exclusion / 평행 모호성·긴 관측 누락 제외 유지
+  ---
+  duration_ms: 0.6045
+  type: 'test'
+  ...
+# Subtest: actual sustained boundary stop remains excluded in v3 / 실제 지속 경계 정지 v3 제외 유지
+ok 240 - actual sustained boundary stop remains excluded in v3 / 실제 지속 경계 정지 v3 제외 유지
+  ---
+  duration_ms: 0.897917
+  type: 'test'
+  ...
+# Subtest: moved upstream flag remains on original and projected occurrences / 이동한 엔진 단절 표시는 원래·투영 구간 모두에 유지
+ok 241 - moved upstream flag remains on original and projected occurrences / 이동한 엔진 단절 표시는 원래·투영 구간 모두에 유지
+  ---
+  duration_ms: 0.123042
+  type: 'test'
+  ...
+# Subtest: local minima actual thirteen non-minimum vertices retain valid projections / 실제 비최소 꼭짓점13건의 유효 투영 유지
+ok 242 - local minima actual thirteen non-minimum vertices retain valid projections / 실제 비최소 꼭짓점13건의 유효 투영 유지
+  ---
+  duration_ms: 3.761458
+  type: 'test'
+  ...
+# {"sample_id":"seoul-road-demo:downtown-gap:68000","status":"MATCHED","edge_id":"660821006736","fraction":0.9864051153002579,"distance_m":1.2795461420187964}
+# {"sample_id":"seoul-road-demo:downtown-noise:11500","status":"MATCHED","edge_id":"671826860432","fraction":0.242446859274046,"distance_m":2.5452781682386516}
+# {"sample_id":"seoul-road-demo:downtown-noise:97500","status":"MATCHED","edge_id":"661324323216","fraction":0.2886000297924904,"distance_m":2.019271921648929}
+# {"sample_id":"seoul-road-demo:mapo-bridge-gap:6000","status":"MATCHED","edge_id":"9151104797786","fraction":0.7272355887805712,"distance_m":0.45172858224908713}
+# {"sample_id":"seoul-road-demo:mapo-bridge-gap:200500","status":"MATCHED","edge_id":"1620276780625","fraction":0.01247001434703271,"distance_m":2.0937149604558734}
+# {"sample_id":"seoul-road-demo:mapo-bridge-gap:202000","status":"MATCHED","edge_id":"1620377443921","fraction":0.00016145030147785887,"distance_m":1.4337508882725485}
+# {"sample_id":"seoul-road-demo:mapo-bridge-noise:59500","status":"MATCHED","edge_id":"478620440976","fraction":0.15223491908740136,"distance_m":1.375989396577952}
+# {"sample_id":"seoul-road-demo:teheran-gap:15000","status":"MATCHED","edge_id":"1297851898256","fraction":0.013468296992287085,"distance_m":1.965633752288363}
+# {"sample_id":"seoul-road-demo:teheran-gap:87000","status":"MATCHED","edge_id":"1337479682448","fraction":0.0013798601376368799,"distance_m":1.4194045939322806}
+# {"sample_id":"seoul-road-demo:teheran-noise:41000","status":"MATCHED","edge_id":"1296945928592","fraction":0.0005364691340120065,"distance_m":1.3922496977227037}
+# {"sample_id":"seoul-road-demo:teheran-noise:43000","status":"MATCHED","edge_id":"1242319313296","fraction":0.0001822681772519058,"distance_m":1.698186422519757}
+# {"sample_id":"seoul-road-demo:teheran-noise:57500","status":"MATCHED","edge_id":"1242185095568","fraction":0.006018285367528604,"distance_m":1.6779027844403722}
+# {"sample_id":"seoul-road-demo:teheran-noise:148000","status":"MATCHED","edge_id":"1345566300560","fraction":0.9922688849552506,"distance_m":1.689014225407101}
+# Subtest: local minima actual distinct interior projections remain ambiguous / 실제 서로 다른 내부 최소 투영의 모호성 유지
+ok 243 - local minima actual distinct interior projections remain ambiguous / 실제 서로 다른 내부 최소 투영의 모호성 유지
+  ---
+  duration_ms: 0.117875
+  type: 'test'
+  ...
+# Subtest: local minima genuine corner and global path endpoint stay eligible / 실제 모서리 최소·전체 경로 끝점 후보 유지
+ok 244 - local minima genuine corner and global path endpoint stay eligible / 실제 모서리 최소·전체 경로 끝점 후보 유지
+  ---
+  duration_ms: 0.144959
+  type: 'test'
+  ...
+# Subtest: local minima nearby unequal endpoints are not one shared vertex / 가까워도 좌표가 다른 끝점을 공유 꼭짓점으로 합치지 않음
+ok 245 - local minima nearby unequal endpoints are not one shared vertex / 가까워도 좌표가 다른 끝점을 공유 꼭짓점으로 합치지 않음
+  ---
+  duration_ms: 0.065667
+  type: 'test'
+  ...
+# Subtest: noisy coverage fixed floor rejects observed 8/18 regression and includes exactly six cases / 잡음 범위 고정 하한은 실제8/18퇴행 거부·정확히6건 검사
+ok 246 - noisy coverage fixed floor rejects observed 8/18 regression and includes exactly six cases / 잡음 범위 고정 하한은 실제8/18퇴행 거부·정확히6건 검사
+  ---
+  duration_ms: 0.160209
+  type: 'test'
+  ...
+# Subtest: engine semantics actual noisy start retains native anchor and avoids projected jitter reversal / 실제 잡음 시작의 엔진 끝점 자격·방향 유지
+ok 247 - engine semantics actual noisy start retains native anchor and avoids projected jitter reversal / 실제 잡음 시작의 엔진 끝점 자격·방향 유지
+  ---
+  duration_ms: 0.375917
+  type: 'test'
+  ...
+# Subtest: engine semantics anchor refuses raw endpoint distance above the unchanged bound / 원관측 끝점 거리가 기존 허용치를 넘으면 고정점 거부
+ok 248 - engine semantics anchor refuses raw endpoint distance above the unchanged bound / 원관측 끝점 거리가 기존 허용치를 넘으면 고정점 거부
+  ---
+  duration_ms: 0.293583
+  type: 'test'
+  ...
+# Subtest: engine semantics moved occurrence cannot borrow native endpoint eligibility / 다른 구간으로 투영된 표본은 엔진 끝점 자격 차용 금지
+ok 249 - engine semantics moved occurrence cannot borrow native endpoint eligibility / 다른 구간으로 투영된 표본은 엔진 끝점 자격 차용 금지
+  ---
+  duration_ms: 0.078416
+  type: 'test'
+  ...
+# Subtest: engine semantics upstream breaks cannot acquire a native endpoint anchor / 엔진 단절 표시가 있으면 끝점 고정 금지
+ok 250 - engine semantics upstream breaks cannot acquire a native endpoint anchor / 엔진 단절 표시가 있으면 끝점 고정 금지
+  ---
+  duration_ms: 0.757375
+  type: 'test'
+  ...
+# Subtest: engine semantics adjacent exclusion and gap reasons cannot be bypassed by anchor / 인접 제외·누락 사유를 끝점 고정으로 우회 금지
+ok 251 - engine semantics adjacent exclusion and gap reasons cannot be bypassed by anchor / 인접 제외·누락 사유를 끝점 고정으로 우회 금지
+  ---
+  duration_ms: 0.502666
+  type: 'test'
+  ...
+# Subtest: engine semantics matching trace end can anchor but a gap cannot / 대응 추적 끝은 고정 가능하지만 누락 경계는 불가
+ok 252 - engine semantics matching trace end can anchor but a gap cannot / 대응 추적 끝은 고정 가능하지만 누락 경계는 불가
+  ---
+  duration_ms: 0.118375
+  type: 'test'
+  ...
+# Subtest: engine semantics genuine native reversal still excludes its occurrence / 실제 엔진 진행 역행은 여전히 해당 구간 제외
+ok 253 - engine semantics genuine native reversal still excludes its occurrence / 실제 엔진 진행 역행은 여전히 해당 구간 제외
+  ---
+  duration_ms: 0.073209
+  type: 'test'
+  ...
+# Subtest: engine semantics native reversal stays on original and moved occurrences / 엔진 역행은 원래·이동한 구간 모두에 유지
+ok 254 - engine semantics native reversal stays on original and moved occurrences / 엔진 역행은 원래·이동한 구간 모두에 유지
+  ---
+  duration_ms: 0.094375
+  type: 'test'
+  ...
+# Subtest: engine semantics native reversal length belongs to its own occurrence / 엔진 역행 거리에는 엔진 발생 구간의 길이 사용
+ok 255 - engine semantics native reversal length belongs to its own occurrence / 엔진 역행 거리에는 엔진 발생 구간의 길이 사용
+  ---
+  duration_ms: 0.091833
+  type: 'test'
+  ...
+# Subtest: tiny simulation truth and noise hashes retain pre-regional byte parity / tiny 정답·잡음의 지역 확장 이전 바이트 보존
+ok 256 - tiny simulation truth and noise hashes retain pre-regional byte parity / tiny 정답·잡음의 지역 확장 이전 바이트 보존
+  ---
+  duration_ms: 4.524458
+  type: 'test'
+  ...
+# Subtest: regional spec has nine vehicles, fixed source-relative clock and explicit modes / 지역 규격9대·원본 이후 시각·명시 모드
+ok 257 - regional spec has nine vehicles, fixed source-relative clock and explicit modes / 지역 규격9대·원본 이후 시각·명시 모드
+  ---
+  duration_ms: 8.375833
+  type: 'test'
+  ...
+# Subtest: regional polyline simulation permits 128 edges while tiny limit stays 20 / 지역128구간·tiny20구간 유지
+ok 258 - regional polyline simulation permits 128 edges while tiny limit stays 20 / 지역128구간·tiny20구간 유지
+  ---
+  duration_ms: 0.734375
+  type: 'test'
+  ...
+# Subtest: regional matching uses full curved geometry and preserves session policy / 지역 매칭의 전체 곡선 지형·세션 정책
+ok 259 - regional matching uses full curved geometry and preserves session policy / 지역 매칭의 전체 곡선 지형·세션 정책
+  ---
+  duration_ms: 1.608333
+  type: 'test'
+  ...
+# Subtest: parallel guard ignores same physical-way hierarchy and opposing IDs / 같은 물리 도로의 계층·역방향 중복은 모호성 아님
+ok 260 - parallel guard ignores same physical-way hierarchy and opposing IDs / 같은 물리 도로의 계층·역방향 중복은 모호성 아님
+  ---
+  duration_ms: 0.140792
+  type: 'test'
+  ...
+# Subtest: boundary equivalence uses real shared endpoint rather than nearest sample / 경계 동등성은 가까운 표본 대신 실제 공유 끝점 사용
+ok 261 - boundary equivalence uses real shared endpoint rather than nearest sample / 경계 동등성은 가까운 표본 대신 실제 공유 끝점 사용
+  ---
+  duration_ms: 0.26975
+  type: 'test'
+  ...
+# Subtest: regional profile refuses missing explicit geometry policy hooks / 지역형의 명시적 지형 정책 함수 누락 거부
+ok 262 - regional profile refuses missing explicit geometry policy hooks / 지역형의 명시적 지형 정책 함수 누락 거부
+  ---
+  duration_ms: 0.17025
+  type: 'test'
+  ...
+# Subtest: report data reflects actual generated values and simulation duration / 보고 자료의 실제 생성값·시뮬레이션 시간
+ok 263 - report data reflects actual generated values and simulation duration / 보고 자료의 실제 생성값·시뮬레이션 시간
+  ---
+  duration_ms: 4.574
+  type: 'test'
+  ...
+# Subtest: fresh failed stage cannot reuse a saved PASS or write completion / 새 단계 실패가 과거 성공을 재사용하지 않음
+ok 264 - fresh failed stage cannot reuse a saved PASS or write completion / 새 단계 실패가 과거 성공을 재사용하지 않음
+  ---
+  duration_ms: 2220.626875
+  type: 'test'
+  ...
+# Subtest: child manifest verifies source plus every raw and semantic hash / 하위 실행 소스·원본·의미 해시 검사
+ok 265 - child manifest verifies source plus every raw and semantic hash / 하위 실행 소스·원본·의미 해시 검사
+  ---
+  duration_ms: 49.512959
+  type: 'test'
+  ...
+# Subtest: integration refuses existing output and CLI help stays explicit / 통합 기존 출력 거부·명확한 도움말
+ok 266 - integration refuses existing output and CLI help stays explicit / 통합 기존 출력 거부·명확한 도움말
+  ---
+  duration_ms: 436.70925
+  type: 'test'
+  ...
+# Subtest: P04 evaluation counts false and missed traversals and enforces timing / P04 잘못된·누락 통과와 시간 오차 검사
+ok 267 - P04 evaluation counts false and missed traversals and enforces timing / P04 잘못된·누락 통과와 시간 오차 검사
+  ---
+  duration_ms: 0.181209
+  type: 'test'
+  ...
+# Subtest: P04 evidence verifier binds source, graph, raw files and result semantics / P04 출처·그래프·원본·결과 의미 연결 검사
+ok 268 - P04 evidence verifier binds source, graph, raw files and result semantics / P04 출처·그래프·원본·결과 의미 연결 검사
+  ---
+  duration_ms: 9.689625
+  type: 'test'
+  ...
+# Subtest: tampered graph input manifest is separate from rejected matching output / 변조 그래프 입력 목록과 거부된 매칭 출력 분리
+ok 269 - tampered graph input manifest is separate from rejected matching output / 변조 그래프 입력 목록과 거부된 매칭 출력 분리
+  ---
+  duration_ms: 79.15125
+  type: 'test'
+  ...
+# Subtest: offline renderer preserves supplied provenance and escapes script termination / 입력 출처 보존과 스크립트 종료 문자 처리
+ok 270 - offline renderer preserves supplied provenance and escapes script termination / 입력 출처 보존과 스크립트 종료 문자 처리
+  ---
+  duration_ms: 1.931292
+  type: 'test'
+  ...
+# Subtest: server serves loopback files and rejects traversal or symlink escapes / 로컬 파일 제공과 경로 탈출·심볼릭 링크 거부
+ok 271 - server serves loopback files and rejects traversal or symlink escapes / 로컬 파일 제공과 경로 탈출·심볼릭 링크 거부
+  ---
+  duration_ms: 73.081667
+  type: 'test'
+  ...
+# Subtest: missing media is a failure rather than an empty pass / 미디어 누락 시 통과하지 않고 실패
+ok 272 - missing media is a failure rather than an empty pass / 미디어 누락 시 통과하지 않고 실패
+  ---
+  duration_ms: 14.710375
+  type: 'test'
+  ...
+# Subtest: media gate rejects changed source, asset, report and commit reference / 소스·자산·보고서·커밋 참조 변경 거부
+ok 273 - media gate rejects changed source, asset, report and commit reference / 소스·자산·보고서·커밋 참조 변경 거부
+  ---
+  duration_ms: 2674.023292
+  type: 'test'
+  ...
+# Subtest: viewer focuses fixed vehicle truth bounds and offers full fixture extent / 고정된 차량 정답 범위와 전체 시험도로 전환
+ok 274 - viewer focuses fixed vehicle truth bounds and offers full fixture extent / 고정된 차량 정답 범위와 전체 시험도로 전환
+  ---
+  duration_ms: 0.828666
+  type: 'test'
+  ...
+# Subtest: optional matching evidence preserves results and bilingual exclusion reasons / 선택 매칭 증거의 결과와 이중 언어 제외 사유 보존
+ok 275 - optional matching evidence preserves results and bilingual exclusion reasons / 선택 매칭 증거의 결과와 이중 언어 제외 사유 보존
+  ---
+  duration_ms: 0.382209
+  type: 'test'
+  ...
+# Subtest: Seoul profile keeps curved geometry, attribution and cached static layer / 서울 곡선 지형·출처·정적 계층 캐시
+ok 276 - Seoul profile keeps curved geometry, attribution and cached static layer / 서울 곡선 지형·출처·정적 계층 캐시
+  ---
+  duration_ms: 0.2395
+  type: 'test'
+  ...
+# Subtest: fixture preserves six independent checks and legal alternatives / 독립 검사 여섯 개·같은 출발도착 보존
+ok 277 - fixture preserves six independent checks and legal alternatives / 독립 검사 여섯 개·같은 출발도착 보존
+  ---
+  duration_ms: 1.263375
+  type: 'test'
+  ...
+# Subtest: fixture rejects missing expectations, duplicate IDs and invalid references / 기대값 누락·중복·잘못된 참조 거부
+ok 278 - fixture rejects missing expectations, duplicate IDs and invalid references / 기대값 누락·중복·잘못된 참조 거부
+  ---
+  duration_ms: 1.320709
+  type: 'test'
+  ...
+# Subtest: actual locate responses map stable labels to string edge IDs / 실제 조회의 이름표·문자열 구간 식별자 대응
+ok 279 - actual locate responses map stable labels to string edge IDs / 실제 조회의 이름표·문자열 구간 식별자 대응
+  ---
+  duration_ms: 0.336
+  type: 'test'
+  ...
+# Subtest: engine shape direction is independent of original way direction / 저장 지형 방향과 원본 도로 방향 구분
+ok 280 - engine shape direction is independent of original way direction / 저장 지형 방향과 원본 도로 방향 구분
+  ---
+  duration_ms: 0.196917
+  type: 'test'
+  ...
+# Subtest: invalid locate evidence cannot pass / 잘못된 구간 조회 증거 거부
+ok 281 - invalid locate evidence cannot pass / 잘못된 구간 조회 증거 거부
+  ---
+  duration_ms: 0.465042
+  type: 'test'
+  ...
+# Subtest: actual route trace preserves geometry, direction and car access / 실제 경로 구간의 지형·방향·자동차 접근 검사
+ok 282 - actual route trace preserves geometry, direction and car access / 실제 경로 구간의 지형·방향·자동차 접근 검사
+  ---
+  duration_ms: 0.629583
+  type: 'test'
+  ...
+# Subtest: independent route expectations reject forbidden transitions / 독립 경로 기대값으로 금지 전환 거부
+ok 283 - independent route expectations reject forbidden transitions / 독립 경로 기대값으로 금지 전환 거부
+  ---
+  duration_ms: 0.121584
+  type: 'test'
+  ...
+# Subtest: no-path requires exact structured engine error and exit one / 경로 없음은 명시적 오류와 종료 코드 1 필요
+ok 284 - no-path requires exact structured engine error and exit one / 경로 없음은 명시적 오류와 종료 코드 1 필요
+  ---
+  duration_ms: 0.150625
+  type: 'test'
+  ...
+# Subtest: engine evidence mismatches have exit one, not input exit two / 엔진 증거 불일치는 종료 코드 1
+ok 285 - engine evidence mismatches have exit one, not input exit two / 엔진 증거 불일치는 종료 코드 1
+  ---
+  duration_ms: 0.365292
+  type: 'test'
+  ...
+# Subtest: tile bytes are bound to whole graph identity / 전체 그래프 식별자에 타일 바이트 결합
+ok 286 - tile bytes are bound to whole graph identity / 전체 그래프 식별자에 타일 바이트 결합
+  ---
+  duration_ms: 0.7025
+  type: 'test'
+  ...
+# Subtest: owned container limits and cleanup are explicit / 소유 컨테이너 자원 제한·정리 확인
+ok 287 - owned container limits and cleanup are explicit / 소유 컨테이너 자원 제한·정리 확인
+  ---
+  duration_ms: 178.174375
+  type: 'test'
+  ...
+# Subtest: ownership mismatch and daemon failure refuse cleanup success / 소유권 불일치·데몬 오류는 정리 성공 아님
+ok 288 - ownership mismatch and daemon failure refuse cleanup success / 소유권 불일치·데몬 오류는 정리 성공 아님
+  ---
+  duration_ms: 108.23225
+  type: 'test'
+  ...
+# Subtest: injected command failure preserves evidence but no completion manifest / 명령 실패 주입 시 미완료 증거 보존
+ok 289 - injected command failure preserves evidence but no completion manifest / 명령 실패 주입 시 미완료 증거 보존
+  ---
+  duration_ms: 1156.995333
+  type: 'test'
+  ...
+# Subtest: output preservation and invalid CLI fail without Docker / 기존 출력 보존·잘못된 인자 거부
+ok 290 - output preservation and invalid CLI fail without Docker / 기존 출력 보존·잘못된 인자 거부
+  ---
+  duration_ms: 519.315167
+  type: 'test'
+  ...
+# Subtest: engine parser accepts complete JSON only and records timeouts / 엔진 JSON 완전성·제한시간 실패 기록
+ok 291 - engine parser accepts complete JSON only and records timeouts / 엔진 JSON 완전성·제한시간 실패 기록
+  ---
+  duration_ms: 3.942666
+  type: 'test'
+  ...
+# Subtest: Accepted inspection binds event time and state to one transaction while status keeps its old shape / 수용 조회는 같은 트랜잭션의 시각·상태를 반환하고 기존 상태 형식 유지
+ok 292 - Accepted inspection binds event time and state to one transaction while status keeps its old shape / 수용 조회는 같은 트랜잭션의 시각·상태를 반환하고 기존 상태 형식 유지
+  ---
+  duration_ms: 4.252292
+  type: 'test'
+  ...
+# Subtest: Strict TAR layout binds index, members and every catalog edge / 엄격 TAR 배치는 목록·멤버·전체 구간을 연결
+ok 293 - Strict TAR layout binds index, members and every catalog edge / 엄격 TAR 배치는 목록·멤버·전체 구간을 연결
+  ---
+  duration_ms: 2.149458
+  type: 'test'
+  ...
+# Subtest: Positive speeds never encode closure or unknown and reject malformed values / 양수 속도는 폐쇄·미확인으로 변환하지 않고 잘못된 값 거부
+ok 294 - Positive speeds never encode closure or unknown and reject malformed values / 양수 속도는 폐쇄·미확인으로 변환하지 않고 잘못된 값 거부
+  ---
+  duration_ms: 0.255584
+  type: 'test'
+  ...
+# Subtest: Compiler preserves non-live/index/header bytes and publishes reproducibly / 변환기는 비LIVE·목록·헤더 바이트를 보존하고 재현 가능한 세대 게시
+ok 295 - Compiler preserves non-live/index/header bytes and publishes reproducibly / 변환기는 비LIVE·목록·헤더 바이트를 보존하고 재현 가능한 세대 게시
+  ---
+  duration_ms: 199.112625
+  type: 'test'
+  ...
+# Subtest: Compiler rejects altered publication and status/speed pairs before writing / 변환기는 바뀐 게시자료·상태속도쌍을 쓰기 전에 거부
+ok 296 - Compiler rejects altered publication and status/speed pairs before writing / 변환기는 바뀐 게시자료·상태속도쌍을 쓰기 전에 거부
+  ---
+  duration_ms: 14.011417
+  type: 'test'
+  ...
+# Subtest: Concurrent identical writers reuse only fully matching immutable content / 동시 동일 작성자는 완전히 일치하는 불변 내용만 재사용
+ok 297 - Concurrent identical writers reuse only fully matching immutable content / 동시 동일 작성자는 완전히 일치하는 불변 내용만 재사용
+  ---
+  duration_ms: 161.228583
+  type: 'test'
+  ...
+# Subtest: Traffic request validates two global coordinates and pinned graph; coverage is checked from the bundle / 교통정보 요청의 지구 좌표 두 개·고정 지도 검사, 범위는 묶음 기준
+ok 298 - Traffic request validates two global coordinates and pinned graph; coverage is checked from the bundle / 교통정보 요청의 지구 좌표 두 개·고정 지도 검사, 범위는 묶음 기준
+  ---
+  duration_ms: 0.250875
+  type: 'test'
+  ...
+# Subtest: fixed source resolves endpoints, authors fifteen independent trips, and retains full truth / 고정 끝점·독립15여행·전체정답보존
+ok 299 - fixed source resolves endpoints, authors fifteen independent trips, and retains full truth / 고정 끝점·독립15여행·전체정답보존
+  ---
+  duration_ms: 17.242666
+  type: 'test'
+  ...
+# Subtest: source drift, duplicates, inaccessible and reordered corridor fail closed / 원본변경·중복·접근불가·순서변경거부
+ok 300 - source drift, duplicates, inaccessible and reordered corridor fail closed / 원본변경·중복·접근불가·순서변경거부
+  ---
+  duration_ms: 0.310291
+  type: 'test'
+  ...
+# Subtest: source endpoint grid permits one microdegree, rejects two and preserves original geometry / 원본끝점격자한칸허용·두칸거부·원지형보존
+ok 301 - source endpoint grid permits one microdegree, rejects two and preserves original geometry / 원본끝점격자한칸허용·두칸거부·원지형보존
+  ---
+  duration_ms: 37.045917
+  type: 'test'
+  ...
+# Subtest: single traffic case inventory rejects missing, duplicate, failed and extra cases / 단일교통검사목록누락·중복·실패·추가거부
+ok 302 - single traffic case inventory rejects missing, duplicate, failed and extra cases / 단일교통검사목록누락·중복·실패·추가거부
+  ---
+  duration_ms: 0.186916
+  type: 'test'
+  ...
+# Subtest: route summary requires actual route and trace evidence / 경로요약에 실제경로·trace원문필요
+ok 303 - route summary requires actual route and trace evidence / 경로요약에 실제경로·trace원문필요
+  ---
+  duration_ms: 0.186208
+  type: 'test'
+  ...
+# Subtest: traffic CLI rejects incomplete arguments before creating resources / 교통명령이 자원생성전불완전인자거부
+ok 304 - traffic CLI rejects incomplete arguments before creating resources / 교통명령이 자원생성전불완전인자거부
+  ---
+  duration_ms: 0.132042
+  type: 'test'
+  ...
+# Subtest: public routing provenance rejects extra raw fields and credentials / 공개경로출처가 원관측필드·인증값거부
+ok 305 - public routing provenance rejects extra raw fields and credentials / 공개경로출처가 원관측필드·인증값거부
+  ---
+  duration_ms: 0.29
+  type: 'test'
+  ...
+# Subtest: traffic report keeps source replay and embeds safe bilingual routing evidence / 교통보고서가 기존원본재생·안전한한영경로근거보존
+ok 306 - traffic report keeps source replay and embeds safe bilingual routing evidence / 교통보고서가 기존원본재생·안전한한영경로근거보존
+  ---
+  duration_ms: 1.794417
+  type: 'test'
+  ...
+# Subtest: archived real bundle integrity is independently recomputed / 보존된 실제 묶음의 무결성을 다시 계산
+ok 307 - archived real bundle integrity is independently recomputed / 보존된 실제 묶음의 무결성을 다시 계산
+  ---
+  duration_ms: 1073.873625
+  type: 'test'
+  ...
+# Subtest: bundle rejects tampered inputs, mapping and completion / 묶음 입력·구간 대응·완료 변조 거부
+ok 308 - bundle rejects tampered inputs, mapping and completion / 묶음 입력·구간 대응·완료 변조 거부
+  ---
+  duration_ms: 678.512958
+  type: 'test'
+  ...
+# Subtest: bundle rejects escapes and symlinks at every evidence boundary / 증거 경로 탈출·심볼릭 링크 거부
+ok 309 - bundle rejects escapes and symlinks at every evidence boundary / 증거 경로 탈출·심볼릭 링크 거부
+  ---
+  duration_ms: 50.022667
+  type: 'test'
+  ...
+# Subtest: independent equatorial distance and baseline crossings / 독립 적도 거리·기본 경로 통과 시각
+ok 310 - independent equatorial distance and baseline crossings / 독립 적도 거리·기본 경로 통과 시각
+  ---
+  duration_ms: 65.135583
+  type: 'test'
+  ...
+# Subtest: authored demo counts and zero-speed wait match hand calculations / 시연 개수·정지 대기를 수작업 계산과 대조
+ok 311 - authored demo counts and zero-speed wait match hand calculations / 시연 개수·정지 대기를 수작업 계산과 대조
+  ---
+  duration_ms: 44.311666
+  type: 'test'
+  ...
+# Subtest: on-grid arrival is included exactly once and exit precedes entry / 정시 도착 중복 방지·진출 후 진입
+ok 312 - on-grid arrival is included exactly once and exit precedes entry / 정시 도착 중복 방지·진출 후 진입
+  ---
+  duration_ms: 45.603417
+  type: 'test'
+  ...
+# Subtest: speed changes integrate continuously and round once / 속도 변경을 연속 적분하고 한 번 올림
+ok 313 - speed changes integrate continuously and round once / 속도 변경을 연속 적분하고 한 번 올림
+  ---
+  duration_ms: 52.395666
+  type: 'test'
+  ...
+# Subtest: same seed and declaration reorder preserve all deterministic content / 같은 시드·선언 순서의 결정성
+ok 314 - same seed and declaration reorder preserve all deterministic content / 같은 시드·선언 순서의 결정성
+  ---
+  duration_ms: 43.306792
+  type: 'test'
+  ...
+# Subtest: faults and seeds never alter truth or traversal times / 장애·시드가 정답·통과 시각을 바꾸지 않음
+ok 315 - faults and seeds never alter truth or traversal times / 장애·시드가 정답·통과 시각을 바꾸지 않음
+  ---
+  duration_ms: 49.928709
+  type: 'test'
+  ...
+# Subtest: drop boundaries preserve IDs and surviving noise stream / 누락 경계·식별자·남은 잡음 흐름 보존
+ok 316 - drop boundaries preserve IDs and surviving noise stream / 누락 경계·식별자·남은 잡음 흐름 보존
+  ---
+  duration_ms: 54.695584
+  type: 'test'
+  ...
+# Subtest: unrelated vehicle does not perturb existing streams or leak edge IDs / 다른 차량 추가의 흐름 독립·정답 식별자 비노출
+ok 317 - unrelated vehicle does not perturb existing streams or leak edge IDs / 다른 차량 추가의 흐름 독립·정답 식별자 비노출
+  ---
+  duration_ms: 57.9235
+  type: 'test'
+  ...
+# Subtest: invalid values, illegal turns and disconnected paths fail early / 잘못된 값·금지 회전·경로 단절 조기 거부
+ok 318 - invalid values, illegal turns and disconnected paths fail early / 잘못된 값·금지 회전·경로 단절 조기 거부
+  ---
+  duration_ms: 41.238792
+  type: 'test'
+  ...
+# Subtest: CLI writes reproducible bound evidence and refuses existing output / 재현 가능한 결합 증거·기존 출력 거부
+ok 319 - CLI writes reproducible bound evidence and refuses existing output / 재현 가능한 결합 증거·기존 출력 거부
+  ---
+  duration_ms: 190.26225
+  type: 'test'
+  ...
+# Subtest: simulation help identifies template and invalid CLI / 시뮬레이션 틀 안내·인자 오류
+ok 320 - simulation help identifies template and invalid CLI / 시뮬레이션 틀 안내·인자 오류
+  ---
+  duration_ms: 0.302458
+  type: 'test'
+  ...
+1..320
+# tests 320
+# suites 0
+# pass 320
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6349.16025

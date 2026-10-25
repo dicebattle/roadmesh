@@ -1,0 +1,61 @@
+{
+  "root_pid": 92454,
+  "session": "routelens-nav02-user-capture-20261025215410-92004",
+  "processes": [
+    {
+      "pid": 92454,
+      "parent": 1,
+      "started_at": "Sun Oct 25 21:54:13 2026",
+      "command": "/Users/dice/.npm/_npx/361c55be1121897e/node_modules/node/bin/node"
+    },
+    {
+      "pid": 92470,
+      "parent": 92454,
+      "started_at": "Sun Oct 25 21:54:13 2026",
+      "command": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    },
+    {
+      "pid": 92704,
+      "parent": 92470,
+      "started_at": "Sun Oct 25 21:54:14 2026",
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/156.0.8078.47/Helpers/Google Chrome Helper (GPU).app/Contents/MacOS/Google Chrome Helper (GPU)"
+    },
+    {
+      "pid": 92706,
+      "parent": 92470,
+      "started_at": "Sun Oct 25 21:54:14 2026",
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/156.0.8078.47/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper"
+    },
+    {
+      "pid": 92723,
+      "parent": 92470,
+      "started_at": "Sun Oct 25 21:54:14 2026",
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/156.0.8078.47/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper"
+    },
+    {
+      "pid": 92763,
+      "parent": 92470,
+      "started_at": "Sun Oct 25 21:54:14 2026",
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/156.0.8078.47/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)"
+    },
+    {
+      "pid": 92764,
+      "parent": 92470,
+      "started_at": "Sun Oct 25 21:54:14 2026",
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/156.0.8078.47/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)"
+    },
+    {
+      "pid": 92765,
+      "parent": 92470,
+      "started_at": "Sun Oct 25 21:54:14 2026",
+      "command": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/156.0.8078.47/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)"
+    },
+    {
+      "pid": 93478,
+      "parent": 92454,
+      "started_at": "Sun Oct 25 21:54:18 2026",
+      "command": "/Users/dice/Library/Caches/ms-playwright/ffmpeg-1011/ffmpeg-mac"
+    }
+  ],
+  "captured_at_utc": "2026-10-25T12:55:00.665Z"
+}

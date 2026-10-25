@@ -1,0 +1,360 @@
+[
+  {
+    "attempt": 1,
+    "node_id": "seoul-gateway-node-a",
+    "request": {
+      "request_id": "wrong-generation-rejected",
+      "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+      "locations": [
+        {
+          "lon": 127.03739724982245,
+          "lat": 37.50083690018144
+        },
+        {
+          "lon": 127.0375277498224,
+          "lat": 37.500877100181434
+        }
+      ],
+      "expected_generation_id": "ff7a8ecf18bd5cb5c3f3a3862a3de0b730381c86093b853aeda6da536fde8aab"
+    },
+    "deadline_ms": 4000,
+    "status": 200,
+    "body": {
+      "code": "ROUTE",
+      "request_id": "wrong-generation-rejected",
+      "node_id": "seoul-gateway-node-a",
+      "instance_id": "3cd362f8-507f-443e-b3c5-633442abccfa",
+      "engine_result": {
+        "request": {
+          "locations": [
+            {
+              "lon": 127.03739724982245,
+              "lat": 37.50083690018144
+            },
+            {
+              "lon": 127.0375277498224,
+              "lat": 37.500877100181434
+            }
+          ],
+          "costing": "auto",
+          "units": "kilometers",
+          "language": "en-US",
+          "date_time": {
+            "type": 0
+          }
+        },
+        "route": {
+          "trip": {
+            "locations": [
+              {
+                "type": "break",
+                "lat": 37.500836,
+                "lon": 127.037397,
+                "date_time": "2026-10-25T11:11",
+                "original_index": 0
+              },
+              {
+                "type": "break",
+                "lat": 37.500877,
+                "lon": 127.037527,
+                "original_index": 1
+              }
+            ],
+            "legs": [
+              {
+                "maneuvers": [
+                  {
+                    "type": 1,
+                    "instruction": "Drive east on 테헤란로/90.",
+                    "verbal_succinct_transition_instruction": "Drive east. Then You will arrive at your destination.",
+                    "verbal_pre_transition_instruction": "Drive east on 테헤란로, 90. Then You will arrive at your destination.",
+                    "verbal_post_transition_instruction": "Continue for 10 meters.",
+                    "street_names": [
+                      "테헤란로",
+                      "90"
+                    ],
+                    "bearing_after": 69,
+                    "time": 22.254,
+                    "length": 0.012,
+                    "cost": 27.261,
+                    "begin_shape_index": 0,
+                    "end_shape_index": 1,
+                    "verbal_multi_cue": true,
+                    "travel_mode": "drive",
+                    "travel_type": "car"
+                  },
+                  {
+                    "type": 4,
+                    "instruction": "You have arrived at your destination.",
+                    "verbal_transition_alert_instruction": "You will arrive at your destination.",
+                    "verbal_pre_transition_instruction": "You have arrived at your destination.",
+                    "bearing_before": 69,
+                    "time": 0,
+                    "length": 0,
+                    "cost": 0,
+                    "begin_shape_index": 1,
+                    "end_shape_index": 1,
+                    "travel_mode": "drive",
+                    "travel_type": "car"
+                  }
+                ],
+                "summary": {
+                  "has_time_restrictions": false,
+                  "has_toll": false,
+                  "has_highway": false,
+                  "has_ferry": false,
+                  "min_lat": 37.500836,
+                  "min_lon": 127.037397,
+                  "max_lat": 37.500877,
+                  "max_lon": 127.037527,
+                  "time": 22.254,
+                  "length": 0.012,
+                  "cost": 27.261
+                },
+                "shape": "iyzofAi|vhqFoAeG"
+              }
+            ],
+            "summary": {
+              "has_time_restrictions": false,
+              "has_toll": false,
+              "has_highway": false,
+              "has_ferry": false,
+              "min_lat": 37.500836,
+              "min_lon": 127.037397,
+              "max_lat": 37.500877,
+              "max_lon": 127.037527,
+              "time": 22.254,
+              "length": 0.012,
+              "cost": 27.261
+            },
+            "status_message": "Found route between points",
+            "status": 0,
+            "units": "kilometers",
+            "language": "en-US"
+          }
+        },
+        "trace": {
+          "units": "kilometers",
+          "shape": "iyzofAi|vhqFoAeG",
+          "edges": [
+            {
+              "id": 1338687642000,
+              "speed": 2,
+              "length": 0.012,
+              "source_percent_along": 0.351,
+              "target_percent_along": 0.653
+            }
+          ],
+          "alternate_paths": []
+        }
+      },
+      "provenance": {
+        "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+        "high_water": 1,
+        "sequence": 1,
+        "traffic_snapshot_id": "4be86de31035291b0fac2caf39e57cae7ea0e67fe331095d6bca690545d5f4f0",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "0000000000000000000000000000000000000000000000000000000000000000",
+        "traffic_sha256": "6a9d39c889a49e666d74a9e4024908646bd5b99a04eb02d0cf35dee4aea5d528",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 2,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "6871952"
+        }
+      }
+    },
+    "outcome": "REJECTED",
+    "reason": "WRONG_GENERATION",
+    "elapsed_start_ms": 930.1556669999991,
+    "elapsed_end_ms": 1491.838667
+  },
+  {
+    "attempt": 2,
+    "node_id": "seoul-gateway-node-b",
+    "request": {
+      "request_id": "wrong-generation-rejected",
+      "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+      "locations": [
+        {
+          "lon": 127.03739724982245,
+          "lat": 37.50083690018144
+        },
+        {
+          "lon": 127.0375277498224,
+          "lat": 37.500877100181434
+        }
+      ],
+      "expected_generation_id": "ff7a8ecf18bd5cb5c3f3a3862a3de0b730381c86093b853aeda6da536fde8aab"
+    },
+    "deadline_ms": 4000,
+    "status": 200,
+    "body": {
+      "code": "ROUTE",
+      "request_id": "wrong-generation-rejected",
+      "node_id": "seoul-gateway-node-b",
+      "instance_id": "5c96e4c6-a38c-4db8-9d98-a0828531cbf2",
+      "engine_result": {
+        "request": {
+          "locations": [
+            {
+              "lon": 127.03739724982245,
+              "lat": 37.50083690018144
+            },
+            {
+              "lon": 127.0375277498224,
+              "lat": 37.500877100181434
+            }
+          ],
+          "costing": "auto",
+          "units": "kilometers",
+          "language": "en-US",
+          "date_time": {
+            "type": 0
+          }
+        },
+        "route": {
+          "trip": {
+            "locations": [
+              {
+                "type": "break",
+                "lat": 37.500836,
+                "lon": 127.037397,
+                "date_time": "2026-10-25T11:11",
+                "original_index": 0
+              },
+              {
+                "type": "break",
+                "lat": 37.500877,
+                "lon": 127.037527,
+                "original_index": 1
+              }
+            ],
+            "legs": [
+              {
+                "maneuvers": [
+                  {
+                    "type": 1,
+                    "instruction": "Drive east on 테헤란로/90.",
+                    "verbal_succinct_transition_instruction": "Drive east. Then You will arrive at your destination.",
+                    "verbal_pre_transition_instruction": "Drive east on 테헤란로, 90. Then You will arrive at your destination.",
+                    "verbal_post_transition_instruction": "Continue for 10 meters.",
+                    "street_names": [
+                      "테헤란로",
+                      "90"
+                    ],
+                    "bearing_after": 69,
+                    "time": 22.254,
+                    "length": 0.012,
+                    "cost": 27.261,
+                    "begin_shape_index": 0,
+                    "end_shape_index": 1,
+                    "verbal_multi_cue": true,
+                    "travel_mode": "drive",
+                    "travel_type": "car"
+                  },
+                  {
+                    "type": 4,
+                    "instruction": "You have arrived at your destination.",
+                    "verbal_transition_alert_instruction": "You will arrive at your destination.",
+                    "verbal_pre_transition_instruction": "You have arrived at your destination.",
+                    "bearing_before": 69,
+                    "time": 0,
+                    "length": 0,
+                    "cost": 0,
+                    "begin_shape_index": 1,
+                    "end_shape_index": 1,
+                    "travel_mode": "drive",
+                    "travel_type": "car"
+                  }
+                ],
+                "summary": {
+                  "has_time_restrictions": false,
+                  "has_toll": false,
+                  "has_highway": false,
+                  "has_ferry": false,
+                  "min_lat": 37.500836,
+                  "min_lon": 127.037397,
+                  "max_lat": 37.500877,
+                  "max_lon": 127.037527,
+                  "time": 22.254,
+                  "length": 0.012,
+                  "cost": 27.261
+                },
+                "shape": "iyzofAi|vhqFoAeG"
+              }
+            ],
+            "summary": {
+              "has_time_restrictions": false,
+              "has_toll": false,
+              "has_highway": false,
+              "has_ferry": false,
+              "min_lat": 37.500836,
+              "min_lon": 127.037397,
+              "max_lat": 37.500877,
+              "max_lon": 127.037527,
+              "time": 22.254,
+              "length": 0.012,
+              "cost": 27.261
+            },
+            "status_message": "Found route between points",
+            "status": 0,
+            "units": "kilometers",
+            "language": "en-US"
+          }
+        },
+        "trace": {
+          "units": "kilometers",
+          "shape": "iyzofAi|vhqFoAeG",
+          "edges": [
+            {
+              "id": 1338687642000,
+              "speed": 2,
+              "length": 0.012,
+              "source_percent_along": 0.351,
+              "target_percent_along": 0.653
+            }
+          ],
+          "alternate_paths": []
+        }
+      },
+      "provenance": {
+        "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+        "high_water": 1,
+        "sequence": 1,
+        "traffic_snapshot_id": "4be86de31035291b0fac2caf39e57cae7ea0e67fe331095d6bca690545d5f4f0",
+        "compiler_policy": "valhalla-current-v1",
+        "generation_id": "0000000000000000000000000000000000000000000000000000000000000000",
+        "traffic_sha256": "6a9d39c889a49e666d74a9e4024908646bd5b99a04eb02d0cf35dee4aea5d528",
+        "traffic_byte_length": 8663040,
+        "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+        "valid_until": "2026-10-24T00:07:00.000Z",
+        "traffic_mode": "LIVE",
+        "engine": {
+          "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+          "version": "3.9.1"
+        },
+        "message_en": "Fresh accepted synthetic traffic is applied.",
+        "message_ko": "현재 수용한 합성 교통정보를 적용했습니다.",
+        "activation_epoch": 2,
+        "native_daemon": {
+          "pid": 16,
+          "start_ticks": "6871952"
+        }
+      }
+    },
+    "outcome": "REJECTED",
+    "reason": "WRONG_GENERATION",
+    "elapsed_start_ms": 1504.1270839999997,
+    "elapsed_end_ms": 2082.704125
+  }
+]

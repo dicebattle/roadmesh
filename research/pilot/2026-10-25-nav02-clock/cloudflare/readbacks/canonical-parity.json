@@ -1,0 +1,57 @@
+[
+  {
+    "case_id": "count-0",
+    "canonical_sha256": "662456c340b09f10bfb21f5e8db897529dfe7e56846863430719f697466ff744",
+    "evidence_path": "parity/count-0-worker.json"
+  },
+  {
+    "case_id": "count-1",
+    "canonical_sha256": "71c5e4598aa8953f440e0a9515cec89b8183a3f2af7a3cab3ce58be87abd4c8c",
+    "evidence_path": "parity/count-1-worker.json"
+  },
+  {
+    "case_id": "count-4",
+    "canonical_sha256": "71c5e4598aa8953f440e0a9515cec89b8183a3f2af7a3cab3ce58be87abd4c8c",
+    "evidence_path": "parity/count-4-worker.json"
+  },
+  {
+    "case_id": "count-5",
+    "canonical_sha256": "e1c70b1d4e8db6a09b1b58d684a9a1a2c9b6506118bca6dcb0709b0e3e87c85b",
+    "evidence_path": "parity/count-5-worker.json"
+  },
+  {
+    "case_id": "late-just-before",
+    "canonical_sha256": "71c5e4598aa8953f440e0a9515cec89b8183a3f2af7a3cab3ce58be87abd4c8c",
+    "evidence_path": "parity/late-just-before-worker.json"
+  },
+  {
+    "case_id": "late-exact",
+    "canonical_sha256": "662456c340b09f10bfb21f5e8db897529dfe7e56846863430719f697466ff744",
+    "evidence_path": "parity/late-exact-worker.json"
+  },
+  {
+    "case_id": "late-after",
+    "canonical_sha256": "662456c340b09f10bfb21f5e8db897529dfe7e56846863430719f697466ff744",
+    "evidence_path": "parity/late-after-worker.json"
+  },
+  {
+    "case_id": "revoked",
+    "canonical_sha256": "71c5e4598aa8953f440e0a9515cec89b8183a3f2af7a3cab3ce58be87abd4c8c",
+    "evidence_path": "parity/revoked-worker.json"
+  },
+  {
+    "case_id": "expired",
+    "canonical_sha256": "d32eb7a8c82c93d8e2d52c576e9da3c5eefa7147b82bcba7d61c9c623f7a3aca",
+    "evidence_path": "parity/expired-worker.json"
+  },
+  {
+    "case_id": "new-empty-window",
+    "canonical_sha256": "1e1ce0853f1cc527176c4a8dfe2b4812eb42e7ad3a198d09c8e08d50fcf7f052",
+    "evidence_path": "parity/new-empty-window-worker.json"
+  },
+  {
+    "case_id": "window-open",
+    "canonical_sha256": null,
+    "evidence_path": "parity/window-open-worker.json"
+  }
+]

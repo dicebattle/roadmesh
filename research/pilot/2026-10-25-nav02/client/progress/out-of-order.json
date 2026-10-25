@@ -1,0 +1,46 @@
+{
+  "source_class": "SYNTHETIC",
+  "binding": {
+    "request_id": "browser-d717334e-f6af-48be-8769-1b6499c2a89d",
+    "request_sha256": "27c7e6ec2d5127c85643fceec798a5a5da737fdc0968444167a5470182f26425",
+    "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+    "generation_id": "24f541e59bc78a0b20e91b334bd7d5bbe45aac7c4141ccc5b43af48d1193b75c"
+  },
+  "metric_scope": "EXACT_RETURNED_ROUTE_NOT_ROAD_NETWORK_MATCHING",
+  "output": {
+    "accepted": false,
+    "reason": "OUT_OF_ORDER",
+    "state": {
+      "policy_id": "route-progress-v1",
+      "source_class": "SYNTHETIC",
+      "binding": {
+        "request_id": "browser-d717334e-f6af-48be-8769-1b6499c2a89d",
+        "request_sha256": "27c7e6ec2d5127c85643fceec798a5a5da737fdc0968444167a5470182f26425",
+        "graph_id": "683ff7cfd037957f50504bd32040b6030585d439091dd593e2ca1b04ab84aa43",
+        "generation_id": "24f541e59bc78a0b20e91b334bd7d5bbe45aac7c4141ccc5b43af48d1193b75c"
+      },
+      "status": "ON_ROUTE",
+      "reason": "CONFIRMED_ROUTE_POSITION",
+      "event_time_ms": 1000,
+      "accuracy_m": 4,
+      "raw_position": [
+        127.02876538352632,
+        37.498380443759004
+      ],
+      "confirmed_position": [
+        127.02876538352632,
+        37.498380443759
+      ],
+      "geometry_length_m": 2117.011521689528,
+      "last_confirmed_progress_m": 20.00000000356295,
+      "progress_m": 20.00000000356295,
+      "remaining_m": 2097.011521685965,
+      "distance_to_route_m": 7.073240659849489e-10,
+      "next_maneuver": {
+        "index": 1,
+        "instruction": "Bear left.",
+        "distance_m": 48.59556257596239
+      }
+    }
+  }
+}

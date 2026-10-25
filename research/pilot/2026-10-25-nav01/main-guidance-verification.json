@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "eca1f9c4c8f705388d8d9f14a3016249470c9603",
+    "dirty": false
+  },
+  "implementation_sha256": "e45cd76833284c384ef280f57fdedd3a62bf3af5eba4535363ae1a03f37c632e",
+  "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+  "original_hashes_checked": 2574,
+  "guidance_cases": 16,
+  "native_browser_bindings": [
+    {
+      "request_id": "browser-3e85ba53-fb05-487f-8fcc-66b6ebfedb86",
+      "language": "en-US",
+      "traffic_snapshot_id": null,
+      "maneuvers": 5,
+      "geometry_points": 57,
+      "distance_m": 2119,
+      "duration_s": 147.404,
+      "native_sha256": "f356f05898ca7505be77e407c87b47d5b6a0f44fa7b58153418ec688c64889d2",
+      "native_route_path": "fixture/nodes/client-node-a/runtime-ab58d27d-de8d-466b-96fc-204efc032d78/engines/f35adf2a-7516-4ec6-9d70-4c7b0e6486d1/requests/1ace4d1a-d29e-4629-a93d-58581fdcadbe/route.response.json"
+    },
+    {
+      "request_id": "browser-0de0aa9e-9927-4a32-9fac-0cbdd267b8ad",
+      "language": "ko-KR",
+      "traffic_snapshot_id": null,
+      "maneuvers": 5,
+      "geometry_points": 57,
+      "distance_m": 2119,
+      "duration_s": 147.404,
+      "native_sha256": "5144c8c90108e3cf0c3d7c05378ce53a8a6ef064614468cc9cb1b3632da628db",
+      "native_route_path": "fixture/nodes/client-node-a/runtime-ab58d27d-de8d-466b-96fc-204efc032d78/engines/f35adf2a-7516-4ec6-9d70-4c7b0e6486d1/requests/f59498c5-9e1a-4d23-b8a1-911eb4df88aa/route.response.json"
+    },
+    {
+      "request_id": "browser-c498f5b4-7e6e-49fd-87bd-65d118b1f168",
+      "language": "en-US",
+      "traffic_snapshot_id": "04c23e79af1fc839a2b9c0f8575630dc87488c7ccdcc9f9b4c054bb7eb556d59",
+      "maneuvers": 2,
+      "geometry_points": 2,
+      "distance_m": 12,
+      "duration_s": 22.254,
+      "native_sha256": "5fbb7699b6dd954ea9eb259be4fafa7f3f3fe68261db8c021f376994d2e9767c",
+      "native_route_path": "fixture/nodes/client-node-a/runtime-ab58d27d-de8d-466b-96fc-204efc032d78/engines/a067375b-9861-4dec-9f51-5b6d11400b69/requests/b23146f5-3be2-4eab-b7ea-bdf5c9ea2c97/route.response.json"
+    },
+    {
+      "request_id": "browser-d2540561-82ad-41b1-aecc-7d2f050598ee",
+      "language": "ko-KR",
+      "traffic_snapshot_id": "1c215a54eb6d6144e986781d185c6d1836ed74c71291ec38d3a3bc1c8976be9e",
+      "maneuvers": 2,
+      "geometry_points": 2,
+      "distance_m": 12,
+      "duration_s": 22.254,
+      "native_sha256": "dddd80829249fd7a69175394cf18986362a180b73b62f9eda4ce6dfbf35c9291",
+      "native_route_path": "fixture/nodes/client-node-a/runtime-3a36c950-8732-4aa6-97bc-e320c4df825f/engines/cb80d3dc-bdaf-4820-bf8d-627b8c61405f/requests/727ebee3-c0c1-4758-a0f1-d2c98397ac2c/route.response.json"
+    }
+  ],
+  "original_bytes_unchanged": true,
+  "message_en": "Main independently checked original native instructions, exact polyline, locale, metrics, browser order and malformed boundaries. Synthetic acceptance is not road accuracy.",
+  "message_ko": "메인이 엔진 원 안내·정확한 지형·언어·수치·화면 순서·오류 경계를 독립 확인했습니다. 합성 수용은 도로 정확도 검증이 아닙니다."
+}

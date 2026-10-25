@@ -1,0 +1,61 @@
+### Page
+- Page URL: http://127.0.0.1:58966/
+- Page Title: RouteLens · Seoul pilot / 서울 파일럿
+- Console: 1 errors, 0 warnings
+### Snapshot
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "RouteLens Seoul route pilot" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - text: RouteLens
+      - generic [ref=e4]: Seoul route pilot
+    - button "Switch to Korean / 한국어로 전환" [ref=e5] [cursor=pointer]: 한국어
+  - main [ref=e6]:
+    - region [ref=e7]:
+      - paragraph [ref=e8]: Actual Seoul roads · synthetic traffic
+      - heading "Choose your route" [level=1] [ref=e9]
+      - generic [ref=e10]:
+        - generic [ref=e11]: Route preset
+        - combobox "Route preset" [ref=e12]:
+          - option "Teheran-ro · long route" [selected]
+          - option "Teheran-ro · short live segment"
+          - option "Enter coordinates"
+        - group "Origin" [ref=e13]:
+          - generic [ref=e15]:
+            - generic [ref=e16]:
+              - generic [ref=e17]: Latitude
+              - spinbutton "Latitude" [ref=e18]: "37.4984"
+            - generic [ref=e19]:
+              - generic [ref=e20]: Longitude
+              - spinbutton "Longitude" [ref=e21]: "127.029"
+        - group "Destination" [ref=e22]:
+          - generic [ref=e24]:
+            - generic [ref=e25]:
+              - generic [ref=e26]: Latitude
+              - spinbutton "Latitude" [ref=e27]: "37.5045"
+            - generic [ref=e28]:
+              - generic [ref=e29]: Longitude
+              - spinbutton "Longitude" [ref=e30]: "127.049"
+        - button "Calculate route" [ref=e31] [cursor=pointer]
+      - region [ref=e32]:
+        - heading "Route result" [level=2] [ref=e33]
+        - status [ref=e34]: Choose two locations, then calculate a route.
+      - group [ref=e35]:
+        - generic "Request and version evidence" [ref=e36] [cursor=pointer]
+      - paragraph [ref=e37]: Local synthetic pilot. Not real-time traffic, driving guidance or independently verified road accuracy.
+    - region "Seoul road map / 서울 도로 지도" [ref=e38]:
+      - region "Interactive Seoul road map / 서울 도로 조작 지도" [ref=e39]:
+        - generic:
+          - region "Interactive Seoul road map" [ref=e49]
+          - generic "Origin marker" [ref=e50]: A
+          - generic "Destination marker" [ref=e51]: B
+        - generic [ref=e41]:
+          - button "Zoom in" [ref=e42] [cursor=pointer]
+          - button "Zoom out" [ref=e44] [cursor=pointer]
+      - paragraph: Select coordinates with the form. Pan or zoom the map to explore the original roads.
+      - paragraph [ref=e47]:
+        - text: ©
+        - link "OpenStreetMap contributors · ODbL" [ref=e48] [cursor=pointer]:
+          - /url: https://www.openstreetmap.org/copyright
+```

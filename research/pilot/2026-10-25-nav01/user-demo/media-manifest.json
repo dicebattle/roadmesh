@@ -1,0 +1,72 @@
+{
+  "source_commit": "eca1f9c4c8f705388d8d9f14a3016249470c9603",
+  "implementation_sha256": "e45cd76833284c384ef280f57fdedd3a62bf3af5eba4535363ae1a03f37c632e",
+  "report_path": "research/pilot/2026-10-25-nav01/report.html",
+  "report_sha256": "4217737b53990dc271185685d0b367b19e8a51fe39828e9cad67cf8dd2a14e99",
+  "capture_method": "Actual automatic Seoul browser pilot, full28.5s at1x. English/Korean captions are in an external108px band; original application1280x720 is retained. / 실제 서울 자동 브라우저28.5초 전체 원속도·원1280x720화면 유지·한영 자막은 아래108픽셀 띠에만 표시.",
+  "user_capture": {
+    "source_commit": "eca1f9c4c8f705388d8d9f14a3016249470c9603",
+    "source_dirty": false,
+    "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+    "raw_capture_seconds": 28.5,
+    "retained_raw_intervals_seconds": [
+      [
+        0,
+        28.5
+      ]
+    ],
+    "published_seconds": 28.5,
+    "captions_languages": [
+      "en",
+      "ko"
+    ],
+    "application_language": "ko",
+    "application_frame": {
+      "width": 1280,
+      "height": 720
+    },
+    "published_frame": {
+      "width": 1280,
+      "height": 828
+    },
+    "caption_band_pixels": 108
+  },
+  "assets": [
+    {
+      "path": "docs/media/demo.mp4",
+      "sha256": "fc74ef2cd8bb7227efc8489039aa43948a400e01163c44abaf06131d7894c85b"
+    },
+    {
+      "path": "docs/media/demo.ko.mp4",
+      "sha256": "32b6d744dc5a1478503a54cbc8ccf0a28cb548aff3915f999308d3afdac84e76"
+    },
+    {
+      "path": "docs/media/demo.gif",
+      "sha256": "c1586579adea3e42adbd434698c9ecdb8f5706a64fab6cb9cd780d66369a3e33"
+    },
+    {
+      "path": "docs/media/demo.ko.gif",
+      "sha256": "04c68c7f7d49201d0e9059224dce939892aa62416d27534925bd39a0b21759b8"
+    },
+    {
+      "path": "docs/media/demo-poster.ko.png",
+      "sha256": "df38768e713f56d9a3966f4f445c2bc3eba0cc13f6e9ca60e9dbadefcd628dbc"
+    },
+    {
+      "path": "research/pilot/2026-10-25-nav01/capture-original.webm",
+      "sha256": "a5e19bb7fadd9161bc6fcd0443dc381e4cf6ba01976865ffda671e1e9dd98310"
+    },
+    {
+      "path": "research/pilot/2026-10-25-nav01/frames/client-ko.png",
+      "sha256": "794b8314c5713beaafa54cd3a725dac16d9a70776ea35957da163f5159a28927"
+    },
+    {
+      "path": "research/pilot/2026-10-25-nav01/frames/raw-frame12.png",
+      "sha256": "1a849a079865c6ccac8f83b1654b93d1620f7849a581d5e305e9733ff459b453"
+    },
+    {
+      "path": "research/pilot/2026-10-25-nav01/report-data.json",
+      "sha256": "bcf5916467cc4235b80901f1aa5a6d116e6e85bfffe90e1711348d9b606f2c40"
+    }
+  ]
+}

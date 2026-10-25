@@ -1,5 +1,7 @@
 import * as maplibregl from "maplibre-gl";
 import "./style.css";
+import { ReplayController } from "./replay.js";
+import type { ProgressState } from "../../tools/route_progress.js";
 import { RouteClientState } from "./state.js";
 import type {
   ClientBootstrap,
@@ -26,6 +28,8 @@ const copy = {
     calculate: "Calculate route",
     recalculate: "Recalculate route",
     result: "Route result",
+    guidance: "Turn instructions",
+    guidanceScope: "Route preview. GPS tracking and spoken guidance are not available yet.",
     evidence: "Request and version evidence",
     scope:
       "Local synthetic pilot. Not real-time traffic, driving guidance or independently verified road accuracy.",
@@ -76,6 +80,8 @@ const copy = {
     calculate: "경로 계산",
     recalculate: "다시 계산",
     result: "경로 결과",
+    guidance: "회전별 길안내",
+    guidanceScope: "경로 미리보기입니다. GPS 추적·음성 안내는 아직 제공하지 않습니다.",
     evidence: "요청과 버전 근거",
     scope:
       "로컬 합성 파일럿입니다. 실시간 교통·주행 안내·독립 검증한 도로 정확도 근거가 아닙니다.",
@@ -132,6 +138,21 @@ let bootstrap: ClientBootstrap | undefined,
   lastRequest: GatewayRequest | undefined;
 let markers: maplibregl.Marker[] = [];
 let renderedGeometry: unknown = null;
+let progressMarkers: maplibregl.Marker[] = [];
+let progressState: ProgressState | null = null;
+const replay = new ReplayController((value) => {
+  progressState=value;
+  progressMarkers.forEach(m=>m.remove());progressMarkers=[];
+  if(mapReady&&map&&value){
+    for(const [point,confirmed] of [[value.raw_position,false],[value.confirmed_position,true]] as const){
+      if(!point)continue;
+      const marker=document.createElement("div");marker.className=confirmed?"confirmed-gps":"synthetic-gps";
+      marker.setAttribute("aria-label",confirmed?"Confirmed route position / 확정한 경로 위치":"Synthetic raw position / 합성 원 위치");
+      progressMarkers.push(new maplibregl.Marker({element:marker}).setLngLat([point[0]!,point[1]!]).addTo(map));
+    }
+  }
+  renderEvidence();
+});
 function renderEvidence(): void {
   $("route-evidence").textContent = JSON.stringify(
     {
@@ -141,6 +162,7 @@ function renderEvidence(): void {
       state: state.phase,
       reason: state.reason,
       map_source_geometry: renderedGeometry,
+      progress: progressState,
     },
     null,
     2,
@@ -270,6 +292,21 @@ function render(): void {
   );
   const button = $("request-route");
   button.setAttribute("aria-busy", String(state.phase === "loading"));
+  replay.sync(state.phase==="current"?state.route:null,bootstrap?.roads.features.map(f=>f.geometry.coordinates)??[],lang);
+  const guidance = $("guidance"), list = $("maneuvers");
+  list.replaceChildren();
+  guidance.hidden = !state.route?.guidance;
+  if (state.route?.guidance) {
+    list.lang = state.route.guidance.language;
+    for (const m of state.route.guidance.maneuvers) {
+      const li = document.createElement("li"), instruction = document.createElement("p"), distance = document.createElement("span");
+      instruction.textContent = m.instruction;
+      distance.textContent = Math.round(m.distance_m) + " m · " + m.duration_s.toFixed(1) + " " + copy[lang].seconds;
+      li.dataset.maneuverIndex = String(m.index);
+      li.append(instruction, distance);
+      list.append(li);
+    }
+  }
   const summary = $("route-summary");
   summary.replaceChildren();
   summary.hidden = !state.route;
@@ -383,6 +420,7 @@ async function submit(): Promise<void> {
     ...chosen,
     profile: "car",
     traffic_policy: "prefer_live",
+    guidance_language: lang === "en" ? "en-US" : "ko-KR",
   };
   lastRequest = request;
   const generation = state.begin(request.request_id),
@@ -406,7 +444,7 @@ async function submit(): Promise<void> {
         typeof body.reason === "string" ? body.reason : "NO_HEALTHY_NODE",
       );
     } else if (
-      state.result(generation, request.request_id, body as GatewaySuccess)
+      state.result(generation, request.request_id, body as GatewaySuccess, request.guidance_language)
     ) {
       if (mapReady && map) {
         const coords = body.geometry.coordinates as number[][];
@@ -533,6 +571,7 @@ for (const endpoint of ["origin", "destination"])
     });
 $("language").addEventListener("click", () => {
   lang = lang === "en" ? "ko" : "en";
+  invalidate();
   try {
     localStorage.setItem("routelens-language", lang);
   } catch {}

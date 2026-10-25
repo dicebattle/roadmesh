@@ -1,0 +1,13 @@
+file:///Users/dice/Documents/routelens-p13/data/archive-nav01-evidence.mjs:12
+const files=[],omitted=[];function walk(d,rel=''){for(const e of fs.readdirSync(d,{withFileTypes:true})){const p=rel?rel+'/'+e.name:e.name,f=path.join(d,e.name);if(e.isDirectory()){if(['.private','private'].includes(e.name))throw Error('Private directory remains / 비공개 폴더 잔존');walk(f,p);}else if(e.isFile()){const x={path:p,bytes:fs.statSync(f).size,sha256:hash(f)};if(allowed.has(p)){if(x.sha256!==allowed.get(p))throw Error('Declared map hash mismatch '+p);omitted.push({...x,actual_bytes_verified:true});}else{if(/(?:\.gph|\.osm\.pbf)$/.test(p)||e.name==='graph.tar')throw Error('Undeclared map omission '+p);files.push(x);}}else throw Error('Nonregular original '+p)}}walk(root);files.sort((a,b)=>a.path.localeCompare(b.path));
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ^
+
+Error: Undeclared map omission bundle/graph.tar
+    at walk (file:///Users/dice/Documents/routelens-p13/data/archive-nav01-evidence.mjs:12:577)
+    at walk (file:///Users/dice/Documents/routelens-p13/data/archive-nav01-evidence.mjs:12:278)
+    at file:///Users/dice/Documents/routelens-p13/data/archive-nav01-evidence.mjs:12:673
+    at ModuleJob.run (node:internal/modules/esm/module_job:430:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:654:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v25.4.0

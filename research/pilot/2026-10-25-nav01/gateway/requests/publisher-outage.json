@@ -1,0 +1,64 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "publisher-outage",
+    "origin": {
+      "longitude": 127.03739724982245,
+      "latitude": 37.50083690018144
+    },
+    "destination": {
+      "longitude": 127.0375277498224,
+      "latitude": 37.500877100181434
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live"
+  },
+  "status": 200,
+  "headers": {
+    "cache-control": "no-store",
+    "connection": "keep-alive",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sun, 25 Oct 2026 11:12:19 GMT",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked"
+  },
+  "body": {
+    "request_id": "publisher-outage",
+    "request_sha256": "5f4334d8109093145783d1eb1342ab482a01845f2266ff73cdbcf795adbd5563",
+    "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+    "snapshot_id": "f86f57e576e0ea969d7eeb070e7bd23d133c5c1232e583b3dc13266febf8554a",
+    "sequence": 2,
+    "generation_id": "83ffff02813b8c79900beddada37bb598d6e07c711ff1c7a9de58f888a839fcb",
+    "traffic_sha256": "6a9d39c889a49e666d74a9e4024908646bd5b99a04eb02d0cf35dee4aea5d528",
+    "engine_version": "3.9.1",
+    "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "costing_config_id": "valhalla-current-v1",
+    "node_id": "seoul-gateway-node-a",
+    "traffic_mode": "LIVE_MIXED",
+    "distance_m": 12,
+    "duration_s": 22.254,
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.037397,
+          37.500837
+        ],
+        [
+          127.037528,
+          37.500877
+        ]
+      ]
+    },
+    "live_coverage_ratio": 1,
+    "warnings": [],
+    "high_water": 2,
+    "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+    "traffic_published_at": "2026-10-24T00:04:30.000Z",
+    "traffic_valid_until": "2026-10-24T00:07:00.000Z",
+    "source_class": "SYNTHETIC",
+    "clock_basis": "SIMULATION_EVENT_TIME",
+    "calculated_at": "2026-10-25T11:12:19.098Z"
+  },
+  "elapsed_ms": 1571.5584159999853
+}

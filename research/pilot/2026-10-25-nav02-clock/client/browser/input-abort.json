@@ -1,0 +1,20 @@
+{
+  "phase": {
+    "type": "PHASE",
+    "phase": "AFTER_GATEWAY_SELECTION",
+    "pid": 79000,
+    "request_id": "browser-69476996-6ae6-4d3f-b5f3-ede833d7f756",
+    "generation_id": "dbfce29141f2c731852a9097483a55514abc19106c4e49b0665ce31045ffb4b3"
+  },
+  "gateway_status": {
+    "gateway_id": "client-gateway",
+    "instance_id": "85a2169a-6d69-4620-a36a-af4cca87cd1d",
+    "in_flight": 0,
+    "closing": false,
+    "high_water": 1,
+    "snapshot_id": "12f22b65ad7d2e9df6203419c46b742711019853480c9cdf0e31ca4ff25db882",
+    "checked_at_event_time": "2026-10-24T00:04:30.000Z",
+    "reason": "READY"
+  },
+  "elapsed_ms": 64.46162499999627
+}

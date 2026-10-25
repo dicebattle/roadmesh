@@ -1,0 +1,114 @@
+{
+  "status": "PASS",
+  "source": "fe49b55cad5b61a9f2dd6043922b4480e5bf2bbb",
+  "runtime": "70af32dc05269aee3a739e234e8db66718bfd1ee86c70b4d84c776be2c5a1db4",
+  "results": [
+    {
+      "name": "whole",
+      "script": "data/inspect-nav02-whole.mjs",
+      "args": [
+        "data/nav02-whole02",
+        "--output",
+        "data/nav02-whole02-independent.json",
+        "--expected-source",
+        "fe49b55cad5b61a9f2dd6043922b4480e5bf2bbb"
+      ],
+      "exit": 0,
+      "log": "data/nav02-clock-inspect-whole.log"
+    },
+    {
+      "name": "progress",
+      "script": "data/inspect-nav02-progress.mjs",
+      "args": [
+        "data/nav02-whole02/client",
+        "fe49b55cad5b61a9f2dd6043922b4480e5bf2bbb",
+        "70af32dc05269aee3a739e234e8db66718bfd1ee86c70b4d84c776be2c5a1db4",
+        "data/nav02-whole02-progress-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/nav02-clock-inspect-progress.log"
+    },
+    {
+      "name": "guidance",
+      "script": "data/inspect-nav01-guidance.mjs",
+      "args": [
+        "data/nav02-whole02/client",
+        "fe49b55cad5b61a9f2dd6043922b4480e5bf2bbb",
+        "70af32dc05269aee3a739e234e8db66718bfd1ee86c70b4d84c776be2c5a1db4",
+        "data/nav02-whole02-guidance-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/nav02-clock-inspect-guidance.log"
+    },
+    {
+      "name": "client",
+      "script": "data/inspect-nav01-client.mjs",
+      "args": [
+        "data/nav02-whole02/client",
+        "fe49b55cad5b61a9f2dd6043922b4480e5bf2bbb",
+        "70af32dc05269aee3a739e234e8db66718bfd1ee86c70b4d84c776be2c5a1db4",
+        "data/nav02-whole02-client-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/nav02-clock-inspect-client.log"
+    },
+    {
+      "name": "traffic",
+      "script": "research/pilot/2026-10-25-p13/inspectors/inspect-p08-evidence.mjs",
+      "args": [
+        "data/nav02-whole02/traffic",
+        "data/nav02-whole02/seoul/graph",
+        "--local",
+        "--output",
+        "data/nav02-whole02-traffic-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/nav02-clock-inspect-traffic.log"
+    },
+    {
+      "name": "nodes",
+      "script": "research/pilot/2026-10-25-p13/inspectors/inspect-p09-evidence.mjs",
+      "args": [
+        "data/nav02-whole02/nodes",
+        "data/nav02-whole02/seoul/graph",
+        "--output",
+        "data/nav02-whole02-nodes-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/nav02-clock-inspect-nodes.log"
+    },
+    {
+      "name": "gateway",
+      "script": "research/pilot/2026-10-25-p13/inspectors/inspect-p10-in-p11.mjs",
+      "args": [
+        "data/nav02-whole02/gateway",
+        "data/nav02-whole02/seoul/graph",
+        "--output",
+        "data/nav02-whole02-gateway-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/nav02-clock-inspect-gateway.log"
+    },
+    {
+      "name": "domain",
+      "script": "research/pilot/2026-10-25-p13/inspectors/inspect-p12-domain.mjs",
+      "args": [
+        "data/nav02-whole02/scenarios",
+        "data/nav02-whole02-domain-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/nav02-clock-inspect-domain.log"
+    },
+    {
+      "name": "cloudflare",
+      "script": "research/pilot/2026-10-25-p13/inspectors/inspect-p13-parity.mjs",
+      "args": [
+        "data/nav02-whole02/cloudflare",
+        "data/nav02-whole02-cloudflare-independent.json",
+        "data/nav02-clock-sqlite-copy"
+      ],
+      "exit": 0,
+      "log": "data/nav02-clock-inspect-cloudflare.log"
+    }
+  ]
+}

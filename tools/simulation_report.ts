@@ -139,6 +139,8 @@ export interface SimulationReportData {
   nodes?: NodeReport;
   gateway?: GatewayReport;
   client?: ClientReport;
+  navigation?: SimulationReportData["assertions"];
+  progress?: SimulationReportData["assertions"];
   scenarios?: ScenarioReport;
   cloudflare?: CloudflareReport;
   traffic?: TrafficReport;
@@ -649,6 +651,10 @@ export function renderSimulationReport(data: SimulationReportData): string {
       ></p>
       <div id="aggregate-evidence"></div>
     </section>
+    <section id="progress-section" class="checks" hidden><h2 data-en="GPS progress and replay acceptance" data-ko="GPS 진행·재생 검증"></h2><div id="progress-cases"></div></section>
+    <section id="navigation-section" class="checks" hidden>
+      <h2 data-en="Turn guidance acceptance" data-ko="회전 안내 검증"></h2><div id="navigation-cases"></div>
+    </section>
     <section id="cloudflare-section" class="checks" hidden>
       <h2 data-en="P13 recorded local Cloudflare parity" data-ko="P13 기록된 로컬 Cloudflare 비교"></h2>
       <p data-en="Actual local Worker, Queue and SQLite Durable Objects replay matched synthetic inputs from this same run's PostgreSQL originals. This section shows completed evidence, not a hosted Cloudflare deployment. Public GPS ingestion, cloud placement and hosted consumer concurrency remain separate." data-ko="실제 로컬 Worker·큐·SQLite Durable Object가 같은 실행의 PostgreSQL 원문에서 합성 매칭 입력을 재생했습니다. 완료된 근거이며 Cloudflare 원격 배포 화면이 아닙니다. 공개 GPS 수집·지역 배치·원격 소비자 동시성은 별도입니다."></p>
@@ -1068,6 +1074,10 @@ export function renderSimulationReport(data: SimulationReportData): string {
       );
       const v = $("vehicle").options[0];
       if (v) v.textContent = lang === "en" ? "All vehicles" : "전체 차량";
+      $("progress-section").hidden=!data.progress;
+      if(data.progress){const root=$("progress-cases");root.replaceChildren();data.progress.forEach(a=>{const row=node("p",a.status+" · "+a["message_"+lang]+" · ",root);evidence(a.evidence_path,row);});}
+      $("navigation-section").hidden=!data.navigation;
+      if(data.navigation){const root=$("navigation-cases");root.replaceChildren();data.navigation.forEach(a=>{const row=node("p",a.status+" · "+a["message_"+lang]+" · ",root);evidence(a.evidence_path,row);});}
       $("cloudflare-section").hidden=!data.cloudflare;
       if(data.cloudflare){const c=data.cloudflare,root=$("cloudflare-evidence");root.replaceChildren();node("p",c.assertions_passed+"/"+c.assertions_total+(lang==="en"?" checks · owned cleanup ":"개 검사 · 소유 정리 ")+c.cleanup_verified,root);node("p",c["runtime_"+lang],root);const parity=$("cloudflare-parity");parity.replaceChildren();c.parity.forEach(p=>{const row=node("p",p.case_id+" · "+(p.canonical_sha256||"WINDOW_OPEN")+" · ",parity);evidence(p.evidence_path,row);});const cases=$("cloudflare-cases");cases.replaceChildren();c.cases.forEach(a=>{const row=node("p",a.status+" · "+a["message_"+lang]+" · ",cases);evidence(a.evidence_path,row);});}
       $("scenario-section").hidden=!data.scenarios;

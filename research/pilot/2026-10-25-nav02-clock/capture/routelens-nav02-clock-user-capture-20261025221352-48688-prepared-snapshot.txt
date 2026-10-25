@@ -1,0 +1,76 @@
+### Page
+- Page URL: http://127.0.0.1:49824/
+- Page Title: RouteLens · Seoul pilot / 서울 파일럿
+- Console: 1 errors, 0 warnings
+### Snapshot
+```yaml
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - link "RouteLens 서울 경로 파일럿" [ref=e65] [cursor=pointer]:
+      - /url: /
+      - text: RouteLens
+      - generic [ref=e4]: 서울 경로 파일럿
+    - button "Switch to English / 영어로 전환" [active] [ref=e66] [cursor=pointer]: English
+  - main [ref=e6]:
+    - region [ref=e67]:
+      - paragraph [ref=e8]: 실제 서울 도로 · 합성 교통정보
+      - heading "경로를 선택하세요" [level=1] [ref=e68]
+      - generic [ref=e10]:
+        - generic [ref=e11]: 미리 정한 경로
+        - combobox "미리 정한 경로" [ref=e69]:
+          - option "테헤란로 · 장거리 경로" [selected]
+          - option "테헤란로 · 짧은 교통 적용 구간"
+          - option "좌표 직접 입력"
+        - group "출발지" [ref=e70]:
+          - generic [ref=e15]:
+            - generic [ref=e16]:
+              - generic [ref=e17]: 위도
+              - spinbutton "위도" [ref=e71]: "37.4984"
+            - generic [ref=e19]:
+              - generic [ref=e20]: 경도
+              - spinbutton "경도" [ref=e72]: "127.029"
+        - group "도착지" [ref=e73]:
+          - generic [ref=e24]:
+            - generic [ref=e25]:
+              - generic [ref=e26]: 위도
+              - spinbutton "위도" [ref=e74]: "37.5045"
+            - generic [ref=e28]:
+              - generic [ref=e29]: 경도
+              - spinbutton "경도" [ref=e75]: "127.049"
+        - button "경로 계산" [ref=e76] [cursor=pointer]
+      - region [ref=e77]:
+        - heading "경로 결과" [level=2] [ref=e78]
+        - status [ref=e34]: 두 위치를 선택한 뒤 경로를 계산하세요.
+        - region [ref=e79]:
+          - heading "합성 GPS 경로 재생" [level=3] [ref=e80]
+          - paragraph [ref=e37]: 이 경로 위 자체 합성 위치입니다. 단말 GPS·위치 업로드를 사용하지 않으며 재생 시계와 교통 시계는 별개입니다.
+          - generic [ref=e38]: 재생 시나리오
+          - combobox "재생 시나리오" [disabled] [ref=e81]:
+            - option "위치 오차" [selected]
+            - option "경로 이탈·복귀"
+          - generic [ref=e40]:
+            - button "4배속 재생" [disabled] [ref=e82] [cursor=pointer]
+            - button "다음 표본" [disabled] [ref=e83] [cursor=pointer]
+            - button "초기화" [disabled] [ref=e84] [cursor=pointer]
+          - status [ref=e44]: 경로를 계산한 뒤 위치를 재생하세요.
+          - paragraph [ref=e45]: 일시정지
+          - group [ref=e46]:
+            - generic "재생 근거" [ref=e85] [cursor=pointer]
+      - group [ref=e48]:
+        - generic "요청과 버전 근거" [ref=e86] [cursor=pointer]
+      - paragraph [ref=e50]: 로컬 합성 파일럿입니다. 실시간 교통·주행 안내·독립 검증한 도로 정확도 근거가 아닙니다.
+    - region "Seoul road map / 서울 도로 지도" [ref=e51]:
+      - region "Interactive Seoul road map / 서울 도로 조작 지도" [ref=e52]:
+        - generic:
+          - region "서울 도로 조작 지도" [ref=e87]
+          - generic "출발지 표시" [ref=e88]: A
+          - generic "도착지 표시" [ref=e89]: B
+        - generic [ref=e54]:
+          - button "지도 확대" [ref=e90] [cursor=pointer]
+          - button "지도 축소" [ref=e91] [cursor=pointer]
+      - paragraph: 입력란에서 좌표를 선택하세요. 지도를 이동하거나 확대해 원래 도로를 살펴볼 수 있습니다.
+      - paragraph [ref=e60]:
+        - text: ©
+        - link "OpenStreetMap contributors · ODbL" [ref=e61] [cursor=pointer]:
+          - /url: https://www.openstreetmap.org/copyright
+```

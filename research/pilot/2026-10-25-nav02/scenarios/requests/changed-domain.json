@@ -1,0 +1,25 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "changed-domain",
+    "origin": {
+      "longitude": 127.029,
+      "latitude": 37.4984
+    },
+    "destination": {
+      "longitude": 127.070395,
+      "latitude": 37.507408
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live",
+    "snap_policy": "nearest_road_100m"
+  },
+  "status": 409,
+  "body": {
+    "code": "ERROR",
+    "reason": "TRAFFIC_CHANGED",
+    "message_en": "The gateway cannot return a current verified route for this request.",
+    "message_ko": "이 요청에 현재 검증된 경로를 반환할 수 없습니다."
+  },
+  "elapsed_ms": 4565.018541999976
+}

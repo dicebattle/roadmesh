@@ -4,6 +4,7 @@ import type {
   GatewayRouteContext,
   GatewaySuccess,
 } from "../../tools/gateway_public_types.js";
+import { validateRequestedGuidance, type GuidanceLanguage } from "../../tools/guidance.js";
 export type ClientPhase =
   | "empty"
   | "loading"
@@ -125,9 +126,14 @@ export class RouteClientState {
     generation: number,
     request_id: string,
     route: GatewaySuccess,
+    language?: GuidanceLanguage,
   ): boolean {
     if (generation !== this.generation || this.request_id !== request_id)
       return false;
+    try { validateRequestedGuidance(route, language); } catch {
+      this.fail(generation, "INVALID_RESPONSE");
+      return false;
+    }
     const own = routeContext(route);
     if (
       route.request_id !== request_id ||

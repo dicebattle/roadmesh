@@ -1,0 +1,25 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "no-path",
+    "origin": {
+      "longitude": 127.029,
+      "latitude": 37.4984
+    },
+    "destination": {
+      "longitude": 127.070395,
+      "latitude": 37.507408
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live",
+    "snap_policy": "nearest_road_100m"
+  },
+  "status": 422,
+  "body": {
+    "code": "ERROR",
+    "reason": "NO_PATH",
+    "message_en": "No car route connects these locations under the selected policy.",
+    "message_ko": "선택한 정책으로 두 위치를 잇는 자동차 경로가 없습니다."
+  },
+  "elapsed_ms": 1627.762166999979
+}

@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "source_commit": "eca1f9c4c8f705388d8d9f14a3016249470c9603",
+  "implementation_sha256": "e45cd76833284c384ef280f57fdedd3a62bf3af5eba4535363ae1a03f37c632e",
+  "graph_id": "3d73519eb63737c10fddfa3e8a846c87e9f3d620ec82f6b4e178d6dee49130af",
+  "bindings": [
+    {
+      "request_id": "browser-7a905e42-7f1c-440e-966c-347d93be081b",
+      "language": "en-US",
+      "maneuvers": 9,
+      "distance_m": 2412,
+      "duration_s": 184.731,
+      "calculated_at": "2026-10-25T11:05:08.186Z",
+      "native_route_path": "pilot/nodes/client-node-a/runtime-5e0b8e9c-3447-49bd-90a1-f03d5f3b8abd/engines/bd971594-5d0c-4db8-ac40-491bac4583d9/requests/f31d0b8b-3d01-449f-9641-e05b6f272ce6/route.response.json",
+      "native_sha256": "65049bfa3efc1489dae8b50e0fc8207ac4aaf8070ce78e035433af3a280e1d09"
+    },
+    {
+      "request_id": "browser-b980f7fc-0b8d-4449-ba73-99e453ff276b",
+      "language": "ko-KR",
+      "maneuvers": 9,
+      "distance_m": 2412,
+      "duration_s": 184.731,
+      "calculated_at": "2026-10-25T11:05:47.714Z",
+      "native_route_path": "pilot/nodes/client-node-a/runtime-5e0b8e9c-3447-49bd-90a1-f03d5f3b8abd/engines/bd971594-5d0c-4db8-ac40-491bac4583d9/requests/4a4c3e7f-81d2-44cf-9f73-53a8c47d2ec6/route.response.json",
+      "native_sha256": "30278c95ffbc7c5140443fe23d3b1d0debde496fc80c9b178df11ffd4ba9097c"
+    },
+    {
+      "request_id": "browser-70dcae32-9d3f-44e1-8eef-34876f6b7f3b",
+      "language": "ko-KR",
+      "maneuvers": 9,
+      "distance_m": 2412,
+      "duration_s": 184.731,
+      "calculated_at": "2026-10-25T11:05:49.416Z",
+      "native_route_path": "pilot/nodes/client-node-a/runtime-5e0b8e9c-3447-49bd-90a1-f03d5f3b8abd/engines/bd971594-5d0c-4db8-ac40-491bac4583d9/requests/4a4c3e7f-81d2-44cf-9f73-53a8c47d2ec6/route.response.json",
+      "native_sha256": "30278c95ffbc7c5140443fe23d3b1d0debde496fc80c9b178df11ffd4ba9097c"
+    }
+  ],
+  "raw_capture_seconds": 28.5,
+  "retained_intervals": [
+    [
+      0,
+      28.5
+    ]
+  ],
+  "captions_outside_application": true,
+  "application_frame": {
+    "width": 1280,
+    "height": 720
+  },
+  "published_frame": {
+    "width": 1280,
+    "height": 828
+  },
+  "capture_browser_processes_absent": 9,
+  "owned_containers_absent": [
+    "routelens-p05-34a0e135-0935-47a0-84f4-6217c88154ca",
+    "routelens-p02-bc5168e1-8a2b-4d84-92b2-07fd18819f29",
+    "routelens-p02-257fdede-a2ab-4157-9df7-bff91eb5ca77",
+    "routelens-p02-bd971594-5d0c-4db8-ac40-491bac4583d9",
+    "routelens-p02-23a82d95-763d-4962-ba47-f309d277ec62",
+    "routelens-p02-31d78431-87bb-4098-901e-23d10bdd84bb",
+    "routelens-p02-593b4535-77a4-4e63-b493-5ce0340ef292",
+    "routelens-p02-6965cf34-6b1b-4077-89cf-700dcb7eca1d",
+    "routelens-p02-5c57332e-cdb0-4c17-bf5d-c349640814a9",
+    "routelens-p02-3c05bb9a-aa33-4848-b0d3-91f6ee4f6e85",
+    "routelens-p02-23ed506c-66ec-4675-a88f-2a4362946e89",
+    "routelens-p02-a8fb99a8-abaf-4035-a13d-78d3cc425bb6",
+    "routelens-p02-9b476f41-4032-4424-bdb1-5fdf264d858d",
+    "routelens-p02-9b7717db-f852-49df-9d7d-09f84050ce2b",
+    "routelens-p02-8522e6f0-2f19-4b51-b9db-e1a7a09e1954",
+    "routelens-p02-d374d19a-8d47-43d1-8293-32022ea1787c",
+    "routelens-p02-ce5a70c7-afbe-423d-b2c4-d6fc038b1b60",
+    "routelens-p02-6a5cf178-b63f-4958-a888-a340d211fea7",
+    "routelens-p02-a9cf2439-84ee-4546-986a-25b02839cab2",
+    "routelens-p02-97b36e2a-0260-4d51-a98b-2924f0012587",
+    "routelens-p02-2e4dc9a8-ff75-4f95-b9c4-57e5636b05c2"
+  ],
+  "owned_volume_absent": "routelens-p05-34a0e135-0935-47a0-84f4-6217c88154ca-db",
+  "app_port_closed": 58966,
+  "iab_languages": [
+    "en",
+    "ko"
+  ],
+  "mobile_width": 390,
+  "horizontal_overflow": false,
+  "message_en": "Actual automatic pilot on this fresh Seoul graph; three successful routes, all nine original turns, IAB state/geometry/order, recorded full flow and exact owned cleanup checked. Same synthetic detour has zero returned-route live coverage.",
+  "message_ko": "이번 새 서울 지도·자동 파일럿에서 성공3건·원 안내9개·내장 화면/지형/순서·전체 녹화·정확한 소유 정리를 확인했습니다. 합성 우회 경로의 반환 구간 적용률은0입니다."
+}
