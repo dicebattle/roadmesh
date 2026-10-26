@@ -141,6 +141,10 @@ const publicCopy: Record<Language, Partial<Record<keyof typeof copy.en, string>>
   },
 };
 function uiText(key: keyof typeof copy.en): string {
+  if (state?.authority?.public_traffic?.provider === "kr-regional") {
+    if (key === "long") return lang === "en" ? "Verified regional road route" : "확인한 지역 도로 경로";
+    if (key === "short") return lang === "en" ? "Short verified public-speed segment" : "짧은 공공 속도 적용 구간";
+  }
   return (bootstrap?.source_class === "PUBLIC_AGENCY" ? publicCopy[lang][key] : undefined) ?? copy[lang][key];
 }
 const $ = <T extends HTMLElement = HTMLElement>(id: string) => {
