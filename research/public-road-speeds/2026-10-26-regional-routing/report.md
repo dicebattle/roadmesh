@@ -105,3 +105,5 @@ First failures remain: the final expiry-display assertion initially expected EXP
 자체 실행 원문785개를 두 묶음으로 보존하고 새 폴더 복원 뒤 전 크기·해시를 확인했습니다. 전체 통합17,756파일은 로컬·공개 해시 목록으로 구분하며 선별 묶음을 기관 원문·전체 통합 복원으로 표현하지 않습니다.
 
 Large selected JSON originals are stored losslessly as gzip; [compression inventory](compressed-originals.json) binds each original path, size/hash and gzip file. Decompress into a new directory to recover exact original paths before an audit; the local full run stays unchanged. / 큰 선별 JSON은 무손실 gzip이며 목록에서 원 경로·크기·해시·압축 파일을 연결합니다. 새 폴더에 원 경로로 해제한 뒤 검사하고 로컬 전체 실행은 유지합니다.
+
+Delivery: implementation/evidence payload `ebd163f` was pushed to `feat/public-road-speeds` and its identical remote SHA read back. [Remote receipt](remote-delivery.json). This documentation-only receipt preserves the accepted runtime/media fingerprint; its latest remote SHA is checked after push. / 구현·증거를 작업 브랜치에 푸시하고 원격 일치를 확인했습니다. 이 문서 후속은 수용한 실행·미디어 지문을 유지하며 푸시 뒤 최신 원격 SHA도 확인합니다.

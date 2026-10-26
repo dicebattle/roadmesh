@@ -886,3 +886,5 @@ The expanded regional context exceeds existing GPS admission limits(7204 roads/1
 확장 지역 GPS·시간대 DB·승인 운영 수집·넓은 지형·정확도는 후속입니다. 기관 원문·실제 교통 바이트·비밀 상태는 로컬 보존하고 선별 근거를 공개합니다. DCO는 전체 변경을 대상으로 마지막 커밋에 남기며 증거의 기존 커밋은 재작성하지 않습니다. 작업 브랜치 푸시·원격 SHA 대조로 마칩니다.
 
 Final delivery checks: generated Cloudflare bindings are up to date; direct pilot CLI exited0. CI artifact selection now retains the added regional protocol JWS/SQLite/native traffic and lifecycle originals just as for ITS; this workflow-only addition does not change runtime behavior. Selected public evidence passed the configured-credential/private-key scan,421 indexed links and66 lossless-original checks. / 최종 바인딩·직접 CLI·지역 CI 원문 보존 범위·비공개 값·링크421개·무손실66개를 확인했습니다. CI 선택 추가는 실행 동작을 바꾸지 않습니다.
+
+Payload `ebd163f` was pushed to `feat/public-road-speeds`, exact remote SHA matched and the checkout was clean. [Remote receipt](../research/public-road-speeds/2026-10-26-regional-routing/remote-delivery.json) is a documentation-only follow-up; verify its latest SHA again after push. / 구현·증거 푸시·원격 일치·깨끗한 체크아웃을 확인했고 이 문서 기록을 푸시한 뒤 최신 SHA도 다시 대조합니다.

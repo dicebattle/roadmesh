@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "branch": "feat/public-road-speeds",
+  "remote": "https://github.com/dicebattle/routelens.git",
+  "verified_payload_commit": "ebd163f66606715c400a2b7164954e8d1dbf81c7",
+  "remote_sha": "ebd163f66606715c400a2b7164954e8d1dbf81c7",
+  "verified_at_utc": "2026-10-26T05:39:36.684Z",
+  "local_clean_before_receipt": true,
+  "runtime_source_commit": "82acad0f5452fb5a72ae20b7fb7b219dae853359",
+  "implementation_sha256": "718e323a745280e2893f536e8360095e1ef6e9463a45458d935a9358ca57af17",
+  "message_en": "Implementation/evidence payload was pushed and identical remote SHA read back. This receipt is a documentation-only follow-up; its own final SHA is verified after push. No PR, main merge or deployment was performed.",
+  "message_ko": "구현·증거를 푸시하고 원격 SHA 일치를 확인했습니다. 이 기록 자체는 문서 후속이며 푸시 뒤 최신 SHA도 확인합니다. 새 PR·main 병합·배포는 없습니다."
+}
