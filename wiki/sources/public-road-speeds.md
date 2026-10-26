@@ -46,3 +46,9 @@ The official [WMS capabilities](https://its.go.kr:9443/geoserver/ntic/wms?servic
 Archive metadata is read from the official [node/link archive](https://www.its.go.kr/nodelink/nodelinkRef) through its declared anonymous read endpoint. The2025-10-14 archive is DF_206/file1; actual relevant geometry and nodes are unchanged from2026-10-14, so historical download did not fix the problem. `/map/link/list` without a disaster-zone selector returned an empty list; it was not used to invent geometry. Large archives and source geometry remain local. The numeric portal's unrestricted reuse does not automatically settle separate map-layer redistribution terms; this implementation publishes code/provenance/coverage and OSM-based screenshots, not a wholesale government geometry mirror.
 
 공식 과거 목록에서2025-10-14 자료를 실제 내려받아 비교했지만 문제는 해결되지 않았고 재난 도로 목록 조회도 빈 결과였습니다. 큰 원본·정부 지형은 로컬에 남기며 수치 API의 이용 조건을 별도 지도 레이어 전체 재배포 허가로 확대하지 않습니다.
+
+## 2026-10-26 — Coverage clarification / 적용 범위 구분
+
+[Recount of retained originals](../../research/public-road-speeds/2026-10-26-coverage-review/README.md) separates the single implemented ITS numeric provider, geometry/OSM, and researched-only candidates. The saved request returned4,064 link IDs including Gangbyeonbuk-ro136/Olympic-daero120/Gyeongbu52/Dongbu Expressway51; counts are bounded returned links, not complete corridors. All11 provider links mapped to31/79 selected native catalog edges are on Teheran-ro. Downtown/Mapo trial corridors are outside the chosen numeric bounds.84.31% describes one2.12km route only. Metropolitan arterial coverage is unmeasured; no fresh numeric call or continuous hosted collector is claimed by this review. Current official ITS/Seoul/Gyeonggi descriptions were rechecked2026-10-26.
+
+보존 응답4064링크에 주요 간선이 포함됨을 다시 집계했지만 도로 전 구간으로 해석하지 않습니다. 실제 연결11링크·31/79는 테헤란로이고 도심/마포 시험은 수치 요청 범위 밖입니다.84.31%는2.12km 한 경로이며 수도권 적용률은 미측정입니다. 공식 명세를 재확인하되 새 수치 수집·상시 운영을 주장하지 않습니다.

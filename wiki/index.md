@@ -149,3 +149,5 @@ Corrected NAV-02 acceptance / 수정 NAV-02 수용: clean fe49b55/runtime70af32d
 - [Public runtime development originals, actual broader-source routes and controlled faults](../research/public-road-speeds/2026-10-26-development/README.md) / 공공 실행 개발 원문·넓어진 실제 자료 경로·통제 장애 근거.
 
 - [Actual public-speed acceptance: fresh462, source/browser originals and46.95s recording](../research/pilot/2026-10-26-public-speeds/report.md) / 실제 공공 속도 수용·새462개·출처/화면 원문·46.95초 녹화.
+
+- [Actual public sources and metropolitan coverage limits / 실제 공공 출처와 수도권 적용 한계](../research/public-road-speeds/2026-10-26-coverage-review/README.md)
