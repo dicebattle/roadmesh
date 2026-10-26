@@ -1,0 +1,4 @@
+First strict compile reported:
+research/public-road-speeds/2026-10-26-additional-sources/ex-document.test.ts(18,25): error TS7006: Parameter 'x' implicitly has an 'any' type.
+The initial command sequence continued to tests after compilation; the test pass was not strict-build acceptance. Narrowed the validated list before mapping; one repaired compile/test run follows. No acquisition bytes changed.
+첫 엄격 컴파일에서 JSON 결과의 배열 형식 추론이 없어 암시적 any가 발생했습니다. 최초 명령이 계속되어 실행한 테스트 통과를 컴파일 통과로 세지 않습니다. 검증한 목록의 형식을 좁힌 뒤 한 번 수정 검사를 하며 수집 바이트는 유지합니다.

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "timestamps_checked": 8270,
+  "method": "Intl.DateTimeFormat Asia/Seoul reverse comparison",
+  "message_en": "Independent timezone-library round-trip compared every saved VDS timestamp with original stdDate/stdHour; minute precision preserved.",
+  "message_ko": "별도 시간대 라이브러리로 VDS 전체의 원 일자/분 시각을 역대조했습니다."
+}

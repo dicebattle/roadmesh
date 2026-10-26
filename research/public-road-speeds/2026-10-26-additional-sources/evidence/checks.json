@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "focused_tests": {
+    "collector": 12,
+    "expressway": 4,
+    "failed": 0
+  },
+  "strict_typescript_files": 7,
+  "strict_command": "node node_modules/typescript/bin/tsc research/public-road-speeds/2026-10-26-additional-sources/*.ts --outDir data/additional-public-sources-20261026/final-compiled --target ES2022 --module NodeNext --strict --noUncheckedIndexedAccess --skipLibCheck",
+  "strict_exit_code": 0,
+  "history_utf8_reinspection_exit_code": 0,
+  "history_exact_result_comparison": "PASS",
+  "failure_record": {
+    "ex_initial_strict_compile": "TS7006; initial tests continued despite compiler failure; not counted as build acceptance",
+    "inspector_initial_strict_compile": "TS2365; stopped before execution; repaired once",
+    "final_history_refinement": "Preserve split UTF8 codepoints with StringDecoder; full original reinspection identical"
+  },
+  "media_check": "PASS; existing runtime fingerprint unchanged",
+  "new_whole_navigation_acceptance": false,
+  "message_en": "Research parsers and original-byte inspection passed. First diagnostics remain published. Native routing, product browser behavior and production collection were not changed by this increment.",
+  "message_ko": "조사 파서·원문 검사를 통과하고 최초 진단을 보존했습니다. 이번 변경은 엔진 경로·제품 화면 동작·운영 수집을 바꾸지 않습니다."
+}

@@ -1,0 +1,6 @@
+{
+  "planned": 42,
+  "skipped": 0,
+  "message_en": "At most two sequential requests per second; stop on403/429 or five consecutive transport/schema failures. No automatic retries.",
+  "message_ko": "초당 최대2개 순차 요청이며403/429·연속5실패에서 중지하고 자동 재시도하지 않습니다."
+}

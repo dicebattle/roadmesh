@@ -1,0 +1,75 @@
+{
+  "receipts": [
+    {
+      "id": "ex-home",
+      "url": "https://data.ex.co.kr/",
+      "status": "400|text/html",
+      "bytes": 166,
+      "sha256": "c5a118c00b71ef99347780f9233c5c5b37402ab5b811922e89b80d2f7572ef1f",
+      "retrieved_at": "2026-10-26T03:01:20.602Z"
+    },
+    {
+      "id": "roadplus-http1",
+      "url": "https://www.roadplus.co.kr/main/main.do",
+      "status": "400|text/html; charset=UTF-8",
+      "bytes": 1414,
+      "sha256": "b10efc106ef2d143f10651f8f67e51eb9f254d2dcf2b4c38ce9466fceca206d3",
+      "retrieved_at": "2026-10-26T03:04:35.403Z"
+    },
+    {
+      "id": "utic-seoul-correct-list",
+      "url": "https://www.utic.go.kr/traffic/trafficRoad.do?area=&pcode=100&roadType=&roadName=",
+      "method": "GET",
+      "body": null,
+      "started_at": "2026-10-26T03:10:07.438Z",
+      "status": "500|text/html",
+      "bytes": 2981,
+      "sha256": "a6df7d31dd047cbb110e30169e3bdbc638ea5418314e398a52b9d93490b0514d",
+      "retrieved_at": "2026-10-26T03:10:07.527Z"
+    },
+    {
+      "id": "utic-gyeonggi-roads",
+      "url": "https://www.utic.go.kr/traffic/trafficRoad.do?area=200",
+      "status": "500|text/html",
+      "bytes": 2981,
+      "sha256": "a6df7d31dd047cbb110e30169e3bdbc638ea5418314e398a52b9d93490b0514d",
+      "retrieved_at": "2026-10-26T03:05:28.473Z"
+    },
+    {
+      "id": "utic-urban-river",
+      "url": "https://www.utic.go.kr/traffic/traffichighway2.do",
+      "method": "POST",
+      "body": "roadName=%EA%B0%95%EB%B3%80%EB%B6%81%EB%A1%9C&area=&roadrank=102&gubn=simple&roadType=",
+      "started_at": "2026-10-26T03:09:03.270Z",
+      "status": "200|text/html;charset=UTF-8",
+      "bytes": 9229,
+      "sha256": "3c0b5310f08ed20518eab7fb3674a13242c28d605ec76daf24e61568ca75dd55",
+      "retrieved_at": "2026-10-26T03:09:03.562Z"
+    },
+    {
+      "id": "utic-urban",
+      "url": "https://www.utic.go.kr/traffic/trafficRoad.do?list=urbanhighway&msg=urban",
+      "method": "GET",
+      "body": null,
+      "started_at": "2026-10-26T03:06:40.980Z",
+      "status": "200|text/html;charset=UTF-8",
+      "bytes": 386743,
+      "sha256": "480c39d34cd692525fd5db30592a3883b9384f6e46c31d5bee99c7ce992e1047",
+      "retrieved_at": "2026-10-26T03:06:41.171Z"
+    },
+    {
+      "id": "topis-historical-september",
+      "url": "https://topis.seoul.go.kr/downloadFileRefRoom.do",
+      "method": "POST",
+      "body": "apndFileNm=2026%EB%85%84%209%EC%9B%94%20%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EC%B0%A8%EB%9F%89%ED%86%B5%ED%96%89%EC%86%8D%EB%8F%84.xlsx&apndFilePathNm=179081365631972212264984056071.xlsx&bdwrSeq=6204&blbdDivCd=06",
+      "started_at": "2026-10-26T03:10:07.440Z",
+      "error": "TRANSPORT_FAILED",
+      "exit": 63
+    }
+  ],
+  "expressway_direct_demo_cli_status": "400|166|text/html",
+  "history_separate_bounded_download_status": "200|34497477|application/download; charset=utf-8",
+  "ex_first_bridge_read_characters": 200011,
+  "message_en": "Failures, empty numeric pages and bounded transfer interruptions are not numeric success. The EX document was later read completely in the ordinary browser; only the specific history file used a higher 64MiB limit after its size was checked. No automatic request retry or bypass.",
+  "message_ko": "실패·빈 수치·전송 크기 제한 중단을 수치 성공으로 세지 않습니다. 도로공사는 일반 브라우저에서 전체 문서를 읽었고 이력은 크기 확인 후 해당 파일만64MiB로 받았습니다. 자동 재시도·우회하지 않았습니다."
+}

@@ -1,0 +1,4156 @@
+{
+  "status": "PASS",
+  "original_response_hashes_checked": 1011,
+  "normalized_rows_checked": 26040,
+  "expressway_records_checked": 8270,
+  "sources": [
+    {
+      "source": "topis",
+      "planned_details": 776,
+      "skipped": 0,
+      "detail_responses_normalized": 776,
+      "empty_details": 36,
+      "errors": [],
+      "rows": 21170,
+      "positive_speed_rows": 20886,
+      "distinct_source_id_direction_pairs": 7715,
+      "missing_record_ids": 0,
+      "distinct_road_names": 710,
+      "freshness_at_retrieval": {
+        "UNKNOWN_TIME": 20886,
+        "NO_SPEED": 284
+      },
+      "original_observed_min": null,
+      "original_observed_max": null,
+      "road_row_counts": [
+        {
+          "road_name": "기타도로",
+          "count": 3885
+        },
+        {
+          "road_name": "동북생활권",
+          "count": 1441
+        },
+        {
+          "road_name": "서남생활권",
+          "count": 1315
+        },
+        {
+          "road_name": "동남생활권",
+          "count": 1187
+        },
+        {
+          "road_name": "방사선도로",
+          "count": 707
+        },
+        {
+          "road_name": "도심생활권",
+          "count": 565
+        },
+        {
+          "road_name": "서북생활권",
+          "count": 550
+        },
+        {
+          "road_name": "기타",
+          "count": 471
+        },
+        {
+          "road_name": "강남혼잡권역",
+          "count": 341
+        },
+        {
+          "road_name": "한양도성",
+          "count": 287
+        },
+        {
+          "road_name": "도심혼잡권역",
+          "count": 287
+        },
+        {
+          "road_name": "도시고속도로",
+          "count": 264
+        },
+        {
+          "road_name": "평택-시흥고속국도",
+          "count": 206
+        },
+        {
+          "road_name": "제1순환고속도로",
+          "count": 144
+        },
+        {
+          "road_name": "강변북로",
+          "count": 140
+        },
+        {
+          "road_name": "방화-암사선",
+          "count": 132
+        },
+        {
+          "road_name": "올림픽대로",
+          "count": 122
+        },
+        {
+          "road_name": "온수-망우선",
+          "count": 122
+        },
+        {
+          "road_name": "도심권(동서간)",
+          "count": 118
+        },
+        {
+          "road_name": "도심권(남북간)",
+          "count": 114
+        },
+        {
+          "road_name": "세곡-상계선",
+          "count": 110
+        },
+        {
+          "road_name": "남부순환로",
+          "count": 90
+        },
+        {
+          "road_name": "여의도혼잡권역",
+          "count": 86
+        },
+        {
+          "road_name": "영동고속도로",
+          "count": 85
+        },
+        {
+          "road_name": "동일로",
+          "count": 78
+        },
+        {
+          "road_name": "과해-삼성선",
+          "count": 78
+        },
+        {
+          "road_name": "서린-상일선",
+          "count": 78
+        },
+        {
+          "road_name": "경부고속도로",
+          "count": 74
+        },
+        {
+          "road_name": "안양천로",
+          "count": 74
+        },
+        {
+          "road_name": "사당-암사선",
+          "count": 73
+        },
+        {
+          "road_name": "신월-신당선",
+          "count": 71
+        },
+        {
+          "road_name": "천호대로",
+          "count": 65
+        },
+        {
+          "road_name": "중부내륙고속도로",
+          "count": 62
+        },
+        {
+          "road_name": "내곡-월곡선",
+          "count": 60
+        },
+        {
+          "road_name": "장지-가회선",
+          "count": 60
+        },
+        {
+          "road_name": "동부간선도로",
+          "count": 58
+        },
+        {
+          "road_name": "필동-도봉선",
+          "count": 58
+        },
+        {
+          "road_name": "내부순환로",
+          "count": 56
+        },
+        {
+          "road_name": "양재대로",
+          "count": 56
+        },
+        {
+          "road_name": "을지-둔촌선",
+          "count": 56
+        },
+        {
+          "road_name": "시흥-중림선",
+          "count": 54
+        },
+        {
+          "road_name": "신림-진관내선",
+          "count": 54
+        },
+        {
+          "road_name": "서해안고속도로",
+          "count": 52
+        },
+        {
+          "road_name": "서초-개포선",
+          "count": 50
+        },
+        {
+          "road_name": "양재-혜화선",
+          "count": 50
+        },
+        {
+          "road_name": "미아-상계선",
+          "count": 48
+        },
+        {
+          "road_name": "궁동-영등포선",
+          "count": 47
+        },
+        {
+          "road_name": "덕릉로",
+          "count": 46
+        },
+        {
+          "road_name": "수유-상계선",
+          "count": 46
+        },
+        {
+          "road_name": "용인서울고속도로",
+          "count": 45
+        },
+        {
+          "road_name": "강남순환로",
+          "count": 44
+        },
+        {
+          "road_name": "공릉-우이선",
+          "count": 42
+        },
+        {
+          "road_name": "신월-노량진선",
+          "count": 42
+        },
+        {
+          "road_name": "장안-수유선",
+          "count": 42
+        },
+        {
+          "road_name": "평택음성고속도로",
+          "count": 42
+        },
+        {
+          "road_name": "도심순환도로",
+          "count": 42
+        },
+        {
+          "road_name": "올림픽로",
+          "count": 41
+        },
+        {
+          "road_name": "고척-가양선",
+          "count": 40
+        },
+        {
+          "road_name": "서부간선도로",
+          "count": 40
+        },
+        {
+          "road_name": "한천로",
+          "count": 40
+        },
+        {
+          "road_name": "문정-고덕선",
+          "count": 38
+        },
+        {
+          "road_name": "경인로",
+          "count": 38
+        },
+        {
+          "road_name": "신설-공릉선",
+          "count": 37
+        },
+        {
+          "road_name": "노고산-창신선",
+          "count": 36
+        },
+        {
+          "road_name": "상암-대흥선",
+          "count": 36
+        },
+        {
+          "road_name": "동남로",
+          "count": 36
+        },
+        {
+          "road_name": "목동동로",
+          "count": 36
+        },
+        {
+          "road_name": "제2경인고속도로",
+          "count": 36
+        },
+        {
+          "road_name": "국회대로",
+          "count": 35
+        },
+        {
+          "road_name": "흥인-면목선",
+          "count": 34
+        },
+        {
+          "road_name": "독산-등촌선",
+          "count": 32
+        },
+        {
+          "road_name": "도봉로",
+          "count": 32
+        },
+        {
+          "road_name": "여의도선",
+          "count": 32
+        },
+        {
+          "road_name": "통일로",
+          "count": 32
+        },
+        {
+          "road_name": "장지-성수선",
+          "count": 32
+        },
+        {
+          "road_name": "돈암-창동선",
+          "count": 30
+        },
+        {
+          "road_name": "동교-월곡선",
+          "count": 30
+        },
+        {
+          "road_name": "방배-잠실선",
+          "count": 30
+        },
+        {
+          "road_name": "창신-답십리선",
+          "count": 30
+        },
+        {
+          "road_name": "강남대로",
+          "count": 30
+        },
+        {
+          "road_name": "우이천로",
+          "count": 30
+        },
+        {
+          "road_name": "자유로",
+          "count": 30
+        },
+        {
+          "road_name": "광나루로",
+          "count": 30
+        },
+        {
+          "road_name": "한글비석로",
+          "count": 30
+        },
+        {
+          "road_name": "화랑로",
+          "count": 30
+        },
+        {
+          "road_name": "신정-봉천선",
+          "count": 30
+        },
+        {
+          "road_name": "노원로",
+          "count": 30
+        },
+        {
+          "road_name": "목동서로",
+          "count": 29
+        },
+        {
+          "road_name": "중부고속도로",
+          "count": 29
+        },
+        {
+          "road_name": "구로-염창선",
+          "count": 28
+        },
+        {
+          "road_name": "성산-진관외선",
+          "count": 28
+        },
+        {
+          "road_name": "망우로",
+          "count": 28
+        },
+        {
+          "road_name": "송파대로",
+          "count": 28
+        },
+        {
+          "road_name": "언주로",
+          "count": 28
+        },
+        {
+          "road_name": "인천국제공항고속도로",
+          "count": 28
+        },
+        {
+          "road_name": "논현로",
+          "count": 28
+        },
+        {
+          "road_name": "목동선",
+          "count": 26
+        },
+        {
+          "road_name": "이수-청담선",
+          "count": 26
+        },
+        {
+          "road_name": "서울춘천고속도로",
+          "count": 26
+        },
+        {
+          "road_name": "아차산로",
+          "count": 26
+        },
+        {
+          "road_name": "월드컵북로",
+          "count": 26
+        },
+        {
+          "road_name": "가마산로",
+          "count": 26
+        },
+        {
+          "road_name": "남산혼잡권역",
+          "count": 26
+        },
+        {
+          "road_name": "우면-수서선",
+          "count": 26
+        },
+        {
+          "road_name": "청계천로",
+          "count": 25
+        },
+        {
+          "road_name": "상암-서교선",
+          "count": 24
+        },
+        {
+          "road_name": "도림로",
+          "count": 24
+        },
+        {
+          "road_name": "서초-청담선",
+          "count": 24
+        },
+        {
+          "road_name": "수유-상계7선",
+          "count": 24
+        },
+        {
+          "road_name": "양평-상도선",
+          "count": 24
+        },
+        {
+          "road_name": "중곡-신내선",
+          "count": 24
+        },
+        {
+          "road_name": "강서로",
+          "count": 24
+        },
+        {
+          "road_name": "선릉로",
+          "count": 24
+        },
+        {
+          "road_name": "영동대로",
+          "count": 24
+        },
+        {
+          "road_name": "오금로",
+          "count": 24
+        },
+        {
+          "road_name": "고산자로",
+          "count": 24
+        },
+        {
+          "road_name": "공릉로",
+          "count": 24
+        },
+        {
+          "road_name": "노들로",
+          "count": 24
+        },
+        {
+          "road_name": "가양-현저선",
+          "count": 24
+        },
+        {
+          "road_name": "우면-중학선",
+          "count": 24
+        },
+        {
+          "road_name": "노해로",
+          "count": 24
+        },
+        {
+          "road_name": "광장-상일선",
+          "count": 22
+        },
+        {
+          "road_name": "신천-거여선",
+          "count": 22
+        },
+        {
+          "road_name": "월계-도봉선",
+          "count": 22
+        },
+        {
+          "road_name": "디지털로",
+          "count": 22
+        },
+        {
+          "road_name": "뚝섬로",
+          "count": 22
+        },
+        {
+          "road_name": "마들로",
+          "count": 22
+        },
+        {
+          "road_name": "성산로",
+          "count": 22
+        },
+        {
+          "road_name": "시흥대로",
+          "count": 22
+        },
+        {
+          "road_name": "여의대방로",
+          "count": 22
+        },
+        {
+          "road_name": "용마산로",
+          "count": 22
+        },
+        {
+          "road_name": "월드컵로",
+          "count": 22
+        },
+        {
+          "road_name": "증산로",
+          "count": 22
+        },
+        {
+          "road_name": "구천면로",
+          "count": 22
+        },
+        {
+          "road_name": "방화-염창선",
+          "count": 20
+        },
+        {
+          "road_name": "오류-대림선",
+          "count": 20
+        },
+        {
+          "road_name": "용두-면목선",
+          "count": 20
+        },
+        {
+          "road_name": "분당수서로",
+          "count": 20
+        },
+        {
+          "road_name": "사가정로",
+          "count": 20
+        },
+        {
+          "road_name": "삼성로",
+          "count": 20
+        },
+        {
+          "road_name": "삼양로",
+          "count": 20
+        },
+        {
+          "road_name": "선유로",
+          "count": 20
+        },
+        {
+          "road_name": "양천로",
+          "count": 20
+        },
+        {
+          "road_name": "왕십리로",
+          "count": 20
+        },
+        {
+          "road_name": "을지로",
+          "count": 20
+        },
+        {
+          "road_name": "공항대로",
+          "count": 20
+        },
+        {
+          "road_name": "수도권제2순환고속도로",
+          "count": 20
+        },
+        {
+          "road_name": "평택-화성고속도로",
+          "count": 20
+        },
+        {
+          "road_name": "갈현-적선선",
+          "count": 20
+        },
+        {
+          "road_name": "답십리로",
+          "count": 20
+        },
+        {
+          "road_name": "가리봉-신길선",
+          "count": 18
+        },
+        {
+          "road_name": "봉래-관훈선",
+          "count": 18
+        },
+        {
+          "road_name": "도림천로",
+          "count": 18
+        },
+        {
+          "road_name": "송정-상봉선",
+          "count": 18
+        },
+        {
+          "road_name": "시흥-신림선",
+          "count": 18
+        },
+        {
+          "road_name": "신림-노량진선",
+          "count": 18
+        },
+        {
+          "road_name": "강동대로",
+          "count": 18
+        },
+        {
+          "road_name": "동호로",
+          "count": 18
+        },
+        {
+          "road_name": "마장로",
+          "count": 18
+        },
+        {
+          "road_name": "백범로",
+          "count": 18
+        },
+        {
+          "road_name": "공원로",
+          "count": 18
+        },
+        {
+          "road_name": "황물로",
+          "count": 18
+        },
+        {
+          "road_name": "상암로",
+          "count": 18
+        },
+        {
+          "road_name": "섬밭로",
+          "count": 18
+        },
+        {
+          "road_name": "수색로",
+          "count": 18
+        },
+        {
+          "road_name": "여의동로",
+          "count": 18
+        },
+        {
+          "road_name": "오목로",
+          "count": 18
+        },
+        {
+          "road_name": "월계로",
+          "count": 18
+        },
+        {
+          "road_name": "종로",
+          "count": 18
+        },
+        {
+          "road_name": "퇴계로",
+          "count": 18
+        },
+        {
+          "road_name": "화곡로",
+          "count": 18
+        },
+        {
+          "road_name": "인천대교고속도로",
+          "count": 18
+        },
+        {
+          "road_name": "양평-노고산선",
+          "count": 18
+        },
+        {
+          "road_name": "신월-목동선",
+          "count": 17
+        },
+        {
+          "road_name": "태릉구리간고속화도로",
+          "count": 17
+        },
+        {
+          "road_name": "가좌로",
+          "count": 16
+        },
+        {
+          "road_name": "도곡로",
+          "count": 16
+        },
+        {
+          "road_name": "망우-공릉선",
+          "count": 16
+        },
+        {
+          "road_name": "성산-홍제선",
+          "count": 16
+        },
+        {
+          "road_name": "성수-자양선",
+          "count": 16
+        },
+        {
+          "road_name": "신월-가양선",
+          "count": 16
+        },
+        {
+          "road_name": "정릉-번동선",
+          "count": 16
+        },
+        {
+          "road_name": "회기-번동선",
+          "count": 16
+        },
+        {
+          "road_name": "면목로",
+          "count": 16
+        },
+        {
+          "road_name": "모래내로",
+          "count": 16
+        },
+        {
+          "road_name": "충민로",
+          "count": 16
+        },
+        {
+          "road_name": "개포로",
+          "count": 16
+        },
+        {
+          "road_name": "삼일대로",
+          "count": 16
+        },
+        {
+          "road_name": "송이로",
+          "count": 16
+        },
+        {
+          "road_name": "신내로",
+          "count": 16
+        },
+        {
+          "road_name": "고덕로",
+          "count": 16
+        },
+        {
+          "road_name": "양녕로",
+          "count": 16
+        },
+        {
+          "road_name": "영등포로",
+          "count": 16
+        },
+        {
+          "road_name": "왕산로",
+          "count": 16
+        },
+        {
+          "road_name": "정릉로",
+          "count": 16
+        },
+        {
+          "road_name": "중앙로",
+          "count": 16
+        },
+        {
+          "road_name": "테헤란로",
+          "count": 16
+        },
+        {
+          "road_name": "토정로",
+          "count": 16
+        },
+        {
+          "road_name": "사당-서빙고선",
+          "count": 16
+        },
+        {
+          "road_name": "한남-태평로선",
+          "count": 15
+        },
+        {
+          "road_name": "흑석로",
+          "count": 15
+        },
+        {
+          "road_name": "구의-광장선",
+          "count": 14
+        },
+        {
+          "road_name": "대림-영등포선",
+          "count": 14
+        },
+        {
+          "road_name": "마장-사근선",
+          "count": 14
+        },
+        {
+          "road_name": "문래-당산선",
+          "count": 14
+        },
+        {
+          "road_name": "북가좌-역촌선",
+          "count": 14
+        },
+        {
+          "road_name": "신사-홍은선",
+          "count": 14
+        },
+        {
+          "road_name": "암사-강일선",
+          "count": 14
+        },
+        {
+          "road_name": "잠실-방이선",
+          "count": 14
+        },
+        {
+          "road_name": "독막로",
+          "count": 14
+        },
+        {
+          "road_name": "동소문로",
+          "count": 14
+        },
+        {
+          "road_name": "동작대로",
+          "count": 14
+        },
+        {
+          "road_name": "반포대로",
+          "count": 14
+        },
+        {
+          "road_name": "백제고분로",
+          "count": 14
+        },
+        {
+          "road_name": "벚꽃로",
+          "count": 14
+        },
+        {
+          "road_name": "봉은사로",
+          "count": 14
+        },
+        {
+          "road_name": "도영로",
+          "count": 14
+        },
+        {
+          "road_name": "장월로",
+          "count": 14
+        },
+        {
+          "road_name": "사평대로",
+          "count": 14
+        },
+        {
+          "road_name": "개화동로",
+          "count": 14
+        },
+        {
+          "road_name": "서빙고로",
+          "count": 14
+        },
+        {
+          "road_name": "서초대로",
+          "count": 14
+        },
+        {
+          "road_name": "세종대로",
+          "count": 14
+        },
+        {
+          "road_name": "신길로",
+          "count": 14
+        },
+        {
+          "road_name": "신반포로",
+          "count": 14
+        },
+        {
+          "road_name": "신촌로",
+          "count": 14
+        },
+        {
+          "road_name": "아리수로",
+          "count": 14
+        },
+        {
+          "road_name": "여의서로",
+          "count": 14
+        },
+        {
+          "road_name": "역삼로",
+          "count": 14
+        },
+        {
+          "road_name": "연서로",
+          "count": 14
+        },
+        {
+          "road_name": "율곡로",
+          "count": 14
+        },
+        {
+          "road_name": "응암로",
+          "count": 14
+        },
+        {
+          "road_name": "중계로",
+          "count": 14
+        },
+        {
+          "road_name": "중랑역로",
+          "count": 14
+        },
+        {
+          "road_name": "청파로",
+          "count": 14
+        },
+        {
+          "road_name": "탄천동로",
+          "count": 14
+        },
+        {
+          "road_name": "풍성로",
+          "count": 14
+        },
+        {
+          "road_name": "한강대로",
+          "count": 14
+        },
+        {
+          "road_name": "효령로",
+          "count": 14
+        },
+        {
+          "road_name": "봉래-세종로선",
+          "count": 14
+        },
+        {
+          "road_name": "당산로",
+          "count": 14
+        },
+        {
+          "road_name": "목동중앙로",
+          "count": 13
+        },
+        {
+          "road_name": "소월로",
+          "count": 13
+        },
+        {
+          "road_name": "양재천로",
+          "count": 13
+        },
+        {
+          "road_name": "이촌로",
+          "count": 13
+        },
+        {
+          "road_name": "노원역-당고개역선",
+          "count": 12
+        },
+        {
+          "road_name": "노유-중곡선",
+          "count": 12
+        },
+        {
+          "road_name": "면목-상봉선",
+          "count": 12
+        },
+        {
+          "road_name": "수서-오금선",
+          "count": 12
+        },
+        {
+          "road_name": "영등포-당산선",
+          "count": 12
+        },
+        {
+          "road_name": "이문-신내선",
+          "count": 12
+        },
+        {
+          "road_name": "휘경-면목선",
+          "count": 12
+        },
+        {
+          "road_name": "마천로",
+          "count": 12
+        },
+        {
+          "road_name": "명일로",
+          "count": 12
+        },
+        {
+          "road_name": "목동로",
+          "count": 12
+        },
+        {
+          "road_name": "방학로",
+          "count": 12
+        },
+        {
+          "road_name": "봉천로",
+          "count": 12
+        },
+        {
+          "road_name": "북부간선도로",
+          "count": 12
+        },
+        {
+          "road_name": "사직로",
+          "count": 12
+        },
+        {
+          "road_name": "상계로",
+          "count": 12
+        },
+        {
+          "road_name": "상도로",
+          "count": 12
+        },
+        {
+          "road_name": "새창로",
+          "count": 12
+        },
+        {
+          "road_name": "서오릉로",
+          "count": 12
+        },
+        {
+          "road_name": "겸재로",
+          "count": 12
+        },
+        {
+          "road_name": "신림로",
+          "count": 12
+        },
+        {
+          "road_name": "연희로",
+          "count": 12
+        },
+        {
+          "road_name": "영신로",
+          "count": 12
+        },
+        {
+          "road_name": "위례성대로",
+          "count": 12
+        },
+        {
+          "road_name": "자하문로",
+          "count": 12
+        },
+        {
+          "road_name": "잠원로",
+          "count": 12
+        },
+        {
+          "road_name": "장충단로",
+          "count": 12
+        },
+        {
+          "road_name": "중대로",
+          "count": 12
+        },
+        {
+          "road_name": "창경궁로",
+          "count": 12
+        },
+        {
+          "road_name": "학동로",
+          "count": 12
+        },
+        {
+          "road_name": "해등로",
+          "count": 12
+        },
+        {
+          "road_name": "헌릉로",
+          "count": 12
+        },
+        {
+          "road_name": "구로중앙로",
+          "count": 12
+        },
+        {
+          "road_name": "금낭화로",
+          "count": 12
+        },
+        {
+          "road_name": "가산디지털1로",
+          "count": 12
+        },
+        {
+          "road_name": "녹사평대로",
+          "count": 12
+        },
+        {
+          "road_name": "능동로",
+          "count": 12
+        },
+        {
+          "road_name": "방이-마천선",
+          "count": 11
+        },
+        {
+          "road_name": "암사-상일선",
+          "count": 11
+        },
+        {
+          "road_name": "구로-신길선",
+          "count": 10
+        },
+        {
+          "road_name": "사직-종암선",
+          "count": 10
+        },
+        {
+          "road_name": "시흥-독산본선",
+          "count": 10
+        },
+        {
+          "road_name": "신대방-신림선",
+          "count": 10
+        },
+        {
+          "road_name": "신사-청담선",
+          "count": 10
+        },
+        {
+          "road_name": "신영-동선동선",
+          "count": 10
+        },
+        {
+          "road_name": "외발산-방화선",
+          "count": 10
+        },
+        {
+          "road_name": "저동-을지로선",
+          "count": 10
+        },
+        {
+          "road_name": "도산대로",
+          "count": 10
+        },
+        {
+          "road_name": "증산-연희선",
+          "count": 10
+        },
+        {
+          "road_name": "하수-마포선",
+          "count": 10
+        },
+        {
+          "road_name": "도신로",
+          "count": 10
+        },
+        {
+          "road_name": "한남-응봉선",
+          "count": 10
+        },
+        {
+          "road_name": "홍익-용두선",
+          "count": 10
+        },
+        {
+          "road_name": "독산로",
+          "count": 10
+        },
+        {
+          "road_name": "독서당로",
+          "count": 10
+        },
+        {
+          "road_name": "동교로",
+          "count": 10
+        },
+        {
+          "road_name": "마른내로",
+          "count": 10
+        },
+        {
+          "road_name": "마포대로",
+          "count": 10
+        },
+        {
+          "road_name": "무학로",
+          "count": 10
+        },
+        {
+          "road_name": "문정로",
+          "count": 10
+        },
+        {
+          "road_name": "방화대로",
+          "count": 10
+        },
+        {
+          "road_name": "보문로",
+          "count": 10
+        },
+        {
+          "road_name": "봉화산로",
+          "count": 10
+        },
+        {
+          "road_name": "여의공원로",
+          "count": 10
+        },
+        {
+          "road_name": "새문안로3길",
+          "count": 10
+        },
+        {
+          "road_name": "북악산로",
+          "count": 10
+        },
+        {
+          "road_name": "서부간선지하도로",
+          "count": 10
+        },
+        {
+          "road_name": "살곶이길",
+          "count": 10
+        },
+        {
+          "road_name": "서초중앙로",
+          "count": 10
+        },
+        {
+          "road_name": "석촌호수로",
+          "count": 10
+        },
+        {
+          "road_name": "성안로",
+          "count": 10
+        },
+        {
+          "road_name": "소공로",
+          "count": 10
+        },
+        {
+          "road_name": "솔샘로",
+          "count": 10
+        },
+        {
+          "road_name": "신월로",
+          "count": 10
+        },
+        {
+          "road_name": "양평로",
+          "count": 10
+        },
+        {
+          "road_name": "영중로",
+          "count": 10
+        },
+        {
+          "road_name": "오리로",
+          "count": 10
+        },
+        {
+          "road_name": "오패산로",
+          "count": 10
+        },
+        {
+          "road_name": "원효로",
+          "count": 10
+        },
+        {
+          "road_name": "은평로",
+          "count": 10
+        },
+        {
+          "road_name": "의사당대로",
+          "count": 10
+        },
+        {
+          "road_name": "잠실로",
+          "count": 10
+        },
+        {
+          "road_name": "전농로",
+          "count": 10
+        },
+        {
+          "road_name": "증가로",
+          "count": 10
+        },
+        {
+          "road_name": "진황도로",
+          "count": 10
+        },
+        {
+          "road_name": "진흥로",
+          "count": 10
+        },
+        {
+          "road_name": "한가람로",
+          "count": 10
+        },
+        {
+          "road_name": "허준로",
+          "count": 10
+        },
+        {
+          "road_name": "회기로",
+          "count": 10
+        },
+        {
+          "road_name": "구로동로",
+          "count": 10
+        },
+        {
+          "road_name": "일반국도77호선",
+          "count": 10
+        },
+        {
+          "road_name": "창의문로",
+          "count": 10
+        },
+        {
+          "road_name": "위례중앙로",
+          "count": 10
+        },
+        {
+          "road_name": "금호로",
+          "count": 10
+        },
+        {
+          "road_name": "가산디지털2로",
+          "count": 10
+        },
+        {
+          "road_name": "난계로",
+          "count": 10
+        },
+        {
+          "road_name": "난곡로",
+          "count": 10
+        },
+        {
+          "road_name": "다산로",
+          "count": 10
+        },
+        {
+          "road_name": "대림로",
+          "count": 10
+        },
+        {
+          "road_name": "대방천로",
+          "count": 10
+        },
+        {
+          "road_name": "독산-봉천선",
+          "count": 8
+        },
+        {
+          "road_name": "방배선",
+          "count": 8
+        },
+        {
+          "road_name": "봉우재선",
+          "count": 8
+        },
+        {
+          "road_name": "봉천-상도선",
+          "count": 8
+        },
+        {
+          "road_name": "상암-성산선",
+          "count": 8
+        },
+        {
+          "road_name": "상일-고덕선",
+          "count": 8
+        },
+        {
+          "road_name": "신월-화곡선",
+          "count": 8
+        },
+        {
+          "road_name": "쌍문-도봉선",
+          "count": 8
+        },
+        {
+          "road_name": "일원-잠실선",
+          "count": 8
+        },
+        {
+          "road_name": "종암-회기선",
+          "count": 8
+        },
+        {
+          "road_name": "팔판-효자선",
+          "count": 8
+        },
+        {
+          "road_name": "필동-와룡선",
+          "count": 8
+        },
+        {
+          "road_name": "돌곶이로",
+          "count": 8
+        },
+        {
+          "road_name": "망원로",
+          "count": 8
+        },
+        {
+          "road_name": "문래로",
+          "count": 8
+        },
+        {
+          "road_name": "방배로",
+          "count": 8
+        },
+        {
+          "road_name": "범안로",
+          "count": 8
+        },
+        {
+          "road_name": "봉우재로",
+          "count": 8
+        },
+        {
+          "road_name": "부일로",
+          "count": 8
+        },
+        {
+          "road_name": "가락로",
+          "count": 8
+        },
+        {
+          "road_name": "상암산로",
+          "count": 8
+        },
+        {
+          "road_name": "동산로",
+          "count": 8
+        },
+        {
+          "road_name": "수유로",
+          "count": 8
+        },
+        {
+          "road_name": "행당로",
+          "count": 8
+        },
+        {
+          "road_name": "목동중앙본로",
+          "count": 8
+        },
+        {
+          "road_name": "백련산로",
+          "count": 8
+        },
+        {
+          "road_name": "신월여의지하도로",
+          "count": 8
+        },
+        {
+          "road_name": "삼전로",
+          "count": 8
+        },
+        {
+          "road_name": "삼청로",
+          "count": 8
+        },
+        {
+          "road_name": "상일로",
+          "count": 8
+        },
+        {
+          "road_name": "새문안로",
+          "count": 8
+        },
+        {
+          "road_name": "거북골로",
+          "count": 8
+        },
+        {
+          "road_name": "서운로",
+          "count": 8
+        },
+        {
+          "road_name": "선유서로",
+          "count": 8
+        },
+        {
+          "road_name": "성남대로",
+          "count": 8
+        },
+        {
+          "road_name": "성암로",
+          "count": 8
+        },
+        {
+          "road_name": "수락산로",
+          "count": 8
+        },
+        {
+          "road_name": "시루봉로",
+          "count": 8
+        },
+        {
+          "road_name": "가로공원로",
+          "count": 8
+        },
+        {
+          "road_name": "신목로",
+          "count": 8
+        },
+        {
+          "road_name": "신사로",
+          "count": 8
+        },
+        {
+          "road_name": "안암로",
+          "count": 8
+        },
+        {
+          "road_name": "압구정로",
+          "count": 8
+        },
+        {
+          "road_name": "약령시로",
+          "count": 8
+        },
+        {
+          "road_name": "양산로(영등포)",
+          "count": 8
+        },
+        {
+          "road_name": "양화로",
+          "count": 8
+        },
+        {
+          "road_name": "여의대로",
+          "count": 8
+        },
+        {
+          "road_name": "와우산로",
+          "count": 8
+        },
+        {
+          "road_name": "이문로",
+          "count": 8
+        },
+        {
+          "road_name": "이태원로",
+          "count": 8
+        },
+        {
+          "road_name": "자양로",
+          "count": 8
+        },
+        {
+          "road_name": "제기로",
+          "count": 8
+        },
+        {
+          "road_name": "종암로",
+          "count": 8
+        },
+        {
+          "road_name": "지봉로",
+          "count": 8
+        },
+        {
+          "road_name": "창전로",
+          "count": 8
+        },
+        {
+          "road_name": "천중로",
+          "count": 8
+        },
+        {
+          "road_name": "관악로",
+          "count": 8
+        },
+        {
+          "road_name": "효창원로",
+          "count": 8
+        },
+        {
+          "road_name": "마곡중앙로",
+          "count": 8
+        },
+        {
+          "road_name": "위례순환로",
+          "count": 8
+        },
+        {
+          "road_name": "국제금융로",
+          "count": 8
+        },
+        {
+          "road_name": "긴고랑로",
+          "count": 8
+        },
+        {
+          "road_name": "남대문로",
+          "count": 8
+        },
+        {
+          "road_name": "노량진로",
+          "count": 8
+        },
+        {
+          "road_name": "가양대로",
+          "count": 8
+        },
+        {
+          "road_name": "대흥로",
+          "count": 8
+        },
+        {
+          "road_name": "가리봉-독산선",
+          "count": 6
+        },
+        {
+          "road_name": "갈월-동자동선",
+          "count": 6
+        },
+        {
+          "road_name": "답십리-전농선",
+          "count": 6
+        },
+        {
+          "road_name": "도봉역선",
+          "count": 6
+        },
+        {
+          "road_name": "문래-신길선",
+          "count": 6
+        },
+        {
+          "road_name": "미아-수유선",
+          "count": 6
+        },
+        {
+          "road_name": "도당로",
+          "count": 6
+        },
+        {
+          "road_name": "상암선",
+          "count": 6
+        },
+        {
+          "road_name": "상황-동소문선",
+          "count": 6
+        },
+        {
+          "road_name": "신정-목동선",
+          "count": 6
+        },
+        {
+          "road_name": "신천동선",
+          "count": 6
+        },
+        {
+          "road_name": "역촌-녹번선",
+          "count": 6
+        },
+        {
+          "road_name": "의사당선",
+          "count": 6
+        },
+        {
+          "road_name": "갈현로",
+          "count": 6
+        },
+        {
+          "road_name": "중학-성북선",
+          "count": 6
+        },
+        {
+          "road_name": "만리재로",
+          "count": 6
+        },
+        {
+          "road_name": "매봉산로",
+          "count": 6
+        },
+        {
+          "road_name": "면목천로",
+          "count": 6
+        },
+        {
+          "road_name": "문성로",
+          "count": 6
+        },
+        {
+          "road_name": "밤고개로",
+          "count": 6
+        },
+        {
+          "road_name": "방화동로",
+          "count": 6
+        },
+        {
+          "road_name": "보광로",
+          "count": 6
+        },
+        {
+          "road_name": "개봉로",
+          "count": 6
+        },
+        {
+          "road_name": "은행로",
+          "count": 6
+        },
+        {
+          "road_name": "북아현로",
+          "count": 6
+        },
+        {
+          "road_name": "삼개로",
+          "count": 6
+        },
+        {
+          "road_name": "솔밭로",
+          "count": 6
+        },
+        {
+          "road_name": "외대역동로",
+          "count": 6
+        },
+        {
+          "road_name": "불광로",
+          "count": 6
+        },
+        {
+          "road_name": "사임당로",
+          "count": 6
+        },
+        {
+          "road_name": "사직로8길",
+          "count": 6
+        },
+        {
+          "road_name": "삼각산로",
+          "count": 6
+        },
+        {
+          "road_name": "삼학사로",
+          "count": 6
+        },
+        {
+          "road_name": "상봉로",
+          "count": 6
+        },
+        {
+          "road_name": "신촌역로",
+          "count": 6
+        },
+        {
+          "road_name": "위례송파로",
+          "count": 6
+        },
+        {
+          "road_name": "새말로",
+          "count": 6
+        },
+        {
+          "road_name": "서강로",
+          "count": 6
+        },
+        {
+          "road_name": "서소문로",
+          "count": 6
+        },
+        {
+          "road_name": "서울시립대로",
+          "count": 6
+        },
+        {
+          "road_name": "성북로",
+          "count": 6
+        },
+        {
+          "road_name": "국회대로 지하차도",
+          "count": 6
+        },
+        {
+          "road_name": "세검정로",
+          "count": 6
+        },
+        {
+          "road_name": "올림픽로35길",
+          "count": 6
+        },
+        {
+          "road_name": "고덕로61길",
+          "count": 6
+        },
+        {
+          "road_name": "여의나루로",
+          "count": 6
+        },
+        {
+          "road_name": "역말로",
+          "count": 6
+        },
+        {
+          "road_name": "오현로",
+          "count": 6
+        },
+        {
+          "road_name": "우정국로",
+          "count": 6
+        },
+        {
+          "road_name": "곰달래로",
+          "count": 6
+        },
+        {
+          "road_name": "인수봉로",
+          "count": 6
+        },
+        {
+          "road_name": "인촌로",
+          "count": 6
+        },
+        {
+          "road_name": "일원로",
+          "count": 6
+        },
+        {
+          "road_name": "잔다리로",
+          "count": 6
+        },
+        {
+          "road_name": "장안벚꽃로",
+          "count": 6
+        },
+        {
+          "road_name": "장위로",
+          "count": 6
+        },
+        {
+          "road_name": "중랑천로",
+          "count": 6
+        },
+        {
+          "road_name": "한남대로",
+          "count": 6
+        },
+        {
+          "road_name": "한천로66길",
+          "count": 6
+        },
+        {
+          "road_name": "현충로",
+          "count": 6
+        },
+        {
+          "road_name": "홍릉로",
+          "count": 6
+        },
+        {
+          "road_name": "광평로",
+          "count": 6
+        },
+        {
+          "road_name": "오산-화성고속도로",
+          "count": 6
+        },
+        {
+          "road_name": "바우뫼로",
+          "count": 6
+        },
+        {
+          "road_name": "은평터널로",
+          "count": 6
+        },
+        {
+          "road_name": "위례서로",
+          "count": 6
+        },
+        {
+          "road_name": "금하로",
+          "count": 6
+        },
+        {
+          "road_name": "공덕-봉래선",
+          "count": 6
+        },
+        {
+          "road_name": "돈화문로",
+          "count": 5
+        },
+        {
+          "road_name": "무교로",
+          "count": 5
+        },
+        {
+          "road_name": "4.19로",
+          "count": 4
+        },
+        {
+          "road_name": "동선-정릉선",
+          "count": 4
+        },
+        {
+          "road_name": "신림-봉천선",
+          "count": 4
+        },
+        {
+          "road_name": "용산-성수선",
+          "count": 4
+        },
+        {
+          "road_name": "월곡선",
+          "count": 4
+        },
+        {
+          "road_name": "진관내-진관외선",
+          "count": 4
+        },
+        {
+          "road_name": "동일로243길",
+          "count": 4
+        },
+        {
+          "road_name": "등촌로",
+          "count": 4
+        },
+        {
+          "road_name": "마조로",
+          "count": 4
+        },
+        {
+          "road_name": "강변역로",
+          "count": 4
+        },
+        {
+          "road_name": "명달로",
+          "count": 4
+        },
+        {
+          "road_name": "목동남로",
+          "count": 4
+        },
+        {
+          "road_name": "버드나루로",
+          "count": 4
+        },
+        {
+          "road_name": "보국문로",
+          "count": 4
+        },
+        {
+          "road_name": "보라매로",
+          "count": 4
+        },
+        {
+          "road_name": "농수산시장로",
+          "count": 4
+        },
+        {
+          "road_name": "노해로66길",
+          "count": 4
+        },
+        {
+          "road_name": "장터길",
+          "count": 4
+        },
+        {
+          "road_name": "북촌로",
+          "count": 4
+        },
+        {
+          "road_name": "북한산로",
+          "count": 4
+        },
+        {
+          "road_name": "사당로",
+          "count": 4
+        },
+        {
+          "road_name": "삼선교로",
+          "count": 4
+        },
+        {
+          "road_name": "거마로",
+          "count": 4
+        },
+        {
+          "road_name": "성내로",
+          "count": 4
+        },
+        {
+          "road_name": "성덕정길",
+          "count": 4
+        },
+        {
+          "road_name": "성수이로",
+          "count": 4
+        },
+        {
+          "road_name": "성수일로",
+          "count": 4
+        },
+        {
+          "road_name": "성중길",
+          "count": 4
+        },
+        {
+          "road_name": "신정로",
+          "count": 4
+        },
+        {
+          "road_name": "신풍로",
+          "count": 4
+        },
+        {
+          "road_name": "아리랑로",
+          "count": 4
+        },
+        {
+          "road_name": "아리수로50길",
+          "count": 4
+        },
+        {
+          "road_name": "고덕로55길",
+          "count": 4
+        },
+        {
+          "road_name": "양재대로156길",
+          "count": 4
+        },
+        {
+          "road_name": "연남로",
+          "count": 4
+        },
+        {
+          "road_name": "고덕로79길",
+          "count": 4
+        },
+        {
+          "road_name": "연세로",
+          "count": 4
+        },
+        {
+          "road_name": "고덕로80길",
+          "count": 4
+        },
+        {
+          "road_name": "우면산로",
+          "count": 4
+        },
+        {
+          "road_name": "고척로",
+          "count": 4
+        },
+        {
+          "road_name": "은천로",
+          "count": 4
+        },
+        {
+          "road_name": "인촌로7길",
+          "count": 4
+        },
+        {
+          "road_name": "자양번영로",
+          "count": 4
+        },
+        {
+          "road_name": "장승배기로",
+          "count": 4
+        },
+        {
+          "road_name": "장한로",
+          "count": 4
+        },
+        {
+          "road_name": "정릉천동로",
+          "count": 4
+        },
+        {
+          "road_name": "조원중앙로",
+          "count": 4
+        },
+        {
+          "road_name": "종로1길",
+          "count": 4
+        },
+        {
+          "road_name": "공항대로41길",
+          "count": 4
+        },
+        {
+          "road_name": "천호옛길",
+          "count": 4
+        },
+        {
+          "road_name": "청와대로",
+          "count": 4
+        },
+        {
+          "road_name": "초원로",
+          "count": 4
+        },
+        {
+          "road_name": "칠패로",
+          "count": 4
+        },
+        {
+          "road_name": "테헤란로115길",
+          "count": 4
+        },
+        {
+          "road_name": "광운로",
+          "count": 4
+        },
+        {
+          "road_name": "혜화로",
+          "count": 4
+        },
+        {
+          "road_name": "호암로",
+          "count": 4
+        },
+        {
+          "road_name": "홍제천로",
+          "count": 4
+        },
+        {
+          "road_name": "효자로",
+          "count": 4
+        },
+        {
+          "road_name": "후암로",
+          "count": 4
+        },
+        {
+          "road_name": "휘경로",
+          "count": 4
+        },
+        {
+          "road_name": "도당로13길",
+          "count": 4
+        },
+        {
+          "road_name": "올림픽로43길",
+          "count": 4
+        },
+        {
+          "road_name": "김포대로",
+          "count": 4
+        },
+        {
+          "road_name": "나루터로",
+          "count": 4
+        },
+        {
+          "road_name": "방화대교",
+          "count": 4
+        },
+        {
+          "road_name": "행주대교",
+          "count": 4
+        },
+        {
+          "road_name": "가산로",
+          "count": 4
+        },
+        {
+          "road_name": "대학로",
+          "count": 4
+        },
+        {
+          "road_name": "남창-남산선",
+          "count": 3
+        },
+        {
+          "road_name": "새문안로5길",
+          "count": 3
+        },
+        {
+          "road_name": "소파로",
+          "count": 3
+        },
+        {
+          "road_name": "제2중부고속도로",
+          "count": 3
+        },
+        {
+          "road_name": "충무로",
+          "count": 3
+        },
+        {
+          "road_name": "개봉선",
+          "count": 2
+        },
+        {
+          "road_name": "공항-내발산선",
+          "count": 2
+        },
+        {
+          "road_name": "덕수궁길",
+          "count": 2
+        },
+        {
+          "road_name": "남산2호터널선",
+          "count": 2
+        },
+        {
+          "road_name": "도곡로62길",
+          "count": 2
+        },
+        {
+          "road_name": "시흥선",
+          "count": 2
+        },
+        {
+          "road_name": "신정이펜하우스-남부순환로",
+          "count": 2
+        },
+        {
+          "road_name": "도봉로170길",
+          "count": 2
+        },
+        {
+          "road_name": "도봉로8길",
+          "count": 2
+        },
+        {
+          "road_name": "장지-거여선",
+          "count": 2
+        },
+        {
+          "road_name": "적선-부암선",
+          "count": 2
+        },
+        {
+          "road_name": "충무-낙원선",
+          "count": 2
+        },
+        {
+          "road_name": "동남로12길",
+          "count": 2
+        },
+        {
+          "road_name": "동남로79길",
+          "count": 2
+        },
+        {
+          "road_name": "동남로81길",
+          "count": 2
+        },
+        {
+          "road_name": "동남로82길",
+          "count": 2
+        },
+        {
+          "road_name": "동소문로20길",
+          "count": 2
+        },
+        {
+          "road_name": "동일로173가길",
+          "count": 2
+        },
+        {
+          "road_name": "동일로191가길",
+          "count": 2
+        },
+        {
+          "road_name": "동일로213길",
+          "count": 2
+        },
+        {
+          "road_name": "동일로214길",
+          "count": 2
+        },
+        {
+          "road_name": "두산로",
+          "count": 2
+        },
+        {
+          "road_name": "두텁바위로",
+          "count": 2
+        },
+        {
+          "road_name": "디지털로10길",
+          "count": 2
+        },
+        {
+          "road_name": "디지털로9길",
+          "count": 2
+        },
+        {
+          "road_name": "마방로",
+          "count": 2
+        },
+        {
+          "road_name": "마장로1길",
+          "count": 2
+        },
+        {
+          "road_name": "망우로21길",
+          "count": 2
+        },
+        {
+          "road_name": "강변역로4길",
+          "count": 2
+        },
+        {
+          "road_name": "모래내로15길",
+          "count": 2
+        },
+        {
+          "road_name": "문정로4길",
+          "count": 2
+        },
+        {
+          "road_name": "발산로",
+          "count": 2
+        },
+        {
+          "road_name": "방화대로47길",
+          "count": 2
+        },
+        {
+          "road_name": "강서로17길",
+          "count": 2
+        },
+        {
+          "road_name": "방화대로48길",
+          "count": 2
+        },
+        {
+          "road_name": "백범로90길",
+          "count": 2
+        },
+        {
+          "road_name": "백석동길",
+          "count": 2
+        },
+        {
+          "road_name": "벌말로",
+          "count": 2
+        },
+        {
+          "road_name": "강서로29길",
+          "count": 2
+        },
+        {
+          "road_name": "불광천길",
+          "count": 2
+        },
+        {
+          "road_name": "삼봉로",
+          "count": 2
+        },
+        {
+          "road_name": "삼전로1길",
+          "count": 2
+        },
+        {
+          "road_name": "삼학사로1길",
+          "count": 2
+        },
+        {
+          "road_name": "삼학사로2길",
+          "count": 2
+        },
+        {
+          "road_name": "상봉중앙로",
+          "count": 2
+        },
+        {
+          "road_name": "독립문로",
+          "count": 2
+        },
+        {
+          "road_name": "경기대로",
+          "count": 2
+        },
+        {
+          "road_name": "상암로61길",
+          "count": 2
+        },
+        {
+          "road_name": "상암로79길",
+          "count": 2
+        },
+        {
+          "road_name": "상일로11길",
+          "count": 2
+        },
+        {
+          "road_name": "새말로20길",
+          "count": 2
+        },
+        {
+          "road_name": "서빙고로51길",
+          "count": 2
+        },
+        {
+          "road_name": "석계로",
+          "count": 2
+        },
+        {
+          "road_name": "석계로1길",
+          "count": 2
+        },
+        {
+          "road_name": "성균관로",
+          "count": 2
+        },
+        {
+          "road_name": "성내천로",
+          "count": 2
+        },
+        {
+          "road_name": "소월로2길",
+          "count": 2
+        },
+        {
+          "road_name": "솔샘로67길",
+          "count": 2
+        },
+        {
+          "road_name": "송월길",
+          "count": 2
+        },
+        {
+          "road_name": "송이로32길",
+          "count": 2
+        },
+        {
+          "road_name": "송파대로4길",
+          "count": 2
+        },
+        {
+          "road_name": "경춘북로",
+          "count": 2
+        },
+        {
+          "road_name": "송파대로60길",
+          "count": 2
+        },
+        {
+          "road_name": "수표로",
+          "count": 2
+        },
+        {
+          "road_name": "신이문로",
+          "count": 2
+        },
+        {
+          "road_name": "신정중앙로",
+          "count": 2
+        },
+        {
+          "road_name": "쑥고개로",
+          "count": 2
+        },
+        {
+          "road_name": "아차산로70길",
+          "count": 2
+        },
+        {
+          "road_name": "양산로(송파)",
+          "count": 2
+        },
+        {
+          "road_name": "양재대로55길",
+          "count": 2
+        },
+        {
+          "road_name": "양천로27길",
+          "count": 2
+        },
+        {
+          "road_name": "양천로55길",
+          "count": 2
+        },
+        {
+          "road_name": "양천로57길",
+          "count": 2
+        },
+        {
+          "road_name": "양천로59길",
+          "count": 2
+        },
+        {
+          "road_name": "양천로61길",
+          "count": 2
+        },
+        {
+          "road_name": "고덕로62길",
+          "count": 2
+        },
+        {
+          "road_name": "연희맛로",
+          "count": 2
+        },
+        {
+          "road_name": "오류로",
+          "count": 2
+        },
+        {
+          "road_name": "올림픽로92길",
+          "count": 2
+        },
+        {
+          "road_name": "올림픽로98길",
+          "count": 2
+        },
+        {
+          "road_name": "우장산로",
+          "count": 2
+        },
+        {
+          "road_name": "월곡로",
+          "count": 2
+        },
+        {
+          "road_name": "을지로45길",
+          "count": 2
+        },
+        {
+          "road_name": "이촌로46길",
+          "count": 2
+        },
+        {
+          "road_name": "이촌로51길",
+          "count": 2
+        },
+        {
+          "road_name": "가로공원로76길",
+          "count": 2
+        },
+        {
+          "road_name": "인촌로8길",
+          "count": 2
+        },
+        {
+          "road_name": "장문로",
+          "count": 2
+        },
+        {
+          "road_name": "정동길",
+          "count": 2
+        },
+        {
+          "road_name": "중림로",
+          "count": 2
+        },
+        {
+          "road_name": "공항대로59길",
+          "count": 2
+        },
+        {
+          "road_name": "진관2로",
+          "count": 2
+        },
+        {
+          "road_name": "과천대로",
+          "count": 2
+        },
+        {
+          "road_name": "천호대로213길",
+          "count": 2
+        },
+        {
+          "road_name": "청파로47길",
+          "count": 2
+        },
+        {
+          "road_name": "충민로2길",
+          "count": 2
+        },
+        {
+          "road_name": "충정로",
+          "count": 2
+        },
+        {
+          "road_name": "태봉로",
+          "count": 2
+        },
+        {
+          "road_name": "테헤란로114길",
+          "count": 2
+        },
+        {
+          "road_name": "평창문화로",
+          "count": 2
+        },
+        {
+          "road_name": "하늘길",
+          "count": 2
+        },
+        {
+          "road_name": "광나루로56길",
+          "count": 2
+        },
+        {
+          "road_name": "한강대로77길",
+          "count": 2
+        },
+        {
+          "road_name": "한천로58길",
+          "count": 2
+        },
+        {
+          "road_name": "홍익로",
+          "count": 2
+        },
+        {
+          "road_name": "회기로5길",
+          "count": 2
+        },
+        {
+          "road_name": "희우정로",
+          "count": 2
+        },
+        {
+          "road_name": "오정로",
+          "count": 2
+        },
+        {
+          "road_name": "토성로",
+          "count": 2
+        },
+        {
+          "road_name": "망우로36길",
+          "count": 2
+        },
+        {
+          "road_name": "수색로6길",
+          "count": 2
+        },
+        {
+          "road_name": "구의강변로",
+          "count": 2
+        },
+        {
+          "road_name": "용마터널",
+          "count": 2
+        },
+        {
+          "road_name": "구리암사대교",
+          "count": 2
+        },
+        {
+          "road_name": "암사대교와양재대로연결길",
+          "count": 2
+        },
+        {
+          "road_name": "수명로",
+          "count": 2
+        },
+        {
+          "road_name": "자곡로",
+          "count": 2
+        },
+        {
+          "road_name": "가재울미래로",
+          "count": 2
+        },
+        {
+          "road_name": "마곡중앙5로",
+          "count": 2
+        },
+        {
+          "road_name": "마곡서로",
+          "count": 2
+        },
+        {
+          "road_name": "군자로",
+          "count": 2
+        },
+        {
+          "road_name": "까치산로",
+          "count": 2
+        },
+        {
+          "road_name": "가양대교",
+          "count": 2
+        },
+        {
+          "road_name": "광진교",
+          "count": 2
+        },
+        {
+          "road_name": "동작대교",
+          "count": 2
+        },
+        {
+          "road_name": "동호대교",
+          "count": 2
+        },
+        {
+          "road_name": "마포대교",
+          "count": 2
+        },
+        {
+          "road_name": "반포대교",
+          "count": 2
+        },
+        {
+          "road_name": "서강대교",
+          "count": 2
+        },
+        {
+          "road_name": "성산대교",
+          "count": 2
+        },
+        {
+          "road_name": "성수대교",
+          "count": 2
+        },
+        {
+          "road_name": "양화대교",
+          "count": 2
+        },
+        {
+          "road_name": "영동대교",
+          "count": 2
+        },
+        {
+          "road_name": "올림픽대교",
+          "count": 2
+        },
+        {
+          "road_name": "원효대교",
+          "count": 2
+        },
+        {
+          "road_name": "잠실대교",
+          "count": 2
+        },
+        {
+          "road_name": "천호대교",
+          "count": 2
+        },
+        {
+          "road_name": "청담대교",
+          "count": 2
+        },
+        {
+          "road_name": "한강대교",
+          "count": 2
+        },
+        {
+          "road_name": "한남대교",
+          "count": 2
+        },
+        {
+          "road_name": "월드컵대교",
+          "count": 2
+        },
+        {
+          "road_name": "남부순환로72길",
+          "count": 2
+        },
+        {
+          "road_name": "노량진로23길",
+          "count": 2
+        },
+        {
+          "road_name": "노원로26길",
+          "count": 2
+        },
+        {
+          "road_name": "녹사평대로26길",
+          "count": 2
+        },
+        {
+          "road_name": "녹사평대로58길",
+          "count": 2
+        },
+        {
+          "road_name": "당산로54길",
+          "count": 2
+        },
+        {
+          "road_name": "봉은사로114길",
+          "count": 1
+        },
+        {
+          "road_name": "세종대로18길",
+          "count": 1
+        },
+        {
+          "road_name": "세종대로20길",
+          "count": 1
+        },
+        {
+          "road_name": "세종대로21길",
+          "count": 1
+        },
+        {
+          "road_name": "소월로3길",
+          "count": 1
+        },
+        {
+          "road_name": "신목로7길",
+          "count": 1
+        },
+        {
+          "road_name": "인촌로24길",
+          "count": 1
+        },
+        {
+          "road_name": "천호대로157길",
+          "count": 1
+        },
+        {
+          "road_name": "남대문로7길",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "gyeonggi",
+      "planned_details": 122,
+      "skipped": 0,
+      "detail_responses_normalized": 122,
+      "empty_details": 0,
+      "errors": [],
+      "rows": 2744,
+      "positive_speed_rows": 2744,
+      "distinct_source_id_direction_pairs": 2744,
+      "missing_record_ids": 0,
+      "distinct_road_names": 121,
+      "freshness_at_retrieval": {
+        "WITHIN_600S": 2744
+      },
+      "original_observed_min": "2026-10-26T03:06:00.000Z",
+      "original_observed_max": "2026-10-26T03:13:00.000Z",
+      "road_row_counts": [
+        {
+          "road_name": "국도 42호선",
+          "count": 86
+        },
+        {
+          "road_name": "수도권 제1순환고속도로",
+          "count": 78
+        },
+        {
+          "road_name": "파주로/광남로/화합로",
+          "count": 62
+        },
+        {
+          "road_name": "국도 45호선",
+          "count": 58
+        },
+        {
+          "road_name": "국도 39호선(안산~서울)",
+          "count": 56
+        },
+        {
+          "road_name": "국도 43호선(화성~서울)",
+          "count": 54
+        },
+        {
+          "road_name": "국도 43호선(서울~포천)",
+          "count": 54
+        },
+        {
+          "road_name": "영동고속도로",
+          "count": 48
+        },
+        {
+          "road_name": "국도 6호선",
+          "count": 48
+        },
+        {
+          "road_name": "일영로/권율로/감악산로",
+          "count": 48
+        },
+        {
+          "road_name": "강변북로",
+          "count": 44
+        },
+        {
+          "road_name": "국도 38호선",
+          "count": 44
+        },
+        {
+          "road_name": "화성로",
+          "count": 44
+        },
+        {
+          "road_name": "덕영대로/오봉로",
+          "count": 44
+        },
+        {
+          "road_name": "경부고속도로",
+          "count": 42
+        },
+        {
+          "road_name": "세종포천고속도로",
+          "count": 42
+        },
+        {
+          "road_name": "국도 3호선(서울~연천)",
+          "count": 42
+        },
+        {
+          "road_name": "올림픽대로",
+          "count": 40
+        },
+        {
+          "road_name": "국도 1호선(평택~안양)",
+          "count": 38
+        },
+        {
+          "road_name": "고양대로/서오릉로",
+          "count": 38
+        },
+        {
+          "road_name": "중앙로/수색로",
+          "count": 38
+        },
+        {
+          "road_name": "국도 37호선",
+          "count": 36
+        },
+        {
+          "road_name": "국도 39호선(평택~안산)",
+          "count": 36
+        },
+        {
+          "road_name": "동막로/돌마로/제일로",
+          "count": 36
+        },
+        {
+          "road_name": "국도 3호선(이천~서울)",
+          "count": 34
+        },
+        {
+          "road_name": "국도 77호선",
+          "count": 32
+        },
+        {
+          "road_name": "용구대로",
+          "count": 32
+        },
+        {
+          "road_name": "남부순환로",
+          "count": 32
+        },
+        {
+          "road_name": "동부간선도로",
+          "count": 31
+        },
+        {
+          "road_name": "서해안고속도로",
+          "count": 30
+        },
+        {
+          "road_name": "국도 47호선(서울~포천)",
+          "count": 30
+        },
+        {
+          "road_name": "자유로",
+          "count": 30
+        },
+        {
+          "road_name": "경의로",
+          "count": 30
+        },
+        {
+          "road_name": "서부로",
+          "count": 30
+        },
+        {
+          "road_name": "안양천로",
+          "count": 30
+        },
+        {
+          "road_name": "중부고속도로",
+          "count": 28
+        },
+        {
+          "road_name": "내부순환로",
+          "count": 28
+        },
+        {
+          "road_name": "국도 1호선(서울~파주)",
+          "count": 28
+        },
+        {
+          "road_name": "삼육사로/탑동가산로",
+          "count": 28
+        },
+        {
+          "road_name": "봉담과천로",
+          "count": 26
+        },
+        {
+          "road_name": "경충대로",
+          "count": 26
+        },
+        {
+          "road_name": "밤고개로/대왕판교로/신수로",
+          "count": 24
+        },
+        {
+          "road_name": "성남대로",
+          "count": 24
+        },
+        {
+          "road_name": "마유로",
+          "count": 24
+        },
+        {
+          "road_name": "국도 46호선",
+          "count": 22
+        },
+        {
+          "road_name": "국도 47호선(안산~서울)",
+          "count": 22
+        },
+        {
+          "road_name": "지방도 318호선",
+          "count": 22
+        },
+        {
+          "road_name": "신평화로",
+          "count": 22
+        },
+        {
+          "road_name": "봉오대로/화곡로",
+          "count": 22
+        },
+        {
+          "road_name": "서울문산고속도로",
+          "count": 20
+        },
+        {
+          "road_name": "북부간선도로",
+          "count": 20
+        },
+        {
+          "road_name": "국도 39호선(고양~의정부)",
+          "count": 20
+        },
+        {
+          "road_name": "본오매송로/매송고색로",
+          "count": 20
+        },
+        {
+          "road_name": "안양판교로/관악대로",
+          "count": 20
+        },
+        {
+          "road_name": "효행로",
+          "count": 20
+        },
+        {
+          "road_name": "호수로",
+          "count": 20
+        },
+        {
+          "road_name": "양재대로/사가정로",
+          "count": 20
+        },
+        {
+          "road_name": "평택제천고속도로",
+          "count": 18
+        },
+        {
+          "road_name": "제2경인고속도로",
+          "count": 18
+        },
+        {
+          "road_name": "국도 48호선",
+          "count": 18
+        },
+        {
+          "road_name": "안성대로",
+          "count": 18
+        },
+        {
+          "road_name": "남가로",
+          "count": 18
+        },
+        {
+          "road_name": "권율대로",
+          "count": 18
+        },
+        {
+          "road_name": "동백죽전대로/미금로",
+          "count": 18
+        },
+        {
+          "road_name": "발안양감로/상신하갈로",
+          "count": 18
+        },
+        {
+          "road_name": "헌릉로",
+          "count": 18
+        },
+        {
+          "road_name": "중부대로",
+          "count": 18
+        },
+        {
+          "road_name": "인천국제공항고속도로",
+          "count": 16
+        },
+        {
+          "road_name": "분당수서로",
+          "count": 16
+        },
+        {
+          "road_name": "국도 82호선",
+          "count": 16
+        },
+        {
+          "road_name": "제2 자유로",
+          "count": 16
+        },
+        {
+          "road_name": "부흥로",
+          "count": 16
+        },
+        {
+          "road_name": "김포대로",
+          "count": 16
+        },
+        {
+          "road_name": "중부내륙고속도로",
+          "count": 14
+        },
+        {
+          "road_name": "수도권 제2순환고속도로(동탄봉담)",
+          "count": 14
+        },
+        {
+          "road_name": "국도 17호선",
+          "count": 14
+        },
+        {
+          "road_name": "경춘로",
+          "count": 14
+        },
+        {
+          "road_name": "국도 87호선",
+          "count": 14
+        },
+        {
+          "road_name": "동탄기흥로",
+          "count": 14
+        },
+        {
+          "road_name": "태재로/서현로",
+          "count": 14
+        },
+        {
+          "road_name": "수원광명고속도로",
+          "count": 12
+        },
+        {
+          "road_name": "제2영동고속도로",
+          "count": 12
+        },
+        {
+          "road_name": "서울양양고속도로",
+          "count": 12
+        },
+        {
+          "road_name": "용인서울고속도로",
+          "count": 12
+        },
+        {
+          "road_name": "제3경인고속화도로",
+          "count": 12
+        },
+        {
+          "road_name": "수도권 제2순환고속도로(봉담송산)",
+          "count": 12
+        },
+        {
+          "road_name": "수도권 제2순환고속도로(화성광주)",
+          "count": 12
+        },
+        {
+          "road_name": "수도권 제2순환고속도로(포천화도)",
+          "count": 12
+        },
+        {
+          "road_name": "서부간선도로",
+          "count": 12
+        },
+        {
+          "road_name": "전곡항로",
+          "count": 12
+        },
+        {
+          "road_name": "석성로/광교호수로",
+          "count": 12
+        },
+        {
+          "road_name": "평택화성고속도로",
+          "count": 10
+        },
+        {
+          "road_name": "제2경인고속도로(안양성남)",
+          "count": 10
+        },
+        {
+          "road_name": "제2경인고속도로(인천대교)",
+          "count": 10
+        },
+        {
+          "road_name": "평택시흥고속도로",
+          "count": 10
+        },
+        {
+          "road_name": "수도권 제2순환고속도로(인천김포)",
+          "count": 10
+        },
+        {
+          "road_name": "수도권 제2순환고속도로(파주양주)",
+          "count": 10
+        },
+        {
+          "road_name": "수석호평고속화도로",
+          "count": 10
+        },
+        {
+          "road_name": "동부대로",
+          "count": 10
+        },
+        {
+          "road_name": "마도로/화성시청로",
+          "count": 10
+        },
+        {
+          "road_name": "경안천로/이배재로",
+          "count": 10
+        },
+        {
+          "road_name": "소사로",
+          "count": 10
+        },
+        {
+          "road_name": "익산평택고속도로",
+          "count": 8
+        },
+        {
+          "road_name": "경인고속도로",
+          "count": 8
+        },
+        {
+          "road_name": "비봉매송간고속화도로",
+          "count": 8
+        },
+        {
+          "road_name": "수원북부순환로",
+          "count": 8
+        },
+        {
+          "road_name": "국도 75호선",
+          "count": 8
+        },
+        {
+          "road_name": "과천우면산로/반포대로",
+          "count": 8
+        },
+        {
+          "road_name": "지방도 337호선",
+          "count": 8
+        },
+        {
+          "road_name": "동서대로",
+          "count": 8
+        },
+        {
+          "road_name": "과천대로/동작대로",
+          "count": 8
+        },
+        {
+          "road_name": "수도권 제2순환고속도로(화도양평)",
+          "count": 6
+        },
+        {
+          "road_name": "분당내곡로",
+          "count": 6
+        },
+        {
+          "road_name": "강남순환도시고속도로",
+          "count": 6
+        },
+        {
+          "road_name": "김포한강로",
+          "count": 6
+        },
+        {
+          "road_name": "국도 43호선(아산~평택)",
+          "count": 6
+        },
+        {
+          "road_name": "대부황금로",
+          "count": 6
+        },
+        {
+          "road_name": "북한강로",
+          "count": 6
+        },
+        {
+          "road_name": "제2중부고속도로",
+          "count": 5
+        },
+        {
+          "road_name": "덕송내각고속화도로",
+          "count": 4
+        },
+        {
+          "road_name": "오산화성고속도로",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "source": "utic",
+      "planned_details": 67,
+      "skipped": 0,
+      "detail_responses_normalized": 67,
+      "empty_details": 0,
+      "errors": [],
+      "rows": 1781,
+      "positive_speed_rows": 1781,
+      "distinct_source_id_direction_pairs": 1781,
+      "missing_record_ids": 0,
+      "distinct_road_names": 67,
+      "freshness_at_retrieval": {
+        "UNKNOWN_TIME": 1781
+      },
+      "original_observed_min": null,
+      "original_observed_max": null,
+      "road_row_counts": [
+        {
+          "road_name": "경부고속도로",
+          "count": 185
+        },
+        {
+          "road_name": "남해고속도로(순천-부산)",
+          "count": 86
+        },
+        {
+          "road_name": "서해안고속도로",
+          "count": 81
+        },
+        {
+          "road_name": "통영대전고속도로",
+          "count": 69
+        },
+        {
+          "road_name": "부산외곽순환고속도로",
+          "count": 66
+        },
+        {
+          "road_name": "영동고속도로",
+          "count": 62
+        },
+        {
+          "road_name": "서울외곽순환고속도로",
+          "count": 59
+        },
+        {
+          "road_name": "중앙고속도로(춘천-금호)",
+          "count": 59
+        },
+        {
+          "road_name": "호남고속도로",
+          "count": 57
+        },
+        {
+          "road_name": "중부내륙고속도로",
+          "count": 49
+        },
+        {
+          "road_name": "광주원주고속도로",
+          "count": 40
+        },
+        {
+          "road_name": "평택제천고속도로",
+          "count": 38
+        },
+        {
+          "road_name": "세종포천고속도로(안성-구리)",
+          "count": 37
+        },
+        {
+          "road_name": "중부내륙고속도로지선",
+          "count": 35
+        },
+        {
+          "road_name": "당진영덕고속도로",
+          "count": 32
+        },
+        {
+          "road_name": "대구외곽순환고속도로",
+          "count": 32
+        },
+        {
+          "road_name": "제2경인고속도로",
+          "count": 32
+        },
+        {
+          "road_name": "중앙고속도로(대구-부산)",
+          "count": 32
+        },
+        {
+          "road_name": "서울양양고속도로",
+          "count": 31
+        },
+        {
+          "road_name": "동해고속도로(삼척-속초)",
+          "count": 30
+        },
+        {
+          "road_name": "상주영천고속도로",
+          "count": 30
+        },
+        {
+          "road_name": "서부내륙고속도로",
+          "count": 30
+        },
+        {
+          "road_name": "수도권제2순환고속도로(화도-양평)",
+          "count": 30
+        },
+        {
+          "road_name": "중부고속도로",
+          "count": 29
+        },
+        {
+          "road_name": "동해고속도로(부산-울산)",
+          "count": 28
+        },
+        {
+          "road_name": "수도권제2순환고속도로(화성-광주)",
+          "count": 28
+        },
+        {
+          "road_name": "수도권제2순환고속도로(봉담-동탄)",
+          "count": 27
+        },
+        {
+          "road_name": "당진영덕고속도로(당진-대전)",
+          "count": 26
+        },
+        {
+          "road_name": "남해고속도로(영암-순천)",
+          "count": 25
+        },
+        {
+          "road_name": "새만금포항고속도로(대구-포항)",
+          "count": 25
+        },
+        {
+          "road_name": "광주대구고속도로",
+          "count": 24
+        },
+        {
+          "road_name": "호남고속도로지선",
+          "count": 24
+        },
+        {
+          "road_name": "세종포천고속도로(구리-포천)",
+          "count": 20
+        },
+        {
+          "road_name": "무안광주고속도로",
+          "count": 18
+        },
+        {
+          "road_name": "인천국제공항고속도로",
+          "count": 18
+        },
+        {
+          "road_name": "평택시흥고속도로",
+          "count": 18
+        },
+        {
+          "road_name": "대구외곽순환고속도로(칠곡경대병원역-개상듬네거리)",
+          "count": 16
+        },
+        {
+          "road_name": "새만금포항고속도로(익산-장수)",
+          "count": 16
+        },
+        {
+          "road_name": "수도권제2순환고속도로(양주-소흘)",
+          "count": 14
+        },
+        {
+          "road_name": "수원광명고속도로",
+          "count": 14
+        },
+        {
+          "road_name": "중앙고속도로지선",
+          "count": 14
+        },
+        {
+          "road_name": "순천완주고속도로",
+          "count": 13
+        },
+        {
+          "road_name": "용인서울고속도로",
+          "count": 13
+        },
+        {
+          "road_name": "함양울산고속도로",
+          "count": 13
+        },
+        {
+          "road_name": "고창담양고속도로",
+          "count": 12
+        },
+        {
+          "road_name": "남해고속도로제3지선",
+          "count": 12
+        },
+        {
+          "road_name": "서천공주고속도로",
+          "count": 12
+        },
+        {
+          "road_name": "아산청주고속도로",
+          "count": 12
+        },
+        {
+          "road_name": "천안논산고속도로",
+          "count": 12
+        },
+        {
+          "road_name": "경인고속도로",
+          "count": 10
+        },
+        {
+          "road_name": "남해고속도로제1지선",
+          "count": 10
+        },
+        {
+          "road_name": "수도권제2순환고속도로(인천-김포)",
+          "count": 10
+        },
+        {
+          "road_name": "제2경인고속도로(인천대교)",
+          "count": 8
+        },
+        {
+          "road_name": "남해고속도로제2지선",
+          "count": 7
+        },
+        {
+          "road_name": "논산천안고속도로",
+          "count": 6
+        },
+        {
+          "road_name": "대전남부순환고속도로",
+          "count": 6
+        },
+        {
+          "road_name": "옥산오창고속도로",
+          "count": 6
+        },
+        {
+          "road_name": "테헤란로",
+          "count": 6
+        },
+        {
+          "road_name": "평택화성고속도로",
+          "count": 5
+        },
+        {
+          "road_name": "서울문산고속도로",
+          "count": 4
+        },
+        {
+          "road_name": "울산고속도로",
+          "count": 4
+        },
+        {
+          "road_name": "제2중부고속도로",
+          "count": 4
+        },
+        {
+          "road_name": "광주외곽순환고속도로",
+          "count": 2
+        },
+        {
+          "road_name": "서부내륙고속도로(현덕-안중)",
+          "count": 2
+        },
+        {
+          "road_name": "서울문산고속도로(남고양-봉대산)",
+          "count": 2
+        },
+        {
+          "road_name": "수도권제2순환고속도로(봉담-송산)",
+          "count": 2
+        },
+        {
+          "road_name": "오산화성고속도로",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "source": "daegu",
+      "planned_details": 42,
+      "skipped": 0,
+      "detail_responses_normalized": 42,
+      "empty_details": 0,
+      "errors": [],
+      "rows": 345,
+      "positive_speed_rows": 287,
+      "distinct_source_id_direction_pairs": 345,
+      "missing_record_ids": 0,
+      "distinct_road_names": 42,
+      "freshness_at_retrieval": {
+        "NO_SPEED": 58,
+        "UNKNOWN_TIME": 287
+      },
+      "original_observed_min": null,
+      "original_observed_max": null,
+      "road_row_counts": [
+        {
+          "road_name": "달구벌대로",
+          "count": 42
+        },
+        {
+          "road_name": "신천대로",
+          "count": 33
+        },
+        {
+          "road_name": "국채보상로",
+          "count": 28
+        },
+        {
+          "road_name": "수성로",
+          "count": 18
+        },
+        {
+          "road_name": "달서대로",
+          "count": 16
+        },
+        {
+          "road_name": "신천동로",
+          "count": 14
+        },
+        {
+          "road_name": "화랑로",
+          "count": 14
+        },
+        {
+          "road_name": "명덕로",
+          "count": 14
+        },
+        {
+          "road_name": "매천로",
+          "count": 12
+        },
+        {
+          "road_name": "중동로",
+          "count": 12
+        },
+        {
+          "road_name": "중앙대로",
+          "count": 12
+        },
+        {
+          "road_name": "태평로",
+          "count": 10
+        },
+        {
+          "road_name": "호국로",
+          "count": 10
+        },
+        {
+          "road_name": "달성로",
+          "count": 8
+        },
+        {
+          "road_name": "와룡로",
+          "count": 8
+        },
+        {
+          "road_name": "달서로",
+          "count": 8
+        },
+        {
+          "road_name": "월곡로",
+          "count": 6
+        },
+        {
+          "road_name": "범안로",
+          "count": 6
+        },
+        {
+          "road_name": "성서로",
+          "count": 6
+        },
+        {
+          "road_name": "서대구로",
+          "count": 6
+        },
+        {
+          "road_name": "팔달로",
+          "count": 6
+        },
+        {
+          "road_name": "현충로",
+          "count": 4
+        },
+        {
+          "road_name": "무학로",
+          "count": 4
+        },
+        {
+          "road_name": "연암로",
+          "count": 4
+        },
+        {
+          "road_name": "학정로",
+          "count": 4
+        },
+        {
+          "road_name": "성서공단남로",
+          "count": 4
+        },
+        {
+          "road_name": "봉덕로",
+          "count": 4
+        },
+        {
+          "road_name": "테크노순환로",
+          "count": 4
+        },
+        {
+          "road_name": "진천로",
+          "count": 2
+        },
+        {
+          "road_name": "앞산터널로",
+          "count": 2
+        },
+        {
+          "road_name": "성북로",
+          "count": 2
+        },
+        {
+          "road_name": "대학로",
+          "count": 2
+        },
+        {
+          "road_name": "동원로",
+          "count": 2
+        },
+        {
+          "road_name": "구암로",
+          "count": 2
+        },
+        {
+          "road_name": "동화천로",
+          "count": 2
+        },
+        {
+          "road_name": "용학로",
+          "count": 2
+        },
+        {
+          "road_name": "경안로",
+          "count": 2
+        },
+        {
+          "road_name": "남산로",
+          "count": 2
+        },
+        {
+          "road_name": "테크노폴리스로",
+          "count": 2
+        },
+        {
+          "road_name": "현풍로테크노북로",
+          "count": 2
+        },
+        {
+          "road_name": "테크노대로",
+          "count": 2
+        },
+        {
+          "road_name": "비슬로",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "source": "korea-expressway-official-demo",
+      "records": 8270,
+      "positive_speed_rows": 6781,
+      "distinct_vds_ids": 8270,
+      "distinct_conzone_ids": 1577,
+      "raw_korean_minute_timestamps": [
+        "20261026 1217"
+      ],
+      "freshness_at_retrieval": {
+        "WITHIN_600S": 6781,
+        "NO_SPEED": 1489
+      },
+      "missing_original_time": 0,
+      "access_method": "READ_ONLY_BROWSER_DOCUMENT_TEXT",
+      "credential_kind": "OFFICIAL_EXAMPLE_DEFAULT_TEST_KEY_NOT_USER_CREDENTIAL",
+      "road_row_counts": [
+        {
+          "road_name": "경부선",
+          "count": 837
+        },
+        {
+          "road_name": "남해선(순천-부산)",
+          "count": 282
+        },
+        {
+          "road_name": "남해선(영암-순천)",
+          "count": 151
+        },
+        {
+          "road_name": "부산신항선",
+          "count": 51
+        },
+        {
+          "road_name": "광주대구선",
+          "count": 196
+        },
+        {
+          "road_name": "무안광주선",
+          "count": 53
+        },
+        {
+          "road_name": "고창담양선",
+          "count": 44
+        },
+        {
+          "road_name": "함양울산선",
+          "count": 142
+        },
+        {
+          "road_name": "서해안선",
+          "count": 445
+        },
+        {
+          "road_name": "평택시흥선",
+          "count": 68
+        },
+        {
+          "road_name": "울산선",
+          "count": 10
+        },
+        {
+          "road_name": "평택화성선",
+          "count": 114
+        },
+        {
+          "road_name": "오산화성선",
+          "count": 4
+        },
+        {
+          "road_name": "서울문산선",
+          "count": 61
+        },
+        {
+          "road_name": "서울문산지선",
+          "count": 4
+        },
+        {
+          "road_name": "익산평택선",
+          "count": 156
+        },
+        {
+          "road_name": "대구포항선",
+          "count": 70
+        },
+        {
+          "road_name": "익산장수선",
+          "count": 66
+        },
+        {
+          "road_name": "새만금전주선",
+          "count": 36
+        },
+        {
+          "road_name": "호남선",
+          "count": 232
+        },
+        {
+          "road_name": "논산천안선",
+          "count": 180
+        },
+        {
+          "road_name": "순천완주선",
+          "count": 162
+        },
+        {
+          "road_name": "세종포천선",
+          "count": 220
+        },
+        {
+          "road_name": "청주영덕선",
+          "count": 202
+        },
+        {
+          "road_name": "당진대전선",
+          "count": 106
+        },
+        {
+          "road_name": "옥산오창선",
+          "count": 18
+        },
+        {
+          "road_name": "당진청주선(아산-천안)",
+          "count": 18
+        },
+        {
+          "road_name": "통영대전선",
+          "count": 216
+        },
+        {
+          "road_name": "중부선",
+          "count": 238
+        },
+        {
+          "road_name": "제2중부선",
+          "count": 53
+        },
+        {
+          "road_name": "평택제천선",
+          "count": 181
+        },
+        {
+          "road_name": "중부내륙선",
+          "count": 582
+        },
+        {
+          "road_name": "영동선",
+          "count": 469
+        },
+        {
+          "road_name": "광주원주선",
+          "count": 124
+        },
+        {
+          "road_name": "중앙선",
+          "count": 352
+        },
+        {
+          "road_name": "대구부산선",
+          "count": 202
+        },
+        {
+          "road_name": "서울양양선",
+          "count": 179
+        },
+        {
+          "road_name": "동해선(삼척-속초)",
+          "count": 139
+        },
+        {
+          "road_name": "부산울산선",
+          "count": 46
+        },
+        {
+          "road_name": "동해선(부산-포항)",
+          "count": 63
+        },
+        {
+          "road_name": "동해선(포항-영덕)",
+          "count": 16
+        },
+        {
+          "road_name": "대구외곽순환선",
+          "count": 42
+        },
+        {
+          "road_name": "수도권제1순환선",
+          "count": 261
+        },
+        {
+          "road_name": "남해1지선",
+          "count": 30
+        },
+        {
+          "road_name": "남해2지선",
+          "count": 30
+        },
+        {
+          "road_name": "제2경인선",
+          "count": 105
+        },
+        {
+          "road_name": "인천대교선",
+          "count": 44
+        },
+        {
+          "road_name": "인천대교지선",
+          "count": 4
+        },
+        {
+          "road_name": "경인선",
+          "count": 28
+        },
+        {
+          "road_name": "신월여의지하도로",
+          "count": 18
+        },
+        {
+          "road_name": "인천공항선",
+          "count": 38
+        },
+        {
+          "road_name": "서천공주선",
+          "count": 72
+        },
+        {
+          "road_name": "용인서울선",
+          "count": 50
+        },
+        {
+          "road_name": "익산평택지선",
+          "count": 8
+        },
+        {
+          "road_name": "호남지선",
+          "count": 90
+        },
+        {
+          "road_name": "대전남부선",
+          "count": 18
+        },
+        {
+          "road_name": "상주영천선",
+          "count": 192
+        },
+        {
+          "road_name": "봉담동탄선",
+          "count": 18
+        },
+        {
+          "road_name": "인천김포선",
+          "count": 57
+        },
+        {
+          "road_name": "수도권제2순환선(파주-포천)",
+          "count": 44
+        },
+        {
+          "road_name": "봉담송산선",
+          "count": 32
+        },
+        {
+          "road_name": "화성광주선",
+          "count": 46
+        },
+        {
+          "road_name": "수도권제2순환선(화도-양평)",
+          "count": 21
+        },
+        {
+          "road_name": "수도권제2순환선(시화MTV)",
+          "count": 2
+        },
+        {
+          "road_name": "수도권제2순환선(포천-화도)",
+          "count": 74
+        },
+        {
+          "road_name": "중부내륙지선",
+          "count": 40
+        },
+        {
+          "road_name": "광주외곽순환선",
+          "count": 12
+        },
+        {
+          "road_name": "중앙선지선",
+          "count": 27
+        },
+        {
+          "road_name": "부산외곽선",
+          "count": 79
+        }
+      ]
+    }
+  ],
+  "historical": {
+    "bytes": 34497477,
+    "sha256": "8a6d1577c75c55fe8957a76ed1e3e7091cfef7d41daebd6cb5cb50dbf742b818",
+    "data_rows": 152151,
+    "days": 30,
+    "hourly_columns": 24,
+    "source_period": "2026-09",
+    "live_traffic": false
+  },
+  "message_en": "Original source values/counts/hashes were independently recounted; no newly acquired source is authorized for routing. Missing timestamps and public-demo access remain explicit.",
+  "message_ko": "원 출처 값·개수·해시를 독립 재검사했으며 새 자료의 경로 적용은 승인하지 않습니다. 시각 누락과 공개 시험키 접근을 구분합니다."
+}

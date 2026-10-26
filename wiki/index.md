@@ -151,3 +151,6 @@ Corrected NAV-02 acceptance / 수정 NAV-02 수용: clean fe49b55/runtime70af32d
 - [Actual public-speed acceptance: fresh462, source/browser originals and46.95s recording](../research/pilot/2026-10-26-public-speeds/report.md) / 실제 공공 속도 수용·새462개·출처/화면 원문·46.95초 녹화.
 
 - [Actual public sources and metropolitan coverage limits / 실제 공공 출처와 수도권 적용 한계](../research/public-road-speeds/2026-10-26-coverage-review/README.md)
+
+- [Additional actual public captures and TypeScript research tools / 추가 공개 수치 실수집·TypeScript 조사 도구](../research/public-road-speeds/2026-10-26-additional-sources/README.md): TOPIS, Gyeonggi, UTIC, EX, Daegu and September history; research acquisition, ITS-only runtime unchanged. / 서울·경기·UTIC·도로공사·대구·9월 이력 확보·기존 ITS 실행 유지.
+- [Traffic API key issuance and storage / 교통 API 키 발급·보관](../docs/39-public-traffic-api-keys.md): official steps only; no application submitted. / 공식 절차 안내·실제 신청 없음.

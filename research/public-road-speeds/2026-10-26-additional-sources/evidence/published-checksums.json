@@ -1,0 +1,156 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 16695,
+      "sha256": "0a3ad85341f3d945ced557e51b0025c5a6b6d012bdf6a5b0cbf61f255bb4d0d9"
+    },
+    {
+      "path": "collector.test.ts",
+      "bytes": 4597,
+      "sha256": "dbf9799b1e2c1d48100ebc03aa2bb83c8d1ffe40b844289daa2bc35f8219923d"
+    },
+    {
+      "path": "collector.ts",
+      "bytes": 12723,
+      "sha256": "6421f448c9867b4980597d3a8f92ea80a08c77d87b4c3ee37cf5b66249b94707"
+    },
+    {
+      "path": "evidence/campaign-verification.json",
+      "bytes": 89373,
+      "sha256": "c581fe8c9f4e9ca94a97544d1fe7b3db6b90e1ac729b999e55d177b3128b9191"
+    },
+    {
+      "path": "evidence/checks.json",
+      "bytes": 1408,
+      "sha256": "32888bf99110b73e2d7b70aa67b9109b39c1d8f760cc01ddffac201ba2017ae8"
+    },
+    {
+      "path": "evidence/collector-tests.tap",
+      "bytes": 3136,
+      "sha256": "d9946f90d7655eb0c11d3d608966630ea9dcdc0a5ab7c32b97b12f569cf63603"
+    },
+    {
+      "path": "evidence/daegu-campaign.json",
+      "bytes": 318,
+      "sha256": "6a5a96711addc3c5d8add934ba7d0c18498f05f513619e5b576099912eb57339"
+    },
+    {
+      "path": "evidence/duplicate-review.json",
+      "bytes": 1320,
+      "sha256": "b93ef61aafb2c6930d541be18180def7450d67e44f806934153fad583ed480f0"
+    },
+    {
+      "path": "evidence/ex-build-first-diagnostic.txt",
+      "bytes": 723,
+      "sha256": "260c8ad5d8c3f7b21db920da9e342f1095ec5bb30e1dce1837ba54538c9f5274"
+    },
+    {
+      "path": "evidence/ex-document-tests-repaired.tap",
+      "bytes": 1165,
+      "sha256": "6e97d777e69d4e742c00671abfba0d7677d165af939091ece6ae9f0bbac9aa6f"
+    },
+    {
+      "path": "evidence/ex-document-tests.tap",
+      "bytes": 1166,
+      "sha256": "8fc9766ff5849b2a0522997624771dd3a5778c1181a87679b299c223a347d0b8"
+    },
+    {
+      "path": "evidence/ex-original-time-independent.json",
+      "bytes": 387,
+      "sha256": "b8b57358201c6557ef26413c23425dd86cfde7fc5eb07ae34ad3b82917deb27f"
+    },
+    {
+      "path": "evidence/gyeonggi-campaign.json",
+      "bytes": 319,
+      "sha256": "00df7c60eb1e6e25a45dd1f5e419ef2d80f253bb5cd768be7a99d0b729da9807"
+    },
+    {
+      "path": "evidence/inspector-build-first-diagnostic.txt",
+      "bytes": 551,
+      "sha256": "b1b1af25f1d0b88efdcc0f4db9ca5e86150fc47b5ea45f47a4cee215ceb54f08"
+    },
+    {
+      "path": "evidence/local-originals-inventory.json",
+      "bytes": 542603,
+      "sha256": "4bf110c88795a2ba6ba09775f355798a12eb80536998a3eca86a3dda2f72488c"
+    },
+    {
+      "path": "evidence/media-check.log",
+      "bytes": 153,
+      "sha256": "94c1bd207154092df71aa884e4d21bce2f6c1c4f426f37c5bb6eb0564a5bf765"
+    },
+    {
+      "path": "evidence/probes.json",
+      "bytes": 3498,
+      "sha256": "a1fc1e7eb8e1114e535643e02d4d58769f67d77865aaf8ce64357743987b3b67"
+    },
+    {
+      "path": "evidence/provenance.json",
+      "bytes": 2588,
+      "sha256": "7d7c251d4dbb8560fa86eb38e78fd7ec6ab053d20dd41784104fe8284f2098e1"
+    },
+    {
+      "path": "evidence/seoul-history-summary.json",
+      "bytes": 2291,
+      "sha256": "d841b373c2118f689c0f35a96b8ce72adbbb8afbabc66553e6eca3e571cc9d3b"
+    },
+    {
+      "path": "evidence/topis-campaign.json",
+      "bytes": 319,
+      "sha256": "6b578e13f43afe6a8a6300e89ace0c567c1aaeaf0664b64b0d259f7e740aa805"
+    },
+    {
+      "path": "evidence/utic-campaign.json",
+      "bytes": 318,
+      "sha256": "3846f967a7bcc4cd1b243de4b72c918e5130b297ca17b49677bc3cb9859857cf"
+    },
+    {
+      "path": "ex-document.test.ts",
+      "bytes": 1721,
+      "sha256": "3388c3c020f6911654f82baa69dfb8a269f95008dd8a3432d659b60d78f37fc9"
+    },
+    {
+      "path": "ex-document.ts",
+      "bytes": 3422,
+      "sha256": "99f1d0167af1d0f010d5fa0bec25f2bfa7c909884c1b4994186e79b90e69aa3b"
+    },
+    {
+      "path": "expressway/README.md",
+      "bytes": 2783,
+      "sha256": "a8ec41b3174a12edb4881d9d908c43190653961b2b7745e10c7873ba248499fa"
+    },
+    {
+      "path": "expressway/document.json",
+      "bytes": 2231871,
+      "sha256": "82d2db703fd5bf46d0ba8c6893bf752afd203b24406cb5eed8d7dec7645c5857"
+    },
+    {
+      "path": "expressway/document.receipt.json",
+      "bytes": 854,
+      "sha256": "7ab35a1a96917a04837b3d32451f92933aefc56b14754d68dd560b7837528e7a"
+    },
+    {
+      "path": "inspect-campaign.ts",
+      "bytes": 8456,
+      "sha256": "88447147b42ea60432d9d3ee73ae2a07840c8bcae2e0f68f8818c7721f659f28"
+    },
+    {
+      "path": "inspect-duplicates.ts",
+      "bytes": 1552,
+      "sha256": "b209267f6ee3acd47fa5cc3a3a269b7b39b6d4fe9dd2b0864af6570614079b97"
+    },
+    {
+      "path": "inspect-history.ts",
+      "bytes": 3001,
+      "sha256": "9290035fbfb2291b3ec9f083dc0ea1bca2990cb84afa9f20a2dc538de3c647dc"
+    },
+    {
+      "path": "plan.md",
+      "bytes": 3349,
+      "sha256": "6ad4fbad95b4be61401d3468200aa40d07bd094458ab1efe8ebabd1ee14afe05"
+    }
+  ],
+  "message_en": "Checksums cover selected published research files, excluding this manifest itself. Local originals have a separate inventory; presence of a hash is not publication of those bytes.",
+  "message_ko": "이 목록 자체를 제외한 선별 게시 파일의 해시입니다. 로컬 원문은 별도 목록이며 해시 기재가 원문 바이트 게시를 뜻하지 않습니다."
+}

@@ -1,0 +1,2 @@
+First strict inspector compile reported TS2365 on nullable timestamp minimum/maximum comparisons. Compilation stopped before inspection. Replaced the compact nullable ternaries with an explicit timestamp list and sorted boundaries. The following compile/inspection is the single repaired attempt. Captures are unchanged.
+첫 엄격 검사기 컴파일의 nullable 시각 비교 형식 오류로 실행 전에 중단했습니다. 시각 목록·정렬 경계로 명확하게 바꾼 뒤 한 번 수정 검사를 하며 수집 원문은 유지합니다.

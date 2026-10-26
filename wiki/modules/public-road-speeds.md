@@ -42,3 +42,9 @@ bind-nodes는 별도 공식 근거를 요구합니다. 최신 전국 지형과 �
 Supersedes the development status above: fresh clean whole462/462, Node22 full369/369, current-media fingerprint/hashes, independent originals/restoration and actual new-graph EN/KO/390px passed. Actual public data:31/79 edges from11 provider links;2119m route,84.31% native partial-length coverage. Actual refresh invalidation/recalculation and owned cleanup are retained. [Final local report](../../research/pilot/2026-10-26-public-speeds/report.md). Authorized branch delivery was verified; no deployment or new main merge.
 
 위 개발 상태 이후 새 전체462개·전체369개·미디어 지문/해시·원문/복원·실제 새 지도 한영390픽셀을 수용했습니다.11제공 링크→31/79구간·2119m/84.31%·실제 갱신/재계산·소유 정리를 보존합니다. 승인된 브랜치 전달을 확인했으며 배포·새 main 병합은 없습니다.
+
+## 2026-10-26 additional-source research / 추가 출처 조사 도구
+
+[Standalone TypeScript acquisition](../../research/public-road-speeds/2026-10-26-additional-sources/README.md) now captures four anonymous official websites, validates the published EX public-demo JSON and inspects local historical XLSX. It is outside `tools/public_*`, native traffic artifacts, source authority and product UI. All new normalized observations have `routing_eligible:false`; missing original timestamps are never replaced by retrieval time. The prior ITS-only runtime/media fingerprint is unchanged. Focused parser tests16/16, seven-file strict build, independent source-value/hash/time inspections and existing media check passed; this is **not a new full-navigation acceptance run**. [Key guide](../../docs/39-public-traffic-api-keys.md).
+
+독립 TypeScript 조사 도구로 네 공개 웹·도로공사 공개 예제 JSON·로컬 이력을 수집/검사합니다. 기존 실행·서명·UI 코드는 바꾸지 않았고 새 자료는 모두 경로 적용 불가입니다. 원시각 누락을 조회시각으로 채우지 않으며 집중16개·조사 전체 엄격 빌드·원문 감사·기존 영상 지문을 통과했습니다. 이를 새 전체 내비게이션 수용으로 세지 않습니다.

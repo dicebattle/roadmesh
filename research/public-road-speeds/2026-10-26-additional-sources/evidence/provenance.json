@@ -1,0 +1,46 @@
+{
+  "captured_date_kst": "2026-10-26",
+  "base_commit": "b427ecc44d27b3166a77f46f3c389bf756f24bb7",
+  "branch": "feat/public-road-speeds",
+  "design_implementation_review": "main Sol",
+  "navigation_runtime_changed": false,
+  "prior_accepted_runtime_fingerprint": "84395cf3393b71677b2268d1ed1dcfbb57f653703fd3c273fb060501b8921f3d",
+  "source_files": [
+    {
+      "path": "research/public-road-speeds/2026-10-26-additional-sources/collector.test.ts",
+      "sha256": "dbf9799b1e2c1d48100ebc03aa2bb83c8d1ffe40b844289daa2bc35f8219923d"
+    },
+    {
+      "path": "research/public-road-speeds/2026-10-26-additional-sources/collector.ts",
+      "sha256": "6421f448c9867b4980597d3a8f92ea80a08c77d87b4c3ee37cf5b66249b94707"
+    },
+    {
+      "path": "research/public-road-speeds/2026-10-26-additional-sources/ex-document.test.ts",
+      "sha256": "3388c3c020f6911654f82baa69dfb8a269f95008dd8a3432d659b60d78f37fc9"
+    },
+    {
+      "path": "research/public-road-speeds/2026-10-26-additional-sources/ex-document.ts",
+      "sha256": "99f1d0167af1d0f010d5fa0bec25f2bfa7c909884c1b4994186e79b90e69aa3b"
+    },
+    {
+      "path": "research/public-road-speeds/2026-10-26-additional-sources/inspect-campaign.ts",
+      "sha256": "88447147b42ea60432d9d3ee73ae2a07840c8bcae2e0f68f8818c7721f659f28"
+    },
+    {
+      "path": "research/public-road-speeds/2026-10-26-additional-sources/inspect-duplicates.ts",
+      "sha256": "b209267f6ee3acd47fa5cc3a3a269b7b39b6d4fe9dd2b0864af6570614079b97"
+    },
+    {
+      "path": "research/public-road-speeds/2026-10-26-additional-sources/inspect-history.ts",
+      "sha256": "9290035fbfb2291b3ec9f083dc0ea1bca2990cb84afa9f20a2dc538de3c647dc"
+    }
+  ],
+  "local_root": "data/additional-public-sources-20261026",
+  "published_ex_document_sha256": "82d2db703fd5bf46d0ba8c6893bf752afd203b24406cb5eed8d7dec7645c5857",
+  "local_history_sha256": "8a6d1577c75c55fe8957a76ed1e3e7091cfef7d41daebd6cb5cb50dbf742b818",
+  "new_sources_routing_eligible": false,
+  "private_credentials_used": false,
+  "new_account_or_key_application_submitted": false,
+  "message_en": "Capture and audit used the research source bytes hashed here on the stated base. New data does not alter the prior accepted ITS-only runtime. Website originals/history remain local; only selected EX numeric data, counts and provenance are published.",
+  "message_ko": "표시한 기준 커밋에서 조사 소스·원문 해시를 보존했습니다. 새 자료는 기존 ITS 실행에 반영하지 않으며 웹 원문·이력은 로컬, 선별 도로공사 수치·집계·근거만 게시합니다."
+}

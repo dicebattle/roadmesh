@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "sources": [
+    {
+      "source": "topis",
+      "rows": 21170,
+      "distinct_record_ids": 6082,
+      "distinct_id_direction_pairs": 7715,
+      "repeated_pair_rows": 13455,
+      "pairs_with_different_speeds": 3055
+    },
+    {
+      "source": "gyeonggi",
+      "rows": 2744,
+      "distinct_record_ids": 2744,
+      "distinct_id_direction_pairs": 2744,
+      "repeated_pair_rows": 0,
+      "pairs_with_different_speeds": 0
+    },
+    {
+      "source": "utic",
+      "rows": 1781,
+      "distinct_record_ids": 1781,
+      "distinct_id_direction_pairs": 1781,
+      "repeated_pair_rows": 0,
+      "pairs_with_different_speeds": 0
+    },
+    {
+      "source": "daegu",
+      "rows": 345,
+      "distinct_record_ids": 345,
+      "distinct_id_direction_pairs": 345,
+      "repeated_pair_rows": 0,
+      "pairs_with_different_speeds": 0
+    }
+  ],
+  "message_en": "Counts are provider-local; overlapping road axes, relative axis directions and staggered captures must not be merged by keeping an arbitrary last speed. No unique metropolitan length denominator is available.",
+  "message_ko": "출처별 식별자 수이며 겹치는 도로 축·축 기준 방향·시간이 다른 조회를 마지막 속도로 임의 병합하지 않습니다. 수도권 전체 길이 분모는 없습니다."
+}
