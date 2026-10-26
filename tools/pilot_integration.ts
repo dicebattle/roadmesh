@@ -537,6 +537,14 @@ export async function runPilotIntegration(
     data.stages.push({id:"public-speeds",name_en:"Public-source native refresh, expiry, recovery and durable withdrawal",name_ko:"공공 출처 엔진 갱신·만료·복구·영속 철회",
       status:"PASS",evidence_path:"public-speeds/manifest.json",duration_ms:performance.now()-publicStarted});
     if(Number(data.assertions.length)!==462||data.assertions.some(a=>a.status!=="PASS"))throw Error("All462 cases required / 전체462개 통과 필요");
+    const regionalStarted=performance.now();
+    const regionalPublic=await runPublicSpeedChecks(join(output,"seoul/graph"),join(output,"traffic/bundle"),join(output,"regional-public-speeds"),true);
+    verifyRegionalChild(join(output,"regional-public-speeds"),verified,data.graph_id);
+    requirePublicSpeedCases(regionalPublic.assertions,true);
+    data.assertions.push(...regionalPublic.assertions.map(a=>({...a,evidence_path:"regional-public-speeds/"+a.evidence_path})));
+    data.stages.push({id:"regional-public-speeds",name_en:"Regional public-source native lifecycle and durable acceptance",
+      name_ko:"지역 공공 출처 엔진 수명·영속 수용",status:"PASS",evidence_path:"regional-public-speeds/manifest.json",duration_ms:performance.now()-regionalStarted});
+    if(Number(data.assertions.length)!==486||data.assertions.some(a=>a.status!=="PASS"))throw Error("All486 cases required / 전체486개 통과 필요");
     data.summary.assertions_passed = data.assertions.filter(
       (a) => a.status === "PASS",
     ).length;
@@ -625,6 +633,8 @@ export async function runPilotIntegration(
     "client/manifest.json",
     "scenarios/manifest.json",
     "cloudflare/manifest.json",
+    "public-speeds/manifest.json",
+    "regional-public-speeds/manifest.json",
     "lifecycle/cleanup.json",
     "report-data.json",
     "report.html",

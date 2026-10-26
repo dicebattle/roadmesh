@@ -4,7 +4,7 @@ import { CompactSign, compactVerify, importJWK, type JWK } from "jose";
 import { canonical, parseJson, record, sha256 } from "./shared.js";
 import { PublicSpeedError, PUBLIC_SPEED_MAX_AGE_MS, PUBLIC_SPEED_POLICY, publicTime,
   type PublicSpeedBatch } from "./public_speed_source.js";
-import { matchesPublicMappingNodes, type PublicRoadMapping } from "./public_speed_geometry.js";
+import { matchesPublicMappingNodes, publicMappingCandidates, type PublicRoadMapping } from "./public_speed_geometry.js";
 import type { CatalogEdge } from "./aggregation_types.js";
 
 export interface PublicTrafficEntry {
@@ -19,10 +19,10 @@ export interface PublicTrafficEntry {
   valid_until: string;
 }
 export interface PublicTrafficSnapshot {
-  schema_version: "public-traffic-0.1";
+  schema_version: "public-traffic-0.1" | "public-traffic-0.2";
   source_class: "PUBLIC_AGENCY";
-  provider: "kr-its";
-  policy: typeof PUBLIC_SPEED_POLICY;
+  provider: "kr-its" | "kr-regional";
+  policy: typeof PUBLIC_SPEED_POLICY | "kr-regional-v1";
   publisher_id: string;
   graph_id: string;
   mapping_sha256: string;
@@ -45,9 +45,9 @@ export interface PublicTrafficSnapshot {
   entries: PublicTrafficEntry[];
 }
 export interface PublicTrafficManifest {
-  schema_version: "public-traffic-0.1";
+  schema_version: "public-traffic-0.1" | "public-traffic-0.2";
   source_class: "PUBLIC_AGENCY";
-  provider: "kr-its";
+  provider: "kr-its" | "kr-regional";
   publisher_id: string;
   graph_id: string;
   mapping_sha256: string;
@@ -90,9 +90,15 @@ export function buildPublicTrafficSnapshot(
 ): PublicTrafficSnapshot | null {
   identifier(publisher_id);
   const now = publicTime(now_utc), retrieved = publicTime(batch.retrieved_at);
-  if (batch.provider !== "kr-its" || batch.source_class !== "PUBLIC_AGENCY" || batch.policy !== PUBLIC_SPEED_POLICY ||
-      batch.schema_version !== "public-source-0.1" || retrieved > now || !nonnegative(sequence) || sequence < 1 ||
-      mapping.schema_version !== "kr-directed-mapping-0.1" || mapping.policy !== "kr-directed-envelope-v1") reject("INVALID_SOURCE_BINDING");
+  const regional = batch.provider === "kr-regional";
+  const binding = regional
+    ? batch.schema_version === "public-source-0.2" && batch.policy === "kr-regional-v1" &&
+      batch.endpoint === "regional-captured-sources-v1" && mapping.schema_version === "kr-directed-mapping-0.2" &&
+      mapping.policy === "kr-regional-envelope-v1"
+    : batch.provider === "kr-its" && batch.schema_version === "public-source-0.1" && batch.policy === PUBLIC_SPEED_POLICY &&
+      mapping.schema_version === "kr-directed-mapping-0.1" && mapping.policy === "kr-directed-envelope-v1";
+  if (!binding || batch.source_class !== "PUBLIC_AGENCY" || retrieved > now || !nonnegative(sequence) || sequence < 1)
+    reject("INVALID_SOURCE_BINDING");
   hash(mapping.graph_id); hash(mapping.geometry_sha256); hash(batch.raw_sha256);
   const entries: PublicTrafficEntry[] = [];
   const coverage: PublicTrafficSnapshot["coverage"] = {
@@ -103,7 +109,18 @@ export function buildPublicTrafficSnapshot(
   const observations = new Map(batch.observations.map(o => [o.link_id, o]));
   if (observations.size !== batch.observations.length ||
       new Set(mapping.entries.map(e => e.edge_id)).size !== mapping.entries.length) reject("DUPLICATE_PUBLIC_EDGE");
-  for (const edge of mapping.entries) {
+  for (const primary of mapping.entries) {
+    // Prefer the first verified, still-valid regional alternative. Expired detector observations
+    // may fall back to a fresh service-link observation without extending either original time.
+    // 검지기 만료 뒤 원시각을 유지한 유효 서비스 링크로 복귀할 수 있습니다.
+    const edge = regional ? publicMappingCandidates(mapping, primary.edge_id).find(e => {
+      const o = observations.get(e.link_id);
+      return o?.status === "LIVE" && o.speed_mps !== null && o.observed_at !== null && o.valid_until !== null &&
+        Number.isFinite(o.speed_mps) && o.speed_mps > 0 && o.speed_mps <= 70 &&
+        publicTime(o.observed_at) <= retrieved + 30_000 && now < publicTime(o.valid_until) &&
+        publicTime(o.valid_until) === publicTime(o.observed_at) + PUBLIC_SPEED_MAX_AGE_MS &&
+        matchesPublicMappingNodes(mapping, e, o.start_node_id, o.end_node_id);
+    }) ?? primary : primary;
     const o = observations.get(edge.link_id);
     if (!o) { coverage.missing_observations++; continue; }
     if (!matchesPublicMappingNodes(mapping, edge, o.start_node_id, o.end_node_id)) {
@@ -123,8 +140,8 @@ export function buildPublicTrafficSnapshot(
   if (!entries.length) return null;
   entries.sort((a, b) => a.edge_id.localeCompare(b.edge_id));
   coverage.live_edges = entries.length;
-  return {schema_version: "public-traffic-0.1", source_class: "PUBLIC_AGENCY", provider: "kr-its",
-    policy: PUBLIC_SPEED_POLICY, publisher_id, graph_id: mapping.graph_id,
+  return {schema_version: regional ? "public-traffic-0.2" : "public-traffic-0.1", source_class: "PUBLIC_AGENCY", provider: batch.provider,
+    policy: batch.policy, publisher_id, graph_id: mapping.graph_id,
     mapping_sha256: sha256(canonical(mapping)), geometry_sha256: mapping.geometry_sha256, raw_sha256: batch.raw_sha256,
     sequence, retrieved_at: batch.retrieved_at, published_at: now_utc,
     valid_until: new Date(Math.min(...entries.map(e => publicTime(e.valid_until)))).toISOString(), coverage, entries};
@@ -146,8 +163,9 @@ export function readPublicTrafficArtifact(
   try { parsed = parseJson(artifact); } catch { reject("INVALID_PUBLIC_JSON"); }
   record(parsed, "public traffic", ["schema_version", "source_class", "provider", "policy", "publisher_id", "graph_id",
     "mapping_sha256", "geometry_sha256", "raw_sha256", "sequence", "retrieved_at", "published_at", "valid_until", "coverage", "entries"]);
-  if (parsed.schema_version !== "public-traffic-0.1" || parsed.source_class !== "PUBLIC_AGENCY" ||
-      parsed.provider !== "kr-its" || parsed.policy !== PUBLIC_SPEED_POLICY) reject("PUBLIC_SOURCE_MISMATCH");
+  const regional = parsed.schema_version === "public-traffic-0.2" && parsed.provider === "kr-regional" && parsed.policy === "kr-regional-v1";
+  const legacy = parsed.schema_version === "public-traffic-0.1" && parsed.provider === "kr-its" && parsed.policy === PUBLIC_SPEED_POLICY;
+  if ((!regional && !legacy) || parsed.source_class !== "PUBLIC_AGENCY") reject("PUBLIC_SOURCE_MISMATCH");
   identifier(parsed.publisher_id);
   for (const h of [parsed.graph_id, parsed.mapping_sha256, parsed.geometry_sha256, parsed.raw_sha256]) hash(h);
   if (!nonnegative(parsed.sequence) || parsed.sequence < 1) reject("INVALID_PUBLIC_SEQUENCE");
@@ -172,7 +190,10 @@ export function readPublicTrafficArtifact(
     if (typeof e.edge_id !== "string" || !/^\d+$/.test(e.edge_id) || !byId.has(e.edge_id) ||
         seen.has(e.edge_id) || (previous && previous.localeCompare(e.edge_id) >= 0) ||
         typeof e.forward !== "boolean" || byId.get(e.edge_id)!.forward !== e.forward ||
-        !sourceId(e.link_id) || !sourceId(e.start_node_id) || !sourceId(e.end_node_id) || e.start_node_id === e.end_node_id ||
+        !(regional ? typeof e.link_id === "string" && /^(?:gits|ex):[A-Za-z0-9_-]{1,64}$/.test(e.link_id) &&
+          typeof e.start_node_id === "string" && /^geometry:[a-f0-9]{64}:start$/.test(e.start_node_id) &&
+          typeof e.end_node_id === "string" && /^geometry:[a-f0-9]{64}:end$/.test(e.end_node_id)
+          : sourceId(e.link_id) && sourceId(e.start_node_id) && sourceId(e.end_node_id)) || e.start_node_id === e.end_node_id ||
         e.status !== "LIVE" || typeof e.speed_mps !== "number" || !Number.isFinite(e.speed_mps) ||
         e.speed_mps <= 0 || e.speed_mps > 70 || typeof e.observed_at !== "string" || typeof e.valid_until !== "string") reject("INVALID_PUBLIC_ENTRY");
     seen.add(e.edge_id); previous = e.edge_id;
@@ -223,14 +244,16 @@ export async function verifyPublicTraffic(
     reject("PUBLIC_SIGNATURE_INVALID");
   }
   const snapshot = readPublicTrafficArtifact(manifest, artifact, catalog);
+  if ((snapshot.provider === "kr-regional") !== (mapping.policy === "kr-regional-envelope-v1")) reject("PUBLIC_SOURCE_MISMATCH");
   if (snapshot.publisher_id !== trust.publisher_id || snapshot.graph_id !== trust.graph_id ||
       snapshot.mapping_sha256 !== trust.mapping_sha256 || snapshot.geometry_sha256 !== mapping.geometry_sha256 ||
       publicTime(snapshot.published_at) > now || now >= publicTime(snapshot.valid_until)) reject("PUBLIC_SCOPE_OR_TIME");
   const mapped = new Map(mapping.entries.map(e => [e.edge_id, e]));
   for (const e of snapshot.entries) {
     const m = mapped.get(e.edge_id);
-    if (!m || e.forward !== m.forward || e.link_id !== m.link_id ||
-        !matchesPublicMappingNodes(mapping, m, e.start_node_id, e.end_node_id)) reject("PUBLIC_MAPPING_MISMATCH");
+    if (!m || !publicMappingCandidates(mapping, e.edge_id).some(candidate => e.forward === candidate.forward &&
+        e.link_id === candidate.link_id && matchesPublicMappingNodes(mapping, candidate, e.start_node_id, e.end_node_id)))
+      reject("PUBLIC_MAPPING_MISMATCH");
   }
   return {kind: "PUBLIC_AGENCY", manifest, snapshot, artifact, jws, kid: trust.kid};
 }

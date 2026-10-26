@@ -29,6 +29,17 @@ test("public server/browser validate the same current source metadata / 서버·
     assert.throws(() => validateClientContext(corrupt, graph)); assert.equal(validContext(corrupt), false);
   }
 });
+test("Regional metadata exposes real source counts and demo access / 지역 출처 개수·공개 예제 구분", () => {
+  const c=context(),v=c.public_traffic!;
+  v.provider="kr-regional";v.sources=[
+    {provider:"kr-gits",live_edges:2,access:"ANONYMOUS_WEBSITE",observed_from:v.observed_from,observed_until:v.observed_until},
+    {provider:"kr-ex",live_edges:1,access:"OFFICIAL_PUBLIC_DEMO_BROWSER_DOCUMENT",observed_from:v.observed_from,observed_until:v.observed_until}];
+  assert.doesNotThrow(()=>validateClientContext(c,graph));assert.equal(validContext(c),true);
+  const wrongCount=structuredClone(c);wrongCount.public_traffic!.sources![0]!.live_edges=3;
+  assert.throws(()=>validateClientContext(wrongCount,graph));
+  const hiddenDemo=structuredClone(c);(hiddenDemo.public_traffic!.sources![1] as unknown as {access:string}).access="ANONYMOUS_WEBSITE";
+  assert.throws(()=>validateClientContext(hiddenDemo,graph));
+});
 test("coverage counts, future source time and made-up expiry cannot authorize public traffic / 적용 수·미래 시각·수명 위조 승인 금지", () => {
   const c = context(), metadata = c.public_traffic!;
   const corruptions = [{...metadata, live_edges: 80}, {...metadata, mapped_edges: -1},

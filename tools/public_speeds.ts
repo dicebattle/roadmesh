@@ -22,7 +22,7 @@ export async function publicSpeedsMain(argv: string[]): Promise<void> {
     map: ["--geometry", "--graph", "--output"],
     "provider-map": ["--graph", "--batch", "--output"],
     "bind-nodes": ["--geometry", "--mapping", "--batch", "--proofs", "--output"],
-    serve: ["--graph", "--bundle", "--mapping", "--state", "--output", "--bounds", "--lifetime-ms", "--capture-evidence"],
+    serve: ["--graph", "--bundle", "--mapping", "--state", "--output", "--bounds", "--lifetime-ms", "--capture-evidence", "--source", "--regional-input"],
   };
   for (let i = 1; i < argv.length; i += 2) {
     const k = argv[i]!, v = argv[i + 1];
@@ -43,9 +43,13 @@ export async function publicSpeedsMain(argv: string[]): Promise<void> {
     try {
       const evidence = options.get("--capture-evidence");
       if (evidence !== undefined && !["true", "false"].includes(evidence)) throw new PublicSpeedError("INVALID_ARGUMENTS");
+      const source=options.get("--source");
+      if(source!==undefined && source!=="kr-its" && source!=="kr-regional")throw new PublicSpeedError("INVALID_ARGUMENTS");
       runtime = await PublicSpeedRuntime.start({graph_directory: resolve(required("--graph")), bundle_directory: resolve(required("--bundle")),
         mapping_path: resolve(required("--mapping")), state_directory: resolve(required("--state")), output_directory: output,
         assets_directory: resolve("dist/web/pilot"), bounds: bounds(),
+        ...(source ? {source} : {}),
+        ...(options.has("--regional-input") ? {regional_input_path:resolve(required("--regional-input"))} : {}),
         ...(options.has("--lifetime-ms") ? {lifetime_ms: Number(options.get("--lifetime-ms"))} : {}), capture_evidence: evidence === "true"}, {}, abort.signal);
       console.log(JSON.stringify({origin: runtime.origin, source_class: "PUBLIC_AGENCY", graph_id: runtime.bootstrap.graph_id,
         message_en: "Local public-speed navigation is ready; actual coverage and source times appear in the client.",

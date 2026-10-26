@@ -1,0 +1,211 @@
+{
+  "fixture_id": "seoul-regional-roads-20261026-v1",
+  "message_en": "Authored endpoints on twelve predeclared provider corridors inside the pinned Seoul extract; no real user GPS or metropolitan completeness claim.",
+  "message_ko": "고정 서울 추출 안의 미리 지정한12개 제공자 도로에 자체 시험점을 정했으며 실제 사용자GPS·수도권 전체를 주장하지 않습니다.",
+  "scenes": [
+    {
+      "route_id": "regional-olympic-west",
+      "name_en": "Olympic-daero westbound",
+      "name_ko": "올림픽대로 서쪽",
+      "selection_basis": "PREDECLARED_PROVIDER_CORRIDOR_NOT_ETA_RESULT",
+      "provider_geometry_reference": "6211006400",
+      "locations": [
+        {
+          "lon": 127.0234051,
+          "lat": 37.5309878
+        },
+        {
+          "lon": 127.0169988,
+          "lat": 37.5245692
+        }
+      ]
+    },
+    {
+      "route_id": "regional-olympic-east",
+      "name_en": "Olympic-daero eastbound",
+      "name_ko": "올림픽대로 동쪽",
+      "selection_basis": "PREDECLARED_PROVIDER_CORRIDOR_NOT_ETA_RESULT",
+      "provider_geometry_reference": "6211006500",
+      "locations": [
+        {
+          "lon": 127.0171667,
+          "lat": 37.524398
+        },
+        {
+          "lon": 127.0235956,
+          "lat": 37.5308192
+        }
+      ]
+    },
+    {
+      "route_id": "regional-gangbyeon-east",
+      "name_en": "Gangbyeonbuk-ro eastbound",
+      "name_ko": "강변북로 동쪽",
+      "selection_basis": "PREDECLARED_PROVIDER_CORRIDOR_NOT_ETA_RESULT",
+      "provider_geometry_reference": "6021001600",
+      "locations": [
+        {
+          "lon": 127.0117792,
+          "lat": 37.5303953
+        },
+        {
+          "lon": 127.0176086,
+          "lat": 37.5388641
+        }
+      ]
+    },
+    {
+      "route_id": "regional-gangbyeon-west",
+      "name_en": "Gangbyeonbuk-ro westbound",
+      "name_ko": "강변북로 서쪽",
+      "selection_basis": "PREDECLARED_PROVIDER_CORRIDOR_NOT_ETA_RESULT",
+      "provider_geometry_reference": "6021001500",
+      "locations": [
+        {
+          "lon": 127.0174687,
+          "lat": 37.5390413
+        },
+        {
+          "lon": 127.0116233,
+          "lat": 37.530579
+        }
+      ]
+    },
+    {
+      "route_id": "regional-dongbu-north",
+      "name_en": "Dongbu Expressway northbound",
+      "name_ko": "동부간선 북쪽",
+      "selection_basis": "PREDECLARED_PROVIDER_CORRIDOR_NOT_ETA_RESULT",
+      "provider_geometry_reference": "6104005900",
+      "locations": [
+        {
+          "lon": 127.0509886,
+          "lat": 37.6770627
+        },
+        {
+          "lon": 127.0521273,
+          "lat": 37.6634497
+        }
+      ]
+    },
+    {
+      "route_id": "regional-dongbu-south",
+      "name_en": "Dongbu Expressway southbound",
+      "name_ko": "동부간선 남쪽",
+      "selection_basis": "PREDECLARED_PROVIDER_CORRIDOR_NOT_ETA_RESULT",
+      "provider_geometry_reference": "6104004800",
+      "locations": [
+        {
+          "lon": 127.0523991,
+          "lat": 37.663464
+        },
+        {
+          "lon": 127.051258,
+          "lat": 37.6770229
+        }
+      ]
+    },
+    {
+      "route_id": "regional-gyeongbu-south",
+      "name_en": "Gyeongbu southbound, Seoul to Seongnam",
+      "name_ko": "경부 서울에서 성남 방향",
+      "selection_basis": "PREDECLARED_PROVIDER_CORRIDOR_NOT_ETA_RESULT",
+      "provider_geometry_reference": "7041002901",
+      "locations": [
+        {
+          "lon": 127.0452278,
+          "lat": 37.4577518
+        },
+        {
+          "lon": 127.0576636,
+          "lat": 37.4437796
+        }
+      ]
+    },
+    {
+      "route_id": "regional-gyeongbu-north",
+      "name_en": "Gyeongbu northbound, Seongnam to Seoul",
+      "name_ko": "경부 성남에서 서울 방향",
+      "selection_basis": "PREDECLARED_PROVIDER_CORRIDOR_NOT_ETA_RESULT",
+      "provider_geometry_reference": "6211000701",
+      "locations": [
+        {
+          "lon": 127.0575906,
+          "lat": 37.4443141
+        },
+        {
+          "lon": 127.0421188,
+          "lat": 37.4613962
+        }
+      ]
+    },
+    {
+      "route_id": "regional-ring-guri-north",
+      "name_en": "Ring road, Namyangju to Guri",
+      "name_ko": "수도권제1순환 남양주에서 구리",
+      "selection_basis": "PREDECLARED_PROVIDER_CORRIDOR_NOT_ETA_RESULT",
+      "provider_geometry_reference": "7211005201",
+      "locations": [
+        {
+          "lon": 127.1532963,
+          "lat": 37.6019285
+        },
+        {
+          "lon": 127.1422782,
+          "lat": 37.6135335
+        }
+      ]
+    },
+    {
+      "route_id": "regional-ring-guri-south",
+      "name_en": "Ring road, Guri to Namyangju",
+      "name_ko": "수도권제1순환 구리에서 남양주",
+      "selection_basis": "PREDECLARED_PROVIDER_CORRIDOR_NOT_ETA_RESULT",
+      "provider_geometry_reference": "7211005101",
+      "locations": [
+        {
+          "lon": 127.1420425,
+          "lat": 37.6133798
+        },
+        {
+          "lon": 127.1535113,
+          "lat": 37.6013416
+        }
+      ]
+    },
+    {
+      "route_id": "regional-ring-goyang-west",
+      "name_en": "Ring road, Tongillo to Goyang",
+      "name_ko": "수도권제1순환 통일로에서 고양",
+      "selection_basis": "PREDECLARED_PROVIDER_CORRIDOR_NOT_ETA_RESULT",
+      "provider_geometry_reference": "2180292A00",
+      "locations": [
+        {
+          "lon": 126.8822503,
+          "lat": 37.6744224
+        },
+        {
+          "lon": 126.8572192,
+          "lat": 37.6674575
+        }
+      ]
+    },
+    {
+      "route_id": "regional-ring-goyang-east",
+      "name_en": "Ring road, Goyang to Tongillo",
+      "name_ko": "수도권제1순환 고양에서 통일로",
+      "selection_basis": "PREDECLARED_PROVIDER_CORRIDOR_NOT_ETA_RESULT",
+      "provider_geometry_reference": "2180302A00",
+      "locations": [
+        {
+          "lon": 126.8571894,
+          "lat": 37.6672421
+        },
+        {
+          "lon": 126.8822949,
+          "lat": 37.6742009
+        }
+      ]
+    }
+  ]
+}

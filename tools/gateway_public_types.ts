@@ -43,7 +43,7 @@ export interface GatewayFreshness {
 }
 
 export interface PublicTrafficContext {
-  provider: "kr-its";
+  provider: "kr-its" | "kr-regional";
   source_state: "CURRENT" | "EXPIRED" | "UNAVAILABLE" | "NO_MAPPED_SPEEDS";
   refresh_state: "OK" | "FAILED" | "WAITING";
   retrieved_at: string | null;
@@ -52,6 +52,9 @@ export interface PublicTrafficContext {
   graph_edges: number;
   mapped_edges: number;
   live_edges: number;
+  sources?: Array<{provider: "kr-gits" | "kr-ex"; live_edges: number;
+    access: "ANONYMOUS_WEBSITE" | "OFFICIAL_PUBLIC_DEMO_BROWSER_DOCUMENT";
+    observed_from: string | null; observed_until: string | null}>;
 }
 
 export interface GatewayRouteContext extends GatewayFreshness {

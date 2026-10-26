@@ -1,5 +1,6 @@
 import {
   closeSync,
+  existsSync,
   lstatSync,
   openSync,
   readFileSync,
@@ -27,9 +28,26 @@ import {
 } from "./graph_evidence.js";
 import { bundlePath } from "./graph_bundle.js";
 import type { SeoulGraphBundle } from "./seoul_types.js";
+import { geodesicSphere } from "./geodesy.js";
 
 export const SOURCE_LOCK = join(ROOT, "fixtures/seoul/source.lock.json");
 export const SCENES = join(ROOT, "fixtures/seoul/scenes.json");
+export const REGIONAL_SCENES = join(ROOT, "fixtures/seoul/regional-scenes.json");
+/** Old three-scene bundles remain valid; extensions require the exact separate fixture bytes.
+ * 기존 세 장면 묶음은 유지하고 확장은 별도 고정 자료 바이트와 대조합니다. */
+export function seoulSceneInputs(directory: string): unknown[] {
+  const scenes = items(object(parseJson(readFileSync(join(directory,"scenes.json")))).scenes);
+  const extension = join(directory,"regional-scenes.json");
+  if (!existsSync(extension)) return scenes;
+  const raw = readFileSync(bundlePath(directory,"regional-scenes.json"));
+  if (sha256(raw) !== sha256(readFileSync(REGIONAL_SCENES)))
+    fail("regional scenes","regional inventory differs from fixed fixture","지역 시험 목록이 고정 자료와 다릅니다");
+  const extra = items(object(parseJson(raw)).scenes);
+  const all = [...scenes,...extra], ids = all.map(v => String(object(v).route_id));
+  if (ids.some(id => !/^[a-z0-9-]{1,80}$/.test(id)) || new Set(ids).size !== ids.length || extra.length > 32)
+    fail("regional scenes","invalid or repeated scene identity","잘못되거나 반복된 장면 식별자입니다");
+  return all;
+}
 export function fileSha256(path: string): string {
   const descriptor = openSync(path, "r"),
     hash = createHash("sha256"),
@@ -156,6 +174,7 @@ export function deriveScene(
 ): { route: SeoulGraphBundle["routes"][number]; edges: EdgeMapping[] } {
   const trip = object(object(routeValue).trip),
     legs = items(trip.legs);
+  const includeEndpoints = scene.inventory_policy === "regional-native-full-edges-v1";
   if (trip.status !== 0 || legs.length !== 1)
     fail(
       "route",
@@ -173,7 +192,7 @@ export function deriveScene(
         (value, axis) => Math.abs(value - shape[index]![axis]!) > 0.00000101,
       ),
     ) ||
-    rawEdges.length < 3
+    rawEdges.length < (includeEndpoints ? 1 : 3)
   )
     fail(
       "trace",
@@ -199,7 +218,8 @@ export function deriveScene(
         "지형 인덱스가 연속되지 않습니다",
       );
     previousIndex = edge.end_shape_index;
-    if (index === 0 || index === rawEdges.length - 1) continue;
+    const endpoint = index === 0 || index === rawEdges.length - 1;
+    if (!includeEndpoints && endpoint) continue;
     const mapping = all.find((item) => item.edge_id === String(edge.id));
     if (
       !mapping ||
@@ -216,7 +236,16 @@ export function deriveScene(
       edge.begin_shape_index,
       edge.end_shape_index + 1,
     );
-    if (!canonical(clipped).equals(canonical(mapping.directed_geometry)))
+    if (includeEndpoints && endpoint) {
+      const full = mapping.directed_geometry;
+      const projections = clipped.map(p => geodesicSphere.project(p,full));
+      const first = projections[0]!, last = projections.at(-1)!;
+      if (clipped.length < 2 || projections.some((p,i) => p.distance_m > 1 ||
+          (i > 0 && p.fraction < projections[i-1]!.fraction - 0.000001)) || last.fraction <= first.fraction ||
+          Math.abs((last.fraction-first.fraction)*geodesicSphere.length(full)-geodesicSphere.length(clipped)) > 1)
+        fail("trace","partial endpoint is not a directed subcurve of independently located full geometry",
+          "부분 끝점이 별도 조회한 전체 방향 지형의 일부로 확인되지 않습니다");
+    } else if (!canonical(clipped).equals(canonical(mapping.directed_geometry)))
       fail(
         "trace",
         "interior shape differs from located full geometry",
@@ -399,7 +428,7 @@ export function loadSeoulGraph(directory: string): SeoulGraphBundle {
     );
   const routes: SeoulGraphBundle["routes"] = [],
     edgeMap = new Map<string, EdgeMapping>();
-  const scenes = items(object(parseJson(read("scenes.json"))).scenes);
+  const scenes = seoulSceneInputs(directory);
   for (const item of scenes) {
     const scene = object(item),
       id = String(scene.route_id);
@@ -429,7 +458,7 @@ export function loadSeoulGraph(directory: string): SeoulGraphBundle {
         canonical(regionalTraceRequest(routeShape)),
       ) ||
       !canonical(parseJson(read(`locate-${id}.request.json`))).equals(
-        canonical(regionalLocateRequest(trace)),
+        canonical(regionalLocateRequest(trace,scene.inventory_policy === "regional-native-full-edges-v1")),
       )
     )
       fail(
@@ -519,11 +548,12 @@ export function regionalTraceRequest(shape: unknown): Record<string, unknown> {
 }
 export function regionalLocateRequest(
   traceValue: unknown,
+  includeEndpoints = false,
 ): Record<string, unknown> {
   const trace = object(traceValue),
     shape = decodeShape(trace.shape),
     edges = items(trace.edges);
-  const locations = edges.slice(1, -1).map((raw) => {
+  const locations = (includeEndpoints ? edges : edges.slice(1, -1)).map((raw) => {
     const edge = object(raw),
       begin = Number(edge.begin_shape_index),
       end = Number(edge.end_shape_index);

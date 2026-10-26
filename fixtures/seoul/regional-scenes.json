@@ -1,0 +1,271 @@
+{
+  "fixture_id": "seoul-regional-roads-20261026-v3",
+  "message_en": "Fixed twelve corridor endpoints; explicitly include partial endpoint edges only through independent native full-geometry lookup and directed subcurve validation. Prior interior-only failures are retained.",
+  "message_ko": "고정12개 도로 끝점을 유지하고 부분 끝 구간은 별도 엔진 전체 지형 조회·방향 부분곡선 검증을 거쳐 목록에 넣습니다. 이전 내부 구간 전용 실패는 보존합니다.",
+  "scenes": [
+    {
+      "route_id": "regional-olympic-west",
+      "name_en": "Olympic-daero westbound",
+      "name_ko": "올림픽대로 서쪽",
+      "selection_basis": "PREDECLARED_CORRIDOR_EXTENDED_FOR_COMPLETE_INTERIOR_NATIVE_EDGES_NOT_ETA",
+      "provider_geometry_reference": "6211006400",
+      "locations": [
+        {
+          "lon": 127.026541,
+          "lat": 37.5338208
+        },
+        {
+          "lon": 127.0112448,
+          "lat": 37.5193768
+        }
+      ],
+      "neighbour_geometry_references": [
+        "6221005600",
+        "6211005300"
+      ],
+      "inventory_policy": "regional-native-full-edges-v1"
+    },
+    {
+      "route_id": "regional-olympic-east",
+      "name_en": "Olympic-daero eastbound",
+      "name_ko": "올림픽대로 동쪽",
+      "selection_basis": "PREDECLARED_CORRIDOR_EXTENDED_FOR_COMPLETE_INTERIOR_NATIVE_EDGES_NOT_ETA",
+      "provider_geometry_reference": "6211006500",
+      "locations": [
+        {
+          "lon": 127.0113988,
+          "lat": 37.5191895
+        },
+        {
+          "lon": 127.0266668,
+          "lat": 37.5336281
+        }
+      ],
+      "neighbour_geometry_references": [
+        "6211005400",
+        "6221005700"
+      ],
+      "inventory_policy": "regional-native-full-edges-v1"
+    },
+    {
+      "route_id": "regional-gangbyeon-east",
+      "name_en": "Gangbyeonbuk-ro eastbound",
+      "name_ko": "강변북로 동쪽",
+      "selection_basis": "PREDECLARED_CORRIDOR_EXTENDED_FOR_COMPLETE_INTERIOR_NATIVE_EDGES_NOT_ETA",
+      "provider_geometry_reference": "6021001600",
+      "locations": [
+        {
+          "lon": 127.0052649,
+          "lat": 37.5267575
+        },
+        {
+          "lon": 127.0215761,
+          "lat": 37.5416893
+        }
+      ],
+      "neighbour_geometry_references": [
+        "6021001000",
+        "6031001200"
+      ],
+      "inventory_policy": "regional-native-full-edges-v1"
+    },
+    {
+      "route_id": "regional-gangbyeon-west",
+      "name_en": "Gangbyeonbuk-ro westbound",
+      "name_ko": "강변북로 서쪽",
+      "selection_basis": "PREDECLARED_CORRIDOR_EXTENDED_FOR_COMPLETE_INTERIOR_NATIVE_EDGES_NOT_ETA",
+      "provider_geometry_reference": "6021001500",
+      "locations": [
+        {
+          "lon": 127.0214771,
+          "lat": 37.5419388
+        },
+        {
+          "lon": 127.0051364,
+          "lat": 37.5269551
+        }
+      ],
+      "neighbour_geometry_references": [
+        "6032001000",
+        "6021000900"
+      ],
+      "inventory_policy": "regional-native-full-edges-v1"
+    },
+    {
+      "route_id": "regional-dongbu-north",
+      "name_en": "Dongbu Expressway northbound",
+      "name_ko": "동부간선 북쪽",
+      "selection_basis": "PREDECLARED_CORRIDOR_EXTENDED_FOR_COMPLETE_INTERIOR_NATIVE_EDGES_NOT_ETA",
+      "provider_geometry_reference": "6104005900",
+      "locations": [
+        {
+          "lon": 127.0520646,
+          "lat": 37.6815866
+        },
+        {
+          "lon": 127.0531318,
+          "lat": 37.6591014
+        }
+      ],
+      "neighbour_geometry_references": [
+        "6101006700",
+        "6102004100"
+      ],
+      "inventory_policy": "regional-native-full-edges-v1"
+    },
+    {
+      "route_id": "regional-dongbu-south",
+      "name_en": "Dongbu Expressway southbound",
+      "name_ko": "동부간선 남쪽",
+      "selection_basis": "PREDECLARED_CORRIDOR_EXTENDED_FOR_COMPLETE_INTERIOR_NATIVE_EDGES_NOT_ETA",
+      "provider_geometry_reference": "6104004800",
+      "locations": [
+        {
+          "lon": 127.0534132,
+          "lat": 37.6591226
+        },
+        {
+          "lon": 127.0522852,
+          "lat": 37.6813536
+        }
+      ],
+      "neighbour_geometry_references": [
+        "6102003800",
+        "6101006800"
+      ],
+      "inventory_policy": "regional-native-full-edges-v1"
+    },
+    {
+      "route_id": "regional-gyeongbu-south",
+      "name_en": "Gyeongbu southbound, Seoul to Seongnam",
+      "name_ko": "경부 서울에서 성남 방향",
+      "selection_basis": "PREDECLARED_CORRIDOR_EXTENDED_FOR_COMPLETE_INTERIOR_NATIVE_EDGES_NOT_ETA",
+      "provider_geometry_reference": "7041002901",
+      "locations": [
+        {
+          "lon": 127.0425029,
+          "lat": 37.4606318
+        },
+        {
+          "lon": 127.0691811,
+          "lat": 37.43085
+        }
+      ],
+      "neighbour_geometry_references": [
+        "9000001033",
+        "7061011401"
+      ],
+      "inventory_policy": "regional-native-full-edges-v1"
+    },
+    {
+      "route_id": "regional-gyeongbu-north",
+      "name_en": "Gyeongbu northbound, Seongnam to Seoul",
+      "name_ko": "경부 성남에서 서울 방향",
+      "selection_basis": "PREDECLARED_CORRIDOR_EXTENDED_FOR_COMPLETE_INTERIOR_NATIVE_EDGES_NOT_ETA",
+      "provider_geometry_reference": "6211000701",
+      "locations": [
+        {
+          "lon": 127.0694263,
+          "lat": 37.4309526
+        },
+        {
+          "lon": 127.0347688,
+          "lat": 37.4691282
+        }
+      ],
+      "neighbour_geometry_references": [
+        "7061011501",
+        "6212002000"
+      ],
+      "inventory_policy": "regional-native-full-edges-v1"
+    },
+    {
+      "route_id": "regional-ring-guri-north",
+      "name_en": "Ring road, Namyangju to Guri",
+      "name_ko": "수도권제1순환 남양주에서 구리",
+      "selection_basis": "PREDECLARED_CORRIDOR_EXTENDED_FOR_COMPLETE_INTERIOR_NATIVE_EDGES_NOT_ETA",
+      "provider_geometry_reference": "7211005201",
+      "locations": [
+        {
+          "lon": 127.1563138,
+          "lat": 37.5973873
+        },
+        {
+          "lon": 127.1399648,
+          "lat": 37.6228817
+        }
+      ],
+      "neighbour_geometry_references": [
+        "7211002701",
+        "7211008800"
+      ],
+      "inventory_policy": "regional-native-full-edges-v1"
+    },
+    {
+      "route_id": "regional-ring-guri-south",
+      "name_en": "Ring road, Guri to Namyangju",
+      "name_ko": "수도권제1순환 구리에서 남양주",
+      "selection_basis": "PREDECLARED_CORRIDOR_EXTENDED_FOR_COMPLETE_INTERIOR_NATIVE_EDGES_NOT_ETA",
+      "provider_geometry_reference": "7211005101",
+      "locations": [
+        {
+          "lon": 127.1397062,
+          "lat": 37.6228043
+        },
+        {
+          "lon": 127.156192,
+          "lat": 37.5968768
+        }
+      ],
+      "neighbour_geometry_references": [
+        "7211008700",
+        "7211002801"
+      ],
+      "inventory_policy": "regional-native-full-edges-v1"
+    },
+    {
+      "route_id": "regional-ring-goyang-west",
+      "name_en": "Ring road, Tongillo to Goyang",
+      "name_ko": "수도권제1순환 통일로에서 고양",
+      "selection_basis": "PREDECLARED_CORRIDOR_EXTENDED_FOR_COMPLETE_INTERIOR_NATIVE_EDGES_NOT_ETA",
+      "provider_geometry_reference": "2180292A00",
+      "locations": [
+        {
+          "lon": 126.8960988,
+          "lat": 37.6733979
+        },
+        {
+          "lon": 126.8411557,
+          "lat": 37.669133
+        }
+      ],
+      "neighbour_geometry_references": [
+        "7011992005",
+        "2180291A00"
+      ],
+      "inventory_policy": "regional-native-full-edges-v1"
+    },
+    {
+      "route_id": "regional-ring-goyang-east",
+      "name_en": "Ring road, Goyang to Tongillo",
+      "name_ko": "수도권제1순환 고양에서 통일로",
+      "selection_basis": "PREDECLARED_CORRIDOR_EXTENDED_FOR_COMPLETE_INTERIOR_NATIVE_EDGES_NOT_ETA",
+      "provider_geometry_reference": "2180302A00",
+      "locations": [
+        {
+          "lon": 126.8412102,
+          "lat": 37.6689183
+        },
+        {
+          "lon": 126.8961846,
+          "lat": 37.6731756
+        }
+      ],
+      "neighbour_geometry_references": [
+        "2180301A00",
+        "7011991010"
+      ],
+      "inventory_policy": "regional-native-full-edges-v1"
+    }
+  ]
+}

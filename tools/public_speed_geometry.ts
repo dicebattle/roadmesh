@@ -173,15 +173,25 @@ export async function importOfficialRoadGeometry(
   return result;
 }
 
+export interface PublicMappingEntry {
+  edge_id: string; forward: boolean; link_id: string;
+  start_node_id: string; end_node_id: string; max_distance_m: number;
+  start_fraction: number; end_fraction: number;
+}
 export interface PublicRoadMapping {
-  schema_version: "kr-directed-mapping-0.1";
-  policy: "kr-directed-envelope-v1";
+  schema_version: "kr-directed-mapping-0.1" | "kr-directed-mapping-0.2";
+  policy: "kr-directed-envelope-v1" | "kr-regional-envelope-v1";
   graph_id: string;
   geometry_sha256: string;
   graph_edges_sha256: string;
-  entries: Array<{edge_id: string; forward: boolean; link_id: string;
-    start_node_id: string; end_node_id: string; max_distance_m: number;
-    start_fraction: number; end_fraction: number}>;
+  entries: PublicMappingEntry[];
+  /** Explicit regional alternatives; anchors are derived geometry references, not agency node IDs.
+   * 명시 지역 출처 후보이며 앵커는 검토 지형 참조이고 기관 노드 번호가 아닙니다. */
+  regional_alternatives?: PublicMappingEntry[];
+  regional_references?: Array<{link_id: string; provider: "kr-gits" | "kr-ex";
+    source_id: string; road_name: string; evidence_sha256: string;
+    start_anchor: string; end_anchor: string; route_no?: string; direction?: string;
+    conzone_id?: string; source_start_name?: string; source_end_name?: string; source_length_m?: number}>;
   excluded: Array<{edge_id: string; reason: "NO_MATCH" | "AMBIGUOUS" | "UNSUPPORTED"}>;
   provider_node_bindings?: Array<{
     link_id: string;
@@ -195,6 +205,12 @@ export interface PublicRoadMapping {
     evidence_sha256: string;
     max_distance_m: number;
   }>;
+}
+
+export function publicMappingCandidates(mapping: PublicRoadMapping, edge_id: string): PublicMappingEntry[] {
+  if (mapping.policy === "kr-regional-envelope-v1")
+    return (mapping.regional_alternatives ?? []).filter(e => e.edge_id === edge_id);
+  return mapping.entries.filter(e => e.edge_id === edge_id);
 }
 
 /** A provider may retain legacy junction IDs while publishing the current link ID.
@@ -274,6 +290,31 @@ export function matchesPublicMappingNodes(mapping: PublicRoadMapping,
 /** Whole directed edges must be covered by one unique source link. A midpoint hit
  * is insufficient; do not copy a component link's speed onto a merged service road.
  * 구간 전체를 유일한 공식 방향 링크가 덮어야 하며 중점 하나로 적용하지 않습니다. */
+/** Whole-edge geometry test shared by ITS and explicit regional references.
+ * ITS·지역 출처가 공유하는 전체 방향 구간 지형 검사입니다. */
+export function matchDirectedPublicCurve(edge: EdgeMapping, coordinates: number[][]): {
+  max_distance_m: number; start_fraction: number; end_fraction: number;
+} | null {
+  const line = edge.directed_geometry;
+  if (!edge.car_access || line.length < 2 || !line.every(coordinate) || coordinates.length < 2 ||
+      !coordinates.every(coordinate)) return null;
+  const length = geodesicSphere.length(line);
+  if (length < 15) return null;
+  const sampleCount = Math.ceil(length / 10) + 1;
+  const samples = Array.from({length: sampleCount}, (_, i) => geodesicSphere.position(line, length * i / (sampleCount - 1)));
+  const projections = samples.map(point => geodesicSphere.project(point, coordinates));
+  const max_distance_m = Math.max(...projections.map(p => p.distance_m));
+  const start = projections[0]!, end = projections.at(-1)!;
+  if (max_distance_m > 12 || end.fraction <= start.fraction ||
+      Math.abs((end.fraction - start.fraction) * geodesicSphere.length(coordinates) - length) > Math.max(5, length * 0.05) ||
+      projections.some((p, i) => i > 0 && p.fraction < projections[i - 1]!.fraction - 0.000001) ||
+      samples.slice(0, -1).some((p, i) => {
+        const direction = geodesicSphere.project(p, [p, samples[i + 1]!]).tangent_radians;
+        return Math.cos(direction - projections[i]!.tangent_radians) < Math.cos(Math.PI / 9);
+      })) return null;
+  return {max_distance_m, start_fraction:start.fraction, end_fraction:end.fraction};
+}
+
 export function mapPublicRoads(
   graph_id: string, edges: EdgeMapping[], geometry: PublicRoadGeometry,
 ): PublicRoadMapping {
@@ -292,29 +333,15 @@ export function mapPublicRoads(
         geodesicSphere.length(line) < 15) {
       result.excluded.push({edge_id: edge.edge_id, reason: "UNSUPPORTED"}); continue;
     }
-    const length = geodesicSphere.length(line), box = boundsOf(line);
+    const box = boundsOf(line);
     const expanded = [box[0]! - 0.00015, box[1]! - 0.00012, box[2]! + 0.00015, box[3]! + 0.00012];
-    const sampleCount = Math.ceil(length / 10) + 1;
-    const samples = Array.from({length: sampleCount}, (_, i) =>
-      geodesicSphere.position(line, length * i / (sampleCount - 1)));
     const candidates: PublicRoadMapping["entries"] = [];
     for (const {link, box: linkBox} of linkBoxes) {
       if (!intersects(expanded, linkBox)) continue;
-      const projections = samples.map(point => geodesicSphere.project(point, link.coordinates));
-      const max_distance_m = Math.max(...projections.map(p => p.distance_m));
-      const start = projections[0]!, end = projections.at(-1)!;
-      if (max_distance_m > 12 || end.fraction <= start.fraction ||
-          Math.abs((end.fraction - start.fraction) * geodesicSphere.length(link.coordinates) - length) > Math.max(5, length * 0.05)) continue;
-      if (projections.some((p, i) => i > 0 && p.fraction < projections[i - 1]!.fraction - 0.000001)) continue;
-      // Local tangents reject reverse carriageways and crossing alignments.
-      // 국소 방향은 반대 차도·교차 정렬을 거부합니다.
-      if (samples.slice(0, -1).some((p, i) => {
-        const direction = geodesicSphere.project(p, [p, samples[i + 1]!]).tangent_radians;
-        return Math.cos(direction - projections[i]!.tangent_radians) < Math.cos(Math.PI / 9);
-      })) continue;
+      const match = matchDirectedPublicCurve(edge, link.coordinates);
+      if (!match) continue;
       candidates.push({edge_id: edge.edge_id, forward: edge.forward, link_id: link.link_id,
-        start_node_id: link.start_node_id, end_node_id: link.end_node_id, max_distance_m,
-        start_fraction: start.fraction, end_fraction: end.fraction});
+        start_node_id: link.start_node_id, end_node_id: link.end_node_id, ...match});
     }
     if (candidates.length === 1) result.entries.push(candidates[0]!);
     else result.excluded.push({edge_id: edge.edge_id, reason: candidates.length ? "AMBIGUOUS" : "NO_MATCH"});

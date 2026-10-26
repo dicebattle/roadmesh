@@ -28,6 +28,7 @@ import {
   inventory,
   loadSeoulGraph,
   SCENES,
+  seoulSceneInputs,
   regionalTraceRequest,
   regionalLocateRequest,
   selectContext,
@@ -95,7 +96,7 @@ export function acquireSeoulSource(sourcePath?: string): string {
   }
   return path;
 }
-function request(
+export function seoulNativeRequest(
   container: OwnedGraphContainer,
   output: string,
   name: string,
@@ -218,29 +219,29 @@ export function runSeoulGraph(
       );
     const routes: SeoulGraphBundle["routes"] = [],
       edgeMap = new Map<string, EdgeMapping>();
-    for (const raw of items(object(parseJson(readFileSync(SCENES))).scenes)) {
+    for (const raw of seoulSceneInputs(output)) {
       const scene = object(raw),
         id = String(scene.route_id),
-        route = request(container, output, `route-${id}`, "route", {
+        route = seoulNativeRequest(container, output, `route-${id}`, "route", {
           locations: scene.locations,
           costing: "auto",
           units: "kilometers",
           language: "en-US",
         });
       const shape = object(items(object(object(route).trip).legs)[0]).shape;
-      const trace = request(
+      const trace = seoulNativeRequest(
         container,
         output,
         `trace-${id}`,
         "trace_attributes",
         regionalTraceRequest(shape),
       );
-      const locate = request(
+      const locate = seoulNativeRequest(
         container,
         output,
         `locate-${id}`,
         "locate",
-        regionalLocateRequest(trace),
+        regionalLocateRequest(trace,scene.inventory_policy === "regional-native-full-edges-v1"),
       );
       const derived = deriveScene(
         scene,

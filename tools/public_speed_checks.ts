@@ -12,6 +12,7 @@ import {inventory, loadSeoulGraph} from "./seoul_bundle.js";
 import {geodesicSphere} from "./geodesy.js";
 import {PublicSpeedRuntime} from "./public_speed_runtime.js";
 import {normalizeItsResponse, type ItsRead} from "./public_speed_source.js";
+import {encodeRegionalEnvelope,normalizeRegionalResponse,regionalReceipt} from "./regional_speed_source.js";
 import type {PublicRoadMapping} from "./public_speed_geometry.js";
 import type {GatewayRequest, GatewaySuccess} from "./gateway_public_types.js";
 import type {SimulationAssertion} from "./vehicle_simulator.js";
@@ -20,10 +21,12 @@ export const PUBLIC_SPEED_CASE_IDS = ["bootstrap","current","source-identity","f
   "malformed-input","native-speed","native-guidance","slow-refresh","provider-outage","partial-expiry","partial-route-coverage",
   "exact-expiry","native-fallback","recovery-order","native-recovery","zero-withdrawal","restart-order","restart-baseline",
   "deadline","input-scope","original-evidence","cleanup"].map(id=>"public-speed-"+id);
-export function requirePublicSpeedCases(assertions: SimulationAssertion[]): void {
-  if (assertions.length !== PUBLIC_SPEED_CASE_IDS.length || assertions.some(a=>a.status!=="PASS") ||
-      new Set(assertions.map(a=>a.assertion_id)).size!==PUBLIC_SPEED_CASE_IDS.length ||
-      PUBLIC_SPEED_CASE_IDS.some(id=>!assertions.some(a=>a.assertion_id===id)))
+export const REGIONAL_PUBLIC_SPEED_CASE_IDS=PUBLIC_SPEED_CASE_IDS.map(id=>id.replace(/^public-speed-/,"regional-public-speed-"));
+export function requirePublicSpeedCases(assertions: SimulationAssertion[],regional=false): void {
+  const required=regional?REGIONAL_PUBLIC_SPEED_CASE_IDS:PUBLIC_SPEED_CASE_IDS;
+  if (assertions.length !== required.length || assertions.some(a=>a.status!=="PASS") ||
+      new Set(assertions.map(a=>a.assertion_id)).size!==required.length ||
+      required.some(id=>!assertions.some(a=>a.assertion_id===id)))
     throw Error("All24 public-speed runtime cases are required / 공공 실행24개 전체 통과 필요");
 }
 async function waitFor<T>(read:()=>Promise<T>, accept:(v:T)=>boolean):Promise<T> {
@@ -31,7 +34,7 @@ async function waitFor<T>(read:()=>Promise<T>, accept:(v:T)=>boolean):Promise<T>
   for (;;) {const v=await read();if(accept(v))return v;if(performance.now()>=until)throw Error("Public runtime wait expired / 공공 실행 대기 만료");
     await new Promise(done=>setTimeout(done,100));}
 }
-export async function runPublicSpeedChecks(graphDirectory:string,bundleDirectory:string,outputPath:string):Promise<{assertions:SimulationAssertion[]}> {
+export async function runPublicSpeedChecks(graphDirectory:string,bundleDirectory:string,outputPath:string,regional=false):Promise<{assertions:SimulationAssertion[]}> {
   const output=resolve(outputPath);mkdirSync(output);
   const graph=loadSeoulGraph(graphDirectory), source=sourceIdentity(), fingerprint=implementationFingerprint();
   const chosen=graph.edges.filter(e=>e.car_access&&geodesicSphere.length(e.directed_geometry)>75).slice(0,2);
@@ -41,12 +44,25 @@ export async function runPublicSpeedChecks(graphDirectory:string,bundleDirectory
     geometry_sha256:sha256(canonical({fixture_kind:"AUTHORED_PROVIDER_PROTOCOL",edges:chosen})),graph_edges_sha256:sha256(canonical(graph.edges)),
     entries:chosen.map((e,i)=>({edge_id:e.edge_id,forward:e.forward,link_id:"900000000"+(i+2),start_node_id:"9000000000",end_node_id:"9000000001",
       max_distance_m:0,start_fraction:0,end_fraction:1})),excluded:graph.edges.filter(e=>!chosen.some(c=>c.edge_id===e.edge_id)).map(e=>({edge_id:e.edge_id,reason:"NO_MATCH"}))};
+  if(regional){
+    mapping.schema_version="kr-directed-mapping-0.2";mapping.policy="kr-regional-envelope-v1";
+    mapping.regional_references=mapping.entries.map((e,i)=>{
+      const proof=sha256(canonical({fixture_kind:"AUTHORED_PROVIDER_PROTOCOL",edge:chosen[i]}));
+      e.link_id="gits:"+e.link_id;e.start_node_id=`geometry:${proof}:start`;e.end_node_id=`geometry:${proof}:end`;
+      return {link_id:e.link_id,provider:"kr-gits",source_id:e.link_id.slice(5),road_name:"Authored provider protocol / 자체 제공자 규격",
+        evidence_sha256:proof,start_anchor:e.start_node_id,end_anchor:e.end_node_id,source_start_name:"Authored start",source_end_name:"Authored end",
+        source_length_m:geodesicSphere.length(chosen[i]!.directed_geometry)};
+    });
+    mapping.regional_alternatives=structuredClone(mapping.entries);
+    writeFileSync(join(output,"authored-input.json"),JSON.stringify({schema_version:"regional-collector-0.1",gits_route_ids:["1010000011"],
+      expressway_document:null,expressway_receipt:null}));
+  }
   const mappingPath=join(output,"authored-mapping.json");writeFileSync(mappingPath,JSON.stringify(mapping,null,2));
   const bounds=[126.98,37.46,127.10,37.56] as const, base=Math.floor(Date.now()/1000)*1000;
   let now=base, mode:"initial"|"outage"|"recovery"|"zero"|"pending"="initial", calls=0, releasePending:(()=>void)|undefined;
   const assertions:SimulationAssertion[]=[];
   function check(id:string,condition:boolean,actual:unknown,message_en:string,message_ko:string,path="readbacks.json"):void {
-    const a:SimulationAssertion={assertion_id:"public-speed-"+id,status:condition?"PASS":"FAIL",expected:true,actual,message_en,message_ko,evidence_path:path};
+    const a:SimulationAssertion={assertion_id:(regional?"regional-public-speed-":"public-speed-")+id,status:condition?"PASS":"FAIL",expected:true,actual,message_en,message_ko,evidence_path:path};
     assertions.push(a);writeFileSync(join(output,"assertions.json"),JSON.stringify(assertions,null,2));
     if(!condition)throw Error(message_en+" / "+message_ko);
   }
@@ -54,6 +70,13 @@ export async function runPublicSpeedChecks(graphDirectory:string,bundleDirectory
   const save=(id:string,value:unknown)=>{captures[id]=value;writeFileSync(join(output,"readbacks.json"),JSON.stringify(captures,null,2));};
   function raw():ItsRead {
     const at=(t:number)=>new Date(t+9*3600000).toISOString().slice(0,19).replace(/[-:T]/g,"");
+    if(regional){
+      const original=canonical(mapping.regional_references!.map((r,i)=>({SVC_LINK_ID:r.source_id,ROUTE_KORNM:r.road_name,
+        START_NODE_NM:r.source_start_name,END_NODE_NM:r.source_end_name,LINK_LENGTH:r.source_length_m,
+        SPD:mode==="zero"?"0":mode==="initial"?"12":"36",PROC_DATE:mode==="initial"?base-(i===0?60000:0):now})));
+      const raw=encodeRegionalEnvelope([regionalReceipt("kr-gits",original,new Date(now).toISOString())]);
+      return {raw,batch:normalizeRegionalResponse(raw,new Date(now).toISOString(),bounds,mapping)};
+    }
     const bytes=canonical({header:{resultCode:0,resultMsg:"SUCCESS"},body:{totalCount:2,items:chosen.map((_,i)=>({
       linkId:"900000000"+(i+2),startNodeId:"9000000000",endNodeId:"9000000001",roadName:"Authored provider protocol / 자체 제공자 규격",
       speed:mode==="zero"?"0":mode==="initial"?"12":"36",travelTime:"10",createdDate:at(mode==="initial"?base-(i===0?60000:0):now)}))}});
@@ -63,6 +86,7 @@ export async function runPublicSpeedChecks(graphDirectory:string,bundleDirectory
     if(mode==="outage"||mode==="pending")throw Error("Authored provider outage / 자체 제공자 장애");return raw();};
   let runtime:PublicSpeedRuntime|undefined, restarted:PublicSpeedRuntime|undefined, clean=false;
   const config={graph_directory:resolve(graphDirectory),bundle_directory:resolve(bundleDirectory),mapping_path:mappingPath,
+    ...(regional?{source:"kr-regional" as const,regional_input_path:join(output,"authored-input.json")} : {}),
     state_directory:privateRoot,assets_directory:resolve("dist/web/pilot"),bounds,lifetime_ms:180000,capture_evidence:true};
   const dependencies={clock:()=>now,collect};
   try {
@@ -72,7 +96,7 @@ export async function runPublicSpeedChecks(graphDirectory:string,bundleDirectory
       "Public client uses the distinct public schema.","공공 화면의 별도 규격을 확인했습니다.");
     check("current",first.public_traffic?.source_state==="CURRENT"&&first.public_traffic.live_edges===2,first,
       "Two authored provider entries are currently accepted.","자체 규격 응답 두 구간의 유효 수용을 확인했습니다.");
-    check("source-identity",first.source_class==="PUBLIC_AGENCY"&&first.clock_basis==="WALL_CLOCK_UTC"&&first.public_traffic?.provider==="kr-its",first,
+    check("source-identity",first.source_class==="PUBLIC_AGENCY"&&first.clock_basis==="WALL_CLOCK_UTC"&&first.public_traffic?.provider===(regional?"kr-regional":"kr-its"),first,
       "Source and clock are explicit; these test responses remain labeled authored.","출처·시계가 명시되며 검사 응답은 자체 규격으로 구분합니다.");
     check("full-denominator",first.public_traffic?.graph_edges===graph.edges.length&&first.public_traffic.mapped_edges===2,first.public_traffic,
       "Unmapped roads remain in the full graph denominator.","미대응 도로를 전체 분모에 유지합니다.");
@@ -165,11 +189,11 @@ export async function runPublicSpeedChecks(graphDirectory:string,bundleDirectory
     rmSync(privateRoot,{recursive:true,force:true});
   }
   check("cleanup",clean,captures.cleanup,"Owned native daemons, compiler, loopback servers and SQLite closed.","소유 엔진·변환·로컬 서버·SQLite를 종료했습니다.");
-  requirePublicSpeedCases(assertions);
+  requirePublicSpeedCases(assertions,regional);
   if(!canonical(sourceIdentity()).equals(canonical(source))||implementationFingerprint()!==fingerprint)
     throw Error("Source changed during public runtime checks / 공공 실행 검사 중 소스 변경");
   writeFileSync(join(output,"manifest.json"),JSON.stringify({status:"PASS",source,graph_id:graph.graphId,implementation_sha256:fingerprint,
-    fixture_kind:captures.fixture_kind,scope_en:"Actual native Seoul routing with authored provider faults; actual live acquisition is separate.",
+    fixture_kind:captures.fixture_kind,provider_contract:regional?"kr-regional-v1":"kr-its-v1",scope_en:"Actual native Seoul routing with authored provider faults; actual live acquisition is separate.",
     scope_ko:"서울 실제 엔진·자체 제공자 장애 검사이며 실제 공공 수집은 별도입니다.",assertions:assertions.length,cleanup_verified:clean,
     output_sha256:inventory(output)},null,2));
   return {assertions};

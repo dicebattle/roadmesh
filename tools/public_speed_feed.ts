@@ -12,6 +12,7 @@ import { matchesPublicMappingNodes, type PublicRoadMapping } from "./public_spee
 import { PublicSpeedAuthority, type PublicAcceptedSelection } from "./public_speed_authority.js";
 import type { CatalogEdge } from "./aggregation_types.js";
 import type { PublicTrafficContext } from "./gateway_public_types.js";
+import { normalizeRegionalResponse } from "./regional_speed_source.js";
 
 export interface PublicFeedConfig {
   directory: string;
@@ -37,6 +38,11 @@ export class PublicSpeedFeed {
   private stopped = false;
   private constructor(private readonly config: PublicFeedConfig) {}
   private now(): string { return new Date((this.config.clock ?? Date.now)()).toISOString(); }
+  private normalize(raw: Uint8Array, retrieved_at: string): PublicSpeedBatch {
+    return this.config.mapping.policy === "kr-regional-envelope-v1"
+      ? normalizeRegionalResponse(raw,retrieved_at,this.config.bounds,this.config.mapping)
+      : normalizeItsResponse(raw,retrieved_at,this.config.bounds);
+  }
   private queue<T>(run: () => Promise<T>): Promise<T> {
     if (this.stopped) return Promise.reject(new PublicSpeedError("PUBLIC_FEED_CLOSED"));
     const work = this.serial.then(run); this.serial = work.catch(() => {}); return work;
@@ -55,7 +61,7 @@ export class PublicSpeedFeed {
     const raw = Buffer.from(value.raw_base64, "base64");
     if (raw.toString("base64") !== value.raw_base64 || sha256(raw) !== value.raw_sha256)
       throw new PublicSpeedError("INVALID_PUBLIC_CACHE");
-    feed.batch = normalizeItsResponse(raw, value.retrieved_at, config.bounds);
+    feed.batch = feed.normalize(raw, value.retrieved_at);
     feed.refreshState = "OK";
     return feed;
   }
@@ -74,7 +80,7 @@ export class PublicSpeedFeed {
       try {
         // Recompute from exact raw bytes; a forged normalized object cannot authorize a speed.
         // 정규화 객체의 주장 대신 정확한 원문으로 다시 계산합니다.
-        const batch = normalizeItsResponse(result.raw, result.batch.retrieved_at, this.config.bounds);
+        const batch = this.normalize(result.raw, result.batch.retrieved_at);
         if (!canonical(batch).equals(canonical(result.batch)) || publicTime(batch.retrieved_at) > publicTime(this.now()) ||
             (this.batch && publicTime(batch.retrieved_at) < publicTime(this.batch.retrieved_at)))
           throw new PublicSpeedError("PUBLIC_SOURCE_TIME_ROLLBACK");
@@ -130,13 +136,20 @@ export class PublicSpeedFeed {
       }).filter(o => o !== null);
       const times = snapshot ? snapshot.entries.map(e => e.observed_at) : mapped.flatMap(o => o.observed_at ? [o.observed_at] : []);
       times.sort();
-      const metadata: PublicTrafficContext = {provider: "kr-its",
+      const metadata: PublicTrafficContext = {provider: this.config.mapping.policy === "kr-regional-envelope-v1" ? "kr-regional" : "kr-its",
         source_state: snapshot ? "CURRENT" : !batch ? "UNAVAILABLE" :
           mapped.some(o => o.valid_until !== null && publicTime(o.valid_until) <= publicTime(state.checked_at_utc)) ? "EXPIRED" : "NO_MAPPED_SPEEDS",
         refresh_state: this.refreshState, retrieved_at: snapshot?.retrieved_at ?? batch?.retrieved_at ?? null,
         observed_from: times[0] ?? null, observed_until: times.at(-1) ?? null,
         graph_edges: this.config.catalog.length, mapped_edges: this.config.mapping.entries.length,
         live_edges: snapshot?.entries.length ?? 0};
+      if (metadata.provider === "kr-regional") metadata.sources = (["kr-gits","kr-ex"] as const).map(provider => {
+        const prefix = provider === "kr-gits" ? "gits:" : "ex:";
+        const entries = snapshot?.entries.filter(e => e.link_id.startsWith(prefix)) ?? [];
+        const observed = entries.map(e => e.observed_at).sort();
+        return {provider,live_edges:entries.length,access:provider === "kr-gits" ? "ANONYMOUS_WEBSITE" : "OFFICIAL_PUBLIC_DEMO_BROWSER_DOCUMENT",
+          observed_from:observed[0] ?? null,observed_until:observed.at(-1) ?? null};
+      });
       return {selection: state, metadata};
     });
   }

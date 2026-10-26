@@ -25,11 +25,11 @@ export interface PublicSpeedObservation {
     "INVALID_SPEED" | "INVALID_NODES" | "CONFLICT";
 }
 export interface PublicSpeedBatch {
-  schema_version: "public-source-0.1";
+  schema_version: "public-source-0.1" | "public-source-0.2";
   source_class: "PUBLIC_AGENCY";
-  provider: "kr-its";
-  policy: typeof PUBLIC_SPEED_POLICY;
-  endpoint: typeof ITS_ENDPOINT;
+  provider: "kr-its" | "kr-regional";
+  policy: typeof PUBLIC_SPEED_POLICY | "kr-regional-v1";
+  endpoint: typeof ITS_ENDPOINT | "regional-captured-sources-v1";
   bounds: PublicBounds;
   retrieved_at: string;
   raw_sha256: string;

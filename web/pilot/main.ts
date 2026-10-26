@@ -306,11 +306,18 @@ function renderPublicSource(): void {
   const title = document.createElement("h3");
   title.textContent = lang === "en" ? "Public road speeds" : "공공 도로 속도";
   panel.append(title);
-  const link = document.createElement("a"); link.href = "https://www.its.go.kr/opendata/intro";
-  link.rel = "noreferrer";
-  link.textContent = lang === "en" ? "Source: MOLIT National Traffic Information Center" : "출처: 국토교통부 국가교통정보센터";
-  panel.append(link);
   const context = state.authority, v = context?.public_traffic;
+  const regional = v?.provider === "kr-regional";
+  const link = document.createElement("a"); link.href = regional ? "https://gits.gg.go.kr/" : "https://www.its.go.kr/opendata/intro";
+  link.rel = "noreferrer";
+  link.textContent = regional ? (lang === "en" ? "Source: Gyeonggi Traffic Information Center" : "출처: 경기도 교통정보센터") :
+    (lang === "en" ? "Source: MOLIT National Traffic Information Center" : "출처: 국토교통부 국가교통정보센터");
+  panel.append(link);
+  if (regional) {
+    const ex = document.createElement("a");ex.href="https://data.ex.co.kr/openapi/intro/introduce02";ex.rel="noreferrer";
+    ex.textContent=lang === "en" ? "Korea Expressway Corporation · public demo access" : "한국도로공사 · 공개 예제 자료";
+    panel.append(ex);
+  }
   const verified = publicContextCurrent && context && Date.now() - Date.parse(context.checked_at_event_time) <= 5000 &&
     Date.now() >= Date.parse(context.checked_at_event_time) - 30000;
   if (!v || !verified) {

@@ -20,6 +20,9 @@ import { ITS_MIN_POLL_MS, ItsSpeedCollector, PublicSpeedError, publicTime, valid
   type PublicBounds, type ItsRead } from "./public_speed_source.js";
 import { PublicSpeedAuthority } from "./public_speed_authority.js";
 import { PublicSpeedFeed, type PublicFeedSelection } from "./public_speed_feed.js";
+import { RegionalSpeedCollector } from "./regional_speed_collector.js";
+import { validateRegionalBounds } from "./regional_speed_source.js";
+import { validateRegionalMapping } from "./regional_speed_geometry.js";
 import type { PublicRoadMapping } from "./public_speed_geometry.js";
 import type { PublicTrafficTrust } from "./public_speed_publication.js";
 import type { TrafficBundle, TrafficGeneration, TrafficRouteRequest } from "./traffic_types.js";
@@ -29,6 +32,8 @@ import type { ClientBootstrap } from "./client_public_types.js";
 import type { GatewayRequest, GatewayRouteContext, GatewaySuccess, GatewayReason } from "./gateway_public_types.js";
 
 export interface PublicRuntimeConfig {
+  source?: "kr-its" | "kr-regional";
+  regional_input_path?: string;
   graph_directory: string;
   bundle_directory: string;
   mapping_path: string;
@@ -60,7 +65,15 @@ function tokenEqual(a: string, b: string): boolean {
   const aa = Buffer.from(a), bb = Buffer.from(b); return aa.length === bb.length && timingSafeEqual(aa, bb);
 }
 function validateConfig(c: PublicRuntimeConfig): void {
-  validatePublicBounds(c.bounds);
+  if(c.source!==undefined && c.source!=="kr-its" && c.source!=="kr-regional") reject("INVALID_RUNTIME_SOURCE");
+  if(c.source==="kr-regional") {
+    validateRegionalBounds(c.bounds);
+    if(typeof c.regional_input_path!=="string" || !c.regional_input_path || c.regional_input_path.includes("\0"))
+      reject("REGIONAL_INPUT_REQUIRED");
+  } else {
+    validatePublicBounds(c.bounds);
+    if(c.regional_input_path!==undefined)reject("REGIONAL_INPUT_SOURCE_MISMATCH");
+  }
   for (const v of [c.graph_directory, c.bundle_directory, c.mapping_path, c.state_directory, c.output_directory, c.assets_directory])
     if (typeof v !== "string" || !v || v.includes("\0")) reject("INVALID_RUNTIME_PATH");
   const lifetime = c.lifetime_ms ?? 900000;
@@ -124,7 +137,8 @@ export class PublicSpeedRuntime {
     return runtime;
   }
   private async signingState(directory: string): Promise<SigningState> {
-    const path = join(directory, "signing.private.json"), scope = {publisher_id: "local-its-bootstrap", graph_id: this.bundle.graph_id,
+    const prefix=this.config.source==="kr-regional" ? "regional" : "its";
+    const path = join(directory, "signing.private.json"), scope = {publisher_id: `local-${prefix}-bootstrap`, graph_id: this.bundle.graph_id,
       mapping_sha256: sha256(canonical(this.mapping))};
     if (existsSync(path)) {
       const stat = lstatSync(path);
@@ -133,7 +147,7 @@ export class PublicSpeedRuntime {
       record(raw, "local signer", ["kid", "private_jwk", "public_jwk", "publisher_id", "graph_id", "mapping_sha256", "valid_from", "valid_until"]);
       const state = raw as unknown as SigningState;
       if (state.publisher_id !== scope.publisher_id || state.graph_id !== scope.graph_id || state.mapping_sha256 !== scope.mapping_sha256 ||
-          state.kid !== "local-its-key" || state.private_jwk?.kty !== "OKP" || state.private_jwk.crv !== "Ed25519" ||
+          state.kid !== `local-${prefix}-key` || state.private_jwk?.kty !== "OKP" || state.private_jwk.crv !== "Ed25519" ||
           !state.private_jwk.d || state.public_jwk?.kty !== "OKP" || state.public_jwk.crv !== "Ed25519" ||
           state.public_jwk.x !== state.private_jwk.x || "d" in state.public_jwk ||
           publicTime(state.valid_from) > this.now() || publicTime(state.valid_until) <= this.now()) reject("INVALID_LOCAL_SIGNING_STATE");
@@ -142,7 +156,7 @@ export class PublicSpeedRuntime {
     }
     if (existsSync(join(directory, "accepted.sqlite"))) reject("LOCAL_SIGNER_MISSING");
     const keys = await generateKeyPair("EdDSA", {crv: "Ed25519", extractable: true});
-    const state: SigningState = {...scope, kid: "local-its-key", private_jwk: await exportJWK(keys.privateKey),
+    const state: SigningState = {...scope, kid: `local-${prefix}-key`, private_jwk: await exportJWK(keys.privateKey),
       public_jwk: await exportJWK(keys.publicKey), valid_from: new Date(this.now() - 60000).toISOString(),
       valid_until: new Date(this.now() + 365 * 86400000).toISOString()};
     writeFileSync(path, canonical(state), {flag: "wx", mode: 0o600}); return state;
@@ -156,11 +170,14 @@ export class PublicSpeedRuntime {
     const stat = lstatSync(this.config.mapping_path);
     if (!stat.isFile() || stat.isSymbolicLink() || stat.size > 16 * 1024 * 1024) reject("INVALID_MAPPING_FILE");
     this.mapping = parseJson(readFileSync(this.config.mapping_path)) as PublicRoadMapping;
-    if (this.mapping.schema_version !== "kr-directed-mapping-0.1" || this.mapping.policy !== "kr-directed-envelope-v1" ||
+    const regional=this.config.source==="kr-regional";
+    if ((regional ? this.mapping.schema_version!=="kr-directed-mapping-0.2" || this.mapping.policy!=="kr-regional-envelope-v1"
+      : this.mapping.schema_version !== "kr-directed-mapping-0.1" || this.mapping.policy !== "kr-directed-envelope-v1") ||
         this.mapping.graph_id !== this.bundle.graph_id || this.mapping.graph_edges_sha256 !== sha256(canonical(graph.edges))) reject("MAPPING_GRAPH_MISMATCH");
     const listed = [...this.mapping.entries, ...this.mapping.excluded].map(e => e.edge_id).sort();
     if (!canonical(listed).equals(canonical(this.bundle.catalog.map(e => e.edge_id).sort())) || new Set(listed).size !== listed.length ||
         this.mapping.entries.some(e => this.bundle.catalog.find(c => c.edge_id === e.edge_id)?.forward !== e.forward)) reject("MAPPING_CATALOG_MISMATCH");
+    if(regional)validateRegionalMapping(this.mapping,this.bundle.catalog);
     const stream = sha256(canonical({graph_id: this.bundle.graph_id, mapping_sha256: sha256(canonical(this.mapping))}));
     const stateRoot = join(resolve(this.config.state_directory), stream);
     mkdirSync(stateRoot, {recursive: true, mode: 0o700});
@@ -170,8 +187,10 @@ export class PublicSpeedRuntime {
     durableNodeJSON(join(root, "trust-public.json"), trust);
     this.authority = await PublicSpeedAuthority.open({state_path: join(stateRoot, "accepted.sqlite"), trust,
       mapping: this.mapping, catalog: this.bundle.catalog, clock: () => this.now()});
-    const collector = new ItsSpeedCollector(this.dependencies.api_key ?? process.env.ROUTELENS_ITS_API_KEY ?? "", this.config.bounds,
-      {clock: () => this.now(), signal: this.abort.signal});
+    const collector = regional
+      ? new RegionalSpeedCollector(this.config.regional_input_path!,this.config.bounds,this.mapping,{clock:()=>this.now(),signal:this.abort.signal})
+      : new ItsSpeedCollector(this.dependencies.api_key ?? process.env.ROUTELENS_ITS_API_KEY ?? "", this.config.bounds,
+        {clock: () => this.now(), signal: this.abort.signal});
     if (this.config.capture_evidence) mkdirSync(join(root, "public-source"));
     this.feed = PublicSpeedFeed.open({directory: stateRoot, bounds: this.config.bounds, mapping: this.mapping, catalog: this.bundle.catalog,
       publisher_id: signer.publisher_id, signer, authority: this.authority,
@@ -184,10 +203,16 @@ export class PublicSpeedRuntime {
     const features = graph.context_roads.map(r => ({type: "Feature" as const, properties: {name: r.name},
       geometry: {type: "LineString" as const, coordinates: r.coordinates}}));
     const points = features.flatMap(r => r.geometry.coordinates);
+    const regionalPreset=regional && existsSync(join(graph.directory,"regional-scenes.json"))
+      ? (parseJson(readFileSync(join(graph.directory,"regional-scenes.json"))) as
+        {scenes:Array<{route_id:string;locations:Array<{lon:number;lat:number}>}>}).scenes.find(s=>s.route_id==="regional-gyeongbu-south") : undefined;
+    if(regionalPreset && regionalPreset.locations.length!==2)reject("REGIONAL_PRESET_REQUIRED");
+    const long = regionalPreset ? {origin:{longitude:regionalPreset.locations[0]!.lon,latitude:regionalPreset.locations[0]!.lat},
+      destination:{longitude:regionalPreset.locations[1]!.lon,latitude:regionalPreset.locations[1]!.lat}} :
+      {origin:{longitude:127.029,latitude:37.4984},destination:{longitude:127.049,latitude:37.5045}};
     this.bootstrap = {schema_version: "public-route-0.1", graph_id: graph.graphId, source_class: "PUBLIC_AGENCY", clock_basis: "WALL_CLOCK_UTC",
       bounds: [Math.min(...points.map(p => p[0]!)), Math.min(...points.map(p => p[1]!)), Math.max(...points.map(p => p[0]!)), Math.max(...points.map(p => p[1]!))],
-      roads: {type: "FeatureCollection", features}, presets: {long: {origin: {longitude: 127.029, latitude: 37.4984},
-        destination: {longitude: 127.049, latitude: 37.5045}}, short: {origin: {longitude: p[0]![0]!, latitude: p[0]![1]!},
+      roads: {type: "FeatureCollection", features}, presets: {long, short: {origin: {longitude: p[0]![0]!, latitude: p[0]![1]!},
         destination: {longitude: p[1]![0]!, latitude: p[1]![1]!}}}, attribution: {text: "© OpenStreetMap contributors · ODbL 1.0", url: "https://www.openstreetmap.org/copyright"}};
     durableNodeJSON(join(root, "app/bootstrap.json"), this.bootstrap);
     await this.feed.refresh(); this.nextPoll = this.now() + ITS_MIN_POLL_MS; this.guard();

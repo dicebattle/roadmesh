@@ -40,6 +40,7 @@
     "cloudflare:types": "wrangler types infra/cloudflare/env.d.ts --config infra/cloudflare/wrangler.jsonc --include-runtime false --strict-vars=false",
     "cloudflare:check": "node dist/tools/cloudflare_checks.js",
     "public:speeds": "node dist/tools/public_speeds.js",
+    "public:regional": "node dist/tools/regional_speeds.js",
     "public:check": "node dist/tools/public_speed_checks.js"
   },
   "dependencies": {

@@ -857,3 +857,13 @@ Verification: strict `tsc --target ES2022 --module NodeNext --strict --noUncheck
 New observations remain PUBLIC_AGENCY and `routing_eligible:false`; missing original time is unknown, not fresh. Website originals/history stay local; publish EX numeric snapshot with dataset attribution, derived counts, hashes and selected test/probe evidence. All owned acquisition/inspection processes finished and the owned in-app browser tab was closed. Next: approved timestamped feeds, compatible directed geometry and independently verified native mapping before new routing authority. Finish through bilingual signed commit, feature-branch push and remote SHA comparison; no new PR/main merge.
 
 새 자료는 실제 공공 출처를 유지하되 경로 반영하지 않고 원시각 누락은 미확인입니다. 웹·이력 원문은 로컬, 도로공사 수치·집계·검증만 선별 게시합니다. 소유 수집/검사 프로세스와 브라우저 탭은 종료했습니다. 다음은 승인 수치·원시각·방향 지형·엔진 대응이며 한영 서명 커밋·작업 브랜치 푸시·원격 대조로 마칩니다. 새 PR·main 병합은 하지 않습니다.
+
+## 2026-10-26 — Regional original-time routing implementation checkpoint / 지역 원시각 경로 구현 중간 기록
+
+User requested actual Gyeonggi and EX route integration, direct Seoul/metropolitan coverage and ETA comparisons, bilingual evidence and a feature-branch push. Main Sol owns design, code and evidence review; no subagent was used. The fixed [regional contract](../docs/40-regional-public-routing.md) adds provider namespaces, conservative paired geometry, detector-containing edges, source receipts and a separate0.2 authority path. Legacy ITS/synthetic behavior remains subject to unchanged integration cases.
+
+경기·도로공사 실제 경로 연결 요청에 메인 Sol이 설계·구현·검토를 직접 수행합니다. 기존 규격을 유지하는 별도 출처·지형·원시각 승인 경로를 구현했고 실제 자료 검증과 전체 통합을 구분합니다.
+
+Development evidence under local `data/regional-public-routing-20261026/`: geometry01 reviewed23 of36 selected service curves, mapping02 accepted56/244 catalog edges with two EX alternatives. graph01/02 failed under interior-only endpoint rules; graph03's explicit full-native-edge policy passed15 scenes/244 edges. comparison01 stopped at the historical Mapo endpoint beyond100m; comparison02 passed48 native cases across the fixed twelve regional trials. runtime-protocol01 failed because the ad-hoc `--input-type=module` runner propagated to a worker; a real `.mjs` entrypoint runtime-protocol02 passed24 cases. Initial full-test build exposed an `unknown` filter type; the corrected `npm test` passed393/393. First-failure originals are retained. These are development runs with dirty source provenance; fresh committed whole integration and current media acceptance follow in the final report.
+
+개발 단계 실패와 수정 결과를 모두 보존합니다. 지형23개·대응56개·도로공사 후보2개·실제48회·통제24개·전체393개를 직접 확인했고, 아직 커밋된 새 전체 통합·화면·미디어까지 완료했다고 표현하지 않습니다. 최종 보고서에서 이어 기록합니다.

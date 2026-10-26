@@ -350,6 +350,25 @@ export function validateNativeRouteResult(
   record(e, "native result", ["request", "route", "trace"]);
   if (!canonical(e.request).equals(canonical(expectedNative(r))))
     throw new PeerError("WRONG_REQUEST");
+  return validateNativeRouteContent(e,r,node_id,bundle,g);
+}
+/** Local controlled comparison only. The public gateway still accepts its original current-time policy.
+ * 로컬 통제 비교 전용이며 공개 게이트웨이의 현재시각 규칙은 유지합니다. */
+export function validateNativeFixedDepartureResult(
+  raw: unknown, r: GatewayRequest, node_id: string,
+  bundle: Pick<TrafficBundle,"graph_id"|"image_id">, g: TrafficGeneration, departure: string,
+): Omit<GatewaySuccess,"calculated_at"|keyof GatewayFreshness> {
+  const e=object(raw);
+  record(e,"fixed departure native result",["request","route","trace"]);
+  if(!/^20\d\d-\d\d-\d\dT\d\d:\d\d$/.test(departure) ||
+      !canonical(e.request).equals(canonical({...expectedNative(r),date_time:{type:1,value:departure}})))
+    throw new PeerError("WRONG_REQUEST");
+  return validateNativeRouteContent(e,r,node_id,bundle,g);
+}
+function validateNativeRouteContent(
+  e: Record<string,unknown>, r: GatewayRequest, node_id: string,
+  bundle: Pick<TrafficBundle,"graph_id"|"image_id">, g: TrafficGeneration,
+): Omit<GatewaySuccess,"calculated_at"|keyof GatewayFreshness> {
   const trip = object(object(e.route).trip),
     legs = trip.legs;
   if (trip.status !== 0 || !Array.isArray(legs) || legs.length !== 1)
