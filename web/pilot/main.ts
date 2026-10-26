@@ -123,7 +123,7 @@ const publicCopy: Record<Language, Partial<Record<keyof typeof copy.en, string>>
     subtitle: "Seoul public-speed preview",
     synthetic: "Actual Seoul roads · public road speeds",
     scope: "Local public-data preview. Speeds cover only verified roads. GPS replay is authored; real driving accuracy is not established.",
-    expired: "The public traffic observations expired. Recalculate to use current defaults.",
+    expired: "The route's public traffic observations expired. Recalculate to check currently usable speeds.",
     applied: "Public road speeds applied to parts of this route",
     age: "Oldest usable public observation",
     noAge: "No usable public observation · default speeds",
@@ -133,7 +133,7 @@ const publicCopy: Record<Language, Partial<Record<keyof typeof copy.en, string>>
     subtitle: "서울 공공 속도 미리보기",
     synthetic: "실제 서울 도로 · 공공 도로 속도",
     scope: "로컬 공공 자료 미리보기입니다. 확인한 도로에만 속도를 적용합니다. GPS 재생은 자체 합성이며 실주행 정확도는 미검증입니다.",
-    expired: "공공 교통 관측의 기한이 지났습니다. 다시 계산하면 현재 기본 속도를 사용합니다.",
+    expired: "이 경로의 공공 교통 관측이 만료됐습니다. 다시 계산해 현재 적용 가능한 속도를 확인하세요.",
     applied: "이 경로의 일부 구간에 공공 속도 적용",
     age: "사용 가능한 가장 오래된 공공 관측",
     noAge: "사용 가능한 공공 관측 없음 · 기본 속도",
@@ -320,7 +320,7 @@ function renderPublicSource(): void {
   if (regional) {
     const ex = document.createElement("a");ex.href="https://data.ex.co.kr/openapi/intro/introduce02";ex.rel="noreferrer";
     ex.textContent=lang === "en" ? "Korea Expressway Corporation · public demo access" : "한국도로공사 · 공개 예제 자료";
-    panel.append(ex);
+    panel.append(document.createElement("br"), ex);
   }
   const verified = publicContextCurrent && context && Date.now() - Date.parse(context.checked_at_event_time) <= 5000 &&
     Date.now() >= Date.parse(context.checked_at_event_time) - 30000;
