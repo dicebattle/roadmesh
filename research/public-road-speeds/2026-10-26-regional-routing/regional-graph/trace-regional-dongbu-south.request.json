@@ -1,0 +1,18 @@
+{
+  "encoded_polyline": "_|oyfAo~uiqFyF|BkRxKaMzFgMrEqPtDqNvAyy@`Fca@zC}bAfHuf@zAmYzAuVnEqLfE{O~FiYxKwTrJ{TrK}QtIwGfDoEfCwM|I{G~EsItGiJvFmH~Ca\\hM_QdFuOjD}RhCav@lCahAbAmJPyRNkZBkTI{Ja@q_@yC_XiDoh@_GsLeByIgBoJ}B_i@}M_m@eQoYiJed@yM{LwCoQmDgVgFaLyByYmF}S}CkTmC{R{Ayi@kEuEg@kKoA{YuDgXgEw@M",
+  "shape_match": "edge_walk",
+  "costing": "auto",
+  "filters": {
+    "action": "include",
+    "attributes": [
+      "edge.id",
+      "edge.way_id",
+      "edge.names",
+      "edge.length",
+      "edge.begin_shape_index",
+      "edge.end_shape_index",
+      "edge.forward",
+      "shape"
+    ]
+  }
+}

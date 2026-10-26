@@ -1,0 +1,16 @@
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {gzipSync} from 'node:zlib';import assert from 'node:assert/strict';
+const root='data/regional-public-routing-20261026',out=root+'/delivery',whole=root+'/whole03';const copy=(a,b)=>{fs.mkdirSync(path.dirname(out+'/'+b),{recursive:true});fs.copyFileSync(a,out+'/'+b);};
+const m=JSON.parse(fs.readFileSync(whole+'/manifest.json'));assert.equal(m.status,'PASS');assert.equal(m.source.dirty,false);assert.equal(m.source.commit,'82acad0f5452fb5a72ae20b7fb7b219dae853359');
+for(const name of ['manifest.json','assertions.json','report-data.json','report.html','summary.md'])copy(whole+'/'+name,'whole/'+name);
+for(const name of fs.readdirSync(root).filter(n=>n.endsWith('-independent.json')||n==='final-audit-commands.json'||n==='tests-final-source.json'))copy(root+'/'+name,'audits/'+name);
+for(const name of fs.readdirSync(root).filter(n=>/^inspect-.*\.mjs$/.test(n)||n==='run-final-audits.mjs'))copy(root+'/'+name,'inspectors/'+name);
+for(const name of fs.readdirSync(root).filter(n=>n.endsWith('.log')))copy(root+'/'+name,'logs/'+name);
+for(const name of ['final-expiry-check-first.json','final-expired-before-recalculate.json','final-after-ex-expiry.json','final-after-ex-expiry.png'])copy(root+'/'+name,'iab/'+name);
+copy(root+'/expiry-independent.json','audits/expiry-independent.json');copy(root+'/video-independent.json','audits/video-independent.json');
+for(const dir of ['public-speeds','regional-public-speeds']){fs.cpSync(whole+'/'+dir,out+'/controlled/'+dir,{recursive:true,errorOnExist:true,force:false});}
+const hash=b=>crypto.createHash('sha256').update(b).digest('hex');let count=0;const entries=[];const walk=(d,rel='')=>{for(const e of fs.readdirSync(d,{withFileTypes:true})){const p=path.join(d,e.name),n=rel?rel+'/'+e.name:e.name;if(e.isDirectory())walk(p,n);else if(e.isFile()){const b=fs.readFileSync(p);entries.push({path:n,bytes:b.length,sha256:hash(b)});count++;}else throw Error('Nonregular whole original / 비정상 원문');}};walk(whole);fs.writeFileSync(out+'/local-inventories/whole03.json.gz',gzipSync(Buffer.from(JSON.stringify(entries))));
+const readbacks=JSON.parse(fs.readFileSync(root+'/final-after-ex-expiry.json'));copy(root+'/web03/cleanup.json','actual-client/cleanup.json');copy(root+'/web03/events.json','actual-client/events.json');copy(root+'/web03/app/bootstrap.json','actual-client/bootstrap.json');
+for(const file of fs.readdirSync(root+'/web03/readbacks'))copy(root+'/web03/readbacks/'+file,'actual-client/readbacks/'+file);
+for(const file of fs.readdirSync(root+'/web03/public-source').filter(n=>/\.jws$|\.manifest\.json$/.test(n)))copy(root+'/web03/public-source/'+file,'actual-client/public-source/'+file);
+copy(root+'/web03/trust-public.json','actual-client/trust-public.json');
+const preservation=JSON.parse(fs.readFileSync(out+'/preservation.json'));preservation.whole_local_original_files=count;preservation.public_controlled_proof_directories=['controlled/public-speeds','controlled/regional-public-speeds'];preservation.actual_client_traffic_artifacts_and_generations_local_only=true;fs.writeFileSync(out+'/preservation.json',JSON.stringify(preservation,null,2)+'\n');console.log({whole_local_hash_entries:count,selected_output:out});

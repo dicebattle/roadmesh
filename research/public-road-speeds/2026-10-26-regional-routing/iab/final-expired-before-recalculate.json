@@ -1,0 +1,65 @@
+{
+  "message": "경로의 유효성을 더 이상 확인할 수 없습니다. 다시 계산해 현재 교통 문맥을 확인하세요.",
+  "source": "공공 도로 속도\n출처: 경기도 교통정보센터\n한국도로공사 · 공개 예제 자료\n\n확인한 도로에 유효한 공공 속도가 있습니다.\n\n유효한 공공 속도가 있는 도로 구간: 56 / 244\n\n가장 오래된 관측: 2026. 10. 26. 14시 12분 0초 KST\n\n자료 조회: 2026. 10. 26. 14시 16분 16초 KST",
+  "state": {
+    "authority": {
+      "checked_at_event_time": "2026-10-26T05:16:56.197Z",
+      "clock_basis": "WALL_CLOCK_UTC",
+      "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+      "high_water": 11,
+      "public_traffic": {
+        "graph_edges": 244,
+        "live_edges": 56,
+        "mapped_edges": 56,
+        "observed_from": "2026-10-26T05:12:00.000Z",
+        "observed_until": "2026-10-26T05:14:00.000Z",
+        "provider": "kr-regional",
+        "refresh_state": "OK",
+        "retrieved_at": "2026-10-26T05:16:16.320Z",
+        "source_state": "CURRENT",
+        "sources": [
+          {
+            "access": "ANONYMOUS_WEBSITE",
+            "live_edges": 56,
+            "observed_from": "2026-10-26T05:12:00.000Z",
+            "observed_until": "2026-10-26T05:14:00.000Z",
+            "provider": "kr-gits"
+          },
+          {
+            "access": "OFFICIAL_PUBLIC_DEMO_BROWSER_DOCUMENT",
+            "live_edges": 0,
+            "observed_from": null,
+            "observed_until": null,
+            "provider": "kr-ex"
+          }
+        ]
+      },
+      "schema_version": "public-route-0.1",
+      "sequence": 11,
+      "source_class": "PUBLIC_AGENCY",
+      "traffic_published_at": "2026-10-26T05:16:16.670Z",
+      "traffic_snapshot_id": "a4f02674b91d7ec24b5d3eb2b1c2eb0d8f057f9263cd9d45fb85b6abf8d890c2",
+      "traffic_valid_until": "2026-10-26T05:22:00.000Z"
+    },
+    "map_source_geometry": null,
+    "progress": null,
+    "reason": "TRAFFIC_CHANGED",
+    "request": {
+      "destination": {
+        "latitude": 37.43085,
+        "longitude": 127.0691811
+      },
+      "guidance_language": "ko-KR",
+      "origin": {
+        "latitude": 37.4606318,
+        "longitude": 127.0425029
+      },
+      "profile": "car",
+      "request_id": "browser-4aa184f2-88a5-45cb-8968-cff6c0f35a6d",
+      "schema_version": "0.1",
+      "traffic_policy": "prefer_live"
+    },
+    "response": null,
+    "state": "unverified"
+  }
+}

@@ -62,3 +62,9 @@ Daegu's [official dataset](https://www.data.go.kr/data/15126266/openapi.do) uses
 Suggested private environment names for future registered adapters are `ROUTELENS_GITS_API_KEY`, `ROUTELENS_EX_API_KEY`, `ROUTELENS_UTIC_API_KEY` and `ROUTELENS_SEOUL_OPEN_DATA_KEY`. **These names are storage recommendations, not implemented configuration switches in this anonymous research collector.** The existing ITS runtime consumes `ROUTELENS_ITS_API_KEY`. Store secrets in a local ignored `.env` or an operator secret store; do not put them in README, commit messages, chat or browser frontend code. Preserve the open-source license separately from each dataset's terms; a key does not grant blanket raw-data redistribution rights.
 
 향후 정식 연결기용 비공개 환경변수 이름을 위처럼 권장하지만 이번 익명 조사 수집기가 이미 이 설정을 읽는다는 뜻은 아닙니다. 기존 ITS 실행은 `ROUTELENS_ITS_API_KEY`를 사용합니다. 키는 Git에서 제외된 로컬.env 또는 비밀 저장소에 보관하고 기록물·대화·프런트엔드에는 넣지 않습니다. 코드와 자료의 이용 조건은 별개이며 키 발급을 원 자료 전체 재배포 허가로 보지 않습니다.
+
+## Later regional implementation / 이후 지역 구현
+
+The dated research captures above remain unchanged. A separate [regional0.2 adapter](40-regional-public-routing.md) now accepts newly acquired, geometry-compatible Gyeonggi and explicitly captured EX public-demo observations for local routing. It does not grant operated API authorization or turn old expired files into fresh traffic.
+
+위 당시 조사 파일은 그대로 보존합니다. 이후 별도 지역 연결기는 새 수집·지형 검증 자료를 로컬 경로에 사용하지만 운영 승인·오래된 파일의 현재성을 만들지 않습니다.

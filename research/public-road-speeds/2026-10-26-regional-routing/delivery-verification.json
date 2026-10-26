@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "indexed_changed_files": 527,
+  "private_scan_files": 1386,
+  "private_scan_bytes": 234930197,
+  "compressed_files_inspected": 74,
+  "controlled_originals_inspected": 785,
+  "local_links_checked": 421,
+  "lossless_originals_checked": 66,
+  "findings": [],
+  "message_en": "Bounded exact configured-credential/PEM/private-JWK scan covers indexed files, lossless representations and restored authored archives. Original hashes and indexed local links agree; this is not a universal secret detector.",
+  "message_ko": "인덱스·무손실 표현·복원 자체 묶음에서 지정 키·PEM·비밀 JWK를 검사하고 원 해시·로컬 링크를 대조했습니다. 모든 비밀 탐지는 아닙니다."
+}

@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "82acad0f5452fb5a72ae20b7fb7b219dae853359",
+    "dirty": false
+  },
+  "regional_graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+  "retained_locally": [
+    "actual-capture01",
+    "actual-capture02",
+    "actual-capture03",
+    "ex-capture01",
+    "ex-capture02",
+    "ex-capture03",
+    "ex-capture04",
+    "geometry01",
+    "discovery",
+    "mapping01",
+    "mapping02",
+    "graph01",
+    "graph02",
+    "graph03",
+    "bundle03",
+    "comparison01",
+    "comparison02",
+    "comparison03",
+    "comparison04",
+    "runtime-protocol01",
+    "runtime-protocol02",
+    "web01",
+    "web02",
+    "web03",
+    "whole01",
+    "whole02",
+    "whole03"
+  ],
+  "policy_en": "Selected derived native outputs and authored verification are public. Agency website/envelope/geometry originals, actual signed artifacts, actual compiled traffic, private signer state and undeclared whole originals remain local. Public hash inventories do not restore excluded bytes.",
+  "policy_ko": "선별 엔진 결과·자체 검증을 게시하고 기관 웹/원문묶음/지형·실제 서명/교통 바이트·비밀 상태·선별 외 전체 원문은 로컬에 보존합니다. 공개 해시로 제외 바이트를 복원할 수 없습니다.",
+  "whole_local_original_files": 17756,
+  "public_controlled_proof_directories": [
+    "controlled-archives/its",
+    "controlled-archives/regional"
+  ],
+  "actual_client_traffic_artifacts_and_generations_local_only": true
+}

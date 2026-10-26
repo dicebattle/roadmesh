@@ -1,0 +1,257 @@
+{
+  "authority": {
+    "checked_at_event_time": "2026-10-26T05:17:33.495Z",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "high_water": 11,
+    "public_traffic": {
+      "graph_edges": 244,
+      "live_edges": 56,
+      "mapped_edges": 56,
+      "observed_from": "2026-10-26T05:12:00.000Z",
+      "observed_until": "2026-10-26T05:14:00.000Z",
+      "provider": "kr-regional",
+      "refresh_state": "OK",
+      "retrieved_at": "2026-10-26T05:16:16.320Z",
+      "source_state": "CURRENT",
+      "sources": [
+        {
+          "access": "ANONYMOUS_WEBSITE",
+          "live_edges": 56,
+          "observed_from": "2026-10-26T05:12:00.000Z",
+          "observed_until": "2026-10-26T05:14:00.000Z",
+          "provider": "kr-gits"
+        },
+        {
+          "access": "OFFICIAL_PUBLIC_DEMO_BROWSER_DOCUMENT",
+          "live_edges": 0,
+          "observed_from": null,
+          "observed_until": null,
+          "provider": "kr-ex"
+        }
+      ]
+    },
+    "schema_version": "public-route-0.1",
+    "sequence": 11,
+    "source_class": "PUBLIC_AGENCY",
+    "traffic_published_at": "2026-10-26T05:16:16.670Z",
+    "traffic_snapshot_id": "a4f02674b91d7ec24b5d3eb2b1c2eb0d8f057f9263cd9d45fb85b6abf8d890c2",
+    "traffic_valid_until": "2026-10-26T05:22:00.000Z"
+  },
+  "map_source_geometry": null,
+  "progress": null,
+  "reason": "",
+  "request": {
+    "destination": {
+      "latitude": 37.43085,
+      "longitude": 127.0691811
+    },
+    "guidance_language": "ko-KR",
+    "origin": {
+      "latitude": 37.4606318,
+      "longitude": 127.0425029
+    },
+    "profile": "car",
+    "request_id": "browser-0cb6b50f-6d42-43e7-ad21-897e677f16eb",
+    "schema_version": "0.1",
+    "traffic_policy": "prefer_live"
+  },
+  "response": {
+    "calculated_at": "2026-10-26T05:17:33.499Z",
+    "checked_at_event_time": "2026-10-26T05:17:33.495Z",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "costing_config_id": "valhalla-current-v1",
+    "distance_m": 4074,
+    "duration_s": 135.916,
+    "engine_version": "3.9.1",
+    "generation_id": "b2db8fb78f19ffd7be2964cb1c0a0931f7611455aef13c9557aa231d26a40579",
+    "geometry": {
+      "coordinates": [
+        [
+          127.042481,
+          37.460619
+        ],
+        [
+          127.043901,
+          37.459107
+        ],
+        [
+          127.044646,
+          37.458309
+        ],
+        [
+          127.0448,
+          37.458145
+        ],
+        [
+          127.045447,
+          37.457459
+        ],
+        [
+          127.047577,
+          37.455247
+        ],
+        [
+          127.049094,
+          37.45361
+        ],
+        [
+          127.051179,
+          37.451313
+        ],
+        [
+          127.051971,
+          37.450422
+        ],
+        [
+          127.052933,
+          37.449345
+        ],
+        [
+          127.053732,
+          37.448484
+        ],
+        [
+          127.054556,
+          37.447577
+        ],
+        [
+          127.055472,
+          37.446537
+        ],
+        [
+          127.055963,
+          37.445972
+        ],
+        [
+          127.056412,
+          37.445432
+        ],
+        [
+          127.056904,
+          37.444828
+        ],
+        [
+          127.057329,
+          37.444247
+        ],
+        [
+          127.058227,
+          37.442991
+        ],
+        [
+          127.05917,
+          37.441641
+        ],
+        [
+          127.060037,
+          37.440475
+        ],
+        [
+          127.060822,
+          37.43935
+        ],
+        [
+          127.0613,
+          37.438759
+        ],
+        [
+          127.062016,
+          37.438003
+        ],
+        [
+          127.062746,
+          37.437271
+        ],
+        [
+          127.063926,
+          37.436059
+        ],
+        [
+          127.06515,
+          37.434814
+        ],
+        [
+          127.066986,
+          37.433019
+        ],
+        [
+          127.067558,
+          37.432459
+        ],
+        [
+          127.069183,
+          37.430852
+        ]
+      ],
+      "type": "LineString"
+    },
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "guidance": {
+      "language": "ko-KR",
+      "maneuvers": [
+        {
+          "begin_shape_index": 0,
+          "distance_m": 4074,
+          "duration_s": 135.916,
+          "end_shape_index": 28,
+          "index": 0,
+          "instruction": "1/경부고속도로에서 남동쪽으로 주행",
+          "native_type": 1
+        },
+        {
+          "begin_shape_index": 28,
+          "distance_m": 0,
+          "duration_s": 0,
+          "end_shape_index": 28,
+          "index": 1,
+          "instruction": "목적지 도착",
+          "native_type": 4
+        }
+      ],
+      "schema_version": "0.1"
+    },
+    "high_water": 11,
+    "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "live_coverage_ratio": 0.07584683357879234,
+    "node_id": "local-public-node",
+    "public_traffic": {
+      "graph_edges": 244,
+      "live_edges": 56,
+      "mapped_edges": 56,
+      "observed_from": "2026-10-26T05:12:00.000Z",
+      "observed_until": "2026-10-26T05:14:00.000Z",
+      "provider": "kr-regional",
+      "refresh_state": "OK",
+      "retrieved_at": "2026-10-26T05:16:16.320Z",
+      "source_state": "CURRENT",
+      "sources": [
+        {
+          "access": "ANONYMOUS_WEBSITE",
+          "live_edges": 56,
+          "observed_from": "2026-10-26T05:12:00.000Z",
+          "observed_until": "2026-10-26T05:14:00.000Z",
+          "provider": "kr-gits"
+        },
+        {
+          "access": "OFFICIAL_PUBLIC_DEMO_BROWSER_DOCUMENT",
+          "live_edges": 0,
+          "observed_from": null,
+          "observed_until": null,
+          "provider": "kr-ex"
+        }
+      ]
+    },
+    "request_id": "browser-0cb6b50f-6d42-43e7-ad21-897e677f16eb",
+    "request_sha256": "89da7e59249925055f32d5aa23e3d1baff77e9604fe6835dd45ed913a97bc1af",
+    "sequence": 11,
+    "snapshot_id": "a4f02674b91d7ec24b5d3eb2b1c2eb0d8f057f9263cd9d45fb85b6abf8d890c2",
+    "source_class": "PUBLIC_AGENCY",
+    "traffic_mode": "LIVE_MIXED",
+    "traffic_published_at": "2026-10-26T05:16:16.670Z",
+    "traffic_sha256": "7e746234b48d43800a308a557df31f5a7c62aae619597ef623c732bdc5dd1266",
+    "traffic_valid_until": "2026-10-26T05:22:00.000Z",
+    "warnings": []
+  },
+  "state": "current"
+}

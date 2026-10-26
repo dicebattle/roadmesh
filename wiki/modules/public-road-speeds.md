@@ -1,3 +1,9 @@
+# Regional0.2 extension / 지역0.2 확장
+
+[Regional routing module](regional-public-routing.md) adds actual timestamped Gyeonggi/EX observations and conservative directed authority. It passed fresh486/393 and48 actual native comparisons. The ITS acceptance below remains its original dated checkpoint; additional-source research output is historical and does not itself become routing authority.
+
+[지역 연결기](regional-public-routing.md)에서 실제 경기·도로공사 원시각·방향 승인을 추가했고 새486개·전체393개·실제48회를 통과했습니다. 아래 ITS·조사 기록은 당시 결과이며 과거 조사 출력 자체를 경로 승인으로 바꾸지 않습니다.
+
 # Public road-speed bootstrap / 공공 도로 속도 확보
 
 Local acceptance: actual collection, directed official mapping, signed/native routing, automatic refresh/expiry/withdrawal and browser integration passed fresh whole462, tests369 and actual46.95s EN/KO recording. Source-specific31/79 coverage and remaining production/geographic limits are documented in the [final report](../../research/pilot/2026-10-26-public-speeds/report.md). Feature-branch delivery was verified; the dated report retains its receipt.

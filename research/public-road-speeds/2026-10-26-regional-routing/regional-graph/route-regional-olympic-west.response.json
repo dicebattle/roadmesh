@@ -1,0 +1,88 @@
+{
+  "trip": {
+    "locations": [
+      {
+        "type": "break",
+        "lat": 37.53382,
+        "lon": 127.026541,
+        "original_index": 0
+      },
+      {
+        "type": "break",
+        "lat": 37.519376,
+        "lon": 127.011244,
+        "original_index": 1
+      }
+    ],
+    "legs": [
+      {
+        "maneuvers": [
+          {
+            "type": 1,
+            "instruction": "Drive southwest on 88/올림픽대로.",
+            "verbal_succinct_transition_instruction": "Drive southwest.",
+            "verbal_pre_transition_instruction": "Drive southwest on 88, 올림픽대로.",
+            "verbal_post_transition_instruction": "Continue for 2 kilometers.",
+            "street_names": [
+              "88",
+              "올림픽대로"
+            ],
+            "bearing_after": 238,
+            "time": 104.409,
+            "length": 2.115,
+            "cost": 136.434,
+            "begin_shape_index": 0,
+            "end_shape_index": 23,
+            "travel_mode": "drive",
+            "travel_type": "car"
+          },
+          {
+            "type": 4,
+            "instruction": "You have arrived at your destination.",
+            "verbal_transition_alert_instruction": "You will arrive at your destination.",
+            "verbal_pre_transition_instruction": "You have arrived at your destination.",
+            "bearing_before": 220,
+            "time": 0,
+            "length": 0,
+            "cost": 0,
+            "begin_shape_index": 23,
+            "end_shape_index": 23,
+            "travel_mode": "drive",
+            "travel_type": "car"
+          }
+        ],
+        "summary": {
+          "has_time_restrictions": false,
+          "has_toll": false,
+          "has_highway": false,
+          "has_ferry": false,
+          "min_lat": 37.519379,
+          "min_lon": 127.01124,
+          "max_lat": 37.533826,
+          "max_lon": 127.026537,
+          "time": 104.409,
+          "length": 2.115,
+          "cost": 136.434
+        },
+        "shape": "cg{qfAquahqF|CrI~KdVxL`VzMtRdNjOlVrUpeAn|@xm@de@l_Azn@l}Az`Afl@ng@xXj^tSlVt^hj@jOjU|QbWvq@bfAfa@|p@v`@ni@vhAviA`bBhgBds@px@ze@vh@"
+      }
+    ],
+    "summary": {
+      "has_time_restrictions": false,
+      "has_toll": false,
+      "has_highway": false,
+      "has_ferry": false,
+      "min_lat": 37.519379,
+      "min_lon": 127.01124,
+      "max_lat": 37.533826,
+      "max_lon": 127.026537,
+      "time": 104.409,
+      "length": 2.115,
+      "cost": 136.434
+    },
+    "status_message": "Found route between points",
+    "status": 0,
+    "units": "kilometers",
+    "language": "en-US"
+  }
+}

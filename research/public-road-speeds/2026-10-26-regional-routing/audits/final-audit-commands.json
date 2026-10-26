@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "source": "82acad0f5452fb5a72ae20b7fb7b219dae853359",
+  "implementation_sha256": "718e323a745280e2893f536e8360095e1ef6e9463a45458d935a9358ca57af17",
+  "results": [
+    {
+      "name": "whole",
+      "script": "data/regional-public-routing-20261026/inspect-whole.mjs",
+      "args": [
+        "data/regional-public-routing-20261026/whole03",
+        "--output",
+        "data/regional-public-routing-20261026/whole-independent.json",
+        "--expected-source",
+        "82acad0f5452fb5a72ae20b7fb7b219dae853359"
+      ],
+      "exit": 0,
+      "log": "data/regional-public-routing-20261026/audit-whole.log"
+    },
+    {
+      "name": "client",
+      "script": "research/pilot/2026-10-25-nav02-clock/inspectors/inspect-nav01-client.mjs",
+      "args": [
+        "data/regional-public-routing-20261026/whole03/client",
+        "82acad0f5452fb5a72ae20b7fb7b219dae853359",
+        "718e323a745280e2893f536e8360095e1ef6e9463a45458d935a9358ca57af17",
+        "data/regional-public-routing-20261026/client-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/regional-public-routing-20261026/audit-client.log"
+    },
+    {
+      "name": "guidance",
+      "script": "research/pilot/2026-10-25-nav02-clock/inspectors/inspect-nav01-guidance.mjs",
+      "args": [
+        "data/regional-public-routing-20261026/whole03/client",
+        "82acad0f5452fb5a72ae20b7fb7b219dae853359",
+        "718e323a745280e2893f536e8360095e1ef6e9463a45458d935a9358ca57af17",
+        "data/regional-public-routing-20261026/guidance-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/regional-public-routing-20261026/audit-guidance.log"
+    },
+    {
+      "name": "progress",
+      "script": "research/pilot/2026-10-25-nav02-clock/inspectors/inspect-nav02-progress.mjs",
+      "args": [
+        "data/regional-public-routing-20261026/whole03/client",
+        "82acad0f5452fb5a72ae20b7fb7b219dae853359",
+        "718e323a745280e2893f536e8360095e1ef6e9463a45458d935a9358ca57af17",
+        "data/regional-public-routing-20261026/progress-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/regional-public-routing-20261026/audit-progress.log"
+    },
+    {
+      "name": "public-runtime",
+      "script": "data/regional-public-routing-20261026/inspect-public-runtime.mjs",
+      "args": [
+        "data/regional-public-routing-20261026/whole03/public-speeds",
+        "82acad0f5452fb5a72ae20b7fb7b219dae853359",
+        "data/regional-public-routing-20261026/public-runtime-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/regional-public-routing-20261026/audit-public-runtime.log"
+    },
+    {
+      "name": "regional-runtime",
+      "script": "data/regional-public-routing-20261026/inspect-public-runtime.mjs",
+      "args": [
+        "data/regional-public-routing-20261026/whole03/regional-public-speeds",
+        "82acad0f5452fb5a72ae20b7fb7b219dae853359",
+        "data/regional-public-routing-20261026/regional-runtime-independent.json"
+      ],
+      "exit": 0,
+      "log": "data/regional-public-routing-20261026/audit-regional-runtime.log"
+    },
+    {
+      "name": "cloudflare",
+      "script": "research/pilot/2026-10-25-nav02-clock/inspectors/inspect-p13-parity.mjs",
+      "args": [
+        "data/regional-public-routing-20261026/whole03/cloudflare",
+        "data/regional-public-routing-20261026/cloudflare-independent.json",
+        "data/regional-public-routing-20261026/cloudflare-sqlite-copies"
+      ],
+      "exit": 0,
+      "log": "data/regional-public-routing-20261026/audit-cloudflare.log"
+    }
+  ]
+}

@@ -55,9 +55,9 @@ Actual IAB review verified EN/KO source/time/coverage, native guidance and autho
 
 내장 한영 화면의 출처/시각/적용률·엔진 안내·합성 GPS를 확인했고390픽셀에서 넘침이 없었습니다. 실제 자동 갱신 때 이전 경로의 표본 버튼이 비활성화된 상황도 보존하고 재계산으로 복구했습니다. 큰 전체 캡처의 지도 경고와 녹화 브라우저의 favicon404를 명시하며 성공 경로로 세지 않았습니다. 애플리케이션 예외·실제 GPS 수집은 없었고 소유 탭·녹화9프로세스·마지막 실제 엔진3개를 정리했습니다.
 
-[![Public-speed walkthrough](../../../docs/media/demo-poster.ko.png)](../../../docs/media/demo.ko.gif)
+[![Public-speed walkthrough](https://raw.githubusercontent.com/dicebattle/routelens/54866b77fe176e80045db57051f7d103b27c1b99/docs/media/demo-poster.ko.png)](https://raw.githubusercontent.com/dicebattle/routelens/54866b77fe176e80045db57051f7d103b27c1b99/docs/media/demo.ko.gif)
 
-[English GIF](../../../docs/media/demo.gif) · [한국어 GIF](../../../docs/media/demo.ko.gif) · [MP4](../../../docs/media/demo.ko.mp4) · [original46.95s](capture-original.webm) · [video provenance](published-video.json).
+[English GIF](https://raw.githubusercontent.com/dicebattle/routelens/54866b77fe176e80045db57051f7d103b27c1b99/docs/media/demo.gif) · [한국어 GIF](https://raw.githubusercontent.com/dicebattle/routelens/54866b77fe176e80045db57051f7d103b27c1b99/docs/media/demo.ko.gif) · [MP4](https://raw.githubusercontent.com/dicebattle/routelens/54866b77fe176e80045db57051f7d103b27c1b99/docs/media/demo.ko.mp4) · [original46.95s](capture-original.webm) · [video provenance](published-video.json).
 
 ## Originals and reproduction / 원문·재현
 

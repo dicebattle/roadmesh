@@ -70,3 +70,9 @@ Corrected NAV-02 acceptance / 수정 NAV-02 수용: clean fe49b55/runtime70af32d
 The user-directed public-source increment is locally accepted (whole462, tests369, actual source/native/browser proof), on `feat/public-road-speeds`. [Current report](../research/pilot/2026-10-26-public-speeds/report.md). It supplies actual public link averages to verified pilot roads; broader geographic coverage, a second independently accessed provider, measured ETA accuracy and production delivery remain future work. NAV-06 destination search/confirmation stays the next ordinary usability priority. NAV-01/02's earlier protected merge is already complete; do not infer a new merge from this public-source task.
 
 사용자가 요청한 공공 자료 연결을 로컬에서 검증했고 다음 일반 사용성 작업은 목적지 검색/확인입니다. 넓은 도로 적용·다른 실제 제공자·도착시간 실측·운영은 후속으로 유지합니다. 이전 NAV-01/02 병합은 완료됐으며 이번 공공 작업의 새 병합 승인으로 확대하지 않습니다.
+
+## 2026-10-26 regional routing checkpoint / 지역 경로 중간 수용
+
+[Timestamped regional routing](40-regional-public-routing.md) is locally accepted for the declared trial scope. Next regional priorities: bound complete competing-road context for GPS replay within5000-road/100000-vertex limits; add timezone DB under a new graph identity; replace explicit EX public-demo documents with approved reliable collection; expand independently reviewed geometry and measure ETA accuracy. This does not complete the remaining navigation roadmap.
+
+지역 원시각 연결을 명시 시험 범위에서 수용했습니다. 다음 지역 작업은 GPS 경쟁 도로 문맥 제한·새 지도 식별자의 시간대 DB·승인받은 안정된 도로공사 수집·독립 지형 확대·시간 정확도 측정이며 내비게이션 전체 완료는 아닙니다.

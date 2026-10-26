@@ -1,0 +1,22 @@
+import fs from 'node:fs';import path from 'node:path';import {createHash} from 'node:crypto';import {gzipSync} from 'node:zlib';import {execFileSync} from 'node:child_process';
+const root='data/regional-public-routing-20261026',out=root+'/delivery';fs.mkdirSync(out);const hash=b=>createHash('sha256').update(b).digest('hex');
+const copy=(a,b)=>{fs.mkdirSync(path.dirname(out+'/'+b),{recursive:true});fs.copyFileSync(a,out+'/'+b);};
+for(const name of ['manifest.json','outcomes.json'])copy(root+'/comparison04/'+name,'actual-comparison/'+name);
+for(const mode of ['baseline','gits','ex','combined'])for(const file of fs.readdirSync(root+'/comparison04/'+mode)){
+ if(/(?:request|response|validated|cleanup|trust)\.json$/.test(file)||file==='source.jws')copy(root+'/comparison04/'+mode+'/'+file,'actual-comparison/'+mode+'/'+file);
+}
+copy(root+'/comparison04-independent.json','audits/actual-comparison-independent.json');
+for(const name of ['full-tests01.log','full-tests02.log','comparison-repair-build.log','regional-label-build.log','fallback-copy-build.log','graph01.log','graph02.log','graph03.log','comparison01.log','comparison02.log','comparison03.log','comparison04.log','runtime-protocol01.log','runtime-protocol02.log','capture01.log','capture02.log','capture03.log','whole01.log','whole02.log'])if(fs.existsSync(root+'/'+name))copy(root+'/'+name,'logs/'+name);
+for(const name of ['inspect-regional-comparison.mjs','inspect-whole.mjs','inspect-public-runtime.mjs','capture-routing-session.sh','source-witness.mjs','render-captions.mjs'])copy(root+'/'+name,'inspectors/'+name);
+for(const name of ['route-ko','route-en','mobile390'])copy('output/playwright/regional-user-'+name+'.png','frames/'+name+'.png');
+for(const name of ['final-iab-en.json','final-iab-ko.json','final-iab-en.png','final-iab-ko.png'])copy(root+'/'+name,'iab/'+name);
+copy('output/playwright/regional-user-capture.webm','capture-original.webm');
+for(const file of fs.readdirSync('data').filter(n=>n.startsWith('routelens-regional-user-capture-20261026141026-29024-')))copy('data/'+file,'capture/'+file);
+for(const file of ['source.lock.json','source-verification.json','manifest.json','regional-base-manifest.json','routes.json','edge-map.json','regional-scenes.json'])copy(root+'/graph03/'+file,'regional-graph/'+file);
+for(const file of fs.readdirSync(root+'/graph03').filter(n=>/^(?:route|trace|locate)-.+\.(?:request|response)\.json$/.test(n)))copy(root+'/graph03/'+file,'regional-graph/'+file);
+copy(root+'/graph03/regional-native/cleanup.json','regional-graph/regional-native-cleanup.json');
+const record={status:'PASS',source:JSON.parse(fs.readFileSync(root+'/comparison04/manifest.json')).source,regional_graph_id:JSON.parse(fs.readFileSync(root+'/comparison04/manifest.json')).graph_id,retained_locally:['actual-capture01','actual-capture02','actual-capture03','ex-capture01','ex-capture02','ex-capture03','ex-capture04','geometry01','discovery','mapping01','mapping02','graph01','graph02','graph03','bundle03','comparison01','comparison02','comparison03','comparison04','runtime-protocol01','runtime-protocol02','web01','web02','web03','whole01','whole02','whole03'],policy_en:'Selected derived native outputs and authored verification are public. Agency website/envelope/geometry originals, actual signed artifacts, actual compiled traffic, private signer state and undeclared whole originals remain local. Public hash inventories do not restore excluded bytes.',policy_ko:'선별 엔진 결과·자체 검증을 게시하고 기관 웹/원문묶음/지형·실제 서명/교통 바이트·비밀 상태·선별 외 전체 원문은 로컬에 보존합니다. 공개 해시로 제외 바이트를 복원할 수 없습니다.'};
+fs.writeFileSync(out+'/preservation.json',JSON.stringify(record,null,2)+'\n');
+let files=0;function ledger(dir){const entries=[];const walk=(d,rel='')=>{for(const e of fs.readdirSync(d,{withFileTypes:true})){const p=path.join(d,e.name),n=rel?rel+'/'+e.name:e.name;if(e.isDirectory())walk(p,n);else if(e.isFile()){const b=fs.readFileSync(p);entries.push({path:n,bytes:b.length,sha256:hash(b)});files++;}else throw Error('Nonregular local original / 비정상 로컬 원문');}};walk(root+'/'+dir);fs.mkdirSync(out+'/local-inventories',{recursive:true});fs.writeFileSync(out+'/local-inventories/'+dir+'.json.gz',gzipSync(Buffer.from(JSON.stringify(entries))));}
+for(const dir of ['geometry01','mapping02','actual-capture03','ex-capture04','comparison04','regional-graph'])if(fs.existsSync(root+'/'+dir))ledger(dir);
+console.log({out,local_hash_entries:files});

@@ -1,0 +1,18 @@
+{
+  "encoded_polyline": "cg{qfAquahqF|CrI~KdVxL`VzMtRdNjOlVrUpeAn|@xm@de@l_Azn@l}Az`Afl@ng@xXj^tSlVt^hj@jOjU|QbWvq@bfAfa@|p@v`@ni@vhAviA`bBhgBds@px@ze@vh@",
+  "shape_match": "edge_walk",
+  "costing": "auto",
+  "filters": {
+    "action": "include",
+    "attributes": [
+      "edge.id",
+      "edge.way_id",
+      "edge.names",
+      "edge.length",
+      "edge.begin_shape_index",
+      "edge.end_shape_index",
+      "edge.forward",
+      "shape"
+    ]
+  }
+}

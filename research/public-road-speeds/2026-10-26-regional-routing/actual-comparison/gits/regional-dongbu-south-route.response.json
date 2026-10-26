@@ -1,0 +1,91 @@
+{
+  "trip": {
+    "locations": [
+      {
+        "type": "break",
+        "lat": 37.659122,
+        "lon": 127.053413,
+        "date_time": "2026-10-26T05:09",
+        "side_of_street": "right",
+        "original_index": 0
+      },
+      {
+        "type": "break",
+        "lat": 37.681353,
+        "lon": 127.052285,
+        "side_of_street": "right",
+        "original_index": 1
+      }
+    ],
+    "legs": [
+      {
+        "maneuvers": [
+          {
+            "type": 2,
+            "instruction": "Drive north on 61/동부간선로.",
+            "verbal_succinct_transition_instruction": "Drive north.",
+            "verbal_pre_transition_instruction": "Drive north on 61, 동부간선로.",
+            "verbal_post_transition_instruction": "Continue for 2.5 kilometers.",
+            "street_names": [
+              "61",
+              "동부간선로"
+            ],
+            "bearing_after": 338,
+            "time": 146.614,
+            "length": 2.56,
+            "cost": 165.202,
+            "begin_shape_index": 0,
+            "end_shape_index": 60,
+            "travel_mode": "drive",
+            "travel_type": "car"
+          },
+          {
+            "type": 5,
+            "instruction": "Your destination is on the right.",
+            "verbal_transition_alert_instruction": "Your destination will be on the right.",
+            "verbal_pre_transition_instruction": "Your destination is on the right.",
+            "bearing_before": 11,
+            "time": 0,
+            "length": 0,
+            "cost": 0,
+            "begin_shape_index": 60,
+            "end_shape_index": 60,
+            "travel_mode": "drive",
+            "travel_type": "car"
+          }
+        ],
+        "summary": {
+          "has_time_restrictions": false,
+          "has_toll": false,
+          "has_highway": false,
+          "has_ferry": false,
+          "min_lat": 37.659088,
+          "min_lon": 127.049737,
+          "max_lat": 37.68137,
+          "max_lon": 127.053303,
+          "time": 146.614,
+          "length": 2.56,
+          "cost": 165.202
+        },
+        "shape": "_|oyfAo~uiqFyF|BkRxKaMzFgMrEqPtDqNvAyy@`Fca@zC}bAfHuf@zAmYzAuVnEqLfE{O~FiYxKwTrJ{TrK}QtIwGfDoEfCwM|I{G~EsItGiJvFmH~Ca\\hM_QdFuOjD}RhCav@lCahAbAmJPyRNkZBkTI{Ja@q_@yC_XiDoh@_GsLeByIgBoJ}B_i@}M_m@eQoYiJed@yM{LwCoQmDgVgFaLyByYmF}S}CkTmC{R{Ayi@kEuEg@kKoA{YuDgXgEw@M"
+      }
+    ],
+    "summary": {
+      "has_time_restrictions": false,
+      "has_toll": false,
+      "has_highway": false,
+      "has_ferry": false,
+      "min_lat": 37.659088,
+      "min_lon": 127.049737,
+      "max_lat": 37.68137,
+      "max_lon": 127.053303,
+      "time": 146.614,
+      "length": 2.56,
+      "cost": 165.202
+    },
+    "status_message": "Found route between points",
+    "status": 0,
+    "units": "kilometers",
+    "language": "en-US"
+  }
+}

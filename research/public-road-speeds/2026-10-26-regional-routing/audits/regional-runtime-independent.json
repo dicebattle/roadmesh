@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "82acad0f5452fb5a72ae20b7fb7b219dae853359",
+    "dirty": false
+  },
+  "graph_id": "662ffb2874ad7a5928eb590e53a5d7c0ecc373aec0c55724518a4fd053a98f12",
+  "implementation_sha256": "718e323a745280e2893f536e8360095e1ef6e9463a45458d935a9358ca57af17",
+  "original_hashes_checked": 390,
+  "signatures_verified_independently_with_node_crypto": 3,
+  "exact_native_traffic_records": 5,
+  "durable_high_water": 3,
+  "durable_withdrawal": true,
+  "http_ports_absent": [
+    64615,
+    64627
+  ],
+  "fixture_kind": "AUTHORED_PROVIDER_PROTOCOL_NOT_ACTUAL_AGENCY_SPEED",
+  "message_en": "Independent original bytes, crypto signatures, native records, outage/expiry/recovery, copied SQLite and exact cleanup reviewed. Controlled provider faults are not actual agency observations.",
+  "message_ko": "원문·표준 서명·엔진 레코드·장애/만료/복구·복사 SQLite·정확한 정리를 독립 확인했습니다. 통제 장애를 실제 기관 관측으로 세지 않습니다."
+}

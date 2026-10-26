@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "82acad0f5452fb5a72ae20b7fb7b219dae853359",
+    "dirty": false
+  },
+  "implementation_sha256": "718e323a745280e2893f536e8360095e1ef6e9463a45458d935a9358ca57af17",
+  "source_class": "PUBLIC_AGENCY",
+  "movement_scope": "NO_GPS_REPLAY_IN_THIS_RECORDING",
+  "raw_seconds": 29.95,
+  "raw_frames": 599,
+  "retained_intervals_seconds": [
+    [
+      0,
+      29.95
+    ]
+  ],
+  "mp4_frames_each": 599,
+  "source_top720_all_frame_ssim_en": 0.996698,
+  "caption_pixels_outside_original_frame": 108,
+  "english_korean_native_guidance_checked": true,
+  "mobile_width": 390,
+  "whole_video_checked_before_source_expiry": true,
+  "owned_browser_processes_absent": 10,
+  "actual_request_id": "browser-f6950d79-1206-43c9-a103-7bf6d1dbafab",
+  "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+  "live_coverage_ratio": 0.07584683357879234,
+  "message_en": "Actual full-duration recording, source identity, native responses, frame count, top-frame SSIM, external captions and owned cleanup agree. Video is routing-only; previous failed GPS attempt is separate.",
+  "message_ko": "실제 전체 길이·소스·엔진 응답·프레임 수·원 화면 유사도·밖 자막·소유 정리를 확인했습니다. 경로 전용 영상이며 첫 GPS 실패와 구분합니다."
+}

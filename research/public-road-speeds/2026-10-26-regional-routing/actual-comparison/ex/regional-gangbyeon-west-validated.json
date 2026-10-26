@@ -1,0 +1,97 @@
+{
+  "request_id": "regional-gangbyeon-west",
+  "request_sha256": "491c7acb7e5a02d4be059a9e387d27c87570f3620d36fad8aa0b5a68dfc42611",
+  "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+  "snapshot_id": "b7728961c92427e0bbd18d6485e0f7f27d1c104e0413bbf7049ec9fb5447c3bc",
+  "sequence": 1,
+  "generation_id": "9edf140325d2910295b891a3e03097c56a11f7adc345056eb1e03082fdfb04c9",
+  "traffic_sha256": "c182644516f8aebf901652b28eb450b47d06b49bb08cf616e17c2ff7e842809e",
+  "engine_version": "3.9.1",
+  "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+  "costing_config_id": "valhalla-current-v1",
+  "node_id": "regional-comparison",
+  "traffic_mode": "BASE_ONLY",
+  "distance_m": 2258,
+  "duration_s": 101.622,
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [
+        127.021471,
+        37.541945
+      ],
+      [
+        127.020867,
+        37.541546
+      ],
+      [
+        127.018995,
+        37.540345
+      ],
+      [
+        127.018104,
+        37.539717
+      ],
+      [
+        127.017635,
+        37.539238
+      ],
+      [
+        127.01738,
+        37.538897
+      ],
+      [
+        127.016445,
+        37.537497
+      ],
+      [
+        127.013418,
+        37.532855
+      ],
+      [
+        127.012629,
+        37.531688
+      ],
+      [
+        127.012222,
+        37.531158
+      ],
+      [
+        127.01172,
+        37.53065
+      ],
+      [
+        127.011075,
+        37.530143
+      ],
+      [
+        127.010188,
+        37.529626
+      ],
+      [
+        127.008199,
+        37.528596
+      ],
+      [
+        127.006602,
+        37.52778
+      ],
+      [
+        127.005644,
+        37.527266
+      ],
+      [
+        127.005158,
+        37.526935
+      ]
+    ]
+  },
+  "live_coverage_ratio": 0,
+  "warnings": [
+    {
+      "code": "NO_ROUTE_LIVE_COVERAGE",
+      "message_en": "This route has no accepted live edge coverage; default speeds apply.",
+      "message_ko": "이 경로에 수용된 실시간 구간이 없어 기본 속도를 적용합니다."
+    }
+  ]
+}

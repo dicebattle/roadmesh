@@ -1,0 +1,354 @@
+{
+  "request": {
+    "schema_version": "0.1",
+    "request_id": "browser-0cb6b50f-6d42-43e7-ad21-897e677f16eb",
+    "origin": {
+      "latitude": 37.4606318,
+      "longitude": 127.0425029
+    },
+    "destination": {
+      "latitude": 37.43085,
+      "longitude": 127.0691811
+    },
+    "profile": "car",
+    "traffic_policy": "prefer_live",
+    "guidance_language": "ko-KR"
+  },
+  "native": {
+    "request": {
+      "locations": [
+        {
+          "lon": 127.0425029,
+          "lat": 37.4606318
+        },
+        {
+          "lon": 127.0691811,
+          "lat": 37.43085
+        }
+      ],
+      "costing": "auto",
+      "units": "kilometers",
+      "language": "ko-KR",
+      "date_time": {
+        "type": 0
+      }
+    },
+    "route": {
+      "trip": {
+        "locations": [
+          {
+            "type": "break",
+            "lat": 37.460631,
+            "lon": 127.042502,
+            "date_time": "2026-10-26T05:17",
+            "original_index": 0
+          },
+          {
+            "type": "break",
+            "lat": 37.43085,
+            "lon": 127.069181,
+            "original_index": 1
+          }
+        ],
+        "legs": [
+          {
+            "maneuvers": [
+              {
+                "type": 1,
+                "instruction": "1/경부고속도로에서 남동쪽으로 주행",
+                "verbal_succinct_transition_instruction": "남동쪽으로 주행",
+                "verbal_pre_transition_instruction": "1, 경부고속도로에서 남동쪽으로 주행",
+                "verbal_post_transition_instruction": "4km 동안 계속",
+                "street_names": [
+                  "1",
+                  "경부고속도로"
+                ],
+                "bearing_after": 143,
+                "time": 135.916,
+                "length": 4.074,
+                "cost": 133.351,
+                "begin_shape_index": 0,
+                "end_shape_index": 28,
+                "toll": true,
+                "highway": true,
+                "travel_mode": "drive",
+                "travel_type": "car"
+              },
+              {
+                "type": 4,
+                "instruction": "목적지 도착",
+                "verbal_transition_alert_instruction": "목적지 도착",
+                "verbal_pre_transition_instruction": "목적지 도착 완료",
+                "bearing_before": 141,
+                "time": 0,
+                "length": 0,
+                "cost": 0,
+                "begin_shape_index": 28,
+                "end_shape_index": 28,
+                "travel_mode": "drive",
+                "travel_type": "car"
+              }
+            ],
+            "summary": {
+              "has_time_restrictions": false,
+              "has_toll": true,
+              "has_highway": true,
+              "has_ferry": false,
+              "min_lat": 37.430851,
+              "min_lon": 127.04248,
+              "max_lat": 37.460618,
+              "max_lon": 127.069183,
+              "time": 135.916,
+              "length": 4.074,
+              "cost": 133.351
+            },
+            "shape": "uglmfAaz`iqFn}AwwAzp@qm@fIsHzi@mg@fiCcdCheBy}ApnCiaCtv@op@hbAc{@xt@}p@tw@or@~_Agx@hb@u]v`@a[vd@w]hc@qYnmAcw@jsA}y@zgAeu@heAap@|c@{\\fn@wk@vl@sl@vjAwhAxlAokAdoBwqB~a@wb@lcBqdB"
+          }
+        ],
+        "summary": {
+          "has_time_restrictions": false,
+          "has_toll": true,
+          "has_highway": true,
+          "has_ferry": false,
+          "min_lat": 37.430851,
+          "min_lon": 127.04248,
+          "max_lat": 37.460618,
+          "max_lon": 127.069183,
+          "time": 135.916,
+          "length": 4.074,
+          "cost": 133.351
+        },
+        "status_message": "Found route between points",
+        "status": 0,
+        "units": "kilometers",
+        "language": "ko-KR"
+      }
+    },
+    "trace": {
+      "units": "kilometers",
+      "shape": "uglmfAaz`iqFn}AwwAzp@qm@fIsHzi@mg@fiCcdCheBy}ApnCiaCtv@op@hbAc{@xt@}p@tw@or@~_Agx@hb@u]v`@a[vd@w]hc@qYnmAcw@jsA}y@zgAeu@heAap@|c@{\\fn@wk@vl@sl@vjAwhAxlAokAdoBwqB~a@wb@lcBqdB",
+      "edges": [
+        {
+          "id": 1266545613200,
+          "speed": 110,
+          "length": 0.21,
+          "source_percent_along": 0.322
+        },
+        {
+          "id": 1264431683984,
+          "speed": 110,
+          "length": 0.111
+        },
+        {
+          "id": 1264263911824,
+          "speed": 110,
+          "length": 3.444
+        },
+        {
+          "id": 1180344277392,
+          "speed": 88,
+          "length": 0.309,
+          "target_percent_along": 0.576
+        }
+      ],
+      "alternate_paths": []
+    }
+  },
+  "response": {
+    "request_id": "browser-0cb6b50f-6d42-43e7-ad21-897e677f16eb",
+    "request_sha256": "89da7e59249925055f32d5aa23e3d1baff77e9604fe6835dd45ed913a97bc1af",
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "snapshot_id": "a4f02674b91d7ec24b5d3eb2b1c2eb0d8f057f9263cd9d45fb85b6abf8d890c2",
+    "sequence": 11,
+    "generation_id": "b2db8fb78f19ffd7be2964cb1c0a0931f7611455aef13c9557aa231d26a40579",
+    "traffic_sha256": "7e746234b48d43800a308a557df31f5a7c62aae619597ef623c732bdc5dd1266",
+    "engine_version": "3.9.1",
+    "image_id": "sha256:34fcb41045d960a181f44583484b7a4372355d4b276f6f78c603e884e706d5c2",
+    "costing_config_id": "valhalla-current-v1",
+    "node_id": "local-public-node",
+    "traffic_mode": "LIVE_MIXED",
+    "distance_m": 4074,
+    "duration_s": 135.916,
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          127.042481,
+          37.460619
+        ],
+        [
+          127.043901,
+          37.459107
+        ],
+        [
+          127.044646,
+          37.458309
+        ],
+        [
+          127.0448,
+          37.458145
+        ],
+        [
+          127.045447,
+          37.457459
+        ],
+        [
+          127.047577,
+          37.455247
+        ],
+        [
+          127.049094,
+          37.45361
+        ],
+        [
+          127.051179,
+          37.451313
+        ],
+        [
+          127.051971,
+          37.450422
+        ],
+        [
+          127.052933,
+          37.449345
+        ],
+        [
+          127.053732,
+          37.448484
+        ],
+        [
+          127.054556,
+          37.447577
+        ],
+        [
+          127.055472,
+          37.446537
+        ],
+        [
+          127.055963,
+          37.445972
+        ],
+        [
+          127.056412,
+          37.445432
+        ],
+        [
+          127.056904,
+          37.444828
+        ],
+        [
+          127.057329,
+          37.444247
+        ],
+        [
+          127.058227,
+          37.442991
+        ],
+        [
+          127.05917,
+          37.441641
+        ],
+        [
+          127.060037,
+          37.440475
+        ],
+        [
+          127.060822,
+          37.43935
+        ],
+        [
+          127.0613,
+          37.438759
+        ],
+        [
+          127.062016,
+          37.438003
+        ],
+        [
+          127.062746,
+          37.437271
+        ],
+        [
+          127.063926,
+          37.436059
+        ],
+        [
+          127.06515,
+          37.434814
+        ],
+        [
+          127.066986,
+          37.433019
+        ],
+        [
+          127.067558,
+          37.432459
+        ],
+        [
+          127.069183,
+          37.430852
+        ]
+      ]
+    },
+    "guidance": {
+      "schema_version": "0.1",
+      "language": "ko-KR",
+      "maneuvers": [
+        {
+          "index": 0,
+          "native_type": 1,
+          "instruction": "1/경부고속도로에서 남동쪽으로 주행",
+          "distance_m": 4074,
+          "duration_s": 135.916,
+          "begin_shape_index": 0,
+          "end_shape_index": 28
+        },
+        {
+          "index": 1,
+          "native_type": 4,
+          "instruction": "목적지 도착",
+          "distance_m": 0,
+          "duration_s": 0,
+          "begin_shape_index": 28,
+          "end_shape_index": 28
+        }
+      ]
+    },
+    "live_coverage_ratio": 0.07584683357879234,
+    "warnings": [],
+    "calculated_at": "2026-10-26T05:17:33.499Z",
+    "high_water": 11,
+    "checked_at_event_time": "2026-10-26T05:17:33.495Z",
+    "traffic_published_at": "2026-10-26T05:16:16.670Z",
+    "traffic_valid_until": "2026-10-26T05:22:00.000Z",
+    "source_class": "PUBLIC_AGENCY",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "public_traffic": {
+      "provider": "kr-regional",
+      "source_state": "CURRENT",
+      "refresh_state": "OK",
+      "retrieved_at": "2026-10-26T05:16:16.320Z",
+      "observed_from": "2026-10-26T05:12:00.000Z",
+      "observed_until": "2026-10-26T05:14:00.000Z",
+      "graph_edges": 244,
+      "mapped_edges": 56,
+      "live_edges": 56,
+      "sources": [
+        {
+          "provider": "kr-gits",
+          "live_edges": 56,
+          "access": "ANONYMOUS_WEBSITE",
+          "observed_from": "2026-10-26T05:12:00.000Z",
+          "observed_until": "2026-10-26T05:14:00.000Z"
+        },
+        {
+          "provider": "kr-ex",
+          "live_edges": 0,
+          "access": "OFFICIAL_PUBLIC_DEMO_BROWSER_DOCUMENT",
+          "observed_from": null,
+          "observed_until": null
+        }
+      ]
+    }
+  }
+}

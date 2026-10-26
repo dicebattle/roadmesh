@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "82acad0f5452fb5a72ae20b7fb7b219dae853359",
+    "dirty": false
+  },
+  "implementation_sha256": "718e323a745280e2893f536e8360095e1ef6e9463a45458d935a9358ca57af17",
+  "graph_id": "662ffb2874ad7a5928eb590e53a5d7c0ecc373aec0c55724518a4fd053a98f12",
+  "original_hashes_checked": 2882,
+  "required_progress_cases": 32,
+  "independent_geometry_length_m": 2117.0115217038333,
+  "progress_states_checked": 191,
+  "confirmed_positions_checked": 168,
+  "max_authored_progress_error_m": 2.2293104880154715,
+  "actual_parallel_context_road_index": 2,
+  "actual_departure_context_road_index": 957,
+  "native_gateway_binding": "browser-ada3728b-cf4e-4a65-968e-4fbadd1fe488-1d101709-064e-49f9-b9f1-084616062871",
+  "browser_departure_rejoin_arrival": true,
+  "mobile_width": 390,
+  "original_bytes_unchanged": true,
+  "message_en": "Independent local-coordinate projections checked original native/route binding, next-turn boundaries, remaining distance, authored noise, actual competing/departure roads, arrival and actual browser playback. This is synthetic route-bound evidence, not device GPS or road-network accuracy.",
+  "message_ko": "독립 좌표 투영으로 엔진/경로 연결·다음 회전·남은 거리·명시 오차·실제 경쟁/이탈 도로·도착·실제 화면 재생을 확인했습니다. 합성 경로 연결 근거이며 단말 GPS·도로망 정확도 검증은 아닙니다."
+}

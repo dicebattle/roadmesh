@@ -1,0 +1,567 @@
+{
+  "units": "kilometers",
+  "shape": "az{zfA{qsiqFfHhAhNrBdOrBd\\|DvNrAln@|FpLhA|PdB|Gz@xQdCzVrEvP~CtQnDtl@~OdQlFzQdGbRnGz^dKvMrDjOtDvh@nLjK~AtEp@bGt@hMpAtUnCpXzChIr@rO`AfSZvIAzLQ~YKfQUhTUj[dAjbAcA|[wCr[oFtHuBtCs@`NuEfNuFxH_E~RwLvGwDtOqIzRqJ|M}FpE{BlEyCbKiIdIoIrDuCbE_DlDqB~HqDpOmFjIuCfFiA~A_@hGaAjQaB~t@TtOkApVeBtOeArGe@nFoA`AItIk@N}Dv@uMRwDtAsX|Dst@zDsz@lBqg@|A{g@ZqI~Ck}@hAcc@n@aW`@uMrKkBxVcEhcAwQ~\\kGj]cG`VmE~JoBh^sGbuAyW|NkCpLiCde@qIhPyBrKcChMuB~K_CxQgDjQgDbtBk\\nLwApHkAt{AqYlf@mMpIcDxAhJlCpRfWziBnFb`@vQbrAvBzObJhn@r@lEJvF[`HoBhG}Bv@g]|JeL|DwQpJkj@nPqEhAgYfHgKlBcNdAa\\bAeXf@oXp@uz@zEuf@xBqgA|CaX|AyVxBeVh@oPnB_TjHc\\nNyV~JiXdN_[pMwXpLui@jT",
+  "edges": [
+    {
+      "way_id": 769545983,
+      "id": 1953841043856,
+      "end_shape_index": 5,
+      "begin_shape_index": 0,
+      "forward": true,
+      "length": 0.155,
+      "source_percent_along": 0.2,
+      "names": [
+        "61",
+        "동부간선로"
+      ]
+    },
+    {
+      "way_id": 830250846,
+      "id": 1953002183056,
+      "end_shape_index": 13,
+      "begin_shape_index": 5,
+      "forward": true,
+      "length": 0.302,
+      "names": [
+        "61",
+        "동부간선로"
+      ]
+    },
+    {
+      "way_id": 830250847,
+      "id": 1952800856464,
+      "end_shape_index": 15,
+      "begin_shape_index": 13,
+      "forward": true,
+      "length": 0.119,
+      "names": [
+        "61",
+        "동부간선로"
+      ]
+    },
+    {
+      "way_id": 830250847,
+      "id": 1952867965328,
+      "end_shape_index": 34,
+      "begin_shape_index": 15,
+      "forward": true,
+      "length": 0.636,
+      "names": [
+        "61",
+        "동부간선로"
+      ]
+    },
+    {
+      "way_id": 1208256718,
+      "id": 1962330315152,
+      "end_shape_index": 35,
+      "begin_shape_index": 34,
+      "forward": true,
+      "length": 0.038,
+      "names": [
+        "61",
+        "동부간선로"
+      ]
+    },
+    {
+      "way_id": 830250848,
+      "id": 1640141004377,
+      "end_shape_index": 65,
+      "begin_shape_index": 35,
+      "forward": true,
+      "length": 0.913,
+      "sign": {}
+    },
+    {
+      "way_id": 890514519,
+      "id": 1639167925849,
+      "end_shape_index": 70,
+      "begin_shape_index": 65,
+      "forward": true,
+      "length": 0.105
+    },
+    {
+      "way_id": 890514519,
+      "id": 1638664609369,
+      "end_shape_index": 71,
+      "begin_shape_index": 70,
+      "forward": true,
+      "length": 0.019
+    },
+    {
+      "way_id": 1093332973,
+      "id": 1638597500505,
+      "end_shape_index": 73,
+      "begin_shape_index": 71,
+      "forward": true,
+      "length": 0.029,
+      "names": [
+        "노원로"
+      ]
+    },
+    {
+      "way_id": 199637114,
+      "id": 1638865935961,
+      "end_shape_index": 74,
+      "begin_shape_index": 73,
+      "forward": true,
+      "length": 0.008,
+      "names": [
+        "노원로"
+      ]
+    },
+    {
+      "way_id": 199637114,
+      "id": 1639100816985,
+      "end_shape_index": 76,
+      "begin_shape_index": 74,
+      "forward": true,
+      "length": 0.113,
+      "names": [
+        "노원로"
+      ]
+    },
+    {
+      "way_id": 199637114,
+      "id": 1639033708121,
+      "end_shape_index": 77,
+      "begin_shape_index": 76,
+      "forward": true,
+      "length": 0.085,
+      "names": [
+        "노원로"
+      ]
+    },
+    {
+      "way_id": 199637114,
+      "id": 1645878812249,
+      "end_shape_index": 78,
+      "begin_shape_index": 77,
+      "forward": true,
+      "length": 0.057,
+      "names": [
+        "노원로"
+      ]
+    },
+    {
+      "way_id": 199637114,
+      "id": 1645945921113,
+      "end_shape_index": 79,
+      "begin_shape_index": 78,
+      "forward": true,
+      "length": 0.058,
+      "names": [
+        "노원로"
+      ]
+    },
+    {
+      "way_id": 199637114,
+      "id": 1645811703385,
+      "end_shape_index": 80,
+      "begin_shape_index": 79,
+      "forward": true,
+      "length": 0.015,
+      "names": [
+        "노원로"
+      ]
+    },
+    {
+      "way_id": 199637114,
+      "id": 1645744594521,
+      "end_shape_index": 81,
+      "begin_shape_index": 80,
+      "forward": true,
+      "length": 0.088,
+      "names": [
+        "노원로"
+      ]
+    },
+    {
+      "way_id": 796660391,
+      "id": 1646013029977,
+      "end_shape_index": 82,
+      "begin_shape_index": 81,
+      "forward": true,
+      "length": 0.051,
+      "names": [
+        "노원로"
+      ]
+    },
+    {
+      "way_id": 796660391,
+      "id": 1646180802137,
+      "end_shape_index": 83,
+      "begin_shape_index": 82,
+      "forward": true,
+      "length": 0.034,
+      "names": [
+        "노원로"
+      ]
+    },
+    {
+      "way_id": 796660391,
+      "id": 1646415683161,
+      "end_shape_index": 84,
+      "begin_shape_index": 83,
+      "forward": true,
+      "length": 0.021,
+      "names": [
+        "노원로"
+      ]
+    },
+    {
+      "way_id": 520033847,
+      "id": 1964142254480,
+      "end_shape_index": 85,
+      "begin_shape_index": 84,
+      "forward": true,
+      "length": 0.023,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 520033847,
+      "id": 1964075145616,
+      "end_shape_index": 87,
+      "begin_shape_index": 85,
+      "forward": true,
+      "length": 0.168,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 520033847,
+      "id": 1964813343120,
+      "end_shape_index": 90,
+      "begin_shape_index": 87,
+      "forward": true,
+      "length": 0.152,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 520033847,
+      "id": 1964612016528,
+      "end_shape_index": 91,
+      "begin_shape_index": 90,
+      "forward": true,
+      "length": 0.022,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 520033847,
+      "id": 1964679125392,
+      "end_shape_index": 94,
+      "begin_shape_index": 91,
+      "forward": true,
+      "length": 0.243,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 520033847,
+      "id": 1965148887440,
+      "end_shape_index": 95,
+      "begin_shape_index": 94,
+      "forward": true,
+      "length": 0.025,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 631747997,
+      "id": 1965350214032,
+      "end_shape_index": 97,
+      "begin_shape_index": 95,
+      "forward": true,
+      "length": 0.101,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 520033841,
+      "id": 1965417322896,
+      "end_shape_index": 98,
+      "begin_shape_index": 97,
+      "forward": true,
+      "length": 0.023,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 520033841,
+      "id": 1965484431760,
+      "end_shape_index": 99,
+      "begin_shape_index": 98,
+      "forward": true,
+      "length": 0.026,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 631748004,
+      "id": 1965551540624,
+      "end_shape_index": 100,
+      "begin_shape_index": 99,
+      "forward": true,
+      "length": 0.024,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 631748004,
+      "id": 1965819976080,
+      "end_shape_index": 101,
+      "begin_shape_index": 100,
+      "forward": true,
+      "length": 0.034,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 470096416,
+      "id": 1965752867216,
+      "end_shape_index": 102,
+      "begin_shape_index": 101,
+      "forward": true,
+      "length": 0.034,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 470096416,
+      "id": 1965618649488,
+      "end_shape_index": 103,
+      "begin_shape_index": 102,
+      "forward": true,
+      "length": 0.213,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 470096416,
+      "id": 1965954193808,
+      "end_shape_index": 104,
+      "begin_shape_index": 103,
+      "forward": true,
+      "length": 0.024,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 218778495,
+      "id": 1966088411536,
+      "end_shape_index": 105,
+      "begin_shape_index": 104,
+      "forward": true,
+      "length": 0.017,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 218778495,
+      "id": 1966289738128,
+      "end_shape_index": 107,
+      "begin_shape_index": 105,
+      "forward": true,
+      "length": 0.242,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 218778495,
+      "id": 1966692391312,
+      "end_shape_index": 108,
+      "begin_shape_index": 107,
+      "forward": true,
+      "length": 0.02,
+      "names": [
+        "동일로",
+        "3"
+      ]
+    },
+    {
+      "way_id": 37401129,
+      "id": 1648294731353,
+      "end_shape_index": 109,
+      "begin_shape_index": 108,
+      "forward": false,
+      "length": 0.017,
+      "names": [
+        "동일로213길"
+      ]
+    },
+    {
+      "way_id": 37401129,
+      "id": 1648529612377,
+      "end_shape_index": 110,
+      "begin_shape_index": 109,
+      "forward": false,
+      "length": 0.029,
+      "names": [
+        "동일로213길"
+      ]
+    },
+    {
+      "way_id": 37401129,
+      "id": 1648596721241,
+      "end_shape_index": 112,
+      "begin_shape_index": 110,
+      "forward": false,
+      "length": 0.205,
+      "names": [
+        "동일로213길"
+      ]
+    },
+    {
+      "way_id": 37401129,
+      "id": 1661112524377,
+      "end_shape_index": 115,
+      "begin_shape_index": 112,
+      "forward": false,
+      "length": 0.216,
+      "names": [
+        "동일로213길"
+      ]
+    },
+    {
+      "way_id": 830250866,
+      "id": 1659569020505,
+      "end_shape_index": 119,
+      "begin_shape_index": 115,
+      "forward": true,
+      "length": 0.047
+    },
+    {
+      "way_id": 380228705,
+      "id": 1967967459728,
+      "end_shape_index": 120,
+      "begin_shape_index": 119,
+      "forward": true,
+      "length": 0.007
+    },
+    {
+      "way_id": 1383689889,
+      "id": 1968034568592,
+      "end_shape_index": 122,
+      "begin_shape_index": 120,
+      "forward": true,
+      "length": 0.081
+    },
+    {
+      "way_id": 1092505297,
+      "id": 1966759500176,
+      "end_shape_index": 123,
+      "begin_shape_index": 122,
+      "forward": true,
+      "length": 0.037
+    },
+    {
+      "way_id": 381798551,
+      "id": 1966927272336,
+      "end_shape_index": 125,
+      "begin_shape_index": 123,
+      "forward": true,
+      "length": 0.093,
+      "names": [
+        "61",
+        "동부간선로"
+      ]
+    },
+    {
+      "way_id": 381798551,
+      "id": 1967027935632,
+      "end_shape_index": 129,
+      "begin_shape_index": 125,
+      "forward": true,
+      "length": 0.15,
+      "names": [
+        "61",
+        "동부간선로"
+      ]
+    },
+    {
+      "way_id": 381792786,
+      "id": 1967162153360,
+      "end_shape_index": 132,
+      "begin_shape_index": 129,
+      "forward": true,
+      "length": 0.197,
+      "names": [
+        "61",
+        "동부간선로"
+      ]
+    },
+    {
+      "way_id": 830250864,
+      "id": 1967229262224,
+      "end_shape_index": 133,
+      "begin_shape_index": 132,
+      "forward": true,
+      "length": 0.071,
+      "names": [
+        "61",
+        "동부간선로"
+      ]
+    },
+    {
+      "way_id": 1014534178,
+      "id": 1967296371088,
+      "end_shape_index": 143,
+      "begin_shape_index": 133,
+      "forward": true,
+      "length": 0.535,
+      "names": [
+        "61",
+        "동부간선로"
+      ]
+    },
+    {
+      "way_id": 1072175777,
+      "id": 1961659226512,
+      "end_shape_index": 145,
+      "begin_shape_index": 143,
+      "forward": true,
+      "length": 0.131,
+      "target_percent_along": 0.939,
+      "names": [
+        "61",
+        "동부간선로"
+      ]
+    }
+  ],
+  "alternate_paths": []
+}

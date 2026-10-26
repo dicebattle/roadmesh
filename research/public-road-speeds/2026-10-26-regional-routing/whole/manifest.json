@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1",
+  "status": "PASS",
+  "source": {
+    "commit": "82acad0f5452fb5a72ae20b7fb7b219dae853359",
+    "dirty": false
+  },
+  "implementation_sha256": "718e323a745280e2893f536e8360095e1ef6e9463a45458d935a9358ca57af17",
+  "graph_id": "662ffb2874ad7a5928eb590e53a5d7c0ecc373aec0c55724518a4fd053a98f12",
+  "cleanup_verified": true,
+  "output_sha256": {
+    "seoul/manifest.json": "9decc11ed68c1e8d70b5cb66c964995d6722c18e6f85a40cd86ee5a05054d32e",
+    "ingestion/manifest.json": "7802b6725e29730ea99920ce27d5c7bdf1287d0afde85197e46f99aec9605529",
+    "aggregation/manifest.json": "4826fd0e38f9faabc43b537d506d9fdd0d32f07b2581bc833a529e1ccd65fad0",
+    "publication/manifest.json": "4ddfcb134fc1729f672a0b56ce56c6678f693af9e46887560d2f94aa2d6675ac",
+    "traffic/manifest.json": "1235b96b086ce377f6778aa0d9e89c23c4a0cc358f4fbb59ada0f94fbc78d6f7",
+    "nodes/manifest.json": "a95c58242f45df6346591f47883cc9832d161014c8ad2abe26ff939357b1a55a",
+    "gateway/manifest.json": "29bd05f5dc5cfb21c31c70506139709df87954e51f4c135c01d5ea1665f96a42",
+    "client/manifest.json": "89a1d6283d01833377f5a319f41c11743503b0af443407a8dae509cb97842220",
+    "scenarios/manifest.json": "e9907554ac52beeaafefff7408f3706471920307d7880d36970aed4ff4a4e7ba",
+    "cloudflare/manifest.json": "dfa694b246b1fc0745fe18de1e2c127cb6753721641298da203334f1f8213ab1",
+    "public-speeds/manifest.json": "16bd37e823345f4e9ba7cf73b0de973123a4c6e5b3f09b48efef9aef83481ef8",
+    "regional-public-speeds/manifest.json": "1b93d593a9ea704ef5b2cdfa83b1e1986f9b22beddc7c972be76ae91084f9b2a",
+    "lifecycle/cleanup.json": "2aaecbbc87f9212ffe532cbd662014663a2dad96d3b1893c15a7dbd5beac5742",
+    "report-data.json": "5651c90948ad01ec96f409884ea622c62e810292302f4a279c022cb510dc1fec",
+    "report.html": "5f5b5ae43e8a7f61a8c5d48b9656f59082f0d9a0fc439c62c5d1f40c212f9f01",
+    "assertions.json": "6cbe2cf84cb1b75dc38442886dcad537dc14b24aeb5507e3029611f97c1a4704",
+    "summary.md": "ff562af335d90639b2033bc0e902cc99dfdc80acf965b1789e3479b8f2e7904c",
+    "seoul-process.json": "97da6287c5f92fa4a33e3484dc5c9df4e1d0b0d48be7526abe1c869e17843005"
+  },
+  "completed_at_utc": "2026-10-26T05:27:03.960Z"
+}

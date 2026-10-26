@@ -1,8 +1,8 @@
 # Timestamped regional traffic routing / 원시각 포함 지역 교통 경로 계산
 
-Status: design fixed before implementation; acceptance is pending. Main Sol owns design, implementation and original-evidence review. [Work record](../research/public-road-speeds/2026-10-26-regional-routing/plan.md).
+Status: locally accepted on2026-10-26: actual48 native comparisons, fresh whole486/486, Node22 suite393/393, original-time expiry and actual EN/KO/390px routing capture. [Measured result](../research/public-road-speeds/2026-10-26-regional-routing/report.md). Main Sol owns design, implementation and original-evidence review. [Work record](../research/public-road-speeds/2026-10-26-regional-routing/plan.md).
 
-상태: 구현 전 확정 설계이며 실제 수용 결과는 아직 없습니다. 메인 Sol이 설계·구현·원문 검토를 맡습니다.
+상태: 실제48회·새 전체486개·전체393개·원시각 만료·한영390픽셀 경로 녹화를 로컬 수용했습니다. 메인 Sol이 설계·구현·원문 검토를 맡았고 아래 설계는 구현 전 확정한 기준입니다. 지역 GPS 문맥·운영·정확도는 별도입니다.
 
 ## Source and geometry / 출처와 지형
 
@@ -20,9 +20,9 @@ Expressway: join each timestamped VDS speed to its exact installation ID, route 
 
 ## Selection, provenance and validity / 선택·근거·유효성
 
-The regional mapping binds exact graph/edge inventory and geometry hashes and retains ordered alternatives per native edge. Prefer the verified EX point-supported observation, then a verified Gyeonggi service-link observation. This is an explicit spatial-resolution policy, not an accuracy ranking. Same-provider latest-time conflicting rows become unknown; an invalid latest row cannot resurrect an older speed. A missing/future original time is invalid. Validity ends exactly600s after original observation; acquisition or publication cannot renew it. A failed source refresh retains only previously unexpired original bytes/times. Recompute alternatives on original expiry, sign immutable bytes, and keep restart-safe sequence/withdrawal handling. Existing compiler, signature/trust checks, SQLite WAL authority, engine lifecycle and before/after-request revalidation are reused.
+The regional mapping binds exact graph/edge inventory and geometry hashes and retains ordered alternatives per native edge. Prefer the verified EX point-supported observation, then a verified Gyeonggi service-link observation. This is an explicit spatial-resolution policy, not an accuracy ranking. Same-provider latest-time conflicting rows become unknown; an invalid latest row cannot resurrect an older speed. A missing original time or one beyond the existing30s clock-skew allowance is invalid. Validity ends exactly600s after original observation; acquisition or publication cannot renew it. A failed source refresh retains only previously unexpired original bytes/times. Recompute alternatives on original expiry, sign immutable bytes, and keep restart-safe sequence/withdrawal handling. Existing compiler, signature/trust checks, SQLite WAL authority, engine lifecycle and before/after-request revalidation are reused.
 
-고정 지도·구간 목록·지형 해시와 순서 있는 출처 후보를 묶습니다. 확인한 검지점 관측 다음에 경기 서비스 링크 평균을 선택하되 정확도 순위로 표현하지 않습니다. 같은 출처의 최신 충돌·최신 무효·미래/누락 시각을 거부하고 원 관측600초를 유지합니다. 갱신 실패·재게시로 수명을 늘리지 않으며 기존 서명·영속 순번/철회·변환·엔진 수명·요청 전후 재검증을 재사용합니다.
+고정 지도·구간 목록·지형 해시와 순서 있는 출처 후보를 묶습니다. 확인한 검지점 관측 다음에 경기 서비스 링크 평균을 선택하되 정확도 순위로 표현하지 않습니다. 같은 출처의 최신 충돌·최신 무효·기존30초 허용치를 넘는 미래/누락 시각을 거부하고 원 관측600초를 유지합니다. 갱신 실패·재게시로 수명을 늘리지 않으며 기존 서명·영속 순번/철회·변환·엔진 수명·요청 전후 재검증을 재사용합니다.
 
 Public evidence must retain original source access method. EX's public example is not a private production credential, and browser document text is not an independently captured wire response. Operator-supplied captured EX files may be consumed only with exact hash/count/time receipts; rereading them never refreshes observation time. No hidden browser-cookie extraction or background browser daemon is added. Source-specific operating keys/approval and transport reliability remain production work.
 

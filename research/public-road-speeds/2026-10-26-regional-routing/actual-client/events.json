@@ -1,0 +1,144 @@
+[
+  {
+    "code": "PUBLIC_ENGINE_READY",
+    "at_utc": "2026-10-26T05:10:13.214Z",
+    "detail": {
+      "generation_id": "11459f49487b70473dec8a3cbf28780651f40f5e58050f4c88e784d383847fac",
+      "snapshot_id": "68bc4838da1f728d13270a26c816baff16f2ffc3d6b1a2970317efaa16910762"
+    }
+  },
+  {
+    "code": "PUBLIC_CLIENT_READY",
+    "at_utc": "2026-10-26T05:10:13.229Z",
+    "detail": {
+      "origin": "http://127.0.0.1:61795",
+      "stream": "5d6da003964e1f60484dec0b976d30095426426f3aa74ec55eb5521e04a3f206",
+      "source_class": "PUBLIC_AGENCY"
+    }
+  },
+  {
+    "code": "PUBLIC_SOURCE_REFRESH",
+    "at_utc": "2026-10-26T05:12:15.577Z",
+    "detail": {
+      "provider": "kr-regional",
+      "source_state": "CURRENT",
+      "refresh_state": "OK",
+      "retrieved_at": "2026-10-26T05:12:15.273Z",
+      "observed_from": "2026-10-26T05:06:00.000Z",
+      "observed_until": "2026-10-26T05:10:00.000Z",
+      "graph_edges": 244,
+      "mapped_edges": 56,
+      "live_edges": 56,
+      "sources": [
+        {
+          "provider": "kr-gits",
+          "live_edges": 54,
+          "access": "ANONYMOUS_WEBSITE",
+          "observed_from": "2026-10-26T05:07:00.000Z",
+          "observed_until": "2026-10-26T05:10:00.000Z"
+        },
+        {
+          "provider": "kr-ex",
+          "live_edges": 2,
+          "access": "OFFICIAL_PUBLIC_DEMO_BROWSER_DOCUMENT",
+          "observed_from": "2026-10-26T05:06:00.000Z",
+          "observed_until": "2026-10-26T05:06:00.000Z"
+        }
+      ]
+    }
+  },
+  {
+    "code": "PUBLIC_ENGINE_READY",
+    "at_utc": "2026-10-26T05:12:17.850Z",
+    "detail": {
+      "generation_id": "0caf7ec60d9f598a347efc44c4215637b4a94de629c44d63d44e517adada3000",
+      "snapshot_id": "1e60940dcdda06235fac132791917ecc46a505f6e6916f1694d84701858bcb25"
+    }
+  },
+  {
+    "code": "PUBLIC_SOURCE_REFRESH",
+    "at_utc": "2026-10-26T05:14:16.244Z",
+    "detail": {
+      "provider": "kr-regional",
+      "source_state": "CURRENT",
+      "refresh_state": "OK",
+      "retrieved_at": "2026-10-26T05:14:15.927Z",
+      "observed_from": "2026-10-26T05:06:00.000Z",
+      "observed_until": "2026-10-26T05:12:00.000Z",
+      "graph_edges": 244,
+      "mapped_edges": 56,
+      "live_edges": 56,
+      "sources": [
+        {
+          "provider": "kr-gits",
+          "live_edges": 54,
+          "access": "ANONYMOUS_WEBSITE",
+          "observed_from": "2026-10-26T05:12:00.000Z",
+          "observed_until": "2026-10-26T05:12:00.000Z"
+        },
+        {
+          "provider": "kr-ex",
+          "live_edges": 2,
+          "access": "OFFICIAL_PUBLIC_DEMO_BROWSER_DOCUMENT",
+          "observed_from": "2026-10-26T05:06:00.000Z",
+          "observed_until": "2026-10-26T05:06:00.000Z"
+        }
+      ]
+    }
+  },
+  {
+    "code": "PUBLIC_ENGINE_READY",
+    "at_utc": "2026-10-26T05:14:18.625Z",
+    "detail": {
+      "generation_id": "b21a955482e4be4793fc3a2073eacb01979b8cb66b401b44ea7bdc8223a32bd5",
+      "snapshot_id": "8d01bf5cfaadbd09d92694519fbecc200b21356cb293271572a5138f87e01fed"
+    }
+  },
+  {
+    "code": "PUBLIC_ENGINE_READY",
+    "at_utc": "2026-10-26T05:16:02.852Z",
+    "detail": {
+      "generation_id": "4ca826491b854a4aca5e0064421a7e340f5054233bc3c9ea3de0f3c9c92dad26",
+      "snapshot_id": "cdfd800906628deb40507eaf5018a6cf02b2a1dd02cd6b4f6511eb4ba6866b4a"
+    }
+  },
+  {
+    "code": "PUBLIC_SOURCE_REFRESH",
+    "at_utc": "2026-10-26T05:16:16.706Z",
+    "detail": {
+      "provider": "kr-regional",
+      "source_state": "CURRENT",
+      "refresh_state": "OK",
+      "retrieved_at": "2026-10-26T05:16:16.320Z",
+      "observed_from": "2026-10-26T05:12:00.000Z",
+      "observed_until": "2026-10-26T05:14:00.000Z",
+      "graph_edges": 244,
+      "mapped_edges": 56,
+      "live_edges": 56,
+      "sources": [
+        {
+          "provider": "kr-gits",
+          "live_edges": 56,
+          "access": "ANONYMOUS_WEBSITE",
+          "observed_from": "2026-10-26T05:12:00.000Z",
+          "observed_until": "2026-10-26T05:14:00.000Z"
+        },
+        {
+          "provider": "kr-ex",
+          "live_edges": 0,
+          "access": "OFFICIAL_PUBLIC_DEMO_BROWSER_DOCUMENT",
+          "observed_from": null,
+          "observed_until": null
+        }
+      ]
+    }
+  },
+  {
+    "code": "PUBLIC_ENGINE_READY",
+    "at_utc": "2026-10-26T05:16:19.414Z",
+    "detail": {
+      "generation_id": "b2db8fb78f19ffd7be2964cb1c0a0931f7611455aef13c9557aa231d26a40579",
+      "snapshot_id": "a4f02674b91d7ec24b5d3eb2b1c2eb0d8f057f9263cd9d45fb85b6abf8d890c2"
+    }
+  }
+]

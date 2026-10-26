@@ -1,0 +1,36 @@
+{
+  "status": "VERIFIED_REJECTION",
+  "scope": "DEVELOPMENT_COMPARISON01_NOT_REGIONAL_ACCEPTANCE",
+  "native_route_sha256": "0e1ee22d2d69a9bb6c130a45a8c3dc23e50ce3eca8c3a773938eaa6fe9095a14",
+  "original_requested_locations": [
+    {
+      "lon": 126.9331,
+      "lat": 37.5277
+    },
+    {
+      "lon": 126.9441,
+      "lat": 37.5393
+    }
+  ],
+  "native_endpoints": [
+    [
+      126.931952,
+      37.527912
+    ],
+    [
+      126.944088,
+      37.539308
+    ]
+  ],
+  "endpoint_gaps_m": [
+    103.94375817827589,
+    1.382309769787956
+  ],
+  "required_max_m": 100,
+  "cleanup": {
+    "cleanup_verified": true,
+    "container": "routelens-p02-149f8afc-72c6-4298-ba2d-b6ac2f0edad2"
+  },
+  "message_en": "Independent polyline6 decode and spherical distance reproduce the retained historical endpoint rejection. The twelve predeclared regional trials and all historical integration cases remain separate.",
+  "message_ko": "독립 지형 해독·구면 거리로 보존한 기존 끝점 거부를 재현했습니다. 사전 고정 지역 열두 시험·기존 통합은 구분합니다."
+}

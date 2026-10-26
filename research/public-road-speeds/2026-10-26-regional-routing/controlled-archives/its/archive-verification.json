@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "source": {
+    "commit": "82acad0f5452fb5a72ae20b7fb7b219dae853359",
+    "dirty": false
+  },
+  "implementation_sha256": "718e323a745280e2893f536e8360095e1ef6e9463a45458d935a9358ca57af17",
+  "graph_id": "662ffb2874ad7a5928eb590e53a5d7c0ecc373aec0c55724518a4fd053a98f12",
+  "archived_original_files": 392,
+  "map_omissions": 0,
+  "archive_bytes": 526924,
+  "archive_sha256": "21d88026fb0d0a3e4dfa774d0720af46df0e6ddd10f65e2dc6df12c9e3a9076c",
+  "parts": [
+    {
+      "path": "originals.tar.gz.part01",
+      "bytes": 526924,
+      "sha256": "21d88026fb0d0a3e4dfa774d0720af46df0e6ddd10f65e2dc6df12c9e3a9076c"
+    }
+  ],
+  "exact_inventory_match": true,
+  "reconstruction_match": true,
+  "scope_en": "Archive integrity only. Original run status and independent acceptance are separate. Every present original except exact manifest-declared map bytes is retained, including XML and SQLite/WAL/SHM. No missing file is fabricated.",
+  "scope_ko": "묶음 무결성만의 판정입니다. 원 실행·독립 수용과 구분하며 정확한 목록 지도 바이트 외 모든 원문과 XML·SQLite/WAL/SHM을 보존합니다. 없는 파일을 만들지 않습니다."
+}

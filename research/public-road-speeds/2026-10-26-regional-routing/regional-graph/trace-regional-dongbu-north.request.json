@@ -1,0 +1,18 @@
+{
+  "encoded_polyline": "az{zfA{qsiqFfHhAhNrBdOrBd\\|DvNrAln@|FpLhA|PdB|Gz@xQdCzVrEvP~CtQnDtl@~OdQlFzQdGbRnGz^dKvMrDjOtDvh@nLjK~AtEp@bGt@hMpAtUnCpXzChIr@rO`AfSZvIAzLQ~YKfQUhTUj[dAjbAcA|[wCr[oFtHuBtCs@`NuEfNuFxH_E~RwLvGwDtOqIzRqJ|M}FpE{BlEyCbKiIdIoIrDuCbE_DlDqB~HqDpOmFjIuCfFiA~A_@hGaAjQaB~t@TtOkApVeBtOeArGe@nFoA`AItIk@N}Dv@uMRwDtAsX|Dst@zDsz@lBqg@|A{g@ZqI~Ck}@hAcc@n@aW`@uMrKkBxVcEhcAwQ~\\kGj]cG`VmE~JoBh^sGbuAyW|NkCpLiCde@qIhPyBrKcChMuB~K_CxQgDjQgDbtBk\\nLwApHkAt{AqYlf@mMpIcDxAhJlCpRfWziBnFb`@vQbrAvBzObJhn@r@lEJvF[`HoBhG}Bv@g]|JeL|DwQpJkj@nPqEhAgYfHgKlBcNdAa\\bAeXf@oXp@uz@zEuf@xBqgA|CaX|AyVxBeVh@oPnB_TjHc\\nNyV~JiXdN_[pMwXpLui@lT",
+  "shape_match": "edge_walk",
+  "costing": "auto",
+  "filters": {
+    "action": "include",
+    "attributes": [
+      "edge.id",
+      "edge.way_id",
+      "edge.names",
+      "edge.length",
+      "edge.begin_shape_index",
+      "edge.end_shape_index",
+      "edge.forward",
+      "shape"
+    ]
+  }
+}

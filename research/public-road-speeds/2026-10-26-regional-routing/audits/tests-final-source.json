@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "command": "npm test",
+  "node": "v22.23.4",
+  "tests": 393,
+  "source_checked_after_execution": {
+    "commit": "82acad0f5452fb5a72ae20b7fb7b219dae853359",
+    "dirty": false
+  },
+  "implementation_sha256": "718e323a745280e2893f536e8360095e1ef6e9463a45458d935a9358ca57af17",
+  "log_sha256": "9b9a00ceeb6a3bb4605f4f0e2b68a5e3e2c1dd1bf60803c53048b60a20bd3029",
+  "message_en": "Final suite and source were inspected after the recorded execution.",
+  "message_ko": "기록된 최종 실행 뒤 전체 검사·소스를 확인했습니다."
+}

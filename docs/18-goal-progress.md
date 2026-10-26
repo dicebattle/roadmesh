@@ -1,3 +1,9 @@
+# Regional public routing accepted locally / 지역 공공 경로 로컬 수용
+
+[Regional module](../wiki/modules/regional-public-routing.md) · [measured report](../research/public-road-speeds/2026-10-26-regional-routing/report.md). Actual timestamped Gyeonggi/EX observations now affect native routing:48 comparisons, fresh whole486/486, Node22 suite393/393 and current29.95s EN/KO/390px recording passed. Mapping56/244 refers only to the fixed trial catalog. Expanded regional GPS context, operated EX collection and measured ETA accuracy remain open. Earlier checkpoints below are historical.
+
+경기·도로공사 원시각 자료의 실제 경로48회·새 전체486개·전체393개·현재 한영390픽셀 녹화를 수용했습니다.56/244개는 시험 목록이며 지역 GPS 문맥·운영 수집·도착시간 정확도는 남습니다. 아래 중간 기록은 과거 시점입니다.
+
 # Continuing pilot goal / 지속 파일럿 목표
 
 The goal remains the complete local P01–P14 pilot. Each increment needs fresh actual-process execution of all implemented modules on actual Seoul OSM, inspected originals, bilingual reports and actual recordings, updated READMEs, branch push and verified protected delivery. A partial module or green unit suite does not finish the goal.

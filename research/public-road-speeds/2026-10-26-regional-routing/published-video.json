@@ -1,0 +1,84 @@
+{
+  "source_commit": "82acad0f5452fb5a72ae20b7fb7b219dae853359",
+  "implementation_sha256": "718e323a745280e2893f536e8360095e1ef6e9463a45458d935a9358ca57af17",
+  "report_path": "research/public-road-speeds/2026-10-26-regional-routing/whole/report.html",
+  "report_sha256": "5f5b5ae43e8a7f61a8c5d48b9656f59082f0d9a0fc439c62c5d1f40c212f9f01",
+  "capture_method": "Actual full29.95s regional client recording at1x,599 frames; captions outside original1280x720; no GPS replay. / 실제 지역 화면 전체29.95초 원속도·599프레임·원1280x720밖 자막·GPS 재생 없음.",
+  "user_capture": {
+    "source_commit": "82acad0f5452fb5a72ae20b7fb7b219dae853359",
+    "source_dirty": false,
+    "graph_id": "a859e9adaf913b14bf6b47a161247ec1c3b6c6c59b6e8d6334a9466646cb2079",
+    "separate_whole_graph_id": "662ffb2874ad7a5928eb590e53a5d7c0ecc373aec0c55724518a4fd053a98f12",
+    "source_class": "PUBLIC_AGENCY",
+    "clock_basis": "WALL_CLOCK_UTC",
+    "movement_scope": "NO_GPS_REPLAY",
+    "raw_capture_seconds": 29.95,
+    "retained_raw_intervals_seconds": [
+      [
+        0,
+        29.95
+      ]
+    ],
+    "published_seconds": 29.95,
+    "frames": 599,
+    "captions_languages": [
+      "en",
+      "ko"
+    ],
+    "application_languages": [
+      "ko",
+      "en"
+    ],
+    "application_frame": {
+      "width": 1280,
+      "height": 720
+    },
+    "published_frame": {
+      "width": 1280,
+      "height": 828
+    },
+    "caption_band_pixels": 108
+  },
+  "assets": [
+    {
+      "path": "docs/media/demo.mp4",
+      "sha256": "ef21c69692de074a9329e4cacdd656aef7223998faae0e77b86bb59975a9a172"
+    },
+    {
+      "path": "docs/media/demo.ko.mp4",
+      "sha256": "cf3c1b4e392a6061f56adf9ee282bdd9bf4424b2c98365081619e6065463ef2a"
+    },
+    {
+      "path": "docs/media/demo.gif",
+      "sha256": "9bc7685dfeb4d6a0a6e2748c4b922e5595d18fab4d23099722228496b3f329ed"
+    },
+    {
+      "path": "docs/media/demo.ko.gif",
+      "sha256": "86a74f73fb7a2344e966c71a3dff9a6342521dec06846c2fb468f20bf245cbac"
+    },
+    {
+      "path": "docs/media/demo-poster.ko.png",
+      "sha256": "d8b5b20b5953fb395b3371d7c6b2343feff68f9bfe328826e569afb515d36b62"
+    },
+    {
+      "path": "research/public-road-speeds/2026-10-26-regional-routing/capture-original.webm",
+      "sha256": "27440e3e3087f097e629a169e67d787e071b199795895e6c878b07262d2db4eb"
+    },
+    {
+      "path": "research/public-road-speeds/2026-10-26-regional-routing/frames/route-ko.png",
+      "sha256": "72b3ef9af40688122528feb457c5ce5033cfcccd2638d5f6a5543cc80214c9cf"
+    },
+    {
+      "path": "research/public-road-speeds/2026-10-26-regional-routing/frames/route-en.png",
+      "sha256": "fb17b9b8f653eb62d588676c501288885e4290438ac94aa436cc1d285376c651"
+    },
+    {
+      "path": "research/public-road-speeds/2026-10-26-regional-routing/frames/mobile390.png",
+      "sha256": "753024c60ae568fabed1c6eefdfa363116a0229e50953fe0c63ddf85a474f185"
+    },
+    {
+      "path": "research/public-road-speeds/2026-10-26-regional-routing/whole/report-data.json.gz",
+      "sha256": "f49e430d4f59bbe0740b52b3a033b6d69f853c6cb1f5d8cdcc0dd5e60e1cbe1f"
+    }
+  ]
+}

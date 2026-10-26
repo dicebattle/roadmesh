@@ -1,0 +1,91 @@
+{
+  "trip": {
+    "locations": [
+      {
+        "type": "break",
+        "lat": 37.668918,
+        "lon": 126.84121,
+        "date_time": "2026-10-26T05:09",
+        "original_index": 0
+      },
+      {
+        "type": "break",
+        "lat": 37.673175,
+        "lon": 126.896184,
+        "original_index": 1
+      }
+    ],
+    "legs": [
+      {
+        "maneuvers": [
+          {
+            "type": 1,
+            "instruction": "Drive east on 100/수도권제1순환고속도로.",
+            "verbal_succinct_transition_instruction": "Drive east.",
+            "verbal_pre_transition_instruction": "Drive east on 100, 수도권제1순환고속도로.",
+            "verbal_post_transition_instruction": "Continue for 5 kilometers.",
+            "street_names": [
+              "100",
+              "수도권제1순환고속도로"
+            ],
+            "bearing_after": 88,
+            "time": 186.437,
+            "length": 5.177,
+            "cost": 190.513,
+            "begin_shape_index": 0,
+            "end_shape_index": 65,
+            "toll": true,
+            "highway": true,
+            "travel_mode": "drive",
+            "travel_type": "car"
+          },
+          {
+            "type": 4,
+            "instruction": "You have arrived at your destination.",
+            "verbal_transition_alert_instruction": "You will arrive at your destination.",
+            "verbal_pre_transition_instruction": "You have arrived at your destination.",
+            "bearing_before": 94,
+            "time": 0,
+            "length": 0,
+            "cost": 0,
+            "begin_shape_index": 65,
+            "end_shape_index": 65,
+            "travel_mode": "drive",
+            "travel_type": "car"
+          }
+        ],
+        "summary": {
+          "has_time_restrictions": false,
+          "has_toll": true,
+          "has_highway": true,
+          "has_ferry": false,
+          "min_lat": 37.66703,
+          "min_lon": 126.841208,
+          "max_lat": 37.67473,
+          "max_lon": 126.896182,
+          "time": 186.437,
+          "length": 5.177,
+          "cost": 190.513
+        },
+        "shape": "edczfAqvw|pFYqZ?gw@f@oi@nA{h@nAoi@bBc[nAc[pBu^lHglA|G}_AbCa`@lEuq@nWkcErCq_@fNwjBrNeuBzEgw@zE_eAnAk\\?gw@oAk\\cBc[wBc[sDc[{E{YcGoZoFgYsDwLsIkW{J_XoKkWcLcV_N{TgOsSsN_SgO_SgOwQgqCg{CoPcQsNwQgO_S_NsScLgTwLwV{JcV{JkWkH_XkHgYcG_X{E{Y_D{YsDc[g@wLcBc[Sgh@Rgw@|D{gAfSy_FvIezBtFgqA|NmvChNoqDrHcnDtD}mA~Ek~B"
+      }
+    ],
+    "summary": {
+      "has_time_restrictions": false,
+      "has_toll": true,
+      "has_highway": true,
+      "has_ferry": false,
+      "min_lat": 37.66703,
+      "min_lon": 126.841208,
+      "max_lat": 37.67473,
+      "max_lon": 126.896182,
+      "time": 186.437,
+      "length": 5.177,
+      "cost": 190.513
+    },
+    "status_message": "Found route between points",
+    "status": 0,
+    "units": "kilometers",
+    "language": "en-US"
+  }
+}
